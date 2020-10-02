@@ -30,6 +30,12 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the job.
+     * </p>
+     */
+    private String jobArn;
+    /**
+     * <p>
      * The name of the job.
      * </p>
      */
@@ -149,6 +155,52 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private JobTimeout timeout;
+    /**
+     * <p>
+     * The tags applied to the job.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the job.
+     * </p>
+     * 
+     * @param jobArn
+     *        The Amazon Resource Name (ARN) of the job.
+     */
+
+    public void setJobArn(String jobArn) {
+        this.jobArn = jobArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the job.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the job.
+     */
+
+    public String getJobArn() {
+        return this.jobArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the job.
+     * </p>
+     * 
+     * @param jobArn
+     *        The Amazon Resource Name (ARN) of the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withJobArn(String jobArn) {
+        setJobArn(jobArn);
+        return this;
+    }
 
     /**
      * <p>
@@ -1091,6 +1143,74 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The tags applied to the job.
+     * </p>
+     * 
+     * @return The tags applied to the job.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags applied to the job.
+     * </p>
+     * 
+     * @param tags
+     *        The tags applied to the job.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags applied to the job.
+     * </p>
+     * 
+     * @param tags
+     *        The tags applied to the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see JobDetail#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1102,6 +1222,8 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getJobArn() != null)
+            sb.append("JobArn: ").append(getJobArn()).append(",");
         if (getJobName() != null)
             sb.append("JobName: ").append(getJobName()).append(",");
         if (getJobId() != null)
@@ -1137,7 +1259,9 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
         if (getArrayProperties() != null)
             sb.append("ArrayProperties: ").append(getArrayProperties()).append(",");
         if (getTimeout() != null)
-            sb.append("Timeout: ").append(getTimeout());
+            sb.append("Timeout: ").append(getTimeout()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -1152,6 +1276,10 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof JobDetail == false)
             return false;
         JobDetail other = (JobDetail) obj;
+        if (other.getJobArn() == null ^ this.getJobArn() == null)
+            return false;
+        if (other.getJobArn() != null && other.getJobArn().equals(this.getJobArn()) == false)
+            return false;
         if (other.getJobName() == null ^ this.getJobName() == null)
             return false;
         if (other.getJobName() != null && other.getJobName().equals(this.getJobName()) == false)
@@ -1224,6 +1352,10 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -1232,6 +1364,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getJobArn() == null) ? 0 : getJobArn().hashCode());
         hashCode = prime * hashCode + ((getJobName() == null) ? 0 : getJobName().hashCode());
         hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
         hashCode = prime * hashCode + ((getJobQueue() == null) ? 0 : getJobQueue().hashCode());
@@ -1250,6 +1383,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getNodeProperties() == null) ? 0 : getNodeProperties().hashCode());
         hashCode = prime * hashCode + ((getArrayProperties() == null) ? 0 : getArrayProperties().hashCode());
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

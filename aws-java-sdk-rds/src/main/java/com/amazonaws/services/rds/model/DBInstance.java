@@ -252,6 +252,13 @@ public class DBInstance implements Serializable, Cloneable {
     private String characterSetName;
     /**
      * <p>
+     * The name of the NCHAR character set for the Oracle DB instance. This character set specifies the Unicode encoding
+     * for data stored in table columns of type NCHAR, NCLOB, or NVARCHAR2.
+     * </p>
+     */
+    private String ncharCharacterSetName;
+    /**
+     * <p>
      * If present, specifies the name of the secondary Availability Zone for a DB instance with multi-AZ support.
      * </p>
      */
@@ -2190,6 +2197,52 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The name of the NCHAR character set for the Oracle DB instance. This character set specifies the Unicode encoding
+     * for data stored in table columns of type NCHAR, NCLOB, or NVARCHAR2.
+     * </p>
+     * 
+     * @param ncharCharacterSetName
+     *        The name of the NCHAR character set for the Oracle DB instance. This character set specifies the Unicode
+     *        encoding for data stored in table columns of type NCHAR, NCLOB, or NVARCHAR2.
+     */
+
+    public void setNcharCharacterSetName(String ncharCharacterSetName) {
+        this.ncharCharacterSetName = ncharCharacterSetName;
+    }
+
+    /**
+     * <p>
+     * The name of the NCHAR character set for the Oracle DB instance. This character set specifies the Unicode encoding
+     * for data stored in table columns of type NCHAR, NCLOB, or NVARCHAR2.
+     * </p>
+     * 
+     * @return The name of the NCHAR character set for the Oracle DB instance. This character set specifies the Unicode
+     *         encoding for data stored in table columns of type NCHAR, NCLOB, or NVARCHAR2.
+     */
+
+    public String getNcharCharacterSetName() {
+        return this.ncharCharacterSetName;
+    }
+
+    /**
+     * <p>
+     * The name of the NCHAR character set for the Oracle DB instance. This character set specifies the Unicode encoding
+     * for data stored in table columns of type NCHAR, NCLOB, or NVARCHAR2.
+     * </p>
+     * 
+     * @param ncharCharacterSetName
+     *        The name of the NCHAR character set for the Oracle DB instance. This character set specifies the Unicode
+     *        encoding for data stored in table columns of type NCHAR, NCLOB, or NVARCHAR2.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withNcharCharacterSetName(String ncharCharacterSetName) {
+        setNcharCharacterSetName(ncharCharacterSetName);
+        return this;
+    }
+
+    /**
+     * <p>
      * If present, specifies the name of the secondary Availability Zone for a DB instance with multi-AZ support.
      * </p>
      * 
@@ -4097,6 +4150,8 @@ public class DBInstance implements Serializable, Cloneable {
             sb.append("OptionGroupMemberships: ").append(getOptionGroupMemberships()).append(",");
         if (getCharacterSetName() != null)
             sb.append("CharacterSetName: ").append(getCharacterSetName()).append(",");
+        if (getNcharCharacterSetName() != null)
+            sb.append("NcharCharacterSetName: ").append(getNcharCharacterSetName()).append(",");
         if (getSecondaryAvailabilityZone() != null)
             sb.append("SecondaryAvailabilityZone: ").append(getSecondaryAvailabilityZone()).append(",");
         if (getPubliclyAccessible() != null)
@@ -4292,6 +4347,10 @@ public class DBInstance implements Serializable, Cloneable {
             return false;
         if (other.getCharacterSetName() != null && other.getCharacterSetName().equals(this.getCharacterSetName()) == false)
             return false;
+        if (other.getNcharCharacterSetName() == null ^ this.getNcharCharacterSetName() == null)
+            return false;
+        if (other.getNcharCharacterSetName() != null && other.getNcharCharacterSetName().equals(this.getNcharCharacterSetName()) == false)
+            return false;
         if (other.getSecondaryAvailabilityZone() == null ^ this.getSecondaryAvailabilityZone() == null)
             return false;
         if (other.getSecondaryAvailabilityZone() != null && other.getSecondaryAvailabilityZone().equals(this.getSecondaryAvailabilityZone()) == false)
@@ -4449,6 +4508,7 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
         hashCode = prime * hashCode + ((getOptionGroupMemberships() == null) ? 0 : getOptionGroupMemberships().hashCode());
         hashCode = prime * hashCode + ((getCharacterSetName() == null) ? 0 : getCharacterSetName().hashCode());
+        hashCode = prime * hashCode + ((getNcharCharacterSetName() == null) ? 0 : getNcharCharacterSetName().hashCode());
         hashCode = prime * hashCode + ((getSecondaryAvailabilityZone() == null) ? 0 : getSecondaryAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
         hashCode = prime * hashCode + ((getStatusInfos() == null) ? 0 : getStatusInfos().hashCode());

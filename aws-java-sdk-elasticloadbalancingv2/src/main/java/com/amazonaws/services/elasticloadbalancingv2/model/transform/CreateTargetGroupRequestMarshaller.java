@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.elasticloadbalancingv2.model.transform;
 
+import java.util.List;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -100,6 +102,27 @@ public class CreateTargetGroupRequestMarshaller implements Marshaller<Request<Cr
 
         if (createTargetGroupRequest.getTargetType() != null) {
             request.addParameter("TargetType", StringUtils.fromString(createTargetGroupRequest.getTargetType()));
+        }
+
+        if (createTargetGroupRequest.getTags() != null) {
+            java.util.List<Tag> tagsList = createTargetGroupRequest.getTags();
+            if (tagsList.isEmpty()) {
+                request.addParameter("Tags", "");
+            } else {
+                int tagsListIndex = 1;
+
+                for (Tag tagsListValue : tagsList) {
+
+                    if (tagsListValue.getKey() != null) {
+                        request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                    }
+
+                    if (tagsListValue.getValue() != null) {
+                        request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                    }
+                    tagsListIndex++;
+                }
+            }
         }
 
         return request;

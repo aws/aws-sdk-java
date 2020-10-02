@@ -601,6 +601,41 @@ public interface AWSBatchAsync extends AWSBatch {
 
     /**
      * <p>
+     * List the tags for an AWS Batch resource. AWS Batch resources that support tags are compute environments, jobs,
+     * job definitions, and job queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not
+     * supported.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSBatchAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * List the tags for an AWS Batch resource. AWS Batch resources that support tags are compute environments, jobs,
+     * job definitions, and job queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not
+     * supported.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSBatchAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Registers an AWS Batch job definition.
      * </p>
      * 
@@ -665,6 +700,45 @@ public interface AWSBatchAsync extends AWSBatch {
 
     /**
      * <p>
+     * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
+     * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
+     * associated with that resource are deleted as well. AWS Batch resources that support tags are compute
+     * environments, jobs, job definitions, and job queues. ARNs for child jobs of array and multi-node parallel (MNP)
+     * jobs are not supported.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSBatchAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
+     * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
+     * associated with that resource are deleted as well. AWS Batch resources that support tags are compute
+     * environments, jobs, job definitions, and job queues. ARNs for child jobs of array and multi-node parallel (MNP)
+     * jobs are not supported.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSBatchAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Terminates a job in a job queue. Jobs that are in the <code>STARTING</code> or <code>RUNNING</code> state are
      * terminated, which causes them to transition to <code>FAILED</code>. Jobs that have not progressed to the
      * <code>STARTING</code> state are cancelled.
@@ -697,6 +771,37 @@ public interface AWSBatchAsync extends AWSBatch {
      */
     java.util.concurrent.Future<TerminateJobResult> terminateJobAsync(TerminateJobRequest terminateJobRequest,
             com.amazonaws.handlers.AsyncHandler<TerminateJobRequest, TerminateJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes specified tags from an AWS Batch resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSBatchAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Deletes specified tags from an AWS Batch resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSBatchAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
      * <p>

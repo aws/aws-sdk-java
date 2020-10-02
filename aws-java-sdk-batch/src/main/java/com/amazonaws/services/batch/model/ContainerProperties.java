@@ -117,8 +117,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
-     * execution IAM role</a>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
+     * role</a>.
      * </p>
      */
     private String executionRoleArn;
@@ -841,14 +841,14 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
-     * execution IAM role</a>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
+     * role</a>.
      * </p>
      * 
      * @param executionRoleArn
      *        The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see
-     *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
-     *        ECS task execution IAM role</a>.
+     *        <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution
+     *        IAM role</a>.
      */
 
     public void setExecutionRoleArn(String executionRoleArn) {
@@ -858,13 +858,13 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
-     * execution IAM role</a>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
+     * role</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see
-     *         <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
-     *         ECS task execution IAM role</a>.
+     *         <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution
+     *         IAM role</a>.
      */
 
     public String getExecutionRoleArn() {
@@ -874,14 +874,14 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
-     * execution IAM role</a>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
+     * role</a>.
      * </p>
      * 
      * @param executionRoleArn
      *        The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see
-     *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
-     *        ECS task execution IAM role</a>.
+     *        <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution
+     *        IAM role</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

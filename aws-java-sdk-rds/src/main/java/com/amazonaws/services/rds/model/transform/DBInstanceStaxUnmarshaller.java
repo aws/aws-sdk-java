@@ -225,6 +225,11 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
                     continue;
                 }
 
+                if (context.testExpression("NcharCharacterSetName", targetDepth)) {
+                    dBInstance.setNcharCharacterSetName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("SecondaryAvailabilityZone", targetDepth)) {
                     dBInstance.setSecondaryAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -149,6 +149,8 @@ import com.amazonaws.services.s3.model.DeleteBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketLifecycleConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketMetricsConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketMetricsConfigurationResult;
+import com.amazonaws.services.s3.model.DeleteBucketOwnershipControlsRequest;
+import com.amazonaws.services.s3.model.DeleteBucketOwnershipControlsResult;
 import com.amazonaws.services.s3.model.DeleteBucketPolicyRequest;
 import com.amazonaws.services.s3.model.DeleteBucketReplicationConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketRequest;
@@ -181,6 +183,8 @@ import com.amazonaws.services.s3.model.GetBucketLoggingConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketMetricsConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketMetricsConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketNotificationConfigurationRequest;
+import com.amazonaws.services.s3.model.GetBucketOwnershipControlsRequest;
+import com.amazonaws.services.s3.model.GetBucketOwnershipControlsResult;
 import com.amazonaws.services.s3.model.GetBucketPolicyRequest;
 import com.amazonaws.services.s3.model.GetBucketPolicyStatusRequest;
 import com.amazonaws.services.s3.model.GetBucketPolicyStatusResult;
@@ -275,6 +279,8 @@ import com.amazonaws.services.s3.model.SetBucketLoggingConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketMetricsConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketMetricsConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketNotificationConfigurationRequest;
+import com.amazonaws.services.s3.model.SetBucketOwnershipControlsRequest;
+import com.amazonaws.services.s3.model.SetBucketOwnershipControlsResult;
 import com.amazonaws.services.s3.model.SetBucketPolicyRequest;
 import com.amazonaws.services.s3.model.SetBucketReplicationConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketTaggingConfigurationRequest;
@@ -301,6 +307,7 @@ import com.amazonaws.services.s3.model.VersionListing;
 import com.amazonaws.services.s3.model.analytics.AnalyticsConfiguration;
 import com.amazonaws.services.s3.model.inventory.InventoryConfiguration;
 import com.amazonaws.services.s3.model.metrics.MetricsConfiguration;
+import com.amazonaws.services.s3.model.ownership.OwnershipControls;
 import com.amazonaws.services.s3.model.transform.AclXmlFactory;
 import com.amazonaws.services.s3.model.transform.BucketConfigurationXmlFactory;
 import com.amazonaws.services.s3.model.transform.BucketNotificationConfigurationStaxUnmarshaller;
@@ -5740,6 +5747,66 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         return invoke(request, new Unmarshallers.ListBucketMetricsConfigurationsUnmarshaller(), bucketName, null);
     }
+
+    @Override
+    public DeleteBucketOwnershipControlsResult deleteBucketOwnershipControls(
+        DeleteBucketOwnershipControlsRequest deleteBucketOwnershipControlsRequest)
+        throws AmazonServiceException, SdkClientException {
+        deleteBucketOwnershipControlsRequest = beforeClientExecution(deleteBucketOwnershipControlsRequest);
+        rejectNull(deleteBucketOwnershipControlsRequest, "The request cannot be null");
+        final String bucketName = assertStringNotEmpty(deleteBucketOwnershipControlsRequest.getBucketName(), "BucketName");
+
+        Request<DeleteBucketOwnershipControlsRequest> request =
+            createRequest(bucketName, null, deleteBucketOwnershipControlsRequest, HttpMethodName.DELETE);
+        request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBucketOwnershipControls");
+        request.addParameter("ownershipControls", null);
+
+        return invoke(request, new Unmarshallers.DeleteBucketOwnershipControlsUnmarshaller(), bucketName, null);
+    }
+
+    @Override
+    public GetBucketOwnershipControlsResult getBucketOwnershipControls(
+        GetBucketOwnershipControlsRequest getBucketOwnershipControlsRequest)
+        throws AmazonServiceException, SdkClientException {
+        getBucketOwnershipControlsRequest = beforeClientExecution(getBucketOwnershipControlsRequest);
+        rejectNull(getBucketOwnershipControlsRequest, "The request cannot be null");
+        final String bucketName = assertStringNotEmpty(getBucketOwnershipControlsRequest.getBucketName(), "BucketName");
+
+        Request<GetBucketOwnershipControlsRequest> request =
+            createRequest(bucketName, null, getBucketOwnershipControlsRequest, HttpMethodName.GET);
+        request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBucketOwnershipControls");
+        request.addParameter("ownershipControls", null);
+
+        return invoke(request, new Unmarshallers.GetBucketOwnershipControlsUnmarshaller(), bucketName, null);
+    }
+
+    public SetBucketOwnershipControlsResult setBucketOwnershipControls(
+        String bucketName, OwnershipControls ownershipControls)
+        throws AmazonServiceException, SdkClientException {
+        return setBucketOwnershipControls(new SetBucketOwnershipControlsRequest(bucketName, ownershipControls));
+    }
+
+    @Override
+    public SetBucketOwnershipControlsResult setBucketOwnershipControls(
+        SetBucketOwnershipControlsRequest setBucketOwnershipControlsRequest)
+        throws AmazonServiceException, SdkClientException {
+        setBucketOwnershipControlsRequest = beforeClientExecution(setBucketOwnershipControlsRequest);
+        rejectNull(setBucketOwnershipControlsRequest, "The request cannot be null");
+        final String bucketName = assertStringNotEmpty(setBucketOwnershipControlsRequest.getBucketName(), "BucketName");
+        final OwnershipControls ownershipControls = assertNotNull(
+            setBucketOwnershipControlsRequest.getOwnershipControls(), "OwnershipControls");
+
+        Request<SetBucketOwnershipControlsRequest> request =
+            createRequest(bucketName, null, setBucketOwnershipControlsRequest, HttpMethodName.PUT);
+        request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutBucketOwnershipControls");
+        request.addParameter("ownershipControls", null);
+
+        byte[] bytes = bucketConfigurationXmlFactory.convertToXmlByteArray(ownershipControls);
+        setContent(request, bytes, "application/xml", true);
+
+        return invoke(request, new Unmarshallers.SetBucketOwnershipControlsUnmarshaller(), bucketName, null);
+    }
+
 
     @Override
     public DeleteBucketAnalyticsConfigurationResult deleteBucketAnalyticsConfiguration(

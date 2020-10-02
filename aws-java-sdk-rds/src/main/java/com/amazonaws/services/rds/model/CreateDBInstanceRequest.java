@@ -1025,6 +1025,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String characterSetName;
     /**
      * <p>
+     * The name of the NCHAR character set for the Oracle DB instance.
+     * </p>
+     */
+    private String ncharCharacterSetName;
+    /**
+     * <p>
      * A value that indicates whether the DB instance is publicly accessible.
      * </p>
      * <p>
@@ -8014,6 +8020,46 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
+     * The name of the NCHAR character set for the Oracle DB instance.
+     * </p>
+     * 
+     * @param ncharCharacterSetName
+     *        The name of the NCHAR character set for the Oracle DB instance.
+     */
+
+    public void setNcharCharacterSetName(String ncharCharacterSetName) {
+        this.ncharCharacterSetName = ncharCharacterSetName;
+    }
+
+    /**
+     * <p>
+     * The name of the NCHAR character set for the Oracle DB instance.
+     * </p>
+     * 
+     * @return The name of the NCHAR character set for the Oracle DB instance.
+     */
+
+    public String getNcharCharacterSetName() {
+        return this.ncharCharacterSetName;
+    }
+
+    /**
+     * <p>
+     * The name of the NCHAR character set for the Oracle DB instance.
+     * </p>
+     * 
+     * @param ncharCharacterSetName
+     *        The name of the NCHAR character set for the Oracle DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceRequest withNcharCharacterSetName(String ncharCharacterSetName) {
+        setNcharCharacterSetName(ncharCharacterSetName);
+        return this;
+    }
+
+    /**
+     * <p>
      * A value that indicates whether the DB instance is publicly accessible.
      * </p>
      * <p>
@@ -10845,6 +10891,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("OptionGroupName: ").append(getOptionGroupName()).append(",");
         if (getCharacterSetName() != null)
             sb.append("CharacterSetName: ").append(getCharacterSetName()).append(",");
+        if (getNcharCharacterSetName() != null)
+            sb.append("NcharCharacterSetName: ").append(getNcharCharacterSetName()).append(",");
         if (getPubliclyAccessible() != null)
             sb.append("PubliclyAccessible: ").append(getPubliclyAccessible()).append(",");
         if (getTags() != null)
@@ -10997,6 +11045,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getCharacterSetName() != null && other.getCharacterSetName().equals(this.getCharacterSetName()) == false)
             return false;
+        if (other.getNcharCharacterSetName() == null ^ this.getNcharCharacterSetName() == null)
+            return false;
+        if (other.getNcharCharacterSetName() != null && other.getNcharCharacterSetName().equals(this.getNcharCharacterSetName()) == false)
+            return false;
         if (other.getPubliclyAccessible() == null ^ this.getPubliclyAccessible() == null)
             return false;
         if (other.getPubliclyAccessible() != null && other.getPubliclyAccessible().equals(this.getPubliclyAccessible()) == false)
@@ -11122,6 +11174,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
         hashCode = prime * hashCode + ((getOptionGroupName() == null) ? 0 : getOptionGroupName().hashCode());
         hashCode = prime * hashCode + ((getCharacterSetName() == null) ? 0 : getCharacterSetName().hashCode());
+        hashCode = prime * hashCode + ((getNcharCharacterSetName() == null) ? 0 : getNcharCharacterSetName().hashCode());
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getDBClusterIdentifier() == null) ? 0 : getDBClusterIdentifier().hashCode());

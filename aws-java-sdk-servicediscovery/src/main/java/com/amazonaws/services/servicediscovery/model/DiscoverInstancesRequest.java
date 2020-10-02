@@ -47,12 +47,20 @@ public class DiscoverInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
     private Integer maxResults;
     /**
      * <p>
-     * A string map that contains attributes with values that you can use to filter instances by any custom attribute
-     * that you specified when you registered the instance. Only instances that match all the specified key/value pairs
-     * will be returned.
+     * Filters to scope the results based on custom attributes for the instance. For example,
+     * <code>{version=v1, az=1a}</code>. Only instances that match all the specified key-value pairs will be returned.
      * </p>
      */
     private java.util.Map<String, String> queryParameters;
+    /**
+     * <p>
+     * Opportunistic filters to scope the results based on custom attributes. If there are instances that match both the
+     * filters specified in both the <code>QueryParameters</code> parameter and this parameter, they are returned.
+     * Otherwise, these filters are ignored and only instances that match the filters specified in the
+     * <code>QueryParameters</code> parameter are returned.
+     * </p>
+     */
+    private java.util.Map<String, String> optionalParameters;
     /**
      * <p>
      * The health status of the instances that you want to discover.
@@ -194,14 +202,13 @@ public class DiscoverInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A string map that contains attributes with values that you can use to filter instances by any custom attribute
-     * that you specified when you registered the instance. Only instances that match all the specified key/value pairs
-     * will be returned.
+     * Filters to scope the results based on custom attributes for the instance. For example,
+     * <code>{version=v1, az=1a}</code>. Only instances that match all the specified key-value pairs will be returned.
      * </p>
      * 
-     * @return A string map that contains attributes with values that you can use to filter instances by any custom
-     *         attribute that you specified when you registered the instance. Only instances that match all the
-     *         specified key/value pairs will be returned.
+     * @return Filters to scope the results based on custom attributes for the instance. For example,
+     *         <code>{version=v1, az=1a}</code>. Only instances that match all the specified key-value pairs will be
+     *         returned.
      */
 
     public java.util.Map<String, String> getQueryParameters() {
@@ -210,15 +217,14 @@ public class DiscoverInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A string map that contains attributes with values that you can use to filter instances by any custom attribute
-     * that you specified when you registered the instance. Only instances that match all the specified key/value pairs
-     * will be returned.
+     * Filters to scope the results based on custom attributes for the instance. For example,
+     * <code>{version=v1, az=1a}</code>. Only instances that match all the specified key-value pairs will be returned.
      * </p>
      * 
      * @param queryParameters
-     *        A string map that contains attributes with values that you can use to filter instances by any custom
-     *        attribute that you specified when you registered the instance. Only instances that match all the specified
-     *        key/value pairs will be returned.
+     *        Filters to scope the results based on custom attributes for the instance. For example,
+     *        <code>{version=v1, az=1a}</code>. Only instances that match all the specified key-value pairs will be
+     *        returned.
      */
 
     public void setQueryParameters(java.util.Map<String, String> queryParameters) {
@@ -227,15 +233,14 @@ public class DiscoverInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A string map that contains attributes with values that you can use to filter instances by any custom attribute
-     * that you specified when you registered the instance. Only instances that match all the specified key/value pairs
-     * will be returned.
+     * Filters to scope the results based on custom attributes for the instance. For example,
+     * <code>{version=v1, az=1a}</code>. Only instances that match all the specified key-value pairs will be returned.
      * </p>
      * 
      * @param queryParameters
-     *        A string map that contains attributes with values that you can use to filter instances by any custom
-     *        attribute that you specified when you registered the instance. Only instances that match all the specified
-     *        key/value pairs will be returned.
+     *        Filters to scope the results based on custom attributes for the instance. For example,
+     *        <code>{version=v1, az=1a}</code>. Only instances that match all the specified key-value pairs will be
+     *        returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -269,6 +274,92 @@ public class DiscoverInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     public DiscoverInstancesRequest clearQueryParametersEntries() {
         this.queryParameters = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * Opportunistic filters to scope the results based on custom attributes. If there are instances that match both the
+     * filters specified in both the <code>QueryParameters</code> parameter and this parameter, they are returned.
+     * Otherwise, these filters are ignored and only instances that match the filters specified in the
+     * <code>QueryParameters</code> parameter are returned.
+     * </p>
+     * 
+     * @return Opportunistic filters to scope the results based on custom attributes. If there are instances that match
+     *         both the filters specified in both the <code>QueryParameters</code> parameter and this parameter, they
+     *         are returned. Otherwise, these filters are ignored and only instances that match the filters specified in
+     *         the <code>QueryParameters</code> parameter are returned.
+     */
+
+    public java.util.Map<String, String> getOptionalParameters() {
+        return optionalParameters;
+    }
+
+    /**
+     * <p>
+     * Opportunistic filters to scope the results based on custom attributes. If there are instances that match both the
+     * filters specified in both the <code>QueryParameters</code> parameter and this parameter, they are returned.
+     * Otherwise, these filters are ignored and only instances that match the filters specified in the
+     * <code>QueryParameters</code> parameter are returned.
+     * </p>
+     * 
+     * @param optionalParameters
+     *        Opportunistic filters to scope the results based on custom attributes. If there are instances that match
+     *        both the filters specified in both the <code>QueryParameters</code> parameter and this parameter, they are
+     *        returned. Otherwise, these filters are ignored and only instances that match the filters specified in the
+     *        <code>QueryParameters</code> parameter are returned.
+     */
+
+    public void setOptionalParameters(java.util.Map<String, String> optionalParameters) {
+        this.optionalParameters = optionalParameters;
+    }
+
+    /**
+     * <p>
+     * Opportunistic filters to scope the results based on custom attributes. If there are instances that match both the
+     * filters specified in both the <code>QueryParameters</code> parameter and this parameter, they are returned.
+     * Otherwise, these filters are ignored and only instances that match the filters specified in the
+     * <code>QueryParameters</code> parameter are returned.
+     * </p>
+     * 
+     * @param optionalParameters
+     *        Opportunistic filters to scope the results based on custom attributes. If there are instances that match
+     *        both the filters specified in both the <code>QueryParameters</code> parameter and this parameter, they are
+     *        returned. Otherwise, these filters are ignored and only instances that match the filters specified in the
+     *        <code>QueryParameters</code> parameter are returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DiscoverInstancesRequest withOptionalParameters(java.util.Map<String, String> optionalParameters) {
+        setOptionalParameters(optionalParameters);
+        return this;
+    }
+
+    /**
+     * Add a single OptionalParameters entry
+     *
+     * @see DiscoverInstancesRequest#withOptionalParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DiscoverInstancesRequest addOptionalParametersEntry(String key, String value) {
+        if (null == this.optionalParameters) {
+            this.optionalParameters = new java.util.HashMap<String, String>();
+        }
+        if (this.optionalParameters.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.optionalParameters.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into OptionalParameters.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DiscoverInstancesRequest clearOptionalParametersEntries() {
+        this.optionalParameters = null;
         return this;
     }
 
@@ -351,6 +442,8 @@ public class DiscoverInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getQueryParameters() != null)
             sb.append("QueryParameters: ").append(getQueryParameters()).append(",");
+        if (getOptionalParameters() != null)
+            sb.append("OptionalParameters: ").append(getOptionalParameters()).append(",");
         if (getHealthStatus() != null)
             sb.append("HealthStatus: ").append(getHealthStatus());
         sb.append("}");
@@ -383,6 +476,10 @@ public class DiscoverInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getQueryParameters() != null && other.getQueryParameters().equals(this.getQueryParameters()) == false)
             return false;
+        if (other.getOptionalParameters() == null ^ this.getOptionalParameters() == null)
+            return false;
+        if (other.getOptionalParameters() != null && other.getOptionalParameters().equals(this.getOptionalParameters()) == false)
+            return false;
         if (other.getHealthStatus() == null ^ this.getHealthStatus() == null)
             return false;
         if (other.getHealthStatus() != null && other.getHealthStatus().equals(this.getHealthStatus()) == false)
@@ -399,6 +496,7 @@ public class DiscoverInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getServiceName() == null) ? 0 : getServiceName().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getQueryParameters() == null) ? 0 : getQueryParameters().hashCode());
+        hashCode = prime * hashCode + ((getOptionalParameters() == null) ? 0 : getOptionalParameters().hashCode());
         hashCode = prime * hashCode + ((getHealthStatus() == null) ? 0 : getHealthStatus().hashCode());
         return hashCode;
     }

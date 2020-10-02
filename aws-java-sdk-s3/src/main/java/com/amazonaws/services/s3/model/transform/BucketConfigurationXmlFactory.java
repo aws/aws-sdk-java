@@ -91,6 +91,8 @@ import com.amazonaws.services.s3.model.metrics.MetricsFilterPredicate;
 import com.amazonaws.services.s3.model.metrics.MetricsPredicateVisitor;
 import com.amazonaws.services.s3.model.metrics.MetricsPrefixPredicate;
 import com.amazonaws.services.s3.model.metrics.MetricsTagPredicate;
+import com.amazonaws.services.s3.model.ownership.OwnershipControls;
+import com.amazonaws.services.s3.model.ownership.OwnershipControlsRule;
 import com.amazonaws.services.s3.model.replication.ReplicationFilter;
 import com.amazonaws.services.s3.model.replication.ReplicationFilterPredicate;
 import com.amazonaws.util.CollectionUtils;
@@ -1192,6 +1194,42 @@ public class BucketConfigurationXmlFactory {
 
         predicate.accept(new MetricsPredicateVisitorImpl(xml));
     }
+
+    /**
+     * Converts the specified {@link com.amazonaws.services.s3.model.ownership.OwnershipControls}
+     * object to an XML fragment that can be sent to Amazon S3.
+     *
+     * @param controls
+     *            The {@link com.amazonaws.services.s3.model.ownership.OwnershipControls}.
+     */
+    public byte[] convertToXmlByteArray(OwnershipControls controls) throws SdkClientException {
+        XmlWriter xml = new XmlWriter();
+
+        xml.start("OwnershipControls", "xmlns", Constants.XML_NAMESPACE);
+        writeOwnershipControlsRule(xml, controls.getRules());
+        xml.end();
+
+        return xml.getBytes();
+    }
+
+    private void writeOwnershipControlsRule(XmlWriter xml, List<OwnershipControlsRule> rules) {
+        if (rules == null) {
+            return;
+        }
+
+        for (OwnershipControlsRule rule : rules) {
+            if (rule == null) {
+                throw new IllegalArgumentException("Ownership control rules must not be null.");
+            }
+
+            xml.start("Rule");
+            if (rule.getOwnership() != null) {
+                xml.start("ObjectOwnership").value(rule.getOwnership()).end();
+            }
+            xml.end();
+        }
+    }
+
 
     private class MetricsPredicateVisitorImpl implements MetricsPredicateVisitor {
         private final XmlWriter xml;

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.batch.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +39,8 @@ public class CreateComputeEnvironmentRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("computeResources").build();
     private static final MarshallingInfo<String> SERVICEROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serviceRole").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateComputeEnvironmentRequestMarshaller instance = new CreateComputeEnvironmentRequestMarshaller();
 
@@ -59,6 +63,7 @@ public class CreateComputeEnvironmentRequestMarshaller {
             protocolMarshaller.marshall(createComputeEnvironmentRequest.getState(), STATE_BINDING);
             protocolMarshaller.marshall(createComputeEnvironmentRequest.getComputeResources(), COMPUTERESOURCES_BINDING);
             protocolMarshaller.marshall(createComputeEnvironmentRequest.getServiceRole(), SERVICEROLE_BINDING);
+            protocolMarshaller.marshall(createComputeEnvironmentRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

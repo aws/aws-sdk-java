@@ -48,6 +48,10 @@ public class JobSummaryJsonUnmarshaller implements Unmarshaller<JobSummary, Json
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("jobArn", targetDepth)) {
+                    context.nextToken();
+                    jobSummary.setJobArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("jobId", targetDepth)) {
                     context.nextToken();
                     jobSummary.setJobId(context.getUnmarshaller(String.class).unmarshall(context));

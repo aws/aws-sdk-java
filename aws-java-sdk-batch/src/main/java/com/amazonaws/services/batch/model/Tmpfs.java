@@ -29,7 +29,7 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The absolute file path where the tmpfs volume is to be mounted.
+     * The absolute file path in the container where the tmpfs volume is to be mounted.
      * </p>
      */
     private String containerPath;
@@ -44,19 +44,26 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
      * The list of tmpfs volume mount options.
      * </p>
      * <p>
-     * Valid values:
-     * <code>"defaults" | "ro" | "rw" | "suid" | "nosuid" | "dev" | "nodev" | "exec" | "noexec" | "sync" | "async" | "dirsync" | "remount" | "mand" | "nomand" | "atime" | "noatime" | "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime" | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid" | "nr_inodes" | "nr_blocks" | "mpol"</code>
+     * Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" | "
+     * <code>nosuid</code>" | "<code>dev</code>" | "<code>nodev</code>" | "<code>exec</code>" | "<code>noexec</code>
+     * " | "<code>sync</code>" | "<code>async</code>" | "<code>dirsync</code>" | "<code>remount</code>" | "
+     * <code>mand</code>" | "<code>nomand</code>" | "<code>atime</code>" | "<code>noatime</code>" | "
+     * <code>diratime</code>" | "<code>nodiratime</code>" | "<code>bind</code>" | "
+     * <code>rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime</code>
+     * " | "<code>norelatime</code>" | "<code>strictatime</code>" | "<code>nostrictatime</code>" | "<code>mode</code>
+     * " | "<code>uid</code>" | "<code>gid</code>" | "<code>nr_inodes</code>" | "<code>nr_blocks</code>" | "
+     * <code>mpol</code>"
      * </p>
      */
     private java.util.List<String> mountOptions;
 
     /**
      * <p>
-     * The absolute file path where the tmpfs volume is to be mounted.
+     * The absolute file path in the container where the tmpfs volume is to be mounted.
      * </p>
      * 
      * @param containerPath
-     *        The absolute file path where the tmpfs volume is to be mounted.
+     *        The absolute file path in the container where the tmpfs volume is to be mounted.
      */
 
     public void setContainerPath(String containerPath) {
@@ -65,10 +72,10 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The absolute file path where the tmpfs volume is to be mounted.
+     * The absolute file path in the container where the tmpfs volume is to be mounted.
      * </p>
      * 
-     * @return The absolute file path where the tmpfs volume is to be mounted.
+     * @return The absolute file path in the container where the tmpfs volume is to be mounted.
      */
 
     public String getContainerPath() {
@@ -77,11 +84,11 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The absolute file path where the tmpfs volume is to be mounted.
+     * The absolute file path in the container where the tmpfs volume is to be mounted.
      * </p>
      * 
      * @param containerPath
-     *        The absolute file path where the tmpfs volume is to be mounted.
+     *        The absolute file path in the container where the tmpfs volume is to be mounted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,14 +142,28 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
      * The list of tmpfs volume mount options.
      * </p>
      * <p>
-     * Valid values:
-     * <code>"defaults" | "ro" | "rw" | "suid" | "nosuid" | "dev" | "nodev" | "exec" | "noexec" | "sync" | "async" | "dirsync" | "remount" | "mand" | "nomand" | "atime" | "noatime" | "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime" | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid" | "nr_inodes" | "nr_blocks" | "mpol"</code>
+     * Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" | "
+     * <code>nosuid</code>" | "<code>dev</code>" | "<code>nodev</code>" | "<code>exec</code>" | "<code>noexec</code>
+     * " | "<code>sync</code>" | "<code>async</code>" | "<code>dirsync</code>" | "<code>remount</code>" | "
+     * <code>mand</code>" | "<code>nomand</code>" | "<code>atime</code>" | "<code>noatime</code>" | "
+     * <code>diratime</code>" | "<code>nodiratime</code>" | "<code>bind</code>" | "
+     * <code>rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime</code>
+     * " | "<code>norelatime</code>" | "<code>strictatime</code>" | "<code>nostrictatime</code>" | "<code>mode</code>
+     * " | "<code>uid</code>" | "<code>gid</code>" | "<code>nr_inodes</code>" | "<code>nr_blocks</code>" | "
+     * <code>mpol</code>"
      * </p>
      * 
      * @return The list of tmpfs volume mount options.</p>
      *         <p>
-     *         Valid values:
-     *         <code>"defaults" | "ro" | "rw" | "suid" | "nosuid" | "dev" | "nodev" | "exec" | "noexec" | "sync" | "async" | "dirsync" | "remount" | "mand" | "nomand" | "atime" | "noatime" | "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime" | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid" | "nr_inodes" | "nr_blocks" | "mpol"</code>
+     *         Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" | "
+     *         <code>nosuid</code>" | "<code>dev</code>" | "<code>nodev</code>" | "<code>exec</code>" | "
+     *         <code>noexec</code>" | "<code>sync</code>" | "<code>async</code>" | "<code>dirsync</code>" | "
+     *         <code>remount</code>" | "<code>mand</code>" | "<code>nomand</code>" | "<code>atime</code>" | "
+     *         <code>noatime</code>" | "<code>diratime</code>" | "<code>nodiratime</code>" | "<code>bind</code>" | "
+     *         <code>rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime</code>
+     *         " | "<code>norelatime</code>" | "<code>strictatime</code>" | "<code>nostrictatime</code>" | "
+     *         <code>mode</code>" | "<code>uid</code>" | "<code>gid</code>" | "<code>nr_inodes</code>" | "
+     *         <code>nr_blocks</code>" | "<code>mpol</code>"
      */
 
     public java.util.List<String> getMountOptions() {
@@ -154,15 +175,29 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
      * The list of tmpfs volume mount options.
      * </p>
      * <p>
-     * Valid values:
-     * <code>"defaults" | "ro" | "rw" | "suid" | "nosuid" | "dev" | "nodev" | "exec" | "noexec" | "sync" | "async" | "dirsync" | "remount" | "mand" | "nomand" | "atime" | "noatime" | "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime" | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid" | "nr_inodes" | "nr_blocks" | "mpol"</code>
+     * Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" | "
+     * <code>nosuid</code>" | "<code>dev</code>" | "<code>nodev</code>" | "<code>exec</code>" | "<code>noexec</code>
+     * " | "<code>sync</code>" | "<code>async</code>" | "<code>dirsync</code>" | "<code>remount</code>" | "
+     * <code>mand</code>" | "<code>nomand</code>" | "<code>atime</code>" | "<code>noatime</code>" | "
+     * <code>diratime</code>" | "<code>nodiratime</code>" | "<code>bind</code>" | "
+     * <code>rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime</code>
+     * " | "<code>norelatime</code>" | "<code>strictatime</code>" | "<code>nostrictatime</code>" | "<code>mode</code>
+     * " | "<code>uid</code>" | "<code>gid</code>" | "<code>nr_inodes</code>" | "<code>nr_blocks</code>" | "
+     * <code>mpol</code>"
      * </p>
      * 
      * @param mountOptions
      *        The list of tmpfs volume mount options.</p>
      *        <p>
-     *        Valid values:
-     *        <code>"defaults" | "ro" | "rw" | "suid" | "nosuid" | "dev" | "nodev" | "exec" | "noexec" | "sync" | "async" | "dirsync" | "remount" | "mand" | "nomand" | "atime" | "noatime" | "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime" | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid" | "nr_inodes" | "nr_blocks" | "mpol"</code>
+     *        Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" | "
+     *        <code>nosuid</code>" | "<code>dev</code>" | "<code>nodev</code>" | "<code>exec</code>" | "
+     *        <code>noexec</code>" | "<code>sync</code>" | "<code>async</code>" | "<code>dirsync</code>" | "
+     *        <code>remount</code>" | "<code>mand</code>" | "<code>nomand</code>" | "<code>atime</code>" | "
+     *        <code>noatime</code>" | "<code>diratime</code>" | "<code>nodiratime</code>" | "<code>bind</code>" | "
+     *        <code>rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime</code>
+     *        " | "<code>norelatime</code>" | "<code>strictatime</code>" | "<code>nostrictatime</code>" | "
+     *        <code>mode</code>" | "<code>uid</code>" | "<code>gid</code>" | "<code>nr_inodes</code>" | "
+     *        <code>nr_blocks</code>" | "<code>mpol</code>"
      */
 
     public void setMountOptions(java.util.Collection<String> mountOptions) {
@@ -179,8 +214,15 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
      * The list of tmpfs volume mount options.
      * </p>
      * <p>
-     * Valid values:
-     * <code>"defaults" | "ro" | "rw" | "suid" | "nosuid" | "dev" | "nodev" | "exec" | "noexec" | "sync" | "async" | "dirsync" | "remount" | "mand" | "nomand" | "atime" | "noatime" | "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime" | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid" | "nr_inodes" | "nr_blocks" | "mpol"</code>
+     * Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" | "
+     * <code>nosuid</code>" | "<code>dev</code>" | "<code>nodev</code>" | "<code>exec</code>" | "<code>noexec</code>
+     * " | "<code>sync</code>" | "<code>async</code>" | "<code>dirsync</code>" | "<code>remount</code>" | "
+     * <code>mand</code>" | "<code>nomand</code>" | "<code>atime</code>" | "<code>noatime</code>" | "
+     * <code>diratime</code>" | "<code>nodiratime</code>" | "<code>bind</code>" | "
+     * <code>rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime</code>
+     * " | "<code>norelatime</code>" | "<code>strictatime</code>" | "<code>nostrictatime</code>" | "<code>mode</code>
+     * " | "<code>uid</code>" | "<code>gid</code>" | "<code>nr_inodes</code>" | "<code>nr_blocks</code>" | "
+     * <code>mpol</code>"
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -191,8 +233,15 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
      * @param mountOptions
      *        The list of tmpfs volume mount options.</p>
      *        <p>
-     *        Valid values:
-     *        <code>"defaults" | "ro" | "rw" | "suid" | "nosuid" | "dev" | "nodev" | "exec" | "noexec" | "sync" | "async" | "dirsync" | "remount" | "mand" | "nomand" | "atime" | "noatime" | "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime" | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid" | "nr_inodes" | "nr_blocks" | "mpol"</code>
+     *        Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" | "
+     *        <code>nosuid</code>" | "<code>dev</code>" | "<code>nodev</code>" | "<code>exec</code>" | "
+     *        <code>noexec</code>" | "<code>sync</code>" | "<code>async</code>" | "<code>dirsync</code>" | "
+     *        <code>remount</code>" | "<code>mand</code>" | "<code>nomand</code>" | "<code>atime</code>" | "
+     *        <code>noatime</code>" | "<code>diratime</code>" | "<code>nodiratime</code>" | "<code>bind</code>" | "
+     *        <code>rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime</code>
+     *        " | "<code>norelatime</code>" | "<code>strictatime</code>" | "<code>nostrictatime</code>" | "
+     *        <code>mode</code>" | "<code>uid</code>" | "<code>gid</code>" | "<code>nr_inodes</code>" | "
+     *        <code>nr_blocks</code>" | "<code>mpol</code>"
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,15 +260,29 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
      * The list of tmpfs volume mount options.
      * </p>
      * <p>
-     * Valid values:
-     * <code>"defaults" | "ro" | "rw" | "suid" | "nosuid" | "dev" | "nodev" | "exec" | "noexec" | "sync" | "async" | "dirsync" | "remount" | "mand" | "nomand" | "atime" | "noatime" | "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime" | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid" | "nr_inodes" | "nr_blocks" | "mpol"</code>
+     * Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" | "
+     * <code>nosuid</code>" | "<code>dev</code>" | "<code>nodev</code>" | "<code>exec</code>" | "<code>noexec</code>
+     * " | "<code>sync</code>" | "<code>async</code>" | "<code>dirsync</code>" | "<code>remount</code>" | "
+     * <code>mand</code>" | "<code>nomand</code>" | "<code>atime</code>" | "<code>noatime</code>" | "
+     * <code>diratime</code>" | "<code>nodiratime</code>" | "<code>bind</code>" | "
+     * <code>rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime</code>
+     * " | "<code>norelatime</code>" | "<code>strictatime</code>" | "<code>nostrictatime</code>" | "<code>mode</code>
+     * " | "<code>uid</code>" | "<code>gid</code>" | "<code>nr_inodes</code>" | "<code>nr_blocks</code>" | "
+     * <code>mpol</code>"
      * </p>
      * 
      * @param mountOptions
      *        The list of tmpfs volume mount options.</p>
      *        <p>
-     *        Valid values:
-     *        <code>"defaults" | "ro" | "rw" | "suid" | "nosuid" | "dev" | "nodev" | "exec" | "noexec" | "sync" | "async" | "dirsync" | "remount" | "mand" | "nomand" | "atime" | "noatime" | "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime" | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid" | "nr_inodes" | "nr_blocks" | "mpol"</code>
+     *        Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" | "
+     *        <code>nosuid</code>" | "<code>dev</code>" | "<code>nodev</code>" | "<code>exec</code>" | "
+     *        <code>noexec</code>" | "<code>sync</code>" | "<code>async</code>" | "<code>dirsync</code>" | "
+     *        <code>remount</code>" | "<code>mand</code>" | "<code>nomand</code>" | "<code>atime</code>" | "
+     *        <code>noatime</code>" | "<code>diratime</code>" | "<code>nodiratime</code>" | "<code>bind</code>" | "
+     *        <code>rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime</code>
+     *        " | "<code>norelatime</code>" | "<code>strictatime</code>" | "<code>nostrictatime</code>" | "
+     *        <code>mode</code>" | "<code>uid</code>" | "<code>gid</code>" | "<code>nr_inodes</code>" | "
+     *        <code>nr_blocks</code>" | "<code>mpol</code>"
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

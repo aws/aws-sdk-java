@@ -116,7 +116,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
     /**
      * <p>
      * Adds the specified tags to the specified Elastic Load Balancing resource. You can tag your Application Load
-     * Balancers, Network Load Balancers, and your target groups.
+     * Balancers, Network Load Balancers, target groups, listeners, and rules.
      * </p>
      * <p>
      * Each tag consists of a key and an optional value. If a resource already has a tag with the same key,
@@ -138,7 +138,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
     /**
      * <p>
      * Adds the specified tags to the specified Elastic Load Balancing resource. You can tag your Application Load
-     * Balancers, Network Load Balancers, and your target groups.
+     * Balancers, Network Load Balancers, target groups, listeners, and rules.
      * </p>
      * <p>
      * Each tag consists of a key and an optional value. If a resource already has a tag with the same key,
@@ -948,8 +948,8 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Describes the tags for the specified resources. You can describe the tags for one or more Application Load
-     * Balancers, Network Load Balancers, and target groups.
+     * Describes the tags for the specified Elastic Load Balancing resources. You can describe the tags for one or more
+     * Application Load Balancers, Network Load Balancers, target groups, listeners, or rules.
      * </p>
      * 
      * @param describeTagsRequest
@@ -962,8 +962,8 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Describes the tags for the specified resources. You can describe the tags for one or more Application Load
-     * Balancers, Network Load Balancers, and target groups.
+     * Describes the tags for the specified Elastic Load Balancing resources. You can describe the tags for one or more
+     * Application Load Balancers, Network Load Balancers, target groups, listeners, or rules.
      * </p>
      * 
      * @param describeTagsRequest
@@ -1431,7 +1431,8 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Removes the specified tags from the specified Elastic Load Balancing resource.
+     * Removes the specified tags from the specified Elastic Load Balancing resources. You can remove the tags for one
+     * or more Application Load Balancers, Network Load Balancers, target groups, listeners, or rules.
      * </p>
      * <p>
      * To list the current tags for your resources, use <a>DescribeTags</a>.
@@ -1447,7 +1448,8 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Removes the specified tags from the specified Elastic Load Balancing resource.
+     * Removes the specified tags from the specified Elastic Load Balancing resources. You can remove the tags for one
+     * or more Application Load Balancers, Network Load Balancers, target groups, listeners, or rules.
      * </p>
      * <p>
      * To list the current tags for your resources, use <a>DescribeTags</a>.

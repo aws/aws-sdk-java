@@ -421,6 +421,27 @@ public interface AWSBatch {
 
     /**
      * <p>
+     * List the tags for an AWS Batch resource. AWS Batch resources that support tags are compute environments, jobs,
+     * job definitions, and job queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not
+     * supported.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @sample AWSBatch.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Registers an AWS Batch job definition.
      * </p>
      * 
@@ -460,6 +481,29 @@ public interface AWSBatch {
 
     /**
      * <p>
+     * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
+     * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
+     * associated with that resource are deleted as well. AWS Batch resources that support tags are compute
+     * environments, jobs, job definitions, and job queues. ARNs for child jobs of array and multi-node parallel (MNP)
+     * jobs are not supported.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @sample AWSBatch.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
      * Terminates a job in a job queue. Jobs that are in the <code>STARTING</code> or <code>RUNNING</code> state are
      * terminated, which causes them to transition to <code>FAILED</code>. Jobs that have not progressed to the
      * <code>STARTING</code> state are cancelled.
@@ -478,6 +522,25 @@ public interface AWSBatch {
      *      Documentation</a>
      */
     TerminateJobResult terminateJob(TerminateJobRequest terminateJobRequest);
+
+    /**
+     * <p>
+     * Deletes specified tags from an AWS Batch resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @sample AWSBatch.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

@@ -33,6 +33,16 @@ public class AbstractAmazonPersonalizeEvents implements AmazonPersonalizeEvents 
     }
 
     @Override
+    public PutItemsResult putItems(PutItemsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutUsersResult putUsers(PutUsersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public void shutdown() {
         throw new java.lang.UnsupportedOperationException();
     }

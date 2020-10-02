@@ -38,7 +38,8 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     private String eventId;
     /**
      * <p>
-     * The type of event. This property corresponds to the <code>EVENT_TYPE</code> field of the Interactions schema.
+     * The type of event, such as click or download. This property corresponds to the <code>EVENT_TYPE</code> field of
+     * your Interactions schema and depends on the types of events you are tracking.
      * </p>
      */
     private String eventType;
@@ -149,12 +150,13 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of event. This property corresponds to the <code>EVENT_TYPE</code> field of the Interactions schema.
+     * The type of event, such as click or download. This property corresponds to the <code>EVENT_TYPE</code> field of
+     * your Interactions schema and depends on the types of events you are tracking.
      * </p>
      * 
      * @param eventType
-     *        The type of event. This property corresponds to the <code>EVENT_TYPE</code> field of the Interactions
-     *        schema.
+     *        The type of event, such as click or download. This property corresponds to the <code>EVENT_TYPE</code>
+     *        field of your Interactions schema and depends on the types of events you are tracking.
      */
 
     public void setEventType(String eventType) {
@@ -163,11 +165,12 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of event. This property corresponds to the <code>EVENT_TYPE</code> field of the Interactions schema.
+     * The type of event, such as click or download. This property corresponds to the <code>EVENT_TYPE</code> field of
+     * your Interactions schema and depends on the types of events you are tracking.
      * </p>
      * 
-     * @return The type of event. This property corresponds to the <code>EVENT_TYPE</code> field of the Interactions
-     *         schema.
+     * @return The type of event, such as click or download. This property corresponds to the <code>EVENT_TYPE</code>
+     *         field of your Interactions schema and depends on the types of events you are tracking.
      */
 
     public String getEventType() {
@@ -176,12 +179,13 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of event. This property corresponds to the <code>EVENT_TYPE</code> field of the Interactions schema.
+     * The type of event, such as click or download. This property corresponds to the <code>EVENT_TYPE</code> field of
+     * your Interactions schema and depends on the types of events you are tracking.
      * </p>
      * 
      * @param eventType
-     *        The type of event. This property corresponds to the <code>EVENT_TYPE</code> field of the Interactions
-     *        schema.
+     *        The type of event, such as click or download. This property corresponds to the <code>EVENT_TYPE</code>
+     *        field of your Interactions schema and depends on the types of events you are tracking.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

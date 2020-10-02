@@ -23,6 +23,8 @@ import static com.amazonaws.util.StringUtils.UTF8;
 
 import com.amazonaws.services.s3.model.inventory.ServerSideEncryptionKMS;
 import com.amazonaws.services.s3.model.inventory.ServerSideEncryptionS3;
+import com.amazonaws.services.s3.model.ownership.OwnershipControls;
+import com.amazonaws.services.s3.model.ownership.OwnershipControlsRule;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -524,6 +526,13 @@ public class XmlResponsesSaxParser {
     public ListBucketMetricsConfigurationsHandler parseListBucketMetricsConfigurationsResponse(InputStream inputStream)
             throws IOException {
         ListBucketMetricsConfigurationsHandler handler = new ListBucketMetricsConfigurationsHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+
+    public GetBucketOwnershipControlsHandler parseGetBucketOwnershipControlsResponse(InputStream inputStream)
+        throws IOException {
+        GetBucketOwnershipControlsHandler handler = new GetBucketOwnershipControlsHandler();
         parseXmlInputStream(handler, inputStream);
         return handler;
     }
@@ -3215,6 +3224,41 @@ public class XmlResponsesSaxParser {
                 }
             }
         }
+    }
+
+    public static class GetBucketOwnershipControlsHandler extends AbstractHandler {
+        private List<OwnershipControlsRule> rulesList;
+
+        public GetBucketOwnershipControlsResult getResult() {
+            OwnershipControls ownershipControls = new OwnershipControls().withRules(rulesList);
+            return new GetBucketOwnershipControlsResult().withOwnershipControls(ownershipControls);
+        }
+
+        @Override
+        protected void doStartElement(String uri, String name, String qName, Attributes attrs) {
+            // <OwnershipControls xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+            // <Rule>
+            // <ObjectOwnership>ObjectWriter</ObjectOwnership>
+            // </Rule>
+            // </OwnershipControls>
+            if (in("OwnershipControls")) {
+                if (name.equals("Rule")) {
+                    if (rulesList == null) {
+                        rulesList = new ArrayList<OwnershipControlsRule>();
+                    }
+                }
+            }
+        }
+
+        @Override
+        protected void doEndElement(String uri, String name, String qName) {
+            if (in("OwnershipControls", "Rule")) {
+                if (name.equals("ObjectOwnership")) {
+                    rulesList.add(new OwnershipControlsRule().withOwnership(getText()));
+                }
+            }
+        }
+
     }
 
     /*

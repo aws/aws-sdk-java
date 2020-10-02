@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.s3;
 
+import com.amazonaws.services.s3.model.ownership.OwnershipControls;
 import java.io.File;
 import java.io.InputStream;
 import java.net.URL;
@@ -1218,6 +1219,30 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
 
     @Override
     public AmazonS3Waiters waiters() {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public DeleteBucketOwnershipControlsResult deleteBucketOwnershipControls(DeleteBucketOwnershipControlsRequest deleteBucketOwnershipControlsRequest)
+        throws AmazonServiceException, SdkClientException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public GetBucketOwnershipControlsResult getBucketOwnershipControls(GetBucketOwnershipControlsRequest getBucketOwnershipControlsRequest)
+        throws AmazonServiceException, SdkClientException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public SetBucketOwnershipControlsResult setBucketOwnershipControls(String bucketName, OwnershipControls ownershipControls)
+        throws AmazonServiceException, SdkClientException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public SetBucketOwnershipControlsResult setBucketOwnershipControls(SetBucketOwnershipControlsRequest setBucketOwnershipControlsRequest)
+        throws AmazonServiceException, SdkClientException {
         throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
     }
 }

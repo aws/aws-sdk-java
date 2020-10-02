@@ -93,6 +93,12 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private NodeProperties nodeProperties;
+    /**
+     * <p>
+     * The tags applied to the job definition.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -556,6 +562,74 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The tags applied to the job definition.
+     * </p>
+     * 
+     * @return The tags applied to the job definition.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags applied to the job definition.
+     * </p>
+     * 
+     * @param tags
+     *        The tags applied to the job definition.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags applied to the job definition.
+     * </p>
+     * 
+     * @param tags
+     *        The tags applied to the job definition.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDefinition withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see JobDefinition#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDefinition addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDefinition clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -586,7 +660,9 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
         if (getTimeout() != null)
             sb.append("Timeout: ").append(getTimeout()).append(",");
         if (getNodeProperties() != null)
-            sb.append("NodeProperties: ").append(getNodeProperties());
+            sb.append("NodeProperties: ").append(getNodeProperties()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -641,6 +717,10 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNodeProperties() != null && other.getNodeProperties().equals(this.getNodeProperties()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -659,6 +739,7 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getContainerProperties() == null) ? 0 : getContainerProperties().hashCode());
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         hashCode = prime * hashCode + ((getNodeProperties() == null) ? 0 : getNodeProperties().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

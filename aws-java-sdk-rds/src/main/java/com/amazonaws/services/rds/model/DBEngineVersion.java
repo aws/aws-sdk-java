@@ -66,10 +66,17 @@ public class DBEngineVersion implements Serializable, Cloneable {
     /**
      * <p>
      * A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the
-     * <code>CreateDBInstance</code> action.
+     * <code>CreateDBInstance</code> operation.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CharacterSet> supportedCharacterSets;
+    /**
+     * <p>
+     * A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code>
+     * parameter of the <code>CreateDBInstance</code> operation.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<CharacterSet> supportedNcharCharacterSets;
     /**
      * <p>
      * A list of engine versions that this database engine version can be upgraded to.
@@ -396,11 +403,11 @@ public class DBEngineVersion implements Serializable, Cloneable {
     /**
      * <p>
      * A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the
-     * <code>CreateDBInstance</code> action.
+     * <code>CreateDBInstance</code> operation.
      * </p>
      * 
      * @return A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of
-     *         the <code>CreateDBInstance</code> action.
+     *         the <code>CreateDBInstance</code> operation.
      */
 
     public java.util.List<CharacterSet> getSupportedCharacterSets() {
@@ -413,12 +420,12 @@ public class DBEngineVersion implements Serializable, Cloneable {
     /**
      * <p>
      * A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the
-     * <code>CreateDBInstance</code> action.
+     * <code>CreateDBInstance</code> operation.
      * </p>
      * 
      * @param supportedCharacterSets
      *        A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of
-     *        the <code>CreateDBInstance</code> action.
+     *        the <code>CreateDBInstance</code> operation.
      */
 
     public void setSupportedCharacterSets(java.util.Collection<CharacterSet> supportedCharacterSets) {
@@ -433,7 +440,7 @@ public class DBEngineVersion implements Serializable, Cloneable {
     /**
      * <p>
      * A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the
-     * <code>CreateDBInstance</code> action.
+     * <code>CreateDBInstance</code> operation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -443,7 +450,7 @@ public class DBEngineVersion implements Serializable, Cloneable {
      * 
      * @param supportedCharacterSets
      *        A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of
-     *        the <code>CreateDBInstance</code> action.
+     *        the <code>CreateDBInstance</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -460,17 +467,98 @@ public class DBEngineVersion implements Serializable, Cloneable {
     /**
      * <p>
      * A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the
-     * <code>CreateDBInstance</code> action.
+     * <code>CreateDBInstance</code> operation.
      * </p>
      * 
      * @param supportedCharacterSets
      *        A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of
-     *        the <code>CreateDBInstance</code> action.
+     *        the <code>CreateDBInstance</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DBEngineVersion withSupportedCharacterSets(java.util.Collection<CharacterSet> supportedCharacterSets) {
         setSupportedCharacterSets(supportedCharacterSets);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code>
+     * parameter of the <code>CreateDBInstance</code> operation.
+     * </p>
+     * 
+     * @return A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code>
+     *         parameter of the <code>CreateDBInstance</code> operation.
+     */
+
+    public java.util.List<CharacterSet> getSupportedNcharCharacterSets() {
+        if (supportedNcharCharacterSets == null) {
+            supportedNcharCharacterSets = new com.amazonaws.internal.SdkInternalList<CharacterSet>();
+        }
+        return supportedNcharCharacterSets;
+    }
+
+    /**
+     * <p>
+     * A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code>
+     * parameter of the <code>CreateDBInstance</code> operation.
+     * </p>
+     * 
+     * @param supportedNcharCharacterSets
+     *        A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code>
+     *        parameter of the <code>CreateDBInstance</code> operation.
+     */
+
+    public void setSupportedNcharCharacterSets(java.util.Collection<CharacterSet> supportedNcharCharacterSets) {
+        if (supportedNcharCharacterSets == null) {
+            this.supportedNcharCharacterSets = null;
+            return;
+        }
+
+        this.supportedNcharCharacterSets = new com.amazonaws.internal.SdkInternalList<CharacterSet>(supportedNcharCharacterSets);
+    }
+
+    /**
+     * <p>
+     * A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code>
+     * parameter of the <code>CreateDBInstance</code> operation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedNcharCharacterSets(java.util.Collection)} or
+     * {@link #withSupportedNcharCharacterSets(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedNcharCharacterSets
+     *        A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code>
+     *        parameter of the <code>CreateDBInstance</code> operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBEngineVersion withSupportedNcharCharacterSets(CharacterSet... supportedNcharCharacterSets) {
+        if (this.supportedNcharCharacterSets == null) {
+            setSupportedNcharCharacterSets(new com.amazonaws.internal.SdkInternalList<CharacterSet>(supportedNcharCharacterSets.length));
+        }
+        for (CharacterSet ele : supportedNcharCharacterSets) {
+            this.supportedNcharCharacterSets.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code>
+     * parameter of the <code>CreateDBInstance</code> operation.
+     * </p>
+     * 
+     * @param supportedNcharCharacterSets
+     *        A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code>
+     *        parameter of the <code>CreateDBInstance</code> operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBEngineVersion withSupportedNcharCharacterSets(java.util.Collection<CharacterSet> supportedNcharCharacterSets) {
+        setSupportedNcharCharacterSets(supportedNcharCharacterSets);
         return this;
     }
 
@@ -1229,6 +1317,8 @@ public class DBEngineVersion implements Serializable, Cloneable {
             sb.append("DefaultCharacterSet: ").append(getDefaultCharacterSet()).append(",");
         if (getSupportedCharacterSets() != null)
             sb.append("SupportedCharacterSets: ").append(getSupportedCharacterSets()).append(",");
+        if (getSupportedNcharCharacterSets() != null)
+            sb.append("SupportedNcharCharacterSets: ").append(getSupportedNcharCharacterSets()).append(",");
         if (getValidUpgradeTarget() != null)
             sb.append("ValidUpgradeTarget: ").append(getValidUpgradeTarget()).append(",");
         if (getSupportedTimezones() != null)
@@ -1291,6 +1381,10 @@ public class DBEngineVersion implements Serializable, Cloneable {
             return false;
         if (other.getSupportedCharacterSets() != null && other.getSupportedCharacterSets().equals(this.getSupportedCharacterSets()) == false)
             return false;
+        if (other.getSupportedNcharCharacterSets() == null ^ this.getSupportedNcharCharacterSets() == null)
+            return false;
+        if (other.getSupportedNcharCharacterSets() != null && other.getSupportedNcharCharacterSets().equals(this.getSupportedNcharCharacterSets()) == false)
+            return false;
         if (other.getValidUpgradeTarget() == null ^ this.getValidUpgradeTarget() == null)
             return false;
         if (other.getValidUpgradeTarget() != null && other.getValidUpgradeTarget().equals(this.getValidUpgradeTarget()) == false)
@@ -1347,6 +1441,7 @@ public class DBEngineVersion implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDBEngineVersionDescription() == null) ? 0 : getDBEngineVersionDescription().hashCode());
         hashCode = prime * hashCode + ((getDefaultCharacterSet() == null) ? 0 : getDefaultCharacterSet().hashCode());
         hashCode = prime * hashCode + ((getSupportedCharacterSets() == null) ? 0 : getSupportedCharacterSets().hashCode());
+        hashCode = prime * hashCode + ((getSupportedNcharCharacterSets() == null) ? 0 : getSupportedNcharCharacterSets().hashCode());
         hashCode = prime * hashCode + ((getValidUpgradeTarget() == null) ? 0 : getValidUpgradeTarget().hashCode());
         hashCode = prime * hashCode + ((getSupportedTimezones() == null) ? 0 : getSupportedTimezones().hashCode());
         hashCode = prime * hashCode + ((getExportableLogTypes() == null) ? 0 : getExportableLogTypes().hashCode());

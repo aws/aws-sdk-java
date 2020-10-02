@@ -1,3 +1,28 @@
+# __1.11.875__ __2020-10-02__
+## __AWS Batch__
+  - ### Features
+    - Support tagging for Batch resources (compute environment, job queue, job definition and job) and tag based access control on Batch APIs
+
+## __AWS Cloud Map__
+  - ### Features
+    - Added support for optional parameters for DiscoverInstances API in AWS Cloud Map
+
+## __Amazon Personalize Events__
+  - ### Features
+    - Adds new APIs to write item and user records to Datasets.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Adds the NCHAR Character Set ID parameter to the CreateDbInstance API for RDS Oracle.
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - Amazon S3 Object Ownership is a new S3 feature that enables bucket owners to automatically assume ownership of objects that are uploaded to their buckets by other AWS Accounts.
+
+## __Elastic Load Balancing__
+  - ### Features
+    - This release adds support for tagging listeners, rules, and target groups on creation. This release also supported tagging operations through tagging api's for listeners and rules.
+
 # __1.11.874__ __2020-10-01__
 ## __AWS AppSync__
   - ### Features

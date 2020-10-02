@@ -29,11 +29,13 @@ import com.amazonaws.services.s3.model.DeleteBucketAnalyticsConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketEncryptionResult;
 import com.amazonaws.services.s3.model.DeleteBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketMetricsConfigurationResult;
+import com.amazonaws.services.s3.model.DeleteBucketOwnershipControlsResult;
 import com.amazonaws.services.s3.model.DeleteObjectTaggingResult;
 import com.amazonaws.services.s3.model.DeletePublicAccessBlockResult;
 import com.amazonaws.services.s3.model.GetBucketAnalyticsConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketMetricsConfigurationResult;
+import com.amazonaws.services.s3.model.GetBucketOwnershipControlsResult;
 import com.amazonaws.services.s3.model.GetObjectLegalHoldResult;
 import com.amazonaws.services.s3.model.GetObjectLockConfigurationResult;
 import com.amazonaws.services.s3.model.GetObjectRetentionResult;
@@ -53,6 +55,7 @@ import com.amazonaws.services.s3.model.SetBucketAnalyticsConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketEncryptionResult;
 import com.amazonaws.services.s3.model.SetBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketMetricsConfigurationResult;
+import com.amazonaws.services.s3.model.SetBucketOwnershipControlsResult;
 import com.amazonaws.services.s3.model.SetObjectLegalHoldResult;
 import com.amazonaws.services.s3.model.SetObjectLockConfigurationResult;
 import com.amazonaws.services.s3.model.SetObjectRetentionResult;
@@ -468,6 +471,36 @@ public class Unmarshallers {
             Unmarshaller<SetBucketMetricsConfigurationResult, InputStream> {
         public SetBucketMetricsConfigurationResult unmarshall(InputStream in) throws Exception {
             return new SetBucketMetricsConfigurationResult();
+        }
+    }
+
+    /**
+     * Unmarshaller for the DeleteBucketOwnershipControls XML response.
+     */
+    public static final class DeleteBucketOwnershipControlsUnmarshaller implements
+            Unmarshaller<DeleteBucketOwnershipControlsResult, InputStream> {
+        public DeleteBucketOwnershipControlsResult unmarshall(InputStream in) throws Exception {
+            return new DeleteBucketOwnershipControlsResult();
+        }
+    }
+
+    /**
+     * Unmarshaller for the GetBucketOwnershipControls XML response.
+     */
+    public static final class GetBucketOwnershipControlsUnmarshaller implements
+            Unmarshaller<GetBucketOwnershipControlsResult, InputStream> {
+        public GetBucketOwnershipControlsResult unmarshall(InputStream in) throws Exception {
+            return new XmlResponsesSaxParser().parseGetBucketOwnershipControlsResponse(in).getResult();
+        }
+    }
+
+    /**
+     * Unmarshaller for the SetBucketOwnershipControls XML response.
+     */
+    public static final class SetBucketOwnershipControlsUnmarshaller implements
+            Unmarshaller<SetBucketOwnershipControlsResult, InputStream> {
+        public SetBucketOwnershipControlsResult unmarshall(InputStream in) throws Exception {
+            return new SetBucketOwnershipControlsResult();
         }
     }
 

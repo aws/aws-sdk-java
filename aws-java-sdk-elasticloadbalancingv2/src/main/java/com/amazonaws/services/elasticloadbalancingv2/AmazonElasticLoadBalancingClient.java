@@ -419,7 +419,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Adds the specified tags to the specified Elastic Load Balancing resource. You can tag your Application Load
-     * Balancers, Network Load Balancers, and your target groups.
+     * Balancers, Network Load Balancers, target groups, listeners, and rules.
      * </p>
      * <p>
      * Each tag consists of a key and an optional value. If a resource already has a tag with the same key,
@@ -544,6 +544,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *         a target group is used by multiple actions for a load balancer, it is counted as only one use.
      * @throws ALPNPolicyNotSupportedException
      *         The specified ALPN policy is not supported.
+     * @throws TooManyTagsException
+     *         You've reached the limit on the number of tags per load balancer.
      * @sample AmazonElasticLoadBalancing.CreateListener
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateListener"
      *      target="_top">AWS API Documentation</a>
@@ -747,6 +749,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * @throws TooManyUniqueTargetGroupsPerLoadBalancerException
      *         You've reached the limit on the number of unique target groups per load balancer across all listeners. If
      *         a target group is used by multiple actions for a load balancer, it is counted as only one use.
+     * @throws TooManyTagsException
+     *         You've reached the limit on the number of tags per load balancer.
      * @sample AmazonElasticLoadBalancing.CreateRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateRule"
      *      target="_top">AWS API Documentation</a>
@@ -829,6 +833,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *         You've reached the limit on the number of target groups for your AWS account.
      * @throws InvalidConfigurationRequestException
      *         The requested configuration is not valid.
+     * @throws TooManyTagsException
+     *         You've reached the limit on the number of tags per load balancer.
      * @sample AmazonElasticLoadBalancing.CreateTargetGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTargetGroup"
      *      target="_top">AWS API Documentation</a>
@@ -1624,8 +1630,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Describes the tags for the specified resources. You can describe the tags for one or more Application Load
-     * Balancers, Network Load Balancers, and target groups.
+     * Describes the tags for the specified Elastic Load Balancing resources. You can describe the tags for one or more
+     * Application Load Balancers, Network Load Balancers, target groups, listeners, or rules.
      * </p>
      * 
      * @param describeTagsRequest
@@ -2385,7 +2391,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Removes the specified tags from the specified Elastic Load Balancing resource.
+     * Removes the specified tags from the specified Elastic Load Balancing resources. You can remove the tags for one
+     * or more Application Load Balancers, Network Load Balancers, target groups, listeners, or rules.
      * </p>
      * <p>
      * To list the current tags for your resources, use <a>DescribeTags</a>.

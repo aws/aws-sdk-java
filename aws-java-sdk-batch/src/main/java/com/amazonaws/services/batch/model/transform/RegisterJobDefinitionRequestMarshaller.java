@@ -43,6 +43,8 @@ public class RegisterJobDefinitionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("retryStrategy").build();
     private static final MarshallingInfo<StructuredPojo> TIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeout").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final RegisterJobDefinitionRequestMarshaller instance = new RegisterJobDefinitionRequestMarshaller();
 
@@ -67,6 +69,7 @@ public class RegisterJobDefinitionRequestMarshaller {
             protocolMarshaller.marshall(registerJobDefinitionRequest.getNodeProperties(), NODEPROPERTIES_BINDING);
             protocolMarshaller.marshall(registerJobDefinitionRequest.getRetryStrategy(), RETRYSTRATEGY_BINDING);
             protocolMarshaller.marshall(registerJobDefinitionRequest.getTimeout(), TIMEOUT_BINDING);
+            protocolMarshaller.marshall(registerJobDefinitionRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

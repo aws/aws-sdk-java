@@ -60,6 +60,11 @@ public class ComputeEnvironmentDetailJsonUnmarshaller implements Unmarshaller<Co
                     context.nextToken();
                     computeEnvironmentDetail.setEcsClusterArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    computeEnvironmentDetail.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
                     computeEnvironmentDetail.setType(context.getUnmarshaller(String.class).unmarshall(context));

@@ -48,6 +48,10 @@ public class JobDetailJsonUnmarshaller implements Unmarshaller<JobDetail, JsonUn
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("jobArn", targetDepth)) {
+                    context.nextToken();
+                    jobDetail.setJobArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("jobName", targetDepth)) {
                     context.nextToken();
                     jobDetail.setJobName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -124,6 +128,11 @@ public class JobDetailJsonUnmarshaller implements Unmarshaller<JobDetail, JsonUn
                 if (context.testExpression("timeout", targetDepth)) {
                     context.nextToken();
                     jobDetail.setTimeout(JobTimeoutJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    jobDetail.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

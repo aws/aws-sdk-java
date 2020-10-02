@@ -54,6 +54,8 @@ import com.amazonaws.services.s3.model.DeleteBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketLifecycleConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketMetricsConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketMetricsConfigurationResult;
+import com.amazonaws.services.s3.model.DeleteBucketOwnershipControlsRequest;
+import com.amazonaws.services.s3.model.DeleteBucketOwnershipControlsResult;
 import com.amazonaws.services.s3.model.DeleteBucketPolicyRequest;
 import com.amazonaws.services.s3.model.DeleteBucketReplicationConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketRequest;
@@ -83,6 +85,8 @@ import com.amazonaws.services.s3.model.GetBucketLoggingConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketMetricsConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketMetricsConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketNotificationConfigurationRequest;
+import com.amazonaws.services.s3.model.GetBucketOwnershipControlsRequest;
+import com.amazonaws.services.s3.model.GetBucketOwnershipControlsResult;
 import com.amazonaws.services.s3.model.GetBucketPolicyRequest;
 import com.amazonaws.services.s3.model.GetBucketPolicyStatusRequest;
 import com.amazonaws.services.s3.model.GetBucketPolicyStatusResult;
@@ -157,6 +161,8 @@ import com.amazonaws.services.s3.model.SetBucketLoggingConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketMetricsConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketMetricsConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketNotificationConfigurationRequest;
+import com.amazonaws.services.s3.model.SetBucketOwnershipControlsRequest;
+import com.amazonaws.services.s3.model.SetBucketOwnershipControlsResult;
 import com.amazonaws.services.s3.model.SetBucketPolicyRequest;
 import com.amazonaws.services.s3.model.SetBucketReplicationConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketTaggingConfigurationRequest;
@@ -181,6 +187,7 @@ import com.amazonaws.services.s3.model.VersionListing;
 import com.amazonaws.services.s3.model.analytics.AnalyticsConfiguration;
 import com.amazonaws.services.s3.model.inventory.InventoryConfiguration;
 import com.amazonaws.services.s3.model.metrics.MetricsConfiguration;
+import com.amazonaws.services.s3.model.ownership.OwnershipControls;
 import com.amazonaws.services.s3.waiters.AmazonS3Waiters;
 import java.io.File;
 import java.io.InputStream;
@@ -5055,7 +5062,6 @@ public interface AmazonS3 extends S3DirectSpi {
     public SetBucketMetricsConfigurationResult setBucketMetricsConfiguration(
             SetBucketMetricsConfigurationRequest setBucketMetricsConfigurationRequest)
             throws AmazonServiceException, SdkClientException;
-
     /**
      * Lists the metrics configurations for the bucket.
      *
@@ -5067,6 +5073,94 @@ public interface AmazonS3 extends S3DirectSpi {
     public ListBucketMetricsConfigurationsResult listBucketMetricsConfigurations(
             ListBucketMetricsConfigurationsRequest listBucketMetricsConfigurationsRequest)
             throws AmazonServiceException, SdkClientException;
+
+    /**
+     * <p>Removes <code>OwnershipControls</code> for an Amazon S3 bucket. To use this operation, you must have the
+     * <code>s3:PutBucketOwnershipControls</code> permission. For more information about Amazon S3 permissions, see
+     * <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html\">Specifying Permissions in a
+     * Policy</a>.</p>
+     *
+     * <p>The following operations are related to <code>DeleteBucketOwnershipControls</code>:</p>
+     *
+     * <ul>
+     *     <li><a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html\">Using Amazon S3 Object
+     *     Ownership</a></li>
+     *     <li>{@link #getBucketOwnershipControls(GetBucketOwnershipControlsRequest)}</li>
+     *     <li>{@link #setBucketOwnershipControls(SetBucketOwnershipControlsRequest)}</li>
+     * </ul>
+     *
+     * @param deleteBucketOwnershipControlsRequest
+     *              The request object to delete the ownership control.
+     */
+    public DeleteBucketOwnershipControlsResult deleteBucketOwnershipControls(
+        DeleteBucketOwnershipControlsRequest deleteBucketOwnershipControlsRequest)
+        throws AmazonServiceException, SdkClientException;
+
+    /**
+     * <p>Retrieves <code>OwnershipControls</code> for an Amazon S3 bucket. To use this operation, you must have the
+     * <code>s3:GetBucketOwnershipControls</code> permission. For more information about Amazon S3 permissions, see
+     * <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html\">Specifying Permissions in a
+     * Policy</a>.</p>
+     *
+     * <p>The following operations are related to <code>GetBucketOwnershipControls</code>:</p>
+     *
+     * <ul>
+     *     <li><a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html\">Using Amazon S3 Object
+     *     Ownership</a></li>
+     *     <li>{@link #setBucketOwnershipControls}</li>
+     *     <li>{@link #deleteBucketOwnershipControls}</li>
+     * </ul>
+     *
+     * @param getBucketOwnershipControlsRequest
+     *              The request object to retrieve the ownership controls.
+     * @return
+     *              The result containing the requested ownership controls.
+     */
+    public GetBucketOwnershipControlsResult getBucketOwnershipControls(
+        GetBucketOwnershipControlsRequest getBucketOwnershipControlsRequest)
+        throws AmazonServiceException, SdkClientException;
+
+    /**
+     * <p>
+     *     Creates or modifies <code>OwnershipControls</code> for an Amazon S3 bucket. To use this operation, you must have the <code>s3:GetBucketOwnershipControls</code> permission. For more information about Amazon S3 permissions, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html\">Specifying Permissions in a Policy</a>.
+     * </p>
+     * <p class=\"title\">
+     *     <b>Related Resources</b>
+     * </p>
+     * <ul>
+     *     <li> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html\">Using Amazon S3 Object Ownership</a> </li>
+     *     <li> <a>GetBucketOwnershipControls</a> </li>
+     *     <li> <a>DeleteBucketOwnershipControls</a> </li>
+     * </ul>
+     *
+     * @param bucketName
+     *              The name of the bucket to set the ownership controls.
+     * @param ownershipControls
+     *              The metrics configuration to set.
+     */
+    public SetBucketOwnershipControlsResult setBucketOwnershipControls(
+        String bucketName, OwnershipControls ownershipControls)
+        throws AmazonServiceException, SdkClientException;
+
+    /**
+     * <p>
+     *     Creates or modifies <code>OwnershipControls</code> for an Amazon S3 bucket. To use this operation, you must have the <code>s3:GetBucketOwnershipControls</code> permission. For more information about Amazon S3 permissions, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html\">Specifying Permissions in a Policy</a>.
+     * </p>
+     * <p class=\"title\">
+     *     <b>Related Resources</b>
+     * </p>
+     * <ul>
+     *     <li> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html\">Using Amazon S3 Object Ownership</a> </li>
+     *     <li> <a>GetBucketOwnershipControls</a> </li>
+     *     <li> <a>DeleteBucketOwnershipControls</a> </li>
+     * </ul>
+     *
+     * @param setBucketOwnershipControlsRequest
+     *              The request object to set the ownership controls.
+     */
+    public SetBucketOwnershipControlsResult setBucketOwnershipControls(
+        SetBucketOwnershipControlsRequest setBucketOwnershipControlsRequest)
+        throws AmazonServiceException, SdkClientException;
 
     /**
      * Deletes an analytics configuration for the bucket (specified by the analytics configuration ID).

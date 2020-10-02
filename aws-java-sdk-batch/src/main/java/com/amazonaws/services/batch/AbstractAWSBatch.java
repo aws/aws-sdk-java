@@ -93,6 +93,11 @@ public class AbstractAWSBatch implements AWSBatch {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RegisterJobDefinitionResult registerJobDefinition(RegisterJobDefinitionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -103,7 +108,17 @@ public class AbstractAWSBatch implements AWSBatch {
     }
 
     @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TerminateJobResult terminateJob(TerminateJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

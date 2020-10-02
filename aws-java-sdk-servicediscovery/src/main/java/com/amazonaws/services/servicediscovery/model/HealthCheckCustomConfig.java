@@ -108,46 +108,59 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class HealthCheckCustomConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
+     * <important>
+     * <p>
+     * This parameter has been deprecated and is always set to 1. AWS Cloud Map waits for approximately 30 seconds after
+     * receiving an <code>UpdateInstanceCustomHealthStatus</code> request before changing the status of the service
+     * instance.
+     * </p>
+     * </important>
      * <p>
      * The number of 30-second intervals that you want AWS Cloud Map to wait after receiving an
      * <code>UpdateInstanceCustomHealthStatus</code> request before it changes the health status of a service instance.
-     * For example, suppose you specify a value of <code>2</code> for <code>FailureTheshold</code>, and then your
-     * application sends an <code>UpdateInstanceCustomHealthStatus</code> request. AWS Cloud Map waits for approximately
-     * 60 seconds (2 x 30) before changing the status of the service instance based on that request.
      * </p>
      * <p>
      * Sending a second or subsequent <code>UpdateInstanceCustomHealthStatus</code> request with the same value before
-     * <code>FailureThreshold x 30</code> seconds has passed doesn't accelerate the change. AWS Cloud Map still waits
-     * <code>FailureThreshold x 30</code> seconds after the first request to make the change.
+     * 30 seconds has passed doesn't accelerate the change. AWS Cloud Map still waits <code>30</code> seconds after the
+     * first request to make the change.
      * </p>
      */
     private Integer failureThreshold;
 
     /**
+     * <important>
+     * <p>
+     * This parameter has been deprecated and is always set to 1. AWS Cloud Map waits for approximately 30 seconds after
+     * receiving an <code>UpdateInstanceCustomHealthStatus</code> request before changing the status of the service
+     * instance.
+     * </p>
+     * </important>
      * <p>
      * The number of 30-second intervals that you want AWS Cloud Map to wait after receiving an
      * <code>UpdateInstanceCustomHealthStatus</code> request before it changes the health status of a service instance.
-     * For example, suppose you specify a value of <code>2</code> for <code>FailureTheshold</code>, and then your
-     * application sends an <code>UpdateInstanceCustomHealthStatus</code> request. AWS Cloud Map waits for approximately
-     * 60 seconds (2 x 30) before changing the status of the service instance based on that request.
      * </p>
      * <p>
      * Sending a second or subsequent <code>UpdateInstanceCustomHealthStatus</code> request with the same value before
-     * <code>FailureThreshold x 30</code> seconds has passed doesn't accelerate the change. AWS Cloud Map still waits
-     * <code>FailureThreshold x 30</code> seconds after the first request to make the change.
+     * 30 seconds has passed doesn't accelerate the change. AWS Cloud Map still waits <code>30</code> seconds after the
+     * first request to make the change.
      * </p>
      * 
      * @param failureThreshold
+     *        <p>
+     *        This parameter has been deprecated and is always set to 1. AWS Cloud Map waits for approximately 30
+     *        seconds after receiving an <code>UpdateInstanceCustomHealthStatus</code> request before changing the
+     *        status of the service instance.
+     *        </p>
+     *        </important>
+     *        <p>
      *        The number of 30-second intervals that you want AWS Cloud Map to wait after receiving an
      *        <code>UpdateInstanceCustomHealthStatus</code> request before it changes the health status of a service
-     *        instance. For example, suppose you specify a value of <code>2</code> for <code>FailureTheshold</code>, and
-     *        then your application sends an <code>UpdateInstanceCustomHealthStatus</code> request. AWS Cloud Map waits
-     *        for approximately 60 seconds (2 x 30) before changing the status of the service instance based on that
-     *        request.</p>
+     *        instance.
+     *        </p>
      *        <p>
      *        Sending a second or subsequent <code>UpdateInstanceCustomHealthStatus</code> request with the same value
-     *        before <code>FailureThreshold x 30</code> seconds has passed doesn't accelerate the change. AWS Cloud Map
-     *        still waits <code>FailureThreshold x 30</code> seconds after the first request to make the change.
+     *        before 30 seconds has passed doesn't accelerate the change. AWS Cloud Map still waits <code>30</code>
+     *        seconds after the first request to make the change.
      */
 
     public void setFailureThreshold(Integer failureThreshold) {
@@ -155,29 +168,38 @@ public class HealthCheckCustomConfig implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <important>
+     * <p>
+     * This parameter has been deprecated and is always set to 1. AWS Cloud Map waits for approximately 30 seconds after
+     * receiving an <code>UpdateInstanceCustomHealthStatus</code> request before changing the status of the service
+     * instance.
+     * </p>
+     * </important>
      * <p>
      * The number of 30-second intervals that you want AWS Cloud Map to wait after receiving an
      * <code>UpdateInstanceCustomHealthStatus</code> request before it changes the health status of a service instance.
-     * For example, suppose you specify a value of <code>2</code> for <code>FailureTheshold</code>, and then your
-     * application sends an <code>UpdateInstanceCustomHealthStatus</code> request. AWS Cloud Map waits for approximately
-     * 60 seconds (2 x 30) before changing the status of the service instance based on that request.
      * </p>
      * <p>
      * Sending a second or subsequent <code>UpdateInstanceCustomHealthStatus</code> request with the same value before
-     * <code>FailureThreshold x 30</code> seconds has passed doesn't accelerate the change. AWS Cloud Map still waits
-     * <code>FailureThreshold x 30</code> seconds after the first request to make the change.
+     * 30 seconds has passed doesn't accelerate the change. AWS Cloud Map still waits <code>30</code> seconds after the
+     * first request to make the change.
      * </p>
      * 
-     * @return The number of 30-second intervals that you want AWS Cloud Map to wait after receiving an
+     * @return <p>
+     *         This parameter has been deprecated and is always set to 1. AWS Cloud Map waits for approximately 30
+     *         seconds after receiving an <code>UpdateInstanceCustomHealthStatus</code> request before changing the
+     *         status of the service instance.
+     *         </p>
+     *         </important>
+     *         <p>
+     *         The number of 30-second intervals that you want AWS Cloud Map to wait after receiving an
      *         <code>UpdateInstanceCustomHealthStatus</code> request before it changes the health status of a service
-     *         instance. For example, suppose you specify a value of <code>2</code> for <code>FailureTheshold</code>,
-     *         and then your application sends an <code>UpdateInstanceCustomHealthStatus</code> request. AWS Cloud Map
-     *         waits for approximately 60 seconds (2 x 30) before changing the status of the service instance based on
-     *         that request.</p>
+     *         instance.
+     *         </p>
      *         <p>
      *         Sending a second or subsequent <code>UpdateInstanceCustomHealthStatus</code> request with the same value
-     *         before <code>FailureThreshold x 30</code> seconds has passed doesn't accelerate the change. AWS Cloud Map
-     *         still waits <code>FailureThreshold x 30</code> seconds after the first request to make the change.
+     *         before 30 seconds has passed doesn't accelerate the change. AWS Cloud Map still waits <code>30</code>
+     *         seconds after the first request to make the change.
      */
 
     public Integer getFailureThreshold() {
@@ -185,30 +207,39 @@ public class HealthCheckCustomConfig implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <important>
+     * <p>
+     * This parameter has been deprecated and is always set to 1. AWS Cloud Map waits for approximately 30 seconds after
+     * receiving an <code>UpdateInstanceCustomHealthStatus</code> request before changing the status of the service
+     * instance.
+     * </p>
+     * </important>
      * <p>
      * The number of 30-second intervals that you want AWS Cloud Map to wait after receiving an
      * <code>UpdateInstanceCustomHealthStatus</code> request before it changes the health status of a service instance.
-     * For example, suppose you specify a value of <code>2</code> for <code>FailureTheshold</code>, and then your
-     * application sends an <code>UpdateInstanceCustomHealthStatus</code> request. AWS Cloud Map waits for approximately
-     * 60 seconds (2 x 30) before changing the status of the service instance based on that request.
      * </p>
      * <p>
      * Sending a second or subsequent <code>UpdateInstanceCustomHealthStatus</code> request with the same value before
-     * <code>FailureThreshold x 30</code> seconds has passed doesn't accelerate the change. AWS Cloud Map still waits
-     * <code>FailureThreshold x 30</code> seconds after the first request to make the change.
+     * 30 seconds has passed doesn't accelerate the change. AWS Cloud Map still waits <code>30</code> seconds after the
+     * first request to make the change.
      * </p>
      * 
      * @param failureThreshold
+     *        <p>
+     *        This parameter has been deprecated and is always set to 1. AWS Cloud Map waits for approximately 30
+     *        seconds after receiving an <code>UpdateInstanceCustomHealthStatus</code> request before changing the
+     *        status of the service instance.
+     *        </p>
+     *        </important>
+     *        <p>
      *        The number of 30-second intervals that you want AWS Cloud Map to wait after receiving an
      *        <code>UpdateInstanceCustomHealthStatus</code> request before it changes the health status of a service
-     *        instance. For example, suppose you specify a value of <code>2</code> for <code>FailureTheshold</code>, and
-     *        then your application sends an <code>UpdateInstanceCustomHealthStatus</code> request. AWS Cloud Map waits
-     *        for approximately 60 seconds (2 x 30) before changing the status of the service instance based on that
-     *        request.</p>
+     *        instance.
+     *        </p>
      *        <p>
      *        Sending a second or subsequent <code>UpdateInstanceCustomHealthStatus</code> request with the same value
-     *        before <code>FailureThreshold x 30</code> seconds has passed doesn't accelerate the change. AWS Cloud Map
-     *        still waits <code>FailureThreshold x 30</code> seconds after the first request to make the change.
+     *        before 30 seconds has passed doesn't accelerate the change. AWS Cloud Map still waits <code>30</code>
+     *        seconds after the first request to make the change.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -75,6 +75,21 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * </note>
      */
     private String serviceRole;
+    /**
+     * <p>
+     * The tags that you apply to the compute environment to help you categorize and organize your resources. Each tag
+     * consists of a key and an optional value. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> in <i>AWS General
+     * Reference</i>.
+     * </p>
+     * <p>
+     * These tags can be updated or removed using the <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API
+     * operations. These tags do not propagate to the underlying compute resources.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -472,6 +487,125 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * The tags that you apply to the compute environment to help you categorize and organize your resources. Each tag
+     * consists of a key and an optional value. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> in <i>AWS General
+     * Reference</i>.
+     * </p>
+     * <p>
+     * These tags can be updated or removed using the <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API
+     * operations. These tags do not propagate to the underlying compute resources.
+     * </p>
+     * 
+     * @return The tags that you apply to the compute environment to help you categorize and organize your resources.
+     *         Each tag consists of a key and an optional value. For more information, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> in <i>AWS
+     *         General Reference</i>.</p>
+     *         <p>
+     *         These tags can be updated or removed using the <a
+     *         href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a
+     *         href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API
+     *         operations. These tags do not propagate to the underlying compute resources.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags that you apply to the compute environment to help you categorize and organize your resources. Each tag
+     * consists of a key and an optional value. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> in <i>AWS General
+     * Reference</i>.
+     * </p>
+     * <p>
+     * These tags can be updated or removed using the <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API
+     * operations. These tags do not propagate to the underlying compute resources.
+     * </p>
+     * 
+     * @param tags
+     *        The tags that you apply to the compute environment to help you categorize and organize your resources.
+     *        Each tag consists of a key and an optional value. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> in <i>AWS
+     *        General Reference</i>.</p>
+     *        <p>
+     *        These tags can be updated or removed using the <a
+     *        href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a
+     *        href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API
+     *        operations. These tags do not propagate to the underlying compute resources.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags that you apply to the compute environment to help you categorize and organize your resources. Each tag
+     * consists of a key and an optional value. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> in <i>AWS General
+     * Reference</i>.
+     * </p>
+     * <p>
+     * These tags can be updated or removed using the <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API
+     * operations. These tags do not propagate to the underlying compute resources.
+     * </p>
+     * 
+     * @param tags
+     *        The tags that you apply to the compute environment to help you categorize and organize your resources.
+     *        Each tag consists of a key and an optional value. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> in <i>AWS
+     *        General Reference</i>.</p>
+     *        <p>
+     *        These tags can be updated or removed using the <a
+     *        href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a
+     *        href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API
+     *        operations. These tags do not propagate to the underlying compute resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateComputeEnvironmentRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see CreateComputeEnvironmentRequest#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateComputeEnvironmentRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateComputeEnvironmentRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -492,7 +626,9 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
         if (getComputeResources() != null)
             sb.append("ComputeResources: ").append(getComputeResources()).append(",");
         if (getServiceRole() != null)
-            sb.append("ServiceRole: ").append(getServiceRole());
+            sb.append("ServiceRole: ").append(getServiceRole()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -527,6 +663,10 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getServiceRole() != null && other.getServiceRole().equals(this.getServiceRole()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -540,6 +680,7 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getComputeResources() == null) ? 0 : getComputeResources().hashCode());
         hashCode = prime * hashCode + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

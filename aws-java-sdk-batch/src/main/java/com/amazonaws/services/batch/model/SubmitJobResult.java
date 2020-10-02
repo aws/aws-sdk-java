@@ -25,6 +25,12 @@ public class SubmitJobResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) for the job.
+     * </p>
+     */
+    private String jobArn;
+    /**
+     * <p>
      * The name of the job.
      * </p>
      */
@@ -35,6 +41,46 @@ public class SubmitJobResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      */
     private String jobId;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the job.
+     * </p>
+     * 
+     * @param jobArn
+     *        The Amazon Resource Name (ARN) for the job.
+     */
+
+    public void setJobArn(String jobArn) {
+        this.jobArn = jobArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the job.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the job.
+     */
+
+    public String getJobArn() {
+        return this.jobArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the job.
+     * </p>
+     * 
+     * @param jobArn
+     *        The Amazon Resource Name (ARN) for the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SubmitJobResult withJobArn(String jobArn) {
+        setJobArn(jobArn);
+        return this;
+    }
 
     /**
      * <p>
@@ -128,6 +174,8 @@ public class SubmitJobResult extends com.amazonaws.AmazonWebServiceResult<com.am
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getJobArn() != null)
+            sb.append("JobArn: ").append(getJobArn()).append(",");
         if (getJobName() != null)
             sb.append("JobName: ").append(getJobName()).append(",");
         if (getJobId() != null)
@@ -146,6 +194,10 @@ public class SubmitJobResult extends com.amazonaws.AmazonWebServiceResult<com.am
         if (obj instanceof SubmitJobResult == false)
             return false;
         SubmitJobResult other = (SubmitJobResult) obj;
+        if (other.getJobArn() == null ^ this.getJobArn() == null)
+            return false;
+        if (other.getJobArn() != null && other.getJobArn().equals(this.getJobArn()) == false)
+            return false;
         if (other.getJobName() == null ^ this.getJobName() == null)
             return false;
         if (other.getJobName() != null && other.getJobName().equals(this.getJobName()) == false)
@@ -162,6 +214,7 @@ public class SubmitJobResult extends com.amazonaws.AmazonWebServiceResult<com.am
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getJobArn() == null) ? 0 : getJobArn().hashCode());
         hashCode = prime * hashCode + ((getJobName() == null) ? 0 : getJobName().hashCode());
         hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
         return hashCode;

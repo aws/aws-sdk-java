@@ -36,13 +36,13 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     private String image;
     /**
      * <p>
-     * The number of VCPUs allocated for the job.
+     * The number of VCPUs allocated for the job. This is a required parameter.
      * </p>
      */
     private Integer vcpus;
     /**
      * <p>
-     * The number of MiB of memory reserved for the job.
+     * The number of MiB of memory reserved for the job. This is a required parameter.
      * </p>
      */
     private Integer memory;
@@ -61,8 +61,8 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
-     * execution IAM role</a>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
+     * role</a>.
      * </p>
      */
     private String executionRoleArn;
@@ -264,11 +264,11 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of VCPUs allocated for the job.
+     * The number of VCPUs allocated for the job. This is a required parameter.
      * </p>
      * 
      * @param vcpus
-     *        The number of VCPUs allocated for the job.
+     *        The number of VCPUs allocated for the job. This is a required parameter.
      */
 
     public void setVcpus(Integer vcpus) {
@@ -277,10 +277,10 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of VCPUs allocated for the job.
+     * The number of VCPUs allocated for the job. This is a required parameter.
      * </p>
      * 
-     * @return The number of VCPUs allocated for the job.
+     * @return The number of VCPUs allocated for the job. This is a required parameter.
      */
 
     public Integer getVcpus() {
@@ -289,11 +289,11 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of VCPUs allocated for the job.
+     * The number of VCPUs allocated for the job. This is a required parameter.
      * </p>
      * 
      * @param vcpus
-     *        The number of VCPUs allocated for the job.
+     *        The number of VCPUs allocated for the job. This is a required parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -304,11 +304,11 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of MiB of memory reserved for the job.
+     * The number of MiB of memory reserved for the job. This is a required parameter.
      * </p>
      * 
      * @param memory
-     *        The number of MiB of memory reserved for the job.
+     *        The number of MiB of memory reserved for the job. This is a required parameter.
      */
 
     public void setMemory(Integer memory) {
@@ -317,10 +317,10 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of MiB of memory reserved for the job.
+     * The number of MiB of memory reserved for the job. This is a required parameter.
      * </p>
      * 
-     * @return The number of MiB of memory reserved for the job.
+     * @return The number of MiB of memory reserved for the job. This is a required parameter.
      */
 
     public Integer getMemory() {
@@ -329,11 +329,11 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of MiB of memory reserved for the job.
+     * The number of MiB of memory reserved for the job. This is a required parameter.
      * </p>
      * 
      * @param memory
-     *        The number of MiB of memory reserved for the job.
+     *        The number of MiB of memory reserved for the job. This is a required parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -455,14 +455,14 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
-     * execution IAM role</a>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
+     * role</a>.
      * </p>
      * 
      * @param executionRoleArn
      *        The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see
-     *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
-     *        ECS task execution IAM role</a>.
+     *        <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution
+     *        IAM role</a>.
      */
 
     public void setExecutionRoleArn(String executionRoleArn) {
@@ -472,13 +472,13 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
-     * execution IAM role</a>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
+     * role</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see
-     *         <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
-     *         ECS task execution IAM role</a>.
+     *         <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution
+     *         IAM role</a>.
      */
 
     public String getExecutionRoleArn() {
@@ -488,14 +488,14 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
-     * execution IAM role</a>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
+     * role</a>.
      * </p>
      * 
      * @param executionRoleArn
      *        The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see
-     *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
-     *        ECS task execution IAM role</a>.
+     *        <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution
+     *        IAM role</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -64,4 +64,66 @@ public interface AmazonPersonalizeEventsAsync extends AmazonPersonalizeEvents {
     java.util.concurrent.Future<PutEventsResult> putEventsAsync(PutEventsRequest putEventsRequest,
             com.amazonaws.handlers.AsyncHandler<PutEventsRequest, PutEventsResult> asyncHandler);
 
+    /**
+     * <p>
+     * Adds one or more items to an Items dataset. For more information see <a>importing-items</a>.
+     * </p>
+     * 
+     * @param putItemsRequest
+     * @return A Java Future containing the result of the PutItems operation returned by the service.
+     * @sample AmazonPersonalizeEventsAsync.PutItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutItems" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutItemsResult> putItemsAsync(PutItemsRequest putItemsRequest);
+
+    /**
+     * <p>
+     * Adds one or more items to an Items dataset. For more information see <a>importing-items</a>.
+     * </p>
+     * 
+     * @param putItemsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutItems operation returned by the service.
+     * @sample AmazonPersonalizeEventsAsyncHandler.PutItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutItems" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutItemsResult> putItemsAsync(PutItemsRequest putItemsRequest,
+            com.amazonaws.handlers.AsyncHandler<PutItemsRequest, PutItemsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds one or more users to a Users dataset. For more information see <a>importing-users</a>.
+     * </p>
+     * 
+     * @param putUsersRequest
+     * @return A Java Future containing the result of the PutUsers operation returned by the service.
+     * @sample AmazonPersonalizeEventsAsync.PutUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutUsers" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutUsersResult> putUsersAsync(PutUsersRequest putUsersRequest);
+
+    /**
+     * <p>
+     * Adds one or more users to a Users dataset. For more information see <a>importing-users</a>.
+     * </p>
+     * 
+     * @param putUsersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutUsers operation returned by the service.
+     * @sample AmazonPersonalizeEventsAsyncHandler.PutUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutUsers" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutUsersResult> putUsersAsync(PutUsersRequest putUsersRequest,
+            com.amazonaws.handlers.AsyncHandler<PutUsersRequest, PutUsersResult> asyncHandler);
+
 }

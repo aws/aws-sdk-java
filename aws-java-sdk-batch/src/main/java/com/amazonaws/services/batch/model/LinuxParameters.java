@@ -39,11 +39,12 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<Device> devices;
     /**
      * <p>
-     * Run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter
-     * maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
-     * This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code>
+     * If true, run an <code>init</code> process inside the container that forwards signals and reaps processes. This
+     * parameter maps to the <code>--init</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25 of the
+     * Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container
+     * instance, log into your container instance and run the following command:
+     * <code>sudo docker version | grep "Server API version"</code>
      * </p>
      */
     private Boolean initProcessEnabled;
@@ -184,16 +185,17 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter
-     * maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
-     * This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code>
+     * If true, run an <code>init</code> process inside the container that forwards signals and reaps processes. This
+     * parameter maps to the <code>--init</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25 of the
+     * Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container
+     * instance, log into your container instance and run the following command:
+     * <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * 
      * @param initProcessEnabled
-     *        Run an <code>init</code> process inside the container that forwards signals and reaps processes. This
-     *        parameter maps to the <code>--init</code> option to <a
+     *        If true, run an <code>init</code> process inside the container that forwards signals and reaps processes.
+     *        This parameter maps to the <code>--init</code> option to <a
      *        href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25
      *        of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
      *        your container instance, log into your container instance and run the following command:
@@ -206,15 +208,16 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter
-     * maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
-     * This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code>
+     * If true, run an <code>init</code> process inside the container that forwards signals and reaps processes. This
+     * parameter maps to the <code>--init</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25 of the
+     * Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container
+     * instance, log into your container instance and run the following command:
+     * <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * 
-     * @return Run an <code>init</code> process inside the container that forwards signals and reaps processes. This
-     *         parameter maps to the <code>--init</code> option to <a
+     * @return If true, run an <code>init</code> process inside the container that forwards signals and reaps processes.
+     *         This parameter maps to the <code>--init</code> option to <a
      *         href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25
      *         of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
      *         your container instance, log into your container instance and run the following command:
@@ -227,16 +230,17 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter
-     * maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
-     * This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code>
+     * If true, run an <code>init</code> process inside the container that forwards signals and reaps processes. This
+     * parameter maps to the <code>--init</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25 of the
+     * Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container
+     * instance, log into your container instance and run the following command:
+     * <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * 
      * @param initProcessEnabled
-     *        Run an <code>init</code> process inside the container that forwards signals and reaps processes. This
-     *        parameter maps to the <code>--init</code> option to <a
+     *        If true, run an <code>init</code> process inside the container that forwards signals and reaps processes.
+     *        This parameter maps to the <code>--init</code> option to <a
      *        href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25
      *        of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
      *        your container instance, log into your container instance and run the following command:
@@ -251,15 +255,16 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter
-     * maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
-     * This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code>
+     * If true, run an <code>init</code> process inside the container that forwards signals and reaps processes. This
+     * parameter maps to the <code>--init</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25 of the
+     * Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container
+     * instance, log into your container instance and run the following command:
+     * <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * 
-     * @return Run an <code>init</code> process inside the container that forwards signals and reaps processes. This
-     *         parameter maps to the <code>--init</code> option to <a
+     * @return If true, run an <code>init</code> process inside the container that forwards signals and reaps processes.
+     *         This parameter maps to the <code>--init</code> option to <a
      *         href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25
      *         of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
      *         your container instance, log into your container instance and run the following command:

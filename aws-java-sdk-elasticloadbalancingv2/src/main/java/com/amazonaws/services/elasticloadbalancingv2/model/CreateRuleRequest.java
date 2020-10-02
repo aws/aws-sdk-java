@@ -74,6 +74,12 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private java.util.List<Action> actions;
+    /**
+     * <p>
+     * The tags to assign to the rule.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -493,6 +499,76 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The tags to assign to the rule.
+     * </p>
+     * 
+     * @return The tags to assign to the rule.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the rule.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to assign to the rule.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the rule.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to assign to the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRuleRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the rule.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to assign to the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRuleRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -511,7 +587,9 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getPriority() != null)
             sb.append("Priority: ").append(getPriority()).append(",");
         if (getActions() != null)
-            sb.append("Actions: ").append(getActions());
+            sb.append("Actions: ").append(getActions()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -542,6 +620,10 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getActions() != null && other.getActions().equals(this.getActions()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -554,6 +636,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getConditions() == null) ? 0 : getConditions().hashCode());
         hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
         hashCode = prime * hashCode + ((getActions() == null) ? 0 : getActions().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

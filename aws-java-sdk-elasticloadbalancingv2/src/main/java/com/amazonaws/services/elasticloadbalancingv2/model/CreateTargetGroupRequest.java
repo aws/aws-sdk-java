@@ -155,6 +155,12 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * </ul>
      */
     private String targetType;
+    /**
+     * <p>
+     * The tags to assign to the target group.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -1209,6 +1215,76 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The tags to assign to the target group.
+     * </p>
+     * 
+     * @return The tags to assign to the target group.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the target group.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to assign to the target group.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the target group.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to assign to the target group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTargetGroupRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the target group.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to assign to the target group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTargetGroupRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1247,7 +1323,9 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getMatcher() != null)
             sb.append("Matcher: ").append(getMatcher()).append(",");
         if (getTargetType() != null)
-            sb.append("TargetType: ").append(getTargetType());
+            sb.append("TargetType: ").append(getTargetType()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -1318,6 +1396,10 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getTargetType() != null && other.getTargetType().equals(this.getTargetType()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -1340,6 +1422,7 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getUnhealthyThresholdCount() == null) ? 0 : getUnhealthyThresholdCount().hashCode());
         hashCode = prime * hashCode + ((getMatcher() == null) ? 0 : getMatcher().hashCode());
         hashCode = prime * hashCode + ((getTargetType() == null) ? 0 : getTargetType().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

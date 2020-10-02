@@ -124,7 +124,9 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Key-value pair tags to be applied to resources that are launched in the compute environment. For AWS Batch, these
      * take the form of "String1": "String2", where String1 is the tag key and String2 is the tag value—for example, {
-     * "Name": "AWS Batch Instance - C4OnDemand" }.
+     * "Name": "AWS Batch Instance - C4OnDemand" }. These tags can not be updated or removed after the compute
+     * environment has been created; any changes require creating a new compute environment and removing the old compute
+     * environment. These tags are not seen when using the AWS Batch ListTagsForResource API operation.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -1006,12 +1008,17 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Key-value pair tags to be applied to resources that are launched in the compute environment. For AWS Batch, these
      * take the form of "String1": "String2", where String1 is the tag key and String2 is the tag value—for example, {
-     * "Name": "AWS Batch Instance - C4OnDemand" }.
+     * "Name": "AWS Batch Instance - C4OnDemand" }. These tags can not be updated or removed after the compute
+     * environment has been created; any changes require creating a new compute environment and removing the old compute
+     * environment. These tags are not seen when using the AWS Batch ListTagsForResource API operation.
      * </p>
      * 
      * @return Key-value pair tags to be applied to resources that are launched in the compute environment. For AWS
      *         Batch, these take the form of "String1": "String2", where String1 is the tag key and String2 is the tag
-     *         value—for example, { "Name": "AWS Batch Instance - C4OnDemand" }.
+     *         value—for example, { "Name": "AWS Batch Instance - C4OnDemand" }. These tags can not be updated or
+     *         removed after the compute environment has been created; any changes require creating a new compute
+     *         environment and removing the old compute environment. These tags are not seen when using the AWS Batch
+     *         ListTagsForResource API operation.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -1022,13 +1029,18 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Key-value pair tags to be applied to resources that are launched in the compute environment. For AWS Batch, these
      * take the form of "String1": "String2", where String1 is the tag key and String2 is the tag value—for example, {
-     * "Name": "AWS Batch Instance - C4OnDemand" }.
+     * "Name": "AWS Batch Instance - C4OnDemand" }. These tags can not be updated or removed after the compute
+     * environment has been created; any changes require creating a new compute environment and removing the old compute
+     * environment. These tags are not seen when using the AWS Batch ListTagsForResource API operation.
      * </p>
      * 
      * @param tags
      *        Key-value pair tags to be applied to resources that are launched in the compute environment. For AWS
      *        Batch, these take the form of "String1": "String2", where String1 is the tag key and String2 is the tag
-     *        value—for example, { "Name": "AWS Batch Instance - C4OnDemand" }.
+     *        value—for example, { "Name": "AWS Batch Instance - C4OnDemand" }. These tags can not be updated or removed
+     *        after the compute environment has been created; any changes require creating a new compute environment and
+     *        removing the old compute environment. These tags are not seen when using the AWS Batch ListTagsForResource
+     *        API operation.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -1039,13 +1051,18 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Key-value pair tags to be applied to resources that are launched in the compute environment. For AWS Batch, these
      * take the form of "String1": "String2", where String1 is the tag key and String2 is the tag value—for example, {
-     * "Name": "AWS Batch Instance - C4OnDemand" }.
+     * "Name": "AWS Batch Instance - C4OnDemand" }. These tags can not be updated or removed after the compute
+     * environment has been created; any changes require creating a new compute environment and removing the old compute
+     * environment. These tags are not seen when using the AWS Batch ListTagsForResource API operation.
      * </p>
      * 
      * @param tags
      *        Key-value pair tags to be applied to resources that are launched in the compute environment. For AWS
      *        Batch, these take the form of "String1": "String2", where String1 is the tag key and String2 is the tag
-     *        value—for example, { "Name": "AWS Batch Instance - C4OnDemand" }.
+     *        value—for example, { "Name": "AWS Batch Instance - C4OnDemand" }. These tags can not be updated or removed
+     *        after the compute environment has been created; any changes require creating a new compute environment and
+     *        removing the old compute environment. These tags are not seen when using the AWS Batch ListTagsForResource
+     *        API operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

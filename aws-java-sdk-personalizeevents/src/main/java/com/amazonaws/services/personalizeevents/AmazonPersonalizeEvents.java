@@ -58,6 +58,40 @@ public interface AmazonPersonalizeEvents {
     PutEventsResult putEvents(PutEventsRequest putEventsRequest);
 
     /**
+     * <p>
+     * Adds one or more items to an Items dataset. For more information see <a>importing-items</a>.
+     * </p>
+     * 
+     * @param putItemsRequest
+     * @return Result of the PutItems operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws ResourceNotFoundException
+     *         Could not find the specified resource.
+     * @sample AmazonPersonalizeEvents.PutItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutItems" target="_top">AWS
+     *      API Documentation</a>
+     */
+    PutItemsResult putItems(PutItemsRequest putItemsRequest);
+
+    /**
+     * <p>
+     * Adds one or more users to a Users dataset. For more information see <a>importing-users</a>.
+     * </p>
+     * 
+     * @param putUsersRequest
+     * @return Result of the PutUsers operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws ResourceNotFoundException
+     *         Could not find the specified resource.
+     * @sample AmazonPersonalizeEvents.PutUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutUsers" target="_top">AWS
+     *      API Documentation</a>
+     */
+    PutUsersResult putUsers(PutUsersRequest putUsersRequest);
+
+    /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and
      * callers are not expected to call it, but can if they want to explicitly release any open resources. Once a client
      * has been shutdown, it should not be used to make any more requests.

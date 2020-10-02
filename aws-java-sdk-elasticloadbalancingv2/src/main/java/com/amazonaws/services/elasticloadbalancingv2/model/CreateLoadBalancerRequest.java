@@ -100,7 +100,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
     private String scheme;
     /**
      * <p>
-     * One or more tags to assign to the load balancer.
+     * The tags to assign to the load balancer.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -797,10 +797,10 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * One or more tags to assign to the load balancer.
+     * The tags to assign to the load balancer.
      * </p>
      * 
-     * @return One or more tags to assign to the load balancer.
+     * @return The tags to assign to the load balancer.
      */
 
     public java.util.List<Tag> getTags() {
@@ -809,11 +809,11 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * One or more tags to assign to the load balancer.
+     * The tags to assign to the load balancer.
      * </p>
      * 
      * @param tags
-     *        One or more tags to assign to the load balancer.
+     *        The tags to assign to the load balancer.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -827,7 +827,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * One or more tags to assign to the load balancer.
+     * The tags to assign to the load balancer.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -836,7 +836,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param tags
-     *        One or more tags to assign to the load balancer.
+     *        The tags to assign to the load balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -852,11 +852,11 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * One or more tags to assign to the load balancer.
+     * The tags to assign to the load balancer.
      * </p>
      * 
      * @param tags
-     *        One or more tags to assign to the load balancer.
+     *        The tags to assign to the load balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

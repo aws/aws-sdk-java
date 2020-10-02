@@ -38,11 +38,65 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and
      * <code>splunk</code>.
      * </p>
+     * <dl>
+     * <dt>awslogs</dt>
+     * <dd>
      * <p>
-     * For more information about using the <code>awslogs</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
-     * Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * Specifies the Amazon CloudWatch Logs logging driver. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using the awslogs Log Driver</a> in
+     * the <i>AWS Batch User Guide</i> and <a href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
+     * CloudWatch Logs logging driver</a> in the Docker documentation.
      * </p>
+     * </dd>
+     * <dt>fluentd</dt>
+     * <dd>
+     * <p>
+     * Specifies the Fluentd logging driver. For more information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the Docker
+     * documentation.
+     * </p>
+     * </dd>
+     * <dt>gelf</dt>
+     * <dd>
+     * <p>
+     * Specifies the Graylog Extended Format (GELF) logging driver. For more information, including usage and options,
+     * see <a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended Format logging driver</a>
+     * in the Docker documentation.
+     * </p>
+     * </dd>
+     * <dt>journald</dt>
+     * <dd>
+     * <p>
+     * Specifies the journald logging driver. For more information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the Docker
+     * documentation.
+     * </p>
+     * </dd>
+     * <dt>json-file</dt>
+     * <dd>
+     * <p>
+     * Specifies the JSON file logging driver. For more information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the Docker
+     * documentation.
+     * </p>
+     * </dd>
+     * <dt>splunk</dt>
+     * <dd>
+     * <p>
+     * Specifies the Splunk logging driver. For more information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the Docker
+     * documentation.
+     * </p>
+     * </dd>
+     * <dt>syslog</dt>
+     * <dd>
+     * <p>
+     * Specifies the syslog logging driver. For more information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the Docker
+     * documentation.
+     * </p>
+     * </dd>
+     * </dl>
      * <note>
      * <p>
      * If you have a custom driver that is not listed earlier that you would like to work with the Amazon ECS container
@@ -71,8 +125,8 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The secrets to pass to the log configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying Sensitive
+     * Data</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      */
     private java.util.List<Secret> secretOptions;
@@ -87,11 +141,65 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and
      * <code>splunk</code>.
      * </p>
+     * <dl>
+     * <dt>awslogs</dt>
+     * <dd>
      * <p>
-     * For more information about using the <code>awslogs</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
-     * Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * Specifies the Amazon CloudWatch Logs logging driver. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using the awslogs Log Driver</a> in
+     * the <i>AWS Batch User Guide</i> and <a href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
+     * CloudWatch Logs logging driver</a> in the Docker documentation.
      * </p>
+     * </dd>
+     * <dt>fluentd</dt>
+     * <dd>
+     * <p>
+     * Specifies the Fluentd logging driver. For more information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the Docker
+     * documentation.
+     * </p>
+     * </dd>
+     * <dt>gelf</dt>
+     * <dd>
+     * <p>
+     * Specifies the Graylog Extended Format (GELF) logging driver. For more information, including usage and options,
+     * see <a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended Format logging driver</a>
+     * in the Docker documentation.
+     * </p>
+     * </dd>
+     * <dt>journald</dt>
+     * <dd>
+     * <p>
+     * Specifies the journald logging driver. For more information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the Docker
+     * documentation.
+     * </p>
+     * </dd>
+     * <dt>json-file</dt>
+     * <dd>
+     * <p>
+     * Specifies the JSON file logging driver. For more information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the Docker
+     * documentation.
+     * </p>
+     * </dd>
+     * <dt>splunk</dt>
+     * <dd>
+     * <p>
+     * Specifies the Splunk logging driver. For more information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the Docker
+     * documentation.
+     * </p>
+     * </dd>
+     * <dt>syslog</dt>
+     * <dd>
+     * <p>
+     * Specifies the syslog logging driver. For more information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the Docker
+     * documentation.
+     * </p>
+     * </dd>
+     * </dl>
      * <note>
      * <p>
      * If you have a custom driver that is not listed earlier that you would like to work with the Amazon ECS container
@@ -115,11 +223,66 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and
      *        <code>splunk</code>.
      *        </p>
+     *        <dl>
+     *        <dt>awslogs</dt>
+     *        <dd>
      *        <p>
-     *        For more information about using the <code>awslogs</code> log driver, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs
-     *        Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        Specifies the Amazon CloudWatch Logs logging driver. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using the awslogs Log
+     *        Driver</a> in the <i>AWS Batch User Guide</i> and <a
+     *        href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon CloudWatch Logs logging
+     *        driver</a> in the Docker documentation.
      *        </p>
+     *        </dd>
+     *        <dt>fluentd</dt>
+     *        <dd>
+     *        <p>
+     *        Specifies the Fluentd logging driver. For more information, including usage and options, see <a
+     *        href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the Docker
+     *        documentation.
+     *        </p>
+     *        </dd>
+     *        <dt>gelf</dt>
+     *        <dd>
+     *        <p>
+     *        Specifies the Graylog Extended Format (GELF) logging driver. For more information, including usage and
+     *        options, see <a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended Format
+     *        logging driver</a> in the Docker documentation.
+     *        </p>
+     *        </dd>
+     *        <dt>journald</dt>
+     *        <dd>
+     *        <p>
+     *        Specifies the journald logging driver. For more information, including usage and options, see <a
+     *        href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the
+     *        Docker documentation.
+     *        </p>
+     *        </dd>
+     *        <dt>json-file</dt>
+     *        <dd>
+     *        <p>
+     *        Specifies the JSON file logging driver. For more information, including usage and options, see <a
+     *        href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the
+     *        Docker documentation.
+     *        </p>
+     *        </dd>
+     *        <dt>splunk</dt>
+     *        <dd>
+     *        <p>
+     *        Specifies the Splunk logging driver. For more information, including usage and options, see <a
+     *        href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the Docker
+     *        documentation.
+     *        </p>
+     *        </dd>
+     *        <dt>syslog</dt>
+     *        <dd>
+     *        <p>
+     *        Specifies the syslog logging driver. For more information, including usage and options, see <a
+     *        href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the Docker
+     *        documentation.
+     *        </p>
+     *        </dd>
+     *        </dl>
      *        <note>
      *        <p>
      *        If you have a custom driver that is not listed earlier that you would like to work with the Amazon ECS
@@ -150,11 +313,65 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and
      * <code>splunk</code>.
      * </p>
+     * <dl>
+     * <dt>awslogs</dt>
+     * <dd>
      * <p>
-     * For more information about using the <code>awslogs</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
-     * Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * Specifies the Amazon CloudWatch Logs logging driver. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using the awslogs Log Driver</a> in
+     * the <i>AWS Batch User Guide</i> and <a href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
+     * CloudWatch Logs logging driver</a> in the Docker documentation.
      * </p>
+     * </dd>
+     * <dt>fluentd</dt>
+     * <dd>
+     * <p>
+     * Specifies the Fluentd logging driver. For more information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the Docker
+     * documentation.
+     * </p>
+     * </dd>
+     * <dt>gelf</dt>
+     * <dd>
+     * <p>
+     * Specifies the Graylog Extended Format (GELF) logging driver. For more information, including usage and options,
+     * see <a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended Format logging driver</a>
+     * in the Docker documentation.
+     * </p>
+     * </dd>
+     * <dt>journald</dt>
+     * <dd>
+     * <p>
+     * Specifies the journald logging driver. For more information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the Docker
+     * documentation.
+     * </p>
+     * </dd>
+     * <dt>json-file</dt>
+     * <dd>
+     * <p>
+     * Specifies the JSON file logging driver. For more information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the Docker
+     * documentation.
+     * </p>
+     * </dd>
+     * <dt>splunk</dt>
+     * <dd>
+     * <p>
+     * Specifies the Splunk logging driver. For more information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the Docker
+     * documentation.
+     * </p>
+     * </dd>
+     * <dt>syslog</dt>
+     * <dd>
+     * <p>
+     * Specifies the syslog logging driver. For more information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the Docker
+     * documentation.
+     * </p>
+     * </dd>
+     * </dl>
      * <note>
      * <p>
      * If you have a custom driver that is not listed earlier that you would like to work with the Amazon ECS container
@@ -177,11 +394,66 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *         <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and
      *         <code>splunk</code>.
      *         </p>
+     *         <dl>
+     *         <dt>awslogs</dt>
+     *         <dd>
      *         <p>
-     *         For more information about using the <code>awslogs</code> log driver, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs
-     *         Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         Specifies the Amazon CloudWatch Logs logging driver. For more information, see <a
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using the awslogs Log
+     *         Driver</a> in the <i>AWS Batch User Guide</i> and <a
+     *         href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon CloudWatch Logs logging
+     *         driver</a> in the Docker documentation.
      *         </p>
+     *         </dd>
+     *         <dt>fluentd</dt>
+     *         <dd>
+     *         <p>
+     *         Specifies the Fluentd logging driver. For more information, including usage and options, see <a
+     *         href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the
+     *         Docker documentation.
+     *         </p>
+     *         </dd>
+     *         <dt>gelf</dt>
+     *         <dd>
+     *         <p>
+     *         Specifies the Graylog Extended Format (GELF) logging driver. For more information, including usage and
+     *         options, see <a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended Format
+     *         logging driver</a> in the Docker documentation.
+     *         </p>
+     *         </dd>
+     *         <dt>journald</dt>
+     *         <dd>
+     *         <p>
+     *         Specifies the journald logging driver. For more information, including usage and options, see <a
+     *         href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the
+     *         Docker documentation.
+     *         </p>
+     *         </dd>
+     *         <dt>json-file</dt>
+     *         <dd>
+     *         <p>
+     *         Specifies the JSON file logging driver. For more information, including usage and options, see <a
+     *         href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the
+     *         Docker documentation.
+     *         </p>
+     *         </dd>
+     *         <dt>splunk</dt>
+     *         <dd>
+     *         <p>
+     *         Specifies the Splunk logging driver. For more information, including usage and options, see <a
+     *         href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the Docker
+     *         documentation.
+     *         </p>
+     *         </dd>
+     *         <dt>syslog</dt>
+     *         <dd>
+     *         <p>
+     *         Specifies the syslog logging driver. For more information, including usage and options, see <a
+     *         href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the Docker
+     *         documentation.
+     *         </p>
+     *         </dd>
+     *         </dl>
      *         <note>
      *         <p>
      *         If you have a custom driver that is not listed earlier that you would like to work with the Amazon ECS
@@ -212,11 +484,65 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and
      * <code>splunk</code>.
      * </p>
+     * <dl>
+     * <dt>awslogs</dt>
+     * <dd>
      * <p>
-     * For more information about using the <code>awslogs</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
-     * Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * Specifies the Amazon CloudWatch Logs logging driver. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using the awslogs Log Driver</a> in
+     * the <i>AWS Batch User Guide</i> and <a href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
+     * CloudWatch Logs logging driver</a> in the Docker documentation.
      * </p>
+     * </dd>
+     * <dt>fluentd</dt>
+     * <dd>
+     * <p>
+     * Specifies the Fluentd logging driver. For more information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the Docker
+     * documentation.
+     * </p>
+     * </dd>
+     * <dt>gelf</dt>
+     * <dd>
+     * <p>
+     * Specifies the Graylog Extended Format (GELF) logging driver. For more information, including usage and options,
+     * see <a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended Format logging driver</a>
+     * in the Docker documentation.
+     * </p>
+     * </dd>
+     * <dt>journald</dt>
+     * <dd>
+     * <p>
+     * Specifies the journald logging driver. For more information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the Docker
+     * documentation.
+     * </p>
+     * </dd>
+     * <dt>json-file</dt>
+     * <dd>
+     * <p>
+     * Specifies the JSON file logging driver. For more information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the Docker
+     * documentation.
+     * </p>
+     * </dd>
+     * <dt>splunk</dt>
+     * <dd>
+     * <p>
+     * Specifies the Splunk logging driver. For more information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the Docker
+     * documentation.
+     * </p>
+     * </dd>
+     * <dt>syslog</dt>
+     * <dd>
+     * <p>
+     * Specifies the syslog logging driver. For more information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the Docker
+     * documentation.
+     * </p>
+     * </dd>
+     * </dl>
      * <note>
      * <p>
      * If you have a custom driver that is not listed earlier that you would like to work with the Amazon ECS container
@@ -240,11 +566,66 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and
      *        <code>splunk</code>.
      *        </p>
+     *        <dl>
+     *        <dt>awslogs</dt>
+     *        <dd>
      *        <p>
-     *        For more information about using the <code>awslogs</code> log driver, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs
-     *        Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        Specifies the Amazon CloudWatch Logs logging driver. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using the awslogs Log
+     *        Driver</a> in the <i>AWS Batch User Guide</i> and <a
+     *        href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon CloudWatch Logs logging
+     *        driver</a> in the Docker documentation.
      *        </p>
+     *        </dd>
+     *        <dt>fluentd</dt>
+     *        <dd>
+     *        <p>
+     *        Specifies the Fluentd logging driver. For more information, including usage and options, see <a
+     *        href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the Docker
+     *        documentation.
+     *        </p>
+     *        </dd>
+     *        <dt>gelf</dt>
+     *        <dd>
+     *        <p>
+     *        Specifies the Graylog Extended Format (GELF) logging driver. For more information, including usage and
+     *        options, see <a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended Format
+     *        logging driver</a> in the Docker documentation.
+     *        </p>
+     *        </dd>
+     *        <dt>journald</dt>
+     *        <dd>
+     *        <p>
+     *        Specifies the journald logging driver. For more information, including usage and options, see <a
+     *        href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the
+     *        Docker documentation.
+     *        </p>
+     *        </dd>
+     *        <dt>json-file</dt>
+     *        <dd>
+     *        <p>
+     *        Specifies the JSON file logging driver. For more information, including usage and options, see <a
+     *        href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the
+     *        Docker documentation.
+     *        </p>
+     *        </dd>
+     *        <dt>splunk</dt>
+     *        <dd>
+     *        <p>
+     *        Specifies the Splunk logging driver. For more information, including usage and options, see <a
+     *        href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the Docker
+     *        documentation.
+     *        </p>
+     *        </dd>
+     *        <dt>syslog</dt>
+     *        <dd>
+     *        <p>
+     *        Specifies the syslog logging driver. For more information, including usage and options, see <a
+     *        href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the Docker
+     *        documentation.
+     *        </p>
+     *        </dd>
+     *        </dl>
      *        <note>
      *        <p>
      *        If you have a custom driver that is not listed earlier that you would like to work with the Amazon ECS
@@ -277,11 +658,65 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and
      * <code>splunk</code>.
      * </p>
+     * <dl>
+     * <dt>awslogs</dt>
+     * <dd>
      * <p>
-     * For more information about using the <code>awslogs</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
-     * Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * Specifies the Amazon CloudWatch Logs logging driver. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using the awslogs Log Driver</a> in
+     * the <i>AWS Batch User Guide</i> and <a href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
+     * CloudWatch Logs logging driver</a> in the Docker documentation.
      * </p>
+     * </dd>
+     * <dt>fluentd</dt>
+     * <dd>
+     * <p>
+     * Specifies the Fluentd logging driver. For more information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the Docker
+     * documentation.
+     * </p>
+     * </dd>
+     * <dt>gelf</dt>
+     * <dd>
+     * <p>
+     * Specifies the Graylog Extended Format (GELF) logging driver. For more information, including usage and options,
+     * see <a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended Format logging driver</a>
+     * in the Docker documentation.
+     * </p>
+     * </dd>
+     * <dt>journald</dt>
+     * <dd>
+     * <p>
+     * Specifies the journald logging driver. For more information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the Docker
+     * documentation.
+     * </p>
+     * </dd>
+     * <dt>json-file</dt>
+     * <dd>
+     * <p>
+     * Specifies the JSON file logging driver. For more information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the Docker
+     * documentation.
+     * </p>
+     * </dd>
+     * <dt>splunk</dt>
+     * <dd>
+     * <p>
+     * Specifies the Splunk logging driver. For more information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the Docker
+     * documentation.
+     * </p>
+     * </dd>
+     * <dt>syslog</dt>
+     * <dd>
+     * <p>
+     * Specifies the syslog logging driver. For more information, including usage and options, see <a
+     * href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the Docker
+     * documentation.
+     * </p>
+     * </dd>
+     * </dl>
      * <note>
      * <p>
      * If you have a custom driver that is not listed earlier that you would like to work with the Amazon ECS container
@@ -305,11 +740,66 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>, and
      *        <code>splunk</code>.
      *        </p>
+     *        <dl>
+     *        <dt>awslogs</dt>
+     *        <dd>
      *        <p>
-     *        For more information about using the <code>awslogs</code> log driver, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs
-     *        Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        Specifies the Amazon CloudWatch Logs logging driver. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using the awslogs Log
+     *        Driver</a> in the <i>AWS Batch User Guide</i> and <a
+     *        href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon CloudWatch Logs logging
+     *        driver</a> in the Docker documentation.
      *        </p>
+     *        </dd>
+     *        <dt>fluentd</dt>
+     *        <dd>
+     *        <p>
+     *        Specifies the Fluentd logging driver. For more information, including usage and options, see <a
+     *        href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging driver</a> in the Docker
+     *        documentation.
+     *        </p>
+     *        </dd>
+     *        <dt>gelf</dt>
+     *        <dd>
+     *        <p>
+     *        Specifies the Graylog Extended Format (GELF) logging driver. For more information, including usage and
+     *        options, see <a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog Extended Format
+     *        logging driver</a> in the Docker documentation.
+     *        </p>
+     *        </dd>
+     *        <dt>journald</dt>
+     *        <dd>
+     *        <p>
+     *        Specifies the journald logging driver. For more information, including usage and options, see <a
+     *        href="https://docs.docker.com/config/containers/logging/journald/">Journald logging driver</a> in the
+     *        Docker documentation.
+     *        </p>
+     *        </dd>
+     *        <dt>json-file</dt>
+     *        <dd>
+     *        <p>
+     *        Specifies the JSON file logging driver. For more information, including usage and options, see <a
+     *        href="https://docs.docker.com/config/containers/logging/json-file/">JSON File logging driver</a> in the
+     *        Docker documentation.
+     *        </p>
+     *        </dd>
+     *        <dt>splunk</dt>
+     *        <dd>
+     *        <p>
+     *        Specifies the Splunk logging driver. For more information, including usage and options, see <a
+     *        href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging driver</a> in the Docker
+     *        documentation.
+     *        </p>
+     *        </dd>
+     *        <dt>syslog</dt>
+     *        <dd>
+     *        <p>
+     *        Specifies the syslog logging driver. For more information, including usage and options, see <a
+     *        href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging driver</a> in the Docker
+     *        documentation.
+     *        </p>
+     *        </dd>
+     *        </dl>
      *        <note>
      *        <p>
      *        If you have a custom driver that is not listed earlier that you would like to work with the Amazon ECS
@@ -421,13 +911,13 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The secrets to pass to the log configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying Sensitive
+     * Data</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @return The secrets to pass to the log configuration. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html"
-     *         >Specifying Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+     *         Sensitive Data</a> in the <i>AWS Batch User Guide</i>.
      */
 
     public java.util.List<Secret> getSecretOptions() {
@@ -437,14 +927,14 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The secrets to pass to the log configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying Sensitive
+     * Data</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param secretOptions
      *        The secrets to pass to the log configuration. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html"
-     *        >Specifying Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+     *        Sensitive Data</a> in the <i>AWS Batch User Guide</i>.
      */
 
     public void setSecretOptions(java.util.Collection<Secret> secretOptions) {
@@ -459,8 +949,8 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The secrets to pass to the log configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying Sensitive
+     * Data</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -470,8 +960,8 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * 
      * @param secretOptions
      *        The secrets to pass to the log configuration. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html"
-     *        >Specifying Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+     *        Sensitive Data</a> in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -488,14 +978,14 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The secrets to pass to the log configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying Sensitive
+     * Data</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param secretOptions
      *        The secrets to pass to the log configuration. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html"
-     *        >Specifying Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+     *        Sensitive Data</a> in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

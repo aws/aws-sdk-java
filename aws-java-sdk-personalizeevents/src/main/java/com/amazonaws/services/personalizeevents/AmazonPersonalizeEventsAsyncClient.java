@@ -109,6 +109,72 @@ public class AmazonPersonalizeEventsAsyncClient extends AmazonPersonalizeEventsC
         });
     }
 
+    @Override
+    public java.util.concurrent.Future<PutItemsResult> putItemsAsync(PutItemsRequest request) {
+
+        return putItemsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutItemsResult> putItemsAsync(final PutItemsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutItemsRequest, PutItemsResult> asyncHandler) {
+        final PutItemsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutItemsResult>() {
+            @Override
+            public PutItemsResult call() throws Exception {
+                PutItemsResult result = null;
+
+                try {
+                    result = executePutItems(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutUsersResult> putUsersAsync(PutUsersRequest request) {
+
+        return putUsersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutUsersResult> putUsersAsync(final PutUsersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutUsersRequest, PutUsersResult> asyncHandler) {
+        final PutUsersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutUsersResult>() {
+            @Override
+            public PutUsersResult call() throws Exception {
+                PutUsersResult result = null;
+
+                try {
+                    result = executePutUsers(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
     /**
      * Shuts down the client, releasing all managed resources. This includes forcibly terminating all pending
      * asynchronous service calls. Clients who wish to give pending asynchronous service calls time to complete should

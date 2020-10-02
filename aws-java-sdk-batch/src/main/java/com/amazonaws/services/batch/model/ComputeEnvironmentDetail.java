@@ -48,6 +48,12 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
     private String ecsClusterArn;
     /**
      * <p>
+     * The tags applied to the compute environment.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
+    /**
+     * <p>
      * The type of the compute environment.
      * </p>
      */
@@ -212,6 +218,74 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
 
     public ComputeEnvironmentDetail withEcsClusterArn(String ecsClusterArn) {
         setEcsClusterArn(ecsClusterArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags applied to the compute environment.
+     * </p>
+     * 
+     * @return The tags applied to the compute environment.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags applied to the compute environment.
+     * </p>
+     * 
+     * @param tags
+     *        The tags applied to the compute environment.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags applied to the compute environment.
+     * </p>
+     * 
+     * @param tags
+     *        The tags applied to the compute environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComputeEnvironmentDetail withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see ComputeEnvironmentDetail#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComputeEnvironmentDetail addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComputeEnvironmentDetail clearTagsEntries() {
+        this.tags = null;
         return this;
     }
 
@@ -691,6 +765,8 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
             sb.append("ComputeEnvironmentArn: ").append(getComputeEnvironmentArn()).append(",");
         if (getEcsClusterArn() != null)
             sb.append("EcsClusterArn: ").append(getEcsClusterArn()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getState() != null)
@@ -729,6 +805,10 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
             return false;
         if (other.getEcsClusterArn() != null && other.getEcsClusterArn().equals(this.getEcsClusterArn()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
@@ -764,6 +844,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getComputeEnvironmentName() == null) ? 0 : getComputeEnvironmentName().hashCode());
         hashCode = prime * hashCode + ((getComputeEnvironmentArn() == null) ? 0 : getComputeEnvironmentArn().hashCode());
         hashCode = prime * hashCode + ((getEcsClusterArn() == null) ? 0 : getEcsClusterArn().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());

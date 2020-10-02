@@ -181,6 +181,12 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private java.util.List<String> alpnPolicy;
+    /**
+     * <p>
+     * The tags to assign to the listener.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -1388,6 +1394,76 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The tags to assign to the listener.
+     * </p>
+     * 
+     * @return The tags to assign to the listener.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the listener.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to assign to the listener.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the listener.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to assign to the listener.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateListenerRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the listener.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to assign to the listener.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateListenerRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1412,7 +1488,9 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getDefaultActions() != null)
             sb.append("DefaultActions: ").append(getDefaultActions()).append(",");
         if (getAlpnPolicy() != null)
-            sb.append("AlpnPolicy: ").append(getAlpnPolicy());
+            sb.append("AlpnPolicy: ").append(getAlpnPolicy()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -1455,6 +1533,10 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getAlpnPolicy() != null && other.getAlpnPolicy().equals(this.getAlpnPolicy()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -1470,6 +1552,7 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getCertificates() == null) ? 0 : getCertificates().hashCode());
         hashCode = prime * hashCode + ((getDefaultActions() == null) ? 0 : getDefaultActions().hashCode());
         hashCode = prime * hashCode + ((getAlpnPolicy() == null) ? 0 : getAlpnPolicy().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

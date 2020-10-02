@@ -48,6 +48,10 @@ public class SubmitJobResultJsonUnmarshaller implements Unmarshaller<SubmitJobRe
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("jobArn", targetDepth)) {
+                    context.nextToken();
+                    submitJobResult.setJobArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("jobName", targetDepth)) {
                     context.nextToken();
                     submitJobResult.setJobName(context.getUnmarshaller(String.class).unmarshall(context));

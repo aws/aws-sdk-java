@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class JobSummaryMarshaller {
 
+    private static final MarshallingInfo<String> JOBARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("jobArn").build();
     private static final MarshallingInfo<String> JOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("jobId").build();
     private static final MarshallingInfo<String> JOBNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -64,6 +66,7 @@ public class JobSummaryMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(jobSummary.getJobArn(), JOBARN_BINDING);
             protocolMarshaller.marshall(jobSummary.getJobId(), JOBID_BINDING);
             protocolMarshaller.marshall(jobSummary.getJobName(), JOBNAME_BINDING);
             protocolMarshaller.marshall(jobSummary.getCreatedAt(), CREATEDAT_BINDING);

@@ -30,6 +30,12 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the job.
+     * </p>
+     */
+    private String jobArn;
+    /**
+     * <p>
      * The ID of the job.
      * </p>
      */
@@ -92,6 +98,46 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private NodePropertiesSummary nodeProperties;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the job.
+     * </p>
+     * 
+     * @param jobArn
+     *        The Amazon Resource Name (ARN) of the job.
+     */
+
+    public void setJobArn(String jobArn) {
+        this.jobArn = jobArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the job.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the job.
+     */
+
+    public String getJobArn() {
+        return this.jobArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the job.
+     * </p>
+     * 
+     * @param jobArn
+     *        The Amazon Resource Name (ARN) of the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobSummary withJobArn(String jobArn) {
+        setJobArn(jobArn);
+        return this;
+    }
 
     /**
      * <p>
@@ -551,6 +597,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getJobArn() != null)
+            sb.append("JobArn: ").append(getJobArn()).append(",");
         if (getJobId() != null)
             sb.append("JobId: ").append(getJobId()).append(",");
         if (getJobName() != null)
@@ -585,6 +633,10 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof JobSummary == false)
             return false;
         JobSummary other = (JobSummary) obj;
+        if (other.getJobArn() == null ^ this.getJobArn() == null)
+            return false;
+        if (other.getJobArn() != null && other.getJobArn().equals(this.getJobArn()) == false)
+            return false;
         if (other.getJobId() == null ^ this.getJobId() == null)
             return false;
         if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
@@ -633,6 +685,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getJobArn() == null) ? 0 : getJobArn().hashCode());
         hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
         hashCode = prime * hashCode + ((getJobName() == null) ? 0 : getJobName().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());

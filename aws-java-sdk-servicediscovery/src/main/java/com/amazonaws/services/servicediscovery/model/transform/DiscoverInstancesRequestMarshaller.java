@@ -37,6 +37,8 @@ public class DiscoverInstancesRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<Map> QUERYPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("QueryParameters").build();
+    private static final MarshallingInfo<Map> OPTIONALPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OptionalParameters").build();
     private static final MarshallingInfo<String> HEALTHSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HealthStatus").build();
 
@@ -60,6 +62,7 @@ public class DiscoverInstancesRequestMarshaller {
             protocolMarshaller.marshall(discoverInstancesRequest.getServiceName(), SERVICENAME_BINDING);
             protocolMarshaller.marshall(discoverInstancesRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(discoverInstancesRequest.getQueryParameters(), QUERYPARAMETERS_BINDING);
+            protocolMarshaller.marshall(discoverInstancesRequest.getOptionalParameters(), OPTIONALPARAMETERS_BINDING);
             protocolMarshaller.marshall(discoverInstancesRequest.getHealthStatus(), HEALTHSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
