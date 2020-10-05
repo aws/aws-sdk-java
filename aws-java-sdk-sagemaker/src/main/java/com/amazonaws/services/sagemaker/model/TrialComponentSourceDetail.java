@@ -49,7 +49,7 @@ public class TrialComponentSourceDetail implements Serializable, Cloneable, Stru
     private ProcessingJob processingJob;
     /**
      * <p>
-     * Information about a transform job that's the source of the trial component.
+     * Information about a transform job that's the source of a trial component.
      * </p>
      */
     private TransformJob transformJob;
@@ -176,11 +176,11 @@ public class TrialComponentSourceDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Information about a transform job that's the source of the trial component.
+     * Information about a transform job that's the source of a trial component.
      * </p>
      * 
      * @param transformJob
-     *        Information about a transform job that's the source of the trial component.
+     *        Information about a transform job that's the source of a trial component.
      */
 
     public void setTransformJob(TransformJob transformJob) {
@@ -189,10 +189,10 @@ public class TrialComponentSourceDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Information about a transform job that's the source of the trial component.
+     * Information about a transform job that's the source of a trial component.
      * </p>
      * 
-     * @return Information about a transform job that's the source of the trial component.
+     * @return Information about a transform job that's the source of a trial component.
      */
 
     public TransformJob getTransformJob() {
@@ -201,11 +201,11 @@ public class TrialComponentSourceDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Information about a transform job that's the source of the trial component.
+     * Information about a transform job that's the source of a trial component.
      * </p>
      * 
      * @param transformJob
-     *        Information about a transform job that's the source of the trial component.
+     *        Information about a transform job that's the source of a trial component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

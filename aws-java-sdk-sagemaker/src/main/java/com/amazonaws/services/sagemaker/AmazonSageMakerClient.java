@@ -637,27 +637,90 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Creates a <code>Domain</code> used by SageMaker Studio. A domain consists of an associated directory, a list of
-     * authorized users, and a variety of security, application, policy, and Amazon Virtual Private Cloud (VPC)
-     * configurations. An AWS account is limited to one domain per region. Users within a domain can share notebook
-     * files and other artifacts with each other.
+     * Creates a <code>Domain</code> used by Amazon SageMaker Studio. A domain consists of an associated Amazon Elastic
+     * File System (EFS) volume, a list of authorized users, and a variety of security, application, policy, and Amazon
+     * Virtual Private Cloud (VPC) configurations. An AWS account is limited to one domain per region. Users within a
+     * domain can share notebook files and other artifacts with each other.
      * </p>
      * <p>
-     * When a domain is created, an Amazon Elastic File System (EFS) volume is also created for use by all of the users
-     * within the domain. Each user receives a private home directory within the EFS for notebooks, Git repositories,
-     * and data files.
+     * When a domain is created, an EFS volume is created for use by all of the users within the domain. Each user
+     * receives a private home directory within the EFS volume for notebooks, Git repositories, and data files.
      * </p>
      * <p>
-     * All traffic between the domain and the EFS volume is communicated through the specified subnet IDs. All other
-     * traffic goes over the Internet through an Amazon SageMaker system VPC. The EFS traffic uses the NFS/TCP protocol
-     * over port 2049.
+     * <b>VPC configuration</b>
      * </p>
-     * <important>
      * <p>
-     * NFS traffic over TCP on port 2049 needs to be allowed in both inbound and outbound rules in order to launch a
-     * SageMaker Studio app successfully.
+     * All SageMaker Studio traffic between the domain and the EFS volume is through the specified VPC and subnets. For
+     * other Studio traffic, you specify the <code>AppNetworkAccessType</code> parameter.
+     * <code>AppNetworkAccessType</code> corresponds to the VPC mode that's chosen when you onboard to Studio. The
+     * following options are available:
      * </p>
-     * </important>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic goes through a VPC managed by Amazon SageMaker, which allows
+     * internet access. This is the default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets. Internet access is disabled
+     * by default. To allow internet access, you must specify a NAT gateway.
+     * </p>
+     * <p>
+     * When internet access is disabled, you won't be able to train or host models unless your VPC has an interface
+     * endpoint (PrivateLink) or a NAT gateway and your security groups allow outbound connections.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b> <code>VpcOnly</code> mode</b>
+     * </p>
+     * <p>
+     * When you specify <code>VpcOnly</code>, you must specify the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Security group inbound and outbound rules to allow NFS traffic over TCP on port 2049 between the domain and the
+     * EFS volume
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Security group inbound and outbound rules to allow traffic between the JupyterServer app and the KernelGateway
+     * apps
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Interface endpoints to access the SageMaker API and SageMaker runtime
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security groups for your
+     * VPC</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html">VPC with public and private subnets
+     * (NAT)</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/interface-vpc-endpoint.html">Connect to SageMaker
+     * through a VPC interface endpoint</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createDomainRequest
      * @return Result of the CreateDomain operation returned by the service.
@@ -1681,6 +1744,12 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * with the Domain's Amazon Elastic File System (EFS) volume. This operation can only be called when the
      * authentication mode equals IAM.
      * </p>
+     * <note>
+     * <p>
+     * The URL that you get from a call to <code>CreatePresignedDomainUrl</code> is valid only for 5 minutes. If you try
+     * to use the URL after the 5-minute limit expires, you are directed to the AWS console sign-in page.
+     * </p>
+     * </note>
      * 
      * @param createPresignedDomainUrlRequest
      * @return Result of the CreatePresignedDomainUrl operation returned by the service.

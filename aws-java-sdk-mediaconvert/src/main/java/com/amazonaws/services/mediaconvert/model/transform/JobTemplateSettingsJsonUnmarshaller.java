@@ -74,6 +74,10 @@ public class JobTemplateSettingsJsonUnmarshaller implements Unmarshaller<JobTemp
                     context.nextToken();
                     jobTemplateSettings.setNielsenConfiguration(NielsenConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("nielsenNonLinearWatermark", targetDepth)) {
+                    context.nextToken();
+                    jobTemplateSettings.setNielsenNonLinearWatermark(NielsenNonLinearWatermarkSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("outputGroups", targetDepth)) {
                     context.nextToken();
                     jobTemplateSettings.setOutputGroups(new ListUnmarshaller<OutputGroup>(OutputGroupJsonUnmarshaller.getInstance())

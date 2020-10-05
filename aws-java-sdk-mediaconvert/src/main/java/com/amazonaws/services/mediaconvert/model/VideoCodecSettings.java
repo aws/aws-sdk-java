@@ -21,8 +21,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to video
  * encoding. The settings in this group vary depending on the value that you choose for Video codec (Codec). For each
  * codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings
- * object pairs. * FRAME_CAPTURE, FrameCaptureSettings * AV1, Av1Settings * H_264, H264Settings * H_265, H265Settings *
- * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VP8, Vp8Settings * VP9, Vp9Settings
+ * object pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * H_264,
+ * H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VC3, Vc3Settings * VP8,
+ * Vp8Settings * VP9, Vp9Settings
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VideoCodecSettings" target="_top">AWS
  *      API Documentation</a>
@@ -32,6 +33,12 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
 
     /** Required when you set Codec, under VideoDescription>CodecSettings to the value AV1. */
     private Av1Settings av1Settings;
+    /**
+     * Required when you set your output video codec to AVC-Intra. For more information about the AVC-I settings, see
+     * the relevant specification. For detailed information about SD and HD in AVC-I, see
+     * https://ieeexplore.ieee.org/document/7290936.
+     */
+    private AvcIntraSettings avcIntraSettings;
     /** Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec. */
     private String codec;
     /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value FRAME_CAPTURE. */
@@ -44,6 +51,8 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     private Mpeg2Settings mpeg2Settings;
     /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value PRORES. */
     private ProresSettings proresSettings;
+    /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VC3 */
+    private Vc3Settings vc3Settings;
     /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP8. */
     private Vp8Settings vp8Settings;
     /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP9. */
@@ -80,6 +89,52 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
 
     public VideoCodecSettings withAv1Settings(Av1Settings av1Settings) {
         setAv1Settings(av1Settings);
+        return this;
+    }
+
+    /**
+     * Required when you set your output video codec to AVC-Intra. For more information about the AVC-I settings, see
+     * the relevant specification. For detailed information about SD and HD in AVC-I, see
+     * https://ieeexplore.ieee.org/document/7290936.
+     * 
+     * @param avcIntraSettings
+     *        Required when you set your output video codec to AVC-Intra. For more information about the AVC-I settings,
+     *        see the relevant specification. For detailed information about SD and HD in AVC-I, see
+     *        https://ieeexplore.ieee.org/document/7290936.
+     */
+
+    public void setAvcIntraSettings(AvcIntraSettings avcIntraSettings) {
+        this.avcIntraSettings = avcIntraSettings;
+    }
+
+    /**
+     * Required when you set your output video codec to AVC-Intra. For more information about the AVC-I settings, see
+     * the relevant specification. For detailed information about SD and HD in AVC-I, see
+     * https://ieeexplore.ieee.org/document/7290936.
+     * 
+     * @return Required when you set your output video codec to AVC-Intra. For more information about the AVC-I
+     *         settings, see the relevant specification. For detailed information about SD and HD in AVC-I, see
+     *         https://ieeexplore.ieee.org/document/7290936.
+     */
+
+    public AvcIntraSettings getAvcIntraSettings() {
+        return this.avcIntraSettings;
+    }
+
+    /**
+     * Required when you set your output video codec to AVC-Intra. For more information about the AVC-I settings, see
+     * the relevant specification. For detailed information about SD and HD in AVC-I, see
+     * https://ieeexplore.ieee.org/document/7290936.
+     * 
+     * @param avcIntraSettings
+     *        Required when you set your output video codec to AVC-Intra. For more information about the AVC-I settings,
+     *        see the relevant specification. For detailed information about SD and HD in AVC-I, see
+     *        https://ieeexplore.ieee.org/document/7290936.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VideoCodecSettings withAvcIntraSettings(AvcIntraSettings avcIntraSettings) {
+        setAvcIntraSettings(avcIntraSettings);
         return this;
     }
 
@@ -305,6 +360,40 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VC3
+     * 
+     * @param vc3Settings
+     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VC3
+     */
+
+    public void setVc3Settings(Vc3Settings vc3Settings) {
+        this.vc3Settings = vc3Settings;
+    }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VC3
+     * 
+     * @return Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VC3
+     */
+
+    public Vc3Settings getVc3Settings() {
+        return this.vc3Settings;
+    }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VC3
+     * 
+     * @param vc3Settings
+     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VC3
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VideoCodecSettings withVc3Settings(Vc3Settings vc3Settings) {
+        setVc3Settings(vc3Settings);
+        return this;
+    }
+
+    /**
      * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP8.
      * 
      * @param vp8Settings
@@ -386,6 +475,8 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
         sb.append("{");
         if (getAv1Settings() != null)
             sb.append("Av1Settings: ").append(getAv1Settings()).append(",");
+        if (getAvcIntraSettings() != null)
+            sb.append("AvcIntraSettings: ").append(getAvcIntraSettings()).append(",");
         if (getCodec() != null)
             sb.append("Codec: ").append(getCodec()).append(",");
         if (getFrameCaptureSettings() != null)
@@ -398,6 +489,8 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
             sb.append("Mpeg2Settings: ").append(getMpeg2Settings()).append(",");
         if (getProresSettings() != null)
             sb.append("ProresSettings: ").append(getProresSettings()).append(",");
+        if (getVc3Settings() != null)
+            sb.append("Vc3Settings: ").append(getVc3Settings()).append(",");
         if (getVp8Settings() != null)
             sb.append("Vp8Settings: ").append(getVp8Settings()).append(",");
         if (getVp9Settings() != null)
@@ -419,6 +512,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
         if (other.getAv1Settings() == null ^ this.getAv1Settings() == null)
             return false;
         if (other.getAv1Settings() != null && other.getAv1Settings().equals(this.getAv1Settings()) == false)
+            return false;
+        if (other.getAvcIntraSettings() == null ^ this.getAvcIntraSettings() == null)
+            return false;
+        if (other.getAvcIntraSettings() != null && other.getAvcIntraSettings().equals(this.getAvcIntraSettings()) == false)
             return false;
         if (other.getCodec() == null ^ this.getCodec() == null)
             return false;
@@ -444,6 +541,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getProresSettings() != null && other.getProresSettings().equals(this.getProresSettings()) == false)
             return false;
+        if (other.getVc3Settings() == null ^ this.getVc3Settings() == null)
+            return false;
+        if (other.getVc3Settings() != null && other.getVc3Settings().equals(this.getVc3Settings()) == false)
+            return false;
         if (other.getVp8Settings() == null ^ this.getVp8Settings() == null)
             return false;
         if (other.getVp8Settings() != null && other.getVp8Settings().equals(this.getVp8Settings()) == false)
@@ -461,12 +562,14 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAv1Settings() == null) ? 0 : getAv1Settings().hashCode());
+        hashCode = prime * hashCode + ((getAvcIntraSettings() == null) ? 0 : getAvcIntraSettings().hashCode());
         hashCode = prime * hashCode + ((getCodec() == null) ? 0 : getCodec().hashCode());
         hashCode = prime * hashCode + ((getFrameCaptureSettings() == null) ? 0 : getFrameCaptureSettings().hashCode());
         hashCode = prime * hashCode + ((getH264Settings() == null) ? 0 : getH264Settings().hashCode());
         hashCode = prime * hashCode + ((getH265Settings() == null) ? 0 : getH265Settings().hashCode());
         hashCode = prime * hashCode + ((getMpeg2Settings() == null) ? 0 : getMpeg2Settings().hashCode());
         hashCode = prime * hashCode + ((getProresSettings() == null) ? 0 : getProresSettings().hashCode());
+        hashCode = prime * hashCode + ((getVc3Settings() == null) ? 0 : getVc3Settings().hashCode());
         hashCode = prime * hashCode + ((getVp8Settings() == null) ? 0 : getVp8Settings().hashCode());
         hashCode = prime * hashCode + ((getVp9Settings() == null) ? 0 : getVp9Settings().hashCode());
         return hashCode;

@@ -126,8 +126,8 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable,
      * </p>
      * <p>
      * For current minimum and maximum provisioned throughput values, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
-     * DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table
+     * Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private ProvisionedThroughputDescription provisionedThroughput;
@@ -967,16 +967,16 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable,
      * </p>
      * <p>
      * For current minimum and maximum provisioned throughput values, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
-     * DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table
+     * Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param provisionedThroughput
      *        Represents the provisioned throughput settings for the specified global secondary index.</p>
      *        <p>
      *        For current minimum and maximum provisioned throughput values, see <a
-     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
-     *        <i>Amazon DynamoDB Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and
+     *        Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public void setProvisionedThroughput(ProvisionedThroughputDescription provisionedThroughput) {
@@ -989,15 +989,15 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable,
      * </p>
      * <p>
      * For current minimum and maximum provisioned throughput values, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
-     * DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table
+     * Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return Represents the provisioned throughput settings for the specified global secondary index.</p>
      *         <p>
      *         For current minimum and maximum provisioned throughput values, see <a
-     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
-     *         <i>Amazon DynamoDB Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and
+     *         Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public ProvisionedThroughputDescription getProvisionedThroughput() {
@@ -1010,16 +1010,16 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable,
      * </p>
      * <p>
      * For current minimum and maximum provisioned throughput values, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
-     * DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table
+     * Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param provisionedThroughput
      *        Represents the provisioned throughput settings for the specified global secondary index.</p>
      *        <p>
      *        For current minimum and maximum provisioned throughput values, see <a
-     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
-     *        <i>Amazon DynamoDB Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and
+     *        Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -40,6 +40,8 @@ public class JobTemplateSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("motionImageInserter").build();
     private static final MarshallingInfo<StructuredPojo> NIELSENCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nielsenConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> NIELSENNONLINEARWATERMARK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nielsenNonLinearWatermark").build();
     private static final MarshallingInfo<List> OUTPUTGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("outputGroups").build();
     private static final MarshallingInfo<StructuredPojo> TIMECODECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -69,6 +71,7 @@ public class JobTemplateSettingsMarshaller {
             protocolMarshaller.marshall(jobTemplateSettings.getInputs(), INPUTS_BINDING);
             protocolMarshaller.marshall(jobTemplateSettings.getMotionImageInserter(), MOTIONIMAGEINSERTER_BINDING);
             protocolMarshaller.marshall(jobTemplateSettings.getNielsenConfiguration(), NIELSENCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(jobTemplateSettings.getNielsenNonLinearWatermark(), NIELSENNONLINEARWATERMARK_BINDING);
             protocolMarshaller.marshall(jobTemplateSettings.getOutputGroups(), OUTPUTGROUPS_BINDING);
             protocolMarshaller.marshall(jobTemplateSettings.getTimecodeConfig(), TIMECODECONFIG_BINDING);
             protocolMarshaller.marshall(jobTemplateSettings.getTimedMetadataInsertion(), TIMEDMETADATAINSERTION_BINDING);

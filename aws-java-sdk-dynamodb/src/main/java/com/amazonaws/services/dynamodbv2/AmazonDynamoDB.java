@@ -186,8 +186,8 @@ public interface AmazonDynamoDB {
      *         The operation tried to access a nonexistent table or index. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
      * @throws RequestLimitExceededException
-     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
-     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
+     *         Throughput exceeds the current throughput quota for your account. Please contact AWS Support at <a
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a quota increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.BatchGetItem
@@ -327,8 +327,8 @@ public interface AmazonDynamoDB {
      *         An item collection is too large. This exception is only returned for tables that have one or more local
      *         secondary indexes.
      * @throws RequestLimitExceededException
-     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
-     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
+     *         Throughput exceeds the current throughput quota for your account. Please contact AWS Support at <a
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a quota increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.BatchWriteItem
@@ -420,7 +420,7 @@ public interface AmazonDynamoDB {
      *         DynamoDB might temporarily reduce the number of concurrent operations.
      *         </p>
      *         <p>
-     *         There is a soft account limit of 256 tables.
+     *         There is a soft account quota of 256 tables.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.CreateBackup
@@ -526,7 +526,7 @@ public interface AmazonDynamoDB {
      *         DynamoDB might temporarily reduce the number of concurrent operations.
      *         </p>
      *         <p>
-     *         There is a soft account limit of 256 tables.
+     *         There is a soft account quota of 256 tables.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws GlobalTableAlreadyExistsException
@@ -581,7 +581,7 @@ public interface AmazonDynamoDB {
      *         DynamoDB might temporarily reduce the number of concurrent operations.
      *         </p>
      *         <p>
-     *         There is a soft account limit of 256 tables.
+     *         There is a soft account quota of 256 tables.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.CreateTable
@@ -627,7 +627,7 @@ public interface AmazonDynamoDB {
      *         DynamoDB might temporarily reduce the number of concurrent operations.
      *         </p>
      *         <p>
-     *         There is a soft account limit of 256 tables.
+     *         There is a soft account quota of 256 tables.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.DeleteBackup
@@ -674,8 +674,8 @@ public interface AmazonDynamoDB {
      * @throws TransactionConflictException
      *         Operation was rejected because there is an ongoing transaction for the item.
      * @throws RequestLimitExceededException
-     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
-     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
+     *         Throughput exceeds the current throughput quota for your account. Please contact AWS Support at <a
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a quota increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.DeleteItem
@@ -747,7 +747,7 @@ public interface AmazonDynamoDB {
      *         DynamoDB might temporarily reduce the number of concurrent operations.
      *         </p>
      *         <p>
-     *         There is a soft account limit of 256 tables.
+     *         There is a soft account quota of 256 tables.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.DeleteTable
@@ -899,22 +899,22 @@ public interface AmazonDynamoDB {
 
     /**
      * <p>
-     * Returns the current provisioned-capacity limits for your AWS account in a Region, both for the Region as a whole
+     * Returns the current provisioned-capacity quotas for your AWS account in a Region, both for the Region as a whole
      * and for any one DynamoDB table that you create there.
      * </p>
      * <p>
-     * When you establish an AWS account, the account has initial limits on the maximum read capacity units and write
+     * When you establish an AWS account, the account has initial quotas on the maximum read capacity units and write
      * capacity units that you can provision across all of your DynamoDB tables in a given Region. Also, there are
-     * per-table limits that apply when you create a table there. For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> page in the
-     * <i>Amazon DynamoDB Developer Guide</i>.
+     * per-table quotas that apply when you create a table there. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table
+     * Quotas</a> page in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
-     * Although you can increase these limits by filing a case at <a
+     * Although you can increase these quotas by filing a case at <a
      * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>, obtaining the increase is not
      * instantaneous. The <code>DescribeLimits</code> action lets you write code to compare the capacity you are
-     * currently using to those limits imposed by your account so that you have enough time to apply for an increase
-     * before you hit a limit.
+     * currently using to those quotas imposed by your account so that you have enough time to apply for an increase
+     * before you hit a quota.
      * </p>
      * <p>
      * For example, you could use one of the AWS SDKs to do the following:
@@ -922,7 +922,7 @@ public interface AmazonDynamoDB {
      * <ol>
      * <li>
      * <p>
-     * Call <code>DescribeLimits</code> for a particular Region to obtain your current account limits on provisioned
+     * Call <code>DescribeLimits</code> for a particular Region to obtain your current account quotas on provisioned
      * capacity there.
      * </p>
      * </li>
@@ -963,22 +963,22 @@ public interface AmazonDynamoDB {
      * </li>
      * <li>
      * <p>
-     * Report the account limits for that Region returned by <code>DescribeLimits</code>, along with the total current
+     * Report the account quotas for that Region returned by <code>DescribeLimits</code>, along with the total current
      * provisioned capacity levels you have calculated.
      * </p>
      * </li>
      * </ol>
      * <p>
-     * This will let you see whether you are getting close to your account-level limits.
+     * This will let you see whether you are getting close to your account-level quotas.
      * </p>
      * <p>
-     * The per-table limits apply only when you are creating a new table. They restrict the sum of the provisioned
+     * The per-table quotas apply only when you are creating a new table. They restrict the sum of the provisioned
      * capacity of the new table itself and all its global secondary indexes.
      * </p>
      * <p>
-     * For existing tables and their GSIs, DynamoDB doesn't let you increase provisioned capacity extremely rapidly. But
-     * the only upper limit that applies is that the aggregate provisioned capacity over all your tables and GSIs cannot
-     * exceed either of the per-account limits.
+     * For existing tables and their GSIs, DynamoDB doesn't let you increase provisioned capacity extremely rapidly, but
+     * the only quota that applies is that the aggregate provisioned capacity over all your tables and GSIs cannot
+     * exceed either of the per-account quotas.
      * </p>
      * <note>
      * <p>
@@ -1104,8 +1104,8 @@ public interface AmazonDynamoDB {
      *         The operation tried to access a nonexistent table or index. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
      * @throws RequestLimitExceededException
-     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
-     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
+     *         Throughput exceeds the current throughput quota for your account. Please contact AWS Support at <a
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a quota increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.GetItem
@@ -1132,11 +1132,11 @@ public interface AmazonDynamoDB {
      * <p>
      * List backups associated with an AWS account. To list backups for a given table, specify <code>TableName</code>.
      * <code>ListBackups</code> returns a paginated list of results with at most 1 MB worth of items in a page. You can
-     * also specify a limit for the maximum number of entries to be returned in a page.
+     * also specify a maximum number of entries to be returned in a page.
      * </p>
      * <p>
-     * In the request, start time is inclusive, but end time is exclusive. Note that these limits are for the time at
-     * which the original backup was requested.
+     * In the request, start time is inclusive, but end time is exclusive. Note that these boundaries are for the time
+     * at which the original backup was requested.
      * </p>
      * <p>
      * You can call <code>ListBackups</code> a maximum of five times per second.
@@ -1380,8 +1380,8 @@ public interface AmazonDynamoDB {
      * @throws TransactionConflictException
      *         Operation was rejected because there is an ongoing transaction for the item.
      * @throws RequestLimitExceededException
-     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
-     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
+     *         Throughput exceeds the current throughput quota for your account. Please contact AWS Support at <a
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a quota increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.PutItem
@@ -1475,8 +1475,8 @@ public interface AmazonDynamoDB {
      *         The operation tried to access a nonexistent table or index. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
      * @throws RequestLimitExceededException
-     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
-     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
+     *         Throughput exceeds the current throughput quota for your account. Please contact AWS Support at <a
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a quota increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.Query
@@ -1554,7 +1554,7 @@ public interface AmazonDynamoDB {
      *         DynamoDB might temporarily reduce the number of concurrent operations.
      *         </p>
      *         <p>
-     *         There is a soft account limit of 256 tables.
+     *         There is a soft account quota of 256 tables.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.RestoreTableFromBackup
@@ -1666,7 +1666,7 @@ public interface AmazonDynamoDB {
      *         DynamoDB might temporarily reduce the number of concurrent operations.
      *         </p>
      *         <p>
-     *         There is a soft account limit of 256 tables.
+     *         There is a soft account quota of 256 tables.
      * @throws InvalidRestoreTimeException
      *         An invalid restore time was specified. RestoreDateTime must be between EarliestRestorableDateTime and
      *         LatestRestorableDateTime.
@@ -1727,8 +1727,8 @@ public interface AmazonDynamoDB {
      *         The operation tried to access a nonexistent table or index. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
      * @throws RequestLimitExceededException
-     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
-     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
+     *         Throughput exceeds the current throughput quota for your account. Please contact AWS Support at <a
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a quota increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.Scan
@@ -1786,7 +1786,7 @@ public interface AmazonDynamoDB {
      *         DynamoDB might temporarily reduce the number of concurrent operations.
      *         </p>
      *         <p>
-     *         There is a soft account limit of 256 tables.
+     *         There is a soft account quota of 256 tables.
      * @throws ResourceNotFoundException
      *         The operation tried to access a nonexistent table or index. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
@@ -2145,8 +2145,8 @@ public interface AmazonDynamoDB {
      *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff"
      *         >Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @throws RequestLimitExceededException
-     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
-     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
+     *         Throughput exceeds the current throughput quota for your account. Please contact AWS Support at <a
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a quota increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.TransactGetItems
@@ -2552,8 +2552,8 @@ public interface AmazonDynamoDB {
      *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff"
      *         >Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @throws RequestLimitExceededException
-     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
-     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
+     *         Throughput exceeds the current throughput quota for your account. Please contact AWS Support at <a
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a quota increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.TransactWriteItems
@@ -2589,7 +2589,7 @@ public interface AmazonDynamoDB {
      *         DynamoDB might temporarily reduce the number of concurrent operations.
      *         </p>
      *         <p>
-     *         There is a soft account limit of 256 tables.
+     *         There is a soft account quota of 256 tables.
      * @throws ResourceNotFoundException
      *         The operation tried to access a nonexistent table or index. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
@@ -2732,7 +2732,7 @@ public interface AmazonDynamoDB {
      *         DynamoDB might temporarily reduce the number of concurrent operations.
      *         </p>
      *         <p>
-     *         There is a soft account limit of 256 tables.
+     *         There is a soft account quota of 256 tables.
      * @throws ResourceInUseException
      *         The operation conflicts with the resource's availability. For example, you attempted to recreate an
      *         existing table, or tried to delete a table currently in the <code>CREATING</code> state.
@@ -2776,8 +2776,8 @@ public interface AmazonDynamoDB {
      * @throws TransactionConflictException
      *         Operation was rejected because there is an ongoing transaction for the item.
      * @throws RequestLimitExceededException
-     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
-     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
+     *         Throughput exceeds the current throughput quota for your account. Please contact AWS Support at <a
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a quota increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.UpdateItem
@@ -2862,7 +2862,7 @@ public interface AmazonDynamoDB {
      *         DynamoDB might temporarily reduce the number of concurrent operations.
      *         </p>
      *         <p>
-     *         There is a soft account limit of 256 tables.
+     *         There is a soft account quota of 256 tables.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.UpdateTable
@@ -2912,7 +2912,7 @@ public interface AmazonDynamoDB {
      *         DynamoDB might temporarily reduce the number of concurrent operations.
      *         </p>
      *         <p>
-     *         There is a soft account limit of 256 tables.
+     *         There is a soft account quota of 256 tables.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.UpdateTableReplicaAutoScaling
@@ -2982,7 +2982,7 @@ public interface AmazonDynamoDB {
      *         DynamoDB might temporarily reduce the number of concurrent operations.
      *         </p>
      *         <p>
-     *         There is a soft account limit of 256 tables.
+     *         There is a soft account quota of 256 tables.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.UpdateTimeToLive

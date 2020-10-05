@@ -15,7 +15,8 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+ * Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies to
+ * Spatial adaptive quantization (spatialAdaptiveQuantization).
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Av1AdaptiveQuantization {

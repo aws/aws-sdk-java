@@ -15,15 +15,14 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Choose the scan line type for the output. Choose Progressive (PROGRESSIVE) to create a progressive output, regardless
- * of the scan type of your input. Choose Top Field First (TOP_FIELD) or Bottom Field First (BOTTOM_FIELD) to create an
- * output that's interlaced with the same field polarity throughout. Choose Follow, Default Top (FOLLOW_TOP_FIELD) or
- * Follow, Default Bottom (FOLLOW_BOTTOM_FIELD) to create an interlaced output with the same field polarity as the
- * source. If the source is interlaced, the output will be interlaced with the same polarity as the source (it will
- * follow the source). The output could therefore be a mix of "top field first" and "bottom field first". If the source
- * is progressive, your output will be interlaced with "top field first" or "bottom field first" polarity, depending on
- * which of the Follow options you chose. If you don't choose a value, the service will default to Progressive
- * (PROGRESSIVE).
+ * Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive
+ * output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first
+ * (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top
+ * (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as
+ * the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output.
+ * Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the
+ * same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field
+ * first, depending on which of the Follow options you choose.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum H265InterlaceMode {

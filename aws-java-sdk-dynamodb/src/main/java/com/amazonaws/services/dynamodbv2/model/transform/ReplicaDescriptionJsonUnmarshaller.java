@@ -79,6 +79,10 @@ public class ReplicaDescriptionJsonUnmarshaller implements Unmarshaller<ReplicaD
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ReplicaInaccessibleDateTime", targetDepth)) {
+                    context.nextToken();
+                    replicaDescription.setReplicaInaccessibleDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -165,7 +165,7 @@ public interface AmazonDynamoDBStreams {
      *         DynamoDB might temporarily reduce the number of concurrent operations.
      *         </p>
      *         <p>
-     *         There is a soft account limit of 256 tables.
+     *         There is a soft account quota of 256 tables.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws ExpiredIteratorException

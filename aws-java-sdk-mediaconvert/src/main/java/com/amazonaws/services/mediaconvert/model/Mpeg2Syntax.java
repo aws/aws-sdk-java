@@ -15,7 +15,8 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Produces a Type D-10 compatible bitstream (SMPTE 356M-2001).
+ * Specify whether this output's video uses the D10 syntax. Keep the default value to not use the syntax. Related
+ * settings: When you choose D10 (D_10) for your MXF profile (profile), you must also set this value to to D10 (D_10).
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Mpeg2Syntax {

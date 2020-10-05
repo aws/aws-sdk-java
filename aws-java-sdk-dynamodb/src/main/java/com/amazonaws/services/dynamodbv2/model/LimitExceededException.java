@@ -29,7 +29,7 @@ import javax.annotation.Generated;
  * reduce the number of concurrent operations.
  * </p>
  * <p>
- * There is a soft account limit of 256 tables.
+ * There is a soft account quota of 256 tables.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -15,7 +15,11 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+ * Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears as a visual flicker that can arise
+ * when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at
+ * the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out
+ * the flicker. This setting is disabled by default. Related setting: In addition to enabling this setting, you must
+ * also set adaptiveQuantization to a value other than Off (OFF).
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum H265FlickerAdaptiveQuantization {

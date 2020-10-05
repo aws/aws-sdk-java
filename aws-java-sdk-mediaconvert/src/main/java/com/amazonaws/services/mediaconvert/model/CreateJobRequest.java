@@ -60,12 +60,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * Optional. When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to
      * the default queue. For more about queues, see the User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
      */
     private String queue;
     /**
      * Required. The IAM role you use for creating this job. For details about permissions, see the User Guide topic at
-     * the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     * the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
      */
     private String role;
     /** JobSettings contains all the transcode settings for a job. */
@@ -418,12 +418,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * Optional. When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to
      * the default queue. For more about queues, see the User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
      * 
      * @param queue
      *        Optional. When you create a job, you can specify a queue to send it to. If you don't specify, the job will
      *        go to the default queue. For more about queues, see the User Guide topic at
-     *        http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
      */
 
     public void setQueue(String queue) {
@@ -433,11 +433,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * Optional. When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to
      * the default queue. For more about queues, see the User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
      * 
      * @return Optional. When you create a job, you can specify a queue to send it to. If you don't specify, the job
      *         will go to the default queue. For more about queues, see the User Guide topic at
-     *         http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
+     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
      */
 
     public String getQueue() {
@@ -447,12 +447,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * Optional. When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to
      * the default queue. For more about queues, see the User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
      * 
      * @param queue
      *        Optional. When you create a job, you can specify a queue to send it to. If you don't specify, the job will
      *        go to the default queue. For more about queues, see the User Guide topic at
-     *        http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -463,11 +463,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * Required. The IAM role you use for creating this job. For details about permissions, see the User Guide topic at
-     * the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     * the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
      * 
      * @param role
      *        Required. The IAM role you use for creating this job. For details about permissions, see the User Guide
-     *        topic at the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     *        topic at the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
      */
 
     public void setRole(String role) {
@@ -476,10 +476,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * Required. The IAM role you use for creating this job. For details about permissions, see the User Guide topic at
-     * the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     * the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
      * 
      * @return Required. The IAM role you use for creating this job. For details about permissions, see the User Guide
-     *         topic at the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     *         topic at the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
      */
 
     public String getRole() {
@@ -488,11 +488,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * Required. The IAM role you use for creating this job. For details about permissions, see the User Guide topic at
-     * the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     * the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
      * 
      * @param role
      *        Required. The IAM role you use for creating this job. For details about permissions, see the User Guide
-     *        topic at the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     *        topic at the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

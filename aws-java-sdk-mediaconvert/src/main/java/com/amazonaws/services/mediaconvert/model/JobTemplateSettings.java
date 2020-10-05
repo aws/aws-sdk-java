@@ -55,6 +55,14 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
      */
     private NielsenConfiguration nielsenConfiguration;
     /**
+     * Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that MediaConvert
+     * uses to generate and place Nielsen watermarks in your output audio. In addition to specifying these values, you
+     * also need to set up your cloud TIC server. These settings apply to every output in your job. The MediaConvert
+     * implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM
+     * Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
+     */
+    private NielsenNonLinearWatermarkSettings nielsenNonLinearWatermark;
+    /**
      * (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All
      * unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as
      * well. Required in (OutputGroups) is a group of settings that apply to the whole group. This required object
@@ -67,7 +75,7 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
     /** Contains settings used to acquire and adjust timecode information from inputs. */
     private TimecodeConfig timecodeConfig;
     /**
-     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed
+     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To include timed
      * metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3
      * insertion (Id3Insertion) objects.
      */
@@ -350,6 +358,67 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that MediaConvert
+     * uses to generate and place Nielsen watermarks in your output audio. In addition to specifying these values, you
+     * also need to set up your cloud TIC server. These settings apply to every output in your job. The MediaConvert
+     * implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM
+     * Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
+     * 
+     * @param nielsenNonLinearWatermark
+     *        Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that
+     *        MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to specifying
+     *        these values, you also need to set up your cloud TIC server. These settings apply to every output in your
+     *        job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark
+     *        SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC]
+     *        Version [5.0.0]
+     */
+
+    public void setNielsenNonLinearWatermark(NielsenNonLinearWatermarkSettings nielsenNonLinearWatermark) {
+        this.nielsenNonLinearWatermark = nielsenNonLinearWatermark;
+    }
+
+    /**
+     * Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that MediaConvert
+     * uses to generate and place Nielsen watermarks in your output audio. In addition to specifying these values, you
+     * also need to set up your cloud TIC server. These settings apply to every output in your job. The MediaConvert
+     * implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM
+     * Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
+     * 
+     * @return Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that
+     *         MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to
+     *         specifying these values, you also need to set up your cloud TIC server. These settings apply to every
+     *         output in your job. The MediaConvert implementation is currently with the following Nielsen versions:
+     *         Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark
+     *         Authenticator [SID_TIC] Version [5.0.0]
+     */
+
+    public NielsenNonLinearWatermarkSettings getNielsenNonLinearWatermark() {
+        return this.nielsenNonLinearWatermark;
+    }
+
+    /**
+     * Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that MediaConvert
+     * uses to generate and place Nielsen watermarks in your output audio. In addition to specifying these values, you
+     * also need to set up your cloud TIC server. These settings apply to every output in your job. The MediaConvert
+     * implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM
+     * Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
+     * 
+     * @param nielsenNonLinearWatermark
+     *        Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that
+     *        MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to specifying
+     *        these values, you also need to set up your cloud TIC server. These settings apply to every output in your
+     *        job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark
+     *        SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC]
+     *        Version [5.0.0]
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobTemplateSettings withNielsenNonLinearWatermark(NielsenNonLinearWatermarkSettings nielsenNonLinearWatermark) {
+        setNielsenNonLinearWatermark(nielsenNonLinearWatermark);
+        return this;
+    }
+
+    /**
      * (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All
      * unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as
      * well. Required in (OutputGroups) is a group of settings that apply to the whole group. This required object
@@ -494,14 +563,14 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed
+     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To include timed
      * metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3
      * insertion (Id3Insertion) objects.
      * 
      * @param timedMetadataInsertion
-     *        Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed
-     *        metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in
-     *        ID3 insertion (Id3Insertion) objects.
+     *        Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To
+     *        include timed metadata, you must enable it here, enable it in each output container, and specify tags and
+     *        timecodes in ID3 insertion (Id3Insertion) objects.
      */
 
     public void setTimedMetadataInsertion(TimedMetadataInsertion timedMetadataInsertion) {
@@ -509,12 +578,12 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed
+     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To include timed
      * metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3
      * insertion (Id3Insertion) objects.
      * 
-     * @return Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include
-     *         timed metadata, you must enable it here, enable it in each output container, and specify tags and
+     * @return Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To
+     *         include timed metadata, you must enable it here, enable it in each output container, and specify tags and
      *         timecodes in ID3 insertion (Id3Insertion) objects.
      */
 
@@ -523,14 +592,14 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed
+     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To include timed
      * metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3
      * insertion (Id3Insertion) objects.
      * 
      * @param timedMetadataInsertion
-     *        Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed
-     *        metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in
-     *        ID3 insertion (Id3Insertion) objects.
+     *        Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To
+     *        include timed metadata, you must enable it here, enable it in each output container, and specify tags and
+     *        timecodes in ID3 insertion (Id3Insertion) objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -563,6 +632,8 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
             sb.append("MotionImageInserter: ").append(getMotionImageInserter()).append(",");
         if (getNielsenConfiguration() != null)
             sb.append("NielsenConfiguration: ").append(getNielsenConfiguration()).append(",");
+        if (getNielsenNonLinearWatermark() != null)
+            sb.append("NielsenNonLinearWatermark: ").append(getNielsenNonLinearWatermark()).append(",");
         if (getOutputGroups() != null)
             sb.append("OutputGroups: ").append(getOutputGroups()).append(",");
         if (getTimecodeConfig() != null)
@@ -607,6 +678,10 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getNielsenConfiguration() != null && other.getNielsenConfiguration().equals(this.getNielsenConfiguration()) == false)
             return false;
+        if (other.getNielsenNonLinearWatermark() == null ^ this.getNielsenNonLinearWatermark() == null)
+            return false;
+        if (other.getNielsenNonLinearWatermark() != null && other.getNielsenNonLinearWatermark().equals(this.getNielsenNonLinearWatermark()) == false)
+            return false;
         if (other.getOutputGroups() == null ^ this.getOutputGroups() == null)
             return false;
         if (other.getOutputGroups() != null && other.getOutputGroups().equals(this.getOutputGroups()) == false)
@@ -633,6 +708,7 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getInputs() == null) ? 0 : getInputs().hashCode());
         hashCode = prime * hashCode + ((getMotionImageInserter() == null) ? 0 : getMotionImageInserter().hashCode());
         hashCode = prime * hashCode + ((getNielsenConfiguration() == null) ? 0 : getNielsenConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getNielsenNonLinearWatermark() == null) ? 0 : getNielsenNonLinearWatermark().hashCode());
         hashCode = prime * hashCode + ((getOutputGroups() == null) ? 0 : getOutputGroups().hashCode());
         hashCode = prime * hashCode + ((getTimecodeConfig() == null) ? 0 : getTimecodeConfig().hashCode());
         hashCode = prime * hashCode + ((getTimedMetadataInsertion() == null) ? 0 : getTimedMetadataInsertion().hashCode());

@@ -52,6 +52,10 @@ public class VideoCodecSettingsJsonUnmarshaller implements Unmarshaller<VideoCod
                     context.nextToken();
                     videoCodecSettings.setAv1Settings(Av1SettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("avcIntraSettings", targetDepth)) {
+                    context.nextToken();
+                    videoCodecSettings.setAvcIntraSettings(AvcIntraSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("codec", targetDepth)) {
                     context.nextToken();
                     videoCodecSettings.setCodec(context.getUnmarshaller(String.class).unmarshall(context));
@@ -75,6 +79,10 @@ public class VideoCodecSettingsJsonUnmarshaller implements Unmarshaller<VideoCod
                 if (context.testExpression("proresSettings", targetDepth)) {
                     context.nextToken();
                     videoCodecSettings.setProresSettings(ProresSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("vc3Settings", targetDepth)) {
+                    context.nextToken();
+                    videoCodecSettings.setVc3Settings(Vc3SettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("vp8Settings", targetDepth)) {
                     context.nextToken();

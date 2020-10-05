@@ -80,6 +80,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
      * Parameters</a>.
      * </p>
+     * <note>
+     * <p>
+     * The model artifacts must be in an S3 bucket that is in the same region as the model or endpoint you are creating.
+     * </p>
+     * </note>
      * <p>
      * If you provide a value for this parameter, Amazon SageMaker uses AWS Security Token Service to download model
      * artifacts from the S3 path you provide. AWS STS is activated in your IAM user account by default. If you
@@ -420,6 +425,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
      * Parameters</a>.
      * </p>
+     * <note>
+     * <p>
+     * The model artifacts must be in an S3 bucket that is in the same region as the model or endpoint you are creating.
+     * </p>
+     * </note>
      * <p>
      * If you provide a value for this parameter, Amazon SageMaker uses AWS Security Token Service to download model
      * artifacts from the S3 path you provide. AWS STS is activated in your IAM user account by default. If you
@@ -441,7 +451,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        built-in algorithms, but not if you use your own algorithms. For more information on built-in algorithms,
      *        see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
-     *        Parameters</a>. </p>
+     *        Parameters</a>. </p> <note>
+     *        <p>
+     *        The model artifacts must be in an S3 bucket that is in the same region as the model or endpoint you are
+     *        creating.
+     *        </p>
+     *        </note>
      *        <p>
      *        If you provide a value for this parameter, Amazon SageMaker uses AWS Security Token Service to download
      *        model artifacts from the S3 path you provide. AWS STS is activated in your IAM user account by default. If
@@ -469,6 +484,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
      * Parameters</a>.
      * </p>
+     * <note>
+     * <p>
+     * The model artifacts must be in an S3 bucket that is in the same region as the model or endpoint you are creating.
+     * </p>
+     * </note>
      * <p>
      * If you provide a value for this parameter, Amazon SageMaker uses AWS Security Token Service to download model
      * artifacts from the S3 path you provide. AWS STS is activated in your IAM user account by default. If you
@@ -489,7 +509,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         built-in algorithms, but not if you use your own algorithms. For more information on built-in algorithms,
      *         see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
-     *         Parameters</a>. </p>
+     *         Parameters</a>. </p> <note>
+     *         <p>
+     *         The model artifacts must be in an S3 bucket that is in the same region as the model or endpoint you are
+     *         creating.
+     *         </p>
+     *         </note>
      *         <p>
      *         If you provide a value for this parameter, Amazon SageMaker uses AWS Security Token Service to download
      *         model artifacts from the S3 path you provide. AWS STS is activated in your IAM user account by default.
@@ -518,6 +543,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
      * Parameters</a>.
      * </p>
+     * <note>
+     * <p>
+     * The model artifacts must be in an S3 bucket that is in the same region as the model or endpoint you are creating.
+     * </p>
+     * </note>
      * <p>
      * If you provide a value for this parameter, Amazon SageMaker uses AWS Security Token Service to download model
      * artifacts from the S3 path you provide. AWS STS is activated in your IAM user account by default. If you
@@ -539,7 +569,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        built-in algorithms, but not if you use your own algorithms. For more information on built-in algorithms,
      *        see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
-     *        Parameters</a>. </p>
+     *        Parameters</a>. </p> <note>
+     *        <p>
+     *        The model artifacts must be in an S3 bucket that is in the same region as the model or endpoint you are
+     *        creating.
+     *        </p>
+     *        </note>
      *        <p>
      *        If you provide a value for this parameter, Amazon SageMaker uses AWS Security Token Service to download
      *        model artifacts from the S3 path you provide. AWS STS is activated in your IAM user account by default. If

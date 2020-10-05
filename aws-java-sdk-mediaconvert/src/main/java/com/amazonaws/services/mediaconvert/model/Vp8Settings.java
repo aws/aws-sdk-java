@@ -40,9 +40,13 @@ public class Vp8Settings implements Serializable, Cloneable, StructuredPojo {
      */
     private String framerateControl;
     /**
-     * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use Drop duplicate
-     * (DUPLICATE_DROP) conversion. When you choose Interpolate (INTERPOLATE) instead, the conversion produces smoother
-     * motion.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
+     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
+     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
+     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
+     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
+     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
+     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
      */
     private String framerateConversionAlgorithm;
     /**
@@ -245,14 +249,23 @@ public class Vp8Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use Drop duplicate
-     * (DUPLICATE_DROP) conversion. When you choose Interpolate (INTERPOLATE) instead, the conversion produces smoother
-     * motion.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
+     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
+     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
+     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
+     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
+     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
+     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
      * 
      * @param framerateConversionAlgorithm
-     *        Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use Drop
-     *        duplicate (DUPLICATE_DROP) conversion. When you choose Interpolate (INTERPOLATE) instead, the conversion
-     *        produces smoother motion.
+     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We
+     *        recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30
+     *        fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This
+     *        results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate
+     *        conversions, especially if your source video has already been converted from its original cadence, use
+     *        FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion
+     *        method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant
+     *        add-on cost.
      * @see Vp8FramerateConversionAlgorithm
      */
 
@@ -261,13 +274,22 @@ public class Vp8Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use Drop duplicate
-     * (DUPLICATE_DROP) conversion. When you choose Interpolate (INTERPOLATE) instead, the conversion produces smoother
-     * motion.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
+     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
+     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
+     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
+     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
+     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
+     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
      * 
-     * @return Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use Drop
-     *         duplicate (DUPLICATE_DROP) conversion. When you choose Interpolate (INTERPOLATE) instead, the conversion
-     *         produces smoother motion.
+     * @return Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We
+     *         recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30
+     *         fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This
+     *         results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate
+     *         conversions, especially if your source video has already been converted from its original cadence, use
+     *         FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion
+     *         method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a
+     *         significant add-on cost.
      * @see Vp8FramerateConversionAlgorithm
      */
 
@@ -276,14 +298,23 @@ public class Vp8Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use Drop duplicate
-     * (DUPLICATE_DROP) conversion. When you choose Interpolate (INTERPOLATE) instead, the conversion produces smoother
-     * motion.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
+     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
+     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
+     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
+     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
+     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
+     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
      * 
      * @param framerateConversionAlgorithm
-     *        Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use Drop
-     *        duplicate (DUPLICATE_DROP) conversion. When you choose Interpolate (INTERPOLATE) instead, the conversion
-     *        produces smoother motion.
+     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We
+     *        recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30
+     *        fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This
+     *        results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate
+     *        conversions, especially if your source video has already been converted from its original cadence, use
+     *        FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion
+     *        method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant
+     *        add-on cost.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Vp8FramerateConversionAlgorithm
      */
@@ -294,14 +325,23 @@ public class Vp8Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use Drop duplicate
-     * (DUPLICATE_DROP) conversion. When you choose Interpolate (INTERPOLATE) instead, the conversion produces smoother
-     * motion.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
+     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
+     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
+     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
+     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
+     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
+     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
      * 
      * @param framerateConversionAlgorithm
-     *        Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use Drop
-     *        duplicate (DUPLICATE_DROP) conversion. When you choose Interpolate (INTERPOLATE) instead, the conversion
-     *        produces smoother motion.
+     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We
+     *        recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30
+     *        fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This
+     *        results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate
+     *        conversions, especially if your source video has already been converted from its original cadence, use
+     *        FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion
+     *        method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant
+     *        add-on cost.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Vp8FramerateConversionAlgorithm
      */

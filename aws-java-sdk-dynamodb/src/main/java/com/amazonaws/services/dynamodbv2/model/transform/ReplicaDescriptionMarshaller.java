@@ -42,6 +42,8 @@ public class ReplicaDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisionedThroughputOverride").build();
     private static final MarshallingInfo<List> GLOBALSECONDARYINDEXES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GlobalSecondaryIndexes").build();
+    private static final MarshallingInfo<java.util.Date> REPLICAINACCESSIBLEDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicaInaccessibleDateTime").timestampFormat("unixTimestamp").build();
 
     private static final ReplicaDescriptionMarshaller instance = new ReplicaDescriptionMarshaller();
 
@@ -66,6 +68,7 @@ public class ReplicaDescriptionMarshaller {
             protocolMarshaller.marshall(replicaDescription.getKMSMasterKeyId(), KMSMASTERKEYID_BINDING);
             protocolMarshaller.marshall(replicaDescription.getProvisionedThroughputOverride(), PROVISIONEDTHROUGHPUTOVERRIDE_BINDING);
             protocolMarshaller.marshall(replicaDescription.getGlobalSecondaryIndexes(), GLOBALSECONDARYINDEXES_BINDING);
+            protocolMarshaller.marshall(replicaDescription.getReplicaInaccessibleDateTime(), REPLICAINACCESSIBLEDATETIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -53,6 +53,8 @@ public class InputMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageInserter").build();
     private static final MarshallingInfo<List> INPUTCLIPPINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputClippings").build();
+    private static final MarshallingInfo<String> INPUTSCANTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputScanType").build();
     private static final MarshallingInfo<StructuredPojo> POSITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("position").build();
     private static final MarshallingInfo<Integer> PROGRAMNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -96,6 +98,7 @@ public class InputMarshaller {
             protocolMarshaller.marshall(input.getFilterStrength(), FILTERSTRENGTH_BINDING);
             protocolMarshaller.marshall(input.getImageInserter(), IMAGEINSERTER_BINDING);
             protocolMarshaller.marshall(input.getInputClippings(), INPUTCLIPPINGS_BINDING);
+            protocolMarshaller.marshall(input.getInputScanType(), INPUTSCANTYPE_BINDING);
             protocolMarshaller.marshall(input.getPosition(), POSITION_BINDING);
             protocolMarshaller.marshall(input.getProgramNumber(), PROGRAMNUMBER_BINDING);
             protocolMarshaller.marshall(input.getPsiControl(), PSICONTROL_BINDING);

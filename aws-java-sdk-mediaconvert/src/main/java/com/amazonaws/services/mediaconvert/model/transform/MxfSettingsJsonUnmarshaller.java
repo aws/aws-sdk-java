@@ -52,6 +52,10 @@ public class MxfSettingsJsonUnmarshaller implements Unmarshaller<MxfSettings, Js
                     context.nextToken();
                     mxfSettings.setAfdSignaling(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("profile", targetDepth)) {
+                    context.nextToken();
+                    mxfSettings.setProfile(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
- * href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
+ * Throughput exceeds the current throughput quota for your account. Please contact AWS Support at <a
+ * href="https://aws.amazon.com/support">AWS Support</a> to request a quota increase.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -59,6 +59,16 @@ public class ReplicaDescription implements Serializable, Cloneable, StructuredPo
      * <code>ACTIVE</code> - The replica is ready for use.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>REGION_DISABLED</code> - The replica is inaccessible because the AWS Region has been disabled.
+     * </p>
+     * <note>
+     * <p>
+     * If the AWS Region remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the
+     * replication group. The replica will not be deleted and replication will stop from and to this region.
+     * </p>
+     * </note></li>
      * </ul>
      */
     private String replicaStatus;
@@ -93,6 +103,13 @@ public class ReplicaDescription implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private java.util.List<ReplicaGlobalSecondaryIndexDescription> globalSecondaryIndexes;
+    /**
+     * <p>
+     * The time at which the replica was first detected as inaccessible. To determine cause of inaccessibility check the
+     * <code>ReplicaStatus</code> property.
+     * </p>
+     */
+    private java.util.Date replicaInaccessibleDateTime;
 
     /**
      * <p>
@@ -159,6 +176,16 @@ public class ReplicaDescription implements Serializable, Cloneable, StructuredPo
      * <code>ACTIVE</code> - The replica is ready for use.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>REGION_DISABLED</code> - The replica is inaccessible because the AWS Region has been disabled.
+     * </p>
+     * <note>
+     * <p>
+     * If the AWS Region remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the
+     * replication group. The replica will not be deleted and replication will stop from and to this region.
+     * </p>
+     * </note></li>
      * </ul>
      * 
      * @param replicaStatus
@@ -184,6 +211,16 @@ public class ReplicaDescription implements Serializable, Cloneable, StructuredPo
      *        <code>ACTIVE</code> - The replica is ready for use.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REGION_DISABLED</code> - The replica is inaccessible because the AWS Region has been disabled.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If the AWS Region remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the
+     *        replication group. The replica will not be deleted and replication will stop from and to this region.
+     *        </p>
+     *        </note></li>
      * @see ReplicaStatus
      */
 
@@ -216,6 +253,16 @@ public class ReplicaDescription implements Serializable, Cloneable, StructuredPo
      * <code>ACTIVE</code> - The replica is ready for use.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>REGION_DISABLED</code> - The replica is inaccessible because the AWS Region has been disabled.
+     * </p>
+     * <note>
+     * <p>
+     * If the AWS Region remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the
+     * replication group. The replica will not be deleted and replication will stop from and to this region.
+     * </p>
+     * </note></li>
      * </ul>
      * 
      * @return The current state of the replica:</p>
@@ -240,6 +287,16 @@ public class ReplicaDescription implements Serializable, Cloneable, StructuredPo
      *         <code>ACTIVE</code> - The replica is ready for use.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         <code>REGION_DISABLED</code> - The replica is inaccessible because the AWS Region has been disabled.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         If the AWS Region remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the
+     *         replication group. The replica will not be deleted and replication will stop from and to this region.
+     *         </p>
+     *         </note></li>
      * @see ReplicaStatus
      */
 
@@ -272,6 +329,16 @@ public class ReplicaDescription implements Serializable, Cloneable, StructuredPo
      * <code>ACTIVE</code> - The replica is ready for use.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>REGION_DISABLED</code> - The replica is inaccessible because the AWS Region has been disabled.
+     * </p>
+     * <note>
+     * <p>
+     * If the AWS Region remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the
+     * replication group. The replica will not be deleted and replication will stop from and to this region.
+     * </p>
+     * </note></li>
      * </ul>
      * 
      * @param replicaStatus
@@ -297,6 +364,16 @@ public class ReplicaDescription implements Serializable, Cloneable, StructuredPo
      *        <code>ACTIVE</code> - The replica is ready for use.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REGION_DISABLED</code> - The replica is inaccessible because the AWS Region has been disabled.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If the AWS Region remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the
+     *        replication group. The replica will not be deleted and replication will stop from and to this region.
+     *        </p>
+     *        </note></li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReplicaStatus
      */
@@ -331,6 +408,16 @@ public class ReplicaDescription implements Serializable, Cloneable, StructuredPo
      * <code>ACTIVE</code> - The replica is ready for use.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>REGION_DISABLED</code> - The replica is inaccessible because the AWS Region has been disabled.
+     * </p>
+     * <note>
+     * <p>
+     * If the AWS Region remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the
+     * replication group. The replica will not be deleted and replication will stop from and to this region.
+     * </p>
+     * </note></li>
      * </ul>
      * 
      * @param replicaStatus
@@ -356,6 +443,16 @@ public class ReplicaDescription implements Serializable, Cloneable, StructuredPo
      *        <code>ACTIVE</code> - The replica is ready for use.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REGION_DISABLED</code> - The replica is inaccessible because the AWS Region has been disabled.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If the AWS Region remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the
+     *        replication group. The replica will not be deleted and replication will stop from and to this region.
+     *        </p>
+     *        </note></li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReplicaStatus
      */
@@ -602,6 +699,52 @@ public class ReplicaDescription implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The time at which the replica was first detected as inaccessible. To determine cause of inaccessibility check the
+     * <code>ReplicaStatus</code> property.
+     * </p>
+     * 
+     * @param replicaInaccessibleDateTime
+     *        The time at which the replica was first detected as inaccessible. To determine cause of inaccessibility
+     *        check the <code>ReplicaStatus</code> property.
+     */
+
+    public void setReplicaInaccessibleDateTime(java.util.Date replicaInaccessibleDateTime) {
+        this.replicaInaccessibleDateTime = replicaInaccessibleDateTime;
+    }
+
+    /**
+     * <p>
+     * The time at which the replica was first detected as inaccessible. To determine cause of inaccessibility check the
+     * <code>ReplicaStatus</code> property.
+     * </p>
+     * 
+     * @return The time at which the replica was first detected as inaccessible. To determine cause of inaccessibility
+     *         check the <code>ReplicaStatus</code> property.
+     */
+
+    public java.util.Date getReplicaInaccessibleDateTime() {
+        return this.replicaInaccessibleDateTime;
+    }
+
+    /**
+     * <p>
+     * The time at which the replica was first detected as inaccessible. To determine cause of inaccessibility check the
+     * <code>ReplicaStatus</code> property.
+     * </p>
+     * 
+     * @param replicaInaccessibleDateTime
+     *        The time at which the replica was first detected as inaccessible. To determine cause of inaccessibility
+     *        check the <code>ReplicaStatus</code> property.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicaDescription withReplicaInaccessibleDateTime(java.util.Date replicaInaccessibleDateTime) {
+        setReplicaInaccessibleDateTime(replicaInaccessibleDateTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -626,7 +769,9 @@ public class ReplicaDescription implements Serializable, Cloneable, StructuredPo
         if (getProvisionedThroughputOverride() != null)
             sb.append("ProvisionedThroughputOverride: ").append(getProvisionedThroughputOverride()).append(",");
         if (getGlobalSecondaryIndexes() != null)
-            sb.append("GlobalSecondaryIndexes: ").append(getGlobalSecondaryIndexes());
+            sb.append("GlobalSecondaryIndexes: ").append(getGlobalSecondaryIndexes()).append(",");
+        if (getReplicaInaccessibleDateTime() != null)
+            sb.append("ReplicaInaccessibleDateTime: ").append(getReplicaInaccessibleDateTime());
         sb.append("}");
         return sb.toString();
     }
@@ -670,6 +815,10 @@ public class ReplicaDescription implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getGlobalSecondaryIndexes() != null && other.getGlobalSecondaryIndexes().equals(this.getGlobalSecondaryIndexes()) == false)
             return false;
+        if (other.getReplicaInaccessibleDateTime() == null ^ this.getReplicaInaccessibleDateTime() == null)
+            return false;
+        if (other.getReplicaInaccessibleDateTime() != null && other.getReplicaInaccessibleDateTime().equals(this.getReplicaInaccessibleDateTime()) == false)
+            return false;
         return true;
     }
 
@@ -685,6 +834,7 @@ public class ReplicaDescription implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getKMSMasterKeyId() == null) ? 0 : getKMSMasterKeyId().hashCode());
         hashCode = prime * hashCode + ((getProvisionedThroughputOverride() == null) ? 0 : getProvisionedThroughputOverride().hashCode());
         hashCode = prime * hashCode + ((getGlobalSecondaryIndexes() == null) ? 0 : getGlobalSecondaryIndexes().hashCode());
+        hashCode = prime * hashCode + ((getReplicaInaccessibleDateTime() == null) ? 0 : getReplicaInaccessibleDateTime().hashCode());
         return hashCode;
     }
 

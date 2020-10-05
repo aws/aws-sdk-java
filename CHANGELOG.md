@@ -1,3 +1,24 @@
+# __1.11.876__ __2020-10-05__
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - AWS Elemental MediaConvert SDK has added support for AVC-I and VC3 encoding in the MXF OP1a container, Nielsen non-linear watermarking, and InSync FrameFormer frame rate conversion.
+
+## __AWS Glue__
+  - ### Features
+    - AWS Glue crawlers now support Amazon DocumentDB (with MongoDB compatibility) and MongoDB collections. You can choose to crawl the entire data set or only a small sample to reduce crawl time.
+
+## __Amazon DynamoDB__
+  - ### Features
+    - This release adds a new ReplicaStatus REGION DISABLED for the Table description. This state indicates that the AWS Region for the replica is inaccessible because the AWS Region is disabled.
+
+## __Amazon DynamoDB Streams__
+  - ### Features
+    - Documentation updates for streams.dynamodb
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - This release adds support for launching Amazon SageMaker Studio in your VPC. Use AppNetworkAccessType in CreateDomain API to disable access to public internet and restrict the network traffic to VPC.
+
 # __1.11.875__ __2020-10-02__
 ## __AWS Batch__
   - ### Features

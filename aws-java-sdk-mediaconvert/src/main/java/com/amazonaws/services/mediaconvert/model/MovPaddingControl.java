@@ -15,7 +15,9 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * If set to OMNEON, inserts Omneon-compatible padding
+ * To make this output compatible with Omenon, keep the default value, OMNEON. Unless you need Omneon compatibility, set
+ * this value to NONE. When you keep the default value, OMNEON, MediaConvert increases the length of the edit list atom.
+ * This might cause file rejections when a recipient of the output file doesn't expct this extra padding.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum MovPaddingControl {

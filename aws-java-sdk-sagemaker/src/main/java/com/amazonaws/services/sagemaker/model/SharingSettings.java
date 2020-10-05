@@ -39,7 +39,7 @@ public class SharingSettings implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used to save the notebook
-     * cell output. If <code>S3OutputPath</code> isn't specified, a default bucket is used.
+     * cell output.
      * </p>
      */
     private String s3OutputPath;
@@ -117,12 +117,12 @@ public class SharingSettings implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used to save the notebook
-     * cell output. If <code>S3OutputPath</code> isn't specified, a default bucket is used.
+     * cell output.
      * </p>
      * 
      * @param s3OutputPath
      *        When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used to save the
-     *        notebook cell output. If <code>S3OutputPath</code> isn't specified, a default bucket is used.
+     *        notebook cell output.
      */
 
     public void setS3OutputPath(String s3OutputPath) {
@@ -132,11 +132,11 @@ public class SharingSettings implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used to save the notebook
-     * cell output. If <code>S3OutputPath</code> isn't specified, a default bucket is used.
+     * cell output.
      * </p>
      * 
      * @return When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used to save the
-     *         notebook cell output. If <code>S3OutputPath</code> isn't specified, a default bucket is used.
+     *         notebook cell output.
      */
 
     public String getS3OutputPath() {
@@ -146,12 +146,12 @@ public class SharingSettings implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used to save the notebook
-     * cell output. If <code>S3OutputPath</code> isn't specified, a default bucket is used.
+     * cell output.
      * </p>
      * 
      * @param s3OutputPath
      *        When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used to save the
-     *        notebook cell output. If <code>S3OutputPath</code> isn't specified, a default bucket is used.
+     *        notebook cell output.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

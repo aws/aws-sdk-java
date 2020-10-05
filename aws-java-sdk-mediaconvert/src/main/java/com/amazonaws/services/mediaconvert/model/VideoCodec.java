@@ -20,12 +20,14 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum VideoCodec {
 
-    FRAME_CAPTURE("FRAME_CAPTURE"),
     AV1("AV1"),
+    AVC_INTRA("AVC_INTRA"),
+    FRAME_CAPTURE("FRAME_CAPTURE"),
     H_264("H_264"),
     H_265("H_265"),
     MPEG2("MPEG2"),
     PRORES("PRORES"),
+    VC3("VC3"),
     VP8("VP8"),
     VP9("VP9");
 

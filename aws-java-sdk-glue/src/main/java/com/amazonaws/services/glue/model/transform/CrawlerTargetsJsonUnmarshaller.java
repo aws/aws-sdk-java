@@ -60,6 +60,12 @@ public class CrawlerTargetsJsonUnmarshaller implements Unmarshaller<CrawlerTarge
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("MongoDBTargets", targetDepth)) {
+                    context.nextToken();
+                    crawlerTargets.setMongoDBTargets(new ListUnmarshaller<MongoDBTarget>(MongoDBTargetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("DynamoDBTargets", targetDepth)) {
                     context.nextToken();
                     crawlerTargets.setDynamoDBTargets(new ListUnmarshaller<DynamoDBTarget>(DynamoDBTargetJsonUnmarshaller.getInstance())

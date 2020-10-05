@@ -110,6 +110,10 @@ public class DescribeDomainResultJsonUnmarshaller implements Unmarshaller<Descri
                     context.nextToken();
                     describeDomainResult.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AppNetworkAccessType", targetDepth)) {
+                    context.nextToken();
+                    describeDomainResult.setAppNetworkAccessType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

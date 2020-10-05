@@ -40,7 +40,11 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
      * when the video codec is MPEG2.
      */
     private String mpeg2FourCCControl;
-    /** If set to OMNEON, inserts Omneon-compatible padding */
+    /**
+     * To make this output compatible with Omenon, keep the default value, OMNEON. Unless you need Omneon compatibility,
+     * set this value to NONE. When you keep the default value, OMNEON, MediaConvert increases the length of the edit
+     * list atom. This might cause file rejections when a recipient of the output file doesn't expct this extra padding.
+     */
     private String paddingControl;
     /** Always keep the default value (SELF_CONTAINED) for this setting. */
     private String reference;
@@ -231,10 +235,15 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If set to OMNEON, inserts Omneon-compatible padding
+     * To make this output compatible with Omenon, keep the default value, OMNEON. Unless you need Omneon compatibility,
+     * set this value to NONE. When you keep the default value, OMNEON, MediaConvert increases the length of the edit
+     * list atom. This might cause file rejections when a recipient of the output file doesn't expct this extra padding.
      * 
      * @param paddingControl
-     *        If set to OMNEON, inserts Omneon-compatible padding
+     *        To make this output compatible with Omenon, keep the default value, OMNEON. Unless you need Omneon
+     *        compatibility, set this value to NONE. When you keep the default value, OMNEON, MediaConvert increases the
+     *        length of the edit list atom. This might cause file rejections when a recipient of the output file doesn't
+     *        expct this extra padding.
      * @see MovPaddingControl
      */
 
@@ -243,9 +252,14 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If set to OMNEON, inserts Omneon-compatible padding
+     * To make this output compatible with Omenon, keep the default value, OMNEON. Unless you need Omneon compatibility,
+     * set this value to NONE. When you keep the default value, OMNEON, MediaConvert increases the length of the edit
+     * list atom. This might cause file rejections when a recipient of the output file doesn't expct this extra padding.
      * 
-     * @return If set to OMNEON, inserts Omneon-compatible padding
+     * @return To make this output compatible with Omenon, keep the default value, OMNEON. Unless you need Omneon
+     *         compatibility, set this value to NONE. When you keep the default value, OMNEON, MediaConvert increases
+     *         the length of the edit list atom. This might cause file rejections when a recipient of the output file
+     *         doesn't expct this extra padding.
      * @see MovPaddingControl
      */
 
@@ -254,10 +268,15 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If set to OMNEON, inserts Omneon-compatible padding
+     * To make this output compatible with Omenon, keep the default value, OMNEON. Unless you need Omneon compatibility,
+     * set this value to NONE. When you keep the default value, OMNEON, MediaConvert increases the length of the edit
+     * list atom. This might cause file rejections when a recipient of the output file doesn't expct this extra padding.
      * 
      * @param paddingControl
-     *        If set to OMNEON, inserts Omneon-compatible padding
+     *        To make this output compatible with Omenon, keep the default value, OMNEON. Unless you need Omneon
+     *        compatibility, set this value to NONE. When you keep the default value, OMNEON, MediaConvert increases the
+     *        length of the edit list atom. This might cause file rejections when a recipient of the output file doesn't
+     *        expct this extra padding.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MovPaddingControl
      */
@@ -268,10 +287,15 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If set to OMNEON, inserts Omneon-compatible padding
+     * To make this output compatible with Omenon, keep the default value, OMNEON. Unless you need Omneon compatibility,
+     * set this value to NONE. When you keep the default value, OMNEON, MediaConvert increases the length of the edit
+     * list atom. This might cause file rejections when a recipient of the output file doesn't expct this extra padding.
      * 
      * @param paddingControl
-     *        If set to OMNEON, inserts Omneon-compatible padding
+     *        To make this output compatible with Omenon, keep the default value, OMNEON. Unless you need Omneon
+     *        compatibility, set this value to NONE. When you keep the default value, OMNEON, MediaConvert increases the
+     *        length of the edit list atom. This might cause file rejections when a recipient of the output file doesn't
+     *        expct this extra padding.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MovPaddingControl
      */

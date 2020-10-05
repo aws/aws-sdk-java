@@ -34,7 +34,7 @@ public class AutoMLDataSource implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <note>
      * <p>
-     * The input data must be in CSV format and contain at least 1000 rows.
+     * The input data must be in CSV format and contain at least 500 rows.
      * </p>
      * </note>
      */
@@ -46,14 +46,14 @@ public class AutoMLDataSource implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <note>
      * <p>
-     * The input data must be in CSV format and contain at least 1000 rows.
+     * The input data must be in CSV format and contain at least 500 rows.
      * </p>
      * </note>
      * 
      * @param s3DataSource
      *        The Amazon S3 location of the input data.</p> <note>
      *        <p>
-     *        The input data must be in CSV format and contain at least 1000 rows.
+     *        The input data must be in CSV format and contain at least 500 rows.
      *        </p>
      */
 
@@ -67,13 +67,13 @@ public class AutoMLDataSource implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <note>
      * <p>
-     * The input data must be in CSV format and contain at least 1000 rows.
+     * The input data must be in CSV format and contain at least 500 rows.
      * </p>
      * </note>
      * 
      * @return The Amazon S3 location of the input data.</p> <note>
      *         <p>
-     *         The input data must be in CSV format and contain at least 1000 rows.
+     *         The input data must be in CSV format and contain at least 500 rows.
      *         </p>
      */
 
@@ -87,14 +87,14 @@ public class AutoMLDataSource implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <note>
      * <p>
-     * The input data must be in CSV format and contain at least 1000 rows.
+     * The input data must be in CSV format and contain at least 500 rows.
      * </p>
      * </note>
      * 
      * @param s3DataSource
      *        The Amazon S3 location of the input data.</p> <note>
      *        <p>
-     *        The input data must be in CSV format and contain at least 1000 rows.
+     *        The input data must be in CSV format and contain at least 500 rows.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

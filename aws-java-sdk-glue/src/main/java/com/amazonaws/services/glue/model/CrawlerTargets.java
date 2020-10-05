@@ -42,6 +42,12 @@ public class CrawlerTargets implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<JdbcTarget> jdbcTargets;
     /**
      * <p>
+     * Specifies Amazon DocumentDB or MongoDB targets.
+     * </p>
+     */
+    private java.util.List<MongoDBTarget> mongoDBTargets;
+    /**
+     * <p>
      * Specifies Amazon DynamoDB targets.
      * </p>
      */
@@ -190,6 +196,76 @@ public class CrawlerTargets implements Serializable, Cloneable, StructuredPojo {
 
     public CrawlerTargets withJdbcTargets(java.util.Collection<JdbcTarget> jdbcTargets) {
         setJdbcTargets(jdbcTargets);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies Amazon DocumentDB or MongoDB targets.
+     * </p>
+     * 
+     * @return Specifies Amazon DocumentDB or MongoDB targets.
+     */
+
+    public java.util.List<MongoDBTarget> getMongoDBTargets() {
+        return mongoDBTargets;
+    }
+
+    /**
+     * <p>
+     * Specifies Amazon DocumentDB or MongoDB targets.
+     * </p>
+     * 
+     * @param mongoDBTargets
+     *        Specifies Amazon DocumentDB or MongoDB targets.
+     */
+
+    public void setMongoDBTargets(java.util.Collection<MongoDBTarget> mongoDBTargets) {
+        if (mongoDBTargets == null) {
+            this.mongoDBTargets = null;
+            return;
+        }
+
+        this.mongoDBTargets = new java.util.ArrayList<MongoDBTarget>(mongoDBTargets);
+    }
+
+    /**
+     * <p>
+     * Specifies Amazon DocumentDB or MongoDB targets.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMongoDBTargets(java.util.Collection)} or {@link #withMongoDBTargets(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param mongoDBTargets
+     *        Specifies Amazon DocumentDB or MongoDB targets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CrawlerTargets withMongoDBTargets(MongoDBTarget... mongoDBTargets) {
+        if (this.mongoDBTargets == null) {
+            setMongoDBTargets(new java.util.ArrayList<MongoDBTarget>(mongoDBTargets.length));
+        }
+        for (MongoDBTarget ele : mongoDBTargets) {
+            this.mongoDBTargets.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies Amazon DocumentDB or MongoDB targets.
+     * </p>
+     * 
+     * @param mongoDBTargets
+     *        Specifies Amazon DocumentDB or MongoDB targets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CrawlerTargets withMongoDBTargets(java.util.Collection<MongoDBTarget> mongoDBTargets) {
+        setMongoDBTargets(mongoDBTargets);
         return this;
     }
 
@@ -349,6 +425,8 @@ public class CrawlerTargets implements Serializable, Cloneable, StructuredPojo {
             sb.append("S3Targets: ").append(getS3Targets()).append(",");
         if (getJdbcTargets() != null)
             sb.append("JdbcTargets: ").append(getJdbcTargets()).append(",");
+        if (getMongoDBTargets() != null)
+            sb.append("MongoDBTargets: ").append(getMongoDBTargets()).append(",");
         if (getDynamoDBTargets() != null)
             sb.append("DynamoDBTargets: ").append(getDynamoDBTargets()).append(",");
         if (getCatalogTargets() != null)
@@ -375,6 +453,10 @@ public class CrawlerTargets implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getJdbcTargets() != null && other.getJdbcTargets().equals(this.getJdbcTargets()) == false)
             return false;
+        if (other.getMongoDBTargets() == null ^ this.getMongoDBTargets() == null)
+            return false;
+        if (other.getMongoDBTargets() != null && other.getMongoDBTargets().equals(this.getMongoDBTargets()) == false)
+            return false;
         if (other.getDynamoDBTargets() == null ^ this.getDynamoDBTargets() == null)
             return false;
         if (other.getDynamoDBTargets() != null && other.getDynamoDBTargets().equals(this.getDynamoDBTargets()) == false)
@@ -393,6 +475,7 @@ public class CrawlerTargets implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getS3Targets() == null) ? 0 : getS3Targets().hashCode());
         hashCode = prime * hashCode + ((getJdbcTargets() == null) ? 0 : getJdbcTargets().hashCode());
+        hashCode = prime * hashCode + ((getMongoDBTargets() == null) ? 0 : getMongoDBTargets().hashCode());
         hashCode = prime * hashCode + ((getDynamoDBTargets() == null) ? 0 : getDynamoDBTargets().hashCode());
         hashCode = prime * hashCode + ((getCatalogTargets() == null) ? 0 : getCatalogTargets().hashCode());
         return hashCode;

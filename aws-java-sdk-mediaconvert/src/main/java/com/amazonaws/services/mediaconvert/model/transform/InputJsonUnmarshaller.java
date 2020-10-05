@@ -101,6 +101,10 @@ public class InputJsonUnmarshaller implements Unmarshaller<Input, JsonUnmarshall
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("inputScanType", targetDepth)) {
+                    context.nextToken();
+                    input.setInputScanType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("position", targetDepth)) {
                     context.nextToken();
                     input.setPosition(RectangleJsonUnmarshaller.getInstance().unmarshall(context));

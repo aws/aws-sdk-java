@@ -40,27 +40,38 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
      */
     private String framerateControl;
     /**
-     * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop
-     * conversion.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
+     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
+     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
+     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
+     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
+     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
+     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
      */
     private String framerateConversionAlgorithm;
-    /** Frame rate denominator. */
+    /**
+     * When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For
+     * example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this
+     * example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use
+     * frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+     */
     private Integer framerateDenominator;
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For
      * example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this
-     * example, use 24000 for the value of FramerateNumerator.
+     * example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame
+     * rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
      */
     private Integer framerateNumerator;
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First (TOP_FIELD) and
-     * Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having the same field polarity
-     * (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default Bottom (FOLLOW_BOTTOM_FIELD)
-     * use the same field polarity as the source. Therefore, behavior depends on the input scan type. - If the source is
-     * interlaced, the output will be interlaced with the same polarity as the source (it will follow the source). The
-     * output could therefore be a mix of "top field first" and "bottom field first". - If the source is progressive,
-     * the output will be interlaced with "top field first" or "bottom field first" polarity, depending on which of the
-     * Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a
+     * progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field
+     * first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow,
+     * default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same
+     * field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the
+     * course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will
+     * be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced
+     * with top field bottom field first, depending on which of the Follow options you choose.
      */
     private String interlaceMode;
     /**
@@ -86,14 +97,18 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
      */
     private Integer parNumerator;
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up
-     * correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to
+     * create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples
+     * your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the
+     * duration of your video. Required settings: You must also set Framerate to 25. In your JSON job specification, set
+     * (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      */
     private String slowPal;
     /**
-     * Only use Telecine (ProresTelecine) when you set Framerate (Framerate) to 29.970. Set Telecine (ProresTelecine) to
-     * Hard (hard) to produce a 29.97i output from a 23.976 input. Set it to Soft (soft) to produce 23.976 output and
-     * leave converstion to the player.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is
+     * interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you keep the
+     * default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything
+     * with the field polarity to create a smoother picture.
      */
     private String telecine;
 
@@ -260,12 +275,23 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop
-     * conversion.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
+     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
+     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
+     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
+     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
+     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
+     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
      * 
      * @param framerateConversionAlgorithm
-     *        Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use
-     *        duplicate drop conversion.
+     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We
+     *        recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30
+     *        fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This
+     *        results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate
+     *        conversions, especially if your source video has already been converted from its original cadence, use
+     *        FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion
+     *        method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant
+     *        add-on cost.
      * @see ProresFramerateConversionAlgorithm
      */
 
@@ -274,11 +300,22 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop
-     * conversion.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
+     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
+     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
+     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
+     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
+     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
+     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
      * 
-     * @return Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use
-     *         duplicate drop conversion.
+     * @return Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We
+     *         recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30
+     *         fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This
+     *         results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate
+     *         conversions, especially if your source video has already been converted from its original cadence, use
+     *         FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion
+     *         method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a
+     *         significant add-on cost.
      * @see ProresFramerateConversionAlgorithm
      */
 
@@ -287,12 +324,23 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop
-     * conversion.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
+     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
+     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
+     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
+     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
+     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
+     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
      * 
      * @param framerateConversionAlgorithm
-     *        Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use
-     *        duplicate drop conversion.
+     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We
+     *        recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30
+     *        fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This
+     *        results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate
+     *        conversions, especially if your source video has already been converted from its original cadence, use
+     *        FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion
+     *        method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant
+     *        add-on cost.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProresFramerateConversionAlgorithm
      */
@@ -303,12 +351,23 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop
-     * conversion.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
+     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
+     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
+     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
+     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
+     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
+     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
      * 
      * @param framerateConversionAlgorithm
-     *        Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use
-     *        duplicate drop conversion.
+     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We
+     *        recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30
+     *        fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This
+     *        results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate
+     *        conversions, especially if your source video has already been converted from its original cadence, use
+     *        FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion
+     *        method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant
+     *        add-on cost.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProresFramerateConversionAlgorithm
      */
@@ -319,10 +378,17 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Frame rate denominator.
+     * When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For
+     * example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this
+     * example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use
+     * frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
      * 
      * @param framerateDenominator
-     *        Frame rate denominator.
+     *        When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a
+     *        fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of
+     *        this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console
+     *        for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In
+     *        this example, specify 23.976.
      */
 
     public void setFramerateDenominator(Integer framerateDenominator) {
@@ -330,9 +396,16 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Frame rate denominator.
+     * When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For
+     * example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this
+     * example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use
+     * frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
      * 
-     * @return Frame rate denominator.
+     * @return When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a
+     *         fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of
+     *         this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console
+     *         for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate.
+     *         In this example, specify 23.976.
      */
 
     public Integer getFramerateDenominator() {
@@ -340,10 +413,17 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Frame rate denominator.
+     * When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For
+     * example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this
+     * example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use
+     * frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
      * 
      * @param framerateDenominator
-     *        Frame rate denominator.
+     *        When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a
+     *        fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of
+     *        this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console
+     *        for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In
+     *        this example, specify 23.976.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,12 +435,15 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For
      * example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this
-     * example, use 24000 for the value of FramerateNumerator.
+     * example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame
+     * rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
      * 
      * @param framerateNumerator
      *        When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a
      *        fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this
-     *        fraction. In this example, use 24000 for the value of FramerateNumerator.
+     *        fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for
+     *        transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In
+     *        this example, specify 23.976.
      */
 
     public void setFramerateNumerator(Integer framerateNumerator) {
@@ -370,11 +453,14 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For
      * example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this
-     * example, use 24000 for the value of FramerateNumerator.
+     * example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame
+     * rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
      * 
      * @return When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a
      *         fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this
-     *         fraction. In this example, use 24000 for the value of FramerateNumerator.
+     *         fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for
+     *         transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In
+     *         this example, specify 23.976.
      */
 
     public Integer getFramerateNumerator() {
@@ -384,12 +470,15 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For
      * example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this
-     * example, use 24000 for the value of FramerateNumerator.
+     * example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame
+     * rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
      * 
      * @param framerateNumerator
      *        When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a
      *        fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this
-     *        fraction. In this example, use 24000 for the value of FramerateNumerator.
+     *        fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for
+     *        transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In
+     *        this example, specify 23.976.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -399,25 +488,25 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First (TOP_FIELD) and
-     * Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having the same field polarity
-     * (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default Bottom (FOLLOW_BOTTOM_FIELD)
-     * use the same field polarity as the source. Therefore, behavior depends on the input scan type. - If the source is
-     * interlaced, the output will be interlaced with the same polarity as the source (it will follow the source). The
-     * output could therefore be a mix of "top field first" and "bottom field first". - If the source is progressive,
-     * the output will be interlaced with "top field first" or "bottom field first" polarity, depending on which of the
-     * Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a
+     * progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field
+     * first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow,
+     * default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same
+     * field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the
+     * course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will
+     * be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced
+     * with top field bottom field first, depending on which of the Follow options you choose.
      * 
      * @param interlaceMode
-     *        Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First
-     *        (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having
-     *        the same field polarity (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow,
-     *        Default Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source. Therefore, behavior
-     *        depends on the input scan type. - If the source is interlaced, the output will be interlaced with the same
-     *        polarity as the source (it will follow the source). The output could therefore be a mix of
-     *        "top field first" and "bottom field first". - If the source is progressive, the output will be interlaced
-     *        with "top field first" or "bottom field first" polarity, depending on which of the Follow options you
-     *        chose.
+     *        Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a
+     *        progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom
+     *        field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout.
+     *        Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce
+     *        outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field
+     *        polarity might change over the course of the output. Follow behavior depends on the input scan type. If
+     *        the source is interlaced, the output will be interlaced with the same polarity as the source. If the
+     *        source is progressive, the output will be interlaced with top field bottom field first, depending on which
+     *        of the Follow options you choose.
      * @see ProresInterlaceMode
      */
 
@@ -426,24 +515,24 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First (TOP_FIELD) and
-     * Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having the same field polarity
-     * (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default Bottom (FOLLOW_BOTTOM_FIELD)
-     * use the same field polarity as the source. Therefore, behavior depends on the input scan type. - If the source is
-     * interlaced, the output will be interlaced with the same polarity as the source (it will follow the source). The
-     * output could therefore be a mix of "top field first" and "bottom field first". - If the source is progressive,
-     * the output will be interlaced with "top field first" or "bottom field first" polarity, depending on which of the
-     * Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a
+     * progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field
+     * first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow,
+     * default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same
+     * field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the
+     * course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will
+     * be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced
+     * with top field bottom field first, depending on which of the Follow options you choose.
      * 
-     * @return Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First
-     *         (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having
-     *         the same field polarity (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow,
-     *         Default Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source. Therefore, behavior
-     *         depends on the input scan type. - If the source is interlaced, the output will be interlaced with the
-     *         same polarity as the source (it will follow the source). The output could therefore be a mix of
-     *         "top field first" and "bottom field first". - If the source is progressive, the output will be interlaced
-     *         with "top field first" or "bottom field first" polarity, depending on which of the Follow options you
-     *         chose.
+     * @return Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a
+     *         progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom
+     *         field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout.
+     *         Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce
+     *         outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field
+     *         polarity might change over the course of the output. Follow behavior depends on the input scan type. If
+     *         the source is interlaced, the output will be interlaced with the same polarity as the source. If the
+     *         source is progressive, the output will be interlaced with top field bottom field first, depending on
+     *         which of the Follow options you choose.
      * @see ProresInterlaceMode
      */
 
@@ -452,25 +541,25 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First (TOP_FIELD) and
-     * Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having the same field polarity
-     * (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default Bottom (FOLLOW_BOTTOM_FIELD)
-     * use the same field polarity as the source. Therefore, behavior depends on the input scan type. - If the source is
-     * interlaced, the output will be interlaced with the same polarity as the source (it will follow the source). The
-     * output could therefore be a mix of "top field first" and "bottom field first". - If the source is progressive,
-     * the output will be interlaced with "top field first" or "bottom field first" polarity, depending on which of the
-     * Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a
+     * progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field
+     * first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow,
+     * default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same
+     * field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the
+     * course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will
+     * be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced
+     * with top field bottom field first, depending on which of the Follow options you choose.
      * 
      * @param interlaceMode
-     *        Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First
-     *        (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having
-     *        the same field polarity (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow,
-     *        Default Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source. Therefore, behavior
-     *        depends on the input scan type. - If the source is interlaced, the output will be interlaced with the same
-     *        polarity as the source (it will follow the source). The output could therefore be a mix of
-     *        "top field first" and "bottom field first". - If the source is progressive, the output will be interlaced
-     *        with "top field first" or "bottom field first" polarity, depending on which of the Follow options you
-     *        chose.
+     *        Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a
+     *        progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom
+     *        field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout.
+     *        Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce
+     *        outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field
+     *        polarity might change over the course of the output. Follow behavior depends on the input scan type. If
+     *        the source is interlaced, the output will be interlaced with the same polarity as the source. If the
+     *        source is progressive, the output will be interlaced with top field bottom field first, depending on which
+     *        of the Follow options you choose.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProresInterlaceMode
      */
@@ -481,25 +570,25 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First (TOP_FIELD) and
-     * Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having the same field polarity
-     * (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default Bottom (FOLLOW_BOTTOM_FIELD)
-     * use the same field polarity as the source. Therefore, behavior depends on the input scan type. - If the source is
-     * interlaced, the output will be interlaced with the same polarity as the source (it will follow the source). The
-     * output could therefore be a mix of "top field first" and "bottom field first". - If the source is progressive,
-     * the output will be interlaced with "top field first" or "bottom field first" polarity, depending on which of the
-     * Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a
+     * progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field
+     * first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow,
+     * default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same
+     * field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the
+     * course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will
+     * be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced
+     * with top field bottom field first, depending on which of the Follow options you choose.
      * 
      * @param interlaceMode
-     *        Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First
-     *        (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having
-     *        the same field polarity (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow,
-     *        Default Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source. Therefore, behavior
-     *        depends on the input scan type. - If the source is interlaced, the output will be interlaced with the same
-     *        polarity as the source (it will follow the source). The output could therefore be a mix of
-     *        "top field first" and "bottom field first". - If the source is progressive, the output will be interlaced
-     *        with "top field first" or "bottom field first" polarity, depending on which of the Follow options you
-     *        chose.
+     *        Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a
+     *        progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom
+     *        field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout.
+     *        Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce
+     *        outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field
+     *        polarity might change over the course of the output. Follow behavior depends on the input scan type. If
+     *        the source is interlaced, the output will be interlaced with the same polarity as the source. If the
+     *        source is progressive, the output will be interlaced with top field bottom field first, depending on which
+     *        of the Follow options you choose.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProresInterlaceMode
      */
@@ -697,12 +786,19 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up
-     * correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to
+     * create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples
+     * your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the
+     * duration of your video. Required settings: You must also set Framerate to 25. In your JSON job specification, set
+     * (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      * 
      * @param slowPal
-     *        Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up
-     *        correspondingly.
+     *        Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL
+     *        to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and
+     *        resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly
+     *        reduce the duration of your video. Required settings: You must also set Framerate to 25. In your JSON job
+     *        specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and
+     *        (framerateDenominator) to 1.
      * @see ProresSlowPal
      */
 
@@ -711,11 +807,18 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up
-     * correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to
+     * create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples
+     * your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the
+     * duration of your video. Required settings: You must also set Framerate to 25. In your JSON job specification, set
+     * (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      * 
-     * @return Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up
-     *         correspondingly.
+     * @return Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL
+     *         to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and
+     *         resamples your audio to keep it synchronized with the video. Note that enabling this setting will
+     *         slightly reduce the duration of your video. Required settings: You must also set Framerate to 25. In your
+     *         JSON job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and
+     *         (framerateDenominator) to 1.
      * @see ProresSlowPal
      */
 
@@ -724,12 +827,19 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up
-     * correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to
+     * create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples
+     * your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the
+     * duration of your video. Required settings: You must also set Framerate to 25. In your JSON job specification, set
+     * (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      * 
      * @param slowPal
-     *        Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up
-     *        correspondingly.
+     *        Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL
+     *        to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and
+     *        resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly
+     *        reduce the duration of your video. Required settings: You must also set Framerate to 25. In your JSON job
+     *        specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and
+     *        (framerateDenominator) to 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProresSlowPal
      */
@@ -740,12 +850,19 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up
-     * correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to
+     * create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples
+     * your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the
+     * duration of your video. Required settings: You must also set Framerate to 25. In your JSON job specification, set
+     * (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      * 
      * @param slowPal
-     *        Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up
-     *        correspondingly.
+     *        Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL
+     *        to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and
+     *        resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly
+     *        reduce the duration of your video. Required settings: You must also set Framerate to 25. In your JSON job
+     *        specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and
+     *        (framerateDenominator) to 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProresSlowPal
      */
@@ -756,14 +873,16 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Only use Telecine (ProresTelecine) when you set Framerate (Framerate) to 29.970. Set Telecine (ProresTelecine) to
-     * Hard (hard) to produce a 29.97i output from a 23.976 input. Set it to Soft (soft) to produce 23.976 output and
-     * leave converstion to the player.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is
+     * interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you keep the
+     * default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything
+     * with the field polarity to create a smoother picture.
      * 
      * @param telecine
-     *        Only use Telecine (ProresTelecine) when you set Framerate (Framerate) to 29.970. Set Telecine
-     *        (ProresTelecine) to Hard (hard) to produce a 29.97i output from a 23.976 input. Set it to Soft (soft) to
-     *        produce 23.976 output and leave converstion to the player.
+     *        When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan
+     *        type is interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you
+     *        keep the default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without
+     *        doing anything with the field polarity to create a smoother picture.
      * @see ProresTelecine
      */
 
@@ -772,13 +891,15 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Only use Telecine (ProresTelecine) when you set Framerate (Framerate) to 29.970. Set Telecine (ProresTelecine) to
-     * Hard (hard) to produce a 29.97i output from a 23.976 input. Set it to Soft (soft) to produce 23.976 output and
-     * leave converstion to the player.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is
+     * interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you keep the
+     * default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything
+     * with the field polarity to create a smoother picture.
      * 
-     * @return Only use Telecine (ProresTelecine) when you set Framerate (Framerate) to 29.970. Set Telecine
-     *         (ProresTelecine) to Hard (hard) to produce a 29.97i output from a 23.976 input. Set it to Soft (soft) to
-     *         produce 23.976 output and leave converstion to the player.
+     * @return When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan
+     *         type is interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you
+     *         keep the default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without
+     *         doing anything with the field polarity to create a smoother picture.
      * @see ProresTelecine
      */
 
@@ -787,14 +908,16 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Only use Telecine (ProresTelecine) when you set Framerate (Framerate) to 29.970. Set Telecine (ProresTelecine) to
-     * Hard (hard) to produce a 29.97i output from a 23.976 input. Set it to Soft (soft) to produce 23.976 output and
-     * leave converstion to the player.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is
+     * interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you keep the
+     * default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything
+     * with the field polarity to create a smoother picture.
      * 
      * @param telecine
-     *        Only use Telecine (ProresTelecine) when you set Framerate (Framerate) to 29.970. Set Telecine
-     *        (ProresTelecine) to Hard (hard) to produce a 29.97i output from a 23.976 input. Set it to Soft (soft) to
-     *        produce 23.976 output and leave converstion to the player.
+     *        When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan
+     *        type is interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you
+     *        keep the default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without
+     *        doing anything with the field polarity to create a smoother picture.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProresTelecine
      */
@@ -805,14 +928,16 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Only use Telecine (ProresTelecine) when you set Framerate (Framerate) to 29.970. Set Telecine (ProresTelecine) to
-     * Hard (hard) to produce a 29.97i output from a 23.976 input. Set it to Soft (soft) to produce 23.976 output and
-     * leave converstion to the player.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is
+     * interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you keep the
+     * default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything
+     * with the field polarity to create a smoother picture.
      * 
      * @param telecine
-     *        Only use Telecine (ProresTelecine) when you set Framerate (Framerate) to 29.970. Set Telecine
-     *        (ProresTelecine) to Hard (hard) to produce a 29.97i output from a 23.976 input. Set it to Soft (soft) to
-     *        produce 23.976 output and leave converstion to the player.
+     *        When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan
+     *        type is interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you
+     *        keep the default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without
+     *        doing anything with the field polarity to create a smoother picture.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProresTelecine
      */

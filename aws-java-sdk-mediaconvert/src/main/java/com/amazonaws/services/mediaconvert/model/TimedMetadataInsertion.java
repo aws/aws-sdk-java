@@ -18,9 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed metadata,
- * you must enable it here, enable it in each output container, and specify tags and timecodes in ID3 insertion
- * (Id3Insertion) objects.
+ * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To include timed
+ * metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3
+ * insertion (Id3Insertion) objects.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TimedMetadataInsertion"
  *      target="_top">AWS API Documentation</a>

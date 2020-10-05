@@ -24,7 +24,8 @@ public enum ReplicaStatus {
     CREATION_FAILED("CREATION_FAILED"),
     UPDATING("UPDATING"),
     DELETING("DELETING"),
-    ACTIVE("ACTIVE");
+    ACTIVE("ACTIVE"),
+    REGION_DISABLED("REGION_DISABLED");
 
     private String value;
 
