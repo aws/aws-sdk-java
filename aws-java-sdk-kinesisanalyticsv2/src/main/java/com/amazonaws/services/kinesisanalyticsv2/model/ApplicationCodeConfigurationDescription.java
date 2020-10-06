@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes code configuration for a Java-based Kinesis Data Analytics application.
+ * Describes code configuration for a Flink-based Kinesis Data Analytics application.
  * </p>
  * 
  * @see <a

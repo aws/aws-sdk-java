@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * For an SQL-based Amazon Kinesis Data Analytics application, describes updates to the output configuration identified
- * by the <code>OutputId</code>.
+ * For a SQL-based Kinesis Data Analytics application, describes updates to the output configuration identified by the
+ * <code>OutputId</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/OutputUpdate" target="_top">AWS

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the starting parameters for an SQL-based Kinesis Data Analytics application.
+ * Describes the starting parameters for a SQL-based Kinesis Data Analytics application.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/SqlRunConfiguration"

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The data format is not valid. Amazon Kinesis Data Analytics cannot detect the schema for the given streaming source.
+ * The data format is not valid. Kinesis Data Analytics cannot detect the schema for the given streaming source.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

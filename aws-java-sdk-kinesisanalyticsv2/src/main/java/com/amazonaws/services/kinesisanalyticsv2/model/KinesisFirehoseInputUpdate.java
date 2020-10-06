@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * For an SQL-based Amazon Kinesis Data Analytics application, when updating application input configuration, provides
+ * For a SQL-based Kinesis Data Analytics application, when updating application input configuration, provides
  * information about a Kinesis Data Firehose delivery stream as the streaming source.
  * </p>
  * 

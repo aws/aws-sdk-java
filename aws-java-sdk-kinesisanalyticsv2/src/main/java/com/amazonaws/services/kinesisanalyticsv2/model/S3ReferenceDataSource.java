@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * For an SQL-based Amazon Kinesis Data Analytics application, identifies the Amazon S3 bucket and object that contains
- * the reference data.
+ * For a SQL-based Kinesis Data Analytics application, identifies the Amazon S3 bucket and object that contains the
+ * reference data.
  * </p>
  * <p>
  * A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the

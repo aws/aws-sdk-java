@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes updates to the input streams, destination streams, and reference data sources for an SQL-based Kinesis Data
+ * Describes updates to the input streams, destination streams, and reference data sources for a SQL-based Kinesis Data
  * Analytics application.
  * </p>
  * 

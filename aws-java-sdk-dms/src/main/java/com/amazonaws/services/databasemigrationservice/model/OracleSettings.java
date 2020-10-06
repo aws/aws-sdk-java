@@ -30,6 +30,116 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Set this attribute to set up table-level supplemental logging for the Oracle database. This attribute enables
+     * PRIMARY KEY supplemental logging on all tables selected for a migration task.
+     * </p>
+     * <p>
+     * If you use this option, you still need to enable database-level supplemental logging.
+     * </p>
+     */
+    private Boolean addSupplementalLogging;
+    /**
+     * <p>
+     * Specifies the destination of the archived redo logs. The value should be the same as the DEST_ID number in the
+     * v$archived_log table. When working with multiple log destinations (DEST_ID), we recommend that you to specify an
+     * archived redo logs location identifier. Doing this improves performance by ensuring that the correct logs are
+     * accessed from the outset.
+     * </p>
+     */
+    private Integer archivedLogDestId;
+    /**
+     * <p>
+     * Set this attribute with <code>archivedLogDestId</code> in a primary/ standby setup. This attribute is useful in
+     * the case of a switchover. In this case, AWS DMS needs to know which destination to get archive redo logs from to
+     * read changes. This need arises because the previous primary instance is now a standby instance after switchover.
+     * </p>
+     */
+    private Integer additionalArchivedLogDestId;
+    /**
+     * <p>
+     * Set this attribute to <code>true</code> to enable replication of Oracle tables containing columns that are nested
+     * tables or defined types.
+     * </p>
+     */
+    private Boolean allowSelectNestedTables;
+    /**
+     * <p>
+     * Set this attribute to change the number of threads that DMS configures to perform a Change Data Capture (CDC)
+     * load using Oracle Automatic Storage Management (ASM). You can specify an integer value between 2 (the default)
+     * and 8 (the maximum). Use this attribute together with the <code>readAheadBlocks</code> attribute.
+     * </p>
+     */
+    private Integer parallelAsmReadThreads;
+    /**
+     * <p>
+     * Set this attribute to change the number of read-ahead blocks that DMS configures to perform a Change Data Capture
+     * (CDC) load using Oracle Automatic Storage Management (ASM). You can specify an integer value between 1000 (the
+     * default) and 200,000 (the maximum).
+     * </p>
+     */
+    private Integer readAheadBlocks;
+    /**
+     * <p>
+     * Set this attribute to <code>false</code> in order to use the Binary Reader to capture change data for an Amazon
+     * RDS for Oracle as the source. This tells the DMS instance to not access redo logs through any specified path
+     * prefix replacement using direct file access.
+     * </p>
+     */
+    private Boolean accessAlternateDirectly;
+    /**
+     * <p>
+     * Set this attribute to <code>true</code> in order to use the Binary Reader to capture change data for an Amazon
+     * RDS for Oracle as the source. This tells the DMS instance to use any specified prefix replacement to access all
+     * online redo logs.
+     * </p>
+     */
+    private Boolean useAlternateFolderForOnline;
+    /**
+     * <p>
+     * Set this string attribute to the required value in order to use the Binary Reader to capture change data for an
+     * Amazon RDS for Oracle as the source. This value specifies the default Oracle root used to access the redo logs.
+     * </p>
+     */
+    private String oraclePathPrefix;
+    /**
+     * <p>
+     * Set this string attribute to the required value in order to use the Binary Reader to capture change data for an
+     * Amazon RDS for Oracle as the source. This value specifies the path prefix used to replace the default Oracle root
+     * to access the redo logs.
+     * </p>
+     */
+    private String usePathPrefix;
+    /**
+     * <p>
+     * Set this attribute to true in order to use the Binary Reader to capture change data for an Amazon RDS for Oracle
+     * as the source. This setting tells DMS instance to replace the default Oracle root with the specified
+     * <code>usePathPrefix</code> setting to access the redo logs.
+     * </p>
+     */
+    private Boolean replacePathPrefix;
+    /**
+     * <p>
+     * Set this attribute to enable homogenous tablespace replication and create existing tables or indexes under the
+     * same tablespace on the target.
+     * </p>
+     */
+    private Boolean enableHomogenousTablespace;
+    /**
+     * <p>
+     * When set to <code>true</code>, this attribute helps to increase the commit rate on the Oracle target database by
+     * writing directly to tables and not writing a trail to database logs.
+     * </p>
+     */
+    private Boolean directPathNoLog;
+    /**
+     * <p>
+     * When this field is set to <code>Y</code>, AWS DMS only accesses the archived redo logs. If the archived redo logs
+     * are stored on Oracle ASM only, the AWS DMS user account needs to be granted ASM privileges.
+     * </p>
+     */
+    private Boolean archivedLogsOnly;
+    /**
+     * <p>
      * For an Oracle source endpoint, your Oracle Automatic Storage Management (ASM) password. You can set this value
      * from the <code> <i>asm_user_password</i> </code> value. You set this value as part of the comma-separated value
      * that you set to the <code>Password</code> request parameter when you create the endpoint to access transaction
@@ -61,10 +171,50 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     private String asmUser;
     /**
      * <p>
+     * Specifies whether the length of a character column is in bytes or in characters. To indicate that the character
+     * column length is in characters, set this attribute to <code>CHAR</code>. Otherwise, the character column length
+     * is in bytes.
+     * </p>
+     * <p>
+     * Example: <code>charLengthSemantics=CHAR;</code>
+     * </p>
+     */
+    private String charLengthSemantics;
+    /**
+     * <p>
      * Database name for the endpoint.
      * </p>
      */
     private String databaseName;
+    /**
+     * <p>
+     * When set to <code>true</code>, this attribute specifies a parallel load when <code>useDirectPathFullLoad</code>
+     * is set to <code>Y</code>. This attribute also only applies when you use the AWS DMS parallel load feature. Note
+     * that the target table cannot have any constraints or indexes.
+     * </p>
+     */
+    private Boolean directPathParallelLoad;
+    /**
+     * <p>
+     * When set to <code>true</code>, this attribute causes a task to fail if the actual size of an LOB column is
+     * greater than the specified <code>LobMaxSize</code>.
+     * </p>
+     * <p>
+     * If a task is set to limited LOB mode and this option is set to <code>true</code>, the task fails instead of
+     * truncating the LOB data.
+     * </p>
+     */
+    private Boolean failTasksOnLobTruncation;
+    /**
+     * <p>
+     * Specifies the number scale. You can select a scale up to 38, or you can select FLOAT. By default, the NUMBER data
+     * type is converted to precision 38, scale 10.
+     * </p>
+     * <p>
+     * Example: <code>numberDataTypeScale=12</code>
+     * </p>
+     */
+    private Integer numberDatatypeScale;
     /**
      * <p>
      * Endpoint connection password.
@@ -77,6 +227,21 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer port;
+    /**
+     * <p>
+     * When set to <code>true</code>, this attribute supports tablespace replication.
+     * </p>
+     */
+    private Boolean readTableSpaceName;
+    /**
+     * <p>
+     * Specifies the number of seconds that the system waits before resending a query.
+     * </p>
+     * <p>
+     * Example: <code>retryInterval=6;</code>
+     * </p>
+     */
+    private Integer retryInterval;
     /**
      * <p>
      * For an Oracle source endpoint, the transparent data encryption (TDE) password required by AWM DMS to access
@@ -115,6 +280,851 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String username;
+
+    /**
+     * <p>
+     * Set this attribute to set up table-level supplemental logging for the Oracle database. This attribute enables
+     * PRIMARY KEY supplemental logging on all tables selected for a migration task.
+     * </p>
+     * <p>
+     * If you use this option, you still need to enable database-level supplemental logging.
+     * </p>
+     * 
+     * @param addSupplementalLogging
+     *        Set this attribute to set up table-level supplemental logging for the Oracle database. This attribute
+     *        enables PRIMARY KEY supplemental logging on all tables selected for a migration task.</p>
+     *        <p>
+     *        If you use this option, you still need to enable database-level supplemental logging.
+     */
+
+    public void setAddSupplementalLogging(Boolean addSupplementalLogging) {
+        this.addSupplementalLogging = addSupplementalLogging;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to set up table-level supplemental logging for the Oracle database. This attribute enables
+     * PRIMARY KEY supplemental logging on all tables selected for a migration task.
+     * </p>
+     * <p>
+     * If you use this option, you still need to enable database-level supplemental logging.
+     * </p>
+     * 
+     * @return Set this attribute to set up table-level supplemental logging for the Oracle database. This attribute
+     *         enables PRIMARY KEY supplemental logging on all tables selected for a migration task.</p>
+     *         <p>
+     *         If you use this option, you still need to enable database-level supplemental logging.
+     */
+
+    public Boolean getAddSupplementalLogging() {
+        return this.addSupplementalLogging;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to set up table-level supplemental logging for the Oracle database. This attribute enables
+     * PRIMARY KEY supplemental logging on all tables selected for a migration task.
+     * </p>
+     * <p>
+     * If you use this option, you still need to enable database-level supplemental logging.
+     * </p>
+     * 
+     * @param addSupplementalLogging
+     *        Set this attribute to set up table-level supplemental logging for the Oracle database. This attribute
+     *        enables PRIMARY KEY supplemental logging on all tables selected for a migration task.</p>
+     *        <p>
+     *        If you use this option, you still need to enable database-level supplemental logging.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OracleSettings withAddSupplementalLogging(Boolean addSupplementalLogging) {
+        setAddSupplementalLogging(addSupplementalLogging);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to set up table-level supplemental logging for the Oracle database. This attribute enables
+     * PRIMARY KEY supplemental logging on all tables selected for a migration task.
+     * </p>
+     * <p>
+     * If you use this option, you still need to enable database-level supplemental logging.
+     * </p>
+     * 
+     * @return Set this attribute to set up table-level supplemental logging for the Oracle database. This attribute
+     *         enables PRIMARY KEY supplemental logging on all tables selected for a migration task.</p>
+     *         <p>
+     *         If you use this option, you still need to enable database-level supplemental logging.
+     */
+
+    public Boolean isAddSupplementalLogging() {
+        return this.addSupplementalLogging;
+    }
+
+    /**
+     * <p>
+     * Specifies the destination of the archived redo logs. The value should be the same as the DEST_ID number in the
+     * v$archived_log table. When working with multiple log destinations (DEST_ID), we recommend that you to specify an
+     * archived redo logs location identifier. Doing this improves performance by ensuring that the correct logs are
+     * accessed from the outset.
+     * </p>
+     * 
+     * @param archivedLogDestId
+     *        Specifies the destination of the archived redo logs. The value should be the same as the DEST_ID number in
+     *        the v$archived_log table. When working with multiple log destinations (DEST_ID), we recommend that you to
+     *        specify an archived redo logs location identifier. Doing this improves performance by ensuring that the
+     *        correct logs are accessed from the outset.
+     */
+
+    public void setArchivedLogDestId(Integer archivedLogDestId) {
+        this.archivedLogDestId = archivedLogDestId;
+    }
+
+    /**
+     * <p>
+     * Specifies the destination of the archived redo logs. The value should be the same as the DEST_ID number in the
+     * v$archived_log table. When working with multiple log destinations (DEST_ID), we recommend that you to specify an
+     * archived redo logs location identifier. Doing this improves performance by ensuring that the correct logs are
+     * accessed from the outset.
+     * </p>
+     * 
+     * @return Specifies the destination of the archived redo logs. The value should be the same as the DEST_ID number
+     *         in the v$archived_log table. When working with multiple log destinations (DEST_ID), we recommend that you
+     *         to specify an archived redo logs location identifier. Doing this improves performance by ensuring that
+     *         the correct logs are accessed from the outset.
+     */
+
+    public Integer getArchivedLogDestId() {
+        return this.archivedLogDestId;
+    }
+
+    /**
+     * <p>
+     * Specifies the destination of the archived redo logs. The value should be the same as the DEST_ID number in the
+     * v$archived_log table. When working with multiple log destinations (DEST_ID), we recommend that you to specify an
+     * archived redo logs location identifier. Doing this improves performance by ensuring that the correct logs are
+     * accessed from the outset.
+     * </p>
+     * 
+     * @param archivedLogDestId
+     *        Specifies the destination of the archived redo logs. The value should be the same as the DEST_ID number in
+     *        the v$archived_log table. When working with multiple log destinations (DEST_ID), we recommend that you to
+     *        specify an archived redo logs location identifier. Doing this improves performance by ensuring that the
+     *        correct logs are accessed from the outset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OracleSettings withArchivedLogDestId(Integer archivedLogDestId) {
+        setArchivedLogDestId(archivedLogDestId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set this attribute with <code>archivedLogDestId</code> in a primary/ standby setup. This attribute is useful in
+     * the case of a switchover. In this case, AWS DMS needs to know which destination to get archive redo logs from to
+     * read changes. This need arises because the previous primary instance is now a standby instance after switchover.
+     * </p>
+     * 
+     * @param additionalArchivedLogDestId
+     *        Set this attribute with <code>archivedLogDestId</code> in a primary/ standby setup. This attribute is
+     *        useful in the case of a switchover. In this case, AWS DMS needs to know which destination to get archive
+     *        redo logs from to read changes. This need arises because the previous primary instance is now a standby
+     *        instance after switchover.
+     */
+
+    public void setAdditionalArchivedLogDestId(Integer additionalArchivedLogDestId) {
+        this.additionalArchivedLogDestId = additionalArchivedLogDestId;
+    }
+
+    /**
+     * <p>
+     * Set this attribute with <code>archivedLogDestId</code> in a primary/ standby setup. This attribute is useful in
+     * the case of a switchover. In this case, AWS DMS needs to know which destination to get archive redo logs from to
+     * read changes. This need arises because the previous primary instance is now a standby instance after switchover.
+     * </p>
+     * 
+     * @return Set this attribute with <code>archivedLogDestId</code> in a primary/ standby setup. This attribute is
+     *         useful in the case of a switchover. In this case, AWS DMS needs to know which destination to get archive
+     *         redo logs from to read changes. This need arises because the previous primary instance is now a standby
+     *         instance after switchover.
+     */
+
+    public Integer getAdditionalArchivedLogDestId() {
+        return this.additionalArchivedLogDestId;
+    }
+
+    /**
+     * <p>
+     * Set this attribute with <code>archivedLogDestId</code> in a primary/ standby setup. This attribute is useful in
+     * the case of a switchover. In this case, AWS DMS needs to know which destination to get archive redo logs from to
+     * read changes. This need arises because the previous primary instance is now a standby instance after switchover.
+     * </p>
+     * 
+     * @param additionalArchivedLogDestId
+     *        Set this attribute with <code>archivedLogDestId</code> in a primary/ standby setup. This attribute is
+     *        useful in the case of a switchover. In this case, AWS DMS needs to know which destination to get archive
+     *        redo logs from to read changes. This need arises because the previous primary instance is now a standby
+     *        instance after switchover.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OracleSettings withAdditionalArchivedLogDestId(Integer additionalArchivedLogDestId) {
+        setAdditionalArchivedLogDestId(additionalArchivedLogDestId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to <code>true</code> to enable replication of Oracle tables containing columns that are nested
+     * tables or defined types.
+     * </p>
+     * 
+     * @param allowSelectNestedTables
+     *        Set this attribute to <code>true</code> to enable replication of Oracle tables containing columns that are
+     *        nested tables or defined types.
+     */
+
+    public void setAllowSelectNestedTables(Boolean allowSelectNestedTables) {
+        this.allowSelectNestedTables = allowSelectNestedTables;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to <code>true</code> to enable replication of Oracle tables containing columns that are nested
+     * tables or defined types.
+     * </p>
+     * 
+     * @return Set this attribute to <code>true</code> to enable replication of Oracle tables containing columns that
+     *         are nested tables or defined types.
+     */
+
+    public Boolean getAllowSelectNestedTables() {
+        return this.allowSelectNestedTables;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to <code>true</code> to enable replication of Oracle tables containing columns that are nested
+     * tables or defined types.
+     * </p>
+     * 
+     * @param allowSelectNestedTables
+     *        Set this attribute to <code>true</code> to enable replication of Oracle tables containing columns that are
+     *        nested tables or defined types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OracleSettings withAllowSelectNestedTables(Boolean allowSelectNestedTables) {
+        setAllowSelectNestedTables(allowSelectNestedTables);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to <code>true</code> to enable replication of Oracle tables containing columns that are nested
+     * tables or defined types.
+     * </p>
+     * 
+     * @return Set this attribute to <code>true</code> to enable replication of Oracle tables containing columns that
+     *         are nested tables or defined types.
+     */
+
+    public Boolean isAllowSelectNestedTables() {
+        return this.allowSelectNestedTables;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to change the number of threads that DMS configures to perform a Change Data Capture (CDC)
+     * load using Oracle Automatic Storage Management (ASM). You can specify an integer value between 2 (the default)
+     * and 8 (the maximum). Use this attribute together with the <code>readAheadBlocks</code> attribute.
+     * </p>
+     * 
+     * @param parallelAsmReadThreads
+     *        Set this attribute to change the number of threads that DMS configures to perform a Change Data Capture
+     *        (CDC) load using Oracle Automatic Storage Management (ASM). You can specify an integer value between 2
+     *        (the default) and 8 (the maximum). Use this attribute together with the <code>readAheadBlocks</code>
+     *        attribute.
+     */
+
+    public void setParallelAsmReadThreads(Integer parallelAsmReadThreads) {
+        this.parallelAsmReadThreads = parallelAsmReadThreads;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to change the number of threads that DMS configures to perform a Change Data Capture (CDC)
+     * load using Oracle Automatic Storage Management (ASM). You can specify an integer value between 2 (the default)
+     * and 8 (the maximum). Use this attribute together with the <code>readAheadBlocks</code> attribute.
+     * </p>
+     * 
+     * @return Set this attribute to change the number of threads that DMS configures to perform a Change Data Capture
+     *         (CDC) load using Oracle Automatic Storage Management (ASM). You can specify an integer value between 2
+     *         (the default) and 8 (the maximum). Use this attribute together with the <code>readAheadBlocks</code>
+     *         attribute.
+     */
+
+    public Integer getParallelAsmReadThreads() {
+        return this.parallelAsmReadThreads;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to change the number of threads that DMS configures to perform a Change Data Capture (CDC)
+     * load using Oracle Automatic Storage Management (ASM). You can specify an integer value between 2 (the default)
+     * and 8 (the maximum). Use this attribute together with the <code>readAheadBlocks</code> attribute.
+     * </p>
+     * 
+     * @param parallelAsmReadThreads
+     *        Set this attribute to change the number of threads that DMS configures to perform a Change Data Capture
+     *        (CDC) load using Oracle Automatic Storage Management (ASM). You can specify an integer value between 2
+     *        (the default) and 8 (the maximum). Use this attribute together with the <code>readAheadBlocks</code>
+     *        attribute.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OracleSettings withParallelAsmReadThreads(Integer parallelAsmReadThreads) {
+        setParallelAsmReadThreads(parallelAsmReadThreads);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to change the number of read-ahead blocks that DMS configures to perform a Change Data Capture
+     * (CDC) load using Oracle Automatic Storage Management (ASM). You can specify an integer value between 1000 (the
+     * default) and 200,000 (the maximum).
+     * </p>
+     * 
+     * @param readAheadBlocks
+     *        Set this attribute to change the number of read-ahead blocks that DMS configures to perform a Change Data
+     *        Capture (CDC) load using Oracle Automatic Storage Management (ASM). You can specify an integer value
+     *        between 1000 (the default) and 200,000 (the maximum).
+     */
+
+    public void setReadAheadBlocks(Integer readAheadBlocks) {
+        this.readAheadBlocks = readAheadBlocks;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to change the number of read-ahead blocks that DMS configures to perform a Change Data Capture
+     * (CDC) load using Oracle Automatic Storage Management (ASM). You can specify an integer value between 1000 (the
+     * default) and 200,000 (the maximum).
+     * </p>
+     * 
+     * @return Set this attribute to change the number of read-ahead blocks that DMS configures to perform a Change Data
+     *         Capture (CDC) load using Oracle Automatic Storage Management (ASM). You can specify an integer value
+     *         between 1000 (the default) and 200,000 (the maximum).
+     */
+
+    public Integer getReadAheadBlocks() {
+        return this.readAheadBlocks;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to change the number of read-ahead blocks that DMS configures to perform a Change Data Capture
+     * (CDC) load using Oracle Automatic Storage Management (ASM). You can specify an integer value between 1000 (the
+     * default) and 200,000 (the maximum).
+     * </p>
+     * 
+     * @param readAheadBlocks
+     *        Set this attribute to change the number of read-ahead blocks that DMS configures to perform a Change Data
+     *        Capture (CDC) load using Oracle Automatic Storage Management (ASM). You can specify an integer value
+     *        between 1000 (the default) and 200,000 (the maximum).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OracleSettings withReadAheadBlocks(Integer readAheadBlocks) {
+        setReadAheadBlocks(readAheadBlocks);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to <code>false</code> in order to use the Binary Reader to capture change data for an Amazon
+     * RDS for Oracle as the source. This tells the DMS instance to not access redo logs through any specified path
+     * prefix replacement using direct file access.
+     * </p>
+     * 
+     * @param accessAlternateDirectly
+     *        Set this attribute to <code>false</code> in order to use the Binary Reader to capture change data for an
+     *        Amazon RDS for Oracle as the source. This tells the DMS instance to not access redo logs through any
+     *        specified path prefix replacement using direct file access.
+     */
+
+    public void setAccessAlternateDirectly(Boolean accessAlternateDirectly) {
+        this.accessAlternateDirectly = accessAlternateDirectly;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to <code>false</code> in order to use the Binary Reader to capture change data for an Amazon
+     * RDS for Oracle as the source. This tells the DMS instance to not access redo logs through any specified path
+     * prefix replacement using direct file access.
+     * </p>
+     * 
+     * @return Set this attribute to <code>false</code> in order to use the Binary Reader to capture change data for an
+     *         Amazon RDS for Oracle as the source. This tells the DMS instance to not access redo logs through any
+     *         specified path prefix replacement using direct file access.
+     */
+
+    public Boolean getAccessAlternateDirectly() {
+        return this.accessAlternateDirectly;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to <code>false</code> in order to use the Binary Reader to capture change data for an Amazon
+     * RDS for Oracle as the source. This tells the DMS instance to not access redo logs through any specified path
+     * prefix replacement using direct file access.
+     * </p>
+     * 
+     * @param accessAlternateDirectly
+     *        Set this attribute to <code>false</code> in order to use the Binary Reader to capture change data for an
+     *        Amazon RDS for Oracle as the source. This tells the DMS instance to not access redo logs through any
+     *        specified path prefix replacement using direct file access.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OracleSettings withAccessAlternateDirectly(Boolean accessAlternateDirectly) {
+        setAccessAlternateDirectly(accessAlternateDirectly);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to <code>false</code> in order to use the Binary Reader to capture change data for an Amazon
+     * RDS for Oracle as the source. This tells the DMS instance to not access redo logs through any specified path
+     * prefix replacement using direct file access.
+     * </p>
+     * 
+     * @return Set this attribute to <code>false</code> in order to use the Binary Reader to capture change data for an
+     *         Amazon RDS for Oracle as the source. This tells the DMS instance to not access redo logs through any
+     *         specified path prefix replacement using direct file access.
+     */
+
+    public Boolean isAccessAlternateDirectly() {
+        return this.accessAlternateDirectly;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to <code>true</code> in order to use the Binary Reader to capture change data for an Amazon
+     * RDS for Oracle as the source. This tells the DMS instance to use any specified prefix replacement to access all
+     * online redo logs.
+     * </p>
+     * 
+     * @param useAlternateFolderForOnline
+     *        Set this attribute to <code>true</code> in order to use the Binary Reader to capture change data for an
+     *        Amazon RDS for Oracle as the source. This tells the DMS instance to use any specified prefix replacement
+     *        to access all online redo logs.
+     */
+
+    public void setUseAlternateFolderForOnline(Boolean useAlternateFolderForOnline) {
+        this.useAlternateFolderForOnline = useAlternateFolderForOnline;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to <code>true</code> in order to use the Binary Reader to capture change data for an Amazon
+     * RDS for Oracle as the source. This tells the DMS instance to use any specified prefix replacement to access all
+     * online redo logs.
+     * </p>
+     * 
+     * @return Set this attribute to <code>true</code> in order to use the Binary Reader to capture change data for an
+     *         Amazon RDS for Oracle as the source. This tells the DMS instance to use any specified prefix replacement
+     *         to access all online redo logs.
+     */
+
+    public Boolean getUseAlternateFolderForOnline() {
+        return this.useAlternateFolderForOnline;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to <code>true</code> in order to use the Binary Reader to capture change data for an Amazon
+     * RDS for Oracle as the source. This tells the DMS instance to use any specified prefix replacement to access all
+     * online redo logs.
+     * </p>
+     * 
+     * @param useAlternateFolderForOnline
+     *        Set this attribute to <code>true</code> in order to use the Binary Reader to capture change data for an
+     *        Amazon RDS for Oracle as the source. This tells the DMS instance to use any specified prefix replacement
+     *        to access all online redo logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OracleSettings withUseAlternateFolderForOnline(Boolean useAlternateFolderForOnline) {
+        setUseAlternateFolderForOnline(useAlternateFolderForOnline);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to <code>true</code> in order to use the Binary Reader to capture change data for an Amazon
+     * RDS for Oracle as the source. This tells the DMS instance to use any specified prefix replacement to access all
+     * online redo logs.
+     * </p>
+     * 
+     * @return Set this attribute to <code>true</code> in order to use the Binary Reader to capture change data for an
+     *         Amazon RDS for Oracle as the source. This tells the DMS instance to use any specified prefix replacement
+     *         to access all online redo logs.
+     */
+
+    public Boolean isUseAlternateFolderForOnline() {
+        return this.useAlternateFolderForOnline;
+    }
+
+    /**
+     * <p>
+     * Set this string attribute to the required value in order to use the Binary Reader to capture change data for an
+     * Amazon RDS for Oracle as the source. This value specifies the default Oracle root used to access the redo logs.
+     * </p>
+     * 
+     * @param oraclePathPrefix
+     *        Set this string attribute to the required value in order to use the Binary Reader to capture change data
+     *        for an Amazon RDS for Oracle as the source. This value specifies the default Oracle root used to access
+     *        the redo logs.
+     */
+
+    public void setOraclePathPrefix(String oraclePathPrefix) {
+        this.oraclePathPrefix = oraclePathPrefix;
+    }
+
+    /**
+     * <p>
+     * Set this string attribute to the required value in order to use the Binary Reader to capture change data for an
+     * Amazon RDS for Oracle as the source. This value specifies the default Oracle root used to access the redo logs.
+     * </p>
+     * 
+     * @return Set this string attribute to the required value in order to use the Binary Reader to capture change data
+     *         for an Amazon RDS for Oracle as the source. This value specifies the default Oracle root used to access
+     *         the redo logs.
+     */
+
+    public String getOraclePathPrefix() {
+        return this.oraclePathPrefix;
+    }
+
+    /**
+     * <p>
+     * Set this string attribute to the required value in order to use the Binary Reader to capture change data for an
+     * Amazon RDS for Oracle as the source. This value specifies the default Oracle root used to access the redo logs.
+     * </p>
+     * 
+     * @param oraclePathPrefix
+     *        Set this string attribute to the required value in order to use the Binary Reader to capture change data
+     *        for an Amazon RDS for Oracle as the source. This value specifies the default Oracle root used to access
+     *        the redo logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OracleSettings withOraclePathPrefix(String oraclePathPrefix) {
+        setOraclePathPrefix(oraclePathPrefix);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set this string attribute to the required value in order to use the Binary Reader to capture change data for an
+     * Amazon RDS for Oracle as the source. This value specifies the path prefix used to replace the default Oracle root
+     * to access the redo logs.
+     * </p>
+     * 
+     * @param usePathPrefix
+     *        Set this string attribute to the required value in order to use the Binary Reader to capture change data
+     *        for an Amazon RDS for Oracle as the source. This value specifies the path prefix used to replace the
+     *        default Oracle root to access the redo logs.
+     */
+
+    public void setUsePathPrefix(String usePathPrefix) {
+        this.usePathPrefix = usePathPrefix;
+    }
+
+    /**
+     * <p>
+     * Set this string attribute to the required value in order to use the Binary Reader to capture change data for an
+     * Amazon RDS for Oracle as the source. This value specifies the path prefix used to replace the default Oracle root
+     * to access the redo logs.
+     * </p>
+     * 
+     * @return Set this string attribute to the required value in order to use the Binary Reader to capture change data
+     *         for an Amazon RDS for Oracle as the source. This value specifies the path prefix used to replace the
+     *         default Oracle root to access the redo logs.
+     */
+
+    public String getUsePathPrefix() {
+        return this.usePathPrefix;
+    }
+
+    /**
+     * <p>
+     * Set this string attribute to the required value in order to use the Binary Reader to capture change data for an
+     * Amazon RDS for Oracle as the source. This value specifies the path prefix used to replace the default Oracle root
+     * to access the redo logs.
+     * </p>
+     * 
+     * @param usePathPrefix
+     *        Set this string attribute to the required value in order to use the Binary Reader to capture change data
+     *        for an Amazon RDS for Oracle as the source. This value specifies the path prefix used to replace the
+     *        default Oracle root to access the redo logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OracleSettings withUsePathPrefix(String usePathPrefix) {
+        setUsePathPrefix(usePathPrefix);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to true in order to use the Binary Reader to capture change data for an Amazon RDS for Oracle
+     * as the source. This setting tells DMS instance to replace the default Oracle root with the specified
+     * <code>usePathPrefix</code> setting to access the redo logs.
+     * </p>
+     * 
+     * @param replacePathPrefix
+     *        Set this attribute to true in order to use the Binary Reader to capture change data for an Amazon RDS for
+     *        Oracle as the source. This setting tells DMS instance to replace the default Oracle root with the
+     *        specified <code>usePathPrefix</code> setting to access the redo logs.
+     */
+
+    public void setReplacePathPrefix(Boolean replacePathPrefix) {
+        this.replacePathPrefix = replacePathPrefix;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to true in order to use the Binary Reader to capture change data for an Amazon RDS for Oracle
+     * as the source. This setting tells DMS instance to replace the default Oracle root with the specified
+     * <code>usePathPrefix</code> setting to access the redo logs.
+     * </p>
+     * 
+     * @return Set this attribute to true in order to use the Binary Reader to capture change data for an Amazon RDS for
+     *         Oracle as the source. This setting tells DMS instance to replace the default Oracle root with the
+     *         specified <code>usePathPrefix</code> setting to access the redo logs.
+     */
+
+    public Boolean getReplacePathPrefix() {
+        return this.replacePathPrefix;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to true in order to use the Binary Reader to capture change data for an Amazon RDS for Oracle
+     * as the source. This setting tells DMS instance to replace the default Oracle root with the specified
+     * <code>usePathPrefix</code> setting to access the redo logs.
+     * </p>
+     * 
+     * @param replacePathPrefix
+     *        Set this attribute to true in order to use the Binary Reader to capture change data for an Amazon RDS for
+     *        Oracle as the source. This setting tells DMS instance to replace the default Oracle root with the
+     *        specified <code>usePathPrefix</code> setting to access the redo logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OracleSettings withReplacePathPrefix(Boolean replacePathPrefix) {
+        setReplacePathPrefix(replacePathPrefix);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to true in order to use the Binary Reader to capture change data for an Amazon RDS for Oracle
+     * as the source. This setting tells DMS instance to replace the default Oracle root with the specified
+     * <code>usePathPrefix</code> setting to access the redo logs.
+     * </p>
+     * 
+     * @return Set this attribute to true in order to use the Binary Reader to capture change data for an Amazon RDS for
+     *         Oracle as the source. This setting tells DMS instance to replace the default Oracle root with the
+     *         specified <code>usePathPrefix</code> setting to access the redo logs.
+     */
+
+    public Boolean isReplacePathPrefix() {
+        return this.replacePathPrefix;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to enable homogenous tablespace replication and create existing tables or indexes under the
+     * same tablespace on the target.
+     * </p>
+     * 
+     * @param enableHomogenousTablespace
+     *        Set this attribute to enable homogenous tablespace replication and create existing tables or indexes under
+     *        the same tablespace on the target.
+     */
+
+    public void setEnableHomogenousTablespace(Boolean enableHomogenousTablespace) {
+        this.enableHomogenousTablespace = enableHomogenousTablespace;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to enable homogenous tablespace replication and create existing tables or indexes under the
+     * same tablespace on the target.
+     * </p>
+     * 
+     * @return Set this attribute to enable homogenous tablespace replication and create existing tables or indexes
+     *         under the same tablespace on the target.
+     */
+
+    public Boolean getEnableHomogenousTablespace() {
+        return this.enableHomogenousTablespace;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to enable homogenous tablespace replication and create existing tables or indexes under the
+     * same tablespace on the target.
+     * </p>
+     * 
+     * @param enableHomogenousTablespace
+     *        Set this attribute to enable homogenous tablespace replication and create existing tables or indexes under
+     *        the same tablespace on the target.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OracleSettings withEnableHomogenousTablespace(Boolean enableHomogenousTablespace) {
+        setEnableHomogenousTablespace(enableHomogenousTablespace);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to enable homogenous tablespace replication and create existing tables or indexes under the
+     * same tablespace on the target.
+     * </p>
+     * 
+     * @return Set this attribute to enable homogenous tablespace replication and create existing tables or indexes
+     *         under the same tablespace on the target.
+     */
+
+    public Boolean isEnableHomogenousTablespace() {
+        return this.enableHomogenousTablespace;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, this attribute helps to increase the commit rate on the Oracle target database by
+     * writing directly to tables and not writing a trail to database logs.
+     * </p>
+     * 
+     * @param directPathNoLog
+     *        When set to <code>true</code>, this attribute helps to increase the commit rate on the Oracle target
+     *        database by writing directly to tables and not writing a trail to database logs.
+     */
+
+    public void setDirectPathNoLog(Boolean directPathNoLog) {
+        this.directPathNoLog = directPathNoLog;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, this attribute helps to increase the commit rate on the Oracle target database by
+     * writing directly to tables and not writing a trail to database logs.
+     * </p>
+     * 
+     * @return When set to <code>true</code>, this attribute helps to increase the commit rate on the Oracle target
+     *         database by writing directly to tables and not writing a trail to database logs.
+     */
+
+    public Boolean getDirectPathNoLog() {
+        return this.directPathNoLog;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, this attribute helps to increase the commit rate on the Oracle target database by
+     * writing directly to tables and not writing a trail to database logs.
+     * </p>
+     * 
+     * @param directPathNoLog
+     *        When set to <code>true</code>, this attribute helps to increase the commit rate on the Oracle target
+     *        database by writing directly to tables and not writing a trail to database logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OracleSettings withDirectPathNoLog(Boolean directPathNoLog) {
+        setDirectPathNoLog(directPathNoLog);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, this attribute helps to increase the commit rate on the Oracle target database by
+     * writing directly to tables and not writing a trail to database logs.
+     * </p>
+     * 
+     * @return When set to <code>true</code>, this attribute helps to increase the commit rate on the Oracle target
+     *         database by writing directly to tables and not writing a trail to database logs.
+     */
+
+    public Boolean isDirectPathNoLog() {
+        return this.directPathNoLog;
+    }
+
+    /**
+     * <p>
+     * When this field is set to <code>Y</code>, AWS DMS only accesses the archived redo logs. If the archived redo logs
+     * are stored on Oracle ASM only, the AWS DMS user account needs to be granted ASM privileges.
+     * </p>
+     * 
+     * @param archivedLogsOnly
+     *        When this field is set to <code>Y</code>, AWS DMS only accesses the archived redo logs. If the archived
+     *        redo logs are stored on Oracle ASM only, the AWS DMS user account needs to be granted ASM privileges.
+     */
+
+    public void setArchivedLogsOnly(Boolean archivedLogsOnly) {
+        this.archivedLogsOnly = archivedLogsOnly;
+    }
+
+    /**
+     * <p>
+     * When this field is set to <code>Y</code>, AWS DMS only accesses the archived redo logs. If the archived redo logs
+     * are stored on Oracle ASM only, the AWS DMS user account needs to be granted ASM privileges.
+     * </p>
+     * 
+     * @return When this field is set to <code>Y</code>, AWS DMS only accesses the archived redo logs. If the archived
+     *         redo logs are stored on Oracle ASM only, the AWS DMS user account needs to be granted ASM privileges.
+     */
+
+    public Boolean getArchivedLogsOnly() {
+        return this.archivedLogsOnly;
+    }
+
+    /**
+     * <p>
+     * When this field is set to <code>Y</code>, AWS DMS only accesses the archived redo logs. If the archived redo logs
+     * are stored on Oracle ASM only, the AWS DMS user account needs to be granted ASM privileges.
+     * </p>
+     * 
+     * @param archivedLogsOnly
+     *        When this field is set to <code>Y</code>, AWS DMS only accesses the archived redo logs. If the archived
+     *        redo logs are stored on Oracle ASM only, the AWS DMS user account needs to be granted ASM privileges.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OracleSettings withArchivedLogsOnly(Boolean archivedLogsOnly) {
+        setArchivedLogsOnly(archivedLogsOnly);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When this field is set to <code>Y</code>, AWS DMS only accesses the archived redo logs. If the archived redo logs
+     * are stored on Oracle ASM only, the AWS DMS user account needs to be granted ASM privileges.
+     * </p>
+     * 
+     * @return When this field is set to <code>Y</code>, AWS DMS only accesses the archived redo logs. If the archived
+     *         redo logs are stored on Oracle ASM only, the AWS DMS user account needs to be granted ASM privileges.
+     */
+
+    public Boolean isArchivedLogsOnly() {
+        return this.archivedLogsOnly;
+    }
 
     /**
      * <p>
@@ -316,6 +1326,101 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Specifies whether the length of a character column is in bytes or in characters. To indicate that the character
+     * column length is in characters, set this attribute to <code>CHAR</code>. Otherwise, the character column length
+     * is in bytes.
+     * </p>
+     * <p>
+     * Example: <code>charLengthSemantics=CHAR;</code>
+     * </p>
+     * 
+     * @param charLengthSemantics
+     *        Specifies whether the length of a character column is in bytes or in characters. To indicate that the
+     *        character column length is in characters, set this attribute to <code>CHAR</code>. Otherwise, the
+     *        character column length is in bytes.</p>
+     *        <p>
+     *        Example: <code>charLengthSemantics=CHAR;</code>
+     * @see CharLengthSemantics
+     */
+
+    public void setCharLengthSemantics(String charLengthSemantics) {
+        this.charLengthSemantics = charLengthSemantics;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the length of a character column is in bytes or in characters. To indicate that the character
+     * column length is in characters, set this attribute to <code>CHAR</code>. Otherwise, the character column length
+     * is in bytes.
+     * </p>
+     * <p>
+     * Example: <code>charLengthSemantics=CHAR;</code>
+     * </p>
+     * 
+     * @return Specifies whether the length of a character column is in bytes or in characters. To indicate that the
+     *         character column length is in characters, set this attribute to <code>CHAR</code>. Otherwise, the
+     *         character column length is in bytes.</p>
+     *         <p>
+     *         Example: <code>charLengthSemantics=CHAR;</code>
+     * @see CharLengthSemantics
+     */
+
+    public String getCharLengthSemantics() {
+        return this.charLengthSemantics;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the length of a character column is in bytes or in characters. To indicate that the character
+     * column length is in characters, set this attribute to <code>CHAR</code>. Otherwise, the character column length
+     * is in bytes.
+     * </p>
+     * <p>
+     * Example: <code>charLengthSemantics=CHAR;</code>
+     * </p>
+     * 
+     * @param charLengthSemantics
+     *        Specifies whether the length of a character column is in bytes or in characters. To indicate that the
+     *        character column length is in characters, set this attribute to <code>CHAR</code>. Otherwise, the
+     *        character column length is in bytes.</p>
+     *        <p>
+     *        Example: <code>charLengthSemantics=CHAR;</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CharLengthSemantics
+     */
+
+    public OracleSettings withCharLengthSemantics(String charLengthSemantics) {
+        setCharLengthSemantics(charLengthSemantics);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the length of a character column is in bytes or in characters. To indicate that the character
+     * column length is in characters, set this attribute to <code>CHAR</code>. Otherwise, the character column length
+     * is in bytes.
+     * </p>
+     * <p>
+     * Example: <code>charLengthSemantics=CHAR;</code>
+     * </p>
+     * 
+     * @param charLengthSemantics
+     *        Specifies whether the length of a character column is in bytes or in characters. To indicate that the
+     *        character column length is in characters, set this attribute to <code>CHAR</code>. Otherwise, the
+     *        character column length is in bytes.</p>
+     *        <p>
+     *        Example: <code>charLengthSemantics=CHAR;</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CharLengthSemantics
+     */
+
+    public OracleSettings withCharLengthSemantics(CharLengthSemantics charLengthSemantics) {
+        this.charLengthSemantics = charLengthSemantics.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * Database name for the endpoint.
      * </p>
      * 
@@ -351,6 +1456,223 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     public OracleSettings withDatabaseName(String databaseName) {
         setDatabaseName(databaseName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, this attribute specifies a parallel load when <code>useDirectPathFullLoad</code>
+     * is set to <code>Y</code>. This attribute also only applies when you use the AWS DMS parallel load feature. Note
+     * that the target table cannot have any constraints or indexes.
+     * </p>
+     * 
+     * @param directPathParallelLoad
+     *        When set to <code>true</code>, this attribute specifies a parallel load when
+     *        <code>useDirectPathFullLoad</code> is set to <code>Y</code>. This attribute also only applies when you use
+     *        the AWS DMS parallel load feature. Note that the target table cannot have any constraints or indexes.
+     */
+
+    public void setDirectPathParallelLoad(Boolean directPathParallelLoad) {
+        this.directPathParallelLoad = directPathParallelLoad;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, this attribute specifies a parallel load when <code>useDirectPathFullLoad</code>
+     * is set to <code>Y</code>. This attribute also only applies when you use the AWS DMS parallel load feature. Note
+     * that the target table cannot have any constraints or indexes.
+     * </p>
+     * 
+     * @return When set to <code>true</code>, this attribute specifies a parallel load when
+     *         <code>useDirectPathFullLoad</code> is set to <code>Y</code>. This attribute also only applies when you
+     *         use the AWS DMS parallel load feature. Note that the target table cannot have any constraints or indexes.
+     */
+
+    public Boolean getDirectPathParallelLoad() {
+        return this.directPathParallelLoad;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, this attribute specifies a parallel load when <code>useDirectPathFullLoad</code>
+     * is set to <code>Y</code>. This attribute also only applies when you use the AWS DMS parallel load feature. Note
+     * that the target table cannot have any constraints or indexes.
+     * </p>
+     * 
+     * @param directPathParallelLoad
+     *        When set to <code>true</code>, this attribute specifies a parallel load when
+     *        <code>useDirectPathFullLoad</code> is set to <code>Y</code>. This attribute also only applies when you use
+     *        the AWS DMS parallel load feature. Note that the target table cannot have any constraints or indexes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OracleSettings withDirectPathParallelLoad(Boolean directPathParallelLoad) {
+        setDirectPathParallelLoad(directPathParallelLoad);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, this attribute specifies a parallel load when <code>useDirectPathFullLoad</code>
+     * is set to <code>Y</code>. This attribute also only applies when you use the AWS DMS parallel load feature. Note
+     * that the target table cannot have any constraints or indexes.
+     * </p>
+     * 
+     * @return When set to <code>true</code>, this attribute specifies a parallel load when
+     *         <code>useDirectPathFullLoad</code> is set to <code>Y</code>. This attribute also only applies when you
+     *         use the AWS DMS parallel load feature. Note that the target table cannot have any constraints or indexes.
+     */
+
+    public Boolean isDirectPathParallelLoad() {
+        return this.directPathParallelLoad;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, this attribute causes a task to fail if the actual size of an LOB column is
+     * greater than the specified <code>LobMaxSize</code>.
+     * </p>
+     * <p>
+     * If a task is set to limited LOB mode and this option is set to <code>true</code>, the task fails instead of
+     * truncating the LOB data.
+     * </p>
+     * 
+     * @param failTasksOnLobTruncation
+     *        When set to <code>true</code>, this attribute causes a task to fail if the actual size of an LOB column is
+     *        greater than the specified <code>LobMaxSize</code>.</p>
+     *        <p>
+     *        If a task is set to limited LOB mode and this option is set to <code>true</code>, the task fails instead
+     *        of truncating the LOB data.
+     */
+
+    public void setFailTasksOnLobTruncation(Boolean failTasksOnLobTruncation) {
+        this.failTasksOnLobTruncation = failTasksOnLobTruncation;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, this attribute causes a task to fail if the actual size of an LOB column is
+     * greater than the specified <code>LobMaxSize</code>.
+     * </p>
+     * <p>
+     * If a task is set to limited LOB mode and this option is set to <code>true</code>, the task fails instead of
+     * truncating the LOB data.
+     * </p>
+     * 
+     * @return When set to <code>true</code>, this attribute causes a task to fail if the actual size of an LOB column
+     *         is greater than the specified <code>LobMaxSize</code>.</p>
+     *         <p>
+     *         If a task is set to limited LOB mode and this option is set to <code>true</code>, the task fails instead
+     *         of truncating the LOB data.
+     */
+
+    public Boolean getFailTasksOnLobTruncation() {
+        return this.failTasksOnLobTruncation;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, this attribute causes a task to fail if the actual size of an LOB column is
+     * greater than the specified <code>LobMaxSize</code>.
+     * </p>
+     * <p>
+     * If a task is set to limited LOB mode and this option is set to <code>true</code>, the task fails instead of
+     * truncating the LOB data.
+     * </p>
+     * 
+     * @param failTasksOnLobTruncation
+     *        When set to <code>true</code>, this attribute causes a task to fail if the actual size of an LOB column is
+     *        greater than the specified <code>LobMaxSize</code>.</p>
+     *        <p>
+     *        If a task is set to limited LOB mode and this option is set to <code>true</code>, the task fails instead
+     *        of truncating the LOB data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OracleSettings withFailTasksOnLobTruncation(Boolean failTasksOnLobTruncation) {
+        setFailTasksOnLobTruncation(failTasksOnLobTruncation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, this attribute causes a task to fail if the actual size of an LOB column is
+     * greater than the specified <code>LobMaxSize</code>.
+     * </p>
+     * <p>
+     * If a task is set to limited LOB mode and this option is set to <code>true</code>, the task fails instead of
+     * truncating the LOB data.
+     * </p>
+     * 
+     * @return When set to <code>true</code>, this attribute causes a task to fail if the actual size of an LOB column
+     *         is greater than the specified <code>LobMaxSize</code>.</p>
+     *         <p>
+     *         If a task is set to limited LOB mode and this option is set to <code>true</code>, the task fails instead
+     *         of truncating the LOB data.
+     */
+
+    public Boolean isFailTasksOnLobTruncation() {
+        return this.failTasksOnLobTruncation;
+    }
+
+    /**
+     * <p>
+     * Specifies the number scale. You can select a scale up to 38, or you can select FLOAT. By default, the NUMBER data
+     * type is converted to precision 38, scale 10.
+     * </p>
+     * <p>
+     * Example: <code>numberDataTypeScale=12</code>
+     * </p>
+     * 
+     * @param numberDatatypeScale
+     *        Specifies the number scale. You can select a scale up to 38, or you can select FLOAT. By default, the
+     *        NUMBER data type is converted to precision 38, scale 10.</p>
+     *        <p>
+     *        Example: <code>numberDataTypeScale=12</code>
+     */
+
+    public void setNumberDatatypeScale(Integer numberDatatypeScale) {
+        this.numberDatatypeScale = numberDatatypeScale;
+    }
+
+    /**
+     * <p>
+     * Specifies the number scale. You can select a scale up to 38, or you can select FLOAT. By default, the NUMBER data
+     * type is converted to precision 38, scale 10.
+     * </p>
+     * <p>
+     * Example: <code>numberDataTypeScale=12</code>
+     * </p>
+     * 
+     * @return Specifies the number scale. You can select a scale up to 38, or you can select FLOAT. By default, the
+     *         NUMBER data type is converted to precision 38, scale 10.</p>
+     *         <p>
+     *         Example: <code>numberDataTypeScale=12</code>
+     */
+
+    public Integer getNumberDatatypeScale() {
+        return this.numberDatatypeScale;
+    }
+
+    /**
+     * <p>
+     * Specifies the number scale. You can select a scale up to 38, or you can select FLOAT. By default, the NUMBER data
+     * type is converted to precision 38, scale 10.
+     * </p>
+     * <p>
+     * Example: <code>numberDataTypeScale=12</code>
+     * </p>
+     * 
+     * @param numberDatatypeScale
+     *        Specifies the number scale. You can select a scale up to 38, or you can select FLOAT. By default, the
+     *        NUMBER data type is converted to precision 38, scale 10.</p>
+     *        <p>
+     *        Example: <code>numberDataTypeScale=12</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OracleSettings withNumberDatatypeScale(Integer numberDatatypeScale) {
+        setNumberDatatypeScale(numberDatatypeScale);
         return this;
     }
 
@@ -431,6 +1753,113 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     public OracleSettings withPort(Integer port) {
         setPort(port);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, this attribute supports tablespace replication.
+     * </p>
+     * 
+     * @param readTableSpaceName
+     *        When set to <code>true</code>, this attribute supports tablespace replication.
+     */
+
+    public void setReadTableSpaceName(Boolean readTableSpaceName) {
+        this.readTableSpaceName = readTableSpaceName;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, this attribute supports tablespace replication.
+     * </p>
+     * 
+     * @return When set to <code>true</code>, this attribute supports tablespace replication.
+     */
+
+    public Boolean getReadTableSpaceName() {
+        return this.readTableSpaceName;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, this attribute supports tablespace replication.
+     * </p>
+     * 
+     * @param readTableSpaceName
+     *        When set to <code>true</code>, this attribute supports tablespace replication.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OracleSettings withReadTableSpaceName(Boolean readTableSpaceName) {
+        setReadTableSpaceName(readTableSpaceName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, this attribute supports tablespace replication.
+     * </p>
+     * 
+     * @return When set to <code>true</code>, this attribute supports tablespace replication.
+     */
+
+    public Boolean isReadTableSpaceName() {
+        return this.readTableSpaceName;
+    }
+
+    /**
+     * <p>
+     * Specifies the number of seconds that the system waits before resending a query.
+     * </p>
+     * <p>
+     * Example: <code>retryInterval=6;</code>
+     * </p>
+     * 
+     * @param retryInterval
+     *        Specifies the number of seconds that the system waits before resending a query.</p>
+     *        <p>
+     *        Example: <code>retryInterval=6;</code>
+     */
+
+    public void setRetryInterval(Integer retryInterval) {
+        this.retryInterval = retryInterval;
+    }
+
+    /**
+     * <p>
+     * Specifies the number of seconds that the system waits before resending a query.
+     * </p>
+     * <p>
+     * Example: <code>retryInterval=6;</code>
+     * </p>
+     * 
+     * @return Specifies the number of seconds that the system waits before resending a query.</p>
+     *         <p>
+     *         Example: <code>retryInterval=6;</code>
+     */
+
+    public Integer getRetryInterval() {
+        return this.retryInterval;
+    }
+
+    /**
+     * <p>
+     * Specifies the number of seconds that the system waits before resending a query.
+     * </p>
+     * <p>
+     * Example: <code>retryInterval=6;</code>
+     * </p>
+     * 
+     * @param retryInterval
+     *        Specifies the number of seconds that the system waits before resending a query.</p>
+     *        <p>
+     *        Example: <code>retryInterval=6;</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OracleSettings withRetryInterval(Integer retryInterval) {
+        setRetryInterval(retryInterval);
         return this;
     }
 
@@ -690,18 +2119,58 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAddSupplementalLogging() != null)
+            sb.append("AddSupplementalLogging: ").append(getAddSupplementalLogging()).append(",");
+        if (getArchivedLogDestId() != null)
+            sb.append("ArchivedLogDestId: ").append(getArchivedLogDestId()).append(",");
+        if (getAdditionalArchivedLogDestId() != null)
+            sb.append("AdditionalArchivedLogDestId: ").append(getAdditionalArchivedLogDestId()).append(",");
+        if (getAllowSelectNestedTables() != null)
+            sb.append("AllowSelectNestedTables: ").append(getAllowSelectNestedTables()).append(",");
+        if (getParallelAsmReadThreads() != null)
+            sb.append("ParallelAsmReadThreads: ").append(getParallelAsmReadThreads()).append(",");
+        if (getReadAheadBlocks() != null)
+            sb.append("ReadAheadBlocks: ").append(getReadAheadBlocks()).append(",");
+        if (getAccessAlternateDirectly() != null)
+            sb.append("AccessAlternateDirectly: ").append(getAccessAlternateDirectly()).append(",");
+        if (getUseAlternateFolderForOnline() != null)
+            sb.append("UseAlternateFolderForOnline: ").append(getUseAlternateFolderForOnline()).append(",");
+        if (getOraclePathPrefix() != null)
+            sb.append("OraclePathPrefix: ").append(getOraclePathPrefix()).append(",");
+        if (getUsePathPrefix() != null)
+            sb.append("UsePathPrefix: ").append(getUsePathPrefix()).append(",");
+        if (getReplacePathPrefix() != null)
+            sb.append("ReplacePathPrefix: ").append(getReplacePathPrefix()).append(",");
+        if (getEnableHomogenousTablespace() != null)
+            sb.append("EnableHomogenousTablespace: ").append(getEnableHomogenousTablespace()).append(",");
+        if (getDirectPathNoLog() != null)
+            sb.append("DirectPathNoLog: ").append(getDirectPathNoLog()).append(",");
+        if (getArchivedLogsOnly() != null)
+            sb.append("ArchivedLogsOnly: ").append(getArchivedLogsOnly()).append(",");
         if (getAsmPassword() != null)
             sb.append("AsmPassword: ").append("***Sensitive Data Redacted***").append(",");
         if (getAsmServer() != null)
             sb.append("AsmServer: ").append(getAsmServer()).append(",");
         if (getAsmUser() != null)
             sb.append("AsmUser: ").append(getAsmUser()).append(",");
+        if (getCharLengthSemantics() != null)
+            sb.append("CharLengthSemantics: ").append(getCharLengthSemantics()).append(",");
         if (getDatabaseName() != null)
             sb.append("DatabaseName: ").append(getDatabaseName()).append(",");
+        if (getDirectPathParallelLoad() != null)
+            sb.append("DirectPathParallelLoad: ").append(getDirectPathParallelLoad()).append(",");
+        if (getFailTasksOnLobTruncation() != null)
+            sb.append("FailTasksOnLobTruncation: ").append(getFailTasksOnLobTruncation()).append(",");
+        if (getNumberDatatypeScale() != null)
+            sb.append("NumberDatatypeScale: ").append(getNumberDatatypeScale()).append(",");
         if (getPassword() != null)
             sb.append("Password: ").append("***Sensitive Data Redacted***").append(",");
         if (getPort() != null)
             sb.append("Port: ").append(getPort()).append(",");
+        if (getReadTableSpaceName() != null)
+            sb.append("ReadTableSpaceName: ").append(getReadTableSpaceName()).append(",");
+        if (getRetryInterval() != null)
+            sb.append("RetryInterval: ").append(getRetryInterval()).append(",");
         if (getSecurityDbEncryption() != null)
             sb.append("SecurityDbEncryption: ").append("***Sensitive Data Redacted***").append(",");
         if (getSecurityDbEncryptionName() != null)
@@ -724,6 +2193,62 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof OracleSettings == false)
             return false;
         OracleSettings other = (OracleSettings) obj;
+        if (other.getAddSupplementalLogging() == null ^ this.getAddSupplementalLogging() == null)
+            return false;
+        if (other.getAddSupplementalLogging() != null && other.getAddSupplementalLogging().equals(this.getAddSupplementalLogging()) == false)
+            return false;
+        if (other.getArchivedLogDestId() == null ^ this.getArchivedLogDestId() == null)
+            return false;
+        if (other.getArchivedLogDestId() != null && other.getArchivedLogDestId().equals(this.getArchivedLogDestId()) == false)
+            return false;
+        if (other.getAdditionalArchivedLogDestId() == null ^ this.getAdditionalArchivedLogDestId() == null)
+            return false;
+        if (other.getAdditionalArchivedLogDestId() != null && other.getAdditionalArchivedLogDestId().equals(this.getAdditionalArchivedLogDestId()) == false)
+            return false;
+        if (other.getAllowSelectNestedTables() == null ^ this.getAllowSelectNestedTables() == null)
+            return false;
+        if (other.getAllowSelectNestedTables() != null && other.getAllowSelectNestedTables().equals(this.getAllowSelectNestedTables()) == false)
+            return false;
+        if (other.getParallelAsmReadThreads() == null ^ this.getParallelAsmReadThreads() == null)
+            return false;
+        if (other.getParallelAsmReadThreads() != null && other.getParallelAsmReadThreads().equals(this.getParallelAsmReadThreads()) == false)
+            return false;
+        if (other.getReadAheadBlocks() == null ^ this.getReadAheadBlocks() == null)
+            return false;
+        if (other.getReadAheadBlocks() != null && other.getReadAheadBlocks().equals(this.getReadAheadBlocks()) == false)
+            return false;
+        if (other.getAccessAlternateDirectly() == null ^ this.getAccessAlternateDirectly() == null)
+            return false;
+        if (other.getAccessAlternateDirectly() != null && other.getAccessAlternateDirectly().equals(this.getAccessAlternateDirectly()) == false)
+            return false;
+        if (other.getUseAlternateFolderForOnline() == null ^ this.getUseAlternateFolderForOnline() == null)
+            return false;
+        if (other.getUseAlternateFolderForOnline() != null && other.getUseAlternateFolderForOnline().equals(this.getUseAlternateFolderForOnline()) == false)
+            return false;
+        if (other.getOraclePathPrefix() == null ^ this.getOraclePathPrefix() == null)
+            return false;
+        if (other.getOraclePathPrefix() != null && other.getOraclePathPrefix().equals(this.getOraclePathPrefix()) == false)
+            return false;
+        if (other.getUsePathPrefix() == null ^ this.getUsePathPrefix() == null)
+            return false;
+        if (other.getUsePathPrefix() != null && other.getUsePathPrefix().equals(this.getUsePathPrefix()) == false)
+            return false;
+        if (other.getReplacePathPrefix() == null ^ this.getReplacePathPrefix() == null)
+            return false;
+        if (other.getReplacePathPrefix() != null && other.getReplacePathPrefix().equals(this.getReplacePathPrefix()) == false)
+            return false;
+        if (other.getEnableHomogenousTablespace() == null ^ this.getEnableHomogenousTablespace() == null)
+            return false;
+        if (other.getEnableHomogenousTablespace() != null && other.getEnableHomogenousTablespace().equals(this.getEnableHomogenousTablespace()) == false)
+            return false;
+        if (other.getDirectPathNoLog() == null ^ this.getDirectPathNoLog() == null)
+            return false;
+        if (other.getDirectPathNoLog() != null && other.getDirectPathNoLog().equals(this.getDirectPathNoLog()) == false)
+            return false;
+        if (other.getArchivedLogsOnly() == null ^ this.getArchivedLogsOnly() == null)
+            return false;
+        if (other.getArchivedLogsOnly() != null && other.getArchivedLogsOnly().equals(this.getArchivedLogsOnly()) == false)
+            return false;
         if (other.getAsmPassword() == null ^ this.getAsmPassword() == null)
             return false;
         if (other.getAsmPassword() != null && other.getAsmPassword().equals(this.getAsmPassword()) == false)
@@ -736,9 +2261,25 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAsmUser() != null && other.getAsmUser().equals(this.getAsmUser()) == false)
             return false;
+        if (other.getCharLengthSemantics() == null ^ this.getCharLengthSemantics() == null)
+            return false;
+        if (other.getCharLengthSemantics() != null && other.getCharLengthSemantics().equals(this.getCharLengthSemantics()) == false)
+            return false;
         if (other.getDatabaseName() == null ^ this.getDatabaseName() == null)
             return false;
         if (other.getDatabaseName() != null && other.getDatabaseName().equals(this.getDatabaseName()) == false)
+            return false;
+        if (other.getDirectPathParallelLoad() == null ^ this.getDirectPathParallelLoad() == null)
+            return false;
+        if (other.getDirectPathParallelLoad() != null && other.getDirectPathParallelLoad().equals(this.getDirectPathParallelLoad()) == false)
+            return false;
+        if (other.getFailTasksOnLobTruncation() == null ^ this.getFailTasksOnLobTruncation() == null)
+            return false;
+        if (other.getFailTasksOnLobTruncation() != null && other.getFailTasksOnLobTruncation().equals(this.getFailTasksOnLobTruncation()) == false)
+            return false;
+        if (other.getNumberDatatypeScale() == null ^ this.getNumberDatatypeScale() == null)
+            return false;
+        if (other.getNumberDatatypeScale() != null && other.getNumberDatatypeScale().equals(this.getNumberDatatypeScale()) == false)
             return false;
         if (other.getPassword() == null ^ this.getPassword() == null)
             return false;
@@ -747,6 +2288,14 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
         if (other.getPort() == null ^ this.getPort() == null)
             return false;
         if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
+            return false;
+        if (other.getReadTableSpaceName() == null ^ this.getReadTableSpaceName() == null)
+            return false;
+        if (other.getReadTableSpaceName() != null && other.getReadTableSpaceName().equals(this.getReadTableSpaceName()) == false)
+            return false;
+        if (other.getRetryInterval() == null ^ this.getRetryInterval() == null)
+            return false;
+        if (other.getRetryInterval() != null && other.getRetryInterval().equals(this.getRetryInterval()) == false)
             return false;
         if (other.getSecurityDbEncryption() == null ^ this.getSecurityDbEncryption() == null)
             return false;
@@ -772,12 +2321,32 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAddSupplementalLogging() == null) ? 0 : getAddSupplementalLogging().hashCode());
+        hashCode = prime * hashCode + ((getArchivedLogDestId() == null) ? 0 : getArchivedLogDestId().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalArchivedLogDestId() == null) ? 0 : getAdditionalArchivedLogDestId().hashCode());
+        hashCode = prime * hashCode + ((getAllowSelectNestedTables() == null) ? 0 : getAllowSelectNestedTables().hashCode());
+        hashCode = prime * hashCode + ((getParallelAsmReadThreads() == null) ? 0 : getParallelAsmReadThreads().hashCode());
+        hashCode = prime * hashCode + ((getReadAheadBlocks() == null) ? 0 : getReadAheadBlocks().hashCode());
+        hashCode = prime * hashCode + ((getAccessAlternateDirectly() == null) ? 0 : getAccessAlternateDirectly().hashCode());
+        hashCode = prime * hashCode + ((getUseAlternateFolderForOnline() == null) ? 0 : getUseAlternateFolderForOnline().hashCode());
+        hashCode = prime * hashCode + ((getOraclePathPrefix() == null) ? 0 : getOraclePathPrefix().hashCode());
+        hashCode = prime * hashCode + ((getUsePathPrefix() == null) ? 0 : getUsePathPrefix().hashCode());
+        hashCode = prime * hashCode + ((getReplacePathPrefix() == null) ? 0 : getReplacePathPrefix().hashCode());
+        hashCode = prime * hashCode + ((getEnableHomogenousTablespace() == null) ? 0 : getEnableHomogenousTablespace().hashCode());
+        hashCode = prime * hashCode + ((getDirectPathNoLog() == null) ? 0 : getDirectPathNoLog().hashCode());
+        hashCode = prime * hashCode + ((getArchivedLogsOnly() == null) ? 0 : getArchivedLogsOnly().hashCode());
         hashCode = prime * hashCode + ((getAsmPassword() == null) ? 0 : getAsmPassword().hashCode());
         hashCode = prime * hashCode + ((getAsmServer() == null) ? 0 : getAsmServer().hashCode());
         hashCode = prime * hashCode + ((getAsmUser() == null) ? 0 : getAsmUser().hashCode());
+        hashCode = prime * hashCode + ((getCharLengthSemantics() == null) ? 0 : getCharLengthSemantics().hashCode());
         hashCode = prime * hashCode + ((getDatabaseName() == null) ? 0 : getDatabaseName().hashCode());
+        hashCode = prime * hashCode + ((getDirectPathParallelLoad() == null) ? 0 : getDirectPathParallelLoad().hashCode());
+        hashCode = prime * hashCode + ((getFailTasksOnLobTruncation() == null) ? 0 : getFailTasksOnLobTruncation().hashCode());
+        hashCode = prime * hashCode + ((getNumberDatatypeScale() == null) ? 0 : getNumberDatatypeScale().hashCode());
         hashCode = prime * hashCode + ((getPassword() == null) ? 0 : getPassword().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
+        hashCode = prime * hashCode + ((getReadTableSpaceName() == null) ? 0 : getReadTableSpaceName().hashCode());
+        hashCode = prime * hashCode + ((getRetryInterval() == null) ? 0 : getRetryInterval().hashCode());
         hashCode = prime * hashCode + ((getSecurityDbEncryption() == null) ? 0 : getSecurityDbEncryption().hashCode());
         hashCode = prime * hashCode + ((getSecurityDbEncryptionName() == null) ? 0 : getSecurityDbEncryptionName().hashCode());
         hashCode = prime * hashCode + ((getServerName() == null) ? 0 : getServerName().hashCode());

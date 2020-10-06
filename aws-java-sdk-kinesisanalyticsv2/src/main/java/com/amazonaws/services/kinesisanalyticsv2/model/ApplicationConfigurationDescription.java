@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes details about the application code and starting parameters for an Amazon Kinesis Data Analytics
- * application.
+ * Describes details about the application code and starting parameters for a Kinesis Data Analytics application.
  * </p>
  * 
  * @see <a
@@ -32,14 +31,13 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The details about inputs, outputs, and reference data sources for an SQL-based Kinesis Data Analytics
-     * application.
+     * The details about inputs, outputs, and reference data sources for a SQL-based Kinesis Data Analytics application.
      * </p>
      */
     private SqlApplicationConfigurationDescription sqlApplicationConfigurationDescription;
     /**
      * <p>
-     * The details about the application code for a Java-based Kinesis Data Analytics application.
+     * The details about the application code for a Flink-based Kinesis Data Analytics application.
      * </p>
      */
     private ApplicationCodeConfigurationDescription applicationCodeConfigurationDescription;
@@ -51,19 +49,19 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
     private RunConfigurationDescription runConfigurationDescription;
     /**
      * <p>
-     * The details about a Java-based Kinesis Data Analytics application.
+     * The details about a Flink-based Kinesis Data Analytics application.
      * </p>
      */
     private FlinkApplicationConfigurationDescription flinkApplicationConfigurationDescription;
     /**
      * <p>
-     * Describes execution properties for a Java-based Kinesis Data Analytics application.
+     * Describes execution properties for a Flink-based Kinesis Data Analytics application.
      * </p>
      */
     private EnvironmentPropertyDescriptions environmentPropertyDescriptions;
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      */
     private ApplicationSnapshotConfigurationDescription applicationSnapshotConfigurationDescription;
@@ -76,12 +74,11 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The details about inputs, outputs, and reference data sources for an SQL-based Kinesis Data Analytics
-     * application.
+     * The details about inputs, outputs, and reference data sources for a SQL-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param sqlApplicationConfigurationDescription
-     *        The details about inputs, outputs, and reference data sources for an SQL-based Kinesis Data Analytics
+     *        The details about inputs, outputs, and reference data sources for a SQL-based Kinesis Data Analytics
      *        application.
      */
 
@@ -91,11 +88,10 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The details about inputs, outputs, and reference data sources for an SQL-based Kinesis Data Analytics
-     * application.
+     * The details about inputs, outputs, and reference data sources for a SQL-based Kinesis Data Analytics application.
      * </p>
      * 
-     * @return The details about inputs, outputs, and reference data sources for an SQL-based Kinesis Data Analytics
+     * @return The details about inputs, outputs, and reference data sources for a SQL-based Kinesis Data Analytics
      *         application.
      */
 
@@ -105,12 +101,11 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The details about inputs, outputs, and reference data sources for an SQL-based Kinesis Data Analytics
-     * application.
+     * The details about inputs, outputs, and reference data sources for a SQL-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param sqlApplicationConfigurationDescription
-     *        The details about inputs, outputs, and reference data sources for an SQL-based Kinesis Data Analytics
+     *        The details about inputs, outputs, and reference data sources for a SQL-based Kinesis Data Analytics
      *        application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -123,11 +118,11 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The details about the application code for a Java-based Kinesis Data Analytics application.
+     * The details about the application code for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param applicationCodeConfigurationDescription
-     *        The details about the application code for a Java-based Kinesis Data Analytics application.
+     *        The details about the application code for a Flink-based Kinesis Data Analytics application.
      */
 
     public void setApplicationCodeConfigurationDescription(ApplicationCodeConfigurationDescription applicationCodeConfigurationDescription) {
@@ -136,10 +131,10 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The details about the application code for a Java-based Kinesis Data Analytics application.
+     * The details about the application code for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
-     * @return The details about the application code for a Java-based Kinesis Data Analytics application.
+     * @return The details about the application code for a Flink-based Kinesis Data Analytics application.
      */
 
     public ApplicationCodeConfigurationDescription getApplicationCodeConfigurationDescription() {
@@ -148,11 +143,11 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The details about the application code for a Java-based Kinesis Data Analytics application.
+     * The details about the application code for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param applicationCodeConfigurationDescription
-     *        The details about the application code for a Java-based Kinesis Data Analytics application.
+     *        The details about the application code for a Flink-based Kinesis Data Analytics application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,11 +199,11 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The details about a Java-based Kinesis Data Analytics application.
+     * The details about a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param flinkApplicationConfigurationDescription
-     *        The details about a Java-based Kinesis Data Analytics application.
+     *        The details about a Flink-based Kinesis Data Analytics application.
      */
 
     public void setFlinkApplicationConfigurationDescription(FlinkApplicationConfigurationDescription flinkApplicationConfigurationDescription) {
@@ -217,10 +212,10 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The details about a Java-based Kinesis Data Analytics application.
+     * The details about a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
-     * @return The details about a Java-based Kinesis Data Analytics application.
+     * @return The details about a Flink-based Kinesis Data Analytics application.
      */
 
     public FlinkApplicationConfigurationDescription getFlinkApplicationConfigurationDescription() {
@@ -229,11 +224,11 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The details about a Java-based Kinesis Data Analytics application.
+     * The details about a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param flinkApplicationConfigurationDescription
-     *        The details about a Java-based Kinesis Data Analytics application.
+     *        The details about a Flink-based Kinesis Data Analytics application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,11 +240,11 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Describes execution properties for a Java-based Kinesis Data Analytics application.
+     * Describes execution properties for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param environmentPropertyDescriptions
-     *        Describes execution properties for a Java-based Kinesis Data Analytics application.
+     *        Describes execution properties for a Flink-based Kinesis Data Analytics application.
      */
 
     public void setEnvironmentPropertyDescriptions(EnvironmentPropertyDescriptions environmentPropertyDescriptions) {
@@ -258,10 +253,10 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Describes execution properties for a Java-based Kinesis Data Analytics application.
+     * Describes execution properties for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
-     * @return Describes execution properties for a Java-based Kinesis Data Analytics application.
+     * @return Describes execution properties for a Flink-based Kinesis Data Analytics application.
      */
 
     public EnvironmentPropertyDescriptions getEnvironmentPropertyDescriptions() {
@@ -270,11 +265,11 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Describes execution properties for a Java-based Kinesis Data Analytics application.
+     * Describes execution properties for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param environmentPropertyDescriptions
-     *        Describes execution properties for a Java-based Kinesis Data Analytics application.
+     *        Describes execution properties for a Flink-based Kinesis Data Analytics application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -285,11 +280,11 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param applicationSnapshotConfigurationDescription
-     *        Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     *        Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      */
 
     public void setApplicationSnapshotConfigurationDescription(ApplicationSnapshotConfigurationDescription applicationSnapshotConfigurationDescription) {
@@ -298,10 +293,10 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
-     * @return Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * @return Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      */
 
     public ApplicationSnapshotConfigurationDescription getApplicationSnapshotConfigurationDescription() {
@@ -310,11 +305,11 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param applicationSnapshotConfigurationDescription
-     *        Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     *        Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

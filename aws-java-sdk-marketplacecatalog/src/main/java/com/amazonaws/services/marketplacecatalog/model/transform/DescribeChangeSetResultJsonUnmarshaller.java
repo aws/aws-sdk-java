@@ -72,6 +72,10 @@ public class DescribeChangeSetResultJsonUnmarshaller implements Unmarshaller<Des
                     context.nextToken();
                     describeChangeSetResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("FailureCode", targetDepth)) {
+                    context.nextToken();
+                    describeChangeSetResult.setFailureCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("FailureDescription", targetDepth)) {
                     context.nextToken();
                     describeChangeSetResult.setFailureDescription(context.getUnmarshaller(String.class).unmarshall(context));

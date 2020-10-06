@@ -19,10 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes parameters for how a Java-based Amazon Kinesis Data Analytics application executes multiple tasks
+ * Describes parameters for how a Flink-based Kinesis Data Analytics application application executes multiple tasks
  * simultaneously. For more information about parallelism, see <a
- * href="https://ci.apache.org/projects/flink/flink-docs-stable/dev/parallel.html">Parallel Execution</a> in the <a
- * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink Documentation</a>.
+ * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/dev/parallel.html">Parallel Execution</a> in the <a
+ * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ParallelismConfiguration"
@@ -41,7 +41,7 @@ public class ParallelismConfiguration implements Serializable, Cloneable, Struct
     private String configurationType;
     /**
      * <p>
-     * Describes the initial number of parallel tasks that a Java-based Kinesis Data Analytics application can perform.
+     * Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform.
      * If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics increases the
      * <code>CurrentParallelism</code> value in response to application load. The service can increase the
      * <code>CurrentParallelism</code> value up to the maximum parallelism, which is <code>ParalellismPerKPU</code>
@@ -53,7 +53,7 @@ public class ParallelismConfiguration implements Serializable, Cloneable, Struct
     private Integer parallelism;
     /**
      * <p>
-     * Describes the number of parallel tasks that a Java-based Kinesis Data Analytics application can perform per
+     * Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform per
      * Kinesis Processing Unit (KPU) used by the application. For more information about KPUs, see <a
      * href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Kinesis Data Analytics Pricing</a>.
      * </p>
@@ -144,7 +144,7 @@ public class ParallelismConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Describes the initial number of parallel tasks that a Java-based Kinesis Data Analytics application can perform.
+     * Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform.
      * If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics increases the
      * <code>CurrentParallelism</code> value in response to application load. The service can increase the
      * <code>CurrentParallelism</code> value up to the maximum parallelism, which is <code>ParalellismPerKPU</code>
@@ -154,7 +154,7 @@ public class ParallelismConfiguration implements Serializable, Cloneable, Struct
      * </p>
      * 
      * @param parallelism
-     *        Describes the initial number of parallel tasks that a Java-based Kinesis Data Analytics application can
+     *        Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can
      *        perform. If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics increases the
      *        <code>CurrentParallelism</code> value in response to application load. The service can increase the
      *        <code>CurrentParallelism</code> value up to the maximum parallelism, which is
@@ -170,7 +170,7 @@ public class ParallelismConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Describes the initial number of parallel tasks that a Java-based Kinesis Data Analytics application can perform.
+     * Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform.
      * If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics increases the
      * <code>CurrentParallelism</code> value in response to application load. The service can increase the
      * <code>CurrentParallelism</code> value up to the maximum parallelism, which is <code>ParalellismPerKPU</code>
@@ -179,7 +179,7 @@ public class ParallelismConfiguration implements Serializable, Cloneable, Struct
      * <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.
      * </p>
      * 
-     * @return Describes the initial number of parallel tasks that a Java-based Kinesis Data Analytics application can
+     * @return Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can
      *         perform. If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics increases the
      *         <code>CurrentParallelism</code> value in response to application load. The service can increase the
      *         <code>CurrentParallelism</code> value up to the maximum parallelism, which is
@@ -195,7 +195,7 @@ public class ParallelismConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Describes the initial number of parallel tasks that a Java-based Kinesis Data Analytics application can perform.
+     * Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform.
      * If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics increases the
      * <code>CurrentParallelism</code> value in response to application load. The service can increase the
      * <code>CurrentParallelism</code> value up to the maximum parallelism, which is <code>ParalellismPerKPU</code>
@@ -205,7 +205,7 @@ public class ParallelismConfiguration implements Serializable, Cloneable, Struct
      * </p>
      * 
      * @param parallelism
-     *        Describes the initial number of parallel tasks that a Java-based Kinesis Data Analytics application can
+     *        Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can
      *        perform. If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics increases the
      *        <code>CurrentParallelism</code> value in response to application load. The service can increase the
      *        <code>CurrentParallelism</code> value up to the maximum parallelism, which is
@@ -223,13 +223,13 @@ public class ParallelismConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Describes the number of parallel tasks that a Java-based Kinesis Data Analytics application can perform per
+     * Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform per
      * Kinesis Processing Unit (KPU) used by the application. For more information about KPUs, see <a
      * href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Kinesis Data Analytics Pricing</a>.
      * </p>
      * 
      * @param parallelismPerKPU
-     *        Describes the number of parallel tasks that a Java-based Kinesis Data Analytics application can perform
+     *        Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform
      *        per Kinesis Processing Unit (KPU) used by the application. For more information about KPUs, see <a
      *        href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Kinesis Data Analytics Pricing</a>.
      */
@@ -240,12 +240,12 @@ public class ParallelismConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Describes the number of parallel tasks that a Java-based Kinesis Data Analytics application can perform per
+     * Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform per
      * Kinesis Processing Unit (KPU) used by the application. For more information about KPUs, see <a
      * href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Kinesis Data Analytics Pricing</a>.
      * </p>
      * 
-     * @return Describes the number of parallel tasks that a Java-based Kinesis Data Analytics application can perform
+     * @return Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform
      *         per Kinesis Processing Unit (KPU) used by the application. For more information about KPUs, see <a
      *         href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Kinesis Data Analytics Pricing</a>.
      */
@@ -256,13 +256,13 @@ public class ParallelismConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Describes the number of parallel tasks that a Java-based Kinesis Data Analytics application can perform per
+     * Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform per
      * Kinesis Processing Unit (KPU) used by the application. For more information about KPUs, see <a
      * href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Kinesis Data Analytics Pricing</a>.
      * </p>
      * 
      * @param parallelismPerKPU
-     *        Describes the number of parallel tasks that a Java-based Kinesis Data Analytics application can perform
+     *        Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform
      *        per Kinesis Processing Unit (KPU) used by the application. For more information about KPUs, see <a
      *        href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Kinesis Data Analytics Pricing</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

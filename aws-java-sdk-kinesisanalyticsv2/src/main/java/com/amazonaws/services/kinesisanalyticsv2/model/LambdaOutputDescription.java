@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * For an SQL-based Amazon Kinesis Data Analytics application output, describes the AWS Lambda function that is
- * configured as its destination.
+ * For a SQL-based Kinesis Data Analytics application's output, describes the AWS Lambda function that is configured as
+ * its destination.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/LambdaOutputDescription"

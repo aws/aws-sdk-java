@@ -64,6 +64,18 @@ public class IBMDb2SettingsJsonUnmarshaller implements Unmarshaller<IBMDb2Settin
                     context.nextToken();
                     iBMDb2Settings.setServerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SetDataCaptureChanges", targetDepth)) {
+                    context.nextToken();
+                    iBMDb2Settings.setSetDataCaptureChanges(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("CurrentLsn", targetDepth)) {
+                    context.nextToken();
+                    iBMDb2Settings.setCurrentLsn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("MaxKBytesPerRead", targetDepth)) {
+                    context.nextToken();
+                    iBMDb2Settings.setMaxKBytesPerRead(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("Username", targetDepth)) {
                     context.nextToken();
                     iBMDb2Settings.setUsername(context.getUnmarshaller(String.class).unmarshall(context));

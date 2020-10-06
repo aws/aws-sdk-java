@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Identifies an Amazon Kinesis data stream as the streaming source. You provide the stream's Amazon Resource Name
- * (ARN).
+ * Identifies a Kinesis data stream as the streaming source. You provide the stream's Amazon Resource Name (ARN).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/KinesisStreamsInput"

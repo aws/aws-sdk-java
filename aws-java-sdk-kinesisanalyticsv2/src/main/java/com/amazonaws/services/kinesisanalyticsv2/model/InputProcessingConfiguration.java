@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * For an SQL-based Amazon Kinesis Data Analytics application, describes a processor that is used to preprocess the
- * records in the stream before being processed by your application code. Currently, the only input processor available
- * is <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a>.
+ * For a SQL-based Kinesis Data Analytics application, describes a processor that is used to preprocess the records in
+ * the stream before being processed by your application code. Currently, the only input processor available is <a
+ * href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/InputProcessingConfiguration"

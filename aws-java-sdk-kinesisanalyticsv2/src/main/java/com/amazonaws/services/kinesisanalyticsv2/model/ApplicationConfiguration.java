@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the creation parameters for an Amazon Kinesis Data Analytics application.
+ * Specifies the creation parameters for a Kinesis Data Analytics application.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ApplicationConfiguration"
@@ -30,31 +30,31 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The creation and update parameters for an SQL-based Kinesis Data Analytics application.
+     * The creation and update parameters for a SQL-based Kinesis Data Analytics application.
      * </p>
      */
     private SqlApplicationConfiguration sqlApplicationConfiguration;
     /**
      * <p>
-     * The creation and update parameters for a Java-based Kinesis Data Analytics application.
+     * The creation and update parameters for a Flink-based Kinesis Data Analytics application.
      * </p>
      */
     private FlinkApplicationConfiguration flinkApplicationConfiguration;
     /**
      * <p>
-     * Describes execution properties for a Java-based Kinesis Data Analytics application.
+     * Describes execution properties for a Flink-based Kinesis Data Analytics application.
      * </p>
      */
     private EnvironmentProperties environmentProperties;
     /**
      * <p>
-     * The code location and type parameters for a Java-based Kinesis Data Analytics application.
+     * The code location and type parameters for a Flink-based Kinesis Data Analytics application.
      * </p>
      */
     private ApplicationCodeConfiguration applicationCodeConfiguration;
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      */
     private ApplicationSnapshotConfiguration applicationSnapshotConfiguration;
@@ -67,11 +67,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The creation and update parameters for an SQL-based Kinesis Data Analytics application.
+     * The creation and update parameters for a SQL-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param sqlApplicationConfiguration
-     *        The creation and update parameters for an SQL-based Kinesis Data Analytics application.
+     *        The creation and update parameters for a SQL-based Kinesis Data Analytics application.
      */
 
     public void setSqlApplicationConfiguration(SqlApplicationConfiguration sqlApplicationConfiguration) {
@@ -80,10 +80,10 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The creation and update parameters for an SQL-based Kinesis Data Analytics application.
+     * The creation and update parameters for a SQL-based Kinesis Data Analytics application.
      * </p>
      * 
-     * @return The creation and update parameters for an SQL-based Kinesis Data Analytics application.
+     * @return The creation and update parameters for a SQL-based Kinesis Data Analytics application.
      */
 
     public SqlApplicationConfiguration getSqlApplicationConfiguration() {
@@ -92,11 +92,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The creation and update parameters for an SQL-based Kinesis Data Analytics application.
+     * The creation and update parameters for a SQL-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param sqlApplicationConfiguration
-     *        The creation and update parameters for an SQL-based Kinesis Data Analytics application.
+     *        The creation and update parameters for a SQL-based Kinesis Data Analytics application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,11 +107,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The creation and update parameters for a Java-based Kinesis Data Analytics application.
+     * The creation and update parameters for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param flinkApplicationConfiguration
-     *        The creation and update parameters for a Java-based Kinesis Data Analytics application.
+     *        The creation and update parameters for a Flink-based Kinesis Data Analytics application.
      */
 
     public void setFlinkApplicationConfiguration(FlinkApplicationConfiguration flinkApplicationConfiguration) {
@@ -120,10 +120,10 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The creation and update parameters for a Java-based Kinesis Data Analytics application.
+     * The creation and update parameters for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
-     * @return The creation and update parameters for a Java-based Kinesis Data Analytics application.
+     * @return The creation and update parameters for a Flink-based Kinesis Data Analytics application.
      */
 
     public FlinkApplicationConfiguration getFlinkApplicationConfiguration() {
@@ -132,11 +132,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The creation and update parameters for a Java-based Kinesis Data Analytics application.
+     * The creation and update parameters for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param flinkApplicationConfiguration
-     *        The creation and update parameters for a Java-based Kinesis Data Analytics application.
+     *        The creation and update parameters for a Flink-based Kinesis Data Analytics application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,11 +147,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Describes execution properties for a Java-based Kinesis Data Analytics application.
+     * Describes execution properties for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param environmentProperties
-     *        Describes execution properties for a Java-based Kinesis Data Analytics application.
+     *        Describes execution properties for a Flink-based Kinesis Data Analytics application.
      */
 
     public void setEnvironmentProperties(EnvironmentProperties environmentProperties) {
@@ -160,10 +160,10 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Describes execution properties for a Java-based Kinesis Data Analytics application.
+     * Describes execution properties for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
-     * @return Describes execution properties for a Java-based Kinesis Data Analytics application.
+     * @return Describes execution properties for a Flink-based Kinesis Data Analytics application.
      */
 
     public EnvironmentProperties getEnvironmentProperties() {
@@ -172,11 +172,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Describes execution properties for a Java-based Kinesis Data Analytics application.
+     * Describes execution properties for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param environmentProperties
-     *        Describes execution properties for a Java-based Kinesis Data Analytics application.
+     *        Describes execution properties for a Flink-based Kinesis Data Analytics application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,11 +187,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The code location and type parameters for a Java-based Kinesis Data Analytics application.
+     * The code location and type parameters for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param applicationCodeConfiguration
-     *        The code location and type parameters for a Java-based Kinesis Data Analytics application.
+     *        The code location and type parameters for a Flink-based Kinesis Data Analytics application.
      */
 
     public void setApplicationCodeConfiguration(ApplicationCodeConfiguration applicationCodeConfiguration) {
@@ -200,10 +200,10 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The code location and type parameters for a Java-based Kinesis Data Analytics application.
+     * The code location and type parameters for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
-     * @return The code location and type parameters for a Java-based Kinesis Data Analytics application.
+     * @return The code location and type parameters for a Flink-based Kinesis Data Analytics application.
      */
 
     public ApplicationCodeConfiguration getApplicationCodeConfiguration() {
@@ -212,11 +212,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The code location and type parameters for a Java-based Kinesis Data Analytics application.
+     * The code location and type parameters for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param applicationCodeConfiguration
-     *        The code location and type parameters for a Java-based Kinesis Data Analytics application.
+     *        The code location and type parameters for a Flink-based Kinesis Data Analytics application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,11 +227,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param applicationSnapshotConfiguration
-     *        Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     *        Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      */
 
     public void setApplicationSnapshotConfiguration(ApplicationSnapshotConfiguration applicationSnapshotConfiguration) {
@@ -240,10 +240,10 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
-     * @return Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * @return Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      */
 
     public ApplicationSnapshotConfiguration getApplicationSnapshotConfiguration() {
@@ -252,11 +252,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param applicationSnapshotConfiguration
-     *        Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     *        Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

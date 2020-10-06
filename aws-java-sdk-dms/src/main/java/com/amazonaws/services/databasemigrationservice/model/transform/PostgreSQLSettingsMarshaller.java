@@ -27,8 +27,20 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class PostgreSQLSettingsMarshaller {
 
+    private static final MarshallingInfo<String> AFTERCONNECTSCRIPT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AfterConnectScript").build();
+    private static final MarshallingInfo<Boolean> CAPTUREDDLS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CaptureDdls").build();
+    private static final MarshallingInfo<Integer> MAXFILESIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxFileSize").build();
     private static final MarshallingInfo<String> DATABASENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatabaseName").build();
+    private static final MarshallingInfo<String> DDLARTIFACTSSCHEMA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DdlArtifactsSchema").build();
+    private static final MarshallingInfo<Integer> EXECUTETIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecuteTimeout").build();
+    private static final MarshallingInfo<Boolean> FAILTASKSONLOBTRUNCATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailTasksOnLobTruncation").build();
     private static final MarshallingInfo<String> PASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Password").build();
     private static final MarshallingInfo<Integer> PORT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
@@ -37,6 +49,8 @@ public class PostgreSQLSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerName").build();
     private static final MarshallingInfo<String> USERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Username").build();
+    private static final MarshallingInfo<String> SLOTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SlotName").build();
 
     private static final PostgreSQLSettingsMarshaller instance = new PostgreSQLSettingsMarshaller();
 
@@ -54,11 +68,18 @@ public class PostgreSQLSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(postgreSQLSettings.getAfterConnectScript(), AFTERCONNECTSCRIPT_BINDING);
+            protocolMarshaller.marshall(postgreSQLSettings.getCaptureDdls(), CAPTUREDDLS_BINDING);
+            protocolMarshaller.marshall(postgreSQLSettings.getMaxFileSize(), MAXFILESIZE_BINDING);
             protocolMarshaller.marshall(postgreSQLSettings.getDatabaseName(), DATABASENAME_BINDING);
+            protocolMarshaller.marshall(postgreSQLSettings.getDdlArtifactsSchema(), DDLARTIFACTSSCHEMA_BINDING);
+            protocolMarshaller.marshall(postgreSQLSettings.getExecuteTimeout(), EXECUTETIMEOUT_BINDING);
+            protocolMarshaller.marshall(postgreSQLSettings.getFailTasksOnLobTruncation(), FAILTASKSONLOBTRUNCATION_BINDING);
             protocolMarshaller.marshall(postgreSQLSettings.getPassword(), PASSWORD_BINDING);
             protocolMarshaller.marshall(postgreSQLSettings.getPort(), PORT_BINDING);
             protocolMarshaller.marshall(postgreSQLSettings.getServerName(), SERVERNAME_BINDING);
             protocolMarshaller.marshall(postgreSQLSettings.getUsername(), USERNAME_BINDING);
+            protocolMarshaller.marshall(postgreSQLSettings.getSlotName(), SLOTNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

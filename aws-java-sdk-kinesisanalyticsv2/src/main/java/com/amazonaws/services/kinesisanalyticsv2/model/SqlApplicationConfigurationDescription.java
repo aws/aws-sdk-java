@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the inputs, outputs, and reference data sources for an SQL-based Kinesis Data Analytics application.
+ * Describes the inputs, outputs, and reference data sources for a SQL-based Kinesis Data Analytics application.
  * </p>
  * 
  * @see <a

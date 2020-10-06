@@ -65,6 +65,11 @@ public class LocalGatewayVirtualInterfaceGroupStaxUnmarshaller implements Unmars
                     continue;
                 }
 
+                if (context.testExpression("ownerId", targetDepth)) {
+                    localGatewayVirtualInterfaceGroup.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("tagSet", targetDepth)) {
                     localGatewayVirtualInterfaceGroup.withTags(new ArrayList<Tag>());
                     continue;

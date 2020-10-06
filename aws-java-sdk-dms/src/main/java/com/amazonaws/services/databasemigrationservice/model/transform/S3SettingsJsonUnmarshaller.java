@@ -132,6 +132,18 @@ public class S3SettingsJsonUnmarshaller implements Unmarshaller<S3Settings, Json
                     context.nextToken();
                     s3Settings.setCdcInsertsAndUpdates(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("DatePartitionEnabled", targetDepth)) {
+                    context.nextToken();
+                    s3Settings.setDatePartitionEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("DatePartitionSequence", targetDepth)) {
+                    context.nextToken();
+                    s3Settings.setDatePartitionSequence(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DatePartitionDelimiter", targetDepth)) {
+                    context.nextToken();
+                    s3Settings.setDatePartitionDelimiter(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

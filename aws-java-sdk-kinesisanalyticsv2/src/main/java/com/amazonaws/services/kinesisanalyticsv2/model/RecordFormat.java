@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * For an SQL-based Amazon Kinesis Data Analytics application, describes the record format and relevant mapping
- * information that should be applied to schematize the records on the stream.
+ * For a SQL-based Kinesis Data Analytics application, describes the record format and relevant mapping information that
+ * should be applied to schematize the records on the stream.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/RecordFormat" target="_top">AWS

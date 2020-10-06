@@ -48,9 +48,29 @@ public class MySQLSettingsJsonUnmarshaller implements Unmarshaller<MySQLSettings
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("AfterConnectScript", targetDepth)) {
+                    context.nextToken();
+                    mySQLSettings.setAfterConnectScript(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("DatabaseName", targetDepth)) {
                     context.nextToken();
                     mySQLSettings.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("EventsPollInterval", targetDepth)) {
+                    context.nextToken();
+                    mySQLSettings.setEventsPollInterval(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("TargetDbType", targetDepth)) {
+                    context.nextToken();
+                    mySQLSettings.setTargetDbType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("MaxFileSize", targetDepth)) {
+                    context.nextToken();
+                    mySQLSettings.setMaxFileSize(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("ParallelLoadThreads", targetDepth)) {
+                    context.nextToken();
+                    mySQLSettings.setParallelLoadThreads(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Password", targetDepth)) {
                     context.nextToken();
@@ -63,6 +83,10 @@ public class MySQLSettingsJsonUnmarshaller implements Unmarshaller<MySQLSettings
                 if (context.testExpression("ServerName", targetDepth)) {
                     context.nextToken();
                     mySQLSettings.setServerName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ServerTimezone", targetDepth)) {
+                    context.nextToken();
+                    mySQLSettings.setServerTimezone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Username", targetDepth)) {
                     context.nextToken();

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes updates to a Java-based Amazon Kinesis Data Analytics application.
+ * Describes code configuration updates to a Flink-based Kinesis Data Analytics application.
  * </p>
  * 
  * @see <a

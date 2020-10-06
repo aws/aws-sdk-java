@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * When you update an SQL-based Amazon Kinesis Data Analytics application's output configuration using the
+ * When you update an SQL-based Kinesis Data Analytics application's output configuration using the
  * <a>UpdateApplication</a> operation, provides information about an AWS Lambda function that is configured as the
  * destination.
  * </p>
@@ -38,7 +38,8 @@ public class LambdaOutputUpdate implements Serializable, Cloneable, StructuredPo
      * <p>
      * To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the
      * Lambda function ARN. For more information about Lambda ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs:
+     * AWS Lambda</a>
      * </p>
      * </note>
      */
@@ -52,7 +53,8 @@ public class LambdaOutputUpdate implements Serializable, Cloneable, StructuredPo
      * <p>
      * To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the
      * Lambda function ARN. For more information about Lambda ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs:
+     * AWS Lambda</a>
      * </p>
      * </note>
      * 
@@ -61,7 +63,8 @@ public class LambdaOutputUpdate implements Serializable, Cloneable, StructuredPo
      *        <p>
      *        To specify an earlier version of the Lambda function than the latest, include the Lambda function version
      *        in the Lambda function ARN. For more information about Lambda ARNs, see <a
-     *        href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda"
+     *        >Example ARNs: AWS Lambda</a>
      *        </p>
      */
 
@@ -77,7 +80,8 @@ public class LambdaOutputUpdate implements Serializable, Cloneable, StructuredPo
      * <p>
      * To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the
      * Lambda function ARN. For more information about Lambda ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs:
+     * AWS Lambda</a>
      * </p>
      * </note>
      * 
@@ -85,7 +89,8 @@ public class LambdaOutputUpdate implements Serializable, Cloneable, StructuredPo
      *         <p>
      *         To specify an earlier version of the Lambda function than the latest, include the Lambda function version
      *         in the Lambda function ARN. For more information about Lambda ARNs, see <a
-     *         href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda"
+     *         >Example ARNs: AWS Lambda</a>
      *         </p>
      */
 
@@ -101,7 +106,8 @@ public class LambdaOutputUpdate implements Serializable, Cloneable, StructuredPo
      * <p>
      * To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the
      * Lambda function ARN. For more information about Lambda ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs:
+     * AWS Lambda</a>
      * </p>
      * </note>
      * 
@@ -110,7 +116,8 @@ public class LambdaOutputUpdate implements Serializable, Cloneable, StructuredPo
      *        <p>
      *        To specify an earlier version of the Lambda function than the latest, include the Lambda function version
      *        in the Lambda function ARN. For more information about Lambda ARNs, see <a
-     *        href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda"
+     *        >Example ARNs: AWS Lambda</a>
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -39,8 +39,8 @@ public class AddApplicationInputProcessingConfigurationResult extends com.amazon
     private Long applicationVersionId;
     /**
      * <p>
-     * The input ID that is associated with the application input. This is the ID that Amazon Kinesis Data Analytics
-     * assigns to each input configuration that you add to your application.
+     * The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics assigns to
+     * each input configuration that you add to your application.
      * </p>
      */
     private String inputId;
@@ -133,13 +133,13 @@ public class AddApplicationInputProcessingConfigurationResult extends com.amazon
 
     /**
      * <p>
-     * The input ID that is associated with the application input. This is the ID that Amazon Kinesis Data Analytics
-     * assigns to each input configuration that you add to your application.
+     * The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics assigns to
+     * each input configuration that you add to your application.
      * </p>
      * 
      * @param inputId
-     *        The input ID that is associated with the application input. This is the ID that Amazon Kinesis Data
-     *        Analytics assigns to each input configuration that you add to your application.
+     *        The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics
+     *        assigns to each input configuration that you add to your application.
      */
 
     public void setInputId(String inputId) {
@@ -148,12 +148,12 @@ public class AddApplicationInputProcessingConfigurationResult extends com.amazon
 
     /**
      * <p>
-     * The input ID that is associated with the application input. This is the ID that Amazon Kinesis Data Analytics
-     * assigns to each input configuration that you add to your application.
+     * The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics assigns to
+     * each input configuration that you add to your application.
      * </p>
      * 
-     * @return The input ID that is associated with the application input. This is the ID that Amazon Kinesis Data
-     *         Analytics assigns to each input configuration that you add to your application.
+     * @return The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics
+     *         assigns to each input configuration that you add to your application.
      */
 
     public String getInputId() {
@@ -162,13 +162,13 @@ public class AddApplicationInputProcessingConfigurationResult extends com.amazon
 
     /**
      * <p>
-     * The input ID that is associated with the application input. This is the ID that Amazon Kinesis Data Analytics
-     * assigns to each input configuration that you add to your application.
+     * The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics assigns to
+     * each input configuration that you add to your application.
      * </p>
      * 
      * @param inputId
-     *        The input ID that is associated with the application input. This is the ID that Amazon Kinesis Data
-     *        Analytics assigns to each input configuration that you add to your application.
+     *        The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics
+     *        assigns to each input configuration that you add to your application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

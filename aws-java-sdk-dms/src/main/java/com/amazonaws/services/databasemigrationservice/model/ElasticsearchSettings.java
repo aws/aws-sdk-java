@@ -36,13 +36,19 @@ public class ElasticsearchSettings implements Serializable, Cloneable, Structure
     private String serviceAccessRoleArn;
     /**
      * <p>
-     * The endpoint for the Elasticsearch cluster.
+     * The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport protocol (http/https) is not
+     * specified.
      * </p>
      */
     private String endpointUri;
     /**
      * <p>
      * The maximum percentage of records that can fail to be written before a full load operation stops.
+     * </p>
+     * <p>
+     * To avoid early failure, this counter is only effective after 1000 records are transferred. Elasticsearch also has
+     * the concept of error monitoring during the last 10 minutes of an Observation Window. If transfer of all records
+     * fail in the last 10 minutes, the full load operation stops.
      * </p>
      */
     private Integer fullLoadErrorPercentage;
@@ -95,11 +101,13 @@ public class ElasticsearchSettings implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The endpoint for the Elasticsearch cluster.
+     * The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport protocol (http/https) is not
+     * specified.
      * </p>
      * 
      * @param endpointUri
-     *        The endpoint for the Elasticsearch cluster.
+     *        The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport protocol (http/https) is not
+     *        specified.
      */
 
     public void setEndpointUri(String endpointUri) {
@@ -108,10 +116,12 @@ public class ElasticsearchSettings implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The endpoint for the Elasticsearch cluster.
+     * The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport protocol (http/https) is not
+     * specified.
      * </p>
      * 
-     * @return The endpoint for the Elasticsearch cluster.
+     * @return The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport protocol (http/https) is
+     *         not specified.
      */
 
     public String getEndpointUri() {
@@ -120,11 +130,13 @@ public class ElasticsearchSettings implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The endpoint for the Elasticsearch cluster.
+     * The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport protocol (http/https) is not
+     * specified.
      * </p>
      * 
      * @param endpointUri
-     *        The endpoint for the Elasticsearch cluster.
+     *        The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport protocol (http/https) is not
+     *        specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,9 +149,18 @@ public class ElasticsearchSettings implements Serializable, Cloneable, Structure
      * <p>
      * The maximum percentage of records that can fail to be written before a full load operation stops.
      * </p>
+     * <p>
+     * To avoid early failure, this counter is only effective after 1000 records are transferred. Elasticsearch also has
+     * the concept of error monitoring during the last 10 minutes of an Observation Window. If transfer of all records
+     * fail in the last 10 minutes, the full load operation stops.
+     * </p>
      * 
      * @param fullLoadErrorPercentage
-     *        The maximum percentage of records that can fail to be written before a full load operation stops.
+     *        The maximum percentage of records that can fail to be written before a full load operation stops.</p>
+     *        <p>
+     *        To avoid early failure, this counter is only effective after 1000 records are transferred. Elasticsearch
+     *        also has the concept of error monitoring during the last 10 minutes of an Observation Window. If transfer
+     *        of all records fail in the last 10 minutes, the full load operation stops.
      */
 
     public void setFullLoadErrorPercentage(Integer fullLoadErrorPercentage) {
@@ -150,8 +171,17 @@ public class ElasticsearchSettings implements Serializable, Cloneable, Structure
      * <p>
      * The maximum percentage of records that can fail to be written before a full load operation stops.
      * </p>
+     * <p>
+     * To avoid early failure, this counter is only effective after 1000 records are transferred. Elasticsearch also has
+     * the concept of error monitoring during the last 10 minutes of an Observation Window. If transfer of all records
+     * fail in the last 10 minutes, the full load operation stops.
+     * </p>
      * 
-     * @return The maximum percentage of records that can fail to be written before a full load operation stops.
+     * @return The maximum percentage of records that can fail to be written before a full load operation stops.</p>
+     *         <p>
+     *         To avoid early failure, this counter is only effective after 1000 records are transferred. Elasticsearch
+     *         also has the concept of error monitoring during the last 10 minutes of an Observation Window. If transfer
+     *         of all records fail in the last 10 minutes, the full load operation stops.
      */
 
     public Integer getFullLoadErrorPercentage() {
@@ -162,9 +192,18 @@ public class ElasticsearchSettings implements Serializable, Cloneable, Structure
      * <p>
      * The maximum percentage of records that can fail to be written before a full load operation stops.
      * </p>
+     * <p>
+     * To avoid early failure, this counter is only effective after 1000 records are transferred. Elasticsearch also has
+     * the concept of error monitoring during the last 10 minutes of an Observation Window. If transfer of all records
+     * fail in the last 10 minutes, the full load operation stops.
+     * </p>
      * 
      * @param fullLoadErrorPercentage
-     *        The maximum percentage of records that can fail to be written before a full load operation stops.
+     *        The maximum percentage of records that can fail to be written before a full load operation stops.</p>
+     *        <p>
+     *        To avoid early failure, this counter is only effective after 1000 records are transferred. Elasticsearch
+     *        also has the concept of error monitoring during the last 10 minutes of an Observation Window. If transfer
+     *        of all records fail in the last 10 minutes, the full load operation stops.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -32,8 +32,7 @@ public class AddApplicationReferenceDataSourceResult extends com.amazonaws.Amazo
     private String applicationARN;
     /**
      * <p>
-     * The updated application version ID. Amazon Kinesis Data Analytics increments this ID when the application is
-     * updated.
+     * The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.
      * </p>
      */
     private Long applicationVersionId;
@@ -86,13 +85,12 @@ public class AddApplicationReferenceDataSourceResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The updated application version ID. Amazon Kinesis Data Analytics increments this ID when the application is
-     * updated.
+     * The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.
      * </p>
      * 
      * @param applicationVersionId
-     *        The updated application version ID. Amazon Kinesis Data Analytics increments this ID when the application
-     *        is updated.
+     *        The updated application version ID. Kinesis Data Analytics increments this ID when the application is
+     *        updated.
      */
 
     public void setApplicationVersionId(Long applicationVersionId) {
@@ -101,12 +99,11 @@ public class AddApplicationReferenceDataSourceResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The updated application version ID. Amazon Kinesis Data Analytics increments this ID when the application is
-     * updated.
+     * The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.
      * </p>
      * 
-     * @return The updated application version ID. Amazon Kinesis Data Analytics increments this ID when the application
-     *         is updated.
+     * @return The updated application version ID. Kinesis Data Analytics increments this ID when the application is
+     *         updated.
      */
 
     public Long getApplicationVersionId() {
@@ -115,13 +112,12 @@ public class AddApplicationReferenceDataSourceResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The updated application version ID. Amazon Kinesis Data Analytics increments this ID when the application is
-     * updated.
+     * The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.
      * </p>
      * 
      * @param applicationVersionId
-     *        The updated application version ID. Amazon Kinesis Data Analytics increments this ID when the application
-     *        is updated.
+     *        The updated application version ID. Kinesis Data Analytics increments this ID when the application is
+     *        updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -33,7 +33,7 @@ public class AddApplicationVpcConfigurationRequest extends com.amazonaws.AmazonW
     private String applicationName;
     /**
      * <p>
-     * The version of the application to which you want to add the input processing configuration. You can use the
+     * The version of the application to which you want to add the VPC configuration. You can use the
      * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
      * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
@@ -88,15 +88,15 @@ public class AddApplicationVpcConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The version of the application to which you want to add the input processing configuration. You can use the
+     * The version of the application to which you want to add the VPC configuration. You can use the
      * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
      * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        The version of the application to which you want to add the input processing configuration. You can use
-     *        the <a>DescribeApplication</a> operation to get the current application version. If the version specified
-     *        is not the current version, the <code>ConcurrentModificationException</code> is returned.
+     *        The version of the application to which you want to add the VPC configuration. You can use the
+     *        <a>DescribeApplication</a> operation to get the current application version. If the version specified is
+     *        not the current version, the <code>ConcurrentModificationException</code> is returned.
      */
 
     public void setCurrentApplicationVersionId(Long currentApplicationVersionId) {
@@ -105,14 +105,14 @@ public class AddApplicationVpcConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The version of the application to which you want to add the input processing configuration. You can use the
+     * The version of the application to which you want to add the VPC configuration. You can use the
      * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
      * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      * 
-     * @return The version of the application to which you want to add the input processing configuration. You can use
-     *         the <a>DescribeApplication</a> operation to get the current application version. If the version specified
-     *         is not the current version, the <code>ConcurrentModificationException</code> is returned.
+     * @return The version of the application to which you want to add the VPC configuration. You can use the
+     *         <a>DescribeApplication</a> operation to get the current application version. If the version specified is
+     *         not the current version, the <code>ConcurrentModificationException</code> is returned.
      */
 
     public Long getCurrentApplicationVersionId() {
@@ -121,15 +121,15 @@ public class AddApplicationVpcConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The version of the application to which you want to add the input processing configuration. You can use the
+     * The version of the application to which you want to add the VPC configuration. You can use the
      * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
      * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        The version of the application to which you want to add the input processing configuration. You can use
-     *        the <a>DescribeApplication</a> operation to get the current application version. If the version specified
-     *        is not the current version, the <code>ConcurrentModificationException</code> is returned.
+     *        The version of the application to which you want to add the VPC configuration. You can use the
+     *        <a>DescribeApplication</a> operation to get the current application version. If the version specified is
+     *        not the current version, the <code>ConcurrentModificationException</code> is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

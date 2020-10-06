@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes an update for the Amazon S3 code content location for a Java-based Amazon Kinesis Data Analytics
- * application.
+ * Describes an update for the Amazon S3 code content location for a Flink-based Kinesis Data Analytics application.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/S3ContentLocationUpdate"

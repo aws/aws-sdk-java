@@ -19,9 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * For an SQL-based Amazon Kinesis Data Analytics application, provides a description of an Amazon S3 data source,
- * including the Amazon Resource Name (ARN) of the S3 bucket and the name of the Amazon S3 object that contains the
- * data.
+ * For a SQL-based Kinesis Data Analytics application, provides a description of an Amazon S3 data source, including the
+ * Amazon Resource Name (ARN) of the S3 bucket and the name of the Amazon S3 object that contains the data.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/S3Configuration" target="_top">AWS

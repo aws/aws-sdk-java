@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * For an SQL-based Amazon Kinesis Data Analytics application, represents an update to the <a>InputLambdaProcessor</a>
- * that is used to preprocess the records in the stream.
+ * For a SQL-based Kinesis Data Analytics application, represents an update to the <a>InputLambdaProcessor</a> that is
+ * used to preprocess the records in the stream.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/InputLambdaProcessorUpdate"
@@ -38,7 +38,8 @@ public class InputLambdaProcessorUpdate implements Serializable, Cloneable, Stru
      * <p>
      * To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the
      * Lambda function ARN. For more information about Lambda ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs:
+     * AWS Lambda</a>
      * </p>
      * </note>
      */
@@ -53,7 +54,8 @@ public class InputLambdaProcessorUpdate implements Serializable, Cloneable, Stru
      * <p>
      * To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the
      * Lambda function ARN. For more information about Lambda ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs:
+     * AWS Lambda</a>
      * </p>
      * </note>
      * 
@@ -63,7 +65,8 @@ public class InputLambdaProcessorUpdate implements Serializable, Cloneable, Stru
      *        <p>
      *        To specify an earlier version of the Lambda function than the latest, include the Lambda function version
      *        in the Lambda function ARN. For more information about Lambda ARNs, see <a
-     *        href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda"
+     *        >Example ARNs: AWS Lambda</a>
      *        </p>
      */
 
@@ -80,7 +83,8 @@ public class InputLambdaProcessorUpdate implements Serializable, Cloneable, Stru
      * <p>
      * To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the
      * Lambda function ARN. For more information about Lambda ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs:
+     * AWS Lambda</a>
      * </p>
      * </note>
      * 
@@ -89,7 +93,8 @@ public class InputLambdaProcessorUpdate implements Serializable, Cloneable, Stru
      *         <p>
      *         To specify an earlier version of the Lambda function than the latest, include the Lambda function version
      *         in the Lambda function ARN. For more information about Lambda ARNs, see <a
-     *         href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda"
+     *         >Example ARNs: AWS Lambda</a>
      *         </p>
      */
 
@@ -106,7 +111,8 @@ public class InputLambdaProcessorUpdate implements Serializable, Cloneable, Stru
      * <p>
      * To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the
      * Lambda function ARN. For more information about Lambda ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs:
+     * AWS Lambda</a>
      * </p>
      * </note>
      * 
@@ -116,7 +122,8 @@ public class InputLambdaProcessorUpdate implements Serializable, Cloneable, Stru
      *        <p>
      *        To specify an earlier version of the Lambda function than the latest, include the Lambda function version
      *        in the Lambda function ARN. For more information about Lambda ARNs, see <a
-     *        href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a>
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda"
+     *        >Example ARNs: AWS Lambda</a>
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

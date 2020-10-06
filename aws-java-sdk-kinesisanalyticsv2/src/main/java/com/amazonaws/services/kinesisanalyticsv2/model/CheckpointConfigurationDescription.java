@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes checkpointing parameters for a Java-based Amazon Kinesis Data Analytics application.
+ * Describes checkpointing parameters for a Flink-based Kinesis Data Analytics application.
  * </p>
  * 
  * @see <a
@@ -60,7 +60,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
     private String configurationType;
     /**
      * <p>
-     * Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      * <note>
      * <p>
@@ -340,7 +340,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
 
     /**
      * <p>
-     * Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      * <note>
      * <p>
@@ -351,7 +351,8 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * </note>
      * 
      * @param checkpointingEnabled
-     *        Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.</p> <note>
+     *        Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p>
+     *        <note>
      *        <p>
      *        If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
      *        use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another
@@ -365,7 +366,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
 
     /**
      * <p>
-     * Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      * <note>
      * <p>
@@ -375,7 +376,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * </p>
      * </note>
      * 
-     * @return Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.</p>
+     * @return Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p>
      *         <note>
      *         <p>
      *         If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
@@ -390,7 +391,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
 
     /**
      * <p>
-     * Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      * <note>
      * <p>
@@ -401,7 +402,8 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * </note>
      * 
      * @param checkpointingEnabled
-     *        Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.</p> <note>
+     *        Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p>
+     *        <note>
      *        <p>
      *        If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
      *        use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another
@@ -417,7 +419,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
 
     /**
      * <p>
-     * Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      * <note>
      * <p>
@@ -427,7 +429,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * </p>
      * </note>
      * 
-     * @return Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.</p>
+     * @return Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p>
      *         <note>
      *         <p>
      *         If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will

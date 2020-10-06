@@ -31,6 +31,21 @@ public class StopApplicationRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String applicationName;
+    /**
+     * <p>
+     * Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to <code>true</code>,
+     * Kinesis Data Analytics stops the application without taking a snapshot.
+     * </p>
+     * <p>
+     * You can only force stop a Flink-based Kinesis Data Analytics application. You can't force stop a SQL-based
+     * Kinesis Data Analytics application.
+     * </p>
+     * <p>
+     * The application must be in the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>,
+     * <code>AUTOSCALING</code>, or <code>RUNNING</code> state.
+     * </p>
+     */
+    private Boolean force;
 
     /**
      * <p>
@@ -73,6 +88,126 @@ public class StopApplicationRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to <code>true</code>,
+     * Kinesis Data Analytics stops the application without taking a snapshot.
+     * </p>
+     * <p>
+     * You can only force stop a Flink-based Kinesis Data Analytics application. You can't force stop a SQL-based
+     * Kinesis Data Analytics application.
+     * </p>
+     * <p>
+     * The application must be in the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>,
+     * <code>AUTOSCALING</code>, or <code>RUNNING</code> state.
+     * </p>
+     * 
+     * @param force
+     *        Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to
+     *        <code>true</code>, Kinesis Data Analytics stops the application without taking a snapshot.</p>
+     *        <p>
+     *        You can only force stop a Flink-based Kinesis Data Analytics application. You can't force stop a SQL-based
+     *        Kinesis Data Analytics application.
+     *        </p>
+     *        <p>
+     *        The application must be in the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>,
+     *        <code>AUTOSCALING</code>, or <code>RUNNING</code> state.
+     */
+
+    public void setForce(Boolean force) {
+        this.force = force;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to <code>true</code>,
+     * Kinesis Data Analytics stops the application without taking a snapshot.
+     * </p>
+     * <p>
+     * You can only force stop a Flink-based Kinesis Data Analytics application. You can't force stop a SQL-based
+     * Kinesis Data Analytics application.
+     * </p>
+     * <p>
+     * The application must be in the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>,
+     * <code>AUTOSCALING</code>, or <code>RUNNING</code> state.
+     * </p>
+     * 
+     * @return Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to
+     *         <code>true</code>, Kinesis Data Analytics stops the application without taking a snapshot.</p>
+     *         <p>
+     *         You can only force stop a Flink-based Kinesis Data Analytics application. You can't force stop a
+     *         SQL-based Kinesis Data Analytics application.
+     *         </p>
+     *         <p>
+     *         The application must be in the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>,
+     *         <code>AUTOSCALING</code>, or <code>RUNNING</code> state.
+     */
+
+    public Boolean getForce() {
+        return this.force;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to <code>true</code>,
+     * Kinesis Data Analytics stops the application without taking a snapshot.
+     * </p>
+     * <p>
+     * You can only force stop a Flink-based Kinesis Data Analytics application. You can't force stop a SQL-based
+     * Kinesis Data Analytics application.
+     * </p>
+     * <p>
+     * The application must be in the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>,
+     * <code>AUTOSCALING</code>, or <code>RUNNING</code> state.
+     * </p>
+     * 
+     * @param force
+     *        Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to
+     *        <code>true</code>, Kinesis Data Analytics stops the application without taking a snapshot.</p>
+     *        <p>
+     *        You can only force stop a Flink-based Kinesis Data Analytics application. You can't force stop a SQL-based
+     *        Kinesis Data Analytics application.
+     *        </p>
+     *        <p>
+     *        The application must be in the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>,
+     *        <code>AUTOSCALING</code>, or <code>RUNNING</code> state.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StopApplicationRequest withForce(Boolean force) {
+        setForce(force);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to <code>true</code>,
+     * Kinesis Data Analytics stops the application without taking a snapshot.
+     * </p>
+     * <p>
+     * You can only force stop a Flink-based Kinesis Data Analytics application. You can't force stop a SQL-based
+     * Kinesis Data Analytics application.
+     * </p>
+     * <p>
+     * The application must be in the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>,
+     * <code>AUTOSCALING</code>, or <code>RUNNING</code> state.
+     * </p>
+     * 
+     * @return Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to
+     *         <code>true</code>, Kinesis Data Analytics stops the application without taking a snapshot.</p>
+     *         <p>
+     *         You can only force stop a Flink-based Kinesis Data Analytics application. You can't force stop a
+     *         SQL-based Kinesis Data Analytics application.
+     *         </p>
+     *         <p>
+     *         The application must be in the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>,
+     *         <code>AUTOSCALING</code>, or <code>RUNNING</code> state.
+     */
+
+    public Boolean isForce() {
+        return this.force;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -85,7 +220,9 @@ public class StopApplicationRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: ").append(getApplicationName());
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
+        if (getForce() != null)
+            sb.append("Force: ").append(getForce());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +241,10 @@ public class StopApplicationRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false)
             return false;
+        if (other.getForce() == null ^ this.getForce() == null)
+            return false;
+        if (other.getForce() != null && other.getForce().equals(this.getForce()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +254,7 @@ public class StopApplicationRequest extends com.amazonaws.AmazonWebServiceReques
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
+        hashCode = prime * hashCode + ((getForce() == null) ? 0 : getForce().hashCode());
         return hashCode;
     }
 

@@ -95,16 +95,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
                             new JsonErrorShapeMetadata().withErrorCode("KMSAccessDeniedFault").withExceptionUnmarshaller(
                                     com.amazonaws.services.databasemigrationservice.model.transform.KMSAccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("KMSInvalidStateFault").withExceptionUnmarshaller(
-                                    com.amazonaws.services.databasemigrationservice.model.transform.KMSInvalidStateExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("KMSDisabledFault").withExceptionUnmarshaller(
                                     com.amazonaws.services.databasemigrationservice.model.transform.KMSDisabledExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UpgradeDependencyFailureFault")
-                                    .withExceptionUnmarshaller(
-                                            com.amazonaws.services.databasemigrationservice.model.transform.UpgradeDependencyFailureExceptionUnmarshaller
-                                                    .getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("SNSInvalidTopicFault").withExceptionUnmarshaller(
                                     com.amazonaws.services.databasemigrationservice.model.transform.SNSInvalidTopicExceptionUnmarshaller.getInstance()))
@@ -115,15 +107,6 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceQuotaExceededFault").withExceptionUnmarshaller(
                                     com.amazonaws.services.databasemigrationservice.model.transform.ResourceQuotaExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("KMSFault").withExceptionUnmarshaller(
-                                    com.amazonaws.services.databasemigrationservice.model.transform.KMSExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedFault").withExceptionUnmarshaller(
-                                    com.amazonaws.services.databasemigrationservice.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceStateFault").withExceptionUnmarshaller(
-                                    com.amazonaws.services.databasemigrationservice.model.transform.InvalidResourceStateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("S3AccessDeniedFault").withExceptionUnmarshaller(
                                     com.amazonaws.services.databasemigrationservice.model.transform.S3AccessDeniedExceptionUnmarshaller.getInstance()))
@@ -146,6 +129,26 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
                             new JsonErrorShapeMetadata().withErrorCode("InvalidSubnet").withExceptionUnmarshaller(
                                     com.amazonaws.services.databasemigrationservice.model.transform.InvalidSubnetExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SNSNoAuthorizationFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.databasemigrationservice.model.transform.SNSNoAuthorizationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("KMSInvalidStateFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.databasemigrationservice.model.transform.KMSInvalidStateExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UpgradeDependencyFailureFault")
+                                    .withExceptionUnmarshaller(
+                                            com.amazonaws.services.databasemigrationservice.model.transform.UpgradeDependencyFailureExceptionUnmarshaller
+                                                    .getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("KMSFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.databasemigrationservice.model.transform.KMSExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.databasemigrationservice.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceStateFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.databasemigrationservice.model.transform.InvalidResourceStateExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("KMSThrottlingFault").withExceptionUnmarshaller(
                                     com.amazonaws.services.databasemigrationservice.model.transform.KMSThrottlingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -154,9 +157,6 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("S3ResourceNotFoundFault").withExceptionUnmarshaller(
                                     com.amazonaws.services.databasemigrationservice.model.transform.S3ResourceNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("SNSNoAuthorizationFault").withExceptionUnmarshaller(
-                                    com.amazonaws.services.databasemigrationservice.model.transform.SNSNoAuthorizationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("ReplicationSubnetGroupDoesNotCoverEnoughAZs")

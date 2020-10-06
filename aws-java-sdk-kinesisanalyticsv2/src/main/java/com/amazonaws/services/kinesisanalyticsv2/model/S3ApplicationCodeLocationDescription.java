@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the location of a Java-based Amazon Kinesis Data Analytics application's code stored in an S3 bucket.
+ * Describes the location of a Flink-based Kinesis Data Analytics application's code stored in an S3 bucket.
  * </p>
  * 
  * @see <a

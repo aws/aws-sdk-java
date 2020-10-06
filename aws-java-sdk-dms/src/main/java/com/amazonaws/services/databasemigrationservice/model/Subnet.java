@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * In response to a request by the <code>DescribeReplicationSubnetGroup</code> operation, this object identifies a
+ * In response to a request by the <code>DescribeReplicationSubnetGroups</code> operation, this object identifies a
  * subnet by its given Availability Zone, subnet identifier, and status.
  * </p>
  * 

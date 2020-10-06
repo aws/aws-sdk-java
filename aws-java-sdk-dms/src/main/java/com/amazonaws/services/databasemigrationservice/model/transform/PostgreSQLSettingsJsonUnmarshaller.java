@@ -48,9 +48,33 @@ public class PostgreSQLSettingsJsonUnmarshaller implements Unmarshaller<PostgreS
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("AfterConnectScript", targetDepth)) {
+                    context.nextToken();
+                    postgreSQLSettings.setAfterConnectScript(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CaptureDdls", targetDepth)) {
+                    context.nextToken();
+                    postgreSQLSettings.setCaptureDdls(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("MaxFileSize", targetDepth)) {
+                    context.nextToken();
+                    postgreSQLSettings.setMaxFileSize(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("DatabaseName", targetDepth)) {
                     context.nextToken();
                     postgreSQLSettings.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DdlArtifactsSchema", targetDepth)) {
+                    context.nextToken();
+                    postgreSQLSettings.setDdlArtifactsSchema(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ExecuteTimeout", targetDepth)) {
+                    context.nextToken();
+                    postgreSQLSettings.setExecuteTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("FailTasksOnLobTruncation", targetDepth)) {
+                    context.nextToken();
+                    postgreSQLSettings.setFailTasksOnLobTruncation(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Password", targetDepth)) {
                     context.nextToken();
@@ -67,6 +91,10 @@ public class PostgreSQLSettingsJsonUnmarshaller implements Unmarshaller<PostgreS
                 if (context.testExpression("Username", targetDepth)) {
                     context.nextToken();
                     postgreSQLSettings.setUsername(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SlotName", targetDepth)) {
+                    context.nextToken();
+                    postgreSQLSettings.setSlotName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

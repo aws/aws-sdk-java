@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * For an SQL-based Amazon Kinesis Data Analytics application, identifies a Kinesis Data Firehose delivery stream as the
+ * For a SQL-based Kinesis Data Analytics application, identifies a Kinesis Data Firehose delivery stream as the
  * streaming source. You provide the delivery stream's Amazon Resource Name (ARN).
  * </p>
  * 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * For an SQL-based Amazon Kinesis Data Analytics application, describes the reference data source configured for an
+ * For a SQL-based Kinesis Data Analytics application, describes the reference data source configured for an
  * application.
  * </p>
  * 

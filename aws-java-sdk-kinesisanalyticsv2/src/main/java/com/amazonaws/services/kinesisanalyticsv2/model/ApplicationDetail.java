@@ -49,7 +49,8 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     private String applicationName;
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     * The runtime environment for the application (<code>SQL-1.0</code>, <code>FLINK-1_6</code>, or
+     * <code>FLINK-1_8</code>).
      * </p>
      */
     private String runtimeEnvironment;
@@ -86,7 +87,7 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     private java.util.Date lastUpdateTimestamp;
     /**
      * <p>
-     * Provides details about the application's SQL or Java code and starting parameters.
+     * Provides details about the application's Java, SQL, or Scala code and starting parameters.
      * </p>
      */
     private ApplicationConfigurationDescription applicationConfigurationDescription;
@@ -219,11 +220,13 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     * The runtime environment for the application (<code>SQL-1.0</code>, <code>FLINK-1_6</code>, or
+     * <code>FLINK-1_8</code>).
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     *        The runtime environment for the application (<code>SQL-1.0</code>, <code>FLINK-1_6</code>, or
+     *        <code>FLINK-1_8</code>).
      * @see RuntimeEnvironment
      */
 
@@ -233,10 +236,12 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     * The runtime environment for the application (<code>SQL-1.0</code>, <code>FLINK-1_6</code>, or
+     * <code>FLINK-1_8</code>).
      * </p>
      * 
-     * @return The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     * @return The runtime environment for the application (<code>SQL-1.0</code>, <code>FLINK-1_6</code>, or
+     *         <code>FLINK-1_8</code>).
      * @see RuntimeEnvironment
      */
 
@@ -246,11 +251,13 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     * The runtime environment for the application (<code>SQL-1.0</code>, <code>FLINK-1_6</code>, or
+     * <code>FLINK-1_8</code>).
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     *        The runtime environment for the application (<code>SQL-1.0</code>, <code>FLINK-1_6</code>, or
+     *        <code>FLINK-1_8</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuntimeEnvironment
      */
@@ -262,11 +269,13 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     * The runtime environment for the application (<code>SQL-1.0</code>, <code>FLINK-1_6</code>, or
+     * <code>FLINK-1_8</code>).
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     *        The runtime environment for the application (<code>SQL-1.0</code>, <code>FLINK-1_6</code>, or
+     *        <code>FLINK-1_8</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuntimeEnvironment
      */
@@ -503,11 +512,11 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Provides details about the application's SQL or Java code and starting parameters.
+     * Provides details about the application's Java, SQL, or Scala code and starting parameters.
      * </p>
      * 
      * @param applicationConfigurationDescription
-     *        Provides details about the application's SQL or Java code and starting parameters.
+     *        Provides details about the application's Java, SQL, or Scala code and starting parameters.
      */
 
     public void setApplicationConfigurationDescription(ApplicationConfigurationDescription applicationConfigurationDescription) {
@@ -516,10 +525,10 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Provides details about the application's SQL or Java code and starting parameters.
+     * Provides details about the application's Java, SQL, or Scala code and starting parameters.
      * </p>
      * 
-     * @return Provides details about the application's SQL or Java code and starting parameters.
+     * @return Provides details about the application's Java, SQL, or Scala code and starting parameters.
      */
 
     public ApplicationConfigurationDescription getApplicationConfigurationDescription() {
@@ -528,11 +537,11 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Provides details about the application's SQL or Java code and starting parameters.
+     * Provides details about the application's Java, SQL, or Scala code and starting parameters.
      * </p>
      * 
      * @param applicationConfigurationDescription
-     *        Provides details about the application's SQL or Java code and starting parameters.
+     *        Provides details about the application's Java, SQL, or Scala code and starting parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

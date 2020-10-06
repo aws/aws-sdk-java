@@ -54,6 +54,25 @@ public class IBMDb2Settings implements Serializable, Cloneable, StructuredPojo {
     private String serverName;
     /**
      * <p>
+     * Enables ongoing replication (CDC) as a BOOLEAN value. The default is true.
+     * </p>
+     */
+    private Boolean setDataCaptureChanges;
+    /**
+     * <p>
+     * For ongoing replication (CDC), use CurrentLSN to specify a log sequence number (LSN) where you want the
+     * replication to start.
+     * </p>
+     */
+    private String currentLsn;
+    /**
+     * <p>
+     * Maximum number of bytes per read, as a NUMBER value. The default is 64 KB.
+     * </p>
+     */
+    private Integer maxKBytesPerRead;
+    /**
+     * <p>
      * Endpoint connection user name.
      * </p>
      */
@@ -221,6 +240,144 @@ public class IBMDb2Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Enables ongoing replication (CDC) as a BOOLEAN value. The default is true.
+     * </p>
+     * 
+     * @param setDataCaptureChanges
+     *        Enables ongoing replication (CDC) as a BOOLEAN value. The default is true.
+     */
+
+    public void setSetDataCaptureChanges(Boolean setDataCaptureChanges) {
+        this.setDataCaptureChanges = setDataCaptureChanges;
+    }
+
+    /**
+     * <p>
+     * Enables ongoing replication (CDC) as a BOOLEAN value. The default is true.
+     * </p>
+     * 
+     * @return Enables ongoing replication (CDC) as a BOOLEAN value. The default is true.
+     */
+
+    public Boolean getSetDataCaptureChanges() {
+        return this.setDataCaptureChanges;
+    }
+
+    /**
+     * <p>
+     * Enables ongoing replication (CDC) as a BOOLEAN value. The default is true.
+     * </p>
+     * 
+     * @param setDataCaptureChanges
+     *        Enables ongoing replication (CDC) as a BOOLEAN value. The default is true.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IBMDb2Settings withSetDataCaptureChanges(Boolean setDataCaptureChanges) {
+        setSetDataCaptureChanges(setDataCaptureChanges);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enables ongoing replication (CDC) as a BOOLEAN value. The default is true.
+     * </p>
+     * 
+     * @return Enables ongoing replication (CDC) as a BOOLEAN value. The default is true.
+     */
+
+    public Boolean isSetDataCaptureChanges() {
+        return this.setDataCaptureChanges;
+    }
+
+    /**
+     * <p>
+     * For ongoing replication (CDC), use CurrentLSN to specify a log sequence number (LSN) where you want the
+     * replication to start.
+     * </p>
+     * 
+     * @param currentLsn
+     *        For ongoing replication (CDC), use CurrentLSN to specify a log sequence number (LSN) where you want the
+     *        replication to start.
+     */
+
+    public void setCurrentLsn(String currentLsn) {
+        this.currentLsn = currentLsn;
+    }
+
+    /**
+     * <p>
+     * For ongoing replication (CDC), use CurrentLSN to specify a log sequence number (LSN) where you want the
+     * replication to start.
+     * </p>
+     * 
+     * @return For ongoing replication (CDC), use CurrentLSN to specify a log sequence number (LSN) where you want the
+     *         replication to start.
+     */
+
+    public String getCurrentLsn() {
+        return this.currentLsn;
+    }
+
+    /**
+     * <p>
+     * For ongoing replication (CDC), use CurrentLSN to specify a log sequence number (LSN) where you want the
+     * replication to start.
+     * </p>
+     * 
+     * @param currentLsn
+     *        For ongoing replication (CDC), use CurrentLSN to specify a log sequence number (LSN) where you want the
+     *        replication to start.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IBMDb2Settings withCurrentLsn(String currentLsn) {
+        setCurrentLsn(currentLsn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Maximum number of bytes per read, as a NUMBER value. The default is 64 KB.
+     * </p>
+     * 
+     * @param maxKBytesPerRead
+     *        Maximum number of bytes per read, as a NUMBER value. The default is 64 KB.
+     */
+
+    public void setMaxKBytesPerRead(Integer maxKBytesPerRead) {
+        this.maxKBytesPerRead = maxKBytesPerRead;
+    }
+
+    /**
+     * <p>
+     * Maximum number of bytes per read, as a NUMBER value. The default is 64 KB.
+     * </p>
+     * 
+     * @return Maximum number of bytes per read, as a NUMBER value. The default is 64 KB.
+     */
+
+    public Integer getMaxKBytesPerRead() {
+        return this.maxKBytesPerRead;
+    }
+
+    /**
+     * <p>
+     * Maximum number of bytes per read, as a NUMBER value. The default is 64 KB.
+     * </p>
+     * 
+     * @param maxKBytesPerRead
+     *        Maximum number of bytes per read, as a NUMBER value. The default is 64 KB.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IBMDb2Settings withMaxKBytesPerRead(Integer maxKBytesPerRead) {
+        setMaxKBytesPerRead(maxKBytesPerRead);
+        return this;
+    }
+
+    /**
+     * <p>
      * Endpoint connection user name.
      * </p>
      * 
@@ -279,6 +436,12 @@ public class IBMDb2Settings implements Serializable, Cloneable, StructuredPojo {
             sb.append("Port: ").append(getPort()).append(",");
         if (getServerName() != null)
             sb.append("ServerName: ").append(getServerName()).append(",");
+        if (getSetDataCaptureChanges() != null)
+            sb.append("SetDataCaptureChanges: ").append(getSetDataCaptureChanges()).append(",");
+        if (getCurrentLsn() != null)
+            sb.append("CurrentLsn: ").append(getCurrentLsn()).append(",");
+        if (getMaxKBytesPerRead() != null)
+            sb.append("MaxKBytesPerRead: ").append(getMaxKBytesPerRead()).append(",");
         if (getUsername() != null)
             sb.append("Username: ").append(getUsername());
         sb.append("}");
@@ -311,6 +474,18 @@ public class IBMDb2Settings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getServerName() != null && other.getServerName().equals(this.getServerName()) == false)
             return false;
+        if (other.getSetDataCaptureChanges() == null ^ this.getSetDataCaptureChanges() == null)
+            return false;
+        if (other.getSetDataCaptureChanges() != null && other.getSetDataCaptureChanges().equals(this.getSetDataCaptureChanges()) == false)
+            return false;
+        if (other.getCurrentLsn() == null ^ this.getCurrentLsn() == null)
+            return false;
+        if (other.getCurrentLsn() != null && other.getCurrentLsn().equals(this.getCurrentLsn()) == false)
+            return false;
+        if (other.getMaxKBytesPerRead() == null ^ this.getMaxKBytesPerRead() == null)
+            return false;
+        if (other.getMaxKBytesPerRead() != null && other.getMaxKBytesPerRead().equals(this.getMaxKBytesPerRead()) == false)
+            return false;
         if (other.getUsername() == null ^ this.getUsername() == null)
             return false;
         if (other.getUsername() != null && other.getUsername().equals(this.getUsername()) == false)
@@ -327,6 +502,9 @@ public class IBMDb2Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPassword() == null) ? 0 : getPassword().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
         hashCode = prime * hashCode + ((getServerName() == null) ? 0 : getServerName().hashCode());
+        hashCode = prime * hashCode + ((getSetDataCaptureChanges() == null) ? 0 : getSetDataCaptureChanges().hashCode());
+        hashCode = prime * hashCode + ((getCurrentLsn() == null) ? 0 : getCurrentLsn().hashCode());
+        hashCode = prime * hashCode + ((getMaxKBytesPerRead() == null) ? 0 : getMaxKBytesPerRead().hashCode());
         hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
         return hashCode;
     }

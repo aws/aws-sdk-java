@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes a subnet group in response to a request by the <code>DescribeReplicationSubnetGroup</code> operation.
+ * Describes a subnet group in response to a request by the <code>DescribeReplicationSubnetGroups</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReplicationSubnetGroup" target="_top">AWS API

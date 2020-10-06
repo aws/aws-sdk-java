@@ -52,8 +52,8 @@ import com.amazonaws.services.kinesisanalyticsv2.model.transform.*;
  * <p>
  * <p>
  * Amazon Kinesis Data Analytics is a fully managed service that you can use to process and analyze streaming data using
- * SQL or Java. The service enables you to quickly author and run SQL or Java code against streaming sources to perform
- * time series analytics, feed real-time dashboards, and create real-time metrics.
+ * Java, SQL, or Scala. The service enables you to quickly author and run Java, SQL, or Scala code against streaming
+ * sources to perform time series analytics, feed real-time dashboards, and create real-time metrics.
  * </p>
  */
 @ThreadSafe
@@ -240,7 +240,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Adds a streaming source to your SQL-based Amazon Kinesis Data Analytics application.
+     * Adds a streaming source to your SQL-based Kinesis Data Analytics application.
      * </p>
      * <p>
      * You can add a streaming source when you create an application, or you can use this operation to add a streaming
@@ -315,9 +315,9 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Adds an <a>InputProcessingConfiguration</a> to an SQL-based Kinesis Data Analytics application. An input
-     * processor pre-processes records on the input stream before the application's SQL code executes. Currently, the
-     * only input processor available is <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a>.
+     * Adds an <a>InputProcessingConfiguration</a> to a SQL-based Kinesis Data Analytics application. An input processor
+     * pre-processes records on the input stream before the application's SQL code executes. Currently, the only input
+     * processor available is <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>.
      * </p>
      * 
      * @param addApplicationInputProcessingConfigurationRequest
@@ -386,7 +386,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Adds an external destination to your SQL-based Amazon Kinesis Data Analytics application.
+     * Adds an external destination to your SQL-based Kinesis Data Analytics application.
      * </p>
      * <p>
      * If you want Kinesis Data Analytics to deliver data from an in-application stream within your application to an
@@ -466,7 +466,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Adds a reference data source to an existing SQL-based Amazon Kinesis Data Analytics application.
+     * Adds a reference data source to an existing SQL-based Kinesis Data Analytics application.
      * </p>
      * <p>
      * Kinesis Data Analytics reads reference data (that is, an Amazon S3 object) and creates an in-application table
@@ -626,7 +626,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Creates an Amazon Kinesis Data Analytics application. For information about creating a Kinesis Data Analytics
+     * Creates a Kinesis Data Analytics application. For information about creating a Kinesis Data Analytics
      * application, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/getting-started.html">Creating
      * an Application</a>.
      * </p>
@@ -838,7 +838,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Deletes an Amazon CloudWatch log stream from an Amazon Kinesis Data Analytics application.
+     * Deletes an Amazon CloudWatch log stream from an Kinesis Data Analytics application.
      * </p>
      * 
      * @param deleteApplicationCloudWatchLoggingOptionRequest
@@ -979,7 +979,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Deletes the output destination configuration from your SQL-based Amazon Kinesis Data Analytics application's
+     * Deletes the output destination configuration from your SQL-based Kinesis Data Analytics application's
      * configuration. Kinesis Data Analytics will no longer write data from the corresponding in-application stream to
      * the external output destination.
      * </p>
@@ -1048,8 +1048,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Deletes a reference data source configuration from the specified SQL-based Amazon Kinesis Data Analytics
-     * application's configuration.
+     * Deletes a reference data source configuration from the specified SQL-based Kinesis Data Analytics application's
+     * configuration.
      * </p>
      * <p>
      * If the application is running, Kinesis Data Analytics immediately removes the in-application table that you
@@ -1258,7 +1258,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Returns information about a specific Amazon Kinesis Data Analytics application.
+     * Returns information about a specific Kinesis Data Analytics application.
      * </p>
      * <p>
      * If you want to retrieve a list of all applications in your account, use the <a>ListApplications</a> operation.
@@ -1384,10 +1384,10 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Infers a schema for an SQL-based Amazon Kinesis Data Analytics application by evaluating sample records on the
-     * specified streaming source (Kinesis data stream or Kinesis Data Firehose delivery stream) or Amazon S3 object. In
-     * the response, the operation returns the inferred schema and also the sample records that the operation used to
-     * infer the schema.
+     * Infers a schema for a SQL-based Kinesis Data Analytics application by evaluating sample records on the specified
+     * streaming source (Kinesis data stream or Kinesis Data Firehose delivery stream) or Amazon S3 object. In the
+     * response, the operation returns the inferred schema and also the sample records that the operation used to infer
+     * the schema.
      * </p>
      * <p>
      * You can use the inferred schema when configuring a streaming source for your application. When you create an
@@ -1400,10 +1400,10 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
      * @throws InvalidArgumentException
      *         The specified input parameter value is not valid.
      * @throws UnableToDetectSchemaException
-     *         The data format is not valid. Amazon Kinesis Data Analytics cannot detect the schema for the given
-     *         streaming source.
+     *         The data format is not valid. Kinesis Data Analytics cannot detect the schema for the given streaming
+     *         source.
      * @throws ResourceProvisionedThroughputExceededException
-     *         Discovery failed to get a record from the streaming source because of the Amazon Kinesis Streams
+     *         Discovery failed to get a record from the streaming source because of the Kinesis Streams
      *         <code>ProvisionedThroughputExceededException</code>. For more information, see <a
      *         href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html">GetRecords</a> in the
      *         Amazon Kinesis Streams API Reference.
@@ -1521,7 +1521,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Returns a list of Amazon Kinesis Data Analytics applications in your account. For each application, the response
+     * Returns a list of Kinesis Data Analytics applications in your account. For each application, the response
      * includes the application name, Amazon Resource Name (ARN), and status.
      * </p>
      * <p>
@@ -1643,8 +1643,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Starts the specified Amazon Kinesis Data Analytics application. After creating an application, you must
-     * exclusively call this operation to start your application.
+     * Starts the specified Kinesis Data Analytics application. After creating an application, you must exclusively call
+     * this operation to start your application.
      * </p>
      * 
      * @param startApplicationRequest
@@ -1724,6 +1724,9 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
      *         The request JSON is not valid for the operation.
      * @throws InvalidApplicationConfigurationException
      *         The user-provided application configuration is not valid.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modifications to an application. This error can be the result
+     *         of attempting to modify an application without using the current application ID.
      * @sample AmazonKinesisAnalyticsV2.StopApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StopApplication"
      *      target="_top">AWS API Documentation</a>
@@ -1773,9 +1776,10 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Adds one or more key-value tags to a Kinesis Analytics application. Note that the maximum number of application
-     * tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see
-     * <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.
+     * Adds one or more key-value tags to a Kinesis Data Analytics application. Note that the maximum number of
+     * application tags includes system tags. The maximum number of user-defined application tags is 50. For more
+     * information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
+     * Tagging</a>.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1842,7 +1846,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Removes one or more tags from a Kinesis Analytics application. For more information, see <a
+     * Removes one or more tags from a Kinesis Data Analytics application. For more information, see <a
      * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.
      * </p>
      * 
@@ -1910,12 +1914,18 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Updates an existing Amazon Kinesis Data Analytics application. Using this operation, you can update application
-     * code, input configuration, and output configuration.
+     * Updates an existing Kinesis Data Analytics application. Using this operation, you can update application code,
+     * input configuration, and output configuration.
      * </p>
      * <p>
      * Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update your application.
      * </p>
+     * <note>
+     * <p>
+     * You cannot update the <code>RuntimeEnvironment</code> of an existing application. If you need to update an
+     * application's <code>RuntimeEnvironment</code>, you must delete the application and create it again.
+     * </p>
+     * </note>
      * 
      * @param updateApplicationRequest
      * @return Result of the UpdateApplication operation returned by the service.

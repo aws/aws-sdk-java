@@ -30,10 +30,58 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Specifies a script to run immediately after AWS DMS connects to the endpoint. The migration task continues
+     * running regardless if the SQL statement succeeds or fails.
+     * </p>
+     */
+    private String afterConnectScript;
+    /**
+     * <p>
      * Database name for the endpoint.
      * </p>
      */
     private String databaseName;
+    /**
+     * <p>
+     * Specifies how often to check the binary log for new changes/events when the database is idle.
+     * </p>
+     * <p>
+     * Example: <code>eventsPollInterval=5;</code>
+     * </p>
+     * <p>
+     * In the example, AWS DMS checks for changes in the binary logs every five seconds.
+     * </p>
+     */
+    private Integer eventsPollInterval;
+    /**
+     * <p>
+     * Specifies where to migrate source tables on the target, either to a single database or multiple databases.
+     * </p>
+     * <p>
+     * Example: <code>targetDbType=MULTIPLE_DATABASES</code>
+     * </p>
+     */
+    private String targetDbType;
+    /**
+     * <p>
+     * Specifies the maximum size (in KB) of any .csv file used to transfer data to a MySQL-compatible database.
+     * </p>
+     * <p>
+     * Example: <code>maxFileSize=512</code>
+     * </p>
+     */
+    private Integer maxFileSize;
+    /**
+     * <p>
+     * Improves performance when loading data into the MySQLcompatible target database. Specifies how many threads to
+     * use to load the data into the MySQL-compatible target database. Setting a large number of threads can have an
+     * adverse effect on database performance, because a separate connection is required for each thread.
+     * </p>
+     * <p>
+     * Example: <code>parallelLoadThreads=1</code>
+     * </p>
+     */
+    private Integer parallelLoadThreads;
     /**
      * <p>
      * Endpoint connection password.
@@ -54,10 +102,68 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
     private String serverName;
     /**
      * <p>
+     * Specifies the time zone for the source MySQL database.
+     * </p>
+     * <p>
+     * Example: <code>serverTimezone=US/Pacific;</code>
+     * </p>
+     * <p>
+     * Note: Do not enclose time zones in single quotes.
+     * </p>
+     */
+    private String serverTimezone;
+    /**
+     * <p>
      * Endpoint connection user name.
      * </p>
      */
     private String username;
+
+    /**
+     * <p>
+     * Specifies a script to run immediately after AWS DMS connects to the endpoint. The migration task continues
+     * running regardless if the SQL statement succeeds or fails.
+     * </p>
+     * 
+     * @param afterConnectScript
+     *        Specifies a script to run immediately after AWS DMS connects to the endpoint. The migration task continues
+     *        running regardless if the SQL statement succeeds or fails.
+     */
+
+    public void setAfterConnectScript(String afterConnectScript) {
+        this.afterConnectScript = afterConnectScript;
+    }
+
+    /**
+     * <p>
+     * Specifies a script to run immediately after AWS DMS connects to the endpoint. The migration task continues
+     * running regardless if the SQL statement succeeds or fails.
+     * </p>
+     * 
+     * @return Specifies a script to run immediately after AWS DMS connects to the endpoint. The migration task
+     *         continues running regardless if the SQL statement succeeds or fails.
+     */
+
+    public String getAfterConnectScript() {
+        return this.afterConnectScript;
+    }
+
+    /**
+     * <p>
+     * Specifies a script to run immediately after AWS DMS connects to the endpoint. The migration task continues
+     * running regardless if the SQL statement succeeds or fails.
+     * </p>
+     * 
+     * @param afterConnectScript
+     *        Specifies a script to run immediately after AWS DMS connects to the endpoint. The migration task continues
+     *        running regardless if the SQL statement succeeds or fails.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MySQLSettings withAfterConnectScript(String afterConnectScript) {
+        setAfterConnectScript(afterConnectScript);
+        return this;
+    }
 
     /**
      * <p>
@@ -96,6 +202,290 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
 
     public MySQLSettings withDatabaseName(String databaseName) {
         setDatabaseName(databaseName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies how often to check the binary log for new changes/events when the database is idle.
+     * </p>
+     * <p>
+     * Example: <code>eventsPollInterval=5;</code>
+     * </p>
+     * <p>
+     * In the example, AWS DMS checks for changes in the binary logs every five seconds.
+     * </p>
+     * 
+     * @param eventsPollInterval
+     *        Specifies how often to check the binary log for new changes/events when the database is idle.</p>
+     *        <p>
+     *        Example: <code>eventsPollInterval=5;</code>
+     *        </p>
+     *        <p>
+     *        In the example, AWS DMS checks for changes in the binary logs every five seconds.
+     */
+
+    public void setEventsPollInterval(Integer eventsPollInterval) {
+        this.eventsPollInterval = eventsPollInterval;
+    }
+
+    /**
+     * <p>
+     * Specifies how often to check the binary log for new changes/events when the database is idle.
+     * </p>
+     * <p>
+     * Example: <code>eventsPollInterval=5;</code>
+     * </p>
+     * <p>
+     * In the example, AWS DMS checks for changes in the binary logs every five seconds.
+     * </p>
+     * 
+     * @return Specifies how often to check the binary log for new changes/events when the database is idle.</p>
+     *         <p>
+     *         Example: <code>eventsPollInterval=5;</code>
+     *         </p>
+     *         <p>
+     *         In the example, AWS DMS checks for changes in the binary logs every five seconds.
+     */
+
+    public Integer getEventsPollInterval() {
+        return this.eventsPollInterval;
+    }
+
+    /**
+     * <p>
+     * Specifies how often to check the binary log for new changes/events when the database is idle.
+     * </p>
+     * <p>
+     * Example: <code>eventsPollInterval=5;</code>
+     * </p>
+     * <p>
+     * In the example, AWS DMS checks for changes in the binary logs every five seconds.
+     * </p>
+     * 
+     * @param eventsPollInterval
+     *        Specifies how often to check the binary log for new changes/events when the database is idle.</p>
+     *        <p>
+     *        Example: <code>eventsPollInterval=5;</code>
+     *        </p>
+     *        <p>
+     *        In the example, AWS DMS checks for changes in the binary logs every five seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MySQLSettings withEventsPollInterval(Integer eventsPollInterval) {
+        setEventsPollInterval(eventsPollInterval);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies where to migrate source tables on the target, either to a single database or multiple databases.
+     * </p>
+     * <p>
+     * Example: <code>targetDbType=MULTIPLE_DATABASES</code>
+     * </p>
+     * 
+     * @param targetDbType
+     *        Specifies where to migrate source tables on the target, either to a single database or multiple
+     *        databases.</p>
+     *        <p>
+     *        Example: <code>targetDbType=MULTIPLE_DATABASES</code>
+     * @see TargetDbType
+     */
+
+    public void setTargetDbType(String targetDbType) {
+        this.targetDbType = targetDbType;
+    }
+
+    /**
+     * <p>
+     * Specifies where to migrate source tables on the target, either to a single database or multiple databases.
+     * </p>
+     * <p>
+     * Example: <code>targetDbType=MULTIPLE_DATABASES</code>
+     * </p>
+     * 
+     * @return Specifies where to migrate source tables on the target, either to a single database or multiple
+     *         databases.</p>
+     *         <p>
+     *         Example: <code>targetDbType=MULTIPLE_DATABASES</code>
+     * @see TargetDbType
+     */
+
+    public String getTargetDbType() {
+        return this.targetDbType;
+    }
+
+    /**
+     * <p>
+     * Specifies where to migrate source tables on the target, either to a single database or multiple databases.
+     * </p>
+     * <p>
+     * Example: <code>targetDbType=MULTIPLE_DATABASES</code>
+     * </p>
+     * 
+     * @param targetDbType
+     *        Specifies where to migrate source tables on the target, either to a single database or multiple
+     *        databases.</p>
+     *        <p>
+     *        Example: <code>targetDbType=MULTIPLE_DATABASES</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TargetDbType
+     */
+
+    public MySQLSettings withTargetDbType(String targetDbType) {
+        setTargetDbType(targetDbType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies where to migrate source tables on the target, either to a single database or multiple databases.
+     * </p>
+     * <p>
+     * Example: <code>targetDbType=MULTIPLE_DATABASES</code>
+     * </p>
+     * 
+     * @param targetDbType
+     *        Specifies where to migrate source tables on the target, either to a single database or multiple
+     *        databases.</p>
+     *        <p>
+     *        Example: <code>targetDbType=MULTIPLE_DATABASES</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TargetDbType
+     */
+
+    public MySQLSettings withTargetDbType(TargetDbType targetDbType) {
+        this.targetDbType = targetDbType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the maximum size (in KB) of any .csv file used to transfer data to a MySQL-compatible database.
+     * </p>
+     * <p>
+     * Example: <code>maxFileSize=512</code>
+     * </p>
+     * 
+     * @param maxFileSize
+     *        Specifies the maximum size (in KB) of any .csv file used to transfer data to a MySQL-compatible
+     *        database.</p>
+     *        <p>
+     *        Example: <code>maxFileSize=512</code>
+     */
+
+    public void setMaxFileSize(Integer maxFileSize) {
+        this.maxFileSize = maxFileSize;
+    }
+
+    /**
+     * <p>
+     * Specifies the maximum size (in KB) of any .csv file used to transfer data to a MySQL-compatible database.
+     * </p>
+     * <p>
+     * Example: <code>maxFileSize=512</code>
+     * </p>
+     * 
+     * @return Specifies the maximum size (in KB) of any .csv file used to transfer data to a MySQL-compatible
+     *         database.</p>
+     *         <p>
+     *         Example: <code>maxFileSize=512</code>
+     */
+
+    public Integer getMaxFileSize() {
+        return this.maxFileSize;
+    }
+
+    /**
+     * <p>
+     * Specifies the maximum size (in KB) of any .csv file used to transfer data to a MySQL-compatible database.
+     * </p>
+     * <p>
+     * Example: <code>maxFileSize=512</code>
+     * </p>
+     * 
+     * @param maxFileSize
+     *        Specifies the maximum size (in KB) of any .csv file used to transfer data to a MySQL-compatible
+     *        database.</p>
+     *        <p>
+     *        Example: <code>maxFileSize=512</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MySQLSettings withMaxFileSize(Integer maxFileSize) {
+        setMaxFileSize(maxFileSize);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Improves performance when loading data into the MySQLcompatible target database. Specifies how many threads to
+     * use to load the data into the MySQL-compatible target database. Setting a large number of threads can have an
+     * adverse effect on database performance, because a separate connection is required for each thread.
+     * </p>
+     * <p>
+     * Example: <code>parallelLoadThreads=1</code>
+     * </p>
+     * 
+     * @param parallelLoadThreads
+     *        Improves performance when loading data into the MySQLcompatible target database. Specifies how many
+     *        threads to use to load the data into the MySQL-compatible target database. Setting a large number of
+     *        threads can have an adverse effect on database performance, because a separate connection is required for
+     *        each thread.</p>
+     *        <p>
+     *        Example: <code>parallelLoadThreads=1</code>
+     */
+
+    public void setParallelLoadThreads(Integer parallelLoadThreads) {
+        this.parallelLoadThreads = parallelLoadThreads;
+    }
+
+    /**
+     * <p>
+     * Improves performance when loading data into the MySQLcompatible target database. Specifies how many threads to
+     * use to load the data into the MySQL-compatible target database. Setting a large number of threads can have an
+     * adverse effect on database performance, because a separate connection is required for each thread.
+     * </p>
+     * <p>
+     * Example: <code>parallelLoadThreads=1</code>
+     * </p>
+     * 
+     * @return Improves performance when loading data into the MySQLcompatible target database. Specifies how many
+     *         threads to use to load the data into the MySQL-compatible target database. Setting a large number of
+     *         threads can have an adverse effect on database performance, because a separate connection is required for
+     *         each thread.</p>
+     *         <p>
+     *         Example: <code>parallelLoadThreads=1</code>
+     */
+
+    public Integer getParallelLoadThreads() {
+        return this.parallelLoadThreads;
+    }
+
+    /**
+     * <p>
+     * Improves performance when loading data into the MySQLcompatible target database. Specifies how many threads to
+     * use to load the data into the MySQL-compatible target database. Setting a large number of threads can have an
+     * adverse effect on database performance, because a separate connection is required for each thread.
+     * </p>
+     * <p>
+     * Example: <code>parallelLoadThreads=1</code>
+     * </p>
+     * 
+     * @param parallelLoadThreads
+     *        Improves performance when loading data into the MySQLcompatible target database. Specifies how many
+     *        threads to use to load the data into the MySQL-compatible target database. Setting a large number of
+     *        threads can have an adverse effect on database performance, because a separate connection is required for
+     *        each thread.</p>
+     *        <p>
+     *        Example: <code>parallelLoadThreads=1</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MySQLSettings withParallelLoadThreads(Integer parallelLoadThreads) {
+        setParallelLoadThreads(parallelLoadThreads);
         return this;
     }
 
@@ -221,6 +611,79 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Specifies the time zone for the source MySQL database.
+     * </p>
+     * <p>
+     * Example: <code>serverTimezone=US/Pacific;</code>
+     * </p>
+     * <p>
+     * Note: Do not enclose time zones in single quotes.
+     * </p>
+     * 
+     * @param serverTimezone
+     *        Specifies the time zone for the source MySQL database.</p>
+     *        <p>
+     *        Example: <code>serverTimezone=US/Pacific;</code>
+     *        </p>
+     *        <p>
+     *        Note: Do not enclose time zones in single quotes.
+     */
+
+    public void setServerTimezone(String serverTimezone) {
+        this.serverTimezone = serverTimezone;
+    }
+
+    /**
+     * <p>
+     * Specifies the time zone for the source MySQL database.
+     * </p>
+     * <p>
+     * Example: <code>serverTimezone=US/Pacific;</code>
+     * </p>
+     * <p>
+     * Note: Do not enclose time zones in single quotes.
+     * </p>
+     * 
+     * @return Specifies the time zone for the source MySQL database.</p>
+     *         <p>
+     *         Example: <code>serverTimezone=US/Pacific;</code>
+     *         </p>
+     *         <p>
+     *         Note: Do not enclose time zones in single quotes.
+     */
+
+    public String getServerTimezone() {
+        return this.serverTimezone;
+    }
+
+    /**
+     * <p>
+     * Specifies the time zone for the source MySQL database.
+     * </p>
+     * <p>
+     * Example: <code>serverTimezone=US/Pacific;</code>
+     * </p>
+     * <p>
+     * Note: Do not enclose time zones in single quotes.
+     * </p>
+     * 
+     * @param serverTimezone
+     *        Specifies the time zone for the source MySQL database.</p>
+     *        <p>
+     *        Example: <code>serverTimezone=US/Pacific;</code>
+     *        </p>
+     *        <p>
+     *        Note: Do not enclose time zones in single quotes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MySQLSettings withServerTimezone(String serverTimezone) {
+        setServerTimezone(serverTimezone);
+        return this;
+    }
+
+    /**
+     * <p>
      * Endpoint connection user name.
      * </p>
      * 
@@ -271,14 +734,26 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAfterConnectScript() != null)
+            sb.append("AfterConnectScript: ").append(getAfterConnectScript()).append(",");
         if (getDatabaseName() != null)
             sb.append("DatabaseName: ").append(getDatabaseName()).append(",");
+        if (getEventsPollInterval() != null)
+            sb.append("EventsPollInterval: ").append(getEventsPollInterval()).append(",");
+        if (getTargetDbType() != null)
+            sb.append("TargetDbType: ").append(getTargetDbType()).append(",");
+        if (getMaxFileSize() != null)
+            sb.append("MaxFileSize: ").append(getMaxFileSize()).append(",");
+        if (getParallelLoadThreads() != null)
+            sb.append("ParallelLoadThreads: ").append(getParallelLoadThreads()).append(",");
         if (getPassword() != null)
             sb.append("Password: ").append("***Sensitive Data Redacted***").append(",");
         if (getPort() != null)
             sb.append("Port: ").append(getPort()).append(",");
         if (getServerName() != null)
             sb.append("ServerName: ").append(getServerName()).append(",");
+        if (getServerTimezone() != null)
+            sb.append("ServerTimezone: ").append(getServerTimezone()).append(",");
         if (getUsername() != null)
             sb.append("Username: ").append(getUsername());
         sb.append("}");
@@ -295,9 +770,29 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof MySQLSettings == false)
             return false;
         MySQLSettings other = (MySQLSettings) obj;
+        if (other.getAfterConnectScript() == null ^ this.getAfterConnectScript() == null)
+            return false;
+        if (other.getAfterConnectScript() != null && other.getAfterConnectScript().equals(this.getAfterConnectScript()) == false)
+            return false;
         if (other.getDatabaseName() == null ^ this.getDatabaseName() == null)
             return false;
         if (other.getDatabaseName() != null && other.getDatabaseName().equals(this.getDatabaseName()) == false)
+            return false;
+        if (other.getEventsPollInterval() == null ^ this.getEventsPollInterval() == null)
+            return false;
+        if (other.getEventsPollInterval() != null && other.getEventsPollInterval().equals(this.getEventsPollInterval()) == false)
+            return false;
+        if (other.getTargetDbType() == null ^ this.getTargetDbType() == null)
+            return false;
+        if (other.getTargetDbType() != null && other.getTargetDbType().equals(this.getTargetDbType()) == false)
+            return false;
+        if (other.getMaxFileSize() == null ^ this.getMaxFileSize() == null)
+            return false;
+        if (other.getMaxFileSize() != null && other.getMaxFileSize().equals(this.getMaxFileSize()) == false)
+            return false;
+        if (other.getParallelLoadThreads() == null ^ this.getParallelLoadThreads() == null)
+            return false;
+        if (other.getParallelLoadThreads() != null && other.getParallelLoadThreads().equals(this.getParallelLoadThreads()) == false)
             return false;
         if (other.getPassword() == null ^ this.getPassword() == null)
             return false;
@@ -311,6 +806,10 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getServerName() != null && other.getServerName().equals(this.getServerName()) == false)
             return false;
+        if (other.getServerTimezone() == null ^ this.getServerTimezone() == null)
+            return false;
+        if (other.getServerTimezone() != null && other.getServerTimezone().equals(this.getServerTimezone()) == false)
+            return false;
         if (other.getUsername() == null ^ this.getUsername() == null)
             return false;
         if (other.getUsername() != null && other.getUsername().equals(this.getUsername()) == false)
@@ -323,10 +822,16 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAfterConnectScript() == null) ? 0 : getAfterConnectScript().hashCode());
         hashCode = prime * hashCode + ((getDatabaseName() == null) ? 0 : getDatabaseName().hashCode());
+        hashCode = prime * hashCode + ((getEventsPollInterval() == null) ? 0 : getEventsPollInterval().hashCode());
+        hashCode = prime * hashCode + ((getTargetDbType() == null) ? 0 : getTargetDbType().hashCode());
+        hashCode = prime * hashCode + ((getMaxFileSize() == null) ? 0 : getMaxFileSize().hashCode());
+        hashCode = prime * hashCode + ((getParallelLoadThreads() == null) ? 0 : getParallelLoadThreads().hashCode());
         hashCode = prime * hashCode + ((getPassword() == null) ? 0 : getPassword().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
         hashCode = prime * hashCode + ((getServerName() == null) ? 0 : getServerName().hashCode());
+        hashCode = prime * hashCode + ((getServerTimezone() == null) ? 0 : getServerTimezone().hashCode());
         hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
         return hashCode;
     }

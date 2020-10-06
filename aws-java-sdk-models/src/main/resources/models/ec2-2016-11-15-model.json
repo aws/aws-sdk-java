@@ -26189,6 +26189,11 @@
           "documentation":"<p>The peer BGP ASN.</p>",
           "locationName":"peerBgpAsn"
         },
+        "OwnerId":{
+          "shape":"String",
+          "documentation":"<p>The AWS account ID that owns the local gateway virtual interface.</p>",
+          "locationName":"ownerId"
+        },
         "Tags":{
           "shape":"TagList",
           "documentation":"<p>The tags assigned to the virtual interface.</p>",
@@ -26214,6 +26219,11 @@
           "shape":"String",
           "documentation":"<p>The ID of the local gateway.</p>",
           "locationName":"localGatewayId"
+        },
+        "OwnerId":{
+          "shape":"String",
+          "documentation":"<p>The AWS account ID that owns the local gateway virtual interface group.</p>",
+          "locationName":"ownerId"
         },
         "Tags":{
           "shape":"TagList",

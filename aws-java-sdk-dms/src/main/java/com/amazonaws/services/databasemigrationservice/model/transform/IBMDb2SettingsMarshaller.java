@@ -35,6 +35,12 @@ public class IBMDb2SettingsMarshaller {
             .marshallLocationName("Port").build();
     private static final MarshallingInfo<String> SERVERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerName").build();
+    private static final MarshallingInfo<Boolean> SETDATACAPTURECHANGES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SetDataCaptureChanges").build();
+    private static final MarshallingInfo<String> CURRENTLSN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CurrentLsn").build();
+    private static final MarshallingInfo<Integer> MAXKBYTESPERREAD_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxKBytesPerRead").build();
     private static final MarshallingInfo<String> USERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Username").build();
 
@@ -58,6 +64,9 @@ public class IBMDb2SettingsMarshaller {
             protocolMarshaller.marshall(iBMDb2Settings.getPassword(), PASSWORD_BINDING);
             protocolMarshaller.marshall(iBMDb2Settings.getPort(), PORT_BINDING);
             protocolMarshaller.marshall(iBMDb2Settings.getServerName(), SERVERNAME_BINDING);
+            protocolMarshaller.marshall(iBMDb2Settings.getSetDataCaptureChanges(), SETDATACAPTURECHANGES_BINDING);
+            protocolMarshaller.marshall(iBMDb2Settings.getCurrentLsn(), CURRENTLSN_BINDING);
+            protocolMarshaller.marshall(iBMDb2Settings.getMaxKBytesPerRead(), MAXKBYTESPERREAD_BINDING);
             protocolMarshaller.marshall(iBMDb2Settings.getUsername(), USERNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

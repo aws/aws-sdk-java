@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * For an SQL-based Amazon Kinesis Data Analytics application, provides the bucket name and object key name that stores
- * the reference data.
+ * For a SQL-based Kinesis Data Analytics application, provides the bucket name and object key name that stores the
+ * reference data.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/S3ReferenceDataSourceDescription"

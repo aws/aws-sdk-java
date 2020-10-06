@@ -19,10 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * When you update a reference data source configuration for a SQL-based Amazon Kinesis Data Analytics application, this
- * object provides all the updated values (such as the source bucket name and object key name), the in-application table
- * name that is created, and updated mapping information that maps the data in the Amazon S3 object to the
- * in-application reference table that is created.
+ * When you update a reference data source configuration for a SQL-based Kinesis Data Analytics application, this object
+ * provides all the updated values (such as the source bucket name and object key name), the in-application table name
+ * that is created, and updated mapping information that maps the data in the Amazon S3 object to the in-application
+ * reference table that is created.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ReferenceDataSourceUpdate"

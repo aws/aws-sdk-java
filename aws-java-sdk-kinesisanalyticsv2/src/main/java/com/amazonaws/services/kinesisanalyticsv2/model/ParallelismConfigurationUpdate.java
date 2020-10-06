@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes updates to parameters for how a Java-based Kinesis Data Analytics application executes multiple tasks
+ * Describes updates to parameters for how a Flink-based Kinesis Data Analytics application executes multiple tasks
  * simultaneously.
  * </p>
  * 

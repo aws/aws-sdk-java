@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes configuration parameters for a Java-based Amazon Kinesis Data Analytics application.
+ * Describes configuration parameters for a Flink-based Kinesis Data Analytics application.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/FlinkApplicationConfiguration"
@@ -32,9 +32,9 @@ public class FlinkApplicationConfiguration implements Serializable, Cloneable, S
      * <p>
      * Describes an application's checkpointing configuration. Checkpointing is the process of persisting application
      * state for fault tolerance. For more information, see <a href=
-     * "https://ci.apache.org/projects/flink/flink-docs-release-1.6/concepts/programming-model.html#checkpoints-for-fault-tolerance"
+     * "https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance"
      * > Checkpoints for Fault Tolerance</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink Documentation</a>.
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>.
      * </p>
      */
     private CheckpointConfiguration checkpointConfiguration;
@@ -55,17 +55,17 @@ public class FlinkApplicationConfiguration implements Serializable, Cloneable, S
      * <p>
      * Describes an application's checkpointing configuration. Checkpointing is the process of persisting application
      * state for fault tolerance. For more information, see <a href=
-     * "https://ci.apache.org/projects/flink/flink-docs-release-1.6/concepts/programming-model.html#checkpoints-for-fault-tolerance"
+     * "https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance"
      * > Checkpoints for Fault Tolerance</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink Documentation</a>.
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>.
      * </p>
      * 
      * @param checkpointConfiguration
      *        Describes an application's checkpointing configuration. Checkpointing is the process of persisting
      *        application state for fault tolerance. For more information, see <a href=
-     *        "https://ci.apache.org/projects/flink/flink-docs-release-1.6/concepts/programming-model.html#checkpoints-for-fault-tolerance"
+     *        "https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance"
      *        > Checkpoints for Fault Tolerance</a> in the <a
-     *        href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink Documentation</a>.
+     *        href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>.
      */
 
     public void setCheckpointConfiguration(CheckpointConfiguration checkpointConfiguration) {
@@ -76,16 +76,16 @@ public class FlinkApplicationConfiguration implements Serializable, Cloneable, S
      * <p>
      * Describes an application's checkpointing configuration. Checkpointing is the process of persisting application
      * state for fault tolerance. For more information, see <a href=
-     * "https://ci.apache.org/projects/flink/flink-docs-release-1.6/concepts/programming-model.html#checkpoints-for-fault-tolerance"
+     * "https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance"
      * > Checkpoints for Fault Tolerance</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink Documentation</a>.
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>.
      * </p>
      * 
      * @return Describes an application's checkpointing configuration. Checkpointing is the process of persisting
      *         application state for fault tolerance. For more information, see <a href=
-     *         "https://ci.apache.org/projects/flink/flink-docs-release-1.6/concepts/programming-model.html#checkpoints-for-fault-tolerance"
+     *         "https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance"
      *         > Checkpoints for Fault Tolerance</a> in the <a
-     *         href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink Documentation</a>.
+     *         href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>.
      */
 
     public CheckpointConfiguration getCheckpointConfiguration() {
@@ -96,17 +96,17 @@ public class FlinkApplicationConfiguration implements Serializable, Cloneable, S
      * <p>
      * Describes an application's checkpointing configuration. Checkpointing is the process of persisting application
      * state for fault tolerance. For more information, see <a href=
-     * "https://ci.apache.org/projects/flink/flink-docs-release-1.6/concepts/programming-model.html#checkpoints-for-fault-tolerance"
+     * "https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance"
      * > Checkpoints for Fault Tolerance</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink Documentation</a>.
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>.
      * </p>
      * 
      * @param checkpointConfiguration
      *        Describes an application's checkpointing configuration. Checkpointing is the process of persisting
      *        application state for fault tolerance. For more information, see <a href=
-     *        "https://ci.apache.org/projects/flink/flink-docs-release-1.6/concepts/programming-model.html#checkpoints-for-fault-tolerance"
+     *        "https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance"
      *        > Checkpoints for Fault Tolerance</a> in the <a
-     *        href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink Documentation</a>.
+     *        href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

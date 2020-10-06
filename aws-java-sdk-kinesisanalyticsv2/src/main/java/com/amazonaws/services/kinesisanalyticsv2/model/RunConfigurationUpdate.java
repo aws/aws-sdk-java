@@ -30,7 +30,7 @@ public class RunConfigurationUpdate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics application.
+     * Describes the starting parameters for a Flink-based Kinesis Data Analytics application.
      * </p>
      */
     private FlinkRunConfiguration flinkRunConfiguration;
@@ -43,11 +43,11 @@ public class RunConfigurationUpdate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics application.
+     * Describes the starting parameters for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param flinkRunConfiguration
-     *        Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics application.
+     *        Describes the starting parameters for a Flink-based Kinesis Data Analytics application.
      */
 
     public void setFlinkRunConfiguration(FlinkRunConfiguration flinkRunConfiguration) {
@@ -56,10 +56,10 @@ public class RunConfigurationUpdate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics application.
+     * Describes the starting parameters for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
-     * @return Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics application.
+     * @return Describes the starting parameters for a Flink-based Kinesis Data Analytics application.
      */
 
     public FlinkRunConfiguration getFlinkRunConfiguration() {
@@ -68,11 +68,11 @@ public class RunConfigurationUpdate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics application.
+     * Describes the starting parameters for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param flinkRunConfiguration
-     *        Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics application.
+     *        Describes the starting parameters for a Flink-based Kinesis Data Analytics application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

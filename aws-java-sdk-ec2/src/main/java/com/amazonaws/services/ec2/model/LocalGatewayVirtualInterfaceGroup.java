@@ -46,6 +46,12 @@ public class LocalGatewayVirtualInterfaceGroup implements Serializable, Cloneabl
     private String localGatewayId;
     /**
      * <p>
+     * The AWS account ID that owns the local gateway virtual interface group.
+     * </p>
+     */
+    private String ownerId;
+    /**
+     * <p>
      * The tags assigned to the virtual interface group.
      * </p>
      */
@@ -206,6 +212,46 @@ public class LocalGatewayVirtualInterfaceGroup implements Serializable, Cloneabl
 
     /**
      * <p>
+     * The AWS account ID that owns the local gateway virtual interface group.
+     * </p>
+     * 
+     * @param ownerId
+     *        The AWS account ID that owns the local gateway virtual interface group.
+     */
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID that owns the local gateway virtual interface group.
+     * </p>
+     * 
+     * @return The AWS account ID that owns the local gateway virtual interface group.
+     */
+
+    public String getOwnerId() {
+        return this.ownerId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID that owns the local gateway virtual interface group.
+     * </p>
+     * 
+     * @param ownerId
+     *        The AWS account ID that owns the local gateway virtual interface group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LocalGatewayVirtualInterfaceGroup withOwnerId(String ownerId) {
+        setOwnerId(ownerId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The tags assigned to the virtual interface group.
      * </p>
      * 
@@ -295,6 +341,8 @@ public class LocalGatewayVirtualInterfaceGroup implements Serializable, Cloneabl
             sb.append("LocalGatewayVirtualInterfaceIds: ").append(getLocalGatewayVirtualInterfaceIds()).append(",");
         if (getLocalGatewayId() != null)
             sb.append("LocalGatewayId: ").append(getLocalGatewayId()).append(",");
+        if (getOwnerId() != null)
+            sb.append("OwnerId: ").append(getOwnerId()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -325,6 +373,10 @@ public class LocalGatewayVirtualInterfaceGroup implements Serializable, Cloneabl
             return false;
         if (other.getLocalGatewayId() != null && other.getLocalGatewayId().equals(this.getLocalGatewayId()) == false)
             return false;
+        if (other.getOwnerId() == null ^ this.getOwnerId() == null)
+            return false;
+        if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -340,6 +392,7 @@ public class LocalGatewayVirtualInterfaceGroup implements Serializable, Cloneabl
         hashCode = prime * hashCode + ((getLocalGatewayVirtualInterfaceGroupId() == null) ? 0 : getLocalGatewayVirtualInterfaceGroupId().hashCode());
         hashCode = prime * hashCode + ((getLocalGatewayVirtualInterfaceIds() == null) ? 0 : getLocalGatewayVirtualInterfaceIds().hashCode());
         hashCode = prime * hashCode + ((getLocalGatewayId() == null) ? 0 : getLocalGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

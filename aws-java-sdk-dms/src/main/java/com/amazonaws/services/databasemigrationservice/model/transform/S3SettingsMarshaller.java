@@ -69,6 +69,12 @@ public class S3SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ParquetTimestampInMillisecond").build();
     private static final MarshallingInfo<Boolean> CDCINSERTSANDUPDATES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CdcInsertsAndUpdates").build();
+    private static final MarshallingInfo<Boolean> DATEPARTITIONENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatePartitionEnabled").build();
+    private static final MarshallingInfo<String> DATEPARTITIONSEQUENCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatePartitionSequence").build();
+    private static final MarshallingInfo<String> DATEPARTITIONDELIMITER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatePartitionDelimiter").build();
 
     private static final S3SettingsMarshaller instance = new S3SettingsMarshaller();
 
@@ -107,6 +113,9 @@ public class S3SettingsMarshaller {
             protocolMarshaller.marshall(s3Settings.getTimestampColumnName(), TIMESTAMPCOLUMNNAME_BINDING);
             protocolMarshaller.marshall(s3Settings.getParquetTimestampInMillisecond(), PARQUETTIMESTAMPINMILLISECOND_BINDING);
             protocolMarshaller.marshall(s3Settings.getCdcInsertsAndUpdates(), CDCINSERTSANDUPDATES_BINDING);
+            protocolMarshaller.marshall(s3Settings.getDatePartitionEnabled(), DATEPARTITIONENABLED_BINDING);
+            protocolMarshaller.marshall(s3Settings.getDatePartitionSequence(), DATEPARTITIONSEQUENCE_BINDING);
+            protocolMarshaller.marshall(s3Settings.getDatePartitionDelimiter(), DATEPARTITIONDELIMITER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

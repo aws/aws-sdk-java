@@ -30,31 +30,31 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes updates to an SQL-based Kinesis Data Analytics application's configuration.
+     * Describes updates to a SQL-based Kinesis Data Analytics application's configuration.
      * </p>
      */
     private SqlApplicationConfigurationUpdate sqlApplicationConfigurationUpdate;
     /**
      * <p>
-     * Describes updates to a Java-based Kinesis Data Analytics application's code configuration.
+     * Describes updates to a Flink-based Kinesis Data Analytics application's code configuration.
      * </p>
      */
     private ApplicationCodeConfigurationUpdate applicationCodeConfigurationUpdate;
     /**
      * <p>
-     * Describes updates to a Java-based Kinesis Data Analytics application's configuration.
+     * Describes updates to a Flink-based Kinesis Data Analytics application's configuration.
      * </p>
      */
     private FlinkApplicationConfigurationUpdate flinkApplicationConfigurationUpdate;
     /**
      * <p>
-     * Describes updates to the environment properties for a Java-based Kinesis Data Analytics application.
+     * Describes updates to the environment properties for a Flink-based Kinesis Data Analytics application.
      * </p>
      */
     private EnvironmentPropertyUpdates environmentPropertyUpdates;
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      */
     private ApplicationSnapshotConfigurationUpdate applicationSnapshotConfigurationUpdate;
@@ -67,11 +67,11 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes updates to an SQL-based Kinesis Data Analytics application's configuration.
+     * Describes updates to a SQL-based Kinesis Data Analytics application's configuration.
      * </p>
      * 
      * @param sqlApplicationConfigurationUpdate
-     *        Describes updates to an SQL-based Kinesis Data Analytics application's configuration.
+     *        Describes updates to a SQL-based Kinesis Data Analytics application's configuration.
      */
 
     public void setSqlApplicationConfigurationUpdate(SqlApplicationConfigurationUpdate sqlApplicationConfigurationUpdate) {
@@ -80,10 +80,10 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes updates to an SQL-based Kinesis Data Analytics application's configuration.
+     * Describes updates to a SQL-based Kinesis Data Analytics application's configuration.
      * </p>
      * 
-     * @return Describes updates to an SQL-based Kinesis Data Analytics application's configuration.
+     * @return Describes updates to a SQL-based Kinesis Data Analytics application's configuration.
      */
 
     public SqlApplicationConfigurationUpdate getSqlApplicationConfigurationUpdate() {
@@ -92,11 +92,11 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes updates to an SQL-based Kinesis Data Analytics application's configuration.
+     * Describes updates to a SQL-based Kinesis Data Analytics application's configuration.
      * </p>
      * 
      * @param sqlApplicationConfigurationUpdate
-     *        Describes updates to an SQL-based Kinesis Data Analytics application's configuration.
+     *        Describes updates to a SQL-based Kinesis Data Analytics application's configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,11 +107,11 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes updates to a Java-based Kinesis Data Analytics application's code configuration.
+     * Describes updates to a Flink-based Kinesis Data Analytics application's code configuration.
      * </p>
      * 
      * @param applicationCodeConfigurationUpdate
-     *        Describes updates to a Java-based Kinesis Data Analytics application's code configuration.
+     *        Describes updates to a Flink-based Kinesis Data Analytics application's code configuration.
      */
 
     public void setApplicationCodeConfigurationUpdate(ApplicationCodeConfigurationUpdate applicationCodeConfigurationUpdate) {
@@ -120,10 +120,10 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes updates to a Java-based Kinesis Data Analytics application's code configuration.
+     * Describes updates to a Flink-based Kinesis Data Analytics application's code configuration.
      * </p>
      * 
-     * @return Describes updates to a Java-based Kinesis Data Analytics application's code configuration.
+     * @return Describes updates to a Flink-based Kinesis Data Analytics application's code configuration.
      */
 
     public ApplicationCodeConfigurationUpdate getApplicationCodeConfigurationUpdate() {
@@ -132,11 +132,11 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes updates to a Java-based Kinesis Data Analytics application's code configuration.
+     * Describes updates to a Flink-based Kinesis Data Analytics application's code configuration.
      * </p>
      * 
      * @param applicationCodeConfigurationUpdate
-     *        Describes updates to a Java-based Kinesis Data Analytics application's code configuration.
+     *        Describes updates to a Flink-based Kinesis Data Analytics application's code configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,11 +147,11 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes updates to a Java-based Kinesis Data Analytics application's configuration.
+     * Describes updates to a Flink-based Kinesis Data Analytics application's configuration.
      * </p>
      * 
      * @param flinkApplicationConfigurationUpdate
-     *        Describes updates to a Java-based Kinesis Data Analytics application's configuration.
+     *        Describes updates to a Flink-based Kinesis Data Analytics application's configuration.
      */
 
     public void setFlinkApplicationConfigurationUpdate(FlinkApplicationConfigurationUpdate flinkApplicationConfigurationUpdate) {
@@ -160,10 +160,10 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes updates to a Java-based Kinesis Data Analytics application's configuration.
+     * Describes updates to a Flink-based Kinesis Data Analytics application's configuration.
      * </p>
      * 
-     * @return Describes updates to a Java-based Kinesis Data Analytics application's configuration.
+     * @return Describes updates to a Flink-based Kinesis Data Analytics application's configuration.
      */
 
     public FlinkApplicationConfigurationUpdate getFlinkApplicationConfigurationUpdate() {
@@ -172,11 +172,11 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes updates to a Java-based Kinesis Data Analytics application's configuration.
+     * Describes updates to a Flink-based Kinesis Data Analytics application's configuration.
      * </p>
      * 
      * @param flinkApplicationConfigurationUpdate
-     *        Describes updates to a Java-based Kinesis Data Analytics application's configuration.
+     *        Describes updates to a Flink-based Kinesis Data Analytics application's configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,11 +187,11 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes updates to the environment properties for a Java-based Kinesis Data Analytics application.
+     * Describes updates to the environment properties for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param environmentPropertyUpdates
-     *        Describes updates to the environment properties for a Java-based Kinesis Data Analytics application.
+     *        Describes updates to the environment properties for a Flink-based Kinesis Data Analytics application.
      */
 
     public void setEnvironmentPropertyUpdates(EnvironmentPropertyUpdates environmentPropertyUpdates) {
@@ -200,10 +200,10 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes updates to the environment properties for a Java-based Kinesis Data Analytics application.
+     * Describes updates to the environment properties for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
-     * @return Describes updates to the environment properties for a Java-based Kinesis Data Analytics application.
+     * @return Describes updates to the environment properties for a Flink-based Kinesis Data Analytics application.
      */
 
     public EnvironmentPropertyUpdates getEnvironmentPropertyUpdates() {
@@ -212,11 +212,11 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes updates to the environment properties for a Java-based Kinesis Data Analytics application.
+     * Describes updates to the environment properties for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param environmentPropertyUpdates
-     *        Describes updates to the environment properties for a Java-based Kinesis Data Analytics application.
+     *        Describes updates to the environment properties for a Flink-based Kinesis Data Analytics application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,11 +227,11 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param applicationSnapshotConfigurationUpdate
-     *        Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     *        Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      */
 
     public void setApplicationSnapshotConfigurationUpdate(ApplicationSnapshotConfigurationUpdate applicationSnapshotConfigurationUpdate) {
@@ -240,10 +240,10 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
-     * @return Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * @return Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      */
 
     public ApplicationSnapshotConfigurationUpdate getApplicationSnapshotConfigurationUpdate() {
@@ -252,11 +252,11 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param applicationSnapshotConfigurationUpdate
-     *        Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     *        Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

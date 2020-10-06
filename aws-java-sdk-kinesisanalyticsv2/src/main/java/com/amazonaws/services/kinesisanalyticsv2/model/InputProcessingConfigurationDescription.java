@@ -19,9 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * For an SQL-based Amazon Kinesis Data Analytics application, provides the configuration information about an input
- * processor. Currently, the only input processor available is <a
- * href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a>.
+ * For a SQL-based Kinesis Data Analytics application, provides the configuration information about an input processor.
+ * Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>.
  * </p>
  * 
  * @see <a

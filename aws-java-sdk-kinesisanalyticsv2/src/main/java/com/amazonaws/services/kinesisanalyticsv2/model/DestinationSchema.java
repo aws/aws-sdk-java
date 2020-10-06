@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the data format when records are written to the destination in an SQL-based Amazon Kinesis Data Analytics
+ * Describes the data format when records are written to the destination in a SQL-based Kinesis Data Analytics
  * application.
  * </p>
  * 

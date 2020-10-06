@@ -29,14 +29,24 @@ public class MicrosoftSQLServerSettingsMarshaller {
 
     private static final MarshallingInfo<Integer> PORT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Port").build();
+    private static final MarshallingInfo<Integer> BCPPACKETSIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BcpPacketSize").build();
     private static final MarshallingInfo<String> DATABASENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatabaseName").build();
+    private static final MarshallingInfo<String> CONTROLTABLESFILEGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ControlTablesFileGroup").build();
     private static final MarshallingInfo<String> PASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Password").build();
+    private static final MarshallingInfo<Boolean> READBACKUPONLY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReadBackupOnly").build();
+    private static final MarshallingInfo<String> SAFEGUARDPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SafeguardPolicy").build();
     private static final MarshallingInfo<String> SERVERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerName").build();
     private static final MarshallingInfo<String> USERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Username").build();
+    private static final MarshallingInfo<Boolean> USEBCPFULLLOAD_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UseBcpFullLoad").build();
 
     private static final MicrosoftSQLServerSettingsMarshaller instance = new MicrosoftSQLServerSettingsMarshaller();
 
@@ -55,10 +65,15 @@ public class MicrosoftSQLServerSettingsMarshaller {
 
         try {
             protocolMarshaller.marshall(microsoftSQLServerSettings.getPort(), PORT_BINDING);
+            protocolMarshaller.marshall(microsoftSQLServerSettings.getBcpPacketSize(), BCPPACKETSIZE_BINDING);
             protocolMarshaller.marshall(microsoftSQLServerSettings.getDatabaseName(), DATABASENAME_BINDING);
+            protocolMarshaller.marshall(microsoftSQLServerSettings.getControlTablesFileGroup(), CONTROLTABLESFILEGROUP_BINDING);
             protocolMarshaller.marshall(microsoftSQLServerSettings.getPassword(), PASSWORD_BINDING);
+            protocolMarshaller.marshall(microsoftSQLServerSettings.getReadBackupOnly(), READBACKUPONLY_BINDING);
+            protocolMarshaller.marshall(microsoftSQLServerSettings.getSafeguardPolicy(), SAFEGUARDPOLICY_BINDING);
             protocolMarshaller.marshall(microsoftSQLServerSettings.getServerName(), SERVERNAME_BINDING);
             protocolMarshaller.marshall(microsoftSQLServerSettings.getUsername(), USERNAME_BINDING);
+            protocolMarshaller.marshall(microsoftSQLServerSettings.getUseBcpFullLoad(), USEBCPFULLLOAD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

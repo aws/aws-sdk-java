@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * For an SQL-based Amazon Kinesis Data Analytics application, describes the Kinesis data stream that is configured as
- * the streaming source in the application input configuration.
+ * For a SQL-based Kinesis Data Analytics application, describes the Kinesis data stream that is configured as the
+ * streaming source in the application input configuration.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/KinesisStreamsInputDescription"

@@ -406,6 +406,29 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </note>
      */
     private Boolean cdcInsertsAndUpdates;
+    /**
+     * <p>
+     * When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit dates. The
+     * default value is <code>false</code>. For more information about date-based folder partitoning, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
+     * >Using date-based folder partitioning</a>
+     * </p>
+     */
+    private Boolean datePartitionEnabled;
+    /**
+     * <p>
+     * Identifies the sequence of the date format to use during folder partitioning. The default value is
+     * <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * </p>
+     */
+    private String datePartitionSequence;
+    /**
+     * <p>
+     * Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>
+     * (/). Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * </p>
+     */
+    private String datePartitionDelimiter;
 
     /**
      * <p>
@@ -3562,6 +3585,262 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit dates. The
+     * default value is <code>false</code>. For more information about date-based folder partitoning, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
+     * >Using date-based folder partitioning</a>
+     * </p>
+     * 
+     * @param datePartitionEnabled
+     *        When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit
+     *        dates. The default value is <code>false</code>. For more information about date-based folder partitoning,
+     *        see <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
+     *        >Using date-based folder partitioning</a>
+     */
+
+    public void setDatePartitionEnabled(Boolean datePartitionEnabled) {
+        this.datePartitionEnabled = datePartitionEnabled;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit dates. The
+     * default value is <code>false</code>. For more information about date-based folder partitoning, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
+     * >Using date-based folder partitioning</a>
+     * </p>
+     * 
+     * @return When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit
+     *         dates. The default value is <code>false</code>. For more information about date-based folder partitoning,
+     *         see <a href=
+     *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
+     *         >Using date-based folder partitioning</a>
+     */
+
+    public Boolean getDatePartitionEnabled() {
+        return this.datePartitionEnabled;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit dates. The
+     * default value is <code>false</code>. For more information about date-based folder partitoning, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
+     * >Using date-based folder partitioning</a>
+     * </p>
+     * 
+     * @param datePartitionEnabled
+     *        When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit
+     *        dates. The default value is <code>false</code>. For more information about date-based folder partitoning,
+     *        see <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
+     *        >Using date-based folder partitioning</a>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3Settings withDatePartitionEnabled(Boolean datePartitionEnabled) {
+        setDatePartitionEnabled(datePartitionEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit dates. The
+     * default value is <code>false</code>. For more information about date-based folder partitoning, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
+     * >Using date-based folder partitioning</a>
+     * </p>
+     * 
+     * @return When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit
+     *         dates. The default value is <code>false</code>. For more information about date-based folder partitoning,
+     *         see <a href=
+     *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
+     *         >Using date-based folder partitioning</a>
+     */
+
+    public Boolean isDatePartitionEnabled() {
+        return this.datePartitionEnabled;
+    }
+
+    /**
+     * <p>
+     * Identifies the sequence of the date format to use during folder partitioning. The default value is
+     * <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * </p>
+     * 
+     * @param datePartitionSequence
+     *        Identifies the sequence of the date format to use during folder partitioning. The default value is
+     *        <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to
+     *        <code>true</code>.
+     * @see DatePartitionSequenceValue
+     */
+
+    public void setDatePartitionSequence(String datePartitionSequence) {
+        this.datePartitionSequence = datePartitionSequence;
+    }
+
+    /**
+     * <p>
+     * Identifies the sequence of the date format to use during folder partitioning. The default value is
+     * <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * </p>
+     * 
+     * @return Identifies the sequence of the date format to use during folder partitioning. The default value is
+     *         <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to
+     *         <code>true</code>.
+     * @see DatePartitionSequenceValue
+     */
+
+    public String getDatePartitionSequence() {
+        return this.datePartitionSequence;
+    }
+
+    /**
+     * <p>
+     * Identifies the sequence of the date format to use during folder partitioning. The default value is
+     * <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * </p>
+     * 
+     * @param datePartitionSequence
+     *        Identifies the sequence of the date format to use during folder partitioning. The default value is
+     *        <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to
+     *        <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DatePartitionSequenceValue
+     */
+
+    public S3Settings withDatePartitionSequence(String datePartitionSequence) {
+        setDatePartitionSequence(datePartitionSequence);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Identifies the sequence of the date format to use during folder partitioning. The default value is
+     * <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * </p>
+     * 
+     * @param datePartitionSequence
+     *        Identifies the sequence of the date format to use during folder partitioning. The default value is
+     *        <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to
+     *        <code>true</code>.
+     * @see DatePartitionSequenceValue
+     */
+
+    public void setDatePartitionSequence(DatePartitionSequenceValue datePartitionSequence) {
+        withDatePartitionSequence(datePartitionSequence);
+    }
+
+    /**
+     * <p>
+     * Identifies the sequence of the date format to use during folder partitioning. The default value is
+     * <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * </p>
+     * 
+     * @param datePartitionSequence
+     *        Identifies the sequence of the date format to use during folder partitioning. The default value is
+     *        <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to
+     *        <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DatePartitionSequenceValue
+     */
+
+    public S3Settings withDatePartitionSequence(DatePartitionSequenceValue datePartitionSequence) {
+        this.datePartitionSequence = datePartitionSequence.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>
+     * (/). Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * </p>
+     * 
+     * @param datePartitionDelimiter
+     *        Specifies a date separating delimiter to use during folder partitioning. The default value is
+     *        <code>SLASH</code> (/). Use this parameter when <code>DatePartitionedEnabled</code> is set to
+     *        <code>true</code>.
+     * @see DatePartitionDelimiterValue
+     */
+
+    public void setDatePartitionDelimiter(String datePartitionDelimiter) {
+        this.datePartitionDelimiter = datePartitionDelimiter;
+    }
+
+    /**
+     * <p>
+     * Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>
+     * (/). Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * </p>
+     * 
+     * @return Specifies a date separating delimiter to use during folder partitioning. The default value is
+     *         <code>SLASH</code> (/). Use this parameter when <code>DatePartitionedEnabled</code> is set to
+     *         <code>true</code>.
+     * @see DatePartitionDelimiterValue
+     */
+
+    public String getDatePartitionDelimiter() {
+        return this.datePartitionDelimiter;
+    }
+
+    /**
+     * <p>
+     * Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>
+     * (/). Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * </p>
+     * 
+     * @param datePartitionDelimiter
+     *        Specifies a date separating delimiter to use during folder partitioning. The default value is
+     *        <code>SLASH</code> (/). Use this parameter when <code>DatePartitionedEnabled</code> is set to
+     *        <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DatePartitionDelimiterValue
+     */
+
+    public S3Settings withDatePartitionDelimiter(String datePartitionDelimiter) {
+        setDatePartitionDelimiter(datePartitionDelimiter);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>
+     * (/). Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * </p>
+     * 
+     * @param datePartitionDelimiter
+     *        Specifies a date separating delimiter to use during folder partitioning. The default value is
+     *        <code>SLASH</code> (/). Use this parameter when <code>DatePartitionedEnabled</code> is set to
+     *        <code>true</code>.
+     * @see DatePartitionDelimiterValue
+     */
+
+    public void setDatePartitionDelimiter(DatePartitionDelimiterValue datePartitionDelimiter) {
+        withDatePartitionDelimiter(datePartitionDelimiter);
+    }
+
+    /**
+     * <p>
+     * Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>
+     * (/). Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * </p>
+     * 
+     * @param datePartitionDelimiter
+     *        Specifies a date separating delimiter to use during folder partitioning. The default value is
+     *        <code>SLASH</code> (/). Use this parameter when <code>DatePartitionedEnabled</code> is set to
+     *        <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DatePartitionDelimiterValue
+     */
+
+    public S3Settings withDatePartitionDelimiter(DatePartitionDelimiterValue datePartitionDelimiter) {
+        this.datePartitionDelimiter = datePartitionDelimiter.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3614,7 +3893,13 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
         if (getParquetTimestampInMillisecond() != null)
             sb.append("ParquetTimestampInMillisecond: ").append(getParquetTimestampInMillisecond()).append(",");
         if (getCdcInsertsAndUpdates() != null)
-            sb.append("CdcInsertsAndUpdates: ").append(getCdcInsertsAndUpdates());
+            sb.append("CdcInsertsAndUpdates: ").append(getCdcInsertsAndUpdates()).append(",");
+        if (getDatePartitionEnabled() != null)
+            sb.append("DatePartitionEnabled: ").append(getDatePartitionEnabled()).append(",");
+        if (getDatePartitionSequence() != null)
+            sb.append("DatePartitionSequence: ").append(getDatePartitionSequence()).append(",");
+        if (getDatePartitionDelimiter() != null)
+            sb.append("DatePartitionDelimiter: ").append(getDatePartitionDelimiter());
         sb.append("}");
         return sb.toString();
     }
@@ -3714,6 +3999,18 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCdcInsertsAndUpdates() != null && other.getCdcInsertsAndUpdates().equals(this.getCdcInsertsAndUpdates()) == false)
             return false;
+        if (other.getDatePartitionEnabled() == null ^ this.getDatePartitionEnabled() == null)
+            return false;
+        if (other.getDatePartitionEnabled() != null && other.getDatePartitionEnabled().equals(this.getDatePartitionEnabled()) == false)
+            return false;
+        if (other.getDatePartitionSequence() == null ^ this.getDatePartitionSequence() == null)
+            return false;
+        if (other.getDatePartitionSequence() != null && other.getDatePartitionSequence().equals(this.getDatePartitionSequence()) == false)
+            return false;
+        if (other.getDatePartitionDelimiter() == null ^ this.getDatePartitionDelimiter() == null)
+            return false;
+        if (other.getDatePartitionDelimiter() != null && other.getDatePartitionDelimiter().equals(this.getDatePartitionDelimiter()) == false)
+            return false;
         return true;
     }
 
@@ -3743,6 +4040,9 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTimestampColumnName() == null) ? 0 : getTimestampColumnName().hashCode());
         hashCode = prime * hashCode + ((getParquetTimestampInMillisecond() == null) ? 0 : getParquetTimestampInMillisecond().hashCode());
         hashCode = prime * hashCode + ((getCdcInsertsAndUpdates() == null) ? 0 : getCdcInsertsAndUpdates().hashCode());
+        hashCode = prime * hashCode + ((getDatePartitionEnabled() == null) ? 0 : getDatePartitionEnabled().hashCode());
+        hashCode = prime * hashCode + ((getDatePartitionSequence() == null) ? 0 : getDatePartitionSequence().hashCode());
+        hashCode = prime * hashCode + ((getDatePartitionDelimiter() == null) ? 0 : getDatePartitionDelimiter().hashCode());
         return hashCode;
     }
 

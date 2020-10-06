@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+ * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ApplicationSnapshotConfiguration"
@@ -30,18 +30,18 @@ public class ApplicationSnapshotConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      */
     private Boolean snapshotsEnabled;
 
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param snapshotsEnabled
-     *        Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     *        Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      */
 
     public void setSnapshotsEnabled(Boolean snapshotsEnabled) {
@@ -50,10 +50,10 @@ public class ApplicationSnapshotConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
-     * @return Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * @return Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      */
 
     public Boolean getSnapshotsEnabled() {
@@ -62,11 +62,11 @@ public class ApplicationSnapshotConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param snapshotsEnabled
-     *        Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     *        Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -77,10 +77,10 @@ public class ApplicationSnapshotConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
-     * @return Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * @return Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      */
 
     public Boolean isSnapshotsEnabled() {

@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * For an SQL-based Amazon Kinesis Data Analytics application, describes the number of in-application streams to create
- * for a given streaming source.
+ * For a SQL-based Kinesis Data Analytics application, describes the number of in-application streams to create for a
+ * given streaming source.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/InputParallelism"

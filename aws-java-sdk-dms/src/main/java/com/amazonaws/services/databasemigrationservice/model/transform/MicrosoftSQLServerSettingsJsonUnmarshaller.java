@@ -52,13 +52,29 @@ public class MicrosoftSQLServerSettingsJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     microsoftSQLServerSettings.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("BcpPacketSize", targetDepth)) {
+                    context.nextToken();
+                    microsoftSQLServerSettings.setBcpPacketSize(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("DatabaseName", targetDepth)) {
                     context.nextToken();
                     microsoftSQLServerSettings.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ControlTablesFileGroup", targetDepth)) {
+                    context.nextToken();
+                    microsoftSQLServerSettings.setControlTablesFileGroup(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Password", targetDepth)) {
                     context.nextToken();
                     microsoftSQLServerSettings.setPassword(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ReadBackupOnly", targetDepth)) {
+                    context.nextToken();
+                    microsoftSQLServerSettings.setReadBackupOnly(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("SafeguardPolicy", targetDepth)) {
+                    context.nextToken();
+                    microsoftSQLServerSettings.setSafeguardPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServerName", targetDepth)) {
                     context.nextToken();
@@ -67,6 +83,10 @@ public class MicrosoftSQLServerSettingsJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("Username", targetDepth)) {
                     context.nextToken();
                     microsoftSQLServerSettings.setUsername(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("UseBcpFullLoad", targetDepth)) {
+                    context.nextToken();
+                    microsoftSQLServerSettings.setUseBcpFullLoad(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

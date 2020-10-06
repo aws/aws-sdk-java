@@ -49,13 +49,25 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
     private String afterConnectScript;
     /**
      * <p>
-     * The location where the comma-separated value (.csv) files are stored before being uploaded to the S3 bucket.
+     * An S3 folder where the comma-separated-value (.csv) files are stored before being uploaded to the target Redshift
+     * cluster.
+     * </p>
+     * <p>
+     * For full load mode, AWS DMS converts source records into .csv files and loads them to the
+     * <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code> command to upload the .csv files to
+     * the target table. The files are deleted once the <code>COPY</code> operation has finished. For more information,
+     * see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift Database Developer
+     * Guide</a>
+     * </p>
+     * <p>
+     * For change-data-capture (CDC) mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files to this
+     * <i>BucketFolder/NetChangesTableID</i> path.
      * </p>
      */
     private String bucketFolder;
     /**
      * <p>
-     * The name of the S3 bucket you want to use
+     * The name of the intermediate S3 bucket used to store .csv files before uploading data to Redshift.
      * </p>
      */
     private String bucketName;
@@ -115,18 +127,27 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
      * The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It defaults
      * to 10.
      * </p>
+     * <p>
+     * The number of parallel streams used to upload a single .csv file to an S3 bucket using S3 Multipart Upload. For
+     * more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart upload
+     * overview</a>.
+     * </p>
+     * <p>
+     * <code>FileTransferUploadStreams</code> accepts a value from 1 through 64. It defaults to 10.
+     * </p>
      */
     private Integer fileTransferUploadStreams;
     /**
      * <p>
-     * The amount of time to wait (in milliseconds) before timing out, beginning from when you begin loading.
+     * The amount of time to wait (in milliseconds) before timing out of operations performed by AWS DMS on a Redshift
+     * cluster, such as Redshift COPY, INSERT, DELETE, and UPDATE.
      * </p>
      */
     private Integer loadTimeout;
     /**
      * <p>
-     * The maximum size (in KB) of any .csv file used to transfer data to Amazon Redshift. This accepts a value from 1
-     * through 1,048,576. It defaults to 32,768 KB (32 MB).
+     * The maximum size (in KB) of any .csv file used to load data on an S3 bucket and transfer data to Amazon Redshift.
+     * It defaults to 1048576KB (1 GB).
      * </p>
      */
     private Integer maxFileSize;
@@ -218,8 +239,8 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
     private String username;
     /**
      * <p>
-     * The size of the write buffer to use in rows. Valid values range from 1 through 2,048. The default is 1,024. Use
-     * this setting to tune performance.
+     * The size (in KB) of the in-memory file write buffer used when generating .csv files on the local disk at the DMS
+     * replication instance. The default value is 1000 (buffer size is 1000KB).
      * </p>
      */
     private Integer writeBufferSize;
@@ -372,12 +393,34 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The location where the comma-separated value (.csv) files are stored before being uploaded to the S3 bucket.
+     * An S3 folder where the comma-separated-value (.csv) files are stored before being uploaded to the target Redshift
+     * cluster.
+     * </p>
+     * <p>
+     * For full load mode, AWS DMS converts source records into .csv files and loads them to the
+     * <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code> command to upload the .csv files to
+     * the target table. The files are deleted once the <code>COPY</code> operation has finished. For more information,
+     * see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift Database Developer
+     * Guide</a>
+     * </p>
+     * <p>
+     * For change-data-capture (CDC) mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files to this
+     * <i>BucketFolder/NetChangesTableID</i> path.
      * </p>
      * 
      * @param bucketFolder
-     *        The location where the comma-separated value (.csv) files are stored before being uploaded to the S3
-     *        bucket.
+     *        An S3 folder where the comma-separated-value (.csv) files are stored before being uploaded to the target
+     *        Redshift cluster. </p>
+     *        <p>
+     *        For full load mode, AWS DMS converts source records into .csv files and loads them to the
+     *        <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code> command to upload the .csv
+     *        files to the target table. The files are deleted once the <code>COPY</code> operation has finished. For
+     *        more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift
+     *        Database Developer Guide</a>
+     *        </p>
+     *        <p>
+     *        For change-data-capture (CDC) mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files to
+     *        this <i>BucketFolder/NetChangesTableID</i> path.
      */
 
     public void setBucketFolder(String bucketFolder) {
@@ -386,11 +429,33 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The location where the comma-separated value (.csv) files are stored before being uploaded to the S3 bucket.
+     * An S3 folder where the comma-separated-value (.csv) files are stored before being uploaded to the target Redshift
+     * cluster.
+     * </p>
+     * <p>
+     * For full load mode, AWS DMS converts source records into .csv files and loads them to the
+     * <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code> command to upload the .csv files to
+     * the target table. The files are deleted once the <code>COPY</code> operation has finished. For more information,
+     * see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift Database Developer
+     * Guide</a>
+     * </p>
+     * <p>
+     * For change-data-capture (CDC) mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files to this
+     * <i>BucketFolder/NetChangesTableID</i> path.
      * </p>
      * 
-     * @return The location where the comma-separated value (.csv) files are stored before being uploaded to the S3
-     *         bucket.
+     * @return An S3 folder where the comma-separated-value (.csv) files are stored before being uploaded to the target
+     *         Redshift cluster. </p>
+     *         <p>
+     *         For full load mode, AWS DMS converts source records into .csv files and loads them to the
+     *         <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code> command to upload the .csv
+     *         files to the target table. The files are deleted once the <code>COPY</code> operation has finished. For
+     *         more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
+     *         Redshift Database Developer Guide</a>
+     *         </p>
+     *         <p>
+     *         For change-data-capture (CDC) mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files
+     *         to this <i>BucketFolder/NetChangesTableID</i> path.
      */
 
     public String getBucketFolder() {
@@ -399,12 +464,34 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The location where the comma-separated value (.csv) files are stored before being uploaded to the S3 bucket.
+     * An S3 folder where the comma-separated-value (.csv) files are stored before being uploaded to the target Redshift
+     * cluster.
+     * </p>
+     * <p>
+     * For full load mode, AWS DMS converts source records into .csv files and loads them to the
+     * <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code> command to upload the .csv files to
+     * the target table. The files are deleted once the <code>COPY</code> operation has finished. For more information,
+     * see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift Database Developer
+     * Guide</a>
+     * </p>
+     * <p>
+     * For change-data-capture (CDC) mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files to this
+     * <i>BucketFolder/NetChangesTableID</i> path.
      * </p>
      * 
      * @param bucketFolder
-     *        The location where the comma-separated value (.csv) files are stored before being uploaded to the S3
-     *        bucket.
+     *        An S3 folder where the comma-separated-value (.csv) files are stored before being uploaded to the target
+     *        Redshift cluster. </p>
+     *        <p>
+     *        For full load mode, AWS DMS converts source records into .csv files and loads them to the
+     *        <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code> command to upload the .csv
+     *        files to the target table. The files are deleted once the <code>COPY</code> operation has finished. For
+     *        more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift
+     *        Database Developer Guide</a>
+     *        </p>
+     *        <p>
+     *        For change-data-capture (CDC) mode, AWS DMS creates a <i>NetChanges</i> table, and loads the .csv files to
+     *        this <i>BucketFolder/NetChangesTableID</i> path.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -415,11 +502,11 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the S3 bucket you want to use
+     * The name of the intermediate S3 bucket used to store .csv files before uploading data to Redshift.
      * </p>
      * 
      * @param bucketName
-     *        The name of the S3 bucket you want to use
+     *        The name of the intermediate S3 bucket used to store .csv files before uploading data to Redshift.
      */
 
     public void setBucketName(String bucketName) {
@@ -428,10 +515,10 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the S3 bucket you want to use
+     * The name of the intermediate S3 bucket used to store .csv files before uploading data to Redshift.
      * </p>
      * 
-     * @return The name of the S3 bucket you want to use
+     * @return The name of the intermediate S3 bucket used to store .csv files before uploading data to Redshift.
      */
 
     public String getBucketName() {
@@ -440,11 +527,11 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the S3 bucket you want to use
+     * The name of the intermediate S3 bucket used to store .csv files before uploading data to Redshift.
      * </p>
      * 
      * @param bucketName
-     *        The name of the S3 bucket you want to use
+     *        The name of the intermediate S3 bucket used to store .csv files before uploading data to Redshift.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -836,10 +923,25 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
      * The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It defaults
      * to 10.
      * </p>
+     * <p>
+     * The number of parallel streams used to upload a single .csv file to an S3 bucket using S3 Multipart Upload. For
+     * more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart upload
+     * overview</a>.
+     * </p>
+     * <p>
+     * <code>FileTransferUploadStreams</code> accepts a value from 1 through 64. It defaults to 10.
+     * </p>
      * 
      * @param fileTransferUploadStreams
      *        The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It
-     *        defaults to 10.
+     *        defaults to 10.</p>
+     *        <p>
+     *        The number of parallel streams used to upload a single .csv file to an S3 bucket using S3 Multipart
+     *        Upload. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart upload overview</a>.
+     *        </p>
+     *        <p>
+     *        <code>FileTransferUploadStreams</code> accepts a value from 1 through 64. It defaults to 10.
      */
 
     public void setFileTransferUploadStreams(Integer fileTransferUploadStreams) {
@@ -851,9 +953,24 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
      * The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It defaults
      * to 10.
      * </p>
+     * <p>
+     * The number of parallel streams used to upload a single .csv file to an S3 bucket using S3 Multipart Upload. For
+     * more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart upload
+     * overview</a>.
+     * </p>
+     * <p>
+     * <code>FileTransferUploadStreams</code> accepts a value from 1 through 64. It defaults to 10.
+     * </p>
      * 
      * @return The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It
-     *         defaults to 10.
+     *         defaults to 10.</p>
+     *         <p>
+     *         The number of parallel streams used to upload a single .csv file to an S3 bucket using S3 Multipart
+     *         Upload. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart upload overview</a>.
+     *         </p>
+     *         <p>
+     *         <code>FileTransferUploadStreams</code> accepts a value from 1 through 64. It defaults to 10.
      */
 
     public Integer getFileTransferUploadStreams() {
@@ -865,10 +982,25 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
      * The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It defaults
      * to 10.
      * </p>
+     * <p>
+     * The number of parallel streams used to upload a single .csv file to an S3 bucket using S3 Multipart Upload. For
+     * more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart upload
+     * overview</a>.
+     * </p>
+     * <p>
+     * <code>FileTransferUploadStreams</code> accepts a value from 1 through 64. It defaults to 10.
+     * </p>
      * 
      * @param fileTransferUploadStreams
      *        The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It
-     *        defaults to 10.
+     *        defaults to 10.</p>
+     *        <p>
+     *        The number of parallel streams used to upload a single .csv file to an S3 bucket using S3 Multipart
+     *        Upload. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart upload overview</a>.
+     *        </p>
+     *        <p>
+     *        <code>FileTransferUploadStreams</code> accepts a value from 1 through 64. It defaults to 10.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -879,11 +1011,13 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The amount of time to wait (in milliseconds) before timing out, beginning from when you begin loading.
+     * The amount of time to wait (in milliseconds) before timing out of operations performed by AWS DMS on a Redshift
+     * cluster, such as Redshift COPY, INSERT, DELETE, and UPDATE.
      * </p>
      * 
      * @param loadTimeout
-     *        The amount of time to wait (in milliseconds) before timing out, beginning from when you begin loading.
+     *        The amount of time to wait (in milliseconds) before timing out of operations performed by AWS DMS on a
+     *        Redshift cluster, such as Redshift COPY, INSERT, DELETE, and UPDATE.
      */
 
     public void setLoadTimeout(Integer loadTimeout) {
@@ -892,10 +1026,12 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The amount of time to wait (in milliseconds) before timing out, beginning from when you begin loading.
+     * The amount of time to wait (in milliseconds) before timing out of operations performed by AWS DMS on a Redshift
+     * cluster, such as Redshift COPY, INSERT, DELETE, and UPDATE.
      * </p>
      * 
-     * @return The amount of time to wait (in milliseconds) before timing out, beginning from when you begin loading.
+     * @return The amount of time to wait (in milliseconds) before timing out of operations performed by AWS DMS on a
+     *         Redshift cluster, such as Redshift COPY, INSERT, DELETE, and UPDATE.
      */
 
     public Integer getLoadTimeout() {
@@ -904,11 +1040,13 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The amount of time to wait (in milliseconds) before timing out, beginning from when you begin loading.
+     * The amount of time to wait (in milliseconds) before timing out of operations performed by AWS DMS on a Redshift
+     * cluster, such as Redshift COPY, INSERT, DELETE, and UPDATE.
      * </p>
      * 
      * @param loadTimeout
-     *        The amount of time to wait (in milliseconds) before timing out, beginning from when you begin loading.
+     *        The amount of time to wait (in milliseconds) before timing out of operations performed by AWS DMS on a
+     *        Redshift cluster, such as Redshift COPY, INSERT, DELETE, and UPDATE.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -919,13 +1057,13 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The maximum size (in KB) of any .csv file used to transfer data to Amazon Redshift. This accepts a value from 1
-     * through 1,048,576. It defaults to 32,768 KB (32 MB).
+     * The maximum size (in KB) of any .csv file used to load data on an S3 bucket and transfer data to Amazon Redshift.
+     * It defaults to 1048576KB (1 GB).
      * </p>
      * 
      * @param maxFileSize
-     *        The maximum size (in KB) of any .csv file used to transfer data to Amazon Redshift. This accepts a value
-     *        from 1 through 1,048,576. It defaults to 32,768 KB (32 MB).
+     *        The maximum size (in KB) of any .csv file used to load data on an S3 bucket and transfer data to Amazon
+     *        Redshift. It defaults to 1048576KB (1 GB).
      */
 
     public void setMaxFileSize(Integer maxFileSize) {
@@ -934,12 +1072,12 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The maximum size (in KB) of any .csv file used to transfer data to Amazon Redshift. This accepts a value from 1
-     * through 1,048,576. It defaults to 32,768 KB (32 MB).
+     * The maximum size (in KB) of any .csv file used to load data on an S3 bucket and transfer data to Amazon Redshift.
+     * It defaults to 1048576KB (1 GB).
      * </p>
      * 
-     * @return The maximum size (in KB) of any .csv file used to transfer data to Amazon Redshift. This accepts a value
-     *         from 1 through 1,048,576. It defaults to 32,768 KB (32 MB).
+     * @return The maximum size (in KB) of any .csv file used to load data on an S3 bucket and transfer data to Amazon
+     *         Redshift. It defaults to 1048576KB (1 GB).
      */
 
     public Integer getMaxFileSize() {
@@ -948,13 +1086,13 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The maximum size (in KB) of any .csv file used to transfer data to Amazon Redshift. This accepts a value from 1
-     * through 1,048,576. It defaults to 32,768 KB (32 MB).
+     * The maximum size (in KB) of any .csv file used to load data on an S3 bucket and transfer data to Amazon Redshift.
+     * It defaults to 1048576KB (1 GB).
      * </p>
      * 
      * @param maxFileSize
-     *        The maximum size (in KB) of any .csv file used to transfer data to Amazon Redshift. This accepts a value
-     *        from 1 through 1,048,576. It defaults to 32,768 KB (32 MB).
+     *        The maximum size (in KB) of any .csv file used to load data on an S3 bucket and transfer data to Amazon
+     *        Redshift. It defaults to 1048576KB (1 GB).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1582,13 +1720,13 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The size of the write buffer to use in rows. Valid values range from 1 through 2,048. The default is 1,024. Use
-     * this setting to tune performance.
+     * The size (in KB) of the in-memory file write buffer used when generating .csv files on the local disk at the DMS
+     * replication instance. The default value is 1000 (buffer size is 1000KB).
      * </p>
      * 
      * @param writeBufferSize
-     *        The size of the write buffer to use in rows. Valid values range from 1 through 2,048. The default is
-     *        1,024. Use this setting to tune performance.
+     *        The size (in KB) of the in-memory file write buffer used when generating .csv files on the local disk at
+     *        the DMS replication instance. The default value is 1000 (buffer size is 1000KB).
      */
 
     public void setWriteBufferSize(Integer writeBufferSize) {
@@ -1597,12 +1735,12 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The size of the write buffer to use in rows. Valid values range from 1 through 2,048. The default is 1,024. Use
-     * this setting to tune performance.
+     * The size (in KB) of the in-memory file write buffer used when generating .csv files on the local disk at the DMS
+     * replication instance. The default value is 1000 (buffer size is 1000KB).
      * </p>
      * 
-     * @return The size of the write buffer to use in rows. Valid values range from 1 through 2,048. The default is
-     *         1,024. Use this setting to tune performance.
+     * @return The size (in KB) of the in-memory file write buffer used when generating .csv files on the local disk at
+     *         the DMS replication instance. The default value is 1000 (buffer size is 1000KB).
      */
 
     public Integer getWriteBufferSize() {
@@ -1611,13 +1749,13 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The size of the write buffer to use in rows. Valid values range from 1 through 2,048. The default is 1,024. Use
-     * this setting to tune performance.
+     * The size (in KB) of the in-memory file write buffer used when generating .csv files on the local disk at the DMS
+     * replication instance. The default value is 1000 (buffer size is 1000KB).
      * </p>
      * 
      * @param writeBufferSize
-     *        The size of the write buffer to use in rows. Valid values range from 1 through 2,048. The default is
-     *        1,024. Use this setting to tune performance.
+     *        The size (in KB) of the in-memory file write buffer used when generating .csv files on the local disk at
+     *        the DMS replication instance. The default value is 1000 (buffer size is 1000KB).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

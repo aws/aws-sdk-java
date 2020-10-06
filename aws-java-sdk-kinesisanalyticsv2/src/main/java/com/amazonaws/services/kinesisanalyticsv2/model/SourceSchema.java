@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * For an SQL-based Amazon Kinesis Data Analytics application, describes the format of the data in the streaming source,
- * and how each data element maps to corresponding columns created in the in-application stream.
+ * For a SQL-based Kinesis Data Analytics application, describes the format of the data in the streaming source, and how
+ * each data element maps to corresponding columns created in the in-application stream.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/SourceSchema" target="_top">AWS

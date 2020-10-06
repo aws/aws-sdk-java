@@ -48,6 +48,62 @@ public class OracleSettingsJsonUnmarshaller implements Unmarshaller<OracleSettin
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("AddSupplementalLogging", targetDepth)) {
+                    context.nextToken();
+                    oracleSettings.setAddSupplementalLogging(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("ArchivedLogDestId", targetDepth)) {
+                    context.nextToken();
+                    oracleSettings.setArchivedLogDestId(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("AdditionalArchivedLogDestId", targetDepth)) {
+                    context.nextToken();
+                    oracleSettings.setAdditionalArchivedLogDestId(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("AllowSelectNestedTables", targetDepth)) {
+                    context.nextToken();
+                    oracleSettings.setAllowSelectNestedTables(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("ParallelAsmReadThreads", targetDepth)) {
+                    context.nextToken();
+                    oracleSettings.setParallelAsmReadThreads(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("ReadAheadBlocks", targetDepth)) {
+                    context.nextToken();
+                    oracleSettings.setReadAheadBlocks(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("AccessAlternateDirectly", targetDepth)) {
+                    context.nextToken();
+                    oracleSettings.setAccessAlternateDirectly(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("UseAlternateFolderForOnline", targetDepth)) {
+                    context.nextToken();
+                    oracleSettings.setUseAlternateFolderForOnline(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("OraclePathPrefix", targetDepth)) {
+                    context.nextToken();
+                    oracleSettings.setOraclePathPrefix(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("UsePathPrefix", targetDepth)) {
+                    context.nextToken();
+                    oracleSettings.setUsePathPrefix(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ReplacePathPrefix", targetDepth)) {
+                    context.nextToken();
+                    oracleSettings.setReplacePathPrefix(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("EnableHomogenousTablespace", targetDepth)) {
+                    context.nextToken();
+                    oracleSettings.setEnableHomogenousTablespace(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("DirectPathNoLog", targetDepth)) {
+                    context.nextToken();
+                    oracleSettings.setDirectPathNoLog(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("ArchivedLogsOnly", targetDepth)) {
+                    context.nextToken();
+                    oracleSettings.setArchivedLogsOnly(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("AsmPassword", targetDepth)) {
                     context.nextToken();
                     oracleSettings.setAsmPassword(context.getUnmarshaller(String.class).unmarshall(context));
@@ -60,9 +116,25 @@ public class OracleSettingsJsonUnmarshaller implements Unmarshaller<OracleSettin
                     context.nextToken();
                     oracleSettings.setAsmUser(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CharLengthSemantics", targetDepth)) {
+                    context.nextToken();
+                    oracleSettings.setCharLengthSemantics(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("DatabaseName", targetDepth)) {
                     context.nextToken();
                     oracleSettings.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DirectPathParallelLoad", targetDepth)) {
+                    context.nextToken();
+                    oracleSettings.setDirectPathParallelLoad(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("FailTasksOnLobTruncation", targetDepth)) {
+                    context.nextToken();
+                    oracleSettings.setFailTasksOnLobTruncation(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("NumberDatatypeScale", targetDepth)) {
+                    context.nextToken();
+                    oracleSettings.setNumberDatatypeScale(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Password", targetDepth)) {
                     context.nextToken();
@@ -71,6 +143,14 @@ public class OracleSettingsJsonUnmarshaller implements Unmarshaller<OracleSettin
                 if (context.testExpression("Port", targetDepth)) {
                     context.nextToken();
                     oracleSettings.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("ReadTableSpaceName", targetDepth)) {
+                    context.nextToken();
+                    oracleSettings.setReadTableSpaceName(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("RetryInterval", targetDepth)) {
+                    context.nextToken();
+                    oracleSettings.setRetryInterval(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityDbEncryption", targetDepth)) {
                     context.nextToken();

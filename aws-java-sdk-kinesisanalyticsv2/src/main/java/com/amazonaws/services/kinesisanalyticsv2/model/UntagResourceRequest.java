@@ -27,7 +27,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the Kinesis Analytics application from which to remove the tags.
+     * The ARN of the Kinesis Data Analytics application from which to remove the tags.
      * </p>
      */
     private String resourceARN;
@@ -40,11 +40,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the Kinesis Analytics application from which to remove the tags.
+     * The ARN of the Kinesis Data Analytics application from which to remove the tags.
      * </p>
      * 
      * @param resourceARN
-     *        The ARN of the Kinesis Analytics application from which to remove the tags.
+     *        The ARN of the Kinesis Data Analytics application from which to remove the tags.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -53,10 +53,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the Kinesis Analytics application from which to remove the tags.
+     * The ARN of the Kinesis Data Analytics application from which to remove the tags.
      * </p>
      * 
-     * @return The ARN of the Kinesis Analytics application from which to remove the tags.
+     * @return The ARN of the Kinesis Data Analytics application from which to remove the tags.
      */
 
     public String getResourceARN() {
@@ -65,11 +65,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the Kinesis Analytics application from which to remove the tags.
+     * The ARN of the Kinesis Data Analytics application from which to remove the tags.
      * </p>
      * 
      * @param resourceARN
-     *        The ARN of the Kinesis Analytics application from which to remove the tags.
+     *        The ARN of the Kinesis Data Analytics application from which to remove the tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

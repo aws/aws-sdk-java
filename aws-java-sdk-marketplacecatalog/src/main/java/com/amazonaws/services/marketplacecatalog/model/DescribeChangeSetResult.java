@@ -63,6 +63,14 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
     private String status;
     /**
      * <p>
+     * Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means
+     * that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>,
+     * which means that there is a problem in the system, and you should retry your request.
+     * </p>
+     */
+    private String failureCode;
+    /**
+     * <p>
      * Returned if there is a failure on the change set, but that failure is not related to any of the changes in the
      * request.
      * </p>
@@ -348,6 +356,85 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
+     * Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means
+     * that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>,
+     * which means that there is a problem in the system, and you should retry your request.
+     * </p>
+     * 
+     * @param failureCode
+     *        Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>,
+     *        which means that there are issues with the request (see the <code>ErrorDetailList</code>), or
+     *        <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your
+     *        request.
+     * @see FailureCode
+     */
+
+    public void setFailureCode(String failureCode) {
+        this.failureCode = failureCode;
+    }
+
+    /**
+     * <p>
+     * Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means
+     * that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>,
+     * which means that there is a problem in the system, and you should retry your request.
+     * </p>
+     * 
+     * @return Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>,
+     *         which means that there are issues with the request (see the <code>ErrorDetailList</code>), or
+     *         <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your
+     *         request.
+     * @see FailureCode
+     */
+
+    public String getFailureCode() {
+        return this.failureCode;
+    }
+
+    /**
+     * <p>
+     * Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means
+     * that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>,
+     * which means that there is a problem in the system, and you should retry your request.
+     * </p>
+     * 
+     * @param failureCode
+     *        Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>,
+     *        which means that there are issues with the request (see the <code>ErrorDetailList</code>), or
+     *        <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your
+     *        request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FailureCode
+     */
+
+    public DescribeChangeSetResult withFailureCode(String failureCode) {
+        setFailureCode(failureCode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means
+     * that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>,
+     * which means that there is a problem in the system, and you should retry your request.
+     * </p>
+     * 
+     * @param failureCode
+     *        Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>,
+     *        which means that there are issues with the request (see the <code>ErrorDetailList</code>), or
+     *        <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your
+     *        request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FailureCode
+     */
+
+    public DescribeChangeSetResult withFailureCode(FailureCode failureCode) {
+        this.failureCode = failureCode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * Returned if there is a failure on the change set, but that failure is not related to any of the changes in the
      * request.
      * </p>
@@ -486,6 +573,8 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
             sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getFailureCode() != null)
+            sb.append("FailureCode: ").append(getFailureCode()).append(",");
         if (getFailureDescription() != null)
             sb.append("FailureDescription: ").append(getFailureDescription()).append(",");
         if (getChangeSet() != null)
@@ -528,6 +617,10 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getFailureCode() == null ^ this.getFailureCode() == null)
+            return false;
+        if (other.getFailureCode() != null && other.getFailureCode().equals(this.getFailureCode()) == false)
+            return false;
         if (other.getFailureDescription() == null ^ this.getFailureDescription() == null)
             return false;
         if (other.getFailureDescription() != null && other.getFailureDescription().equals(this.getFailureDescription()) == false)
@@ -550,6 +643,7 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getFailureCode() == null) ? 0 : getFailureCode().hashCode());
         hashCode = prime * hashCode + ((getFailureDescription() == null) ? 0 : getFailureDescription().hashCode());
         hashCode = prime * hashCode + ((getChangeSet() == null) ? 0 : getChangeSet().hashCode());
         return hashCode;

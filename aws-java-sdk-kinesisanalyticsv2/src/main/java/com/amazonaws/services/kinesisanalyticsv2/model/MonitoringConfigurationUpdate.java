@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes updates to configuration parameters for Amazon CloudWatch logging for a Java-based Kinesis Data Analytics
+ * Describes updates to configuration parameters for Amazon CloudWatch logging for a Flink-based Kinesis Data Analytics
  * application.
  * </p>
  * 
@@ -39,7 +39,8 @@ public class MonitoringConfigurationUpdate implements Serializable, Cloneable, S
     private String configurationTypeUpdate;
     /**
      * <p>
-     * Describes updates to the granularity of the CloudWatch Logs for an application.
+     * Describes updates to the granularity of the CloudWatch Logs for an application. The <code>Parallelism</code>
+     * level is not recommended for applications with a Parallelism over 64 due to excessive costs.
      * </p>
      */
     private String metricsLevelUpdate;
@@ -127,11 +128,14 @@ public class MonitoringConfigurationUpdate implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Describes updates to the granularity of the CloudWatch Logs for an application.
+     * Describes updates to the granularity of the CloudWatch Logs for an application. The <code>Parallelism</code>
+     * level is not recommended for applications with a Parallelism over 64 due to excessive costs.
      * </p>
      * 
      * @param metricsLevelUpdate
-     *        Describes updates to the granularity of the CloudWatch Logs for an application.
+     *        Describes updates to the granularity of the CloudWatch Logs for an application. The
+     *        <code>Parallelism</code> level is not recommended for applications with a Parallelism over 64 due to
+     *        excessive costs.
      * @see MetricsLevel
      */
 
@@ -141,10 +145,13 @@ public class MonitoringConfigurationUpdate implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Describes updates to the granularity of the CloudWatch Logs for an application.
+     * Describes updates to the granularity of the CloudWatch Logs for an application. The <code>Parallelism</code>
+     * level is not recommended for applications with a Parallelism over 64 due to excessive costs.
      * </p>
      * 
-     * @return Describes updates to the granularity of the CloudWatch Logs for an application.
+     * @return Describes updates to the granularity of the CloudWatch Logs for an application. The
+     *         <code>Parallelism</code> level is not recommended for applications with a Parallelism over 64 due to
+     *         excessive costs.
      * @see MetricsLevel
      */
 
@@ -154,11 +161,14 @@ public class MonitoringConfigurationUpdate implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Describes updates to the granularity of the CloudWatch Logs for an application.
+     * Describes updates to the granularity of the CloudWatch Logs for an application. The <code>Parallelism</code>
+     * level is not recommended for applications with a Parallelism over 64 due to excessive costs.
      * </p>
      * 
      * @param metricsLevelUpdate
-     *        Describes updates to the granularity of the CloudWatch Logs for an application.
+     *        Describes updates to the granularity of the CloudWatch Logs for an application. The
+     *        <code>Parallelism</code> level is not recommended for applications with a Parallelism over 64 due to
+     *        excessive costs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricsLevel
      */
@@ -170,11 +180,14 @@ public class MonitoringConfigurationUpdate implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Describes updates to the granularity of the CloudWatch Logs for an application.
+     * Describes updates to the granularity of the CloudWatch Logs for an application. The <code>Parallelism</code>
+     * level is not recommended for applications with a Parallelism over 64 due to excessive costs.
      * </p>
      * 
      * @param metricsLevelUpdate
-     *        Describes updates to the granularity of the CloudWatch Logs for an application.
+     *        Describes updates to the granularity of the CloudWatch Logs for an application. The
+     *        <code>Parallelism</code> level is not recommended for applications with a Parallelism over 64 due to
+     *        excessive costs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricsLevel
      */
