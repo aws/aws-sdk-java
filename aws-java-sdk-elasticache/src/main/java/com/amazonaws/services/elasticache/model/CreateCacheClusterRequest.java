@@ -510,6 +510,24 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String authToken;
+    /**
+     * <p>
+     * Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.
+     * </p>
+     */
+    private String outpostMode;
+    /**
+     * <p>
+     * The outpost ARN in which the cache cluster is created.
+     * </p>
+     */
+    private String preferredOutpostArn;
+    /**
+     * <p>
+     * The outpost ARNs in which the cache cluster is created.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> preferredOutpostArns;
 
     /**
      * Default constructor for CreateCacheClusterRequest object. Callers should use the setter or fluent setter
@@ -3961,6 +3979,192 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.
+     * </p>
+     * 
+     * @param outpostMode
+     *        Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.
+     * @see OutpostMode
+     */
+
+    public void setOutpostMode(String outpostMode) {
+        this.outpostMode = outpostMode;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.
+     * </p>
+     * 
+     * @return Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.
+     * @see OutpostMode
+     */
+
+    public String getOutpostMode() {
+        return this.outpostMode;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.
+     * </p>
+     * 
+     * @param outpostMode
+     *        Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OutpostMode
+     */
+
+    public CreateCacheClusterRequest withOutpostMode(String outpostMode) {
+        setOutpostMode(outpostMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.
+     * </p>
+     * 
+     * @param outpostMode
+     *        Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.
+     * @see OutpostMode
+     */
+
+    public void setOutpostMode(OutpostMode outpostMode) {
+        withOutpostMode(outpostMode);
+    }
+
+    /**
+     * <p>
+     * Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.
+     * </p>
+     * 
+     * @param outpostMode
+     *        Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OutpostMode
+     */
+
+    public CreateCacheClusterRequest withOutpostMode(OutpostMode outpostMode) {
+        this.outpostMode = outpostMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The outpost ARN in which the cache cluster is created.
+     * </p>
+     * 
+     * @param preferredOutpostArn
+     *        The outpost ARN in which the cache cluster is created.
+     */
+
+    public void setPreferredOutpostArn(String preferredOutpostArn) {
+        this.preferredOutpostArn = preferredOutpostArn;
+    }
+
+    /**
+     * <p>
+     * The outpost ARN in which the cache cluster is created.
+     * </p>
+     * 
+     * @return The outpost ARN in which the cache cluster is created.
+     */
+
+    public String getPreferredOutpostArn() {
+        return this.preferredOutpostArn;
+    }
+
+    /**
+     * <p>
+     * The outpost ARN in which the cache cluster is created.
+     * </p>
+     * 
+     * @param preferredOutpostArn
+     *        The outpost ARN in which the cache cluster is created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCacheClusterRequest withPreferredOutpostArn(String preferredOutpostArn) {
+        setPreferredOutpostArn(preferredOutpostArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The outpost ARNs in which the cache cluster is created.
+     * </p>
+     * 
+     * @return The outpost ARNs in which the cache cluster is created.
+     */
+
+    public java.util.List<String> getPreferredOutpostArns() {
+        if (preferredOutpostArns == null) {
+            preferredOutpostArns = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return preferredOutpostArns;
+    }
+
+    /**
+     * <p>
+     * The outpost ARNs in which the cache cluster is created.
+     * </p>
+     * 
+     * @param preferredOutpostArns
+     *        The outpost ARNs in which the cache cluster is created.
+     */
+
+    public void setPreferredOutpostArns(java.util.Collection<String> preferredOutpostArns) {
+        if (preferredOutpostArns == null) {
+            this.preferredOutpostArns = null;
+            return;
+        }
+
+        this.preferredOutpostArns = new com.amazonaws.internal.SdkInternalList<String>(preferredOutpostArns);
+    }
+
+    /**
+     * <p>
+     * The outpost ARNs in which the cache cluster is created.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPreferredOutpostArns(java.util.Collection)} or {@link #withPreferredOutpostArns(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param preferredOutpostArns
+     *        The outpost ARNs in which the cache cluster is created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCacheClusterRequest withPreferredOutpostArns(String... preferredOutpostArns) {
+        if (this.preferredOutpostArns == null) {
+            setPreferredOutpostArns(new com.amazonaws.internal.SdkInternalList<String>(preferredOutpostArns.length));
+        }
+        for (String ele : preferredOutpostArns) {
+            this.preferredOutpostArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The outpost ARNs in which the cache cluster is created.
+     * </p>
+     * 
+     * @param preferredOutpostArns
+     *        The outpost ARNs in which the cache cluster is created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCacheClusterRequest withPreferredOutpostArns(java.util.Collection<String> preferredOutpostArns) {
+        setPreferredOutpostArns(preferredOutpostArns);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -4017,7 +4221,13 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
         if (getSnapshotWindow() != null)
             sb.append("SnapshotWindow: ").append(getSnapshotWindow()).append(",");
         if (getAuthToken() != null)
-            sb.append("AuthToken: ").append(getAuthToken());
+            sb.append("AuthToken: ").append(getAuthToken()).append(",");
+        if (getOutpostMode() != null)
+            sb.append("OutpostMode: ").append(getOutpostMode()).append(",");
+        if (getPreferredOutpostArn() != null)
+            sb.append("PreferredOutpostArn: ").append(getPreferredOutpostArn()).append(",");
+        if (getPreferredOutpostArns() != null)
+            sb.append("PreferredOutpostArns: ").append(getPreferredOutpostArns());
         sb.append("}");
         return sb.toString();
     }
@@ -4124,6 +4334,18 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getAuthToken() != null && other.getAuthToken().equals(this.getAuthToken()) == false)
             return false;
+        if (other.getOutpostMode() == null ^ this.getOutpostMode() == null)
+            return false;
+        if (other.getOutpostMode() != null && other.getOutpostMode().equals(this.getOutpostMode()) == false)
+            return false;
+        if (other.getPreferredOutpostArn() == null ^ this.getPreferredOutpostArn() == null)
+            return false;
+        if (other.getPreferredOutpostArn() != null && other.getPreferredOutpostArn().equals(this.getPreferredOutpostArn()) == false)
+            return false;
+        if (other.getPreferredOutpostArns() == null ^ this.getPreferredOutpostArns() == null)
+            return false;
+        if (other.getPreferredOutpostArns() != null && other.getPreferredOutpostArns().equals(this.getPreferredOutpostArns()) == false)
+            return false;
         return true;
     }
 
@@ -4155,6 +4377,9 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getSnapshotRetentionLimit() == null) ? 0 : getSnapshotRetentionLimit().hashCode());
         hashCode = prime * hashCode + ((getSnapshotWindow() == null) ? 0 : getSnapshotWindow().hashCode());
         hashCode = prime * hashCode + ((getAuthToken() == null) ? 0 : getAuthToken().hashCode());
+        hashCode = prime * hashCode + ((getOutpostMode() == null) ? 0 : getOutpostMode().hashCode());
+        hashCode = prime * hashCode + ((getPreferredOutpostArn() == null) ? 0 : getPreferredOutpostArn().hashCode());
+        hashCode = prime * hashCode + ((getPreferredOutpostArns() == null) ? 0 : getPreferredOutpostArns().hashCode());
         return hashCode;
     }
 

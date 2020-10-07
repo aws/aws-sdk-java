@@ -150,6 +150,16 @@ public class ReplicationGroupStaxUnmarshaller implements Unmarshaller<Replicatio
                     continue;
                 }
 
+                if (context.testExpression("MemberClustersOutpostArns", targetDepth)) {
+                    replicationGroup.withMemberClustersOutpostArns(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("MemberClustersOutpostArns/ReplicationGroupOutpostArn", targetDepth)) {
+                    replicationGroup.withMemberClustersOutpostArns(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("KmsKeyId", targetDepth)) {
                     replicationGroup.setKmsKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -159,6 +169,17 @@ public class ReplicationGroupStaxUnmarshaller implements Unmarshaller<Replicatio
                     replicationGroup.setARN(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("UserGroupIds", targetDepth)) {
+                    replicationGroup.withUserGroupIds(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("UserGroupIds/member", targetDepth)) {
+                    replicationGroup.withUserGroupIds(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return replicationGroup;

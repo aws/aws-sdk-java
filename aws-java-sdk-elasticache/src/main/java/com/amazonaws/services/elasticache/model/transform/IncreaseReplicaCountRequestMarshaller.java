@@ -81,6 +81,22 @@ public class IncreaseReplicaCountRequestMarshaller implements Marshaller<Request
                         preferredAvailabilityZonesListIndex++;
                     }
                 }
+
+                if (!replicaConfigurationListValue.getPreferredOutpostArns().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) replicaConfigurationListValue.getPreferredOutpostArns()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> preferredOutpostArnsList = (com.amazonaws.internal.SdkInternalList<String>) replicaConfigurationListValue
+                            .getPreferredOutpostArns();
+                    int preferredOutpostArnsListIndex = 1;
+
+                    for (String preferredOutpostArnsListValue : preferredOutpostArnsList) {
+                        if (preferredOutpostArnsListValue != null) {
+                            request.addParameter("ReplicaConfiguration.ConfigureShard." + replicaConfigurationListIndex
+                                    + ".PreferredOutpostArns.PreferredOutpostArn." + preferredOutpostArnsListIndex,
+                                    StringUtils.fromString(preferredOutpostArnsListValue));
+                        }
+                        preferredOutpostArnsListIndex++;
+                    }
+                }
                 replicaConfigurationListIndex++;
             }
         }

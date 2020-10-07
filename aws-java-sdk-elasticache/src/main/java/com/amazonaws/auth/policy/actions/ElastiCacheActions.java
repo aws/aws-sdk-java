@@ -51,6 +51,10 @@ public enum ElastiCacheActions implements Action {
     CreateReplicationGroup("elasticache:CreateReplicationGroup"),
     /** Action for the CreateSnapshot operation. */
     CreateSnapshot("elasticache:CreateSnapshot"),
+    /** Action for the CreateUser operation. */
+    CreateUser("elasticache:CreateUser"),
+    /** Action for the CreateUserGroup operation. */
+    CreateUserGroup("elasticache:CreateUserGroup"),
     /** Action for the DecreaseNodeGroupsInGlobalReplicationGroup operation. */
     DecreaseNodeGroupsInGlobalReplicationGroup("elasticache:DecreaseNodeGroupsInGlobalReplicationGroup"),
     /** Action for the DecreaseReplicaCount operation. */
@@ -69,6 +73,10 @@ public enum ElastiCacheActions implements Action {
     DeleteReplicationGroup("elasticache:DeleteReplicationGroup"),
     /** Action for the DeleteSnapshot operation. */
     DeleteSnapshot("elasticache:DeleteSnapshot"),
+    /** Action for the DeleteUser operation. */
+    DeleteUser("elasticache:DeleteUser"),
+    /** Action for the DeleteUserGroup operation. */
+    DeleteUserGroup("elasticache:DeleteUserGroup"),
     /** Action for the DescribeCacheClusters operation. */
     DescribeCacheClusters("elasticache:DescribeCacheClusters"),
     /** Action for the DescribeCacheEngineVersions operation. */
@@ -99,6 +107,10 @@ public enum ElastiCacheActions implements Action {
     DescribeSnapshots("elasticache:DescribeSnapshots"),
     /** Action for the DescribeUpdateActions operation. */
     DescribeUpdateActions("elasticache:DescribeUpdateActions"),
+    /** Action for the DescribeUserGroups operation. */
+    DescribeUserGroups("elasticache:DescribeUserGroups"),
+    /** Action for the DescribeUsers operation. */
+    DescribeUsers("elasticache:DescribeUsers"),
     /** Action for the DisassociateGlobalReplicationGroup operation. */
     DisassociateGlobalReplicationGroup("elasticache:DisassociateGlobalReplicationGroup"),
     /** Action for the FailoverGlobalReplicationGroup operation. */
@@ -123,6 +135,10 @@ public enum ElastiCacheActions implements Action {
     ModifyReplicationGroup("elasticache:ModifyReplicationGroup"),
     /** Action for the ModifyReplicationGroupShardConfiguration operation. */
     ModifyReplicationGroupShardConfiguration("elasticache:ModifyReplicationGroupShardConfiguration"),
+    /** Action for the ModifyUser operation. */
+    ModifyUser("elasticache:ModifyUser"),
+    /** Action for the ModifyUserGroup operation. */
+    ModifyUserGroup("elasticache:ModifyUserGroup"),
     /** Action for the PurchaseReservedCacheNodesOffering operation. */
     PurchaseReservedCacheNodesOffering("elasticache:PurchaseReservedCacheNodesOffering"),
     /** Action for the RebalanceSlotsInGlobalReplicationGroup operation. */

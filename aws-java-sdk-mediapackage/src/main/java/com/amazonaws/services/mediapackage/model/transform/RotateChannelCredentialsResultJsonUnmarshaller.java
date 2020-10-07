@@ -56,6 +56,10 @@ public class RotateChannelCredentialsResultJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     rotateChannelCredentialsResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("egressAccessLogs", targetDepth)) {
+                    context.nextToken();
+                    rotateChannelCredentialsResult.setEgressAccessLogs(EgressAccessLogsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("hlsIngest", targetDepth)) {
                     context.nextToken();
                     rotateChannelCredentialsResult.setHlsIngest(HlsIngestJsonUnmarshaller.getInstance().unmarshall(context));
@@ -63,6 +67,10 @@ public class RotateChannelCredentialsResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     rotateChannelCredentialsResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ingressAccessLogs", targetDepth)) {
+                    context.nextToken();
+                    rotateChannelCredentialsResult.setIngressAccessLogs(IngressAccessLogsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

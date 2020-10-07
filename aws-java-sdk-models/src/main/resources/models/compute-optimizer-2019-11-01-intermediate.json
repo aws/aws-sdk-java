@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -287,7 +287,7 @@
       "asyncReturnType" : "GetAutoScalingGroupRecommendationsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Returns Auto Scaling group recommendations.</p> <p>AWS Compute Optimizer currently generates recommendations for Auto Scaling groups that are configured to run instances of the M, C, R, T, and X instance families. The service does not generate recommendations for Auto Scaling groups that have a scaling policy attached to them, or that do not have the same values for desired, minimum, and maximum capacity. In order for Compute Optimizer to analyze your Auto Scaling groups, they must be of a fixed size. For more information, see the <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/what-is.html\">AWS Compute Optimizer User Guide</a>.</p>",
+      "documentation" : "<p>Returns Auto Scaling group recommendations.</p> <p>AWS Compute Optimizer generates recommendations for Amazon EC2 Auto Scaling groups that meet a specific set of requirements. For more information, see the <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html\">Supported resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -352,7 +352,7 @@
       "asyncReturnType" : "GetEC2InstanceRecommendationsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Returns Amazon EC2 instance recommendations.</p> <p>AWS Compute Optimizer currently generates recommendations for Amazon Elastic Compute Cloud (Amazon EC2) and Amazon EC2 Auto Scaling. It generates recommendations for M, C, R, T, and X instance families. For more information, see the <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/what-is.html\">AWS Compute Optimizer User Guide</a>.</p>",
+      "documentation" : "<p>Returns Amazon EC2 instance recommendations.</p> <p>AWS Compute Optimizer generates recommendations for Amazon Elastic Compute Cloud (Amazon EC2) instances that meet a specific set of requirements. For more information, see the <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html\">Supported resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -417,7 +417,7 @@
       "asyncReturnType" : "GetEC2RecommendationProjectedMetricsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Returns the projected utilization metrics of Amazon EC2 instance recommendations.</p>",
+      "documentation" : "<p>Returns the projected utilization metrics of Amazon EC2 instance recommendations.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned when you run this action. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -3019,12 +3019,12 @@
         "c2jName" : "projectedUtilizationMetrics",
         "c2jShape" : "ProjectedUtilizationMetrics",
         "deprecated" : false,
-        "documentation" : "<p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p>",
+        "documentation" : "<p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p>\n@param projectedUtilizationMetrics An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@param projectedUtilizationMetrics An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withProjectedUtilizationMetrics",
-        "getterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p>\n@return An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.*/",
+        "getterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@return An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>*/",
         "getterMethodName" : "getProjectedUtilizationMetrics",
         "getterModel" : {
           "returnType" : "java.util.List<UtilizationMetric>",
@@ -3142,7 +3142,7 @@
         "marshallingType" : "LIST",
         "name" : "ProjectedUtilizationMetrics",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p>\n@param projectedUtilizationMetrics An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.*/",
+        "setterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@param projectedUtilizationMetrics An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>*/",
         "setterMethodName" : "setProjectedUtilizationMetrics",
         "setterModel" : {
           "timestampFormat" : null,
@@ -3157,13 +3157,13 @@
         "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProjectedUtilizationMetrics(java.util.Collection)} or {@link #withProjectedUtilizationMetrics(java.util.Collection)} if you want to override the existing values.</p>\n@param projectedUtilizationMetrics An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProjectedUtilizationMetrics(java.util.Collection)} or {@link #withProjectedUtilizationMetrics(java.util.Collection)} if you want to override the existing values.</p>\n@param projectedUtilizationMetrics An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<UtilizationMetric>",
           "variableName" : "projectedUtilizationMetrics",
           "variableType" : "java.util.List<UtilizationMetric>",
-          "documentation" : "<p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p>",
+          "documentation" : "<p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>",
           "simpleType" : "List<UtilizationMetric>",
           "variableSetterType" : "java.util.Collection<UtilizationMetric>"
         },
@@ -3452,12 +3452,12 @@
           "c2jName" : "projectedUtilizationMetrics",
           "c2jShape" : "ProjectedUtilizationMetrics",
           "deprecated" : false,
-          "documentation" : "<p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p>",
+          "documentation" : "<p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p>\n@param projectedUtilizationMetrics An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@param projectedUtilizationMetrics An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withProjectedUtilizationMetrics",
-          "getterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p>\n@return An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.*/",
+          "getterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@return An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>*/",
           "getterMethodName" : "getProjectedUtilizationMetrics",
           "getterModel" : {
             "returnType" : "java.util.List<UtilizationMetric>",
@@ -3575,7 +3575,7 @@
           "marshallingType" : "LIST",
           "name" : "ProjectedUtilizationMetrics",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p>\n@param projectedUtilizationMetrics An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.*/",
+          "setterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@param projectedUtilizationMetrics An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>*/",
           "setterMethodName" : "setProjectedUtilizationMetrics",
           "setterModel" : {
             "timestampFormat" : null,
@@ -3590,13 +3590,13 @@
           "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProjectedUtilizationMetrics(java.util.Collection)} or {@link #withProjectedUtilizationMetrics(java.util.Collection)} if you want to override the existing values.</p>\n@param projectedUtilizationMetrics An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProjectedUtilizationMetrics(java.util.Collection)} or {@link #withProjectedUtilizationMetrics(java.util.Collection)} if you want to override the existing values.</p>\n@param projectedUtilizationMetrics An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<UtilizationMetric>",
             "variableName" : "projectedUtilizationMetrics",
             "variableType" : "java.util.List<UtilizationMetric>",
-            "documentation" : "<p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p>",
+            "documentation" : "<p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>",
             "simpleType" : "List<UtilizationMetric>",
             "variableSetterType" : "java.util.Collection<UtilizationMetric>"
           },
@@ -5464,12 +5464,12 @@
         "c2jName" : "fieldsToExport",
         "c2jShape" : "ExportableAutoScalingGroupFields",
         "deprecated" : false,
-        "documentation" : "<p>The recommendations data to include in the export file.</p>",
+        "documentation" : "<p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : "ExportableAutoScalingGroupField",
-        "fluentSetterDocumentation" : "/**<p>The recommendations data to include in the export file.</p>\n@param fieldsToExport The recommendations data to include in the export file.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ExportableAutoScalingGroupField*/",
+        "fluentSetterDocumentation" : "/**<p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>\n@param fieldsToExport The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ExportableAutoScalingGroupField*/",
         "fluentSetterMethodName" : "withFieldsToExport",
-        "getterDocumentation" : "/**<p>The recommendations data to include in the export file.</p>\n@return The recommendations data to include in the export file.\n@see ExportableAutoScalingGroupField*/",
+        "getterDocumentation" : "/**<p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>\n@return The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.\n@see ExportableAutoScalingGroupField*/",
         "getterMethodName" : "getFieldsToExport",
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -5587,7 +5587,7 @@
         "marshallingType" : "LIST",
         "name" : "FieldsToExport",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The recommendations data to include in the export file.</p>\n@param fieldsToExport The recommendations data to include in the export file.\n@see ExportableAutoScalingGroupField*/",
+        "setterDocumentation" : "/**<p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>\n@param fieldsToExport The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.\n@see ExportableAutoScalingGroupField*/",
         "setterMethodName" : "setFieldsToExport",
         "setterModel" : {
           "timestampFormat" : null,
@@ -5602,13 +5602,13 @@
         "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The recommendations data to include in the export file.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFieldsToExport(java.util.Collection)} or {@link #withFieldsToExport(java.util.Collection)} if you want to override the existing values.</p>\n@param fieldsToExport The recommendations data to include in the export file.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ExportableAutoScalingGroupField*/",
+        "varargSetterDocumentation" : "/**<p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFieldsToExport(java.util.Collection)} or {@link #withFieldsToExport(java.util.Collection)} if you want to override the existing values.</p>\n@param fieldsToExport The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ExportableAutoScalingGroupField*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "fieldsToExport",
           "variableType" : "java.util.List<String>",
-          "documentation" : "<p>The recommendations data to include in the export file.</p>",
+          "documentation" : "<p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -5980,12 +5980,12 @@
           "c2jName" : "fieldsToExport",
           "c2jShape" : "ExportableAutoScalingGroupFields",
           "deprecated" : false,
-          "documentation" : "<p>The recommendations data to include in the export file.</p>",
+          "documentation" : "<p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : "ExportableAutoScalingGroupField",
-          "fluentSetterDocumentation" : "/**<p>The recommendations data to include in the export file.</p>\n@param fieldsToExport The recommendations data to include in the export file.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ExportableAutoScalingGroupField*/",
+          "fluentSetterDocumentation" : "/**<p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>\n@param fieldsToExport The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ExportableAutoScalingGroupField*/",
           "fluentSetterMethodName" : "withFieldsToExport",
-          "getterDocumentation" : "/**<p>The recommendations data to include in the export file.</p>\n@return The recommendations data to include in the export file.\n@see ExportableAutoScalingGroupField*/",
+          "getterDocumentation" : "/**<p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>\n@return The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.\n@see ExportableAutoScalingGroupField*/",
           "getterMethodName" : "getFieldsToExport",
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -6103,7 +6103,7 @@
           "marshallingType" : "LIST",
           "name" : "FieldsToExport",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The recommendations data to include in the export file.</p>\n@param fieldsToExport The recommendations data to include in the export file.\n@see ExportableAutoScalingGroupField*/",
+          "setterDocumentation" : "/**<p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>\n@param fieldsToExport The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.\n@see ExportableAutoScalingGroupField*/",
           "setterMethodName" : "setFieldsToExport",
           "setterModel" : {
             "timestampFormat" : null,
@@ -6118,13 +6118,13 @@
           "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The recommendations data to include in the export file.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFieldsToExport(java.util.Collection)} or {@link #withFieldsToExport(java.util.Collection)} if you want to override the existing values.</p>\n@param fieldsToExport The recommendations data to include in the export file.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ExportableAutoScalingGroupField*/",
+          "varargSetterDocumentation" : "/**<p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFieldsToExport(java.util.Collection)} or {@link #withFieldsToExport(java.util.Collection)} if you want to override the existing values.</p>\n@param fieldsToExport The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ExportableAutoScalingGroupField*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "fieldsToExport",
             "variableType" : "java.util.List<String>",
-            "documentation" : "<p>The recommendations data to include in the export file.</p>",
+            "documentation" : "<p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -7358,12 +7358,12 @@
         "c2jName" : "fieldsToExport",
         "c2jShape" : "ExportableInstanceFields",
         "deprecated" : false,
-        "documentation" : "<p>The recommendations data to include in the export file.</p>",
+        "documentation" : "<p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : "ExportableInstanceField",
-        "fluentSetterDocumentation" : "/**<p>The recommendations data to include in the export file.</p>\n@param fieldsToExport The recommendations data to include in the export file.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ExportableInstanceField*/",
+        "fluentSetterDocumentation" : "/**<p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>\n@param fieldsToExport The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ExportableInstanceField*/",
         "fluentSetterMethodName" : "withFieldsToExport",
-        "getterDocumentation" : "/**<p>The recommendations data to include in the export file.</p>\n@return The recommendations data to include in the export file.\n@see ExportableInstanceField*/",
+        "getterDocumentation" : "/**<p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>\n@return The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.\n@see ExportableInstanceField*/",
         "getterMethodName" : "getFieldsToExport",
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -7481,7 +7481,7 @@
         "marshallingType" : "LIST",
         "name" : "FieldsToExport",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The recommendations data to include in the export file.</p>\n@param fieldsToExport The recommendations data to include in the export file.\n@see ExportableInstanceField*/",
+        "setterDocumentation" : "/**<p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>\n@param fieldsToExport The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.\n@see ExportableInstanceField*/",
         "setterMethodName" : "setFieldsToExport",
         "setterModel" : {
           "timestampFormat" : null,
@@ -7496,13 +7496,13 @@
         "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The recommendations data to include in the export file.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFieldsToExport(java.util.Collection)} or {@link #withFieldsToExport(java.util.Collection)} if you want to override the existing values.</p>\n@param fieldsToExport The recommendations data to include in the export file.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ExportableInstanceField*/",
+        "varargSetterDocumentation" : "/**<p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFieldsToExport(java.util.Collection)} or {@link #withFieldsToExport(java.util.Collection)} if you want to override the existing values.</p>\n@param fieldsToExport The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ExportableInstanceField*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "fieldsToExport",
           "variableType" : "java.util.List<String>",
-          "documentation" : "<p>The recommendations data to include in the export file.</p>",
+          "documentation" : "<p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -7874,12 +7874,12 @@
           "c2jName" : "fieldsToExport",
           "c2jShape" : "ExportableInstanceFields",
           "deprecated" : false,
-          "documentation" : "<p>The recommendations data to include in the export file.</p>",
+          "documentation" : "<p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : "ExportableInstanceField",
-          "fluentSetterDocumentation" : "/**<p>The recommendations data to include in the export file.</p>\n@param fieldsToExport The recommendations data to include in the export file.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ExportableInstanceField*/",
+          "fluentSetterDocumentation" : "/**<p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>\n@param fieldsToExport The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ExportableInstanceField*/",
           "fluentSetterMethodName" : "withFieldsToExport",
-          "getterDocumentation" : "/**<p>The recommendations data to include in the export file.</p>\n@return The recommendations data to include in the export file.\n@see ExportableInstanceField*/",
+          "getterDocumentation" : "/**<p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>\n@return The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.\n@see ExportableInstanceField*/",
           "getterMethodName" : "getFieldsToExport",
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -7997,7 +7997,7 @@
           "marshallingType" : "LIST",
           "name" : "FieldsToExport",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The recommendations data to include in the export file.</p>\n@param fieldsToExport The recommendations data to include in the export file.\n@see ExportableInstanceField*/",
+          "setterDocumentation" : "/**<p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>\n@param fieldsToExport The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.\n@see ExportableInstanceField*/",
           "setterMethodName" : "setFieldsToExport",
           "setterModel" : {
             "timestampFormat" : null,
@@ -8012,13 +8012,13 @@
           "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The recommendations data to include in the export file.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFieldsToExport(java.util.Collection)} or {@link #withFieldsToExport(java.util.Collection)} if you want to override the existing values.</p>\n@param fieldsToExport The recommendations data to include in the export file.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ExportableInstanceField*/",
+          "varargSetterDocumentation" : "/**<p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFieldsToExport(java.util.Collection)} or {@link #withFieldsToExport(java.util.Collection)} if you want to override the existing values.</p>\n@param fieldsToExport The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ExportableInstanceField*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "fieldsToExport",
             "variableType" : "java.util.List<String>",
-            "documentation" : "<p>The recommendations data to include in the export file.</p>",
+            "documentation" : "<p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files\">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -8761,6 +8761,18 @@
         "name" : "UtilizationMetricsMemoryMaximum",
         "value" : "UtilizationMetricsMemoryMaximum"
       }, {
+        "name" : "UtilizationMetricsEbsReadOpsPerSecondMaximum",
+        "value" : "UtilizationMetricsEbsReadOpsPerSecondMaximum"
+      }, {
+        "name" : "UtilizationMetricsEbsWriteOpsPerSecondMaximum",
+        "value" : "UtilizationMetricsEbsWriteOpsPerSecondMaximum"
+      }, {
+        "name" : "UtilizationMetricsEbsReadBytesPerSecondMaximum",
+        "value" : "UtilizationMetricsEbsReadBytesPerSecondMaximum"
+      }, {
+        "name" : "UtilizationMetricsEbsWriteBytesPerSecondMaximum",
+        "value" : "UtilizationMetricsEbsWriteBytesPerSecondMaximum"
+      }, {
         "name" : "LookbackPeriodInDays",
         "value" : "LookbackPeriodInDays"
       }, {
@@ -8909,6 +8921,18 @@
       }, {
         "name" : "UtilizationMetricsMemoryMaximum",
         "value" : "UtilizationMetricsMemoryMaximum"
+      }, {
+        "name" : "UtilizationMetricsEbsReadOpsPerSecondMaximum",
+        "value" : "UtilizationMetricsEbsReadOpsPerSecondMaximum"
+      }, {
+        "name" : "UtilizationMetricsEbsWriteOpsPerSecondMaximum",
+        "value" : "UtilizationMetricsEbsWriteOpsPerSecondMaximum"
+      }, {
+        "name" : "UtilizationMetricsEbsReadBytesPerSecondMaximum",
+        "value" : "UtilizationMetricsEbsReadBytesPerSecondMaximum"
+      }, {
+        "name" : "UtilizationMetricsEbsWriteBytesPerSecondMaximum",
+        "value" : "UtilizationMetricsEbsWriteBytesPerSecondMaximum"
       }, {
         "name" : "CurrentOnDemandPrice",
         "value" : "CurrentOnDemandPrice"
@@ -18966,12 +18990,12 @@
         "c2jName" : "projectedUtilizationMetrics",
         "c2jShape" : "ProjectedUtilizationMetrics",
         "deprecated" : false,
-        "documentation" : "<p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p>",
+        "documentation" : "<p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p>\n@param projectedUtilizationMetrics An array of objects that describe the projected utilization metrics of the instance recommendation option.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@param projectedUtilizationMetrics An array of objects that describe the projected utilization metrics of the instance recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withProjectedUtilizationMetrics",
-        "getterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p>\n@return An array of objects that describe the projected utilization metrics of the instance recommendation option.*/",
+        "getterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@return An array of objects that describe the projected utilization metrics of the instance recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>*/",
         "getterMethodName" : "getProjectedUtilizationMetrics",
         "getterModel" : {
           "returnType" : "java.util.List<UtilizationMetric>",
@@ -19089,7 +19113,7 @@
         "marshallingType" : "LIST",
         "name" : "ProjectedUtilizationMetrics",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p>\n@param projectedUtilizationMetrics An array of objects that describe the projected utilization metrics of the instance recommendation option.*/",
+        "setterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@param projectedUtilizationMetrics An array of objects that describe the projected utilization metrics of the instance recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>*/",
         "setterMethodName" : "setProjectedUtilizationMetrics",
         "setterModel" : {
           "timestampFormat" : null,
@@ -19104,13 +19128,13 @@
         "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProjectedUtilizationMetrics(java.util.Collection)} or {@link #withProjectedUtilizationMetrics(java.util.Collection)} if you want to override the existing values.</p>\n@param projectedUtilizationMetrics An array of objects that describe the projected utilization metrics of the instance recommendation option.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProjectedUtilizationMetrics(java.util.Collection)} or {@link #withProjectedUtilizationMetrics(java.util.Collection)} if you want to override the existing values.</p>\n@param projectedUtilizationMetrics An array of objects that describe the projected utilization metrics of the instance recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<UtilizationMetric>",
           "variableName" : "projectedUtilizationMetrics",
           "variableType" : "java.util.List<UtilizationMetric>",
-          "documentation" : "<p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p>",
+          "documentation" : "<p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>",
           "simpleType" : "List<UtilizationMetric>",
           "variableSetterType" : "java.util.Collection<UtilizationMetric>"
         },
@@ -19399,12 +19423,12 @@
           "c2jName" : "projectedUtilizationMetrics",
           "c2jShape" : "ProjectedUtilizationMetrics",
           "deprecated" : false,
-          "documentation" : "<p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p>",
+          "documentation" : "<p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p>\n@param projectedUtilizationMetrics An array of objects that describe the projected utilization metrics of the instance recommendation option.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@param projectedUtilizationMetrics An array of objects that describe the projected utilization metrics of the instance recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withProjectedUtilizationMetrics",
-          "getterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p>\n@return An array of objects that describe the projected utilization metrics of the instance recommendation option.*/",
+          "getterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@return An array of objects that describe the projected utilization metrics of the instance recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>*/",
           "getterMethodName" : "getProjectedUtilizationMetrics",
           "getterModel" : {
             "returnType" : "java.util.List<UtilizationMetric>",
@@ -19522,7 +19546,7 @@
           "marshallingType" : "LIST",
           "name" : "ProjectedUtilizationMetrics",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p>\n@param projectedUtilizationMetrics An array of objects that describe the projected utilization metrics of the instance recommendation option.*/",
+          "setterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@param projectedUtilizationMetrics An array of objects that describe the projected utilization metrics of the instance recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>*/",
           "setterMethodName" : "setProjectedUtilizationMetrics",
           "setterModel" : {
             "timestampFormat" : null,
@@ -19537,13 +19561,13 @@
           "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProjectedUtilizationMetrics(java.util.Collection)} or {@link #withProjectedUtilizationMetrics(java.util.Collection)} if you want to override the existing values.</p>\n@param projectedUtilizationMetrics An array of objects that describe the projected utilization metrics of the instance recommendation option.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProjectedUtilizationMetrics(java.util.Collection)} or {@link #withProjectedUtilizationMetrics(java.util.Collection)} if you want to override the existing values.</p>\n@param projectedUtilizationMetrics An array of objects that describe the projected utilization metrics of the instance recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<UtilizationMetric>",
             "variableName" : "projectedUtilizationMetrics",
             "variableType" : "java.util.List<UtilizationMetric>",
-            "documentation" : "<p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p>",
+            "documentation" : "<p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>",
             "simpleType" : "List<UtilizationMetric>",
             "variableSetterType" : "java.util.Collection<UtilizationMetric>"
           },
@@ -20379,6 +20403,18 @@
       }, {
         "name" : "Memory",
         "value" : "Memory"
+      }, {
+        "name" : "EBS_READ_OPS_PER_SECOND",
+        "value" : "EBS_READ_OPS_PER_SECOND"
+      }, {
+        "name" : "EBS_WRITE_OPS_PER_SECOND",
+        "value" : "EBS_WRITE_OPS_PER_SECOND"
+      }, {
+        "name" : "EBS_READ_BYTES_PER_SECOND",
+        "value" : "EBS_READ_BYTES_PER_SECOND"
+      }, {
+        "name" : "EBS_WRITE_BYTES_PER_SECOND",
+        "value" : "EBS_WRITE_BYTES_PER_SECOND"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.computeoptimizer.enum.MetricName",
@@ -20553,7 +20589,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Describes a projected utilization metric of a recommendation option, such as an Amazon EC2 instance.</p>",
+      "documentation" : "<p>Describes a projected utilization metric of a recommendation option, such as an Amazon EC2 instance.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned when you run the <code>GetEC2RecommendationProjectedMetrics</code> action. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
@@ -20568,12 +20604,12 @@
         "c2jName" : "name",
         "c2jShape" : "MetricName",
         "deprecated" : false,
-        "documentation" : "<p>The name of the projected utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>",
+        "documentation" : "<p>The name of the projected utilization metric.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : "MetricName",
-        "fluentSetterDocumentation" : "/**<p>The name of the projected utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@param name The name of the projected utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricName*/",
+        "fluentSetterDocumentation" : "/**<p>The name of the projected utilization metric.</p>\n@param name The name of the projected utilization metric.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricName*/",
         "fluentSetterMethodName" : "withName",
-        "getterDocumentation" : "/**<p>The name of the projected utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@return The name of the projected utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@see MetricName*/",
+        "getterDocumentation" : "/**<p>The name of the projected utilization metric.</p>\n@return The name of the projected utilization metric.\n@see MetricName*/",
         "getterMethodName" : "getName",
         "getterModel" : {
           "returnType" : "String",
@@ -20607,7 +20643,7 @@
         "marshallingType" : "STRING",
         "name" : "Name",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The name of the projected utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@param name The name of the projected utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@see MetricName*/",
+        "setterDocumentation" : "/**<p>The name of the projected utilization metric.</p>\n@param name The name of the projected utilization metric.\n@see MetricName*/",
         "setterMethodName" : "setName",
         "setterModel" : {
           "timestampFormat" : null,
@@ -20622,13 +20658,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The name of the projected utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@param name The name of the projected utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricName*/",
+        "varargSetterDocumentation" : "/**<p>The name of the projected utilization metric.</p>\n@param name The name of the projected utilization metric.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricName*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
-          "documentation" : "<p>The name of the projected utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>",
+          "documentation" : "<p>The name of the projected utilization metric.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -20945,12 +20981,12 @@
           "c2jName" : "name",
           "c2jShape" : "MetricName",
           "deprecated" : false,
-          "documentation" : "<p>The name of the projected utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>",
+          "documentation" : "<p>The name of the projected utilization metric.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : "MetricName",
-          "fluentSetterDocumentation" : "/**<p>The name of the projected utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@param name The name of the projected utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricName*/",
+          "fluentSetterDocumentation" : "/**<p>The name of the projected utilization metric.</p>\n@param name The name of the projected utilization metric.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricName*/",
           "fluentSetterMethodName" : "withName",
-          "getterDocumentation" : "/**<p>The name of the projected utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@return The name of the projected utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@see MetricName*/",
+          "getterDocumentation" : "/**<p>The name of the projected utilization metric.</p>\n@return The name of the projected utilization metric.\n@see MetricName*/",
           "getterMethodName" : "getName",
           "getterModel" : {
             "returnType" : "String",
@@ -20984,7 +21020,7 @@
           "marshallingType" : "STRING",
           "name" : "Name",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The name of the projected utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@param name The name of the projected utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@see MetricName*/",
+          "setterDocumentation" : "/**<p>The name of the projected utilization metric.</p>\n@param name The name of the projected utilization metric.\n@see MetricName*/",
           "setterMethodName" : "setName",
           "setterModel" : {
             "timestampFormat" : null,
@@ -20999,13 +21035,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The name of the projected utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@param name The name of the projected utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricName*/",
+          "varargSetterDocumentation" : "/**<p>The name of the projected utilization metric.</p>\n@param name The name of the projected utilization metric.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricName*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
-            "documentation" : "<p>The name of the projected utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>",
+            "documentation" : "<p>The name of the projected utilization metric.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -23372,7 +23408,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Describes a projected utilization metric of a recommendation option.</p>",
+      "documentation" : "<p>Describes a projected utilization metric of a recommendation option.</p> <note> <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned when you run the <code>GetEC2RecommendationProjectedMetrics</code> action. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
@@ -26004,12 +26040,12 @@
         "c2jName" : "name",
         "c2jShape" : "MetricName",
         "deprecated" : false,
-        "documentation" : "<p>The name of the utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>",
+        "documentation" : "<p>The name of the utilization metric.</p> <note> <p>The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>",
         "endpointDiscoveryId" : false,
         "enumType" : "MetricName",
-        "fluentSetterDocumentation" : "/**<p>The name of the utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@param name The name of the utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricName*/",
+        "fluentSetterDocumentation" : "/**<p>The name of the utilization metric.</p> <note> <p>The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@param name The name of the utilization metric.</p> <note> <p>The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricName*/",
         "fluentSetterMethodName" : "withName",
-        "getterDocumentation" : "/**<p>The name of the utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@return The name of the utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@see MetricName*/",
+        "getterDocumentation" : "/**<p>The name of the utilization metric.</p> <note> <p>The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@return The name of the utilization metric.</p> <note> <p>The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@see MetricName*/",
         "getterMethodName" : "getName",
         "getterModel" : {
           "returnType" : "String",
@@ -26043,7 +26079,7 @@
         "marshallingType" : "STRING",
         "name" : "Name",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The name of the utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@param name The name of the utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@see MetricName*/",
+        "setterDocumentation" : "/**<p>The name of the utilization metric.</p> <note> <p>The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@param name The name of the utilization metric.</p> <note> <p>The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@see MetricName*/",
         "setterMethodName" : "setName",
         "setterModel" : {
           "timestampFormat" : null,
@@ -26058,13 +26094,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The name of the utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@param name The name of the utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricName*/",
+        "varargSetterDocumentation" : "/**<p>The name of the utilization metric.</p> <note> <p>The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@param name The name of the utilization metric.</p> <note> <p>The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricName*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
-          "documentation" : "<p>The name of the utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>",
+          "documentation" : "<p>The name of the utilization metric.</p> <note> <p>The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -26213,12 +26249,12 @@
           "c2jName" : "name",
           "c2jShape" : "MetricName",
           "deprecated" : false,
-          "documentation" : "<p>The name of the utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>",
+          "documentation" : "<p>The name of the utilization metric.</p> <note> <p>The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>",
           "endpointDiscoveryId" : false,
           "enumType" : "MetricName",
-          "fluentSetterDocumentation" : "/**<p>The name of the utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@param name The name of the utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricName*/",
+          "fluentSetterDocumentation" : "/**<p>The name of the utilization metric.</p> <note> <p>The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@param name The name of the utilization metric.</p> <note> <p>The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricName*/",
           "fluentSetterMethodName" : "withName",
-          "getterDocumentation" : "/**<p>The name of the utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@return The name of the utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@see MetricName*/",
+          "getterDocumentation" : "/**<p>The name of the utilization metric.</p> <note> <p>The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@return The name of the utilization metric.</p> <note> <p>The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@see MetricName*/",
           "getterMethodName" : "getName",
           "getterModel" : {
             "returnType" : "String",
@@ -26252,7 +26288,7 @@
           "marshallingType" : "STRING",
           "name" : "Name",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The name of the utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@param name The name of the utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@see MetricName*/",
+          "setterDocumentation" : "/**<p>The name of the utilization metric.</p> <note> <p>The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@param name The name of the utilization metric.</p> <note> <p>The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@see MetricName*/",
           "setterMethodName" : "setName",
           "setterModel" : {
             "timestampFormat" : null,
@@ -26267,13 +26303,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The name of the utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@param name The name of the utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricName*/",
+          "varargSetterDocumentation" : "/**<p>The name of the utilization metric.</p> <note> <p>The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>\n@param name The name of the utilization metric.</p> <note> <p>The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricName*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
-            "documentation" : "<p>The name of the utilization metric.</p> <note> <p>Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>",
+            "documentation" : "<p>The name of the utilization metric.</p> <note> <p>The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling Memory Utilization with the CloudWatch Agent</a>.</p> </note>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },

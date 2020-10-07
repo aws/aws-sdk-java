@@ -72,6 +72,39 @@ public class AWSMediaPackageAsyncClient extends AWSMediaPackageClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<ConfigureLogsResult> configureLogsAsync(ConfigureLogsRequest request) {
+
+        return configureLogsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConfigureLogsResult> configureLogsAsync(final ConfigureLogsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ConfigureLogsRequest, ConfigureLogsResult> asyncHandler) {
+        final ConfigureLogsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ConfigureLogsResult>() {
+            @Override
+            public ConfigureLogsResult call() throws Exception {
+                ConfigureLogsResult result = null;
+
+                try {
+                    result = executeConfigureLogs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateChannelResult> createChannelAsync(CreateChannelRequest request) {
 
         return createChannelAsync(request, null);

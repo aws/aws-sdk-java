@@ -38,6 +38,15 @@ public class InstanceRecommendationOption implements Serializable, Cloneable, St
      * <p>
      * An array of objects that describe the projected utilization metrics of the instance recommendation option.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned.
+     * Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch
+     * agent installed on them. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization
+     * with the CloudWatch Agent</a>.
+     * </p>
+     * </note>
      */
     private java.util.List<UtilizationMetric> projectedUtilizationMetrics;
     /**
@@ -107,9 +116,25 @@ public class InstanceRecommendationOption implements Serializable, Cloneable, St
      * <p>
      * An array of objects that describe the projected utilization metrics of the instance recommendation option.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned.
+     * Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch
+     * agent installed on them. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization
+     * with the CloudWatch Agent</a>.
+     * </p>
+     * </note>
      * 
      * @return An array of objects that describe the projected utilization metrics of the instance recommendation
-     *         option.
+     *         option.</p> <note>
+     *         <p>
+     *         The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned.
+     *         Additionally, the <code>Memory</code> metric is returned only for resources that have the unified
+     *         CloudWatch agent installed on them. For more information, see <a
+     *         href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory
+     *         Utilization with the CloudWatch Agent</a>.
+     *         </p>
      */
 
     public java.util.List<UtilizationMetric> getProjectedUtilizationMetrics() {
@@ -120,9 +145,26 @@ public class InstanceRecommendationOption implements Serializable, Cloneable, St
      * <p>
      * An array of objects that describe the projected utilization metrics of the instance recommendation option.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned.
+     * Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch
+     * agent installed on them. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization
+     * with the CloudWatch Agent</a>.
+     * </p>
+     * </note>
      * 
      * @param projectedUtilizationMetrics
-     *        An array of objects that describe the projected utilization metrics of the instance recommendation option.
+     *        An array of objects that describe the projected utilization metrics of the instance recommendation
+     *        option.</p> <note>
+     *        <p>
+     *        The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned.
+     *        Additionally, the <code>Memory</code> metric is returned only for resources that have the unified
+     *        CloudWatch agent installed on them. For more information, see <a
+     *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory
+     *        Utilization with the CloudWatch Agent</a>.
+     *        </p>
      */
 
     public void setProjectedUtilizationMetrics(java.util.Collection<UtilizationMetric> projectedUtilizationMetrics) {
@@ -138,6 +180,15 @@ public class InstanceRecommendationOption implements Serializable, Cloneable, St
      * <p>
      * An array of objects that describe the projected utilization metrics of the instance recommendation option.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned.
+     * Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch
+     * agent installed on them. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization
+     * with the CloudWatch Agent</a>.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setProjectedUtilizationMetrics(java.util.Collection)} or
@@ -145,7 +196,15 @@ public class InstanceRecommendationOption implements Serializable, Cloneable, St
      * </p>
      * 
      * @param projectedUtilizationMetrics
-     *        An array of objects that describe the projected utilization metrics of the instance recommendation option.
+     *        An array of objects that describe the projected utilization metrics of the instance recommendation
+     *        option.</p> <note>
+     *        <p>
+     *        The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned.
+     *        Additionally, the <code>Memory</code> metric is returned only for resources that have the unified
+     *        CloudWatch agent installed on them. For more information, see <a
+     *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory
+     *        Utilization with the CloudWatch Agent</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,9 +222,26 @@ public class InstanceRecommendationOption implements Serializable, Cloneable, St
      * <p>
      * An array of objects that describe the projected utilization metrics of the instance recommendation option.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned.
+     * Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch
+     * agent installed on them. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization
+     * with the CloudWatch Agent</a>.
+     * </p>
+     * </note>
      * 
      * @param projectedUtilizationMetrics
-     *        An array of objects that describe the projected utilization metrics of the instance recommendation option.
+     *        An array of objects that describe the projected utilization metrics of the instance recommendation
+     *        option.</p> <note>
+     *        <p>
+     *        The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned.
+     *        Additionally, the <code>Memory</code> metric is returned only for resources that have the unified
+     *        CloudWatch agent installed on them. For more information, see <a
+     *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory
+     *        Utilization with the CloudWatch Agent</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

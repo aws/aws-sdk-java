@@ -31,6 +31,35 @@ import com.amazonaws.services.mediapackage.model.*;
 public interface AWSMediaPackageAsync extends AWSMediaPackage {
 
     /**
+     * Changes the Channel's properities to configure log subscription
+     * 
+     * @param configureLogsRequest
+     *        the option to configure log subscription.
+     * @return A Java Future containing the result of the ConfigureLogs operation returned by the service.
+     * @sample AWSMediaPackageAsync.ConfigureLogs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/ConfigureLogs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ConfigureLogsResult> configureLogsAsync(ConfigureLogsRequest configureLogsRequest);
+
+    /**
+     * Changes the Channel's properities to configure log subscription
+     * 
+     * @param configureLogsRequest
+     *        the option to configure log subscription.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ConfigureLogs operation returned by the service.
+     * @sample AWSMediaPackageAsyncHandler.ConfigureLogs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/ConfigureLogs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ConfigureLogsResult> configureLogsAsync(ConfigureLogsRequest configureLogsRequest,
+            com.amazonaws.handlers.AsyncHandler<ConfigureLogsRequest, ConfigureLogsResult> asyncHandler);
+
+    /**
      * Creates a new Channel.
      * 
      * @param createChannelRequest

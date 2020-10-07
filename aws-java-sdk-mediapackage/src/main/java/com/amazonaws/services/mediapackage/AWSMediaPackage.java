@@ -40,6 +40,30 @@ public interface AWSMediaPackage {
     String ENDPOINT_PREFIX = "mediapackage";
 
     /**
+     * Changes the Channel's properities to configure log subscription
+     * 
+     * @param configureLogsRequest
+     *        the option to configure log subscription.
+     * @return Result of the ConfigureLogs operation returned by the service.
+     * @throws UnprocessableEntityException
+     *         The parameters sent in the request are not valid.
+     * @throws InternalServerErrorException
+     *         An unexpected error occurred.
+     * @throws ForbiddenException
+     *         The client is not authorized to access the requested resource.
+     * @throws NotFoundException
+     *         The requested resource does not exist.
+     * @throws ServiceUnavailableException
+     *         An unexpected error occurred.
+     * @throws TooManyRequestsException
+     *         The client has exceeded their resource or throttling limits.
+     * @sample AWSMediaPackage.ConfigureLogs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/ConfigureLogs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ConfigureLogsResult configureLogs(ConfigureLogsRequest configureLogsRequest);
+
+    /**
      * Creates a new Channel.
      * 
      * @param createChannelRequest

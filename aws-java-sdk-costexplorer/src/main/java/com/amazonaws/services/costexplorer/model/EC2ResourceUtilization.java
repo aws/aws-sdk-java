@@ -46,6 +46,12 @@ public class EC2ResourceUtilization implements Serializable, Cloneable, Structur
      * </p>
      */
     private String maxStorageUtilizationPercentage;
+    /**
+     * <p>
+     * The EBS field that contains a list of EBS metrics associated with the current instance.
+     * </p>
+     */
+    private EBSResourceUtilization eBSResourceUtilization;
 
     /**
      * <p>
@@ -168,6 +174,46 @@ public class EC2ResourceUtilization implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The EBS field that contains a list of EBS metrics associated with the current instance.
+     * </p>
+     * 
+     * @param eBSResourceUtilization
+     *        The EBS field that contains a list of EBS metrics associated with the current instance.
+     */
+
+    public void setEBSResourceUtilization(EBSResourceUtilization eBSResourceUtilization) {
+        this.eBSResourceUtilization = eBSResourceUtilization;
+    }
+
+    /**
+     * <p>
+     * The EBS field that contains a list of EBS metrics associated with the current instance.
+     * </p>
+     * 
+     * @return The EBS field that contains a list of EBS metrics associated with the current instance.
+     */
+
+    public EBSResourceUtilization getEBSResourceUtilization() {
+        return this.eBSResourceUtilization;
+    }
+
+    /**
+     * <p>
+     * The EBS field that contains a list of EBS metrics associated with the current instance.
+     * </p>
+     * 
+     * @param eBSResourceUtilization
+     *        The EBS field that contains a list of EBS metrics associated with the current instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EC2ResourceUtilization withEBSResourceUtilization(EBSResourceUtilization eBSResourceUtilization) {
+        setEBSResourceUtilization(eBSResourceUtilization);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +230,9 @@ public class EC2ResourceUtilization implements Serializable, Cloneable, Structur
         if (getMaxMemoryUtilizationPercentage() != null)
             sb.append("MaxMemoryUtilizationPercentage: ").append(getMaxMemoryUtilizationPercentage()).append(",");
         if (getMaxStorageUtilizationPercentage() != null)
-            sb.append("MaxStorageUtilizationPercentage: ").append(getMaxStorageUtilizationPercentage());
+            sb.append("MaxStorageUtilizationPercentage: ").append(getMaxStorageUtilizationPercentage()).append(",");
+        if (getEBSResourceUtilization() != null)
+            sb.append("EBSResourceUtilization: ").append(getEBSResourceUtilization());
         sb.append("}");
         return sb.toString();
     }
@@ -213,6 +261,10 @@ public class EC2ResourceUtilization implements Serializable, Cloneable, Structur
         if (other.getMaxStorageUtilizationPercentage() != null
                 && other.getMaxStorageUtilizationPercentage().equals(this.getMaxStorageUtilizationPercentage()) == false)
             return false;
+        if (other.getEBSResourceUtilization() == null ^ this.getEBSResourceUtilization() == null)
+            return false;
+        if (other.getEBSResourceUtilization() != null && other.getEBSResourceUtilization().equals(this.getEBSResourceUtilization()) == false)
+            return false;
         return true;
     }
 
@@ -224,6 +276,7 @@ public class EC2ResourceUtilization implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getMaxCpuUtilizationPercentage() == null) ? 0 : getMaxCpuUtilizationPercentage().hashCode());
         hashCode = prime * hashCode + ((getMaxMemoryUtilizationPercentage() == null) ? 0 : getMaxMemoryUtilizationPercentage().hashCode());
         hashCode = prime * hashCode + ((getMaxStorageUtilizationPercentage() == null) ? 0 : getMaxStorageUtilizationPercentage().hashCode());
+        hashCode = prime * hashCode + ((getEBSResourceUtilization() == null) ? 0 : getEBSResourceUtilization().hashCode());
         return hashCode;
     }
 

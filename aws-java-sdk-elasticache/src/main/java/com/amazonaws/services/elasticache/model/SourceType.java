@@ -24,7 +24,9 @@ public enum SourceType {
     CacheParameterGroup("cache-parameter-group"),
     CacheSecurityGroup("cache-security-group"),
     CacheSubnetGroup("cache-subnet-group"),
-    ReplicationGroup("replication-group");
+    ReplicationGroup("replication-group"),
+    User("user"),
+    UserGroup("user-group");
 
     private String value;
 

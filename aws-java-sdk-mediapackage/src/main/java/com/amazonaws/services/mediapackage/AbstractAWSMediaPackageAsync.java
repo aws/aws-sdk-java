@@ -28,6 +28,19 @@ public class AbstractAWSMediaPackageAsync extends AbstractAWSMediaPackage implem
     }
 
     @Override
+    public java.util.concurrent.Future<ConfigureLogsResult> configureLogsAsync(ConfigureLogsRequest request) {
+
+        return configureLogsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConfigureLogsResult> configureLogsAsync(ConfigureLogsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ConfigureLogsRequest, ConfigureLogsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateChannelResult> createChannelAsync(CreateChannelRequest request) {
 
         return createChannelAsync(request, null);

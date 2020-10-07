@@ -608,6 +608,12 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String kmsKeyId;
+    /**
+     * <p>
+     * The list of user groups to associate with the replication group.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> userGroupIds;
 
     /**
      * <p>
@@ -4603,6 +4609,79 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The list of user groups to associate with the replication group.
+     * </p>
+     * 
+     * @return The list of user groups to associate with the replication group.
+     */
+
+    public java.util.List<String> getUserGroupIds() {
+        if (userGroupIds == null) {
+            userGroupIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return userGroupIds;
+    }
+
+    /**
+     * <p>
+     * The list of user groups to associate with the replication group.
+     * </p>
+     * 
+     * @param userGroupIds
+     *        The list of user groups to associate with the replication group.
+     */
+
+    public void setUserGroupIds(java.util.Collection<String> userGroupIds) {
+        if (userGroupIds == null) {
+            this.userGroupIds = null;
+            return;
+        }
+
+        this.userGroupIds = new com.amazonaws.internal.SdkInternalList<String>(userGroupIds);
+    }
+
+    /**
+     * <p>
+     * The list of user groups to associate with the replication group.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUserGroupIds(java.util.Collection)} or {@link #withUserGroupIds(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param userGroupIds
+     *        The list of user groups to associate with the replication group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateReplicationGroupRequest withUserGroupIds(String... userGroupIds) {
+        if (this.userGroupIds == null) {
+            setUserGroupIds(new com.amazonaws.internal.SdkInternalList<String>(userGroupIds.length));
+        }
+        for (String ele : userGroupIds) {
+            this.userGroupIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of user groups to associate with the replication group.
+     * </p>
+     * 
+     * @param userGroupIds
+     *        The list of user groups to associate with the replication group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateReplicationGroupRequest withUserGroupIds(java.util.Collection<String> userGroupIds) {
+        setUserGroupIds(userGroupIds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -4675,7 +4754,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         if (getAtRestEncryptionEnabled() != null)
             sb.append("AtRestEncryptionEnabled: ").append(getAtRestEncryptionEnabled()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: ").append(getKmsKeyId());
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getUserGroupIds() != null)
+            sb.append("UserGroupIds: ").append(getUserGroupIds());
         sb.append("}");
         return sb.toString();
     }
@@ -4814,6 +4895,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getUserGroupIds() == null ^ this.getUserGroupIds() == null)
+            return false;
+        if (other.getUserGroupIds() != null && other.getUserGroupIds().equals(this.getUserGroupIds()) == false)
+            return false;
         return true;
     }
 
@@ -4853,6 +4938,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getTransitEncryptionEnabled() == null) ? 0 : getTransitEncryptionEnabled().hashCode());
         hashCode = prime * hashCode + ((getAtRestEncryptionEnabled() == null) ? 0 : getAtRestEncryptionEnabled().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getUserGroupIds() == null) ? 0 : getUserGroupIds().hashCode());
         return hashCode;
     }
 

@@ -21,7 +21,11 @@ import javax.annotation.Generated;
 public enum MetricName {
 
     Cpu("Cpu"),
-    Memory("Memory");
+    Memory("Memory"),
+    EBS_READ_OPS_PER_SECOND("EBS_READ_OPS_PER_SECOND"),
+    EBS_WRITE_OPS_PER_SECOND("EBS_WRITE_OPS_PER_SECOND"),
+    EBS_READ_BYTES_PER_SECOND("EBS_READ_BYTES_PER_SECOND"),
+    EBS_WRITE_BYTES_PER_SECOND("EBS_WRITE_BYTES_PER_SECOND");
 
     private String value;
 

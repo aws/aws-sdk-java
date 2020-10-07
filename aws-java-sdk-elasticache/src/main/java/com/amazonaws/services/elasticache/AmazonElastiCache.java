@@ -500,6 +500,10 @@ public interface AmazonElastiCache {
      *         group.
      * @throws InvalidSubnetException
      *         An invalid subnet identifier was specified.
+     * @throws SubnetNotAllowedException
+     *         At least one subnet ID does not match the other subnet IDs. This mismatch typically occurs when a user
+     *         sets one subnet ID to a regional Availability Zone and a different one to an outpost. Or when a user sets
+     *         the subnet ID to an Outpost when not subscribed on this service.
      * @sample AmazonElastiCache.CreateCacheSubnetGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSubnetGroup"
      *      target="_top">AWS API Documentation</a>
@@ -587,6 +591,10 @@ public interface AmazonElastiCache {
      *         The requested cluster is not in the <code>available</code> state.
      * @throws ReplicationGroupAlreadyExistsException
      *         The specified replication group already exists.
+     * @throws InvalidUserGroupStateException
+     *         The user group is not in an active state.
+     * @throws UserGroupNotFoundException
+     *         The user group was not found or does not exist
      * @throws InsufficientCacheClusterCapacityException
      *         The requested cache node type is not available in the specified Availability Zone. For more information,
      *         see <a href=
@@ -677,6 +685,58 @@ public interface AmazonElastiCache {
      *      Documentation</a>
      */
     Snapshot createSnapshot(CreateSnapshotRequest createSnapshotRequest);
+
+    /**
+     * <p>
+     * For Redis engine version 6.04 onwards: Creates a Redis user. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access
+     * Control (RBAC)</a>.
+     * </p>
+     * 
+     * @param createUserRequest
+     * @return Result of the CreateUser operation returned by the service.
+     * @throws UserAlreadyExistsException
+     *         A user with this ID already exists.
+     * @throws UserQuotaExceededException
+     *         The quota of users has been exceeded.
+     * @throws DuplicateUserNameException
+     *         A user with this username already exists.
+     * @throws InvalidParameterValueException
+     *         The value for a parameter is invalid.
+     * @throws InvalidParameterCombinationException
+     *         Two or more incompatible parameters were specified.
+     * @sample AmazonElastiCache.CreateUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateUserResult createUser(CreateUserRequest createUserRequest);
+
+    /**
+     * <p>
+     * For Redis engine version 6.04 onwards: Creates a Redis user group. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access
+     * Control (RBAC)</a>
+     * </p>
+     * 
+     * @param createUserGroupRequest
+     * @return Result of the CreateUserGroup operation returned by the service.
+     * @throws UserNotFoundException
+     *         The user does not exist or could not be found.
+     * @throws DuplicateUserNameException
+     *         A user with this username already exists.
+     * @throws UserGroupAlreadyExistsException
+     *         The user group with this ID already exists.
+     * @throws DefaultUserRequiredException
+     *         You must add default user to a user group.
+     * @throws UserGroupQuotaExceededException
+     *         The number of users exceeds the user group limit.
+     * @throws InvalidParameterValueException
+     *         The value for a parameter is invalid.
+     * @sample AmazonElastiCache.CreateUserGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateUserGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateUserGroupResult createUserGroup(CreateUserGroupRequest createUserGroupRequest);
 
     /**
      * <p>
@@ -1013,6 +1073,51 @@ public interface AmazonElastiCache {
      *      Documentation</a>
      */
     Snapshot deleteSnapshot(DeleteSnapshotRequest deleteSnapshotRequest);
+
+    /**
+     * <p>
+     * For Redis engine version 6.04 onwards: Deletes a user. The user will be removed from all user groups and in turn
+     * removed from all replication groups. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access
+     * Control (RBAC)</a>.
+     * </p>
+     * 
+     * @param deleteUserRequest
+     * @return Result of the DeleteUser operation returned by the service.
+     * @throws InvalidUserStateException
+     *         The user is not in active state.
+     * @throws UserNotFoundException
+     *         The user does not exist or could not be found.
+     * @throws InvalidParameterValueException
+     *         The value for a parameter is invalid.
+     * @throws DefaultUserAssociatedToUserGroupException
+     * @sample AmazonElastiCache.DeleteUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteUserResult deleteUser(DeleteUserRequest deleteUserRequest);
+
+    /**
+     * <p>
+     * For Redis engine version 6.04 onwards: Deletes a ser group. The user group must first be disassociated from the
+     * replcation group before it can be deleted. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access
+     * Control (RBAC)</a>.
+     * </p>
+     * 
+     * @param deleteUserGroupRequest
+     * @return Result of the DeleteUserGroup operation returned by the service.
+     * @throws UserGroupNotFoundException
+     *         The user group was not found or does not exist
+     * @throws InvalidUserGroupStateException
+     *         The user group is not in an active state.
+     * @throws InvalidParameterValueException
+     *         The value for a parameter is invalid.
+     * @sample AmazonElastiCache.DeleteUserGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteUserGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteUserGroupResult deleteUserGroup(DeleteUserGroupRequest deleteUserGroupRequest);
 
     /**
      * <p>
@@ -1416,6 +1521,40 @@ public interface AmazonElastiCache {
 
     /**
      * <p>
+     * Returns a list of user groups.
+     * </p>
+     * 
+     * @param describeUserGroupsRequest
+     * @return Result of the DescribeUserGroups operation returned by the service.
+     * @throws UserGroupNotFoundException
+     *         The user group was not found or does not exist
+     * @throws InvalidParameterCombinationException
+     *         Two or more incompatible parameters were specified.
+     * @sample AmazonElastiCache.DescribeUserGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUserGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeUserGroupsResult describeUserGroups(DescribeUserGroupsRequest describeUserGroupsRequest);
+
+    /**
+     * <p>
+     * Returns a list of users.
+     * </p>
+     * 
+     * @param describeUsersRequest
+     * @return Result of the DescribeUsers operation returned by the service.
+     * @throws UserNotFoundException
+     *         The user does not exist or could not be found.
+     * @throws InvalidParameterCombinationException
+     *         Two or more incompatible parameters were specified.
+     * @sample AmazonElastiCache.DescribeUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUsers" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeUsersResult describeUsers(DescribeUsersRequest describeUsersRequest);
+
+    /**
+     * <p>
      * Remove a secondary cluster from the Global Datastore using the Global Datastore name. The secondary cluster will
      * no longer receive updates from the primary cluster, but will remain as a standalone cluster in that AWS region.
      * </p>
@@ -1668,6 +1807,10 @@ public interface AmazonElastiCache {
      *         The requested subnet is being used by another cache subnet group.
      * @throws InvalidSubnetException
      *         An invalid subnet identifier was specified.
+     * @throws SubnetNotAllowedException
+     *         At least one subnet ID does not match the other subnet IDs. This mismatch typically occurs when a user
+     *         sets one subnet ID to a regional Availability Zone and a different one to an outpost. Or when a user sets
+     *         the subnet ID to an Outpost when not subscribed on this service.
      * @sample AmazonElastiCache.ModifyCacheSubnetGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheSubnetGroup"
      *      target="_top">AWS API Documentation</a>
@@ -1725,6 +1868,10 @@ public interface AmazonElastiCache {
      *         The specified replication group does not exist.
      * @throws InvalidReplicationGroupStateException
      *         The requested replication group is not in the <code>available</code> state.
+     * @throws InvalidUserGroupStateException
+     *         The user group is not in an active state.
+     * @throws UserGroupNotFoundException
+     *         The user group was not found or does not exist
      * @throws InvalidCacheClusterStateException
      *         The requested cluster is not in the <code>available</code> state.
      * @throws InvalidCacheSecurityGroupStateException
@@ -1798,6 +1945,54 @@ public interface AmazonElastiCache {
      *      target="_top">AWS API Documentation</a>
      */
     ReplicationGroup modifyReplicationGroupShardConfiguration(ModifyReplicationGroupShardConfigurationRequest modifyReplicationGroupShardConfigurationRequest);
+
+    /**
+     * <p>
+     * Changes user password(s) and/or access string.
+     * </p>
+     * 
+     * @param modifyUserRequest
+     * @return Result of the ModifyUser operation returned by the service.
+     * @throws UserNotFoundException
+     *         The user does not exist or could not be found.
+     * @throws InvalidUserStateException
+     *         The user is not in active state.
+     * @throws InvalidParameterValueException
+     *         The value for a parameter is invalid.
+     * @throws InvalidParameterCombinationException
+     *         Two or more incompatible parameters were specified.
+     * @sample AmazonElastiCache.ModifyUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ModifyUserResult modifyUser(ModifyUserRequest modifyUserRequest);
+
+    /**
+     * <p>
+     * Changes the list of users that belong to the user group.
+     * </p>
+     * 
+     * @param modifyUserGroupRequest
+     * @return Result of the ModifyUserGroup operation returned by the service.
+     * @throws UserGroupNotFoundException
+     *         The user group was not found or does not exist
+     * @throws UserNotFoundException
+     *         The user does not exist or could not be found.
+     * @throws DuplicateUserNameException
+     *         A user with this username already exists.
+     * @throws DefaultUserRequiredException
+     *         You must add default user to a user group.
+     * @throws InvalidUserGroupStateException
+     *         The user group is not in an active state.
+     * @throws InvalidParameterValueException
+     *         The value for a parameter is invalid.
+     * @throws InvalidParameterCombinationException
+     *         Two or more incompatible parameters were specified.
+     * @sample AmazonElastiCache.ModifyUserGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyUserGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ModifyUserGroupResult modifyUserGroup(ModifyUserGroupRequest modifyUserGroupRequest);
 
     /**
      * <p>

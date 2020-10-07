@@ -65,6 +65,16 @@ public class ConfigureShardStaxUnmarshaller implements Unmarshaller<ConfigureSha
                     continue;
                 }
 
+                if (context.testExpression("PreferredOutpostArns", targetDepth)) {
+                    configureShard.withPreferredOutpostArns(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("PreferredOutpostArns/PreferredOutpostArn", targetDepth)) {
+                    configureShard.withPreferredOutpostArns(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return configureShard;

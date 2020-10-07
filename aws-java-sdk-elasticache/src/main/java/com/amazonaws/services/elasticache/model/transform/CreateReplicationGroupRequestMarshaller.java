@@ -135,6 +135,26 @@ public class CreateReplicationGroupRequestMarshaller implements Marshaller<Reque
                         replicaAvailabilityZonesListIndex++;
                     }
                 }
+
+                if (nodeGroupConfigurationListValue.getPrimaryOutpostArn() != null) {
+                    request.addParameter("NodeGroupConfiguration.NodeGroupConfiguration." + nodeGroupConfigurationListIndex + ".PrimaryOutpostArn",
+                            StringUtils.fromString(nodeGroupConfigurationListValue.getPrimaryOutpostArn()));
+                }
+
+                if (!nodeGroupConfigurationListValue.getReplicaOutpostArns().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) nodeGroupConfigurationListValue.getReplicaOutpostArns()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> replicaOutpostArnsList = (com.amazonaws.internal.SdkInternalList<String>) nodeGroupConfigurationListValue
+                            .getReplicaOutpostArns();
+                    int replicaOutpostArnsListIndex = 1;
+
+                    for (String replicaOutpostArnsListValue : replicaOutpostArnsList) {
+                        if (replicaOutpostArnsListValue != null) {
+                            request.addParameter("NodeGroupConfiguration.NodeGroupConfiguration." + nodeGroupConfigurationListIndex
+                                    + ".ReplicaOutpostArns.OutpostArn." + replicaOutpostArnsListIndex, StringUtils.fromString(replicaOutpostArnsListValue));
+                        }
+                        replicaOutpostArnsListIndex++;
+                    }
+                }
                 nodeGroupConfigurationListIndex++;
             }
         }
@@ -262,6 +282,20 @@ public class CreateReplicationGroupRequestMarshaller implements Marshaller<Reque
 
         if (createReplicationGroupRequest.getKmsKeyId() != null) {
             request.addParameter("KmsKeyId", StringUtils.fromString(createReplicationGroupRequest.getKmsKeyId()));
+        }
+
+        if (!createReplicationGroupRequest.getUserGroupIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createReplicationGroupRequest.getUserGroupIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> userGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) createReplicationGroupRequest
+                    .getUserGroupIds();
+            int userGroupIdsListIndex = 1;
+
+            for (String userGroupIdsListValue : userGroupIdsList) {
+                if (userGroupIdsListValue != null) {
+                    request.addParameter("UserGroupIds.member." + userGroupIdsListIndex, StringUtils.fromString(userGroupIdsListValue));
+                }
+                userGroupIdsListIndex++;
+            }
         }
 
         return request;

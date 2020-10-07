@@ -63,6 +63,11 @@ public class NodeGroupMemberStaxUnmarshaller implements Unmarshaller<NodeGroupMe
                     continue;
                 }
 
+                if (context.testExpression("PreferredOutpostArn", targetDepth)) {
+                    nodeGroupMember.setPreferredOutpostArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("CurrentRole", targetDepth)) {
                     nodeGroupMember.setCurrentRole(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

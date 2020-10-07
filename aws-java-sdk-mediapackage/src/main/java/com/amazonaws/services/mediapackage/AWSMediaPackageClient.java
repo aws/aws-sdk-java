@@ -142,6 +142,71 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
     }
 
     /**
+     * Changes the Channel's properities to configure log subscription
+     * 
+     * @param configureLogsRequest
+     *        the option to configure log subscription.
+     * @return Result of the ConfigureLogs operation returned by the service.
+     * @throws UnprocessableEntityException
+     *         The parameters sent in the request are not valid.
+     * @throws InternalServerErrorException
+     *         An unexpected error occurred.
+     * @throws ForbiddenException
+     *         The client is not authorized to access the requested resource.
+     * @throws NotFoundException
+     *         The requested resource does not exist.
+     * @throws ServiceUnavailableException
+     *         An unexpected error occurred.
+     * @throws TooManyRequestsException
+     *         The client has exceeded their resource or throttling limits.
+     * @sample AWSMediaPackage.ConfigureLogs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/ConfigureLogs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ConfigureLogsResult configureLogs(ConfigureLogsRequest request) {
+        request = beforeClientExecution(request);
+        return executeConfigureLogs(request);
+    }
+
+    @SdkInternalApi
+    final ConfigureLogsResult executeConfigureLogs(ConfigureLogsRequest configureLogsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(configureLogsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ConfigureLogsRequest> request = null;
+        Response<ConfigureLogsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ConfigureLogsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(configureLogsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ConfigureLogs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ConfigureLogsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ConfigureLogsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Creates a new Channel.
      * 
      * @param createChannelRequest

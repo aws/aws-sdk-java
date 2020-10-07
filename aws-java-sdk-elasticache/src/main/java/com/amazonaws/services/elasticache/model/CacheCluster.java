@@ -216,6 +216,12 @@ public class CacheCluster implements Serializable, Cloneable {
     private String preferredAvailabilityZone;
     /**
      * <p>
+     * The outpost ARN in which the cache cluster is created.
+     * </p>
+     */
+    private String preferredOutpostArn;
+    /**
+     * <p>
      * The date and time when the cluster was created.
      * </p>
      */
@@ -1575,6 +1581,46 @@ public class CacheCluster implements Serializable, Cloneable {
 
     public CacheCluster withPreferredAvailabilityZone(String preferredAvailabilityZone) {
         setPreferredAvailabilityZone(preferredAvailabilityZone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The outpost ARN in which the cache cluster is created.
+     * </p>
+     * 
+     * @param preferredOutpostArn
+     *        The outpost ARN in which the cache cluster is created.
+     */
+
+    public void setPreferredOutpostArn(String preferredOutpostArn) {
+        this.preferredOutpostArn = preferredOutpostArn;
+    }
+
+    /**
+     * <p>
+     * The outpost ARN in which the cache cluster is created.
+     * </p>
+     * 
+     * @return The outpost ARN in which the cache cluster is created.
+     */
+
+    public String getPreferredOutpostArn() {
+        return this.preferredOutpostArn;
+    }
+
+    /**
+     * <p>
+     * The outpost ARN in which the cache cluster is created.
+     * </p>
+     * 
+     * @param preferredOutpostArn
+     *        The outpost ARN in which the cache cluster is created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CacheCluster withPreferredOutpostArn(String preferredOutpostArn) {
+        setPreferredOutpostArn(preferredOutpostArn);
         return this;
     }
 
@@ -2993,6 +3039,8 @@ public class CacheCluster implements Serializable, Cloneable {
             sb.append("NumCacheNodes: ").append(getNumCacheNodes()).append(",");
         if (getPreferredAvailabilityZone() != null)
             sb.append("PreferredAvailabilityZone: ").append(getPreferredAvailabilityZone()).append(",");
+        if (getPreferredOutpostArn() != null)
+            sb.append("PreferredOutpostArn: ").append(getPreferredOutpostArn()).append(",");
         if (getCacheClusterCreateTime() != null)
             sb.append("CacheClusterCreateTime: ").append(getCacheClusterCreateTime()).append(",");
         if (getPreferredMaintenanceWindow() != null)
@@ -3078,6 +3126,10 @@ public class CacheCluster implements Serializable, Cloneable {
         if (other.getPreferredAvailabilityZone() == null ^ this.getPreferredAvailabilityZone() == null)
             return false;
         if (other.getPreferredAvailabilityZone() != null && other.getPreferredAvailabilityZone().equals(this.getPreferredAvailabilityZone()) == false)
+            return false;
+        if (other.getPreferredOutpostArn() == null ^ this.getPreferredOutpostArn() == null)
+            return false;
+        if (other.getPreferredOutpostArn() != null && other.getPreferredOutpostArn().equals(this.getPreferredOutpostArn()) == false)
             return false;
         if (other.getCacheClusterCreateTime() == null ^ this.getCacheClusterCreateTime() == null)
             return false;
@@ -3168,6 +3220,7 @@ public class CacheCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCacheClusterStatus() == null) ? 0 : getCacheClusterStatus().hashCode());
         hashCode = prime * hashCode + ((getNumCacheNodes() == null) ? 0 : getNumCacheNodes().hashCode());
         hashCode = prime * hashCode + ((getPreferredAvailabilityZone() == null) ? 0 : getPreferredAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getPreferredOutpostArn() == null) ? 0 : getPreferredOutpostArn().hashCode());
         hashCode = prime * hashCode + ((getCacheClusterCreateTime() == null) ? 0 : getCacheClusterCreateTime().hashCode());
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode());
         hashCode = prime * hashCode + ((getPendingModifiedValues() == null) ? 0 : getPendingModifiedValues().hashCode());

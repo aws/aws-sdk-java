@@ -406,7 +406,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
      * and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time
      * range. For a complete list of valid dimensions, see the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html"
-     * >GetDimensionValues</a> operation. Master accounts in an organization in AWS Organizations have access to all
+     * >GetDimensionValues</a> operation. Master account in an organization in AWS Organizations have access to all
      * member accounts.
      * </p>
      * 
@@ -425,7 +425,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
      * and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time
      * range. For a complete list of valid dimensions, see the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html"
-     * >GetDimensionValues</a> operation. Master accounts in an organization in AWS Organizations have access to all
+     * >GetDimensionValues</a> operation. Master account in an organization in AWS Organizations have access to all
      * member accounts.
      * </p>
      * 
@@ -449,7 +449,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
      * can also filter and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a
      * specific time range. For a complete list of valid dimensions, see the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html"
-     * >GetDimensionValues</a> operation. Master accounts in an organization in AWS Organizations have access to all
+     * >GetDimensionValues</a> operation. Master account in an organization in AWS Organizations have access to all
      * member accounts. This API is currently available for the Amazon Elastic Compute Cloud – Compute service only.
      * </p>
      * <note>
@@ -478,7 +478,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
      * can also filter and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a
      * specific time range. For a complete list of valid dimensions, see the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html"
-     * >GetDimensionValues</a> operation. Master accounts in an organization in AWS Organizations have access to all
+     * >GetDimensionValues</a> operation. Master account in an organization in AWS Organizations have access to all
      * member accounts. This API is currently available for the Amazon Elastic Compute Cloud – Compute service only.
      * </p>
      * <note>
@@ -811,7 +811,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * Retrieves the reservation utilization for your account. Master accounts in an organization have access to member
+     * Retrieves the reservation utilization for your account. Master account in an organization have access to member
      * accounts. You can filter data by dimensions in a time period. You can use <code>GetDimensionValues</code> to
      * determine the possible dimension values. Currently, you can group only by <code>SUBSCRIPTION_ID</code>.
      * </p>
@@ -827,7 +827,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * Retrieves the reservation utilization for your account. Master accounts in an organization have access to member
+     * Retrieves the reservation utilization for your account. Master account in an organization have access to member
      * accounts. You can filter data by dimensions in a time period. You can use <code>GetDimensionValues</code> to
      * determine the possible dimension values. Currently, you can group only by <code>SUBSCRIPTION_ID</code>.
      * </p>
@@ -1018,7 +1018,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
     /**
      * <p>
      * Retrieves the Savings Plans utilization for your account across date ranges with daily or monthly granularity.
-     * Master accounts in an organization have access to member accounts. You can use <code>GetDimensionValues</code> in
+     * Master account in an organization have access to member accounts. You can use <code>GetDimensionValues</code> in
      * <code>SAVINGS_PLANS</code> to determine the possible dimension values.
      * </p>
      * <note>
@@ -1039,7 +1039,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
     /**
      * <p>
      * Retrieves the Savings Plans utilization for your account across date ranges with daily or monthly granularity.
-     * Master accounts in an organization have access to member accounts. You can use <code>GetDimensionValues</code> in
+     * Master account in an organization have access to member accounts. You can use <code>GetDimensionValues</code> in
      * <code>SAVINGS_PLANS</code> to determine the possible dimension values.
      * </p>
      * <note>

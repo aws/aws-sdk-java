@@ -21,6 +21,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Describes a projected utilization metric of a recommendation option, such as an Amazon EC2 instance.
  * </p>
+ * <note>
+ * <p>
+ * The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned when you run
+ * the <code>GetEC2RecommendationProjectedMetrics</code> action. Additionally, the <code>Memory</code> metric is
+ * returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a
+ * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with
+ * the CloudWatch Agent</a>.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ProjectedMetric" target="_top">AWS
  *      API Documentation</a>
@@ -32,14 +41,6 @@ public class ProjectedMetric implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The name of the projected utilization metric.
      * </p>
-     * <note>
-     * <p>
-     * Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html">Enabling
-     * Memory Utilization with the CloudWatch Agent</a>.
-     * </p>
-     * </note>
      */
     private String name;
     /**
@@ -59,23 +60,9 @@ public class ProjectedMetric implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The name of the projected utilization metric.
      * </p>
-     * <note>
-     * <p>
-     * Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html">Enabling
-     * Memory Utilization with the CloudWatch Agent</a>.
-     * </p>
-     * </note>
      * 
      * @param name
-     *        The name of the projected utilization metric.</p> <note>
-     *        <p>
-     *        Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them.
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html"
-     *        >Enabling Memory Utilization with the CloudWatch Agent</a>.
-     *        </p>
+     *        The name of the projected utilization metric.
      * @see MetricName
      */
 
@@ -87,22 +74,8 @@ public class ProjectedMetric implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The name of the projected utilization metric.
      * </p>
-     * <note>
-     * <p>
-     * Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html">Enabling
-     * Memory Utilization with the CloudWatch Agent</a>.
-     * </p>
-     * </note>
      * 
-     * @return The name of the projected utilization metric.</p> <note>
-     *         <p>
-     *         Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them.
-     *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html"
-     *         >Enabling Memory Utilization with the CloudWatch Agent</a>.
-     *         </p>
+     * @return The name of the projected utilization metric.
      * @see MetricName
      */
 
@@ -114,23 +87,9 @@ public class ProjectedMetric implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The name of the projected utilization metric.
      * </p>
-     * <note>
-     * <p>
-     * Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html">Enabling
-     * Memory Utilization with the CloudWatch Agent</a>.
-     * </p>
-     * </note>
      * 
      * @param name
-     *        The name of the projected utilization metric.</p> <note>
-     *        <p>
-     *        Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them.
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html"
-     *        >Enabling Memory Utilization with the CloudWatch Agent</a>.
-     *        </p>
+     *        The name of the projected utilization metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricName
      */
@@ -144,23 +103,9 @@ public class ProjectedMetric implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The name of the projected utilization metric.
      * </p>
-     * <note>
-     * <p>
-     * Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html">Enabling
-     * Memory Utilization with the CloudWatch Agent</a>.
-     * </p>
-     * </note>
      * 
      * @param name
-     *        The name of the projected utilization metric.</p> <note>
-     *        <p>
-     *        Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them.
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html"
-     *        >Enabling Memory Utilization with the CloudWatch Agent</a>.
-     *        </p>
+     *        The name of the projected utilization metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricName
      */

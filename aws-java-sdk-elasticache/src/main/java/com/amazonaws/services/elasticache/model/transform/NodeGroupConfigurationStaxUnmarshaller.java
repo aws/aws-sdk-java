@@ -75,6 +75,21 @@ public class NodeGroupConfigurationStaxUnmarshaller implements Unmarshaller<Node
                     continue;
                 }
 
+                if (context.testExpression("PrimaryOutpostArn", targetDepth)) {
+                    nodeGroupConfiguration.setPrimaryOutpostArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ReplicaOutpostArns", targetDepth)) {
+                    nodeGroupConfiguration.withReplicaOutpostArns(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("ReplicaOutpostArns/OutpostArn", targetDepth)) {
+                    nodeGroupConfiguration.withReplicaOutpostArns(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return nodeGroupConfiguration;

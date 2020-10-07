@@ -55,7 +55,10 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
     private java.util.List<Filter> filters;
     /**
      * <p>
-     * The recommendations data to include in the export file.
+     * The recommendations data to include in the export file. For more information about the fields that can be
+     * exported, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files"
+     * >Exported files</a> in the <i>Compute Optimizer User Guide</i>.
      * </p>
      */
     private java.util.List<String> fieldsToExport;
@@ -369,10 +372,16 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The recommendations data to include in the export file.
+     * The recommendations data to include in the export file. For more information about the fields that can be
+     * exported, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files"
+     * >Exported files</a> in the <i>Compute Optimizer User Guide</i>.
      * </p>
      * 
-     * @return The recommendations data to include in the export file.
+     * @return The recommendations data to include in the export file. For more information about the fields that can be
+     *         exported, see <a href=
+     *         "https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files"
+     *         >Exported files</a> in the <i>Compute Optimizer User Guide</i>.
      * @see ExportableAutoScalingGroupField
      */
 
@@ -382,11 +391,17 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The recommendations data to include in the export file.
+     * The recommendations data to include in the export file. For more information about the fields that can be
+     * exported, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files"
+     * >Exported files</a> in the <i>Compute Optimizer User Guide</i>.
      * </p>
      * 
      * @param fieldsToExport
-     *        The recommendations data to include in the export file.
+     *        The recommendations data to include in the export file. For more information about the fields that can be
+     *        exported, see <a href=
+     *        "https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files"
+     *        >Exported files</a> in the <i>Compute Optimizer User Guide</i>.
      * @see ExportableAutoScalingGroupField
      */
 
@@ -401,7 +416,10 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The recommendations data to include in the export file.
+     * The recommendations data to include in the export file. For more information about the fields that can be
+     * exported, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files"
+     * >Exported files</a> in the <i>Compute Optimizer User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -410,7 +428,10 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      * </p>
      * 
      * @param fieldsToExport
-     *        The recommendations data to include in the export file.
+     *        The recommendations data to include in the export file. For more information about the fields that can be
+     *        exported, see <a href=
+     *        "https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files"
+     *        >Exported files</a> in the <i>Compute Optimizer User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExportableAutoScalingGroupField
      */
@@ -427,11 +448,17 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The recommendations data to include in the export file.
+     * The recommendations data to include in the export file. For more information about the fields that can be
+     * exported, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files"
+     * >Exported files</a> in the <i>Compute Optimizer User Guide</i>.
      * </p>
      * 
      * @param fieldsToExport
-     *        The recommendations data to include in the export file.
+     *        The recommendations data to include in the export file. For more information about the fields that can be
+     *        exported, see <a href=
+     *        "https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files"
+     *        >Exported files</a> in the <i>Compute Optimizer User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExportableAutoScalingGroupField
      */
@@ -443,11 +470,17 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The recommendations data to include in the export file.
+     * The recommendations data to include in the export file. For more information about the fields that can be
+     * exported, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files"
+     * >Exported files</a> in the <i>Compute Optimizer User Guide</i>.
      * </p>
      * 
      * @param fieldsToExport
-     *        The recommendations data to include in the export file.
+     *        The recommendations data to include in the export file. For more information about the fields that can be
+     *        exported, see <a href=
+     *        "https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files"
+     *        >Exported files</a> in the <i>Compute Optimizer User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExportableAutoScalingGroupField
      */

@@ -60,6 +60,10 @@ public class EC2ResourceUtilizationJsonUnmarshaller implements Unmarshaller<EC2R
                     context.nextToken();
                     eC2ResourceUtilization.setMaxStorageUtilizationPercentage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EBSResourceUtilization", targetDepth)) {
+                    context.nextToken();
+                    eC2ResourceUtilization.setEBSResourceUtilization(EBSResourceUtilizationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

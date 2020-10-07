@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum AuthTokenUpdateStrategyType {
 
     SET("SET"),
-    ROTATE("ROTATE");
+    ROTATE("ROTATE"),
+    DELETE("DELETE");
 
     private String value;
 

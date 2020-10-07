@@ -1,3 +1,20 @@
+# __1.11.878__ __2020-10-07__
+## __AWS Compute Optimizer__
+  - ### Features
+    - This release enables AWS Compute Optimizer to analyze EC2 instance-level EBS read and write operations, and throughput when generating recommendations for your EC2 instances and Auto Scaling groups.
+
+## __AWS Cost Explorer Service__
+  - ### Features
+    - Enables Rightsizing Recommendations to analyze and present EC2 instance-level EBS metrics when generating recommendations. Returns AccessDeniedException if the account is not opted into Rightsizing
+
+## __AWS Elemental MediaPackage__
+  - ### Features
+    - AWS Elemental MediaPackage provides access logs that capture detailed information about requests sent to a customer's MediaPackage channel.
+
+## __Amazon ElastiCache__
+  - ### Features
+    - This release introduces User and UserGroup to allow customers to have access control list of the Redis resources for AWS ElastiCache. This release also adds support for Outposts  for AWS ElastiCache.
+
 # __1.11.877__ __2020-10-06__
 ## __AWS Database Migration Service__
   - ### Features

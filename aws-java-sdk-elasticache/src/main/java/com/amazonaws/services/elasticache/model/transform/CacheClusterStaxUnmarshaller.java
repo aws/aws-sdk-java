@@ -90,6 +90,11 @@ public class CacheClusterStaxUnmarshaller implements Unmarshaller<CacheCluster, 
                     continue;
                 }
 
+                if (context.testExpression("PreferredOutpostArn", targetDepth)) {
+                    cacheCluster.setPreferredOutpostArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("CacheClusterCreateTime", targetDepth)) {
                     cacheCluster.setCacheClusterCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;

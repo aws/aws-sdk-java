@@ -292,8 +292,11 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
         exceptionUnmarshallers.add(new ReplicationGroupNotUnderMigrationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CacheParameterGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TestFailoverNotAvailableExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DuplicateUserNameExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CacheParameterGroupNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SubnetNotAllowedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ServiceLinkedRoleNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new UserNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NodeGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new APICallRateForCustomerExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidKMSKeyExceptionUnmarshaller());
@@ -311,9 +314,14 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
         exceptionUnmarshallers.add(new GlobalReplicationGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidParameterValueExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SnapshotAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new UserGroupQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidReplicationGroupStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SnapshotQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new UserGroupAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DefaultUserRequiredExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NodeQuotaForCustomerExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new UserAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidUserGroupStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TagNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterQuotaForCustomerExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NodeQuotaForClusterExceededExceptionUnmarshaller());
@@ -327,8 +335,12 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
         exceptionUnmarshallers.add(new CacheSubnetGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CacheSubnetGroupQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ReplicationGroupAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DefaultUserAssociatedToUserGroupExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidParameterCombinationExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidUserStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new UserGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SnapshotNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new UserQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CacheSecurityGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidCacheParameterGroupStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidARNExceptionUnmarshaller());
@@ -1106,6 +1118,10 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *         group.
      * @throws InvalidSubnetException
      *         An invalid subnet identifier was specified.
+     * @throws SubnetNotAllowedException
+     *         At least one subnet ID does not match the other subnet IDs. This mismatch typically occurs when a user
+     *         sets one subnet ID to a regional Availability Zone and a different one to an outpost. Or when a user sets
+     *         the subnet ID to an Outpost when not subscribed on this service.
      * @sample AmazonElastiCache.CreateCacheSubnetGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSubnetGroup"
      *      target="_top">AWS API Documentation</a>
@@ -1274,6 +1290,10 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *         The requested cluster is not in the <code>available</code> state.
      * @throws ReplicationGroupAlreadyExistsException
      *         The specified replication group already exists.
+     * @throws InvalidUserGroupStateException
+     *         The user group is not in an active state.
+     * @throws UserGroupNotFoundException
+     *         The user group was not found or does not exist
      * @throws InsufficientCacheClusterCapacityException
      *         The requested cache node type is not available in the specified Availability Zone. For more information,
      *         see <a href=
@@ -1435,6 +1455,139 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
             }
 
             StaxResponseHandler<Snapshot> responseHandler = new StaxResponseHandler<Snapshot>(new SnapshotStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * For Redis engine version 6.04 onwards: Creates a Redis user. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access
+     * Control (RBAC)</a>.
+     * </p>
+     * 
+     * @param createUserRequest
+     * @return Result of the CreateUser operation returned by the service.
+     * @throws UserAlreadyExistsException
+     *         A user with this ID already exists.
+     * @throws UserQuotaExceededException
+     *         The quota of users has been exceeded.
+     * @throws DuplicateUserNameException
+     *         A user with this username already exists.
+     * @throws InvalidParameterValueException
+     *         The value for a parameter is invalid.
+     * @throws InvalidParameterCombinationException
+     *         Two or more incompatible parameters were specified.
+     * @sample AmazonElastiCache.CreateUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateUserResult createUser(CreateUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateUser(request);
+    }
+
+    @SdkInternalApi
+    final CreateUserResult executeCreateUser(CreateUserRequest createUserRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateUserRequest> request = null;
+        Response<CreateUserResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateUserRequestMarshaller().marshall(super.beforeMarshalling(createUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateUserResult> responseHandler = new StaxResponseHandler<CreateUserResult>(new CreateUserResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * For Redis engine version 6.04 onwards: Creates a Redis user group. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access
+     * Control (RBAC)</a>
+     * </p>
+     * 
+     * @param createUserGroupRequest
+     * @return Result of the CreateUserGroup operation returned by the service.
+     * @throws UserNotFoundException
+     *         The user does not exist or could not be found.
+     * @throws DuplicateUserNameException
+     *         A user with this username already exists.
+     * @throws UserGroupAlreadyExistsException
+     *         The user group with this ID already exists.
+     * @throws DefaultUserRequiredException
+     *         You must add default user to a user group.
+     * @throws UserGroupQuotaExceededException
+     *         The number of users exceeds the user group limit.
+     * @throws InvalidParameterValueException
+     *         The value for a parameter is invalid.
+     * @sample AmazonElastiCache.CreateUserGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateUserGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateUserGroupResult createUserGroup(CreateUserGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateUserGroup(request);
+    }
+
+    @SdkInternalApi
+    final CreateUserGroupResult executeCreateUserGroup(CreateUserGroupRequest createUserGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createUserGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateUserGroupRequest> request = null;
+        Response<CreateUserGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateUserGroupRequestMarshaller().marshall(super.beforeMarshalling(createUserGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUserGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateUserGroupResult> responseHandler = new StaxResponseHandler<CreateUserGroupResult>(
+                    new CreateUserGroupResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2137,6 +2290,132 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
             }
 
             StaxResponseHandler<Snapshot> responseHandler = new StaxResponseHandler<Snapshot>(new SnapshotStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * For Redis engine version 6.04 onwards: Deletes a user. The user will be removed from all user groups and in turn
+     * removed from all replication groups. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access
+     * Control (RBAC)</a>.
+     * </p>
+     * 
+     * @param deleteUserRequest
+     * @return Result of the DeleteUser operation returned by the service.
+     * @throws InvalidUserStateException
+     *         The user is not in active state.
+     * @throws UserNotFoundException
+     *         The user does not exist or could not be found.
+     * @throws InvalidParameterValueException
+     *         The value for a parameter is invalid.
+     * @throws DefaultUserAssociatedToUserGroupException
+     * @sample AmazonElastiCache.DeleteUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteUserResult deleteUser(DeleteUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteUser(request);
+    }
+
+    @SdkInternalApi
+    final DeleteUserResult executeDeleteUser(DeleteUserRequest deleteUserRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteUserRequest> request = null;
+        Response<DeleteUserResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteUserRequestMarshaller().marshall(super.beforeMarshalling(deleteUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteUserResult> responseHandler = new StaxResponseHandler<DeleteUserResult>(new DeleteUserResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * For Redis engine version 6.04 onwards: Deletes a ser group. The user group must first be disassociated from the
+     * replcation group before it can be deleted. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access
+     * Control (RBAC)</a>.
+     * </p>
+     * 
+     * @param deleteUserGroupRequest
+     * @return Result of the DeleteUserGroup operation returned by the service.
+     * @throws UserGroupNotFoundException
+     *         The user group was not found or does not exist
+     * @throws InvalidUserGroupStateException
+     *         The user group is not in an active state.
+     * @throws InvalidParameterValueException
+     *         The value for a parameter is invalid.
+     * @sample AmazonElastiCache.DeleteUserGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteUserGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteUserGroupResult deleteUserGroup(DeleteUserGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteUserGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteUserGroupResult executeDeleteUserGroup(DeleteUserGroupRequest deleteUserGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteUserGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteUserGroupRequest> request = null;
+        Response<DeleteUserGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteUserGroupRequestMarshaller().marshall(super.beforeMarshalling(deleteUserGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUserGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteUserGroupResult> responseHandler = new StaxResponseHandler<DeleteUserGroupResult>(
+                    new DeleteUserGroupResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3145,6 +3424,121 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Returns a list of user groups.
+     * </p>
+     * 
+     * @param describeUserGroupsRequest
+     * @return Result of the DescribeUserGroups operation returned by the service.
+     * @throws UserGroupNotFoundException
+     *         The user group was not found or does not exist
+     * @throws InvalidParameterCombinationException
+     *         Two or more incompatible parameters were specified.
+     * @sample AmazonElastiCache.DescribeUserGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUserGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeUserGroupsResult describeUserGroups(DescribeUserGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeUserGroups(request);
+    }
+
+    @SdkInternalApi
+    final DescribeUserGroupsResult executeDescribeUserGroups(DescribeUserGroupsRequest describeUserGroupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeUserGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeUserGroupsRequest> request = null;
+        Response<DescribeUserGroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeUserGroupsRequestMarshaller().marshall(super.beforeMarshalling(describeUserGroupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUserGroups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeUserGroupsResult> responseHandler = new StaxResponseHandler<DescribeUserGroupsResult>(
+                    new DescribeUserGroupsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of users.
+     * </p>
+     * 
+     * @param describeUsersRequest
+     * @return Result of the DescribeUsers operation returned by the service.
+     * @throws UserNotFoundException
+     *         The user does not exist or could not be found.
+     * @throws InvalidParameterCombinationException
+     *         Two or more incompatible parameters were specified.
+     * @sample AmazonElastiCache.DescribeUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUsers" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeUsersResult describeUsers(DescribeUsersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeUsers(request);
+    }
+
+    @SdkInternalApi
+    final DescribeUsersResult executeDescribeUsers(DescribeUsersRequest describeUsersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeUsersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeUsersRequest> request = null;
+        Response<DescribeUsersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeUsersRequestMarshaller().marshall(super.beforeMarshalling(describeUsersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUsers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeUsersResult> responseHandler = new StaxResponseHandler<DescribeUsersResult>(new DescribeUsersResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Remove a secondary cluster from the Global Datastore using the Global Datastore name. The secondary cluster will
      * no longer receive updates from the primary cluster, but will remain as a standalone cluster in that AWS region.
      * </p>
@@ -3724,6 +4118,10 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *         The requested subnet is being used by another cache subnet group.
      * @throws InvalidSubnetException
      *         An invalid subnet identifier was specified.
+     * @throws SubnetNotAllowedException
+     *         At least one subnet ID does not match the other subnet IDs. This mismatch typically occurs when a user
+     *         sets one subnet ID to a regional Availability Zone and a different one to an outpost. Or when a user sets
+     *         the subnet ID to an Outpost when not subscribed on this service.
      * @sample AmazonElastiCache.ModifyCacheSubnetGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheSubnetGroup"
      *      target="_top">AWS API Documentation</a>
@@ -3862,6 +4260,10 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *         The specified replication group does not exist.
      * @throws InvalidReplicationGroupStateException
      *         The requested replication group is not in the <code>available</code> state.
+     * @throws InvalidUserGroupStateException
+     *         The user group is not in an active state.
+     * @throws UserGroupNotFoundException
+     *         The user group was not found or does not exist
      * @throws InvalidCacheClusterStateException
      *         The requested cluster is not in the <code>available</code> state.
      * @throws InvalidCacheSecurityGroupStateException
@@ -4008,6 +4410,135 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
             }
 
             StaxResponseHandler<ReplicationGroup> responseHandler = new StaxResponseHandler<ReplicationGroup>(new ReplicationGroupStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Changes user password(s) and/or access string.
+     * </p>
+     * 
+     * @param modifyUserRequest
+     * @return Result of the ModifyUser operation returned by the service.
+     * @throws UserNotFoundException
+     *         The user does not exist or could not be found.
+     * @throws InvalidUserStateException
+     *         The user is not in active state.
+     * @throws InvalidParameterValueException
+     *         The value for a parameter is invalid.
+     * @throws InvalidParameterCombinationException
+     *         Two or more incompatible parameters were specified.
+     * @sample AmazonElastiCache.ModifyUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ModifyUserResult modifyUser(ModifyUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyUser(request);
+    }
+
+    @SdkInternalApi
+    final ModifyUserResult executeModifyUser(ModifyUserRequest modifyUserRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyUserRequest> request = null;
+        Response<ModifyUserResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyUserRequestMarshaller().marshall(super.beforeMarshalling(modifyUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyUserResult> responseHandler = new StaxResponseHandler<ModifyUserResult>(new ModifyUserResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Changes the list of users that belong to the user group.
+     * </p>
+     * 
+     * @param modifyUserGroupRequest
+     * @return Result of the ModifyUserGroup operation returned by the service.
+     * @throws UserGroupNotFoundException
+     *         The user group was not found or does not exist
+     * @throws UserNotFoundException
+     *         The user does not exist or could not be found.
+     * @throws DuplicateUserNameException
+     *         A user with this username already exists.
+     * @throws DefaultUserRequiredException
+     *         You must add default user to a user group.
+     * @throws InvalidUserGroupStateException
+     *         The user group is not in an active state.
+     * @throws InvalidParameterValueException
+     *         The value for a parameter is invalid.
+     * @throws InvalidParameterCombinationException
+     *         Two or more incompatible parameters were specified.
+     * @sample AmazonElastiCache.ModifyUserGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyUserGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ModifyUserGroupResult modifyUserGroup(ModifyUserGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyUserGroup(request);
+    }
+
+    @SdkInternalApi
+    final ModifyUserGroupResult executeModifyUserGroup(ModifyUserGroupRequest modifyUserGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyUserGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyUserGroupRequest> request = null;
+        Response<ModifyUserGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyUserGroupRequestMarshaller().marshall(super.beforeMarshalling(modifyUserGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyUserGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyUserGroupResult> responseHandler = new StaxResponseHandler<ModifyUserGroupResult>(
+                    new ModifyUserGroupResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

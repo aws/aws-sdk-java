@@ -104,6 +104,16 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
     }
 
     @Override
+    public CreateUserResult createUser(CreateUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateUserGroupResult createUserGroup(CreateUserGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GlobalReplicationGroup decreaseNodeGroupsInGlobalReplicationGroup(DecreaseNodeGroupsInGlobalReplicationGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -145,6 +155,16 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
 
     @Override
     public Snapshot deleteSnapshot(DeleteSnapshotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteUserResult deleteUser(DeleteUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteUserGroupResult deleteUserGroup(DeleteUserGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -274,6 +294,16 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
     }
 
     @Override
+    public DescribeUserGroupsResult describeUserGroups(DescribeUserGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeUsersResult describeUsers(DescribeUsersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GlobalReplicationGroup disassociateGlobalReplicationGroup(DisassociateGlobalReplicationGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -335,6 +365,16 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
 
     @Override
     public ReplicationGroup modifyReplicationGroupShardConfiguration(ModifyReplicationGroupShardConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyUserResult modifyUser(ModifyUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyUserGroupResult modifyUserGroup(ModifyUserGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

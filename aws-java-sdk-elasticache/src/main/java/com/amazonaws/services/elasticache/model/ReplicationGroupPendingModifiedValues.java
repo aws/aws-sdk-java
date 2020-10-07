@@ -51,6 +51,12 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      * </p>
      */
     private String authTokenStatus;
+    /**
+     * <p>
+     * The user groups being modified.
+     * </p>
+     */
+    private UserGroupsUpdateStatus userGroups;
 
     /**
      * <p>
@@ -285,6 +291,46 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
     }
 
     /**
+     * <p>
+     * The user groups being modified.
+     * </p>
+     * 
+     * @param userGroups
+     *        The user groups being modified.
+     */
+
+    public void setUserGroups(UserGroupsUpdateStatus userGroups) {
+        this.userGroups = userGroups;
+    }
+
+    /**
+     * <p>
+     * The user groups being modified.
+     * </p>
+     * 
+     * @return The user groups being modified.
+     */
+
+    public UserGroupsUpdateStatus getUserGroups() {
+        return this.userGroups;
+    }
+
+    /**
+     * <p>
+     * The user groups being modified.
+     * </p>
+     * 
+     * @param userGroups
+     *        The user groups being modified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationGroupPendingModifiedValues withUserGroups(UserGroupsUpdateStatus userGroups) {
+        setUserGroups(userGroups);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -303,7 +349,9 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
         if (getResharding() != null)
             sb.append("Resharding: ").append(getResharding()).append(",");
         if (getAuthTokenStatus() != null)
-            sb.append("AuthTokenStatus: ").append(getAuthTokenStatus());
+            sb.append("AuthTokenStatus: ").append(getAuthTokenStatus()).append(",");
+        if (getUserGroups() != null)
+            sb.append("UserGroups: ").append(getUserGroups());
         sb.append("}");
         return sb.toString();
     }
@@ -334,6 +382,10 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
             return false;
         if (other.getAuthTokenStatus() != null && other.getAuthTokenStatus().equals(this.getAuthTokenStatus()) == false)
             return false;
+        if (other.getUserGroups() == null ^ this.getUserGroups() == null)
+            return false;
+        if (other.getUserGroups() != null && other.getUserGroups().equals(this.getUserGroups()) == false)
+            return false;
         return true;
     }
 
@@ -346,6 +398,7 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
         hashCode = prime * hashCode + ((getAutomaticFailoverStatus() == null) ? 0 : getAutomaticFailoverStatus().hashCode());
         hashCode = prime * hashCode + ((getResharding() == null) ? 0 : getResharding().hashCode());
         hashCode = prime * hashCode + ((getAuthTokenStatus() == null) ? 0 : getAuthTokenStatus().hashCode());
+        hashCode = prime * hashCode + ((getUserGroups() == null) ? 0 : getUserGroups().hashCode());
         return hashCode;
     }
 

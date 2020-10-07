@@ -62,6 +62,11 @@ public class ReplicationGroupPendingModifiedValuesStaxUnmarshaller implements Un
                     replicationGroupPendingModifiedValues.setAuthTokenStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("UserGroups", targetDepth)) {
+                    replicationGroupPendingModifiedValues.setUserGroups(UserGroupsUpdateStatusStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return replicationGroupPendingModifiedValues;

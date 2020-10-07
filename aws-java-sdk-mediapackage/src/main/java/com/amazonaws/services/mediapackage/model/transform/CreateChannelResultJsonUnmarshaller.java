@@ -56,6 +56,10 @@ public class CreateChannelResultJsonUnmarshaller implements Unmarshaller<CreateC
                     context.nextToken();
                     createChannelResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("egressAccessLogs", targetDepth)) {
+                    context.nextToken();
+                    createChannelResult.setEgressAccessLogs(EgressAccessLogsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("hlsIngest", targetDepth)) {
                     context.nextToken();
                     createChannelResult.setHlsIngest(HlsIngestJsonUnmarshaller.getInstance().unmarshall(context));
@@ -63,6 +67,10 @@ public class CreateChannelResultJsonUnmarshaller implements Unmarshaller<CreateC
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     createChannelResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ingressAccessLogs", targetDepth)) {
+                    context.nextToken();
+                    createChannelResult.setIngressAccessLogs(IngressAccessLogsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

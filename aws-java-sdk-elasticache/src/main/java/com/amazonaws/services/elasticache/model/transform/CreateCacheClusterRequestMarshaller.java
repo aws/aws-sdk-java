@@ -188,6 +188,29 @@ public class CreateCacheClusterRequestMarshaller implements Marshaller<Request<C
             request.addParameter("AuthToken", StringUtils.fromString(createCacheClusterRequest.getAuthToken()));
         }
 
+        if (createCacheClusterRequest.getOutpostMode() != null) {
+            request.addParameter("OutpostMode", StringUtils.fromString(createCacheClusterRequest.getOutpostMode()));
+        }
+
+        if (createCacheClusterRequest.getPreferredOutpostArn() != null) {
+            request.addParameter("PreferredOutpostArn", StringUtils.fromString(createCacheClusterRequest.getPreferredOutpostArn()));
+        }
+
+        if (!createCacheClusterRequest.getPreferredOutpostArns().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createCacheClusterRequest.getPreferredOutpostArns()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> preferredOutpostArnsList = (com.amazonaws.internal.SdkInternalList<String>) createCacheClusterRequest
+                    .getPreferredOutpostArns();
+            int preferredOutpostArnsListIndex = 1;
+
+            for (String preferredOutpostArnsListValue : preferredOutpostArnsList) {
+                if (preferredOutpostArnsListValue != null) {
+                    request.addParameter("PreferredOutpostArns.PreferredOutpostArn." + preferredOutpostArnsListIndex,
+                            StringUtils.fromString(preferredOutpostArnsListValue));
+                }
+                preferredOutpostArnsListIndex++;
+            }
+        }
+
         return request;
     }
 

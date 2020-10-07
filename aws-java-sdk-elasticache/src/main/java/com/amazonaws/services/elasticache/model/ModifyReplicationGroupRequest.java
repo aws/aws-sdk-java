@@ -301,6 +301,24 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String authTokenUpdateStrategy;
+    /**
+     * <p>
+     * A list of user group IDs.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> userGroupIdsToAdd;
+    /**
+     * <p>
+     * A list of users groups to remove, meaning the users in the group no longer can access thereplication group.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> userGroupIdsToRemove;
+    /**
+     * <p>
+     * Removes the user groups that can access this replication group.
+     * </p>
+     */
+    private Boolean removeUserGroups;
 
     /**
      * <p>
@@ -2207,6 +2225,208 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * A list of user group IDs.
+     * </p>
+     * 
+     * @return A list of user group IDs.
+     */
+
+    public java.util.List<String> getUserGroupIdsToAdd() {
+        if (userGroupIdsToAdd == null) {
+            userGroupIdsToAdd = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return userGroupIdsToAdd;
+    }
+
+    /**
+     * <p>
+     * A list of user group IDs.
+     * </p>
+     * 
+     * @param userGroupIdsToAdd
+     *        A list of user group IDs.
+     */
+
+    public void setUserGroupIdsToAdd(java.util.Collection<String> userGroupIdsToAdd) {
+        if (userGroupIdsToAdd == null) {
+            this.userGroupIdsToAdd = null;
+            return;
+        }
+
+        this.userGroupIdsToAdd = new com.amazonaws.internal.SdkInternalList<String>(userGroupIdsToAdd);
+    }
+
+    /**
+     * <p>
+     * A list of user group IDs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUserGroupIdsToAdd(java.util.Collection)} or {@link #withUserGroupIdsToAdd(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param userGroupIdsToAdd
+     *        A list of user group IDs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyReplicationGroupRequest withUserGroupIdsToAdd(String... userGroupIdsToAdd) {
+        if (this.userGroupIdsToAdd == null) {
+            setUserGroupIdsToAdd(new com.amazonaws.internal.SdkInternalList<String>(userGroupIdsToAdd.length));
+        }
+        for (String ele : userGroupIdsToAdd) {
+            this.userGroupIdsToAdd.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of user group IDs.
+     * </p>
+     * 
+     * @param userGroupIdsToAdd
+     *        A list of user group IDs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyReplicationGroupRequest withUserGroupIdsToAdd(java.util.Collection<String> userGroupIdsToAdd) {
+        setUserGroupIdsToAdd(userGroupIdsToAdd);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of users groups to remove, meaning the users in the group no longer can access thereplication group.
+     * </p>
+     * 
+     * @return A list of users groups to remove, meaning the users in the group no longer can access thereplication
+     *         group.
+     */
+
+    public java.util.List<String> getUserGroupIdsToRemove() {
+        if (userGroupIdsToRemove == null) {
+            userGroupIdsToRemove = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return userGroupIdsToRemove;
+    }
+
+    /**
+     * <p>
+     * A list of users groups to remove, meaning the users in the group no longer can access thereplication group.
+     * </p>
+     * 
+     * @param userGroupIdsToRemove
+     *        A list of users groups to remove, meaning the users in the group no longer can access thereplication
+     *        group.
+     */
+
+    public void setUserGroupIdsToRemove(java.util.Collection<String> userGroupIdsToRemove) {
+        if (userGroupIdsToRemove == null) {
+            this.userGroupIdsToRemove = null;
+            return;
+        }
+
+        this.userGroupIdsToRemove = new com.amazonaws.internal.SdkInternalList<String>(userGroupIdsToRemove);
+    }
+
+    /**
+     * <p>
+     * A list of users groups to remove, meaning the users in the group no longer can access thereplication group.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUserGroupIdsToRemove(java.util.Collection)} or {@link #withUserGroupIdsToRemove(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param userGroupIdsToRemove
+     *        A list of users groups to remove, meaning the users in the group no longer can access thereplication
+     *        group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyReplicationGroupRequest withUserGroupIdsToRemove(String... userGroupIdsToRemove) {
+        if (this.userGroupIdsToRemove == null) {
+            setUserGroupIdsToRemove(new com.amazonaws.internal.SdkInternalList<String>(userGroupIdsToRemove.length));
+        }
+        for (String ele : userGroupIdsToRemove) {
+            this.userGroupIdsToRemove.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of users groups to remove, meaning the users in the group no longer can access thereplication group.
+     * </p>
+     * 
+     * @param userGroupIdsToRemove
+     *        A list of users groups to remove, meaning the users in the group no longer can access thereplication
+     *        group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyReplicationGroupRequest withUserGroupIdsToRemove(java.util.Collection<String> userGroupIdsToRemove) {
+        setUserGroupIdsToRemove(userGroupIdsToRemove);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Removes the user groups that can access this replication group.
+     * </p>
+     * 
+     * @param removeUserGroups
+     *        Removes the user groups that can access this replication group.
+     */
+
+    public void setRemoveUserGroups(Boolean removeUserGroups) {
+        this.removeUserGroups = removeUserGroups;
+    }
+
+    /**
+     * <p>
+     * Removes the user groups that can access this replication group.
+     * </p>
+     * 
+     * @return Removes the user groups that can access this replication group.
+     */
+
+    public Boolean getRemoveUserGroups() {
+        return this.removeUserGroups;
+    }
+
+    /**
+     * <p>
+     * Removes the user groups that can access this replication group.
+     * </p>
+     * 
+     * @param removeUserGroups
+     *        Removes the user groups that can access this replication group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyReplicationGroupRequest withRemoveUserGroups(Boolean removeUserGroups) {
+        setRemoveUserGroups(removeUserGroups);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Removes the user groups that can access this replication group.
+     * </p>
+     * 
+     * @return Removes the user groups that can access this replication group.
+     */
+
+    public Boolean isRemoveUserGroups() {
+        return this.removeUserGroups;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2259,7 +2479,13 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         if (getAuthToken() != null)
             sb.append("AuthToken: ").append(getAuthToken()).append(",");
         if (getAuthTokenUpdateStrategy() != null)
-            sb.append("AuthTokenUpdateStrategy: ").append(getAuthTokenUpdateStrategy());
+            sb.append("AuthTokenUpdateStrategy: ").append(getAuthTokenUpdateStrategy()).append(",");
+        if (getUserGroupIdsToAdd() != null)
+            sb.append("UserGroupIdsToAdd: ").append(getUserGroupIdsToAdd()).append(",");
+        if (getUserGroupIdsToRemove() != null)
+            sb.append("UserGroupIdsToRemove: ").append(getUserGroupIdsToRemove()).append(",");
+        if (getRemoveUserGroups() != null)
+            sb.append("RemoveUserGroups: ").append(getRemoveUserGroups());
         sb.append("}");
         return sb.toString();
     }
@@ -2358,6 +2584,18 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getAuthTokenUpdateStrategy() != null && other.getAuthTokenUpdateStrategy().equals(this.getAuthTokenUpdateStrategy()) == false)
             return false;
+        if (other.getUserGroupIdsToAdd() == null ^ this.getUserGroupIdsToAdd() == null)
+            return false;
+        if (other.getUserGroupIdsToAdd() != null && other.getUserGroupIdsToAdd().equals(this.getUserGroupIdsToAdd()) == false)
+            return false;
+        if (other.getUserGroupIdsToRemove() == null ^ this.getUserGroupIdsToRemove() == null)
+            return false;
+        if (other.getUserGroupIdsToRemove() != null && other.getUserGroupIdsToRemove().equals(this.getUserGroupIdsToRemove()) == false)
+            return false;
+        if (other.getRemoveUserGroups() == null ^ this.getRemoveUserGroups() == null)
+            return false;
+        if (other.getRemoveUserGroups() != null && other.getRemoveUserGroups().equals(this.getRemoveUserGroups()) == false)
+            return false;
         return true;
     }
 
@@ -2387,6 +2625,9 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getCacheNodeType() == null) ? 0 : getCacheNodeType().hashCode());
         hashCode = prime * hashCode + ((getAuthToken() == null) ? 0 : getAuthToken().hashCode());
         hashCode = prime * hashCode + ((getAuthTokenUpdateStrategy() == null) ? 0 : getAuthTokenUpdateStrategy().hashCode());
+        hashCode = prime * hashCode + ((getUserGroupIdsToAdd() == null) ? 0 : getUserGroupIdsToAdd().hashCode());
+        hashCode = prime * hashCode + ((getUserGroupIdsToRemove() == null) ? 0 : getUserGroupIdsToRemove().hashCode());
+        hashCode = prime * hashCode + ((getRemoveUserGroups() == null) ? 0 : getRemoveUserGroups().hashCode());
         return hashCode;
     }
 

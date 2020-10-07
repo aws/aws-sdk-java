@@ -193,6 +193,12 @@ public class CacheNode implements Serializable, Cloneable {
      * </p>
      */
     private String customerAvailabilityZone;
+    /**
+     * <p>
+     * The customer outpost ARN of the cache node.
+     * </p>
+     */
+    private String customerOutpostArn;
 
     /**
      * <p>
@@ -493,6 +499,46 @@ public class CacheNode implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The customer outpost ARN of the cache node.
+     * </p>
+     * 
+     * @param customerOutpostArn
+     *        The customer outpost ARN of the cache node.
+     */
+
+    public void setCustomerOutpostArn(String customerOutpostArn) {
+        this.customerOutpostArn = customerOutpostArn;
+    }
+
+    /**
+     * <p>
+     * The customer outpost ARN of the cache node.
+     * </p>
+     * 
+     * @return The customer outpost ARN of the cache node.
+     */
+
+    public String getCustomerOutpostArn() {
+        return this.customerOutpostArn;
+    }
+
+    /**
+     * <p>
+     * The customer outpost ARN of the cache node.
+     * </p>
+     * 
+     * @param customerOutpostArn
+     *        The customer outpost ARN of the cache node.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CacheNode withCustomerOutpostArn(String customerOutpostArn) {
+        setCustomerOutpostArn(customerOutpostArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -517,7 +563,9 @@ public class CacheNode implements Serializable, Cloneable {
         if (getSourceCacheNodeId() != null)
             sb.append("SourceCacheNodeId: ").append(getSourceCacheNodeId()).append(",");
         if (getCustomerAvailabilityZone() != null)
-            sb.append("CustomerAvailabilityZone: ").append(getCustomerAvailabilityZone());
+            sb.append("CustomerAvailabilityZone: ").append(getCustomerAvailabilityZone()).append(",");
+        if (getCustomerOutpostArn() != null)
+            sb.append("CustomerOutpostArn: ").append(getCustomerOutpostArn());
         sb.append("}");
         return sb.toString();
     }
@@ -560,6 +608,10 @@ public class CacheNode implements Serializable, Cloneable {
             return false;
         if (other.getCustomerAvailabilityZone() != null && other.getCustomerAvailabilityZone().equals(this.getCustomerAvailabilityZone()) == false)
             return false;
+        if (other.getCustomerOutpostArn() == null ^ this.getCustomerOutpostArn() == null)
+            return false;
+        if (other.getCustomerOutpostArn() != null && other.getCustomerOutpostArn().equals(this.getCustomerOutpostArn()) == false)
+            return false;
         return true;
     }
 
@@ -575,6 +627,7 @@ public class CacheNode implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getParameterGroupStatus() == null) ? 0 : getParameterGroupStatus().hashCode());
         hashCode = prime * hashCode + ((getSourceCacheNodeId() == null) ? 0 : getSourceCacheNodeId().hashCode());
         hashCode = prime * hashCode + ((getCustomerAvailabilityZone() == null) ? 0 : getCustomerAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getCustomerOutpostArn() == null) ? 0 : getCustomerOutpostArn().hashCode());
         return hashCode;
     }
 

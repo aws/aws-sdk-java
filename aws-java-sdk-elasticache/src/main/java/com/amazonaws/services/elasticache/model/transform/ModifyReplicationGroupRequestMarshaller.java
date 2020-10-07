@@ -145,6 +145,38 @@ public class ModifyReplicationGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("AuthTokenUpdateStrategy", StringUtils.fromString(modifyReplicationGroupRequest.getAuthTokenUpdateStrategy()));
         }
 
+        if (!modifyReplicationGroupRequest.getUserGroupIdsToAdd().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyReplicationGroupRequest.getUserGroupIdsToAdd()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> userGroupIdsToAddList = (com.amazonaws.internal.SdkInternalList<String>) modifyReplicationGroupRequest
+                    .getUserGroupIdsToAdd();
+            int userGroupIdsToAddListIndex = 1;
+
+            for (String userGroupIdsToAddListValue : userGroupIdsToAddList) {
+                if (userGroupIdsToAddListValue != null) {
+                    request.addParameter("UserGroupIdsToAdd.member." + userGroupIdsToAddListIndex, StringUtils.fromString(userGroupIdsToAddListValue));
+                }
+                userGroupIdsToAddListIndex++;
+            }
+        }
+
+        if (!modifyReplicationGroupRequest.getUserGroupIdsToRemove().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyReplicationGroupRequest.getUserGroupIdsToRemove()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> userGroupIdsToRemoveList = (com.amazonaws.internal.SdkInternalList<String>) modifyReplicationGroupRequest
+                    .getUserGroupIdsToRemove();
+            int userGroupIdsToRemoveListIndex = 1;
+
+            for (String userGroupIdsToRemoveListValue : userGroupIdsToRemoveList) {
+                if (userGroupIdsToRemoveListValue != null) {
+                    request.addParameter("UserGroupIdsToRemove.member." + userGroupIdsToRemoveListIndex, StringUtils.fromString(userGroupIdsToRemoveListValue));
+                }
+                userGroupIdsToRemoveListIndex++;
+            }
+        }
+
+        if (modifyReplicationGroupRequest.getRemoveUserGroups() != null) {
+            request.addParameter("RemoveUserGroups", StringUtils.fromBoolean(modifyReplicationGroupRequest.getRemoveUserGroups()));
+        }
+
         return request;
     }
 

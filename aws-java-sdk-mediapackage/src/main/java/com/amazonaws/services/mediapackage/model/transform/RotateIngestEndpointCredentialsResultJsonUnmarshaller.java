@@ -56,6 +56,10 @@ public class RotateIngestEndpointCredentialsResultJsonUnmarshaller implements Un
                     context.nextToken();
                     rotateIngestEndpointCredentialsResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("egressAccessLogs", targetDepth)) {
+                    context.nextToken();
+                    rotateIngestEndpointCredentialsResult.setEgressAccessLogs(EgressAccessLogsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("hlsIngest", targetDepth)) {
                     context.nextToken();
                     rotateIngestEndpointCredentialsResult.setHlsIngest(HlsIngestJsonUnmarshaller.getInstance().unmarshall(context));
@@ -63,6 +67,10 @@ public class RotateIngestEndpointCredentialsResultJsonUnmarshaller implements Un
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     rotateIngestEndpointCredentialsResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ingressAccessLogs", targetDepth)) {
+                    context.nextToken();
+                    rotateIngestEndpointCredentialsResult.setIngressAccessLogs(IngressAccessLogsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

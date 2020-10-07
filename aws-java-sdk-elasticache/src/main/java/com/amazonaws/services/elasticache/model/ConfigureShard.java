@@ -80,6 +80,12 @@ public class ConfigureShard implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> preferredAvailabilityZones;
+    /**
+     * <p>
+     * The outpost ARNs in which the cache cluster is created.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> preferredOutpostArns;
 
     /**
      * <p>
@@ -456,6 +462,79 @@ public class ConfigureShard implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The outpost ARNs in which the cache cluster is created.
+     * </p>
+     * 
+     * @return The outpost ARNs in which the cache cluster is created.
+     */
+
+    public java.util.List<String> getPreferredOutpostArns() {
+        if (preferredOutpostArns == null) {
+            preferredOutpostArns = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return preferredOutpostArns;
+    }
+
+    /**
+     * <p>
+     * The outpost ARNs in which the cache cluster is created.
+     * </p>
+     * 
+     * @param preferredOutpostArns
+     *        The outpost ARNs in which the cache cluster is created.
+     */
+
+    public void setPreferredOutpostArns(java.util.Collection<String> preferredOutpostArns) {
+        if (preferredOutpostArns == null) {
+            this.preferredOutpostArns = null;
+            return;
+        }
+
+        this.preferredOutpostArns = new com.amazonaws.internal.SdkInternalList<String>(preferredOutpostArns);
+    }
+
+    /**
+     * <p>
+     * The outpost ARNs in which the cache cluster is created.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPreferredOutpostArns(java.util.Collection)} or {@link #withPreferredOutpostArns(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param preferredOutpostArns
+     *        The outpost ARNs in which the cache cluster is created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConfigureShard withPreferredOutpostArns(String... preferredOutpostArns) {
+        if (this.preferredOutpostArns == null) {
+            setPreferredOutpostArns(new com.amazonaws.internal.SdkInternalList<String>(preferredOutpostArns.length));
+        }
+        for (String ele : preferredOutpostArns) {
+            this.preferredOutpostArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The outpost ARNs in which the cache cluster is created.
+     * </p>
+     * 
+     * @param preferredOutpostArns
+     *        The outpost ARNs in which the cache cluster is created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConfigureShard withPreferredOutpostArns(java.util.Collection<String> preferredOutpostArns) {
+        setPreferredOutpostArns(preferredOutpostArns);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -472,7 +551,9 @@ public class ConfigureShard implements Serializable, Cloneable {
         if (getNewReplicaCount() != null)
             sb.append("NewReplicaCount: ").append(getNewReplicaCount()).append(",");
         if (getPreferredAvailabilityZones() != null)
-            sb.append("PreferredAvailabilityZones: ").append(getPreferredAvailabilityZones());
+            sb.append("PreferredAvailabilityZones: ").append(getPreferredAvailabilityZones()).append(",");
+        if (getPreferredOutpostArns() != null)
+            sb.append("PreferredOutpostArns: ").append(getPreferredOutpostArns());
         sb.append("}");
         return sb.toString();
     }
@@ -499,6 +580,10 @@ public class ConfigureShard implements Serializable, Cloneable {
             return false;
         if (other.getPreferredAvailabilityZones() != null && other.getPreferredAvailabilityZones().equals(this.getPreferredAvailabilityZones()) == false)
             return false;
+        if (other.getPreferredOutpostArns() == null ^ this.getPreferredOutpostArns() == null)
+            return false;
+        if (other.getPreferredOutpostArns() != null && other.getPreferredOutpostArns().equals(this.getPreferredOutpostArns()) == false)
+            return false;
         return true;
     }
 
@@ -510,6 +595,7 @@ public class ConfigureShard implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getNodeGroupId() == null) ? 0 : getNodeGroupId().hashCode());
         hashCode = prime * hashCode + ((getNewReplicaCount() == null) ? 0 : getNewReplicaCount().hashCode());
         hashCode = prime * hashCode + ((getPreferredAvailabilityZones() == null) ? 0 : getPreferredAvailabilityZones().hashCode());
+        hashCode = prime * hashCode + ((getPreferredOutpostArns() == null) ? 0 : getPreferredOutpostArns().hashCode());
         return hashCode;
     }
 

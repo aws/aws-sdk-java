@@ -39,6 +39,12 @@ public class Subnet implements Serializable, Cloneable {
      * </p>
      */
     private AvailabilityZone subnetAvailabilityZone;
+    /**
+     * <p>
+     * The outpost ARN of the subnet.
+     * </p>
+     */
+    private SubnetOutpost subnetOutpost;
 
     /**
      * <p>
@@ -121,6 +127,46 @@ public class Subnet implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The outpost ARN of the subnet.
+     * </p>
+     * 
+     * @param subnetOutpost
+     *        The outpost ARN of the subnet.
+     */
+
+    public void setSubnetOutpost(SubnetOutpost subnetOutpost) {
+        this.subnetOutpost = subnetOutpost;
+    }
+
+    /**
+     * <p>
+     * The outpost ARN of the subnet.
+     * </p>
+     * 
+     * @return The outpost ARN of the subnet.
+     */
+
+    public SubnetOutpost getSubnetOutpost() {
+        return this.subnetOutpost;
+    }
+
+    /**
+     * <p>
+     * The outpost ARN of the subnet.
+     * </p>
+     * 
+     * @param subnetOutpost
+     *        The outpost ARN of the subnet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Subnet withSubnetOutpost(SubnetOutpost subnetOutpost) {
+        setSubnetOutpost(subnetOutpost);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -135,7 +181,9 @@ public class Subnet implements Serializable, Cloneable {
         if (getSubnetIdentifier() != null)
             sb.append("SubnetIdentifier: ").append(getSubnetIdentifier()).append(",");
         if (getSubnetAvailabilityZone() != null)
-            sb.append("SubnetAvailabilityZone: ").append(getSubnetAvailabilityZone());
+            sb.append("SubnetAvailabilityZone: ").append(getSubnetAvailabilityZone()).append(",");
+        if (getSubnetOutpost() != null)
+            sb.append("SubnetOutpost: ").append(getSubnetOutpost());
         sb.append("}");
         return sb.toString();
     }
@@ -158,6 +206,10 @@ public class Subnet implements Serializable, Cloneable {
             return false;
         if (other.getSubnetAvailabilityZone() != null && other.getSubnetAvailabilityZone().equals(this.getSubnetAvailabilityZone()) == false)
             return false;
+        if (other.getSubnetOutpost() == null ^ this.getSubnetOutpost() == null)
+            return false;
+        if (other.getSubnetOutpost() != null && other.getSubnetOutpost().equals(this.getSubnetOutpost()) == false)
+            return false;
         return true;
     }
 
@@ -168,6 +220,7 @@ public class Subnet implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getSubnetIdentifier() == null) ? 0 : getSubnetIdentifier().hashCode());
         hashCode = prime * hashCode + ((getSubnetAvailabilityZone() == null) ? 0 : getSubnetAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getSubnetOutpost() == null) ? 0 : getSubnetOutpost().hashCode());
         return hashCode;
     }
 

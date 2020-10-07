@@ -28,6 +28,11 @@ public class AbstractAWSMediaPackage implements AWSMediaPackage {
     }
 
     @Override
+    public ConfigureLogsResult configureLogs(ConfigureLogsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateChannelResult createChannel(CreateChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

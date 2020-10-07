@@ -34,10 +34,10 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <note>
      * <p>
-     * Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html">Enabling
-     * Memory Utilization with the CloudWatch Agent</a>.
+     * The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on
+     * them. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization
+     * with the CloudWatch Agent</a>.
      * </p>
      * </note>
      */
@@ -61,20 +61,20 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <note>
      * <p>
-     * Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html">Enabling
-     * Memory Utilization with the CloudWatch Agent</a>.
+     * The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on
+     * them. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization
+     * with the CloudWatch Agent</a>.
      * </p>
      * </note>
      * 
      * @param name
      *        The name of the utilization metric.</p> <note>
      *        <p>
-     *        Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them.
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html"
-     *        >Enabling Memory Utilization with the CloudWatch Agent</a>.
+     *        The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent
+     *        installed on them. For more information, see <a
+     *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory
+     *        Utilization with the CloudWatch Agent</a>.
      *        </p>
      * @see MetricName
      */
@@ -89,19 +89,19 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <note>
      * <p>
-     * Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html">Enabling
-     * Memory Utilization with the CloudWatch Agent</a>.
+     * The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on
+     * them. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization
+     * with the CloudWatch Agent</a>.
      * </p>
      * </note>
      * 
      * @return The name of the utilization metric.</p> <note>
      *         <p>
-     *         Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them.
-     *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html"
-     *         >Enabling Memory Utilization with the CloudWatch Agent</a>.
+     *         The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent
+     *         installed on them. For more information, see <a
+     *         href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory
+     *         Utilization with the CloudWatch Agent</a>.
      *         </p>
      * @see MetricName
      */
@@ -116,20 +116,20 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <note>
      * <p>
-     * Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html">Enabling
-     * Memory Utilization with the CloudWatch Agent</a>.
+     * The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on
+     * them. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization
+     * with the CloudWatch Agent</a>.
      * </p>
      * </note>
      * 
      * @param name
      *        The name of the utilization metric.</p> <note>
      *        <p>
-     *        Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them.
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html"
-     *        >Enabling Memory Utilization with the CloudWatch Agent</a>.
+     *        The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent
+     *        installed on them. For more information, see <a
+     *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory
+     *        Utilization with the CloudWatch Agent</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricName
@@ -146,20 +146,20 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <note>
      * <p>
-     * Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html">Enabling
-     * Memory Utilization with the CloudWatch Agent</a>.
+     * The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on
+     * them. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization
+     * with the CloudWatch Agent</a>.
      * </p>
      * </note>
      * 
      * @param name
      *        The name of the utilization metric.</p> <note>
      *        <p>
-     *        Memory metrics are only returned for resources that have the unified CloudWatch agent installed on them.
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html"
-     *        >Enabling Memory Utilization with the CloudWatch Agent</a>.
+     *        The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent
+     *        installed on them. For more information, see <a
+     *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory
+     *        Utilization with the CloudWatch Agent</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricName

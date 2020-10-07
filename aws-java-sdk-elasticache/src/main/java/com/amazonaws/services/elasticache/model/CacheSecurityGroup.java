@@ -69,7 +69,7 @@ public class CacheSecurityGroup implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<EC2SecurityGroup> eC2SecurityGroups;
     /**
      * <p>
-     * The ARN (Amazon Resource Name) of the cache security group.
+     * The ARN of the cache security group,
      * </p>
      */
     private String aRN;
@@ -269,11 +269,11 @@ public class CacheSecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN (Amazon Resource Name) of the cache security group.
+     * The ARN of the cache security group,
      * </p>
      * 
      * @param aRN
-     *        The ARN (Amazon Resource Name) of the cache security group.
+     *        The ARN of the cache security group,
      */
 
     public void setARN(String aRN) {
@@ -282,10 +282,10 @@ public class CacheSecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN (Amazon Resource Name) of the cache security group.
+     * The ARN of the cache security group,
      * </p>
      * 
-     * @return The ARN (Amazon Resource Name) of the cache security group.
+     * @return The ARN of the cache security group,
      */
 
     public String getARN() {
@@ -294,11 +294,11 @@ public class CacheSecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN (Amazon Resource Name) of the cache security group.
+     * The ARN of the cache security group,
      * </p>
      * 
      * @param aRN
-     *        The ARN (Amazon Resource Name) of the cache security group.
+     *        The ARN of the cache security group,
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

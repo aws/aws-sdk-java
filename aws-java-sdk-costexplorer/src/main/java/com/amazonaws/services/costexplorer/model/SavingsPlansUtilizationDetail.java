@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A single daily or monthly Savings Plans utilization rate, and details for your account. Master accounts in an
+ * A single daily or monthly Savings Plans utilization rate, and details for your account. A master account in an
  * organization have access to member accounts. You can use <code>GetDimensionValues</code> to determine the possible
  * dimension values.
  * </p>

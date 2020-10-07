@@ -198,6 +198,12 @@ public class ReplicationGroup implements Serializable, Cloneable {
     private Boolean atRestEncryptionEnabled;
     /**
      * <p>
+     * The outpost ARNs of the replication group's member clusters.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> memberClustersOutpostArns;
+    /**
+     * <p>
      * The ID of the KMS key used to encrypt the disk in the cluster.
      * </p>
      */
@@ -208,6 +214,12 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </p>
      */
     private String aRN;
+    /**
+     * <p>
+     * The list of user group IDs that have access to the replication group.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> userGroupIds;
 
     /**
      * <p>
@@ -1539,6 +1551,79 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The outpost ARNs of the replication group's member clusters.
+     * </p>
+     * 
+     * @return The outpost ARNs of the replication group's member clusters.
+     */
+
+    public java.util.List<String> getMemberClustersOutpostArns() {
+        if (memberClustersOutpostArns == null) {
+            memberClustersOutpostArns = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return memberClustersOutpostArns;
+    }
+
+    /**
+     * <p>
+     * The outpost ARNs of the replication group's member clusters.
+     * </p>
+     * 
+     * @param memberClustersOutpostArns
+     *        The outpost ARNs of the replication group's member clusters.
+     */
+
+    public void setMemberClustersOutpostArns(java.util.Collection<String> memberClustersOutpostArns) {
+        if (memberClustersOutpostArns == null) {
+            this.memberClustersOutpostArns = null;
+            return;
+        }
+
+        this.memberClustersOutpostArns = new com.amazonaws.internal.SdkInternalList<String>(memberClustersOutpostArns);
+    }
+
+    /**
+     * <p>
+     * The outpost ARNs of the replication group's member clusters.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMemberClustersOutpostArns(java.util.Collection)} or
+     * {@link #withMemberClustersOutpostArns(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param memberClustersOutpostArns
+     *        The outpost ARNs of the replication group's member clusters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationGroup withMemberClustersOutpostArns(String... memberClustersOutpostArns) {
+        if (this.memberClustersOutpostArns == null) {
+            setMemberClustersOutpostArns(new com.amazonaws.internal.SdkInternalList<String>(memberClustersOutpostArns.length));
+        }
+        for (String ele : memberClustersOutpostArns) {
+            this.memberClustersOutpostArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The outpost ARNs of the replication group's member clusters.
+     * </p>
+     * 
+     * @param memberClustersOutpostArns
+     *        The outpost ARNs of the replication group's member clusters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationGroup withMemberClustersOutpostArns(java.util.Collection<String> memberClustersOutpostArns) {
+        setMemberClustersOutpostArns(memberClustersOutpostArns);
+        return this;
+    }
+
+    /**
+     * <p>
      * The ID of the KMS key used to encrypt the disk in the cluster.
      * </p>
      * 
@@ -1618,6 +1703,79 @@ public class ReplicationGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The list of user group IDs that have access to the replication group.
+     * </p>
+     * 
+     * @return The list of user group IDs that have access to the replication group.
+     */
+
+    public java.util.List<String> getUserGroupIds() {
+        if (userGroupIds == null) {
+            userGroupIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return userGroupIds;
+    }
+
+    /**
+     * <p>
+     * The list of user group IDs that have access to the replication group.
+     * </p>
+     * 
+     * @param userGroupIds
+     *        The list of user group IDs that have access to the replication group.
+     */
+
+    public void setUserGroupIds(java.util.Collection<String> userGroupIds) {
+        if (userGroupIds == null) {
+            this.userGroupIds = null;
+            return;
+        }
+
+        this.userGroupIds = new com.amazonaws.internal.SdkInternalList<String>(userGroupIds);
+    }
+
+    /**
+     * <p>
+     * The list of user group IDs that have access to the replication group.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUserGroupIds(java.util.Collection)} or {@link #withUserGroupIds(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param userGroupIds
+     *        The list of user group IDs that have access to the replication group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationGroup withUserGroupIds(String... userGroupIds) {
+        if (this.userGroupIds == null) {
+            setUserGroupIds(new com.amazonaws.internal.SdkInternalList<String>(userGroupIds.length));
+        }
+        for (String ele : userGroupIds) {
+            this.userGroupIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of user group IDs that have access to the replication group.
+     * </p>
+     * 
+     * @param userGroupIds
+     *        The list of user group IDs that have access to the replication group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationGroup withUserGroupIds(java.util.Collection<String> userGroupIds) {
+        setUserGroupIds(userGroupIds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1667,10 +1825,14 @@ public class ReplicationGroup implements Serializable, Cloneable {
             sb.append("TransitEncryptionEnabled: ").append(getTransitEncryptionEnabled()).append(",");
         if (getAtRestEncryptionEnabled() != null)
             sb.append("AtRestEncryptionEnabled: ").append(getAtRestEncryptionEnabled()).append(",");
+        if (getMemberClustersOutpostArns() != null)
+            sb.append("MemberClustersOutpostArns: ").append(getMemberClustersOutpostArns()).append(",");
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getARN() != null)
-            sb.append("ARN: ").append(getARN());
+            sb.append("ARN: ").append(getARN()).append(",");
+        if (getUserGroupIds() != null)
+            sb.append("UserGroupIds: ").append(getUserGroupIds());
         sb.append("}");
         return sb.toString();
     }
@@ -1761,6 +1923,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
             return false;
         if (other.getAtRestEncryptionEnabled() != null && other.getAtRestEncryptionEnabled().equals(this.getAtRestEncryptionEnabled()) == false)
             return false;
+        if (other.getMemberClustersOutpostArns() == null ^ this.getMemberClustersOutpostArns() == null)
+            return false;
+        if (other.getMemberClustersOutpostArns() != null && other.getMemberClustersOutpostArns().equals(this.getMemberClustersOutpostArns()) == false)
+            return false;
         if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
@@ -1768,6 +1934,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
         if (other.getARN() == null ^ this.getARN() == null)
             return false;
         if (other.getARN() != null && other.getARN().equals(this.getARN()) == false)
+            return false;
+        if (other.getUserGroupIds() == null ^ this.getUserGroupIds() == null)
+            return false;
+        if (other.getUserGroupIds() != null && other.getUserGroupIds().equals(this.getUserGroupIds()) == false)
             return false;
         return true;
     }
@@ -1796,8 +1966,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAuthTokenLastModifiedDate() == null) ? 0 : getAuthTokenLastModifiedDate().hashCode());
         hashCode = prime * hashCode + ((getTransitEncryptionEnabled() == null) ? 0 : getTransitEncryptionEnabled().hashCode());
         hashCode = prime * hashCode + ((getAtRestEncryptionEnabled() == null) ? 0 : getAtRestEncryptionEnabled().hashCode());
+        hashCode = prime * hashCode + ((getMemberClustersOutpostArns() == null) ? 0 : getMemberClustersOutpostArns().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getARN() == null) ? 0 : getARN().hashCode());
+        hashCode = prime * hashCode + ((getUserGroupIds() == null) ? 0 : getUserGroupIds().hashCode());
         return hashCode;
     }
 

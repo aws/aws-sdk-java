@@ -52,6 +52,11 @@ public class SubnetStaxUnmarshaller implements Unmarshaller<Subnet, StaxUnmarsha
                     subnet.setSubnetAvailabilityZone(AvailabilityZoneStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("SubnetOutpost", targetDepth)) {
+                    subnet.setSubnetOutpost(SubnetOutpostStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return subnet;

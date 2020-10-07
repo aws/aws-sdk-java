@@ -223,6 +223,12 @@ public class Snapshot implements Serializable, Cloneable {
     private String preferredAvailabilityZone;
     /**
      * <p>
+     * The ARN (Amazon Resource Name) of the preferred outpost.
+     * </p>
+     */
+    private String preferredOutpostArn;
+    /**
+     * <p>
      * The date and time when the source cluster was created.
      * </p>
      */
@@ -1593,6 +1599,46 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The ARN (Amazon Resource Name) of the preferred outpost.
+     * </p>
+     * 
+     * @param preferredOutpostArn
+     *        The ARN (Amazon Resource Name) of the preferred outpost.
+     */
+
+    public void setPreferredOutpostArn(String preferredOutpostArn) {
+        this.preferredOutpostArn = preferredOutpostArn;
+    }
+
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the preferred outpost.
+     * </p>
+     * 
+     * @return The ARN (Amazon Resource Name) of the preferred outpost.
+     */
+
+    public String getPreferredOutpostArn() {
+        return this.preferredOutpostArn;
+    }
+
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the preferred outpost.
+     * </p>
+     * 
+     * @param preferredOutpostArn
+     *        The ARN (Amazon Resource Name) of the preferred outpost.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Snapshot withPreferredOutpostArn(String preferredOutpostArn) {
+        setPreferredOutpostArn(preferredOutpostArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * The date and time when the source cluster was created.
      * </p>
      * 
@@ -2621,6 +2667,8 @@ public class Snapshot implements Serializable, Cloneable {
             sb.append("NumCacheNodes: ").append(getNumCacheNodes()).append(",");
         if (getPreferredAvailabilityZone() != null)
             sb.append("PreferredAvailabilityZone: ").append(getPreferredAvailabilityZone()).append(",");
+        if (getPreferredOutpostArn() != null)
+            sb.append("PreferredOutpostArn: ").append(getPreferredOutpostArn()).append(",");
         if (getCacheClusterCreateTime() != null)
             sb.append("CacheClusterCreateTime: ").append(getCacheClusterCreateTime()).append(",");
         if (getPreferredMaintenanceWindow() != null)
@@ -2709,6 +2757,10 @@ public class Snapshot implements Serializable, Cloneable {
             return false;
         if (other.getPreferredAvailabilityZone() != null && other.getPreferredAvailabilityZone().equals(this.getPreferredAvailabilityZone()) == false)
             return false;
+        if (other.getPreferredOutpostArn() == null ^ this.getPreferredOutpostArn() == null)
+            return false;
+        if (other.getPreferredOutpostArn() != null && other.getPreferredOutpostArn().equals(this.getPreferredOutpostArn()) == false)
+            return false;
         if (other.getCacheClusterCreateTime() == null ^ this.getCacheClusterCreateTime() == null)
             return false;
         if (other.getCacheClusterCreateTime() != null && other.getCacheClusterCreateTime().equals(this.getCacheClusterCreateTime()) == false)
@@ -2788,6 +2840,7 @@ public class Snapshot implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
         hashCode = prime * hashCode + ((getNumCacheNodes() == null) ? 0 : getNumCacheNodes().hashCode());
         hashCode = prime * hashCode + ((getPreferredAvailabilityZone() == null) ? 0 : getPreferredAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getPreferredOutpostArn() == null) ? 0 : getPreferredOutpostArn().hashCode());
         hashCode = prime * hashCode + ((getCacheClusterCreateTime() == null) ? 0 : getCacheClusterCreateTime().hashCode());
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode());
         hashCode = prime * hashCode + ((getTopicArn() == null) ? 0 : getTopicArn().hashCode());
