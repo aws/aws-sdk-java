@@ -4950,6 +4950,10 @@
   - ### Features
     - Amazon Transcribe - support transcriptions from audio sources in Russian (ru-RU) and Chinese (zh-CN).
 
+## __AWS SDK for Java__
+  - ### Features
+    - AWS Java SDK now supports setting STS regional endpoints option in config file. See https://docs.aws.amazon.com/credref/latest/refdocs/setting-global-sts_regional_endpoints.html for more details.
+
 # __1.11.617__ __2019-08-22__
 ## __AWS DataSync__
   - ### Features
