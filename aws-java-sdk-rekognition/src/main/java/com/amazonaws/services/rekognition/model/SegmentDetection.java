@@ -34,13 +34,15 @@ public class SegmentDetection implements Serializable, Cloneable, StructuredPojo
     private String type;
     /**
      * <p>
-     * The start time of the detected segment in milliseconds from the start of the video.
+     * The start time of the detected segment in milliseconds from the start of the video. This value is rounded down.
+     * For example, if the actual timestamp is 100.6667 milliseconds, Amazon Rekognition Video returns a value of 100
+     * millis.
      * </p>
      */
     private Long startTimestampMillis;
     /**
      * <p>
-     * The end time of the detected segment, in milliseconds, from the start of the video.
+     * The end time of the detected segment, in milliseconds, from the start of the video. This value is rounded down.
      * </p>
      */
     private Long endTimestampMillis;
@@ -144,11 +146,15 @@ public class SegmentDetection implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The start time of the detected segment in milliseconds from the start of the video.
+     * The start time of the detected segment in milliseconds from the start of the video. This value is rounded down.
+     * For example, if the actual timestamp is 100.6667 milliseconds, Amazon Rekognition Video returns a value of 100
+     * millis.
      * </p>
      * 
      * @param startTimestampMillis
-     *        The start time of the detected segment in milliseconds from the start of the video.
+     *        The start time of the detected segment in milliseconds from the start of the video. This value is rounded
+     *        down. For example, if the actual timestamp is 100.6667 milliseconds, Amazon Rekognition Video returns a
+     *        value of 100 millis.
      */
 
     public void setStartTimestampMillis(Long startTimestampMillis) {
@@ -157,10 +163,14 @@ public class SegmentDetection implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The start time of the detected segment in milliseconds from the start of the video.
+     * The start time of the detected segment in milliseconds from the start of the video. This value is rounded down.
+     * For example, if the actual timestamp is 100.6667 milliseconds, Amazon Rekognition Video returns a value of 100
+     * millis.
      * </p>
      * 
-     * @return The start time of the detected segment in milliseconds from the start of the video.
+     * @return The start time of the detected segment in milliseconds from the start of the video. This value is rounded
+     *         down. For example, if the actual timestamp is 100.6667 milliseconds, Amazon Rekognition Video returns a
+     *         value of 100 millis.
      */
 
     public Long getStartTimestampMillis() {
@@ -169,11 +179,15 @@ public class SegmentDetection implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The start time of the detected segment in milliseconds from the start of the video.
+     * The start time of the detected segment in milliseconds from the start of the video. This value is rounded down.
+     * For example, if the actual timestamp is 100.6667 milliseconds, Amazon Rekognition Video returns a value of 100
+     * millis.
      * </p>
      * 
      * @param startTimestampMillis
-     *        The start time of the detected segment in milliseconds from the start of the video.
+     *        The start time of the detected segment in milliseconds from the start of the video. This value is rounded
+     *        down. For example, if the actual timestamp is 100.6667 milliseconds, Amazon Rekognition Video returns a
+     *        value of 100 millis.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,11 +198,12 @@ public class SegmentDetection implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The end time of the detected segment, in milliseconds, from the start of the video.
+     * The end time of the detected segment, in milliseconds, from the start of the video. This value is rounded down.
      * </p>
      * 
      * @param endTimestampMillis
-     *        The end time of the detected segment, in milliseconds, from the start of the video.
+     *        The end time of the detected segment, in milliseconds, from the start of the video. This value is rounded
+     *        down.
      */
 
     public void setEndTimestampMillis(Long endTimestampMillis) {
@@ -197,10 +212,11 @@ public class SegmentDetection implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The end time of the detected segment, in milliseconds, from the start of the video.
+     * The end time of the detected segment, in milliseconds, from the start of the video. This value is rounded down.
      * </p>
      * 
-     * @return The end time of the detected segment, in milliseconds, from the start of the video.
+     * @return The end time of the detected segment, in milliseconds, from the start of the video. This value is rounded
+     *         down.
      */
 
     public Long getEndTimestampMillis() {
@@ -209,11 +225,12 @@ public class SegmentDetection implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The end time of the detected segment, in milliseconds, from the start of the video.
+     * The end time of the detected segment, in milliseconds, from the start of the video. This value is rounded down.
      * </p>
      * 
      * @param endTimestampMillis
-     *        The end time of the detected segment, in milliseconds, from the start of the video.
+     *        The end time of the detected segment, in milliseconds, from the start of the video. This value is rounded
+     *        down.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

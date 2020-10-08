@@ -58,6 +58,12 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<CostCategoryRule> rules;
+    /**
+     * <p>
+     * The list of processing statuses for Cost Management products for a specific cost category.
+     * </p>
+     */
+    private java.util.List<CostCategoryProcessingStatus> processingStatus;
 
     /**
      * <p>
@@ -324,6 +330,76 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The list of processing statuses for Cost Management products for a specific cost category.
+     * </p>
+     * 
+     * @return The list of processing statuses for Cost Management products for a specific cost category.
+     */
+
+    public java.util.List<CostCategoryProcessingStatus> getProcessingStatus() {
+        return processingStatus;
+    }
+
+    /**
+     * <p>
+     * The list of processing statuses for Cost Management products for a specific cost category.
+     * </p>
+     * 
+     * @param processingStatus
+     *        The list of processing statuses for Cost Management products for a specific cost category.
+     */
+
+    public void setProcessingStatus(java.util.Collection<CostCategoryProcessingStatus> processingStatus) {
+        if (processingStatus == null) {
+            this.processingStatus = null;
+            return;
+        }
+
+        this.processingStatus = new java.util.ArrayList<CostCategoryProcessingStatus>(processingStatus);
+    }
+
+    /**
+     * <p>
+     * The list of processing statuses for Cost Management products for a specific cost category.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProcessingStatus(java.util.Collection)} or {@link #withProcessingStatus(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param processingStatus
+     *        The list of processing statuses for Cost Management products for a specific cost category.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CostCategory withProcessingStatus(CostCategoryProcessingStatus... processingStatus) {
+        if (this.processingStatus == null) {
+            setProcessingStatus(new java.util.ArrayList<CostCategoryProcessingStatus>(processingStatus.length));
+        }
+        for (CostCategoryProcessingStatus ele : processingStatus) {
+            this.processingStatus.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of processing statuses for Cost Management products for a specific cost category.
+     * </p>
+     * 
+     * @param processingStatus
+     *        The list of processing statuses for Cost Management products for a specific cost category.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CostCategory withProcessingStatus(java.util.Collection<CostCategoryProcessingStatus> processingStatus) {
+        setProcessingStatus(processingStatus);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -346,7 +422,9 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
         if (getRuleVersion() != null)
             sb.append("RuleVersion: ").append(getRuleVersion()).append(",");
         if (getRules() != null)
-            sb.append("Rules: ").append(getRules());
+            sb.append("Rules: ").append(getRules()).append(",");
+        if (getProcessingStatus() != null)
+            sb.append("ProcessingStatus: ").append(getProcessingStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -385,6 +463,10 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRules() != null && other.getRules().equals(this.getRules()) == false)
             return false;
+        if (other.getProcessingStatus() == null ^ this.getProcessingStatus() == null)
+            return false;
+        if (other.getProcessingStatus() != null && other.getProcessingStatus().equals(this.getProcessingStatus()) == false)
+            return false;
         return true;
     }
 
@@ -399,6 +481,7 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getRuleVersion() == null) ? 0 : getRuleVersion().hashCode());
         hashCode = prime * hashCode + ((getRules() == null) ? 0 : getRules().hashCode());
+        hashCode = prime * hashCode + ((getProcessingStatus() == null) ? 0 : getProcessingStatus().hashCode());
         return hashCode;
     }
 

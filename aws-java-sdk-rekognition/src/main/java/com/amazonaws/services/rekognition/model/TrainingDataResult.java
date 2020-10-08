@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A Sagemaker Groundtruth format manifest file that represents the dataset used for training.
+ * Sagemaker Groundtruth format manifest files for the input, output and validation datasets that are used and created
+ * during testing.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -37,6 +38,13 @@ public class TrainingDataResult implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private TrainingData output;
+    /**
+     * <p>
+     * The location of the data validation manifest. The data validation manifest is created for the training dataset
+     * during model training.
+     * </p>
+     */
+    private ValidationData validation;
 
     /**
      * <p>
@@ -119,6 +127,52 @@ public class TrainingDataResult implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The location of the data validation manifest. The data validation manifest is created for the training dataset
+     * during model training.
+     * </p>
+     * 
+     * @param validation
+     *        The location of the data validation manifest. The data validation manifest is created for the training
+     *        dataset during model training.
+     */
+
+    public void setValidation(ValidationData validation) {
+        this.validation = validation;
+    }
+
+    /**
+     * <p>
+     * The location of the data validation manifest. The data validation manifest is created for the training dataset
+     * during model training.
+     * </p>
+     * 
+     * @return The location of the data validation manifest. The data validation manifest is created for the training
+     *         dataset during model training.
+     */
+
+    public ValidationData getValidation() {
+        return this.validation;
+    }
+
+    /**
+     * <p>
+     * The location of the data validation manifest. The data validation manifest is created for the training dataset
+     * during model training.
+     * </p>
+     * 
+     * @param validation
+     *        The location of the data validation manifest. The data validation manifest is created for the training
+     *        dataset during model training.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrainingDataResult withValidation(ValidationData validation) {
+        setValidation(validation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +187,9 @@ public class TrainingDataResult implements Serializable, Cloneable, StructuredPo
         if (getInput() != null)
             sb.append("Input: ").append(getInput()).append(",");
         if (getOutput() != null)
-            sb.append("Output: ").append(getOutput());
+            sb.append("Output: ").append(getOutput()).append(",");
+        if (getValidation() != null)
+            sb.append("Validation: ").append(getValidation());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +212,10 @@ public class TrainingDataResult implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getOutput() != null && other.getOutput().equals(this.getOutput()) == false)
             return false;
+        if (other.getValidation() == null ^ this.getValidation() == null)
+            return false;
+        if (other.getValidation() != null && other.getValidation().equals(this.getValidation()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +226,7 @@ public class TrainingDataResult implements Serializable, Cloneable, StructuredPo
 
         hashCode = prime * hashCode + ((getInput() == null) ? 0 : getInput().hashCode());
         hashCode = prime * hashCode + ((getOutput() == null) ? 0 : getOutput().hashCode());
+        hashCode = prime * hashCode + ((getValidation() == null) ? 0 : getValidation().hashCode());
         return hashCode;
     }
 

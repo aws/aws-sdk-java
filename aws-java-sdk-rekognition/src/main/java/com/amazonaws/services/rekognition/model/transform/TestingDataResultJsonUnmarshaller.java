@@ -56,6 +56,10 @@ public class TestingDataResultJsonUnmarshaller implements Unmarshaller<TestingDa
                     context.nextToken();
                     testingDataResult.setOutput(TestingDataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Validation", targetDepth)) {
+                    context.nextToken();
+                    testingDataResult.setValidation(ValidationDataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

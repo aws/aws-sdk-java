@@ -32,6 +32,8 @@ public class CostCategoryValuesMarshaller {
             .marshallLocationName("Key").build();
     private static final MarshallingInfo<List> VALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Values").build();
+    private static final MarshallingInfo<List> MATCHOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("MatchOptions").build();
 
     private static final CostCategoryValuesMarshaller instance = new CostCategoryValuesMarshaller();
 
@@ -51,6 +53,7 @@ public class CostCategoryValuesMarshaller {
         try {
             protocolMarshaller.marshall(costCategoryValues.getKey(), KEY_BINDING);
             protocolMarshaller.marshall(costCategoryValues.getValues(), VALUES_BINDING);
+            protocolMarshaller.marshall(costCategoryValues.getMatchOptions(), MATCHOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

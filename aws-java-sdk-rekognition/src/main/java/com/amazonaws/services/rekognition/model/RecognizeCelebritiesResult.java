@@ -20,7 +20,7 @@ public class RecognizeCelebritiesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 15 celebrities in an
+     * Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 64 celebrities in an
      * image.
      * </p>
      */
@@ -51,11 +51,11 @@ public class RecognizeCelebritiesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 15 celebrities in an
+     * Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 64 celebrities in an
      * image.
      * </p>
      * 
-     * @return Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 15
+     * @return Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 64
      *         celebrities in an image.
      */
 
@@ -65,12 +65,12 @@ public class RecognizeCelebritiesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 15 celebrities in an
+     * Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 64 celebrities in an
      * image.
      * </p>
      * 
      * @param celebrityFaces
-     *        Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 15 celebrities
+     *        Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 64 celebrities
      *        in an image.
      */
 
@@ -85,7 +85,7 @@ public class RecognizeCelebritiesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 15 celebrities in an
+     * Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 64 celebrities in an
      * image.
      * </p>
      * <p>
@@ -95,7 +95,7 @@ public class RecognizeCelebritiesResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param celebrityFaces
-     *        Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 15 celebrities
+     *        Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 64 celebrities
      *        in an image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -112,12 +112,12 @@ public class RecognizeCelebritiesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 15 celebrities in an
+     * Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 64 celebrities in an
      * image.
      * </p>
      * 
      * @param celebrityFaces
-     *        Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 15 celebrities
+     *        Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 64 celebrities
      *        in an image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A Sagemaker Groundtruth format manifest file representing the dataset used for testing.
+ * Sagemaker Groundtruth format manifest files for the input, output and validation datasets that are used and created
+ * during testing.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -38,6 +39,13 @@ public class TestingDataResult implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private TestingData output;
+    /**
+     * <p>
+     * The location of the data validation manifest. The data validation manifest is created for the test dataset during
+     * model training.
+     * </p>
+     */
+    private ValidationData validation;
 
     /**
      * <p>
@@ -126,6 +134,52 @@ public class TestingDataResult implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The location of the data validation manifest. The data validation manifest is created for the test dataset during
+     * model training.
+     * </p>
+     * 
+     * @param validation
+     *        The location of the data validation manifest. The data validation manifest is created for the test dataset
+     *        during model training.
+     */
+
+    public void setValidation(ValidationData validation) {
+        this.validation = validation;
+    }
+
+    /**
+     * <p>
+     * The location of the data validation manifest. The data validation manifest is created for the test dataset during
+     * model training.
+     * </p>
+     * 
+     * @return The location of the data validation manifest. The data validation manifest is created for the test
+     *         dataset during model training.
+     */
+
+    public ValidationData getValidation() {
+        return this.validation;
+    }
+
+    /**
+     * <p>
+     * The location of the data validation manifest. The data validation manifest is created for the test dataset during
+     * model training.
+     * </p>
+     * 
+     * @param validation
+     *        The location of the data validation manifest. The data validation manifest is created for the test dataset
+     *        during model training.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TestingDataResult withValidation(ValidationData validation) {
+        setValidation(validation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -140,7 +194,9 @@ public class TestingDataResult implements Serializable, Cloneable, StructuredPoj
         if (getInput() != null)
             sb.append("Input: ").append(getInput()).append(",");
         if (getOutput() != null)
-            sb.append("Output: ").append(getOutput());
+            sb.append("Output: ").append(getOutput()).append(",");
+        if (getValidation() != null)
+            sb.append("Validation: ").append(getValidation());
         sb.append("}");
         return sb.toString();
     }
@@ -163,6 +219,10 @@ public class TestingDataResult implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getOutput() != null && other.getOutput().equals(this.getOutput()) == false)
             return false;
+        if (other.getValidation() == null ^ this.getValidation() == null)
+            return false;
+        if (other.getValidation() != null && other.getValidation().equals(this.getValidation()) == false)
+            return false;
         return true;
     }
 
@@ -173,6 +233,7 @@ public class TestingDataResult implements Serializable, Cloneable, StructuredPoj
 
         hashCode = prime * hashCode + ((getInput() == null) ? 0 : getInput().hashCode());
         hashCode = prime * hashCode + ((getOutput() == null) ? 0 : getOutput().hashCode());
+        hashCode = prime * hashCode + ((getValidation() == null) ? 0 : getValidation().hashCode());
         return hashCode;
     }
 

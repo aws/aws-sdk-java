@@ -941,8 +941,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * See <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport"
-     * >Version and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport"
+     * >Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * <b>MySQL</b>
@@ -1336,6 +1336,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      * >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
      * Guide</i>.
+     * </p>
+     * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. CloudWatch Logs exports are managed by the DB cluster.
      * </p>
      * <p>
      * <b>MariaDB</b>
@@ -7339,8 +7345,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * See <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport"
-     * >Version and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport"
+     * >Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * <b>MySQL</b>
@@ -7395,8 +7401,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        <p>
      *        See <a href=
-     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport"
-     *        >Version and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport"
+     *        >Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
      *        <p>
      *        <b>MySQL</b>
@@ -7458,8 +7464,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * See <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport"
-     * >Version and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport"
+     * >Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * <b>MySQL</b>
@@ -7513,8 +7519,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </p>
      *         <p>
      *         See <a href=
-     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport"
-     *         >Version and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport"
+     *         >Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
      *         </p>
      *         <p>
      *         <b>MySQL</b>
@@ -7576,8 +7582,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * See <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport"
-     * >Version and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport"
+     * >Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * <b>MySQL</b>
@@ -7632,8 +7638,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        <p>
      *        See <a href=
-     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport"
-     *        >Version and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport"
+     *        >Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
      *        <p>
      *        <b>MySQL</b>
@@ -10239,6 +10245,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Guide</i>.
      * </p>
      * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. CloudWatch Logs exports are managed by the DB cluster.
+     * </p>
+     * <p>
      * <b>MariaDB</b>
      * </p>
      * <p>
@@ -10274,6 +10286,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      *         >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service
      *         User Guide</i>.</p>
+     *         <p>
+     *         <b>Amazon Aurora</b>
+     *         </p>
+     *         <p>
+     *         Not applicable. CloudWatch Logs exports are managed by the DB cluster.
+     *         </p>
      *         <p>
      *         <b>MariaDB</b>
      *         </p>
@@ -10324,6 +10342,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Guide</i>.
      * </p>
      * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. CloudWatch Logs exports are managed by the DB cluster.
+     * </p>
+     * <p>
      * <b>MariaDB</b>
      * </p>
      * <p>
@@ -10360,6 +10384,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      *        >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
      *        Guide</i>.</p>
+     *        <p>
+     *        <b>Amazon Aurora</b>
+     *        </p>
+     *        <p>
+     *        Not applicable. CloudWatch Logs exports are managed by the DB cluster.
+     *        </p>
      *        <p>
      *        <b>MariaDB</b>
      *        </p>
@@ -10411,6 +10441,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Guide</i>.
      * </p>
      * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. CloudWatch Logs exports are managed by the DB cluster.
+     * </p>
+     * <p>
      * <b>MariaDB</b>
      * </p>
      * <p>
@@ -10452,6 +10488,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      *        >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
      *        Guide</i>.</p>
+     *        <p>
+     *        <b>Amazon Aurora</b>
+     *        </p>
+     *        <p>
+     *        Not applicable. CloudWatch Logs exports are managed by the DB cluster.
+     *        </p>
      *        <p>
      *        <b>MariaDB</b>
      *        </p>
@@ -10505,6 +10547,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Guide</i>.
      * </p>
      * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. CloudWatch Logs exports are managed by the DB cluster.
+     * </p>
+     * <p>
      * <b>MariaDB</b>
      * </p>
      * <p>
@@ -10541,6 +10589,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      *        >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
      *        Guide</i>.</p>
+     *        <p>
+     *        <b>Amazon Aurora</b>
+     *        </p>
+     *        <p>
+     *        Not applicable. CloudWatch Logs exports are managed by the DB cluster.
+     *        </p>
      *        <p>
      *        <b>MariaDB</b>
      *        </p>

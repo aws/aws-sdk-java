@@ -45,7 +45,8 @@ public enum TargetDevice {
     Sitara_am57x("sitara_am57x"),
     Amba_cv22("amba_cv22"),
     X86_win32("x86_win32"),
-    X86_win64("x86_win64");
+    X86_win64("x86_win64"),
+    Coreml("coreml");
 
     private String value;
 

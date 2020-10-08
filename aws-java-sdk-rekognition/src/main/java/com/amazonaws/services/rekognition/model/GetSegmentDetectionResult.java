@@ -57,7 +57,9 @@ public class GetSegmentDetectionResult extends com.amazonaws.AmazonWebServiceRes
     private String nextToken;
     /**
      * <p>
-     * An array of segments detected in a video.
+     * An array of segments detected in a video. The array is sorted by the segment types (TECHNICAL_CUE or SHOT)
+     * specified in the <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>. Within each
+     * segment type the array is sorted by timestamp values.
      * </p>
      */
     private java.util.List<SegmentDetection> segments;
@@ -410,10 +412,14 @@ public class GetSegmentDetectionResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An array of segments detected in a video.
+     * An array of segments detected in a video. The array is sorted by the segment types (TECHNICAL_CUE or SHOT)
+     * specified in the <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>. Within each
+     * segment type the array is sorted by timestamp values.
      * </p>
      * 
-     * @return An array of segments detected in a video.
+     * @return An array of segments detected in a video. The array is sorted by the segment types (TECHNICAL_CUE or
+     *         SHOT) specified in the <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>.
+     *         Within each segment type the array is sorted by timestamp values.
      */
 
     public java.util.List<SegmentDetection> getSegments() {
@@ -422,11 +428,15 @@ public class GetSegmentDetectionResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An array of segments detected in a video.
+     * An array of segments detected in a video. The array is sorted by the segment types (TECHNICAL_CUE or SHOT)
+     * specified in the <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>. Within each
+     * segment type the array is sorted by timestamp values.
      * </p>
      * 
      * @param segments
-     *        An array of segments detected in a video.
+     *        An array of segments detected in a video. The array is sorted by the segment types (TECHNICAL_CUE or SHOT)
+     *        specified in the <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>. Within
+     *        each segment type the array is sorted by timestamp values.
      */
 
     public void setSegments(java.util.Collection<SegmentDetection> segments) {
@@ -440,7 +450,9 @@ public class GetSegmentDetectionResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An array of segments detected in a video.
+     * An array of segments detected in a video. The array is sorted by the segment types (TECHNICAL_CUE or SHOT)
+     * specified in the <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>. Within each
+     * segment type the array is sorted by timestamp values.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -449,7 +461,9 @@ public class GetSegmentDetectionResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param segments
-     *        An array of segments detected in a video.
+     *        An array of segments detected in a video. The array is sorted by the segment types (TECHNICAL_CUE or SHOT)
+     *        specified in the <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>. Within
+     *        each segment type the array is sorted by timestamp values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -465,11 +479,15 @@ public class GetSegmentDetectionResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An array of segments detected in a video.
+     * An array of segments detected in a video. The array is sorted by the segment types (TECHNICAL_CUE or SHOT)
+     * specified in the <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>. Within each
+     * segment type the array is sorted by timestamp values.
      * </p>
      * 
      * @param segments
-     *        An array of segments detected in a video.
+     *        An array of segments detected in a video. The array is sorted by the segment types (TECHNICAL_CUE or SHOT)
+     *        specified in the <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>. Within
+     *        each segment type the array is sorted by timestamp values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -231,6 +231,121 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <code>DataInputConfig</code> supports the following parameters for <code>CoreML</code>
+     * <a>OutputConfig$TargetDevice</a> (ML Model format):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>shape</code>: Input shape, for example <code>{"input_1": {"shape": [1,224,224,3]}}</code>. In addition to
+     * static input shapes, CoreML converter supports Flexible input shapes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Range Dimension. You can use the Range Dimension feature if you know the input shape will be within some specific
+     * interval in that dimension, for example: <code>{"input_1": {"shape": ["1..10", 224, 224, 3]}}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Enumerated shapes. Sometimes, the models are trained to work only on a select set of inputs. You can enumerate
+     * all supported input shapes, for example:
+     * <code>{"input_1": {"shape": [[1, 224, 224, 3], [1, 160, 160, 3]]}}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>default_shape</code>: Default input shape. You can set a default shape during conversion for both Range
+     * Dimension and Enumerated Shapes. For example
+     * <code>{"input_1": {"shape": ["1..10", 224, 224, 3], "default_shape": [1, 224, 224, 3]}}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>type</code>: Input type. Allowed values: <code>Image</code> and <code>Tensor</code>. By default, the
+     * converter generates an ML Model with inputs of type Tensor (MultiArray). User can set input type to be Image.
+     * Image input type requires additional input parameters such as <code>bias</code> and <code>scale</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bias</code>: If the input type is an Image, you need to provide the bias vector.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>scale</code>: If the input type is an Image, you need to provide a scale factor.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * CoreML <code>ClassifierConfig</code> parameters can be specified using <a>OutputConfig$CompilerOptions</a>.
+     * CoreML converter supports Tensorflow and PyTorch models. CoreML conversion examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Tensor type input:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3]}}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Tensor type input without input name (PyTorch):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224]}]</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Image type input:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Image type input without input name (PyTorch):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      */
     private String dataInputConfig;
     /**
@@ -481,6 +596,121 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <code>DataInputConfig</code> supports the following parameters for <code>CoreML</code>
+     * <a>OutputConfig$TargetDevice</a> (ML Model format):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>shape</code>: Input shape, for example <code>{"input_1": {"shape": [1,224,224,3]}}</code>. In addition to
+     * static input shapes, CoreML converter supports Flexible input shapes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Range Dimension. You can use the Range Dimension feature if you know the input shape will be within some specific
+     * interval in that dimension, for example: <code>{"input_1": {"shape": ["1..10", 224, 224, 3]}}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Enumerated shapes. Sometimes, the models are trained to work only on a select set of inputs. You can enumerate
+     * all supported input shapes, for example:
+     * <code>{"input_1": {"shape": [[1, 224, 224, 3], [1, 160, 160, 3]]}}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>default_shape</code>: Default input shape. You can set a default shape during conversion for both Range
+     * Dimension and Enumerated Shapes. For example
+     * <code>{"input_1": {"shape": ["1..10", 224, 224, 3], "default_shape": [1, 224, 224, 3]}}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>type</code>: Input type. Allowed values: <code>Image</code> and <code>Tensor</code>. By default, the
+     * converter generates an ML Model with inputs of type Tensor (MultiArray). User can set input type to be Image.
+     * Image input type requires additional input parameters such as <code>bias</code> and <code>scale</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bias</code>: If the input type is an Image, you need to provide the bias vector.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>scale</code>: If the input type is an Image, you need to provide a scale factor.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * CoreML <code>ClassifierConfig</code> parameters can be specified using <a>OutputConfig$CompilerOptions</a>.
+     * CoreML converter supports Tensorflow and PyTorch models. CoreML conversion examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Tensor type input:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3]}}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Tensor type input without input name (PyTorch):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224]}]</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Image type input:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Image type input without input name (PyTorch):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param dataInputConfig
      *        Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary
@@ -674,6 +904,124 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>XGBOOST</code>: input data name and shape are not needed.
      *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <code>DataInputConfig</code> supports the following parameters for <code>CoreML</code>
+     *        <a>OutputConfig$TargetDevice</a> (ML Model format):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>shape</code>: Input shape, for example <code>{"input_1": {"shape": [1,224,224,3]}}</code>. In
+     *        addition to static input shapes, CoreML converter supports Flexible input shapes:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Range Dimension. You can use the Range Dimension feature if you know the input shape will be within some
+     *        specific interval in that dimension, for example:
+     *        <code>{"input_1": {"shape": ["1..10", 224, 224, 3]}}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Enumerated shapes. Sometimes, the models are trained to work only on a select set of inputs. You can
+     *        enumerate all supported input shapes, for example:
+     *        <code>{"input_1": {"shape": [[1, 224, 224, 3], [1, 160, 160, 3]]}}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>default_shape</code>: Default input shape. You can set a default shape during conversion for both
+     *        Range Dimension and Enumerated Shapes. For example
+     *        <code>{"input_1": {"shape": ["1..10", 224, 224, 3], "default_shape": [1, 224, 224, 3]}}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>type</code>: Input type. Allowed values: <code>Image</code> and <code>Tensor</code>. By default, the
+     *        converter generates an ML Model with inputs of type Tensor (MultiArray). User can set input type to be
+     *        Image. Image input type requires additional input parameters such as <code>bias</code> and
+     *        <code>scale</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>bias</code>: If the input type is an Image, you need to provide the bias vector.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>scale</code>: If the input type is an Image, you need to provide a scale factor.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        CoreML <code>ClassifierConfig</code> parameters can be specified using
+     *        <a>OutputConfig$CompilerOptions</a>. CoreML converter supports Tensorflow and PyTorch models. CoreML
+     *        conversion examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Tensor type input:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3]}}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tensor type input without input name (PyTorch):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224]}]</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Image type input:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Image type input without input name (PyTorch):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}]</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      */
 
@@ -876,6 +1224,121 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <code>DataInputConfig</code> supports the following parameters for <code>CoreML</code>
+     * <a>OutputConfig$TargetDevice</a> (ML Model format):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>shape</code>: Input shape, for example <code>{"input_1": {"shape": [1,224,224,3]}}</code>. In addition to
+     * static input shapes, CoreML converter supports Flexible input shapes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Range Dimension. You can use the Range Dimension feature if you know the input shape will be within some specific
+     * interval in that dimension, for example: <code>{"input_1": {"shape": ["1..10", 224, 224, 3]}}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Enumerated shapes. Sometimes, the models are trained to work only on a select set of inputs. You can enumerate
+     * all supported input shapes, for example:
+     * <code>{"input_1": {"shape": [[1, 224, 224, 3], [1, 160, 160, 3]]}}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>default_shape</code>: Default input shape. You can set a default shape during conversion for both Range
+     * Dimension and Enumerated Shapes. For example
+     * <code>{"input_1": {"shape": ["1..10", 224, 224, 3], "default_shape": [1, 224, 224, 3]}}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>type</code>: Input type. Allowed values: <code>Image</code> and <code>Tensor</code>. By default, the
+     * converter generates an ML Model with inputs of type Tensor (MultiArray). User can set input type to be Image.
+     * Image input type requires additional input parameters such as <code>bias</code> and <code>scale</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bias</code>: If the input type is an Image, you need to provide the bias vector.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>scale</code>: If the input type is an Image, you need to provide a scale factor.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * CoreML <code>ClassifierConfig</code> parameters can be specified using <a>OutputConfig$CompilerOptions</a>.
+     * CoreML converter supports Tensorflow and PyTorch models. CoreML conversion examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Tensor type input:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3]}}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Tensor type input without input name (PyTorch):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224]}]</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Image type input:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Image type input without input name (PyTorch):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @return Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary
      *         form. The data inputs are <a>InputConfig$Framework</a> specific. </p>
@@ -1068,6 +1531,124 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         <code>XGBOOST</code>: input data name and shape are not needed.
      *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <code>DataInputConfig</code> supports the following parameters for <code>CoreML</code>
+     *         <a>OutputConfig$TargetDevice</a> (ML Model format):
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>shape</code>: Input shape, for example <code>{"input_1": {"shape": [1,224,224,3]}}</code>. In
+     *         addition to static input shapes, CoreML converter supports Flexible input shapes:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Range Dimension. You can use the Range Dimension feature if you know the input shape will be within some
+     *         specific interval in that dimension, for example:
+     *         <code>{"input_1": {"shape": ["1..10", 224, 224, 3]}}</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Enumerated shapes. Sometimes, the models are trained to work only on a select set of inputs. You can
+     *         enumerate all supported input shapes, for example:
+     *         <code>{"input_1": {"shape": [[1, 224, 224, 3], [1, 160, 160, 3]]}}</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>default_shape</code>: Default input shape. You can set a default shape during conversion for both
+     *         Range Dimension and Enumerated Shapes. For example
+     *         <code>{"input_1": {"shape": ["1..10", 224, 224, 3], "default_shape": [1, 224, 224, 3]}}</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>type</code>: Input type. Allowed values: <code>Image</code> and <code>Tensor</code>. By default,
+     *         the converter generates an ML Model with inputs of type Tensor (MultiArray). User can set input type to
+     *         be Image. Image input type requires additional input parameters such as <code>bias</code> and
+     *         <code>scale</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>bias</code>: If the input type is an Image, you need to provide the bias vector.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>scale</code>: If the input type is an Image, you need to provide a scale factor.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         CoreML <code>ClassifierConfig</code> parameters can be specified using
+     *         <a>OutputConfig$CompilerOptions</a>. CoreML converter supports Tensorflow and PyTorch models. CoreML
+     *         conversion examples:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Tensor type input:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3]}}</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Tensor type input without input name (PyTorch):
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224]}]</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Image type input:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}}</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Image type input without input name (PyTorch):
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}]</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     *         </p>
+     *         </li>
+     *         </ul>
      *         </li>
      */
 
@@ -1270,6 +1851,121 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <code>DataInputConfig</code> supports the following parameters for <code>CoreML</code>
+     * <a>OutputConfig$TargetDevice</a> (ML Model format):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>shape</code>: Input shape, for example <code>{"input_1": {"shape": [1,224,224,3]}}</code>. In addition to
+     * static input shapes, CoreML converter supports Flexible input shapes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Range Dimension. You can use the Range Dimension feature if you know the input shape will be within some specific
+     * interval in that dimension, for example: <code>{"input_1": {"shape": ["1..10", 224, 224, 3]}}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Enumerated shapes. Sometimes, the models are trained to work only on a select set of inputs. You can enumerate
+     * all supported input shapes, for example:
+     * <code>{"input_1": {"shape": [[1, 224, 224, 3], [1, 160, 160, 3]]}}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>default_shape</code>: Default input shape. You can set a default shape during conversion for both Range
+     * Dimension and Enumerated Shapes. For example
+     * <code>{"input_1": {"shape": ["1..10", 224, 224, 3], "default_shape": [1, 224, 224, 3]}}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>type</code>: Input type. Allowed values: <code>Image</code> and <code>Tensor</code>. By default, the
+     * converter generates an ML Model with inputs of type Tensor (MultiArray). User can set input type to be Image.
+     * Image input type requires additional input parameters such as <code>bias</code> and <code>scale</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bias</code>: If the input type is an Image, you need to provide the bias vector.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>scale</code>: If the input type is an Image, you need to provide a scale factor.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * CoreML <code>ClassifierConfig</code> parameters can be specified using <a>OutputConfig$CompilerOptions</a>.
+     * CoreML converter supports Tensorflow and PyTorch models. CoreML conversion examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Tensor type input:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3]}}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Tensor type input without input name (PyTorch):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224]}]</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Image type input:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Image type input without input name (PyTorch):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param dataInputConfig
      *        Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary
@@ -1463,6 +2159,124 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>XGBOOST</code>: input data name and shape are not needed.
      *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <code>DataInputConfig</code> supports the following parameters for <code>CoreML</code>
+     *        <a>OutputConfig$TargetDevice</a> (ML Model format):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>shape</code>: Input shape, for example <code>{"input_1": {"shape": [1,224,224,3]}}</code>. In
+     *        addition to static input shapes, CoreML converter supports Flexible input shapes:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Range Dimension. You can use the Range Dimension feature if you know the input shape will be within some
+     *        specific interval in that dimension, for example:
+     *        <code>{"input_1": {"shape": ["1..10", 224, 224, 3]}}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Enumerated shapes. Sometimes, the models are trained to work only on a select set of inputs. You can
+     *        enumerate all supported input shapes, for example:
+     *        <code>{"input_1": {"shape": [[1, 224, 224, 3], [1, 160, 160, 3]]}}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>default_shape</code>: Default input shape. You can set a default shape during conversion for both
+     *        Range Dimension and Enumerated Shapes. For example
+     *        <code>{"input_1": {"shape": ["1..10", 224, 224, 3], "default_shape": [1, 224, 224, 3]}}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>type</code>: Input type. Allowed values: <code>Image</code> and <code>Tensor</code>. By default, the
+     *        converter generates an ML Model with inputs of type Tensor (MultiArray). User can set input type to be
+     *        Image. Image input type requires additional input parameters such as <code>bias</code> and
+     *        <code>scale</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>bias</code>: If the input type is an Image, you need to provide the bias vector.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>scale</code>: If the input type is an Image, you need to provide a scale factor.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        CoreML <code>ClassifierConfig</code> parameters can be specified using
+     *        <a>OutputConfig$CompilerOptions</a>. CoreML converter supports Tensorflow and PyTorch models. CoreML
+     *        conversion examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Tensor type input:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3]}}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tensor type input without input name (PyTorch):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224]}]</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Image type input:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Image type input without input name (PyTorch):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}]</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

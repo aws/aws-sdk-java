@@ -92,6 +92,10 @@ public class ProjectVersionDescriptionJsonUnmarshaller implements Unmarshaller<P
                     context.nextToken();
                     projectVersionDescription.setEvaluationResult(EvaluationResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ManifestSummary", targetDepth)) {
+                    context.nextToken();
+                    projectVersionDescription.setManifestSummary(GroundTruthManifestJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -74,6 +74,13 @@ public class CostCategoryJsonUnmarshaller implements Unmarshaller<CostCategory, 
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ProcessingStatus", targetDepth)) {
+                    context.nextToken();
+                    costCategory.setProcessingStatus(new ListUnmarshaller<CostCategoryProcessingStatus>(CostCategoryProcessingStatusJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

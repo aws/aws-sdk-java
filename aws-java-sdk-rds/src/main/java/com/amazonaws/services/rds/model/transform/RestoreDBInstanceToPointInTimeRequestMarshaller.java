@@ -221,6 +221,10 @@ public class RestoreDBInstanceToPointInTimeRequestMarshaller implements
             request.addParameter("SourceDbiResourceId", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getSourceDbiResourceId()));
         }
 
+        if (restoreDBInstanceToPointInTimeRequest.getMaxAllocatedStorage() != null) {
+            request.addParameter("MaxAllocatedStorage", StringUtils.fromInteger(restoreDBInstanceToPointInTimeRequest.getMaxAllocatedStorage()));
+        }
+
         return request;
     }
 

@@ -128,7 +128,7 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Specifies additional parameters for compiler options in JSON format. The compiler options are
      * <code>TargetPlatform</code> specific. It is required for NVIDIA accelerators and highly recommended for CPU
-     * compliations. For any other cases, it is optional to specify <code>CompilerOptions.</code>
+     * compilations. For any other cases, it is optional to specify <code>CompilerOptions.</code>
      * </p>
      * <ul>
      * <li>
@@ -204,6 +204,21 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <code>mattr</code>: Add <code>{'mattr': ['+neon']}</code> to compiler options if compiling for ARM 32-bit
      * platform with NEON support.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CoreML</code>: Compilation for the CoreML <a>OutputConfig$TargetDevice</a> supports the following compiler
+     * options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>class_labels</code>: Specifies the classification labels file name inside input tar.gz file. For example,
+     * <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be separated by
+     * newlines.
      * </p>
      * </li>
      * </ul>
@@ -794,7 +809,7 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Specifies additional parameters for compiler options in JSON format. The compiler options are
      * <code>TargetPlatform</code> specific. It is required for NVIDIA accelerators and highly recommended for CPU
-     * compliations. For any other cases, it is optional to specify <code>CompilerOptions.</code>
+     * compilations. For any other cases, it is optional to specify <code>CompilerOptions.</code>
      * </p>
      * <ul>
      * <li>
@@ -874,12 +889,27 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * </li>
+     * <li>
+     * <p>
+     * <code>CoreML</code>: Compilation for the CoreML <a>OutputConfig$TargetDevice</a> supports the following compiler
+     * options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>class_labels</code>: Specifies the classification labels file name inside input tar.gz file. For example,
+     * <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be separated by
+     * newlines.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
      * </ul>
      * 
      * @param compilerOptions
      *        Specifies additional parameters for compiler options in JSON format. The compiler options are
      *        <code>TargetPlatform</code> specific. It is required for NVIDIA accelerators and highly recommended for
-     *        CPU compliations. For any other cases, it is optional to specify <code>CompilerOptions.</code> </p>
+     *        CPU compilations. For any other cases, it is optional to specify <code>CompilerOptions.</code> </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -958,6 +988,21 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CoreML</code>: Compilation for the CoreML <a>OutputConfig$TargetDevice</a> supports the following
+     *        compiler options:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>class_labels</code>: Specifies the classification labels file name inside input tar.gz file. For
+     *        example, <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be
+     *        separated by newlines.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      */
 
     public void setCompilerOptions(String compilerOptions) {
@@ -968,7 +1013,7 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Specifies additional parameters for compiler options in JSON format. The compiler options are
      * <code>TargetPlatform</code> specific. It is required for NVIDIA accelerators and highly recommended for CPU
-     * compliations. For any other cases, it is optional to specify <code>CompilerOptions.</code>
+     * compilations. For any other cases, it is optional to specify <code>CompilerOptions.</code>
      * </p>
      * <ul>
      * <li>
@@ -1048,11 +1093,26 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * </li>
+     * <li>
+     * <p>
+     * <code>CoreML</code>: Compilation for the CoreML <a>OutputConfig$TargetDevice</a> supports the following compiler
+     * options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>class_labels</code>: Specifies the classification labels file name inside input tar.gz file. For example,
+     * <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be separated by
+     * newlines.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
      * </ul>
      * 
      * @return Specifies additional parameters for compiler options in JSON format. The compiler options are
      *         <code>TargetPlatform</code> specific. It is required for NVIDIA accelerators and highly recommended for
-     *         CPU compliations. For any other cases, it is optional to specify <code>CompilerOptions.</code> </p>
+     *         CPU compilations. For any other cases, it is optional to specify <code>CompilerOptions.</code> </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1131,6 +1191,21 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         </ul>
      *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CoreML</code>: Compilation for the CoreML <a>OutputConfig$TargetDevice</a> supports the following
+     *         compiler options:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>class_labels</code>: Specifies the classification labels file name inside input tar.gz file. For
+     *         example, <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be
+     *         separated by newlines.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
      */
 
     public String getCompilerOptions() {
@@ -1141,7 +1216,7 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Specifies additional parameters for compiler options in JSON format. The compiler options are
      * <code>TargetPlatform</code> specific. It is required for NVIDIA accelerators and highly recommended for CPU
-     * compliations. For any other cases, it is optional to specify <code>CompilerOptions.</code>
+     * compilations. For any other cases, it is optional to specify <code>CompilerOptions.</code>
      * </p>
      * <ul>
      * <li>
@@ -1221,12 +1296,27 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * </li>
+     * <li>
+     * <p>
+     * <code>CoreML</code>: Compilation for the CoreML <a>OutputConfig$TargetDevice</a> supports the following compiler
+     * options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>class_labels</code>: Specifies the classification labels file name inside input tar.gz file. For example,
+     * <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be separated by
+     * newlines.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
      * </ul>
      * 
      * @param compilerOptions
      *        Specifies additional parameters for compiler options in JSON format. The compiler options are
      *        <code>TargetPlatform</code> specific. It is required for NVIDIA accelerators and highly recommended for
-     *        CPU compliations. For any other cases, it is optional to specify <code>CompilerOptions.</code> </p>
+     *        CPU compilations. For any other cases, it is optional to specify <code>CompilerOptions.</code> </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1301,6 +1391,21 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>mattr</code>: Add <code>{'mattr': ['+neon']}</code> to compiler options if compiling for ARM 32-bit
      *        platform with NEON support.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CoreML</code>: Compilation for the CoreML <a>OutputConfig$TargetDevice</a> supports the following
+     *        compiler options:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>class_labels</code>: Specifies the classification labels file name inside input tar.gz file. For
+     *        example, <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be
+     *        separated by newlines.
      *        </p>
      *        </li>
      *        </ul>

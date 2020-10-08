@@ -277,6 +277,10 @@ public class RestoreDBInstanceFromS3RequestMarshaller implements Marshaller<Requ
             request.addParameter("DeletionProtection", StringUtils.fromBoolean(restoreDBInstanceFromS3Request.getDeletionProtection()));
         }
 
+        if (restoreDBInstanceFromS3Request.getMaxAllocatedStorage() != null) {
+            request.addParameter("MaxAllocatedStorage", StringUtils.fromInteger(restoreDBInstanceFromS3Request.getMaxAllocatedStorage()));
+        }
+
         return request;
     }
 

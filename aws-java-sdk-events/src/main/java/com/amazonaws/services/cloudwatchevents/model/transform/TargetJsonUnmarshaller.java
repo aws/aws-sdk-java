@@ -100,6 +100,14 @@ public class TargetJsonUnmarshaller implements Unmarshaller<Target, JsonUnmarsha
                     context.nextToken();
                     target.setRedshiftDataParameters(RedshiftDataParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DeadLetterConfig", targetDepth)) {
+                    context.nextToken();
+                    target.setDeadLetterConfig(DeadLetterConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("RetryPolicy", targetDepth)) {
+                    context.nextToken();
+                    target.setRetryPolicy(RetryPolicyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

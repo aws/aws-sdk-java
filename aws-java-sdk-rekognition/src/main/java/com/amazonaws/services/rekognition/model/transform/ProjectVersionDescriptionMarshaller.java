@@ -49,6 +49,8 @@ public class ProjectVersionDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TestingDataResult").build();
     private static final MarshallingInfo<StructuredPojo> EVALUATIONRESULT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EvaluationResult").build();
+    private static final MarshallingInfo<StructuredPojo> MANIFESTSUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ManifestSummary").build();
 
     private static final ProjectVersionDescriptionMarshaller instance = new ProjectVersionDescriptionMarshaller();
 
@@ -77,6 +79,7 @@ public class ProjectVersionDescriptionMarshaller {
             protocolMarshaller.marshall(projectVersionDescription.getTrainingDataResult(), TRAININGDATARESULT_BINDING);
             protocolMarshaller.marshall(projectVersionDescription.getTestingDataResult(), TESTINGDATARESULT_BINDING);
             protocolMarshaller.marshall(projectVersionDescription.getEvaluationResult(), EVALUATIONRESULT_BINDING);
+            protocolMarshaller.marshall(projectVersionDescription.getManifestSummary(), MANIFESTSUMMARY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -46,7 +46,7 @@ public class AudioMetadata implements Serializable, Cloneable, StructuredPojo {
     private Long sampleRate;
     /**
      * <p>
-     * The number of audio channels in the segement.
+     * The number of audio channels in the segment.
      * </p>
      */
     private Long numberOfChannels;
@@ -173,11 +173,11 @@ public class AudioMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of audio channels in the segement.
+     * The number of audio channels in the segment.
      * </p>
      * 
      * @param numberOfChannels
-     *        The number of audio channels in the segement.
+     *        The number of audio channels in the segment.
      */
 
     public void setNumberOfChannels(Long numberOfChannels) {
@@ -186,10 +186,10 @@ public class AudioMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of audio channels in the segement.
+     * The number of audio channels in the segment.
      * </p>
      * 
-     * @return The number of audio channels in the segement.
+     * @return The number of audio channels in the segment.
      */
 
     public Long getNumberOfChannels() {
@@ -198,11 +198,11 @@ public class AudioMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of audio channels in the segement.
+     * The number of audio channels in the segment.
      * </p>
      * 
      * @param numberOfChannels
-     *        The number of audio channels in the segement.
+     *        The number of audio channels in the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

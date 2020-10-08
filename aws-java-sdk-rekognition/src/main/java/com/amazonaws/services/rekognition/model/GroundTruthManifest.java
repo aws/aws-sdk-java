@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The S3 bucket that contains the Ground Truth manifest file.
+ * The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

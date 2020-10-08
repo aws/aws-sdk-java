@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.ec2.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -42,6 +44,21 @@ public class RevokeSecurityGroupEgressResultStaxUnmarshaller implements Unmarsha
                 return revokeSecurityGroupEgressResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
+                if (context.testExpression("return", targetDepth)) {
+                    revokeSecurityGroupEgressResult.setReturn(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("unknownIpPermissionSet", targetDepth)) {
+                    revokeSecurityGroupEgressResult.withUnknownIpPermissions(new ArrayList<IpPermission>());
+                    continue;
+                }
+
+                if (context.testExpression("unknownIpPermissionSet/item", targetDepth)) {
+                    revokeSecurityGroupEgressResult.withUnknownIpPermissions(IpPermissionStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
 
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {

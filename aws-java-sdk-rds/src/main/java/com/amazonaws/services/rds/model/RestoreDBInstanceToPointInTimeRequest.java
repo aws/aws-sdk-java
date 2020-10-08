@@ -464,6 +464,12 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </p>
      */
     private String sourceDbiResourceId;
+    /**
+     * <p>
+     * The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
+     * </p>
+     */
+    private Integer maxAllocatedStorage;
 
     /**
      * Default constructor for RestoreDBInstanceToPointInTimeRequest object. Callers should use the setter or fluent
@@ -3522,6 +3528,46 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
+     * </p>
+     * 
+     * @param maxAllocatedStorage
+     *        The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
+     */
+
+    public void setMaxAllocatedStorage(Integer maxAllocatedStorage) {
+        this.maxAllocatedStorage = maxAllocatedStorage;
+    }
+
+    /**
+     * <p>
+     * The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
+     * </p>
+     * 
+     * @return The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
+     */
+
+    public Integer getMaxAllocatedStorage() {
+        return this.maxAllocatedStorage;
+    }
+
+    /**
+     * <p>
+     * The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
+     * </p>
+     * 
+     * @param maxAllocatedStorage
+     *        The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBInstanceToPointInTimeRequest withMaxAllocatedStorage(Integer maxAllocatedStorage) {
+        setMaxAllocatedStorage(maxAllocatedStorage);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3594,7 +3640,9 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
         if (getDeletionProtection() != null)
             sb.append("DeletionProtection: ").append(getDeletionProtection()).append(",");
         if (getSourceDbiResourceId() != null)
-            sb.append("SourceDbiResourceId: ").append(getSourceDbiResourceId());
+            sb.append("SourceDbiResourceId: ").append(getSourceDbiResourceId()).append(",");
+        if (getMaxAllocatedStorage() != null)
+            sb.append("MaxAllocatedStorage: ").append(getMaxAllocatedStorage());
         sb.append("}");
         return sb.toString();
     }
@@ -3734,6 +3782,10 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
             return false;
         if (other.getSourceDbiResourceId() != null && other.getSourceDbiResourceId().equals(this.getSourceDbiResourceId()) == false)
             return false;
+        if (other.getMaxAllocatedStorage() == null ^ this.getMaxAllocatedStorage() == null)
+            return false;
+        if (other.getMaxAllocatedStorage() != null && other.getMaxAllocatedStorage().equals(this.getMaxAllocatedStorage()) == false)
+            return false;
         return true;
     }
 
@@ -3773,6 +3825,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
         hashCode = prime * hashCode + ((getDBParameterGroupName() == null) ? 0 : getDBParameterGroupName().hashCode());
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         hashCode = prime * hashCode + ((getSourceDbiResourceId() == null) ? 0 : getSourceDbiResourceId().hashCode());
+        hashCode = prime * hashCode + ((getMaxAllocatedStorage() == null) ? 0 : getMaxAllocatedStorage().hashCode());
         return hashCode;
     }
 

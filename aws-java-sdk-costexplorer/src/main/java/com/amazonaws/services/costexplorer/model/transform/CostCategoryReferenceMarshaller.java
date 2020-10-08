@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.costexplorer.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +38,10 @@ public class CostCategoryReferenceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EffectiveEnd").build();
     private static final MarshallingInfo<Integer> NUMBEROFRULES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NumberOfRules").build();
+    private static final MarshallingInfo<List> PROCESSINGSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProcessingStatus").build();
+    private static final MarshallingInfo<List> VALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Values").build();
 
     private static final CostCategoryReferenceMarshaller instance = new CostCategoryReferenceMarshaller();
 
@@ -59,6 +64,8 @@ public class CostCategoryReferenceMarshaller {
             protocolMarshaller.marshall(costCategoryReference.getEffectiveStart(), EFFECTIVESTART_BINDING);
             protocolMarshaller.marshall(costCategoryReference.getEffectiveEnd(), EFFECTIVEEND_BINDING);
             protocolMarshaller.marshall(costCategoryReference.getNumberOfRules(), NUMBEROFRULES_BINDING);
+            protocolMarshaller.marshall(costCategoryReference.getProcessingStatus(), PROCESSINGSTATUS_BINDING);
+            protocolMarshaller.marshall(costCategoryReference.getValues(), VALUES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

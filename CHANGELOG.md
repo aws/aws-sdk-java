@@ -1,3 +1,36 @@
+# __1.11.879__ __2020-10-08__
+## __AWS Cost Explorer Service__
+  - ### Features
+    - You can now create hierarchical cost categories by choosing "Cost Category" as a dimension. You can also track the status of your cost category updates to your cost and usage information.
+
+## __Amazon CloudWatch Events__
+  - ### Features
+    - Amazon EventBridge (formerly called CloudWatch Events) adds support for target Dead-letter Queues and custom retry policies.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - AWS EC2 RevokeSecurityGroupIngress and RevokeSecurityGroupEgress APIs will return IpPermissions which do not match with any existing IpPermissions for security groups in default VPC and EC2-Classic.
+
+## __Amazon EventBridge__
+  - ### Features
+    - Amazon EventBridge adds support for target Dead Letter Queues (DLQs) and custom retry policies.
+
+## __Amazon Rekognition__
+  - ### Features
+    - This release provides location information for the manifest validation files.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Supports a new parameter to set the max allocated storage in gigabytes for restore database instance from S3 and restore database instance to a point in time APIs.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - This release enables Sagemaker customers to convert Tensorflow and PyTorch models to CoreML (ML Model) format.
+
+## __Amazon Simple Notification Service__
+  - ### Features
+    - Documentation updates for SNS.
+
 # __1.11.878__ __2020-10-07__
 ## __AWS Compute Optimizer__
   - ### Features
@@ -4431,7 +4464,7 @@
 # __1.11.658__ __2019-10-23__
 ## __AWS Security Token Service__
   - ### Features
-    - AWS Security Token Service (STS) now supports a regional configuration flag to make the client respect the region without the need for the endpoint parameter. 
+    - AWS Security Token Service (STS) now supports a regional configuration flag to make the client respect the region without the need for the endpoint parameter. The flag 'regional' can be set as a system property "sts_regional_endpoints" or an environment variable "AWS_STS_REGIONAL_ENDPOINTS". See https://docs.aws.amazon.com/credref/latest/refdocs/setting-global-sts_regional_endpoints.html for more details. 
 
 ## __Amazon Connect Service__
   - ### Features

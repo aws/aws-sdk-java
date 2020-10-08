@@ -27,7 +27,7 @@ public class ShotSegment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An Identifier for a shot detection segment detected in a video
+     * An Identifier for a shot detection segment detected in a video.
      * </p>
      */
     private Long index;
@@ -40,11 +40,11 @@ public class ShotSegment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An Identifier for a shot detection segment detected in a video
+     * An Identifier for a shot detection segment detected in a video.
      * </p>
      * 
      * @param index
-     *        An Identifier for a shot detection segment detected in a video
+     *        An Identifier for a shot detection segment detected in a video.
      */
 
     public void setIndex(Long index) {
@@ -53,10 +53,10 @@ public class ShotSegment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An Identifier for a shot detection segment detected in a video
+     * An Identifier for a shot detection segment detected in a video.
      * </p>
      * 
-     * @return An Identifier for a shot detection segment detected in a video
+     * @return An Identifier for a shot detection segment detected in a video.
      */
 
     public Long getIndex() {
@@ -65,11 +65,11 @@ public class ShotSegment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An Identifier for a shot detection segment detected in a video
+     * An Identifier for a shot detection segment detected in a video.
      * </p>
      * 
      * @param index
-     *        An Identifier for a shot detection segment detected in a video
+     *        An Identifier for a shot detection segment detected in a video.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

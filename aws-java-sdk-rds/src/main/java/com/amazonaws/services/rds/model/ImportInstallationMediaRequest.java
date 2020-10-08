@@ -81,8 +81,8 @@ public class ImportInstallationMediaRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * See <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport"
-     * >Version and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport"
+     * > Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      */
     private String engineVersion;
@@ -366,8 +366,8 @@ public class ImportInstallationMediaRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * See <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport"
-     * >Version and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport"
+     * > Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param engineVersion
@@ -384,8 +384,8 @@ public class ImportInstallationMediaRequest extends com.amazonaws.AmazonWebServi
      *        </p>
      *        <p>
      *        See <a href=
-     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport"
-     *        >Version and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport"
+     *        > Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -408,8 +408,8 @@ public class ImportInstallationMediaRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * See <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport"
-     * >Version and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport"
+     * > Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @return The version number of the database engine to use.</p>
@@ -425,8 +425,8 @@ public class ImportInstallationMediaRequest extends com.amazonaws.AmazonWebServi
      *         </p>
      *         <p>
      *         See <a href=
-     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport"
-     *         >Version and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport"
+     *         > Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public String getEngineVersion() {
@@ -449,8 +449,8 @@ public class ImportInstallationMediaRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * See <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport"
-     * >Version and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport"
+     * > Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param engineVersion
@@ -467,8 +467,8 @@ public class ImportInstallationMediaRequest extends com.amazonaws.AmazonWebServi
      *        </p>
      *        <p>
      *        See <a href=
-     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport"
-     *        >Version and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport"
+     *        > Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
