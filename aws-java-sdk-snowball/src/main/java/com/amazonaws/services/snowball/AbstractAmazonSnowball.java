@@ -63,6 +63,11 @@ public class AbstractAmazonSnowball implements AmazonSnowball {
     }
 
     @Override
+    public CreateReturnShippingLabelResult createReturnShippingLabel(CreateReturnShippingLabelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeAddressResult describeAddress(DescribeAddressRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,6 +84,11 @@ public class AbstractAmazonSnowball implements AmazonSnowball {
 
     @Override
     public DescribeJobResult describeJob(DescribeJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeReturnShippingLabelResult describeReturnShippingLabel(DescribeReturnShippingLabelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -129,6 +139,11 @@ public class AbstractAmazonSnowball implements AmazonSnowball {
 
     @Override
     public UpdateJobResult updateJob(UpdateJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateJobShipmentStateResult updateJobShipmentState(UpdateJobShipmentStateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

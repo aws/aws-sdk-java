@@ -126,6 +126,14 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
     private Boolean enableBasicAuth;
     /**
      * <p>
+     * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
+     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
+     * minutes to roll out.
+     * </p>
+     */
+    private Boolean enablePerformanceMode;
+    /**
+     * <p>
      * The thumbnail URL for the branch of an Amplify app.
      * </p>
      */
@@ -968,6 +976,74 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
+     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
+     * minutes to roll out.
+     * </p>
+     * 
+     * @param enablePerformanceMode
+     *        Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
+     *        longer interval. Enabling performance mode will mean that hosting configuration or code changes can take
+     *        up to 10 minutes to roll out.
+     */
+
+    public void setEnablePerformanceMode(Boolean enablePerformanceMode) {
+        this.enablePerformanceMode = enablePerformanceMode;
+    }
+
+    /**
+     * <p>
+     * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
+     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
+     * minutes to roll out.
+     * </p>
+     * 
+     * @return Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
+     *         longer interval. Enabling performance mode will mean that hosting configuration or code changes can take
+     *         up to 10 minutes to roll out.
+     */
+
+    public Boolean getEnablePerformanceMode() {
+        return this.enablePerformanceMode;
+    }
+
+    /**
+     * <p>
+     * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
+     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
+     * minutes to roll out.
+     * </p>
+     * 
+     * @param enablePerformanceMode
+     *        Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
+     *        longer interval. Enabling performance mode will mean that hosting configuration or code changes can take
+     *        up to 10 minutes to roll out.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Branch withEnablePerformanceMode(Boolean enablePerformanceMode) {
+        setEnablePerformanceMode(enablePerformanceMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
+     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
+     * minutes to roll out.
+     * </p>
+     * 
+     * @return Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
+     *         longer interval. Enabling performance mode will mean that hosting configuration or code changes can take
+     *         up to 10 minutes to roll out.
+     */
+
+    public Boolean isEnablePerformanceMode() {
+        return this.enablePerformanceMode;
+    }
+
+    /**
+     * <p>
      * The thumbnail URL for the branch of an Amplify app.
      * </p>
      * 
@@ -1452,6 +1528,8 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
             sb.append("TotalNumberOfJobs: ").append(getTotalNumberOfJobs()).append(",");
         if (getEnableBasicAuth() != null)
             sb.append("EnableBasicAuth: ").append(getEnableBasicAuth()).append(",");
+        if (getEnablePerformanceMode() != null)
+            sb.append("EnablePerformanceMode: ").append(getEnablePerformanceMode()).append(",");
         if (getThumbnailUrl() != null)
             sb.append("ThumbnailUrl: ").append(getThumbnailUrl()).append(",");
         if (getBasicAuthCredentials() != null)
@@ -1550,6 +1628,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEnableBasicAuth() != null && other.getEnableBasicAuth().equals(this.getEnableBasicAuth()) == false)
             return false;
+        if (other.getEnablePerformanceMode() == null ^ this.getEnablePerformanceMode() == null)
+            return false;
+        if (other.getEnablePerformanceMode() != null && other.getEnablePerformanceMode().equals(this.getEnablePerformanceMode()) == false)
+            return false;
         if (other.getThumbnailUrl() == null ^ this.getThumbnailUrl() == null)
             return false;
         if (other.getThumbnailUrl() != null && other.getThumbnailUrl().equals(this.getThumbnailUrl()) == false)
@@ -1614,6 +1696,7 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getActiveJobId() == null) ? 0 : getActiveJobId().hashCode());
         hashCode = prime * hashCode + ((getTotalNumberOfJobs() == null) ? 0 : getTotalNumberOfJobs().hashCode());
         hashCode = prime * hashCode + ((getEnableBasicAuth() == null) ? 0 : getEnableBasicAuth().hashCode());
+        hashCode = prime * hashCode + ((getEnablePerformanceMode() == null) ? 0 : getEnablePerformanceMode().hashCode());
         hashCode = prime * hashCode + ((getThumbnailUrl() == null) ? 0 : getThumbnailUrl().hashCode());
         hashCode = prime * hashCode + ((getBasicAuthCredentials() == null) ? 0 : getBasicAuthCredentials().hashCode());
         hashCode = prime * hashCode + ((getBuildSpec() == null) ? 0 : getBuildSpec().hashCode());

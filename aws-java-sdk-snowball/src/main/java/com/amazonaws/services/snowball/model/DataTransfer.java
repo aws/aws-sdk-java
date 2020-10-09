@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Defines the real-time status of a Snowball's data transfer while the device is at AWS. This data is only available
+ * Defines the real-time status of a Snow device's data transfer while the device is at AWS. This data is only available
  * while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs.
  * </p>
  * 
@@ -31,38 +31,38 @@ public class DataTransfer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of bytes transferred between a Snowball and Amazon S3.
+     * The number of bytes transferred between a Snow device and Amazon S3.
      * </p>
      */
     private Long bytesTransferred;
     /**
      * <p>
-     * The number of objects transferred between a Snowball and Amazon S3.
+     * The number of objects transferred between a Snow device and Amazon S3.
      * </p>
      */
     private Long objectsTransferred;
     /**
      * <p>
-     * The total bytes of data for a transfer between a Snowball and Amazon S3. This value is set to 0 (zero) until all
-     * the keys that will be transferred have been listed.
+     * The total bytes of data for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until
+     * all the keys that will be transferred have been listed.
      * </p>
      */
     private Long totalBytes;
     /**
      * <p>
-     * The total number of objects for a transfer between a Snowball and Amazon S3. This value is set to 0 (zero) until
-     * all the keys that will be transferred have been listed.
+     * The total number of objects for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero)
+     * until all the keys that will be transferred have been listed.
      * </p>
      */
     private Long totalObjects;
 
     /**
      * <p>
-     * The number of bytes transferred between a Snowball and Amazon S3.
+     * The number of bytes transferred between a Snow device and Amazon S3.
      * </p>
      * 
      * @param bytesTransferred
-     *        The number of bytes transferred between a Snowball and Amazon S3.
+     *        The number of bytes transferred between a Snow device and Amazon S3.
      */
 
     public void setBytesTransferred(Long bytesTransferred) {
@@ -71,10 +71,10 @@ public class DataTransfer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of bytes transferred between a Snowball and Amazon S3.
+     * The number of bytes transferred between a Snow device and Amazon S3.
      * </p>
      * 
-     * @return The number of bytes transferred between a Snowball and Amazon S3.
+     * @return The number of bytes transferred between a Snow device and Amazon S3.
      */
 
     public Long getBytesTransferred() {
@@ -83,11 +83,11 @@ public class DataTransfer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of bytes transferred between a Snowball and Amazon S3.
+     * The number of bytes transferred between a Snow device and Amazon S3.
      * </p>
      * 
      * @param bytesTransferred
-     *        The number of bytes transferred between a Snowball and Amazon S3.
+     *        The number of bytes transferred between a Snow device and Amazon S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class DataTransfer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of objects transferred between a Snowball and Amazon S3.
+     * The number of objects transferred between a Snow device and Amazon S3.
      * </p>
      * 
      * @param objectsTransferred
-     *        The number of objects transferred between a Snowball and Amazon S3.
+     *        The number of objects transferred between a Snow device and Amazon S3.
      */
 
     public void setObjectsTransferred(Long objectsTransferred) {
@@ -111,10 +111,10 @@ public class DataTransfer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of objects transferred between a Snowball and Amazon S3.
+     * The number of objects transferred between a Snow device and Amazon S3.
      * </p>
      * 
-     * @return The number of objects transferred between a Snowball and Amazon S3.
+     * @return The number of objects transferred between a Snow device and Amazon S3.
      */
 
     public Long getObjectsTransferred() {
@@ -123,11 +123,11 @@ public class DataTransfer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of objects transferred between a Snowball and Amazon S3.
+     * The number of objects transferred between a Snow device and Amazon S3.
      * </p>
      * 
      * @param objectsTransferred
-     *        The number of objects transferred between a Snowball and Amazon S3.
+     *        The number of objects transferred between a Snow device and Amazon S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,12 +138,12 @@ public class DataTransfer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total bytes of data for a transfer between a Snowball and Amazon S3. This value is set to 0 (zero) until all
-     * the keys that will be transferred have been listed.
+     * The total bytes of data for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until
+     * all the keys that will be transferred have been listed.
      * </p>
      * 
      * @param totalBytes
-     *        The total bytes of data for a transfer between a Snowball and Amazon S3. This value is set to 0 (zero)
+     *        The total bytes of data for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero)
      *        until all the keys that will be transferred have been listed.
      */
 
@@ -153,11 +153,11 @@ public class DataTransfer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total bytes of data for a transfer between a Snowball and Amazon S3. This value is set to 0 (zero) until all
-     * the keys that will be transferred have been listed.
+     * The total bytes of data for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until
+     * all the keys that will be transferred have been listed.
      * </p>
      * 
-     * @return The total bytes of data for a transfer between a Snowball and Amazon S3. This value is set to 0 (zero)
+     * @return The total bytes of data for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero)
      *         until all the keys that will be transferred have been listed.
      */
 
@@ -167,12 +167,12 @@ public class DataTransfer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total bytes of data for a transfer between a Snowball and Amazon S3. This value is set to 0 (zero) until all
-     * the keys that will be transferred have been listed.
+     * The total bytes of data for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until
+     * all the keys that will be transferred have been listed.
      * </p>
      * 
      * @param totalBytes
-     *        The total bytes of data for a transfer between a Snowball and Amazon S3. This value is set to 0 (zero)
+     *        The total bytes of data for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero)
      *        until all the keys that will be transferred have been listed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -184,13 +184,13 @@ public class DataTransfer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of objects for a transfer between a Snowball and Amazon S3. This value is set to 0 (zero) until
-     * all the keys that will be transferred have been listed.
+     * The total number of objects for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero)
+     * until all the keys that will be transferred have been listed.
      * </p>
      * 
      * @param totalObjects
-     *        The total number of objects for a transfer between a Snowball and Amazon S3. This value is set to 0 (zero)
-     *        until all the keys that will be transferred have been listed.
+     *        The total number of objects for a transfer between a Snow device and Amazon S3. This value is set to 0
+     *        (zero) until all the keys that will be transferred have been listed.
      */
 
     public void setTotalObjects(Long totalObjects) {
@@ -199,11 +199,11 @@ public class DataTransfer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of objects for a transfer between a Snowball and Amazon S3. This value is set to 0 (zero) until
-     * all the keys that will be transferred have been listed.
+     * The total number of objects for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero)
+     * until all the keys that will be transferred have been listed.
      * </p>
      * 
-     * @return The total number of objects for a transfer between a Snowball and Amazon S3. This value is set to 0
+     * @return The total number of objects for a transfer between a Snow device and Amazon S3. This value is set to 0
      *         (zero) until all the keys that will be transferred have been listed.
      */
 
@@ -213,13 +213,13 @@ public class DataTransfer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of objects for a transfer between a Snowball and Amazon S3. This value is set to 0 (zero) until
-     * all the keys that will be transferred have been listed.
+     * The total number of objects for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero)
+     * until all the keys that will be transferred have been listed.
      * </p>
      * 
      * @param totalObjects
-     *        The total number of objects for a transfer between a Snowball and Amazon S3. This value is set to 0 (zero)
-     *        until all the keys that will be transferred have been listed.
+     *        The total number of objects for a transfer between a Snow device and Amazon S3. This value is set to 0
+     *        (zero) until all the keys that will be transferred have been listed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

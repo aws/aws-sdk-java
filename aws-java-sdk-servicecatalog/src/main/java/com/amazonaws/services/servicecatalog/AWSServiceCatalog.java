@@ -346,7 +346,7 @@ public interface AWSServiceCatalog {
     /**
      * <p>
      * Shares the specified portfolio with the specified account or organization node. Shares to an organization node
-     * can only be created by the master account of an organization or by a delegated administrator. You can share
+     * can only be created by the management account of an organization or by a delegated administrator. You can share
      * portfolios to an organization, an organizational unit, or a specific account.
      * </p>
      * <p>
@@ -549,7 +549,7 @@ public interface AWSServiceCatalog {
     /**
      * <p>
      * Stops sharing the specified portfolio with the specified account or organization node. Shares to an organization
-     * node can only be deleted by the master account of an organization or by a delegated administrator.
+     * node can only be deleted by the management account of an organization or by a delegated administrator.
      * </p>
      * <p>
      * Note that if a delegated admin is de-registered, portfolio shares created from that account are removed.
@@ -732,8 +732,8 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Gets the status of the specified portfolio share operation. This API can only be called by the master account in
-     * the organization or by a delegated admin.
+     * Gets the status of the specified portfolio share operation. This API can only be called by the management account
+     * in the organization or by a delegated admin.
      * </p>
      * 
      * @param describePortfolioShareStatusRequest
@@ -965,8 +965,8 @@ public interface AWSServiceCatalog {
      * <p>
      * Disable portfolio sharing through AWS Organizations feature. This feature will not delete your current shares but
      * it will prevent you from creating new shares throughout your organization. Current shares will not be in sync
-     * with your organization structure if it changes after calling this API. This API can only be called by the master
-     * account in the organization.
+     * with your organization structure if it changes after calling this API. This API can only be called by the
+     * management account in the organization.
      * </p>
      * <p>
      * This API can't be invoked if there are active delegated administrators in the organization.
@@ -1086,7 +1086,7 @@ public interface AWSServiceCatalog {
      * <p>
      * Enable portfolio sharing feature through AWS Organizations. This API will allow Service Catalog to receive
      * updates on your organization in order to sync your shares with the current structure. This API can only be called
-     * by the master account in the organization.
+     * by the management account in the organization.
      * </p>
      * <p>
      * By calling this API Service Catalog will make a call to organizations:EnableAWSServiceAccess on your behalf so
@@ -1155,7 +1155,7 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Get the Access Status for AWS Organization portfolio share feature. This API can only be called by the master
+     * Get the Access Status for AWS Organization portfolio share feature. This API can only be called by the management
      * account in the organization or by a delegated admin.
      * </p>
      * 
@@ -1170,6 +1170,24 @@ public interface AWSServiceCatalog {
      *      target="_top">AWS API Documentation</a>
      */
     GetAWSOrganizationsAccessStatusResult getAWSOrganizationsAccessStatus(GetAWSOrganizationsAccessStatusRequest getAWSOrganizationsAccessStatusRequest);
+
+    /**
+     * <p>
+     * This API takes either a <code>ProvisonedProductId</code> or a <code>ProvisionedProductName</code>, along with a
+     * list of one or more output keys, and responds with the key/value pairs of those outputs.
+     * </p>
+     * 
+     * @param getProvisionedProductOutputsRequest
+     * @return Result of the GetProvisionedProductOutputs operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.GetProvisionedProductOutputs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/GetProvisionedProductOutputs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetProvisionedProductOutputsResult getProvisionedProductOutputs(GetProvisionedProductOutputsRequest getProvisionedProductOutputsRequest);
 
     /**
      * <p>
@@ -1243,7 +1261,7 @@ public interface AWSServiceCatalog {
     /**
      * <p>
      * Lists the organization nodes that have access to the specified portfolio. This API can only be called by the
-     * master account in the organization or by a delegated admin.
+     * management account in the organization or by a delegated admin.
      * </p>
      * <p>
      * If a delegated admin is de-registered, they can no longer perform this operation.

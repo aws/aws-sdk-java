@@ -244,9 +244,9 @@ public interface AWSMediaLive {
      * @throws ForbiddenException
      *         You don't have permission to create the multiplex.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on create multiplex calls to multiplex service.
      * @throws ConflictException
@@ -273,9 +273,9 @@ public interface AWSMediaLive {
      * @throws ForbiddenException
      *         You do not have permission to create a program.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on create multiplex program calls to multiplex service.
      * @throws ConflictException
@@ -401,11 +401,11 @@ public interface AWSMediaLive {
      * @throws ForbiddenException
      *         You don't have permission to delete the multiplex.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws NotFoundException
      *         The multiplex that you are trying to delete doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on delete multiplex calls to multiplex service.
      * @throws ConflictException
@@ -429,11 +429,11 @@ public interface AWSMediaLive {
      * @throws ForbiddenException
      *         You don't have permission to delete the multiplex program.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws NotFoundException
      *         The program that you are trying to delete doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on delete multiplex program calls to multiplex service.
      * @throws ConflictException
@@ -461,7 +461,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         Reservation you're attempting to delete does not exist
      * @throws GatewayTimeoutException
-     *         Gateway timeout error
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on delete reservation request
      * @throws ConflictException
@@ -587,7 +587,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         The input device you're requesting to describe does not exist. Check the ID.
      * @throws GatewayTimeoutException
-     *         Gateway timeout error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on describe calls to the input device service.
      * @sample AWSMediaLive.DescribeInputDevice
@@ -613,7 +613,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         Input device not found.
      * @throws GatewayTimeoutException
-     *         Gateway timeout error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on get thumbnail calls to the input device service.
      * @sample AWSMediaLive.DescribeInputDeviceThumbnail
@@ -661,11 +661,11 @@ public interface AWSMediaLive {
      * @throws ForbiddenException
      *         You don't have permission to describe the multiplex.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws NotFoundException
      *         The multiplex that you are trying to describe doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on describe multiplex calls to multiplex service.
      * @sample AWSMediaLive.DescribeMultiplex
@@ -687,12 +687,12 @@ public interface AWSMediaLive {
      * @throws ForbiddenException
      *         You don't have permission to describe the multiplex program.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws NotFoundException
      *         MediaLive can't describe the program. The multiplex or the program that you specified doesn’t exist.
      *         Check the IDs and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on describe multiplex program calls to multiplex service.
      * @sample AWSMediaLive.DescribeMultiplexProgram
@@ -718,7 +718,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         Offering you're attempting to describe does not exist
      * @throws GatewayTimeoutException
-     *         Gateway timeout error
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on describe offering request
      * @sample AWSMediaLive.DescribeOffering
@@ -744,7 +744,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         Reservation you're attempting to describe does not exist
      * @throws GatewayTimeoutException
-     *         Gateway timeout error
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on describe reservation request
      * @sample AWSMediaLive.DescribeReservation
@@ -818,7 +818,7 @@ public interface AWSMediaLive {
      * @throws BadGatewayException
      *         Bad gateway error.
      * @throws GatewayTimeoutException
-     *         Gateway timeout error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on list devices calls to the input device service.
      * @sample AWSMediaLive.ListInputDevices
@@ -889,12 +889,12 @@ public interface AWSMediaLive {
      * @throws ForbiddenException
      *         You do not have permission to list multiplex programs.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws NotFoundException
      *         MediaLive can't provide the list of programs. The multiplex that you specified doesn’t exist. Check the
      *         ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on list multiplex calls to multiplex service.
      * @sample AWSMediaLive.ListMultiplexPrograms
@@ -917,9 +917,9 @@ public interface AWSMediaLive {
      * @throws ForbiddenException
      *         You don't have permission to list multiplexes.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on list multiplex calls to multiplex service.
      * @sample AWSMediaLive.ListMultiplexes
@@ -943,7 +943,7 @@ public interface AWSMediaLive {
      * @throws BadGatewayException
      *         Bad gateway error
      * @throws GatewayTimeoutException
-     *         Gateway timeout error
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on list offerings request
      * @sample AWSMediaLive.ListOfferings
@@ -967,7 +967,7 @@ public interface AWSMediaLive {
      * @throws BadGatewayException
      *         Bad gateway error
      * @throws GatewayTimeoutException
-     *         Gateway timeout error
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on list reservations request
      * @sample AWSMediaLive.ListReservations
@@ -1013,7 +1013,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         Offering you're attempting to purchase does not exist
      * @throws GatewayTimeoutException
-     *         Gateway timeout error
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on purchase offering request
      * @throws ConflictException
@@ -1067,11 +1067,11 @@ public interface AWSMediaLive {
      * @throws ForbiddenException
      *         You don't have permission to start the multiplex.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws NotFoundException
      *         The multiplex that you are trying to start doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on start multiplex calls to multiplex service.
      * @throws ConflictException
@@ -1124,11 +1124,11 @@ public interface AWSMediaLive {
      * @throws ForbiddenException
      *         You don't have permission to stop the multiplex.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws NotFoundException
      *         The multiplex that you are trying to stop doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on stop multiplex calls to multiplex service.
      * @throws ConflictException
@@ -1240,7 +1240,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         The input device you're requesting to does not exist. Check the ID.
      * @throws GatewayTimeoutException
-     *         Gateway timeout error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on update calls to the input device service.
      * @sample AWSMediaLive.UpdateInputDevice
@@ -1292,11 +1292,11 @@ public interface AWSMediaLive {
      * @throws ForbiddenException
      *         You don't have permission to update the multiplex.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws NotFoundException
      *         The multiplex that you are trying to update doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws ConflictException
      *         The multiplex is unable to update due to an issue with multiplex resources.
      * @sample AWSMediaLive.UpdateMultiplex
@@ -1321,12 +1321,12 @@ public interface AWSMediaLive {
      * @throws ForbiddenException
      *         You don't have permission to update the multiplex program.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws NotFoundException
      *         MediaLive can't update the program. The multiplex or the program that you specified doesn’t exist. Check
      *         the IDs and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws ConflictException
      *         The multiplex program is unable to update due to an issue with multiplex resources.
      * @sample AWSMediaLive.UpdateMultiplexProgram
@@ -1352,7 +1352,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         Reservation not found
      * @throws GatewayTimeoutException
-     *         Gateway timeout error
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded
      * @throws ConflictException

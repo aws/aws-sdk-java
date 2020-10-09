@@ -73,6 +73,10 @@ public class AutoBranchCreationConfigJsonUnmarshaller implements Unmarshaller<Au
                     context.nextToken();
                     autoBranchCreationConfig.setEnableBasicAuth(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("enablePerformanceMode", targetDepth)) {
+                    context.nextToken();
+                    autoBranchCreationConfig.setEnablePerformanceMode(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("buildSpec", targetDepth)) {
                     context.nextToken();
                     autoBranchCreationConfig.setBuildSpec(context.getUnmarshaller(String.class).unmarshall(context));

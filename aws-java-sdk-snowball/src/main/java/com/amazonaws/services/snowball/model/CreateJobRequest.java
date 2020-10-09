@@ -55,7 +55,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String description;
     /**
      * <p>
-     * The ID for the address that you want the Snowball shipped to.
+     * The ID for the address that you want the Snow device shipped to.
      * </p>
      */
     private String addressId;
@@ -77,34 +77,34 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String roleARN;
     /**
      * <p>
-     * If your job is being created in one of the US regions, you have the option of specifying what size Snowball you'd
-     * like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     * If your job is being created in one of the US regions, you have the option of specifying what size Snow device
+     * you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
      * </p>
      */
     private String snowballCapacityPreference;
     /**
      * <p>
-     * The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snowball, rather it
-     * represents how quickly the Snowball moves to its destination while in transit. Regional shipping speeds are as
+     * The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it
+     * represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as
      * follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in about a
-     * day.
+     * In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about
+     * a day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowballs are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -130,16 +130,16 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String clusterId;
     /**
      * <p>
-     * The type of AWS Snowball device to use for this job.
+     * The type of AWS Snow Family device to use for this job.
      * </p>
      * <note>
      * <p>
-     * For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     * For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
      * </p>
      * </note>
      * <p>
-     * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
-     * is <code>EDGE</code>.
+     * The type of AWS Snow device to use for this job. Currently, the only supported device type for cluster jobs is
+     * <code>EDGE</code>.
      * </p>
      * <p>
      * For more information, see <a
@@ -382,11 +382,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID for the address that you want the Snowball shipped to.
+     * The ID for the address that you want the Snow device shipped to.
      * </p>
      * 
      * @param addressId
-     *        The ID for the address that you want the Snowball shipped to.
+     *        The ID for the address that you want the Snow device shipped to.
      */
 
     public void setAddressId(String addressId) {
@@ -395,10 +395,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID for the address that you want the Snowball shipped to.
+     * The ID for the address that you want the Snow device shipped to.
      * </p>
      * 
-     * @return The ID for the address that you want the Snowball shipped to.
+     * @return The ID for the address that you want the Snow device shipped to.
      */
 
     public String getAddressId() {
@@ -407,11 +407,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID for the address that you want the Snowball shipped to.
+     * The ID for the address that you want the Snow device shipped to.
      * </p>
      * 
      * @param addressId
-     *        The ID for the address that you want the Snowball shipped to.
+     *        The ID for the address that you want the Snow device shipped to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -527,13 +527,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * If your job is being created in one of the US regions, you have the option of specifying what size Snowball you'd
-     * like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     * If your job is being created in one of the US regions, you have the option of specifying what size Snow device
+     * you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
      * </p>
      * 
      * @param snowballCapacityPreference
-     *        If your job is being created in one of the US regions, you have the option of specifying what size
-     *        Snowball you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     *        If your job is being created in one of the US regions, you have the option of specifying what size Snow
+     *        device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
      * @see SnowballCapacity
      */
 
@@ -543,12 +543,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * If your job is being created in one of the US regions, you have the option of specifying what size Snowball you'd
-     * like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     * If your job is being created in one of the US regions, you have the option of specifying what size Snow device
+     * you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
      * </p>
      * 
-     * @return If your job is being created in one of the US regions, you have the option of specifying what size
-     *         Snowball you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     * @return If your job is being created in one of the US regions, you have the option of specifying what size Snow
+     *         device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
      * @see SnowballCapacity
      */
 
@@ -558,13 +558,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * If your job is being created in one of the US regions, you have the option of specifying what size Snowball you'd
-     * like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     * If your job is being created in one of the US regions, you have the option of specifying what size Snow device
+     * you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
      * </p>
      * 
      * @param snowballCapacityPreference
-     *        If your job is being created in one of the US regions, you have the option of specifying what size
-     *        Snowball you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     *        If your job is being created in one of the US regions, you have the option of specifying what size Snow
+     *        device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballCapacity
      */
@@ -576,13 +576,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * If your job is being created in one of the US regions, you have the option of specifying what size Snowball you'd
-     * like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     * If your job is being created in one of the US regions, you have the option of specifying what size Snow device
+     * you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
      * </p>
      * 
      * @param snowballCapacityPreference
-     *        If your job is being created in one of the US regions, you have the option of specifying what size
-     *        Snowball you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     *        If your job is being created in one of the US regions, you have the option of specifying what size Snow
+     *        device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
      * @see SnowballCapacity
      */
 
@@ -592,13 +592,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * If your job is being created in one of the US regions, you have the option of specifying what size Snowball you'd
-     * like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     * If your job is being created in one of the US regions, you have the option of specifying what size Snow device
+     * you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
      * </p>
      * 
      * @param snowballCapacityPreference
-     *        If your job is being created in one of the US regions, you have the option of specifying what size
-     *        Snowball you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     *        If your job is being created in one of the US regions, you have the option of specifying what size Snow
+     *        device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballCapacity
      */
@@ -610,27 +610,27 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snowball, rather it
-     * represents how quickly the Snowball moves to its destination while in transit. Regional shipping speeds are as
+     * The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it
+     * represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as
      * follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in about a
-     * day.
+     * In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about
+     * a day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowballs are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -641,26 +641,26 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </ul>
      * 
      * @param shippingOption
-     *        The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snowball, rather it
-     *        represents how quickly the Snowball moves to its destination while in transit. Regional shipping speeds
+     *        The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it
+     *        represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds
      *        are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in
-     *        about a day.
+     *        In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered
+     *        in about a day.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
-     *        delivered in about a day. In addition, most countries in the EU have access to standard shipping, which
-     *        typically takes less than a week, one way.
+     *        In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
+     *        are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
+     *        which typically takes less than a week, one way.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snowballs are delivered in one to seven days.
+     *        In India, Snow devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -677,27 +677,27 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snowball, rather it
-     * represents how quickly the Snowball moves to its destination while in transit. Regional shipping speeds are as
+     * The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it
+     * represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as
      * follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in about a
-     * day.
+     * In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about
+     * a day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowballs are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -707,26 +707,26 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * </ul>
      * 
-     * @return The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snowball, rather it
-     *         represents how quickly the Snowball moves to its destination while in transit. Regional shipping speeds
-     *         are as follows:</p>
+     * @return The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather
+     *         it represents how quickly the Snow device moves to its destination while in transit. Regional shipping
+     *         speeds are as follows:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in
-     *         about a day.
+     *         In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered
+     *         in about a day.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
-     *         delivered in about a day. In addition, most countries in the EU have access to standard shipping, which
-     *         typically takes less than a week, one way.
+     *         In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
+     *         are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
+     *         which typically takes less than a week, one way.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         In India, Snowballs are delivered in one to seven days.
+     *         In India, Snow devices are delivered in one to seven days.
      *         </p>
      *         </li>
      *         <li>
@@ -743,27 +743,27 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snowball, rather it
-     * represents how quickly the Snowball moves to its destination while in transit. Regional shipping speeds are as
+     * The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it
+     * represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as
      * follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in about a
-     * day.
+     * In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about
+     * a day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowballs are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -774,26 +774,26 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </ul>
      * 
      * @param shippingOption
-     *        The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snowball, rather it
-     *        represents how quickly the Snowball moves to its destination while in transit. Regional shipping speeds
+     *        The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it
+     *        represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds
      *        are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in
-     *        about a day.
+     *        In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered
+     *        in about a day.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
-     *        delivered in about a day. In addition, most countries in the EU have access to standard shipping, which
-     *        typically takes less than a week, one way.
+     *        In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
+     *        are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
+     *        which typically takes less than a week, one way.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snowballs are delivered in one to seven days.
+     *        In India, Snow devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -812,27 +812,27 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snowball, rather it
-     * represents how quickly the Snowball moves to its destination while in transit. Regional shipping speeds are as
+     * The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it
+     * represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as
      * follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in about a
-     * day.
+     * In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about
+     * a day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowballs are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -843,26 +843,26 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </ul>
      * 
      * @param shippingOption
-     *        The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snowball, rather it
-     *        represents how quickly the Snowball moves to its destination while in transit. Regional shipping speeds
+     *        The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it
+     *        represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds
      *        are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in
-     *        about a day.
+     *        In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered
+     *        in about a day.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
-     *        delivered in about a day. In addition, most countries in the EU have access to standard shipping, which
-     *        typically takes less than a week, one way.
+     *        In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
+     *        are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
+     *        which typically takes less than a week, one way.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snowballs are delivered in one to seven days.
+     *        In India, Snow devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -879,27 +879,27 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snowball, rather it
-     * represents how quickly the Snowball moves to its destination while in transit. Regional shipping speeds are as
+     * The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it
+     * represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as
      * follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in about a
-     * day.
+     * In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about
+     * a day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowballs are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -910,26 +910,26 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </ul>
      * 
      * @param shippingOption
-     *        The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snowball, rather it
-     *        represents how quickly the Snowball moves to its destination while in transit. Regional shipping speeds
+     *        The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it
+     *        represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds
      *        are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in
-     *        about a day.
+     *        In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered
+     *        in about a day.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
-     *        delivered in about a day. In addition, most countries in the EU have access to standard shipping, which
-     *        typically takes less than a week, one way.
+     *        In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
+     *        are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
+     *        which typically takes less than a week, one way.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snowballs are delivered in one to seven days.
+     *        In India, Snow devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -1034,16 +1034,16 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this job.
+     * The type of AWS Snow Family device to use for this job.
      * </p>
      * <note>
      * <p>
-     * For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     * For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
      * </p>
      * </note>
      * <p>
-     * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
-     * is <code>EDGE</code>.
+     * The type of AWS Snow device to use for this job. Currently, the only supported device type for cluster jobs is
+     * <code>EDGE</code>.
      * </p>
      * <p>
      * For more information, see <a
@@ -1052,13 +1052,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this job. </p> <note>
+     *        The type of AWS Snow Family device to use for this job. </p> <note>
      *        <p>
-     *        For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     *        For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
      *        </p>
      *        </note>
      *        <p>
-     *        The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster
+     *        The type of AWS Snow device to use for this job. Currently, the only supported device type for cluster
      *        jobs is <code>EDGE</code>.
      *        </p>
      *        <p>
@@ -1074,16 +1074,16 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this job.
+     * The type of AWS Snow Family device to use for this job.
      * </p>
      * <note>
      * <p>
-     * For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     * For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
      * </p>
      * </note>
      * <p>
-     * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
-     * is <code>EDGE</code>.
+     * The type of AWS Snow device to use for this job. Currently, the only supported device type for cluster jobs is
+     * <code>EDGE</code>.
      * </p>
      * <p>
      * For more information, see <a
@@ -1091,14 +1091,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Options</a> in the Snowball Edge Developer Guide.
      * </p>
      * 
-     * @return The type of AWS Snowball device to use for this job. </p> <note>
+     * @return The type of AWS Snow Family device to use for this job. </p> <note>
      *         <p>
-     *         For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     *         For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
      *         </p>
      *         </note>
      *         <p>
-     *         The type of AWS Snowball device to use for this job. Currently, the only supported device type for
-     *         cluster jobs is <code>EDGE</code>.
+     *         The type of AWS Snow device to use for this job. Currently, the only supported device type for cluster
+     *         jobs is <code>EDGE</code>.
      *         </p>
      *         <p>
      *         For more information, see <a
@@ -1113,16 +1113,16 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this job.
+     * The type of AWS Snow Family device to use for this job.
      * </p>
      * <note>
      * <p>
-     * For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     * For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
      * </p>
      * </note>
      * <p>
-     * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
-     * is <code>EDGE</code>.
+     * The type of AWS Snow device to use for this job. Currently, the only supported device type for cluster jobs is
+     * <code>EDGE</code>.
      * </p>
      * <p>
      * For more information, see <a
@@ -1131,13 +1131,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this job. </p> <note>
+     *        The type of AWS Snow Family device to use for this job. </p> <note>
      *        <p>
-     *        For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     *        For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
      *        </p>
      *        </note>
      *        <p>
-     *        The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster
+     *        The type of AWS Snow device to use for this job. Currently, the only supported device type for cluster
      *        jobs is <code>EDGE</code>.
      *        </p>
      *        <p>
@@ -1155,16 +1155,16 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this job.
+     * The type of AWS Snow Family device to use for this job.
      * </p>
      * <note>
      * <p>
-     * For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     * For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
      * </p>
      * </note>
      * <p>
-     * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
-     * is <code>EDGE</code>.
+     * The type of AWS Snow device to use for this job. Currently, the only supported device type for cluster jobs is
+     * <code>EDGE</code>.
      * </p>
      * <p>
      * For more information, see <a
@@ -1173,13 +1173,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this job. </p> <note>
+     *        The type of AWS Snow Family device to use for this job. </p> <note>
      *        <p>
-     *        For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     *        For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
      *        </p>
      *        </note>
      *        <p>
-     *        The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster
+     *        The type of AWS Snow device to use for this job. Currently, the only supported device type for cluster
      *        jobs is <code>EDGE</code>.
      *        </p>
      *        <p>
@@ -1195,16 +1195,16 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this job.
+     * The type of AWS Snow Family device to use for this job.
      * </p>
      * <note>
      * <p>
-     * For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     * For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
      * </p>
      * </note>
      * <p>
-     * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
-     * is <code>EDGE</code>.
+     * The type of AWS Snow device to use for this job. Currently, the only supported device type for cluster jobs is
+     * <code>EDGE</code>.
      * </p>
      * <p>
      * For more information, see <a
@@ -1213,13 +1213,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this job. </p> <note>
+     *        The type of AWS Snow Family device to use for this job. </p> <note>
      *        <p>
-     *        For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     *        For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
      *        </p>
      *        </note>
      *        <p>
-     *        The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster
+     *        The type of AWS Snow device to use for this job. Currently, the only supported device type for cluster
      *        jobs is <code>EDGE</code>.
      *        </p>
      *        <p>

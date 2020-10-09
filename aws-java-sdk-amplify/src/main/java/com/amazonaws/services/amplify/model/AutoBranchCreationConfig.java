@@ -66,6 +66,14 @@ public class AutoBranchCreationConfig implements Serializable, Cloneable, Struct
     private Boolean enableBasicAuth;
     /**
      * <p>
+     * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
+     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
+     * minutes to roll out.
+     * </p>
+     */
+    private Boolean enablePerformanceMode;
+    /**
+     * <p>
      * The build specification (build spec) for the autocreated branch.
      * </p>
      */
@@ -396,6 +404,74 @@ public class AutoBranchCreationConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
+     * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
+     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
+     * minutes to roll out.
+     * </p>
+     * 
+     * @param enablePerformanceMode
+     *        Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
+     *        longer interval. Enabling performance mode will mean that hosting configuration or code changes can take
+     *        up to 10 minutes to roll out.
+     */
+
+    public void setEnablePerformanceMode(Boolean enablePerformanceMode) {
+        this.enablePerformanceMode = enablePerformanceMode;
+    }
+
+    /**
+     * <p>
+     * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
+     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
+     * minutes to roll out.
+     * </p>
+     * 
+     * @return Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
+     *         longer interval. Enabling performance mode will mean that hosting configuration or code changes can take
+     *         up to 10 minutes to roll out.
+     */
+
+    public Boolean getEnablePerformanceMode() {
+        return this.enablePerformanceMode;
+    }
+
+    /**
+     * <p>
+     * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
+     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
+     * minutes to roll out.
+     * </p>
+     * 
+     * @param enablePerformanceMode
+     *        Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
+     *        longer interval. Enabling performance mode will mean that hosting configuration or code changes can take
+     *        up to 10 minutes to roll out.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoBranchCreationConfig withEnablePerformanceMode(Boolean enablePerformanceMode) {
+        setEnablePerformanceMode(enablePerformanceMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
+     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
+     * minutes to roll out.
+     * </p>
+     * 
+     * @return Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
+     *         longer interval. Enabling performance mode will mean that hosting configuration or code changes can take
+     *         up to 10 minutes to roll out.
+     */
+
+    public Boolean isEnablePerformanceMode() {
+        return this.enablePerformanceMode;
+    }
+
+    /**
+     * <p>
      * The build specification (build spec) for the autocreated branch.
      * </p>
      * 
@@ -550,6 +626,8 @@ public class AutoBranchCreationConfig implements Serializable, Cloneable, Struct
             sb.append("BasicAuthCredentials: ").append("***Sensitive Data Redacted***").append(",");
         if (getEnableBasicAuth() != null)
             sb.append("EnableBasicAuth: ").append(getEnableBasicAuth()).append(",");
+        if (getEnablePerformanceMode() != null)
+            sb.append("EnablePerformanceMode: ").append(getEnablePerformanceMode()).append(",");
         if (getBuildSpec() != null)
             sb.append("BuildSpec: ").append(getBuildSpec()).append(",");
         if (getEnablePullRequestPreview() != null)
@@ -594,6 +672,10 @@ public class AutoBranchCreationConfig implements Serializable, Cloneable, Struct
             return false;
         if (other.getEnableBasicAuth() != null && other.getEnableBasicAuth().equals(this.getEnableBasicAuth()) == false)
             return false;
+        if (other.getEnablePerformanceMode() == null ^ this.getEnablePerformanceMode() == null)
+            return false;
+        if (other.getEnablePerformanceMode() != null && other.getEnablePerformanceMode().equals(this.getEnablePerformanceMode()) == false)
+            return false;
         if (other.getBuildSpec() == null ^ this.getBuildSpec() == null)
             return false;
         if (other.getBuildSpec() != null && other.getBuildSpec().equals(this.getBuildSpec()) == false)
@@ -620,6 +702,7 @@ public class AutoBranchCreationConfig implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getEnvironmentVariables() == null) ? 0 : getEnvironmentVariables().hashCode());
         hashCode = prime * hashCode + ((getBasicAuthCredentials() == null) ? 0 : getBasicAuthCredentials().hashCode());
         hashCode = prime * hashCode + ((getEnableBasicAuth() == null) ? 0 : getEnableBasicAuth().hashCode());
+        hashCode = prime * hashCode + ((getEnablePerformanceMode() == null) ? 0 : getEnablePerformanceMode().hashCode());
         hashCode = prime * hashCode + ((getBuildSpec() == null) ? 0 : getBuildSpec().hashCode());
         hashCode = prime * hashCode + ((getEnablePullRequestPreview() == null) ? 0 : getEnablePullRequestPreview().hashCode());
         hashCode = prime * hashCode + ((getPullRequestEnvironmentName() == null) ? 0 : getPullRequestEnvironmentName().hashCode());

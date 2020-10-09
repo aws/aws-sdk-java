@@ -61,6 +61,8 @@ public class BranchMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("totalNumberOfJobs").build();
     private static final MarshallingInfo<Boolean> ENABLEBASICAUTH_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableBasicAuth").build();
+    private static final MarshallingInfo<Boolean> ENABLEPERFORMANCEMODE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enablePerformanceMode").build();
     private static final MarshallingInfo<String> THUMBNAILURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("thumbnailUrl").build();
     private static final MarshallingInfo<String> BASICAUTHCREDENTIALS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -114,6 +116,7 @@ public class BranchMarshaller {
             protocolMarshaller.marshall(branch.getActiveJobId(), ACTIVEJOBID_BINDING);
             protocolMarshaller.marshall(branch.getTotalNumberOfJobs(), TOTALNUMBEROFJOBS_BINDING);
             protocolMarshaller.marshall(branch.getEnableBasicAuth(), ENABLEBASICAUTH_BINDING);
+            protocolMarshaller.marshall(branch.getEnablePerformanceMode(), ENABLEPERFORMANCEMODE_BINDING);
             protocolMarshaller.marshall(branch.getThumbnailUrl(), THUMBNAILURL_BINDING);
             protocolMarshaller.marshall(branch.getBasicAuthCredentials(), BASICAUTHCREDENTIALS_BINDING);
             protocolMarshaller.marshall(branch.getBuildSpec(), BUILDSPEC_BINDING);

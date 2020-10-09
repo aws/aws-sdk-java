@@ -41,6 +41,8 @@ public class AutoBranchCreationConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("basicAuthCredentials").build();
     private static final MarshallingInfo<Boolean> ENABLEBASICAUTH_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableBasicAuth").build();
+    private static final MarshallingInfo<Boolean> ENABLEPERFORMANCEMODE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enablePerformanceMode").build();
     private static final MarshallingInfo<String> BUILDSPEC_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("buildSpec").build();
     private static final MarshallingInfo<Boolean> ENABLEPULLREQUESTPREVIEW_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -70,6 +72,7 @@ public class AutoBranchCreationConfigMarshaller {
             protocolMarshaller.marshall(autoBranchCreationConfig.getEnvironmentVariables(), ENVIRONMENTVARIABLES_BINDING);
             protocolMarshaller.marshall(autoBranchCreationConfig.getBasicAuthCredentials(), BASICAUTHCREDENTIALS_BINDING);
             protocolMarshaller.marshall(autoBranchCreationConfig.getEnableBasicAuth(), ENABLEBASICAUTH_BINDING);
+            protocolMarshaller.marshall(autoBranchCreationConfig.getEnablePerformanceMode(), ENABLEPERFORMANCEMODE_BINDING);
             protocolMarshaller.marshall(autoBranchCreationConfig.getBuildSpec(), BUILDSPEC_BINDING);
             protocolMarshaller.marshall(autoBranchCreationConfig.getEnablePullRequestPreview(), ENABLEPULLREQUESTPREVIEW_BINDING);
             protocolMarshaller.marshall(autoBranchCreationConfig.getPullRequestEnvironmentName(), PULLREQUESTENVIRONMENTNAME_BINDING);

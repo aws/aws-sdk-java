@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -15115,6 +15115,9 @@
       }, {
         "name" : "InsufficientFreeAddresses",
         "value" : "InsufficientFreeAddresses"
+      }, {
+        "name" : "ClusterUnreachable",
+        "value" : "ClusterUnreachable"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.eks.enum.ErrorCode",
@@ -29732,6 +29735,9 @@
       }, {
         "name" : "InternalFailure",
         "value" : "InternalFailure"
+      }, {
+        "name" : "ClusterUnreachable",
+        "value" : "ClusterUnreachable"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.eks.enum.NodegroupIssueCode",

@@ -27,18 +27,18 @@ public class CreateAddressRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The address that you want the Snowball shipped to.
+     * The address that you want the Snow device shipped to.
      * </p>
      */
     private Address address;
 
     /**
      * <p>
-     * The address that you want the Snowball shipped to.
+     * The address that you want the Snow device shipped to.
      * </p>
      * 
      * @param address
-     *        The address that you want the Snowball shipped to.
+     *        The address that you want the Snow device shipped to.
      */
 
     public void setAddress(Address address) {
@@ -47,10 +47,10 @@ public class CreateAddressRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The address that you want the Snowball shipped to.
+     * The address that you want the Snow device shipped to.
      * </p>
      * 
-     * @return The address that you want the Snowball shipped to.
+     * @return The address that you want the Snow device shipped to.
      */
 
     public Address getAddress() {
@@ -59,11 +59,11 @@ public class CreateAddressRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The address that you want the Snowball shipped to.
+     * The address that you want the Snow device shipped to.
      * </p>
      * 
      * @param address
-     *        The address that you want the Snowball shipped to.
+     *        The address that you want the Snow device shipped to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -90,6 +90,14 @@ public class CreateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
     private Boolean enableBasicAuth;
     /**
      * <p>
+     * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
+     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
+     * minutes to roll out.
+     * </p>
+     */
+    private Boolean enablePerformanceMode;
+    /**
+     * <p>
      * The tag for the branch.
      * </p>
      */
@@ -616,6 +624,74 @@ public class CreateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
+     * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
+     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
+     * minutes to roll out.
+     * </p>
+     * 
+     * @param enablePerformanceMode
+     *        Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
+     *        longer interval. Enabling performance mode will mean that hosting configuration or code changes can take
+     *        up to 10 minutes to roll out.
+     */
+
+    public void setEnablePerformanceMode(Boolean enablePerformanceMode) {
+        this.enablePerformanceMode = enablePerformanceMode;
+    }
+
+    /**
+     * <p>
+     * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
+     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
+     * minutes to roll out.
+     * </p>
+     * 
+     * @return Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
+     *         longer interval. Enabling performance mode will mean that hosting configuration or code changes can take
+     *         up to 10 minutes to roll out.
+     */
+
+    public Boolean getEnablePerformanceMode() {
+        return this.enablePerformanceMode;
+    }
+
+    /**
+     * <p>
+     * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
+     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
+     * minutes to roll out.
+     * </p>
+     * 
+     * @param enablePerformanceMode
+     *        Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
+     *        longer interval. Enabling performance mode will mean that hosting configuration or code changes can take
+     *        up to 10 minutes to roll out.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateBranchRequest withEnablePerformanceMode(Boolean enablePerformanceMode) {
+        setEnablePerformanceMode(enablePerformanceMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
+     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
+     * minutes to roll out.
+     * </p>
+     * 
+     * @return Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
+     *         longer interval. Enabling performance mode will mean that hosting configuration or code changes can take
+     *         up to 10 minutes to roll out.
+     */
+
+    public Boolean isEnablePerformanceMode() {
+        return this.enablePerformanceMode;
+    }
+
+    /**
+     * <p>
      * The tag for the branch.
      * </p>
      * 
@@ -966,6 +1042,8 @@ public class CreateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("BasicAuthCredentials: ").append("***Sensitive Data Redacted***").append(",");
         if (getEnableBasicAuth() != null)
             sb.append("EnableBasicAuth: ").append(getEnableBasicAuth()).append(",");
+        if (getEnablePerformanceMode() != null)
+            sb.append("EnablePerformanceMode: ").append(getEnablePerformanceMode()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getBuildSpec() != null)
@@ -1034,6 +1112,10 @@ public class CreateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getEnableBasicAuth() != null && other.getEnableBasicAuth().equals(this.getEnableBasicAuth()) == false)
             return false;
+        if (other.getEnablePerformanceMode() == null ^ this.getEnablePerformanceMode() == null)
+            return false;
+        if (other.getEnablePerformanceMode() != null && other.getEnablePerformanceMode().equals(this.getEnablePerformanceMode()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -1080,6 +1162,7 @@ public class CreateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getEnvironmentVariables() == null) ? 0 : getEnvironmentVariables().hashCode());
         hashCode = prime * hashCode + ((getBasicAuthCredentials() == null) ? 0 : getBasicAuthCredentials().hashCode());
         hashCode = prime * hashCode + ((getEnableBasicAuth() == null) ? 0 : getEnableBasicAuth().hashCode());
+        hashCode = prime * hashCode + ((getEnablePerformanceMode() == null) ? 0 : getEnablePerformanceMode().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getBuildSpec() == null) ? 0 : getBuildSpec().hashCode());
         hashCode = prime * hashCode + ((getTtl() == null) ? 0 : getTtl().hashCode());

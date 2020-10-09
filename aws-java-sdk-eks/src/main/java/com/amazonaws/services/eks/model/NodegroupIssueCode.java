@@ -36,7 +36,8 @@ public enum NodegroupIssueCode {
     InstanceLimitExceeded("InstanceLimitExceeded"),
     InsufficientFreeAddresses("InsufficientFreeAddresses"),
     AccessDenied("AccessDenied"),
-    InternalFailure("InternalFailure");
+    InternalFailure("InternalFailure"),
+    ClusterUnreachable("ClusterUnreachable");
 
     private String value;
 

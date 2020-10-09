@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateChannelRequestMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> CDIINPUTSPECIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cdiInputSpecification").build();
     private static final MarshallingInfo<String> CHANNELID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("channelId").build();
     private static final MarshallingInfo<List> DESTINATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -61,6 +63,7 @@ public class UpdateChannelRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(updateChannelRequest.getCdiInputSpecification(), CDIINPUTSPECIFICATION_BINDING);
             protocolMarshaller.marshall(updateChannelRequest.getChannelId(), CHANNELID_BINDING);
             protocolMarshaller.marshall(updateChannelRequest.getDestinations(), DESTINATIONS_BINDING);
             protocolMarshaller.marshall(updateChannelRequest.getEncoderSettings(), ENCODERSETTINGS_BINDING);

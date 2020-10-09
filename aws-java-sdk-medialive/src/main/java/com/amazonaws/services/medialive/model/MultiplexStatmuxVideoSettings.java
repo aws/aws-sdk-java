@@ -30,6 +30,13 @@ public class MultiplexStatmuxVideoSettings implements Serializable, Cloneable, S
     private Integer maximumBitrate;
     /** Minimum statmux bitrate. */
     private Integer minimumBitrate;
+    /**
+     * The purpose of the priority is to use a combination of the\nmultiplex rate control algorithm and the QVBR
+     * capability of the\nencoder to prioritize the video quality of some channels in a\nmultiplex over others. Channels
+     * that have a higher priority will\nget higher video quality at the expense of the video quality of\nother channels
+     * in the multiplex with lower priority.
+     */
+    private Integer priority;
 
     /**
      * Maximum statmux bitrate.
@@ -100,6 +107,58 @@ public class MultiplexStatmuxVideoSettings implements Serializable, Cloneable, S
     }
 
     /**
+     * The purpose of the priority is to use a combination of the\nmultiplex rate control algorithm and the QVBR
+     * capability of the\nencoder to prioritize the video quality of some channels in a\nmultiplex over others. Channels
+     * that have a higher priority will\nget higher video quality at the expense of the video quality of\nother channels
+     * in the multiplex with lower priority.
+     * 
+     * @param priority
+     *        The purpose of the priority is to use a combination of the\nmultiplex rate control algorithm and the QVBR
+     *        capability of the\nencoder to prioritize the video quality of some channels in a\nmultiplex over others.
+     *        Channels that have a higher priority will\nget higher video quality at the expense of the video quality
+     *        of\nother channels in the multiplex with lower priority.
+     */
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
+
+    /**
+     * The purpose of the priority is to use a combination of the\nmultiplex rate control algorithm and the QVBR
+     * capability of the\nencoder to prioritize the video quality of some channels in a\nmultiplex over others. Channels
+     * that have a higher priority will\nget higher video quality at the expense of the video quality of\nother channels
+     * in the multiplex with lower priority.
+     * 
+     * @return The purpose of the priority is to use a combination of the\nmultiplex rate control algorithm and the QVBR
+     *         capability of the\nencoder to prioritize the video quality of some channels in a\nmultiplex over others.
+     *         Channels that have a higher priority will\nget higher video quality at the expense of the video quality
+     *         of\nother channels in the multiplex with lower priority.
+     */
+
+    public Integer getPriority() {
+        return this.priority;
+    }
+
+    /**
+     * The purpose of the priority is to use a combination of the\nmultiplex rate control algorithm and the QVBR
+     * capability of the\nencoder to prioritize the video quality of some channels in a\nmultiplex over others. Channels
+     * that have a higher priority will\nget higher video quality at the expense of the video quality of\nother channels
+     * in the multiplex with lower priority.
+     * 
+     * @param priority
+     *        The purpose of the priority is to use a combination of the\nmultiplex rate control algorithm and the QVBR
+     *        capability of the\nencoder to prioritize the video quality of some channels in a\nmultiplex over others.
+     *        Channels that have a higher priority will\nget higher video quality at the expense of the video quality
+     *        of\nother channels in the multiplex with lower priority.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MultiplexStatmuxVideoSettings withPriority(Integer priority) {
+        setPriority(priority);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -114,7 +173,9 @@ public class MultiplexStatmuxVideoSettings implements Serializable, Cloneable, S
         if (getMaximumBitrate() != null)
             sb.append("MaximumBitrate: ").append(getMaximumBitrate()).append(",");
         if (getMinimumBitrate() != null)
-            sb.append("MinimumBitrate: ").append(getMinimumBitrate());
+            sb.append("MinimumBitrate: ").append(getMinimumBitrate()).append(",");
+        if (getPriority() != null)
+            sb.append("Priority: ").append(getPriority());
         sb.append("}");
         return sb.toString();
     }
@@ -137,6 +198,10 @@ public class MultiplexStatmuxVideoSettings implements Serializable, Cloneable, S
             return false;
         if (other.getMinimumBitrate() != null && other.getMinimumBitrate().equals(this.getMinimumBitrate()) == false)
             return false;
+        if (other.getPriority() == null ^ this.getPriority() == null)
+            return false;
+        if (other.getPriority() != null && other.getPriority().equals(this.getPriority()) == false)
+            return false;
         return true;
     }
 
@@ -147,6 +212,7 @@ public class MultiplexStatmuxVideoSettings implements Serializable, Cloneable, S
 
         hashCode = prime * hashCode + ((getMaximumBitrate() == null) ? 0 : getMaximumBitrate().hashCode());
         hashCode = prime * hashCode + ((getMinimumBitrate() == null) ? 0 : getMinimumBitrate().hashCode());
+        hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
         return hashCode;
     }
 

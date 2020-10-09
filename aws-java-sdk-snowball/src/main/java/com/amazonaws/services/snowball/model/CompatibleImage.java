@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A JSON-formatted object that describes a compatible Amazon Machine Image (AMI), including the ID and name for a
- * Snowball Edge AMI. This AMI is compatible with the device's physical hardware requirements, and it should be able to
- * be run in an SBE1 instance on the device.
+ * A JSON-formatted object that describes a compatible Amazon Machine Image (AMI), including the ID and name for a Snow
+ * device AMI. This AMI is compatible with the device's physical hardware requirements, and it should be able to be run
+ * in an SBE1 instance on the device.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CompatibleImage" target="_top">AWS API
@@ -32,7 +32,7 @@ public class CompatibleImage implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The unique identifier for an individual Snowball Edge AMI.
+     * The unique identifier for an individual Snow device AMI.
      * </p>
      */
     private String amiId;
@@ -45,11 +45,11 @@ public class CompatibleImage implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The unique identifier for an individual Snowball Edge AMI.
+     * The unique identifier for an individual Snow device AMI.
      * </p>
      * 
      * @param amiId
-     *        The unique identifier for an individual Snowball Edge AMI.
+     *        The unique identifier for an individual Snow device AMI.
      */
 
     public void setAmiId(String amiId) {
@@ -58,10 +58,10 @@ public class CompatibleImage implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The unique identifier for an individual Snowball Edge AMI.
+     * The unique identifier for an individual Snow device AMI.
      * </p>
      * 
-     * @return The unique identifier for an individual Snowball Edge AMI.
+     * @return The unique identifier for an individual Snow device AMI.
      */
 
     public String getAmiId() {
@@ -70,11 +70,11 @@ public class CompatibleImage implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The unique identifier for an individual Snowball Edge AMI.
+     * The unique identifier for an individual Snow device AMI.
      * </p>
      * 
      * @param amiId
-     *        The unique identifier for an individual Snowball Edge AMI.
+     *        The unique identifier for an individual Snow device AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

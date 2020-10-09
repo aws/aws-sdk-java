@@ -61,6 +61,13 @@ public class DescribeMultiplexProgramResultJsonUnmarshaller implements Unmarshal
                     describeMultiplexProgramResult.setPacketIdentifiersMap(MultiplexProgramPacketIdentifiersMapJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
+                if (context.testExpression("pipelineDetails", targetDepth)) {
+                    context.nextToken();
+                    describeMultiplexProgramResult.setPipelineDetails(new ListUnmarshaller<MultiplexProgramPipelineDetail>(
+                            MultiplexProgramPipelineDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("programName", targetDepth)) {
                     context.nextToken();
                     describeMultiplexProgramResult.setProgramName(context.getUnmarshaller(String.class).unmarshall(context));

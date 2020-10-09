@@ -30,7 +30,8 @@ public enum ErrorCode {
     Unknown("Unknown"),
     NodeCreationFailure("NodeCreationFailure"),
     PodEvictionFailure("PodEvictionFailure"),
-    InsufficientFreeAddresses("InsufficientFreeAddresses");
+    InsufficientFreeAddresses("InsufficientFreeAddresses"),
+    ClusterUnreachable("ClusterUnreachable");
 
     private String value;
 

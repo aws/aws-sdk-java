@@ -30,27 +30,27 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snowball from the
+     * The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device from the
      * job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional
      * shipping speeds are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in about a
-     * day.
+     * In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about
+     * a day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowballs are delivered in one to seven days.
+     * In India, Snow device are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -63,42 +63,42 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
     private String shippingOption;
     /**
      * <p>
-     * The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being returned to AWS for a
+     * The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being returned to AWS for a
      * particular job.
      * </p>
      */
     private Shipment inboundShipment;
     /**
      * <p>
-     * The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being delivered to the address that
-     * you specified for a particular job.
+     * The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being delivered to the address
+     * that you specified for a particular job.
      * </p>
      */
     private Shipment outboundShipment;
 
     /**
      * <p>
-     * The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snowball from the
+     * The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device from the
      * job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional
      * shipping speeds are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in about a
-     * day.
+     * In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about
+     * a day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowballs are delivered in one to seven days.
+     * In India, Snow device are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -109,26 +109,26 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param shippingOption
-     *        The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snowball from
-     *        the job's creation date. This speed represents how quickly it moves to its destination while in transit.
-     *        Regional shipping speeds are as follows:</p>
+     *        The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device
+     *        from the job's creation date. This speed represents how quickly it moves to its destination while in
+     *        transit. Regional shipping speeds are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in
-     *        about a day.
+     *        In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered
+     *        in about a day.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
-     *        delivered in about a day. In addition, most countries in the EU have access to standard shipping, which
-     *        typically takes less than a week, one way.
+     *        In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
+     *        are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
+     *        which typically takes less than a week, one way.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snowballs are delivered in one to seven days.
+     *        In India, Snow device are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -145,27 +145,27 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snowball from the
+     * The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device from the
      * job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional
      * shipping speeds are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in about a
-     * day.
+     * In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about
+     * a day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowballs are delivered in one to seven days.
+     * In India, Snow device are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -175,26 +175,26 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * 
-     * @return The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snowball from
-     *         the job's creation date. This speed represents how quickly it moves to its destination while in transit.
-     *         Regional shipping speeds are as follows:</p>
+     * @return The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device
+     *         from the job's creation date. This speed represents how quickly it moves to its destination while in
+     *         transit. Regional shipping speeds are as follows:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in
-     *         about a day.
+     *         In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered
+     *         in about a day.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
-     *         delivered in about a day. In addition, most countries in the EU have access to standard shipping, which
-     *         typically takes less than a week, one way.
+     *         In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
+     *         are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
+     *         which typically takes less than a week, one way.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         In India, Snowballs are delivered in one to seven days.
+     *         In India, Snow device are delivered in one to seven days.
      *         </p>
      *         </li>
      *         <li>
@@ -211,27 +211,27 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snowball from the
+     * The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device from the
      * job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional
      * shipping speeds are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in about a
-     * day.
+     * In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about
+     * a day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowballs are delivered in one to seven days.
+     * In India, Snow device are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -242,26 +242,26 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param shippingOption
-     *        The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snowball from
-     *        the job's creation date. This speed represents how quickly it moves to its destination while in transit.
-     *        Regional shipping speeds are as follows:</p>
+     *        The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device
+     *        from the job's creation date. This speed represents how quickly it moves to its destination while in
+     *        transit. Regional shipping speeds are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in
-     *        about a day.
+     *        In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered
+     *        in about a day.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
-     *        delivered in about a day. In addition, most countries in the EU have access to standard shipping, which
-     *        typically takes less than a week, one way.
+     *        In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
+     *        are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
+     *        which typically takes less than a week, one way.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snowballs are delivered in one to seven days.
+     *        In India, Snow device are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -280,27 +280,27 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snowball from the
+     * The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device from the
      * job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional
      * shipping speeds are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in about a
-     * day.
+     * In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about
+     * a day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowballs are delivered in one to seven days.
+     * In India, Snow device are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -311,26 +311,26 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param shippingOption
-     *        The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snowball from
-     *        the job's creation date. This speed represents how quickly it moves to its destination while in transit.
-     *        Regional shipping speeds are as follows:</p>
+     *        The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device
+     *        from the job's creation date. This speed represents how quickly it moves to its destination while in
+     *        transit. Regional shipping speeds are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in
-     *        about a day.
+     *        In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered
+     *        in about a day.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
-     *        delivered in about a day. In addition, most countries in the EU have access to standard shipping, which
-     *        typically takes less than a week, one way.
+     *        In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
+     *        are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
+     *        which typically takes less than a week, one way.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snowballs are delivered in one to seven days.
+     *        In India, Snow device are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -347,27 +347,27 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snowball from the
+     * The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device from the
      * job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional
      * shipping speeds are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in about a
-     * day.
+     * In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about
+     * a day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowballs are delivered in one to seven days.
+     * In India, Snow device are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -378,26 +378,26 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param shippingOption
-     *        The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snowball from
-     *        the job's creation date. This speed represents how quickly it moves to its destination while in transit.
-     *        Regional shipping speeds are as follows:</p>
+     *        The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device
+     *        from the job's creation date. This speed represents how quickly it moves to its destination while in
+     *        transit. Regional shipping speeds are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in
-     *        about a day.
+     *        In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered
+     *        in about a day.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
-     *        delivered in about a day. In addition, most countries in the EU have access to standard shipping, which
-     *        typically takes less than a week, one way.
+     *        In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
+     *        are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
+     *        which typically takes less than a week, one way.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snowballs are delivered in one to seven days.
+     *        In India, Snow device are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -416,13 +416,13 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being returned to AWS for a
+     * The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being returned to AWS for a
      * particular job.
      * </p>
      * 
      * @param inboundShipment
-     *        The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being returned to AWS for a
-     *        particular job.
+     *        The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being returned to AWS for
+     *        a particular job.
      */
 
     public void setInboundShipment(Shipment inboundShipment) {
@@ -431,12 +431,12 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being returned to AWS for a
+     * The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being returned to AWS for a
      * particular job.
      * </p>
      * 
-     * @return The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being returned to AWS for a
-     *         particular job.
+     * @return The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being returned to AWS
+     *         for a particular job.
      */
 
     public Shipment getInboundShipment() {
@@ -445,13 +445,13 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being returned to AWS for a
+     * The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being returned to AWS for a
      * particular job.
      * </p>
      * 
      * @param inboundShipment
-     *        The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being returned to AWS for a
-     *        particular job.
+     *        The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being returned to AWS for
+     *        a particular job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -462,12 +462,12 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being delivered to the address that
-     * you specified for a particular job.
+     * The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being delivered to the address
+     * that you specified for a particular job.
      * </p>
      * 
      * @param outboundShipment
-     *        The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being delivered to the
+     *        The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being delivered to the
      *        address that you specified for a particular job.
      */
 
@@ -477,11 +477,11 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being delivered to the address that
-     * you specified for a particular job.
+     * The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being delivered to the address
+     * that you specified for a particular job.
      * </p>
      * 
-     * @return The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being delivered to the
+     * @return The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being delivered to the
      *         address that you specified for a particular job.
      */
 
@@ -491,12 +491,12 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being delivered to the address that
-     * you specified for a particular job.
+     * The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being delivered to the address
+     * that you specified for a particular job.
      * </p>
      * 
      * @param outboundShipment
-     *        The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being delivered to the
+     *        The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being delivered to the
      *        address that you specified for a particular job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

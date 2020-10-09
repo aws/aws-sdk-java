@@ -61,6 +61,13 @@ public class DeleteMultiplexProgramResultJsonUnmarshaller implements Unmarshalle
                     deleteMultiplexProgramResult
                             .setPacketIdentifiersMap(MultiplexProgramPacketIdentifiersMapJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("pipelineDetails", targetDepth)) {
+                    context.nextToken();
+                    deleteMultiplexProgramResult.setPipelineDetails(new ListUnmarshaller<MultiplexProgramPipelineDetail>(
+                            MultiplexProgramPipelineDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("programName", targetDepth)) {
                     context.nextToken();
                     deleteMultiplexProgramResult.setProgramName(context.getUnmarshaller(String.class).unmarshall(context));

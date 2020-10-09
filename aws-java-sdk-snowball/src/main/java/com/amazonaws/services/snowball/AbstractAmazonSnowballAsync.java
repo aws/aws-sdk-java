@@ -93,6 +93,19 @@ public class AbstractAmazonSnowballAsync extends AbstractAmazonSnowball implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateReturnShippingLabelResult> createReturnShippingLabelAsync(CreateReturnShippingLabelRequest request) {
+
+        return createReturnShippingLabelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateReturnShippingLabelResult> createReturnShippingLabelAsync(CreateReturnShippingLabelRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateReturnShippingLabelRequest, CreateReturnShippingLabelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAddressResult> describeAddressAsync(DescribeAddressRequest request) {
 
         return describeAddressAsync(request, null);
@@ -140,6 +153,19 @@ public class AbstractAmazonSnowballAsync extends AbstractAmazonSnowball implemen
     @Override
     public java.util.concurrent.Future<DescribeJobResult> describeJobAsync(DescribeJobRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeJobRequest, DescribeJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReturnShippingLabelResult> describeReturnShippingLabelAsync(DescribeReturnShippingLabelRequest request) {
+
+        return describeReturnShippingLabelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReturnShippingLabelResult> describeReturnShippingLabelAsync(DescribeReturnShippingLabelRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeReturnShippingLabelRequest, DescribeReturnShippingLabelResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -270,6 +296,19 @@ public class AbstractAmazonSnowballAsync extends AbstractAmazonSnowball implemen
     @Override
     public java.util.concurrent.Future<UpdateJobResult> updateJobAsync(UpdateJobRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateJobRequest, UpdateJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateJobShipmentStateResult> updateJobShipmentStateAsync(UpdateJobShipmentStateRequest request) {
+
+        return updateJobShipmentStateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateJobShipmentStateResult> updateJobShipmentStateAsync(UpdateJobShipmentStateRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateJobShipmentStateRequest, UpdateJobShipmentStateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

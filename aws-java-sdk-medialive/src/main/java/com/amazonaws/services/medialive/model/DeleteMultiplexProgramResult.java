@@ -30,6 +30,12 @@ public class DeleteMultiplexProgramResult extends com.amazonaws.AmazonWebService
     private MultiplexProgramSettings multiplexProgramSettings;
     /** The packet identifier map for this multiplex program. */
     private MultiplexProgramPacketIdentifiersMap packetIdentifiersMap;
+    /**
+     * Contains information about the current sources for the specified program in the specified multiplex. Keep in mind
+     * that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the
+     * program). But only one of those channel pipelines is ever active at one time.
+     */
+    private java.util.List<MultiplexProgramPipelineDetail> pipelineDetails;
     /** The name of the multiplex program. */
     private String programName;
 
@@ -136,6 +142,84 @@ public class DeleteMultiplexProgramResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * Contains information about the current sources for the specified program in the specified multiplex. Keep in mind
+     * that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the
+     * program). But only one of those channel pipelines is ever active at one time.
+     * 
+     * @return Contains information about the current sources for the specified program in the specified multiplex. Keep
+     *         in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel
+     *         identified by the program). But only one of those channel pipelines is ever active at one time.
+     */
+
+    public java.util.List<MultiplexProgramPipelineDetail> getPipelineDetails() {
+        return pipelineDetails;
+    }
+
+    /**
+     * Contains information about the current sources for the specified program in the specified multiplex. Keep in mind
+     * that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the
+     * program). But only one of those channel pipelines is ever active at one time.
+     * 
+     * @param pipelineDetails
+     *        Contains information about the current sources for the specified program in the specified multiplex. Keep
+     *        in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel
+     *        identified by the program). But only one of those channel pipelines is ever active at one time.
+     */
+
+    public void setPipelineDetails(java.util.Collection<MultiplexProgramPipelineDetail> pipelineDetails) {
+        if (pipelineDetails == null) {
+            this.pipelineDetails = null;
+            return;
+        }
+
+        this.pipelineDetails = new java.util.ArrayList<MultiplexProgramPipelineDetail>(pipelineDetails);
+    }
+
+    /**
+     * Contains information about the current sources for the specified program in the specified multiplex. Keep in mind
+     * that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the
+     * program). But only one of those channel pipelines is ever active at one time.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPipelineDetails(java.util.Collection)} or {@link #withPipelineDetails(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param pipelineDetails
+     *        Contains information about the current sources for the specified program in the specified multiplex. Keep
+     *        in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel
+     *        identified by the program). But only one of those channel pipelines is ever active at one time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteMultiplexProgramResult withPipelineDetails(MultiplexProgramPipelineDetail... pipelineDetails) {
+        if (this.pipelineDetails == null) {
+            setPipelineDetails(new java.util.ArrayList<MultiplexProgramPipelineDetail>(pipelineDetails.length));
+        }
+        for (MultiplexProgramPipelineDetail ele : pipelineDetails) {
+            this.pipelineDetails.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * Contains information about the current sources for the specified program in the specified multiplex. Keep in mind
+     * that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the
+     * program). But only one of those channel pipelines is ever active at one time.
+     * 
+     * @param pipelineDetails
+     *        Contains information about the current sources for the specified program in the specified multiplex. Keep
+     *        in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel
+     *        identified by the program). But only one of those channel pipelines is ever active at one time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteMultiplexProgramResult withPipelineDetails(java.util.Collection<MultiplexProgramPipelineDetail> pipelineDetails) {
+        setPipelineDetails(pipelineDetails);
+        return this;
+    }
+
+    /**
      * The name of the multiplex program.
      * 
      * @param programName
@@ -187,6 +271,8 @@ public class DeleteMultiplexProgramResult extends com.amazonaws.AmazonWebService
             sb.append("MultiplexProgramSettings: ").append(getMultiplexProgramSettings()).append(",");
         if (getPacketIdentifiersMap() != null)
             sb.append("PacketIdentifiersMap: ").append(getPacketIdentifiersMap()).append(",");
+        if (getPipelineDetails() != null)
+            sb.append("PipelineDetails: ").append(getPipelineDetails()).append(",");
         if (getProgramName() != null)
             sb.append("ProgramName: ").append(getProgramName());
         sb.append("}");
@@ -215,6 +301,10 @@ public class DeleteMultiplexProgramResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getPacketIdentifiersMap() != null && other.getPacketIdentifiersMap().equals(this.getPacketIdentifiersMap()) == false)
             return false;
+        if (other.getPipelineDetails() == null ^ this.getPipelineDetails() == null)
+            return false;
+        if (other.getPipelineDetails() != null && other.getPipelineDetails().equals(this.getPipelineDetails()) == false)
+            return false;
         if (other.getProgramName() == null ^ this.getProgramName() == null)
             return false;
         if (other.getProgramName() != null && other.getProgramName().equals(this.getProgramName()) == false)
@@ -230,6 +320,7 @@ public class DeleteMultiplexProgramResult extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getChannelId() == null) ? 0 : getChannelId().hashCode());
         hashCode = prime * hashCode + ((getMultiplexProgramSettings() == null) ? 0 : getMultiplexProgramSettings().hashCode());
         hashCode = prime * hashCode + ((getPacketIdentifiersMap() == null) ? 0 : getPacketIdentifiersMap().hashCode());
+        hashCode = prime * hashCode + ((getPipelineDetails() == null) ? 0 : getPipelineDetails().hashCode());
         hashCode = prime * hashCode + ((getProgramName() == null) ? 0 : getProgramName().hashCode());
         return hashCode;
     }

@@ -1024,7 +1024,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Shares the specified portfolio with the specified account or organization node. Shares to an organization node
-     * can only be created by the master account of an organization or by a delegated administrator. You can share
+     * can only be created by the management account of an organization or by a delegated administrator. You can share
      * portfolios to an organization, an organizational unit, or a specific account.
      * </p>
      * <p>
@@ -1559,7 +1559,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Stops sharing the specified portfolio with the specified account or organization node. Shares to an organization
-     * node can only be deleted by the master account of an organization or by a delegated administrator.
+     * node can only be deleted by the management account of an organization or by a delegated administrator.
      * </p>
      * <p>
      * Note that if a delegated admin is de-registered, portfolio shares created from that account are removed.
@@ -2117,8 +2117,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Gets the status of the specified portfolio share operation. This API can only be called by the master account in
-     * the organization or by a delegated admin.
+     * Gets the status of the specified portfolio share operation. This API can only be called by the management account
+     * in the organization or by a delegated admin.
      * </p>
      * 
      * @param describePortfolioShareStatusRequest
@@ -2856,8 +2856,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * <p>
      * Disable portfolio sharing through AWS Organizations feature. This feature will not delete your current shares but
      * it will prevent you from creating new shares throughout your organization. Current shares will not be in sync
-     * with your organization structure if it changes after calling this API. This API can only be called by the master
-     * account in the organization.
+     * with your organization structure if it changes after calling this API. This API can only be called by the
+     * management account in the organization.
      * </p>
      * <p>
      * This API can't be invoked if there are active delegated administrators in the organization.
@@ -3238,7 +3238,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * <p>
      * Enable portfolio sharing feature through AWS Organizations. This API will allow Service Catalog to receive
      * updates on your organization in order to sync your shares with the current structure. This API can only be called
-     * by the master account in the organization.
+     * by the management account in the organization.
      * </p>
      * <p>
      * By calling this API Service Catalog will make a call to organizations:EnableAWSServiceAccess on your behalf so
@@ -3436,7 +3436,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Get the Access Status for AWS Organization portfolio share feature. This API can only be called by the master
+     * Get the Access Status for AWS Organization portfolio share feature. This API can only be called by the management
      * account in the organization or by a delegated admin.
      * </p>
      * 
@@ -3486,6 +3486,67 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             HttpResponseHandler<AmazonWebServiceResponse<GetAWSOrganizationsAccessStatusResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetAWSOrganizationsAccessStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This API takes either a <code>ProvisonedProductId</code> or a <code>ProvisionedProductName</code>, along with a
+     * list of one or more output keys, and responds with the key/value pairs of those outputs.
+     * </p>
+     * 
+     * @param getProvisionedProductOutputsRequest
+     * @return Result of the GetProvisionedProductOutputs operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.GetProvisionedProductOutputs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/GetProvisionedProductOutputs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetProvisionedProductOutputsResult getProvisionedProductOutputs(GetProvisionedProductOutputsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetProvisionedProductOutputs(request);
+    }
+
+    @SdkInternalApi
+    final GetProvisionedProductOutputsResult executeGetProvisionedProductOutputs(GetProvisionedProductOutputsRequest getProvisionedProductOutputsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getProvisionedProductOutputsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetProvisionedProductOutputsRequest> request = null;
+        Response<GetProvisionedProductOutputsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetProvisionedProductOutputsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getProvisionedProductOutputsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetProvisionedProductOutputs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetProvisionedProductOutputsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetProvisionedProductOutputsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3737,7 +3798,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Lists the organization nodes that have access to the specified portfolio. This API can only be called by the
-     * master account in the organization or by a delegated admin.
+     * management account in the organization or by a delegated admin.
      * </p>
      * <p>
      * If a delegated admin is de-registered, they can no longer perform this operation.

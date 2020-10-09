@@ -447,7 +447,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     /**
      * <p>
      * Shares the specified portfolio with the specified account or organization node. Shares to an organization node
-     * can only be created by the master account of an organization or by a delegated administrator. You can share
+     * can only be created by the management account of an organization or by a delegated administrator. You can share
      * portfolios to an organization, an organizational unit, or a specific account.
      * </p>
      * <p>
@@ -471,7 +471,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     /**
      * <p>
      * Shares the specified portfolio with the specified account or organization node. Shares to an organization node
-     * can only be created by the master account of an organization or by a delegated administrator. You can share
+     * can only be created by the management account of an organization or by a delegated administrator. You can share
      * portfolios to an organization, an organizational unit, or a specific account.
      * </p>
      * <p>
@@ -773,7 +773,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     /**
      * <p>
      * Stops sharing the specified portfolio with the specified account or organization node. Shares to an organization
-     * node can only be deleted by the master account of an organization or by a delegated administrator.
+     * node can only be deleted by the management account of an organization or by a delegated administrator.
      * </p>
      * <p>
      * Note that if a delegated admin is de-registered, portfolio shares created from that account are removed.
@@ -790,7 +790,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     /**
      * <p>
      * Stops sharing the specified portfolio with the specified account or organization node. Shares to an organization
-     * node can only be deleted by the master account of an organization or by a delegated administrator.
+     * node can only be deleted by the management account of an organization or by a delegated administrator.
      * </p>
      * <p>
      * Note that if a delegated admin is de-registered, portfolio shares created from that account are removed.
@@ -1099,8 +1099,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Gets the status of the specified portfolio share operation. This API can only be called by the master account in
-     * the organization or by a delegated admin.
+     * Gets the status of the specified portfolio share operation. This API can only be called by the management account
+     * in the organization or by a delegated admin.
      * </p>
      * 
      * @param describePortfolioShareStatusRequest
@@ -1115,8 +1115,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Gets the status of the specified portfolio share operation. This API can only be called by the master account in
-     * the organization or by a delegated admin.
+     * Gets the status of the specified portfolio share operation. This API can only be called by the management account
+     * in the organization or by a delegated admin.
      * </p>
      * 
      * @param describePortfolioShareStatusRequest
@@ -1547,8 +1547,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * Disable portfolio sharing through AWS Organizations feature. This feature will not delete your current shares but
      * it will prevent you from creating new shares throughout your organization. Current shares will not be in sync
-     * with your organization structure if it changes after calling this API. This API can only be called by the master
-     * account in the organization.
+     * with your organization structure if it changes after calling this API. This API can only be called by the
+     * management account in the organization.
      * </p>
      * <p>
      * This API can't be invoked if there are active delegated administrators in the organization.
@@ -1571,8 +1571,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * Disable portfolio sharing through AWS Organizations feature. This feature will not delete your current shares but
      * it will prevent you from creating new shares throughout your organization. Current shares will not be in sync
-     * with your organization structure if it changes after calling this API. This API can only be called by the master
-     * account in the organization.
+     * with your organization structure if it changes after calling this API. This API can only be called by the
+     * management account in the organization.
      * </p>
      * <p>
      * This API can't be invoked if there are active delegated administrators in the organization.
@@ -1785,7 +1785,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * Enable portfolio sharing feature through AWS Organizations. This API will allow Service Catalog to receive
      * updates on your organization in order to sync your shares with the current structure. This API can only be called
-     * by the master account in the organization.
+     * by the management account in the organization.
      * </p>
      * <p>
      * By calling this API Service Catalog will make a call to organizations:EnableAWSServiceAccess on your behalf so
@@ -1809,7 +1809,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * Enable portfolio sharing feature through AWS Organizations. This API will allow Service Catalog to receive
      * updates on your organization in order to sync your shares with the current structure. This API can only be called
-     * by the master account in the organization.
+     * by the management account in the organization.
      * </p>
      * <p>
      * By calling this API Service Catalog will make a call to organizations:EnableAWSServiceAccess on your behalf so
@@ -1908,7 +1908,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Get the Access Status for AWS Organization portfolio share feature. This API can only be called by the master
+     * Get the Access Status for AWS Organization portfolio share feature. This API can only be called by the management
      * account in the organization or by a delegated admin.
      * </p>
      * 
@@ -1924,7 +1924,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Get the Access Status for AWS Organization portfolio share feature. This API can only be called by the master
+     * Get the Access Status for AWS Organization portfolio share feature. This API can only be called by the management
      * account in the organization or by a delegated admin.
      * </p>
      * 
@@ -1942,6 +1942,43 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     java.util.concurrent.Future<GetAWSOrganizationsAccessStatusResult> getAWSOrganizationsAccessStatusAsync(
             GetAWSOrganizationsAccessStatusRequest getAWSOrganizationsAccessStatusRequest,
             com.amazonaws.handlers.AsyncHandler<GetAWSOrganizationsAccessStatusRequest, GetAWSOrganizationsAccessStatusResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API takes either a <code>ProvisonedProductId</code> or a <code>ProvisionedProductName</code>, along with a
+     * list of one or more output keys, and responds with the key/value pairs of those outputs.
+     * </p>
+     * 
+     * @param getProvisionedProductOutputsRequest
+     * @return A Java Future containing the result of the GetProvisionedProductOutputs operation returned by the
+     *         service.
+     * @sample AWSServiceCatalogAsync.GetProvisionedProductOutputs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/GetProvisionedProductOutputs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetProvisionedProductOutputsResult> getProvisionedProductOutputsAsync(
+            GetProvisionedProductOutputsRequest getProvisionedProductOutputsRequest);
+
+    /**
+     * <p>
+     * This API takes either a <code>ProvisonedProductId</code> or a <code>ProvisionedProductName</code>, along with a
+     * list of one or more output keys, and responds with the key/value pairs of those outputs.
+     * </p>
+     * 
+     * @param getProvisionedProductOutputsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetProvisionedProductOutputs operation returned by the
+     *         service.
+     * @sample AWSServiceCatalogAsyncHandler.GetProvisionedProductOutputs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/GetProvisionedProductOutputs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetProvisionedProductOutputsResult> getProvisionedProductOutputsAsync(
+            GetProvisionedProductOutputsRequest getProvisionedProductOutputsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetProvisionedProductOutputsRequest, GetProvisionedProductOutputsResult> asyncHandler);
 
     /**
      * <p>
@@ -2076,7 +2113,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     /**
      * <p>
      * Lists the organization nodes that have access to the specified portfolio. This API can only be called by the
-     * master account in the organization or by a delegated admin.
+     * management account in the organization or by a delegated admin.
      * </p>
      * <p>
      * If a delegated admin is de-registered, they can no longer perform this operation.
@@ -2095,7 +2132,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     /**
      * <p>
      * Lists the organization nodes that have access to the specified portfolio. This API can only be called by the
-     * master account in the organization or by a delegated admin.
+     * management account in the organization or by a delegated admin.
      * </p>
      * <p>
      * If a delegated admin is de-registered, they can no longer perform this operation.

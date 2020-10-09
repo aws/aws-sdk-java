@@ -116,6 +116,10 @@ public class BranchJsonUnmarshaller implements Unmarshaller<Branch, JsonUnmarsha
                     context.nextToken();
                     branch.setEnableBasicAuth(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("enablePerformanceMode", targetDepth)) {
+                    context.nextToken();
+                    branch.setEnablePerformanceMode(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("thumbnailUrl", targetDepth)) {
                     context.nextToken();
                     branch.setThumbnailUrl(context.getUnmarshaller(String.class).unmarshall(context));

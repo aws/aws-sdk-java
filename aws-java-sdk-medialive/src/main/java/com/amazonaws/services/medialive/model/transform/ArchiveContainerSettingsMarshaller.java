@@ -29,6 +29,8 @@ public class ArchiveContainerSettingsMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> M2TSSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("m2tsSettings").build();
+    private static final MarshallingInfo<StructuredPojo> RAWSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rawSettings").build();
 
     private static final ArchiveContainerSettingsMarshaller instance = new ArchiveContainerSettingsMarshaller();
 
@@ -47,6 +49,7 @@ public class ArchiveContainerSettingsMarshaller {
 
         try {
             protocolMarshaller.marshall(archiveContainerSettings.getM2tsSettings(), M2TSSETTINGS_BINDING);
+            protocolMarshaller.marshall(archiveContainerSettings.getRawSettings(), RAWSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

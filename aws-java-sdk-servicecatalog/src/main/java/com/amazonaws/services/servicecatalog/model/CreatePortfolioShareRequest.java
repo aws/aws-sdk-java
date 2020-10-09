@@ -63,9 +63,9 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in,
-     * <code>PortfolioShare</code> will be created for the node and its children (when applies), and a
-     * <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the
-     * status of the <code>PortfolioShare</code> creation process.
+     * <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children (when
+     * applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to
+     * monitor the status of the <code>PortfolioShare</code> creation process.
      * </p>
      */
     private OrganizationNode organizationNode;
@@ -292,16 +292,16 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in,
-     * <code>PortfolioShare</code> will be created for the node and its children (when applies), and a
-     * <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the
-     * status of the <code>PortfolioShare</code> creation process.
+     * <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children (when
+     * applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to
+     * monitor the status of the <code>PortfolioShare</code> creation process.
      * </p>
      * 
      * @param organizationNode
      *        The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in,
-     *        <code>PortfolioShare</code> will be created for the node and its children (when applies), and a
-     *        <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor
-     *        the status of the <code>PortfolioShare</code> creation process.
+     *        <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children
+     *        (when applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the
+     *        administrator to monitor the status of the <code>PortfolioShare</code> creation process.
      */
 
     public void setOrganizationNode(OrganizationNode organizationNode) {
@@ -311,15 +311,15 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in,
-     * <code>PortfolioShare</code> will be created for the node and its children (when applies), and a
-     * <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the
-     * status of the <code>PortfolioShare</code> creation process.
+     * <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children (when
+     * applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to
+     * monitor the status of the <code>PortfolioShare</code> creation process.
      * </p>
      * 
      * @return The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in,
-     *         <code>PortfolioShare</code> will be created for the node and its children (when applies), and a
-     *         <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor
-     *         the status of the <code>PortfolioShare</code> creation process.
+     *         <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children
+     *         (when applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the
+     *         administrator to monitor the status of the <code>PortfolioShare</code> creation process.
      */
 
     public OrganizationNode getOrganizationNode() {
@@ -329,16 +329,16 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in,
-     * <code>PortfolioShare</code> will be created for the node and its children (when applies), and a
-     * <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the
-     * status of the <code>PortfolioShare</code> creation process.
+     * <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children (when
+     * applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to
+     * monitor the status of the <code>PortfolioShare</code> creation process.
      * </p>
      * 
      * @param organizationNode
      *        The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in,
-     *        <code>PortfolioShare</code> will be created for the node and its children (when applies), and a
-     *        <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor
-     *        the status of the <code>PortfolioShare</code> creation process.
+     *        <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children
+     *        (when applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the
+     *        administrator to monitor the status of the <code>PortfolioShare</code> creation process.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

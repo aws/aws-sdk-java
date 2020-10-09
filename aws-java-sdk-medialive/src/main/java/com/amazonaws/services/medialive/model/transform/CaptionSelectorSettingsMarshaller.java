@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CaptionSelectorSettingsMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> ANCILLARYSOURCESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ancillarySourceSettings").build();
     private static final MarshallingInfo<StructuredPojo> ARIBSOURCESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("aribSourceSettings").build();
     private static final MarshallingInfo<StructuredPojo> DVBSUBSOURCESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -56,6 +58,7 @@ public class CaptionSelectorSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(captionSelectorSettings.getAncillarySourceSettings(), ANCILLARYSOURCESETTINGS_BINDING);
             protocolMarshaller.marshall(captionSelectorSettings.getAribSourceSettings(), ARIBSOURCESETTINGS_BINDING);
             protocolMarshaller.marshall(captionSelectorSettings.getDvbSubSourceSettings(), DVBSUBSOURCESETTINGS_BINDING);
             protocolMarshaller.marshall(captionSelectorSettings.getEmbeddedSourceSettings(), EMBEDDEDSOURCESETTINGS_BINDING);

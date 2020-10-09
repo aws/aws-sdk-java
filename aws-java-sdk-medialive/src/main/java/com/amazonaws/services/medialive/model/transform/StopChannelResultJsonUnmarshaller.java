@@ -52,6 +52,10 @@ public class StopChannelResultJsonUnmarshaller implements Unmarshaller<StopChann
                     context.nextToken();
                     stopChannelResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("cdiInputSpecification", targetDepth)) {
+                    context.nextToken();
+                    stopChannelResult.setCdiInputSpecification(CdiInputSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("channelClass", targetDepth)) {
                     context.nextToken();
                     stopChannelResult.setChannelClass(context.getUnmarshaller(String.class).unmarshall(context));

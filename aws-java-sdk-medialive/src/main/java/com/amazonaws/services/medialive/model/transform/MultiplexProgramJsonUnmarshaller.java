@@ -60,6 +60,13 @@ public class MultiplexProgramJsonUnmarshaller implements Unmarshaller<MultiplexP
                     context.nextToken();
                     multiplexProgram.setPacketIdentifiersMap(MultiplexProgramPacketIdentifiersMapJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("pipelineDetails", targetDepth)) {
+                    context.nextToken();
+                    multiplexProgram.setPipelineDetails(new ListUnmarshaller<MultiplexProgramPipelineDetail>(MultiplexProgramPipelineDetailJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("programName", targetDepth)) {
                     context.nextToken();
                     multiplexProgram.setProgramName(context.getUnmarshaller(String.class).unmarshall(context));

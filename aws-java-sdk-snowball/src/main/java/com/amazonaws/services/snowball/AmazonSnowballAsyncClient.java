@@ -31,12 +31,13 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * AWS Snowball is a petabyte-scale data transport solution that uses secure devices to transfer large amounts of data
- * between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snowball commands described
- * here provide access to the same functionality that is available in the AWS Snowball Management Console, which enables
- * you to create and manage jobs for Snowball. To transfer data locally with a Snowball device, you'll need to use the
- * Snowball client or the Amazon S3 API adapter for Snowball. For more information, see the <a
- * href="https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User Guide</a>.
+ * AWS Snow Family is a petabyte-scale data transport solution that uses secure devices to transfer large amounts of
+ * data between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snow commands described
+ * here provide access to the same functionality that is available in the AWS Snow Family Management Console, which
+ * enables you to create and manage jobs for a Snow device. To transfer data locally with a Snow device, you'll need to
+ * use the Snowball Edge client or the Amazon S3 API Interface for Snowball or AWS OpsHub for Snow Family. For more
+ * information, see the <a href="https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User
+ * Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -426,6 +427,39 @@ public class AmazonSnowballAsyncClient extends AmazonSnowballClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CreateReturnShippingLabelResult> createReturnShippingLabelAsync(CreateReturnShippingLabelRequest request) {
+
+        return createReturnShippingLabelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateReturnShippingLabelResult> createReturnShippingLabelAsync(final CreateReturnShippingLabelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateReturnShippingLabelRequest, CreateReturnShippingLabelResult> asyncHandler) {
+        final CreateReturnShippingLabelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateReturnShippingLabelResult>() {
+            @Override
+            public CreateReturnShippingLabelResult call() throws Exception {
+                CreateReturnShippingLabelResult result = null;
+
+                try {
+                    result = executeCreateReturnShippingLabel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAddressResult> describeAddressAsync(DescribeAddressRequest request) {
 
         return describeAddressAsync(request, null);
@@ -542,6 +576,39 @@ public class AmazonSnowballAsyncClient extends AmazonSnowballClient implements A
 
                 try {
                     result = executeDescribeJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReturnShippingLabelResult> describeReturnShippingLabelAsync(DescribeReturnShippingLabelRequest request) {
+
+        return describeReturnShippingLabelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReturnShippingLabelResult> describeReturnShippingLabelAsync(final DescribeReturnShippingLabelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeReturnShippingLabelRequest, DescribeReturnShippingLabelResult> asyncHandler) {
+        final DescribeReturnShippingLabelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeReturnShippingLabelResult>() {
+            @Override
+            public DescribeReturnShippingLabelResult call() throws Exception {
+                DescribeReturnShippingLabelResult result = null;
+
+                try {
+                    result = executeDescribeReturnShippingLabel(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -872,6 +939,39 @@ public class AmazonSnowballAsyncClient extends AmazonSnowballClient implements A
 
                 try {
                     result = executeUpdateJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateJobShipmentStateResult> updateJobShipmentStateAsync(UpdateJobShipmentStateRequest request) {
+
+        return updateJobShipmentStateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateJobShipmentStateResult> updateJobShipmentStateAsync(final UpdateJobShipmentStateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateJobShipmentStateRequest, UpdateJobShipmentStateResult> asyncHandler) {
+        final UpdateJobShipmentStateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateJobShipmentStateResult>() {
+            @Override
+            public UpdateJobShipmentStateResult call() throws Exception {
+                UpdateJobShipmentStateResult result = null;
+
+                try {
+                    result = executeUpdateJobShipmentState(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

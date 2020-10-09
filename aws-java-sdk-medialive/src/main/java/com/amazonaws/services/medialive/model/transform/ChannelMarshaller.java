@@ -31,6 +31,8 @@ public class ChannelMarshaller {
 
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
+    private static final MarshallingInfo<StructuredPojo> CDIINPUTSPECIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cdiInputSpecification").build();
     private static final MarshallingInfo<String> CHANNELCLASS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("channelClass").build();
     private static final MarshallingInfo<List> DESTINATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -77,6 +79,7 @@ public class ChannelMarshaller {
 
         try {
             protocolMarshaller.marshall(channel.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(channel.getCdiInputSpecification(), CDIINPUTSPECIFICATION_BINDING);
             protocolMarshaller.marshall(channel.getChannelClass(), CHANNELCLASS_BINDING);
             protocolMarshaller.marshall(channel.getDestinations(), DESTINATIONS_BINDING);
             protocolMarshaller.marshall(channel.getEgressEndpoints(), EGRESSENDPOINTS_BINDING);

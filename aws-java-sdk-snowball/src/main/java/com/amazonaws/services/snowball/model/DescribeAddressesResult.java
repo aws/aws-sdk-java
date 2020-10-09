@@ -25,7 +25,7 @@ public class DescribeAddressesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Snowball shipping addresses that were created for this account.
+     * The Snow device shipping addresses that were created for this account.
      * </p>
      */
     private java.util.List<Address> addresses;
@@ -39,10 +39,10 @@ public class DescribeAddressesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Snowball shipping addresses that were created for this account.
+     * The Snow device shipping addresses that were created for this account.
      * </p>
      * 
-     * @return The Snowball shipping addresses that were created for this account.
+     * @return The Snow device shipping addresses that were created for this account.
      */
 
     public java.util.List<Address> getAddresses() {
@@ -51,11 +51,11 @@ public class DescribeAddressesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Snowball shipping addresses that were created for this account.
+     * The Snow device shipping addresses that were created for this account.
      * </p>
      * 
      * @param addresses
-     *        The Snowball shipping addresses that were created for this account.
+     *        The Snow device shipping addresses that were created for this account.
      */
 
     public void setAddresses(java.util.Collection<Address> addresses) {
@@ -69,7 +69,7 @@ public class DescribeAddressesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Snowball shipping addresses that were created for this account.
+     * The Snow device shipping addresses that were created for this account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class DescribeAddressesResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @param addresses
-     *        The Snowball shipping addresses that were created for this account.
+     *        The Snow device shipping addresses that were created for this account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class DescribeAddressesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Snowball shipping addresses that were created for this account.
+     * The Snow device shipping addresses that were created for this account.
      * </p>
      * 
      * @param addresses
-     *        The Snowball shipping addresses that were created for this account.
+     *        The Snow device shipping addresses that were created for this account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

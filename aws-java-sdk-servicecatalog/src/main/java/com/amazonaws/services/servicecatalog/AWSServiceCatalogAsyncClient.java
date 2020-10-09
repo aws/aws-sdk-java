@@ -1942,6 +1942,39 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<GetProvisionedProductOutputsResult> getProvisionedProductOutputsAsync(GetProvisionedProductOutputsRequest request) {
+
+        return getProvisionedProductOutputsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetProvisionedProductOutputsResult> getProvisionedProductOutputsAsync(final GetProvisionedProductOutputsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetProvisionedProductOutputsRequest, GetProvisionedProductOutputsResult> asyncHandler) {
+        final GetProvisionedProductOutputsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetProvisionedProductOutputsResult>() {
+            @Override
+            public GetProvisionedProductOutputsResult call() throws Exception {
+                GetProvisionedProductOutputsResult result = null;
+
+                try {
+                    result = executeGetProvisionedProductOutputs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAcceptedPortfolioSharesResult> listAcceptedPortfolioSharesAsync(ListAcceptedPortfolioSharesRequest request) {
 
         return listAcceptedPortfolioSharesAsync(request, null);

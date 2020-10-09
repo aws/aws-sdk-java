@@ -48,6 +48,10 @@ public class CaptionSelectorSettingsJsonUnmarshaller implements Unmarshaller<Cap
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("ancillarySourceSettings", targetDepth)) {
+                    context.nextToken();
+                    captionSelectorSettings.setAncillarySourceSettings(AncillarySourceSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("aribSourceSettings", targetDepth)) {
                     context.nextToken();
                     captionSelectorSettings.setAribSourceSettings(AribSourceSettingsJsonUnmarshaller.getInstance().unmarshall(context));

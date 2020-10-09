@@ -61,7 +61,7 @@ public class AcceptPortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the master account of your organization.
+     * <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your organization.
      * </p>
      * </li>
      * <li>
@@ -268,7 +268,7 @@ public class AcceptPortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the master account of your organization.
+     * <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your organization.
      * </p>
      * </li>
      * <li>
@@ -292,7 +292,7 @@ public class AcceptPortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the master account of your organization.
+     *        <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your organization.
      *        </p>
      *        </li>
      *        <li>
@@ -323,7 +323,7 @@ public class AcceptPortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the master account of your organization.
+     * <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your organization.
      * </p>
      * </li>
      * <li>
@@ -346,7 +346,7 @@ public class AcceptPortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the master account of your organization.
+     *         <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your organization.
      *         </p>
      *         </li>
      *         <li>
@@ -377,7 +377,7 @@ public class AcceptPortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the master account of your organization.
+     * <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your organization.
      * </p>
      * </li>
      * <li>
@@ -401,7 +401,7 @@ public class AcceptPortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the master account of your organization.
+     *        <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your organization.
      *        </p>
      *        </li>
      *        <li>
@@ -434,7 +434,7 @@ public class AcceptPortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the master account of your organization.
+     * <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your organization.
      * </p>
      * </li>
      * <li>
@@ -458,7 +458,7 @@ public class AcceptPortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the master account of your organization.
+     *        <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your organization.
      *        </p>
      *        </li>
      *        <li>

@@ -27,12 +27,13 @@ import com.amazonaws.services.snowball.model.*;
  * </p>
  * <p>
  * <p>
- * AWS Snowball is a petabyte-scale data transport solution that uses secure devices to transfer large amounts of data
- * between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snowball commands described
- * here provide access to the same functionality that is available in the AWS Snowball Management Console, which enables
- * you to create and manage jobs for Snowball. To transfer data locally with a Snowball device, you'll need to use the
- * Snowball client or the Amazon S3 API adapter for Snowball. For more information, see the <a
- * href="https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User Guide</a>.
+ * AWS Snow Family is a petabyte-scale data transport solution that uses secure devices to transfer large amounts of
+ * data between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snow commands described
+ * here provide access to the same functionality that is available in the AWS Snow Family Management Console, which
+ * enables you to create and manage jobs for a Snow device. To transfer data locally with a Snow device, you'll need to
+ * use the Snowball Edge client or the Amazon S3 API Interface for Snowball or AWS OpsHub for Snow Family. For more
+ * information, see the <a href="https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User
+ * Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -145,7 +146,7 @@ public interface AmazonSnowball {
 
     /**
      * <p>
-     * Creates an address for a Snowball to be shipped to. In most regions, addresses are validated at the time of
+     * Creates an address for a Snow device to be shipped to. In most regions, addresses are validated at the time of
      * creation. The address you provide must be located within the serviceable area of your region. If the address is
      * invalid or unsupported, then an exception is thrown.
      * </p>
@@ -220,6 +221,34 @@ public interface AmazonSnowball {
 
     /**
      * <p>
+     * Creates a shipping label that will be used to return the Snow device to AWS.
+     * </p>
+     * 
+     * @param createReturnShippingLabelRequest
+     * @return Result of the CreateReturnShippingLabel operation returned by the service.
+     * @throws InvalidResourceException
+     *         The specified resource can't be found. Check the information you provided in your last request, and try
+     *         again.
+     * @throws InvalidJobStateException
+     *         The action can't be performed because the job's current state doesn't allow that action to be performed.
+     * @throws InvalidInputCombinationException
+     *         Job or cluster creation failed. One or more inputs were invalid. Confirm that the
+     *         <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try
+     *         again.
+     * @throws ConflictException
+     *         You get this exception when you call <code>CreateReturnShippingLabel</code> more than once when other
+     *         requests are not completed.
+     * @throws ReturnShippingLabelAlreadyExistsException
+     *         You get this exception if you call <code>CreateReturnShippingLabel</code> and a valid return shipping
+     *         label already exists. In this case, use <code>DescribeReturnShippingLabel</code> to get the url.
+     * @sample AmazonSnowball.CreateReturnShippingLabel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateReturnShippingLabel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateReturnShippingLabelResult createReturnShippingLabel(CreateReturnShippingLabelRequest createReturnShippingLabelRequest);
+
+    /**
+     * <p>
      * Takes an <code>AddressId</code> and returns specific details about that address in the form of an
      * <code>Address</code> object.
      * </p>
@@ -291,6 +320,27 @@ public interface AmazonSnowball {
 
     /**
      * <p>
+     * Information on the shipping label of a Snow device that is being returned to AWS.
+     * </p>
+     * 
+     * @param describeReturnShippingLabelRequest
+     * @return Result of the DescribeReturnShippingLabel operation returned by the service.
+     * @throws InvalidResourceException
+     *         The specified resource can't be found. Check the information you provided in your last request, and try
+     *         again.
+     * @throws InvalidJobStateException
+     *         The action can't be performed because the job's current state doesn't allow that action to be performed.
+     * @throws ConflictException
+     *         You get this exception when you call <code>CreateReturnShippingLabel</code> more than once when other
+     *         requests are not completed.
+     * @sample AmazonSnowball.DescribeReturnShippingLabel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeReturnShippingLabel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeReturnShippingLabelResult describeReturnShippingLabel(DescribeReturnShippingLabelRequest describeReturnShippingLabelRequest);
+
+    /**
+     * <p>
      * Returns a link to an Amazon S3 presigned URL for the manifest file associated with the specified
      * <code>JobId</code> value. You can access the manifest file for up to 60 minutes after this request has been made.
      * To access the manifest file after 60 minutes have passed, you'll have to make another call to the
@@ -299,12 +349,12 @@ public interface AmazonSnowball {
      * <p>
      * The manifest is an encrypted file that you can download after your job enters the <code>WithCustomer</code>
      * status. The manifest is decrypted by using the <code>UnlockCode</code> code value, when you pass both values to
-     * the Snowball through the Snowball client when the client is started for the first time.
+     * the Snow device through the Snowball client when the client is started for the first time.
      * </p>
      * <p>
      * As a best practice, we recommend that you don't save a copy of an <code>UnlockCode</code> value in the same
      * location as the manifest file for that job. Saving these separately helps prevent unauthorized parties from
-     * gaining access to the Snowball associated with that job.
+     * gaining access to the Snow device associated with that job.
      * </p>
      * <p>
      * The credentials of a given job, including its manifest file and unlock code, expire 90 days after the job is
@@ -331,13 +381,13 @@ public interface AmazonSnowball {
      * </p>
      * <p>
      * The <code>UnlockCode</code> value is a 29-character code with 25 alphanumeric characters and 4 hyphens. This code
-     * is used to decrypt the manifest file when it is passed along with the manifest to the Snowball through the
+     * is used to decrypt the manifest file when it is passed along with the manifest to the Snow device through the
      * Snowball client when the client is started for the first time.
      * </p>
      * <p>
      * As a best practice, we recommend that you don't save a copy of the <code>UnlockCode</code> in the same location
      * as the manifest file for that job. Saving these separately helps prevent unauthorized parties from gaining access
-     * to the Snowball associated with that job.
+     * to the Snow device associated with that job.
      * </p>
      * 
      * @param getJobUnlockCodeRequest
@@ -355,12 +405,12 @@ public interface AmazonSnowball {
 
     /**
      * <p>
-     * Returns information about the Snowball service limit for your account, and also the number of Snowballs your
-     * account has in use.
+     * Returns information about the Snow Family service limit for your account, and also the number of Snow devices
+     * your account has in use.
      * </p>
      * <p>
-     * The default service limit for the number of Snowballs that you can have at one time is 1. If you want to increase
-     * your service limit, contact AWS Support.
+     * The default service limit for the number of Snow devices that you can have at one time is 1. If you want to
+     * increase your service limit, contact AWS Support.
      * </p>
      * 
      * @param getSnowballUsageRequest
@@ -430,9 +480,9 @@ public interface AmazonSnowball {
     /**
      * <p>
      * This action returns a list of the different Amazon EC2 Amazon Machine Images (AMIs) that are owned by your AWS
-     * account that would be supported for use on a Snowball Edge device. Currently, supported AMIs are based on the
-     * CentOS 7 (x86_64) - with Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS - Xenial (HVM) images,
-     * available on the AWS Marketplace.
+     * account that would be supported for use on a Snow device. Currently, supported AMIs are based on the CentOS 7
+     * (x86_64) - with Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS - Xenial (HVM) images, available
+     * on the AWS Marketplace.
      * </p>
      * 
      * @param listCompatibleImagesRequest
@@ -528,6 +578,24 @@ public interface AmazonSnowball {
      *      Documentation</a>
      */
     UpdateJobResult updateJob(UpdateJobRequest updateJobRequest);
+
+    /**
+     * <p>
+     * Updates the state when a the shipment states changes to a different state.
+     * </p>
+     * 
+     * @param updateJobShipmentStateRequest
+     * @return Result of the UpdateJobShipmentState operation returned by the service.
+     * @throws InvalidResourceException
+     *         The specified resource can't be found. Check the information you provided in your last request, and try
+     *         again.
+     * @throws InvalidJobStateException
+     *         The action can't be performed because the job's current state doesn't allow that action to be performed.
+     * @sample AmazonSnowball.UpdateJobShipmentState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJobShipmentState"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateJobShipmentStateResult updateJobShipmentState(UpdateJobShipmentStateRequest updateJobShipmentStateRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

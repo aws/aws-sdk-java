@@ -70,11 +70,11 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
     private String jobType;
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster.
+     * The type of AWS Snow device to use for this cluster.
      * </p>
      * <note>
      * <p>
-     * For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     * For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
      * </p>
      * </note>
      */
@@ -100,9 +100,9 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
     private String addressId;
     /**
      * <p>
-     * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball
-     * Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional
-     * shipping speeds are as follows:
+     * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device,
+     * rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds
+     * are as follows:
      * </p>
      * <ul>
      * <li>
@@ -113,14 +113,14 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowball Edges are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -488,18 +488,18 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster.
+     * The type of AWS Snow device to use for this cluster.
      * </p>
      * <note>
      * <p>
-     * For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     * For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
      * </p>
      * </note>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this cluster. </p> <note>
+     *        The type of AWS Snow device to use for this cluster. </p> <note>
      *        <p>
-     *        For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     *        For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
      *        </p>
      * @see SnowballType
      */
@@ -510,17 +510,17 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster.
+     * The type of AWS Snow device to use for this cluster.
      * </p>
      * <note>
      * <p>
-     * For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     * For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
      * </p>
      * </note>
      * 
-     * @return The type of AWS Snowball device to use for this cluster. </p> <note>
+     * @return The type of AWS Snow device to use for this cluster. </p> <note>
      *         <p>
-     *         For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     *         For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
      *         </p>
      * @see SnowballType
      */
@@ -531,18 +531,18 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster.
+     * The type of AWS Snow device to use for this cluster.
      * </p>
      * <note>
      * <p>
-     * For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     * For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
      * </p>
      * </note>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this cluster. </p> <note>
+     *        The type of AWS Snow device to use for this cluster. </p> <note>
      *        <p>
-     *        For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     *        For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
@@ -555,18 +555,18 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster.
+     * The type of AWS Snow device to use for this cluster.
      * </p>
      * <note>
      * <p>
-     * For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     * For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
      * </p>
      * </note>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this cluster. </p> <note>
+     *        The type of AWS Snow device to use for this cluster. </p> <note>
      *        <p>
-     *        For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     *        For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
      *        </p>
      * @see SnowballType
      */
@@ -577,18 +577,18 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster.
+     * The type of AWS Snow device to use for this cluster.
      * </p>
      * <note>
      * <p>
-     * For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     * For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
      * </p>
      * </note>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this cluster. </p> <note>
+     *        The type of AWS Snow device to use for this cluster. </p> <note>
      *        <p>
-     *        For cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device type.
+     *        For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
@@ -727,9 +727,9 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball
-     * Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional
-     * shipping speeds are as follows:
+     * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device,
+     * rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds
+     * are as follows:
      * </p>
      * <ul>
      * <li>
@@ -740,14 +740,14 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowball Edges are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -759,8 +759,8 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param shippingOption
      *        The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each
-     *        Snowball Edge device, rather it represents how quickly each device moves to its destination while in
-     *        transit. Regional shipping speeds are as follows:</p>
+     *        device, rather it represents how quickly each device moves to its destination while in transit. Regional
+     *        shipping speeds are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -770,14 +770,14 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express
+     *        In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
      *        are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
      *        which typically takes less than a week, one way.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snowball Edges are delivered in one to seven days.
+     *        In India, Snow devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -794,9 +794,9 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball
-     * Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional
-     * shipping speeds are as follows:
+     * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device,
+     * rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds
+     * are as follows:
      * </p>
      * <ul>
      * <li>
@@ -807,14 +807,14 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowball Edges are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -825,8 +825,8 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @return The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each
-     *         Snowball Edge device, rather it represents how quickly each device moves to its destination while in
-     *         transit. Regional shipping speeds are as follows:</p>
+     *         device, rather it represents how quickly each device moves to its destination while in transit. Regional
+     *         shipping speeds are as follows:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -836,14 +836,14 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
      *         </li>
      *         <li>
      *         <p>
-     *         In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped
-     *         express are delivered in about a day. In addition, most countries in the EU have access to standard
-     *         shipping, which typically takes less than a week, one way.
+     *         In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
+     *         are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
+     *         which typically takes less than a week, one way.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         In India, Snowball Edges are delivered in one to seven days.
+     *         In India, Snow devices are delivered in one to seven days.
      *         </p>
      *         </li>
      *         <li>
@@ -860,9 +860,9 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball
-     * Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional
-     * shipping speeds are as follows:
+     * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device,
+     * rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds
+     * are as follows:
      * </p>
      * <ul>
      * <li>
@@ -873,14 +873,14 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowball Edges are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -892,8 +892,8 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param shippingOption
      *        The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each
-     *        Snowball Edge device, rather it represents how quickly each device moves to its destination while in
-     *        transit. Regional shipping speeds are as follows:</p>
+     *        device, rather it represents how quickly each device moves to its destination while in transit. Regional
+     *        shipping speeds are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -903,14 +903,14 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express
+     *        In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
      *        are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
      *        which typically takes less than a week, one way.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snowball Edges are delivered in one to seven days.
+     *        In India, Snow devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -929,9 +929,9 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball
-     * Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional
-     * shipping speeds are as follows:
+     * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device,
+     * rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds
+     * are as follows:
      * </p>
      * <ul>
      * <li>
@@ -942,14 +942,14 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowball Edges are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -961,8 +961,8 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param shippingOption
      *        The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each
-     *        Snowball Edge device, rather it represents how quickly each device moves to its destination while in
-     *        transit. Regional shipping speeds are as follows:</p>
+     *        device, rather it represents how quickly each device moves to its destination while in transit. Regional
+     *        shipping speeds are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -972,14 +972,14 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express
+     *        In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
      *        are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
      *        which typically takes less than a week, one way.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snowball Edges are delivered in one to seven days.
+     *        In India, Snow devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -996,9 +996,9 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball
-     * Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional
-     * shipping speeds are as follows:
+     * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device,
+     * rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds
+     * are as follows:
      * </p>
      * <ul>
      * <li>
@@ -1009,14 +1009,14 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowball Edges are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -1028,8 +1028,8 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param shippingOption
      *        The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each
-     *        Snowball Edge device, rather it represents how quickly each device moves to its destination while in
-     *        transit. Regional shipping speeds are as follows:</p>
+     *        device, rather it represents how quickly each device moves to its destination while in transit. Regional
+     *        shipping speeds are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1039,14 +1039,14 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express
+     *        In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
      *        are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
      *        which typically takes less than a week, one way.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snowball Edges are delivered in one to seven days.
+     *        In India, Snow devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>

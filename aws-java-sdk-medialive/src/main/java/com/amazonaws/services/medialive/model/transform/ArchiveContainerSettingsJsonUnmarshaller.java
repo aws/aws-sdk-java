@@ -52,6 +52,10 @@ public class ArchiveContainerSettingsJsonUnmarshaller implements Unmarshaller<Ar
                     context.nextToken();
                     archiveContainerSettings.setM2tsSettings(M2tsSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("rawSettings", targetDepth)) {
+                    context.nextToken();
+                    archiveContainerSettings.setRawSettings(RawSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

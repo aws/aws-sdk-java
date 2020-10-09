@@ -43,10 +43,10 @@ public class JobListEntry implements Serializable, Cloneable, StructuredPojo {
     private String jobState;
     /**
      * <p>
-     * A value that indicates that this job is a master job. A master job represents a successful request to create an
-     * export job. Master jobs aren't associated with any Snowballs. Instead, each master job will have at least one job
+     * A value that indicates that this job is a main job. A main job represents a successful request to create an
+     * export job. Main jobs aren't associated with any Snowballs. Instead, each main job will have at least one job
      * part, and each job part is associated with a Snowball. It might take some time before the job parts associated
-     * with a particular master job are listed, because they are created after the master job is created.
+     * with a particular main job are listed, because they are created after the main job is created.
      * </p>
      */
     private Boolean isMaster;
@@ -193,18 +193,18 @@ public class JobListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that indicates that this job is a master job. A master job represents a successful request to create an
-     * export job. Master jobs aren't associated with any Snowballs. Instead, each master job will have at least one job
+     * A value that indicates that this job is a main job. A main job represents a successful request to create an
+     * export job. Main jobs aren't associated with any Snowballs. Instead, each main job will have at least one job
      * part, and each job part is associated with a Snowball. It might take some time before the job parts associated
-     * with a particular master job are listed, because they are created after the master job is created.
+     * with a particular main job are listed, because they are created after the main job is created.
      * </p>
      * 
      * @param isMaster
-     *        A value that indicates that this job is a master job. A master job represents a successful request to
-     *        create an export job. Master jobs aren't associated with any Snowballs. Instead, each master job will have
-     *        at least one job part, and each job part is associated with a Snowball. It might take some time before the
-     *        job parts associated with a particular master job are listed, because they are created after the master
-     *        job is created.
+     *        A value that indicates that this job is a main job. A main job represents a successful request to create
+     *        an export job. Main jobs aren't associated with any Snowballs. Instead, each main job will have at least
+     *        one job part, and each job part is associated with a Snowball. It might take some time before the job
+     *        parts associated with a particular main job are listed, because they are created after the main job is
+     *        created.
      */
 
     public void setIsMaster(Boolean isMaster) {
@@ -213,17 +213,17 @@ public class JobListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that indicates that this job is a master job. A master job represents a successful request to create an
-     * export job. Master jobs aren't associated with any Snowballs. Instead, each master job will have at least one job
+     * A value that indicates that this job is a main job. A main job represents a successful request to create an
+     * export job. Main jobs aren't associated with any Snowballs. Instead, each main job will have at least one job
      * part, and each job part is associated with a Snowball. It might take some time before the job parts associated
-     * with a particular master job are listed, because they are created after the master job is created.
+     * with a particular main job are listed, because they are created after the main job is created.
      * </p>
      * 
-     * @return A value that indicates that this job is a master job. A master job represents a successful request to
-     *         create an export job. Master jobs aren't associated with any Snowballs. Instead, each master job will
-     *         have at least one job part, and each job part is associated with a Snowball. It might take some time
-     *         before the job parts associated with a particular master job are listed, because they are created after
-     *         the master job is created.
+     * @return A value that indicates that this job is a main job. A main job represents a successful request to create
+     *         an export job. Main jobs aren't associated with any Snowballs. Instead, each main job will have at least
+     *         one job part, and each job part is associated with a Snowball. It might take some time before the job
+     *         parts associated with a particular main job are listed, because they are created after the main job is
+     *         created.
      */
 
     public Boolean getIsMaster() {
@@ -232,18 +232,18 @@ public class JobListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that indicates that this job is a master job. A master job represents a successful request to create an
-     * export job. Master jobs aren't associated with any Snowballs. Instead, each master job will have at least one job
+     * A value that indicates that this job is a main job. A main job represents a successful request to create an
+     * export job. Main jobs aren't associated with any Snowballs. Instead, each main job will have at least one job
      * part, and each job part is associated with a Snowball. It might take some time before the job parts associated
-     * with a particular master job are listed, because they are created after the master job is created.
+     * with a particular main job are listed, because they are created after the main job is created.
      * </p>
      * 
      * @param isMaster
-     *        A value that indicates that this job is a master job. A master job represents a successful request to
-     *        create an export job. Master jobs aren't associated with any Snowballs. Instead, each master job will have
-     *        at least one job part, and each job part is associated with a Snowball. It might take some time before the
-     *        job parts associated with a particular master job are listed, because they are created after the master
-     *        job is created.
+     *        A value that indicates that this job is a main job. A main job represents a successful request to create
+     *        an export job. Main jobs aren't associated with any Snowballs. Instead, each main job will have at least
+     *        one job part, and each job part is associated with a Snowball. It might take some time before the job
+     *        parts associated with a particular main job are listed, because they are created after the main job is
+     *        created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -254,17 +254,17 @@ public class JobListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that indicates that this job is a master job. A master job represents a successful request to create an
-     * export job. Master jobs aren't associated with any Snowballs. Instead, each master job will have at least one job
+     * A value that indicates that this job is a main job. A main job represents a successful request to create an
+     * export job. Main jobs aren't associated with any Snowballs. Instead, each main job will have at least one job
      * part, and each job part is associated with a Snowball. It might take some time before the job parts associated
-     * with a particular master job are listed, because they are created after the master job is created.
+     * with a particular main job are listed, because they are created after the main job is created.
      * </p>
      * 
-     * @return A value that indicates that this job is a master job. A master job represents a successful request to
-     *         create an export job. Master jobs aren't associated with any Snowballs. Instead, each master job will
-     *         have at least one job part, and each job part is associated with a Snowball. It might take some time
-     *         before the job parts associated with a particular master job are listed, because they are created after
-     *         the master job is created.
+     * @return A value that indicates that this job is a main job. A main job represents a successful request to create
+     *         an export job. Main jobs aren't associated with any Snowballs. Instead, each main job will have at least
+     *         one job part, and each job part is associated with a Snowball. It might take some time before the job
+     *         parts associated with a particular main job are listed, because they are created after the main job is
+     *         created.
      */
 
     public Boolean isMaster() {

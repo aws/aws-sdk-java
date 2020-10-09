@@ -828,6 +828,10 @@
           "shape":"EnableBasicAuth",
           "documentation":"<p> Enables basic authorization for the autocreated branch. </p>"
         },
+        "enablePerformanceMode":{
+          "shape":"EnablePerformanceMode",
+          "documentation":"<p> Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10 minutes to roll out. </p>"
+        },
         "buildSpec":{
           "shape":"BuildSpec",
           "documentation":"<p> The build specification (build spec) for the autocreated branch. </p>"
@@ -1010,6 +1014,10 @@
         "enableBasicAuth":{
           "shape":"EnableBasicAuth",
           "documentation":"<p> Enables basic authorization for a branch of an Amplify app. </p>"
+        },
+        "enablePerformanceMode":{
+          "shape":"EnablePerformanceMode",
+          "documentation":"<p> Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10 minutes to roll out. </p>"
         },
         "thumbnailUrl":{
           "shape":"ThumbnailUrl",
@@ -1267,6 +1275,10 @@
         "enableBasicAuth":{
           "shape":"EnableBasicAuth",
           "documentation":"<p> Enables basic authorization for the branch. </p>"
+        },
+        "enablePerformanceMode":{
+          "shape":"EnablePerformanceMode",
+          "documentation":"<p> Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10 minutes to roll out. </p>"
         },
         "tags":{
           "shape":"TagMap",
@@ -1776,6 +1788,7 @@
     "EnableBranchAutoBuild":{"type":"boolean"},
     "EnableBranchAutoDeletion":{"type":"boolean"},
     "EnableNotification":{"type":"boolean"},
+    "EnablePerformanceMode":{"type":"boolean"},
     "EnablePullRequestPreview":{"type":"boolean"},
     "EndTime":{"type":"timestamp"},
     "EnvKey":{
@@ -3161,6 +3174,10 @@
         "enableBasicAuth":{
           "shape":"EnableBasicAuth",
           "documentation":"<p> Enables basic authorization for the branch. </p>"
+        },
+        "enablePerformanceMode":{
+          "shape":"EnablePerformanceMode",
+          "documentation":"<p> Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10 minutes to roll out. </p>"
         },
         "buildSpec":{
           "shape":"BuildSpec",

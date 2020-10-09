@@ -31,6 +31,8 @@ public class MultiplexStatmuxVideoSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maximumBitrate").build();
     private static final MarshallingInfo<Integer> MINIMUMBITRATE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minimumBitrate").build();
+    private static final MarshallingInfo<Integer> PRIORITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("priority").build();
 
     private static final MultiplexStatmuxVideoSettingsMarshaller instance = new MultiplexStatmuxVideoSettingsMarshaller();
 
@@ -50,6 +52,7 @@ public class MultiplexStatmuxVideoSettingsMarshaller {
         try {
             protocolMarshaller.marshall(multiplexStatmuxVideoSettings.getMaximumBitrate(), MAXIMUMBITRATE_BINDING);
             protocolMarshaller.marshall(multiplexStatmuxVideoSettings.getMinimumBitrate(), MINIMUMBITRATE_BINDING);
+            protocolMarshaller.marshall(multiplexStatmuxVideoSettings.getPriority(), PRIORITY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
