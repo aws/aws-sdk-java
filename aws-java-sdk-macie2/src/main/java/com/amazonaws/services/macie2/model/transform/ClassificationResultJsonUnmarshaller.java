@@ -48,6 +48,10 @@ public class ClassificationResultJsonUnmarshaller implements Unmarshaller<Classi
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("additionalOccurrences", targetDepth)) {
+                    context.nextToken();
+                    classificationResult.setAdditionalOccurrences(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("customDataIdentifiers", targetDepth)) {
                     context.nextToken();
                     classificationResult.setCustomDataIdentifiers(CustomDataIdentifiersJsonUnmarshaller.getInstance().unmarshall(context));

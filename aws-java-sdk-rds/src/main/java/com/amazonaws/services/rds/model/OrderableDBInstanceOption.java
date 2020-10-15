@@ -165,13 +165,6 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * <p>
      * A list of the supported DB engine modes.
      * </p>
-     * <note>
-     * <p>
-     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
-     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
-     * mode.
-     * </p>
-     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<String> supportedEngineModes;
     /**
@@ -1251,20 +1244,8 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * <p>
      * A list of the supported DB engine modes.
      * </p>
-     * <note>
-     * <p>
-     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
-     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
-     * mode.
-     * </p>
-     * </note>
      * 
-     * @return A list of the supported DB engine modes.</p> <note>
-     *         <p>
-     *         <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
-     *         version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
-     *         <code>provisioned</code> engine mode.
-     *         </p>
+     * @return A list of the supported DB engine modes.
      */
 
     public java.util.List<String> getSupportedEngineModes() {
@@ -1278,21 +1259,9 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * <p>
      * A list of the supported DB engine modes.
      * </p>
-     * <note>
-     * <p>
-     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
-     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
-     * mode.
-     * </p>
-     * </note>
      * 
      * @param supportedEngineModes
-     *        A list of the supported DB engine modes.</p> <note>
-     *        <p>
-     *        <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
-     *        version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
-     *        <code>provisioned</code> engine mode.
-     *        </p>
+     *        A list of the supported DB engine modes.
      */
 
     public void setSupportedEngineModes(java.util.Collection<String> supportedEngineModes) {
@@ -1308,13 +1277,6 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * <p>
      * A list of the supported DB engine modes.
      * </p>
-     * <note>
-     * <p>
-     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
-     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
-     * mode.
-     * </p>
-     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSupportedEngineModes(java.util.Collection)} or {@link #withSupportedEngineModes(java.util.Collection)}
@@ -1322,12 +1284,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * </p>
      * 
      * @param supportedEngineModes
-     *        A list of the supported DB engine modes.</p> <note>
-     *        <p>
-     *        <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
-     *        version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
-     *        <code>provisioned</code> engine mode.
-     *        </p>
+     *        A list of the supported DB engine modes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1345,21 +1302,9 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * <p>
      * A list of the supported DB engine modes.
      * </p>
-     * <note>
-     * <p>
-     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
-     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
-     * mode.
-     * </p>
-     * </note>
      * 
      * @param supportedEngineModes
-     *        A list of the supported DB engine modes.</p> <note>
-     *        <p>
-     *        <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
-     *        version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
-     *        <code>provisioned</code> engine mode.
-     *        </p>
+     *        A list of the supported DB engine modes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

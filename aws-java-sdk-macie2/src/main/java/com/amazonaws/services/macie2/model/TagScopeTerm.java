@@ -30,7 +30,7 @@ public class TagScopeTerm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The operator to use in the condition.
+     * The operator to use in the condition. Valid operators are EQ (equals) or NE (not equals).
      * </p>
      */
     private String comparator;
@@ -42,7 +42,7 @@ public class TagScopeTerm implements Serializable, Cloneable, StructuredPojo {
     private String key;
     /**
      * <p>
-     * The tag key and value pairs to use in the condition.
+     * The tag keys or tag key and value pairs to use in the condition.
      * </p>
      */
     private java.util.List<TagValuePair> tagValues;
@@ -55,11 +55,11 @@ public class TagScopeTerm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The operator to use in the condition.
+     * The operator to use in the condition. Valid operators are EQ (equals) or NE (not equals).
      * </p>
      * 
      * @param comparator
-     *        The operator to use in the condition.
+     *        The operator to use in the condition. Valid operators are EQ (equals) or NE (not equals).
      * @see JobComparator
      */
 
@@ -69,10 +69,10 @@ public class TagScopeTerm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The operator to use in the condition.
+     * The operator to use in the condition. Valid operators are EQ (equals) or NE (not equals).
      * </p>
      * 
-     * @return The operator to use in the condition.
+     * @return The operator to use in the condition. Valid operators are EQ (equals) or NE (not equals).
      * @see JobComparator
      */
 
@@ -82,11 +82,11 @@ public class TagScopeTerm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The operator to use in the condition.
+     * The operator to use in the condition. Valid operators are EQ (equals) or NE (not equals).
      * </p>
      * 
      * @param comparator
-     *        The operator to use in the condition.
+     *        The operator to use in the condition. Valid operators are EQ (equals) or NE (not equals).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobComparator
      */
@@ -98,11 +98,11 @@ public class TagScopeTerm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The operator to use in the condition.
+     * The operator to use in the condition. Valid operators are EQ (equals) or NE (not equals).
      * </p>
      * 
      * @param comparator
-     *        The operator to use in the condition.
+     *        The operator to use in the condition. Valid operators are EQ (equals) or NE (not equals).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobComparator
      */
@@ -154,10 +154,10 @@ public class TagScopeTerm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag key and value pairs to use in the condition.
+     * The tag keys or tag key and value pairs to use in the condition.
      * </p>
      * 
-     * @return The tag key and value pairs to use in the condition.
+     * @return The tag keys or tag key and value pairs to use in the condition.
      */
 
     public java.util.List<TagValuePair> getTagValues() {
@@ -166,11 +166,11 @@ public class TagScopeTerm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag key and value pairs to use in the condition.
+     * The tag keys or tag key and value pairs to use in the condition.
      * </p>
      * 
      * @param tagValues
-     *        The tag key and value pairs to use in the condition.
+     *        The tag keys or tag key and value pairs to use in the condition.
      */
 
     public void setTagValues(java.util.Collection<TagValuePair> tagValues) {
@@ -184,7 +184,7 @@ public class TagScopeTerm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag key and value pairs to use in the condition.
+     * The tag keys or tag key and value pairs to use in the condition.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -193,7 +193,7 @@ public class TagScopeTerm implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param tagValues
-     *        The tag key and value pairs to use in the condition.
+     *        The tag keys or tag key and value pairs to use in the condition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,11 +209,11 @@ public class TagScopeTerm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag key and value pairs to use in the condition.
+     * The tag keys or tag key and value pairs to use in the condition.
      * </p>
      * 
      * @param tagValues
-     *        The tag key and value pairs to use in the condition.
+     *        The tag keys or tag key and value pairs to use in the condition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

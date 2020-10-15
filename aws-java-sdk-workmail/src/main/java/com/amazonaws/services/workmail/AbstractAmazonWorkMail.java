@@ -53,6 +53,11 @@ public class AbstractAmazonWorkMail implements AmazonWorkMail {
     }
 
     @Override
+    public CreateOrganizationResult createOrganization(CreateOrganizationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateResourceResult createResource(CreateResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,6 +84,11 @@ public class AbstractAmazonWorkMail implements AmazonWorkMail {
 
     @Override
     public DeleteMailboxPermissionsResult deleteMailboxPermissions(DeleteMailboxPermissionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteOrganizationResult deleteOrganization(DeleteOrganizationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

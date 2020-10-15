@@ -28,6 +28,11 @@ public class AbstractAWSAccessAnalyzer implements AWSAccessAnalyzer {
     }
 
     @Override
+    public ApplyArchiveRuleResult applyArchiveRule(ApplyArchiveRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateAnalyzerResult createAnalyzer(CreateAnalyzerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -309,14 +309,10 @@ public class DBCluster implements Serializable, Cloneable {
      * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
      * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      * </p>
-     * <note>
      * <p>
-     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
-     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
-     * mode. To check if a DB cluster is part of a global database, use <code>DescribeGlobalClusters</code> instead of
-     * checking the <code>EngineMode</code> return value from <code>DescribeDBClusters</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html"> CreateDBCluster</a>.
      * </p>
-     * </note>
      */
     private String engineMode;
 
@@ -386,6 +382,8 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DomainMembership> domainMemberships;
+
+    private com.amazonaws.internal.SdkInternalList<Tag> tagList;
     /**
      * <p>
      * Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not enabled, or
@@ -2534,25 +2532,18 @@ public class DBCluster implements Serializable, Cloneable {
      * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
      * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      * </p>
-     * <note>
      * <p>
-     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
-     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
-     * mode. To check if a DB cluster is part of a global database, use <code>DescribeGlobalClusters</code> instead of
-     * checking the <code>EngineMode</code> return value from <code>DescribeDBClusters</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html"> CreateDBCluster</a>.
      * </p>
-     * </note>
      * 
      * @param engineMode
      *        The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-     *        <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p> <note>
+     *        <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
      *        <p>
-     *        <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
-     *        version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
-     *        <code>provisioned</code> engine mode. To check if a DB cluster is part of a global database, use
-     *        <code>DescribeGlobalClusters</code> instead of checking the <code>EngineMode</code> return value from
-     *        <code>DescribeDBClusters</code>.
-     *        </p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     *        CreateDBCluster</a>.
      */
 
     public void setEngineMode(String engineMode) {
@@ -2564,24 +2555,17 @@ public class DBCluster implements Serializable, Cloneable {
      * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
      * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      * </p>
-     * <note>
      * <p>
-     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
-     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
-     * mode. To check if a DB cluster is part of a global database, use <code>DescribeGlobalClusters</code> instead of
-     * checking the <code>EngineMode</code> return value from <code>DescribeDBClusters</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html"> CreateDBCluster</a>.
      * </p>
-     * </note>
      * 
      * @return The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-     *         <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p> <note>
+     *         <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
      *         <p>
-     *         <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
-     *         version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
-     *         <code>provisioned</code> engine mode. To check if a DB cluster is part of a global database, use
-     *         <code>DescribeGlobalClusters</code> instead of checking the <code>EngineMode</code> return value from
-     *         <code>DescribeDBClusters</code>.
-     *         </p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     *         CreateDBCluster</a>.
      */
 
     public String getEngineMode() {
@@ -2593,25 +2577,18 @@ public class DBCluster implements Serializable, Cloneable {
      * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
      * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      * </p>
-     * <note>
      * <p>
-     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
-     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
-     * mode. To check if a DB cluster is part of a global database, use <code>DescribeGlobalClusters</code> instead of
-     * checking the <code>EngineMode</code> return value from <code>DescribeDBClusters</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html"> CreateDBCluster</a>.
      * </p>
-     * </note>
      * 
      * @param engineMode
      *        The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-     *        <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p> <note>
+     *        <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
      *        <p>
-     *        <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
-     *        version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
-     *        <code>provisioned</code> engine mode. To check if a DB cluster is part of a global database, use
-     *        <code>DescribeGlobalClusters</code> instead of checking the <code>EngineMode</code> return value from
-     *        <code>DescribeDBClusters</code>.
-     *        </p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     *        CreateDBCluster</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3214,6 +3191,61 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<Tag> getTagList() {
+        if (tagList == null) {
+            tagList = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tagList;
+    }
+
+    /**
+     * @param tagList
+     */
+
+    public void setTagList(java.util.Collection<Tag> tagList) {
+        if (tagList == null) {
+            this.tagList = null;
+            return;
+        }
+
+        this.tagList = new com.amazonaws.internal.SdkInternalList<Tag>(tagList);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param tagList
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withTagList(Tag... tagList) {
+        if (this.tagList == null) {
+            setTagList(new com.amazonaws.internal.SdkInternalList<Tag>(tagList.length));
+        }
+        for (Tag ele : tagList) {
+            this.tagList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param tagList
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withTagList(java.util.Collection<Tag> tagList) {
+        setTagList(tagList);
+        return this;
+    }
+
+    /**
      * <p>
      * Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not enabled, or
      * is in the process of enabling it.
@@ -3472,6 +3504,8 @@ public class DBCluster implements Serializable, Cloneable {
             sb.append("CrossAccountClone: ").append(getCrossAccountClone()).append(",");
         if (getDomainMemberships() != null)
             sb.append("DomainMemberships: ").append(getDomainMemberships()).append(",");
+        if (getTagList() != null)
+            sb.append("TagList: ").append(getTagList()).append(",");
         if (getGlobalWriteForwardingStatus() != null)
             sb.append("GlobalWriteForwardingStatus: ").append(getGlobalWriteForwardingStatus()).append(",");
         if (getGlobalWriteForwardingRequested() != null)
@@ -3702,6 +3736,10 @@ public class DBCluster implements Serializable, Cloneable {
             return false;
         if (other.getDomainMemberships() != null && other.getDomainMemberships().equals(this.getDomainMemberships()) == false)
             return false;
+        if (other.getTagList() == null ^ this.getTagList() == null)
+            return false;
+        if (other.getTagList() != null && other.getTagList().equals(this.getTagList()) == false)
+            return false;
         if (other.getGlobalWriteForwardingStatus() == null ^ this.getGlobalWriteForwardingStatus() == null)
             return false;
         if (other.getGlobalWriteForwardingStatus() != null && other.getGlobalWriteForwardingStatus().equals(this.getGlobalWriteForwardingStatus()) == false)
@@ -3771,6 +3809,7 @@ public class DBCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCopyTagsToSnapshot() == null) ? 0 : getCopyTagsToSnapshot().hashCode());
         hashCode = prime * hashCode + ((getCrossAccountClone() == null) ? 0 : getCrossAccountClone().hashCode());
         hashCode = prime * hashCode + ((getDomainMemberships() == null) ? 0 : getDomainMemberships().hashCode());
+        hashCode = prime * hashCode + ((getTagList() == null) ? 0 : getTagList().hashCode());
         hashCode = prime * hashCode + ((getGlobalWriteForwardingStatus() == null) ? 0 : getGlobalWriteForwardingStatus().hashCode());
         hashCode = prime * hashCode + ((getGlobalWriteForwardingRequested() == null) ? 0 : getGlobalWriteForwardingRequested().hashCode());
         return hashCode;

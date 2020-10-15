@@ -85,18 +85,18 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String certificate;
     /**
      * <p>
-     * The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled
-     * server. When you host your endpoint within your VPC, you can make it accessible only to resources within your
-     * VPC, or you can attach Elastic IPs and make it accessible to clients over the internet. Your VPC's default
-     * security groups are automatically assigned to your endpoint.
+     * The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
+     * endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic
+     * IPs and make it accessible to clients over the internet. Your VPC's default security groups are automatically
+     * assigned to your endpoint.
      * </p>
      */
     private EndpointDetails endpointDetails;
     /**
      * <p>
-     * The type of VPC endpoint that you want your file transfer protocol-enabled server to connect to. You can choose
-     * to connect to the public internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server
-     * and resources only within your VPC.
+     * The type of VPC endpoint that you want your server to connect to. You can choose to connect to the public
+     * internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only within
+     * your VPC.
      * </p>
      * <note>
      * <p>
@@ -135,11 +135,11 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     private IdentityProviderDetails identityProviderDetails;
     /**
      * <p>
-     * Specifies the mode of authentication for a file transfer protocol-enabled server. The default value is
-     * <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the AWS Transfer
-     * Family service. Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing.
-     * The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
-     * authentication using the <code>IdentityProviderDetails</code> parameter.
+     * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
+     * allows you to store and access user credentials within the AWS Transfer Family service. Use the
+     * <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
+     * using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      */
     private String identityProviderType;
@@ -175,7 +175,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <note>
      * <p>
      * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
-     * be used to identify your file transfer protocol-enabled server when clients connect to it over FTPS.
+     * be used to identify your server when clients connect to it over FTPS.
      * </p>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -200,7 +200,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String securityPolicyName;
     /**
      * <p>
-     * Key-value pairs that can be used to group and search for file transfer protocol-enabled servers.
+     * Key-value pairs that can be used to group and search for servers.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -556,17 +556,17 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled
-     * server. When you host your endpoint within your VPC, you can make it accessible only to resources within your
-     * VPC, or you can attach Elastic IPs and make it accessible to clients over the internet. Your VPC's default
-     * security groups are automatically assigned to your endpoint.
+     * The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
+     * endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic
+     * IPs and make it accessible to clients over the internet. Your VPC's default security groups are automatically
+     * assigned to your endpoint.
      * </p>
      * 
      * @param endpointDetails
-     *        The virtual private cloud (VPC) endpoint settings that are configured for your file transfer
-     *        protocol-enabled server. When you host your endpoint within your VPC, you can make it accessible only to
-     *        resources within your VPC, or you can attach Elastic IPs and make it accessible to clients over the
-     *        internet. Your VPC's default security groups are automatically assigned to your endpoint.
+     *        The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
+     *        endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach
+     *        Elastic IPs and make it accessible to clients over the internet. Your VPC's default security groups are
+     *        automatically assigned to your endpoint.
      */
 
     public void setEndpointDetails(EndpointDetails endpointDetails) {
@@ -575,16 +575,16 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled
-     * server. When you host your endpoint within your VPC, you can make it accessible only to resources within your
-     * VPC, or you can attach Elastic IPs and make it accessible to clients over the internet. Your VPC's default
-     * security groups are automatically assigned to your endpoint.
+     * The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
+     * endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic
+     * IPs and make it accessible to clients over the internet. Your VPC's default security groups are automatically
+     * assigned to your endpoint.
      * </p>
      * 
-     * @return The virtual private cloud (VPC) endpoint settings that are configured for your file transfer
-     *         protocol-enabled server. When you host your endpoint within your VPC, you can make it accessible only to
-     *         resources within your VPC, or you can attach Elastic IPs and make it accessible to clients over the
-     *         internet. Your VPC's default security groups are automatically assigned to your endpoint.
+     * @return The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
+     *         endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach
+     *         Elastic IPs and make it accessible to clients over the internet. Your VPC's default security groups are
+     *         automatically assigned to your endpoint.
      */
 
     public EndpointDetails getEndpointDetails() {
@@ -593,17 +593,17 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled
-     * server. When you host your endpoint within your VPC, you can make it accessible only to resources within your
-     * VPC, or you can attach Elastic IPs and make it accessible to clients over the internet. Your VPC's default
-     * security groups are automatically assigned to your endpoint.
+     * The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
+     * endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic
+     * IPs and make it accessible to clients over the internet. Your VPC's default security groups are automatically
+     * assigned to your endpoint.
      * </p>
      * 
      * @param endpointDetails
-     *        The virtual private cloud (VPC) endpoint settings that are configured for your file transfer
-     *        protocol-enabled server. When you host your endpoint within your VPC, you can make it accessible only to
-     *        resources within your VPC, or you can attach Elastic IPs and make it accessible to clients over the
-     *        internet. Your VPC's default security groups are automatically assigned to your endpoint.
+     *        The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
+     *        endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach
+     *        Elastic IPs and make it accessible to clients over the internet. Your VPC's default security groups are
+     *        automatically assigned to your endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -614,9 +614,9 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of VPC endpoint that you want your file transfer protocol-enabled server to connect to. You can choose
-     * to connect to the public internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server
-     * and resources only within your VPC.
+     * The type of VPC endpoint that you want your server to connect to. You can choose to connect to the public
+     * internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only within
+     * your VPC.
      * </p>
      * <note>
      * <p>
@@ -628,9 +628,9 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      * 
      * @param endpointType
-     *        The type of VPC endpoint that you want your file transfer protocol-enabled server to connect to. You can
-     *        choose to connect to the public internet or a VPC endpoint. With a VPC endpoint, you can restrict access
-     *        to your server and resources only within your VPC.</p> <note>
+     *        The type of VPC endpoint that you want your server to connect to. You can choose to connect to the public
+     *        internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only
+     *        within your VPC.</p> <note>
      *        <p>
      *        It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type,
      *        you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your
@@ -646,9 +646,9 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of VPC endpoint that you want your file transfer protocol-enabled server to connect to. You can choose
-     * to connect to the public internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server
-     * and resources only within your VPC.
+     * The type of VPC endpoint that you want your server to connect to. You can choose to connect to the public
+     * internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only within
+     * your VPC.
      * </p>
      * <note>
      * <p>
@@ -659,9 +659,9 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </note>
      * 
-     * @return The type of VPC endpoint that you want your file transfer protocol-enabled server to connect to. You can
-     *         choose to connect to the public internet or a VPC endpoint. With a VPC endpoint, you can restrict access
-     *         to your server and resources only within your VPC.</p> <note>
+     * @return The type of VPC endpoint that you want your server to connect to. You can choose to connect to the public
+     *         internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources
+     *         only within your VPC.</p> <note>
      *         <p>
      *         It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint
      *         type, you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with
@@ -677,9 +677,9 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of VPC endpoint that you want your file transfer protocol-enabled server to connect to. You can choose
-     * to connect to the public internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server
-     * and resources only within your VPC.
+     * The type of VPC endpoint that you want your server to connect to. You can choose to connect to the public
+     * internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only within
+     * your VPC.
      * </p>
      * <note>
      * <p>
@@ -691,9 +691,9 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      * 
      * @param endpointType
-     *        The type of VPC endpoint that you want your file transfer protocol-enabled server to connect to. You can
-     *        choose to connect to the public internet or a VPC endpoint. With a VPC endpoint, you can restrict access
-     *        to your server and resources only within your VPC.</p> <note>
+     *        The type of VPC endpoint that you want your server to connect to. You can choose to connect to the public
+     *        internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only
+     *        within your VPC.</p> <note>
      *        <p>
      *        It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type,
      *        you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your
@@ -711,9 +711,9 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of VPC endpoint that you want your file transfer protocol-enabled server to connect to. You can choose
-     * to connect to the public internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server
-     * and resources only within your VPC.
+     * The type of VPC endpoint that you want your server to connect to. You can choose to connect to the public
+     * internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only within
+     * your VPC.
      * </p>
      * <note>
      * <p>
@@ -725,9 +725,9 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      * 
      * @param endpointType
-     *        The type of VPC endpoint that you want your file transfer protocol-enabled server to connect to. You can
-     *        choose to connect to the public internet or a VPC endpoint. With a VPC endpoint, you can restrict access
-     *        to your server and resources only within your VPC.</p> <note>
+     *        The type of VPC endpoint that you want your server to connect to. You can choose to connect to the public
+     *        internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only
+     *        within your VPC.</p> <note>
      *        <p>
      *        It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type,
      *        you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your
@@ -903,19 +903,19 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies the mode of authentication for a file transfer protocol-enabled server. The default value is
-     * <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the AWS Transfer
-     * Family service. Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing.
-     * The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
-     * authentication using the <code>IdentityProviderDetails</code> parameter.
+     * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
+     * allows you to store and access user credentials within the AWS Transfer Family service. Use the
+     * <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
+     * using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      * 
      * @param identityProviderType
-     *        Specifies the mode of authentication for a file transfer protocol-enabled server. The default value is
-     *        <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the AWS
-     *        Transfer Family service. Use the <code>API_GATEWAY</code> value to integrate with an identity provider of
-     *        your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to
-     *        call for authentication using the <code>IdentityProviderDetails</code> parameter.
+     *        Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
+     *        which allows you to store and access user credentials within the AWS Transfer Family service. Use the
+     *        <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     *        <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
+     *        authentication using the <code>IdentityProviderDetails</code> parameter.
      * @see IdentityProviderType
      */
 
@@ -925,18 +925,18 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies the mode of authentication for a file transfer protocol-enabled server. The default value is
-     * <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the AWS Transfer
-     * Family service. Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing.
-     * The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
-     * authentication using the <code>IdentityProviderDetails</code> parameter.
+     * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
+     * allows you to store and access user credentials within the AWS Transfer Family service. Use the
+     * <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
+     * using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      * 
-     * @return Specifies the mode of authentication for a file transfer protocol-enabled server. The default value is
-     *         <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the AWS
-     *         Transfer Family service. Use the <code>API_GATEWAY</code> value to integrate with an identity provider of
-     *         your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL
-     *         to call for authentication using the <code>IdentityProviderDetails</code> parameter.
+     * @return Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
+     *         which allows you to store and access user credentials within the AWS Transfer Family service. Use the
+     *         <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     *         <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
+     *         authentication using the <code>IdentityProviderDetails</code> parameter.
      * @see IdentityProviderType
      */
 
@@ -946,19 +946,19 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies the mode of authentication for a file transfer protocol-enabled server. The default value is
-     * <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the AWS Transfer
-     * Family service. Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing.
-     * The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
-     * authentication using the <code>IdentityProviderDetails</code> parameter.
+     * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
+     * allows you to store and access user credentials within the AWS Transfer Family service. Use the
+     * <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
+     * using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      * 
      * @param identityProviderType
-     *        Specifies the mode of authentication for a file transfer protocol-enabled server. The default value is
-     *        <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the AWS
-     *        Transfer Family service. Use the <code>API_GATEWAY</code> value to integrate with an identity provider of
-     *        your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to
-     *        call for authentication using the <code>IdentityProviderDetails</code> parameter.
+     *        Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
+     *        which allows you to store and access user credentials within the AWS Transfer Family service. Use the
+     *        <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     *        <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
+     *        authentication using the <code>IdentityProviderDetails</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
      */
@@ -970,19 +970,19 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies the mode of authentication for a file transfer protocol-enabled server. The default value is
-     * <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the AWS Transfer
-     * Family service. Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing.
-     * The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
-     * authentication using the <code>IdentityProviderDetails</code> parameter.
+     * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
+     * allows you to store and access user credentials within the AWS Transfer Family service. Use the
+     * <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
+     * using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      * 
      * @param identityProviderType
-     *        Specifies the mode of authentication for a file transfer protocol-enabled server. The default value is
-     *        <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the AWS
-     *        Transfer Family service. Use the <code>API_GATEWAY</code> value to integrate with an identity provider of
-     *        your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to
-     *        call for authentication using the <code>IdentityProviderDetails</code> parameter.
+     *        Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
+     *        which allows you to store and access user credentials within the AWS Transfer Family service. Use the
+     *        <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     *        <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
+     *        authentication using the <code>IdentityProviderDetails</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
      */
@@ -1063,7 +1063,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <note>
      * <p>
      * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
-     * be used to identify your file transfer protocol-enabled server when clients connect to it over FTPS.
+     * be used to identify your server when clients connect to it over FTPS.
      * </p>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1101,8 +1101,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <note>
      *         <p>
      *         If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM)
-     *         which will be used to identify your file transfer protocol-enabled server when clients connect to it over
-     *         FTPS.
+     *         which will be used to identify your server when clients connect to it over FTPS.
      *         </p>
      *         <p>
      *         If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1149,7 +1148,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <note>
      * <p>
      * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
-     * be used to identify your file transfer protocol-enabled server when clients connect to it over FTPS.
+     * be used to identify your server when clients connect to it over FTPS.
      * </p>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1188,8 +1187,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <note>
      *        <p>
      *        If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM)
-     *        which will be used to identify your file transfer protocol-enabled server when clients connect to it over
-     *        FTPS.
+     *        which will be used to identify your server when clients connect to it over FTPS.
      *        </p>
      *        <p>
      *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1241,7 +1239,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <note>
      * <p>
      * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
-     * be used to identify your file transfer protocol-enabled server when clients connect to it over FTPS.
+     * be used to identify your server when clients connect to it over FTPS.
      * </p>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1285,8 +1283,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <note>
      *        <p>
      *        If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM)
-     *        which will be used to identify your file transfer protocol-enabled server when clients connect to it over
-     *        FTPS.
+     *        which will be used to identify your server when clients connect to it over FTPS.
      *        </p>
      *        <p>
      *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1340,7 +1337,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <note>
      * <p>
      * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
-     * be used to identify your file transfer protocol-enabled server when clients connect to it over FTPS.
+     * be used to identify your server when clients connect to it over FTPS.
      * </p>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1379,8 +1376,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <note>
      *        <p>
      *        If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM)
-     *        which will be used to identify your file transfer protocol-enabled server when clients connect to it over
-     *        FTPS.
+     *        which will be used to identify your server when clients connect to it over FTPS.
      *        </p>
      *        <p>
      *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1429,7 +1425,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <note>
      * <p>
      * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
-     * be used to identify your file transfer protocol-enabled server when clients connect to it over FTPS.
+     * be used to identify your server when clients connect to it over FTPS.
      * </p>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1468,8 +1464,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <note>
      *        <p>
      *        If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM)
-     *        which will be used to identify your file transfer protocol-enabled server when clients connect to it over
-     *        FTPS.
+     *        which will be used to identify your server when clients connect to it over FTPS.
      *        </p>
      *        <p>
      *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1543,10 +1538,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Key-value pairs that can be used to group and search for file transfer protocol-enabled servers.
+     * Key-value pairs that can be used to group and search for servers.
      * </p>
      * 
-     * @return Key-value pairs that can be used to group and search for file transfer protocol-enabled servers.
+     * @return Key-value pairs that can be used to group and search for servers.
      */
 
     public java.util.List<Tag> getTags() {
@@ -1555,11 +1550,11 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Key-value pairs that can be used to group and search for file transfer protocol-enabled servers.
+     * Key-value pairs that can be used to group and search for servers.
      * </p>
      * 
      * @param tags
-     *        Key-value pairs that can be used to group and search for file transfer protocol-enabled servers.
+     *        Key-value pairs that can be used to group and search for servers.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -1573,7 +1568,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Key-value pairs that can be used to group and search for file transfer protocol-enabled servers.
+     * Key-value pairs that can be used to group and search for servers.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1582,7 +1577,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param tags
-     *        Key-value pairs that can be used to group and search for file transfer protocol-enabled servers.
+     *        Key-value pairs that can be used to group and search for servers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1598,11 +1593,11 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Key-value pairs that can be used to group and search for file transfer protocol-enabled servers.
+     * Key-value pairs that can be used to group and search for servers.
      * </p>
      * 
      * @param tags
-     *        Key-value pairs that can be used to group and search for file transfer protocol-enabled servers.
+     *        Key-value pairs that can be used to group and search for servers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

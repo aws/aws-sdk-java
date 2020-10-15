@@ -41,6 +41,11 @@ public class UpdateWorkspaceImagePermissionRequest extends com.amazonaws.AmazonW
      * <p>
      * The identifier of the AWS account to share or unshare the image with.
      * </p>
+     * <important>
+     * <p>
+     * Before sharing the image, confirm that you are sharing to the correct AWS account ID.
+     * </p>
+     * </important>
      */
     private String sharedAccountId;
 
@@ -140,9 +145,17 @@ public class UpdateWorkspaceImagePermissionRequest extends com.amazonaws.AmazonW
      * <p>
      * The identifier of the AWS account to share or unshare the image with.
      * </p>
+     * <important>
+     * <p>
+     * Before sharing the image, confirm that you are sharing to the correct AWS account ID.
+     * </p>
+     * </important>
      * 
      * @param sharedAccountId
-     *        The identifier of the AWS account to share or unshare the image with.
+     *        The identifier of the AWS account to share or unshare the image with.</p> <important>
+     *        <p>
+     *        Before sharing the image, confirm that you are sharing to the correct AWS account ID.
+     *        </p>
      */
 
     public void setSharedAccountId(String sharedAccountId) {
@@ -153,8 +166,16 @@ public class UpdateWorkspaceImagePermissionRequest extends com.amazonaws.AmazonW
      * <p>
      * The identifier of the AWS account to share or unshare the image with.
      * </p>
+     * <important>
+     * <p>
+     * Before sharing the image, confirm that you are sharing to the correct AWS account ID.
+     * </p>
+     * </important>
      * 
-     * @return The identifier of the AWS account to share or unshare the image with.
+     * @return The identifier of the AWS account to share or unshare the image with.</p> <important>
+     *         <p>
+     *         Before sharing the image, confirm that you are sharing to the correct AWS account ID.
+     *         </p>
      */
 
     public String getSharedAccountId() {
@@ -165,9 +186,17 @@ public class UpdateWorkspaceImagePermissionRequest extends com.amazonaws.AmazonW
      * <p>
      * The identifier of the AWS account to share or unshare the image with.
      * </p>
+     * <important>
+     * <p>
+     * Before sharing the image, confirm that you are sharing to the correct AWS account ID.
+     * </p>
+     * </important>
      * 
      * @param sharedAccountId
-     *        The identifier of the AWS account to share or unshare the image with.
+     *        The identifier of the AWS account to share or unshare the image with.</p> <important>
+     *        <p>
+     *        Before sharing the image, confirm that you are sharing to the correct AWS account ID.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

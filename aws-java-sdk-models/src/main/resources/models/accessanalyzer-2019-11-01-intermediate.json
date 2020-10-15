@@ -85,6 +85,59 @@
     "xmlProtocol" : false
   },
   "operations" : {
+    "ApplyArchiveRule" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<ApplyArchiveRuleResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<ApplyArchiveRuleResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ApplyArchiveRuleRequest, ApplyArchiveRuleResult>",
+      "asyncReturnType" : "ApplyArchiveRuleResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Retroactively applies the archive rule to existing findings that meet the archive rule criteria.</p>",
+      "endpointCacheRequired" : false,
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
+      "endpointTrait" : null,
+      "exceptions" : [ {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>The specified resource could not be found.</p>",
+        "httpStatusCode" : 404
+      }, {
+        "exceptionName" : "ValidationException",
+        "documentation" : "<p>Validation exception error.</p>",
+        "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "InternalServerException",
+        "documentation" : "<p>Internal server error.</p>",
+        "httpStatusCode" : 500
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>Throttling limit exceeded error.</p>",
+        "httpStatusCode" : 429
+      }, {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>You do not have sufficient access to perform this action.</p>",
+        "httpStatusCode" : 403
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
+      "input" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "ApplyArchiveRuleRequest",
+        "variableName" : "applyArchiveRuleRequest",
+        "variableType" : "ApplyArchiveRuleRequest",
+        "documentation" : "<p>Retroactively applies an archive rule.</p>",
+        "simpleType" : "ApplyArchiveRuleRequest",
+        "variableSetterType" : "ApplyArchiveRuleRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "applyArchiveRule",
+      "operationName" : "ApplyArchiveRule",
+      "returnType" : {
+        "returnType" : "ApplyArchiveRuleResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "ApplyArchiveRuleResult"
+    },
     "CreateAnalyzer" : {
       "asyncCallableType" : "java.util.concurrent.Callable<CreateAnalyzerResult>",
       "asyncFutureType" : "java.util.concurrent.Future<CreateAnalyzerResult>",
@@ -149,7 +202,7 @@
       "asyncReturnType" : "CreateArchiveRuleResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Creates an archive rule for the specified analyzer. Archive rules automatically archive findings that meet the criteria you define when you create the rule.</p>",
+      "documentation" : "<p>Creates an archive rule for the specified analyzer. Archive rules automatically archive new findings that meet the criteria you define when you create the rule.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -4975,6 +5028,516 @@
         "documentation" : null,
         "simpleType" : "AnalyzerSummary",
         "variableSetterType" : "AnalyzerSummary"
+      },
+      "wrapper" : false
+    },
+    "ApplyArchiveRuleRequest" : {
+      "c2jName" : "ApplyArchiveRuleRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>Retroactively applies an archive rule.</p>",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.accessanalyzer.request.ApplyArchiveRuleRequest",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "ApplyArchiveRule",
+        "locationName" : null,
+        "requestUri" : "/archive-rule",
+        "target" : null,
+        "verb" : "PUT",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "analyzerArn",
+        "c2jShape" : "AnalyzerArn",
+        "deprecated" : false,
+        "documentation" : "<p>The Amazon resource name (ARN) of the analyzer.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The Amazon resource name (ARN) of the analyzer.</p>\n@param analyzerArn The Amazon resource name (ARN) of the analyzer.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withAnalyzerArn",
+        "getterDocumentation" : "/**<p>The Amazon resource name (ARN) of the analyzer.</p>\n@return The Amazon resource name (ARN) of the analyzer.*/",
+        "getterMethodName" : "getAnalyzerArn",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "analyzerArn",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "analyzerArn",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "AnalyzerArn",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The Amazon resource name (ARN) of the analyzer.</p>\n@param analyzerArn The Amazon resource name (ARN) of the analyzer.*/",
+        "setterMethodName" : "setAnalyzerArn",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "analyzerArn",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The Amazon resource name (ARN) of the analyzer.</p>\n@param analyzerArn The Amazon resource name (ARN) of the analyzer.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "analyzerArn",
+          "variableType" : "String",
+          "documentation" : "<p>The Amazon resource name (ARN) of the analyzer.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "clientToken",
+        "c2jShape" : "String",
+        "deprecated" : false,
+        "documentation" : "<p>A client token.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>A client token.</p>\n@param clientToken A client token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withClientToken",
+        "getterDocumentation" : "/**<p>A client token.</p>\n@return A client token.*/",
+        "getterMethodName" : "getClientToken",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "clientToken",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "clientToken",
+          "uri" : false
+        },
+        "idempotencyToken" : true,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "ClientToken",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>A client token.</p>\n@param clientToken A client token.*/",
+        "setterMethodName" : "setClientToken",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "clientToken",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>A client token.</p>\n@param clientToken A client token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "clientToken",
+          "variableType" : "String",
+          "documentation" : "<p>A client token.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "ruleName",
+        "c2jShape" : "Name",
+        "deprecated" : false,
+        "documentation" : "<p>The name of the rule to apply.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The name of the rule to apply.</p>\n@param ruleName The name of the rule to apply.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withRuleName",
+        "getterDocumentation" : "/**<p>The name of the rule to apply.</p>\n@return The name of the rule to apply.*/",
+        "getterMethodName" : "getRuleName",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ruleName",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ruleName",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "RuleName",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The name of the rule to apply.</p>\n@param ruleName The name of the rule to apply.*/",
+        "setterMethodName" : "setRuleName",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "ruleName",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The name of the rule to apply.</p>\n@param ruleName The name of the rule to apply.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "ruleName",
+          "variableType" : "String",
+          "documentation" : "<p>The name of the rule to apply.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "AnalyzerArn" : {
+          "c2jName" : "analyzerArn",
+          "c2jShape" : "AnalyzerArn",
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon resource name (ARN) of the analyzer.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The Amazon resource name (ARN) of the analyzer.</p>\n@param analyzerArn The Amazon resource name (ARN) of the analyzer.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withAnalyzerArn",
+          "getterDocumentation" : "/**<p>The Amazon resource name (ARN) of the analyzer.</p>\n@return The Amazon resource name (ARN) of the analyzer.*/",
+          "getterMethodName" : "getAnalyzerArn",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "analyzerArn",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "analyzerArn",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "AnalyzerArn",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The Amazon resource name (ARN) of the analyzer.</p>\n@param analyzerArn The Amazon resource name (ARN) of the analyzer.*/",
+          "setterMethodName" : "setAnalyzerArn",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "analyzerArn",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The Amazon resource name (ARN) of the analyzer.</p>\n@param analyzerArn The Amazon resource name (ARN) of the analyzer.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "analyzerArn",
+            "variableType" : "String",
+            "documentation" : "<p>The Amazon resource name (ARN) of the analyzer.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "ClientToken" : {
+          "c2jName" : "clientToken",
+          "c2jShape" : "String",
+          "deprecated" : false,
+          "documentation" : "<p>A client token.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>A client token.</p>\n@param clientToken A client token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withClientToken",
+          "getterDocumentation" : "/**<p>A client token.</p>\n@return A client token.*/",
+          "getterMethodName" : "getClientToken",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "clientToken",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "clientToken",
+            "uri" : false
+          },
+          "idempotencyToken" : true,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "ClientToken",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>A client token.</p>\n@param clientToken A client token.*/",
+          "setterMethodName" : "setClientToken",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "clientToken",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>A client token.</p>\n@param clientToken A client token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "clientToken",
+            "variableType" : "String",
+            "documentation" : "<p>A client token.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "RuleName" : {
+          "c2jName" : "ruleName",
+          "c2jShape" : "Name",
+          "deprecated" : false,
+          "documentation" : "<p>The name of the rule to apply.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The name of the rule to apply.</p>\n@param ruleName The name of the rule to apply.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withRuleName",
+          "getterDocumentation" : "/**<p>The name of the rule to apply.</p>\n@return The name of the rule to apply.*/",
+          "getterMethodName" : "getRuleName",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ruleName",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ruleName",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "RuleName",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The name of the rule to apply.</p>\n@param ruleName The name of the rule to apply.*/",
+          "setterMethodName" : "setRuleName",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "ruleName",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The name of the rule to apply.</p>\n@param ruleName The name of the rule to apply.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "ruleName",
+            "variableType" : "String",
+            "documentation" : "<p>The name of the rule to apply.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "packageName" : "com.amazonaws.services.accessanalyzer.request",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "analyzerArn", "ruleName" ],
+      "shapeName" : "ApplyArchiveRuleRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "ApplyArchiveRuleRequest",
+        "variableName" : "applyArchiveRuleRequest",
+        "variableType" : "ApplyArchiveRuleRequest",
+        "documentation" : null,
+        "simpleType" : "ApplyArchiveRuleRequest",
+        "variableSetterType" : "ApplyArchiveRuleRequest"
+      },
+      "wrapper" : false
+    },
+    "ApplyArchiveRuleResult" : {
+      "c2jName" : "ApplyArchiveRuleResult",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : null,
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.accessanalyzer.response.ApplyArchiveRuleResult",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.accessanalyzer.response",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "ApplyArchiveRuleResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "ApplyArchiveRuleResult",
+        "variableName" : "applyArchiveRuleResult",
+        "variableType" : "ApplyArchiveRuleResult",
+        "documentation" : null,
+        "simpleType" : "ApplyArchiveRuleResult",
+        "variableSetterType" : "ApplyArchiveRuleResult"
       },
       "wrapper" : false
     },
@@ -13316,11 +13879,11 @@
       "documentation" : "",
       "endpointDiscoveryMembers" : null,
       "enums" : [ {
-        "name" : "BUCKET_ACL",
-        "value" : "BUCKET_ACL"
-      }, {
         "name" : "POLICY",
         "value" : "POLICY"
+      }, {
+        "name" : "BUCKET_ACL",
+        "value" : "BUCKET_ACL"
       }, {
         "name" : "S3_ACCESS_POINT",
         "value" : "S3_ACCESS_POINT"
@@ -24091,11 +24654,14 @@
       "documentation" : "",
       "endpointDiscoveryMembers" : null,
       "enums" : [ {
+        "name" : "AWSS3Bucket",
+        "value" : "AWS::S3::Bucket"
+      }, {
         "name" : "AWSIAMRole",
         "value" : "AWS::IAM::Role"
       }, {
-        "name" : "AWSKMSKey",
-        "value" : "AWS::KMS::Key"
+        "name" : "AWSSQSQueue",
+        "value" : "AWS::SQS::Queue"
       }, {
         "name" : "AWSLambdaFunction",
         "value" : "AWS::Lambda::Function"
@@ -24103,11 +24669,8 @@
         "name" : "AWSLambdaLayerVersion",
         "value" : "AWS::Lambda::LayerVersion"
       }, {
-        "name" : "AWSS3Bucket",
-        "value" : "AWS::S3::Bucket"
-      }, {
-        "name" : "AWSSQSQueue",
-        "value" : "AWS::SQS::Queue"
+        "name" : "AWSKMSKey",
+        "value" : "AWS::KMS::Key"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.accessanalyzer.enum.ResourceType",
@@ -29244,6 +29807,9 @@
       "documentation" : "",
       "endpointDiscoveryMembers" : null,
       "enums" : [ {
+        "name" : "UnknownOperation",
+        "value" : "unknownOperation"
+      }, {
         "name" : "CannotParse",
         "value" : "cannotParse"
       }, {
@@ -29252,9 +29818,6 @@
       }, {
         "name" : "Other",
         "value" : "other"
-      }, {
-        "name" : "UnknownOperation",
-        "value" : "unknownOperation"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.accessanalyzer.enum.ValidationExceptionReason",

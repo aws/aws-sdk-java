@@ -51,15 +51,15 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
     private BucketCountBySharedAccessType bucketCountBySharedAccessType;
     /**
      * <p>
-     * The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported file or
-     * storage format and storage class.
+     * The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported storage
+     * class and have a file name extension for a supported file or storage format.
      * </p>
      */
     private Long classifiableObjectCount;
     /**
      * <p>
      * The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects
-     * use a supported file or storage format and storage class.
+     * use a supported storage class and have a file name extension for a supported file or storage format.
      * </p>
      */
     private Long classifiableSizeInBytes;
@@ -90,15 +90,16 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
     private Long sizeInBytesCompressed;
     /**
      * <p>
-     * The total number of objects that Amazon Macie can't analyze in the buckets. These objects use an unsupported file
-     * or storage format or storage class.
+     * The total number of objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported
+     * storage class or don't have a file name extension for a supported file or storage format.
      * </p>
      */
     private ObjectLevelStatistics unclassifiableObjectCount;
     /**
      * <p>
      * The total storage size, in bytes, of all the objects that Amazon Macie can't analyze in the buckets. These
-     * objects use an unsupported file or storage format or storage class.
+     * objects don't use a supported storage class or don't have a file name extension for a supported file or storage
+     * format.
      * </p>
      */
     private ObjectLevelStatistics unclassifiableObjectSizeInBytes;
@@ -277,13 +278,13 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported file or
-     * storage format and storage class.
+     * The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported storage
+     * class and have a file name extension for a supported file or storage format.
      * </p>
      * 
      * @param classifiableObjectCount
      *        The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported
-     *        file or storage format and storage class.
+     *        storage class and have a file name extension for a supported file or storage format.
      */
 
     public void setClassifiableObjectCount(Long classifiableObjectCount) {
@@ -292,12 +293,12 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported file or
-     * storage format and storage class.
+     * The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported storage
+     * class and have a file name extension for a supported file or storage format.
      * </p>
      * 
      * @return The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported
-     *         file or storage format and storage class.
+     *         storage class and have a file name extension for a supported file or storage format.
      */
 
     public Long getClassifiableObjectCount() {
@@ -306,13 +307,13 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported file or
-     * storage format and storage class.
+     * The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported storage
+     * class and have a file name extension for a supported file or storage format.
      * </p>
      * 
      * @param classifiableObjectCount
      *        The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported
-     *        file or storage format and storage class.
+     *        storage class and have a file name extension for a supported file or storage format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -324,12 +325,13 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects
-     * use a supported file or storage format and storage class.
+     * use a supported storage class and have a file name extension for a supported file or storage format.
      * </p>
      * 
      * @param classifiableSizeInBytes
      *        The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These
-     *        objects use a supported file or storage format and storage class.
+     *        objects use a supported storage class and have a file name extension for a supported file or storage
+     *        format.
      */
 
     public void setClassifiableSizeInBytes(Long classifiableSizeInBytes) {
@@ -339,11 +341,12 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects
-     * use a supported file or storage format and storage class.
+     * use a supported storage class and have a file name extension for a supported file or storage format.
      * </p>
      * 
      * @return The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These
-     *         objects use a supported file or storage format and storage class.
+     *         objects use a supported storage class and have a file name extension for a supported file or storage
+     *         format.
      */
 
     public Long getClassifiableSizeInBytes() {
@@ -353,12 +356,13 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects
-     * use a supported file or storage format and storage class.
+     * use a supported storage class and have a file name extension for a supported file or storage format.
      * </p>
      * 
      * @param classifiableSizeInBytes
      *        The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These
-     *        objects use a supported file or storage format and storage class.
+     *        objects use a supported storage class and have a file name extension for a supported file or storage
+     *        format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -535,13 +539,13 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie can't analyze in the buckets. These objects use an unsupported file
-     * or storage format or storage class.
+     * The total number of objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported
+     * storage class or don't have a file name extension for a supported file or storage format.
      * </p>
      * 
      * @param unclassifiableObjectCount
-     *        The total number of objects that Amazon Macie can't analyze in the buckets. These objects use an
-     *        unsupported file or storage format or storage class.
+     *        The total number of objects that Amazon Macie can't analyze in the buckets. These objects don't use a
+     *        supported storage class or don't have a file name extension for a supported file or storage format.
      */
 
     public void setUnclassifiableObjectCount(ObjectLevelStatistics unclassifiableObjectCount) {
@@ -550,12 +554,12 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie can't analyze in the buckets. These objects use an unsupported file
-     * or storage format or storage class.
+     * The total number of objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported
+     * storage class or don't have a file name extension for a supported file or storage format.
      * </p>
      * 
-     * @return The total number of objects that Amazon Macie can't analyze in the buckets. These objects use an
-     *         unsupported file or storage format or storage class.
+     * @return The total number of objects that Amazon Macie can't analyze in the buckets. These objects don't use a
+     *         supported storage class or don't have a file name extension for a supported file or storage format.
      */
 
     public ObjectLevelStatistics getUnclassifiableObjectCount() {
@@ -564,13 +568,13 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie can't analyze in the buckets. These objects use an unsupported file
-     * or storage format or storage class.
+     * The total number of objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported
+     * storage class or don't have a file name extension for a supported file or storage format.
      * </p>
      * 
      * @param unclassifiableObjectCount
-     *        The total number of objects that Amazon Macie can't analyze in the buckets. These objects use an
-     *        unsupported file or storage format or storage class.
+     *        The total number of objects that Amazon Macie can't analyze in the buckets. These objects don't use a
+     *        supported storage class or don't have a file name extension for a supported file or storage format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -582,12 +586,14 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * The total storage size, in bytes, of all the objects that Amazon Macie can't analyze in the buckets. These
-     * objects use an unsupported file or storage format or storage class.
+     * objects don't use a supported storage class or don't have a file name extension for a supported file or storage
+     * format.
      * </p>
      * 
      * @param unclassifiableObjectSizeInBytes
      *        The total storage size, in bytes, of all the objects that Amazon Macie can't analyze in the buckets. These
-     *        objects use an unsupported file or storage format or storage class.
+     *        objects don't use a supported storage class or don't have a file name extension for a supported file or
+     *        storage format.
      */
 
     public void setUnclassifiableObjectSizeInBytes(ObjectLevelStatistics unclassifiableObjectSizeInBytes) {
@@ -597,11 +603,13 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * The total storage size, in bytes, of all the objects that Amazon Macie can't analyze in the buckets. These
-     * objects use an unsupported file or storage format or storage class.
+     * objects don't use a supported storage class or don't have a file name extension for a supported file or storage
+     * format.
      * </p>
      * 
      * @return The total storage size, in bytes, of all the objects that Amazon Macie can't analyze in the buckets.
-     *         These objects use an unsupported file or storage format or storage class.
+     *         These objects don't use a supported storage class or don't have a file name extension for a supported
+     *         file or storage format.
      */
 
     public ObjectLevelStatistics getUnclassifiableObjectSizeInBytes() {
@@ -611,12 +619,14 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * The total storage size, in bytes, of all the objects that Amazon Macie can't analyze in the buckets. These
-     * objects use an unsupported file or storage format or storage class.
+     * objects don't use a supported storage class or don't have a file name extension for a supported file or storage
+     * format.
      * </p>
      * 
      * @param unclassifiableObjectSizeInBytes
      *        The total storage size, in bytes, of all the objects that Amazon Macie can't analyze in the buckets. These
-     *        objects use an unsupported file or storage format or storage class.
+     *        objects don't use a supported storage class or don't have a file name extension for a supported file or
+     *        storage format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

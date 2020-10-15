@@ -391,7 +391,8 @@ public interface AWSXRay {
      * @throws ThrottledException
      *         The request exceeds the maximum number of requests per second.
      * @throws ResourceNotFoundException
-     *         The resource was not found. Verify that the name or ARN of the resource is correct.
+     *         The resource was not found. Verify that the name or Amazon Resource Name (ARN) of the resource is
+     *         correct.
      * @sample AWSXRay.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ListTagsForResource" target="_top">AWS API
      *      Documentation</a>
@@ -444,7 +445,7 @@ public interface AWSXRay {
      * Documents</a> in the <i>AWS X-Ray Developer Guide</i>.
      * </p>
      * <p class="title">
-     * <b>Required Segment Document Fields</b>
+     * <b>Required segment document fields</b>
      * </p>
      * <ul>
      * <li>
@@ -479,9 +480,9 @@ public interface AWSXRay {
      * <li>
      * <p>
      * <code>in_progress</code> - Set to <code>true</code> instead of specifying an <code>end_time</code> to record that
-     * a segment has been started, but is not complete. Send an in progress segment when your application receives a
-     * request that will take a long time to serve, to trace the fact that the request was received. When the response
-     * is sent, send the complete segment to overwrite the in-progress segment.
+     * a segment has been started, but is not complete. Send an in-progress segment when your application receives a
+     * request that will take a long time to serve, to trace that the request was received. When the response is sent,
+     * send the complete segment to overwrite the in-progress segment.
      * </p>
      * </li>
      * </ul>
@@ -495,7 +496,7 @@ public interface AWSXRay {
      * <ul>
      * <li>
      * <p>
-     * The version number, i.e. <code>1</code>.
+     * The version number, for instance, <code>1</code>.
      * </p>
      * </li>
      * <li>
@@ -535,7 +536,8 @@ public interface AWSXRay {
      * @throws ThrottledException
      *         The request exceeds the maximum number of requests per second.
      * @throws ResourceNotFoundException
-     *         The resource was not found. Verify that the name or ARN of the resource is correct.
+     *         The resource was not found. Verify that the name or Amazon Resource Name (ARN) of the resource is
+     *         correct.
      * @throws TooManyTagsException
      *         You have exceeded the maximum number of tags you can apply to this resource.
      * @sample AWSXRay.TagResource
@@ -557,7 +559,8 @@ public interface AWSXRay {
      * @throws ThrottledException
      *         The request exceeds the maximum number of requests per second.
      * @throws ResourceNotFoundException
-     *         The resource was not found. Verify that the name or ARN of the resource is correct.
+     *         The resource was not found. Verify that the name or Amazon Resource Name (ARN) of the resource is
+     *         correct.
      * @sample AWSXRay.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UntagResource" target="_top">AWS API
      *      Documentation</a>

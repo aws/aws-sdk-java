@@ -29,6 +29,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class DataflowDetail implements Serializable, Cloneable, StructuredPojo {
 
     private Destination destination;
+    /**
+     * <p>
+     * Error message for a dataflow.
+     * </p>
+     */
+    private String errorMessage;
 
     private Source source;
 
@@ -55,6 +61,46 @@ public class DataflowDetail implements Serializable, Cloneable, StructuredPojo {
 
     public DataflowDetail withDestination(Destination destination) {
         setDestination(destination);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Error message for a dataflow.
+     * </p>
+     * 
+     * @param errorMessage
+     *        Error message for a dataflow.
+     */
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
+
+    /**
+     * <p>
+     * Error message for a dataflow.
+     * </p>
+     * 
+     * @return Error message for a dataflow.
+     */
+
+    public String getErrorMessage() {
+        return this.errorMessage;
+    }
+
+    /**
+     * <p>
+     * Error message for a dataflow.
+     * </p>
+     * 
+     * @param errorMessage
+     *        Error message for a dataflow.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataflowDetail withErrorMessage(String errorMessage) {
+        setErrorMessage(errorMessage);
         return this;
     }
 
@@ -98,6 +144,8 @@ public class DataflowDetail implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getDestination() != null)
             sb.append("Destination: ").append(getDestination()).append(",");
+        if (getErrorMessage() != null)
+            sb.append("ErrorMessage: ").append(getErrorMessage()).append(",");
         if (getSource() != null)
             sb.append("Source: ").append(getSource());
         sb.append("}");
@@ -118,6 +166,10 @@ public class DataflowDetail implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDestination() != null && other.getDestination().equals(this.getDestination()) == false)
             return false;
+        if (other.getErrorMessage() == null ^ this.getErrorMessage() == null)
+            return false;
+        if (other.getErrorMessage() != null && other.getErrorMessage().equals(this.getErrorMessage()) == false)
+            return false;
         if (other.getSource() == null ^ this.getSource() == null)
             return false;
         if (other.getSource() != null && other.getSource().equals(this.getSource()) == false)
@@ -131,6 +183,7 @@ public class DataflowDetail implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode());
+        hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
         hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode());
         return hashCode;
     }

@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the AWS accounts that have been granted permission to use a shared image.
+ * Describes the AWS accounts that have been granted permission to use a shared image. For more information about
+ * sharing images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html"> Share
+ * or Unshare a Custom WorkSpaces Image</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImagePermission" target="_top">AWS API

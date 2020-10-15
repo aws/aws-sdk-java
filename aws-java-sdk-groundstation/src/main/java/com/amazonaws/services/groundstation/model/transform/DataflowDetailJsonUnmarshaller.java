@@ -52,6 +52,10 @@ public class DataflowDetailJsonUnmarshaller implements Unmarshaller<DataflowDeta
                     context.nextToken();
                     dataflowDetail.setDestination(DestinationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("errorMessage", targetDepth)) {
+                    context.nextToken();
+                    dataflowDetail.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("source", targetDepth)) {
                     context.nextToken();
                     dataflowDetail.setSource(SourceJsonUnmarshaller.getInstance().unmarshall(context));

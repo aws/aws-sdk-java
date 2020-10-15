@@ -27,8 +27,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The landing directory (folder) for a user when they log in to the file transfer protocol-enabled server using the
-     * client.
+     * The landing directory (folder) for a user when they log in to the server using the client.
      * </p>
      * <p>
      * An example is <i> <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.
@@ -37,11 +36,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String homeDirectory;
     /**
      * <p>
-     * The type of landing directory (folder) you want your users' home directory to be when they log into the file
-     * transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3
-     * bucket paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to
-     * provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to
-     * your users.
+     * The type of landing directory (folder) you want your users' home directory to be when they log into the server.
+     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their file
+     * transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your users.
      * </p>
      */
     private String homeDirectoryType;
@@ -101,22 +99,21 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this role will
      * determine the level of access you want to provide your users when transferring files into and out of your Amazon
-     * S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the file transfer
-     * protocol-enabled server to access your resources when servicing your users' transfer requests.
+     * S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the server to access your
+     * resources when servicing your users' transfer requests.
      * </p>
      */
     private String role;
     /**
      * <p>
-     * A system-assigned unique identifier for a file transfer protocol-enabled server instance. This is the specific
-     * server that you added your user to.
+     * A system-assigned unique identifier for a server instance. This is the specific server that you added your user
+     * to.
      * </p>
      */
     private String serverId;
     /**
      * <p>
-     * The public portion of the Secure Shell (SSH) key used to authenticate the user to the file transfer
-     * protocol-enabled server.
+     * The public portion of the Secure Shell (SSH) key used to authenticate the user to the server.
      * </p>
      */
     private String sshPublicKeyBody;
@@ -129,26 +126,24 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * A unique string that identifies a user and is associated with a file transfer protocol-enabled server as
-     * specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters
-     * long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'.
-     * The user name can't start with a hyphen, period, and at sign.
+     * A unique string that identifies a user and is associated with a as specified by the <code>ServerId</code>. This
+     * user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid characters: a-z,
+     * A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen,
+     * period, or at sign.
      * </p>
      */
     private String userName;
 
     /**
      * <p>
-     * The landing directory (folder) for a user when they log in to the file transfer protocol-enabled server using the
-     * client.
+     * The landing directory (folder) for a user when they log in to the server using the client.
      * </p>
      * <p>
      * An example is <i> <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.
      * </p>
      * 
      * @param homeDirectory
-     *        The landing directory (folder) for a user when they log in to the file transfer protocol-enabled server
-     *        using the client.</p>
+     *        The landing directory (folder) for a user when they log in to the server using the client.</p>
      *        <p>
      *        An example is <i> <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.
      */
@@ -159,15 +154,13 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The landing directory (folder) for a user when they log in to the file transfer protocol-enabled server using the
-     * client.
+     * The landing directory (folder) for a user when they log in to the server using the client.
      * </p>
      * <p>
      * An example is <i> <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.
      * </p>
      * 
-     * @return The landing directory (folder) for a user when they log in to the file transfer protocol-enabled server
-     *         using the client.</p>
+     * @return The landing directory (folder) for a user when they log in to the server using the client.</p>
      *         <p>
      *         An example is <i> <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.
      */
@@ -178,16 +171,14 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The landing directory (folder) for a user when they log in to the file transfer protocol-enabled server using the
-     * client.
+     * The landing directory (folder) for a user when they log in to the server using the client.
      * </p>
      * <p>
      * An example is <i> <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.
      * </p>
      * 
      * @param homeDirectory
-     *        The landing directory (folder) for a user when they log in to the file transfer protocol-enabled server
-     *        using the client.</p>
+     *        The landing directory (folder) for a user when they log in to the server using the client.</p>
      *        <p>
      *        An example is <i> <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -200,19 +191,18 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The type of landing directory (folder) you want your users' home directory to be when they log into the file
-     * transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3
-     * bucket paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to
-     * provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to
-     * your users.
+     * The type of landing directory (folder) you want your users' home directory to be when they log into the server.
+     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their file
+     * transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your users.
      * </p>
      * 
      * @param homeDirectoryType
      *        The type of landing directory (folder) you want your users' home directory to be when they log into the
-     *        file transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute
-     *        Amazon S3 bucket paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>,
-     *        you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make
-     *        Amazon S3 paths visible to your users.
+     *        server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in
+     *        their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     *        mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to
+     *        your users.
      * @see HomeDirectoryType
      */
 
@@ -222,18 +212,17 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The type of landing directory (folder) you want your users' home directory to be when they log into the file
-     * transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3
-     * bucket paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to
-     * provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to
-     * your users.
+     * The type of landing directory (folder) you want your users' home directory to be when they log into the server.
+     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their file
+     * transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your users.
      * </p>
      * 
      * @return The type of landing directory (folder) you want your users' home directory to be when they log into the
-     *         file transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute
-     *         Amazon S3 bucket paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>,
-     *         you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make
-     *         Amazon S3 paths visible to your users.
+     *         server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is
+     *         in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     *         mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to
+     *         your users.
      * @see HomeDirectoryType
      */
 
@@ -243,19 +232,18 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The type of landing directory (folder) you want your users' home directory to be when they log into the file
-     * transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3
-     * bucket paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to
-     * provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to
-     * your users.
+     * The type of landing directory (folder) you want your users' home directory to be when they log into the server.
+     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their file
+     * transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your users.
      * </p>
      * 
      * @param homeDirectoryType
      *        The type of landing directory (folder) you want your users' home directory to be when they log into the
-     *        file transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute
-     *        Amazon S3 bucket paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>,
-     *        you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make
-     *        Amazon S3 paths visible to your users.
+     *        server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in
+     *        their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     *        mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to
+     *        your users.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HomeDirectoryType
      */
@@ -267,19 +255,18 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The type of landing directory (folder) you want your users' home directory to be when they log into the file
-     * transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3
-     * bucket paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to
-     * provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to
-     * your users.
+     * The type of landing directory (folder) you want your users' home directory to be when they log into the server.
+     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their file
+     * transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your users.
      * </p>
      * 
      * @param homeDirectoryType
      *        The type of landing directory (folder) you want your users' home directory to be when they log into the
-     *        file transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute
-     *        Amazon S3 bucket paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>,
-     *        you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make
-     *        Amazon S3 paths visible to your users.
+     *        server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in
+     *        their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     *        mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to
+     *        your users.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HomeDirectoryType
      */
@@ -686,16 +673,15 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this role will
      * determine the level of access you want to provide your users when transferring files into and out of your Amazon
-     * S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the file transfer
-     * protocol-enabled server to access your resources when servicing your users' transfer requests.
+     * S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the server to access your
+     * resources when servicing your users' transfer requests.
      * </p>
      * 
      * @param role
      *        The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this role
      *        will determine the level of access you want to provide your users when transferring files into and out of
      *        your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the
-     *        file transfer protocol-enabled server to access your resources when servicing your users' transfer
-     *        requests.
+     *        server to access your resources when servicing your users' transfer requests.
      */
 
     public void setRole(String role) {
@@ -706,15 +692,14 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this role will
      * determine the level of access you want to provide your users when transferring files into and out of your Amazon
-     * S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the file transfer
-     * protocol-enabled server to access your resources when servicing your users' transfer requests.
+     * S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the server to access your
+     * resources when servicing your users' transfer requests.
      * </p>
      * 
      * @return The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this
      *         role will determine the level of access you want to provide your users when transferring files into and
      *         out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that
-     *         allows the file transfer protocol-enabled server to access your resources when servicing your users'
-     *         transfer requests.
+     *         allows the server to access your resources when servicing your users' transfer requests.
      */
 
     public String getRole() {
@@ -725,16 +710,15 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this role will
      * determine the level of access you want to provide your users when transferring files into and out of your Amazon
-     * S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the file transfer
-     * protocol-enabled server to access your resources when servicing your users' transfer requests.
+     * S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the server to access your
+     * resources when servicing your users' transfer requests.
      * </p>
      * 
      * @param role
      *        The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this role
      *        will determine the level of access you want to provide your users when transferring files into and out of
      *        your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the
-     *        file transfer protocol-enabled server to access your resources when servicing your users' transfer
-     *        requests.
+     *        server to access your resources when servicing your users' transfer requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -745,13 +729,13 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A system-assigned unique identifier for a file transfer protocol-enabled server instance. This is the specific
-     * server that you added your user to.
+     * A system-assigned unique identifier for a server instance. This is the specific server that you added your user
+     * to.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for a file transfer protocol-enabled server instance. This is the
-     *        specific server that you added your user to.
+     *        A system-assigned unique identifier for a server instance. This is the specific server that you added your
+     *        user to.
      */
 
     public void setServerId(String serverId) {
@@ -760,12 +744,12 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A system-assigned unique identifier for a file transfer protocol-enabled server instance. This is the specific
-     * server that you added your user to.
+     * A system-assigned unique identifier for a server instance. This is the specific server that you added your user
+     * to.
      * </p>
      * 
-     * @return A system-assigned unique identifier for a file transfer protocol-enabled server instance. This is the
-     *         specific server that you added your user to.
+     * @return A system-assigned unique identifier for a server instance. This is the specific server that you added
+     *         your user to.
      */
 
     public String getServerId() {
@@ -774,13 +758,13 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A system-assigned unique identifier for a file transfer protocol-enabled server instance. This is the specific
-     * server that you added your user to.
+     * A system-assigned unique identifier for a server instance. This is the specific server that you added your user
+     * to.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for a file transfer protocol-enabled server instance. This is the
-     *        specific server that you added your user to.
+     *        A system-assigned unique identifier for a server instance. This is the specific server that you added your
+     *        user to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -791,13 +775,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The public portion of the Secure Shell (SSH) key used to authenticate the user to the file transfer
-     * protocol-enabled server.
+     * The public portion of the Secure Shell (SSH) key used to authenticate the user to the server.
      * </p>
      * 
      * @param sshPublicKeyBody
-     *        The public portion of the Secure Shell (SSH) key used to authenticate the user to the file transfer
-     *        protocol-enabled server.
+     *        The public portion of the Secure Shell (SSH) key used to authenticate the user to the server.
      */
 
     public void setSshPublicKeyBody(String sshPublicKeyBody) {
@@ -806,12 +788,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The public portion of the Secure Shell (SSH) key used to authenticate the user to the file transfer
-     * protocol-enabled server.
+     * The public portion of the Secure Shell (SSH) key used to authenticate the user to the server.
      * </p>
      * 
-     * @return The public portion of the Secure Shell (SSH) key used to authenticate the user to the file transfer
-     *         protocol-enabled server.
+     * @return The public portion of the Secure Shell (SSH) key used to authenticate the user to the server.
      */
 
     public String getSshPublicKeyBody() {
@@ -820,13 +800,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The public portion of the Secure Shell (SSH) key used to authenticate the user to the file transfer
-     * protocol-enabled server.
+     * The public portion of the Secure Shell (SSH) key used to authenticate the user to the server.
      * </p>
      * 
      * @param sshPublicKeyBody
-     *        The public portion of the Secure Shell (SSH) key used to authenticate the user to the file transfer
-     *        protocol-enabled server.
+     *        The public portion of the Secure Shell (SSH) key used to authenticate the user to the server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -915,17 +893,17 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A unique string that identifies a user and is associated with a file transfer protocol-enabled server as
-     * specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters
-     * long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'.
-     * The user name can't start with a hyphen, period, and at sign.
+     * A unique string that identifies a user and is associated with a as specified by the <code>ServerId</code>. This
+     * user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid characters: a-z,
+     * A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen,
+     * period, or at sign.
      * </p>
      * 
      * @param userName
-     *        A unique string that identifies a user and is associated with a file transfer protocol-enabled server as
-     *        specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100
-     *        characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period
-     *        '.', and at sign '@'. The user name can't start with a hyphen, period, and at sign.
+     *        A unique string that identifies a user and is associated with a as specified by the <code>ServerId</code>.
+     *        This user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid
+     *        characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't
+     *        start with a hyphen, period, or at sign.
      */
 
     public void setUserName(String userName) {
@@ -934,16 +912,16 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A unique string that identifies a user and is associated with a file transfer protocol-enabled server as
-     * specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters
-     * long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'.
-     * The user name can't start with a hyphen, period, and at sign.
+     * A unique string that identifies a user and is associated with a as specified by the <code>ServerId</code>. This
+     * user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid characters: a-z,
+     * A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen,
+     * period, or at sign.
      * </p>
      * 
-     * @return A unique string that identifies a user and is associated with a file transfer protocol-enabled server as
-     *         specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100
-     *         characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period
-     *         '.', and at sign '@'. The user name can't start with a hyphen, period, and at sign.
+     * @return A unique string that identifies a user and is associated with a as specified by the <code>ServerId</code>
+     *         . This user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid
+     *         characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't
+     *         start with a hyphen, period, or at sign.
      */
 
     public String getUserName() {
@@ -952,17 +930,17 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A unique string that identifies a user and is associated with a file transfer protocol-enabled server as
-     * specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters
-     * long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'.
-     * The user name can't start with a hyphen, period, and at sign.
+     * A unique string that identifies a user and is associated with a as specified by the <code>ServerId</code>. This
+     * user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid characters: a-z,
+     * A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen,
+     * period, or at sign.
      * </p>
      * 
      * @param userName
-     *        A unique string that identifies a user and is associated with a file transfer protocol-enabled server as
-     *        specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100
-     *        characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period
-     *        '.', and at sign '@'. The user name can't start with a hyphen, period, and at sign.
+     *        A unique string that identifies a user and is associated with a as specified by the <code>ServerId</code>.
+     *        This user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid
+     *        characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't
+     *        start with a hyphen, period, or at sign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

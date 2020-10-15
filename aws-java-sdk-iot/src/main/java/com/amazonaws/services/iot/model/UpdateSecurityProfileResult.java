@@ -50,12 +50,11 @@ public class UpdateSecurityProfileResult extends com.amazonaws.AmazonWebServiceR
     private java.util.Map<String, AlertTarget> alertTargets;
     /**
      * <p>
-     * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     * security profile's <code>behaviors</code>, but it is also retained for any metric specified here.
+     * <i>Please use <a>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</a> instead.</i>
      * </p>
      * <p>
-     * <b>Note:</b> This API field is deprecated. Please use
-     * <a>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</a> instead.
+     * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
+     * security profile's <code>behaviors</code>, but it is also retained for any metric specified here.
      * </p>
      */
     @Deprecated
@@ -346,19 +345,17 @@ public class UpdateSecurityProfileResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
+     * <i>Please use <a>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</a> instead.</i>
+     * </p>
+     * <p>
      * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
      * security profile's <code>behaviors</code>, but it is also retained for any metric specified here.
      * </p>
-     * <p>
-     * <b>Note:</b> This API field is deprecated. Please use
-     * <a>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</a> instead.
-     * </p>
      * 
-     * @return A list of metrics whose data is retained (stored). By default, data is retained for any metric used in
-     *         the security profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
+     * @return <i>Please use <a>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</a> instead.</i> </p>
      *         <p>
-     *         <b>Note:</b> This API field is deprecated. Please use
-     *         <a>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</a> instead.
+     *         A list of metrics whose data is retained (stored). By default, data is retained for any metric used in
+     *         the security profile's <code>behaviors</code>, but it is also retained for any metric specified here.
      */
     @Deprecated
     public java.util.List<String> getAdditionalMetricsToRetain() {
@@ -367,20 +364,18 @@ public class UpdateSecurityProfileResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
+     * <i>Please use <a>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</a> instead.</i>
+     * </p>
+     * <p>
      * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
      * security profile's <code>behaviors</code>, but it is also retained for any metric specified here.
      * </p>
-     * <p>
-     * <b>Note:</b> This API field is deprecated. Please use
-     * <a>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</a> instead.
-     * </p>
      * 
      * @param additionalMetricsToRetain
-     *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     *        security profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
+     *        <i>Please use <a>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</a> instead.</i> </p>
      *        <p>
-     *        <b>Note:</b> This API field is deprecated. Please use
-     *        <a>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</a> instead.
+     *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
+     *        security profile's <code>behaviors</code>, but it is also retained for any metric specified here.
      */
     @Deprecated
     public void setAdditionalMetricsToRetain(java.util.Collection<String> additionalMetricsToRetain) {
@@ -394,12 +389,11 @@ public class UpdateSecurityProfileResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     * security profile's <code>behaviors</code>, but it is also retained for any metric specified here.
+     * <i>Please use <a>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</a> instead.</i>
      * </p>
      * <p>
-     * <b>Note:</b> This API field is deprecated. Please use
-     * <a>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</a> instead.
+     * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
+     * security profile's <code>behaviors</code>, but it is also retained for any metric specified here.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -408,11 +402,10 @@ public class UpdateSecurityProfileResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param additionalMetricsToRetain
-     *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     *        security profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
+     *        <i>Please use <a>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</a> instead.</i> </p>
      *        <p>
-     *        <b>Note:</b> This API field is deprecated. Please use
-     *        <a>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</a> instead.
+     *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
+     *        security profile's <code>behaviors</code>, but it is also retained for any metric specified here.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -428,20 +421,18 @@ public class UpdateSecurityProfileResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
+     * <i>Please use <a>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</a> instead.</i>
+     * </p>
+     * <p>
      * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
      * security profile's <code>behaviors</code>, but it is also retained for any metric specified here.
      * </p>
-     * <p>
-     * <b>Note:</b> This API field is deprecated. Please use
-     * <a>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</a> instead.
-     * </p>
      * 
      * @param additionalMetricsToRetain
-     *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     *        security profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
+     *        <i>Please use <a>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</a> instead.</i> </p>
      *        <p>
-     *        <b>Note:</b> This API field is deprecated. Please use
-     *        <a>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</a> instead.
+     *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
+     *        security profile's <code>behaviors</code>, but it is also retained for any metric specified here.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated

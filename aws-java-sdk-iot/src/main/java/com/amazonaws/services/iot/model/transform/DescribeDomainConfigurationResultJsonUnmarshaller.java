@@ -83,6 +83,10 @@ public class DescribeDomainConfigurationResultJsonUnmarshaller implements Unmars
                     context.nextToken();
                     describeDomainConfigurationResult.setDomainType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("lastStatusChangeDate", targetDepth)) {
+                    context.nextToken();
+                    describeDomainConfigurationResult.setLastStatusChangeDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

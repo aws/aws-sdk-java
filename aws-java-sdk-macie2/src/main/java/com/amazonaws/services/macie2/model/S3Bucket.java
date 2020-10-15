@@ -42,7 +42,7 @@ public class S3Bucket implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date createdAt;
     /**
      * <p>
-     * The server-side encryption settings for the bucket.
+     * The type of server-side encryption that's used by default to encrypt objects in the bucket.
      * </p>
      */
     private ServerSideEncryption defaultServerSideEncryption;
@@ -153,11 +153,11 @@ public class S3Bucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The server-side encryption settings for the bucket.
+     * The type of server-side encryption that's used by default to encrypt objects in the bucket.
      * </p>
      * 
      * @param defaultServerSideEncryption
-     *        The server-side encryption settings for the bucket.
+     *        The type of server-side encryption that's used by default to encrypt objects in the bucket.
      */
 
     public void setDefaultServerSideEncryption(ServerSideEncryption defaultServerSideEncryption) {
@@ -166,10 +166,10 @@ public class S3Bucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The server-side encryption settings for the bucket.
+     * The type of server-side encryption that's used by default to encrypt objects in the bucket.
      * </p>
      * 
-     * @return The server-side encryption settings for the bucket.
+     * @return The type of server-side encryption that's used by default to encrypt objects in the bucket.
      */
 
     public ServerSideEncryption getDefaultServerSideEncryption() {
@@ -178,11 +178,11 @@ public class S3Bucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The server-side encryption settings for the bucket.
+     * The type of server-side encryption that's used by default to encrypt objects in the bucket.
      * </p>
      * 
      * @param defaultServerSideEncryption
-     *        The server-side encryption settings for the bucket.
+     *        The type of server-side encryption that's used by default to encrypt objects in the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,24 +25,24 @@ public class CreateUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The ID of the file transfer protocol-enabled server that the user is attached to.
+     * The ID of the server that the user is attached to.
      * </p>
      */
     private String serverId;
     /**
      * <p>
-     * A unique string that identifies a user account associated with a file transfer protocol-enabled server.
+     * A unique string that identifies a user account associated with a server.
      * </p>
      */
     private String userName;
 
     /**
      * <p>
-     * The ID of the file transfer protocol-enabled server that the user is attached to.
+     * The ID of the server that the user is attached to.
      * </p>
      * 
      * @param serverId
-     *        The ID of the file transfer protocol-enabled server that the user is attached to.
+     *        The ID of the server that the user is attached to.
      */
 
     public void setServerId(String serverId) {
@@ -51,10 +51,10 @@ public class CreateUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The ID of the file transfer protocol-enabled server that the user is attached to.
+     * The ID of the server that the user is attached to.
      * </p>
      * 
-     * @return The ID of the file transfer protocol-enabled server that the user is attached to.
+     * @return The ID of the server that the user is attached to.
      */
 
     public String getServerId() {
@@ -63,11 +63,11 @@ public class CreateUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The ID of the file transfer protocol-enabled server that the user is attached to.
+     * The ID of the server that the user is attached to.
      * </p>
      * 
      * @param serverId
-     *        The ID of the file transfer protocol-enabled server that the user is attached to.
+     *        The ID of the server that the user is attached to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,11 +78,11 @@ public class CreateUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A unique string that identifies a user account associated with a file transfer protocol-enabled server.
+     * A unique string that identifies a user account associated with a server.
      * </p>
      * 
      * @param userName
-     *        A unique string that identifies a user account associated with a file transfer protocol-enabled server.
+     *        A unique string that identifies a user account associated with a server.
      */
 
     public void setUserName(String userName) {
@@ -91,10 +91,10 @@ public class CreateUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A unique string that identifies a user account associated with a file transfer protocol-enabled server.
+     * A unique string that identifies a user account associated with a server.
      * </p>
      * 
-     * @return A unique string that identifies a user account associated with a file transfer protocol-enabled server.
+     * @return A unique string that identifies a user account associated with a server.
      */
 
     public String getUserName() {
@@ -103,11 +103,11 @@ public class CreateUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A unique string that identifies a user account associated with a file transfer protocol-enabled server.
+     * A unique string that identifies a user account associated with a server.
      * </p>
      * 
      * @param userName
-     *        A unique string that identifies a user account associated with a file transfer protocol-enabled server.
+     *        A unique string that identifies a user account associated with a server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

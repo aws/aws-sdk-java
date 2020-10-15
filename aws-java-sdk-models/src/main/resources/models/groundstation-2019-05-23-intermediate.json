@@ -6886,6 +6886,9 @@
         "name" : "AWS_CANCELLED",
         "value" : "AWS_CANCELLED"
       }, {
+        "name" : "AWS_FAILED",
+        "value" : "AWS_FAILED"
+      }, {
         "name" : "CANCELLED",
         "value" : "CANCELLED"
       }, {
@@ -10744,6 +10747,75 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "errorMessage",
+        "c2jShape" : "String",
+        "deprecated" : false,
+        "documentation" : "<p>Error message for a dataflow.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Error message for a dataflow.</p>\n@param errorMessage Error message for a dataflow.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withErrorMessage",
+        "getterDocumentation" : "/**<p>Error message for a dataflow.</p>\n@return Error message for a dataflow.*/",
+        "getterMethodName" : "getErrorMessage",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "errorMessage",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "errorMessage",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "ErrorMessage",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>Error message for a dataflow.</p>\n@param errorMessage Error message for a dataflow.*/",
+        "setterMethodName" : "setErrorMessage",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "errorMessage",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Error message for a dataflow.</p>\n@param errorMessage Error message for a dataflow.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "errorMessage",
+          "variableType" : "String",
+          "documentation" : "<p>Error message for a dataflow.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "source",
         "c2jShape" : "Source",
         "deprecated" : false,
@@ -10881,6 +10953,76 @@
             "documentation" : "",
             "simpleType" : "Destination",
             "variableSetterType" : "Destination"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "ErrorMessage" : {
+          "c2jName" : "errorMessage",
+          "c2jShape" : "String",
+          "deprecated" : false,
+          "documentation" : "<p>Error message for a dataflow.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Error message for a dataflow.</p>\n@param errorMessage Error message for a dataflow.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withErrorMessage",
+          "getterDocumentation" : "/**<p>Error message for a dataflow.</p>\n@return Error message for a dataflow.*/",
+          "getterMethodName" : "getErrorMessage",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "errorMessage",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "errorMessage",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "ErrorMessage",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>Error message for a dataflow.</p>\n@param errorMessage Error message for a dataflow.*/",
+          "setterMethodName" : "setErrorMessage",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "errorMessage",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Error message for a dataflow.</p>\n@param errorMessage Error message for a dataflow.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "errorMessage",
+            "variableType" : "String",
+            "documentation" : "<p>Error message for a dataflow.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "xmlNameSpaceUri" : null
         },

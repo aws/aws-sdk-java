@@ -68,6 +68,12 @@ public class EndpointDetailsJsonUnmarshaller implements Unmarshaller<EndpointDet
                     context.nextToken();
                     endpointDetails.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SecurityGroupIds", targetDepth)) {
+                    context.nextToken();
+                    endpointDetails.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

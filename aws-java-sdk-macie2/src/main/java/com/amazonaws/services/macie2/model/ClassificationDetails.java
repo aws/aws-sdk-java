@@ -30,9 +30,9 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The path to the folder or file (in Amazon S3) that contains the corresponding sensitive data discovery results
-     * for the finding. If a finding applies to a large archive or compressed file, this is a path to a folder.
-     * Otherwise, this is a path to a file.
+     * The path to the folder or file (in Amazon S3) that contains the corresponding sensitive data discovery result for
+     * the finding. If a finding applies to a large archive or compressed file, this value is the path to a folder.
+     * Otherwise, this value is the path to a file.
      * </p>
      */
     private String detailedResultsLocation;
@@ -57,15 +57,15 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The path to the folder or file (in Amazon S3) that contains the corresponding sensitive data discovery results
-     * for the finding. If a finding applies to a large archive or compressed file, this is a path to a folder.
-     * Otherwise, this is a path to a file.
+     * The path to the folder or file (in Amazon S3) that contains the corresponding sensitive data discovery result for
+     * the finding. If a finding applies to a large archive or compressed file, this value is the path to a folder.
+     * Otherwise, this value is the path to a file.
      * </p>
      * 
      * @param detailedResultsLocation
      *        The path to the folder or file (in Amazon S3) that contains the corresponding sensitive data discovery
-     *        results for the finding. If a finding applies to a large archive or compressed file, this is a path to a
-     *        folder. Otherwise, this is a path to a file.
+     *        result for the finding. If a finding applies to a large archive or compressed file, this value is the path
+     *        to a folder. Otherwise, this value is the path to a file.
      */
 
     public void setDetailedResultsLocation(String detailedResultsLocation) {
@@ -74,14 +74,14 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The path to the folder or file (in Amazon S3) that contains the corresponding sensitive data discovery results
-     * for the finding. If a finding applies to a large archive or compressed file, this is a path to a folder.
-     * Otherwise, this is a path to a file.
+     * The path to the folder or file (in Amazon S3) that contains the corresponding sensitive data discovery result for
+     * the finding. If a finding applies to a large archive or compressed file, this value is the path to a folder.
+     * Otherwise, this value is the path to a file.
      * </p>
      * 
      * @return The path to the folder or file (in Amazon S3) that contains the corresponding sensitive data discovery
-     *         results for the finding. If a finding applies to a large archive or compressed file, this is a path to a
-     *         folder. Otherwise, this is a path to a file.
+     *         result for the finding. If a finding applies to a large archive or compressed file, this value is the
+     *         path to a folder. Otherwise, this value is the path to a file.
      */
 
     public String getDetailedResultsLocation() {
@@ -90,15 +90,15 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The path to the folder or file (in Amazon S3) that contains the corresponding sensitive data discovery results
-     * for the finding. If a finding applies to a large archive or compressed file, this is a path to a folder.
-     * Otherwise, this is a path to a file.
+     * The path to the folder or file (in Amazon S3) that contains the corresponding sensitive data discovery result for
+     * the finding. If a finding applies to a large archive or compressed file, this value is the path to a folder.
+     * Otherwise, this value is the path to a file.
      * </p>
      * 
      * @param detailedResultsLocation
      *        The path to the folder or file (in Amazon S3) that contains the corresponding sensitive data discovery
-     *        results for the finding. If a finding applies to a large archive or compressed file, this is a path to a
-     *        folder. Otherwise, this is a path to a file.
+     *        result for the finding. If a finding applies to a large archive or compressed file, this value is the path
+     *        to a folder. Otherwise, this value is the path to a file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

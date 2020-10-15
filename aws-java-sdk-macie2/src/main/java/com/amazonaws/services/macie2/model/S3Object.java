@@ -75,7 +75,7 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
     private Boolean publicAccess;
     /**
      * <p>
-     * The server-side encryption settings for the object.
+     * The type of server-side encryption that's used for the object.
      * </p>
      */
     private ServerSideEncryption serverSideEncryption;
@@ -419,11 +419,11 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The server-side encryption settings for the object.
+     * The type of server-side encryption that's used for the object.
      * </p>
      * 
      * @param serverSideEncryption
-     *        The server-side encryption settings for the object.
+     *        The type of server-side encryption that's used for the object.
      */
 
     public void setServerSideEncryption(ServerSideEncryption serverSideEncryption) {
@@ -432,10 +432,10 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The server-side encryption settings for the object.
+     * The type of server-side encryption that's used for the object.
      * </p>
      * 
-     * @return The server-side encryption settings for the object.
+     * @return The type of server-side encryption that's used for the object.
      */
 
     public ServerSideEncryption getServerSideEncryption() {
@@ -444,11 +444,11 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The server-side encryption settings for the object.
+     * The type of server-side encryption that's used for the object.
      * </p>
      * 
      * @param serverSideEncryption
-     *        The server-side encryption settings for the object.
+     *        The type of server-side encryption that's used for the object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

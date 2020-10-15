@@ -56,6 +56,15 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The operational state of the WorkSpace.
      * </p>
+     * <note>
+     * <p>
+     * After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the WorkSpace
+     * directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace is terminated,
+     * check for the WorkSpace ID by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkSpaces</a>. If
+     * the WorkSpace ID isn't returned, then the WorkSpace has been successfully terminated.
+     * </p>
+     * </note>
      */
     private String state;
     /**
@@ -286,9 +295,26 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The operational state of the WorkSpace.
      * </p>
+     * <note>
+     * <p>
+     * After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the WorkSpace
+     * directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace is terminated,
+     * check for the WorkSpace ID by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkSpaces</a>. If
+     * the WorkSpace ID isn't returned, then the WorkSpace has been successfully terminated.
+     * </p>
+     * </note>
      * 
      * @param state
-     *        The operational state of the WorkSpace.
+     *        The operational state of the WorkSpace.</p> <note>
+     *        <p>
+     *        After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the
+     *        WorkSpace directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace
+     *        is terminated, check for the WorkSpace ID by using <a
+     *        href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
+     *        DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has been successfully
+     *        terminated.
+     *        </p>
      * @see WorkspaceState
      */
 
@@ -300,8 +326,25 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The operational state of the WorkSpace.
      * </p>
+     * <note>
+     * <p>
+     * After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the WorkSpace
+     * directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace is terminated,
+     * check for the WorkSpace ID by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkSpaces</a>. If
+     * the WorkSpace ID isn't returned, then the WorkSpace has been successfully terminated.
+     * </p>
+     * </note>
      * 
-     * @return The operational state of the WorkSpace.
+     * @return The operational state of the WorkSpace.</p> <note>
+     *         <p>
+     *         After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the
+     *         WorkSpace directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace
+     *         is terminated, check for the WorkSpace ID by using <a
+     *         href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
+     *         DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has been successfully
+     *         terminated.
+     *         </p>
      * @see WorkspaceState
      */
 
@@ -313,9 +356,26 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The operational state of the WorkSpace.
      * </p>
+     * <note>
+     * <p>
+     * After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the WorkSpace
+     * directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace is terminated,
+     * check for the WorkSpace ID by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkSpaces</a>. If
+     * the WorkSpace ID isn't returned, then the WorkSpace has been successfully terminated.
+     * </p>
+     * </note>
      * 
      * @param state
-     *        The operational state of the WorkSpace.
+     *        The operational state of the WorkSpace.</p> <note>
+     *        <p>
+     *        After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the
+     *        WorkSpace directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace
+     *        is terminated, check for the WorkSpace ID by using <a
+     *        href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
+     *        DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has been successfully
+     *        terminated.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorkspaceState
      */
@@ -329,9 +389,26 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The operational state of the WorkSpace.
      * </p>
+     * <note>
+     * <p>
+     * After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the WorkSpace
+     * directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace is terminated,
+     * check for the WorkSpace ID by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkSpaces</a>. If
+     * the WorkSpace ID isn't returned, then the WorkSpace has been successfully terminated.
+     * </p>
+     * </note>
      * 
      * @param state
-     *        The operational state of the WorkSpace.
+     *        The operational state of the WorkSpace.</p> <note>
+     *        <p>
+     *        After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the
+     *        WorkSpace directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace
+     *        is terminated, check for the WorkSpace ID by using <a
+     *        href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
+     *        DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has been successfully
+     *        terminated.
+     *        </p>
      * @see WorkspaceState
      */
 
@@ -343,9 +420,26 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The operational state of the WorkSpace.
      * </p>
+     * <note>
+     * <p>
+     * After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the WorkSpace
+     * directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace is terminated,
+     * check for the WorkSpace ID by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkSpaces</a>. If
+     * the WorkSpace ID isn't returned, then the WorkSpace has been successfully terminated.
+     * </p>
+     * </note>
      * 
      * @param state
-     *        The operational state of the WorkSpace.
+     *        The operational state of the WorkSpace.</p> <note>
+     *        <p>
+     *        After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the
+     *        WorkSpace directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace
+     *        is terminated, check for the WorkSpace ID by using <a
+     *        href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
+     *        DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has been successfully
+     *        terminated.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorkspaceState
      */

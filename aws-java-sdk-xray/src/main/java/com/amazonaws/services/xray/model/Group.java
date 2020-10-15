@@ -35,7 +35,7 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
     private String groupName;
     /**
      * <p>
-     * The ARN of the group generated based on the GroupName.
+     * The Amazon Resource Name (ARN) of the group generated based on the GroupName.
      * </p>
      */
     private String groupARN;
@@ -47,9 +47,22 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
     private String filterExpression;
     /**
      * <p>
-     * The structure containing configurations related to insights. The InsightsEnabled boolean can be set to true to
-     * enable insights for the group or false to disable insights for the group.
+     * The structure containing configurations related to insights.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for
+     * the group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The NotifcationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge
+     * for the group.
+     * </p>
+     * </li>
+     * </ul>
      */
     private InsightsConfiguration insightsConfiguration;
 
@@ -95,11 +108,11 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the group generated based on the GroupName.
+     * The Amazon Resource Name (ARN) of the group generated based on the GroupName.
      * </p>
      * 
      * @param groupARN
-     *        The ARN of the group generated based on the GroupName.
+     *        The Amazon Resource Name (ARN) of the group generated based on the GroupName.
      */
 
     public void setGroupARN(String groupARN) {
@@ -108,10 +121,10 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the group generated based on the GroupName.
+     * The Amazon Resource Name (ARN) of the group generated based on the GroupName.
      * </p>
      * 
-     * @return The ARN of the group generated based on the GroupName.
+     * @return The Amazon Resource Name (ARN) of the group generated based on the GroupName.
      */
 
     public String getGroupARN() {
@@ -120,11 +133,11 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the group generated based on the GroupName.
+     * The Amazon Resource Name (ARN) of the group generated based on the GroupName.
      * </p>
      * 
      * @param groupARN
-     *        The ARN of the group generated based on the GroupName.
+     *        The Amazon Resource Name (ARN) of the group generated based on the GroupName.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,13 +188,38 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The structure containing configurations related to insights. The InsightsEnabled boolean can be set to true to
-     * enable insights for the group or false to disable insights for the group.
+     * The structure containing configurations related to insights.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for
+     * the group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The NotifcationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge
+     * for the group.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param insightsConfiguration
-     *        The structure containing configurations related to insights. The InsightsEnabled boolean can be set to
-     *        true to enable insights for the group or false to disable insights for the group.
+     *        The structure containing configurations related to insights.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable
+     *        insights for the group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The NotifcationsEnabled boolean can be set to true to enable insights notifications through Amazon
+     *        EventBridge for the group.
+     *        </p>
+     *        </li>
      */
 
     public void setInsightsConfiguration(InsightsConfiguration insightsConfiguration) {
@@ -190,12 +228,37 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The structure containing configurations related to insights. The InsightsEnabled boolean can be set to true to
-     * enable insights for the group or false to disable insights for the group.
+     * The structure containing configurations related to insights.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for
+     * the group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The NotifcationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge
+     * for the group.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The structure containing configurations related to insights. The InsightsEnabled boolean can be set to
-     *         true to enable insights for the group or false to disable insights for the group.
+     * @return The structure containing configurations related to insights.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable
+     *         insights for the group.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The NotifcationsEnabled boolean can be set to true to enable insights notifications through Amazon
+     *         EventBridge for the group.
+     *         </p>
+     *         </li>
      */
 
     public InsightsConfiguration getInsightsConfiguration() {
@@ -204,13 +267,38 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The structure containing configurations related to insights. The InsightsEnabled boolean can be set to true to
-     * enable insights for the group or false to disable insights for the group.
+     * The structure containing configurations related to insights.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for
+     * the group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The NotifcationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge
+     * for the group.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param insightsConfiguration
-     *        The structure containing configurations related to insights. The InsightsEnabled boolean can be set to
-     *        true to enable insights for the group or false to disable insights for the group.
+     *        The structure containing configurations related to insights.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable
+     *        insights for the group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The NotifcationsEnabled boolean can be set to true to enable insights notifications through Amazon
+     *        EventBridge for the group.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

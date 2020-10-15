@@ -537,8 +537,7 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Copies the specified DB snapshot. The source DB snapshot must be in the <code>available</code> or
-     * <code>storage-optimization</code> state.
+     * Copies the specified DB snapshot. The source DB snapshot must be in the <code>available</code> state.
      * </p>
      * <p>
      * You can copy a snapshot from one AWS Region to another. In that case, the AWS Region where you call the
@@ -999,7 +998,8 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Creates a DBSnapshot. The source DBInstance must be in "available" state.
+     * Creates a snapshot of a DB instance. The source DB instance must be in the <code>available</code> or
+     * <code>storage-optimization</code>state.
      * </p>
      * 
      * @param createDBSnapshotRequest

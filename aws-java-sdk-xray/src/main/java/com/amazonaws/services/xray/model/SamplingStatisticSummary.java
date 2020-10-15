@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Aggregated request sampling data for a sampling rule across all services for a 10 second window.
+ * Aggregated request sampling data for a sampling rule across all services for a 10-second window.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/SamplingStatisticSummary" target="_top">AWS API

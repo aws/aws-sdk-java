@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies a tag key and value, as a pair, to use in a tag-based condition for a classification job.
+ * Specifies a tag key or tag key and value pair to use in a tag-based condition for a classification job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TagValuePair" target="_top">AWS API
@@ -36,7 +36,8 @@ public class TagValuePair implements Serializable, Cloneable, StructuredPojo {
     private String key;
     /**
      * <p>
-     * The tag value, associated with the specified tag key, to use in the condition.
+     * The tag value, associated with the specified tag key (key), to use in the condition. To specify only a tag key
+     * for a condition, specify the tag key for the key property and set this value to an empty string.
      * </p>
      */
     private String value;
@@ -83,11 +84,13 @@ public class TagValuePair implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag value, associated with the specified tag key, to use in the condition.
+     * The tag value, associated with the specified tag key (key), to use in the condition. To specify only a tag key
+     * for a condition, specify the tag key for the key property and set this value to an empty string.
      * </p>
      * 
      * @param value
-     *        The tag value, associated with the specified tag key, to use in the condition.
+     *        The tag value, associated with the specified tag key (key), to use in the condition. To specify only a tag
+     *        key for a condition, specify the tag key for the key property and set this value to an empty string.
      */
 
     public void setValue(String value) {
@@ -96,10 +99,12 @@ public class TagValuePair implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag value, associated with the specified tag key, to use in the condition.
+     * The tag value, associated with the specified tag key (key), to use in the condition. To specify only a tag key
+     * for a condition, specify the tag key for the key property and set this value to an empty string.
      * </p>
      * 
-     * @return The tag value, associated with the specified tag key, to use in the condition.
+     * @return The tag value, associated with the specified tag key (key), to use in the condition. To specify only a
+     *         tag key for a condition, specify the tag key for the key property and set this value to an empty string.
      */
 
     public String getValue() {
@@ -108,11 +113,13 @@ public class TagValuePair implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag value, associated with the specified tag key, to use in the condition.
+     * The tag value, associated with the specified tag key (key), to use in the condition. To specify only a tag key
+     * for a condition, specify the tag key for the key property and set this value to an empty string.
      * </p>
      * 
      * @param value
-     *        The tag value, associated with the specified tag key, to use in the condition.
+     *        The tag value, associated with the specified tag key (key), to use in the condition. To specify only a tag
+     *        key for a condition, specify the tag key for the key property and set this value to an empty string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

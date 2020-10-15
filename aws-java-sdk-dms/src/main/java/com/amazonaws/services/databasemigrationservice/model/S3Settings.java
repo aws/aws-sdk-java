@@ -424,8 +424,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     private String datePartitionSequence;
     /**
      * <p>
-     * Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>
-     * (/). Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>.
+     * Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
      * </p>
      */
     private String datePartitionDelimiter;
@@ -3754,13 +3754,13 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>
-     * (/). Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>.
+     * Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
      * </p>
      * 
      * @param datePartitionDelimiter
      *        Specifies a date separating delimiter to use during folder partitioning. The default value is
-     *        <code>SLASH</code> (/). Use this parameter when <code>DatePartitionedEnabled</code> is set to
+     *        <code>SLASH</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to
      *        <code>true</code>.
      * @see DatePartitionDelimiterValue
      */
@@ -3771,12 +3771,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>
-     * (/). Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>.
+     * Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
      * </p>
      * 
      * @return Specifies a date separating delimiter to use during folder partitioning. The default value is
-     *         <code>SLASH</code> (/). Use this parameter when <code>DatePartitionedEnabled</code> is set to
+     *         <code>SLASH</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to
      *         <code>true</code>.
      * @see DatePartitionDelimiterValue
      */
@@ -3787,13 +3787,13 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>
-     * (/). Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>.
+     * Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
      * </p>
      * 
      * @param datePartitionDelimiter
      *        Specifies a date separating delimiter to use during folder partitioning. The default value is
-     *        <code>SLASH</code> (/). Use this parameter when <code>DatePartitionedEnabled</code> is set to
+     *        <code>SLASH</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to
      *        <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DatePartitionDelimiterValue
@@ -3806,13 +3806,13 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>
-     * (/). Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>.
+     * Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
      * </p>
      * 
      * @param datePartitionDelimiter
      *        Specifies a date separating delimiter to use during folder partitioning. The default value is
-     *        <code>SLASH</code> (/). Use this parameter when <code>DatePartitionedEnabled</code> is set to
+     *        <code>SLASH</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to
      *        <code>true</code>.
      * @see DatePartitionDelimiterValue
      */
@@ -3823,13 +3823,13 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>
-     * (/). Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>.
+     * Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
      * </p>
      * 
      * @param datePartitionDelimiter
      *        Specifies a date separating delimiter to use during folder partitioning. The default value is
-     *        <code>SLASH</code> (/). Use this parameter when <code>DatePartitionedEnabled</code> is set to
+     *        <code>SLASH</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to
      *        <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DatePartitionDelimiterValue

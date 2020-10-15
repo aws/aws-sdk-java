@@ -25,21 +25,21 @@ public class GetGroupResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The group that was requested. Contains the name of the group, the ARN of the group, and the filter expression
-     * that assigned to the group.
+     * The group that was requested. Contains the name of the group, the ARN of the group, the filter expression, and
+     * the insight configuration assigned to the group.
      * </p>
      */
     private Group group;
 
     /**
      * <p>
-     * The group that was requested. Contains the name of the group, the ARN of the group, and the filter expression
-     * that assigned to the group.
+     * The group that was requested. Contains the name of the group, the ARN of the group, the filter expression, and
+     * the insight configuration assigned to the group.
      * </p>
      * 
      * @param group
-     *        The group that was requested. Contains the name of the group, the ARN of the group, and the filter
-     *        expression that assigned to the group.
+     *        The group that was requested. Contains the name of the group, the ARN of the group, the filter expression,
+     *        and the insight configuration assigned to the group.
      */
 
     public void setGroup(Group group) {
@@ -48,12 +48,12 @@ public class GetGroupResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The group that was requested. Contains the name of the group, the ARN of the group, and the filter expression
-     * that assigned to the group.
+     * The group that was requested. Contains the name of the group, the ARN of the group, the filter expression, and
+     * the insight configuration assigned to the group.
      * </p>
      * 
-     * @return The group that was requested. Contains the name of the group, the ARN of the group, and the filter
-     *         expression that assigned to the group.
+     * @return The group that was requested. Contains the name of the group, the ARN of the group, the filter
+     *         expression, and the insight configuration assigned to the group.
      */
 
     public Group getGroup() {
@@ -62,13 +62,13 @@ public class GetGroupResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The group that was requested. Contains the name of the group, the ARN of the group, and the filter expression
-     * that assigned to the group.
+     * The group that was requested. Contains the name of the group, the ARN of the group, the filter expression, and
+     * the insight configuration assigned to the group.
      * </p>
      * 
      * @param group
-     *        The group that was requested. Contains the name of the group, the ARN of the group, and the filter
-     *        expression that assigned to the group.
+     *        The group that was requested. Contains the name of the group, the ARN of the group, the filter expression,
+     *        and the insight configuration assigned to the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

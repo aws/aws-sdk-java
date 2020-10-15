@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides detailed information about a sensitive data finding, including the types and number of occurrences of the
- * sensitive data that was found.
+ * Provides the details of a sensitive data finding, including the types, number of occurrences, and locations of the
+ * sensitive data that was detected.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ClassificationResult" target="_top">AWS API
@@ -31,21 +31,33 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The number of occurrences of the data that produced the finding, and the custom data identifiers that detected
-     * the data.
+     * Specifies whether Amazon Macie detected additional occurrences of sensitive data in the S3 object. A finding
+     * includes location data for a maximum of 15 occurrences of sensitive data.
+     * </p>
+     * <p>
+     * This value can help you to determine whether to investigate additional occurrences of sensitive data in an
+     * object. You can do this by referring to the corresponding sensitive data discovery result for the finding
+     * (ClassificationDetails.detailedResultsLocation).
+     * </p>
+     */
+    private Boolean additionalOccurrences;
+    /**
+     * <p>
+     * The custom data identifiers that detected the sensitive data and the number of occurrences of the data that they
+     * detected.
      * </p>
      */
     private CustomDataIdentifiers customDataIdentifiers;
     /**
      * <p>
-     * The type of content, expressed as a MIME type, that the finding applies to. For example, application/gzip, for a
-     * GNU Gzip compressed archive file, or application/pdf, for an Adobe PDF file.
+     * The type of content, as a MIME type, that the finding applies to. For example, application/gzip, for a GNU Gzip
+     * compressed archive file, or application/pdf, for an Adobe Portable Document Format file.
      * </p>
      */
     private String mimeType;
     /**
      * <p>
-     * The category and number of occurrences of the sensitive data that produced the finding.
+     * The category, types, and number of occurrences of the sensitive data that produced the finding.
      * </p>
      */
     private java.util.List<SensitiveDataItem> sensitiveData;
@@ -64,13 +76,109 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The number of occurrences of the data that produced the finding, and the custom data identifiers that detected
-     * the data.
+     * Specifies whether Amazon Macie detected additional occurrences of sensitive data in the S3 object. A finding
+     * includes location data for a maximum of 15 occurrences of sensitive data.
+     * </p>
+     * <p>
+     * This value can help you to determine whether to investigate additional occurrences of sensitive data in an
+     * object. You can do this by referring to the corresponding sensitive data discovery result for the finding
+     * (ClassificationDetails.detailedResultsLocation).
+     * </p>
+     * 
+     * @param additionalOccurrences
+     *        Specifies whether Amazon Macie detected additional occurrences of sensitive data in the S3 object. A
+     *        finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
+     *        <p>
+     *        This value can help you to determine whether to investigate additional occurrences of sensitive data in an
+     *        object. You can do this by referring to the corresponding sensitive data discovery result for the finding
+     *        (ClassificationDetails.detailedResultsLocation).
+     */
+
+    public void setAdditionalOccurrences(Boolean additionalOccurrences) {
+        this.additionalOccurrences = additionalOccurrences;
+    }
+
+    /**
+     * <p>
+     * Specifies whether Amazon Macie detected additional occurrences of sensitive data in the S3 object. A finding
+     * includes location data for a maximum of 15 occurrences of sensitive data.
+     * </p>
+     * <p>
+     * This value can help you to determine whether to investigate additional occurrences of sensitive data in an
+     * object. You can do this by referring to the corresponding sensitive data discovery result for the finding
+     * (ClassificationDetails.detailedResultsLocation).
+     * </p>
+     * 
+     * @return Specifies whether Amazon Macie detected additional occurrences of sensitive data in the S3 object. A
+     *         finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
+     *         <p>
+     *         This value can help you to determine whether to investigate additional occurrences of sensitive data in
+     *         an object. You can do this by referring to the corresponding sensitive data discovery result for the
+     *         finding (ClassificationDetails.detailedResultsLocation).
+     */
+
+    public Boolean getAdditionalOccurrences() {
+        return this.additionalOccurrences;
+    }
+
+    /**
+     * <p>
+     * Specifies whether Amazon Macie detected additional occurrences of sensitive data in the S3 object. A finding
+     * includes location data for a maximum of 15 occurrences of sensitive data.
+     * </p>
+     * <p>
+     * This value can help you to determine whether to investigate additional occurrences of sensitive data in an
+     * object. You can do this by referring to the corresponding sensitive data discovery result for the finding
+     * (ClassificationDetails.detailedResultsLocation).
+     * </p>
+     * 
+     * @param additionalOccurrences
+     *        Specifies whether Amazon Macie detected additional occurrences of sensitive data in the S3 object. A
+     *        finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
+     *        <p>
+     *        This value can help you to determine whether to investigate additional occurrences of sensitive data in an
+     *        object. You can do this by referring to the corresponding sensitive data discovery result for the finding
+     *        (ClassificationDetails.detailedResultsLocation).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClassificationResult withAdditionalOccurrences(Boolean additionalOccurrences) {
+        setAdditionalOccurrences(additionalOccurrences);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether Amazon Macie detected additional occurrences of sensitive data in the S3 object. A finding
+     * includes location data for a maximum of 15 occurrences of sensitive data.
+     * </p>
+     * <p>
+     * This value can help you to determine whether to investigate additional occurrences of sensitive data in an
+     * object. You can do this by referring to the corresponding sensitive data discovery result for the finding
+     * (ClassificationDetails.detailedResultsLocation).
+     * </p>
+     * 
+     * @return Specifies whether Amazon Macie detected additional occurrences of sensitive data in the S3 object. A
+     *         finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
+     *         <p>
+     *         This value can help you to determine whether to investigate additional occurrences of sensitive data in
+     *         an object. You can do this by referring to the corresponding sensitive data discovery result for the
+     *         finding (ClassificationDetails.detailedResultsLocation).
+     */
+
+    public Boolean isAdditionalOccurrences() {
+        return this.additionalOccurrences;
+    }
+
+    /**
+     * <p>
+     * The custom data identifiers that detected the sensitive data and the number of occurrences of the data that they
+     * detected.
      * </p>
      * 
      * @param customDataIdentifiers
-     *        The number of occurrences of the data that produced the finding, and the custom data identifiers that
-     *        detected the data.
+     *        The custom data identifiers that detected the sensitive data and the number of occurrences of the data
+     *        that they detected.
      */
 
     public void setCustomDataIdentifiers(CustomDataIdentifiers customDataIdentifiers) {
@@ -79,12 +187,12 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The number of occurrences of the data that produced the finding, and the custom data identifiers that detected
-     * the data.
+     * The custom data identifiers that detected the sensitive data and the number of occurrences of the data that they
+     * detected.
      * </p>
      * 
-     * @return The number of occurrences of the data that produced the finding, and the custom data identifiers that
-     *         detected the data.
+     * @return The custom data identifiers that detected the sensitive data and the number of occurrences of the data
+     *         that they detected.
      */
 
     public CustomDataIdentifiers getCustomDataIdentifiers() {
@@ -93,13 +201,13 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The number of occurrences of the data that produced the finding, and the custom data identifiers that detected
-     * the data.
+     * The custom data identifiers that detected the sensitive data and the number of occurrences of the data that they
+     * detected.
      * </p>
      * 
      * @param customDataIdentifiers
-     *        The number of occurrences of the data that produced the finding, and the custom data identifiers that
-     *        detected the data.
+     *        The custom data identifiers that detected the sensitive data and the number of occurrences of the data
+     *        that they detected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,13 +218,13 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The type of content, expressed as a MIME type, that the finding applies to. For example, application/gzip, for a
-     * GNU Gzip compressed archive file, or application/pdf, for an Adobe PDF file.
+     * The type of content, as a MIME type, that the finding applies to. For example, application/gzip, for a GNU Gzip
+     * compressed archive file, or application/pdf, for an Adobe Portable Document Format file.
      * </p>
      * 
      * @param mimeType
-     *        The type of content, expressed as a MIME type, that the finding applies to. For example, application/gzip,
-     *        for a GNU Gzip compressed archive file, or application/pdf, for an Adobe PDF file.
+     *        The type of content, as a MIME type, that the finding applies to. For example, application/gzip, for a GNU
+     *        Gzip compressed archive file, or application/pdf, for an Adobe Portable Document Format file.
      */
 
     public void setMimeType(String mimeType) {
@@ -125,12 +233,12 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The type of content, expressed as a MIME type, that the finding applies to. For example, application/gzip, for a
-     * GNU Gzip compressed archive file, or application/pdf, for an Adobe PDF file.
+     * The type of content, as a MIME type, that the finding applies to. For example, application/gzip, for a GNU Gzip
+     * compressed archive file, or application/pdf, for an Adobe Portable Document Format file.
      * </p>
      * 
-     * @return The type of content, expressed as a MIME type, that the finding applies to. For example,
-     *         application/gzip, for a GNU Gzip compressed archive file, or application/pdf, for an Adobe PDF file.
+     * @return The type of content, as a MIME type, that the finding applies to. For example, application/gzip, for a
+     *         GNU Gzip compressed archive file, or application/pdf, for an Adobe Portable Document Format file.
      */
 
     public String getMimeType() {
@@ -139,13 +247,13 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The type of content, expressed as a MIME type, that the finding applies to. For example, application/gzip, for a
-     * GNU Gzip compressed archive file, or application/pdf, for an Adobe PDF file.
+     * The type of content, as a MIME type, that the finding applies to. For example, application/gzip, for a GNU Gzip
+     * compressed archive file, or application/pdf, for an Adobe Portable Document Format file.
      * </p>
      * 
      * @param mimeType
-     *        The type of content, expressed as a MIME type, that the finding applies to. For example, application/gzip,
-     *        for a GNU Gzip compressed archive file, or application/pdf, for an Adobe PDF file.
+     *        The type of content, as a MIME type, that the finding applies to. For example, application/gzip, for a GNU
+     *        Gzip compressed archive file, or application/pdf, for an Adobe Portable Document Format file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,10 +264,10 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The category and number of occurrences of the sensitive data that produced the finding.
+     * The category, types, and number of occurrences of the sensitive data that produced the finding.
      * </p>
      * 
-     * @return The category and number of occurrences of the sensitive data that produced the finding.
+     * @return The category, types, and number of occurrences of the sensitive data that produced the finding.
      */
 
     public java.util.List<SensitiveDataItem> getSensitiveData() {
@@ -168,11 +276,11 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The category and number of occurrences of the sensitive data that produced the finding.
+     * The category, types, and number of occurrences of the sensitive data that produced the finding.
      * </p>
      * 
      * @param sensitiveData
-     *        The category and number of occurrences of the sensitive data that produced the finding.
+     *        The category, types, and number of occurrences of the sensitive data that produced the finding.
      */
 
     public void setSensitiveData(java.util.Collection<SensitiveDataItem> sensitiveData) {
@@ -186,7 +294,7 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The category and number of occurrences of the sensitive data that produced the finding.
+     * The category, types, and number of occurrences of the sensitive data that produced the finding.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -195,7 +303,7 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param sensitiveData
-     *        The category and number of occurrences of the sensitive data that produced the finding.
+     *        The category, types, and number of occurrences of the sensitive data that produced the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,11 +319,11 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The category and number of occurrences of the sensitive data that produced the finding.
+     * The category, types, and number of occurrences of the sensitive data that produced the finding.
      * </p>
      * 
      * @param sensitiveData
-     *        The category and number of occurrences of the sensitive data that produced the finding.
+     *        The category, types, and number of occurrences of the sensitive data that produced the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -316,6 +424,8 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAdditionalOccurrences() != null)
+            sb.append("AdditionalOccurrences: ").append(getAdditionalOccurrences()).append(",");
         if (getCustomDataIdentifiers() != null)
             sb.append("CustomDataIdentifiers: ").append(getCustomDataIdentifiers()).append(",");
         if (getMimeType() != null)
@@ -340,6 +450,10 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
         if (obj instanceof ClassificationResult == false)
             return false;
         ClassificationResult other = (ClassificationResult) obj;
+        if (other.getAdditionalOccurrences() == null ^ this.getAdditionalOccurrences() == null)
+            return false;
+        if (other.getAdditionalOccurrences() != null && other.getAdditionalOccurrences().equals(this.getAdditionalOccurrences()) == false)
+            return false;
         if (other.getCustomDataIdentifiers() == null ^ this.getCustomDataIdentifiers() == null)
             return false;
         if (other.getCustomDataIdentifiers() != null && other.getCustomDataIdentifiers().equals(this.getCustomDataIdentifiers()) == false)
@@ -368,6 +482,7 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAdditionalOccurrences() == null) ? 0 : getAdditionalOccurrences().hashCode());
         hashCode = prime * hashCode + ((getCustomDataIdentifiers() == null) ? 0 : getCustomDataIdentifiers().hashCode());
         hashCode = prime * hashCode + ((getMimeType() == null) ? 0 : getMimeType().hashCode());
         hashCode = prime * hashCode + ((getSensitiveData() == null) ? 0 : getSensitiveData().hashCode());

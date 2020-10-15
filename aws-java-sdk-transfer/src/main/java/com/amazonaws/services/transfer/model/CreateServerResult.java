@@ -25,18 +25,18 @@ public class CreateServerResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The service-assigned ID of the file transfer protocol-enabled server that is created.
+     * The service-assigned ID of the server that is created.
      * </p>
      */
     private String serverId;
 
     /**
      * <p>
-     * The service-assigned ID of the file transfer protocol-enabled server that is created.
+     * The service-assigned ID of the server that is created.
      * </p>
      * 
      * @param serverId
-     *        The service-assigned ID of the file transfer protocol-enabled server that is created.
+     *        The service-assigned ID of the server that is created.
      */
 
     public void setServerId(String serverId) {
@@ -45,10 +45,10 @@ public class CreateServerResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The service-assigned ID of the file transfer protocol-enabled server that is created.
+     * The service-assigned ID of the server that is created.
      * </p>
      * 
-     * @return The service-assigned ID of the file transfer protocol-enabled server that is created.
+     * @return The service-assigned ID of the server that is created.
      */
 
     public String getServerId() {
@@ -57,11 +57,11 @@ public class CreateServerResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The service-assigned ID of the file transfer protocol-enabled server that is created.
+     * The service-assigned ID of the server that is created.
      * </p>
      * 
      * @param serverId
-     *        The service-assigned ID of the file transfer protocol-enabled server that is created.
+     *        The service-assigned ID of the server that is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

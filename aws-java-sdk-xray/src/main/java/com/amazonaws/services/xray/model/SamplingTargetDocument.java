@@ -44,7 +44,7 @@ public class SamplingTargetDocument implements Serializable, Cloneable, Structur
     private Double fixedRate;
     /**
      * <p>
-     * The number of requests per second that X-Ray allocated this service.
+     * The number of requests per second that X-Ray allocated for this service.
      * </p>
      */
     private Integer reservoirQuota;
@@ -143,11 +143,11 @@ public class SamplingTargetDocument implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The number of requests per second that X-Ray allocated this service.
+     * The number of requests per second that X-Ray allocated for this service.
      * </p>
      * 
      * @param reservoirQuota
-     *        The number of requests per second that X-Ray allocated this service.
+     *        The number of requests per second that X-Ray allocated for this service.
      */
 
     public void setReservoirQuota(Integer reservoirQuota) {
@@ -156,10 +156,10 @@ public class SamplingTargetDocument implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The number of requests per second that X-Ray allocated this service.
+     * The number of requests per second that X-Ray allocated for this service.
      * </p>
      * 
-     * @return The number of requests per second that X-Ray allocated this service.
+     * @return The number of requests per second that X-Ray allocated for this service.
      */
 
     public Integer getReservoirQuota() {
@@ -168,11 +168,11 @@ public class SamplingTargetDocument implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The number of requests per second that X-Ray allocated this service.
+     * The number of requests per second that X-Ray allocated for this service.
      * </p>
      * 
      * @param reservoirQuota
-     *        The number of requests per second that X-Ray allocated this service.
+     *        The number of requests per second that X-Ray allocated for this service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

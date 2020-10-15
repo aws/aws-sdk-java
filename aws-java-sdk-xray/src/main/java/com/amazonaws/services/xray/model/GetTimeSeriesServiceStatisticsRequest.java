@@ -45,7 +45,7 @@ public class GetTimeSeriesServiceStatisticsRequest extends com.amazonaws.AmazonW
     private String groupName;
     /**
      * <p>
-     * The ARN of the group for which to pull statistics from.
+     * The Amazon Resource Name (ARN) of the group for which to pull statistics from.
      * </p>
      */
     private String groupARN;
@@ -191,11 +191,11 @@ public class GetTimeSeriesServiceStatisticsRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The ARN of the group for which to pull statistics from.
+     * The Amazon Resource Name (ARN) of the group for which to pull statistics from.
      * </p>
      * 
      * @param groupARN
-     *        The ARN of the group for which to pull statistics from.
+     *        The Amazon Resource Name (ARN) of the group for which to pull statistics from.
      */
 
     public void setGroupARN(String groupARN) {
@@ -204,10 +204,10 @@ public class GetTimeSeriesServiceStatisticsRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The ARN of the group for which to pull statistics from.
+     * The Amazon Resource Name (ARN) of the group for which to pull statistics from.
      * </p>
      * 
-     * @return The ARN of the group for which to pull statistics from.
+     * @return The Amazon Resource Name (ARN) of the group for which to pull statistics from.
      */
 
     public String getGroupARN() {
@@ -216,11 +216,11 @@ public class GetTimeSeriesServiceStatisticsRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The ARN of the group for which to pull statistics from.
+     * The Amazon Resource Name (ARN) of the group for which to pull statistics from.
      * </p>
      * 
      * @param groupARN
-     *        The ARN of the group for which to pull statistics from.
+     *        The Amazon Resource Name (ARN) of the group for which to pull statistics from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

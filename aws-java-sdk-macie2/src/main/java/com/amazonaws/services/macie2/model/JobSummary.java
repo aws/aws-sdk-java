@@ -53,30 +53,36 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - You cancelled the job. A job might also be cancelled if ownership of an S3 bucket changed while the
-     * job was running, and that change affected the job's access to the bucket.
+     * CANCELLED - You cancelled the job, or you paused the job and didn't resume it within 30 days of pausing it.
      * </p>
      * </li>
      * <li>
      * <p>
-     * COMPLETE - Amazon Macie finished processing all the data specified for the job.
+     * COMPLETE - For a one-time job, Amazon Macie finished processing all the data specified for the job. This value
+     * doesn't apply to recurring jobs.
      * </p>
      * </li>
      * <li>
      * <p>
      * IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This
-     * value doesn't apply to jobs that occur only once.
+     * value doesn't apply to one-time jobs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PAUSED - Amazon Macie started the job, but completion of the job would exceed one or more quotas for your
+     * PAUSED - Amazon Macie started running the job but completion of the job would exceed one or more quotas for your
      * account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RUNNING - The job is in progress.
+     * RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * USER_PAUSED - You paused the job. If you don't resume the job within 30 days of pausing it, the job will expire
+     * and be cancelled.
      * </p>
      * </li>
      * </ul>
@@ -89,7 +95,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * ONE_TIME - The job ran or will run only once.
+     * ONE_TIME - The job runs only once.
      * </p>
      * </li>
      * <li>
@@ -106,6 +112,13 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job will expire
+     * and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.
+     * </p>
+     */
+    private UserPausedDetails userPausedDetails;
 
     /**
      * <p>
@@ -264,30 +277,36 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - You cancelled the job. A job might also be cancelled if ownership of an S3 bucket changed while the
-     * job was running, and that change affected the job's access to the bucket.
+     * CANCELLED - You cancelled the job, or you paused the job and didn't resume it within 30 days of pausing it.
      * </p>
      * </li>
      * <li>
      * <p>
-     * COMPLETE - Amazon Macie finished processing all the data specified for the job.
+     * COMPLETE - For a one-time job, Amazon Macie finished processing all the data specified for the job. This value
+     * doesn't apply to recurring jobs.
      * </p>
      * </li>
      * <li>
      * <p>
      * IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This
-     * value doesn't apply to jobs that occur only once.
+     * value doesn't apply to one-time jobs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PAUSED - Amazon Macie started the job, but completion of the job would exceed one or more quotas for your
+     * PAUSED - Amazon Macie started running the job but completion of the job would exceed one or more quotas for your
      * account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RUNNING - The job is in progress.
+     * RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * USER_PAUSED - You paused the job. If you don't resume the job within 30 days of pausing it, the job will expire
+     * and be cancelled.
      * </p>
      * </li>
      * </ul>
@@ -297,30 +316,37 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        CANCELLED - You cancelled the job. A job might also be cancelled if ownership of an S3 bucket changed
-     *        while the job was running, and that change affected the job's access to the bucket.
+     *        CANCELLED - You cancelled the job, or you paused the job and didn't resume it within 30 days of pausing
+     *        it.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        COMPLETE - Amazon Macie finished processing all the data specified for the job.
+     *        COMPLETE - For a one-time job, Amazon Macie finished processing all the data specified for the job. This
+     *        value doesn't apply to recurring jobs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending.
-     *        This value doesn't apply to jobs that occur only once.
+     *        This value doesn't apply to one-time jobs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PAUSED - Amazon Macie started the job, but completion of the job would exceed one or more quotas for your
-     *        account.
+     *        PAUSED - Amazon Macie started running the job but completion of the job would exceed one or more quotas
+     *        for your account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        RUNNING - The job is in progress.
+     *        RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        USER_PAUSED - You paused the job. If you don't resume the job within 30 days of pausing it, the job will
+     *        expire and be cancelled.
      *        </p>
      *        </li>
      * @see JobStatus
@@ -337,30 +363,36 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - You cancelled the job. A job might also be cancelled if ownership of an S3 bucket changed while the
-     * job was running, and that change affected the job's access to the bucket.
+     * CANCELLED - You cancelled the job, or you paused the job and didn't resume it within 30 days of pausing it.
      * </p>
      * </li>
      * <li>
      * <p>
-     * COMPLETE - Amazon Macie finished processing all the data specified for the job.
+     * COMPLETE - For a one-time job, Amazon Macie finished processing all the data specified for the job. This value
+     * doesn't apply to recurring jobs.
      * </p>
      * </li>
      * <li>
      * <p>
      * IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This
-     * value doesn't apply to jobs that occur only once.
+     * value doesn't apply to one-time jobs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PAUSED - Amazon Macie started the job, but completion of the job would exceed one or more quotas for your
+     * PAUSED - Amazon Macie started running the job but completion of the job would exceed one or more quotas for your
      * account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RUNNING - The job is in progress.
+     * RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * USER_PAUSED - You paused the job. If you don't resume the job within 30 days of pausing it, the job will expire
+     * and be cancelled.
      * </p>
      * </li>
      * </ul>
@@ -369,30 +401,38 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         CANCELLED - You cancelled the job. A job might also be cancelled if ownership of an S3 bucket changed
-     *         while the job was running, and that change affected the job's access to the bucket.
+     *         CANCELLED - You cancelled the job, or you paused the job and didn't resume it within 30 days of pausing
+     *         it.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         COMPLETE - Amazon Macie finished processing all the data specified for the job.
+     *         COMPLETE - For a one-time job, Amazon Macie finished processing all the data specified for the job. This
+     *         value doesn't apply to recurring jobs.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending.
-     *         This value doesn't apply to jobs that occur only once.
+     *         This value doesn't apply to one-time jobs.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         PAUSED - Amazon Macie started the job, but completion of the job would exceed one or more quotas for your
-     *         account.
+     *         PAUSED - Amazon Macie started running the job but completion of the job would exceed one or more quotas
+     *         for your account.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         RUNNING - The job is in progress.
+     *         RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in
+     *         progress.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         USER_PAUSED - You paused the job. If you don't resume the job within 30 days of pausing it, the job will
+     *         expire and be cancelled.
      *         </p>
      *         </li>
      * @see JobStatus
@@ -409,30 +449,36 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - You cancelled the job. A job might also be cancelled if ownership of an S3 bucket changed while the
-     * job was running, and that change affected the job's access to the bucket.
+     * CANCELLED - You cancelled the job, or you paused the job and didn't resume it within 30 days of pausing it.
      * </p>
      * </li>
      * <li>
      * <p>
-     * COMPLETE - Amazon Macie finished processing all the data specified for the job.
+     * COMPLETE - For a one-time job, Amazon Macie finished processing all the data specified for the job. This value
+     * doesn't apply to recurring jobs.
      * </p>
      * </li>
      * <li>
      * <p>
      * IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This
-     * value doesn't apply to jobs that occur only once.
+     * value doesn't apply to one-time jobs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PAUSED - Amazon Macie started the job, but completion of the job would exceed one or more quotas for your
+     * PAUSED - Amazon Macie started running the job but completion of the job would exceed one or more quotas for your
      * account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RUNNING - The job is in progress.
+     * RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * USER_PAUSED - You paused the job. If you don't resume the job within 30 days of pausing it, the job will expire
+     * and be cancelled.
      * </p>
      * </li>
      * </ul>
@@ -442,30 +488,37 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        CANCELLED - You cancelled the job. A job might also be cancelled if ownership of an S3 bucket changed
-     *        while the job was running, and that change affected the job's access to the bucket.
+     *        CANCELLED - You cancelled the job, or you paused the job and didn't resume it within 30 days of pausing
+     *        it.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        COMPLETE - Amazon Macie finished processing all the data specified for the job.
+     *        COMPLETE - For a one-time job, Amazon Macie finished processing all the data specified for the job. This
+     *        value doesn't apply to recurring jobs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending.
-     *        This value doesn't apply to jobs that occur only once.
+     *        This value doesn't apply to one-time jobs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PAUSED - Amazon Macie started the job, but completion of the job would exceed one or more quotas for your
-     *        account.
+     *        PAUSED - Amazon Macie started running the job but completion of the job would exceed one or more quotas
+     *        for your account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        RUNNING - The job is in progress.
+     *        RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        USER_PAUSED - You paused the job. If you don't resume the job within 30 days of pausing it, the job will
+     *        expire and be cancelled.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -484,30 +537,36 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - You cancelled the job. A job might also be cancelled if ownership of an S3 bucket changed while the
-     * job was running, and that change affected the job's access to the bucket.
+     * CANCELLED - You cancelled the job, or you paused the job and didn't resume it within 30 days of pausing it.
      * </p>
      * </li>
      * <li>
      * <p>
-     * COMPLETE - Amazon Macie finished processing all the data specified for the job.
+     * COMPLETE - For a one-time job, Amazon Macie finished processing all the data specified for the job. This value
+     * doesn't apply to recurring jobs.
      * </p>
      * </li>
      * <li>
      * <p>
      * IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This
-     * value doesn't apply to jobs that occur only once.
+     * value doesn't apply to one-time jobs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PAUSED - Amazon Macie started the job, but completion of the job would exceed one or more quotas for your
+     * PAUSED - Amazon Macie started running the job but completion of the job would exceed one or more quotas for your
      * account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RUNNING - The job is in progress.
+     * RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * USER_PAUSED - You paused the job. If you don't resume the job within 30 days of pausing it, the job will expire
+     * and be cancelled.
      * </p>
      * </li>
      * </ul>
@@ -517,30 +576,37 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        CANCELLED - You cancelled the job. A job might also be cancelled if ownership of an S3 bucket changed
-     *        while the job was running, and that change affected the job's access to the bucket.
+     *        CANCELLED - You cancelled the job, or you paused the job and didn't resume it within 30 days of pausing
+     *        it.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        COMPLETE - Amazon Macie finished processing all the data specified for the job.
+     *        COMPLETE - For a one-time job, Amazon Macie finished processing all the data specified for the job. This
+     *        value doesn't apply to recurring jobs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending.
-     *        This value doesn't apply to jobs that occur only once.
+     *        This value doesn't apply to one-time jobs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PAUSED - Amazon Macie started the job, but completion of the job would exceed one or more quotas for your
-     *        account.
+     *        PAUSED - Amazon Macie started running the job but completion of the job would exceed one or more quotas
+     *        for your account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        RUNNING - The job is in progress.
+     *        RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        USER_PAUSED - You paused the job. If you don't resume the job within 30 days of pausing it, the job will
+     *        expire and be cancelled.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -559,7 +625,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * ONE_TIME - The job ran or will run only once.
+     * ONE_TIME - The job runs only once.
      * </p>
      * </li>
      * <li>
@@ -574,7 +640,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        ONE_TIME - The job ran or will run only once.
+     *        ONE_TIME - The job runs only once.
      *        </p>
      *        </li>
      *        <li>
@@ -596,7 +662,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * ONE_TIME - The job ran or will run only once.
+     * ONE_TIME - The job runs only once.
      * </p>
      * </li>
      * <li>
@@ -610,7 +676,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         ONE_TIME - The job ran or will run only once.
+     *         ONE_TIME - The job runs only once.
      *         </p>
      *         </li>
      *         <li>
@@ -632,7 +698,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * ONE_TIME - The job ran or will run only once.
+     * ONE_TIME - The job runs only once.
      * </p>
      * </li>
      * <li>
@@ -647,7 +713,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        ONE_TIME - The job ran or will run only once.
+     *        ONE_TIME - The job runs only once.
      *        </p>
      *        </li>
      *        <li>
@@ -671,7 +737,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * ONE_TIME - The job ran or will run only once.
+     * ONE_TIME - The job runs only once.
      * </p>
      * </li>
      * <li>
@@ -686,7 +752,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        ONE_TIME - The job ran or will run only once.
+     *        ONE_TIME - The job runs only once.
      *        </p>
      *        </li>
      *        <li>
@@ -744,6 +810,55 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job will expire
+     * and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.
+     * </p>
+     * 
+     * @param userPausedDetails
+     *        If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job will
+     *        expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is
+     *        USER_PAUSED.
+     */
+
+    public void setUserPausedDetails(UserPausedDetails userPausedDetails) {
+        this.userPausedDetails = userPausedDetails;
+    }
+
+    /**
+     * <p>
+     * If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job will expire
+     * and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.
+     * </p>
+     * 
+     * @return If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job will
+     *         expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is
+     *         USER_PAUSED.
+     */
+
+    public UserPausedDetails getUserPausedDetails() {
+        return this.userPausedDetails;
+    }
+
+    /**
+     * <p>
+     * If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job will expire
+     * and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.
+     * </p>
+     * 
+     * @param userPausedDetails
+     *        If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job will
+     *        expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is
+     *        USER_PAUSED.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobSummary withUserPausedDetails(UserPausedDetails userPausedDetails) {
+        setUserPausedDetails(userPausedDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -766,7 +881,9 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
         if (getJobType() != null)
             sb.append("JobType: ").append(getJobType()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getUserPausedDetails() != null)
+            sb.append("UserPausedDetails: ").append(getUserPausedDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -805,6 +922,10 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getUserPausedDetails() == null ^ this.getUserPausedDetails() == null)
+            return false;
+        if (other.getUserPausedDetails() != null && other.getUserPausedDetails().equals(this.getUserPausedDetails()) == false)
+            return false;
         return true;
     }
 
@@ -819,6 +940,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getJobStatus() == null) ? 0 : getJobStatus().hashCode());
         hashCode = prime * hashCode + ((getJobType() == null) ? 0 : getJobType().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getUserPausedDetails() == null) ? 0 : getUserPausedDetails().hashCode());
         return hashCode;
     }
 

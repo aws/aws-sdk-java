@@ -48,7 +48,7 @@ public class GetFindingStatisticsRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * severity.description - The severity of the finding, such as High or Medium.
+     * severity.description - The severity level of the finding, such as High or Medium.
      * </p>
      * </li>
      * <li>
@@ -129,7 +129,7 @@ public class GetFindingStatisticsRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * severity.description - The severity of the finding, such as High or Medium.
+     * severity.description - The severity level of the finding, such as High or Medium.
      * </p>
      * </li>
      * <li>
@@ -154,7 +154,7 @@ public class GetFindingStatisticsRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        <li>
      *        <p>
-     *        severity.description - The severity of the finding, such as High or Medium.
+     *        severity.description - The severity level of the finding, such as High or Medium.
      *        </p>
      *        </li>
      *        <li>
@@ -186,7 +186,7 @@ public class GetFindingStatisticsRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * severity.description - The severity of the finding, such as High or Medium.
+     * severity.description - The severity level of the finding, such as High or Medium.
      * </p>
      * </li>
      * <li>
@@ -210,7 +210,7 @@ public class GetFindingStatisticsRequest extends com.amazonaws.AmazonWebServiceR
      *         </li>
      *         <li>
      *         <p>
-     *         severity.description - The severity of the finding, such as High or Medium.
+     *         severity.description - The severity level of the finding, such as High or Medium.
      *         </p>
      *         </li>
      *         <li>
@@ -242,7 +242,7 @@ public class GetFindingStatisticsRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * severity.description - The severity of the finding, such as High or Medium.
+     * severity.description - The severity level of the finding, such as High or Medium.
      * </p>
      * </li>
      * <li>
@@ -267,7 +267,7 @@ public class GetFindingStatisticsRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        <li>
      *        <p>
-     *        severity.description - The severity of the finding, such as High or Medium.
+     *        severity.description - The severity level of the finding, such as High or Medium.
      *        </p>
      *        </li>
      *        <li>
@@ -301,7 +301,7 @@ public class GetFindingStatisticsRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * severity.description - The severity of the finding, such as High or Medium.
+     * severity.description - The severity level of the finding, such as High or Medium.
      * </p>
      * </li>
      * <li>
@@ -326,7 +326,7 @@ public class GetFindingStatisticsRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        <li>
      *        <p>
-     *        severity.description - The severity of the finding, such as High or Medium.
+     *        severity.description - The severity level of the finding, such as High or Medium.
      *        </p>
      *        </li>
      *        <li>

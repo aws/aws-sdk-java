@@ -2028,7 +2028,7 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
-     * Query a list of all parameters used by the AWS account.
+     * Retrieves the history of all changes to a parameter.
      * </p>
      * 
      * @param getParameterHistoryRequest

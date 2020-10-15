@@ -27,7 +27,7 @@ public class GetParameterHistoryRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of a parameter you want to query.
+     * The name of the parameter for which you want to review history.
      * </p>
      */
     private String name;
@@ -54,11 +54,11 @@ public class GetParameterHistoryRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of a parameter you want to query.
+     * The name of the parameter for which you want to review history.
      * </p>
      * 
      * @param name
-     *        The name of a parameter you want to query.
+     *        The name of the parameter for which you want to review history.
      */
 
     public void setName(String name) {
@@ -67,10 +67,10 @@ public class GetParameterHistoryRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of a parameter you want to query.
+     * The name of the parameter for which you want to review history.
      * </p>
      * 
-     * @return The name of a parameter you want to query.
+     * @return The name of the parameter for which you want to review history.
      */
 
     public String getName() {
@@ -79,11 +79,11 @@ public class GetParameterHistoryRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of a parameter you want to query.
+     * The name of the parameter for which you want to review history.
      * </p>
      * 
      * @param name
-     *        The name of a parameter you want to query.
+     *        The name of the parameter for which you want to review history.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

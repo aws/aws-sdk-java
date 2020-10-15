@@ -32,8 +32,8 @@ public class ObjectLevelStatistics implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an
-     * unsupported file or storage format.
+     * The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects don't
+     * have a file name extension for a supported file or storage format.
      * </p>
      */
     private Long fileType;
@@ -47,20 +47,20 @@ public class ObjectLevelStatistics implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an
-     * unsupported file or storage format or storage class.
+     * unsupported storage class or don't have a file name extension for a supported file or storage format.
      * </p>
      */
     private Long total;
 
     /**
      * <p>
-     * The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an
-     * unsupported file or storage format.
+     * The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects don't
+     * have a file name extension for a supported file or storage format.
      * </p>
      * 
      * @param fileType
      *        The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects
-     *        use an unsupported file or storage format.
+     *        don't have a file name extension for a supported file or storage format.
      */
 
     public void setFileType(Long fileType) {
@@ -69,12 +69,12 @@ public class ObjectLevelStatistics implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an
-     * unsupported file or storage format.
+     * The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects don't
+     * have a file name extension for a supported file or storage format.
      * </p>
      * 
      * @return The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the
-     *         objects use an unsupported file or storage format.
+     *         objects don't have a file name extension for a supported file or storage format.
      */
 
     public Long getFileType() {
@@ -83,13 +83,13 @@ public class ObjectLevelStatistics implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an
-     * unsupported file or storage format.
+     * The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects don't
+     * have a file name extension for a supported file or storage format.
      * </p>
      * 
      * @param fileType
      *        The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects
-     *        use an unsupported file or storage format.
+     *        don't have a file name extension for a supported file or storage format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,12 +147,13 @@ public class ObjectLevelStatistics implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an
-     * unsupported file or storage format or storage class.
+     * unsupported storage class or don't have a file name extension for a supported file or storage format.
      * </p>
      * 
      * @param total
      *        The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects
-     *        use an unsupported file or storage format or storage class.
+     *        use an unsupported storage class or don't have a file name extension for a supported file or storage
+     *        format.
      */
 
     public void setTotal(Long total) {
@@ -162,11 +163,12 @@ public class ObjectLevelStatistics implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an
-     * unsupported file or storage format or storage class.
+     * unsupported storage class or don't have a file name extension for a supported file or storage format.
      * </p>
      * 
      * @return The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the
-     *         objects use an unsupported file or storage format or storage class.
+     *         objects use an unsupported storage class or don't have a file name extension for a supported file or
+     *         storage format.
      */
 
     public Long getTotal() {
@@ -176,12 +178,13 @@ public class ObjectLevelStatistics implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an
-     * unsupported file or storage format or storage class.
+     * unsupported storage class or don't have a file name extension for a supported file or storage format.
      * </p>
      * 
      * @param total
      *        The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects
-     *        use an unsupported file or storage format or storage class.
+     *        use an unsupported storage class or don't have a file name extension for a supported file or storage
+     *        format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

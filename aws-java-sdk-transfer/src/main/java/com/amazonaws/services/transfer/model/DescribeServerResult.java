@@ -25,21 +25,18 @@ public class DescribeServerResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An array containing the properties of a file transfer protocol-enabled server with the <code>ServerID</code> you
-     * specified.
+     * An array containing the properties of a server with the <code>ServerID</code> you specified.
      * </p>
      */
     private DescribedServer server;
 
     /**
      * <p>
-     * An array containing the properties of a file transfer protocol-enabled server with the <code>ServerID</code> you
-     * specified.
+     * An array containing the properties of a server with the <code>ServerID</code> you specified.
      * </p>
      * 
      * @param server
-     *        An array containing the properties of a file transfer protocol-enabled server with the
-     *        <code>ServerID</code> you specified.
+     *        An array containing the properties of a server with the <code>ServerID</code> you specified.
      */
 
     public void setServer(DescribedServer server) {
@@ -48,12 +45,10 @@ public class DescribeServerResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An array containing the properties of a file transfer protocol-enabled server with the <code>ServerID</code> you
-     * specified.
+     * An array containing the properties of a server with the <code>ServerID</code> you specified.
      * </p>
      * 
-     * @return An array containing the properties of a file transfer protocol-enabled server with the
-     *         <code>ServerID</code> you specified.
+     * @return An array containing the properties of a server with the <code>ServerID</code> you specified.
      */
 
     public DescribedServer getServer() {
@@ -62,13 +57,11 @@ public class DescribeServerResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An array containing the properties of a file transfer protocol-enabled server with the <code>ServerID</code> you
-     * specified.
+     * An array containing the properties of a server with the <code>ServerID</code> you specified.
      * </p>
      * 
      * @param server
-     *        An array containing the properties of a file transfer protocol-enabled server with the
-     *        <code>ServerID</code> you specified.
+     *        An array containing the properties of a server with the <code>ServerID</code> you specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

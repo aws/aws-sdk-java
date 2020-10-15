@@ -159,6 +159,19 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String taskData;
+    /**
+     * <p>
+     * A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is
+     * returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters.
+     * It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two
+     * consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a
+     * <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier value for the end of
+     * <code>EndpointArn</code>.
+     * </p>
+     */
+    private String resourceIdentifier;
 
     /**
      * <p>
@@ -1076,6 +1089,88 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is
+     * returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters.
+     * It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two
+     * consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a
+     * <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier value for the end of
+     * <code>EndpointArn</code>.
+     * </p>
+     * 
+     * @param resourceIdentifier
+     *        A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter
+     *        that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to
+     *        31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a
+     *        hyphen or contain two consecutive hyphens, and can only begin with a letter, such as
+     *        <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value
+     *        <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a
+     *        <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier value for the end of
+     *        <code>EndpointArn</code>.
+     */
+
+    public void setResourceIdentifier(String resourceIdentifier) {
+        this.resourceIdentifier = resourceIdentifier;
+    }
+
+    /**
+     * <p>
+     * A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is
+     * returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters.
+     * It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two
+     * consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a
+     * <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier value for the end of
+     * <code>EndpointArn</code>.
+     * </p>
+     * 
+     * @return A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter
+     *         that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to
+     *         31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a
+     *         hyphen or contain two consecutive hyphens, and can only begin with a letter, such as
+     *         <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value
+     *         <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a
+     *         <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier value for the end of
+     *         <code>EndpointArn</code>.
+     */
+
+    public String getResourceIdentifier() {
+        return this.resourceIdentifier;
+    }
+
+    /**
+     * <p>
+     * A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is
+     * returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters.
+     * It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two
+     * consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a
+     * <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier value for the end of
+     * <code>EndpointArn</code>.
+     * </p>
+     * 
+     * @param resourceIdentifier
+     *        A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter
+     *        that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to
+     *        31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a
+     *        hyphen or contain two consecutive hyphens, and can only begin with a letter, such as
+     *        <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value
+     *        <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a
+     *        <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier value for the end of
+     *        <code>EndpointArn</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateReplicationTaskRequest withResourceIdentifier(String resourceIdentifier) {
+        setResourceIdentifier(resourceIdentifier);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1110,7 +1205,9 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getTaskData() != null)
-            sb.append("TaskData: ").append(getTaskData());
+            sb.append("TaskData: ").append(getTaskData()).append(",");
+        if (getResourceIdentifier() != null)
+            sb.append("ResourceIdentifier: ").append(getResourceIdentifier());
         sb.append("}");
         return sb.toString();
     }
@@ -1173,6 +1270,10 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getTaskData() != null && other.getTaskData().equals(this.getTaskData()) == false)
             return false;
+        if (other.getResourceIdentifier() == null ^ this.getResourceIdentifier() == null)
+            return false;
+        if (other.getResourceIdentifier() != null && other.getResourceIdentifier().equals(this.getResourceIdentifier()) == false)
+            return false;
         return true;
     }
 
@@ -1193,6 +1294,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getCdcStopPosition() == null) ? 0 : getCdcStopPosition().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getTaskData() == null) ? 0 : getTaskData().hashCode());
+        hashCode = prime * hashCode + ((getResourceIdentifier() == null) ? 0 : getResourceIdentifier().hashCode());
         return hashCode;
     }
 

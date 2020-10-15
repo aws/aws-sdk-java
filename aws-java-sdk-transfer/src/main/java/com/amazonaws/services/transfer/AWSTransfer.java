@@ -421,9 +421,14 @@ public interface AWSTransfer {
      * <p>
      * Changes the state of a file transfer protocol-enabled server from <code>ONLINE</code> to <code>OFFLINE</code>. An
      * <code>OFFLINE</code> server cannot accept and process file transfer jobs. Information tied to your server, such
-     * as server and user properties, are not affected by stopping your server. Stopping the server will not reduce or
-     * impact your file transfer protocol endpoint billing.
+     * as server and user properties, are not affected by stopping your server.
      * </p>
+     * <note>
+     * <p>
+     * Stopping the server will not reduce or impact your file transfer protocol endpoint billing; you must delete the
+     * server to stop being billed.
+     * </p>
+     * </note>
      * <p>
      * The state of <code>STOPPING</code> indicates that the server is in an intermediate state, either not fully able
      * to respond, or not fully offline. The values of <code>STOP_FAILED</code> can indicate an error condition.

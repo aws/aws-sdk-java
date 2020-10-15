@@ -47,7 +47,7 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * <li>
      * <p>
      * SKIPPED - Macie wasn't able to analyze the object that the finding applies to. For example, the object is a
-     * malformed file or a file that's in an unsupported format.
+     * malformed file or a file that uses an unsupported format.
      * </p>
      * </li>
      * </ul>
@@ -80,7 +80,7 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * <li>
      * <p>
      * SKIPPED - Macie wasn't able to analyze the object that the finding applies to. For example, the object is a
-     * malformed file or a file that's in an unsupported format.
+     * malformed file or a file that uses an unsupported format.
      * </p>
      * </li>
      * </ul>
@@ -104,7 +104,7 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *        <li>
      *        <p>
      *        SKIPPED - Macie wasn't able to analyze the object that the finding applies to. For example, the object is
-     *        a malformed file or a file that's in an unsupported format.
+     *        a malformed file or a file that uses an unsupported format.
      *        </p>
      *        </li>
      *        </ul>
@@ -133,7 +133,7 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * <li>
      * <p>
      * SKIPPED - Macie wasn't able to analyze the object that the finding applies to. For example, the object is a
-     * malformed file or a file that's in an unsupported format.
+     * malformed file or a file that uses an unsupported format.
      * </p>
      * </li>
      * </ul>
@@ -156,7 +156,7 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *         <li>
      *         <p>
      *         SKIPPED - Macie wasn't able to analyze the object that the finding applies to. For example, the object is
-     *         a malformed file or a file that's in an unsupported format.
+     *         a malformed file or a file that uses an unsupported format.
      *         </p>
      *         </li>
      *         </ul>
@@ -185,7 +185,7 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * <li>
      * <p>
      * SKIPPED - Macie wasn't able to analyze the object that the finding applies to. For example, the object is a
-     * malformed file or a file that's in an unsupported format.
+     * malformed file or a file that uses an unsupported format.
      * </p>
      * </li>
      * </ul>
@@ -209,7 +209,7 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *        <li>
      *        <p>
      *        SKIPPED - Macie wasn't able to analyze the object that the finding applies to. For example, the object is
-     *        a malformed file or a file that's in an unsupported format.
+     *        a malformed file or a file that uses an unsupported format.
      *        </p>
      *        </li>
      *        </ul>

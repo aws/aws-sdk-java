@@ -52,6 +52,10 @@ public class DefaultDetectionJsonUnmarshaller implements Unmarshaller<DefaultDet
                     context.nextToken();
                     defaultDetection.setCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("occurrences", targetDepth)) {
+                    context.nextToken();
+                    defaultDetection.setOccurrences(OccurrencesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
                     defaultDetection.setType(context.getUnmarshaller(String.class).unmarshall(context));

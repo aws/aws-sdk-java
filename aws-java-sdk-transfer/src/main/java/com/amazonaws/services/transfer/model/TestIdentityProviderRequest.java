@@ -27,8 +27,8 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A system-assigned identifier for a specific file transfer protocol-enabled server. That server's user
-     * authentication method is tested with a user name and password.
+     * A system-assigned identifier for a specific server. That server's user authentication method is tested with a
+     * user name and password.
      * </p>
      */
     private String serverId;
@@ -79,13 +79,13 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A system-assigned identifier for a specific file transfer protocol-enabled server. That server's user
-     * authentication method is tested with a user name and password.
+     * A system-assigned identifier for a specific server. That server's user authentication method is tested with a
+     * user name and password.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned identifier for a specific file transfer protocol-enabled server. That server's user
-     *        authentication method is tested with a user name and password.
+     *        A system-assigned identifier for a specific server. That server's user authentication method is tested
+     *        with a user name and password.
      */
 
     public void setServerId(String serverId) {
@@ -94,12 +94,12 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A system-assigned identifier for a specific file transfer protocol-enabled server. That server's user
-     * authentication method is tested with a user name and password.
+     * A system-assigned identifier for a specific server. That server's user authentication method is tested with a
+     * user name and password.
      * </p>
      * 
-     * @return A system-assigned identifier for a specific file transfer protocol-enabled server. That server's user
-     *         authentication method is tested with a user name and password.
+     * @return A system-assigned identifier for a specific server. That server's user authentication method is tested
+     *         with a user name and password.
      */
 
     public String getServerId() {
@@ -108,13 +108,13 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A system-assigned identifier for a specific file transfer protocol-enabled server. That server's user
-     * authentication method is tested with a user name and password.
+     * A system-assigned identifier for a specific server. That server's user authentication method is tested with a
+     * user name and password.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned identifier for a specific file transfer protocol-enabled server. That server's user
-     *        authentication method is tested with a user name and password.
+     *        A system-assigned identifier for a specific server. That server's user authentication method is tested
+     *        with a user name and password.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

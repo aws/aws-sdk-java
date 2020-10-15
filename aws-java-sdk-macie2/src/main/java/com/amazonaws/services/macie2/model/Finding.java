@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about a finding.
+ * Provides the details of a finding.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Finding" target="_top">AWS API
@@ -56,7 +56,7 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     private ClassificationDetails classificationDetails;
     /**
      * <p>
-     * The total number of occurrences of this finding.
+     * The total number of occurrences of the finding.
      * </p>
      */
     private Long count;
@@ -118,7 +118,7 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     private String schemaVersion;
     /**
      * <p>
-     * The severity of the finding.
+     * The severity level and score for the finding.
      * </p>
      */
     private Severity severity;
@@ -137,7 +137,8 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The date and time, in UTC and extended ISO 8601 format, when the finding was last updated. For sensitive data
-     * findings, this value is the same as the value for the createdAt property. Sensitive data findings aren't updated.
+     * findings, this value is the same as the value for the createdAt property. All sensitive data findings are
+     * considered new (unique) because they derive from individual classification jobs.
      * </p>
      */
     private java.util.Date updatedAt;
@@ -349,11 +350,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of occurrences of this finding.
+     * The total number of occurrences of the finding.
      * </p>
      * 
      * @param count
-     *        The total number of occurrences of this finding.
+     *        The total number of occurrences of the finding.
      */
 
     public void setCount(Long count) {
@@ -362,10 +363,10 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of occurrences of this finding.
+     * The total number of occurrences of the finding.
      * </p>
      * 
-     * @return The total number of occurrences of this finding.
+     * @return The total number of occurrences of the finding.
      */
 
     public Long getCount() {
@@ -374,11 +375,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of occurrences of this finding.
+     * The total number of occurrences of the finding.
      * </p>
      * 
      * @param count
-     *        The total number of occurrences of this finding.
+     *        The total number of occurrences of the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -775,11 +776,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The severity of the finding.
+     * The severity level and score for the finding.
      * </p>
      * 
      * @param severity
-     *        The severity of the finding.
+     *        The severity level and score for the finding.
      */
 
     public void setSeverity(Severity severity) {
@@ -788,10 +789,10 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The severity of the finding.
+     * The severity level and score for the finding.
      * </p>
      * 
-     * @return The severity of the finding.
+     * @return The severity level and score for the finding.
      */
 
     public Severity getSeverity() {
@@ -800,11 +801,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The severity of the finding.
+     * The severity level and score for the finding.
      * </p>
      * 
      * @param severity
-     *        The severity of the finding.
+     *        The severity level and score for the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -915,13 +916,14 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The date and time, in UTC and extended ISO 8601 format, when the finding was last updated. For sensitive data
-     * findings, this value is the same as the value for the createdAt property. Sensitive data findings aren't updated.
+     * findings, this value is the same as the value for the createdAt property. All sensitive data findings are
+     * considered new (unique) because they derive from individual classification jobs.
      * </p>
      * 
      * @param updatedAt
      *        The date and time, in UTC and extended ISO 8601 format, when the finding was last updated. For sensitive
-     *        data findings, this value is the same as the value for the createdAt property. Sensitive data findings
-     *        aren't updated.
+     *        data findings, this value is the same as the value for the createdAt property. All sensitive data findings
+     *        are considered new (unique) because they derive from individual classification jobs.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -931,12 +933,13 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The date and time, in UTC and extended ISO 8601 format, when the finding was last updated. For sensitive data
-     * findings, this value is the same as the value for the createdAt property. Sensitive data findings aren't updated.
+     * findings, this value is the same as the value for the createdAt property. All sensitive data findings are
+     * considered new (unique) because they derive from individual classification jobs.
      * </p>
      * 
      * @return The date and time, in UTC and extended ISO 8601 format, when the finding was last updated. For sensitive
-     *         data findings, this value is the same as the value for the createdAt property. Sensitive data findings
-     *         aren't updated.
+     *         data findings, this value is the same as the value for the createdAt property. All sensitive data
+     *         findings are considered new (unique) because they derive from individual classification jobs.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -946,13 +949,14 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The date and time, in UTC and extended ISO 8601 format, when the finding was last updated. For sensitive data
-     * findings, this value is the same as the value for the createdAt property. Sensitive data findings aren't updated.
+     * findings, this value is the same as the value for the createdAt property. All sensitive data findings are
+     * considered new (unique) because they derive from individual classification jobs.
      * </p>
      * 
      * @param updatedAt
      *        The date and time, in UTC and extended ISO 8601 format, when the finding was last updated. For sensitive
-     *        data findings, this value is the same as the value for the createdAt property. Sensitive data findings
-     *        aren't updated.
+     *        data findings, this value is the same as the value for the createdAt property. All sensitive data findings
+     *        are considered new (unique) because they derive from individual classification jobs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

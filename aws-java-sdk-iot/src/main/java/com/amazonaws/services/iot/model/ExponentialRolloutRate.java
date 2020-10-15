@@ -36,14 +36,14 @@ public class ExponentialRolloutRate implements Serializable, Cloneable, Structur
      * <p>
      * The exponential factor to increase the rate of rollout for a job.
      * </p>
+     * <p>
+     * AWS IoT supports up to one digit after the decimal (for example, 1.5, but not 1.55).
+     * </p>
      */
     private Double incrementFactor;
     /**
      * <p>
      * The criteria to initiate the increase in rate of rollout for a job.
-     * </p>
-     * <p>
-     * AWS IoT supports up to one digit after the decimal (for example, 1.5, but not 1.55).
      * </p>
      */
     private RateIncreaseCriteria rateIncreaseCriteria;
@@ -98,9 +98,14 @@ public class ExponentialRolloutRate implements Serializable, Cloneable, Structur
      * <p>
      * The exponential factor to increase the rate of rollout for a job.
      * </p>
+     * <p>
+     * AWS IoT supports up to one digit after the decimal (for example, 1.5, but not 1.55).
+     * </p>
      * 
      * @param incrementFactor
-     *        The exponential factor to increase the rate of rollout for a job.
+     *        The exponential factor to increase the rate of rollout for a job.</p>
+     *        <p>
+     *        AWS IoT supports up to one digit after the decimal (for example, 1.5, but not 1.55).
      */
 
     public void setIncrementFactor(Double incrementFactor) {
@@ -111,8 +116,13 @@ public class ExponentialRolloutRate implements Serializable, Cloneable, Structur
      * <p>
      * The exponential factor to increase the rate of rollout for a job.
      * </p>
+     * <p>
+     * AWS IoT supports up to one digit after the decimal (for example, 1.5, but not 1.55).
+     * </p>
      * 
-     * @return The exponential factor to increase the rate of rollout for a job.
+     * @return The exponential factor to increase the rate of rollout for a job.</p>
+     *         <p>
+     *         AWS IoT supports up to one digit after the decimal (for example, 1.5, but not 1.55).
      */
 
     public Double getIncrementFactor() {
@@ -123,9 +133,14 @@ public class ExponentialRolloutRate implements Serializable, Cloneable, Structur
      * <p>
      * The exponential factor to increase the rate of rollout for a job.
      * </p>
+     * <p>
+     * AWS IoT supports up to one digit after the decimal (for example, 1.5, but not 1.55).
+     * </p>
      * 
      * @param incrementFactor
-     *        The exponential factor to increase the rate of rollout for a job.
+     *        The exponential factor to increase the rate of rollout for a job.</p>
+     *        <p>
+     *        AWS IoT supports up to one digit after the decimal (for example, 1.5, but not 1.55).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,14 +153,9 @@ public class ExponentialRolloutRate implements Serializable, Cloneable, Structur
      * <p>
      * The criteria to initiate the increase in rate of rollout for a job.
      * </p>
-     * <p>
-     * AWS IoT supports up to one digit after the decimal (for example, 1.5, but not 1.55).
-     * </p>
      * 
      * @param rateIncreaseCriteria
-     *        The criteria to initiate the increase in rate of rollout for a job.</p>
-     *        <p>
-     *        AWS IoT supports up to one digit after the decimal (for example, 1.5, but not 1.55).
+     *        The criteria to initiate the increase in rate of rollout for a job.
      */
 
     public void setRateIncreaseCriteria(RateIncreaseCriteria rateIncreaseCriteria) {
@@ -156,13 +166,8 @@ public class ExponentialRolloutRate implements Serializable, Cloneable, Structur
      * <p>
      * The criteria to initiate the increase in rate of rollout for a job.
      * </p>
-     * <p>
-     * AWS IoT supports up to one digit after the decimal (for example, 1.5, but not 1.55).
-     * </p>
      * 
-     * @return The criteria to initiate the increase in rate of rollout for a job.</p>
-     *         <p>
-     *         AWS IoT supports up to one digit after the decimal (for example, 1.5, but not 1.55).
+     * @return The criteria to initiate the increase in rate of rollout for a job.
      */
 
     public RateIncreaseCriteria getRateIncreaseCriteria() {
@@ -173,14 +178,9 @@ public class ExponentialRolloutRate implements Serializable, Cloneable, Structur
      * <p>
      * The criteria to initiate the increase in rate of rollout for a job.
      * </p>
-     * <p>
-     * AWS IoT supports up to one digit after the decimal (for example, 1.5, but not 1.55).
-     * </p>
      * 
      * @param rateIncreaseCriteria
-     *        The criteria to initiate the increase in rate of rollout for a job.</p>
-     *        <p>
-     *        AWS IoT supports up to one digit after the decimal (for example, 1.5, but not 1.55).
+     *        The criteria to initiate the increase in rate of rollout for a job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

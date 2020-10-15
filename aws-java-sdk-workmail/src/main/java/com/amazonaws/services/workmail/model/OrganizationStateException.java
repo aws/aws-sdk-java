@@ -16,8 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization
- * or its members.
+ * The organization must have a valid state to perform certain operations on the organization or its members.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

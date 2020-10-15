@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about an application that processed requests, users that made requests, or downstream services, resources
- * and applications that an application used.
+ * Information about an application that processed requests, users that made requests, or downstream services,
+ * resources, and applications that an application used.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/Service" target="_top">AWS API Documentation</a>
@@ -65,7 +65,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * AWS Resource - The type of an AWS resource. For example, <code>AWS::EC2::Instance</code> for a application
+     * AWS Resource - The type of an AWS resource. For example, <code>AWS::EC2::Instance</code> for an application
      * running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the application
      * used.
      * </p>
@@ -381,7 +381,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * AWS Resource - The type of an AWS resource. For example, <code>AWS::EC2::Instance</code> for a application
+     * AWS Resource - The type of an AWS resource. For example, <code>AWS::EC2::Instance</code> for an application
      * running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the application
      * used.
      * </p>
@@ -409,9 +409,9 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        AWS Resource - The type of an AWS resource. For example, <code>AWS::EC2::Instance</code> for a application
-     *        running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the
-     *        application used.
+     *        AWS Resource - The type of an AWS resource. For example, <code>AWS::EC2::Instance</code> for an
+     *        application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that
+     *        the application used.
      *        </p>
      *        </li>
      *        <li>
@@ -443,7 +443,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * AWS Resource - The type of an AWS resource. For example, <code>AWS::EC2::Instance</code> for a application
+     * AWS Resource - The type of an AWS resource. For example, <code>AWS::EC2::Instance</code> for an application
      * running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the application
      * used.
      * </p>
@@ -470,7 +470,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         AWS Resource - The type of an AWS resource. For example, <code>AWS::EC2::Instance</code> for a
+     *         AWS Resource - The type of an AWS resource. For example, <code>AWS::EC2::Instance</code> for an
      *         application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that
      *         the application used.
      *         </p>
@@ -504,7 +504,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * AWS Resource - The type of an AWS resource. For example, <code>AWS::EC2::Instance</code> for a application
+     * AWS Resource - The type of an AWS resource. For example, <code>AWS::EC2::Instance</code> for an application
      * running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the application
      * used.
      * </p>
@@ -532,9 +532,9 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        AWS Resource - The type of an AWS resource. For example, <code>AWS::EC2::Instance</code> for a application
-     *        running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the
-     *        application used.
+     *        AWS Resource - The type of an AWS resource. For example, <code>AWS::EC2::Instance</code> for an
+     *        application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that
+     *        the application used.
      *        </p>
      *        </li>
      *        <li>

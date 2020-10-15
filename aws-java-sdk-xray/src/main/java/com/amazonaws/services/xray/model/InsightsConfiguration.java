@@ -34,6 +34,13 @@ public class InsightsConfiguration implements Serializable, Cloneable, Structure
      * </p>
      */
     private Boolean insightsEnabled;
+    /**
+     * <p>
+     * Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be enabled on
+     * a group with InsightsEnabled set to true.
+     * </p>
+     */
+    private Boolean notificationsEnabled;
 
     /**
      * <p>
@@ -88,6 +95,66 @@ public class InsightsConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be enabled on
+     * a group with InsightsEnabled set to true.
+     * </p>
+     * 
+     * @param notificationsEnabled
+     *        Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be
+     *        enabled on a group with InsightsEnabled set to true.
+     */
+
+    public void setNotificationsEnabled(Boolean notificationsEnabled) {
+        this.notificationsEnabled = notificationsEnabled;
+    }
+
+    /**
+     * <p>
+     * Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be enabled on
+     * a group with InsightsEnabled set to true.
+     * </p>
+     * 
+     * @return Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be
+     *         enabled on a group with InsightsEnabled set to true.
+     */
+
+    public Boolean getNotificationsEnabled() {
+        return this.notificationsEnabled;
+    }
+
+    /**
+     * <p>
+     * Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be enabled on
+     * a group with InsightsEnabled set to true.
+     * </p>
+     * 
+     * @param notificationsEnabled
+     *        Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be
+     *        enabled on a group with InsightsEnabled set to true.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InsightsConfiguration withNotificationsEnabled(Boolean notificationsEnabled) {
+        setNotificationsEnabled(notificationsEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be enabled on
+     * a group with InsightsEnabled set to true.
+     * </p>
+     * 
+     * @return Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be
+     *         enabled on a group with InsightsEnabled set to true.
+     */
+
+    public Boolean isNotificationsEnabled() {
+        return this.notificationsEnabled;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -100,7 +167,9 @@ public class InsightsConfiguration implements Serializable, Cloneable, Structure
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInsightsEnabled() != null)
-            sb.append("InsightsEnabled: ").append(getInsightsEnabled());
+            sb.append("InsightsEnabled: ").append(getInsightsEnabled()).append(",");
+        if (getNotificationsEnabled() != null)
+            sb.append("NotificationsEnabled: ").append(getNotificationsEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -119,6 +188,10 @@ public class InsightsConfiguration implements Serializable, Cloneable, Structure
             return false;
         if (other.getInsightsEnabled() != null && other.getInsightsEnabled().equals(this.getInsightsEnabled()) == false)
             return false;
+        if (other.getNotificationsEnabled() == null ^ this.getNotificationsEnabled() == null)
+            return false;
+        if (other.getNotificationsEnabled() != null && other.getNotificationsEnabled().equals(this.getNotificationsEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -128,6 +201,7 @@ public class InsightsConfiguration implements Serializable, Cloneable, Structure
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getInsightsEnabled() == null) ? 0 : getInsightsEnabled().hashCode());
+        hashCode = prime * hashCode + ((getNotificationsEnabled() == null) ? 0 : getNotificationsEnabled().hashCode());
         return hashCode;
     }
 

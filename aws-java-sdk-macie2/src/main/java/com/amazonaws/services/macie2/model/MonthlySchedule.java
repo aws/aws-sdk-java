@@ -30,19 +30,31 @@ public class MonthlySchedule implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through 30.
+     * The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through 31.
+     * </p>
+     * <p>
+     * If this value exceeds the number of days in a certain month, Macie runs the job on the last day of that month.
+     * For example, if this value is 31 and a month has only 30 days, Macie runs the job on day 30 of that month.
      * </p>
      */
     private Integer dayOfMonth;
 
     /**
      * <p>
-     * The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through 30.
+     * The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through 31.
+     * </p>
+     * <p>
+     * If this value exceeds the number of days in a certain month, Macie runs the job on the last day of that month.
+     * For example, if this value is 31 and a month has only 30 days, Macie runs the job on day 30 of that month.
      * </p>
      * 
      * @param dayOfMonth
      *        The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through
-     *        30.
+     *        31.</p>
+     *        <p>
+     *        If this value exceeds the number of days in a certain month, Macie runs the job on the last day of that
+     *        month. For example, if this value is 31 and a month has only 30 days, Macie runs the job on day 30 of that
+     *        month.
      */
 
     public void setDayOfMonth(Integer dayOfMonth) {
@@ -51,11 +63,19 @@ public class MonthlySchedule implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through 30.
+     * The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through 31.
+     * </p>
+     * <p>
+     * If this value exceeds the number of days in a certain month, Macie runs the job on the last day of that month.
+     * For example, if this value is 31 and a month has only 30 days, Macie runs the job on day 30 of that month.
      * </p>
      * 
      * @return The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through
-     *         30.
+     *         31.</p>
+     *         <p>
+     *         If this value exceeds the number of days in a certain month, Macie runs the job on the last day of that
+     *         month. For example, if this value is 31 and a month has only 30 days, Macie runs the job on day 30 of
+     *         that month.
      */
 
     public Integer getDayOfMonth() {
@@ -64,12 +84,20 @@ public class MonthlySchedule implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through 30.
+     * The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through 31.
+     * </p>
+     * <p>
+     * If this value exceeds the number of days in a certain month, Macie runs the job on the last day of that month.
+     * For example, if this value is 31 and a month has only 30 days, Macie runs the job on day 30 of that month.
      * </p>
      * 
      * @param dayOfMonth
      *        The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through
-     *        30.
+     *        31.</p>
+     *        <p>
+     *        If this value exceeds the number of days in a certain month, Macie runs the job on the last day of that
+     *        month. For example, if this value is 31 and a month has only 30 days, Macie runs the job on day 30 of that
+     *        month.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -157,6 +157,71 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Retroactively applies the archive rule to existing findings that meet the archive rule criteria.
+     * </p>
+     * 
+     * @param applyArchiveRuleRequest
+     *        Retroactively applies an archive rule.
+     * @return Result of the ApplyArchiveRule operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws InternalServerException
+     *         Internal server error.
+     * @throws ThrottlingException
+     *         Throttling limit exceeded error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSAccessAnalyzer.ApplyArchiveRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ApplyArchiveRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ApplyArchiveRuleResult applyArchiveRule(ApplyArchiveRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeApplyArchiveRule(request);
+    }
+
+    @SdkInternalApi
+    final ApplyArchiveRuleResult executeApplyArchiveRule(ApplyArchiveRuleRequest applyArchiveRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(applyArchiveRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ApplyArchiveRuleRequest> request = null;
+        Response<ApplyArchiveRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ApplyArchiveRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(applyArchiveRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ApplyArchiveRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ApplyArchiveRuleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ApplyArchiveRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates an analyzer for your account.
      * </p>
      * 
@@ -224,8 +289,8 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Creates an archive rule for the specified analyzer. Archive rules automatically archive findings that meet the
-     * criteria you define when you create the rule.
+     * Creates an archive rule for the specified analyzer. Archive rules automatically archive new findings that meet
+     * the criteria you define when you create the rule.
      * </p>
      * 
      * @param createArchiveRuleRequest

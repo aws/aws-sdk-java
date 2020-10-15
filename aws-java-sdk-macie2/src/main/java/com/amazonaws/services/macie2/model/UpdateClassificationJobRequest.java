@@ -33,9 +33,32 @@ public class UpdateClassificationJobRequest extends com.amazonaws.AmazonWebServi
     private String jobId;
     /**
      * <p>
-     * The status to change the job's status to. The only supported value is CANCELLED, which cancels the job
-     * completely.
+     * The new status for the job. Valid values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * CANCELLED - Stops the job permanently and cancels it. You can't resume a job after you cancel it. This value is
+     * valid only if the job's current status is IDLE, PAUSED, RUNNING, or USER_PAUSED.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RUNNING - Resumes the job. This value is valid only if the job's current status is USER_PAUSED. If you specify
+     * this value, Amazon Macie immediately resumes the job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * USER_PAUSED - Pauses the job. This value is valid only if the job's current status is IDLE or RUNNING. If you
+     * specify this value and the job is currently running, Macie immediately stops running the job.
+     * </p>
+     * <p>
+     * To resume a job after you pause it, change the job's status to RUNNING. If you don't resume a job within 30 days
+     * of pausing it, the job expires and Macie cancels it. You can't resume a job after it's cancelled.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String jobStatus;
 
@@ -81,13 +104,58 @@ public class UpdateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The status to change the job's status to. The only supported value is CANCELLED, which cancels the job
-     * completely.
+     * The new status for the job. Valid values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * CANCELLED - Stops the job permanently and cancels it. You can't resume a job after you cancel it. This value is
+     * valid only if the job's current status is IDLE, PAUSED, RUNNING, or USER_PAUSED.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RUNNING - Resumes the job. This value is valid only if the job's current status is USER_PAUSED. If you specify
+     * this value, Amazon Macie immediately resumes the job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * USER_PAUSED - Pauses the job. This value is valid only if the job's current status is IDLE or RUNNING. If you
+     * specify this value and the job is currently running, Macie immediately stops running the job.
+     * </p>
+     * <p>
+     * To resume a job after you pause it, change the job's status to RUNNING. If you don't resume a job within 30 days
+     * of pausing it, the job expires and Macie cancels it. You can't resume a job after it's cancelled.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param jobStatus
-     *        The status to change the job's status to. The only supported value is CANCELLED, which cancels the job
-     *        completely.
+     *        The new status for the job. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        CANCELLED - Stops the job permanently and cancels it. You can't resume a job after you cancel it. This
+     *        value is valid only if the job's current status is IDLE, PAUSED, RUNNING, or USER_PAUSED.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RUNNING - Resumes the job. This value is valid only if the job's current status is USER_PAUSED. If you
+     *        specify this value, Amazon Macie immediately resumes the job.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        USER_PAUSED - Pauses the job. This value is valid only if the job's current status is IDLE or RUNNING. If
+     *        you specify this value and the job is currently running, Macie immediately stops running the job.
+     *        </p>
+     *        <p>
+     *        To resume a job after you pause it, change the job's status to RUNNING. If you don't resume a job within
+     *        30 days of pausing it, the job expires and Macie cancels it. You can't resume a job after it's cancelled.
+     *        </p>
+     *        </li>
      * @see JobStatus
      */
 
@@ -97,12 +165,57 @@ public class UpdateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The status to change the job's status to. The only supported value is CANCELLED, which cancels the job
-     * completely.
+     * The new status for the job. Valid values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * CANCELLED - Stops the job permanently and cancels it. You can't resume a job after you cancel it. This value is
+     * valid only if the job's current status is IDLE, PAUSED, RUNNING, or USER_PAUSED.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RUNNING - Resumes the job. This value is valid only if the job's current status is USER_PAUSED. If you specify
+     * this value, Amazon Macie immediately resumes the job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * USER_PAUSED - Pauses the job. This value is valid only if the job's current status is IDLE or RUNNING. If you
+     * specify this value and the job is currently running, Macie immediately stops running the job.
+     * </p>
+     * <p>
+     * To resume a job after you pause it, change the job's status to RUNNING. If you don't resume a job within 30 days
+     * of pausing it, the job expires and Macie cancels it. You can't resume a job after it's cancelled.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The status to change the job's status to. The only supported value is CANCELLED, which cancels the job
-     *         completely.
+     * @return The new status for the job. Valid values are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         CANCELLED - Stops the job permanently and cancels it. You can't resume a job after you cancel it. This
+     *         value is valid only if the job's current status is IDLE, PAUSED, RUNNING, or USER_PAUSED.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         RUNNING - Resumes the job. This value is valid only if the job's current status is USER_PAUSED. If you
+     *         specify this value, Amazon Macie immediately resumes the job.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         USER_PAUSED - Pauses the job. This value is valid only if the job's current status is IDLE or RUNNING. If
+     *         you specify this value and the job is currently running, Macie immediately stops running the job.
+     *         </p>
+     *         <p>
+     *         To resume a job after you pause it, change the job's status to RUNNING. If you don't resume a job within
+     *         30 days of pausing it, the job expires and Macie cancels it. You can't resume a job after it's cancelled.
+     *         </p>
+     *         </li>
      * @see JobStatus
      */
 
@@ -112,13 +225,58 @@ public class UpdateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The status to change the job's status to. The only supported value is CANCELLED, which cancels the job
-     * completely.
+     * The new status for the job. Valid values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * CANCELLED - Stops the job permanently and cancels it. You can't resume a job after you cancel it. This value is
+     * valid only if the job's current status is IDLE, PAUSED, RUNNING, or USER_PAUSED.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RUNNING - Resumes the job. This value is valid only if the job's current status is USER_PAUSED. If you specify
+     * this value, Amazon Macie immediately resumes the job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * USER_PAUSED - Pauses the job. This value is valid only if the job's current status is IDLE or RUNNING. If you
+     * specify this value and the job is currently running, Macie immediately stops running the job.
+     * </p>
+     * <p>
+     * To resume a job after you pause it, change the job's status to RUNNING. If you don't resume a job within 30 days
+     * of pausing it, the job expires and Macie cancels it. You can't resume a job after it's cancelled.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param jobStatus
-     *        The status to change the job's status to. The only supported value is CANCELLED, which cancels the job
-     *        completely.
+     *        The new status for the job. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        CANCELLED - Stops the job permanently and cancels it. You can't resume a job after you cancel it. This
+     *        value is valid only if the job's current status is IDLE, PAUSED, RUNNING, or USER_PAUSED.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RUNNING - Resumes the job. This value is valid only if the job's current status is USER_PAUSED. If you
+     *        specify this value, Amazon Macie immediately resumes the job.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        USER_PAUSED - Pauses the job. This value is valid only if the job's current status is IDLE or RUNNING. If
+     *        you specify this value and the job is currently running, Macie immediately stops running the job.
+     *        </p>
+     *        <p>
+     *        To resume a job after you pause it, change the job's status to RUNNING. If you don't resume a job within
+     *        30 days of pausing it, the job expires and Macie cancels it. You can't resume a job after it's cancelled.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus
      */
@@ -130,13 +288,58 @@ public class UpdateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The status to change the job's status to. The only supported value is CANCELLED, which cancels the job
-     * completely.
+     * The new status for the job. Valid values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * CANCELLED - Stops the job permanently and cancels it. You can't resume a job after you cancel it. This value is
+     * valid only if the job's current status is IDLE, PAUSED, RUNNING, or USER_PAUSED.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RUNNING - Resumes the job. This value is valid only if the job's current status is USER_PAUSED. If you specify
+     * this value, Amazon Macie immediately resumes the job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * USER_PAUSED - Pauses the job. This value is valid only if the job's current status is IDLE or RUNNING. If you
+     * specify this value and the job is currently running, Macie immediately stops running the job.
+     * </p>
+     * <p>
+     * To resume a job after you pause it, change the job's status to RUNNING. If you don't resume a job within 30 days
+     * of pausing it, the job expires and Macie cancels it. You can't resume a job after it's cancelled.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param jobStatus
-     *        The status to change the job's status to. The only supported value is CANCELLED, which cancels the job
-     *        completely.
+     *        The new status for the job. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        CANCELLED - Stops the job permanently and cancels it. You can't resume a job after you cancel it. This
+     *        value is valid only if the job's current status is IDLE, PAUSED, RUNNING, or USER_PAUSED.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RUNNING - Resumes the job. This value is valid only if the job's current status is USER_PAUSED. If you
+     *        specify this value, Amazon Macie immediately resumes the job.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        USER_PAUSED - Pauses the job. This value is valid only if the job's current status is IDLE or RUNNING. If
+     *        you specify this value and the job is currently running, Macie immediately stops running the job.
+     *        </p>
+     *        <p>
+     *        To resume a job after you pause it, change the job's status to RUNNING. If you don't resume a job within
+     *        30 days of pausing it, the job expires and Macie cancels it. You can't resume a job after it's cancelled.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus
      */

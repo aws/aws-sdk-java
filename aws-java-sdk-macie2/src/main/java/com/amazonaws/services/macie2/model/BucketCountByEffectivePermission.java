@@ -47,6 +47,13 @@ public class BucketCountByEffectivePermission implements Serializable, Cloneable
      * </p>
      */
     private Long publiclyWritable;
+    /**
+     * <p>
+     * The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. Macie can't
+     * determine whether these buckets are publicly accessible.
+     * </p>
+     */
+    private Long unknown;
 
     /**
      * <p>
@@ -169,6 +176,52 @@ public class BucketCountByEffectivePermission implements Serializable, Cloneable
     }
 
     /**
+     * <p>
+     * The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. Macie can't
+     * determine whether these buckets are publicly accessible.
+     * </p>
+     * 
+     * @param unknown
+     *        The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. Macie
+     *        can't determine whether these buckets are publicly accessible.
+     */
+
+    public void setUnknown(Long unknown) {
+        this.unknown = unknown;
+    }
+
+    /**
+     * <p>
+     * The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. Macie can't
+     * determine whether these buckets are publicly accessible.
+     * </p>
+     * 
+     * @return The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. Macie
+     *         can't determine whether these buckets are publicly accessible.
+     */
+
+    public Long getUnknown() {
+        return this.unknown;
+    }
+
+    /**
+     * <p>
+     * The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. Macie can't
+     * determine whether these buckets are publicly accessible.
+     * </p>
+     * 
+     * @param unknown
+     *        The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. Macie
+     *        can't determine whether these buckets are publicly accessible.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BucketCountByEffectivePermission withUnknown(Long unknown) {
+        setUnknown(unknown);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -185,7 +238,9 @@ public class BucketCountByEffectivePermission implements Serializable, Cloneable
         if (getPubliclyReadable() != null)
             sb.append("PubliclyReadable: ").append(getPubliclyReadable()).append(",");
         if (getPubliclyWritable() != null)
-            sb.append("PubliclyWritable: ").append(getPubliclyWritable());
+            sb.append("PubliclyWritable: ").append(getPubliclyWritable()).append(",");
+        if (getUnknown() != null)
+            sb.append("Unknown: ").append(getUnknown());
         sb.append("}");
         return sb.toString();
     }
@@ -212,6 +267,10 @@ public class BucketCountByEffectivePermission implements Serializable, Cloneable
             return false;
         if (other.getPubliclyWritable() != null && other.getPubliclyWritable().equals(this.getPubliclyWritable()) == false)
             return false;
+        if (other.getUnknown() == null ^ this.getUnknown() == null)
+            return false;
+        if (other.getUnknown() != null && other.getUnknown().equals(this.getUnknown()) == false)
+            return false;
         return true;
     }
 
@@ -223,6 +282,7 @@ public class BucketCountByEffectivePermission implements Serializable, Cloneable
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
         hashCode = prime * hashCode + ((getPubliclyReadable() == null) ? 0 : getPubliclyReadable().hashCode());
         hashCode = prime * hashCode + ((getPubliclyWritable() == null) ? 0 : getPubliclyWritable().hashCode());
+        hashCode = prime * hashCode + ((getUnknown() == null) ? 0 : getUnknown().hashCode());
         return hashCode;
     }
 

@@ -29,6 +29,8 @@ public class InsightsConfigurationMarshaller {
 
     private static final MarshallingInfo<Boolean> INSIGHTSENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InsightsEnabled").build();
+    private static final MarshallingInfo<Boolean> NOTIFICATIONSENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotificationsEnabled").build();
 
     private static final InsightsConfigurationMarshaller instance = new InsightsConfigurationMarshaller();
 
@@ -47,6 +49,7 @@ public class InsightsConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(insightsConfiguration.getInsightsEnabled(), INSIGHTSENABLED_BINDING);
+            protocolMarshaller.marshall(insightsConfiguration.getNotificationsEnabled(), NOTIFICATIONSENABLED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

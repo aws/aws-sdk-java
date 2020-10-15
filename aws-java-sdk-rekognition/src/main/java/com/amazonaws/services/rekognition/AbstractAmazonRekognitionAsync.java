@@ -262,6 +262,19 @@ public class AbstractAmazonRekognitionAsync extends AbstractAmazonRekognition im
     }
 
     @Override
+    public java.util.concurrent.Future<DetectProtectiveEquipmentResult> detectProtectiveEquipmentAsync(DetectProtectiveEquipmentRequest request) {
+
+        return detectProtectiveEquipmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetectProtectiveEquipmentResult> detectProtectiveEquipmentAsync(DetectProtectiveEquipmentRequest request,
+            com.amazonaws.handlers.AsyncHandler<DetectProtectiveEquipmentRequest, DetectProtectiveEquipmentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DetectTextResult> detectTextAsync(DetectTextRequest request) {
 
         return detectTextAsync(request, null);

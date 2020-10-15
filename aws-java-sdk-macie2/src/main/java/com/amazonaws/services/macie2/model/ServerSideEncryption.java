@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about the server-side encryption settings for an S3 bucket or object.
+ * Provides information about the server-side encryption settings for an S3 bucket or S3 object.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ServerSideEncryption" target="_top">AWS API

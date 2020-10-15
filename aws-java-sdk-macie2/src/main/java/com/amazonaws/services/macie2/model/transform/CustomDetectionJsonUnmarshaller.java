@@ -60,6 +60,10 @@ public class CustomDetectionJsonUnmarshaller implements Unmarshaller<CustomDetec
                     context.nextToken();
                     customDetection.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("occurrences", targetDepth)) {
+                    context.nextToken();
+                    customDetection.setOccurrences(OccurrencesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

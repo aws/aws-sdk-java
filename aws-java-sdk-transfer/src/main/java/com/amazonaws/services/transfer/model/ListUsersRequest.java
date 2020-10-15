@@ -41,7 +41,7 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String nextToken;
     /**
      * <p>
-     * A system-assigned unique identifier for a file transfer protocol-enabled server that has users assigned to it.
+     * A system-assigned unique identifier for a server that has users assigned to it.
      * </p>
      */
     private String serverId;
@@ -140,12 +140,11 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A system-assigned unique identifier for a file transfer protocol-enabled server that has users assigned to it.
+     * A system-assigned unique identifier for a server that has users assigned to it.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for a file transfer protocol-enabled server that has users assigned to
-     *        it.
+     *        A system-assigned unique identifier for a server that has users assigned to it.
      */
 
     public void setServerId(String serverId) {
@@ -154,11 +153,10 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A system-assigned unique identifier for a file transfer protocol-enabled server that has users assigned to it.
+     * A system-assigned unique identifier for a server that has users assigned to it.
      * </p>
      * 
-     * @return A system-assigned unique identifier for a file transfer protocol-enabled server that has users assigned
-     *         to it.
+     * @return A system-assigned unique identifier for a server that has users assigned to it.
      */
 
     public String getServerId() {
@@ -167,12 +165,11 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A system-assigned unique identifier for a file transfer protocol-enabled server that has users assigned to it.
+     * A system-assigned unique identifier for a server that has users assigned to it.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for a file transfer protocol-enabled server that has users assigned to
-     *        it.
+     *        A system-assigned unique identifier for a server that has users assigned to it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

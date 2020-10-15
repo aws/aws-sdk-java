@@ -33,6 +33,8 @@ public class BucketCountByEffectivePermissionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("publiclyReadable").build();
     private static final MarshallingInfo<Long> PUBLICLYWRITABLE_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("publiclyWritable").build();
+    private static final MarshallingInfo<Long> UNKNOWN_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("unknown").build();
 
     private static final BucketCountByEffectivePermissionMarshaller instance = new BucketCountByEffectivePermissionMarshaller();
 
@@ -53,6 +55,7 @@ public class BucketCountByEffectivePermissionMarshaller {
             protocolMarshaller.marshall(bucketCountByEffectivePermission.getPubliclyAccessible(), PUBLICLYACCESSIBLE_BINDING);
             protocolMarshaller.marshall(bucketCountByEffectivePermission.getPubliclyReadable(), PUBLICLYREADABLE_BINDING);
             protocolMarshaller.marshall(bucketCountByEffectivePermission.getPubliclyWritable(), PUBLICLYWRITABLE_BINDING);
+            protocolMarshaller.marshall(bucketCountByEffectivePermission.getUnknown(), UNKNOWN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

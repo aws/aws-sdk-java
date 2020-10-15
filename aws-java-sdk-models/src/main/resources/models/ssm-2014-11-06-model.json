@@ -1129,7 +1129,7 @@
         {"shape":"InvalidNextToken"},
         {"shape":"InvalidKeyId"}
       ],
-      "documentation":"<p>Query a list of all parameters used by the AWS account.</p>"
+      "documentation":"<p>Retrieves the history of all changes to a parameter.</p>"
     },
     "GetParameters":{
       "name":"GetParameters",
@@ -7149,7 +7149,7 @@
       "members":{
         "Name":{
           "shape":"PSParameterName",
-          "documentation":"<p>The name of a parameter you want to query.</p>"
+          "documentation":"<p>The name of the parameter for which you want to review history.</p>"
         },
         "WithDecryption":{
           "shape":"Boolean",
@@ -11025,7 +11025,7 @@
       "members":{
         "Id":{
           "shape":"PatchId",
-          "documentation":"<p>The ID of the patch (this is different than the Microsoft Knowledge Base ID).</p>"
+          "documentation":"<p>The ID of the patch. Applies to Windows patches only.</p> <note> <p>This ID is not the same as the Microsoft Knowledge Base ID.</p> </note>"
         },
         "ReleaseDate":{
           "shape":"DateTime",
@@ -11049,31 +11049,71 @@
         },
         "ProductFamily":{
           "shape":"PatchProductFamily",
-          "documentation":"<p>The product family the patch is applicable for (for example, Windows).</p>"
+          "documentation":"<p>The product family the patch is applicable for. For example, <code>Windows</code> or <code>Amazon Linux 2</code>.</p>"
         },
         "Product":{
           "shape":"PatchProduct",
-          "documentation":"<p>The specific product the patch is applicable for (for example, WindowsServer2016).</p>"
+          "documentation":"<p>The specific product the patch is applicable for. For example, <code>WindowsServer2016</code> or <code>AmazonLinux2018.03</code>.</p>"
         },
         "Classification":{
           "shape":"PatchClassification",
-          "documentation":"<p>The classification of the patch (for example, SecurityUpdates, Updates, CriticalUpdates).</p>"
+          "documentation":"<p>The classification of the patch. For example, <code>SecurityUpdates</code>, <code>Updates</code>, or <code>CriticalUpdates</code>.</p>"
         },
         "MsrcSeverity":{
           "shape":"PatchMsrcSeverity",
-          "documentation":"<p>The severity of the patch (for example Critical, Important, Moderate).</p>"
+          "documentation":"<p>The severity of the patch, such as <code>Critical</code>, <code>Important</code>, or <code>Moderate</code>. Applies to Windows patches only.</p>"
         },
         "KbNumber":{
           "shape":"PatchKbNumber",
-          "documentation":"<p>The Microsoft Knowledge Base ID of the patch.</p>"
+          "documentation":"<p>The Microsoft Knowledge Base ID of the patch. Applies to Windows patches only.</p>"
         },
         "MsrcNumber":{
           "shape":"PatchMsrcNumber",
-          "documentation":"<p>The ID of the MSRC bulletin the patch is related to.</p>"
+          "documentation":"<p>The ID of the Microsoft Security Response Center (MSRC) bulletin the patch is related to. For example, <code>MS14-045</code>. Applies to Windows patches only.</p>"
         },
         "Language":{
           "shape":"PatchLanguage",
           "documentation":"<p>The language of the patch if it's language-specific.</p>"
+        },
+        "AdvisoryIds":{
+          "shape":"PatchAdvisoryIdList",
+          "documentation":"<p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>. Applies to Linux-based instances only.</p>"
+        },
+        "BugzillaIds":{
+          "shape":"PatchBugzillaIdList",
+          "documentation":"<p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to Linux-based instances only.</p>"
+        },
+        "CVEIds":{
+          "shape":"PatchCVEIdList",
+          "documentation":"<p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-1999-0067</code>. Applies to Linux-based instances only.</p>"
+        },
+        "Name":{
+          "shape":"PatchName",
+          "documentation":"<p>The name of the patch. Applies to Linux-based instances only.</p>"
+        },
+        "Epoch":{
+          "shape":"PatchEpoch",
+          "documentation":"<p>The epoch of the patch. For example in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch value is <code>20180914-2</code>. Applies to Linux-based instances only.</p>"
+        },
+        "Version":{
+          "shape":"PatchVersion",
+          "documentation":"<p>The version number of the patch. For example, in <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is indicated by <code>-1</code>. Applies to Linux-based instances only.</p>"
+        },
+        "Release":{
+          "shape":"PatchRelease",
+          "documentation":"<p>The particular release of a patch. For example, in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is <code>2.amaz1</code>. Applies to Linux-based instances only.</p>"
+        },
+        "Arch":{
+          "shape":"PatchArch",
+          "documentation":"<p>The architecture of the patch. For example, in <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated by <code>x86_64</code>. Applies to Linux-based instances only.</p>"
+        },
+        "Severity":{
+          "shape":"PatchSeverity",
+          "documentation":"<p>The severity level of the patch. For example, <code>CRITICAL</code> or <code>MODERATE</code>.</p>"
+        },
+        "Repository":{
+          "shape":"PatchRepository",
+          "documentation":"<p>The source patch repository for the operating system and version, such as <code>trusty-security</code> for Ubuntu Server 14.04 LTE and <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based instances only.</p>"
         }
       },
       "documentation":"<p>Represents metadata about a patch.</p>"
@@ -11085,6 +11125,12 @@
         "BLOCK"
       ]
     },
+    "PatchAdvisoryId":{"type":"string"},
+    "PatchAdvisoryIdList":{
+      "type":"list",
+      "member":{"shape":"PatchAdvisoryId"}
+    },
+    "PatchArch":{"type":"string"},
     "PatchBaselineIdentity":{
       "type":"structure",
       "members":{
@@ -11119,6 +11165,16 @@
       "type":"integer",
       "max":100,
       "min":1
+    },
+    "PatchBugzillaId":{"type":"string"},
+    "PatchBugzillaIdList":{
+      "type":"list",
+      "member":{"shape":"PatchBugzillaId"}
+    },
+    "PatchCVEId":{"type":"string"},
+    "PatchCVEIdList":{
+      "type":"list",
+      "member":{"shape":"PatchCVEId"}
     },
     "PatchClassification":{"type":"string"},
     "PatchComplianceData":{
@@ -11202,6 +11258,7 @@
       ]
     },
     "PatchDescription":{"type":"string"},
+    "PatchEpoch":{"type":"integer"},
     "PatchFailedCount":{"type":"integer"},
     "PatchFilter":{
       "type":"structure",
@@ -11235,15 +11292,25 @@
     "PatchFilterKey":{
       "type":"string",
       "enum":[
+        "ARCH",
+        "ADVISORY_ID",
+        "BUGZILLA_ID",
         "PATCH_SET",
         "PRODUCT",
         "PRODUCT_FAMILY",
         "CLASSIFICATION",
+        "CVE_ID",
+        "EPOCH",
         "MSRC_SEVERITY",
+        "NAME",
         "PATCH_ID",
         "SECTION",
         "PRIORITY",
-        "SEVERITY"
+        "REPOSITORY",
+        "RELEASE",
+        "SEVERITY",
+        "SECURITY",
+        "VERSION"
       ]
     },
     "PatchFilterList":{
@@ -11315,6 +11382,7 @@
     "PatchMissingCount":{"type":"integer"},
     "PatchMsrcNumber":{"type":"string"},
     "PatchMsrcSeverity":{"type":"string"},
+    "PatchName":{"type":"string"},
     "PatchNotApplicableCount":{"type":"integer"},
     "PatchOperationType":{
       "type":"string",
@@ -11379,6 +11447,8 @@
       "key":{"shape":"AttributeName"},
       "value":{"shape":"AttributeValue"}
     },
+    "PatchRelease":{"type":"string"},
+    "PatchRepository":{"type":"string"},
     "PatchRule":{
       "type":"structure",
       "required":["PatchFilterGroup"],
@@ -11510,6 +11580,7 @@
     "PatchTitle":{"type":"string"},
     "PatchUnreportedNotApplicableCount":{"type":"integer"},
     "PatchVendor":{"type":"string"},
+    "PatchVersion":{"type":"string"},
     "PingStatus":{
       "type":"string",
       "enum":[

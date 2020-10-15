@@ -85,18 +85,16 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String certificate;
     /**
      * <p>
-     * The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled
-     * server. With a VPC endpoint, you can restrict access to your server to resources only within your VPC. To control
-     * incoming internet traffic, you will need to associate one or more Elastic IP addresses with your server's
-     * endpoint.
+     * The virtual private cloud (VPC) endpoint settings that are configured for your server. With a VPC endpoint, you
+     * can restrict access to your server to resources only within your VPC. To control incoming internet traffic, you
+     * will need to associate one or more Elastic IP addresses with your server's endpoint.
      * </p>
      */
     private EndpointDetails endpointDetails;
     /**
      * <p>
-     * The type of endpoint that you want your file transfer protocol-enabled server to connect to. You can choose to
-     * connect to the public internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and
-     * resources only within your VPC.
+     * The type of endpoint that you want your server to connect to. You can choose to connect to the public internet or
+     * a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only within your VPC.
      * </p>
      * <note>
      * <p>
@@ -114,8 +112,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <important>
      * <p>
-     * If you aren't planning to migrate existing users from an existing file transfer protocol-enabled server to a new
-     * server, don't update the host key. Accidentally changing a server's host key can be disruptive.
+     * If you aren't planning to migrate existing users from an existing server to a new server, don't update the host
+     * key. Accidentally changing a server's host key can be disruptive.
      * </p>
      * </important>
      * <p>
@@ -188,8 +186,7 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String securityPolicyName;
     /**
      * <p>
-     * A system-assigned unique identifier for a file transfer protocol-enabled server instance that the user account is
-     * assigned to.
+     * A system-assigned unique identifier for a server instance that the user account is assigned to.
      * </p>
      */
     private String serverId;
@@ -545,17 +542,15 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled
-     * server. With a VPC endpoint, you can restrict access to your server to resources only within your VPC. To control
-     * incoming internet traffic, you will need to associate one or more Elastic IP addresses with your server's
-     * endpoint.
+     * The virtual private cloud (VPC) endpoint settings that are configured for your server. With a VPC endpoint, you
+     * can restrict access to your server to resources only within your VPC. To control incoming internet traffic, you
+     * will need to associate one or more Elastic IP addresses with your server's endpoint.
      * </p>
      * 
      * @param endpointDetails
-     *        The virtual private cloud (VPC) endpoint settings that are configured for your file transfer
-     *        protocol-enabled server. With a VPC endpoint, you can restrict access to your server to resources only
-     *        within your VPC. To control incoming internet traffic, you will need to associate one or more Elastic IP
-     *        addresses with your server's endpoint.
+     *        The virtual private cloud (VPC) endpoint settings that are configured for your server. With a VPC
+     *        endpoint, you can restrict access to your server to resources only within your VPC. To control incoming
+     *        internet traffic, you will need to associate one or more Elastic IP addresses with your server's endpoint.
      */
 
     public void setEndpointDetails(EndpointDetails endpointDetails) {
@@ -564,16 +559,15 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled
-     * server. With a VPC endpoint, you can restrict access to your server to resources only within your VPC. To control
-     * incoming internet traffic, you will need to associate one or more Elastic IP addresses with your server's
-     * endpoint.
+     * The virtual private cloud (VPC) endpoint settings that are configured for your server. With a VPC endpoint, you
+     * can restrict access to your server to resources only within your VPC. To control incoming internet traffic, you
+     * will need to associate one or more Elastic IP addresses with your server's endpoint.
      * </p>
      * 
-     * @return The virtual private cloud (VPC) endpoint settings that are configured for your file transfer
-     *         protocol-enabled server. With a VPC endpoint, you can restrict access to your server to resources only
-     *         within your VPC. To control incoming internet traffic, you will need to associate one or more Elastic IP
-     *         addresses with your server's endpoint.
+     * @return The virtual private cloud (VPC) endpoint settings that are configured for your server. With a VPC
+     *         endpoint, you can restrict access to your server to resources only within your VPC. To control incoming
+     *         internet traffic, you will need to associate one or more Elastic IP addresses with your server's
+     *         endpoint.
      */
 
     public EndpointDetails getEndpointDetails() {
@@ -582,17 +576,15 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled
-     * server. With a VPC endpoint, you can restrict access to your server to resources only within your VPC. To control
-     * incoming internet traffic, you will need to associate one or more Elastic IP addresses with your server's
-     * endpoint.
+     * The virtual private cloud (VPC) endpoint settings that are configured for your server. With a VPC endpoint, you
+     * can restrict access to your server to resources only within your VPC. To control incoming internet traffic, you
+     * will need to associate one or more Elastic IP addresses with your server's endpoint.
      * </p>
      * 
      * @param endpointDetails
-     *        The virtual private cloud (VPC) endpoint settings that are configured for your file transfer
-     *        protocol-enabled server. With a VPC endpoint, you can restrict access to your server to resources only
-     *        within your VPC. To control incoming internet traffic, you will need to associate one or more Elastic IP
-     *        addresses with your server's endpoint.
+     *        The virtual private cloud (VPC) endpoint settings that are configured for your server. With a VPC
+     *        endpoint, you can restrict access to your server to resources only within your VPC. To control incoming
+     *        internet traffic, you will need to associate one or more Elastic IP addresses with your server's endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -603,9 +595,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of endpoint that you want your file transfer protocol-enabled server to connect to. You can choose to
-     * connect to the public internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and
-     * resources only within your VPC.
+     * The type of endpoint that you want your server to connect to. You can choose to connect to the public internet or
+     * a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only within your VPC.
      * </p>
      * <note>
      * <p>
@@ -617,9 +608,9 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      * 
      * @param endpointType
-     *        The type of endpoint that you want your file transfer protocol-enabled server to connect to. You can
-     *        choose to connect to the public internet or a VPC endpoint. With a VPC endpoint, you can restrict access
-     *        to your server and resources only within your VPC.</p> <note>
+     *        The type of endpoint that you want your server to connect to. You can choose to connect to the public
+     *        internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only
+     *        within your VPC.</p> <note>
      *        <p>
      *        It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type,
      *        you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your
@@ -635,9 +626,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of endpoint that you want your file transfer protocol-enabled server to connect to. You can choose to
-     * connect to the public internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and
-     * resources only within your VPC.
+     * The type of endpoint that you want your server to connect to. You can choose to connect to the public internet or
+     * a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only within your VPC.
      * </p>
      * <note>
      * <p>
@@ -648,9 +638,9 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </note>
      * 
-     * @return The type of endpoint that you want your file transfer protocol-enabled server to connect to. You can
-     *         choose to connect to the public internet or a VPC endpoint. With a VPC endpoint, you can restrict access
-     *         to your server and resources only within your VPC.</p> <note>
+     * @return The type of endpoint that you want your server to connect to. You can choose to connect to the public
+     *         internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources
+     *         only within your VPC.</p> <note>
      *         <p>
      *         It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint
      *         type, you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with
@@ -666,9 +656,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of endpoint that you want your file transfer protocol-enabled server to connect to. You can choose to
-     * connect to the public internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and
-     * resources only within your VPC.
+     * The type of endpoint that you want your server to connect to. You can choose to connect to the public internet or
+     * a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only within your VPC.
      * </p>
      * <note>
      * <p>
@@ -680,9 +669,9 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      * 
      * @param endpointType
-     *        The type of endpoint that you want your file transfer protocol-enabled server to connect to. You can
-     *        choose to connect to the public internet or a VPC endpoint. With a VPC endpoint, you can restrict access
-     *        to your server and resources only within your VPC.</p> <note>
+     *        The type of endpoint that you want your server to connect to. You can choose to connect to the public
+     *        internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only
+     *        within your VPC.</p> <note>
      *        <p>
      *        It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type,
      *        you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your
@@ -700,9 +689,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of endpoint that you want your file transfer protocol-enabled server to connect to. You can choose to
-     * connect to the public internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and
-     * resources only within your VPC.
+     * The type of endpoint that you want your server to connect to. You can choose to connect to the public internet or
+     * a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only within your VPC.
      * </p>
      * <note>
      * <p>
@@ -714,9 +702,9 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      * 
      * @param endpointType
-     *        The type of endpoint that you want your file transfer protocol-enabled server to connect to. You can
-     *        choose to connect to the public internet or a VPC endpoint. With a VPC endpoint, you can restrict access
-     *        to your server and resources only within your VPC.</p> <note>
+     *        The type of endpoint that you want your server to connect to. You can choose to connect to the public
+     *        internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only
+     *        within your VPC.</p> <note>
      *        <p>
      *        It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type,
      *        you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your
@@ -738,8 +726,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <important>
      * <p>
-     * If you aren't planning to migrate existing users from an existing file transfer protocol-enabled server to a new
-     * server, don't update the host key. Accidentally changing a server's host key can be disruptive.
+     * If you aren't planning to migrate existing users from an existing server to a new server, don't update the host
+     * key. Accidentally changing a server's host key can be disruptive.
      * </p>
      * </important>
      * <p>
@@ -752,8 +740,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f my-new-server-key</code>.</p>
      *        <important>
      *        <p>
-     *        If you aren't planning to migrate existing users from an existing file transfer protocol-enabled server to
-     *        a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.
+     *        If you aren't planning to migrate existing users from an existing server to a new server, don't update the
+     *        host key. Accidentally changing a server's host key can be disruptive.
      *        </p>
      *        </important>
      *        <p>
@@ -772,8 +760,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <important>
      * <p>
-     * If you aren't planning to migrate existing users from an existing file transfer protocol-enabled server to a new
-     * server, don't update the host key. Accidentally changing a server's host key can be disruptive.
+     * If you aren't planning to migrate existing users from an existing server to a new server, don't update the host
+     * key. Accidentally changing a server's host key can be disruptive.
      * </p>
      * </important>
      * <p>
@@ -785,8 +773,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @return The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f my-new-server-key</code>.</p>
      *         <important>
      *         <p>
-     *         If you aren't planning to migrate existing users from an existing file transfer protocol-enabled server
-     *         to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.
+     *         If you aren't planning to migrate existing users from an existing server to a new server, don't update
+     *         the host key. Accidentally changing a server's host key can be disruptive.
      *         </p>
      *         </important>
      *         <p>
@@ -805,8 +793,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <important>
      * <p>
-     * If you aren't planning to migrate existing users from an existing file transfer protocol-enabled server to a new
-     * server, don't update the host key. Accidentally changing a server's host key can be disruptive.
+     * If you aren't planning to migrate existing users from an existing server to a new server, don't update the host
+     * key. Accidentally changing a server's host key can be disruptive.
      * </p>
      * </important>
      * <p>
@@ -819,8 +807,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f my-new-server-key</code>.</p>
      *        <important>
      *        <p>
-     *        If you aren't planning to migrate existing users from an existing file transfer protocol-enabled server to
-     *        a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.
+     *        If you aren't planning to migrate existing users from an existing server to a new server, don't update the
+     *        host key. Accidentally changing a server's host key can be disruptive.
      *        </p>
      *        </important>
      *        <p>
@@ -1421,13 +1409,11 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A system-assigned unique identifier for a file transfer protocol-enabled server instance that the user account is
-     * assigned to.
+     * A system-assigned unique identifier for a server instance that the user account is assigned to.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for a file transfer protocol-enabled server instance that the user
-     *        account is assigned to.
+     *        A system-assigned unique identifier for a server instance that the user account is assigned to.
      */
 
     public void setServerId(String serverId) {
@@ -1436,12 +1422,10 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A system-assigned unique identifier for a file transfer protocol-enabled server instance that the user account is
-     * assigned to.
+     * A system-assigned unique identifier for a server instance that the user account is assigned to.
      * </p>
      * 
-     * @return A system-assigned unique identifier for a file transfer protocol-enabled server instance that the user
-     *         account is assigned to.
+     * @return A system-assigned unique identifier for a server instance that the user account is assigned to.
      */
 
     public String getServerId() {
@@ -1450,13 +1434,11 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A system-assigned unique identifier for a file transfer protocol-enabled server instance that the user account is
-     * assigned to.
+     * A system-assigned unique identifier for a server instance that the user account is assigned to.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for a file transfer protocol-enabled server instance that the user
-     *        account is assigned to.
+     *        A system-assigned unique identifier for a server instance that the user account is assigned to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

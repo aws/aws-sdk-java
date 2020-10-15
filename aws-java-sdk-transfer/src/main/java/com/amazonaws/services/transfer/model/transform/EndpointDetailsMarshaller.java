@@ -36,6 +36,8 @@ public class EndpointDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcEndpointId").build();
     private static final MarshallingInfo<String> VPCID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("VpcId").build();
+    private static final MarshallingInfo<List> SECURITYGROUPIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecurityGroupIds").build();
 
     private static final EndpointDetailsMarshaller instance = new EndpointDetailsMarshaller();
 
@@ -57,6 +59,7 @@ public class EndpointDetailsMarshaller {
             protocolMarshaller.marshall(endpointDetails.getSubnetIds(), SUBNETIDS_BINDING);
             protocolMarshaller.marshall(endpointDetails.getVpcEndpointId(), VPCENDPOINTID_BINDING);
             protocolMarshaller.marshall(endpointDetails.getVpcId(), VPCID_BINDING);
+            protocolMarshaller.marshall(endpointDetails.getSecurityGroupIds(), SECURITYGROUPIDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

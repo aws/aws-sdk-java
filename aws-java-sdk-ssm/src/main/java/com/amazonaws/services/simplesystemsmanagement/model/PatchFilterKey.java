@@ -20,15 +20,25 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum PatchFilterKey {
 
+    ARCH("ARCH"),
+    ADVISORY_ID("ADVISORY_ID"),
+    BUGZILLA_ID("BUGZILLA_ID"),
     PATCH_SET("PATCH_SET"),
     PRODUCT("PRODUCT"),
     PRODUCT_FAMILY("PRODUCT_FAMILY"),
     CLASSIFICATION("CLASSIFICATION"),
+    CVE_ID("CVE_ID"),
+    EPOCH("EPOCH"),
     MSRC_SEVERITY("MSRC_SEVERITY"),
+    NAME("NAME"),
     PATCH_ID("PATCH_ID"),
     SECTION("SECTION"),
     PRIORITY("PRIORITY"),
-    SEVERITY("SEVERITY");
+    REPOSITORY("REPOSITORY"),
+    RELEASE("RELEASE"),
+    SEVERITY("SEVERITY"),
+    SECURITY("SECURITY"),
+    VERSION("VERSION");
 
     private String value;
 

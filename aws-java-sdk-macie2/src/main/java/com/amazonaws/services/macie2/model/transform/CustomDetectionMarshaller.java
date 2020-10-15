@@ -33,6 +33,8 @@ public class CustomDetectionMarshaller {
             .marshallLocationName("count").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<StructuredPojo> OCCURRENCES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("occurrences").build();
 
     private static final CustomDetectionMarshaller instance = new CustomDetectionMarshaller();
 
@@ -53,6 +55,7 @@ public class CustomDetectionMarshaller {
             protocolMarshaller.marshall(customDetection.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(customDetection.getCount(), COUNT_BINDING);
             protocolMarshaller.marshall(customDetection.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(customDetection.getOccurrences(), OCCURRENCES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -199,6 +199,29 @@ public interface AWSBudgets {
 
     /**
      * <p>
+     * Creates a budget action.
+     * </p>
+     * 
+     * @param createBudgetActionRequest
+     * @return Result of the CreateBudgetAction operation returned by the service.
+     * @throws InvalidParameterException
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
+     * @throws InternalErrorException
+     *         An error on the server occurred during the processing of your request. Try again later.
+     * @throws CreationLimitExceededException
+     *         You've exceeded the notification or subscriber limit.
+     * @throws DuplicateRecordException
+     *         The budget name already exists. Budget names must be unique within an account.
+     * @throws NotFoundException
+     *         We can’t locate the resource that you specified.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
+     * @sample AWSBudgets.CreateBudgetAction
+     */
+    CreateBudgetActionResult createBudgetAction(CreateBudgetActionRequest createBudgetActionRequest);
+
+    /**
+     * <p>
      * Creates a notification. You must create the budget before you create the associated notification.
      * </p>
      * 
@@ -269,6 +292,28 @@ public interface AWSBudgets {
      * @sample AWSBudgets.DeleteBudget
      */
     DeleteBudgetResult deleteBudget(DeleteBudgetRequest deleteBudgetRequest);
+
+    /**
+     * <p>
+     * Deletes a budget action.
+     * </p>
+     * 
+     * @param deleteBudgetActionRequest
+     * @return Result of the DeleteBudgetAction operation returned by the service.
+     * @throws InternalErrorException
+     *         An error on the server occurred during the processing of your request. Try again later.
+     * @throws InvalidParameterException
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
+     * @throws NotFoundException
+     *         We can’t locate the resource that you specified.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
+     * @throws ResourceLockedException
+     *         The request was received and recognized by the server, but the server rejected that particular method for
+     *         the requested resource.
+     * @sample AWSBudgets.DeleteBudgetAction
+     */
+    DeleteBudgetActionResult deleteBudgetAction(DeleteBudgetActionRequest deleteBudgetActionRequest);
 
     /**
      * <p>
@@ -347,6 +392,86 @@ public interface AWSBudgets {
      * @sample AWSBudgets.DescribeBudget
      */
     DescribeBudgetResult describeBudget(DescribeBudgetRequest describeBudgetRequest);
+
+    /**
+     * <p>
+     * Describes a budget action detail.
+     * </p>
+     * 
+     * @param describeBudgetActionRequest
+     * @return Result of the DescribeBudgetAction operation returned by the service.
+     * @throws InternalErrorException
+     *         An error on the server occurred during the processing of your request. Try again later.
+     * @throws InvalidParameterException
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
+     * @throws NotFoundException
+     *         We can’t locate the resource that you specified.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
+     * @sample AWSBudgets.DescribeBudgetAction
+     */
+    DescribeBudgetActionResult describeBudgetAction(DescribeBudgetActionRequest describeBudgetActionRequest);
+
+    /**
+     * <p>
+     * Describes a budget action history detail.
+     * </p>
+     * 
+     * @param describeBudgetActionHistoriesRequest
+     * @return Result of the DescribeBudgetActionHistories operation returned by the service.
+     * @throws InternalErrorException
+     *         An error on the server occurred during the processing of your request. Try again later.
+     * @throws InvalidParameterException
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
+     * @throws NotFoundException
+     *         We can’t locate the resource that you specified.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid.
+     * @sample AWSBudgets.DescribeBudgetActionHistories
+     */
+    DescribeBudgetActionHistoriesResult describeBudgetActionHistories(DescribeBudgetActionHistoriesRequest describeBudgetActionHistoriesRequest);
+
+    /**
+     * <p>
+     * Describes all of the budget actions for an account.
+     * </p>
+     * 
+     * @param describeBudgetActionsForAccountRequest
+     * @return Result of the DescribeBudgetActionsForAccount operation returned by the service.
+     * @throws InternalErrorException
+     *         An error on the server occurred during the processing of your request. Try again later.
+     * @throws InvalidParameterException
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid.
+     * @sample AWSBudgets.DescribeBudgetActionsForAccount
+     */
+    DescribeBudgetActionsForAccountResult describeBudgetActionsForAccount(DescribeBudgetActionsForAccountRequest describeBudgetActionsForAccountRequest);
+
+    /**
+     * <p>
+     * Describes all of the budget actions for a budget.
+     * </p>
+     * 
+     * @param describeBudgetActionsForBudgetRequest
+     * @return Result of the DescribeBudgetActionsForBudget operation returned by the service.
+     * @throws InternalErrorException
+     *         An error on the server occurred during the processing of your request. Try again later.
+     * @throws InvalidParameterException
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
+     * @throws NotFoundException
+     *         We can’t locate the resource that you specified.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid.
+     * @sample AWSBudgets.DescribeBudgetActionsForBudget
+     */
+    DescribeBudgetActionsForBudgetResult describeBudgetActionsForBudget(DescribeBudgetActionsForBudgetRequest describeBudgetActionsForBudgetRequest);
 
     /**
      * <p>
@@ -455,6 +580,28 @@ public interface AWSBudgets {
 
     /**
      * <p>
+     * Executes a budget action.
+     * </p>
+     * 
+     * @param executeBudgetActionRequest
+     * @return Result of the ExecuteBudgetAction operation returned by the service.
+     * @throws InternalErrorException
+     *         An error on the server occurred during the processing of your request. Try again later.
+     * @throws InvalidParameterException
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
+     * @throws NotFoundException
+     *         We can’t locate the resource that you specified.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
+     * @throws ResourceLockedException
+     *         The request was received and recognized by the server, but the server rejected that particular method for
+     *         the requested resource.
+     * @sample AWSBudgets.ExecuteBudgetAction
+     */
+    ExecuteBudgetActionResult executeBudgetAction(ExecuteBudgetActionRequest executeBudgetActionRequest);
+
+    /**
+     * <p>
      * Updates a budget. You can change every part of a budget except for the <code>budgetName</code> and the
      * <code>calculatedSpend</code>. When you modify a budget, the <code>calculatedSpend</code> drops to zero until AWS
      * has new usage data to use for forecasting.
@@ -483,6 +630,28 @@ public interface AWSBudgets {
      * @sample AWSBudgets.UpdateBudget
      */
     UpdateBudgetResult updateBudget(UpdateBudgetRequest updateBudgetRequest);
+
+    /**
+     * <p>
+     * Updates a budget action.
+     * </p>
+     * 
+     * @param updateBudgetActionRequest
+     * @return Result of the UpdateBudgetAction operation returned by the service.
+     * @throws InternalErrorException
+     *         An error on the server occurred during the processing of your request. Try again later.
+     * @throws InvalidParameterException
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
+     * @throws NotFoundException
+     *         We can’t locate the resource that you specified.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
+     * @throws ResourceLockedException
+     *         The request was received and recognized by the server, but the server rejected that particular method for
+     *         the requested resource.
+     * @sample AWSBudgets.UpdateBudgetAction
+     */
+    UpdateBudgetActionResult updateBudgetAction(UpdateBudgetActionRequest updateBudgetActionRequest);
 
     /**
      * <p>

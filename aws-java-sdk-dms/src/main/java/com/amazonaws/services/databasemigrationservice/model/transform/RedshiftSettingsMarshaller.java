@@ -35,6 +35,10 @@ public class RedshiftSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BucketFolder").build();
     private static final MarshallingInfo<String> BUCKETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BucketName").build();
+    private static final MarshallingInfo<Boolean> CASESENSITIVENAMES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CaseSensitiveNames").build();
+    private static final MarshallingInfo<Boolean> COMPUPDATE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompUpdate").build();
     private static final MarshallingInfo<Integer> CONNECTIONTIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectionTimeout").build();
     private static final MarshallingInfo<String> DATABASENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -45,6 +49,8 @@ public class RedshiftSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EmptyAsNull").build();
     private static final MarshallingInfo<String> ENCRYPTIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EncryptionMode").build();
+    private static final MarshallingInfo<Boolean> EXPLICITIDS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExplicitIds").build();
     private static final MarshallingInfo<Integer> FILETRANSFERUPLOADSTREAMS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileTransferUploadStreams").build();
     private static final MarshallingInfo<Integer> LOADTIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -98,11 +104,14 @@ public class RedshiftSettingsMarshaller {
             protocolMarshaller.marshall(redshiftSettings.getAfterConnectScript(), AFTERCONNECTSCRIPT_BINDING);
             protocolMarshaller.marshall(redshiftSettings.getBucketFolder(), BUCKETFOLDER_BINDING);
             protocolMarshaller.marshall(redshiftSettings.getBucketName(), BUCKETNAME_BINDING);
+            protocolMarshaller.marshall(redshiftSettings.getCaseSensitiveNames(), CASESENSITIVENAMES_BINDING);
+            protocolMarshaller.marshall(redshiftSettings.getCompUpdate(), COMPUPDATE_BINDING);
             protocolMarshaller.marshall(redshiftSettings.getConnectionTimeout(), CONNECTIONTIMEOUT_BINDING);
             protocolMarshaller.marshall(redshiftSettings.getDatabaseName(), DATABASENAME_BINDING);
             protocolMarshaller.marshall(redshiftSettings.getDateFormat(), DATEFORMAT_BINDING);
             protocolMarshaller.marshall(redshiftSettings.getEmptyAsNull(), EMPTYASNULL_BINDING);
             protocolMarshaller.marshall(redshiftSettings.getEncryptionMode(), ENCRYPTIONMODE_BINDING);
+            protocolMarshaller.marshall(redshiftSettings.getExplicitIds(), EXPLICITIDS_BINDING);
             protocolMarshaller.marshall(redshiftSettings.getFileTransferUploadStreams(), FILETRANSFERUPLOADSTREAMS_BINDING);
             protocolMarshaller.marshall(redshiftSettings.getLoadTimeout(), LOADTIMEOUT_BINDING);
             protocolMarshaller.marshall(redshiftSettings.getMaxFileSize(), MAXFILESIZE_BINDING);

@@ -20,10 +20,10 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ValidationExceptionReason {
 
+    UnknownOperation("unknownOperation"),
     CannotParse("cannotParse"),
     FieldValidationFailed("fieldValidationFailed"),
-    Other("other"),
-    UnknownOperation("unknownOperation");
+    Other("other");
 
     private String value;
 

@@ -111,7 +111,7 @@ public class TraceSummary implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<InstanceIdDetail> instanceIds;
     /**
      * <p>
-     * A list of availability zones for any zone corresponding to the trace segments.
+     * A list of Availability Zones for any zone corresponding to the trace segments.
      * </p>
      */
     private java.util.List<AvailabilityZoneDetail> availabilityZones;
@@ -123,7 +123,7 @@ public class TraceSummary implements Serializable, Cloneable, StructuredPojo {
     private ServiceId entryPoint;
     /**
      * <p>
-     * A collection of FaultRootCause structures corresponding to the the trace segments.
+     * A collection of FaultRootCause structures corresponding to the trace segments.
      * </p>
      */
     private java.util.List<FaultRootCause> faultRootCauses;
@@ -888,10 +888,10 @@ public class TraceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of availability zones for any zone corresponding to the trace segments.
+     * A list of Availability Zones for any zone corresponding to the trace segments.
      * </p>
      * 
-     * @return A list of availability zones for any zone corresponding to the trace segments.
+     * @return A list of Availability Zones for any zone corresponding to the trace segments.
      */
 
     public java.util.List<AvailabilityZoneDetail> getAvailabilityZones() {
@@ -900,11 +900,11 @@ public class TraceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of availability zones for any zone corresponding to the trace segments.
+     * A list of Availability Zones for any zone corresponding to the trace segments.
      * </p>
      * 
      * @param availabilityZones
-     *        A list of availability zones for any zone corresponding to the trace segments.
+     *        A list of Availability Zones for any zone corresponding to the trace segments.
      */
 
     public void setAvailabilityZones(java.util.Collection<AvailabilityZoneDetail> availabilityZones) {
@@ -918,7 +918,7 @@ public class TraceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of availability zones for any zone corresponding to the trace segments.
+     * A list of Availability Zones for any zone corresponding to the trace segments.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -927,7 +927,7 @@ public class TraceSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param availabilityZones
-     *        A list of availability zones for any zone corresponding to the trace segments.
+     *        A list of Availability Zones for any zone corresponding to the trace segments.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -943,11 +943,11 @@ public class TraceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of availability zones for any zone corresponding to the trace segments.
+     * A list of Availability Zones for any zone corresponding to the trace segments.
      * </p>
      * 
      * @param availabilityZones
-     *        A list of availability zones for any zone corresponding to the trace segments.
+     *        A list of Availability Zones for any zone corresponding to the trace segments.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -998,10 +998,10 @@ public class TraceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A collection of FaultRootCause structures corresponding to the the trace segments.
+     * A collection of FaultRootCause structures corresponding to the trace segments.
      * </p>
      * 
-     * @return A collection of FaultRootCause structures corresponding to the the trace segments.
+     * @return A collection of FaultRootCause structures corresponding to the trace segments.
      */
 
     public java.util.List<FaultRootCause> getFaultRootCauses() {
@@ -1010,11 +1010,11 @@ public class TraceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A collection of FaultRootCause structures corresponding to the the trace segments.
+     * A collection of FaultRootCause structures corresponding to the trace segments.
      * </p>
      * 
      * @param faultRootCauses
-     *        A collection of FaultRootCause structures corresponding to the the trace segments.
+     *        A collection of FaultRootCause structures corresponding to the trace segments.
      */
 
     public void setFaultRootCauses(java.util.Collection<FaultRootCause> faultRootCauses) {
@@ -1028,7 +1028,7 @@ public class TraceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A collection of FaultRootCause structures corresponding to the the trace segments.
+     * A collection of FaultRootCause structures corresponding to the trace segments.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1037,7 +1037,7 @@ public class TraceSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param faultRootCauses
-     *        A collection of FaultRootCause structures corresponding to the the trace segments.
+     *        A collection of FaultRootCause structures corresponding to the trace segments.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1053,11 +1053,11 @@ public class TraceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A collection of FaultRootCause structures corresponding to the the trace segments.
+     * A collection of FaultRootCause structures corresponding to the trace segments.
      * </p>
      * 
      * @param faultRootCauses
-     *        A collection of FaultRootCause structures corresponding to the the trace segments.
+     *        A collection of FaultRootCause structures corresponding to the trace segments.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

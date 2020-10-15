@@ -363,6 +363,39 @@ public class AWSBudgetsAsyncClient extends AWSBudgetsClient implements AWSBudget
     }
 
     @Override
+    public java.util.concurrent.Future<CreateBudgetActionResult> createBudgetActionAsync(CreateBudgetActionRequest request) {
+
+        return createBudgetActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBudgetActionResult> createBudgetActionAsync(final CreateBudgetActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateBudgetActionRequest, CreateBudgetActionResult> asyncHandler) {
+        final CreateBudgetActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateBudgetActionResult>() {
+            @Override
+            public CreateBudgetActionResult call() throws Exception {
+                CreateBudgetActionResult result = null;
+
+                try {
+                    result = executeCreateBudgetAction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateNotificationResult> createNotificationAsync(CreateNotificationRequest request) {
 
         return createNotificationAsync(request, null);
@@ -462,6 +495,39 @@ public class AWSBudgetsAsyncClient extends AWSBudgetsClient implements AWSBudget
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteBudgetActionResult> deleteBudgetActionAsync(DeleteBudgetActionRequest request) {
+
+        return deleteBudgetActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBudgetActionResult> deleteBudgetActionAsync(final DeleteBudgetActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteBudgetActionRequest, DeleteBudgetActionResult> asyncHandler) {
+        final DeleteBudgetActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteBudgetActionResult>() {
+            @Override
+            public DeleteBudgetActionResult call() throws Exception {
+                DeleteBudgetActionResult result = null;
+
+                try {
+                    result = executeDeleteBudgetAction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteNotificationResult> deleteNotificationAsync(DeleteNotificationRequest request) {
 
         return deleteNotificationAsync(request, null);
@@ -545,6 +611,142 @@ public class AWSBudgetsAsyncClient extends AWSBudgetsClient implements AWSBudget
 
                 try {
                     result = executeDescribeBudget(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBudgetActionResult> describeBudgetActionAsync(DescribeBudgetActionRequest request) {
+
+        return describeBudgetActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBudgetActionResult> describeBudgetActionAsync(final DescribeBudgetActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeBudgetActionRequest, DescribeBudgetActionResult> asyncHandler) {
+        final DescribeBudgetActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeBudgetActionResult>() {
+            @Override
+            public DescribeBudgetActionResult call() throws Exception {
+                DescribeBudgetActionResult result = null;
+
+                try {
+                    result = executeDescribeBudgetAction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBudgetActionHistoriesResult> describeBudgetActionHistoriesAsync(DescribeBudgetActionHistoriesRequest request) {
+
+        return describeBudgetActionHistoriesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBudgetActionHistoriesResult> describeBudgetActionHistoriesAsync(
+            final DescribeBudgetActionHistoriesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeBudgetActionHistoriesRequest, DescribeBudgetActionHistoriesResult> asyncHandler) {
+        final DescribeBudgetActionHistoriesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeBudgetActionHistoriesResult>() {
+            @Override
+            public DescribeBudgetActionHistoriesResult call() throws Exception {
+                DescribeBudgetActionHistoriesResult result = null;
+
+                try {
+                    result = executeDescribeBudgetActionHistories(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBudgetActionsForAccountResult> describeBudgetActionsForAccountAsync(
+            DescribeBudgetActionsForAccountRequest request) {
+
+        return describeBudgetActionsForAccountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBudgetActionsForAccountResult> describeBudgetActionsForAccountAsync(
+            final DescribeBudgetActionsForAccountRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeBudgetActionsForAccountRequest, DescribeBudgetActionsForAccountResult> asyncHandler) {
+        final DescribeBudgetActionsForAccountRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeBudgetActionsForAccountResult>() {
+            @Override
+            public DescribeBudgetActionsForAccountResult call() throws Exception {
+                DescribeBudgetActionsForAccountResult result = null;
+
+                try {
+                    result = executeDescribeBudgetActionsForAccount(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBudgetActionsForBudgetResult> describeBudgetActionsForBudgetAsync(DescribeBudgetActionsForBudgetRequest request) {
+
+        return describeBudgetActionsForBudgetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBudgetActionsForBudgetResult> describeBudgetActionsForBudgetAsync(
+            final DescribeBudgetActionsForBudgetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeBudgetActionsForBudgetRequest, DescribeBudgetActionsForBudgetResult> asyncHandler) {
+        final DescribeBudgetActionsForBudgetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeBudgetActionsForBudgetResult>() {
+            @Override
+            public DescribeBudgetActionsForBudgetResult call() throws Exception {
+                DescribeBudgetActionsForBudgetResult result = null;
+
+                try {
+                    result = executeDescribeBudgetActionsForBudget(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -698,6 +900,39 @@ public class AWSBudgetsAsyncClient extends AWSBudgetsClient implements AWSBudget
     }
 
     @Override
+    public java.util.concurrent.Future<ExecuteBudgetActionResult> executeBudgetActionAsync(ExecuteBudgetActionRequest request) {
+
+        return executeBudgetActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExecuteBudgetActionResult> executeBudgetActionAsync(final ExecuteBudgetActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ExecuteBudgetActionRequest, ExecuteBudgetActionResult> asyncHandler) {
+        final ExecuteBudgetActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ExecuteBudgetActionResult>() {
+            @Override
+            public ExecuteBudgetActionResult call() throws Exception {
+                ExecuteBudgetActionResult result = null;
+
+                try {
+                    result = executeExecuteBudgetAction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateBudgetResult> updateBudgetAsync(UpdateBudgetRequest request) {
 
         return updateBudgetAsync(request, null);
@@ -715,6 +950,39 @@ public class AWSBudgetsAsyncClient extends AWSBudgetsClient implements AWSBudget
 
                 try {
                     result = executeUpdateBudget(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBudgetActionResult> updateBudgetActionAsync(UpdateBudgetActionRequest request) {
+
+        return updateBudgetActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBudgetActionResult> updateBudgetActionAsync(final UpdateBudgetActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateBudgetActionRequest, UpdateBudgetActionResult> asyncHandler) {
+        final UpdateBudgetActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateBudgetActionResult>() {
+            @Override
+            public UpdateBudgetActionResult call() throws Exception {
+                UpdateBudgetActionResult result = null;
+
+                try {
+                    result = executeUpdateBudgetAction(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

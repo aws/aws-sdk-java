@@ -56,6 +56,10 @@ public class TraceJsonUnmarshaller implements Unmarshaller<Trace, JsonUnmarshall
                     context.nextToken();
                     trace.setDuration(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
+                if (context.testExpression("LimitExceeded", targetDepth)) {
+                    context.nextToken();
+                    trace.setLimitExceeded(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("Segments", targetDepth)) {
                     context.nextToken();
                     trace.setSegments(new ListUnmarshaller<Segment>(SegmentJsonUnmarshaller.getInstance())

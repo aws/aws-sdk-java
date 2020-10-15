@@ -92,7 +92,7 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The recurrence pattern for running the job. To run the job only once, don't specify a value for this property and
-     * set the value of the jobType property to ONE_TIME.
+     * set the value for the jobType property to ONE_TIME.
      * </p>
      */
     private JobScheduleFrequency scheduleFrequency;
@@ -614,12 +614,12 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The recurrence pattern for running the job. To run the job only once, don't specify a value for this property and
-     * set the value of the jobType property to ONE_TIME.
+     * set the value for the jobType property to ONE_TIME.
      * </p>
      * 
      * @param scheduleFrequency
      *        The recurrence pattern for running the job. To run the job only once, don't specify a value for this
-     *        property and set the value of the jobType property to ONE_TIME.
+     *        property and set the value for the jobType property to ONE_TIME.
      */
 
     public void setScheduleFrequency(JobScheduleFrequency scheduleFrequency) {
@@ -629,11 +629,11 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The recurrence pattern for running the job. To run the job only once, don't specify a value for this property and
-     * set the value of the jobType property to ONE_TIME.
+     * set the value for the jobType property to ONE_TIME.
      * </p>
      * 
      * @return The recurrence pattern for running the job. To run the job only once, don't specify a value for this
-     *         property and set the value of the jobType property to ONE_TIME.
+     *         property and set the value for the jobType property to ONE_TIME.
      */
 
     public JobScheduleFrequency getScheduleFrequency() {
@@ -643,12 +643,12 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The recurrence pattern for running the job. To run the job only once, don't specify a value for this property and
-     * set the value of the jobType property to ONE_TIME.
+     * set the value for the jobType property to ONE_TIME.
      * </p>
      * 
      * @param scheduleFrequency
      *        The recurrence pattern for running the job. To run the job only once, don't specify a value for this
-     *        property and set the value of the jobType property to ONE_TIME.
+     *        property and set the value for the jobType property to ONE_TIME.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

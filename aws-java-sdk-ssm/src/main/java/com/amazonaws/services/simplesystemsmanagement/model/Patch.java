@@ -29,8 +29,13 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the patch (this is different than the Microsoft Knowledge Base ID).
+     * The ID of the patch. Applies to Windows patches only.
      * </p>
+     * <note>
+     * <p>
+     * This ID is not the same as the Microsoft Knowledge Base ID.
+     * </p>
+     * </note>
      */
     private String id;
     /**
@@ -65,37 +70,41 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
     private String vendor;
     /**
      * <p>
-     * The product family the patch is applicable for (for example, Windows).
+     * The product family the patch is applicable for. For example, <code>Windows</code> or <code>Amazon Linux 2</code>.
      * </p>
      */
     private String productFamily;
     /**
      * <p>
-     * The specific product the patch is applicable for (for example, WindowsServer2016).
+     * The specific product the patch is applicable for. For example, <code>WindowsServer2016</code> or
+     * <code>AmazonLinux2018.03</code>.
      * </p>
      */
     private String product;
     /**
      * <p>
-     * The classification of the patch (for example, SecurityUpdates, Updates, CriticalUpdates).
+     * The classification of the patch. For example, <code>SecurityUpdates</code>, <code>Updates</code>, or
+     * <code>CriticalUpdates</code>.
      * </p>
      */
     private String classification;
     /**
      * <p>
-     * The severity of the patch (for example Critical, Important, Moderate).
+     * The severity of the patch, such as <code>Critical</code>, <code>Important</code>, or <code>Moderate</code>.
+     * Applies to Windows patches only.
      * </p>
      */
     private String msrcSeverity;
     /**
      * <p>
-     * The Microsoft Knowledge Base ID of the patch.
+     * The Microsoft Knowledge Base ID of the patch. Applies to Windows patches only.
      * </p>
      */
     private String kbNumber;
     /**
      * <p>
-     * The ID of the MSRC bulletin the patch is related to.
+     * The ID of the Microsoft Security Response Center (MSRC) bulletin the patch is related to. For example,
+     * <code>MS14-045</code>. Applies to Windows patches only.
      * </p>
      */
     private String msrcNumber;
@@ -105,14 +114,89 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String language;
+    /**
+     * <p>
+     * The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>. Applies to Linux-based instances only.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> advisoryIds;
+    /**
+     * <p>
+     * The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to Linux-based instances only.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> bugzillaIds;
+    /**
+     * <p>
+     * The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-1999-0067</code>. Applies
+     * to Linux-based instances only.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> cVEIds;
+    /**
+     * <p>
+     * The name of the patch. Applies to Linux-based instances only.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * The epoch of the patch. For example in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch value is
+     * <code>20180914-2</code>. Applies to Linux-based instances only.
+     * </p>
+     */
+    private Integer epoch;
+    /**
+     * <p>
+     * The version number of the patch. For example, in <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version
+     * number is indicated by <code>-1</code>. Applies to Linux-based instances only.
+     * </p>
+     */
+    private String version;
+    /**
+     * <p>
+     * The particular release of a patch. For example, in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the
+     * release is <code>2.amaz1</code>. Applies to Linux-based instances only.
+     * </p>
+     */
+    private String release;
+    /**
+     * <p>
+     * The architecture of the patch. For example, in <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the
+     * architecture is indicated by <code>x86_64</code>. Applies to Linux-based instances only.
+     * </p>
+     */
+    private String arch;
+    /**
+     * <p>
+     * The severity level of the patch. For example, <code>CRITICAL</code> or <code>MODERATE</code>.
+     * </p>
+     */
+    private String severity;
+    /**
+     * <p>
+     * The source patch repository for the operating system and version, such as <code>trusty-security</code> for Ubuntu
+     * Server 14.04 LTE and <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based instances
+     * only.
+     * </p>
+     */
+    private String repository;
 
     /**
      * <p>
-     * The ID of the patch (this is different than the Microsoft Knowledge Base ID).
+     * The ID of the patch. Applies to Windows patches only.
      * </p>
+     * <note>
+     * <p>
+     * This ID is not the same as the Microsoft Knowledge Base ID.
+     * </p>
+     * </note>
      * 
      * @param id
-     *        The ID of the patch (this is different than the Microsoft Knowledge Base ID).
+     *        The ID of the patch. Applies to Windows patches only.</p> <note>
+     *        <p>
+     *        This ID is not the same as the Microsoft Knowledge Base ID.
+     *        </p>
      */
 
     public void setId(String id) {
@@ -121,10 +205,18 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the patch (this is different than the Microsoft Knowledge Base ID).
+     * The ID of the patch. Applies to Windows patches only.
      * </p>
+     * <note>
+     * <p>
+     * This ID is not the same as the Microsoft Knowledge Base ID.
+     * </p>
+     * </note>
      * 
-     * @return The ID of the patch (this is different than the Microsoft Knowledge Base ID).
+     * @return The ID of the patch. Applies to Windows patches only.</p> <note>
+     *         <p>
+     *         This ID is not the same as the Microsoft Knowledge Base ID.
+     *         </p>
      */
 
     public String getId() {
@@ -133,11 +225,19 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the patch (this is different than the Microsoft Knowledge Base ID).
+     * The ID of the patch. Applies to Windows patches only.
      * </p>
+     * <note>
+     * <p>
+     * This ID is not the same as the Microsoft Knowledge Base ID.
+     * </p>
+     * </note>
      * 
      * @param id
-     *        The ID of the patch (this is different than the Microsoft Knowledge Base ID).
+     *        The ID of the patch. Applies to Windows patches only.</p> <note>
+     *        <p>
+     *        This ID is not the same as the Microsoft Knowledge Base ID.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -348,11 +448,12 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The product family the patch is applicable for (for example, Windows).
+     * The product family the patch is applicable for. For example, <code>Windows</code> or <code>Amazon Linux 2</code>.
      * </p>
      * 
      * @param productFamily
-     *        The product family the patch is applicable for (for example, Windows).
+     *        The product family the patch is applicable for. For example, <code>Windows</code> or
+     *        <code>Amazon Linux 2</code>.
      */
 
     public void setProductFamily(String productFamily) {
@@ -361,10 +462,11 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The product family the patch is applicable for (for example, Windows).
+     * The product family the patch is applicable for. For example, <code>Windows</code> or <code>Amazon Linux 2</code>.
      * </p>
      * 
-     * @return The product family the patch is applicable for (for example, Windows).
+     * @return The product family the patch is applicable for. For example, <code>Windows</code> or
+     *         <code>Amazon Linux 2</code>.
      */
 
     public String getProductFamily() {
@@ -373,11 +475,12 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The product family the patch is applicable for (for example, Windows).
+     * The product family the patch is applicable for. For example, <code>Windows</code> or <code>Amazon Linux 2</code>.
      * </p>
      * 
      * @param productFamily
-     *        The product family the patch is applicable for (for example, Windows).
+     *        The product family the patch is applicable for. For example, <code>Windows</code> or
+     *        <code>Amazon Linux 2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -388,11 +491,13 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The specific product the patch is applicable for (for example, WindowsServer2016).
+     * The specific product the patch is applicable for. For example, <code>WindowsServer2016</code> or
+     * <code>AmazonLinux2018.03</code>.
      * </p>
      * 
      * @param product
-     *        The specific product the patch is applicable for (for example, WindowsServer2016).
+     *        The specific product the patch is applicable for. For example, <code>WindowsServer2016</code> or
+     *        <code>AmazonLinux2018.03</code>.
      */
 
     public void setProduct(String product) {
@@ -401,10 +506,12 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The specific product the patch is applicable for (for example, WindowsServer2016).
+     * The specific product the patch is applicable for. For example, <code>WindowsServer2016</code> or
+     * <code>AmazonLinux2018.03</code>.
      * </p>
      * 
-     * @return The specific product the patch is applicable for (for example, WindowsServer2016).
+     * @return The specific product the patch is applicable for. For example, <code>WindowsServer2016</code> or
+     *         <code>AmazonLinux2018.03</code>.
      */
 
     public String getProduct() {
@@ -413,11 +520,13 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The specific product the patch is applicable for (for example, WindowsServer2016).
+     * The specific product the patch is applicable for. For example, <code>WindowsServer2016</code> or
+     * <code>AmazonLinux2018.03</code>.
      * </p>
      * 
      * @param product
-     *        The specific product the patch is applicable for (for example, WindowsServer2016).
+     *        The specific product the patch is applicable for. For example, <code>WindowsServer2016</code> or
+     *        <code>AmazonLinux2018.03</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -428,11 +537,13 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The classification of the patch (for example, SecurityUpdates, Updates, CriticalUpdates).
+     * The classification of the patch. For example, <code>SecurityUpdates</code>, <code>Updates</code>, or
+     * <code>CriticalUpdates</code>.
      * </p>
      * 
      * @param classification
-     *        The classification of the patch (for example, SecurityUpdates, Updates, CriticalUpdates).
+     *        The classification of the patch. For example, <code>SecurityUpdates</code>, <code>Updates</code>, or
+     *        <code>CriticalUpdates</code>.
      */
 
     public void setClassification(String classification) {
@@ -441,10 +552,12 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The classification of the patch (for example, SecurityUpdates, Updates, CriticalUpdates).
+     * The classification of the patch. For example, <code>SecurityUpdates</code>, <code>Updates</code>, or
+     * <code>CriticalUpdates</code>.
      * </p>
      * 
-     * @return The classification of the patch (for example, SecurityUpdates, Updates, CriticalUpdates).
+     * @return The classification of the patch. For example, <code>SecurityUpdates</code>, <code>Updates</code>, or
+     *         <code>CriticalUpdates</code>.
      */
 
     public String getClassification() {
@@ -453,11 +566,13 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The classification of the patch (for example, SecurityUpdates, Updates, CriticalUpdates).
+     * The classification of the patch. For example, <code>SecurityUpdates</code>, <code>Updates</code>, or
+     * <code>CriticalUpdates</code>.
      * </p>
      * 
      * @param classification
-     *        The classification of the patch (for example, SecurityUpdates, Updates, CriticalUpdates).
+     *        The classification of the patch. For example, <code>SecurityUpdates</code>, <code>Updates</code>, or
+     *        <code>CriticalUpdates</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -468,11 +583,13 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The severity of the patch (for example Critical, Important, Moderate).
+     * The severity of the patch, such as <code>Critical</code>, <code>Important</code>, or <code>Moderate</code>.
+     * Applies to Windows patches only.
      * </p>
      * 
      * @param msrcSeverity
-     *        The severity of the patch (for example Critical, Important, Moderate).
+     *        The severity of the patch, such as <code>Critical</code>, <code>Important</code>, or <code>Moderate</code>
+     *        . Applies to Windows patches only.
      */
 
     public void setMsrcSeverity(String msrcSeverity) {
@@ -481,10 +598,12 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The severity of the patch (for example Critical, Important, Moderate).
+     * The severity of the patch, such as <code>Critical</code>, <code>Important</code>, or <code>Moderate</code>.
+     * Applies to Windows patches only.
      * </p>
      * 
-     * @return The severity of the patch (for example Critical, Important, Moderate).
+     * @return The severity of the patch, such as <code>Critical</code>, <code>Important</code>, or
+     *         <code>Moderate</code>. Applies to Windows patches only.
      */
 
     public String getMsrcSeverity() {
@@ -493,11 +612,13 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The severity of the patch (for example Critical, Important, Moderate).
+     * The severity of the patch, such as <code>Critical</code>, <code>Important</code>, or <code>Moderate</code>.
+     * Applies to Windows patches only.
      * </p>
      * 
      * @param msrcSeverity
-     *        The severity of the patch (for example Critical, Important, Moderate).
+     *        The severity of the patch, such as <code>Critical</code>, <code>Important</code>, or <code>Moderate</code>
+     *        . Applies to Windows patches only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -508,11 +629,11 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Microsoft Knowledge Base ID of the patch.
+     * The Microsoft Knowledge Base ID of the patch. Applies to Windows patches only.
      * </p>
      * 
      * @param kbNumber
-     *        The Microsoft Knowledge Base ID of the patch.
+     *        The Microsoft Knowledge Base ID of the patch. Applies to Windows patches only.
      */
 
     public void setKbNumber(String kbNumber) {
@@ -521,10 +642,10 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Microsoft Knowledge Base ID of the patch.
+     * The Microsoft Knowledge Base ID of the patch. Applies to Windows patches only.
      * </p>
      * 
-     * @return The Microsoft Knowledge Base ID of the patch.
+     * @return The Microsoft Knowledge Base ID of the patch. Applies to Windows patches only.
      */
 
     public String getKbNumber() {
@@ -533,11 +654,11 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Microsoft Knowledge Base ID of the patch.
+     * The Microsoft Knowledge Base ID of the patch. Applies to Windows patches only.
      * </p>
      * 
      * @param kbNumber
-     *        The Microsoft Knowledge Base ID of the patch.
+     *        The Microsoft Knowledge Base ID of the patch. Applies to Windows patches only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -548,11 +669,13 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the MSRC bulletin the patch is related to.
+     * The ID of the Microsoft Security Response Center (MSRC) bulletin the patch is related to. For example,
+     * <code>MS14-045</code>. Applies to Windows patches only.
      * </p>
      * 
      * @param msrcNumber
-     *        The ID of the MSRC bulletin the patch is related to.
+     *        The ID of the Microsoft Security Response Center (MSRC) bulletin the patch is related to. For example,
+     *        <code>MS14-045</code>. Applies to Windows patches only.
      */
 
     public void setMsrcNumber(String msrcNumber) {
@@ -561,10 +684,12 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the MSRC bulletin the patch is related to.
+     * The ID of the Microsoft Security Response Center (MSRC) bulletin the patch is related to. For example,
+     * <code>MS14-045</code>. Applies to Windows patches only.
      * </p>
      * 
-     * @return The ID of the MSRC bulletin the patch is related to.
+     * @return The ID of the Microsoft Security Response Center (MSRC) bulletin the patch is related to. For example,
+     *         <code>MS14-045</code>. Applies to Windows patches only.
      */
 
     public String getMsrcNumber() {
@@ -573,11 +698,13 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the MSRC bulletin the patch is related to.
+     * The ID of the Microsoft Security Response Center (MSRC) bulletin the patch is related to. For example,
+     * <code>MS14-045</code>. Applies to Windows patches only.
      * </p>
      * 
      * @param msrcNumber
-     *        The ID of the MSRC bulletin the patch is related to.
+     *        The ID of the Microsoft Security Response Center (MSRC) bulletin the patch is related to. For example,
+     *        <code>MS14-045</code>. Applies to Windows patches only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -627,6 +754,553 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>. Applies to Linux-based instances only.
+     * </p>
+     * 
+     * @return The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>. Applies to Linux-based instances
+     *         only.
+     */
+
+    public java.util.List<String> getAdvisoryIds() {
+        if (advisoryIds == null) {
+            advisoryIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return advisoryIds;
+    }
+
+    /**
+     * <p>
+     * The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>. Applies to Linux-based instances only.
+     * </p>
+     * 
+     * @param advisoryIds
+     *        The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>. Applies to Linux-based instances
+     *        only.
+     */
+
+    public void setAdvisoryIds(java.util.Collection<String> advisoryIds) {
+        if (advisoryIds == null) {
+            this.advisoryIds = null;
+            return;
+        }
+
+        this.advisoryIds = new com.amazonaws.internal.SdkInternalList<String>(advisoryIds);
+    }
+
+    /**
+     * <p>
+     * The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>. Applies to Linux-based instances only.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdvisoryIds(java.util.Collection)} or {@link #withAdvisoryIds(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param advisoryIds
+     *        The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>. Applies to Linux-based instances
+     *        only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Patch withAdvisoryIds(String... advisoryIds) {
+        if (this.advisoryIds == null) {
+            setAdvisoryIds(new com.amazonaws.internal.SdkInternalList<String>(advisoryIds.length));
+        }
+        for (String ele : advisoryIds) {
+            this.advisoryIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>. Applies to Linux-based instances only.
+     * </p>
+     * 
+     * @param advisoryIds
+     *        The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>. Applies to Linux-based instances
+     *        only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Patch withAdvisoryIds(java.util.Collection<String> advisoryIds) {
+        setAdvisoryIds(advisoryIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to Linux-based instances only.
+     * </p>
+     * 
+     * @return The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to Linux-based instances only.
+     */
+
+    public java.util.List<String> getBugzillaIds() {
+        if (bugzillaIds == null) {
+            bugzillaIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return bugzillaIds;
+    }
+
+    /**
+     * <p>
+     * The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to Linux-based instances only.
+     * </p>
+     * 
+     * @param bugzillaIds
+     *        The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to Linux-based instances only.
+     */
+
+    public void setBugzillaIds(java.util.Collection<String> bugzillaIds) {
+        if (bugzillaIds == null) {
+            this.bugzillaIds = null;
+            return;
+        }
+
+        this.bugzillaIds = new com.amazonaws.internal.SdkInternalList<String>(bugzillaIds);
+    }
+
+    /**
+     * <p>
+     * The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to Linux-based instances only.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBugzillaIds(java.util.Collection)} or {@link #withBugzillaIds(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param bugzillaIds
+     *        The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to Linux-based instances only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Patch withBugzillaIds(String... bugzillaIds) {
+        if (this.bugzillaIds == null) {
+            setBugzillaIds(new com.amazonaws.internal.SdkInternalList<String>(bugzillaIds.length));
+        }
+        for (String ele : bugzillaIds) {
+            this.bugzillaIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to Linux-based instances only.
+     * </p>
+     * 
+     * @param bugzillaIds
+     *        The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to Linux-based instances only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Patch withBugzillaIds(java.util.Collection<String> bugzillaIds) {
+        setBugzillaIds(bugzillaIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-1999-0067</code>. Applies
+     * to Linux-based instances only.
+     * </p>
+     * 
+     * @return The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-1999-0067</code>.
+     *         Applies to Linux-based instances only.
+     */
+
+    public java.util.List<String> getCVEIds() {
+        if (cVEIds == null) {
+            cVEIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return cVEIds;
+    }
+
+    /**
+     * <p>
+     * The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-1999-0067</code>. Applies
+     * to Linux-based instances only.
+     * </p>
+     * 
+     * @param cVEIds
+     *        The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-1999-0067</code>.
+     *        Applies to Linux-based instances only.
+     */
+
+    public void setCVEIds(java.util.Collection<String> cVEIds) {
+        if (cVEIds == null) {
+            this.cVEIds = null;
+            return;
+        }
+
+        this.cVEIds = new com.amazonaws.internal.SdkInternalList<String>(cVEIds);
+    }
+
+    /**
+     * <p>
+     * The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-1999-0067</code>. Applies
+     * to Linux-based instances only.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCVEIds(java.util.Collection)} or {@link #withCVEIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param cVEIds
+     *        The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-1999-0067</code>.
+     *        Applies to Linux-based instances only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Patch withCVEIds(String... cVEIds) {
+        if (this.cVEIds == null) {
+            setCVEIds(new com.amazonaws.internal.SdkInternalList<String>(cVEIds.length));
+        }
+        for (String ele : cVEIds) {
+            this.cVEIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-1999-0067</code>. Applies
+     * to Linux-based instances only.
+     * </p>
+     * 
+     * @param cVEIds
+     *        The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-1999-0067</code>.
+     *        Applies to Linux-based instances only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Patch withCVEIds(java.util.Collection<String> cVEIds) {
+        setCVEIds(cVEIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the patch. Applies to Linux-based instances only.
+     * </p>
+     * 
+     * @param name
+     *        The name of the patch. Applies to Linux-based instances only.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The name of the patch. Applies to Linux-based instances only.
+     * </p>
+     * 
+     * @return The name of the patch. Applies to Linux-based instances only.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the patch. Applies to Linux-based instances only.
+     * </p>
+     * 
+     * @param name
+     *        The name of the patch. Applies to Linux-based instances only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Patch withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The epoch of the patch. For example in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch value is
+     * <code>20180914-2</code>. Applies to Linux-based instances only.
+     * </p>
+     * 
+     * @param epoch
+     *        The epoch of the patch. For example in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch
+     *        value is <code>20180914-2</code>. Applies to Linux-based instances only.
+     */
+
+    public void setEpoch(Integer epoch) {
+        this.epoch = epoch;
+    }
+
+    /**
+     * <p>
+     * The epoch of the patch. For example in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch value is
+     * <code>20180914-2</code>. Applies to Linux-based instances only.
+     * </p>
+     * 
+     * @return The epoch of the patch. For example in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch
+     *         value is <code>20180914-2</code>. Applies to Linux-based instances only.
+     */
+
+    public Integer getEpoch() {
+        return this.epoch;
+    }
+
+    /**
+     * <p>
+     * The epoch of the patch. For example in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch value is
+     * <code>20180914-2</code>. Applies to Linux-based instances only.
+     * </p>
+     * 
+     * @param epoch
+     *        The epoch of the patch. For example in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch
+     *        value is <code>20180914-2</code>. Applies to Linux-based instances only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Patch withEpoch(Integer epoch) {
+        setEpoch(epoch);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The version number of the patch. For example, in <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version
+     * number is indicated by <code>-1</code>. Applies to Linux-based instances only.
+     * </p>
+     * 
+     * @param version
+     *        The version number of the patch. For example, in <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the
+     *        version number is indicated by <code>-1</code>. Applies to Linux-based instances only.
+     */
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    /**
+     * <p>
+     * The version number of the patch. For example, in <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version
+     * number is indicated by <code>-1</code>. Applies to Linux-based instances only.
+     * </p>
+     * 
+     * @return The version number of the patch. For example, in <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the
+     *         version number is indicated by <code>-1</code>. Applies to Linux-based instances only.
+     */
+
+    public String getVersion() {
+        return this.version;
+    }
+
+    /**
+     * <p>
+     * The version number of the patch. For example, in <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version
+     * number is indicated by <code>-1</code>. Applies to Linux-based instances only.
+     * </p>
+     * 
+     * @param version
+     *        The version number of the patch. For example, in <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the
+     *        version number is indicated by <code>-1</code>. Applies to Linux-based instances only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Patch withVersion(String version) {
+        setVersion(version);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The particular release of a patch. For example, in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the
+     * release is <code>2.amaz1</code>. Applies to Linux-based instances only.
+     * </p>
+     * 
+     * @param release
+     *        The particular release of a patch. For example, in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>,
+     *        the release is <code>2.amaz1</code>. Applies to Linux-based instances only.
+     */
+
+    public void setRelease(String release) {
+        this.release = release;
+    }
+
+    /**
+     * <p>
+     * The particular release of a patch. For example, in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the
+     * release is <code>2.amaz1</code>. Applies to Linux-based instances only.
+     * </p>
+     * 
+     * @return The particular release of a patch. For example, in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>,
+     *         the release is <code>2.amaz1</code>. Applies to Linux-based instances only.
+     */
+
+    public String getRelease() {
+        return this.release;
+    }
+
+    /**
+     * <p>
+     * The particular release of a patch. For example, in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the
+     * release is <code>2.amaz1</code>. Applies to Linux-based instances only.
+     * </p>
+     * 
+     * @param release
+     *        The particular release of a patch. For example, in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>,
+     *        the release is <code>2.amaz1</code>. Applies to Linux-based instances only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Patch withRelease(String release) {
+        setRelease(release);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The architecture of the patch. For example, in <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the
+     * architecture is indicated by <code>x86_64</code>. Applies to Linux-based instances only.
+     * </p>
+     * 
+     * @param arch
+     *        The architecture of the patch. For example, in <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the
+     *        architecture is indicated by <code>x86_64</code>. Applies to Linux-based instances only.
+     */
+
+    public void setArch(String arch) {
+        this.arch = arch;
+    }
+
+    /**
+     * <p>
+     * The architecture of the patch. For example, in <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the
+     * architecture is indicated by <code>x86_64</code>. Applies to Linux-based instances only.
+     * </p>
+     * 
+     * @return The architecture of the patch. For example, in <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the
+     *         architecture is indicated by <code>x86_64</code>. Applies to Linux-based instances only.
+     */
+
+    public String getArch() {
+        return this.arch;
+    }
+
+    /**
+     * <p>
+     * The architecture of the patch. For example, in <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the
+     * architecture is indicated by <code>x86_64</code>. Applies to Linux-based instances only.
+     * </p>
+     * 
+     * @param arch
+     *        The architecture of the patch. For example, in <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the
+     *        architecture is indicated by <code>x86_64</code>. Applies to Linux-based instances only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Patch withArch(String arch) {
+        setArch(arch);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The severity level of the patch. For example, <code>CRITICAL</code> or <code>MODERATE</code>.
+     * </p>
+     * 
+     * @param severity
+     *        The severity level of the patch. For example, <code>CRITICAL</code> or <code>MODERATE</code>.
+     */
+
+    public void setSeverity(String severity) {
+        this.severity = severity;
+    }
+
+    /**
+     * <p>
+     * The severity level of the patch. For example, <code>CRITICAL</code> or <code>MODERATE</code>.
+     * </p>
+     * 
+     * @return The severity level of the patch. For example, <code>CRITICAL</code> or <code>MODERATE</code>.
+     */
+
+    public String getSeverity() {
+        return this.severity;
+    }
+
+    /**
+     * <p>
+     * The severity level of the patch. For example, <code>CRITICAL</code> or <code>MODERATE</code>.
+     * </p>
+     * 
+     * @param severity
+     *        The severity level of the patch. For example, <code>CRITICAL</code> or <code>MODERATE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Patch withSeverity(String severity) {
+        setSeverity(severity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The source patch repository for the operating system and version, such as <code>trusty-security</code> for Ubuntu
+     * Server 14.04 LTE and <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based instances
+     * only.
+     * </p>
+     * 
+     * @param repository
+     *        The source patch repository for the operating system and version, such as <code>trusty-security</code> for
+     *        Ubuntu Server 14.04 LTE and <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to
+     *        Linux-based instances only.
+     */
+
+    public void setRepository(String repository) {
+        this.repository = repository;
+    }
+
+    /**
+     * <p>
+     * The source patch repository for the operating system and version, such as <code>trusty-security</code> for Ubuntu
+     * Server 14.04 LTE and <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based instances
+     * only.
+     * </p>
+     * 
+     * @return The source patch repository for the operating system and version, such as <code>trusty-security</code>
+     *         for Ubuntu Server 14.04 LTE and <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to
+     *         Linux-based instances only.
+     */
+
+    public String getRepository() {
+        return this.repository;
+    }
+
+    /**
+     * <p>
+     * The source patch repository for the operating system and version, such as <code>trusty-security</code> for Ubuntu
+     * Server 14.04 LTE and <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based instances
+     * only.
+     * </p>
+     * 
+     * @param repository
+     *        The source patch repository for the operating system and version, such as <code>trusty-security</code> for
+     *        Ubuntu Server 14.04 LTE and <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to
+     *        Linux-based instances only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Patch withRepository(String repository) {
+        setRepository(repository);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -663,7 +1337,27 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
         if (getMsrcNumber() != null)
             sb.append("MsrcNumber: ").append(getMsrcNumber()).append(",");
         if (getLanguage() != null)
-            sb.append("Language: ").append(getLanguage());
+            sb.append("Language: ").append(getLanguage()).append(",");
+        if (getAdvisoryIds() != null)
+            sb.append("AdvisoryIds: ").append(getAdvisoryIds()).append(",");
+        if (getBugzillaIds() != null)
+            sb.append("BugzillaIds: ").append(getBugzillaIds()).append(",");
+        if (getCVEIds() != null)
+            sb.append("CVEIds: ").append(getCVEIds()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getEpoch() != null)
+            sb.append("Epoch: ").append(getEpoch()).append(",");
+        if (getVersion() != null)
+            sb.append("Version: ").append(getVersion()).append(",");
+        if (getRelease() != null)
+            sb.append("Release: ").append(getRelease()).append(",");
+        if (getArch() != null)
+            sb.append("Arch: ").append(getArch()).append(",");
+        if (getSeverity() != null)
+            sb.append("Severity: ").append(getSeverity()).append(",");
+        if (getRepository() != null)
+            sb.append("Repository: ").append(getRepository());
         sb.append("}");
         return sb.toString();
     }
@@ -730,6 +1424,46 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLanguage() != null && other.getLanguage().equals(this.getLanguage()) == false)
             return false;
+        if (other.getAdvisoryIds() == null ^ this.getAdvisoryIds() == null)
+            return false;
+        if (other.getAdvisoryIds() != null && other.getAdvisoryIds().equals(this.getAdvisoryIds()) == false)
+            return false;
+        if (other.getBugzillaIds() == null ^ this.getBugzillaIds() == null)
+            return false;
+        if (other.getBugzillaIds() != null && other.getBugzillaIds().equals(this.getBugzillaIds()) == false)
+            return false;
+        if (other.getCVEIds() == null ^ this.getCVEIds() == null)
+            return false;
+        if (other.getCVEIds() != null && other.getCVEIds().equals(this.getCVEIds()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getEpoch() == null ^ this.getEpoch() == null)
+            return false;
+        if (other.getEpoch() != null && other.getEpoch().equals(this.getEpoch()) == false)
+            return false;
+        if (other.getVersion() == null ^ this.getVersion() == null)
+            return false;
+        if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
+            return false;
+        if (other.getRelease() == null ^ this.getRelease() == null)
+            return false;
+        if (other.getRelease() != null && other.getRelease().equals(this.getRelease()) == false)
+            return false;
+        if (other.getArch() == null ^ this.getArch() == null)
+            return false;
+        if (other.getArch() != null && other.getArch().equals(this.getArch()) == false)
+            return false;
+        if (other.getSeverity() == null ^ this.getSeverity() == null)
+            return false;
+        if (other.getSeverity() != null && other.getSeverity().equals(this.getSeverity()) == false)
+            return false;
+        if (other.getRepository() == null ^ this.getRepository() == null)
+            return false;
+        if (other.getRepository() != null && other.getRepository().equals(this.getRepository()) == false)
+            return false;
         return true;
     }
 
@@ -751,6 +1485,16 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getKbNumber() == null) ? 0 : getKbNumber().hashCode());
         hashCode = prime * hashCode + ((getMsrcNumber() == null) ? 0 : getMsrcNumber().hashCode());
         hashCode = prime * hashCode + ((getLanguage() == null) ? 0 : getLanguage().hashCode());
+        hashCode = prime * hashCode + ((getAdvisoryIds() == null) ? 0 : getAdvisoryIds().hashCode());
+        hashCode = prime * hashCode + ((getBugzillaIds() == null) ? 0 : getBugzillaIds().hashCode());
+        hashCode = prime * hashCode + ((getCVEIds() == null) ? 0 : getCVEIds().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getEpoch() == null) ? 0 : getEpoch().hashCode());
+        hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
+        hashCode = prime * hashCode + ((getRelease() == null) ? 0 : getRelease().hashCode());
+        hashCode = prime * hashCode + ((getArch() == null) ? 0 : getArch().hashCode());
+        hashCode = prime * hashCode + ((getSeverity() == null) ? 0 : getSeverity().hashCode());
+        hashCode = prime * hashCode + ((getRepository() == null) ? 0 : getRepository().hashCode());
         return hashCode;
     }
 

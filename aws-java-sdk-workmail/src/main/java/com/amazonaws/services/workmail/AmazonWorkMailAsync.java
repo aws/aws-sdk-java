@@ -244,6 +244,71 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
+     * Creates a new Amazon WorkMail organization. Optionally, you can choose to associate an existing AWS Directory
+     * Service directory with your organization. If an AWS Directory Service directory ID is specified, the organization
+     * alias must match the directory alias. If you choose not to associate an existing directory with your
+     * organization, then we create a new Amazon WorkMail directory for you. For more information, see <a
+     * href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html">Adding an
+     * organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * </p>
+     * <p>
+     * You can associate multiple email domains with an organization, then set your default email domain from the Amazon
+     * WorkMail console. You can also associate a domain that is managed in an Amazon Route 53 public hosted zone. For
+     * more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html">Adding a
+     * domain</a> and <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/default_domain.html">Choosing the
+     * default domain</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * </p>
+     * <p>
+     * Optionally, you can use a customer managed master key from AWS Key Management Service (AWS KMS) to encrypt email
+     * for your organization. If you don't associate an AWS KMS key, Amazon WorkMail creates a default AWS managed
+     * master key for you.
+     * </p>
+     * 
+     * @param createOrganizationRequest
+     * @return A Java Future containing the result of the CreateOrganization operation returned by the service.
+     * @sample AmazonWorkMailAsync.CreateOrganization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateOrganization" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateOrganizationResult> createOrganizationAsync(CreateOrganizationRequest createOrganizationRequest);
+
+    /**
+     * <p>
+     * Creates a new Amazon WorkMail organization. Optionally, you can choose to associate an existing AWS Directory
+     * Service directory with your organization. If an AWS Directory Service directory ID is specified, the organization
+     * alias must match the directory alias. If you choose not to associate an existing directory with your
+     * organization, then we create a new Amazon WorkMail directory for you. For more information, see <a
+     * href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html">Adding an
+     * organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * </p>
+     * <p>
+     * You can associate multiple email domains with an organization, then set your default email domain from the Amazon
+     * WorkMail console. You can also associate a domain that is managed in an Amazon Route 53 public hosted zone. For
+     * more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html">Adding a
+     * domain</a> and <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/default_domain.html">Choosing the
+     * default domain</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * </p>
+     * <p>
+     * Optionally, you can use a customer managed master key from AWS Key Management Service (AWS KMS) to encrypt email
+     * for your organization. If you don't associate an AWS KMS key, Amazon WorkMail creates a default AWS managed
+     * master key for you.
+     * </p>
+     * 
+     * @param createOrganizationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateOrganization operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.CreateOrganization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateOrganization" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateOrganizationResult> createOrganizationAsync(CreateOrganizationRequest createOrganizationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateOrganizationRequest, CreateOrganizationResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new Amazon WorkMail resource.
      * </p>
      * 
@@ -427,6 +492,43 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
      */
     java.util.concurrent.Future<DeleteMailboxPermissionsResult> deleteMailboxPermissionsAsync(DeleteMailboxPermissionsRequest deleteMailboxPermissionsRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteMailboxPermissionsRequest, DeleteMailboxPermissionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an Amazon WorkMail organization and all underlying AWS resources managed by Amazon WorkMail as part of
+     * the organization. You can choose whether to delete the associated directory. For more information, see <a
+     * href="https://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html">Removing an
+     * organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * </p>
+     * 
+     * @param deleteOrganizationRequest
+     * @return A Java Future containing the result of the DeleteOrganization operation returned by the service.
+     * @sample AmazonWorkMailAsync.DeleteOrganization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteOrganization" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteOrganizationResult> deleteOrganizationAsync(DeleteOrganizationRequest deleteOrganizationRequest);
+
+    /**
+     * <p>
+     * Deletes an Amazon WorkMail organization and all underlying AWS resources managed by Amazon WorkMail as part of
+     * the organization. You can choose whether to delete the associated directory. For more information, see <a
+     * href="https://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html">Removing an
+     * organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * </p>
+     * 
+     * @param deleteOrganizationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteOrganization operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.DeleteOrganization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteOrganization" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteOrganizationResult> deleteOrganizationAsync(DeleteOrganizationRequest deleteOrganizationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteOrganizationRequest, DeleteOrganizationResult> asyncHandler);
 
     /**
      * <p>

@@ -1128,7 +1128,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Retrieves information about the status and settings for a classification job.
+     * Retrieves the status and settings for a classification job.
      * </p>
      * 
      * @param describeClassificationJobRequest
@@ -1199,7 +1199,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Retrieves information about the Amazon Macie configuration settings for an AWS organization.
+     * Retrieves the Amazon Macie configuration settings for an AWS organization.
      * </p>
      * 
      * @param describeOrganizationConfigurationRequest
@@ -1833,7 +1833,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Retrieves information about the criteria and other settings for a custom data identifier.
+     * Retrieves the criteria and other settings for a custom data identifier.
      * </p>
      * 
      * @param getCustomDataIdentifierRequest
@@ -1973,7 +1973,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Retrieves information about one or more findings.
+     * Retrieves the details of one or more findings.
      * </p>
      * 
      * @param getFindingsRequest
@@ -2042,7 +2042,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Retrieves information about the criteria and other settings for a findings filter.
+     * Retrieves the criteria and other settings for a findings filter.
      * </p>
      * 
      * @param getFindingsFilterRequest
@@ -2180,7 +2180,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Retrieves information about the current status and configuration settings for an Amazon Macie account.
+     * Retrieves the current status and configuration settings for an Amazon Macie account.
      * </p>
      * 
      * @param getMacieSessionRequest
@@ -3322,7 +3322,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Cancels a classification job.
+     * Changes the status of a classification job.
      * </p>
      * 
      * @param updateClassificationJobRequest

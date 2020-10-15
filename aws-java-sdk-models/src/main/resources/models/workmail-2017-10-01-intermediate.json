@@ -115,7 +115,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -156,7 +156,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "DirectoryUnavailableException",
-        "documentation" : "<p>The directory on which you are trying to perform operations isn't available.</p>",
+        "documentation" : "<p>The directory is unavailable. It might be located in another Region or deleted.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "EntityNotFoundException",
@@ -176,7 +176,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "UnsupportedOperationException",
@@ -225,7 +225,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "EntityNotFoundException",
@@ -294,7 +294,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
@@ -339,7 +339,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "DirectoryUnavailableException",
-        "documentation" : "<p>The directory on which you are trying to perform operations isn't available.</p>",
+        "documentation" : "<p>The directory is unavailable. It might be located in another Region or deleted.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterException",
@@ -355,7 +355,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ReservedNameException",
@@ -386,6 +386,59 @@
       },
       "syncReturnType" : "CreateGroupResult"
     },
+    "CreateOrganization" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<CreateOrganizationResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<CreateOrganizationResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateOrganizationRequest, CreateOrganizationResult>",
+      "asyncReturnType" : "CreateOrganizationResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Creates a new Amazon WorkMail organization. Optionally, you can choose to associate an existing AWS Directory Service directory with your organization. If an AWS Directory Service directory ID is specified, the organization alias must match the directory alias. If you choose not to associate an existing directory with your organization, then we create a new Amazon WorkMail directory for you. For more information, see <a href=\"https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html\">Adding an organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.</p> <p>You can associate multiple email domains with an organization, then set your default email domain from the Amazon WorkMail console. You can also associate a domain that is managed in an Amazon Route 53 public hosted zone. For more information, see <a href=\"https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html\">Adding a domain</a> and <a href=\"https://docs.aws.amazon.com/workmail/latest/adminguide/default_domain.html\">Choosing the default domain</a> in the <i>Amazon WorkMail Administrator Guide</i>.</p> <p>Optionally, you can use a customer managed master key from AWS Key Management Service (AWS KMS) to encrypt email for your organization. If you don't associate an AWS KMS key, Amazon WorkMail creates a default AWS managed master key for you.</p>",
+      "endpointCacheRequired" : false,
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
+      "endpointTrait" : null,
+      "exceptions" : [ {
+        "exceptionName" : "InvalidParameterException",
+        "documentation" : "<p>One or more of the input parameters don't match the service's restrictions.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "DirectoryInUseException",
+        "documentation" : "<p>The directory is already in use by another WorkMail organization in the same account and Region.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "DirectoryUnavailableException",
+        "documentation" : "<p>The directory is unavailable. It might be located in another Region or deleted.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "LimitExceededException",
+        "documentation" : "<p>The request exceeds the limit of the resource.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "NameAvailabilityException",
+        "documentation" : "<p>The user, group, or resource name isn't unique in Amazon WorkMail.</p>",
+        "httpStatusCode" : null
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
+      "input" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "CreateOrganizationRequest",
+        "variableName" : "createOrganizationRequest",
+        "variableType" : "CreateOrganizationRequest",
+        "documentation" : "",
+        "simpleType" : "CreateOrganizationRequest",
+        "variableSetterType" : "CreateOrganizationRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "createOrganization",
+      "operationName" : "CreateOrganization",
+      "returnType" : {
+        "returnType" : "CreateOrganizationResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "CreateOrganizationResult"
+    },
     "CreateResource" : {
       "asyncCallableType" : "java.util.concurrent.Callable<CreateResourceResult>",
       "asyncFutureType" : "java.util.concurrent.Future<CreateResourceResult>",
@@ -404,7 +457,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "DirectoryUnavailableException",
-        "documentation" : "<p>The directory on which you are trying to perform operations isn't available.</p>",
+        "documentation" : "<p>The directory is unavailable. It might be located in another Region or deleted.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterException",
@@ -420,7 +473,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ReservedNameException",
@@ -465,7 +518,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "DirectoryUnavailableException",
-        "documentation" : "<p>The directory on which you are trying to perform operations isn't available.</p>",
+        "documentation" : "<p>The directory is unavailable. It might be located in another Region or deleted.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterException",
@@ -485,7 +538,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ReservedNameException",
@@ -534,7 +587,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -587,7 +640,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -628,7 +681,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "DirectoryUnavailableException",
-        "documentation" : "<p>The directory on which you are trying to perform operations isn't available.</p>",
+        "documentation" : "<p>The directory is unavailable. It might be located in another Region or deleted.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "EntityStateException",
@@ -644,7 +697,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "UnsupportedOperationException",
@@ -701,7 +754,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -723,6 +776,51 @@
         "documentation" : null
       },
       "syncReturnType" : "DeleteMailboxPermissionsResult"
+    },
+    "DeleteOrganization" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteOrganizationResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteOrganizationResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteOrganizationRequest, DeleteOrganizationResult>",
+      "asyncReturnType" : "DeleteOrganizationResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Deletes an Amazon WorkMail organization and all underlying AWS resources managed by Amazon WorkMail as part of the organization. You can choose whether to delete the associated directory. For more information, see <a href=\"https://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html\">Removing an organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.</p>",
+      "endpointCacheRequired" : false,
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
+      "endpointTrait" : null,
+      "exceptions" : [ {
+        "exceptionName" : "InvalidParameterException",
+        "documentation" : "<p>One or more of the input parameters don't match the service's restrictions.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "OrganizationNotFoundException",
+        "documentation" : "<p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "OrganizationStateException",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
+        "httpStatusCode" : null
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
+      "input" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeleteOrganizationRequest",
+        "variableName" : "deleteOrganizationRequest",
+        "variableType" : "DeleteOrganizationRequest",
+        "documentation" : "",
+        "simpleType" : "DeleteOrganizationRequest",
+        "variableSetterType" : "DeleteOrganizationRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "deleteOrganization",
+      "operationName" : "DeleteOrganization",
+      "returnType" : {
+        "returnType" : "DeleteOrganizationResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "DeleteOrganizationResult"
     },
     "DeleteResource" : {
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteResourceResult>",
@@ -750,7 +848,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -795,7 +893,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -836,7 +934,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "DirectoryUnavailableException",
-        "documentation" : "<p>The directory on which you are trying to perform operations isn't available.</p>",
+        "documentation" : "<p>The directory is unavailable. It might be located in another Region or deleted.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "EntityStateException",
@@ -852,7 +950,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "UnsupportedOperationException",
@@ -909,7 +1007,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -958,7 +1056,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1003,7 +1101,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "EntityNotFoundException",
@@ -1097,7 +1195,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1146,7 +1244,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1199,7 +1297,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1240,7 +1338,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "DirectoryUnavailableException",
-        "documentation" : "<p>The directory on which you are trying to perform operations isn't available.</p>",
+        "documentation" : "<p>The directory is unavailable. It might be located in another Region or deleted.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "EntityNotFoundException",
@@ -1260,7 +1358,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "UnsupportedOperationException",
@@ -1313,7 +1411,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1358,7 +1456,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "EntityNotFoundException",
@@ -1403,7 +1501,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "EntityNotFoundException",
@@ -1448,7 +1546,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1501,7 +1599,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1554,7 +1652,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1603,7 +1701,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1648,7 +1746,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1697,7 +1795,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1787,7 +1885,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1832,7 +1930,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1914,7 +2012,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1967,7 +2065,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -2020,7 +2118,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -2065,7 +2163,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
@@ -2110,7 +2208,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "DirectoryUnavailableException",
-        "documentation" : "<p>The directory on which you are trying to perform operations isn't available.</p>",
+        "documentation" : "<p>The directory is unavailable. It might be located in another Region or deleted.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "EmailAddressInUseException",
@@ -2146,7 +2244,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -2187,7 +2285,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "DirectoryUnavailableException",
-        "documentation" : "<p>The directory on which you are trying to perform operations isn't available.</p>",
+        "documentation" : "<p>The directory is unavailable. It might be located in another Region or deleted.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "EntityNotFoundException",
@@ -2211,7 +2309,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "UnsupportedOperationException",
@@ -2260,7 +2358,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "EntityNotFoundException",
@@ -2313,7 +2411,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -2395,7 +2493,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "EntityNotFoundException",
@@ -2444,7 +2542,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "DirectoryUnavailableException",
-        "documentation" : "<p>The directory on which you are trying to perform operations isn't available.</p>",
+        "documentation" : "<p>The directory is unavailable. It might be located in another Region or deleted.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "EmailAddressInUseException",
@@ -2480,7 +2578,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "UnsupportedOperationException",
@@ -2521,7 +2619,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "DirectoryUnavailableException",
-        "documentation" : "<p>The directory on which you are trying to perform operations isn't available.</p>",
+        "documentation" : "<p>The directory is unavailable. It might be located in another Region or deleted.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "EntityNotFoundException",
@@ -2557,7 +2655,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OrganizationStateException",
-        "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+        "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -8227,6 +8325,1241 @@
       },
       "wrapper" : false
     },
+    "CreateOrganizationRequest" : {
+      "c2jName" : "CreateOrganizationRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.workmail.request.CreateOrganizationRequest",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "CreateOrganization",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "WorkMailService.CreateOrganization",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "DirectoryId",
+        "c2jShape" : "DirectoryId",
+        "deprecated" : false,
+        "documentation" : "<p>The AWS Directory Service directory ID.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The AWS Directory Service directory ID.</p>\n@param directoryId The AWS Directory Service directory ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withDirectoryId",
+        "getterDocumentation" : "/**<p>The AWS Directory Service directory ID.</p>\n@return The AWS Directory Service directory ID.*/",
+        "getterMethodName" : "getDirectoryId",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "DirectoryId",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "DirectoryId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "DirectoryId",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The AWS Directory Service directory ID.</p>\n@param directoryId The AWS Directory Service directory ID.*/",
+        "setterMethodName" : "setDirectoryId",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "directoryId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The AWS Directory Service directory ID.</p>\n@param directoryId The AWS Directory Service directory ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "directoryId",
+          "variableType" : "String",
+          "documentation" : "<p>The AWS Directory Service directory ID.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "Alias",
+        "c2jShape" : "OrganizationName",
+        "deprecated" : false,
+        "documentation" : "<p>The organization alias.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The organization alias.</p>\n@param alias The organization alias.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withAlias",
+        "getterDocumentation" : "/**<p>The organization alias.</p>\n@return The organization alias.*/",
+        "getterMethodName" : "getAlias",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "Alias",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Alias",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "Alias",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The organization alias.</p>\n@param alias The organization alias.*/",
+        "setterMethodName" : "setAlias",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "alias",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The organization alias.</p>\n@param alias The organization alias.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "alias",
+          "variableType" : "String",
+          "documentation" : "<p>The organization alias.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "ClientToken",
+        "c2jShape" : "IdempotencyClientToken",
+        "deprecated" : false,
+        "documentation" : "<p>The idempotency token associated with the request.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The idempotency token associated with the request.</p>\n@param clientToken The idempotency token associated with the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withClientToken",
+        "getterDocumentation" : "/**<p>The idempotency token associated with the request.</p>\n@return The idempotency token associated with the request.*/",
+        "getterMethodName" : "getClientToken",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ClientToken",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ClientToken",
+          "uri" : false
+        },
+        "idempotencyToken" : true,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "ClientToken",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The idempotency token associated with the request.</p>\n@param clientToken The idempotency token associated with the request.*/",
+        "setterMethodName" : "setClientToken",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "clientToken",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The idempotency token associated with the request.</p>\n@param clientToken The idempotency token associated with the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "clientToken",
+          "variableType" : "String",
+          "documentation" : "<p>The idempotency token associated with the request.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "Domains",
+        "c2jShape" : "Domains",
+        "deprecated" : false,
+        "documentation" : "<p>The email domains to associate with the organization.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The email domains to associate with the organization.</p>\n@param domains The email domains to associate with the organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withDomains",
+        "getterDocumentation" : "/**<p>The email domains to associate with the organization.</p>\n@return The email domains to associate with the organization.*/",
+        "getterMethodName" : "getDomains",
+        "getterModel" : {
+          "returnType" : "java.util.List<Domain>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "Domains",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Domains",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : true,
+        "listModel" : {
+          "implType" : "java.util.ArrayList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "c2jName" : "member",
+            "c2jShape" : "Domain",
+            "deprecated" : false,
+            "documentation" : "",
+            "endpointDiscoveryId" : false,
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "fluentSetterMethodName" : "withMember",
+            "getterDocumentation" : "/**\n@return */",
+            "getterMethodName" : "getMember",
+            "getterModel" : {
+              "returnType" : "Domain",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "greedy" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocation" : "PAYLOAD",
+              "marshallLocationName" : "member",
+              "queryString" : false,
+              "requiresLength" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "member",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "isBinary" : false,
+            "jsonValue" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "marshallingTargetClass" : "StructuredPojo",
+            "marshallingType" : "STRUCTURED",
+            "name" : "Member",
+            "sensitive" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "setterMethodName" : "setMember",
+            "setterModel" : {
+              "timestampFormat" : null,
+              "variableDeclarationType" : "Domain",
+              "variableName" : "member",
+              "variableType" : "Domain",
+              "documentation" : "",
+              "simpleType" : "Domain",
+              "variableSetterType" : "Domain"
+            },
+            "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
+            "simple" : false,
+            "unmarshallingType" : null,
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "timestampFormat" : null,
+              "variableDeclarationType" : "Domain",
+              "variableName" : "member",
+              "variableType" : "Domain",
+              "documentation" : "",
+              "simpleType" : "Domain",
+              "variableSetterType" : "Domain"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "memberLocationName" : null,
+          "memberType" : "Domain",
+          "map" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : false,
+          "simpleType" : "Domain",
+          "templateImplType" : "java.util.ArrayList<Domain>",
+          "templateType" : "java.util.List<Domain>"
+        },
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "List",
+        "marshallingType" : "LIST",
+        "name" : "Domains",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The email domains to associate with the organization.</p>\n@param domains The email domains to associate with the organization.*/",
+        "setterMethodName" : "setDomains",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "java.util.List<Domain>",
+          "variableName" : "domains",
+          "variableType" : "java.util.List<Domain>",
+          "documentation" : "",
+          "simpleType" : "List<Domain>",
+          "variableSetterType" : "java.util.Collection<Domain>"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The email domains to associate with the organization.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDomains(java.util.Collection)} or {@link #withDomains(java.util.Collection)} if you want to override the existing values.</p>\n@param domains The email domains to associate with the organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "java.util.List<Domain>",
+          "variableName" : "domains",
+          "variableType" : "java.util.List<Domain>",
+          "documentation" : "<p>The email domains to associate with the organization.</p>",
+          "simpleType" : "List<Domain>",
+          "variableSetterType" : "java.util.Collection<Domain>"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "KmsKeyArn",
+        "c2jShape" : "KmsKeyArn",
+        "deprecated" : false,
+        "documentation" : "<p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>\n@param kmsKeyArn The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withKmsKeyArn",
+        "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>\n@return The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.*/",
+        "getterMethodName" : "getKmsKeyArn",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "KmsKeyArn",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "KmsKeyArn",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "KmsKeyArn",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>\n@param kmsKeyArn The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.*/",
+        "setterMethodName" : "setKmsKeyArn",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "kmsKeyArn",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>\n@param kmsKeyArn The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "kmsKeyArn",
+          "variableType" : "String",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "EnableInteroperability",
+        "c2jShape" : "Boolean",
+        "deprecated" : false,
+        "documentation" : "<p>When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.</p>\n@param enableInteroperability When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withEnableInteroperability",
+        "getterDocumentation" : "/**<p>When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.</p>\n@return When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.*/",
+        "getterMethodName" : "getEnableInteroperability",
+        "getterModel" : {
+          "returnType" : "Boolean",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "EnableInteroperability",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "EnableInteroperability",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
+        "name" : "EnableInteroperability",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.</p>\n@param enableInteroperability When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.*/",
+        "setterMethodName" : "setEnableInteroperability",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "enableInteroperability",
+          "variableType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.</p>\n@param enableInteroperability When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "enableInteroperability",
+          "variableType" : "Boolean",
+          "documentation" : "<p>When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.</p>",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "Alias" : {
+          "c2jName" : "Alias",
+          "c2jShape" : "OrganizationName",
+          "deprecated" : false,
+          "documentation" : "<p>The organization alias.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The organization alias.</p>\n@param alias The organization alias.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withAlias",
+          "getterDocumentation" : "/**<p>The organization alias.</p>\n@return The organization alias.*/",
+          "getterMethodName" : "getAlias",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "Alias",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Alias",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "Alias",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The organization alias.</p>\n@param alias The organization alias.*/",
+          "setterMethodName" : "setAlias",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "alias",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The organization alias.</p>\n@param alias The organization alias.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "alias",
+            "variableType" : "String",
+            "documentation" : "<p>The organization alias.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "ClientToken" : {
+          "c2jName" : "ClientToken",
+          "c2jShape" : "IdempotencyClientToken",
+          "deprecated" : false,
+          "documentation" : "<p>The idempotency token associated with the request.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The idempotency token associated with the request.</p>\n@param clientToken The idempotency token associated with the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withClientToken",
+          "getterDocumentation" : "/**<p>The idempotency token associated with the request.</p>\n@return The idempotency token associated with the request.*/",
+          "getterMethodName" : "getClientToken",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ClientToken",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ClientToken",
+            "uri" : false
+          },
+          "idempotencyToken" : true,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "ClientToken",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The idempotency token associated with the request.</p>\n@param clientToken The idempotency token associated with the request.*/",
+          "setterMethodName" : "setClientToken",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "clientToken",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The idempotency token associated with the request.</p>\n@param clientToken The idempotency token associated with the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "clientToken",
+            "variableType" : "String",
+            "documentation" : "<p>The idempotency token associated with the request.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "DirectoryId" : {
+          "c2jName" : "DirectoryId",
+          "c2jShape" : "DirectoryId",
+          "deprecated" : false,
+          "documentation" : "<p>The AWS Directory Service directory ID.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The AWS Directory Service directory ID.</p>\n@param directoryId The AWS Directory Service directory ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withDirectoryId",
+          "getterDocumentation" : "/**<p>The AWS Directory Service directory ID.</p>\n@return The AWS Directory Service directory ID.*/",
+          "getterMethodName" : "getDirectoryId",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "DirectoryId",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "DirectoryId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "DirectoryId",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The AWS Directory Service directory ID.</p>\n@param directoryId The AWS Directory Service directory ID.*/",
+          "setterMethodName" : "setDirectoryId",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "directoryId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The AWS Directory Service directory ID.</p>\n@param directoryId The AWS Directory Service directory ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "directoryId",
+            "variableType" : "String",
+            "documentation" : "<p>The AWS Directory Service directory ID.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Domains" : {
+          "c2jName" : "Domains",
+          "c2jShape" : "Domains",
+          "deprecated" : false,
+          "documentation" : "<p>The email domains to associate with the organization.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The email domains to associate with the organization.</p>\n@param domains The email domains to associate with the organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withDomains",
+          "getterDocumentation" : "/**<p>The email domains to associate with the organization.</p>\n@return The email domains to associate with the organization.*/",
+          "getterMethodName" : "getDomains",
+          "getterModel" : {
+            "returnType" : "java.util.List<Domain>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "Domains",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Domains",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : true,
+          "listModel" : {
+            "implType" : "java.util.ArrayList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "c2jName" : "member",
+              "c2jShape" : "Domain",
+              "deprecated" : false,
+              "documentation" : "",
+              "endpointDiscoveryId" : false,
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "fluentSetterMethodName" : "withMember",
+              "getterDocumentation" : "/**\n@return */",
+              "getterMethodName" : "getMember",
+              "getterModel" : {
+                "returnType" : "Domain",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "greedy" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocation" : "PAYLOAD",
+                "marshallLocationName" : "member",
+                "queryString" : false,
+                "requiresLength" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "member",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "isBinary" : false,
+              "jsonValue" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "marshallingTargetClass" : "StructuredPojo",
+              "marshallingType" : "STRUCTURED",
+              "name" : "Member",
+              "sensitive" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "setterMethodName" : "setMember",
+              "setterModel" : {
+                "timestampFormat" : null,
+                "variableDeclarationType" : "Domain",
+                "variableName" : "member",
+                "variableType" : "Domain",
+                "documentation" : "",
+                "simpleType" : "Domain",
+                "variableSetterType" : "Domain"
+              },
+              "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
+              "simple" : false,
+              "unmarshallingType" : null,
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "timestampFormat" : null,
+                "variableDeclarationType" : "Domain",
+                "variableName" : "member",
+                "variableType" : "Domain",
+                "documentation" : "",
+                "simpleType" : "Domain",
+                "variableSetterType" : "Domain"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "memberLocationName" : null,
+            "memberType" : "Domain",
+            "map" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : false,
+            "simpleType" : "Domain",
+            "templateImplType" : "java.util.ArrayList<Domain>",
+            "templateType" : "java.util.List<Domain>"
+          },
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "List",
+          "marshallingType" : "LIST",
+          "name" : "Domains",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The email domains to associate with the organization.</p>\n@param domains The email domains to associate with the organization.*/",
+          "setterMethodName" : "setDomains",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "java.util.List<Domain>",
+            "variableName" : "domains",
+            "variableType" : "java.util.List<Domain>",
+            "documentation" : "",
+            "simpleType" : "List<Domain>",
+            "variableSetterType" : "java.util.Collection<Domain>"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The email domains to associate with the organization.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDomains(java.util.Collection)} or {@link #withDomains(java.util.Collection)} if you want to override the existing values.</p>\n@param domains The email domains to associate with the organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "java.util.List<Domain>",
+            "variableName" : "domains",
+            "variableType" : "java.util.List<Domain>",
+            "documentation" : "<p>The email domains to associate with the organization.</p>",
+            "simpleType" : "List<Domain>",
+            "variableSetterType" : "java.util.Collection<Domain>"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "EnableInteroperability" : {
+          "c2jName" : "EnableInteroperability",
+          "c2jShape" : "Boolean",
+          "deprecated" : false,
+          "documentation" : "<p>When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.</p>\n@param enableInteroperability When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withEnableInteroperability",
+          "getterDocumentation" : "/**<p>When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.</p>\n@return When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.*/",
+          "getterMethodName" : "getEnableInteroperability",
+          "getterModel" : {
+            "returnType" : "Boolean",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "EnableInteroperability",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "EnableInteroperability",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
+          "name" : "EnableInteroperability",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.</p>\n@param enableInteroperability When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.*/",
+          "setterMethodName" : "setEnableInteroperability",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "enableInteroperability",
+            "variableType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.</p>\n@param enableInteroperability When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "enableInteroperability",
+            "variableType" : "Boolean",
+            "documentation" : "<p>When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.</p>",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "KmsKeyArn" : {
+          "c2jName" : "KmsKeyArn",
+          "c2jShape" : "KmsKeyArn",
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>\n@param kmsKeyArn The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withKmsKeyArn",
+          "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>\n@return The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.*/",
+          "getterMethodName" : "getKmsKeyArn",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "KmsKeyArn",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "KmsKeyArn",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "KmsKeyArn",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>\n@param kmsKeyArn The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.*/",
+          "setterMethodName" : "setKmsKeyArn",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "kmsKeyArn",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>\n@param kmsKeyArn The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "kmsKeyArn",
+            "variableType" : "String",
+            "documentation" : "<p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "packageName" : "com.amazonaws.services.workmail.request",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "Alias" ],
+      "shapeName" : "CreateOrganizationRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "CreateOrganizationRequest",
+        "variableName" : "createOrganizationRequest",
+        "variableType" : "CreateOrganizationRequest",
+        "documentation" : null,
+        "simpleType" : "CreateOrganizationRequest",
+        "variableSetterType" : "CreateOrganizationRequest"
+      },
+      "wrapper" : false
+    },
+    "CreateOrganizationResult" : {
+      "c2jName" : "CreateOrganizationResponse",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.workmail.response.CreateOrganizationResult",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "OrganizationId",
+        "c2jShape" : "OrganizationId",
+        "deprecated" : false,
+        "documentation" : "<p>The organization ID.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The organization ID.</p>\n@param organizationId The organization ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withOrganizationId",
+        "getterDocumentation" : "/**<p>The organization ID.</p>\n@return The organization ID.*/",
+        "getterMethodName" : "getOrganizationId",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "OrganizationId",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "OrganizationId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "OrganizationId",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The organization ID.</p>\n@param organizationId The organization ID.*/",
+        "setterMethodName" : "setOrganizationId",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "organizationId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The organization ID.</p>\n@param organizationId The organization ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "organizationId",
+          "variableType" : "String",
+          "documentation" : "<p>The organization ID.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "OrganizationId" : {
+          "c2jName" : "OrganizationId",
+          "c2jShape" : "OrganizationId",
+          "deprecated" : false,
+          "documentation" : "<p>The organization ID.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The organization ID.</p>\n@param organizationId The organization ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withOrganizationId",
+          "getterDocumentation" : "/**<p>The organization ID.</p>\n@return The organization ID.*/",
+          "getterMethodName" : "getOrganizationId",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "OrganizationId",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "OrganizationId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "OrganizationId",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The organization ID.</p>\n@param organizationId The organization ID.*/",
+          "setterMethodName" : "setOrganizationId",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "organizationId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The organization ID.</p>\n@param organizationId The organization ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "organizationId",
+            "variableType" : "String",
+            "documentation" : "<p>The organization ID.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "packageName" : "com.amazonaws.services.workmail.response",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "CreateOrganizationResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "CreateOrganizationResult",
+        "variableName" : "createOrganizationResult",
+        "variableType" : "CreateOrganizationResult",
+        "documentation" : null,
+        "simpleType" : "CreateOrganizationResult",
+        "variableSetterType" : "CreateOrganizationResult"
+      },
+      "wrapper" : false
+    },
     "CreateResourceRequest" : {
       "c2jName" : "CreateResourceRequest",
       "customization" : {
@@ -11341,12 +12674,12 @@
         "c2jName" : "EntityId",
         "c2jShape" : "WorkMailIdentifier",
         "deprecated" : false,
-        "documentation" : "<p>The identifier of the member (user or group)that owns the mailbox.</p>",
+        "documentation" : "<p>The identifier of the member (user or group) that owns the mailbox.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The identifier of the member (user or group)that owns the mailbox.</p>\n@param entityId The identifier of the member (user or group)that owns the mailbox.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The identifier of the member (user or group) that owns the mailbox.</p>\n@param entityId The identifier of the member (user or group) that owns the mailbox.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withEntityId",
-        "getterDocumentation" : "/**<p>The identifier of the member (user or group)that owns the mailbox.</p>\n@return The identifier of the member (user or group)that owns the mailbox.*/",
+        "getterDocumentation" : "/**<p>The identifier of the member (user or group) that owns the mailbox.</p>\n@return The identifier of the member (user or group) that owns the mailbox.*/",
         "getterMethodName" : "getEntityId",
         "getterModel" : {
           "returnType" : "String",
@@ -11380,7 +12713,7 @@
         "marshallingType" : "STRING",
         "name" : "EntityId",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The identifier of the member (user or group)that owns the mailbox.</p>\n@param entityId The identifier of the member (user or group)that owns the mailbox.*/",
+        "setterDocumentation" : "/**<p>The identifier of the member (user or group) that owns the mailbox.</p>\n@param entityId The identifier of the member (user or group) that owns the mailbox.*/",
         "setterMethodName" : "setEntityId",
         "setterModel" : {
           "timestampFormat" : null,
@@ -11395,13 +12728,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The identifier of the member (user or group)that owns the mailbox.</p>\n@param entityId The identifier of the member (user or group)that owns the mailbox.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The identifier of the member (user or group) that owns the mailbox.</p>\n@param entityId The identifier of the member (user or group) that owns the mailbox.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "entityId",
           "variableType" : "String",
-          "documentation" : "<p>The identifier of the member (user or group)that owns the mailbox.</p>",
+          "documentation" : "<p>The identifier of the member (user or group) that owns the mailbox.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -11481,12 +12814,12 @@
           "c2jName" : "EntityId",
           "c2jShape" : "WorkMailIdentifier",
           "deprecated" : false,
-          "documentation" : "<p>The identifier of the member (user or group)that owns the mailbox.</p>",
+          "documentation" : "<p>The identifier of the member (user or group) that owns the mailbox.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The identifier of the member (user or group)that owns the mailbox.</p>\n@param entityId The identifier of the member (user or group)that owns the mailbox.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The identifier of the member (user or group) that owns the mailbox.</p>\n@param entityId The identifier of the member (user or group) that owns the mailbox.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withEntityId",
-          "getterDocumentation" : "/**<p>The identifier of the member (user or group)that owns the mailbox.</p>\n@return The identifier of the member (user or group)that owns the mailbox.*/",
+          "getterDocumentation" : "/**<p>The identifier of the member (user or group) that owns the mailbox.</p>\n@return The identifier of the member (user or group) that owns the mailbox.*/",
           "getterMethodName" : "getEntityId",
           "getterModel" : {
             "returnType" : "String",
@@ -11520,7 +12853,7 @@
           "marshallingType" : "STRING",
           "name" : "EntityId",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The identifier of the member (user or group)that owns the mailbox.</p>\n@param entityId The identifier of the member (user or group)that owns the mailbox.*/",
+          "setterDocumentation" : "/**<p>The identifier of the member (user or group) that owns the mailbox.</p>\n@param entityId The identifier of the member (user or group) that owns the mailbox.*/",
           "setterMethodName" : "setEntityId",
           "setterModel" : {
             "timestampFormat" : null,
@@ -11535,13 +12868,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The identifier of the member (user or group)that owns the mailbox.</p>\n@param entityId The identifier of the member (user or group)that owns the mailbox.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The identifier of the member (user or group) that owns the mailbox.</p>\n@param entityId The identifier of the member (user or group) that owns the mailbox.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "entityId",
             "variableType" : "String",
-            "documentation" : "<p>The identifier of the member (user or group)that owns the mailbox.</p>",
+            "documentation" : "<p>The identifier of the member (user or group) that owns the mailbox.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -11748,6 +13081,795 @@
         "documentation" : null,
         "simpleType" : "DeleteMailboxPermissionsResult",
         "variableSetterType" : "DeleteMailboxPermissionsResult"
+      },
+      "wrapper" : false
+    },
+    "DeleteOrganizationRequest" : {
+      "c2jName" : "DeleteOrganizationRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.workmail.request.DeleteOrganizationRequest",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "DeleteOrganization",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "WorkMailService.DeleteOrganization",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "ClientToken",
+        "c2jShape" : "IdempotencyClientToken",
+        "deprecated" : false,
+        "documentation" : "<p>The idempotency token associated with the request.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The idempotency token associated with the request.</p>\n@param clientToken The idempotency token associated with the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withClientToken",
+        "getterDocumentation" : "/**<p>The idempotency token associated with the request.</p>\n@return The idempotency token associated with the request.*/",
+        "getterMethodName" : "getClientToken",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ClientToken",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ClientToken",
+          "uri" : false
+        },
+        "idempotencyToken" : true,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "ClientToken",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The idempotency token associated with the request.</p>\n@param clientToken The idempotency token associated with the request.*/",
+        "setterMethodName" : "setClientToken",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "clientToken",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The idempotency token associated with the request.</p>\n@param clientToken The idempotency token associated with the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "clientToken",
+          "variableType" : "String",
+          "documentation" : "<p>The idempotency token associated with the request.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "OrganizationId",
+        "c2jShape" : "OrganizationId",
+        "deprecated" : false,
+        "documentation" : "<p>The organization ID.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The organization ID.</p>\n@param organizationId The organization ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withOrganizationId",
+        "getterDocumentation" : "/**<p>The organization ID.</p>\n@return The organization ID.*/",
+        "getterMethodName" : "getOrganizationId",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "OrganizationId",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "OrganizationId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "OrganizationId",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The organization ID.</p>\n@param organizationId The organization ID.*/",
+        "setterMethodName" : "setOrganizationId",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "organizationId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The organization ID.</p>\n@param organizationId The organization ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "organizationId",
+          "variableType" : "String",
+          "documentation" : "<p>The organization ID.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "DeleteDirectory",
+        "c2jShape" : "Boolean",
+        "deprecated" : false,
+        "documentation" : "<p>If true, deletes the AWS Directory Service directory associated with the organization.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>If true, deletes the AWS Directory Service directory associated with the organization.</p>\n@param deleteDirectory If true, deletes the AWS Directory Service directory associated with the organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withDeleteDirectory",
+        "getterDocumentation" : "/**<p>If true, deletes the AWS Directory Service directory associated with the organization.</p>\n@return If true, deletes the AWS Directory Service directory associated with the organization.*/",
+        "getterMethodName" : "getDeleteDirectory",
+        "getterModel" : {
+          "returnType" : "Boolean",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "DeleteDirectory",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "DeleteDirectory",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
+        "name" : "DeleteDirectory",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>If true, deletes the AWS Directory Service directory associated with the organization.</p>\n@param deleteDirectory If true, deletes the AWS Directory Service directory associated with the organization.*/",
+        "setterMethodName" : "setDeleteDirectory",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "deleteDirectory",
+          "variableType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>If true, deletes the AWS Directory Service directory associated with the organization.</p>\n@param deleteDirectory If true, deletes the AWS Directory Service directory associated with the organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "deleteDirectory",
+          "variableType" : "Boolean",
+          "documentation" : "<p>If true, deletes the AWS Directory Service directory associated with the organization.</p>",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "ClientToken" : {
+          "c2jName" : "ClientToken",
+          "c2jShape" : "IdempotencyClientToken",
+          "deprecated" : false,
+          "documentation" : "<p>The idempotency token associated with the request.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The idempotency token associated with the request.</p>\n@param clientToken The idempotency token associated with the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withClientToken",
+          "getterDocumentation" : "/**<p>The idempotency token associated with the request.</p>\n@return The idempotency token associated with the request.*/",
+          "getterMethodName" : "getClientToken",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ClientToken",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ClientToken",
+            "uri" : false
+          },
+          "idempotencyToken" : true,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "ClientToken",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The idempotency token associated with the request.</p>\n@param clientToken The idempotency token associated with the request.*/",
+          "setterMethodName" : "setClientToken",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "clientToken",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The idempotency token associated with the request.</p>\n@param clientToken The idempotency token associated with the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "clientToken",
+            "variableType" : "String",
+            "documentation" : "<p>The idempotency token associated with the request.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "DeleteDirectory" : {
+          "c2jName" : "DeleteDirectory",
+          "c2jShape" : "Boolean",
+          "deprecated" : false,
+          "documentation" : "<p>If true, deletes the AWS Directory Service directory associated with the organization.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>If true, deletes the AWS Directory Service directory associated with the organization.</p>\n@param deleteDirectory If true, deletes the AWS Directory Service directory associated with the organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withDeleteDirectory",
+          "getterDocumentation" : "/**<p>If true, deletes the AWS Directory Service directory associated with the organization.</p>\n@return If true, deletes the AWS Directory Service directory associated with the organization.*/",
+          "getterMethodName" : "getDeleteDirectory",
+          "getterModel" : {
+            "returnType" : "Boolean",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "DeleteDirectory",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "DeleteDirectory",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
+          "name" : "DeleteDirectory",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>If true, deletes the AWS Directory Service directory associated with the organization.</p>\n@param deleteDirectory If true, deletes the AWS Directory Service directory associated with the organization.*/",
+          "setterMethodName" : "setDeleteDirectory",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "deleteDirectory",
+            "variableType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>If true, deletes the AWS Directory Service directory associated with the organization.</p>\n@param deleteDirectory If true, deletes the AWS Directory Service directory associated with the organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "deleteDirectory",
+            "variableType" : "Boolean",
+            "documentation" : "<p>If true, deletes the AWS Directory Service directory associated with the organization.</p>",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "OrganizationId" : {
+          "c2jName" : "OrganizationId",
+          "c2jShape" : "OrganizationId",
+          "deprecated" : false,
+          "documentation" : "<p>The organization ID.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The organization ID.</p>\n@param organizationId The organization ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withOrganizationId",
+          "getterDocumentation" : "/**<p>The organization ID.</p>\n@return The organization ID.*/",
+          "getterMethodName" : "getOrganizationId",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "OrganizationId",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "OrganizationId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "OrganizationId",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The organization ID.</p>\n@param organizationId The organization ID.*/",
+          "setterMethodName" : "setOrganizationId",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "organizationId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The organization ID.</p>\n@param organizationId The organization ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "organizationId",
+            "variableType" : "String",
+            "documentation" : "<p>The organization ID.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "packageName" : "com.amazonaws.services.workmail.request",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "OrganizationId", "DeleteDirectory" ],
+      "shapeName" : "DeleteOrganizationRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeleteOrganizationRequest",
+        "variableName" : "deleteOrganizationRequest",
+        "variableType" : "DeleteOrganizationRequest",
+        "documentation" : null,
+        "simpleType" : "DeleteOrganizationRequest",
+        "variableSetterType" : "DeleteOrganizationRequest"
+      },
+      "wrapper" : false
+    },
+    "DeleteOrganizationResult" : {
+      "c2jName" : "DeleteOrganizationResponse",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.workmail.response.DeleteOrganizationResult",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "OrganizationId",
+        "c2jShape" : "OrganizationId",
+        "deprecated" : false,
+        "documentation" : "<p>The organization ID.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The organization ID.</p>\n@param organizationId The organization ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withOrganizationId",
+        "getterDocumentation" : "/**<p>The organization ID.</p>\n@return The organization ID.*/",
+        "getterMethodName" : "getOrganizationId",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "OrganizationId",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "OrganizationId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "OrganizationId",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The organization ID.</p>\n@param organizationId The organization ID.*/",
+        "setterMethodName" : "setOrganizationId",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "organizationId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The organization ID.</p>\n@param organizationId The organization ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "organizationId",
+          "variableType" : "String",
+          "documentation" : "<p>The organization ID.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "State",
+        "c2jShape" : "String",
+        "deprecated" : false,
+        "documentation" : "<p>The state of the organization.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The state of the organization.</p>\n@param state The state of the organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withState",
+        "getterDocumentation" : "/**<p>The state of the organization.</p>\n@return The state of the organization.*/",
+        "getterMethodName" : "getState",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "State",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "State",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "State",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The state of the organization.</p>\n@param state The state of the organization.*/",
+        "setterMethodName" : "setState",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "state",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The state of the organization.</p>\n@param state The state of the organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "state",
+          "variableType" : "String",
+          "documentation" : "<p>The state of the organization.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "OrganizationId" : {
+          "c2jName" : "OrganizationId",
+          "c2jShape" : "OrganizationId",
+          "deprecated" : false,
+          "documentation" : "<p>The organization ID.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The organization ID.</p>\n@param organizationId The organization ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withOrganizationId",
+          "getterDocumentation" : "/**<p>The organization ID.</p>\n@return The organization ID.*/",
+          "getterMethodName" : "getOrganizationId",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "OrganizationId",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "OrganizationId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "OrganizationId",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The organization ID.</p>\n@param organizationId The organization ID.*/",
+          "setterMethodName" : "setOrganizationId",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "organizationId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The organization ID.</p>\n@param organizationId The organization ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "organizationId",
+            "variableType" : "String",
+            "documentation" : "<p>The organization ID.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "State" : {
+          "c2jName" : "State",
+          "c2jShape" : "String",
+          "deprecated" : false,
+          "documentation" : "<p>The state of the organization.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The state of the organization.</p>\n@param state The state of the organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withState",
+          "getterDocumentation" : "/**<p>The state of the organization.</p>\n@return The state of the organization.*/",
+          "getterMethodName" : "getState",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "State",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "State",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "State",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The state of the organization.</p>\n@param state The state of the organization.*/",
+          "setterMethodName" : "setState",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "state",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The state of the organization.</p>\n@param state The state of the organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "state",
+            "variableType" : "String",
+            "documentation" : "<p>The state of the organization.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "packageName" : "com.amazonaws.services.workmail.response",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "DeleteOrganizationResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeleteOrganizationResult",
+        "variableName" : "deleteOrganizationResult",
+        "variableType" : "DeleteOrganizationResult",
+        "documentation" : null,
+        "simpleType" : "DeleteOrganizationResult",
+        "variableSetterType" : "DeleteOrganizationResult"
       },
       "wrapper" : false
     },
@@ -20933,6 +23055,47 @@
       },
       "wrapper" : false
     },
+    "DirectoryInUseException" : {
+      "c2jName" : "DirectoryInUseException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The directory is already in use by another WorkMail organization in the same account and Region.</p>",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : "DirectoryInUseException",
+      "fullyQualifiedName" : "com.amazonaws.services.workmail.exception.DirectoryInUseException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ ],
+      "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.workmail.exception",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "DirectoryInUseException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DirectoryInUseException",
+        "variableName" : "directoryInUseException",
+        "variableType" : "DirectoryInUseException",
+        "documentation" : null,
+        "simpleType" : "DirectoryInUseException",
+        "variableSetterType" : "DirectoryInUseException"
+      },
+      "wrapper" : false
+    },
     "DirectoryServiceAuthenticationFailedException" : {
       "c2jName" : "DirectoryServiceAuthenticationFailedException",
       "customization" : {
@@ -20983,7 +23146,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>The directory on which you are trying to perform operations isn't available.</p>",
+      "documentation" : "<p>The directory is unavailable. It might be located in another Region or deleted.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "DirectoryUnavailableException",
@@ -22032,6 +24195,329 @@
         "documentation" : null,
         "simpleType" : "DisassociateMemberFromGroupResult",
         "variableSetterType" : "DisassociateMemberFromGroupResult"
+      },
+      "wrapper" : false
+    },
+    "Domain" : {
+      "c2jName" : "Domain",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The domain to associate with an Amazon WorkMail organization.</p> <p>When you configure a domain hosted in Amazon Route 53 (Route 53), all recommended DNS records are added to the organization when you create it. For more information, see <a href=\"https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html\">Adding a domain</a> in the <i>Amazon WorkMail Administrator Guide</i>.</p>",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.workmail.model.Domain",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "DomainName",
+        "c2jShape" : "DomainName",
+        "deprecated" : false,
+        "documentation" : "<p>The fully qualified domain name.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The fully qualified domain name.</p>\n@param domainName The fully qualified domain name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withDomainName",
+        "getterDocumentation" : "/**<p>The fully qualified domain name.</p>\n@return The fully qualified domain name.*/",
+        "getterMethodName" : "getDomainName",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "DomainName",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "DomainName",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "DomainName",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The fully qualified domain name.</p>\n@param domainName The fully qualified domain name.*/",
+        "setterMethodName" : "setDomainName",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "domainName",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The fully qualified domain name.</p>\n@param domainName The fully qualified domain name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "domainName",
+          "variableType" : "String",
+          "documentation" : "<p>The fully qualified domain name.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "HostedZoneId",
+        "c2jShape" : "HostedZoneId",
+        "deprecated" : false,
+        "documentation" : "<p>The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.</p>\n@param hostedZoneId The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withHostedZoneId",
+        "getterDocumentation" : "/**<p>The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.</p>\n@return The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.*/",
+        "getterMethodName" : "getHostedZoneId",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "HostedZoneId",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "HostedZoneId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "HostedZoneId",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.</p>\n@param hostedZoneId The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.*/",
+        "setterMethodName" : "setHostedZoneId",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "hostedZoneId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.</p>\n@param hostedZoneId The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "hostedZoneId",
+          "variableType" : "String",
+          "documentation" : "<p>The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "DomainName" : {
+          "c2jName" : "DomainName",
+          "c2jShape" : "DomainName",
+          "deprecated" : false,
+          "documentation" : "<p>The fully qualified domain name.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The fully qualified domain name.</p>\n@param domainName The fully qualified domain name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withDomainName",
+          "getterDocumentation" : "/**<p>The fully qualified domain name.</p>\n@return The fully qualified domain name.*/",
+          "getterMethodName" : "getDomainName",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "DomainName",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "DomainName",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "DomainName",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The fully qualified domain name.</p>\n@param domainName The fully qualified domain name.*/",
+          "setterMethodName" : "setDomainName",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "domainName",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The fully qualified domain name.</p>\n@param domainName The fully qualified domain name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "domainName",
+            "variableType" : "String",
+            "documentation" : "<p>The fully qualified domain name.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "HostedZoneId" : {
+          "c2jName" : "HostedZoneId",
+          "c2jShape" : "HostedZoneId",
+          "deprecated" : false,
+          "documentation" : "<p>The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.</p>\n@param hostedZoneId The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withHostedZoneId",
+          "getterDocumentation" : "/**<p>The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.</p>\n@return The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.*/",
+          "getterMethodName" : "getHostedZoneId",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "HostedZoneId",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "HostedZoneId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "HostedZoneId",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.</p>\n@param hostedZoneId The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.*/",
+          "setterMethodName" : "setHostedZoneId",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "hostedZoneId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.</p>\n@param hostedZoneId The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "hostedZoneId",
+            "variableType" : "String",
+            "documentation" : "<p>The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "packageName" : "com.amazonaws.services.workmail.model",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "Domain",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "Domain",
+        "variableName" : "domain",
+        "variableType" : "Domain",
+        "documentation" : null,
+        "simpleType" : "Domain",
+        "variableSetterType" : "Domain"
       },
       "wrapper" : false
     },
@@ -39083,7 +41569,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its members.</p>",
+      "documentation" : "<p>The organization must have a valid state to perform certain operations on the organization or its members.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "OrganizationStateException",
@@ -39269,6 +41755,75 @@
           "variableName" : "alias",
           "variableType" : "String",
           "documentation" : "<p>The alias associated with the organization.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "DefaultMailDomain",
+        "c2jShape" : "DomainName",
+        "deprecated" : false,
+        "documentation" : "<p>The default email domain associated with the organization.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The default email domain associated with the organization.</p>\n@param defaultMailDomain The default email domain associated with the organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withDefaultMailDomain",
+        "getterDocumentation" : "/**<p>The default email domain associated with the organization.</p>\n@return The default email domain associated with the organization.*/",
+        "getterMethodName" : "getDefaultMailDomain",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "DefaultMailDomain",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "DefaultMailDomain",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "DefaultMailDomain",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The default email domain associated with the organization.</p>\n@param defaultMailDomain The default email domain associated with the organization.*/",
+        "setterMethodName" : "setDefaultMailDomain",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "defaultMailDomain",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The default email domain associated with the organization.</p>\n@param defaultMailDomain The default email domain associated with the organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "defaultMailDomain",
+          "variableType" : "String",
+          "documentation" : "<p>The default email domain associated with the organization.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -39478,6 +42033,76 @@
             "variableName" : "alias",
             "variableType" : "String",
             "documentation" : "<p>The alias associated with the organization.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "DefaultMailDomain" : {
+          "c2jName" : "DefaultMailDomain",
+          "c2jShape" : "DomainName",
+          "deprecated" : false,
+          "documentation" : "<p>The default email domain associated with the organization.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The default email domain associated with the organization.</p>\n@param defaultMailDomain The default email domain associated with the organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withDefaultMailDomain",
+          "getterDocumentation" : "/**<p>The default email domain associated with the organization.</p>\n@return The default email domain associated with the organization.*/",
+          "getterMethodName" : "getDefaultMailDomain",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "DefaultMailDomain",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "DefaultMailDomain",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "DefaultMailDomain",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The default email domain associated with the organization.</p>\n@param defaultMailDomain The default email domain associated with the organization.*/",
+          "setterMethodName" : "setDefaultMailDomain",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "defaultMailDomain",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The default email domain associated with the organization.</p>\n@param defaultMailDomain The default email domain associated with the organization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "defaultMailDomain",
+            "variableType" : "String",
+            "documentation" : "<p>The default email domain associated with the organization.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },

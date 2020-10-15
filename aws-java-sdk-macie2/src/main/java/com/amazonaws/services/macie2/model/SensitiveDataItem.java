@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about the category, type, and number of occurrences of sensitive data that produced a finding.
+ * Provides information about the category, types, and occurrences of sensitive data that produced a sensitive data
+ * finding.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SensitiveDataItem" target="_top">AWS API
@@ -31,15 +32,17 @@ public class SensitiveDataItem implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The category of sensitive data that was detected. For example: FINANCIAL_INFORMATION, for financial information
-     * such as credit card numbers; PERSONAL_INFORMATION, for personally identifiable information such as full names and
-     * mailing addresses; or, CUSTOM_IDENTIFIER, for data that was detected by a custom data identifier.
+     * such as credit card numbers; PERSONAL_INFORMATION, for personally identifiable information, such as full names
+     * and mailing addresses, or personal health information; or, CUSTOM_IDENTIFIER, for data that was detected by a
+     * custom data identifier.
      * </p>
      */
     private String category;
     /**
      * <p>
      * An array of objects, one for each type of sensitive data that was detected. Each object reports the number of
-     * occurrences of a specific type of sensitive data that was detected.
+     * occurrences of a specific type of sensitive data that was detected, and the location of up to 15 of those
+     * occurrences.
      * </p>
      */
     private java.util.List<DefaultDetection> detections;
@@ -53,15 +56,16 @@ public class SensitiveDataItem implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The category of sensitive data that was detected. For example: FINANCIAL_INFORMATION, for financial information
-     * such as credit card numbers; PERSONAL_INFORMATION, for personally identifiable information such as full names and
-     * mailing addresses; or, CUSTOM_IDENTIFIER, for data that was detected by a custom data identifier.
+     * such as credit card numbers; PERSONAL_INFORMATION, for personally identifiable information, such as full names
+     * and mailing addresses, or personal health information; or, CUSTOM_IDENTIFIER, for data that was detected by a
+     * custom data identifier.
      * </p>
      * 
      * @param category
      *        The category of sensitive data that was detected. For example: FINANCIAL_INFORMATION, for financial
-     *        information such as credit card numbers; PERSONAL_INFORMATION, for personally identifiable information
-     *        such as full names and mailing addresses; or, CUSTOM_IDENTIFIER, for data that was detected by a custom
-     *        data identifier.
+     *        information such as credit card numbers; PERSONAL_INFORMATION, for personally identifiable information,
+     *        such as full names and mailing addresses, or personal health information; or, CUSTOM_IDENTIFIER, for data
+     *        that was detected by a custom data identifier.
      * @see SensitiveDataItemCategory
      */
 
@@ -72,14 +76,15 @@ public class SensitiveDataItem implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The category of sensitive data that was detected. For example: FINANCIAL_INFORMATION, for financial information
-     * such as credit card numbers; PERSONAL_INFORMATION, for personally identifiable information such as full names and
-     * mailing addresses; or, CUSTOM_IDENTIFIER, for data that was detected by a custom data identifier.
+     * such as credit card numbers; PERSONAL_INFORMATION, for personally identifiable information, such as full names
+     * and mailing addresses, or personal health information; or, CUSTOM_IDENTIFIER, for data that was detected by a
+     * custom data identifier.
      * </p>
      * 
      * @return The category of sensitive data that was detected. For example: FINANCIAL_INFORMATION, for financial
-     *         information such as credit card numbers; PERSONAL_INFORMATION, for personally identifiable information
-     *         such as full names and mailing addresses; or, CUSTOM_IDENTIFIER, for data that was detected by a custom
-     *         data identifier.
+     *         information such as credit card numbers; PERSONAL_INFORMATION, for personally identifiable information,
+     *         such as full names and mailing addresses, or personal health information; or, CUSTOM_IDENTIFIER, for data
+     *         that was detected by a custom data identifier.
      * @see SensitiveDataItemCategory
      */
 
@@ -90,15 +95,16 @@ public class SensitiveDataItem implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The category of sensitive data that was detected. For example: FINANCIAL_INFORMATION, for financial information
-     * such as credit card numbers; PERSONAL_INFORMATION, for personally identifiable information such as full names and
-     * mailing addresses; or, CUSTOM_IDENTIFIER, for data that was detected by a custom data identifier.
+     * such as credit card numbers; PERSONAL_INFORMATION, for personally identifiable information, such as full names
+     * and mailing addresses, or personal health information; or, CUSTOM_IDENTIFIER, for data that was detected by a
+     * custom data identifier.
      * </p>
      * 
      * @param category
      *        The category of sensitive data that was detected. For example: FINANCIAL_INFORMATION, for financial
-     *        information such as credit card numbers; PERSONAL_INFORMATION, for personally identifiable information
-     *        such as full names and mailing addresses; or, CUSTOM_IDENTIFIER, for data that was detected by a custom
-     *        data identifier.
+     *        information such as credit card numbers; PERSONAL_INFORMATION, for personally identifiable information,
+     *        such as full names and mailing addresses, or personal health information; or, CUSTOM_IDENTIFIER, for data
+     *        that was detected by a custom data identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SensitiveDataItemCategory
      */
@@ -111,15 +117,16 @@ public class SensitiveDataItem implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The category of sensitive data that was detected. For example: FINANCIAL_INFORMATION, for financial information
-     * such as credit card numbers; PERSONAL_INFORMATION, for personally identifiable information such as full names and
-     * mailing addresses; or, CUSTOM_IDENTIFIER, for data that was detected by a custom data identifier.
+     * such as credit card numbers; PERSONAL_INFORMATION, for personally identifiable information, such as full names
+     * and mailing addresses, or personal health information; or, CUSTOM_IDENTIFIER, for data that was detected by a
+     * custom data identifier.
      * </p>
      * 
      * @param category
      *        The category of sensitive data that was detected. For example: FINANCIAL_INFORMATION, for financial
-     *        information such as credit card numbers; PERSONAL_INFORMATION, for personally identifiable information
-     *        such as full names and mailing addresses; or, CUSTOM_IDENTIFIER, for data that was detected by a custom
-     *        data identifier.
+     *        information such as credit card numbers; PERSONAL_INFORMATION, for personally identifiable information,
+     *        such as full names and mailing addresses, or personal health information; or, CUSTOM_IDENTIFIER, for data
+     *        that was detected by a custom data identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SensitiveDataItemCategory
      */
@@ -132,11 +139,13 @@ public class SensitiveDataItem implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * An array of objects, one for each type of sensitive data that was detected. Each object reports the number of
-     * occurrences of a specific type of sensitive data that was detected.
+     * occurrences of a specific type of sensitive data that was detected, and the location of up to 15 of those
+     * occurrences.
      * </p>
      * 
      * @return An array of objects, one for each type of sensitive data that was detected. Each object reports the
-     *         number of occurrences of a specific type of sensitive data that was detected.
+     *         number of occurrences of a specific type of sensitive data that was detected, and the location of up to
+     *         15 of those occurrences.
      */
 
     public java.util.List<DefaultDetection> getDetections() {
@@ -146,12 +155,14 @@ public class SensitiveDataItem implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * An array of objects, one for each type of sensitive data that was detected. Each object reports the number of
-     * occurrences of a specific type of sensitive data that was detected.
+     * occurrences of a specific type of sensitive data that was detected, and the location of up to 15 of those
+     * occurrences.
      * </p>
      * 
      * @param detections
      *        An array of objects, one for each type of sensitive data that was detected. Each object reports the number
-     *        of occurrences of a specific type of sensitive data that was detected.
+     *        of occurrences of a specific type of sensitive data that was detected, and the location of up to 15 of
+     *        those occurrences.
      */
 
     public void setDetections(java.util.Collection<DefaultDetection> detections) {
@@ -166,7 +177,8 @@ public class SensitiveDataItem implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * An array of objects, one for each type of sensitive data that was detected. Each object reports the number of
-     * occurrences of a specific type of sensitive data that was detected.
+     * occurrences of a specific type of sensitive data that was detected, and the location of up to 15 of those
+     * occurrences.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -176,7 +188,8 @@ public class SensitiveDataItem implements Serializable, Cloneable, StructuredPoj
      * 
      * @param detections
      *        An array of objects, one for each type of sensitive data that was detected. Each object reports the number
-     *        of occurrences of a specific type of sensitive data that was detected.
+     *        of occurrences of a specific type of sensitive data that was detected, and the location of up to 15 of
+     *        those occurrences.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,12 +206,14 @@ public class SensitiveDataItem implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * An array of objects, one for each type of sensitive data that was detected. Each object reports the number of
-     * occurrences of a specific type of sensitive data that was detected.
+     * occurrences of a specific type of sensitive data that was detected, and the location of up to 15 of those
+     * occurrences.
      * </p>
      * 
      * @param detections
      *        An array of objects, one for each type of sensitive data that was detected. Each object reports the number
-     *        of occurrences of a specific type of sensitive data that was detected.
+     *        of occurrences of a specific type of sensitive data that was detected, and the location of up to 15 of
+     *        those occurrences.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

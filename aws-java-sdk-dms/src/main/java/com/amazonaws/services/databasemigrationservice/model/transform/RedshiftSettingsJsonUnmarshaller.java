@@ -64,6 +64,14 @@ public class RedshiftSettingsJsonUnmarshaller implements Unmarshaller<RedshiftSe
                     context.nextToken();
                     redshiftSettings.setBucketName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CaseSensitiveNames", targetDepth)) {
+                    context.nextToken();
+                    redshiftSettings.setCaseSensitiveNames(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("CompUpdate", targetDepth)) {
+                    context.nextToken();
+                    redshiftSettings.setCompUpdate(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("ConnectionTimeout", targetDepth)) {
                     context.nextToken();
                     redshiftSettings.setConnectionTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
@@ -83,6 +91,10 @@ public class RedshiftSettingsJsonUnmarshaller implements Unmarshaller<RedshiftSe
                 if (context.testExpression("EncryptionMode", targetDepth)) {
                     context.nextToken();
                     redshiftSettings.setEncryptionMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ExplicitIds", targetDepth)) {
+                    context.nextToken();
+                    redshiftSettings.setExplicitIds(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("FileTransferUploadStreams", targetDepth)) {
                     context.nextToken();

@@ -73,6 +73,22 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
     private String bucketName;
     /**
      * <p>
+     * If Amazon Redshift is configured to support case sensitive schema names, set <code>CaseSensitiveNames</code> to
+     * <code>true</code>. The default is <code>false</code>.
+     * </p>
+     */
+    private Boolean caseSensitiveNames;
+    /**
+     * <p>
+     * If you set <code>CompUpdate</code> to <code>true</code> Amazon Redshift applies automatic compression if the
+     * table is empty. This applies even if the table columns already have encodings other than <code>RAW</code>. If you
+     * set <code>CompUpdate</code> to <code>false</code>, automatic compression is disabled and existing column
+     * encodings aren't changed. The default is <code>true</code>.
+     * </p>
+     */
+    private Boolean compUpdate;
+    /**
+     * <p>
      * A value that sets the amount of time to wait (in milliseconds) before timing out, beginning from when you
      * initially establish a connection.
      * </p>
@@ -122,6 +138,14 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String encryptionMode;
+    /**
+     * <p>
+     * This setting is only valid for a full-load migration task. Set <code>ExplicitIds</code> to <code>true</code> to
+     * have tables with <code>IDENTITY</code> columns override their auto-generated values with explicit values loaded
+     * from the source data files used to populate the tables. The default is <code>false</code>.
+     * </p>
+     */
+    private Boolean explicitIds;
     /**
      * <p>
      * The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It defaults
@@ -542,6 +566,142 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * If Amazon Redshift is configured to support case sensitive schema names, set <code>CaseSensitiveNames</code> to
+     * <code>true</code>. The default is <code>false</code>.
+     * </p>
+     * 
+     * @param caseSensitiveNames
+     *        If Amazon Redshift is configured to support case sensitive schema names, set
+     *        <code>CaseSensitiveNames</code> to <code>true</code>. The default is <code>false</code>.
+     */
+
+    public void setCaseSensitiveNames(Boolean caseSensitiveNames) {
+        this.caseSensitiveNames = caseSensitiveNames;
+    }
+
+    /**
+     * <p>
+     * If Amazon Redshift is configured to support case sensitive schema names, set <code>CaseSensitiveNames</code> to
+     * <code>true</code>. The default is <code>false</code>.
+     * </p>
+     * 
+     * @return If Amazon Redshift is configured to support case sensitive schema names, set
+     *         <code>CaseSensitiveNames</code> to <code>true</code>. The default is <code>false</code>.
+     */
+
+    public Boolean getCaseSensitiveNames() {
+        return this.caseSensitiveNames;
+    }
+
+    /**
+     * <p>
+     * If Amazon Redshift is configured to support case sensitive schema names, set <code>CaseSensitiveNames</code> to
+     * <code>true</code>. The default is <code>false</code>.
+     * </p>
+     * 
+     * @param caseSensitiveNames
+     *        If Amazon Redshift is configured to support case sensitive schema names, set
+     *        <code>CaseSensitiveNames</code> to <code>true</code>. The default is <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RedshiftSettings withCaseSensitiveNames(Boolean caseSensitiveNames) {
+        setCaseSensitiveNames(caseSensitiveNames);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If Amazon Redshift is configured to support case sensitive schema names, set <code>CaseSensitiveNames</code> to
+     * <code>true</code>. The default is <code>false</code>.
+     * </p>
+     * 
+     * @return If Amazon Redshift is configured to support case sensitive schema names, set
+     *         <code>CaseSensitiveNames</code> to <code>true</code>. The default is <code>false</code>.
+     */
+
+    public Boolean isCaseSensitiveNames() {
+        return this.caseSensitiveNames;
+    }
+
+    /**
+     * <p>
+     * If you set <code>CompUpdate</code> to <code>true</code> Amazon Redshift applies automatic compression if the
+     * table is empty. This applies even if the table columns already have encodings other than <code>RAW</code>. If you
+     * set <code>CompUpdate</code> to <code>false</code>, automatic compression is disabled and existing column
+     * encodings aren't changed. The default is <code>true</code>.
+     * </p>
+     * 
+     * @param compUpdate
+     *        If you set <code>CompUpdate</code> to <code>true</code> Amazon Redshift applies automatic compression if
+     *        the table is empty. This applies even if the table columns already have encodings other than
+     *        <code>RAW</code>. If you set <code>CompUpdate</code> to <code>false</code>, automatic compression is
+     *        disabled and existing column encodings aren't changed. The default is <code>true</code>.
+     */
+
+    public void setCompUpdate(Boolean compUpdate) {
+        this.compUpdate = compUpdate;
+    }
+
+    /**
+     * <p>
+     * If you set <code>CompUpdate</code> to <code>true</code> Amazon Redshift applies automatic compression if the
+     * table is empty. This applies even if the table columns already have encodings other than <code>RAW</code>. If you
+     * set <code>CompUpdate</code> to <code>false</code>, automatic compression is disabled and existing column
+     * encodings aren't changed. The default is <code>true</code>.
+     * </p>
+     * 
+     * @return If you set <code>CompUpdate</code> to <code>true</code> Amazon Redshift applies automatic compression if
+     *         the table is empty. This applies even if the table columns already have encodings other than
+     *         <code>RAW</code>. If you set <code>CompUpdate</code> to <code>false</code>, automatic compression is
+     *         disabled and existing column encodings aren't changed. The default is <code>true</code>.
+     */
+
+    public Boolean getCompUpdate() {
+        return this.compUpdate;
+    }
+
+    /**
+     * <p>
+     * If you set <code>CompUpdate</code> to <code>true</code> Amazon Redshift applies automatic compression if the
+     * table is empty. This applies even if the table columns already have encodings other than <code>RAW</code>. If you
+     * set <code>CompUpdate</code> to <code>false</code>, automatic compression is disabled and existing column
+     * encodings aren't changed. The default is <code>true</code>.
+     * </p>
+     * 
+     * @param compUpdate
+     *        If you set <code>CompUpdate</code> to <code>true</code> Amazon Redshift applies automatic compression if
+     *        the table is empty. This applies even if the table columns already have encodings other than
+     *        <code>RAW</code>. If you set <code>CompUpdate</code> to <code>false</code>, automatic compression is
+     *        disabled and existing column encodings aren't changed. The default is <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RedshiftSettings withCompUpdate(Boolean compUpdate) {
+        setCompUpdate(compUpdate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If you set <code>CompUpdate</code> to <code>true</code> Amazon Redshift applies automatic compression if the
+     * table is empty. This applies even if the table columns already have encodings other than <code>RAW</code>. If you
+     * set <code>CompUpdate</code> to <code>false</code>, automatic compression is disabled and existing column
+     * encodings aren't changed. The default is <code>true</code>.
+     * </p>
+     * 
+     * @return If you set <code>CompUpdate</code> to <code>true</code> Amazon Redshift applies automatic compression if
+     *         the table is empty. This applies even if the table columns already have encodings other than
+     *         <code>RAW</code>. If you set <code>CompUpdate</code> to <code>false</code>, automatic compression is
+     *         disabled and existing column encodings aren't changed. The default is <code>true</code>.
+     */
+
+    public Boolean isCompUpdate() {
+        return this.compUpdate;
+    }
+
+    /**
+     * <p>
      * A value that sets the amount of time to wait (in milliseconds) before timing out, beginning from when you
      * initially establish a connection.
      * </p>
@@ -916,6 +1076,78 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
     public RedshiftSettings withEncryptionMode(EncryptionModeValue encryptionMode) {
         this.encryptionMode = encryptionMode.toString();
         return this;
+    }
+
+    /**
+     * <p>
+     * This setting is only valid for a full-load migration task. Set <code>ExplicitIds</code> to <code>true</code> to
+     * have tables with <code>IDENTITY</code> columns override their auto-generated values with explicit values loaded
+     * from the source data files used to populate the tables. The default is <code>false</code>.
+     * </p>
+     * 
+     * @param explicitIds
+     *        This setting is only valid for a full-load migration task. Set <code>ExplicitIds</code> to
+     *        <code>true</code> to have tables with <code>IDENTITY</code> columns override their auto-generated values
+     *        with explicit values loaded from the source data files used to populate the tables. The default is
+     *        <code>false</code>.
+     */
+
+    public void setExplicitIds(Boolean explicitIds) {
+        this.explicitIds = explicitIds;
+    }
+
+    /**
+     * <p>
+     * This setting is only valid for a full-load migration task. Set <code>ExplicitIds</code> to <code>true</code> to
+     * have tables with <code>IDENTITY</code> columns override their auto-generated values with explicit values loaded
+     * from the source data files used to populate the tables. The default is <code>false</code>.
+     * </p>
+     * 
+     * @return This setting is only valid for a full-load migration task. Set <code>ExplicitIds</code> to
+     *         <code>true</code> to have tables with <code>IDENTITY</code> columns override their auto-generated values
+     *         with explicit values loaded from the source data files used to populate the tables. The default is
+     *         <code>false</code>.
+     */
+
+    public Boolean getExplicitIds() {
+        return this.explicitIds;
+    }
+
+    /**
+     * <p>
+     * This setting is only valid for a full-load migration task. Set <code>ExplicitIds</code> to <code>true</code> to
+     * have tables with <code>IDENTITY</code> columns override their auto-generated values with explicit values loaded
+     * from the source data files used to populate the tables. The default is <code>false</code>.
+     * </p>
+     * 
+     * @param explicitIds
+     *        This setting is only valid for a full-load migration task. Set <code>ExplicitIds</code> to
+     *        <code>true</code> to have tables with <code>IDENTITY</code> columns override their auto-generated values
+     *        with explicit values loaded from the source data files used to populate the tables. The default is
+     *        <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RedshiftSettings withExplicitIds(Boolean explicitIds) {
+        setExplicitIds(explicitIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This setting is only valid for a full-load migration task. Set <code>ExplicitIds</code> to <code>true</code> to
+     * have tables with <code>IDENTITY</code> columns override their auto-generated values with explicit values loaded
+     * from the source data files used to populate the tables. The default is <code>false</code>.
+     * </p>
+     * 
+     * @return This setting is only valid for a full-load migration task. Set <code>ExplicitIds</code> to
+     *         <code>true</code> to have tables with <code>IDENTITY</code> columns override their auto-generated values
+     *         with explicit values loaded from the source data files used to populate the tables. The default is
+     *         <code>false</code>.
+     */
+
+    public Boolean isExplicitIds() {
+        return this.explicitIds;
     }
 
     /**
@@ -1784,6 +2016,10 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
             sb.append("BucketFolder: ").append(getBucketFolder()).append(",");
         if (getBucketName() != null)
             sb.append("BucketName: ").append(getBucketName()).append(",");
+        if (getCaseSensitiveNames() != null)
+            sb.append("CaseSensitiveNames: ").append(getCaseSensitiveNames()).append(",");
+        if (getCompUpdate() != null)
+            sb.append("CompUpdate: ").append(getCompUpdate()).append(",");
         if (getConnectionTimeout() != null)
             sb.append("ConnectionTimeout: ").append(getConnectionTimeout()).append(",");
         if (getDatabaseName() != null)
@@ -1794,6 +2030,8 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
             sb.append("EmptyAsNull: ").append(getEmptyAsNull()).append(",");
         if (getEncryptionMode() != null)
             sb.append("EncryptionMode: ").append(getEncryptionMode()).append(",");
+        if (getExplicitIds() != null)
+            sb.append("ExplicitIds: ").append(getExplicitIds()).append(",");
         if (getFileTransferUploadStreams() != null)
             sb.append("FileTransferUploadStreams: ").append(getFileTransferUploadStreams()).append(",");
         if (getLoadTimeout() != null)
@@ -1856,6 +2094,14 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getBucketName() != null && other.getBucketName().equals(this.getBucketName()) == false)
             return false;
+        if (other.getCaseSensitiveNames() == null ^ this.getCaseSensitiveNames() == null)
+            return false;
+        if (other.getCaseSensitiveNames() != null && other.getCaseSensitiveNames().equals(this.getCaseSensitiveNames()) == false)
+            return false;
+        if (other.getCompUpdate() == null ^ this.getCompUpdate() == null)
+            return false;
+        if (other.getCompUpdate() != null && other.getCompUpdate().equals(this.getCompUpdate()) == false)
+            return false;
         if (other.getConnectionTimeout() == null ^ this.getConnectionTimeout() == null)
             return false;
         if (other.getConnectionTimeout() != null && other.getConnectionTimeout().equals(this.getConnectionTimeout()) == false)
@@ -1875,6 +2121,10 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
         if (other.getEncryptionMode() == null ^ this.getEncryptionMode() == null)
             return false;
         if (other.getEncryptionMode() != null && other.getEncryptionMode().equals(this.getEncryptionMode()) == false)
+            return false;
+        if (other.getExplicitIds() == null ^ this.getExplicitIds() == null)
+            return false;
+        if (other.getExplicitIds() != null && other.getExplicitIds().equals(this.getExplicitIds()) == false)
             return false;
         if (other.getFileTransferUploadStreams() == null ^ this.getFileTransferUploadStreams() == null)
             return false;
@@ -1952,11 +2202,14 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getAfterConnectScript() == null) ? 0 : getAfterConnectScript().hashCode());
         hashCode = prime * hashCode + ((getBucketFolder() == null) ? 0 : getBucketFolder().hashCode());
         hashCode = prime * hashCode + ((getBucketName() == null) ? 0 : getBucketName().hashCode());
+        hashCode = prime * hashCode + ((getCaseSensitiveNames() == null) ? 0 : getCaseSensitiveNames().hashCode());
+        hashCode = prime * hashCode + ((getCompUpdate() == null) ? 0 : getCompUpdate().hashCode());
         hashCode = prime * hashCode + ((getConnectionTimeout() == null) ? 0 : getConnectionTimeout().hashCode());
         hashCode = prime * hashCode + ((getDatabaseName() == null) ? 0 : getDatabaseName().hashCode());
         hashCode = prime * hashCode + ((getDateFormat() == null) ? 0 : getDateFormat().hashCode());
         hashCode = prime * hashCode + ((getEmptyAsNull() == null) ? 0 : getEmptyAsNull().hashCode());
         hashCode = prime * hashCode + ((getEncryptionMode() == null) ? 0 : getEncryptionMode().hashCode());
+        hashCode = prime * hashCode + ((getExplicitIds() == null) ? 0 : getExplicitIds().hashCode());
         hashCode = prime * hashCode + ((getFileTransferUploadStreams() == null) ? 0 : getFileTransferUploadStreams().hashCode());
         hashCode = prime * hashCode + ((getLoadTimeout() == null) ? 0 : getLoadTimeout().hashCode());
         hashCode = prime * hashCode + ((getMaxFileSize() == null) ? 0 : getMaxFileSize().hashCode());

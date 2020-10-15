@@ -48,9 +48,22 @@ public class GroupSummary implements Serializable, Cloneable, StructuredPojo {
     private String filterExpression;
     /**
      * <p>
-     * The structure containing configurations related to insights. The InsightsEnabled boolean can be set to true to
-     * enable insights for the groups or false to disable insights for the groups.
+     * The structure containing configurations related to insights.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for
+     * the group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can only be
+     * enabled on a group with InsightsEnabled set to true.
+     * </p>
+     * </li>
+     * </ul>
      */
     private InsightsConfiguration insightsConfiguration;
 
@@ -176,13 +189,38 @@ public class GroupSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The structure containing configurations related to insights. The InsightsEnabled boolean can be set to true to
-     * enable insights for the groups or false to disable insights for the groups.
+     * The structure containing configurations related to insights.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for
+     * the group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can only be
+     * enabled on a group with InsightsEnabled set to true.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param insightsConfiguration
-     *        The structure containing configurations related to insights. The InsightsEnabled boolean can be set to
-     *        true to enable insights for the groups or false to disable insights for the groups.
+     *        The structure containing configurations related to insights.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable
+     *        insights for the group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can
+     *        only be enabled on a group with InsightsEnabled set to true.
+     *        </p>
+     *        </li>
      */
 
     public void setInsightsConfiguration(InsightsConfiguration insightsConfiguration) {
@@ -191,12 +229,37 @@ public class GroupSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The structure containing configurations related to insights. The InsightsEnabled boolean can be set to true to
-     * enable insights for the groups or false to disable insights for the groups.
+     * The structure containing configurations related to insights.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for
+     * the group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can only be
+     * enabled on a group with InsightsEnabled set to true.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The structure containing configurations related to insights. The InsightsEnabled boolean can be set to
-     *         true to enable insights for the groups or false to disable insights for the groups.
+     * @return The structure containing configurations related to insights.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable
+     *         insights for the group.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can
+     *         only be enabled on a group with InsightsEnabled set to true.
+     *         </p>
+     *         </li>
      */
 
     public InsightsConfiguration getInsightsConfiguration() {
@@ -205,13 +268,38 @@ public class GroupSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The structure containing configurations related to insights. The InsightsEnabled boolean can be set to true to
-     * enable insights for the groups or false to disable insights for the groups.
+     * The structure containing configurations related to insights.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for
+     * the group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can only be
+     * enabled on a group with InsightsEnabled set to true.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param insightsConfiguration
-     *        The structure containing configurations related to insights. The InsightsEnabled boolean can be set to
-     *        true to enable insights for the groups or false to disable insights for the groups.
+     *        The structure containing configurations related to insights.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable
+     *        insights for the group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can
+     *        only be enabled on a group with InsightsEnabled set to true.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

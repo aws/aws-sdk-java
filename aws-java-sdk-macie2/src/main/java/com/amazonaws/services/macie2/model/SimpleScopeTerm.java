@@ -31,30 +31,121 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The operator to use in the condition.
+     * The operator to use in the condition. Valid operators for each supported property (key) are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OBJECT_EXTENSION - EQ (equals) or NE (not equals)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_SIZE - Any operator except CONTAINS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TAG - EQ (equals) or NE (not equals)
+     * </p>
+     * </li>
+     * </ul>
      */
     private String comparator;
     /**
      * <p>
-     * The property to use in the condition.
+     * The object property to use in the condition.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * An array that lists one or more values to use in the condition.
+     * An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION,
+     * this array can specify multiple values and Amazon Macie uses an OR operator to join the values. Otherwise, this
+     * array can specify only one value. Valid values for each supported property (key) are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: doc, docx, pdf
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was created or
+     * last changed, whichever is latest. For example: 2020-09-28T14:31:13Z
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object, instead
+     * of a SimpleScopeTerm object, to define a tag-based condition for the job.
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<String> values;
 
     /**
      * <p>
-     * The operator to use in the condition.
+     * The operator to use in the condition. Valid operators for each supported property (key) are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OBJECT_EXTENSION - EQ (equals) or NE (not equals)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_SIZE - Any operator except CONTAINS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TAG - EQ (equals) or NE (not equals)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param comparator
-     *        The operator to use in the condition.
+     *        The operator to use in the condition. Valid operators for each supported property (key) are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        OBJECT_EXTENSION - EQ (equals) or NE (not equals)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_SIZE - Any operator except CONTAINS
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TAG - EQ (equals) or NE (not equals)
+     *        </p>
+     *        </li>
      * @see JobComparator
      */
 
@@ -64,10 +155,53 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The operator to use in the condition.
+     * The operator to use in the condition. Valid operators for each supported property (key) are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OBJECT_EXTENSION - EQ (equals) or NE (not equals)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_SIZE - Any operator except CONTAINS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TAG - EQ (equals) or NE (not equals)
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The operator to use in the condition.
+     * @return The operator to use in the condition. Valid operators for each supported property (key) are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         OBJECT_EXTENSION - EQ (equals) or NE (not equals)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OBJECT_SIZE - Any operator except CONTAINS
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TAG - EQ (equals) or NE (not equals)
+     *         </p>
+     *         </li>
      * @see JobComparator
      */
 
@@ -77,11 +211,54 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The operator to use in the condition.
+     * The operator to use in the condition. Valid operators for each supported property (key) are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OBJECT_EXTENSION - EQ (equals) or NE (not equals)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_SIZE - Any operator except CONTAINS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TAG - EQ (equals) or NE (not equals)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param comparator
-     *        The operator to use in the condition.
+     *        The operator to use in the condition. Valid operators for each supported property (key) are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        OBJECT_EXTENSION - EQ (equals) or NE (not equals)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_SIZE - Any operator except CONTAINS
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TAG - EQ (equals) or NE (not equals)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobComparator
      */
@@ -93,11 +270,54 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The operator to use in the condition.
+     * The operator to use in the condition. Valid operators for each supported property (key) are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OBJECT_EXTENSION - EQ (equals) or NE (not equals)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_SIZE - Any operator except CONTAINS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TAG - EQ (equals) or NE (not equals)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param comparator
-     *        The operator to use in the condition.
+     *        The operator to use in the condition. Valid operators for each supported property (key) are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        OBJECT_EXTENSION - EQ (equals) or NE (not equals)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_SIZE - Any operator except CONTAINS
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TAG - EQ (equals) or NE (not equals)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobComparator
      */
@@ -109,11 +329,11 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The property to use in the condition.
+     * The object property to use in the condition.
      * </p>
      * 
      * @param key
-     *        The property to use in the condition.
+     *        The object property to use in the condition.
      * @see ScopeFilterKey
      */
 
@@ -123,10 +343,10 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The property to use in the condition.
+     * The object property to use in the condition.
      * </p>
      * 
-     * @return The property to use in the condition.
+     * @return The object property to use in the condition.
      * @see ScopeFilterKey
      */
 
@@ -136,11 +356,11 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The property to use in the condition.
+     * The object property to use in the condition.
      * </p>
      * 
      * @param key
-     *        The property to use in the condition.
+     *        The object property to use in the condition.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScopeFilterKey
      */
@@ -152,11 +372,11 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The property to use in the condition.
+     * The object property to use in the condition.
      * </p>
      * 
      * @param key
-     *        The property to use in the condition.
+     *        The object property to use in the condition.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScopeFilterKey
      */
@@ -168,10 +388,63 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array that lists one or more values to use in the condition.
+     * An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION,
+     * this array can specify multiple values and Amazon Macie uses an OR operator to join the values. Otherwise, this
+     * array can specify only one value. Valid values for each supported property (key) are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: doc, docx, pdf
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was created or
+     * last changed, whichever is latest. For example: 2020-09-28T14:31:13Z
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object, instead
+     * of a SimpleScopeTerm object, to define a tag-based condition for the job.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return An array that lists one or more values to use in the condition.
+     * @return An array that lists the values to use in the condition. If the value for the key property is
+     *         OBJECT_EXTENSION, this array can specify multiple values and Amazon Macie uses an OR operator to join the
+     *         values. Otherwise, this array can specify only one value. Valid values for each supported property (key)
+     *         are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: doc, docx,
+     *         pdf
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was
+     *         created or last changed, whichever is latest. For example: 2020-09-28T14:31:13Z
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object,
+     *         instead of a SimpleScopeTerm object, to define a tag-based condition for the job.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<String> getValues() {
@@ -180,11 +453,64 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array that lists one or more values to use in the condition.
+     * An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION,
+     * this array can specify multiple values and Amazon Macie uses an OR operator to join the values. Otherwise, this
+     * array can specify only one value. Valid values for each supported property (key) are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: doc, docx, pdf
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was created or
+     * last changed, whichever is latest. For example: 2020-09-28T14:31:13Z
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object, instead
+     * of a SimpleScopeTerm object, to define a tag-based condition for the job.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param values
-     *        An array that lists one or more values to use in the condition.
+     *        An array that lists the values to use in the condition. If the value for the key property is
+     *        OBJECT_EXTENSION, this array can specify multiple values and Amazon Macie uses an OR operator to join the
+     *        values. Otherwise, this array can specify only one value. Valid values for each supported property (key)
+     *        are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: doc, docx,
+     *        pdf
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was
+     *        created or last changed, whichever is latest. For example: 2020-09-28T14:31:13Z
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object,
+     *        instead of a SimpleScopeTerm object, to define a tag-based condition for the job.
+     *        </p>
+     *        </li>
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -198,8 +524,34 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array that lists one or more values to use in the condition.
+     * An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION,
+     * this array can specify multiple values and Amazon Macie uses an OR operator to join the values. Otherwise, this
+     * array can specify only one value. Valid values for each supported property (key) are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: doc, docx, pdf
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was created or
+     * last changed, whichever is latest. For example: 2020-09-28T14:31:13Z
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object, instead
+     * of a SimpleScopeTerm object, to define a tag-based condition for the job.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the
@@ -207,7 +559,34 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param values
-     *        An array that lists one or more values to use in the condition.
+     *        An array that lists the values to use in the condition. If the value for the key property is
+     *        OBJECT_EXTENSION, this array can specify multiple values and Amazon Macie uses an OR operator to join the
+     *        values. Otherwise, this array can specify only one value. Valid values for each supported property (key)
+     *        are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: doc, docx,
+     *        pdf
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was
+     *        created or last changed, whichever is latest. For example: 2020-09-28T14:31:13Z
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object,
+     *        instead of a SimpleScopeTerm object, to define a tag-based condition for the job.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -223,11 +602,64 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array that lists one or more values to use in the condition.
+     * An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION,
+     * this array can specify multiple values and Amazon Macie uses an OR operator to join the values. Otherwise, this
+     * array can specify only one value. Valid values for each supported property (key) are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: doc, docx, pdf
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was created or
+     * last changed, whichever is latest. For example: 2020-09-28T14:31:13Z
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object, instead
+     * of a SimpleScopeTerm object, to define a tag-based condition for the job.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param values
-     *        An array that lists one or more values to use in the condition.
+     *        An array that lists the values to use in the condition. If the value for the key property is
+     *        OBJECT_EXTENSION, this array can specify multiple values and Amazon Macie uses an OR operator to join the
+     *        values. Otherwise, this array can specify only one value. Valid values for each supported property (key)
+     *        are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: doc, docx,
+     *        pdf
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was
+     *        created or last changed, whichever is latest. For example: 2020-09-28T14:31:13Z
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object,
+     *        instead of a SimpleScopeTerm object, to define a tag-based condition for the job.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

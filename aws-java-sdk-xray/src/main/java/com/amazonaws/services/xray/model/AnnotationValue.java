@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Value of a segment annotation. Has one of three value types: Number, Boolean or String.
+ * Value of a segment annotation. Has one of three value types: Number, Boolean, or String.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/AnnotationValue" target="_top">AWS API

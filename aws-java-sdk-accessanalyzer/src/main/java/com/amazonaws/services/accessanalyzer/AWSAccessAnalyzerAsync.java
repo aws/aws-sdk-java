@@ -43,6 +43,39 @@ public interface AWSAccessAnalyzerAsync extends AWSAccessAnalyzer {
 
     /**
      * <p>
+     * Retroactively applies the archive rule to existing findings that meet the archive rule criteria.
+     * </p>
+     * 
+     * @param applyArchiveRuleRequest
+     *        Retroactively applies an archive rule.
+     * @return A Java Future containing the result of the ApplyArchiveRule operation returned by the service.
+     * @sample AWSAccessAnalyzerAsync.ApplyArchiveRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ApplyArchiveRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ApplyArchiveRuleResult> applyArchiveRuleAsync(ApplyArchiveRuleRequest applyArchiveRuleRequest);
+
+    /**
+     * <p>
+     * Retroactively applies the archive rule to existing findings that meet the archive rule criteria.
+     * </p>
+     * 
+     * @param applyArchiveRuleRequest
+     *        Retroactively applies an archive rule.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ApplyArchiveRule operation returned by the service.
+     * @sample AWSAccessAnalyzerAsyncHandler.ApplyArchiveRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ApplyArchiveRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ApplyArchiveRuleResult> applyArchiveRuleAsync(ApplyArchiveRuleRequest applyArchiveRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<ApplyArchiveRuleRequest, ApplyArchiveRuleResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an analyzer for your account.
      * </p>
      * 
@@ -76,8 +109,8 @@ public interface AWSAccessAnalyzerAsync extends AWSAccessAnalyzer {
 
     /**
      * <p>
-     * Creates an archive rule for the specified analyzer. Archive rules automatically archive findings that meet the
-     * criteria you define when you create the rule.
+     * Creates an archive rule for the specified analyzer. Archive rules automatically archive new findings that meet
+     * the criteria you define when you create the rule.
      * </p>
      * 
      * @param createArchiveRuleRequest
@@ -91,8 +124,8 @@ public interface AWSAccessAnalyzerAsync extends AWSAccessAnalyzer {
 
     /**
      * <p>
-     * Creates an archive rule for the specified analyzer. Archive rules automatically archive findings that meet the
-     * criteria you define when you create the rule.
+     * Creates an archive rule for the specified analyzer. Archive rules automatically archive new findings that meet
+     * the criteria you define when you create the rule.
      * </p>
      * 
      * @param createArchiveRuleRequest

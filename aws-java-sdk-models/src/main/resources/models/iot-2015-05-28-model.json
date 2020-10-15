@@ -989,6 +989,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"DeleteConflictException"},
         {"shape":"ThrottlingException"},
+        {"shape":"ConflictingResourceUpdateException"},
         {"shape":"UnauthorizedException"}
       ],
       "documentation":"<p>Deletes a fleet provisioning template.</p>"
@@ -1007,6 +1008,7 @@
         {"shape":"ThrottlingException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"UnauthorizedException"},
+        {"shape":"ConflictingResourceUpdateException"},
         {"shape":"DeleteConflictException"}
       ],
       "documentation":"<p>Deletes a fleet provisioning template version.</p>"
@@ -3705,7 +3707,7 @@
       "type":"string",
       "max":2048,
       "min":1,
-      "pattern":"arn:aws:acm:[a-z]{2}-(gov-)?[a-z]{4,9}-\\d{1}:\\d{12}:certificate/?[a-zA-Z0-9/-]+"
+      "pattern":"arn:aws(-cn|-us-gov|-iso-b|-iso)?:acm:[a-z]{2}-(gov-|iso-|isob-)?[a-z]{4,9}-\\d{1}:\\d{12}:certificate/[a-zA-Z0-9/-]+"
     },
     "Action":{
       "type":"structure",
@@ -4661,7 +4663,10 @@
       "type":"list",
       "member":{"shape":"AuthResult"}
     },
-    "AuthorizerArn":{"type":"string"},
+    "AuthorizerArn":{
+      "type":"string",
+      "max":2048
+    },
     "AuthorizerConfig":{
       "type":"structure",
       "members":{
@@ -4719,7 +4724,10 @@
       },
       "documentation":"<p>The authorizer description.</p>"
     },
-    "AuthorizerFunctionArn":{"type":"string"},
+    "AuthorizerFunctionArn":{
+      "type":"string",
+      "max":2048
+    },
     "AuthorizerName":{
       "type":"string",
       "max":128,
@@ -6556,7 +6564,7 @@
         },
         "additionalMetricsToRetain":{
           "shape":"AdditionalMetricsToRetainList",
-          "documentation":"<p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p> <p> <b>Note:</b> This API field is deprecated. Please use <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</p>",
+          "documentation":"<p> <i>Please use <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</i> </p> <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>",
           "deprecated":true,
           "deprecatedMessage":"Use additionalMetricsToRetainV2."
         },
@@ -7827,6 +7835,10 @@
         "domainType":{
           "shape":"DomainType",
           "documentation":"<p>The type of the domain.</p>"
+        },
+        "lastStatusChangeDate":{
+          "shape":"DateType",
+          "documentation":"<p>The date and time the domain configuration's status was last changed.</p>"
         }
       }
     },
@@ -8211,7 +8223,7 @@
         },
         "additionalMetricsToRetain":{
           "shape":"AdditionalMetricsToRetainList",
-          "documentation":"<p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p> <p> <b>Note:</b> This API field is deprecated. Please use <a>DescribeSecurityProfileResponse$additionalMetricsToRetainV2</a> instead.</p>",
+          "documentation":"<p> <i>Please use <a>DescribeSecurityProfileResponse$additionalMetricsToRetainV2</a> instead.</i> </p> <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>",
           "deprecated":true,
           "deprecatedMessage":"Use additionalMetricsToRetainV2."
         },
@@ -8957,11 +8969,11 @@
         },
         "incrementFactor":{
           "shape":"IncrementFactor",
-          "documentation":"<p>The exponential factor to increase the rate of rollout for a job.</p>"
+          "documentation":"<p>The exponential factor to increase the rate of rollout for a job.</p> <p>AWS IoT supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>"
         },
         "rateIncreaseCriteria":{
           "shape":"RateIncreaseCriteria",
-          "documentation":"<p>The criteria to initiate the increase in rate of rollout for a job.</p> <p>AWS IoT supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>"
+          "documentation":"<p>The criteria to initiate the increase in rate of rollout for a job.</p>"
         }
       },
       "documentation":"<p>Allows you to create an exponential rate of rollout for a job.</p>"
@@ -12273,6 +12285,7 @@
     },
     "Marker":{
       "type":"string",
+      "max":1024,
       "pattern":"[A-Za-z0-9+/]+={0,2}"
     },
     "MaxJobExecutionsPerMin":{
@@ -13455,7 +13468,10 @@
       "min":1,
       "pattern":"[\\w.:-]+"
     },
-    "Resource":{"type":"string"},
+    "Resource":{
+      "type":"string",
+      "max":2048
+    },
     "ResourceAlreadyExistsException":{
       "type":"structure",
       "members":{
@@ -15384,7 +15400,7 @@
       "members":{
         "sql":{
           "shape":"SQL",
-          "documentation":"<p>The SQL statement used to query the topic. For more information, see <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference\">AWS IoT SQL Reference</a> in the <i>AWS IoT Developer Guide</i>.</p>"
+          "documentation":"<p>The SQL statement used to query the topic. For more information, see <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html\">AWS IoT SQL Reference</a> in the <i>AWS IoT Developer Guide</i>.</p>"
         },
         "description":{
           "shape":"Description",
@@ -16098,7 +16114,7 @@
         },
         "additionalMetricsToRetain":{
           "shape":"AdditionalMetricsToRetainList",
-          "documentation":"<p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p> <p> <b>Note:</b> This API field is deprecated. Please use <a>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</p>",
+          "documentation":"<p> <i>Please use <a>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</i> </p> <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>",
           "deprecated":true,
           "deprecatedMessage":"Use additionalMetricsToRetainV2."
         },
@@ -16151,7 +16167,7 @@
         },
         "additionalMetricsToRetain":{
           "shape":"AdditionalMetricsToRetainList",
-          "documentation":"<p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the security profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p> <p> <b>Note:</b> This API field is deprecated. Please use <a>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</a> instead.</p>",
+          "documentation":"<p> <i>Please use <a>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</a> instead.</i> </p> <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the security profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>",
           "deprecated":true,
           "deprecatedMessage":"Use additionalMetricsToRetainV2."
         },

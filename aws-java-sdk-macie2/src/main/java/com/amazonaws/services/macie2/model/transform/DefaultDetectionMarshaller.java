@@ -29,6 +29,8 @@ public class DefaultDetectionMarshaller {
 
     private static final MarshallingInfo<Long> COUNT_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("count").build();
+    private static final MarshallingInfo<StructuredPojo> OCCURRENCES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("occurrences").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("type").build();
 
@@ -49,6 +51,7 @@ public class DefaultDetectionMarshaller {
 
         try {
             protocolMarshaller.marshall(defaultDetection.getCount(), COUNT_BINDING);
+            protocolMarshaller.marshall(defaultDetection.getOccurrences(), OCCURRENCES_BINDING);
             protocolMarshaller.marshall(defaultDetection.getType(), TYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

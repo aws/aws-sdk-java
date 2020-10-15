@@ -101,8 +101,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.AssociateDelegateToResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AssociateDelegateToResource"
      *      target="_top">AWS API Documentation</a>
@@ -119,7 +119,7 @@ public interface AmazonWorkMail {
      * @throws DirectoryServiceAuthenticationFailedException
      *         The directory service doesn't recognize the credentials supplied by WorkMail.
      * @throws DirectoryUnavailableException
-     *         The directory on which you are trying to perform operations isn't available.
+     *         The directory is unavailable. It might be located in another Region or deleted.
      * @throws EntityNotFoundException
      *         The identifier supplied for the user, group, or resource does not exist in your organization.
      * @throws EntityStateException
@@ -130,8 +130,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws UnsupportedOperationException
      *         You can't perform a write operation against a read-only directory.
      * @sample AmazonWorkMail.AssociateMemberToGroup
@@ -157,8 +157,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws EntityNotFoundException
      *         The identifier supplied for the user, group, or resource does not exist in your organization.
      * @sample AmazonWorkMail.CancelMailboxExportJob
@@ -192,8 +192,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws LimitExceededException
      *         The request exceeds the limit of the resource.
      * @sample AmazonWorkMail.CreateAlias
@@ -212,7 +212,7 @@ public interface AmazonWorkMail {
      * @throws DirectoryServiceAuthenticationFailedException
      *         The directory service doesn't recognize the credentials supplied by WorkMail.
      * @throws DirectoryUnavailableException
-     *         The directory on which you are trying to perform operations isn't available.
+     *         The directory is unavailable. It might be located in another Region or deleted.
      * @throws InvalidParameterException
      *         One or more of the input parameters don't match the service's restrictions.
      * @throws NameAvailabilityException
@@ -220,8 +220,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws ReservedNameException
      *         This user, group, or resource name is not allowed in Amazon WorkMail.
      * @throws UnsupportedOperationException
@@ -234,6 +234,46 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
+     * Creates a new Amazon WorkMail organization. Optionally, you can choose to associate an existing AWS Directory
+     * Service directory with your organization. If an AWS Directory Service directory ID is specified, the organization
+     * alias must match the directory alias. If you choose not to associate an existing directory with your
+     * organization, then we create a new Amazon WorkMail directory for you. For more information, see <a
+     * href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html">Adding an
+     * organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * </p>
+     * <p>
+     * You can associate multiple email domains with an organization, then set your default email domain from the Amazon
+     * WorkMail console. You can also associate a domain that is managed in an Amazon Route 53 public hosted zone. For
+     * more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html">Adding a
+     * domain</a> and <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/default_domain.html">Choosing the
+     * default domain</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * </p>
+     * <p>
+     * Optionally, you can use a customer managed master key from AWS Key Management Service (AWS KMS) to encrypt email
+     * for your organization. If you don't associate an AWS KMS key, Amazon WorkMail creates a default AWS managed
+     * master key for you.
+     * </p>
+     * 
+     * @param createOrganizationRequest
+     * @return Result of the CreateOrganization operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws DirectoryInUseException
+     *         The directory is already in use by another WorkMail organization in the same account and Region.
+     * @throws DirectoryUnavailableException
+     *         The directory is unavailable. It might be located in another Region or deleted.
+     * @throws LimitExceededException
+     *         The request exceeds the limit of the resource.
+     * @throws NameAvailabilityException
+     *         The user, group, or resource name isn't unique in Amazon WorkMail.
+     * @sample AmazonWorkMail.CreateOrganization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateOrganization" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateOrganizationResult createOrganization(CreateOrganizationRequest createOrganizationRequest);
+
+    /**
+     * <p>
      * Creates a new Amazon WorkMail resource.
      * </p>
      * 
@@ -242,7 +282,7 @@ public interface AmazonWorkMail {
      * @throws DirectoryServiceAuthenticationFailedException
      *         The directory service doesn't recognize the credentials supplied by WorkMail.
      * @throws DirectoryUnavailableException
-     *         The directory on which you are trying to perform operations isn't available.
+     *         The directory is unavailable. It might be located in another Region or deleted.
      * @throws InvalidParameterException
      *         One or more of the input parameters don't match the service's restrictions.
      * @throws NameAvailabilityException
@@ -250,8 +290,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws ReservedNameException
      *         This user, group, or resource name is not allowed in Amazon WorkMail.
      * @sample AmazonWorkMail.CreateResource
@@ -270,7 +310,7 @@ public interface AmazonWorkMail {
      * @throws DirectoryServiceAuthenticationFailedException
      *         The directory service doesn't recognize the credentials supplied by WorkMail.
      * @throws DirectoryUnavailableException
-     *         The directory on which you are trying to perform operations isn't available.
+     *         The directory is unavailable. It might be located in another Region or deleted.
      * @throws InvalidParameterException
      *         One or more of the input parameters don't match the service's restrictions.
      * @throws InvalidPasswordException
@@ -281,8 +321,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws ReservedNameException
      *         This user, group, or resource name is not allowed in Amazon WorkMail.
      * @throws UnsupportedOperationException
@@ -303,8 +343,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.DeleteAccessControlRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAccessControlRule"
      *      target="_top">AWS API Documentation</a>
@@ -328,8 +368,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.DeleteAlias
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAlias" target="_top">AWS API
      *      Documentation</a>
@@ -346,7 +386,7 @@ public interface AmazonWorkMail {
      * @throws DirectoryServiceAuthenticationFailedException
      *         The directory service doesn't recognize the credentials supplied by WorkMail.
      * @throws DirectoryUnavailableException
-     *         The directory on which you are trying to perform operations isn't available.
+     *         The directory is unavailable. It might be located in another Region or deleted.
      * @throws EntityStateException
      *         You are performing an operation on a user, group, or resource that isn't in the expected state, such as
      *         trying to delete an active user.
@@ -355,8 +395,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws UnsupportedOperationException
      *         You can't perform a write operation against a read-only directory.
      * @sample AmazonWorkMail.DeleteGroup
@@ -382,13 +422,36 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.DeleteMailboxPermissions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMailboxPermissions"
      *      target="_top">AWS API Documentation</a>
      */
     DeleteMailboxPermissionsResult deleteMailboxPermissions(DeleteMailboxPermissionsRequest deleteMailboxPermissionsRequest);
+
+    /**
+     * <p>
+     * Deletes an Amazon WorkMail organization and all underlying AWS resources managed by Amazon WorkMail as part of
+     * the organization. You can choose whether to delete the associated directory. For more information, see <a
+     * href="https://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html">Removing an
+     * organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * </p>
+     * 
+     * @param deleteOrganizationRequest
+     * @return Result of the DeleteOrganization operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @sample AmazonWorkMail.DeleteOrganization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteOrganization" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteOrganizationResult deleteOrganization(DeleteOrganizationRequest deleteOrganizationRequest);
 
     /**
      * <p>
@@ -405,8 +468,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.DeleteResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteResource" target="_top">AWS API
      *      Documentation</a>
@@ -425,8 +488,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.DeleteRetentionPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteRetentionPolicy" target="_top">AWS
      *      API Documentation</a>
@@ -448,7 +511,7 @@ public interface AmazonWorkMail {
      * @throws DirectoryServiceAuthenticationFailedException
      *         The directory service doesn't recognize the credentials supplied by WorkMail.
      * @throws DirectoryUnavailableException
-     *         The directory on which you are trying to perform operations isn't available.
+     *         The directory is unavailable. It might be located in another Region or deleted.
      * @throws EntityStateException
      *         You are performing an operation on a user, group, or resource that isn't in the expected state, such as
      *         trying to delete an active user.
@@ -457,8 +520,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws UnsupportedOperationException
      *         You can't perform a write operation against a read-only directory.
      * @sample AmazonWorkMail.DeleteUser
@@ -486,8 +549,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.DeregisterFromWorkMail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeregisterFromWorkMail"
      *      target="_top">AWS API Documentation</a>
@@ -508,8 +571,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.DescribeGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeGroup" target="_top">AWS API
      *      Documentation</a>
@@ -528,8 +591,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws EntityNotFoundException
      *         The identifier supplied for the user, group, or resource does not exist in your organization.
      * @sample AmazonWorkMail.DescribeMailboxExportJob
@@ -569,8 +632,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.DescribeResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeResource" target="_top">AWS API
      *      Documentation</a>
@@ -591,8 +654,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.DescribeUser
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeUser" target="_top">AWS API
      *      Documentation</a>
@@ -616,8 +679,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.DisassociateDelegateFromResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DisassociateDelegateFromResource"
      *      target="_top">AWS API Documentation</a>
@@ -634,7 +697,7 @@ public interface AmazonWorkMail {
      * @throws DirectoryServiceAuthenticationFailedException
      *         The directory service doesn't recognize the credentials supplied by WorkMail.
      * @throws DirectoryUnavailableException
-     *         The directory on which you are trying to perform operations isn't available.
+     *         The directory is unavailable. It might be located in another Region or deleted.
      * @throws EntityNotFoundException
      *         The identifier supplied for the user, group, or resource does not exist in your organization.
      * @throws EntityStateException
@@ -645,8 +708,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws UnsupportedOperationException
      *         You can't perform a write operation against a read-only directory.
      * @sample AmazonWorkMail.DisassociateMemberFromGroup
@@ -670,8 +733,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.GetAccessControlEffect
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetAccessControlEffect"
      *      target="_top">AWS API Documentation</a>
@@ -690,8 +753,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws EntityNotFoundException
      *         The identifier supplied for the user, group, or resource does not exist in your organization.
      * @sample AmazonWorkMail.GetDefaultRetentionPolicy
@@ -710,8 +773,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws EntityNotFoundException
      *         The identifier supplied for the user, group, or resource does not exist in your organization.
      * @sample AmazonWorkMail.GetMailboxDetails
@@ -730,8 +793,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.ListAccessControlRules
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAccessControlRules"
      *      target="_top">AWS API Documentation</a>
@@ -755,8 +818,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.ListAliases
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAliases" target="_top">AWS API
      *      Documentation</a>
@@ -780,8 +843,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.ListGroupMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListGroupMembers" target="_top">AWS API
      *      Documentation</a>
@@ -802,8 +865,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.ListGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListGroups" target="_top">AWS API
      *      Documentation</a>
@@ -822,8 +885,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.ListMailboxExportJobs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailboxExportJobs" target="_top">AWS
      *      API Documentation</a>
@@ -844,8 +907,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.ListMailboxPermissions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailboxPermissions"
      *      target="_top">AWS API Documentation</a>
@@ -885,8 +948,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.ListResourceDelegates
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListResourceDelegates" target="_top">AWS
      *      API Documentation</a>
@@ -905,8 +968,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.ListResources
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListResources" target="_top">AWS API
      *      Documentation</a>
@@ -940,8 +1003,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.ListUsers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListUsers" target="_top">AWS API
      *      Documentation</a>
@@ -966,8 +1029,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.PutAccessControlRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutAccessControlRule" target="_top">AWS
      *      API Documentation</a>
@@ -991,8 +1054,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.PutMailboxPermissions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutMailboxPermissions" target="_top">AWS
      *      API Documentation</a>
@@ -1011,8 +1074,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws LimitExceededException
      *         The request exceeds the limit of the resource.
      * @sample AmazonWorkMail.PutRetentionPolicy
@@ -1039,7 +1102,7 @@ public interface AmazonWorkMail {
      * @throws DirectoryServiceAuthenticationFailedException
      *         The directory service doesn't recognize the credentials supplied by WorkMail.
      * @throws DirectoryUnavailableException
-     *         The directory on which you are trying to perform operations isn't available.
+     *         The directory is unavailable. It might be located in another Region or deleted.
      * @throws EmailAddressInUseException
      *         The email address that you're trying to assign is already created for a different user, group, or
      *         resource.
@@ -1060,8 +1123,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.RegisterToWorkMail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/RegisterToWorkMail" target="_top">AWS
      *      API Documentation</a>
@@ -1078,7 +1141,7 @@ public interface AmazonWorkMail {
      * @throws DirectoryServiceAuthenticationFailedException
      *         The directory service doesn't recognize the credentials supplied by WorkMail.
      * @throws DirectoryUnavailableException
-     *         The directory on which you are trying to perform operations isn't available.
+     *         The directory is unavailable. It might be located in another Region or deleted.
      * @throws EntityNotFoundException
      *         The identifier supplied for the user, group, or resource does not exist in your organization.
      * @throws EntityStateException
@@ -1092,8 +1155,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws UnsupportedOperationException
      *         You can't perform a write operation against a read-only directory.
      * @sample AmazonWorkMail.ResetPassword
@@ -1117,8 +1180,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws EntityNotFoundException
      *         The identifier supplied for the user, group, or resource does not exist in your organization.
      * @throws LimitExceededException
@@ -1141,8 +1204,8 @@ public interface AmazonWorkMail {
      * @throws TooManyTagsException
      *         The resource can have up to 50 user-applied tags.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -1176,8 +1239,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws EntityNotFoundException
      *         The identifier supplied for the user, group, or resource does not exist in your organization.
      * @throws EntityStateException
@@ -1201,7 +1264,7 @@ public interface AmazonWorkMail {
      * @throws DirectoryServiceAuthenticationFailedException
      *         The directory service doesn't recognize the credentials supplied by WorkMail.
      * @throws DirectoryUnavailableException
-     *         The directory on which you are trying to perform operations isn't available.
+     *         The directory is unavailable. It might be located in another Region or deleted.
      * @throws EmailAddressInUseException
      *         The email address that you're trying to assign is already created for a different user, group, or
      *         resource.
@@ -1222,8 +1285,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws UnsupportedOperationException
      *         You can't perform a write operation against a read-only directory.
      * @sample AmazonWorkMail.UpdatePrimaryEmailAddress
@@ -1242,7 +1305,7 @@ public interface AmazonWorkMail {
      * @param updateResourceRequest
      * @return Result of the UpdateResource operation returned by the service.
      * @throws DirectoryUnavailableException
-     *         The directory on which you are trying to perform operations isn't available.
+     *         The directory is unavailable. It might be located in another Region or deleted.
      * @throws EntityNotFoundException
      *         The identifier supplied for the user, group, or resource does not exist in your organization.
      * @throws EntityStateException
@@ -1264,8 +1327,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.UpdateResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateResource" target="_top">AWS API
      *      Documentation</a>

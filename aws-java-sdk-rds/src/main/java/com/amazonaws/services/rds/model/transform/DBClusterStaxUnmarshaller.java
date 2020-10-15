@@ -350,6 +350,16 @@ public class DBClusterStaxUnmarshaller implements Unmarshaller<DBCluster, StaxUn
                     continue;
                 }
 
+                if (context.testExpression("TagList", targetDepth)) {
+                    dBCluster.withTagList(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("TagList/Tag", targetDepth)) {
+                    dBCluster.withTagList(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("GlobalWriteForwardingStatus", targetDepth)) {
                     dBCluster.setGlobalWriteForwardingStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -45,9 +45,22 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String filterExpression;
     /**
      * <p>
-     * The structure containing configurations related to insights. The InsightsEnabled boolean can be set to true to
-     * enable insights for the group or false to disable insights for the group.
+     * The structure containing configurations related to insights.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for
+     * the group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The NotifcationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications
+     * can only be enabled on a group with InsightsEnabled set to true.
+     * </p>
+     * </li>
+     * </ul>
      */
     private InsightsConfiguration insightsConfiguration;
 
@@ -173,13 +186,38 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The structure containing configurations related to insights. The InsightsEnabled boolean can be set to true to
-     * enable insights for the group or false to disable insights for the group.
+     * The structure containing configurations related to insights.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for
+     * the group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The NotifcationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications
+     * can only be enabled on a group with InsightsEnabled set to true.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param insightsConfiguration
-     *        The structure containing configurations related to insights. The InsightsEnabled boolean can be set to
-     *        true to enable insights for the group or false to disable insights for the group.
+     *        The structure containing configurations related to insights.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable
+     *        insights for the group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The NotifcationsEnabled boolean can be set to true to enable insights notifications for the group.
+     *        Notifications can only be enabled on a group with InsightsEnabled set to true.
+     *        </p>
+     *        </li>
      */
 
     public void setInsightsConfiguration(InsightsConfiguration insightsConfiguration) {
@@ -188,12 +226,37 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The structure containing configurations related to insights. The InsightsEnabled boolean can be set to true to
-     * enable insights for the group or false to disable insights for the group.
+     * The structure containing configurations related to insights.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for
+     * the group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The NotifcationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications
+     * can only be enabled on a group with InsightsEnabled set to true.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The structure containing configurations related to insights. The InsightsEnabled boolean can be set to
-     *         true to enable insights for the group or false to disable insights for the group.
+     * @return The structure containing configurations related to insights.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable
+     *         insights for the group.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The NotifcationsEnabled boolean can be set to true to enable insights notifications for the group.
+     *         Notifications can only be enabled on a group with InsightsEnabled set to true.
+     *         </p>
+     *         </li>
      */
 
     public InsightsConfiguration getInsightsConfiguration() {
@@ -202,13 +265,38 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The structure containing configurations related to insights. The InsightsEnabled boolean can be set to true to
-     * enable insights for the group or false to disable insights for the group.
+     * The structure containing configurations related to insights.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for
+     * the group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The NotifcationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications
+     * can only be enabled on a group with InsightsEnabled set to true.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param insightsConfiguration
-     *        The structure containing configurations related to insights. The InsightsEnabled boolean can be set to
-     *        true to enable insights for the group or false to disable insights for the group.
+     *        The structure containing configurations related to insights.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable
+     *        insights for the group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The NotifcationsEnabled boolean can be set to true to enable insights notifications for the group.
+     *        Notifications can only be enabled on a group with InsightsEnabled set to true.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

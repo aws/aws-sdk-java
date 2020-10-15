@@ -32,23 +32,23 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of address allocation IDs that are required to attach an Elastic IP address to your file transfer
-     * protocol-enabled server's endpoint. This is only valid in the <code>UpdateServer</code> API.
+     * A list of address allocation IDs that are required to attach an Elastic IP address to your server's endpoint.
      * </p>
      * <note>
      * <p>
-     * This property can only be use when <code>EndpointType</code> is set to <code>VPC</code>.
+     * This property can only be set when <code>EndpointType</code> is set to <code>VPC</code> and it is only valid in
+     * the <code>UpdateServer</code> API.
      * </p>
      * </note>
      */
     private java.util.List<String> addressAllocationIds;
     /**
      * <p>
-     * A list of subnet IDs that are required to host your file transfer protocol-enabled server endpoint in your VPC.
+     * A list of subnet IDs that are required to host your server endpoint in your VPC.
      * </p>
      * <note>
      * <p>
-     * This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     * This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
      * </p>
      * </note>
      */
@@ -59,38 +59,55 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This property can only be used when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.
+     * This property can only be set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.
      * </p>
      * </note>
      */
     private String vpcEndpointId;
     /**
      * <p>
-     * The VPC ID of the VPC in which a file transfer protocol-enabled server's endpoint will be hosted.
+     * The VPC ID of the VPC in which a server's endpoint will be hosted.
      * </p>
      * <note>
      * <p>
-     * This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     * This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
      * </p>
      * </note>
      */
     private String vpcId;
-
     /**
      * <p>
-     * A list of address allocation IDs that are required to attach an Elastic IP address to your file transfer
-     * protocol-enabled server's endpoint. This is only valid in the <code>UpdateServer</code> API.
+     * A list of security groups IDs that are available to attach to your server's endpoint.
      * </p>
      * <note>
      * <p>
-     * This property can only be use when <code>EndpointType</code> is set to <code>VPC</code>.
+     * This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
+     * </p>
+     * <p>
+     * You can only edit the <code>SecurityGroupIds</code> property in the <code>UpdateServer</code> API and only if you
+     * are changing the <code>EndpointType</code> from <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to
+     * <code>VPC</code>.
+     * </p>
+     * </note>
+     */
+    private java.util.List<String> securityGroupIds;
+
+    /**
+     * <p>
+     * A list of address allocation IDs that are required to attach an Elastic IP address to your server's endpoint.
+     * </p>
+     * <note>
+     * <p>
+     * This property can only be set when <code>EndpointType</code> is set to <code>VPC</code> and it is only valid in
+     * the <code>UpdateServer</code> API.
      * </p>
      * </note>
      * 
-     * @return A list of address allocation IDs that are required to attach an Elastic IP address to your file transfer
-     *         protocol-enabled server's endpoint. This is only valid in the <code>UpdateServer</code> API.</p> <note>
+     * @return A list of address allocation IDs that are required to attach an Elastic IP address to your server's
+     *         endpoint.</p> <note>
      *         <p>
-     *         This property can only be use when <code>EndpointType</code> is set to <code>VPC</code>.
+     *         This property can only be set when <code>EndpointType</code> is set to <code>VPC</code> and it is only
+     *         valid in the <code>UpdateServer</code> API.
      *         </p>
      */
 
@@ -100,20 +117,21 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of address allocation IDs that are required to attach an Elastic IP address to your file transfer
-     * protocol-enabled server's endpoint. This is only valid in the <code>UpdateServer</code> API.
+     * A list of address allocation IDs that are required to attach an Elastic IP address to your server's endpoint.
      * </p>
      * <note>
      * <p>
-     * This property can only be use when <code>EndpointType</code> is set to <code>VPC</code>.
+     * This property can only be set when <code>EndpointType</code> is set to <code>VPC</code> and it is only valid in
+     * the <code>UpdateServer</code> API.
      * </p>
      * </note>
      * 
      * @param addressAllocationIds
-     *        A list of address allocation IDs that are required to attach an Elastic IP address to your file transfer
-     *        protocol-enabled server's endpoint. This is only valid in the <code>UpdateServer</code> API.</p> <note>
+     *        A list of address allocation IDs that are required to attach an Elastic IP address to your server's
+     *        endpoint.</p> <note>
      *        <p>
-     *        This property can only be use when <code>EndpointType</code> is set to <code>VPC</code>.
+     *        This property can only be set when <code>EndpointType</code> is set to <code>VPC</code> and it is only
+     *        valid in the <code>UpdateServer</code> API.
      *        </p>
      */
 
@@ -128,12 +146,12 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of address allocation IDs that are required to attach an Elastic IP address to your file transfer
-     * protocol-enabled server's endpoint. This is only valid in the <code>UpdateServer</code> API.
+     * A list of address allocation IDs that are required to attach an Elastic IP address to your server's endpoint.
      * </p>
      * <note>
      * <p>
-     * This property can only be use when <code>EndpointType</code> is set to <code>VPC</code>.
+     * This property can only be set when <code>EndpointType</code> is set to <code>VPC</code> and it is only valid in
+     * the <code>UpdateServer</code> API.
      * </p>
      * </note>
      * <p>
@@ -143,10 +161,11 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param addressAllocationIds
-     *        A list of address allocation IDs that are required to attach an Elastic IP address to your file transfer
-     *        protocol-enabled server's endpoint. This is only valid in the <code>UpdateServer</code> API.</p> <note>
+     *        A list of address allocation IDs that are required to attach an Elastic IP address to your server's
+     *        endpoint.</p> <note>
      *        <p>
-     *        This property can only be use when <code>EndpointType</code> is set to <code>VPC</code>.
+     *        This property can only be set when <code>EndpointType</code> is set to <code>VPC</code> and it is only
+     *        valid in the <code>UpdateServer</code> API.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -163,20 +182,21 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of address allocation IDs that are required to attach an Elastic IP address to your file transfer
-     * protocol-enabled server's endpoint. This is only valid in the <code>UpdateServer</code> API.
+     * A list of address allocation IDs that are required to attach an Elastic IP address to your server's endpoint.
      * </p>
      * <note>
      * <p>
-     * This property can only be use when <code>EndpointType</code> is set to <code>VPC</code>.
+     * This property can only be set when <code>EndpointType</code> is set to <code>VPC</code> and it is only valid in
+     * the <code>UpdateServer</code> API.
      * </p>
      * </note>
      * 
      * @param addressAllocationIds
-     *        A list of address allocation IDs that are required to attach an Elastic IP address to your file transfer
-     *        protocol-enabled server's endpoint. This is only valid in the <code>UpdateServer</code> API.</p> <note>
+     *        A list of address allocation IDs that are required to attach an Elastic IP address to your server's
+     *        endpoint.</p> <note>
      *        <p>
-     *        This property can only be use when <code>EndpointType</code> is set to <code>VPC</code>.
+     *        This property can only be set when <code>EndpointType</code> is set to <code>VPC</code> and it is only
+     *        valid in the <code>UpdateServer</code> API.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -188,18 +208,17 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of subnet IDs that are required to host your file transfer protocol-enabled server endpoint in your VPC.
+     * A list of subnet IDs that are required to host your server endpoint in your VPC.
      * </p>
      * <note>
      * <p>
-     * This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     * This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
      * </p>
      * </note>
      * 
-     * @return A list of subnet IDs that are required to host your file transfer protocol-enabled server endpoint in
-     *         your VPC.</p> <note>
+     * @return A list of subnet IDs that are required to host your server endpoint in your VPC.</p> <note>
      *         <p>
-     *         This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     *         This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
      *         </p>
      */
 
@@ -209,19 +228,18 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of subnet IDs that are required to host your file transfer protocol-enabled server endpoint in your VPC.
+     * A list of subnet IDs that are required to host your server endpoint in your VPC.
      * </p>
      * <note>
      * <p>
-     * This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     * This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
      * </p>
      * </note>
      * 
      * @param subnetIds
-     *        A list of subnet IDs that are required to host your file transfer protocol-enabled server endpoint in your
-     *        VPC.</p> <note>
+     *        A list of subnet IDs that are required to host your server endpoint in your VPC.</p> <note>
      *        <p>
-     *        This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     *        This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
      *        </p>
      */
 
@@ -236,11 +254,11 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of subnet IDs that are required to host your file transfer protocol-enabled server endpoint in your VPC.
+     * A list of subnet IDs that are required to host your server endpoint in your VPC.
      * </p>
      * <note>
      * <p>
-     * This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     * This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
      * </p>
      * </note>
      * <p>
@@ -250,10 +268,9 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param subnetIds
-     *        A list of subnet IDs that are required to host your file transfer protocol-enabled server endpoint in your
-     *        VPC.</p> <note>
+     *        A list of subnet IDs that are required to host your server endpoint in your VPC.</p> <note>
      *        <p>
-     *        This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     *        This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -270,19 +287,18 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of subnet IDs that are required to host your file transfer protocol-enabled server endpoint in your VPC.
+     * A list of subnet IDs that are required to host your server endpoint in your VPC.
      * </p>
      * <note>
      * <p>
-     * This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     * This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
      * </p>
      * </note>
      * 
      * @param subnetIds
-     *        A list of subnet IDs that are required to host your file transfer protocol-enabled server endpoint in your
-     *        VPC.</p> <note>
+     *        A list of subnet IDs that are required to host your server endpoint in your VPC.</p> <note>
      *        <p>
-     *        This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     *        This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -298,14 +314,14 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This property can only be used when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.
+     * This property can only be set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.
      * </p>
      * </note>
      * 
      * @param vpcEndpointId
      *        The ID of the VPC endpoint.</p> <note>
      *        <p>
-     *        This property can only be used when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.
+     *        This property can only be set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.
      *        </p>
      */
 
@@ -319,13 +335,13 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This property can only be used when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.
+     * This property can only be set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.
      * </p>
      * </note>
      * 
      * @return The ID of the VPC endpoint.</p> <note>
      *         <p>
-     *         This property can only be used when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.
+     *         This property can only be set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.
      *         </p>
      */
 
@@ -339,14 +355,14 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * This property can only be used when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.
+     * This property can only be set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.
      * </p>
      * </note>
      * 
      * @param vpcEndpointId
      *        The ID of the VPC endpoint.</p> <note>
      *        <p>
-     *        This property can only be used when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.
+     *        This property can only be set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -358,19 +374,18 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The VPC ID of the VPC in which a file transfer protocol-enabled server's endpoint will be hosted.
+     * The VPC ID of the VPC in which a server's endpoint will be hosted.
      * </p>
      * <note>
      * <p>
-     * This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     * This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
      * </p>
      * </note>
      * 
      * @param vpcId
-     *        The VPC ID of the VPC in which a file transfer protocol-enabled server's endpoint will be hosted.</p>
-     *        <note>
+     *        The VPC ID of the VPC in which a server's endpoint will be hosted.</p> <note>
      *        <p>
-     *        This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     *        This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
      *        </p>
      */
 
@@ -380,18 +395,17 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The VPC ID of the VPC in which a file transfer protocol-enabled server's endpoint will be hosted.
+     * The VPC ID of the VPC in which a server's endpoint will be hosted.
      * </p>
      * <note>
      * <p>
-     * This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     * This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
      * </p>
      * </note>
      * 
-     * @return The VPC ID of the VPC in which a file transfer protocol-enabled server's endpoint will be hosted.</p>
-     *         <note>
+     * @return The VPC ID of the VPC in which a server's endpoint will be hosted.</p> <note>
      *         <p>
-     *         This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     *         This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
      *         </p>
      */
 
@@ -401,25 +415,166 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The VPC ID of the VPC in which a file transfer protocol-enabled server's endpoint will be hosted.
+     * The VPC ID of the VPC in which a server's endpoint will be hosted.
      * </p>
      * <note>
      * <p>
-     * This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     * This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
      * </p>
      * </note>
      * 
      * @param vpcId
-     *        The VPC ID of the VPC in which a file transfer protocol-enabled server's endpoint will be hosted.</p>
-     *        <note>
+     *        The VPC ID of the VPC in which a server's endpoint will be hosted.</p> <note>
      *        <p>
-     *        This property can only be used when <code>EndpointType</code> is set to <code>VPC</code>.
+     *        This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EndpointDetails withVpcId(String vpcId) {
         setVpcId(vpcId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of security groups IDs that are available to attach to your server's endpoint.
+     * </p>
+     * <note>
+     * <p>
+     * This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
+     * </p>
+     * <p>
+     * You can only edit the <code>SecurityGroupIds</code> property in the <code>UpdateServer</code> API and only if you
+     * are changing the <code>EndpointType</code> from <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to
+     * <code>VPC</code>.
+     * </p>
+     * </note>
+     * 
+     * @return A list of security groups IDs that are available to attach to your server's endpoint.</p> <note>
+     *         <p>
+     *         This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
+     *         </p>
+     *         <p>
+     *         You can only edit the <code>SecurityGroupIds</code> property in the <code>UpdateServer</code> API and
+     *         only if you are changing the <code>EndpointType</code> from <code>PUBLIC</code> or
+     *         <code>VPC_ENDPOINT</code> to <code>VPC</code>.
+     *         </p>
+     */
+
+    public java.util.List<String> getSecurityGroupIds() {
+        return securityGroupIds;
+    }
+
+    /**
+     * <p>
+     * A list of security groups IDs that are available to attach to your server's endpoint.
+     * </p>
+     * <note>
+     * <p>
+     * This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
+     * </p>
+     * <p>
+     * You can only edit the <code>SecurityGroupIds</code> property in the <code>UpdateServer</code> API and only if you
+     * are changing the <code>EndpointType</code> from <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to
+     * <code>VPC</code>.
+     * </p>
+     * </note>
+     * 
+     * @param securityGroupIds
+     *        A list of security groups IDs that are available to attach to your server's endpoint.</p> <note>
+     *        <p>
+     *        This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
+     *        </p>
+     *        <p>
+     *        You can only edit the <code>SecurityGroupIds</code> property in the <code>UpdateServer</code> API and only
+     *        if you are changing the <code>EndpointType</code> from <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to
+     *        <code>VPC</code>.
+     *        </p>
+     */
+
+    public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
+        if (securityGroupIds == null) {
+            this.securityGroupIds = null;
+            return;
+        }
+
+        this.securityGroupIds = new java.util.ArrayList<String>(securityGroupIds);
+    }
+
+    /**
+     * <p>
+     * A list of security groups IDs that are available to attach to your server's endpoint.
+     * </p>
+     * <note>
+     * <p>
+     * This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
+     * </p>
+     * <p>
+     * You can only edit the <code>SecurityGroupIds</code> property in the <code>UpdateServer</code> API and only if you
+     * are changing the <code>EndpointType</code> from <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to
+     * <code>VPC</code>.
+     * </p>
+     * </note>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecurityGroupIds(java.util.Collection)} or {@link #withSecurityGroupIds(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param securityGroupIds
+     *        A list of security groups IDs that are available to attach to your server's endpoint.</p> <note>
+     *        <p>
+     *        This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
+     *        </p>
+     *        <p>
+     *        You can only edit the <code>SecurityGroupIds</code> property in the <code>UpdateServer</code> API and only
+     *        if you are changing the <code>EndpointType</code> from <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to
+     *        <code>VPC</code>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EndpointDetails withSecurityGroupIds(String... securityGroupIds) {
+        if (this.securityGroupIds == null) {
+            setSecurityGroupIds(new java.util.ArrayList<String>(securityGroupIds.length));
+        }
+        for (String ele : securityGroupIds) {
+            this.securityGroupIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of security groups IDs that are available to attach to your server's endpoint.
+     * </p>
+     * <note>
+     * <p>
+     * This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
+     * </p>
+     * <p>
+     * You can only edit the <code>SecurityGroupIds</code> property in the <code>UpdateServer</code> API and only if you
+     * are changing the <code>EndpointType</code> from <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to
+     * <code>VPC</code>.
+     * </p>
+     * </note>
+     * 
+     * @param securityGroupIds
+     *        A list of security groups IDs that are available to attach to your server's endpoint.</p> <note>
+     *        <p>
+     *        This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.
+     *        </p>
+     *        <p>
+     *        You can only edit the <code>SecurityGroupIds</code> property in the <code>UpdateServer</code> API and only
+     *        if you are changing the <code>EndpointType</code> from <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to
+     *        <code>VPC</code>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EndpointDetails withSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
+        setSecurityGroupIds(securityGroupIds);
         return this;
     }
 
@@ -442,7 +597,9 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
         if (getVpcEndpointId() != null)
             sb.append("VpcEndpointId: ").append(getVpcEndpointId()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: ").append(getVpcId());
+            sb.append("VpcId: ").append(getVpcId()).append(",");
+        if (getSecurityGroupIds() != null)
+            sb.append("SecurityGroupIds: ").append(getSecurityGroupIds());
         sb.append("}");
         return sb.toString();
     }
@@ -473,6 +630,10 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
+        if (other.getSecurityGroupIds() == null ^ this.getSecurityGroupIds() == null)
+            return false;
+        if (other.getSecurityGroupIds() != null && other.getSecurityGroupIds().equals(this.getSecurityGroupIds()) == false)
+            return false;
         return true;
     }
 
@@ -485,6 +646,7 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
         hashCode = prime * hashCode + ((getVpcEndpointId() == null) ? 0 : getVpcEndpointId().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
         return hashCode;
     }
 

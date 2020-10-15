@@ -20,7 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Specifies one or more property- and tag-based conditions that define criteria for including or excluding objects from
- * a classification job.
+ * a classification job. If you specify more than one condition, Amazon Macie uses an AND operator to join the
+ * conditions.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/JobScopingBlock" target="_top">AWS API

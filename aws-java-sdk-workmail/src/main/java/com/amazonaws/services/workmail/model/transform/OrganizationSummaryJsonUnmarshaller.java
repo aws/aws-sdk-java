@@ -56,6 +56,10 @@ public class OrganizationSummaryJsonUnmarshaller implements Unmarshaller<Organiz
                     context.nextToken();
                     organizationSummary.setAlias(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DefaultMailDomain", targetDepth)) {
+                    context.nextToken();
+                    organizationSummary.setDefaultMailDomain(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
                     context.nextToken();
                     organizationSummary.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));

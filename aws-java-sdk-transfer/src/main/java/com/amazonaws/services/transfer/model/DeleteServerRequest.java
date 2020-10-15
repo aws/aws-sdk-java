@@ -27,18 +27,18 @@ public class DeleteServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A unique system-assigned identifier for a file transfer protocol-enabled server instance.
+     * A unique system-assigned identifier for a server instance.
      * </p>
      */
     private String serverId;
 
     /**
      * <p>
-     * A unique system-assigned identifier for a file transfer protocol-enabled server instance.
+     * A unique system-assigned identifier for a server instance.
      * </p>
      * 
      * @param serverId
-     *        A unique system-assigned identifier for a file transfer protocol-enabled server instance.
+     *        A unique system-assigned identifier for a server instance.
      */
 
     public void setServerId(String serverId) {
@@ -47,10 +47,10 @@ public class DeleteServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A unique system-assigned identifier for a file transfer protocol-enabled server instance.
+     * A unique system-assigned identifier for a server instance.
      * </p>
      * 
-     * @return A unique system-assigned identifier for a file transfer protocol-enabled server instance.
+     * @return A unique system-assigned identifier for a server instance.
      */
 
     public String getServerId() {
@@ -59,11 +59,11 @@ public class DeleteServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A unique system-assigned identifier for a file transfer protocol-enabled server instance.
+     * A unique system-assigned identifier for a server instance.
      * </p>
      * 
      * @param serverId
-     *        A unique system-assigned identifier for a file transfer protocol-enabled server instance.
+     *        A unique system-assigned identifier for a server instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

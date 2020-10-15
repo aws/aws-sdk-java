@@ -20,12 +20,12 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ResourceType {
 
+    AWSS3Bucket("AWS::S3::Bucket"),
     AWSIAMRole("AWS::IAM::Role"),
-    AWSKMSKey("AWS::KMS::Key"),
+    AWSSQSQueue("AWS::SQS::Queue"),
     AWSLambdaFunction("AWS::Lambda::Function"),
     AWSLambdaLayerVersion("AWS::Lambda::LayerVersion"),
-    AWSS3Bucket("AWS::S3::Bucket"),
-    AWSSQSQueue("AWS::SQS::Queue");
+    AWSKMSKey("AWS::KMS::Key");
 
     private String value;
 

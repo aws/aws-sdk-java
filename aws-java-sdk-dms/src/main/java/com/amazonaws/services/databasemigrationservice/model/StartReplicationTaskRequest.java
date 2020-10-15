@@ -34,7 +34,7 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
     private String replicationTaskArn;
     /**
      * <p>
-     * The type of replication task.
+     * A type of replication task.
      * </p>
      */
     private String startReplicationTaskType;
@@ -133,11 +133,11 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of replication task.
+     * A type of replication task.
      * </p>
      * 
      * @param startReplicationTaskType
-     *        The type of replication task.
+     *        A type of replication task.
      * @see StartReplicationTaskTypeValue
      */
 
@@ -147,10 +147,10 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of replication task.
+     * A type of replication task.
      * </p>
      * 
-     * @return The type of replication task.
+     * @return A type of replication task.
      * @see StartReplicationTaskTypeValue
      */
 
@@ -160,11 +160,11 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of replication task.
+     * A type of replication task.
      * </p>
      * 
      * @param startReplicationTaskType
-     *        The type of replication task.
+     *        A type of replication task.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StartReplicationTaskTypeValue
      */
@@ -176,11 +176,11 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of replication task.
+     * A type of replication task.
      * </p>
      * 
      * @param startReplicationTaskType
-     *        The type of replication task.
+     *        A type of replication task.
      * @see StartReplicationTaskTypeValue
      */
 
@@ -190,11 +190,11 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of replication task.
+     * A type of replication task.
      * </p>
      * 
      * @param startReplicationTaskType
-     *        The type of replication task.
+     *        A type of replication task.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StartReplicationTaskTypeValue
      */

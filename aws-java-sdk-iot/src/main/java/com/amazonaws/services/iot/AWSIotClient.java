@@ -4129,6 +4129,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         You can't delete the resource because it is attached to one or more resources.
      * @throws ThrottlingException
      *         The rate exceeds the limit.
+     * @throws ConflictingResourceUpdateException
+     *         A conflicting resource update exception. This exception is thrown when two pending updates cause a
+     *         conflict.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @sample AWSIot.DeleteProvisioningTemplate
@@ -4195,6 +4198,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The specified resource does not exist.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
+     * @throws ConflictingResourceUpdateException
+     *         A conflicting resource update exception. This exception is thrown when two pending updates cause a
+     *         conflict.
      * @throws DeleteConflictException
      *         You can't delete the resource because it is attached to one or more resources.
      * @sample AWSIot.DeleteProvisioningTemplateVersion

@@ -26,7 +26,8 @@ public enum JobStatus {
     PAUSED("PAUSED"),
     CANCELLED("CANCELLED"),
     COMPLETE("COMPLETE"),
-    IDLE("IDLE");
+    IDLE("IDLE"),
+    USER_PAUSED("USER_PAUSED");
 
     private String value;
 

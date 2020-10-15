@@ -77,8 +77,8 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Specifies the IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this
      * role will determine the level of access you want to provide your users when transferring files into and out of
-     * your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows a file
-     * transfer protocol-enabled server to access your resources when servicing your users' transfer requests.
+     * your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows a server to
+     * access your resources when servicing your users' transfer requests.
      * </p>
      */
     private String role;
@@ -98,8 +98,7 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the name of the user that was requested to be described. User names are used for authentication
-     * purposes. This is the string that will be used by your user when they log in to your file transfer
-     * protocol-enabled server.
+     * purposes. This is the string that will be used by your user when they log in to your server.
      * </p>
      */
     private String userName;
@@ -473,16 +472,15 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Specifies the IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this
      * role will determine the level of access you want to provide your users when transferring files into and out of
-     * your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows a file
-     * transfer protocol-enabled server to access your resources when servicing your users' transfer requests.
+     * your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows a server to
+     * access your resources when servicing your users' transfer requests.
      * </p>
      * 
      * @param role
      *        Specifies the IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to
      *        this role will determine the level of access you want to provide your users when transferring files into
      *        and out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that
-     *        allows a file transfer protocol-enabled server to access your resources when servicing your users'
-     *        transfer requests.
+     *        allows a server to access your resources when servicing your users' transfer requests.
      */
 
     public void setRole(String role) {
@@ -493,15 +491,14 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Specifies the IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this
      * role will determine the level of access you want to provide your users when transferring files into and out of
-     * your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows a file
-     * transfer protocol-enabled server to access your resources when servicing your users' transfer requests.
+     * your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows a server to
+     * access your resources when servicing your users' transfer requests.
      * </p>
      * 
      * @return Specifies the IAM role that controls your users' access to your Amazon S3 bucket. The policies attached
      *         to this role will determine the level of access you want to provide your users when transferring files
      *         into and out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship
-     *         that allows a file transfer protocol-enabled server to access your resources when servicing your users'
-     *         transfer requests.
+     *         that allows a server to access your resources when servicing your users' transfer requests.
      */
 
     public String getRole() {
@@ -512,16 +509,15 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Specifies the IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this
      * role will determine the level of access you want to provide your users when transferring files into and out of
-     * your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows a file
-     * transfer protocol-enabled server to access your resources when servicing your users' transfer requests.
+     * your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows a server to
+     * access your resources when servicing your users' transfer requests.
      * </p>
      * 
      * @param role
      *        Specifies the IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to
      *        this role will determine the level of access you want to provide your users when transferring files into
      *        and out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that
-     *        allows a file transfer protocol-enabled server to access your resources when servicing your users'
-     *        transfer requests.
+     *        allows a server to access your resources when servicing your users' transfer requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -681,14 +677,12 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the name of the user that was requested to be described. User names are used for authentication
-     * purposes. This is the string that will be used by your user when they log in to your file transfer
-     * protocol-enabled server.
+     * purposes. This is the string that will be used by your user when they log in to your server.
      * </p>
      * 
      * @param userName
      *        Specifies the name of the user that was requested to be described. User names are used for authentication
-     *        purposes. This is the string that will be used by your user when they log in to your file transfer
-     *        protocol-enabled server.
+     *        purposes. This is the string that will be used by your user when they log in to your server.
      */
 
     public void setUserName(String userName) {
@@ -698,13 +692,11 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the name of the user that was requested to be described. User names are used for authentication
-     * purposes. This is the string that will be used by your user when they log in to your file transfer
-     * protocol-enabled server.
+     * purposes. This is the string that will be used by your user when they log in to your server.
      * </p>
      * 
      * @return Specifies the name of the user that was requested to be described. User names are used for authentication
-     *         purposes. This is the string that will be used by your user when they log in to your file transfer
-     *         protocol-enabled server.
+     *         purposes. This is the string that will be used by your user when they log in to your server.
      */
 
     public String getUserName() {
@@ -714,14 +706,12 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the name of the user that was requested to be described. User names are used for authentication
-     * purposes. This is the string that will be used by your user when they log in to your file transfer
-     * protocol-enabled server.
+     * purposes. This is the string that will be used by your user when they log in to your server.
      * </p>
      * 
      * @param userName
      *        Specifies the name of the user that was requested to be described. User names are used for authentication
-     *        purposes. This is the string that will be used by your user when they log in to your file transfer
-     *        protocol-enabled server.
+     *        purposes. This is the string that will be used by your user when they log in to your server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

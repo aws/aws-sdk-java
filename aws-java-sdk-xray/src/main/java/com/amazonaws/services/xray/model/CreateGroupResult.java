@@ -25,24 +25,24 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The group that was created. Contains the name of the group that was created, the ARN of the group that was
-     * generated based on the group name, the filter expression, and the insight configuration that was assigned to the
-     * group.
+     * The group that was created. Contains the name of the group that was created, the Amazon Resource Name (ARN) of
+     * the group that was generated based on the group name, the filter expression, and the insight configuration that
+     * was assigned to the group.
      * </p>
      */
     private Group group;
 
     /**
      * <p>
-     * The group that was created. Contains the name of the group that was created, the ARN of the group that was
-     * generated based on the group name, the filter expression, and the insight configuration that was assigned to the
-     * group.
+     * The group that was created. Contains the name of the group that was created, the Amazon Resource Name (ARN) of
+     * the group that was generated based on the group name, the filter expression, and the insight configuration that
+     * was assigned to the group.
      * </p>
      * 
      * @param group
-     *        The group that was created. Contains the name of the group that was created, the ARN of the group that was
-     *        generated based on the group name, the filter expression, and the insight configuration that was assigned
-     *        to the group.
+     *        The group that was created. Contains the name of the group that was created, the Amazon Resource Name
+     *        (ARN) of the group that was generated based on the group name, the filter expression, and the insight
+     *        configuration that was assigned to the group.
      */
 
     public void setGroup(Group group) {
@@ -51,14 +51,14 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The group that was created. Contains the name of the group that was created, the ARN of the group that was
-     * generated based on the group name, the filter expression, and the insight configuration that was assigned to the
-     * group.
+     * The group that was created. Contains the name of the group that was created, the Amazon Resource Name (ARN) of
+     * the group that was generated based on the group name, the filter expression, and the insight configuration that
+     * was assigned to the group.
      * </p>
      * 
-     * @return The group that was created. Contains the name of the group that was created, the ARN of the group that
-     *         was generated based on the group name, the filter expression, and the insight configuration that was
-     *         assigned to the group.
+     * @return The group that was created. Contains the name of the group that was created, the Amazon Resource Name
+     *         (ARN) of the group that was generated based on the group name, the filter expression, and the insight
+     *         configuration that was assigned to the group.
      */
 
     public Group getGroup() {
@@ -67,15 +67,15 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The group that was created. Contains the name of the group that was created, the ARN of the group that was
-     * generated based on the group name, the filter expression, and the insight configuration that was assigned to the
-     * group.
+     * The group that was created. Contains the name of the group that was created, the Amazon Resource Name (ARN) of
+     * the group that was generated based on the group name, the filter expression, and the insight configuration that
+     * was assigned to the group.
      * </p>
      * 
      * @param group
-     *        The group that was created. Contains the name of the group that was created, the ARN of the group that was
-     *        generated based on the group name, the filter expression, and the insight configuration that was assigned
-     *        to the group.
+     *        The group that was created. Contains the name of the group that was created, the Amazon Resource Name
+     *        (ARN) of the group that was generated based on the group name, the filter expression, and the insight
+     *        configuration that was assigned to the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

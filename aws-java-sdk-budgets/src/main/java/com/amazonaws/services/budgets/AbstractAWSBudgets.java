@@ -43,6 +43,11 @@ public class AbstractAWSBudgets implements AWSBudgets {
     }
 
     @Override
+    public CreateBudgetActionResult createBudgetAction(CreateBudgetActionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateNotificationResult createNotification(CreateNotificationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -58,6 +63,11 @@ public class AbstractAWSBudgets implements AWSBudgets {
     }
 
     @Override
+    public DeleteBudgetActionResult deleteBudgetAction(DeleteBudgetActionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteNotificationResult deleteNotification(DeleteNotificationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -69,6 +79,26 @@ public class AbstractAWSBudgets implements AWSBudgets {
 
     @Override
     public DescribeBudgetResult describeBudget(DescribeBudgetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeBudgetActionResult describeBudgetAction(DescribeBudgetActionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeBudgetActionHistoriesResult describeBudgetActionHistories(DescribeBudgetActionHistoriesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeBudgetActionsForAccountResult describeBudgetActionsForAccount(DescribeBudgetActionsForAccountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeBudgetActionsForBudgetResult describeBudgetActionsForBudget(DescribeBudgetActionsForBudgetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -93,7 +123,17 @@ public class AbstractAWSBudgets implements AWSBudgets {
     }
 
     @Override
+    public ExecuteBudgetActionResult executeBudgetAction(ExecuteBudgetActionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateBudgetResult updateBudget(UpdateBudgetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateBudgetActionResult updateBudgetAction(UpdateBudgetActionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

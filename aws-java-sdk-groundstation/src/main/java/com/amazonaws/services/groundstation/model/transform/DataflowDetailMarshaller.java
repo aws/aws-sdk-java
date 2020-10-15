@@ -29,6 +29,8 @@ public class DataflowDetailMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> DESTINATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destination").build();
+    private static final MarshallingInfo<String> ERRORMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("errorMessage").build();
     private static final MarshallingInfo<StructuredPojo> SOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("source").build();
 
@@ -49,6 +51,7 @@ public class DataflowDetailMarshaller {
 
         try {
             protocolMarshaller.marshall(dataflowDetail.getDestination(), DESTINATION_BINDING);
+            protocolMarshaller.marshall(dataflowDetail.getErrorMessage(), ERRORMESSAGE_BINDING);
             protocolMarshaller.marshall(dataflowDetail.getSource(), SOURCE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

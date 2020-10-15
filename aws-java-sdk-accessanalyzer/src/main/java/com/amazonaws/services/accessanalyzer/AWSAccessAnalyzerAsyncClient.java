@@ -83,6 +83,39 @@ public class AWSAccessAnalyzerAsyncClient extends AWSAccessAnalyzerClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<ApplyArchiveRuleResult> applyArchiveRuleAsync(ApplyArchiveRuleRequest request) {
+
+        return applyArchiveRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ApplyArchiveRuleResult> applyArchiveRuleAsync(final ApplyArchiveRuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ApplyArchiveRuleRequest, ApplyArchiveRuleResult> asyncHandler) {
+        final ApplyArchiveRuleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ApplyArchiveRuleResult>() {
+            @Override
+            public ApplyArchiveRuleResult call() throws Exception {
+                ApplyArchiveRuleResult result = null;
+
+                try {
+                    result = executeApplyArchiveRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAnalyzerResult> createAnalyzerAsync(CreateAnalyzerRequest request) {
 
         return createAnalyzerAsync(request, null);

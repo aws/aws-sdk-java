@@ -129,6 +129,11 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
     }
 
     @Override
+    public DetectProtectiveEquipmentResult detectProtectiveEquipment(DetectProtectiveEquipmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DetectTextResult detectText(DetectTextRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

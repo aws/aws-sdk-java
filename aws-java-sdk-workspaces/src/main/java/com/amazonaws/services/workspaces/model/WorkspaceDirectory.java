@@ -92,7 +92,12 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
     private String workspaceSecurityGroupId;
     /**
      * <p>
-     * The state of the directory's registration with Amazon WorkSpaces.
+     * The state of the directory's registration with Amazon WorkSpaces. After a directory is deregistered, the
+     * <code>DEREGISTERED</code> state is returned very briefly before the directory metadata is cleaned up, so this
+     * state is rarely returned. To confirm that a directory is deregistered, check for the directory ID by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html">
+     * DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the directory has been successfully
+     * deregistered.
      * </p>
      */
     private String state;
@@ -643,11 +648,21 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The state of the directory's registration with Amazon WorkSpaces.
+     * The state of the directory's registration with Amazon WorkSpaces. After a directory is deregistered, the
+     * <code>DEREGISTERED</code> state is returned very briefly before the directory metadata is cleaned up, so this
+     * state is rarely returned. To confirm that a directory is deregistered, check for the directory ID by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html">
+     * DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the directory has been successfully
+     * deregistered.
      * </p>
      * 
      * @param state
-     *        The state of the directory's registration with Amazon WorkSpaces.
+     *        The state of the directory's registration with Amazon WorkSpaces. After a directory is deregistered, the
+     *        <code>DEREGISTERED</code> state is returned very briefly before the directory metadata is cleaned up, so
+     *        this state is rarely returned. To confirm that a directory is deregistered, check for the directory ID by
+     *        using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html">
+     *        DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the directory has been
+     *        successfully deregistered.
      * @see WorkspaceDirectoryState
      */
 
@@ -657,10 +672,20 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The state of the directory's registration with Amazon WorkSpaces.
+     * The state of the directory's registration with Amazon WorkSpaces. After a directory is deregistered, the
+     * <code>DEREGISTERED</code> state is returned very briefly before the directory metadata is cleaned up, so this
+     * state is rarely returned. To confirm that a directory is deregistered, check for the directory ID by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html">
+     * DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the directory has been successfully
+     * deregistered.
      * </p>
      * 
-     * @return The state of the directory's registration with Amazon WorkSpaces.
+     * @return The state of the directory's registration with Amazon WorkSpaces. After a directory is deregistered, the
+     *         <code>DEREGISTERED</code> state is returned very briefly before the directory metadata is cleaned up, so
+     *         this state is rarely returned. To confirm that a directory is deregistered, check for the directory ID by
+     *         using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html">
+     *         DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the directory has been
+     *         successfully deregistered.
      * @see WorkspaceDirectoryState
      */
 
@@ -670,11 +695,21 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The state of the directory's registration with Amazon WorkSpaces.
+     * The state of the directory's registration with Amazon WorkSpaces. After a directory is deregistered, the
+     * <code>DEREGISTERED</code> state is returned very briefly before the directory metadata is cleaned up, so this
+     * state is rarely returned. To confirm that a directory is deregistered, check for the directory ID by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html">
+     * DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the directory has been successfully
+     * deregistered.
      * </p>
      * 
      * @param state
-     *        The state of the directory's registration with Amazon WorkSpaces.
+     *        The state of the directory's registration with Amazon WorkSpaces. After a directory is deregistered, the
+     *        <code>DEREGISTERED</code> state is returned very briefly before the directory metadata is cleaned up, so
+     *        this state is rarely returned. To confirm that a directory is deregistered, check for the directory ID by
+     *        using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html">
+     *        DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the directory has been
+     *        successfully deregistered.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorkspaceDirectoryState
      */
@@ -686,11 +721,21 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The state of the directory's registration with Amazon WorkSpaces.
+     * The state of the directory's registration with Amazon WorkSpaces. After a directory is deregistered, the
+     * <code>DEREGISTERED</code> state is returned very briefly before the directory metadata is cleaned up, so this
+     * state is rarely returned. To confirm that a directory is deregistered, check for the directory ID by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html">
+     * DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the directory has been successfully
+     * deregistered.
      * </p>
      * 
      * @param state
-     *        The state of the directory's registration with Amazon WorkSpaces.
+     *        The state of the directory's registration with Amazon WorkSpaces. After a directory is deregistered, the
+     *        <code>DEREGISTERED</code> state is returned very briefly before the directory metadata is cleaned up, so
+     *        this state is rarely returned. To confirm that a directory is deregistered, check for the directory ID by
+     *        using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html">
+     *        DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the directory has been
+     *        successfully deregistered.
      * @see WorkspaceDirectoryState
      */
 
@@ -700,11 +745,21 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The state of the directory's registration with Amazon WorkSpaces.
+     * The state of the directory's registration with Amazon WorkSpaces. After a directory is deregistered, the
+     * <code>DEREGISTERED</code> state is returned very briefly before the directory metadata is cleaned up, so this
+     * state is rarely returned. To confirm that a directory is deregistered, check for the directory ID by using <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html">
+     * DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the directory has been successfully
+     * deregistered.
      * </p>
      * 
      * @param state
-     *        The state of the directory's registration with Amazon WorkSpaces.
+     *        The state of the directory's registration with Amazon WorkSpaces. After a directory is deregistered, the
+     *        <code>DEREGISTERED</code> state is returned very briefly before the directory metadata is cleaned up, so
+     *        this state is rarely returned. To confirm that a directory is deregistered, check for the directory ID by
+     *        using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html">
+     *        DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the directory has been
+     *        successfully deregistered.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorkspaceDirectoryState
      */

@@ -41,6 +41,19 @@ public class AbstractAWSBudgetsAsync extends AbstractAWSBudgets implements AWSBu
     }
 
     @Override
+    public java.util.concurrent.Future<CreateBudgetActionResult> createBudgetActionAsync(CreateBudgetActionRequest request) {
+
+        return createBudgetActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBudgetActionResult> createBudgetActionAsync(CreateBudgetActionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateBudgetActionRequest, CreateBudgetActionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateNotificationResult> createNotificationAsync(CreateNotificationRequest request) {
 
         return createNotificationAsync(request, null);
@@ -80,6 +93,19 @@ public class AbstractAWSBudgetsAsync extends AbstractAWSBudgets implements AWSBu
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteBudgetActionResult> deleteBudgetActionAsync(DeleteBudgetActionRequest request) {
+
+        return deleteBudgetActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBudgetActionResult> deleteBudgetActionAsync(DeleteBudgetActionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteBudgetActionRequest, DeleteBudgetActionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteNotificationResult> deleteNotificationAsync(DeleteNotificationRequest request) {
 
         return deleteNotificationAsync(request, null);
@@ -114,6 +140,60 @@ public class AbstractAWSBudgetsAsync extends AbstractAWSBudgets implements AWSBu
     @Override
     public java.util.concurrent.Future<DescribeBudgetResult> describeBudgetAsync(DescribeBudgetRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeBudgetRequest, DescribeBudgetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBudgetActionResult> describeBudgetActionAsync(DescribeBudgetActionRequest request) {
+
+        return describeBudgetActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBudgetActionResult> describeBudgetActionAsync(DescribeBudgetActionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeBudgetActionRequest, DescribeBudgetActionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBudgetActionHistoriesResult> describeBudgetActionHistoriesAsync(DescribeBudgetActionHistoriesRequest request) {
+
+        return describeBudgetActionHistoriesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBudgetActionHistoriesResult> describeBudgetActionHistoriesAsync(DescribeBudgetActionHistoriesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeBudgetActionHistoriesRequest, DescribeBudgetActionHistoriesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBudgetActionsForAccountResult> describeBudgetActionsForAccountAsync(
+            DescribeBudgetActionsForAccountRequest request) {
+
+        return describeBudgetActionsForAccountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBudgetActionsForAccountResult> describeBudgetActionsForAccountAsync(
+            DescribeBudgetActionsForAccountRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeBudgetActionsForAccountRequest, DescribeBudgetActionsForAccountResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBudgetActionsForBudgetResult> describeBudgetActionsForBudgetAsync(DescribeBudgetActionsForBudgetRequest request) {
+
+        return describeBudgetActionsForBudgetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBudgetActionsForBudgetResult> describeBudgetActionsForBudgetAsync(DescribeBudgetActionsForBudgetRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeBudgetActionsForBudgetRequest, DescribeBudgetActionsForBudgetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -175,6 +255,19 @@ public class AbstractAWSBudgetsAsync extends AbstractAWSBudgets implements AWSBu
     }
 
     @Override
+    public java.util.concurrent.Future<ExecuteBudgetActionResult> executeBudgetActionAsync(ExecuteBudgetActionRequest request) {
+
+        return executeBudgetActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExecuteBudgetActionResult> executeBudgetActionAsync(ExecuteBudgetActionRequest request,
+            com.amazonaws.handlers.AsyncHandler<ExecuteBudgetActionRequest, ExecuteBudgetActionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateBudgetResult> updateBudgetAsync(UpdateBudgetRequest request) {
 
         return updateBudgetAsync(request, null);
@@ -183,6 +276,19 @@ public class AbstractAWSBudgetsAsync extends AbstractAWSBudgets implements AWSBu
     @Override
     public java.util.concurrent.Future<UpdateBudgetResult> updateBudgetAsync(UpdateBudgetRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateBudgetRequest, UpdateBudgetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBudgetActionResult> updateBudgetActionAsync(UpdateBudgetActionRequest request) {
+
+        return updateBudgetActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBudgetActionResult> updateBudgetActionAsync(UpdateBudgetActionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateBudgetActionRequest, UpdateBudgetActionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

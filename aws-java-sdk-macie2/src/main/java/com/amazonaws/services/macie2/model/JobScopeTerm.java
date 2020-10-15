@@ -38,8 +38,8 @@ public class JobScopeTerm implements Serializable, Cloneable, StructuredPojo {
     private SimpleScopeTerm simpleScopeTerm;
     /**
      * <p>
-     * A tag-based condition that defines the operator and a tag key or tag keys and values for including or excluding
-     * an object from the job.
+     * A tag-based condition that defines the operator and tag keys or tag key and value pairs for including or
+     * excluding an object from the job.
      * </p>
      */
     private TagScopeTerm tagScopeTerm;
@@ -92,12 +92,12 @@ public class JobScopeTerm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A tag-based condition that defines the operator and a tag key or tag keys and values for including or excluding
-     * an object from the job.
+     * A tag-based condition that defines the operator and tag keys or tag key and value pairs for including or
+     * excluding an object from the job.
      * </p>
      * 
      * @param tagScopeTerm
-     *        A tag-based condition that defines the operator and a tag key or tag keys and values for including or
+     *        A tag-based condition that defines the operator and tag keys or tag key and value pairs for including or
      *        excluding an object from the job.
      */
 
@@ -107,11 +107,11 @@ public class JobScopeTerm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A tag-based condition that defines the operator and a tag key or tag keys and values for including or excluding
-     * an object from the job.
+     * A tag-based condition that defines the operator and tag keys or tag key and value pairs for including or
+     * excluding an object from the job.
      * </p>
      * 
-     * @return A tag-based condition that defines the operator and a tag key or tag keys and values for including or
+     * @return A tag-based condition that defines the operator and tag keys or tag key and value pairs for including or
      *         excluding an object from the job.
      */
 
@@ -121,12 +121,12 @@ public class JobScopeTerm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A tag-based condition that defines the operator and a tag key or tag keys and values for including or excluding
-     * an object from the job.
+     * A tag-based condition that defines the operator and tag keys or tag key and value pairs for including or
+     * excluding an object from the job.
      * </p>
      * 
      * @param tagScopeTerm
-     *        A tag-based condition that defines the operator and a tag key or tag keys and values for including or
+     *        A tag-based condition that defines the operator and tag keys or tag key and value pairs for including or
      *        excluding an object from the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

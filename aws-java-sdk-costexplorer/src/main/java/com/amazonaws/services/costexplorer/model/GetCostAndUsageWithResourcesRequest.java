@@ -86,7 +86,8 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
     private java.util.List<String> metrics;
     /**
      * <p>
-     * You can group Amazon Web Services costs using up to two different groups: either dimensions, tag keys, or both.
+     * You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>,
+     * <code>TAG</code>, <code>COST_CATEGORY</code>.
      * </p>
      */
     private java.util.List<GroupDefinition> groupBy;
@@ -557,11 +558,12 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * You can group Amazon Web Services costs using up to two different groups: either dimensions, tag keys, or both.
+     * You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>,
+     * <code>TAG</code>, <code>COST_CATEGORY</code>.
      * </p>
      * 
-     * @return You can group Amazon Web Services costs using up to two different groups: either dimensions, tag keys, or
-     *         both.
+     * @return You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>,
+     *         <code>TAG</code>, <code>COST_CATEGORY</code>.
      */
 
     public java.util.List<GroupDefinition> getGroupBy() {
@@ -570,12 +572,13 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * You can group Amazon Web Services costs using up to two different groups: either dimensions, tag keys, or both.
+     * You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>,
+     * <code>TAG</code>, <code>COST_CATEGORY</code>.
      * </p>
      * 
      * @param groupBy
-     *        You can group Amazon Web Services costs using up to two different groups: either dimensions, tag keys, or
-     *        both.
+     *        You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>,
+     *        <code>TAG</code>, <code>COST_CATEGORY</code>.
      */
 
     public void setGroupBy(java.util.Collection<GroupDefinition> groupBy) {
@@ -589,7 +592,8 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * You can group Amazon Web Services costs using up to two different groups: either dimensions, tag keys, or both.
+     * You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>,
+     * <code>TAG</code>, <code>COST_CATEGORY</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -598,8 +602,8 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param groupBy
-     *        You can group Amazon Web Services costs using up to two different groups: either dimensions, tag keys, or
-     *        both.
+     *        You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>,
+     *        <code>TAG</code>, <code>COST_CATEGORY</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -615,12 +619,13 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * You can group Amazon Web Services costs using up to two different groups: either dimensions, tag keys, or both.
+     * You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>,
+     * <code>TAG</code>, <code>COST_CATEGORY</code>.
      * </p>
      * 
      * @param groupBy
-     *        You can group Amazon Web Services costs using up to two different groups: either dimensions, tag keys, or
-     *        both.
+     *        You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>,
+     *        <code>TAG</code>, <code>COST_CATEGORY</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
