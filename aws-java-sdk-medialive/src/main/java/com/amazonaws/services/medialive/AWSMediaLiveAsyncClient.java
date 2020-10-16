@@ -72,6 +72,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
     }
 
     @Override
+    public java.util.concurrent.Future<AcceptInputDeviceTransferResult> acceptInputDeviceTransferAsync(AcceptInputDeviceTransferRequest request) {
+
+        return acceptInputDeviceTransferAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AcceptInputDeviceTransferResult> acceptInputDeviceTransferAsync(final AcceptInputDeviceTransferRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AcceptInputDeviceTransferRequest, AcceptInputDeviceTransferResult> asyncHandler) {
+        final AcceptInputDeviceTransferRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AcceptInputDeviceTransferResult>() {
+            @Override
+            public AcceptInputDeviceTransferResult call() throws Exception {
+                AcceptInputDeviceTransferResult result = null;
+
+                try {
+                    result = executeAcceptInputDeviceTransfer(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchDeleteResult> batchDeleteAsync(BatchDeleteRequest request) {
 
         return batchDeleteAsync(request, null);
@@ -188,6 +221,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
 
                 try {
                     result = executeBatchUpdateSchedule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelInputDeviceTransferResult> cancelInputDeviceTransferAsync(CancelInputDeviceTransferRequest request) {
+
+        return cancelInputDeviceTransferAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelInputDeviceTransferResult> cancelInputDeviceTransferAsync(final CancelInputDeviceTransferRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelInputDeviceTransferRequest, CancelInputDeviceTransferResult> asyncHandler) {
+        final CancelInputDeviceTransferRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelInputDeviceTransferResult>() {
+            @Override
+            public CancelInputDeviceTransferResult call() throws Exception {
+                CancelInputDeviceTransferResult result = null;
+
+                try {
+                    result = executeCancelInputDeviceTransfer(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1029,6 +1095,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
     }
 
     @Override
+    public java.util.concurrent.Future<ListInputDeviceTransfersResult> listInputDeviceTransfersAsync(ListInputDeviceTransfersRequest request) {
+
+        return listInputDeviceTransfersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInputDeviceTransfersResult> listInputDeviceTransfersAsync(final ListInputDeviceTransfersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListInputDeviceTransfersRequest, ListInputDeviceTransfersResult> asyncHandler) {
+        final ListInputDeviceTransfersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListInputDeviceTransfersResult>() {
+            @Override
+            public ListInputDeviceTransfersResult call() throws Exception {
+                ListInputDeviceTransfersResult result = null;
+
+                try {
+                    result = executeListInputDeviceTransfers(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListInputDevicesResult> listInputDevicesAsync(ListInputDevicesRequest request) {
 
         return listInputDevicesAsync(request, null);
@@ -1326,6 +1425,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
     }
 
     @Override
+    public java.util.concurrent.Future<RejectInputDeviceTransferResult> rejectInputDeviceTransferAsync(RejectInputDeviceTransferRequest request) {
+
+        return rejectInputDeviceTransferAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RejectInputDeviceTransferResult> rejectInputDeviceTransferAsync(final RejectInputDeviceTransferRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RejectInputDeviceTransferRequest, RejectInputDeviceTransferResult> asyncHandler) {
+        final RejectInputDeviceTransferRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RejectInputDeviceTransferResult>() {
+            @Override
+            public RejectInputDeviceTransferResult call() throws Exception {
+                RejectInputDeviceTransferResult result = null;
+
+                try {
+                    result = executeRejectInputDeviceTransfer(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartChannelResult> startChannelAsync(StartChannelRequest request) {
 
         return startChannelAsync(request, null);
@@ -1442,6 +1574,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
 
                 try {
                     result = executeStopMultiplex(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TransferInputDeviceResult> transferInputDeviceAsync(TransferInputDeviceRequest request) {
+
+        return transferInputDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TransferInputDeviceResult> transferInputDeviceAsync(final TransferInputDeviceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TransferInputDeviceRequest, TransferInputDeviceResult> asyncHandler) {
+        final TransferInputDeviceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TransferInputDeviceResult>() {
+            @Override
+            public TransferInputDeviceResult call() throws Exception {
+                TransferInputDeviceResult result = null;
+
+                try {
+                    result = executeTransferInputDevice(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

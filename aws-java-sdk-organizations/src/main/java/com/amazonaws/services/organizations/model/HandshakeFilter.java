@@ -46,7 +46,7 @@ public class HandshakeFilter implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by
-     * from 8 to 32 lower-case letters or digits.
+     * from 8 to 32 lowercase letters or digits.
      * </p>
      */
     private String parentHandshakeId;
@@ -158,7 +158,7 @@ public class HandshakeFilter implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by
-     * from 8 to 32 lower-case letters or digits.
+     * from 8 to 32 lowercase letters or digits.
      * </p>
      * 
      * @param parentHandshakeId
@@ -168,7 +168,7 @@ public class HandshakeFilter implements Serializable, Cloneable, StructuredPojo 
      *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-"
-     *        followed by from 8 to 32 lower-case letters or digits.
+     *        followed by from 8 to 32 lowercase letters or digits.
      */
 
     public void setParentHandshakeId(String parentHandshakeId) {
@@ -184,7 +184,7 @@ public class HandshakeFilter implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by
-     * from 8 to 32 lower-case letters or digits.
+     * from 8 to 32 lowercase letters or digits.
      * </p>
      * 
      * @return Specifies the parent handshake. Only used for handshake types that are a child of another type.</p>
@@ -193,7 +193,7 @@ public class HandshakeFilter implements Serializable, Cloneable, StructuredPojo 
      *         </p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-"
-     *         followed by from 8 to 32 lower-case letters or digits.
+     *         followed by from 8 to 32 lowercase letters or digits.
      */
 
     public String getParentHandshakeId() {
@@ -209,7 +209,7 @@ public class HandshakeFilter implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by
-     * from 8 to 32 lower-case letters or digits.
+     * from 8 to 32 lowercase letters or digits.
      * </p>
      * 
      * @param parentHandshakeId
@@ -219,7 +219,7 @@ public class HandshakeFilter implements Serializable, Cloneable, StructuredPojo 
      *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-"
-     *        followed by from 8 to 32 lower-case letters or digits.
+     *        followed by from 8 to 32 lowercase letters or digits.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,7 +36,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization ID string requires "o-"
-     * followed by from 10 to 32 lower-case letters or digits.
+     * followed by from 10 to 32 lowercase letters or digits.
      * </p>
      */
     private String id;
@@ -109,14 +109,14 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization ID string requires "o-"
-     * followed by from 10 to 32 lower-case letters or digits.
+     * followed by from 10 to 32 lowercase letters or digits.
      * </p>
      * 
      * @param id
      *        The unique identifier (ID) of an organization.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization ID string requires
-     *        "o-" followed by from 10 to 32 lower-case letters or digits.
+     *        "o-" followed by from 10 to 32 lowercase letters or digits.
      */
 
     public void setId(String id) {
@@ -129,13 +129,13 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization ID string requires "o-"
-     * followed by from 10 to 32 lower-case letters or digits.
+     * followed by from 10 to 32 lowercase letters or digits.
      * </p>
      * 
      * @return The unique identifier (ID) of an organization.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization ID string requires
-     *         "o-" followed by from 10 to 32 lower-case letters or digits.
+     *         "o-" followed by from 10 to 32 lowercase letters or digits.
      */
 
     public String getId() {
@@ -148,14 +148,14 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization ID string requires "o-"
-     * followed by from 10 to 32 lower-case letters or digits.
+     * followed by from 10 to 32 lowercase letters or digits.
      * </p>
      * 
      * @param id
      *        The unique identifier (ID) of an organization.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization ID string requires
-     *        "o-" followed by from 10 to 32 lower-case letters or digits.
+     *        "o-" followed by from 10 to 32 lowercase letters or digits.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

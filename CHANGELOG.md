@@ -1,3 +1,12 @@
+# __1.11.882__ __2020-10-16__
+## __AWS Elemental MediaLive__
+  - ### Features
+    - The AWS Elemental MediaLive APIs and SDKs now support the ability to transfer the ownership of MediaLive Link devices across AWS accounts.
+
+## __AWS Organizations__
+  - ### Features
+    - Documentation updates for AWS Organizations.
+
 # __1.11.881__ __2020-10-15__
 ## __AWS Budgets__
   - ### Features

@@ -43,26 +43,25 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
      * AISERVICES_OPT_OUT_POLICY</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
-     * </a>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     * BACKUP_POLICY</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
      * SERVICE_CONTROL_POLICY</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
      * TAG_POLICY</a>
      * </p>
      * </li>
@@ -144,26 +143,25 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
      * AISERVICES_OPT_OUT_POLICY</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
-     * </a>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     * BACKUP_POLICY</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
      * SERVICE_CONTROL_POLICY</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
      * TAG_POLICY</a>
      * </p>
      * </li>
@@ -174,27 +172,27 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     *        <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
      *        AISERVICES_OPT_OUT_POLICY</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     *        <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
      *        BACKUP_POLICY</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     *        <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
      *        SERVICE_CONTROL_POLICY</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a
-     *        href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
-     *        TAG_POLICY</a>
+     *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html"
+     *        >TAG_POLICY</a>
      *        </p>
      *        </li>
      * @see PolicyType
@@ -211,26 +209,25 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
      * AISERVICES_OPT_OUT_POLICY</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
-     * </a>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     * BACKUP_POLICY</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
      * SERVICE_CONTROL_POLICY</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
      * TAG_POLICY</a>
      * </p>
      * </li>
@@ -240,26 +237,27 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     *         <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
      *         AISERVICES_OPT_OUT_POLICY</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     *         <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
      *         BACKUP_POLICY</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     *         <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
      *         SERVICE_CONTROL_POLICY</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <a
-     *         href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html"
+     *         <a href=
+     *         "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html"
      *         >TAG_POLICY</a>
      *         </p>
      *         </li>
@@ -277,26 +275,25 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
      * AISERVICES_OPT_OUT_POLICY</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
-     * </a>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     * BACKUP_POLICY</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
      * SERVICE_CONTROL_POLICY</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
      * TAG_POLICY</a>
      * </p>
      * </li>
@@ -307,27 +304,27 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     *        <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
      *        AISERVICES_OPT_OUT_POLICY</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     *        <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
      *        BACKUP_POLICY</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     *        <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
      *        SERVICE_CONTROL_POLICY</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a
-     *        href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
-     *        TAG_POLICY</a>
+     *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html"
+     *        >TAG_POLICY</a>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -346,26 +343,25 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
      * AISERVICES_OPT_OUT_POLICY</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
-     * </a>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     * BACKUP_POLICY</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
      * SERVICE_CONTROL_POLICY</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
      * TAG_POLICY</a>
      * </p>
      * </li>
@@ -376,27 +372,27 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     *        <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
      *        AISERVICES_OPT_OUT_POLICY</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     *        <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
      *        BACKUP_POLICY</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     *        <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
      *        SERVICE_CONTROL_POLICY</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a
-     *        href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
-     *        TAG_POLICY</a>
+     *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html"
+     *        >TAG_POLICY</a>
      *        </p>
      *        </li>
      * @see PolicyType
@@ -413,26 +409,25 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
      * AISERVICES_OPT_OUT_POLICY</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
-     * </a>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     * BACKUP_POLICY</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
      * SERVICE_CONTROL_POLICY</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
      * TAG_POLICY</a>
      * </p>
      * </li>
@@ -443,27 +438,27 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     *        <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
      *        AISERVICES_OPT_OUT_POLICY</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     *        <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
      *        BACKUP_POLICY</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     *        <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
      *        SERVICE_CONTROL_POLICY</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a
-     *        href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
-     *        TAG_POLICY</a>
+     *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html"
+     *        >TAG_POLICY</a>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

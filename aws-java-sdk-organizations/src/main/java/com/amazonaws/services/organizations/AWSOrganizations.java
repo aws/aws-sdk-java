@@ -373,26 +373,25 @@ public interface AWSOrganizations {
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
      * AISERVICES_OPT_OUT_POLICY</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY
-     * </a>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     * BACKUP_POLICY</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
      * SERVICE_CONTROL_POLICY</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
      * TAG_POLICY</a>
      * </p>
      * </li>
@@ -971,8 +970,8 @@ public interface AWSOrganizations {
      * <ul>
      * <li>
      * <p>
-     * Use the <code>OperationId</code> response element from this operation to provide as a parameter to the
-     * <a>DescribeCreateAccountStatus</a> operation.
+     * Use the <code>Id</code> member of the <code>CreateAccountStatus</code> response element from this operation to
+     * provide as a parameter to the <a>DescribeCreateAccountStatus</a> operation.
      * </p>
      * </li>
      * <li>
@@ -1440,8 +1439,8 @@ public interface AWSOrganizations {
      * </li>
      * <li>
      * <p>
-     * You already have an account in the AWS GovCloud (US) Region that is associated with your master account in the
-     * commercial Region.
+     * You already have an account in the AWS GovCloud (US) Region that is paired with a master account of an
+     * organization in the commercial Region.
      * </p>
      * </li>
      * <li>

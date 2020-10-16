@@ -29,6 +29,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
     }
 
     @Override
+    public AcceptInputDeviceTransferResult acceptInputDeviceTransfer(AcceptInputDeviceTransferRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchDeleteResult batchDelete(BatchDeleteRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -45,6 +50,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
 
     @Override
     public BatchUpdateScheduleResult batchUpdateSchedule(BatchUpdateScheduleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CancelInputDeviceTransferResult cancelInputDeviceTransfer(CancelInputDeviceTransferRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -174,6 +184,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
     }
 
     @Override
+    public ListInputDeviceTransfersResult listInputDeviceTransfers(ListInputDeviceTransfersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListInputDevicesResult listInputDevices(ListInputDevicesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -219,6 +234,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
     }
 
     @Override
+    public RejectInputDeviceTransferResult rejectInputDeviceTransfer(RejectInputDeviceTransferRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartChannelResult startChannel(StartChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -235,6 +255,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
 
     @Override
     public StopMultiplexResult stopMultiplex(StopMultiplexRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TransferInputDeviceResult transferInputDevice(TransferInputDeviceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

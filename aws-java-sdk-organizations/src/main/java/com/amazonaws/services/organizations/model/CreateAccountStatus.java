@@ -36,7 +36,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires
-     * "car-" followed by from 8 to 32 lower-case letters or digits.
+     * "car-" followed by from 8 to 32 lowercase letters or digits.
      * </p>
      */
     private String id;
@@ -147,7 +147,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires
-     * "car-" followed by from 8 to 32 lower-case letters or digits.
+     * "car-" followed by from 8 to 32 lowercase letters or digits.
      * </p>
      * 
      * @param id
@@ -155,7 +155,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        initial <a>CreateAccount</a> request to create the account.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string
-     *        requires "car-" followed by from 8 to 32 lower-case letters or digits.
+     *        requires "car-" followed by from 8 to 32 lowercase letters or digits.
      */
 
     public void setId(String id) {
@@ -169,14 +169,14 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires
-     * "car-" followed by from 8 to 32 lower-case letters or digits.
+     * "car-" followed by from 8 to 32 lowercase letters or digits.
      * </p>
      * 
      * @return The unique identifier (ID) that references this request. You get this value from the response of the
      *         initial <a>CreateAccount</a> request to create the account.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string
-     *         requires "car-" followed by from 8 to 32 lower-case letters or digits.
+     *         requires "car-" followed by from 8 to 32 lowercase letters or digits.
      */
 
     public String getId() {
@@ -190,7 +190,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires
-     * "car-" followed by from 8 to 32 lower-case letters or digits.
+     * "car-" followed by from 8 to 32 lowercase letters or digits.
      * </p>
      * 
      * @param id
@@ -198,7 +198,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        initial <a>CreateAccount</a> request to create the account.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string
-     *        requires "car-" followed by from 8 to 32 lower-case letters or digits.
+     *        requires "car-" followed by from 8 to 32 lowercase letters or digits.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

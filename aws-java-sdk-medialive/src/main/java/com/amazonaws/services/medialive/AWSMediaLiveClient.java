@@ -154,6 +154,79 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
     }
 
     /**
+     * Accept an incoming input device transfer. The ownership of the device will transfer to your AWS account.
+     * 
+     * @param acceptInputDeviceTransferRequest
+     *        Placeholder documentation for AcceptInputDeviceTransferRequest
+     * @return Result of the AcceptInputDeviceTransfer operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         Transfer operation failed, input could not be validated.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to accept input device transfers.
+     * @throws BadGatewayException
+     *         Bad gateway error.
+     * @throws NotFoundException
+     *         Input device not found.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on transfer device calls to the input device service.
+     * @throws ConflictException
+     *         Input device transfer could not be accepted.
+     * @sample AWSMediaLive.AcceptInputDeviceTransfer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AcceptInputDeviceTransfer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AcceptInputDeviceTransferResult acceptInputDeviceTransfer(AcceptInputDeviceTransferRequest request) {
+        request = beforeClientExecution(request);
+        return executeAcceptInputDeviceTransfer(request);
+    }
+
+    @SdkInternalApi
+    final AcceptInputDeviceTransferResult executeAcceptInputDeviceTransfer(AcceptInputDeviceTransferRequest acceptInputDeviceTransferRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(acceptInputDeviceTransferRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AcceptInputDeviceTransferRequest> request = null;
+        Response<AcceptInputDeviceTransferResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AcceptInputDeviceTransferRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(acceptInputDeviceTransferRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptInputDeviceTransfer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AcceptInputDeviceTransferResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AcceptInputDeviceTransferResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Starts delete of resources.
      * 
      * @param batchDeleteRequest
@@ -419,6 +492,79 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
 
             HttpResponseHandler<AmazonWebServiceResponse<BatchUpdateScheduleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchUpdateScheduleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Cancel an input device transfer that you have requested.
+     * 
+     * @param cancelInputDeviceTransferRequest
+     *        Placeholder documentation for CancelInputDeviceTransferRequest
+     * @return Result of the CancelInputDeviceTransfer operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         Transfer operation failed, input could not be validated.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to cancel input device transfers.
+     * @throws BadGatewayException
+     *         Bad gateway error.
+     * @throws NotFoundException
+     *         Input device not found.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on transfer device calls to the input device service.
+     * @throws ConflictException
+     *         Input device transfer could not be canceled.
+     * @sample AWSMediaLive.CancelInputDeviceTransfer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CancelInputDeviceTransfer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CancelInputDeviceTransferResult cancelInputDeviceTransfer(CancelInputDeviceTransferRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelInputDeviceTransfer(request);
+    }
+
+    @SdkInternalApi
+    final CancelInputDeviceTransferResult executeCancelInputDeviceTransfer(CancelInputDeviceTransferRequest cancelInputDeviceTransferRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelInputDeviceTransferRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelInputDeviceTransferRequest> request = null;
+        Response<CancelInputDeviceTransferResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelInputDeviceTransferRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(cancelInputDeviceTransferRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelInputDeviceTransfer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelInputDeviceTransferResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CancelInputDeviceTransferResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2120,6 +2266,76 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
     }
 
     /**
+     * List input devices that are currently being transferred. List input devices that you are transferring from your
+     * AWS account or input devices that another AWS account is transferring to you.
+     * 
+     * @param listInputDeviceTransfersRequest
+     *        Placeholder documentation for ListInputDeviceTransfersRequest
+     * @return Result of the ListInputDeviceTransfers operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         Transfer operation failed, input could not be validated.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to list transferring devices.
+     * @throws BadGatewayException
+     *         Bad gateway error.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on list devices calls to the input device service.
+     * @sample AWSMediaLive.ListInputDeviceTransfers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListInputDeviceTransfers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListInputDeviceTransfersResult listInputDeviceTransfers(ListInputDeviceTransfersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListInputDeviceTransfers(request);
+    }
+
+    @SdkInternalApi
+    final ListInputDeviceTransfersResult executeListInputDeviceTransfers(ListInputDeviceTransfersRequest listInputDeviceTransfersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listInputDeviceTransfersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListInputDeviceTransfersRequest> request = null;
+        Response<ListInputDeviceTransfersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListInputDeviceTransfersRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listInputDeviceTransfersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInputDeviceTransfers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListInputDeviceTransfersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListInputDeviceTransfersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * List input devices
      * 
      * @param listInputDevicesRequest
@@ -2713,6 +2929,79 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
     }
 
     /**
+     * Reject the transfer of the specified input device to your AWS account.
+     * 
+     * @param rejectInputDeviceTransferRequest
+     *        Placeholder documentation for RejectInputDeviceTransferRequest
+     * @return Result of the RejectInputDeviceTransfer operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         Transfer operation failed, input could not be validated.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to reject input device transfers.
+     * @throws BadGatewayException
+     *         Bad gateway error.
+     * @throws NotFoundException
+     *         Input device not found.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on transfer device calls to the input device service.
+     * @throws ConflictException
+     *         Input device transfer could not be rejected.
+     * @sample AWSMediaLive.RejectInputDeviceTransfer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RejectInputDeviceTransfer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RejectInputDeviceTransferResult rejectInputDeviceTransfer(RejectInputDeviceTransferRequest request) {
+        request = beforeClientExecution(request);
+        return executeRejectInputDeviceTransfer(request);
+    }
+
+    @SdkInternalApi
+    final RejectInputDeviceTransferResult executeRejectInputDeviceTransfer(RejectInputDeviceTransferRequest rejectInputDeviceTransferRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(rejectInputDeviceTransferRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RejectInputDeviceTransferRequest> request = null;
+        Response<RejectInputDeviceTransferResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RejectInputDeviceTransferRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(rejectInputDeviceTransferRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RejectInputDeviceTransfer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RejectInputDeviceTransferResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new RejectInputDeviceTransferResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Starts an existing channel
      * 
      * @param startChannelRequest
@@ -2981,6 +3270,78 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
 
             HttpResponseHandler<AmazonWebServiceResponse<StopMultiplexResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopMultiplexResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Start an input device transfer to another AWS account. After you make the request, the other account must accept
+     * or reject the transfer.
+     * 
+     * @param transferInputDeviceRequest
+     *        A request to transfer an input device.
+     * @return Result of the TransferInputDevice operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         Transfer operation failed, input could not be validated.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to transfer input devices.
+     * @throws BadGatewayException
+     *         Bad gateway error.
+     * @throws NotFoundException
+     *         Input device not found.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on transfer device calls to the input device service.
+     * @throws ConflictException
+     *         Input device could not be transferred.
+     * @sample AWSMediaLive.TransferInputDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/TransferInputDevice" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public TransferInputDeviceResult transferInputDevice(TransferInputDeviceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTransferInputDevice(request);
+    }
+
+    @SdkInternalApi
+    final TransferInputDeviceResult executeTransferInputDevice(TransferInputDeviceRequest transferInputDeviceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(transferInputDeviceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TransferInputDeviceRequest> request = null;
+        Response<TransferInputDeviceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TransferInputDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(transferInputDeviceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TransferInputDevice");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TransferInputDeviceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TransferInputDeviceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
