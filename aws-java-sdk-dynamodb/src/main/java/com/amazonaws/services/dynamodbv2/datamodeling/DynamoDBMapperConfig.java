@@ -806,6 +806,23 @@ public class DynamoDBMapperConfig {
         private static final int MAX_RETRIES = 5;
         private static final long MAX_BACKOFF_IN_MILLISECONDS = 1000 * 3;
 
+        private final int maxRetry;
+
+        /**
+         * Retry load a default number of times
+         */
+        public DefaultBatchLoadRetryStrategy() {
+            this(MAX_RETRIES);
+        }
+
+        /**
+         * Retry load a certain number of times
+         * @param maxRetry How many times to retry the load
+         */
+        public DefaultBatchLoadRetryStrategy(int maxRetry) {
+            this.maxRetry = maxRetry;
+        }
+
         @Override
         public long getDelayBeforeNextRetry(final BatchLoadContext batchLoadContext) {
             Map<String, KeysAndAttributes> requestedKeys = batchLoadContext.getBatchGetItemRequest().getRequestItems();
@@ -827,7 +844,7 @@ public class DynamoDBMapperConfig {
         @Override
         public boolean shouldRetry(BatchLoadContext batchLoadContext) {
             Map<String, KeysAndAttributes> unprocessedKeys = batchLoadContext.getBatchGetItemResult().getUnprocessedKeys();
-            return (unprocessedKeys != null && unprocessedKeys.size() > 0 && batchLoadContext.getRetriesAttempted() < MAX_RETRIES);
+            return (unprocessedKeys != null && unprocessedKeys.size() > 0 && batchLoadContext.getRetriesAttempted() < maxRetry);
         }
 
         public final DynamoDBMapperConfig config() {
