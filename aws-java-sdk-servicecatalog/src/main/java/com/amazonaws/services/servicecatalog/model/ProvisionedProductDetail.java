@@ -186,6 +186,12 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      * </p>
      */
     private String provisioningArtifactId;
+    /**
+     * <p>
+     * The ARN of the launch role associated with the provisioned product.
+     * </p>
+     */
+    private String launchRoleArn;
 
     /**
      * <p>
@@ -1357,6 +1363,46 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The ARN of the launch role associated with the provisioned product.
+     * </p>
+     * 
+     * @param launchRoleArn
+     *        The ARN of the launch role associated with the provisioned product.
+     */
+
+    public void setLaunchRoleArn(String launchRoleArn) {
+        this.launchRoleArn = launchRoleArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the launch role associated with the provisioned product.
+     * </p>
+     * 
+     * @return The ARN of the launch role associated with the provisioned product.
+     */
+
+    public String getLaunchRoleArn() {
+        return this.launchRoleArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the launch role associated with the provisioned product.
+     * </p>
+     * 
+     * @param launchRoleArn
+     *        The ARN of the launch role associated with the provisioned product.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProvisionedProductDetail withLaunchRoleArn(String launchRoleArn) {
+        setLaunchRoleArn(launchRoleArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1393,7 +1439,9 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
         if (getProductId() != null)
             sb.append("ProductId: ").append(getProductId()).append(",");
         if (getProvisioningArtifactId() != null)
-            sb.append("ProvisioningArtifactId: ").append(getProvisioningArtifactId());
+            sb.append("ProvisioningArtifactId: ").append(getProvisioningArtifactId()).append(",");
+        if (getLaunchRoleArn() != null)
+            sb.append("LaunchRoleArn: ").append(getLaunchRoleArn());
         sb.append("}");
         return sb.toString();
     }
@@ -1461,6 +1509,10 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
             return false;
         if (other.getProvisioningArtifactId() != null && other.getProvisioningArtifactId().equals(this.getProvisioningArtifactId()) == false)
             return false;
+        if (other.getLaunchRoleArn() == null ^ this.getLaunchRoleArn() == null)
+            return false;
+        if (other.getLaunchRoleArn() != null && other.getLaunchRoleArn().equals(this.getLaunchRoleArn()) == false)
+            return false;
         return true;
     }
 
@@ -1482,6 +1534,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getLastSuccessfulProvisioningRecordId() == null) ? 0 : getLastSuccessfulProvisioningRecordId().hashCode());
         hashCode = prime * hashCode + ((getProductId() == null) ? 0 : getProductId().hashCode());
         hashCode = prime * hashCode + ((getProvisioningArtifactId() == null) ? 0 : getProvisioningArtifactId().hashCode());
+        hashCode = prime * hashCode + ((getLaunchRoleArn() == null) ? 0 : getLaunchRoleArn().hashCode());
         return hashCode;
     }
 

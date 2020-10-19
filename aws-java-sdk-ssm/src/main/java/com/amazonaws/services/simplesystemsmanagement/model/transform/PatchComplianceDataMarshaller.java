@@ -39,6 +39,8 @@ public class PatchComplianceDataMarshaller {
             .marshallLocationName("State").build();
     private static final MarshallingInfo<java.util.Date> INSTALLEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstalledTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> CVEIDS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("CVEIds").build();
 
     private static final PatchComplianceDataMarshaller instance = new PatchComplianceDataMarshaller();
 
@@ -62,6 +64,7 @@ public class PatchComplianceDataMarshaller {
             protocolMarshaller.marshall(patchComplianceData.getSeverity(), SEVERITY_BINDING);
             protocolMarshaller.marshall(patchComplianceData.getState(), STATE_BINDING);
             protocolMarshaller.marshall(patchComplianceData.getInstalledTime(), INSTALLEDTIME_BINDING);
+            protocolMarshaller.marshall(patchComplianceData.getCVEIds(), CVEIDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

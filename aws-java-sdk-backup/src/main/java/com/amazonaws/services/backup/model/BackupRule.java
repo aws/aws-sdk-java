@@ -44,7 +44,11 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
     private String targetBackupVaultName;
     /**
      * <p>
-     * A CRON expression specifying when AWS Backup initiates a backup job.
+     * A CRON expression specifying when AWS Backup initiates a backup job. For more information about cron expressions,
+     * see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>. Prior to specifying a value for
+     * this parameter, we recommend testing your cron expression using one of the many available cron generator and
+     * testing tools.
      * </p>
      */
     private String scheduleExpression;
@@ -188,11 +192,20 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A CRON expression specifying when AWS Backup initiates a backup job.
+     * A CRON expression specifying when AWS Backup initiates a backup job. For more information about cron expressions,
+     * see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>. Prior to specifying a value for
+     * this parameter, we recommend testing your cron expression using one of the many available cron generator and
+     * testing tools.
      * </p>
      * 
      * @param scheduleExpression
-     *        A CRON expression specifying when AWS Backup initiates a backup job.
+     *        A CRON expression specifying when AWS Backup initiates a backup job. For more information about cron
+     *        expressions, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     *        Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>. Prior to specifying a value
+     *        for this parameter, we recommend testing your cron expression using one of the many available cron
+     *        generator and testing tools.
      */
 
     public void setScheduleExpression(String scheduleExpression) {
@@ -201,10 +214,19 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A CRON expression specifying when AWS Backup initiates a backup job.
+     * A CRON expression specifying when AWS Backup initiates a backup job. For more information about cron expressions,
+     * see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>. Prior to specifying a value for
+     * this parameter, we recommend testing your cron expression using one of the many available cron generator and
+     * testing tools.
      * </p>
      * 
-     * @return A CRON expression specifying when AWS Backup initiates a backup job.
+     * @return A CRON expression specifying when AWS Backup initiates a backup job. For more information about cron
+     *         expressions, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     *         Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>. Prior to specifying a value
+     *         for this parameter, we recommend testing your cron expression using one of the many available cron
+     *         generator and testing tools.
      */
 
     public String getScheduleExpression() {
@@ -213,11 +235,20 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A CRON expression specifying when AWS Backup initiates a backup job.
+     * A CRON expression specifying when AWS Backup initiates a backup job. For more information about cron expressions,
+     * see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>. Prior to specifying a value for
+     * this parameter, we recommend testing your cron expression using one of the many available cron generator and
+     * testing tools.
      * </p>
      * 
      * @param scheduleExpression
-     *        A CRON expression specifying when AWS Backup initiates a backup job.
+     *        A CRON expression specifying when AWS Backup initiates a backup job. For more information about cron
+     *        expressions, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     *        Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>. Prior to specifying a value
+     *        for this parameter, we recommend testing your cron expression using one of the many available cron
+     *        generator and testing tools.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

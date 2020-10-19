@@ -236,6 +236,22 @@ public class CreateDistributionWithTagsRequestMarshaller implements Marshaller<R
                                         if (originsItemsListValue.getConnectionTimeout() != null) {
                                             xmlWriter.startElement("ConnectionTimeout").value(originsItemsListValue.getConnectionTimeout()).endElement();
                                         }
+
+                                        {
+                                            OriginShield originShield = originsItemsListValue.getOriginShield();
+                                            if (originShield != null) {
+                                                xmlWriter.startElement("OriginShield");
+
+                                                if (originShield.getEnabled() != null) {
+                                                    xmlWriter.startElement("Enabled").value(originShield.getEnabled()).endElement();
+                                                }
+
+                                                if (originShield.getOriginShieldRegion() != null) {
+                                                    xmlWriter.startElement("OriginShieldRegion").value(originShield.getOriginShieldRegion()).endElement();
+                                                }
+                                                xmlWriter.endElement();
+                                            }
+                                        }
                                         xmlWriter.endElement();
                                     }
                                     xmlWriter.endElement();

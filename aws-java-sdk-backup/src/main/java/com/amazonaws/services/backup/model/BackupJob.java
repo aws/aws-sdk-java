@@ -160,9 +160,9 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
      * Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.
      * </p>
      * <p>
-     * Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows backup; otherwise, creates a
-     * regular backup. If you specify an invalid option, you get an <code>InvalidParameterValueException</code>
-     * exception.
+     * Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and create a VSS
+     * Windows backup. Set to “WindowsVSS”:”disabled” to create a regular backup. If you specify an invalid option, you
+     * get an <code>InvalidParameterValueException</code> exception.
      * </p>
      */
     private java.util.Map<String, String> backupOptions;
@@ -1031,17 +1031,17 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
      * Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.
      * </p>
      * <p>
-     * Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows backup; otherwise, creates a
-     * regular backup. If you specify an invalid option, you get an <code>InvalidParameterValueException</code>
-     * exception.
+     * Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and create a VSS
+     * Windows backup. Set to “WindowsVSS”:”disabled” to create a regular backup. If you specify an invalid option, you
+     * get an <code>InvalidParameterValueException</code> exception.
      * </p>
      * 
      * @return Specifies the backup option for a selected resource. This option is only available for Windows VSS backup
      *         jobs.</p>
      *         <p>
-     *         Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows backup; otherwise,
-     *         creates a regular backup. If you specify an invalid option, you get an
-     *         <code>InvalidParameterValueException</code> exception.
+     *         Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and create a
+     *         VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular backup. If you specify an invalid
+     *         option, you get an <code>InvalidParameterValueException</code> exception.
      */
 
     public java.util.Map<String, String> getBackupOptions() {
@@ -1053,18 +1053,18 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
      * Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.
      * </p>
      * <p>
-     * Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows backup; otherwise, creates a
-     * regular backup. If you specify an invalid option, you get an <code>InvalidParameterValueException</code>
-     * exception.
+     * Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and create a VSS
+     * Windows backup. Set to “WindowsVSS”:”disabled” to create a regular backup. If you specify an invalid option, you
+     * get an <code>InvalidParameterValueException</code> exception.
      * </p>
      * 
      * @param backupOptions
      *        Specifies the backup option for a selected resource. This option is only available for Windows VSS backup
      *        jobs.</p>
      *        <p>
-     *        Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows backup; otherwise,
-     *        creates a regular backup. If you specify an invalid option, you get an
-     *        <code>InvalidParameterValueException</code> exception.
+     *        Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and create a
+     *        VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular backup. If you specify an invalid
+     *        option, you get an <code>InvalidParameterValueException</code> exception.
      */
 
     public void setBackupOptions(java.util.Map<String, String> backupOptions) {
@@ -1076,18 +1076,18 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
      * Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.
      * </p>
      * <p>
-     * Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows backup; otherwise, creates a
-     * regular backup. If you specify an invalid option, you get an <code>InvalidParameterValueException</code>
-     * exception.
+     * Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and create a VSS
+     * Windows backup. Set to “WindowsVSS”:”disabled” to create a regular backup. If you specify an invalid option, you
+     * get an <code>InvalidParameterValueException</code> exception.
      * </p>
      * 
      * @param backupOptions
      *        Specifies the backup option for a selected resource. This option is only available for Windows VSS backup
      *        jobs.</p>
      *        <p>
-     *        Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows backup; otherwise,
-     *        creates a regular backup. If you specify an invalid option, you get an
-     *        <code>InvalidParameterValueException</code> exception.
+     *        Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and create a
+     *        VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular backup. If you specify an invalid
+     *        option, you get an <code>InvalidParameterValueException</code> exception.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

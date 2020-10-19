@@ -53,6 +53,8 @@ public class ProvisionedProductDetailMarshaller {
             .marshallLocationName("ProductId").build();
     private static final MarshallingInfo<String> PROVISIONINGARTIFACTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisioningArtifactId").build();
+    private static final MarshallingInfo<String> LAUNCHROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LaunchRoleArn").build();
 
     private static final ProvisionedProductDetailMarshaller instance = new ProvisionedProductDetailMarshaller();
 
@@ -83,6 +85,7 @@ public class ProvisionedProductDetailMarshaller {
             protocolMarshaller.marshall(provisionedProductDetail.getLastSuccessfulProvisioningRecordId(), LASTSUCCESSFULPROVISIONINGRECORDID_BINDING);
             protocolMarshaller.marshall(provisionedProductDetail.getProductId(), PRODUCTID_BINDING);
             protocolMarshaller.marshall(provisionedProductDetail.getProvisioningArtifactId(), PROVISIONINGARTIFACTID_BINDING);
+            protocolMarshaller.marshall(provisionedProductDetail.getLaunchRoleArn(), LAUNCHROLEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

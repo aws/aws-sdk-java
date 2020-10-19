@@ -91,8 +91,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.
      * </p>
      * <p>
-     * Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows backup; otherwise, creates a
-     * regular backup.
+     * Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and create a VSS
+     * Windows backup. Set to “WindowsVSS”:”disabled” to create a regular backup. The WindowsVSS option is not enabled
+     * by default.
      * </p>
      */
     private java.util.Map<String, String> backupOptions;
@@ -528,15 +529,17 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.
      * </p>
      * <p>
-     * Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows backup; otherwise, creates a
-     * regular backup.
+     * Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and create a VSS
+     * Windows backup. Set to “WindowsVSS”:”disabled” to create a regular backup. The WindowsVSS option is not enabled
+     * by default.
      * </p>
      * 
      * @return Specifies the backup option for a selected resource. This option is only available for Windows VSS backup
      *         jobs.</p>
      *         <p>
-     *         Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows backup; otherwise,
-     *         creates a regular backup.
+     *         Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and create a
+     *         VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular backup. The WindowsVSS option is
+     *         not enabled by default.
      */
 
     public java.util.Map<String, String> getBackupOptions() {
@@ -548,16 +551,18 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.
      * </p>
      * <p>
-     * Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows backup; otherwise, creates a
-     * regular backup.
+     * Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and create a VSS
+     * Windows backup. Set to “WindowsVSS”:”disabled” to create a regular backup. The WindowsVSS option is not enabled
+     * by default.
      * </p>
      * 
      * @param backupOptions
      *        Specifies the backup option for a selected resource. This option is only available for Windows VSS backup
      *        jobs.</p>
      *        <p>
-     *        Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows backup; otherwise,
-     *        creates a regular backup.
+     *        Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and create a
+     *        VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular backup. The WindowsVSS option is
+     *        not enabled by default.
      */
 
     public void setBackupOptions(java.util.Map<String, String> backupOptions) {
@@ -569,16 +574,18 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.
      * </p>
      * <p>
-     * Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows backup; otherwise, creates a
-     * regular backup.
+     * Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and create a VSS
+     * Windows backup. Set to “WindowsVSS”:”disabled” to create a regular backup. The WindowsVSS option is not enabled
+     * by default.
      * </p>
      * 
      * @param backupOptions
      *        Specifies the backup option for a selected resource. This option is only available for Windows VSS backup
      *        jobs.</p>
      *        <p>
-     *        Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows backup; otherwise,
-     *        creates a regular backup.
+     *        Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and create a
+     *        VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular backup. The WindowsVSS option is
+     *        not enabled by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -246,25 +246,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon DocumentDB uses the
-     * encryption key that is used to encrypt the source. Otherwise, Amazon DocumentDB uses your default encryption key.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If the <code>StorageEncrypted</code> parameter is <code>true</code> and <code>ReplicationSourceIdentifier</code>
-     * is not specified, Amazon DocumentDB uses your default encryption key.
+     * If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default
+     * encryption key.
      * </p>
      * </li>
      * </ul>
      * <p>
      * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
      * encryption key for each AWS Region.
-     * </p>
-     * <p>
-     * If you create a replica of an encrypted cluster in another AWS Region, you must set <code>KmsKeyId</code> to a
-     * KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the replica in that AWS
-     * Region.
      * </p>
      */
     private String kmsKeyId;
@@ -1664,25 +1653,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon DocumentDB uses the
-     * encryption key that is used to encrypt the source. Otherwise, Amazon DocumentDB uses your default encryption key.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If the <code>StorageEncrypted</code> parameter is <code>true</code> and <code>ReplicationSourceIdentifier</code>
-     * is not specified, Amazon DocumentDB uses your default encryption key.
+     * If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default
+     * encryption key.
      * </p>
      * </li>
      * </ul>
      * <p>
      * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
      * encryption key for each AWS Region.
-     * </p>
-     * <p>
-     * If you create a replica of an encrypted cluster in another AWS Region, you must set <code>KmsKeyId</code> to a
-     * KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the replica in that AWS
-     * Region.
      * </p>
      * 
      * @param kmsKeyId
@@ -1698,27 +1676,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon DocumentDB uses
-     *        the encryption key that is used to encrypt the source. Otherwise, Amazon DocumentDB uses your default
+     *        If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default
      *        encryption key.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If the <code>StorageEncrypted</code> parameter is <code>true</code> and
-     *        <code>ReplicationSourceIdentifier</code> is not specified, Amazon DocumentDB uses your default encryption
-     *        key.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
      *        encryption key for each AWS Region.
-     *        </p>
-     *        <p>
-     *        If you create a replica of an encrypted cluster in another AWS Region, you must set <code>KmsKeyId</code>
-     *        to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the replica in
-     *        that AWS Region.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -1740,25 +1705,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon DocumentDB uses the
-     * encryption key that is used to encrypt the source. Otherwise, Amazon DocumentDB uses your default encryption key.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If the <code>StorageEncrypted</code> parameter is <code>true</code> and <code>ReplicationSourceIdentifier</code>
-     * is not specified, Amazon DocumentDB uses your default encryption key.
+     * If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default
+     * encryption key.
      * </p>
      * </li>
      * </ul>
      * <p>
      * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
      * encryption key for each AWS Region.
-     * </p>
-     * <p>
-     * If you create a replica of an encrypted cluster in another AWS Region, you must set <code>KmsKeyId</code> to a
-     * KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the replica in that AWS
-     * Region.
      * </p>
      * 
      * @return The AWS KMS key identifier for an encrypted cluster.</p>
@@ -1774,27 +1728,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         <ul>
      *         <li>
      *         <p>
-     *         If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon DocumentDB uses
-     *         the encryption key that is used to encrypt the source. Otherwise, Amazon DocumentDB uses your default
+     *         If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default
      *         encryption key.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         If the <code>StorageEncrypted</code> parameter is <code>true</code> and
-     *         <code>ReplicationSourceIdentifier</code> is not specified, Amazon DocumentDB uses your default encryption
-     *         key.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
      *         AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
      *         encryption key for each AWS Region.
-     *         </p>
-     *         <p>
-     *         If you create a replica of an encrypted cluster in another AWS Region, you must set <code>KmsKeyId</code>
-     *         to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the replica in
-     *         that AWS Region.
      */
 
     public String getKmsKeyId() {
@@ -1816,25 +1757,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon DocumentDB uses the
-     * encryption key that is used to encrypt the source. Otherwise, Amazon DocumentDB uses your default encryption key.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If the <code>StorageEncrypted</code> parameter is <code>true</code> and <code>ReplicationSourceIdentifier</code>
-     * is not specified, Amazon DocumentDB uses your default encryption key.
+     * If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default
+     * encryption key.
      * </p>
      * </li>
      * </ul>
      * <p>
      * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
      * encryption key for each AWS Region.
-     * </p>
-     * <p>
-     * If you create a replica of an encrypted cluster in another AWS Region, you must set <code>KmsKeyId</code> to a
-     * KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the replica in that AWS
-     * Region.
      * </p>
      * 
      * @param kmsKeyId
@@ -1850,27 +1780,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon DocumentDB uses
-     *        the encryption key that is used to encrypt the source. Otherwise, Amazon DocumentDB uses your default
+     *        If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default
      *        encryption key.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If the <code>StorageEncrypted</code> parameter is <code>true</code> and
-     *        <code>ReplicationSourceIdentifier</code> is not specified, Amazon DocumentDB uses your default encryption
-     *        key.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
      *        encryption key for each AWS Region.
-     *        </p>
-     *        <p>
-     *        If you create a replica of an encrypted cluster in another AWS Region, you must set <code>KmsKeyId</code>
-     *        to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the replica in
-     *        that AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

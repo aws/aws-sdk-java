@@ -26,14 +26,12 @@ import javax.annotation.Generated;
  * <ul>
  * <li>
  * <p>
- * Use the <code>S3OriginConfig</code> type to specify an Amazon S3 bucket that is <i> <b>not</b> </i> configured with
- * static website hosting.
+ * Use <code>S3OriginConfig</code> to specify an Amazon S3 bucket that is not configured with static website hosting.
  * </p>
  * </li>
  * <li>
  * <p>
- * Use the <code>CustomOriginConfig</code> type to specify various other kinds of content containers or HTTP servers,
- * including:
+ * Use <code>CustomOriginConfig</code> to specify all other kinds of origins, including:
  * </p>
  * <ul>
  * <li>
@@ -48,7 +46,7 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * An AWS Elemental MediaPackage origin
+ * An AWS Elemental MediaPackage endpoint
  * </p>
  * </li>
  * <li>
@@ -112,7 +110,7 @@ public class Origin implements Serializable, Cloneable {
     private String originPath;
     /**
      * <p>
-     * A list of HTTP header names and values that CloudFront adds to requests it sends to the origin.
+     * A list of HTTP header names and values that CloudFront adds to the requests that it sends to the origin.
      * </p>
      * <p>
      * For more information, see <a
@@ -123,17 +121,17 @@ public class Origin implements Serializable, Cloneable {
     private CustomHeaders customHeaders;
     /**
      * <p>
-     * Use this type to specify an origin that is an Amazon S3 bucket that is <i> <b>not</b> </i> configured with static
-     * website hosting. To specify any other type of origin, including an Amazon S3 bucket that is configured with
-     * static website hosting, use the <code>CustomOriginConfig</code> type instead.
+     * Use this type to specify an origin that is an Amazon S3 bucket that is not configured with static website
+     * hosting. To specify any other type of origin, including an Amazon S3 bucket that is configured with static
+     * website hosting, use the <code>CustomOriginConfig</code> type instead.
      * </p>
      */
     private S3OriginConfig s3OriginConfig;
     /**
      * <p>
-     * Use this type to specify an origin that is a content container or HTTP server, including an Amazon S3 bucket that
-     * is configured with static website hosting. To specify an Amazon S3 bucket that is <i> <b>not</b> </i> configured
-     * with static website hosting, use the <code>S3OriginConfig</code> type instead.
+     * Use this type to specify an origin that is not an Amazon S3 bucket, with one exception. If the Amazon S3 bucket
+     * is configured with static website hosting, use this type. If the Amazon S3 bucket is not configured with static
+     * website hosting, use the <code>S3OriginConfig</code> type instead.
      * </p>
      */
     private CustomOriginConfig customOriginConfig;
@@ -168,6 +166,17 @@ public class Origin implements Serializable, Cloneable {
      * </p>
      */
     private Integer connectionTimeout;
+    /**
+     * <p>
+     * CloudFront Origin Shield. Using Origin Shield can help reduce the load on your origin.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using Origin
+     * Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     */
+    private OriginShield originShield;
 
     /**
      * <p>
@@ -372,7 +381,7 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of HTTP header names and values that CloudFront adds to requests it sends to the origin.
+     * A list of HTTP header names and values that CloudFront adds to the requests that it sends to the origin.
      * </p>
      * <p>
      * For more information, see <a
@@ -381,7 +390,8 @@ public class Origin implements Serializable, Cloneable {
      * </p>
      * 
      * @param customHeaders
-     *        A list of HTTP header names and values that CloudFront adds to requests it sends to the origin.</p>
+     *        A list of HTTP header names and values that CloudFront adds to the requests that it sends to the
+     *        origin.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/add-origin-custom-headers.html"
@@ -394,7 +404,7 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of HTTP header names and values that CloudFront adds to requests it sends to the origin.
+     * A list of HTTP header names and values that CloudFront adds to the requests that it sends to the origin.
      * </p>
      * <p>
      * For more information, see <a
@@ -402,7 +412,8 @@ public class Origin implements Serializable, Cloneable {
      * Custom Headers to Origin Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
-     * @return A list of HTTP header names and values that CloudFront adds to requests it sends to the origin.</p>
+     * @return A list of HTTP header names and values that CloudFront adds to the requests that it sends to the
+     *         origin.</p>
      *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/add-origin-custom-headers.html"
@@ -415,7 +426,7 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of HTTP header names and values that CloudFront adds to requests it sends to the origin.
+     * A list of HTTP header names and values that CloudFront adds to the requests that it sends to the origin.
      * </p>
      * <p>
      * For more information, see <a
@@ -424,7 +435,8 @@ public class Origin implements Serializable, Cloneable {
      * </p>
      * 
      * @param customHeaders
-     *        A list of HTTP header names and values that CloudFront adds to requests it sends to the origin.</p>
+     *        A list of HTTP header names and values that CloudFront adds to the requests that it sends to the
+     *        origin.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/add-origin-custom-headers.html"
@@ -439,15 +451,15 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Use this type to specify an origin that is an Amazon S3 bucket that is <i> <b>not</b> </i> configured with static
-     * website hosting. To specify any other type of origin, including an Amazon S3 bucket that is configured with
-     * static website hosting, use the <code>CustomOriginConfig</code> type instead.
+     * Use this type to specify an origin that is an Amazon S3 bucket that is not configured with static website
+     * hosting. To specify any other type of origin, including an Amazon S3 bucket that is configured with static
+     * website hosting, use the <code>CustomOriginConfig</code> type instead.
      * </p>
      * 
      * @param s3OriginConfig
-     *        Use this type to specify an origin that is an Amazon S3 bucket that is <i> <b>not</b> </i> configured with
-     *        static website hosting. To specify any other type of origin, including an Amazon S3 bucket that is
-     *        configured with static website hosting, use the <code>CustomOriginConfig</code> type instead.
+     *        Use this type to specify an origin that is an Amazon S3 bucket that is not configured with static website
+     *        hosting. To specify any other type of origin, including an Amazon S3 bucket that is configured with static
+     *        website hosting, use the <code>CustomOriginConfig</code> type instead.
      */
 
     public void setS3OriginConfig(S3OriginConfig s3OriginConfig) {
@@ -456,14 +468,14 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Use this type to specify an origin that is an Amazon S3 bucket that is <i> <b>not</b> </i> configured with static
-     * website hosting. To specify any other type of origin, including an Amazon S3 bucket that is configured with
-     * static website hosting, use the <code>CustomOriginConfig</code> type instead.
+     * Use this type to specify an origin that is an Amazon S3 bucket that is not configured with static website
+     * hosting. To specify any other type of origin, including an Amazon S3 bucket that is configured with static
+     * website hosting, use the <code>CustomOriginConfig</code> type instead.
      * </p>
      * 
-     * @return Use this type to specify an origin that is an Amazon S3 bucket that is <i> <b>not</b> </i> configured
-     *         with static website hosting. To specify any other type of origin, including an Amazon S3 bucket that is
-     *         configured with static website hosting, use the <code>CustomOriginConfig</code> type instead.
+     * @return Use this type to specify an origin that is an Amazon S3 bucket that is not configured with static website
+     *         hosting. To specify any other type of origin, including an Amazon S3 bucket that is configured with
+     *         static website hosting, use the <code>CustomOriginConfig</code> type instead.
      */
 
     public S3OriginConfig getS3OriginConfig() {
@@ -472,15 +484,15 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Use this type to specify an origin that is an Amazon S3 bucket that is <i> <b>not</b> </i> configured with static
-     * website hosting. To specify any other type of origin, including an Amazon S3 bucket that is configured with
-     * static website hosting, use the <code>CustomOriginConfig</code> type instead.
+     * Use this type to specify an origin that is an Amazon S3 bucket that is not configured with static website
+     * hosting. To specify any other type of origin, including an Amazon S3 bucket that is configured with static
+     * website hosting, use the <code>CustomOriginConfig</code> type instead.
      * </p>
      * 
      * @param s3OriginConfig
-     *        Use this type to specify an origin that is an Amazon S3 bucket that is <i> <b>not</b> </i> configured with
-     *        static website hosting. To specify any other type of origin, including an Amazon S3 bucket that is
-     *        configured with static website hosting, use the <code>CustomOriginConfig</code> type instead.
+     *        Use this type to specify an origin that is an Amazon S3 bucket that is not configured with static website
+     *        hosting. To specify any other type of origin, including an Amazon S3 bucket that is configured with static
+     *        website hosting, use the <code>CustomOriginConfig</code> type instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -491,15 +503,15 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Use this type to specify an origin that is a content container or HTTP server, including an Amazon S3 bucket that
-     * is configured with static website hosting. To specify an Amazon S3 bucket that is <i> <b>not</b> </i> configured
-     * with static website hosting, use the <code>S3OriginConfig</code> type instead.
+     * Use this type to specify an origin that is not an Amazon S3 bucket, with one exception. If the Amazon S3 bucket
+     * is configured with static website hosting, use this type. If the Amazon S3 bucket is not configured with static
+     * website hosting, use the <code>S3OriginConfig</code> type instead.
      * </p>
      * 
      * @param customOriginConfig
-     *        Use this type to specify an origin that is a content container or HTTP server, including an Amazon S3
-     *        bucket that is configured with static website hosting. To specify an Amazon S3 bucket that is <i>
-     *        <b>not</b> </i> configured with static website hosting, use the <code>S3OriginConfig</code> type instead.
+     *        Use this type to specify an origin that is not an Amazon S3 bucket, with one exception. If the Amazon S3
+     *        bucket is configured with static website hosting, use this type. If the Amazon S3 bucket is not configured
+     *        with static website hosting, use the <code>S3OriginConfig</code> type instead.
      */
 
     public void setCustomOriginConfig(CustomOriginConfig customOriginConfig) {
@@ -508,14 +520,14 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Use this type to specify an origin that is a content container or HTTP server, including an Amazon S3 bucket that
-     * is configured with static website hosting. To specify an Amazon S3 bucket that is <i> <b>not</b> </i> configured
-     * with static website hosting, use the <code>S3OriginConfig</code> type instead.
+     * Use this type to specify an origin that is not an Amazon S3 bucket, with one exception. If the Amazon S3 bucket
+     * is configured with static website hosting, use this type. If the Amazon S3 bucket is not configured with static
+     * website hosting, use the <code>S3OriginConfig</code> type instead.
      * </p>
      * 
-     * @return Use this type to specify an origin that is a content container or HTTP server, including an Amazon S3
-     *         bucket that is configured with static website hosting. To specify an Amazon S3 bucket that is <i>
-     *         <b>not</b> </i> configured with static website hosting, use the <code>S3OriginConfig</code> type instead.
+     * @return Use this type to specify an origin that is not an Amazon S3 bucket, with one exception. If the Amazon S3
+     *         bucket is configured with static website hosting, use this type. If the Amazon S3 bucket is not
+     *         configured with static website hosting, use the <code>S3OriginConfig</code> type instead.
      */
 
     public CustomOriginConfig getCustomOriginConfig() {
@@ -524,15 +536,15 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Use this type to specify an origin that is a content container or HTTP server, including an Amazon S3 bucket that
-     * is configured with static website hosting. To specify an Amazon S3 bucket that is <i> <b>not</b> </i> configured
-     * with static website hosting, use the <code>S3OriginConfig</code> type instead.
+     * Use this type to specify an origin that is not an Amazon S3 bucket, with one exception. If the Amazon S3 bucket
+     * is configured with static website hosting, use this type. If the Amazon S3 bucket is not configured with static
+     * website hosting, use the <code>S3OriginConfig</code> type instead.
      * </p>
      * 
      * @param customOriginConfig
-     *        Use this type to specify an origin that is a content container or HTTP server, including an Amazon S3
-     *        bucket that is configured with static website hosting. To specify an Amazon S3 bucket that is <i>
-     *        <b>not</b> </i> configured with static website hosting, use the <code>S3OriginConfig</code> type instead.
+     *        Use this type to specify an origin that is not an Amazon S3 bucket, with one exception. If the Amazon S3
+     *        bucket is configured with static website hosting, use this type. If the Amazon S3 bucket is not configured
+     *        with static website hosting, use the <code>S3OriginConfig</code> type instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -733,6 +745,73 @@ public class Origin implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * CloudFront Origin Shield. Using Origin Shield can help reduce the load on your origin.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using Origin
+     * Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param originShield
+     *        CloudFront Origin Shield. Using Origin Shield can help reduce the load on your origin.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using Origin
+     *        Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     */
+
+    public void setOriginShield(OriginShield originShield) {
+        this.originShield = originShield;
+    }
+
+    /**
+     * <p>
+     * CloudFront Origin Shield. Using Origin Shield can help reduce the load on your origin.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using Origin
+     * Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @return CloudFront Origin Shield. Using Origin Shield can help reduce the load on your origin.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using Origin
+     *         Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     */
+
+    public OriginShield getOriginShield() {
+        return this.originShield;
+    }
+
+    /**
+     * <p>
+     * CloudFront Origin Shield. Using Origin Shield can help reduce the load on your origin.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using Origin
+     * Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param originShield
+     *        CloudFront Origin Shield. Using Origin Shield can help reduce the load on your origin.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using Origin
+     *        Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Origin withOriginShield(OriginShield originShield) {
+        setOriginShield(originShield);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -759,7 +838,9 @@ public class Origin implements Serializable, Cloneable {
         if (getConnectionAttempts() != null)
             sb.append("ConnectionAttempts: ").append(getConnectionAttempts()).append(",");
         if (getConnectionTimeout() != null)
-            sb.append("ConnectionTimeout: ").append(getConnectionTimeout());
+            sb.append("ConnectionTimeout: ").append(getConnectionTimeout()).append(",");
+        if (getOriginShield() != null)
+            sb.append("OriginShield: ").append(getOriginShield());
         sb.append("}");
         return sb.toString();
     }
@@ -806,6 +887,10 @@ public class Origin implements Serializable, Cloneable {
             return false;
         if (other.getConnectionTimeout() != null && other.getConnectionTimeout().equals(this.getConnectionTimeout()) == false)
             return false;
+        if (other.getOriginShield() == null ^ this.getOriginShield() == null)
+            return false;
+        if (other.getOriginShield() != null && other.getOriginShield().equals(this.getOriginShield()) == false)
+            return false;
         return true;
     }
 
@@ -822,6 +907,7 @@ public class Origin implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCustomOriginConfig() == null) ? 0 : getCustomOriginConfig().hashCode());
         hashCode = prime * hashCode + ((getConnectionAttempts() == null) ? 0 : getConnectionAttempts().hashCode());
         hashCode = prime * hashCode + ((getConnectionTimeout() == null) ? 0 : getConnectionTimeout().hashCode());
+        hashCode = prime * hashCode + ((getOriginShield() == null) ? 0 : getOriginShield().hashCode());
         return hashCode;
     }
 

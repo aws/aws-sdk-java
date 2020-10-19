@@ -72,6 +72,10 @@ public class PatchComplianceDataJsonUnmarshaller implements Unmarshaller<PatchCo
                     context.nextToken();
                     patchComplianceData.setInstalledTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("CVEIds", targetDepth)) {
+                    context.nextToken();
+                    patchComplianceData.setCVEIds(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -152,6 +152,12 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<RecordTag> recordTags;
+    /**
+     * <p>
+     * The ARN of the launch role associated with the provisioned product.
+     * </p>
+     */
+    private String launchRoleArn;
 
     /**
      * <p>
@@ -1154,6 +1160,46 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ARN of the launch role associated with the provisioned product.
+     * </p>
+     * 
+     * @param launchRoleArn
+     *        The ARN of the launch role associated with the provisioned product.
+     */
+
+    public void setLaunchRoleArn(String launchRoleArn) {
+        this.launchRoleArn = launchRoleArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the launch role associated with the provisioned product.
+     * </p>
+     * 
+     * @return The ARN of the launch role associated with the provisioned product.
+     */
+
+    public String getLaunchRoleArn() {
+        return this.launchRoleArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the launch role associated with the provisioned product.
+     * </p>
+     * 
+     * @param launchRoleArn
+     *        The ARN of the launch role associated with the provisioned product.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecordDetail withLaunchRoleArn(String launchRoleArn) {
+        setLaunchRoleArn(launchRoleArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1190,7 +1236,9 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
         if (getRecordErrors() != null)
             sb.append("RecordErrors: ").append(getRecordErrors()).append(",");
         if (getRecordTags() != null)
-            sb.append("RecordTags: ").append(getRecordTags());
+            sb.append("RecordTags: ").append(getRecordTags()).append(",");
+        if (getLaunchRoleArn() != null)
+            sb.append("LaunchRoleArn: ").append(getLaunchRoleArn());
         sb.append("}");
         return sb.toString();
     }
@@ -1257,6 +1305,10 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRecordTags() != null && other.getRecordTags().equals(this.getRecordTags()) == false)
             return false;
+        if (other.getLaunchRoleArn() == null ^ this.getLaunchRoleArn() == null)
+            return false;
+        if (other.getLaunchRoleArn() != null && other.getLaunchRoleArn().equals(this.getLaunchRoleArn()) == false)
+            return false;
         return true;
     }
 
@@ -1278,6 +1330,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPathId() == null) ? 0 : getPathId().hashCode());
         hashCode = prime * hashCode + ((getRecordErrors() == null) ? 0 : getRecordErrors().hashCode());
         hashCode = prime * hashCode + ((getRecordTags() == null) ? 0 : getRecordTags().hashCode());
+        hashCode = prime * hashCode + ((getLaunchRoleArn() == null) ? 0 : getLaunchRoleArn().hashCode());
         return hashCode;
     }
 

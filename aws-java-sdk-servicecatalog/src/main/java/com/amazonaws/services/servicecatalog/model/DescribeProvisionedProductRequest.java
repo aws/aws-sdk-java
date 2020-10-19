@@ -53,13 +53,21 @@ public class DescribeProvisionedProductRequest extends com.amazonaws.AmazonWebSe
     private String acceptLanguage;
     /**
      * <p>
-     * The provisioned product identifier.
+     * The provisioned product identifier. You must provide the name or ID, but not both.
+     * </p>
+     * <p>
+     * If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code>
+     * will occur.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The name of the provisioned product.
+     * The name of the provisioned product. You must provide the name or ID, but not both.
+     * </p>
+     * <p>
+     * If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code>
+     * will occur.
      * </p>
      */
     private String name;
@@ -205,11 +213,18 @@ public class DescribeProvisionedProductRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The provisioned product identifier.
+     * The provisioned product identifier. You must provide the name or ID, but not both.
+     * </p>
+     * <p>
+     * If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code>
+     * will occur.
      * </p>
      * 
      * @param id
-     *        The provisioned product identifier.
+     *        The provisioned product identifier. You must provide the name or ID, but not both.</p>
+     *        <p>
+     *        If you do not provide a name or ID, or you provide both name and ID, an
+     *        <code>InvalidParametersException</code> will occur.
      */
 
     public void setId(String id) {
@@ -218,10 +233,17 @@ public class DescribeProvisionedProductRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The provisioned product identifier.
+     * The provisioned product identifier. You must provide the name or ID, but not both.
+     * </p>
+     * <p>
+     * If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code>
+     * will occur.
      * </p>
      * 
-     * @return The provisioned product identifier.
+     * @return The provisioned product identifier. You must provide the name or ID, but not both.</p>
+     *         <p>
+     *         If you do not provide a name or ID, or you provide both name and ID, an
+     *         <code>InvalidParametersException</code> will occur.
      */
 
     public String getId() {
@@ -230,11 +252,18 @@ public class DescribeProvisionedProductRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The provisioned product identifier.
+     * The provisioned product identifier. You must provide the name or ID, but not both.
+     * </p>
+     * <p>
+     * If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code>
+     * will occur.
      * </p>
      * 
      * @param id
-     *        The provisioned product identifier.
+     *        The provisioned product identifier. You must provide the name or ID, but not both.</p>
+     *        <p>
+     *        If you do not provide a name or ID, or you provide both name and ID, an
+     *        <code>InvalidParametersException</code> will occur.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,11 +274,18 @@ public class DescribeProvisionedProductRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the provisioned product.
+     * The name of the provisioned product. You must provide the name or ID, but not both.
+     * </p>
+     * <p>
+     * If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code>
+     * will occur.
      * </p>
      * 
      * @param name
-     *        The name of the provisioned product.
+     *        The name of the provisioned product. You must provide the name or ID, but not both.</p>
+     *        <p>
+     *        If you do not provide a name or ID, or you provide both name and ID, an
+     *        <code>InvalidParametersException</code> will occur.
      */
 
     public void setName(String name) {
@@ -258,10 +294,17 @@ public class DescribeProvisionedProductRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the provisioned product.
+     * The name of the provisioned product. You must provide the name or ID, but not both.
+     * </p>
+     * <p>
+     * If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code>
+     * will occur.
      * </p>
      * 
-     * @return The name of the provisioned product.
+     * @return The name of the provisioned product. You must provide the name or ID, but not both.</p>
+     *         <p>
+     *         If you do not provide a name or ID, or you provide both name and ID, an
+     *         <code>InvalidParametersException</code> will occur.
      */
 
     public String getName() {
@@ -270,11 +313,18 @@ public class DescribeProvisionedProductRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the provisioned product.
+     * The name of the provisioned product. You must provide the name or ID, but not both.
+     * </p>
+     * <p>
+     * If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code>
+     * will occur.
      * </p>
      * 
      * @param name
-     *        The name of the provisioned product.
+     *        The name of the provisioned product. You must provide the name or ID, but not both.</p>
+     *        <p>
+     *        If you do not provide a name or ID, or you provide both name and ID, an
+     *        <code>InvalidParametersException</code> will occur.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

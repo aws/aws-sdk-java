@@ -54,6 +54,8 @@ public class RecordDetailMarshaller {
             .marshallLocationName("RecordErrors").build();
     private static final MarshallingInfo<List> RECORDTAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RecordTags").build();
+    private static final MarshallingInfo<String> LAUNCHROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LaunchRoleArn").build();
 
     private static final RecordDetailMarshaller instance = new RecordDetailMarshaller();
 
@@ -84,6 +86,7 @@ public class RecordDetailMarshaller {
             protocolMarshaller.marshall(recordDetail.getPathId(), PATHID_BINDING);
             protocolMarshaller.marshall(recordDetail.getRecordErrors(), RECORDERRORS_BINDING);
             protocolMarshaller.marshall(recordDetail.getRecordTags(), RECORDTAGS_BINDING);
+            protocolMarshaller.marshall(recordDetail.getLaunchRoleArn(), LAUNCHROLEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -114,7 +114,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China Regions.
+     * <code>SecureString</code> is not currently supported for AWS CloudFormation templates.
      * </p>
      * </note>
      * <p>
@@ -854,7 +854,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China Regions.
+     * <code>SecureString</code> is not currently supported for AWS CloudFormation templates.
      * </p>
      * </note>
      * <p>
@@ -872,8 +872,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param type
      *        The type of parameter that you want to add to the system.</p> <note>
      *        <p>
-     *        <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China
-     *        Regions.
+     *        <code>SecureString</code> is not currently supported for AWS CloudFormation templates.
      *        </p>
      *        </note>
      *        <p>
@@ -899,7 +898,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China Regions.
+     * <code>SecureString</code> is not currently supported for AWS CloudFormation templates.
      * </p>
      * </note>
      * <p>
@@ -916,8 +915,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @return The type of parameter that you want to add to the system.</p> <note>
      *         <p>
-     *         <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China
-     *         Regions.
+     *         <code>SecureString</code> is not currently supported for AWS CloudFormation templates.
      *         </p>
      *         </note>
      *         <p>
@@ -943,7 +941,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China Regions.
+     * <code>SecureString</code> is not currently supported for AWS CloudFormation templates.
      * </p>
      * </note>
      * <p>
@@ -961,8 +959,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param type
      *        The type of parameter that you want to add to the system.</p> <note>
      *        <p>
-     *        <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China
-     *        Regions.
+     *        <code>SecureString</code> is not currently supported for AWS CloudFormation templates.
      *        </p>
      *        </note>
      *        <p>
@@ -990,7 +987,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China Regions.
+     * <code>SecureString</code> is not currently supported for AWS CloudFormation templates.
      * </p>
      * </note>
      * <p>
@@ -1008,8 +1005,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param type
      *        The type of parameter that you want to add to the system.</p> <note>
      *        <p>
-     *        <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China
-     *        Regions.
+     *        <code>SecureString</code> is not currently supported for AWS CloudFormation templates.
      *        </p>
      *        </note>
      *        <p>
@@ -1035,7 +1031,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China Regions.
+     * <code>SecureString</code> is not currently supported for AWS CloudFormation templates.
      * </p>
      * </note>
      * <p>
@@ -1053,8 +1049,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param type
      *        The type of parameter that you want to add to the system.</p> <note>
      *        <p>
-     *        <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China
-     *        Regions.
+     *        <code>SecureString</code> is not currently supported for AWS CloudFormation templates.
      *        </p>
      *        </note>
      *        <p>

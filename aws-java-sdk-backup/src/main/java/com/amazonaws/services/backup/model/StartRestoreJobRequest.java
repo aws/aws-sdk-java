@@ -61,7 +61,8 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system.
+     * <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system. You can
+     * specify a key from another AWS account provided that key it is properly shared with your account via AWS KMS.
      * </p>
      * </li>
      * <li>
@@ -78,6 +79,13 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored to a new
      * Amazon EFS file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each string is a file path. Use
+     * <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This
+     * parameter is optional.
      * </p>
      * </li>
      * </ul>
@@ -210,7 +218,8 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system.
+     * <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system. You can
+     * specify a key from another AWS account provided that key it is properly shared with your account via AWS KMS.
      * </p>
      * </li>
      * <li>
@@ -227,6 +236,13 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored to a new
      * Amazon EFS file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each string is a file path. Use
+     * <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This
+     * parameter is optional.
      * </p>
      * </li>
      * </ul>
@@ -257,7 +273,9 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *         </li>
      *         <li>
      *         <p>
-     *         <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system.
+     *         <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system. You
+     *         can specify a key from another AWS account provided that key it is properly shared with your account via
+     *         AWS KMS.
      *         </p>
      *         </li>
      *         <li>
@@ -275,6 +293,13 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *         <p>
      *         <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored
      *         to a new Amazon EFS file system.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ItemsToRestore </code>: A serialized list of up to five strings where each string is a file path.
+     *         Use <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file
+     *         system. This parameter is optional.
      *         </p>
      *         </li>
      */
@@ -312,7 +337,8 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system.
+     * <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system. You can
+     * specify a key from another AWS account provided that key it is properly shared with your account via AWS KMS.
      * </p>
      * </li>
      * <li>
@@ -329,6 +355,13 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored to a new
      * Amazon EFS file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each string is a file path. Use
+     * <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This
+     * parameter is optional.
      * </p>
      * </li>
      * </ul>
@@ -360,7 +393,9 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system.
+     *        <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system. You can
+     *        specify a key from another AWS account provided that key it is properly shared with your account via AWS
+     *        KMS.
      *        </p>
      *        </li>
      *        <li>
@@ -378,6 +413,13 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored
      *        to a new Amazon EFS file system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ItemsToRestore </code>: A serialized list of up to five strings where each string is a file path.
+     *        Use <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file
+     *        system. This parameter is optional.
      *        </p>
      *        </li>
      */
@@ -415,7 +457,8 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system.
+     * <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system. You can
+     * specify a key from another AWS account provided that key it is properly shared with your account via AWS KMS.
      * </p>
      * </li>
      * <li>
@@ -432,6 +475,13 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored to a new
      * Amazon EFS file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ItemsToRestore </code>: A serialized list of up to five strings where each string is a file path. Use
+     * <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This
+     * parameter is optional.
      * </p>
      * </li>
      * </ul>
@@ -463,7 +513,9 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system.
+     *        <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system. You can
+     *        specify a key from another AWS account provided that key it is properly shared with your account via AWS
+     *        KMS.
      *        </p>
      *        </li>
      *        <li>
@@ -481,6 +533,13 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored
      *        to a new Amazon EFS file system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ItemsToRestore </code>: A serialized list of up to five strings where each string is a file path.
+     *        Use <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file
+     *        system. This parameter is optional.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

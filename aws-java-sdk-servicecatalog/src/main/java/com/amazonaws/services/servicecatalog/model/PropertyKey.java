@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum PropertyKey {
 
-    OWNER("OWNER");
+    OWNER("OWNER"),
+    LAUNCH_ROLE("LAUNCH_ROLE");
 
     private String value;
 
