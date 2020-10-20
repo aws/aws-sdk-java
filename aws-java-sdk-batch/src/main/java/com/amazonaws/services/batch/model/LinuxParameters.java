@@ -66,7 +66,9 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
      * <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where
-     * the value would be the sum of the container memory plus the <code>maxSwap</code> value.
+     * the value would be the sum of the container memory plus the <code>maxSwap</code> value. For more information, see
+     * <a href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details">
+     * <code>--memory-swap</code> details</a> in the Docker documentation.
      * </p>
      * <p>
      * If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted values
@@ -403,7 +405,9 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
      * <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where
-     * the value would be the sum of the container memory plus the <code>maxSwap</code> value.
+     * the value would be the sum of the container memory plus the <code>maxSwap</code> value. For more information, see
+     * <a href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details">
+     * <code>--memory-swap</code> details</a> in the Docker documentation.
      * </p>
      * <p>
      * If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted values
@@ -415,7 +419,10 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * @param maxSwap
      *        The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
      *        <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a> where the value would be the sum of the container memory plus the <code>maxSwap</code> value.</p>
+     *        run</a> where the value would be the sum of the container memory plus the <code>maxSwap</code> value. For
+     *        more information, see <a
+     *        href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details">
+     *        <code>--memory-swap</code> details</a> in the Docker documentation.</p>
      *        <p>
      *        If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted
      *        values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the
@@ -431,7 +438,9 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
      * <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where
-     * the value would be the sum of the container memory plus the <code>maxSwap</code> value.
+     * the value would be the sum of the container memory plus the <code>maxSwap</code> value. For more information, see
+     * <a href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details">
+     * <code>--memory-swap</code> details</a> in the Docker documentation.
      * </p>
      * <p>
      * If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted values
@@ -442,7 +451,10 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * 
      * @return The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
      *         <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *         run</a> where the value would be the sum of the container memory plus the <code>maxSwap</code> value.</p>
+     *         run</a> where the value would be the sum of the container memory plus the <code>maxSwap</code> value. For
+     *         more information, see <a
+     *         href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details">
+     *         <code>--memory-swap</code> details</a> in the Docker documentation.</p>
      *         <p>
      *         If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted
      *         values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the
@@ -458,7 +470,9 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
      * <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where
-     * the value would be the sum of the container memory plus the <code>maxSwap</code> value.
+     * the value would be the sum of the container memory plus the <code>maxSwap</code> value. For more information, see
+     * <a href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details">
+     * <code>--memory-swap</code> details</a> in the Docker documentation.
      * </p>
      * <p>
      * If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted values
@@ -470,7 +484,10 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * @param maxSwap
      *        The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
      *        <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a> where the value would be the sum of the container memory plus the <code>maxSwap</code> value.</p>
+     *        run</a> where the value would be the sum of the container memory plus the <code>maxSwap</code> value. For
+     *        more information, see <a
+     *        href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details">
+     *        <code>--memory-swap</code> details</a> in the Docker documentation.</p>
      *        <p>
      *        If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted
      *        values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the

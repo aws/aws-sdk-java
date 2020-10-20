@@ -55,7 +55,7 @@ public class UpdateApiCacheRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <b>PER_RESOLVER_CACHING</b>: Individual resovlers that you specify are cached.
+     * <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.
      * </p>
      * </li>
      * </ul>
@@ -112,7 +112,7 @@ public class UpdateApiCacheRequest extends com.amazonaws.AmazonWebServiceRequest
      * generic identifiers above should be used.
      * </p>
      * <p>
-     * The following legacy instance types are avaible, but their use is discouraged:
+     * The following legacy instance types are available, but their use is discouraged:
      * </p>
      * <ul>
      * <li>
@@ -261,7 +261,7 @@ public class UpdateApiCacheRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <b>PER_RESOLVER_CACHING</b>: Individual resovlers that you specify are cached.
+     * <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.
      * </p>
      * </li>
      * </ul>
@@ -276,7 +276,7 @@ public class UpdateApiCacheRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <b>PER_RESOLVER_CACHING</b>: Individual resovlers that you specify are cached.
+     *        <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.
      *        </p>
      *        </li>
      * @see ApiCachingBehavior
@@ -298,7 +298,7 @@ public class UpdateApiCacheRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <b>PER_RESOLVER_CACHING</b>: Individual resovlers that you specify are cached.
+     * <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.
      * </p>
      * </li>
      * </ul>
@@ -312,7 +312,7 @@ public class UpdateApiCacheRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         <b>PER_RESOLVER_CACHING</b>: Individual resovlers that you specify are cached.
+     *         <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.
      *         </p>
      *         </li>
      * @see ApiCachingBehavior
@@ -334,7 +334,7 @@ public class UpdateApiCacheRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <b>PER_RESOLVER_CACHING</b>: Individual resovlers that you specify are cached.
+     * <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.
      * </p>
      * </li>
      * </ul>
@@ -349,7 +349,7 @@ public class UpdateApiCacheRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <b>PER_RESOLVER_CACHING</b>: Individual resovlers that you specify are cached.
+     *        <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -373,7 +373,7 @@ public class UpdateApiCacheRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <b>PER_RESOLVER_CACHING</b>: Individual resovlers that you specify are cached.
+     * <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.
      * </p>
      * </li>
      * </ul>
@@ -388,7 +388,7 @@ public class UpdateApiCacheRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <b>PER_RESOLVER_CACHING</b>: Individual resovlers that you specify are cached.
+     *        <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -451,7 +451,7 @@ public class UpdateApiCacheRequest extends com.amazonaws.AmazonWebServiceRequest
      * generic identifiers above should be used.
      * </p>
      * <p>
-     * The following legacy instance types are avaible, but their use is discouraged:
+     * The following legacy instance types are available, but their use is discouraged:
      * </p>
      * <ul>
      * <li>
@@ -540,7 +540,7 @@ public class UpdateApiCacheRequest extends com.amazonaws.AmazonWebServiceRequest
      *        and the generic identifiers above should be used.
      *        </p>
      *        <p>
-     *        The following legacy instance types are avaible, but their use is discouraged:
+     *        The following legacy instance types are available, but their use is discouraged:
      *        </p>
      *        <ul>
      *        <li>
@@ -636,7 +636,7 @@ public class UpdateApiCacheRequest extends com.amazonaws.AmazonWebServiceRequest
      * generic identifiers above should be used.
      * </p>
      * <p>
-     * The following legacy instance types are avaible, but their use is discouraged:
+     * The following legacy instance types are available, but their use is discouraged:
      * </p>
      * <ul>
      * <li>
@@ -724,7 +724,7 @@ public class UpdateApiCacheRequest extends com.amazonaws.AmazonWebServiceRequest
      *         and the generic identifiers above should be used.
      *         </p>
      *         <p>
-     *         The following legacy instance types are avaible, but their use is discouraged:
+     *         The following legacy instance types are available, but their use is discouraged:
      *         </p>
      *         <ul>
      *         <li>
@@ -820,7 +820,7 @@ public class UpdateApiCacheRequest extends com.amazonaws.AmazonWebServiceRequest
      * generic identifiers above should be used.
      * </p>
      * <p>
-     * The following legacy instance types are avaible, but their use is discouraged:
+     * The following legacy instance types are available, but their use is discouraged:
      * </p>
      * <ul>
      * <li>
@@ -909,7 +909,7 @@ public class UpdateApiCacheRequest extends com.amazonaws.AmazonWebServiceRequest
      *        and the generic identifiers above should be used.
      *        </p>
      *        <p>
-     *        The following legacy instance types are avaible, but their use is discouraged:
+     *        The following legacy instance types are available, but their use is discouraged:
      *        </p>
      *        <ul>
      *        <li>
@@ -1007,7 +1007,7 @@ public class UpdateApiCacheRequest extends com.amazonaws.AmazonWebServiceRequest
      * generic identifiers above should be used.
      * </p>
      * <p>
-     * The following legacy instance types are avaible, but their use is discouraged:
+     * The following legacy instance types are available, but their use is discouraged:
      * </p>
      * <ul>
      * <li>
@@ -1096,7 +1096,7 @@ public class UpdateApiCacheRequest extends com.amazonaws.AmazonWebServiceRequest
      *        and the generic identifiers above should be used.
      *        </p>
      *        <p>
-     *        The following legacy instance types are avaible, but their use is discouraged:
+     *        The following legacy instance types are available, but their use is discouraged:
      *        </p>
      *        <ul>
      *        <li>

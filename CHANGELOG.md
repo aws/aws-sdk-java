@@ -1,3 +1,16 @@
+# __1.11.884__ __2020-10-20__
+## __AWS AppSync__
+  - ### Features
+    - Documentation updates to AppSync to correct several typos.
+
+## __AWS Batch__
+  - ### Features
+    - Adding evaluateOnExit to job retry strategies.
+
+## __AWS Elastic Beanstalk__
+  - ### Features
+    - EnvironmentStatus enum update to include Aborting, LinkingFrom and LinkingTo
+
 # __1.11.883__ __2020-10-19__
 ## __AWS Backup__
   - ### Features

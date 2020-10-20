@@ -20,8 +20,11 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum EnvironmentStatus {
 
+    Aborting("Aborting"),
     Launching("Launching"),
     Updating("Updating"),
+    LinkingFrom("LinkingFrom"),
+    LinkingTo("LinkingTo"),
     Ready("Ready"),
     Terminating("Terminating"),
     Terminated("Terminated");

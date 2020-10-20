@@ -96,7 +96,8 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
     private Boolean xrayEnabled;
     /**
      * <p>
-     * The ARN of the AWS WAF ACL associated with this <code>GraphqlApi</code> if one exists.
+     * The ARN of the AWS Web Application Firewall (WAF) ACL associated with this <code>GraphqlApi</code>, if one
+     * exists.
      * </p>
      */
     private String wafWebAclArn;
@@ -660,11 +661,13 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the AWS WAF ACL associated with this <code>GraphqlApi</code> if one exists.
+     * The ARN of the AWS Web Application Firewall (WAF) ACL associated with this <code>GraphqlApi</code>, if one
+     * exists.
      * </p>
      * 
      * @param wafWebAclArn
-     *        The ARN of the AWS WAF ACL associated with this <code>GraphqlApi</code> if one exists.
+     *        The ARN of the AWS Web Application Firewall (WAF) ACL associated with this <code>GraphqlApi</code>, if one
+     *        exists.
      */
 
     public void setWafWebAclArn(String wafWebAclArn) {
@@ -673,10 +676,12 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the AWS WAF ACL associated with this <code>GraphqlApi</code> if one exists.
+     * The ARN of the AWS Web Application Firewall (WAF) ACL associated with this <code>GraphqlApi</code>, if one
+     * exists.
      * </p>
      * 
-     * @return The ARN of the AWS WAF ACL associated with this <code>GraphqlApi</code> if one exists.
+     * @return The ARN of the AWS Web Application Firewall (WAF) ACL associated with this <code>GraphqlApi</code>, if
+     *         one exists.
      */
 
     public String getWafWebAclArn() {
@@ -685,11 +690,13 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the AWS WAF ACL associated with this <code>GraphqlApi</code> if one exists.
+     * The ARN of the AWS Web Application Firewall (WAF) ACL associated with this <code>GraphqlApi</code>, if one
+     * exists.
      * </p>
      * 
      * @param wafWebAclArn
-     *        The ARN of the AWS WAF ACL associated with this <code>GraphqlApi</code> if one exists.
+     *        The ARN of the AWS Web Application Firewall (WAF) ACL associated with this <code>GraphqlApi</code>, if one
+     *        exists.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

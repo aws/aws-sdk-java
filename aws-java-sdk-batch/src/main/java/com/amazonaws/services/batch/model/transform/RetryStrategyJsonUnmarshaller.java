@@ -52,6 +52,12 @@ public class RetryStrategyJsonUnmarshaller implements Unmarshaller<RetryStrategy
                     context.nextToken();
                     retryStrategy.setAttempts(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("evaluateOnExit", targetDepth)) {
+                    context.nextToken();
+                    retryStrategy.setEvaluateOnExit(new ListUnmarshaller<EvaluateOnExit>(EvaluateOnExitJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

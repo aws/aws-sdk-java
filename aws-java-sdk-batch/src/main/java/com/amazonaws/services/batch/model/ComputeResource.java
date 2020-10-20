@@ -47,8 +47,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute resources and will select
      * additional instance types that are large enough to meet the requirements of the jobs in the queue, with a
      * preference for instance types that are less likely to be interrupted. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html ">Allocation Strategies</a>
-     * in the <i>AWS Batch User Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation Strategies</a> in
+     * the <i>AWS Batch User Guide</i>.
      * </p>
      */
     private String allocationStrategy;
@@ -258,8 +258,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute resources and will select
      * additional instance types that are large enough to meet the requirements of the jobs in the queue, with a
      * preference for instance types that are less likely to be interrupted. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html ">Allocation Strategies</a>
-     * in the <i>AWS Batch User Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation Strategies</a> in
+     * the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param allocationStrategy
@@ -275,7 +275,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      *        Instance compute resources and will select additional instance types that are large enough to meet the
      *        requirements of the jobs in the queue, with a preference for instance types that are less likely to be
      *        interrupted. For more information, see <a
-     *        href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html ">Allocation
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation
      *        Strategies</a> in the <i>AWS Batch User Guide</i>.
      * @see CRAllocationStrategy
      */
@@ -297,8 +297,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute resources and will select
      * additional instance types that are large enough to meet the requirements of the jobs in the queue, with a
      * preference for instance types that are less likely to be interrupted. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html ">Allocation Strategies</a>
-     * in the <i>AWS Batch User Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation Strategies</a> in
+     * the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @return The allocation strategy to use for the compute resource in case not enough instances of the best fitting
@@ -313,7 +313,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      *         Spot Instance compute resources and will select additional instance types that are large enough to meet
      *         the requirements of the jobs in the queue, with a preference for instance types that are less likely to
      *         be interrupted. For more information, see <a
-     *         href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html ">Allocation
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation
      *         Strategies</a> in the <i>AWS Batch User Guide</i>.
      * @see CRAllocationStrategy
      */
@@ -335,8 +335,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute resources and will select
      * additional instance types that are large enough to meet the requirements of the jobs in the queue, with a
      * preference for instance types that are less likely to be interrupted. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html ">Allocation Strategies</a>
-     * in the <i>AWS Batch User Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation Strategies</a> in
+     * the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param allocationStrategy
@@ -352,7 +352,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      *        Instance compute resources and will select additional instance types that are large enough to meet the
      *        requirements of the jobs in the queue, with a preference for instance types that are less likely to be
      *        interrupted. For more information, see <a
-     *        href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html ">Allocation
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation
      *        Strategies</a> in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CRAllocationStrategy
@@ -376,8 +376,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute resources and will select
      * additional instance types that are large enough to meet the requirements of the jobs in the queue, with a
      * preference for instance types that are less likely to be interrupted. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html ">Allocation Strategies</a>
-     * in the <i>AWS Batch User Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation Strategies</a> in
+     * the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param allocationStrategy
@@ -393,7 +393,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      *        Instance compute resources and will select additional instance types that are large enough to meet the
      *        requirements of the jobs in the queue, with a preference for instance types that are less likely to be
      *        interrupted. For more information, see <a
-     *        href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html ">Allocation
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation
      *        Strategies</a> in the <i>AWS Batch User Guide</i>.
      * @see CRAllocationStrategy
      */
@@ -415,8 +415,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute resources and will select
      * additional instance types that are large enough to meet the requirements of the jobs in the queue, with a
      * preference for instance types that are less likely to be interrupted. For more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html ">Allocation Strategies</a>
-     * in the <i>AWS Batch User Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation Strategies</a> in
+     * the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param allocationStrategy
@@ -432,7 +432,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      *        Instance compute resources and will select additional instance types that are large enough to meet the
      *        requirements of the jobs in the queue, with a preference for instance types that are less likely to be
      *        interrupted. For more information, see <a
-     *        href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html ">Allocation
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation
      *        Strategies</a> in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CRAllocationStrategy

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.batch.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,8 @@ public class RetryStrategyMarshaller {
 
     private static final MarshallingInfo<Integer> ATTEMPTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("attempts").build();
+    private static final MarshallingInfo<List> EVALUATEONEXIT_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("evaluateOnExit").build();
 
     private static final RetryStrategyMarshaller instance = new RetryStrategyMarshaller();
 
@@ -47,6 +50,7 @@ public class RetryStrategyMarshaller {
 
         try {
             protocolMarshaller.marshall(retryStrategy.getAttempts(), ATTEMPTS_BINDING);
+            protocolMarshaller.marshall(retryStrategy.getEvaluateOnExit(), EVALUATEONEXIT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
