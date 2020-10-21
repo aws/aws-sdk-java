@@ -25,30 +25,30 @@ public class CreatePublicKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Returned when you add a public key.
+     * The public key.
      * </p>
      */
     private PublicKey publicKey;
     /**
      * <p>
-     * The fully qualified URI of the new public key resource just created.
+     * The URL of the public key.
      * </p>
      */
     private String location;
     /**
      * <p>
-     * The current version of the public key. For example: <code>E2QWRUHAPOMQZL</code>.
+     * The identifier for this version of the public key.
      * </p>
      */
     private String eTag;
 
     /**
      * <p>
-     * Returned when you add a public key.
+     * The public key.
      * </p>
      * 
      * @param publicKey
-     *        Returned when you add a public key.
+     *        The public key.
      */
 
     public void setPublicKey(PublicKey publicKey) {
@@ -57,10 +57,10 @@ public class CreatePublicKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Returned when you add a public key.
+     * The public key.
      * </p>
      * 
-     * @return Returned when you add a public key.
+     * @return The public key.
      */
 
     public PublicKey getPublicKey() {
@@ -69,11 +69,11 @@ public class CreatePublicKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Returned when you add a public key.
+     * The public key.
      * </p>
      * 
      * @param publicKey
-     *        Returned when you add a public key.
+     *        The public key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,11 +84,11 @@ public class CreatePublicKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The fully qualified URI of the new public key resource just created.
+     * The URL of the public key.
      * </p>
      * 
      * @param location
-     *        The fully qualified URI of the new public key resource just created.
+     *        The URL of the public key.
      */
 
     public void setLocation(String location) {
@@ -97,10 +97,10 @@ public class CreatePublicKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The fully qualified URI of the new public key resource just created.
+     * The URL of the public key.
      * </p>
      * 
-     * @return The fully qualified URI of the new public key resource just created.
+     * @return The URL of the public key.
      */
 
     public String getLocation() {
@@ -109,11 +109,11 @@ public class CreatePublicKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The fully qualified URI of the new public key resource just created.
+     * The URL of the public key.
      * </p>
      * 
      * @param location
-     *        The fully qualified URI of the new public key resource just created.
+     *        The URL of the public key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,11 +124,11 @@ public class CreatePublicKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The current version of the public key. For example: <code>E2QWRUHAPOMQZL</code>.
+     * The identifier for this version of the public key.
      * </p>
      * 
      * @param eTag
-     *        The current version of the public key. For example: <code>E2QWRUHAPOMQZL</code>.
+     *        The identifier for this version of the public key.
      */
 
     public void setETag(String eTag) {
@@ -137,10 +137,10 @@ public class CreatePublicKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The current version of the public key. For example: <code>E2QWRUHAPOMQZL</code>.
+     * The identifier for this version of the public key.
      * </p>
      * 
-     * @return The current version of the public key. For example: <code>E2QWRUHAPOMQZL</code>.
+     * @return The identifier for this version of the public key.
      */
 
     public String getETag() {
@@ -149,11 +149,11 @@ public class CreatePublicKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The current version of the public key. For example: <code>E2QWRUHAPOMQZL</code>.
+     * The identifier for this version of the public key.
      * </p>
      * 
      * @param eTag
-     *        The current version of the public key. For example: <code>E2QWRUHAPOMQZL</code>.
+     *        The identifier for this version of the public key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

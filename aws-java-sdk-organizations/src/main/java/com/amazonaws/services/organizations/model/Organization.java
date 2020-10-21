@@ -63,7 +63,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
     private String featureSet;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the account that is designated as the master account for the organization.
+     * The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.
      * </p>
      * <p>
      * For more information about ARNs in Organizations, see <a
@@ -74,7 +74,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
     private String masterAccountArn;
     /**
      * <p>
-     * The unique identifier (ID) of the master account of an organization.
+     * The unique identifier (ID) of the management account of an organization.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
@@ -84,7 +84,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
     private String masterAccountId;
     /**
      * <p>
-     * The email address that is associated with the AWS account that is designated as the master account for the
+     * The email address that is associated with the AWS account that is designated as the management account for the
      * organization.
      * </p>
      */
@@ -351,7 +351,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the account that is designated as the master account for the organization.
+     * The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.
      * </p>
      * <p>
      * For more information about ARNs in Organizations, see <a
@@ -360,7 +360,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param masterAccountArn
-     *        The Amazon Resource Name (ARN) of the account that is designated as the master account for the
+     *        The Amazon Resource Name (ARN) of the account that is designated as the management account for the
      *        organization.</p>
      *        <p>
      *        For more information about ARNs in Organizations, see <a href=
@@ -374,7 +374,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the account that is designated as the master account for the organization.
+     * The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.
      * </p>
      * <p>
      * For more information about ARNs in Organizations, see <a
@@ -382,7 +382,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the account that is designated as the master account for the
+     * @return The Amazon Resource Name (ARN) of the account that is designated as the management account for the
      *         organization.</p>
      *         <p>
      *         For more information about ARNs in Organizations, see <a href=
@@ -396,7 +396,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the account that is designated as the master account for the organization.
+     * The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.
      * </p>
      * <p>
      * For more information about ARNs in Organizations, see <a
@@ -405,7 +405,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param masterAccountArn
-     *        The Amazon Resource Name (ARN) of the account that is designated as the master account for the
+     *        The Amazon Resource Name (ARN) of the account that is designated as the management account for the
      *        organization.</p>
      *        <p>
      *        For more information about ARNs in Organizations, see <a href=
@@ -421,7 +421,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier (ID) of the master account of an organization.
+     * The unique identifier (ID) of the management account of an organization.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
@@ -429,7 +429,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param masterAccountId
-     *        The unique identifier (ID) of the master account of an organization.</p>
+     *        The unique identifier (ID) of the management account of an organization.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly
      *        12 digits.
@@ -441,14 +441,14 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier (ID) of the master account of an organization.
+     * The unique identifier (ID) of the management account of an organization.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
      * digits.
      * </p>
      * 
-     * @return The unique identifier (ID) of the master account of an organization.</p>
+     * @return The unique identifier (ID) of the management account of an organization.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly
      *         12 digits.
@@ -460,7 +460,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier (ID) of the master account of an organization.
+     * The unique identifier (ID) of the management account of an organization.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
@@ -468,7 +468,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param masterAccountId
-     *        The unique identifier (ID) of the master account of an organization.</p>
+     *        The unique identifier (ID) of the management account of an organization.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly
      *        12 digits.
@@ -482,13 +482,13 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The email address that is associated with the AWS account that is designated as the master account for the
+     * The email address that is associated with the AWS account that is designated as the management account for the
      * organization.
      * </p>
      * 
      * @param masterAccountEmail
-     *        The email address that is associated with the AWS account that is designated as the master account for the
-     *        organization.
+     *        The email address that is associated with the AWS account that is designated as the management account for
+     *        the organization.
      */
 
     public void setMasterAccountEmail(String masterAccountEmail) {
@@ -497,12 +497,12 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The email address that is associated with the AWS account that is designated as the master account for the
+     * The email address that is associated with the AWS account that is designated as the management account for the
      * organization.
      * </p>
      * 
-     * @return The email address that is associated with the AWS account that is designated as the master account for
-     *         the organization.
+     * @return The email address that is associated with the AWS account that is designated as the management account
+     *         for the organization.
      */
 
     public String getMasterAccountEmail() {
@@ -511,13 +511,13 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The email address that is associated with the AWS account that is designated as the master account for the
+     * The email address that is associated with the AWS account that is designated as the management account for the
      * organization.
      * </p>
      * 
      * @param masterAccountEmail
-     *        The email address that is associated with the AWS account that is designated as the master account for the
-     *        organization.
+     *        The email address that is associated with the AWS account that is designated as the management account for
+     *        the organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,29 +36,38 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      */
     private String targetOriginId;
     /**
+     * <important>
      * <p>
-     * A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private
-     * content.
+     * We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.
+     * </p>
+     * </important>
+     * <p>
+     * A list of AWS account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.
      * </p>
      * <p>
-     * If you want to require signed URLs in requests for objects in the target origin that match the
-     * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify
-     * the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
-     * Content with Signed URLs and Signed Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.
-     * </p>
-     * <p>
-     * If you don’t want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify
-     * <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>
-     * .
-     * </p>
-     * <p>
-     * To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it’s
-     * currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers
-     * that you want to include in the updated distribution.
+     * When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all
+     * requests that match the cache behavior. The URLs or cookies must be signed with the private key of a CloudFront
+     * key pair in a trusted signer’s AWS account. The signed URL or cookie contains information about which public key
+     * CloudFront should use to verify the signature. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private
+     * content</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      */
     private TrustedSigners trustedSigners;
+    /**
+     * <p>
+     * A list of key groups that CloudFront can use to validate signed URLs or signed cookies.
+     * </p>
+     * <p>
+     * When a cache behavior contains trusted key groups, CloudFront requires signed URLs or signed cookies for all
+     * requests that match the cache behavior. The URLs or cookies must be signed with a private key whose corresponding
+     * public key is in the key group. The signed URL or cookie contains information about which public key CloudFront
+     * should use to verify the signature. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private
+     * content</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     */
+    private TrustedKeyGroups trustedKeyGroups;
     /**
      * <p>
      * The protocol that viewers can use to access the files in the origin specified by <code>TargetOriginId</code> when
@@ -305,47 +314,38 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
     }
 
     /**
+     * <important>
      * <p>
-     * A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private
-     * content.
+     * We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.
+     * </p>
+     * </important>
+     * <p>
+     * A list of AWS account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.
      * </p>
      * <p>
-     * If you want to require signed URLs in requests for objects in the target origin that match the
-     * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify
-     * the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
-     * Content with Signed URLs and Signed Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.
-     * </p>
-     * <p>
-     * If you don’t want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify
-     * <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>
-     * .
-     * </p>
-     * <p>
-     * To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it’s
-     * currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers
-     * that you want to include in the updated distribution.
+     * When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all
+     * requests that match the cache behavior. The URLs or cookies must be signed with the private key of a CloudFront
+     * key pair in a trusted signer’s AWS account. The signed URL or cookie contains information about which public key
+     * CloudFront should use to verify the signature. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private
+     * content</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param trustedSigners
-     *        A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for
-     *        private content.</p>
      *        <p>
-     *        If you want to require signed URLs in requests for objects in the target origin that match the
-     *        <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and
-     *        specify the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see
-     *        <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-     *        Private Content with Signed URLs and Signed Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        A list of AWS account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.
      *        </p>
      *        <p>
-     *        If you don’t want to require signed URLs in requests for objects that match <code>PathPattern</code>,
-     *        specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit
-     *        <code>Items</code>.
-     *        </p>
-     *        <p>
-     *        To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code>
-     *        (if it’s currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the
-     *        trusted signers that you want to include in the updated distribution.
+     *        When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all
+     *        requests that match the cache behavior. The URLs or cookies must be signed with the private key of a
+     *        CloudFront key pair in a trusted signer’s AWS account. The signed URL or cookie contains information about
+     *        which public key CloudFront should use to verify the signature. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     *        private content</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
     public void setTrustedSigners(TrustedSigners trustedSigners) {
@@ -353,46 +353,37 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
     }
 
     /**
+     * <important>
      * <p>
-     * A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private
-     * content.
+     * We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.
+     * </p>
+     * </important>
+     * <p>
+     * A list of AWS account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.
      * </p>
      * <p>
-     * If you want to require signed URLs in requests for objects in the target origin that match the
-     * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify
-     * the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
-     * Content with Signed URLs and Signed Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.
-     * </p>
-     * <p>
-     * If you don’t want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify
-     * <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>
-     * .
-     * </p>
-     * <p>
-     * To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it’s
-     * currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers
-     * that you want to include in the updated distribution.
+     * When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all
+     * requests that match the cache behavior. The URLs or cookies must be signed with the private key of a CloudFront
+     * key pair in a trusted signer’s AWS account. The signed URL or cookie contains information about which public key
+     * CloudFront should use to verify the signature. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private
+     * content</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
-     * @return A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for
-     *         private content.</p>
+     * @return <p>
+     *         We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.
+     *         </p>
+     *         </important>
      *         <p>
-     *         If you want to require signed URLs in requests for objects in the target origin that match the
-     *         <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and
-     *         specify the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see
-     *         <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-     *         Private Content with Signed URLs and Signed Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *         A list of AWS account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.
      *         </p>
      *         <p>
-     *         If you don’t want to require signed URLs in requests for objects that match <code>PathPattern</code>,
-     *         specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit
-     *         <code>Items</code>.
-     *         </p>
-     *         <p>
-     *         To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code>
-     *         (if it’s currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of
-     *         the trusted signers that you want to include in the updated distribution.
+     *         When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all
+     *         requests that match the cache behavior. The URLs or cookies must be signed with the private key of a
+     *         CloudFront key pair in a trusted signer’s AWS account. The signed URL or cookie contains information
+     *         about which public key CloudFront should use to verify the signature. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     *         private content</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
     public TrustedSigners getTrustedSigners() {
@@ -400,52 +391,128 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
     }
 
     /**
+     * <important>
      * <p>
-     * A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private
-     * content.
+     * We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.
+     * </p>
+     * </important>
+     * <p>
+     * A list of AWS account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.
      * </p>
      * <p>
-     * If you want to require signed URLs in requests for objects in the target origin that match the
-     * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify
-     * the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
-     * Content with Signed URLs and Signed Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.
-     * </p>
-     * <p>
-     * If you don’t want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify
-     * <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>
-     * .
-     * </p>
-     * <p>
-     * To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it’s
-     * currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers
-     * that you want to include in the updated distribution.
+     * When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all
+     * requests that match the cache behavior. The URLs or cookies must be signed with the private key of a CloudFront
+     * key pair in a trusted signer’s AWS account. The signed URL or cookie contains information about which public key
+     * CloudFront should use to verify the signature. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private
+     * content</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param trustedSigners
-     *        A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for
-     *        private content.</p>
      *        <p>
-     *        If you want to require signed URLs in requests for objects in the target origin that match the
-     *        <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and
-     *        specify the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see
-     *        <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-     *        Private Content with Signed URLs and Signed Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        A list of AWS account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.
      *        </p>
      *        <p>
-     *        If you don’t want to require signed URLs in requests for objects that match <code>PathPattern</code>,
-     *        specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit
-     *        <code>Items</code>.
-     *        </p>
-     *        <p>
-     *        To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code>
-     *        (if it’s currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the
-     *        trusted signers that you want to include in the updated distribution.
+     *        When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all
+     *        requests that match the cache behavior. The URLs or cookies must be signed with the private key of a
+     *        CloudFront key pair in a trusted signer’s AWS account. The signed URL or cookie contains information about
+     *        which public key CloudFront should use to verify the signature. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     *        private content</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DefaultCacheBehavior withTrustedSigners(TrustedSigners trustedSigners) {
         setTrustedSigners(trustedSigners);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of key groups that CloudFront can use to validate signed URLs or signed cookies.
+     * </p>
+     * <p>
+     * When a cache behavior contains trusted key groups, CloudFront requires signed URLs or signed cookies for all
+     * requests that match the cache behavior. The URLs or cookies must be signed with a private key whose corresponding
+     * public key is in the key group. The signed URL or cookie contains information about which public key CloudFront
+     * should use to verify the signature. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private
+     * content</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param trustedKeyGroups
+     *        A list of key groups that CloudFront can use to validate signed URLs or signed cookies.</p>
+     *        <p>
+     *        When a cache behavior contains trusted key groups, CloudFront requires signed URLs or signed cookies for
+     *        all requests that match the cache behavior. The URLs or cookies must be signed with a private key whose
+     *        corresponding public key is in the key group. The signed URL or cookie contains information about which
+     *        public key CloudFront should use to verify the signature. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     *        private content</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     */
+
+    public void setTrustedKeyGroups(TrustedKeyGroups trustedKeyGroups) {
+        this.trustedKeyGroups = trustedKeyGroups;
+    }
+
+    /**
+     * <p>
+     * A list of key groups that CloudFront can use to validate signed URLs or signed cookies.
+     * </p>
+     * <p>
+     * When a cache behavior contains trusted key groups, CloudFront requires signed URLs or signed cookies for all
+     * requests that match the cache behavior. The URLs or cookies must be signed with a private key whose corresponding
+     * public key is in the key group. The signed URL or cookie contains information about which public key CloudFront
+     * should use to verify the signature. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private
+     * content</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @return A list of key groups that CloudFront can use to validate signed URLs or signed cookies.</p>
+     *         <p>
+     *         When a cache behavior contains trusted key groups, CloudFront requires signed URLs or signed cookies for
+     *         all requests that match the cache behavior. The URLs or cookies must be signed with a private key whose
+     *         corresponding public key is in the key group. The signed URL or cookie contains information about which
+     *         public key CloudFront should use to verify the signature. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     *         private content</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     */
+
+    public TrustedKeyGroups getTrustedKeyGroups() {
+        return this.trustedKeyGroups;
+    }
+
+    /**
+     * <p>
+     * A list of key groups that CloudFront can use to validate signed URLs or signed cookies.
+     * </p>
+     * <p>
+     * When a cache behavior contains trusted key groups, CloudFront requires signed URLs or signed cookies for all
+     * requests that match the cache behavior. The URLs or cookies must be signed with a private key whose corresponding
+     * public key is in the key group. The signed URL or cookie contains information about which public key CloudFront
+     * should use to verify the signature. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private
+     * content</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param trustedKeyGroups
+     *        A list of key groups that CloudFront can use to validate signed URLs or signed cookies.</p>
+     *        <p>
+     *        When a cache behavior contains trusted key groups, CloudFront requires signed URLs or signed cookies for
+     *        all requests that match the cache behavior. The URLs or cookies must be signed with a private key whose
+     *        corresponding public key is in the key group. The signed URL or cookie contains information about which
+     *        public key CloudFront should use to verify the signature. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     *        private content</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DefaultCacheBehavior withTrustedKeyGroups(TrustedKeyGroups trustedKeyGroups) {
+        setTrustedKeyGroups(trustedKeyGroups);
         return this;
     }
 
@@ -1899,6 +1966,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
             sb.append("TargetOriginId: ").append(getTargetOriginId()).append(",");
         if (getTrustedSigners() != null)
             sb.append("TrustedSigners: ").append(getTrustedSigners()).append(",");
+        if (getTrustedKeyGroups() != null)
+            sb.append("TrustedKeyGroups: ").append(getTrustedKeyGroups()).append(",");
         if (getViewerProtocolPolicy() != null)
             sb.append("ViewerProtocolPolicy: ").append(getViewerProtocolPolicy()).append(",");
         if (getAllowedMethods() != null)
@@ -1946,6 +2015,10 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
         if (other.getTrustedSigners() == null ^ this.getTrustedSigners() == null)
             return false;
         if (other.getTrustedSigners() != null && other.getTrustedSigners().equals(this.getTrustedSigners()) == false)
+            return false;
+        if (other.getTrustedKeyGroups() == null ^ this.getTrustedKeyGroups() == null)
+            return false;
+        if (other.getTrustedKeyGroups() != null && other.getTrustedKeyGroups().equals(this.getTrustedKeyGroups()) == false)
             return false;
         if (other.getViewerProtocolPolicy() == null ^ this.getViewerProtocolPolicy() == null)
             return false;
@@ -2009,6 +2082,7 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getTargetOriginId() == null) ? 0 : getTargetOriginId().hashCode());
         hashCode = prime * hashCode + ((getTrustedSigners() == null) ? 0 : getTrustedSigners().hashCode());
+        hashCode = prime * hashCode + ((getTrustedKeyGroups() == null) ? 0 : getTrustedKeyGroups().hashCode());
         hashCode = prime * hashCode + ((getViewerProtocolPolicy() == null) ? 0 : getViewerProtocolPolicy().hashCode());
         hashCode = prime * hashCode + ((getAllowedMethods() == null) ? 0 : getAllowedMethods().hashCode());
         hashCode = prime * hashCode + ((getSmoothStreaming() == null) ? 0 : getSmoothStreaming().hashCode());

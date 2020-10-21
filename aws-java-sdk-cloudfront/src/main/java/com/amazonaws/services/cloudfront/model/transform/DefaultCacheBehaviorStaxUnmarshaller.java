@@ -53,6 +53,11 @@ public class DefaultCacheBehaviorStaxUnmarshaller implements Unmarshaller<Defaul
                     continue;
                 }
 
+                if (context.testExpression("TrustedKeyGroups", targetDepth)) {
+                    defaultCacheBehavior.setTrustedKeyGroups(TrustedKeyGroupsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("ViewerProtocolPolicy", targetDepth)) {
                     defaultCacheBehavior.setViewerProtocolPolicy(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

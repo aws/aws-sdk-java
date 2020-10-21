@@ -17,7 +17,11 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Information about a public key you add to CloudFront to use with features like field-level encryption.
+ * Configuration information about a public key that you can use with <a
+ * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed
+ * cookies</a>, or with <a
+ * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level
+ * encryption</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PublicKeyConfig" target="_top">AWS API
@@ -28,36 +32,40 @@ public class PublicKeyConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique number that ensures that the request can't be replayed.
+     * A string included in the request to help make sure that the request can’t be replayed.
      * </p>
      */
     private String callerReference;
     /**
      * <p>
-     * The name for a public key you add to CloudFront to use with features like field-level encryption.
+     * A name to help identify the public key.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The encoded public key that you want to add to CloudFront to use with features like field-level encryption.
+     * The public key that you can use with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and
+     * signed cookies</a>, or with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level
+     * encryption</a>.
      * </p>
      */
     private String encodedKey;
     /**
      * <p>
-     * An optional comment about a public key.
+     * A comment to describe the public key.
      * </p>
      */
     private String comment;
 
     /**
      * <p>
-     * A unique number that ensures that the request can't be replayed.
+     * A string included in the request to help make sure that the request can’t be replayed.
      * </p>
      * 
      * @param callerReference
-     *        A unique number that ensures that the request can't be replayed.
+     *        A string included in the request to help make sure that the request can’t be replayed.
      */
 
     public void setCallerReference(String callerReference) {
@@ -66,10 +74,10 @@ public class PublicKeyConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique number that ensures that the request can't be replayed.
+     * A string included in the request to help make sure that the request can’t be replayed.
      * </p>
      * 
-     * @return A unique number that ensures that the request can't be replayed.
+     * @return A string included in the request to help make sure that the request can’t be replayed.
      */
 
     public String getCallerReference() {
@@ -78,11 +86,11 @@ public class PublicKeyConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique number that ensures that the request can't be replayed.
+     * A string included in the request to help make sure that the request can’t be replayed.
      * </p>
      * 
      * @param callerReference
-     *        A unique number that ensures that the request can't be replayed.
+     *        A string included in the request to help make sure that the request can’t be replayed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +101,11 @@ public class PublicKeyConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name for a public key you add to CloudFront to use with features like field-level encryption.
+     * A name to help identify the public key.
      * </p>
      * 
      * @param name
-     *        The name for a public key you add to CloudFront to use with features like field-level encryption.
+     *        A name to help identify the public key.
      */
 
     public void setName(String name) {
@@ -106,10 +114,10 @@ public class PublicKeyConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name for a public key you add to CloudFront to use with features like field-level encryption.
+     * A name to help identify the public key.
      * </p>
      * 
-     * @return The name for a public key you add to CloudFront to use with features like field-level encryption.
+     * @return A name to help identify the public key.
      */
 
     public String getName() {
@@ -118,11 +126,11 @@ public class PublicKeyConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name for a public key you add to CloudFront to use with features like field-level encryption.
+     * A name to help identify the public key.
      * </p>
      * 
      * @param name
-     *        The name for a public key you add to CloudFront to use with features like field-level encryption.
+     *        A name to help identify the public key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,12 +141,19 @@ public class PublicKeyConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The encoded public key that you want to add to CloudFront to use with features like field-level encryption.
+     * The public key that you can use with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and
+     * signed cookies</a>, or with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level
+     * encryption</a>.
      * </p>
      * 
      * @param encodedKey
-     *        The encoded public key that you want to add to CloudFront to use with features like field-level
-     *        encryption.
+     *        The public key that you can use with <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs
+     *        and signed cookies</a>, or with <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html"
+     *        >field-level encryption</a>.
      */
 
     public void setEncodedKey(String encodedKey) {
@@ -147,11 +162,18 @@ public class PublicKeyConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The encoded public key that you want to add to CloudFront to use with features like field-level encryption.
+     * The public key that you can use with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and
+     * signed cookies</a>, or with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level
+     * encryption</a>.
      * </p>
      * 
-     * @return The encoded public key that you want to add to CloudFront to use with features like field-level
-     *         encryption.
+     * @return The public key that you can use with <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs
+     *         and signed cookies</a>, or with <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html"
+     *         >field-level encryption</a>.
      */
 
     public String getEncodedKey() {
@@ -160,12 +182,19 @@ public class PublicKeyConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The encoded public key that you want to add to CloudFront to use with features like field-level encryption.
+     * The public key that you can use with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and
+     * signed cookies</a>, or with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level
+     * encryption</a>.
      * </p>
      * 
      * @param encodedKey
-     *        The encoded public key that you want to add to CloudFront to use with features like field-level
-     *        encryption.
+     *        The public key that you can use with <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs
+     *        and signed cookies</a>, or with <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html"
+     *        >field-level encryption</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -176,11 +205,11 @@ public class PublicKeyConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An optional comment about a public key.
+     * A comment to describe the public key.
      * </p>
      * 
      * @param comment
-     *        An optional comment about a public key.
+     *        A comment to describe the public key.
      */
 
     public void setComment(String comment) {
@@ -189,10 +218,10 @@ public class PublicKeyConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An optional comment about a public key.
+     * A comment to describe the public key.
      * </p>
      * 
-     * @return An optional comment about a public key.
+     * @return A comment to describe the public key.
      */
 
     public String getComment() {
@@ -201,11 +230,11 @@ public class PublicKeyConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An optional comment about a public key.
+     * A comment to describe the public key.
      * </p>
      * 
      * @param comment
-     *        An optional comment about a public key.
+     *        A comment to describe the public key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

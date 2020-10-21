@@ -373,6 +373,35 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                             }
                         }
 
+                        {
+                            TrustedKeyGroups trustedKeyGroups = defaultCacheBehavior.getTrustedKeyGroups();
+                            if (trustedKeyGroups != null) {
+                                xmlWriter.startElement("TrustedKeyGroups");
+
+                                if (trustedKeyGroups.getEnabled() != null) {
+                                    xmlWriter.startElement("Enabled").value(trustedKeyGroups.getEnabled()).endElement();
+                                }
+
+                                if (trustedKeyGroups.getQuantity() != null) {
+                                    xmlWriter.startElement("Quantity").value(trustedKeyGroups.getQuantity()).endElement();
+                                }
+
+                                com.amazonaws.internal.SdkInternalList<String> trustedKeyGroupsItemsList = (com.amazonaws.internal.SdkInternalList<String>) trustedKeyGroups
+                                        .getItems();
+                                if (!trustedKeyGroupsItemsList.isEmpty() || !trustedKeyGroupsItemsList.isAutoConstruct()) {
+                                    xmlWriter.startElement("Items");
+
+                                    for (String trustedKeyGroupsItemsListValue : trustedKeyGroupsItemsList) {
+                                        xmlWriter.startElement("KeyGroup");
+                                        xmlWriter.value(trustedKeyGroupsItemsListValue);
+                                        xmlWriter.endElement();
+                                    }
+                                    xmlWriter.endElement();
+                                }
+                                xmlWriter.endElement();
+                            }
+                        }
+
                         if (defaultCacheBehavior.getViewerProtocolPolicy() != null) {
                             xmlWriter.startElement("ViewerProtocolPolicy").value(defaultCacheBehavior.getViewerProtocolPolicy()).endElement();
                         }
@@ -648,6 +677,35 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                                             for (String trustedSignersItemsListValue : trustedSignersItemsList) {
                                                 xmlWriter.startElement("AwsAccountNumber");
                                                 xmlWriter.value(trustedSignersItemsListValue);
+                                                xmlWriter.endElement();
+                                            }
+                                            xmlWriter.endElement();
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                }
+
+                                {
+                                    TrustedKeyGroups trustedKeyGroups = cacheBehaviorsItemsListValue.getTrustedKeyGroups();
+                                    if (trustedKeyGroups != null) {
+                                        xmlWriter.startElement("TrustedKeyGroups");
+
+                                        if (trustedKeyGroups.getEnabled() != null) {
+                                            xmlWriter.startElement("Enabled").value(trustedKeyGroups.getEnabled()).endElement();
+                                        }
+
+                                        if (trustedKeyGroups.getQuantity() != null) {
+                                            xmlWriter.startElement("Quantity").value(trustedKeyGroups.getQuantity()).endElement();
+                                        }
+
+                                        com.amazonaws.internal.SdkInternalList<String> trustedKeyGroupsItemsList = (com.amazonaws.internal.SdkInternalList<String>) trustedKeyGroups
+                                                .getItems();
+                                        if (!trustedKeyGroupsItemsList.isEmpty() || !trustedKeyGroupsItemsList.isAutoConstruct()) {
+                                            xmlWriter.startElement("Items");
+
+                                            for (String trustedKeyGroupsItemsListValue : trustedKeyGroupsItemsList) {
+                                                xmlWriter.startElement("KeyGroup");
+                                                xmlWriter.value(trustedKeyGroupsItemsListValue);
                                                 xmlWriter.endElement();
                                             }
                                             xmlWriter.endElement();

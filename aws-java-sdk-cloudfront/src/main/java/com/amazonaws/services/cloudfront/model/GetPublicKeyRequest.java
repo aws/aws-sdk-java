@@ -27,18 +27,18 @@ public class GetPublicKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Request the ID for the public key.
+     * The identifier of the public key you are getting.
      * </p>
      */
     private String id;
 
     /**
      * <p>
-     * Request the ID for the public key.
+     * The identifier of the public key you are getting.
      * </p>
      * 
      * @param id
-     *        Request the ID for the public key.
+     *        The identifier of the public key you are getting.
      */
 
     public void setId(String id) {
@@ -47,10 +47,10 @@ public class GetPublicKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Request the ID for the public key.
+     * The identifier of the public key you are getting.
      * </p>
      * 
-     * @return Request the ID for the public key.
+     * @return The identifier of the public key you are getting.
      */
 
     public String getId() {
@@ -59,11 +59,11 @@ public class GetPublicKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Request the ID for the public key.
+     * The identifier of the public key you are getting.
      * </p>
      * 
      * @param id
-     *        Request the ID for the public key.
+     *        The identifier of the public key you are getting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -40,6 +40,8 @@ public class CrawlerMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<List> CLASSIFIERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Classifiers").build();
+    private static final MarshallingInfo<StructuredPojo> RECRAWLPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecrawlPolicy").build();
     private static final MarshallingInfo<StructuredPojo> SCHEMACHANGEPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SchemaChangePolicy").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -85,6 +87,7 @@ public class CrawlerMarshaller {
             protocolMarshaller.marshall(crawler.getDatabaseName(), DATABASENAME_BINDING);
             protocolMarshaller.marshall(crawler.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(crawler.getClassifiers(), CLASSIFIERS_BINDING);
+            protocolMarshaller.marshall(crawler.getRecrawlPolicy(), RECRAWLPOLICY_BINDING);
             protocolMarshaller.marshall(crawler.getSchemaChangePolicy(), SCHEMACHANGEPOLICY_BINDING);
             protocolMarshaller.marshall(crawler.getState(), STATE_BINDING);
             protocolMarshaller.marshall(crawler.getTablePrefix(), TABLEPREFIX_BINDING);

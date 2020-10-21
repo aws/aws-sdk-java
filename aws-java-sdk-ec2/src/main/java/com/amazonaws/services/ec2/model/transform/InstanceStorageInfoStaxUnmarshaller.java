@@ -60,6 +60,10 @@ public class InstanceStorageInfoStaxUnmarshaller implements Unmarshaller<Instanc
                     continue;
                 }
 
+                if (context.testExpression("nvmeSupport", targetDepth)) {
+                    instanceStorageInfo.setNvmeSupport(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return instanceStorageInfo;

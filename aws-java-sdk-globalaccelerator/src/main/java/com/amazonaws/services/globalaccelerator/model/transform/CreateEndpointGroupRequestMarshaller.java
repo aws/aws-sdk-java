@@ -51,6 +51,8 @@ public class CreateEndpointGroupRequestMarshaller {
     private static final MarshallingInfo<String> IDEMPOTENCYTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdempotencyToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<List> PORTOVERRIDES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("PortOverrides").build();
 
     private static final CreateEndpointGroupRequestMarshaller instance = new CreateEndpointGroupRequestMarshaller();
 
@@ -78,6 +80,7 @@ public class CreateEndpointGroupRequestMarshaller {
             protocolMarshaller.marshall(createEndpointGroupRequest.getHealthCheckIntervalSeconds(), HEALTHCHECKINTERVALSECONDS_BINDING);
             protocolMarshaller.marshall(createEndpointGroupRequest.getThresholdCount(), THRESHOLDCOUNT_BINDING);
             protocolMarshaller.marshall(createEndpointGroupRequest.getIdempotencyToken(), IDEMPOTENCYTOKEN_BINDING);
+            protocolMarshaller.marshall(createEndpointGroupRequest.getPortOverrides(), PORTOVERRIDES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

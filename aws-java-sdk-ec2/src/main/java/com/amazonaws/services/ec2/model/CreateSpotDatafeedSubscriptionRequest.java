@@ -30,13 +30,16 @@ public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon S3 bucket in which to store the Spot Instance data feed.
+     * The name of the Amazon S3 bucket in which to store the Spot Instance data feed. For more information about bucket
+     * names, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Rules for bucket
+     * naming</a> in the <i>Amazon S3 Developer Guide</i>.
      * </p>
      */
     private String bucket;
     /**
      * <p>
-     * A prefix for the data feed file names.
+     * The prefix for the data feed file names.
      * </p>
      */
     private String prefix;
@@ -53,7 +56,10 @@ public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
      * (with...) methods to initialize any additional object members.
      * 
      * @param bucket
-     *        The Amazon S3 bucket in which to store the Spot Instance data feed.
+     *        The name of the Amazon S3 bucket in which to store the Spot Instance data feed. For more information about
+     *        bucket names, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Rules for
+     *        bucket naming</a> in the <i>Amazon S3 Developer Guide</i>.
      */
     public CreateSpotDatafeedSubscriptionRequest(String bucket) {
         setBucket(bucket);
@@ -61,11 +67,17 @@ public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon S3 bucket in which to store the Spot Instance data feed.
+     * The name of the Amazon S3 bucket in which to store the Spot Instance data feed. For more information about bucket
+     * names, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Rules for bucket
+     * naming</a> in the <i>Amazon S3 Developer Guide</i>.
      * </p>
      * 
      * @param bucket
-     *        The Amazon S3 bucket in which to store the Spot Instance data feed.
+     *        The name of the Amazon S3 bucket in which to store the Spot Instance data feed. For more information about
+     *        bucket names, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Rules for
+     *        bucket naming</a> in the <i>Amazon S3 Developer Guide</i>.
      */
 
     public void setBucket(String bucket) {
@@ -74,10 +86,16 @@ public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon S3 bucket in which to store the Spot Instance data feed.
+     * The name of the Amazon S3 bucket in which to store the Spot Instance data feed. For more information about bucket
+     * names, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Rules for bucket
+     * naming</a> in the <i>Amazon S3 Developer Guide</i>.
      * </p>
      * 
-     * @return The Amazon S3 bucket in which to store the Spot Instance data feed.
+     * @return The name of the Amazon S3 bucket in which to store the Spot Instance data feed. For more information
+     *         about bucket names, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Rules
+     *         for bucket naming</a> in the <i>Amazon S3 Developer Guide</i>.
      */
 
     public String getBucket() {
@@ -86,11 +104,17 @@ public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon S3 bucket in which to store the Spot Instance data feed.
+     * The name of the Amazon S3 bucket in which to store the Spot Instance data feed. For more information about bucket
+     * names, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Rules for bucket
+     * naming</a> in the <i>Amazon S3 Developer Guide</i>.
      * </p>
      * 
      * @param bucket
-     *        The Amazon S3 bucket in which to store the Spot Instance data feed.
+     *        The name of the Amazon S3 bucket in which to store the Spot Instance data feed. For more information about
+     *        bucket names, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Rules for
+     *        bucket naming</a> in the <i>Amazon S3 Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +125,11 @@ public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
 
     /**
      * <p>
-     * A prefix for the data feed file names.
+     * The prefix for the data feed file names.
      * </p>
      * 
      * @param prefix
-     *        A prefix for the data feed file names.
+     *        The prefix for the data feed file names.
      */
 
     public void setPrefix(String prefix) {
@@ -114,10 +138,10 @@ public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
 
     /**
      * <p>
-     * A prefix for the data feed file names.
+     * The prefix for the data feed file names.
      * </p>
      * 
-     * @return A prefix for the data feed file names.
+     * @return The prefix for the data feed file names.
      */
 
     public String getPrefix() {
@@ -126,11 +150,11 @@ public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
 
     /**
      * <p>
-     * A prefix for the data feed file names.
+     * The prefix for the data feed file names.
      * </p>
      * 
      * @param prefix
-     *        A prefix for the data feed file names.
+     *        The prefix for the data feed file names.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

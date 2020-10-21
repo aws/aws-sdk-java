@@ -382,6 +382,61 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
+     * Creates a key group that you can use with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">CloudFront signed
+     * URLs and signed cookies</a>.
+     * </p>
+     * <p>
+     * To create a key group, you must specify at least one public key for the key group. After you create a key group,
+     * you can reference it from one or more cache behaviors. When you reference a key group in a cache behavior,
+     * CloudFront requires signed URLs or signed cookies for all requests that match the cache behavior. The URLs or
+     * cookies must be signed with a private key whose corresponding public key is in the key group. The signed URL or
+     * cookie contains information about which public key CloudFront should use to verify the signature. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private
+     * content</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param createKeyGroupRequest
+     * @return A Java Future containing the result of the CreateKeyGroup operation returned by the service.
+     * @sample AmazonCloudFrontAsync.CreateKeyGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateKeyGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateKeyGroupResult> createKeyGroupAsync(CreateKeyGroupRequest createKeyGroupRequest);
+
+    /**
+     * <p>
+     * Creates a key group that you can use with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">CloudFront signed
+     * URLs and signed cookies</a>.
+     * </p>
+     * <p>
+     * To create a key group, you must specify at least one public key for the key group. After you create a key group,
+     * you can reference it from one or more cache behaviors. When you reference a key group in a cache behavior,
+     * CloudFront requires signed URLs or signed cookies for all requests that match the cache behavior. The URLs or
+     * cookies must be signed with a private key whose corresponding public key is in the key group. The signed URL or
+     * cookie contains information about which public key CloudFront should use to verify the signature. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private
+     * content</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param createKeyGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateKeyGroup operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.CreateKeyGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateKeyGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateKeyGroupResult> createKeyGroupAsync(CreateKeyGroupRequest createKeyGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateKeyGroupRequest, CreateKeyGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Enables additional CloudWatch metrics for the specified CloudFront distribution. The additional metrics incur an
      * additional cost.
      * </p>
@@ -530,8 +585,11 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Add a new public key to CloudFront to use, for example, for field-level encryption. You can add a maximum of 10
-     * public keys with one AWS account.
+     * Uploads a public key to CloudFront that you can use with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and
+     * signed cookies</a>, or with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level
+     * encryption</a>.
      * </p>
      * 
      * @param createPublicKeyRequest
@@ -544,8 +602,11 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Add a new public key to CloudFront to use, for example, for field-level encryption. You can add a maximum of 10
-     * public keys with one AWS account.
+     * Uploads a public key to CloudFront that you can use with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and
+     * signed cookies</a>, or with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level
+     * encryption</a>.
      * </p>
      * 
      * @param createPublicKeyRequest
@@ -1044,6 +1105,53 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
     java.util.concurrent.Future<DeleteFieldLevelEncryptionProfileResult> deleteFieldLevelEncryptionProfileAsync(
             DeleteFieldLevelEncryptionProfileRequest deleteFieldLevelEncryptionProfileRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteFieldLevelEncryptionProfileRequest, DeleteFieldLevelEncryptionProfileResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a key group.
+     * </p>
+     * <p>
+     * You cannot delete a key group that is referenced in a cache behavior. First update your distributions to remove
+     * the key group from all cache behaviors, then delete the key group.
+     * </p>
+     * <p>
+     * To delete a key group, you must provide the key group’s identifier and version. To get these values, use
+     * <code>ListKeyGroups</code> followed by <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.
+     * </p>
+     * 
+     * @param deleteKeyGroupRequest
+     * @return A Java Future containing the result of the DeleteKeyGroup operation returned by the service.
+     * @sample AmazonCloudFrontAsync.DeleteKeyGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteKeyGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteKeyGroupResult> deleteKeyGroupAsync(DeleteKeyGroupRequest deleteKeyGroupRequest);
+
+    /**
+     * <p>
+     * Deletes a key group.
+     * </p>
+     * <p>
+     * You cannot delete a key group that is referenced in a cache behavior. First update your distributions to remove
+     * the key group from all cache behaviors, then delete the key group.
+     * </p>
+     * <p>
+     * To delete a key group, you must provide the key group’s identifier and version. To get these values, use
+     * <code>ListKeyGroups</code> followed by <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.
+     * </p>
+     * 
+     * @param deleteKeyGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteKeyGroup operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.DeleteKeyGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteKeyGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteKeyGroupResult> deleteKeyGroupAsync(DeleteKeyGroupRequest deleteKeyGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteKeyGroupRequest, DeleteKeyGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -1797,6 +1905,92 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
+     * Gets a key group, including the date and time when the key group was last modified.
+     * </p>
+     * <p>
+     * To get a key group, you must provide the key group’s identifier. If the key group is referenced in a
+     * distribution’s cache behavior, you can get the key group’s identifier using <code>ListDistributions</code> or
+     * <code>GetDistribution</code>. If the key group is not referenced in a cache behavior, you can get the identifier
+     * using <code>ListKeyGroups</code>.
+     * </p>
+     * 
+     * @param getKeyGroupRequest
+     * @return A Java Future containing the result of the GetKeyGroup operation returned by the service.
+     * @sample AmazonCloudFrontAsync.GetKeyGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetKeyGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetKeyGroupResult> getKeyGroupAsync(GetKeyGroupRequest getKeyGroupRequest);
+
+    /**
+     * <p>
+     * Gets a key group, including the date and time when the key group was last modified.
+     * </p>
+     * <p>
+     * To get a key group, you must provide the key group’s identifier. If the key group is referenced in a
+     * distribution’s cache behavior, you can get the key group’s identifier using <code>ListDistributions</code> or
+     * <code>GetDistribution</code>. If the key group is not referenced in a cache behavior, you can get the identifier
+     * using <code>ListKeyGroups</code>.
+     * </p>
+     * 
+     * @param getKeyGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetKeyGroup operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.GetKeyGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetKeyGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetKeyGroupResult> getKeyGroupAsync(GetKeyGroupRequest getKeyGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<GetKeyGroupRequest, GetKeyGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a key group configuration.
+     * </p>
+     * <p>
+     * To get a key group configuration, you must provide the key group’s identifier. If the key group is referenced in
+     * a distribution’s cache behavior, you can get the key group’s identifier using <code>ListDistributions</code> or
+     * <code>GetDistribution</code>. If the key group is not referenced in a cache behavior, you can get the identifier
+     * using <code>ListKeyGroups</code>.
+     * </p>
+     * 
+     * @param getKeyGroupConfigRequest
+     * @return A Java Future containing the result of the GetKeyGroupConfig operation returned by the service.
+     * @sample AmazonCloudFrontAsync.GetKeyGroupConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetKeyGroupConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetKeyGroupConfigResult> getKeyGroupConfigAsync(GetKeyGroupConfigRequest getKeyGroupConfigRequest);
+
+    /**
+     * <p>
+     * Gets a key group configuration.
+     * </p>
+     * <p>
+     * To get a key group configuration, you must provide the key group’s identifier. If the key group is referenced in
+     * a distribution’s cache behavior, you can get the key group’s identifier using <code>ListDistributions</code> or
+     * <code>GetDistribution</code>. If the key group is not referenced in a cache behavior, you can get the identifier
+     * using <code>ListKeyGroups</code>.
+     * </p>
+     * 
+     * @param getKeyGroupConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetKeyGroupConfig operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.GetKeyGroupConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetKeyGroupConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetKeyGroupConfigResult> getKeyGroupConfigAsync(GetKeyGroupConfigRequest getKeyGroupConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<GetKeyGroupConfigRequest, GetKeyGroupConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about whether additional CloudWatch metrics are enabled for the specified CloudFront
      * distribution.
      * </p>
@@ -1946,7 +2140,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Get the public key information.
+     * Gets a public key.
      * </p>
      * 
      * @param getPublicKeyRequest
@@ -1959,7 +2153,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Get the public key information.
+     * Gets a public key.
      * </p>
      * 
      * @param getPublicKeyRequest
@@ -1977,7 +2171,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Return public key configuration informaation
+     * Gets a public key configuration.
      * </p>
      * 
      * @param getPublicKeyConfigRequest
@@ -1990,7 +2184,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Return public key configuration informaation
+     * Gets a public key configuration.
      * </p>
      * 
      * @param getPublicKeyConfigRequest
@@ -2289,6 +2483,53 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
+     * Gets a list of distribution IDs for distributions that have a cache behavior that references the specified key
+     * group.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listDistributionsByKeyGroupRequest
+     * @return A Java Future containing the result of the ListDistributionsByKeyGroup operation returned by the service.
+     * @sample AmazonCloudFrontAsync.ListDistributionsByKeyGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByKeyGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDistributionsByKeyGroupResult> listDistributionsByKeyGroupAsync(
+            ListDistributionsByKeyGroupRequest listDistributionsByKeyGroupRequest);
+
+    /**
+     * <p>
+     * Gets a list of distribution IDs for distributions that have a cache behavior that references the specified key
+     * group.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listDistributionsByKeyGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDistributionsByKeyGroup operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.ListDistributionsByKeyGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByKeyGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDistributionsByKeyGroupResult> listDistributionsByKeyGroupAsync(
+            ListDistributionsByKeyGroupRequest listDistributionsByKeyGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDistributionsByKeyGroupRequest, ListDistributionsByKeyGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets a list of distribution IDs for distributions that have a cache behavior that’s associated with the specified
      * origin request policy.
      * </p>
@@ -2534,6 +2775,49 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      */
     java.util.concurrent.Future<ListInvalidationsResult> listInvalidationsAsync(ListInvalidationsRequest listInvalidationsRequest,
             com.amazonaws.handlers.AsyncHandler<ListInvalidationsRequest, ListInvalidationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a list of key groups.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listKeyGroupsRequest
+     * @return A Java Future containing the result of the ListKeyGroups operation returned by the service.
+     * @sample AmazonCloudFrontAsync.ListKeyGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListKeyGroups" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListKeyGroupsResult> listKeyGroupsAsync(ListKeyGroupsRequest listKeyGroupsRequest);
+
+    /**
+     * <p>
+     * Gets a list of key groups.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listKeyGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListKeyGroups operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.ListKeyGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListKeyGroups" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListKeyGroupsResult> listKeyGroupsAsync(ListKeyGroupsRequest listKeyGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListKeyGroupsRequest, ListKeyGroupsResult> asyncHandler);
 
     /**
      * <p>
@@ -3226,6 +3510,81 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
     java.util.concurrent.Future<UpdateFieldLevelEncryptionProfileResult> updateFieldLevelEncryptionProfileAsync(
             UpdateFieldLevelEncryptionProfileRequest updateFieldLevelEncryptionProfileRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateFieldLevelEncryptionProfileRequest, UpdateFieldLevelEncryptionProfileResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a key group.
+     * </p>
+     * <p>
+     * When you update a key group, all the fields are updated with the values provided in the request. You cannot
+     * update some fields independent of others. To update a key group:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Get the current key group with <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Locally modify the fields in the key group that you want to update. For example, add or remove public key IDs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Call <code>UpdateKeyGroup</code> with the entire key group object, including the fields that you modified and
+     * those that you didn’t.
+     * </p>
+     * </li>
+     * </ol>
+     * 
+     * @param updateKeyGroupRequest
+     * @return A Java Future containing the result of the UpdateKeyGroup operation returned by the service.
+     * @sample AmazonCloudFrontAsync.UpdateKeyGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateKeyGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateKeyGroupResult> updateKeyGroupAsync(UpdateKeyGroupRequest updateKeyGroupRequest);
+
+    /**
+     * <p>
+     * Updates a key group.
+     * </p>
+     * <p>
+     * When you update a key group, all the fields are updated with the values provided in the request. You cannot
+     * update some fields independent of others. To update a key group:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Get the current key group with <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Locally modify the fields in the key group that you want to update. For example, add or remove public key IDs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Call <code>UpdateKeyGroup</code> with the entire key group object, including the fields that you modified and
+     * those that you didn’t.
+     * </p>
+     * </li>
+     * </ol>
+     * 
+     * @param updateKeyGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateKeyGroup operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.UpdateKeyGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateKeyGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateKeyGroupResult> updateKeyGroupAsync(UpdateKeyGroupRequest updateKeyGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateKeyGroupRequest, UpdateKeyGroupResult> asyncHandler);
 
     /**
      * <p>

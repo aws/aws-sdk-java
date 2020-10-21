@@ -74,6 +74,10 @@ public class CrawlerJsonUnmarshaller implements Unmarshaller<Crawler, JsonUnmars
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("RecrawlPolicy", targetDepth)) {
+                    context.nextToken();
+                    crawler.setRecrawlPolicy(RecrawlPolicyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("SchemaChangePolicy", targetDepth)) {
                     context.nextToken();
                     crawler.setSchemaChangePolicy(SchemaChangePolicyJsonUnmarshaller.getInstance().unmarshall(context));

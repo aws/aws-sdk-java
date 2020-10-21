@@ -80,6 +80,11 @@ public class DistributionStaxUnmarshaller implements Unmarshaller<Distribution, 
                     continue;
                 }
 
+                if (context.testExpression("ActiveTrustedKeyGroups", targetDepth)) {
+                    distribution.setActiveTrustedKeyGroups(ActiveTrustedKeyGroupsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("DistributionConfig", targetDepth)) {
                     distribution.setDistributionConfig(DistributionConfigStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

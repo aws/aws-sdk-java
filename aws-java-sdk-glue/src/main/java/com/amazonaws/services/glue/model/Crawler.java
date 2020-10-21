@@ -67,6 +67,13 @@ public class Crawler implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> classifiers;
     /**
      * <p>
+     * A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since
+     * the last crawler run.
+     * </p>
+     */
+    private RecrawlPolicy recrawlPolicy;
+    /**
+     * <p>
      * The policy that specifies update and delete behaviors for the crawler.
      * </p>
      */
@@ -407,6 +414,52 @@ public class Crawler implements Serializable, Cloneable, StructuredPojo {
 
     public Crawler withClassifiers(java.util.Collection<String> classifiers) {
         setClassifiers(classifiers);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since
+     * the last crawler run.
+     * </p>
+     * 
+     * @param recrawlPolicy
+     *        A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were
+     *        added since the last crawler run.
+     */
+
+    public void setRecrawlPolicy(RecrawlPolicy recrawlPolicy) {
+        this.recrawlPolicy = recrawlPolicy;
+    }
+
+    /**
+     * <p>
+     * A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since
+     * the last crawler run.
+     * </p>
+     * 
+     * @return A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were
+     *         added since the last crawler run.
+     */
+
+    public RecrawlPolicy getRecrawlPolicy() {
+        return this.recrawlPolicy;
+    }
+
+    /**
+     * <p>
+     * A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since
+     * the last crawler run.
+     * </p>
+     * 
+     * @param recrawlPolicy
+     *        A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were
+     *        added since the last crawler run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Crawler withRecrawlPolicy(RecrawlPolicy recrawlPolicy) {
+        setRecrawlPolicy(recrawlPolicy);
         return this;
     }
 
@@ -905,6 +958,8 @@ public class Crawler implements Serializable, Cloneable, StructuredPojo {
             sb.append("Description: ").append(getDescription()).append(",");
         if (getClassifiers() != null)
             sb.append("Classifiers: ").append(getClassifiers()).append(",");
+        if (getRecrawlPolicy() != null)
+            sb.append("RecrawlPolicy: ").append(getRecrawlPolicy()).append(",");
         if (getSchemaChangePolicy() != null)
             sb.append("SchemaChangePolicy: ").append(getSchemaChangePolicy()).append(",");
         if (getState() != null)
@@ -965,6 +1020,10 @@ public class Crawler implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getClassifiers() != null && other.getClassifiers().equals(this.getClassifiers()) == false)
             return false;
+        if (other.getRecrawlPolicy() == null ^ this.getRecrawlPolicy() == null)
+            return false;
+        if (other.getRecrawlPolicy() != null && other.getRecrawlPolicy().equals(this.getRecrawlPolicy()) == false)
+            return false;
         if (other.getSchemaChangePolicy() == null ^ this.getSchemaChangePolicy() == null)
             return false;
         if (other.getSchemaChangePolicy() != null && other.getSchemaChangePolicy().equals(this.getSchemaChangePolicy()) == false)
@@ -1023,6 +1082,7 @@ public class Crawler implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDatabaseName() == null) ? 0 : getDatabaseName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getClassifiers() == null) ? 0 : getClassifiers().hashCode());
+        hashCode = prime * hashCode + ((getRecrawlPolicy() == null) ? 0 : getRecrawlPolicy().hashCode());
         hashCode = prime * hashCode + ((getSchemaChangePolicy() == null) ? 0 : getSchemaChangePolicy().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getTablePrefix() == null) ? 0 : getTablePrefix().hashCode());

@@ -45,8 +45,8 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * The name of an IAM role that AWS Organizations automatically preconfigures in the new member account. This role
-     * trusts the master account, allowing users in the master account to assume the role, as permitted by the master
-     * account administrator. The role has administrator permissions in the new member account.
+     * trusts the management account, allowing users in the management account to assume the role, as permitted by the
+     * management account administrator. The role has administrator permissions in the new member account.
      * </p>
      * <p>
      * If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.
@@ -211,8 +211,8 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * The name of an IAM role that AWS Organizations automatically preconfigures in the new member account. This role
-     * trusts the master account, allowing users in the master account to assume the role, as permitted by the master
-     * account administrator. The role has administrator permissions in the new member account.
+     * trusts the management account, allowing users in the management account to assume the role, as permitted by the
+     * management account administrator. The role has administrator permissions in the new member account.
      * </p>
      * <p>
      * If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.
@@ -247,8 +247,9 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        (Optional)</p>
      *        <p>
      *        The name of an IAM role that AWS Organizations automatically preconfigures in the new member account. This
-     *        role trusts the master account, allowing users in the master account to assume the role, as permitted by
-     *        the master account administrator. The role has administrator permissions in the new member account.
+     *        role trusts the management account, allowing users in the management account to assume the role, as
+     *        permitted by the management account administrator. The role has administrator permissions in the new
+     *        member account.
      *        </p>
      *        <p>
      *        If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.
@@ -289,8 +290,8 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * The name of an IAM role that AWS Organizations automatically preconfigures in the new member account. This role
-     * trusts the master account, allowing users in the master account to assume the role, as permitted by the master
-     * account administrator. The role has administrator permissions in the new member account.
+     * trusts the management account, allowing users in the management account to assume the role, as permitted by the
+     * management account administrator. The role has administrator permissions in the new member account.
      * </p>
      * <p>
      * If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.
@@ -324,9 +325,9 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @return (Optional)</p>
      *         <p>
      *         The name of an IAM role that AWS Organizations automatically preconfigures in the new member account.
-     *         This role trusts the master account, allowing users in the master account to assume the role, as
-     *         permitted by the master account administrator. The role has administrator permissions in the new member
-     *         account.
+     *         This role trusts the management account, allowing users in the management account to assume the role, as
+     *         permitted by the management account administrator. The role has administrator permissions in the new
+     *         member account.
      *         </p>
      *         <p>
      *         If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>
@@ -368,8 +369,8 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * The name of an IAM role that AWS Organizations automatically preconfigures in the new member account. This role
-     * trusts the master account, allowing users in the master account to assume the role, as permitted by the master
-     * account administrator. The role has administrator permissions in the new member account.
+     * trusts the management account, allowing users in the management account to assume the role, as permitted by the
+     * management account administrator. The role has administrator permissions in the new member account.
      * </p>
      * <p>
      * If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.
@@ -404,8 +405,9 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        (Optional)</p>
      *        <p>
      *        The name of an IAM role that AWS Organizations automatically preconfigures in the new member account. This
-     *        role trusts the master account, allowing users in the master account to assume the role, as permitted by
-     *        the master account administrator. The role has administrator permissions in the new member account.
+     *        role trusts the management account, allowing users in the management account to assume the role, as
+     *        permitted by the management account administrator. The role has administrator permissions in the new
+     *        member account.
      *        </p>
      *        <p>
      *        If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.

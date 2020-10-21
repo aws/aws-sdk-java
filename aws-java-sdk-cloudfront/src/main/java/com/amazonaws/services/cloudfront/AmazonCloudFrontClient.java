@@ -272,108 +272,115 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     private void init() {
         exceptionUnmarshallers.add(new StreamingDistributionAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TrustedSignerDoesNotExistExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchInvalidationExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidWebACLIdExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchFieldLevelEncryptionConfigExceptionUnmarshaller());
         exceptionUnmarshallers.add(new OriginRequestPolicyAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyHeadersInForwardedValuesExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidOriginReadTimeoutExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new OriginRequestPolicyInUseExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyKeyGroupsAssociatedToDistributionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidMinimumProtocolVersionExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyDistributionCNAMEsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyInvalidationsInProgressExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyFieldLevelEncryptionConfigsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyPublicKeysExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidErrorCodeExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyCacheBehaviorsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CloudFrontOriginAccessIdentityInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new FieldLevelEncryptionProfileAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyFieldLevelEncryptionFieldPatternsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new MissingBodyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyOriginsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidTTLOrderExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidRequiredProtocolExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new NoSuchOriginRequestPolicyExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new NoSuchOriginExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyQueryStringsInOriginRequestPolicyExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyTrustedSignersExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyDistributionsWithSingleFunctionARNExceptionUnmarshaller());
         exceptionUnmarshallers.add(new BatchTooLargeExceptionUnmarshaller());
         exceptionUnmarshallers.add(new RealtimeLogConfigInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidResponseCodeExceptionUnmarshaller());
         exceptionUnmarshallers.add(new FieldLevelEncryptionConfigAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidOriginKeepaliveTimeoutExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyStreamingDistributionsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new PublicKeyInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StreamingDistributionNotDisabledExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new PreconditionFailedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyQueryStringParametersExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyFieldLevelEncryptionEncryptionEntitiesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new FieldLevelEncryptionConfigInUseExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DistributionAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyStreamingDistributionCNAMEsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CloudFrontOriginAccessIdentityAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new CachePolicyAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchRealtimeLogConfigExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidProtocolSettingsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyFieldLevelEncryptionProfilesExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyOriginCustomHeadersExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidLocationCodeExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ResourceInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidForwardCookiesExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new FieldLevelEncryptionProfileSizeExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyCertificatesExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new QueryArgProfileEmptyExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyRealtimeLogConfigsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyPublicKeysInKeyGroupExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidOriginAccessIdentityExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidQueryStringParametersExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CNAMEAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new IllegalUpdateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyCookieNamesInWhiteListExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyHeadersInCachePolicyExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TrustedKeyGroupDoesNotExistExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchDistributionExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new NoSuchFieldLevelEncryptionProfileExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new NoSuchResourceExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InconsistentQuantitiesExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidLambdaFunctionAssociationExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyLambdaFunctionAssociationsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidViewerCertificateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyCachePoliciesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyQueryStringsInCachePolicyExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DistributionNotDisabledExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyOriginGroupsPerDistributionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CachePolicyInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDefaultRootObjectExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new AccessDeniedExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyCookiesInCachePolicyExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidArgumentExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyOriginRequestPoliciesExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new NoSuchCachePolicyExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new NoSuchStreamingDistributionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyCloudFrontOriginAccessIdentitiesExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new NoSuchPublicKeyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyFieldLevelEncryptionContentTypeProfilesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidRelativePathExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyDistributionsAssociatedToFieldLevelEncryptionConfigExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyDistributionsWithLambdaAssociationsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyDistributionsAssociatedToCachePolicyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidHeadersForS3OriginExceptionUnmarshaller());
         exceptionUnmarshallers.add(new RealtimeLogConfigAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyDistributionsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyDistributionsAssociatedToOriginRequestPolicyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CannotChangeImmutablePublicKeyFieldsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyFieldLevelEncryptionQueryArgProfilesExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new PublicKeyAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new FieldLevelEncryptionProfileInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyCookiesInOriginRequestPolicyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new IllegalDeleteExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidOriginExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidGeoRestrictionParameterExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TrustedSignerDoesNotExistExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidWebACLIdExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyHeadersInForwardedValuesExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidOriginReadTimeoutExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new OriginRequestPolicyInUseExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyDistributionsAssociatedToKeyGroupExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyDistributionCNAMEsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidErrorCodeExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyFieldLevelEncryptionFieldPatternsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidRequiredProtocolExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchOriginRequestPolicyExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchOriginExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyQueryStringsInOriginRequestPolicyExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyTrustedSignersExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyStreamingDistributionsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new PublicKeyInUseExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new PreconditionFailedExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyKeyGroupsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DistributionAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyStreamingDistributionCNAMEsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new CachePolicyAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyOriginCustomHeadersExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidLocationCodeExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new FieldLevelEncryptionProfileSizeExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyCertificatesExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new QueryArgProfileEmptyExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyRealtimeLogConfigsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidQueryStringParametersExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyHeadersInCachePolicyExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchFieldLevelEncryptionProfileExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchResourceExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InconsistentQuantitiesExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidLambdaFunctionAssociationExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyLambdaFunctionAssociationsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DistributionNotDisabledExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyOriginGroupsPerDistributionExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new AccessDeniedExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyCookiesInCachePolicyExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidArgumentExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyOriginRequestPoliciesExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchCachePolicyExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new KeyGroupAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchStreamingDistributionExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchPublicKeyExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyDistributionsAssociatedToFieldLevelEncryptionConfigExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyDistributionsAssociatedToCachePolicyExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new PublicKeyAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new FieldLevelEncryptionProfileInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidIfMatchVersionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidTaggingExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidOriginExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyHeadersInOriginRequestPolicyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchCloudFrontOriginAccessIdentityExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidGeoRestrictionParameterExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.cloudfront.model.AmazonCloudFrontException.class));
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
@@ -714,6 +721,18 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
      *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyDistributionsAssociatedToKeyGroupException
+     *         The number of distributions that reference this key group is more than the maximum allowed. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyKeyGroupsAssociatedToDistributionException
+     *         The number of key groups referenced by this distribution is more than the maximum allowed. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TrustedKeyGroupDoesNotExistException
+     *         The specified key group does not exist.
      * @sample AmazonCloudFront.CreateDistribution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistribution" target="_top">AWS
      *      API Documentation</a>
@@ -888,6 +907,18 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
      *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyDistributionsAssociatedToKeyGroupException
+     *         The number of distributions that reference this key group is more than the maximum allowed. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyKeyGroupsAssociatedToDistributionException
+     *         The number of key groups referenced by this distribution is more than the maximum allowed. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TrustedKeyGroupDoesNotExistException
+     *         The specified key group does not exist.
      * @sample AmazonCloudFront.CreateDistributionWithTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistributionWithTags"
      *      target="_top">AWS API Documentation</a>
@@ -1150,6 +1181,87 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Creates a key group that you can use with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">CloudFront signed
+     * URLs and signed cookies</a>.
+     * </p>
+     * <p>
+     * To create a key group, you must specify at least one public key for the key group. After you create a key group,
+     * you can reference it from one or more cache behaviors. When you reference a key group in a cache behavior,
+     * CloudFront requires signed URLs or signed cookies for all requests that match the cache behavior. The URLs or
+     * cookies must be signed with a private key whose corresponding public key is in the key group. The signed URL or
+     * cookie contains information about which public key CloudFront should use to verify the signature. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private
+     * content</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param createKeyGroupRequest
+     * @return Result of the CreateKeyGroup operation returned by the service.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @throws KeyGroupAlreadyExistsException
+     *         A key group with this name already exists. You must provide a unique name. To modify an existing key
+     *         group, use <code>UpdateKeyGroup</code>.
+     * @throws TooManyKeyGroupsException
+     *         You have reached the maximum number of key groups for this AWS account. For more information, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+     *         (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyPublicKeysInKeyGroupException
+     *         The number of public keys in this key group is more than the maximum allowed. For more information, see
+     *         <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas
+     *         </a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @sample AmazonCloudFront.CreateKeyGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateKeyGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateKeyGroupResult createKeyGroup(CreateKeyGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateKeyGroup(request);
+    }
+
+    @SdkInternalApi
+    final CreateKeyGroupResult executeCreateKeyGroup(CreateKeyGroupRequest createKeyGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createKeyGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateKeyGroupRequest> request = null;
+        Response<CreateKeyGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateKeyGroupRequestMarshaller().marshall(super.beforeMarshalling(createKeyGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateKeyGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateKeyGroupResult> responseHandler = new StaxResponseHandler<CreateKeyGroupResult>(
+                    new CreateKeyGroupResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Enables additional CloudWatch metrics for the specified CloudFront distribution. The additional metrics incur an
      * additional cost.
      * </p>
@@ -1331,8 +1443,11 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Add a new public key to CloudFront to use, for example, for field-level encryption. You can add a maximum of 10
-     * public keys with one AWS account.
+     * Uploads a public key to CloudFront that you can use with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and
+     * signed cookies</a>, or with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level
+     * encryption</a>.
      * </p>
      * 
      * @param createPublicKeyRequest
@@ -1417,6 +1532,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
      * @throws InvalidArgumentException
      *         An argument is invalid.
+     * @throws AccessDeniedException
+     *         Access denied.
      * @sample AmazonCloudFront.CreateRealtimeLogConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateRealtimeLogConfig"
      *      target="_top">AWS API Documentation</a>
@@ -2057,6 +2174,76 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Deletes a key group.
+     * </p>
+     * <p>
+     * You cannot delete a key group that is referenced in a cache behavior. First update your distributions to remove
+     * the key group from all cache behaviors, then delete the key group.
+     * </p>
+     * <p>
+     * To delete a key group, you must provide the key group’s identifier and version. To get these values, use
+     * <code>ListKeyGroups</code> followed by <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.
+     * </p>
+     * 
+     * @param deleteKeyGroupRequest
+     * @return Result of the DeleteKeyGroup operation returned by the service.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid.
+     * @throws NoSuchResourceException
+     *         A resource that was specified is not valid.
+     * @throws PreconditionFailedException
+     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     * @throws ResourceInUseException
+     *         Cannot delete this resource because it is in use.
+     * @sample AmazonCloudFront.DeleteKeyGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteKeyGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteKeyGroupResult deleteKeyGroup(DeleteKeyGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteKeyGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteKeyGroupResult executeDeleteKeyGroup(DeleteKeyGroupRequest deleteKeyGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteKeyGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteKeyGroupRequest> request = null;
+        Response<DeleteKeyGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteKeyGroupRequestMarshaller().marshall(super.beforeMarshalling(deleteKeyGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteKeyGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteKeyGroupResult> responseHandler = new StaxResponseHandler<DeleteKeyGroupResult>(
+                    new DeleteKeyGroupResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Disables additional CloudWatch metrics for the specified CloudFront distribution.
      * </p>
      * 
@@ -2275,6 +2462,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         Cannot delete the real-time log configuration because it is attached to one or more cache behaviors.
      * @throws InvalidArgumentException
      *         An argument is invalid.
+     * @throws AccessDeniedException
+     *         Access denied.
      * @sample AmazonCloudFront.DeleteRealtimeLogConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteRealtimeLogConfig"
      *      target="_top">AWS API Documentation</a>
@@ -3128,6 +3317,129 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Gets a key group, including the date and time when the key group was last modified.
+     * </p>
+     * <p>
+     * To get a key group, you must provide the key group’s identifier. If the key group is referenced in a
+     * distribution’s cache behavior, you can get the key group’s identifier using <code>ListDistributions</code> or
+     * <code>GetDistribution</code>. If the key group is not referenced in a cache behavior, you can get the identifier
+     * using <code>ListKeyGroups</code>.
+     * </p>
+     * 
+     * @param getKeyGroupRequest
+     * @return Result of the GetKeyGroup operation returned by the service.
+     * @throws NoSuchResourceException
+     *         A resource that was specified is not valid.
+     * @sample AmazonCloudFront.GetKeyGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetKeyGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetKeyGroupResult getKeyGroup(GetKeyGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetKeyGroup(request);
+    }
+
+    @SdkInternalApi
+    final GetKeyGroupResult executeGetKeyGroup(GetKeyGroupRequest getKeyGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getKeyGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetKeyGroupRequest> request = null;
+        Response<GetKeyGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetKeyGroupRequestMarshaller().marshall(super.beforeMarshalling(getKeyGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetKeyGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetKeyGroupResult> responseHandler = new StaxResponseHandler<GetKeyGroupResult>(new GetKeyGroupResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a key group configuration.
+     * </p>
+     * <p>
+     * To get a key group configuration, you must provide the key group’s identifier. If the key group is referenced in
+     * a distribution’s cache behavior, you can get the key group’s identifier using <code>ListDistributions</code> or
+     * <code>GetDistribution</code>. If the key group is not referenced in a cache behavior, you can get the identifier
+     * using <code>ListKeyGroups</code>.
+     * </p>
+     * 
+     * @param getKeyGroupConfigRequest
+     * @return Result of the GetKeyGroupConfig operation returned by the service.
+     * @throws NoSuchResourceException
+     *         A resource that was specified is not valid.
+     * @sample AmazonCloudFront.GetKeyGroupConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetKeyGroupConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetKeyGroupConfigResult getKeyGroupConfig(GetKeyGroupConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetKeyGroupConfig(request);
+    }
+
+    @SdkInternalApi
+    final GetKeyGroupConfigResult executeGetKeyGroupConfig(GetKeyGroupConfigRequest getKeyGroupConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getKeyGroupConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetKeyGroupConfigRequest> request = null;
+        Response<GetKeyGroupConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetKeyGroupConfigRequestMarshaller().marshall(super.beforeMarshalling(getKeyGroupConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetKeyGroupConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetKeyGroupConfigResult> responseHandler = new StaxResponseHandler<GetKeyGroupConfigResult>(
+                    new GetKeyGroupConfigResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets information about whether additional CloudWatch metrics are enabled for the specified CloudFront
      * distribution.
      * </p>
@@ -3327,7 +3639,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Get the public key information.
+     * Gets a public key.
      * </p>
      * 
      * @param getPublicKeyRequest
@@ -3384,7 +3696,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Return public key configuration informaation
+     * Gets a public key configuration.
      * </p>
      * 
      * @param getPublicKeyConfigRequest
@@ -3456,6 +3768,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The real-time log configuration does not exist.
      * @throws InvalidArgumentException
      *         An argument is invalid.
+     * @throws AccessDeniedException
+     *         Access denied.
      * @sample AmazonCloudFront.GetRealtimeLogConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetRealtimeLogConfig"
      *      target="_top">AWS API Documentation</a>
@@ -3877,6 +4191,71 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Gets a list of distribution IDs for distributions that have a cache behavior that references the specified key
+     * group.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listDistributionsByKeyGroupRequest
+     * @return Result of the ListDistributionsByKeyGroup operation returned by the service.
+     * @throws NoSuchResourceException
+     *         A resource that was specified is not valid.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @sample AmazonCloudFront.ListDistributionsByKeyGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByKeyGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListDistributionsByKeyGroupResult listDistributionsByKeyGroup(ListDistributionsByKeyGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDistributionsByKeyGroup(request);
+    }
+
+    @SdkInternalApi
+    final ListDistributionsByKeyGroupResult executeListDistributionsByKeyGroup(ListDistributionsByKeyGroupRequest listDistributionsByKeyGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDistributionsByKeyGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDistributionsByKeyGroupRequest> request = null;
+        Response<ListDistributionsByKeyGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDistributionsByKeyGroupRequestMarshaller().marshall(super.beforeMarshalling(listDistributionsByKeyGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDistributionsByKeyGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListDistributionsByKeyGroupResult> responseHandler = new StaxResponseHandler<ListDistributionsByKeyGroupResult>(
+                    new ListDistributionsByKeyGroupResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets a list of distribution IDs for distributions that have a cache behavior that’s associated with the specified
      * origin request policy.
      * </p>
@@ -4255,6 +4634,67 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Gets a list of key groups.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listKeyGroupsRequest
+     * @return Result of the ListKeyGroups operation returned by the service.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @sample AmazonCloudFront.ListKeyGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListKeyGroups" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListKeyGroupsResult listKeyGroups(ListKeyGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListKeyGroups(request);
+    }
+
+    @SdkInternalApi
+    final ListKeyGroupsResult executeListKeyGroups(ListKeyGroupsRequest listKeyGroupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listKeyGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListKeyGroupsRequest> request = null;
+        Response<ListKeyGroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListKeyGroupsRequestMarshaller().marshall(super.beforeMarshalling(listKeyGroupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListKeyGroups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListKeyGroupsResult> responseHandler = new StaxResponseHandler<ListKeyGroupsResult>(new ListKeyGroupsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets a list of origin request policies.
      * </p>
      * <p>
@@ -4392,6 +4832,12 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * 
      * @param listRealtimeLogConfigsRequest
      * @return Result of the ListRealtimeLogConfigs operation returned by the service.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws NoSuchRealtimeLogConfigException
+     *         The real-time log configuration does not exist.
      * @sample AmazonCloudFront.ListRealtimeLogConfigs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListRealtimeLogConfigs"
      *      target="_top">AWS API Documentation</a>
@@ -5093,6 +5539,18 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
      *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyDistributionsAssociatedToKeyGroupException
+     *         The number of distributions that reference this key group is more than the maximum allowed. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyKeyGroupsAssociatedToDistributionException
+     *         The number of key groups referenced by this distribution is more than the maximum allowed. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TrustedKeyGroupDoesNotExistException
+     *         The specified key group does not exist.
      * @sample AmazonCloudFront.UpdateDistribution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistribution" target="_top">AWS
      *      API Documentation</a>
@@ -5286,6 +5744,98 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<UpdateFieldLevelEncryptionProfileResult> responseHandler = new StaxResponseHandler<UpdateFieldLevelEncryptionProfileResult>(
                     new UpdateFieldLevelEncryptionProfileResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a key group.
+     * </p>
+     * <p>
+     * When you update a key group, all the fields are updated with the values provided in the request. You cannot
+     * update some fields independent of others. To update a key group:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Get the current key group with <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Locally modify the fields in the key group that you want to update. For example, add or remove public key IDs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Call <code>UpdateKeyGroup</code> with the entire key group object, including the fields that you modified and
+     * those that you didn’t.
+     * </p>
+     * </li>
+     * </ol>
+     * 
+     * @param updateKeyGroupRequest
+     * @return Result of the UpdateKeyGroup operation returned by the service.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid.
+     * @throws NoSuchResourceException
+     *         A resource that was specified is not valid.
+     * @throws PreconditionFailedException
+     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     * @throws KeyGroupAlreadyExistsException
+     *         A key group with this name already exists. You must provide a unique name. To modify an existing key
+     *         group, use <code>UpdateKeyGroup</code>.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @throws TooManyPublicKeysInKeyGroupException
+     *         The number of public keys in this key group is more than the maximum allowed. For more information, see
+     *         <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas
+     *         </a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @sample AmazonCloudFront.UpdateKeyGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateKeyGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateKeyGroupResult updateKeyGroup(UpdateKeyGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateKeyGroup(request);
+    }
+
+    @SdkInternalApi
+    final UpdateKeyGroupResult executeUpdateKeyGroup(UpdateKeyGroupRequest updateKeyGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateKeyGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateKeyGroupRequest> request = null;
+        Response<UpdateKeyGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateKeyGroupRequestMarshaller().marshall(super.beforeMarshalling(updateKeyGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateKeyGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UpdateKeyGroupResult> responseHandler = new StaxResponseHandler<UpdateKeyGroupResult>(
+                    new UpdateKeyGroupResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5509,6 +6059,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The real-time log configuration does not exist.
      * @throws InvalidArgumentException
      *         An argument is invalid.
+     * @throws AccessDeniedException
+     *         Access denied.
      * @sample AmazonCloudFront.UpdateRealtimeLogConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateRealtimeLogConfig"
      *      target="_top">AWS API Documentation</a>

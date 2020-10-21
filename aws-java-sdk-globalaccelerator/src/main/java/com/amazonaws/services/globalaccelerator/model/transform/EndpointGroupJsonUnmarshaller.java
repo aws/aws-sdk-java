@@ -86,6 +86,12 @@ public class EndpointGroupJsonUnmarshaller implements Unmarshaller<EndpointGroup
                     context.nextToken();
                     endpointGroup.setThresholdCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("PortOverrides", targetDepth)) {
+                    context.nextToken();
+                    endpointGroup.setPortOverrides(new ListUnmarshaller<PortOverride>(PortOverrideJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

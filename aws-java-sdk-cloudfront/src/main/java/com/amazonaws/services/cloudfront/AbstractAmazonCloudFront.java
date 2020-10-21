@@ -74,6 +74,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     }
 
     @Override
+    public CreateKeyGroupResult createKeyGroup(CreateKeyGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateMonitoringSubscriptionResult createMonitoringSubscription(CreateMonitoringSubscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -125,6 +130,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
 
     @Override
     public DeleteFieldLevelEncryptionProfileResult deleteFieldLevelEncryptionProfile(DeleteFieldLevelEncryptionProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteKeyGroupResult deleteKeyGroup(DeleteKeyGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -209,6 +219,16 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     }
 
     @Override
+    public GetKeyGroupResult getKeyGroup(GetKeyGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetKeyGroupConfigResult getKeyGroupConfig(GetKeyGroupConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetMonitoringSubscriptionResult getMonitoringSubscription(GetMonitoringSubscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -269,6 +289,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     }
 
     @Override
+    public ListDistributionsByKeyGroupResult listDistributionsByKeyGroup(ListDistributionsByKeyGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListDistributionsByOriginRequestPolicyIdResult listDistributionsByOriginRequestPolicyId(ListDistributionsByOriginRequestPolicyIdRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -295,6 +320,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
 
     @Override
     public ListInvalidationsResult listInvalidations(ListInvalidationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListKeyGroupsResult listKeyGroups(ListKeyGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -355,6 +385,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
 
     @Override
     public UpdateFieldLevelEncryptionProfileResult updateFieldLevelEncryptionProfile(UpdateFieldLevelEncryptionProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateKeyGroupResult updateKeyGroup(UpdateKeyGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

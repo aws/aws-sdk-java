@@ -58,6 +58,12 @@ public class S3DataSourceConfigurationJsonUnmarshaller implements Unmarshaller<S
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("InclusionPatterns", targetDepth)) {
+                    context.nextToken();
+                    s3DataSourceConfiguration.setInclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("ExclusionPatterns", targetDepth)) {
                     context.nextToken();
                     s3DataSourceConfiguration.setExclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))

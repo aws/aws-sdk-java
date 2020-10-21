@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A complex type for endpoints.
+ * A complex type for endpoints. A resource must be valid and active when you add it as an endpoint.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/EndpointConfiguration"
@@ -32,7 +32,8 @@ public class EndpointConfiguration implements Serializable, Cloneable, Structure
      * <p>
      * An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the
      * Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID. For EC2 instances, this is the EC2 instance ID.
+     * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. A resource must be valid and active
+     * when you add it as an endpoint.
      * </p>
      * <p>
      * An Application Load Balancer can be either internal or internet-facing.
@@ -71,7 +72,8 @@ public class EndpointConfiguration implements Serializable, Cloneable, Structure
      * <p>
      * An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the
      * Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID. For EC2 instances, this is the EC2 instance ID.
+     * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. A resource must be valid and active
+     * when you add it as an endpoint.
      * </p>
      * <p>
      * An Application Load Balancer can be either internal or internet-facing.
@@ -80,7 +82,8 @@ public class EndpointConfiguration implements Serializable, Cloneable, Structure
      * @param endpointId
      *        An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is
      *        the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the
-     *        Elastic IP address allocation ID. For EC2 instances, this is the EC2 instance ID. </p>
+     *        Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. A resource must
+     *        be valid and active when you add it as an endpoint.</p>
      *        <p>
      *        An Application Load Balancer can be either internal or internet-facing.
      */
@@ -93,7 +96,8 @@ public class EndpointConfiguration implements Serializable, Cloneable, Structure
      * <p>
      * An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the
      * Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID. For EC2 instances, this is the EC2 instance ID.
+     * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. A resource must be valid and active
+     * when you add it as an endpoint.
      * </p>
      * <p>
      * An Application Load Balancer can be either internal or internet-facing.
@@ -101,7 +105,8 @@ public class EndpointConfiguration implements Serializable, Cloneable, Structure
      * 
      * @return An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is
      *         the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the
-     *         Elastic IP address allocation ID. For EC2 instances, this is the EC2 instance ID. </p>
+     *         Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. A resource must
+     *         be valid and active when you add it as an endpoint.</p>
      *         <p>
      *         An Application Load Balancer can be either internal or internet-facing.
      */
@@ -114,7 +119,8 @@ public class EndpointConfiguration implements Serializable, Cloneable, Structure
      * <p>
      * An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the
      * Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID. For EC2 instances, this is the EC2 instance ID.
+     * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. A resource must be valid and active
+     * when you add it as an endpoint.
      * </p>
      * <p>
      * An Application Load Balancer can be either internal or internet-facing.
@@ -123,7 +129,8 @@ public class EndpointConfiguration implements Serializable, Cloneable, Structure
      * @param endpointId
      *        An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is
      *        the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the
-     *        Elastic IP address allocation ID. For EC2 instances, this is the EC2 instance ID. </p>
+     *        Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. A resource must
+     *        be valid and active when you add it as an endpoint.</p>
      *        <p>
      *        An Application Load Balancer can be either internal or internet-facing.
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -496,6 +496,39 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateKeyGroupResult> createKeyGroupAsync(CreateKeyGroupRequest request) {
+
+        return createKeyGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateKeyGroupResult> createKeyGroupAsync(final CreateKeyGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateKeyGroupRequest, CreateKeyGroupResult> asyncHandler) {
+        final CreateKeyGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateKeyGroupResult>() {
+            @Override
+            public CreateKeyGroupResult call() throws Exception {
+                CreateKeyGroupResult result = null;
+
+                try {
+                    result = executeCreateKeyGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateMonitoringSubscriptionResult> createMonitoringSubscriptionAsync(CreateMonitoringSubscriptionRequest request) {
 
         return createMonitoringSubscriptionAsync(request, null);
@@ -851,6 +884,39 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
 
                 try {
                     result = executeDeleteFieldLevelEncryptionProfile(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteKeyGroupResult> deleteKeyGroupAsync(DeleteKeyGroupRequest request) {
+
+        return deleteKeyGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteKeyGroupResult> deleteKeyGroupAsync(final DeleteKeyGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteKeyGroupRequest, DeleteKeyGroupResult> asyncHandler) {
+        final DeleteKeyGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteKeyGroupResult>() {
+            @Override
+            public DeleteKeyGroupResult call() throws Exception {
+                DeleteKeyGroupResult result = null;
+
+                try {
+                    result = executeDeleteKeyGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1403,6 +1469,72 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetKeyGroupResult> getKeyGroupAsync(GetKeyGroupRequest request) {
+
+        return getKeyGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetKeyGroupResult> getKeyGroupAsync(final GetKeyGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetKeyGroupRequest, GetKeyGroupResult> asyncHandler) {
+        final GetKeyGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetKeyGroupResult>() {
+            @Override
+            public GetKeyGroupResult call() throws Exception {
+                GetKeyGroupResult result = null;
+
+                try {
+                    result = executeGetKeyGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetKeyGroupConfigResult> getKeyGroupConfigAsync(GetKeyGroupConfigRequest request) {
+
+        return getKeyGroupConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetKeyGroupConfigResult> getKeyGroupConfigAsync(final GetKeyGroupConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetKeyGroupConfigRequest, GetKeyGroupConfigResult> asyncHandler) {
+        final GetKeyGroupConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetKeyGroupConfigResult>() {
+            @Override
+            public GetKeyGroupConfigResult call() throws Exception {
+                GetKeyGroupConfigResult result = null;
+
+                try {
+                    result = executeGetKeyGroupConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetMonitoringSubscriptionResult> getMonitoringSubscriptionAsync(GetMonitoringSubscriptionRequest request) {
 
         return getMonitoringSubscriptionAsync(request, null);
@@ -1804,6 +1936,39 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListDistributionsByKeyGroupResult> listDistributionsByKeyGroupAsync(ListDistributionsByKeyGroupRequest request) {
+
+        return listDistributionsByKeyGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDistributionsByKeyGroupResult> listDistributionsByKeyGroupAsync(final ListDistributionsByKeyGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDistributionsByKeyGroupRequest, ListDistributionsByKeyGroupResult> asyncHandler) {
+        final ListDistributionsByKeyGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDistributionsByKeyGroupResult>() {
+            @Override
+            public ListDistributionsByKeyGroupResult call() throws Exception {
+                ListDistributionsByKeyGroupResult result = null;
+
+                try {
+                    result = executeListDistributionsByKeyGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDistributionsByOriginRequestPolicyIdResult> listDistributionsByOriginRequestPolicyIdAsync(
             ListDistributionsByOriginRequestPolicyIdRequest request) {
 
@@ -1994,6 +2159,39 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
 
                 try {
                     result = executeListInvalidations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListKeyGroupsResult> listKeyGroupsAsync(ListKeyGroupsRequest request) {
+
+        return listKeyGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListKeyGroupsResult> listKeyGroupsAsync(final ListKeyGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListKeyGroupsRequest, ListKeyGroupsResult> asyncHandler) {
+        final ListKeyGroupsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListKeyGroupsResult>() {
+            @Override
+            public ListKeyGroupsResult call() throws Exception {
+                ListKeyGroupsResult result = null;
+
+                try {
+                    result = executeListKeyGroups(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2396,6 +2594,39 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
 
                 try {
                     result = executeUpdateFieldLevelEncryptionProfile(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateKeyGroupResult> updateKeyGroupAsync(UpdateKeyGroupRequest request) {
+
+        return updateKeyGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateKeyGroupResult> updateKeyGroupAsync(final UpdateKeyGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateKeyGroupRequest, UpdateKeyGroupResult> asyncHandler) {
+        final UpdateKeyGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateKeyGroupResult>() {
+            @Override
+            public UpdateKeyGroupResult call() throws Exception {
+                UpdateKeyGroupResult result = null;
+
+                try {
+                    result = executeUpdateKeyGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

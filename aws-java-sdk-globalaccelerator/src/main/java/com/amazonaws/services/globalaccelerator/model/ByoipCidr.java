@@ -115,8 +115,8 @@ public class ByoipCidr implements Serializable, Cloneable, StructuredPojo {
     private String state;
     /**
      * <p>
-     * A history of status changes for an IP address range that that you bring to AWS Global Accelerator through bring
-     * your own IP address (BYOIP).
+     * A history of status changes for an IP address range that you bring to AWS Global Accelerator through bring your
+     * own IP address (BYOIP).
      * </p>
      */
     private java.util.List<ByoipCidrEvent> events;
@@ -222,11 +222,11 @@ public class ByoipCidr implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A history of status changes for an IP address range that that you bring to AWS Global Accelerator through bring
-     * your own IP address (BYOIP).
+     * A history of status changes for an IP address range that you bring to AWS Global Accelerator through bring your
+     * own IP address (BYOIP).
      * </p>
      * 
-     * @return A history of status changes for an IP address range that that you bring to AWS Global Accelerator through
+     * @return A history of status changes for an IP address range that you bring to AWS Global Accelerator through
      *         bring your own IP address (BYOIP).
      */
 
@@ -236,13 +236,13 @@ public class ByoipCidr implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A history of status changes for an IP address range that that you bring to AWS Global Accelerator through bring
-     * your own IP address (BYOIP).
+     * A history of status changes for an IP address range that you bring to AWS Global Accelerator through bring your
+     * own IP address (BYOIP).
      * </p>
      * 
      * @param events
-     *        A history of status changes for an IP address range that that you bring to AWS Global Accelerator through
-     *        bring your own IP address (BYOIP).
+     *        A history of status changes for an IP address range that you bring to AWS Global Accelerator through bring
+     *        your own IP address (BYOIP).
      */
 
     public void setEvents(java.util.Collection<ByoipCidrEvent> events) {
@@ -256,8 +256,8 @@ public class ByoipCidr implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A history of status changes for an IP address range that that you bring to AWS Global Accelerator through bring
-     * your own IP address (BYOIP).
+     * A history of status changes for an IP address range that you bring to AWS Global Accelerator through bring your
+     * own IP address (BYOIP).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -266,8 +266,8 @@ public class ByoipCidr implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param events
-     *        A history of status changes for an IP address range that that you bring to AWS Global Accelerator through
-     *        bring your own IP address (BYOIP).
+     *        A history of status changes for an IP address range that you bring to AWS Global Accelerator through bring
+     *        your own IP address (BYOIP).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -283,13 +283,13 @@ public class ByoipCidr implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A history of status changes for an IP address range that that you bring to AWS Global Accelerator through bring
-     * your own IP address (BYOIP).
+     * A history of status changes for an IP address range that you bring to AWS Global Accelerator through bring your
+     * own IP address (BYOIP).
      * </p>
      * 
      * @param events
-     *        A history of status changes for an IP address range that that you bring to AWS Global Accelerator through
-     *        bring your own IP address (BYOIP).
+     *        A history of status changes for an IP address range that you bring to AWS Global Accelerator through bring
+     *        your own IP address (BYOIP).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

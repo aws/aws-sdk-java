@@ -125,6 +125,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     }
 
     @Override
+    public java.util.concurrent.Future<CreateKeyGroupResult> createKeyGroupAsync(CreateKeyGroupRequest request) {
+
+        return createKeyGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateKeyGroupResult> createKeyGroupAsync(CreateKeyGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateKeyGroupRequest, CreateKeyGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateMonitoringSubscriptionResult> createMonitoringSubscriptionAsync(CreateMonitoringSubscriptionRequest request) {
 
         return createMonitoringSubscriptionAsync(request, null);
@@ -271,6 +284,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     public java.util.concurrent.Future<DeleteFieldLevelEncryptionProfileResult> deleteFieldLevelEncryptionProfileAsync(
             DeleteFieldLevelEncryptionProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteFieldLevelEncryptionProfileRequest, DeleteFieldLevelEncryptionProfileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteKeyGroupResult> deleteKeyGroupAsync(DeleteKeyGroupRequest request) {
+
+        return deleteKeyGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteKeyGroupResult> deleteKeyGroupAsync(DeleteKeyGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteKeyGroupRequest, DeleteKeyGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -490,6 +516,32 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     }
 
     @Override
+    public java.util.concurrent.Future<GetKeyGroupResult> getKeyGroupAsync(GetKeyGroupRequest request) {
+
+        return getKeyGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetKeyGroupResult> getKeyGroupAsync(GetKeyGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetKeyGroupRequest, GetKeyGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetKeyGroupConfigResult> getKeyGroupConfigAsync(GetKeyGroupConfigRequest request) {
+
+        return getKeyGroupConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetKeyGroupConfigResult> getKeyGroupConfigAsync(GetKeyGroupConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetKeyGroupConfigRequest, GetKeyGroupConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetMonitoringSubscriptionResult> getMonitoringSubscriptionAsync(GetMonitoringSubscriptionRequest request) {
 
         return getMonitoringSubscriptionAsync(request, null);
@@ -650,6 +702,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     }
 
     @Override
+    public java.util.concurrent.Future<ListDistributionsByKeyGroupResult> listDistributionsByKeyGroupAsync(ListDistributionsByKeyGroupRequest request) {
+
+        return listDistributionsByKeyGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDistributionsByKeyGroupResult> listDistributionsByKeyGroupAsync(ListDistributionsByKeyGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDistributionsByKeyGroupRequest, ListDistributionsByKeyGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDistributionsByOriginRequestPolicyIdResult> listDistributionsByOriginRequestPolicyIdAsync(
             ListDistributionsByOriginRequestPolicyIdRequest request) {
 
@@ -731,6 +796,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     @Override
     public java.util.concurrent.Future<ListInvalidationsResult> listInvalidationsAsync(ListInvalidationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListInvalidationsRequest, ListInvalidationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListKeyGroupsResult> listKeyGroupsAsync(ListKeyGroupsRequest request) {
+
+        return listKeyGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListKeyGroupsResult> listKeyGroupsAsync(ListKeyGroupsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListKeyGroupsRequest, ListKeyGroupsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -893,6 +971,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     public java.util.concurrent.Future<UpdateFieldLevelEncryptionProfileResult> updateFieldLevelEncryptionProfileAsync(
             UpdateFieldLevelEncryptionProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateFieldLevelEncryptionProfileRequest, UpdateFieldLevelEncryptionProfileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateKeyGroupResult> updateKeyGroupAsync(UpdateKeyGroupRequest request) {
+
+        return updateKeyGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateKeyGroupResult> updateKeyGroupAsync(UpdateKeyGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateKeyGroupRequest, UpdateKeyGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

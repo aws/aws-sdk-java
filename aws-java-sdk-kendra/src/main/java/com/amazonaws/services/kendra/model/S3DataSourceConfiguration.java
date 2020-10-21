@@ -42,8 +42,19 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
     private java.util.List<String> inclusionPrefixes;
     /**
      * <p>
-     * A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion prefix
+     * A list of glob patterns for documents that should be indexed. If a document that matches an inclusion pattern
      * also matches an exclusion pattern, the document is not indexed.
+     * </p>
+     * <p>
+     * For more information about glob patterns, see <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob
+     * (programming)</a> in <i>Wikipedia</i>.
+     * </p>
+     */
+    private java.util.List<String> inclusionPatterns;
+    /**
+     * <p>
+     * A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion prefix
+     * or inclusion pattern also matches an exclusion pattern, the document is not indexed.
      * </p>
      * <p>
      * For more information about glob patterns, see <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob
@@ -172,7 +183,7 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion prefix
+     * A list of glob patterns for documents that should be indexed. If a document that matches an inclusion pattern
      * also matches an exclusion pattern, the document is not indexed.
      * </p>
      * <p>
@@ -180,8 +191,114 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
      * (programming)</a> in <i>Wikipedia</i>.
      * </p>
      * 
+     * @return A list of glob patterns for documents that should be indexed. If a document that matches an inclusion
+     *         pattern also matches an exclusion pattern, the document is not indexed.</p>
+     *         <p>
+     *         For more information about glob patterns, see <a
+     *         href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a> in <i>Wikipedia</i>.
+     */
+
+    public java.util.List<String> getInclusionPatterns() {
+        return inclusionPatterns;
+    }
+
+    /**
+     * <p>
+     * A list of glob patterns for documents that should be indexed. If a document that matches an inclusion pattern
+     * also matches an exclusion pattern, the document is not indexed.
+     * </p>
+     * <p>
+     * For more information about glob patterns, see <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob
+     * (programming)</a> in <i>Wikipedia</i>.
+     * </p>
+     * 
+     * @param inclusionPatterns
+     *        A list of glob patterns for documents that should be indexed. If a document that matches an inclusion
+     *        pattern also matches an exclusion pattern, the document is not indexed.</p>
+     *        <p>
+     *        For more information about glob patterns, see <a
+     *        href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a> in <i>Wikipedia</i>.
+     */
+
+    public void setInclusionPatterns(java.util.Collection<String> inclusionPatterns) {
+        if (inclusionPatterns == null) {
+            this.inclusionPatterns = null;
+            return;
+        }
+
+        this.inclusionPatterns = new java.util.ArrayList<String>(inclusionPatterns);
+    }
+
+    /**
+     * <p>
+     * A list of glob patterns for documents that should be indexed. If a document that matches an inclusion pattern
+     * also matches an exclusion pattern, the document is not indexed.
+     * </p>
+     * <p>
+     * For more information about glob patterns, see <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob
+     * (programming)</a> in <i>Wikipedia</i>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInclusionPatterns(java.util.Collection)} or {@link #withInclusionPatterns(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param inclusionPatterns
+     *        A list of glob patterns for documents that should be indexed. If a document that matches an inclusion
+     *        pattern also matches an exclusion pattern, the document is not indexed.</p>
+     *        <p>
+     *        For more information about glob patterns, see <a
+     *        href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a> in <i>Wikipedia</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3DataSourceConfiguration withInclusionPatterns(String... inclusionPatterns) {
+        if (this.inclusionPatterns == null) {
+            setInclusionPatterns(new java.util.ArrayList<String>(inclusionPatterns.length));
+        }
+        for (String ele : inclusionPatterns) {
+            this.inclusionPatterns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of glob patterns for documents that should be indexed. If a document that matches an inclusion pattern
+     * also matches an exclusion pattern, the document is not indexed.
+     * </p>
+     * <p>
+     * For more information about glob patterns, see <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob
+     * (programming)</a> in <i>Wikipedia</i>.
+     * </p>
+     * 
+     * @param inclusionPatterns
+     *        A list of glob patterns for documents that should be indexed. If a document that matches an inclusion
+     *        pattern also matches an exclusion pattern, the document is not indexed.</p>
+     *        <p>
+     *        For more information about glob patterns, see <a
+     *        href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a> in <i>Wikipedia</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3DataSourceConfiguration withInclusionPatterns(java.util.Collection<String> inclusionPatterns) {
+        setInclusionPatterns(inclusionPatterns);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion prefix
+     * or inclusion pattern also matches an exclusion pattern, the document is not indexed.
+     * </p>
+     * <p>
+     * For more information about glob patterns, see <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob
+     * (programming)</a> in <i>Wikipedia</i>.
+     * </p>
+     * 
      * @return A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion
-     *         prefix also matches an exclusion pattern, the document is not indexed.</p>
+     *         prefix or inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
      *         <p>
      *         For more information about glob patterns, see <a
      *         href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a> in <i>Wikipedia</i>.
@@ -194,7 +311,7 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
     /**
      * <p>
      * A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion prefix
-     * also matches an exclusion pattern, the document is not indexed.
+     * or inclusion pattern also matches an exclusion pattern, the document is not indexed.
      * </p>
      * <p>
      * For more information about glob patterns, see <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob
@@ -203,7 +320,7 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
      * 
      * @param exclusionPatterns
      *        A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion
-     *        prefix also matches an exclusion pattern, the document is not indexed.</p>
+     *        prefix or inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
      *        <p>
      *        For more information about glob patterns, see <a
      *        href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a> in <i>Wikipedia</i>.
@@ -221,7 +338,7 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
     /**
      * <p>
      * A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion prefix
-     * also matches an exclusion pattern, the document is not indexed.
+     * or inclusion pattern also matches an exclusion pattern, the document is not indexed.
      * </p>
      * <p>
      * For more information about glob patterns, see <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob
@@ -235,7 +352,7 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
      * 
      * @param exclusionPatterns
      *        A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion
-     *        prefix also matches an exclusion pattern, the document is not indexed.</p>
+     *        prefix or inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
      *        <p>
      *        For more information about glob patterns, see <a
      *        href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a> in <i>Wikipedia</i>.
@@ -255,7 +372,7 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
     /**
      * <p>
      * A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion prefix
-     * also matches an exclusion pattern, the document is not indexed.
+     * or inclusion pattern also matches an exclusion pattern, the document is not indexed.
      * </p>
      * <p>
      * For more information about glob patterns, see <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob
@@ -264,7 +381,7 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
      * 
      * @param exclusionPatterns
      *        A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion
-     *        prefix also matches an exclusion pattern, the document is not indexed.</p>
+     *        prefix or inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
      *        <p>
      *        For more information about glob patterns, see <a
      *        href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a> in <i>Wikipedia</i>.
@@ -358,6 +475,8 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
             sb.append("BucketName: ").append(getBucketName()).append(",");
         if (getInclusionPrefixes() != null)
             sb.append("InclusionPrefixes: ").append(getInclusionPrefixes()).append(",");
+        if (getInclusionPatterns() != null)
+            sb.append("InclusionPatterns: ").append(getInclusionPatterns()).append(",");
         if (getExclusionPatterns() != null)
             sb.append("ExclusionPatterns: ").append(getExclusionPatterns()).append(",");
         if (getDocumentsMetadataConfiguration() != null)
@@ -386,6 +505,10 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
             return false;
         if (other.getInclusionPrefixes() != null && other.getInclusionPrefixes().equals(this.getInclusionPrefixes()) == false)
             return false;
+        if (other.getInclusionPatterns() == null ^ this.getInclusionPatterns() == null)
+            return false;
+        if (other.getInclusionPatterns() != null && other.getInclusionPatterns().equals(this.getInclusionPatterns()) == false)
+            return false;
         if (other.getExclusionPatterns() == null ^ this.getExclusionPatterns() == null)
             return false;
         if (other.getExclusionPatterns() != null && other.getExclusionPatterns().equals(this.getExclusionPatterns()) == false)
@@ -410,6 +533,7 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
 
         hashCode = prime * hashCode + ((getBucketName() == null) ? 0 : getBucketName().hashCode());
         hashCode = prime * hashCode + ((getInclusionPrefixes() == null) ? 0 : getInclusionPrefixes().hashCode());
+        hashCode = prime * hashCode + ((getInclusionPatterns() == null) ? 0 : getInclusionPatterns().hashCode());
         hashCode = prime * hashCode + ((getExclusionPatterns() == null) ? 0 : getExclusionPatterns().hashCode());
         hashCode = prime * hashCode + ((getDocumentsMetadataConfiguration() == null) ? 0 : getDocumentsMetadataConfiguration().hashCode());
         hashCode = prime * hashCode + ((getAccessControlListConfiguration() == null) ? 0 : getAccessControlListConfiguration().hashCode());

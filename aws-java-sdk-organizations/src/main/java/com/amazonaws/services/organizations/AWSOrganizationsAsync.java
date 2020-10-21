@@ -54,7 +54,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </li>
      * <li>
      * <p>
-     * <b>Enable all features final confirmation</b> handshake: only a principal from the master account.
+     * <b>Enable all features final confirmation</b> handshake: only a principal from the management account.
      * </p>
      * <p>
      * For more information about invitations, see <a
@@ -103,7 +103,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </li>
      * <li>
      * <p>
-     * <b>Enable all features final confirmation</b> handshake: only a principal from the master account.
+     * <b>Enable all features final confirmation</b> handshake: only a principal from the management account.
      * </p>
      * <p>
      * For more information about invitations, see <a
@@ -166,7 +166,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </li>
      * </ul>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param attachPolicyRequest
@@ -210,7 +210,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </li>
      * </ul>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param attachPolicyRequest
@@ -311,12 +311,13 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * <p>
      * AWS Organizations preconfigures the new member account with a role (named
-     * <code>OrganizationAccountAccessRole</code> by default) that grants users in the master account administrator
-     * permissions in the new member account. Principals in the master account can assume the role. AWS Organizations
-     * clones the company name and address information for the new account from the organization's master account.
+     * <code>OrganizationAccountAccessRole</code> by default) that grants users in the management account administrator
+     * permissions in the new member account. Principals in the management account can assume the role. AWS
+     * Organizations clones the company name and address information for the new account from the organization's
+     * management account.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * <p>
      * For more information about creating accounts, see <a
@@ -413,12 +414,13 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * <p>
      * AWS Organizations preconfigures the new member account with a role (named
-     * <code>OrganizationAccountAccessRole</code> by default) that grants users in the master account administrator
-     * permissions in the new member account. Principals in the master account can assume the role. AWS Organizations
-     * clones the company name and address information for the new account from the organization's master account.
+     * <code>OrganizationAccountAccessRole</code> by default) that grants users in the management account administrator
+     * permissions in the new member account. Principals in the management account can assume the role. AWS
+     * Organizations clones the company name and address information for the new account from the organization's
+     * management account.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * <p>
      * For more information about creating accounts, see <a
@@ -498,13 +500,13 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </li>
      * <li>
      * <p>
-     * You already have an account in the AWS GovCloud (US) Region that is paired with a master account of an
+     * You already have an account in the AWS GovCloud (US) Region that is paired with a management account of an
      * organization in the commercial Region.
      * </p>
      * </li>
      * <li>
      * <p>
-     * You call this action from the master account of your organization in the commercial Region.
+     * You call this action from the management account of your organization in the commercial Region.
      * </p>
      * </li>
      * <li>
@@ -546,10 +548,10 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * after the new GovCloud account exists.
      * </p>
      * <p>
-     * You call this action from the master account of your organization in the commercial Region to create a standalone
-     * AWS account in the AWS GovCloud (US) Region. After the account is created, the master account of an organization
-     * in the AWS GovCloud (US) Region can invite it to that organization. For more information on inviting standalone
-     * accounts in the AWS GovCloud (US) to join an organization, see <a
+     * You call this action from the management account of your organization in the commercial Region to create a
+     * standalone AWS account in the AWS GovCloud (US) Region. After the account is created, the management account of
+     * an organization in the AWS GovCloud (US) Region can invite it to that organization. For more information on
+     * inviting standalone accounts in the AWS GovCloud (US) to join an organization, see <a
      * href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS Organizations</a>
      * in the <i>AWS GovCloud User Guide.</i>
      * </p>
@@ -583,13 +585,13 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * request. Both accounts are associated with the same email address.
      * </p>
      * <p>
-     * A role is created in the new account in the commercial Region that allows the master account in the organization
-     * in the commercial Region to assume it. An AWS GovCloud (US) account is then created and associated with the
-     * commercial account that you just created. A role is also created in the new AWS GovCloud (US) account that can be
-     * assumed by the AWS GovCloud (US) account that is associated with the master account of the commercial
-     * organization. For more information and to view a diagram that explains how account access works, see <a
-     * href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS Organizations</a>
-     * in the <i>AWS GovCloud User Guide.</i>
+     * A role is created in the new account in the commercial Region that allows the management account in the
+     * organization in the commercial Region to assume it. An AWS GovCloud (US) account is then created and associated
+     * with the commercial account that you just created. A role is also created in the new AWS GovCloud (US) account
+     * that can be assumed by the AWS GovCloud (US) account that is associated with the management account of the
+     * commercial organization. For more information and to view a diagram that explains how account access works, see
+     * <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
+     * Organizations</a> in the <i>AWS GovCloud User Guide.</i>
      * </p>
      * <p>
      * For more information about creating accounts, see <a
@@ -665,13 +667,13 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </li>
      * <li>
      * <p>
-     * You already have an account in the AWS GovCloud (US) Region that is paired with a master account of an
+     * You already have an account in the AWS GovCloud (US) Region that is paired with a management account of an
      * organization in the commercial Region.
      * </p>
      * </li>
      * <li>
      * <p>
-     * You call this action from the master account of your organization in the commercial Region.
+     * You call this action from the management account of your organization in the commercial Region.
      * </p>
      * </li>
      * <li>
@@ -713,10 +715,10 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * after the new GovCloud account exists.
      * </p>
      * <p>
-     * You call this action from the master account of your organization in the commercial Region to create a standalone
-     * AWS account in the AWS GovCloud (US) Region. After the account is created, the master account of an organization
-     * in the AWS GovCloud (US) Region can invite it to that organization. For more information on inviting standalone
-     * accounts in the AWS GovCloud (US) to join an organization, see <a
+     * You call this action from the management account of your organization in the commercial Region to create a
+     * standalone AWS account in the AWS GovCloud (US) Region. After the account is created, the management account of
+     * an organization in the AWS GovCloud (US) Region can invite it to that organization. For more information on
+     * inviting standalone accounts in the AWS GovCloud (US) to join an organization, see <a
      * href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS Organizations</a>
      * in the <i>AWS GovCloud User Guide.</i>
      * </p>
@@ -750,13 +752,13 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * request. Both accounts are associated with the same email address.
      * </p>
      * <p>
-     * A role is created in the new account in the commercial Region that allows the master account in the organization
-     * in the commercial Region to assume it. An AWS GovCloud (US) account is then created and associated with the
-     * commercial account that you just created. A role is also created in the new AWS GovCloud (US) account that can be
-     * assumed by the AWS GovCloud (US) account that is associated with the master account of the commercial
-     * organization. For more information and to view a diagram that explains how account access works, see <a
-     * href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS Organizations</a>
-     * in the <i>AWS GovCloud User Guide.</i>
+     * A role is created in the new account in the commercial Region that allows the management account in the
+     * organization in the commercial Region to assume it. An AWS GovCloud (US) account is then created and associated
+     * with the commercial account that you just created. A role is also created in the new AWS GovCloud (US) account
+     * that can be assumed by the AWS GovCloud (US) account that is associated with the management account of the
+     * commercial organization. For more information and to view a diagram that explains how account access works, see
+     * <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
+     * Organizations</a> in the <i>AWS GovCloud User Guide.</i>
      * </p>
      * <p>
      * For more information about creating accounts, see <a
@@ -828,11 +830,11 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Creates an AWS organization. The account whose user is calling the <code>CreateOrganization</code> operation
      * automatically becomes the <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account"
-     * >master account</a> of the new organization.
+     * >management account</a> of the new organization.
      * </p>
      * <p>
-     * This operation must be called using credentials from the account that is to become the new organization's master
-     * account. The principal must also have the relevant IAM permissions.
+     * This operation must be called using credentials from the account that is to become the new organization's
+     * management account. The principal must also have the relevant IAM permissions.
      * </p>
      * <p>
      * By default (or if you set the <code>FeatureSet</code> parameter to <code>ALL</code>), the new organization is
@@ -855,11 +857,11 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Creates an AWS organization. The account whose user is calling the <code>CreateOrganization</code> operation
      * automatically becomes the <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account"
-     * >master account</a> of the new organization.
+     * >management account</a> of the new organization.
      * </p>
      * <p>
-     * This operation must be called using credentials from the account that is to become the new organization's master
-     * account. The principal must also have the relevant IAM permissions.
+     * This operation must be called using credentials from the account that is to become the new organization's
+     * management account. The principal must also have the relevant IAM permissions.
      * </p>
      * <p>
      * By default (or if you set the <code>FeatureSet</code> parameter to <code>ALL</code>), the new organization is
@@ -898,7 +900,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param createOrganizationalUnitRequest
@@ -925,7 +927,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param createOrganizationalUnitRequest
@@ -955,7 +957,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param createPolicyRequest
@@ -980,7 +982,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param createPolicyRequest
@@ -1049,8 +1051,8 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
 
     /**
      * <p>
-     * Deletes the organization. You can delete an organization only by using credentials from the master account. The
-     * organization must be empty of member accounts.
+     * Deletes the organization. You can delete an organization only by using credentials from the management account.
+     * The organization must be empty of member accounts.
      * </p>
      * 
      * @param deleteOrganizationRequest
@@ -1063,8 +1065,8 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
 
     /**
      * <p>
-     * Deletes the organization. You can delete an organization only by using credentials from the master account. The
-     * organization must be empty of member accounts.
+     * Deletes the organization. You can delete an organization only by using credentials from the management account.
+     * The organization must be empty of member accounts.
      * </p>
      * 
      * @param deleteOrganizationRequest
@@ -1086,7 +1088,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * from the OU that you want to delete.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param deleteOrganizationalUnitRequest
@@ -1103,7 +1105,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * from the OU that you want to delete.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param deleteOrganizationalUnitRequest
@@ -1125,7 +1127,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * policy from all organizational units (OUs), roots, and accounts.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param deletePolicyRequest
@@ -1142,7 +1144,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * policy from all organizational units (OUs), roots, and accounts.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param deletePolicyRequest
@@ -1176,7 +1178,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * that you can use with AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param deregisterDelegatedAdministratorRequest
@@ -1207,7 +1209,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * that you can use with AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param deregisterDelegatedAdministratorRequest
@@ -1230,7 +1232,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Retrieves AWS Organizations-related information about the specified account.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -1247,7 +1249,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Retrieves AWS Organizations-related information about the specified account.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -1269,7 +1271,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Retrieves the current status of an asynchronous request to create an account.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -1287,7 +1289,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Retrieves the current status of an asynchronous request to create an account.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -1320,7 +1322,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Inheritance Works</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -1347,7 +1349,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Inheritance Works</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -1465,7 +1467,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Retrieves information about an organizational unit (OU).
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -1483,7 +1485,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Retrieves information about an organizational unit (OU).
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -1506,7 +1508,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Retrieves information about a policy.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -1523,7 +1525,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Retrieves information about a policy.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -1563,7 +1565,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * .html#orgs_policies_denylist">deny list</a>".
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param detachPolicyRequest
@@ -1597,7 +1599,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * .html#orgs_policies_denylist">deny list</a>".
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param detachPolicyRequest
@@ -1644,7 +1646,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Organizations with Other AWS Services</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param disableAWSServiceAccessRequest
@@ -1686,7 +1688,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Organizations with Other AWS Services</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param disableAWSServiceAccessRequest
@@ -1717,7 +1719,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * status of policy types for a specified root, and then use this operation.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * <p>
      * To view the status of available policy types in the organization, use <a>DescribeOrganization</a>.
@@ -1746,7 +1748,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * status of policy types for a specified root, and then use this operation.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * <p>
      * To view the status of available policy types in the organization, use <a>DescribeOrganization</a>.
@@ -1788,10 +1790,10 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Organizations with Other AWS Services</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account and only if the organization has <a
-     * href=
-     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">enabled all
-     * features</a>.
+     * This operation can be called only from the organization's management account and only if the organization has <a
+     * href
+     * ="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">enabled
+     * all features</a>.
      * </p>
      * 
      * @param enableAWSServiceAccessRequest
@@ -1825,10 +1827,10 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Organizations with Other AWS Services</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account and only if the organization has <a
-     * href=
-     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">enabled all
-     * features</a>.
+     * This operation can be called only from the organization's management account and only if the organization has <a
+     * href
+     * ="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">enabled
+     * all features</a>.
      * </p>
      * 
      * @param enableAWSServiceAccessRequest
@@ -1871,13 +1873,13 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * handshake that contains <code>"Action": "ENABLE_ALL_FEATURES"</code>. This completes the change.
      * </p>
      * <p>
-     * After you enable all features in your organization, the master account in the organization can apply policies on
-     * all member accounts. These policies can restrict what users and even administrators in those accounts can do. The
-     * master account can apply policies that prevent accounts from leaving the organization. Ensure that your account
-     * administrators are aware of this.
+     * After you enable all features in your organization, the management account in the organization can apply policies
+     * on all member accounts. These policies can restrict what users and even administrators in those accounts can do.
+     * The management account can apply policies that prevent accounts from leaving the organization. Ensure that your
+     * account administrators are aware of this.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param enableAllFeaturesRequest
@@ -1915,13 +1917,13 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * handshake that contains <code>"Action": "ENABLE_ALL_FEATURES"</code>. This completes the change.
      * </p>
      * <p>
-     * After you enable all features in your organization, the master account in the organization can apply policies on
-     * all member accounts. These policies can restrict what users and even administrators in those accounts can do. The
-     * master account can apply policies that prevent accounts from leaving the organization. Ensure that your account
-     * administrators are aware of this.
+     * After you enable all features in your organization, the management account in the organization can apply policies
+     * on all member accounts. These policies can restrict what users and even administrators in those accounts can do.
+     * The management account can apply policies that prevent accounts from leaving the organization. Ensure that your
+     * account administrators are aware of this.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param enableAllFeaturesRequest
@@ -1948,7 +1950,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <a>ListRoots</a> to see the status of policy types for a specified root, and then use this operation.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * <p>
      * You can enable a policy type in a root only if that policy type is available in the organization. To view the
@@ -1974,7 +1976,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <a>ListRoots</a> to see the status of policy types for a specified root, and then use this operation.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * <p>
      * You can enable a policy type in a root only if that policy type is available in the organization. To view the
@@ -2004,10 +2006,10 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <ul>
      * <li>
      * <p>
-     * You can invite AWS accounts only from the same seller as the master account. For example, if your organization's
-     * master account was created by Amazon Internet Services Pvt. Ltd (AISPL), an AWS seller in India, you can invite
-     * only other AISPL accounts to your organization. You can't combine accounts from AISPL and AWS or from any other
-     * AWS seller. For more information, see <a
+     * You can invite AWS accounts only from the same seller as the management account. For example, if your
+     * organization's management account was created by Amazon Internet Services Pvt. Ltd (AISPL), an AWS seller in
+     * India, you can invite only other AISPL accounts to your organization. You can't combine accounts from AISPL and
+     * AWS or from any other AWS seller. For more information, see <a
      * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html"
      * >Consolidated Billing in India</a>.
      * </p>
@@ -2025,7 +2027,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param inviteAccountToOrganizationRequest
@@ -2047,10 +2049,10 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <ul>
      * <li>
      * <p>
-     * You can invite AWS accounts only from the same seller as the master account. For example, if your organization's
-     * master account was created by Amazon Internet Services Pvt. Ltd (AISPL), an AWS seller in India, you can invite
-     * only other AISPL accounts to your organization. You can't combine accounts from AISPL and AWS or from any other
-     * AWS seller. For more information, see <a
+     * You can invite AWS accounts only from the same seller as the management account. For example, if your
+     * organization's management account was created by Amazon Internet Services Pvt. Ltd (AISPL), an AWS seller in
+     * India, you can invite only other AISPL accounts to your organization. You can't combine accounts from AISPL and
+     * AWS or from any other AWS seller. For more information, see <a
      * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html"
      * >Consolidated Billing in India</a>.
      * </p>
@@ -2068,7 +2070,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param inviteAccountToOrganizationRequest
@@ -2088,7 +2090,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
     /**
      * <p>
      * Removes a member account from its parent organization. This version of the operation is performed by the account
-     * that wants to leave. To remove a member account as a user in the master account, use
+     * that wants to leave. To remove a member account as a user in the management account, use
      * <a>RemoveAccountFromOrganization</a> instead.
      * </p>
      * <p>
@@ -2098,9 +2100,9 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <ul>
      * <li>
      * <p>
-     * The master account in an organization with all features enabled can set service control policies (SCPs) that can
-     * restrict what administrators of member accounts can do. This includes preventing them from successfully calling
-     * <code>LeaveOrganization</code> and leaving the organization.
+     * The management account in an organization with all features enabled can set service control policies (SCPs) that
+     * can restrict what administrators of member accounts can do. This includes preventing them from successfully
+     * calling <code>LeaveOrganization</code> and leaving the organization.
      * </p>
      * </li>
      * <li>
@@ -2165,7 +2167,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
     /**
      * <p>
      * Removes a member account from its parent organization. This version of the operation is performed by the account
-     * that wants to leave. To remove a member account as a user in the master account, use
+     * that wants to leave. To remove a member account as a user in the management account, use
      * <a>RemoveAccountFromOrganization</a> instead.
      * </p>
      * <p>
@@ -2175,9 +2177,9 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <ul>
      * <li>
      * <p>
-     * The master account in an organization with all features enabled can set service control policies (SCPs) that can
-     * restrict what administrators of member accounts can do. This includes preventing them from successfully calling
-     * <code>LeaveOrganization</code> and leaving the organization.
+     * The management account in an organization with all features enabled can set service control policies (SCPs) that
+     * can restrict what administrators of member accounts can do. This includes preventing them from successfully
+     * calling <code>LeaveOrganization</code> and leaving the organization.
      * </p>
      * </li>
      * <li>
@@ -2257,7 +2259,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Organizations with Other AWS Services</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -2285,7 +2287,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Organizations with Other AWS Services</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -2319,7 +2321,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -2345,7 +2347,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -2378,7 +2380,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -2406,7 +2408,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -2437,7 +2439,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -2463,7 +2465,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -2494,7 +2496,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -2520,7 +2522,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -2542,7 +2544,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Lists the AWS accounts that are designated as delegated administrators in this organization.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -2560,7 +2562,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Lists the AWS accounts that are designated as delegated administrators in this organization.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -2583,7 +2585,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * List the AWS services for which the specified account is a delegated administrator.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -2602,7 +2604,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * List the AWS services for which the specified account is a delegated administrator.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -2701,7 +2703,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -2734,7 +2736,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -2766,7 +2768,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -2793,7 +2795,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -2827,7 +2829,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * <note>
@@ -2859,7 +2861,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * <note>
@@ -2894,7 +2896,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -2919,7 +2921,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -2950,7 +2952,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -2976,7 +2978,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -3006,7 +3008,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * <note>
@@ -3039,7 +3041,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * <note>
@@ -3094,7 +3096,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </li>
      * </ul>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -3136,7 +3138,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </li>
      * </ul>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -3166,7 +3168,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -3191,7 +3193,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -3214,7 +3216,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * parent root or OU.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param moveAccountRequest
@@ -3231,7 +3233,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * parent root or OU.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param moveAccountRequest
@@ -3260,7 +3262,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * that you can use with AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param registerDelegatedAdministratorRequest
@@ -3286,7 +3288,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * that you can use with AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param registerDelegatedAdministratorRequest
@@ -3310,12 +3312,12 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * <p>
      * The removed account becomes a standalone account that isn't a member of any organization. It's no longer subject
-     * to any policies and is responsible for its own bill payments. The organization's master account is no longer
+     * to any policies and is responsible for its own bill payments. The organization's management account is no longer
      * charged for any expenses accrued by the member account after it's removed from the organization.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account. Member accounts can remove themselves
-     * with <a>LeaveOrganization</a> instead.
+     * This operation can be called only from the organization's management account. Member accounts can remove
+     * themselves with <a>LeaveOrganization</a> instead.
      * </p>
      * <important>
      * <ul>
@@ -3359,12 +3361,12 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * <p>
      * The removed account becomes a standalone account that isn't a member of any organization. It's no longer subject
-     * to any policies and is responsible for its own bill payments. The organization's master account is no longer
+     * to any policies and is responsible for its own bill payments. The organization's management account is no longer
      * charged for any expenses accrued by the member account after it's removed from the organization.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account. Member accounts can remove themselves
-     * with <a>LeaveOrganization</a> instead.
+     * This operation can be called only from the organization's management account. Member accounts can remove
+     * themselves with <a>LeaveOrganization</a> instead.
      * </p>
      * <important>
      * <ul>
@@ -3437,7 +3439,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </li>
      * </ul>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param tagResourceRequest
@@ -3478,7 +3480,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </li>
      * </ul>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param tagResourceRequest
@@ -3524,7 +3526,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </li>
      * </ul>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param untagResourceRequest
@@ -3565,7 +3567,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </li>
      * </ul>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param untagResourceRequest
@@ -3587,7 +3589,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * place, and any attached policies of the OU remain attached.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param updateOrganizationalUnitRequest
@@ -3604,7 +3606,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * place, and any attached policies of the OU remain attached.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param updateOrganizationalUnitRequest
@@ -3626,7 +3628,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * value remains unchanged. You can't change a policy's type.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param updatePolicyRequest
@@ -3643,7 +3645,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * value remains unchanged. You can't change a policy's type.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param updatePolicyRequest

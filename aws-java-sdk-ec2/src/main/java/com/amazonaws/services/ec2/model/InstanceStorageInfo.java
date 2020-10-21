@@ -38,6 +38,12 @@ public class InstanceStorageInfo implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DiskInfo> disks;
+    /**
+     * <p>
+     * Indicates whether non-volatile memory express (NVMe) is supported for instance store.
+     * </p>
+     */
+    private String nvmeSupport;
 
     /**
      * <p>
@@ -153,6 +159,65 @@ public class InstanceStorageInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether non-volatile memory express (NVMe) is supported for instance store.
+     * </p>
+     * 
+     * @param nvmeSupport
+     *        Indicates whether non-volatile memory express (NVMe) is supported for instance store.
+     * @see EphemeralNvmeSupport
+     */
+
+    public void setNvmeSupport(String nvmeSupport) {
+        this.nvmeSupport = nvmeSupport;
+    }
+
+    /**
+     * <p>
+     * Indicates whether non-volatile memory express (NVMe) is supported for instance store.
+     * </p>
+     * 
+     * @return Indicates whether non-volatile memory express (NVMe) is supported for instance store.
+     * @see EphemeralNvmeSupport
+     */
+
+    public String getNvmeSupport() {
+        return this.nvmeSupport;
+    }
+
+    /**
+     * <p>
+     * Indicates whether non-volatile memory express (NVMe) is supported for instance store.
+     * </p>
+     * 
+     * @param nvmeSupport
+     *        Indicates whether non-volatile memory express (NVMe) is supported for instance store.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EphemeralNvmeSupport
+     */
+
+    public InstanceStorageInfo withNvmeSupport(String nvmeSupport) {
+        setNvmeSupport(nvmeSupport);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether non-volatile memory express (NVMe) is supported for instance store.
+     * </p>
+     * 
+     * @param nvmeSupport
+     *        Indicates whether non-volatile memory express (NVMe) is supported for instance store.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EphemeralNvmeSupport
+     */
+
+    public InstanceStorageInfo withNvmeSupport(EphemeralNvmeSupport nvmeSupport) {
+        this.nvmeSupport = nvmeSupport.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -167,7 +232,9 @@ public class InstanceStorageInfo implements Serializable, Cloneable {
         if (getTotalSizeInGB() != null)
             sb.append("TotalSizeInGB: ").append(getTotalSizeInGB()).append(",");
         if (getDisks() != null)
-            sb.append("Disks: ").append(getDisks());
+            sb.append("Disks: ").append(getDisks()).append(",");
+        if (getNvmeSupport() != null)
+            sb.append("NvmeSupport: ").append(getNvmeSupport());
         sb.append("}");
         return sb.toString();
     }
@@ -190,6 +257,10 @@ public class InstanceStorageInfo implements Serializable, Cloneable {
             return false;
         if (other.getDisks() != null && other.getDisks().equals(this.getDisks()) == false)
             return false;
+        if (other.getNvmeSupport() == null ^ this.getNvmeSupport() == null)
+            return false;
+        if (other.getNvmeSupport() != null && other.getNvmeSupport().equals(this.getNvmeSupport()) == false)
+            return false;
         return true;
     }
 
@@ -200,6 +271,7 @@ public class InstanceStorageInfo implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getTotalSizeInGB() == null) ? 0 : getTotalSizeInGB().hashCode());
         hashCode = prime * hashCode + ((getDisks() == null) ? 0 : getDisks().hashCode());
+        hashCode = prime * hashCode + ((getNvmeSupport() == null) ? 0 : getNvmeSupport().hashCode());
         return hashCode;
     }
 

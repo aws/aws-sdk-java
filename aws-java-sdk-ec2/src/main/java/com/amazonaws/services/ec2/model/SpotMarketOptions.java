@@ -46,14 +46,39 @@ public class SpotMarketOptions implements Serializable, Cloneable {
      * The required duration for the Spot Instances (also known as Spot blocks), in minutes. This value must be a
      * multiple of 60 (60, 120, 180, 240, 300, or 360).
      * </p>
+     * <p>
+     * The duration period starts as soon as your Spot Instance receives its instance ID. At the end of the duration
+     * period, Amazon EC2 marks the Spot Instance for termination and provides a Spot Instance termination notice, which
+     * gives the instance a two-minute warning before it terminates.
+     * </p>
+     * <p>
+     * You can't specify an Availability Zone group or a launch group if you specify a duration.
+     * </p>
+     * <p>
+     * New accounts or accounts with no previous billing history with AWS are not eligible for Spot Instances with a
+     * defined duration (also known as Spot blocks).
+     * </p>
      */
     private Integer blockDurationMinutes;
     /**
      * <p>
-     * The end date of the request. For a one-time request, the request remains active until all instances launch, the
-     * request is canceled, or this date is reached. If the request is persistent, it remains active until it is
-     * canceled or this date and time is reached. The default end date is 7 days from the current date.
+     * The end date of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * Supported only for persistent requests.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached.
+     * Otherwise, the request remains active until you cancel it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances
+     * launch or you cancel the request.
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.Date validUntil;
     /**
@@ -192,10 +217,33 @@ public class SpotMarketOptions implements Serializable, Cloneable {
      * The required duration for the Spot Instances (also known as Spot blocks), in minutes. This value must be a
      * multiple of 60 (60, 120, 180, 240, 300, or 360).
      * </p>
+     * <p>
+     * The duration period starts as soon as your Spot Instance receives its instance ID. At the end of the duration
+     * period, Amazon EC2 marks the Spot Instance for termination and provides a Spot Instance termination notice, which
+     * gives the instance a two-minute warning before it terminates.
+     * </p>
+     * <p>
+     * You can't specify an Availability Zone group or a launch group if you specify a duration.
+     * </p>
+     * <p>
+     * New accounts or accounts with no previous billing history with AWS are not eligible for Spot Instances with a
+     * defined duration (also known as Spot blocks).
+     * </p>
      * 
      * @param blockDurationMinutes
      *        The required duration for the Spot Instances (also known as Spot blocks), in minutes. This value must be a
-     *        multiple of 60 (60, 120, 180, 240, 300, or 360).
+     *        multiple of 60 (60, 120, 180, 240, 300, or 360).</p>
+     *        <p>
+     *        The duration period starts as soon as your Spot Instance receives its instance ID. At the end of the
+     *        duration period, Amazon EC2 marks the Spot Instance for termination and provides a Spot Instance
+     *        termination notice, which gives the instance a two-minute warning before it terminates.
+     *        </p>
+     *        <p>
+     *        You can't specify an Availability Zone group or a launch group if you specify a duration.
+     *        </p>
+     *        <p>
+     *        New accounts or accounts with no previous billing history with AWS are not eligible for Spot Instances
+     *        with a defined duration (also known as Spot blocks).
      */
 
     public void setBlockDurationMinutes(Integer blockDurationMinutes) {
@@ -207,9 +255,32 @@ public class SpotMarketOptions implements Serializable, Cloneable {
      * The required duration for the Spot Instances (also known as Spot blocks), in minutes. This value must be a
      * multiple of 60 (60, 120, 180, 240, 300, or 360).
      * </p>
+     * <p>
+     * The duration period starts as soon as your Spot Instance receives its instance ID. At the end of the duration
+     * period, Amazon EC2 marks the Spot Instance for termination and provides a Spot Instance termination notice, which
+     * gives the instance a two-minute warning before it terminates.
+     * </p>
+     * <p>
+     * You can't specify an Availability Zone group or a launch group if you specify a duration.
+     * </p>
+     * <p>
+     * New accounts or accounts with no previous billing history with AWS are not eligible for Spot Instances with a
+     * defined duration (also known as Spot blocks).
+     * </p>
      * 
      * @return The required duration for the Spot Instances (also known as Spot blocks), in minutes. This value must be
-     *         a multiple of 60 (60, 120, 180, 240, 300, or 360).
+     *         a multiple of 60 (60, 120, 180, 240, 300, or 360).</p>
+     *         <p>
+     *         The duration period starts as soon as your Spot Instance receives its instance ID. At the end of the
+     *         duration period, Amazon EC2 marks the Spot Instance for termination and provides a Spot Instance
+     *         termination notice, which gives the instance a two-minute warning before it terminates.
+     *         </p>
+     *         <p>
+     *         You can't specify an Availability Zone group or a launch group if you specify a duration.
+     *         </p>
+     *         <p>
+     *         New accounts or accounts with no previous billing history with AWS are not eligible for Spot Instances
+     *         with a defined duration (also known as Spot blocks).
      */
 
     public Integer getBlockDurationMinutes() {
@@ -221,10 +292,33 @@ public class SpotMarketOptions implements Serializable, Cloneable {
      * The required duration for the Spot Instances (also known as Spot blocks), in minutes. This value must be a
      * multiple of 60 (60, 120, 180, 240, 300, or 360).
      * </p>
+     * <p>
+     * The duration period starts as soon as your Spot Instance receives its instance ID. At the end of the duration
+     * period, Amazon EC2 marks the Spot Instance for termination and provides a Spot Instance termination notice, which
+     * gives the instance a two-minute warning before it terminates.
+     * </p>
+     * <p>
+     * You can't specify an Availability Zone group or a launch group if you specify a duration.
+     * </p>
+     * <p>
+     * New accounts or accounts with no previous billing history with AWS are not eligible for Spot Instances with a
+     * defined duration (also known as Spot blocks).
+     * </p>
      * 
      * @param blockDurationMinutes
      *        The required duration for the Spot Instances (also known as Spot blocks), in minutes. This value must be a
-     *        multiple of 60 (60, 120, 180, 240, 300, or 360).
+     *        multiple of 60 (60, 120, 180, 240, 300, or 360).</p>
+     *        <p>
+     *        The duration period starts as soon as your Spot Instance receives its instance ID. At the end of the
+     *        duration period, Amazon EC2 marks the Spot Instance for termination and provides a Spot Instance
+     *        termination notice, which gives the instance a two-minute warning before it terminates.
+     *        </p>
+     *        <p>
+     *        You can't specify an Availability Zone group or a launch group if you specify a duration.
+     *        </p>
+     *        <p>
+     *        New accounts or accounts with no previous billing history with AWS are not eligible for Spot Instances
+     *        with a defined duration (also known as Spot blocks).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -235,16 +329,41 @@ public class SpotMarketOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The end date of the request. For a one-time request, the request remains active until all instances launch, the
-     * request is canceled, or this date is reached. If the request is persistent, it remains active until it is
-     * canceled or this date and time is reached. The default end date is 7 days from the current date.
+     * The end date of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * Supported only for persistent requests.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached.
+     * Otherwise, the request remains active until you cancel it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances
+     * launch or you cancel the request.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param validUntil
-     *        The end date of the request. For a one-time request, the request remains active until all instances
-     *        launch, the request is canceled, or this date is reached. If the request is persistent, it remains active
-     *        until it is canceled or this date and time is reached. The default end date is 7 days from the current
-     *        date.
+     *        The end date of the request, in UTC format
+     *        (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). Supported only for persistent
+     *        requests.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is
+     *        reached. Otherwise, the request remains active until you cancel it.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all
+     *        instances launch or you cancel the request.
+     *        </p>
+     *        </li>
      */
 
     public void setValidUntil(java.util.Date validUntil) {
@@ -253,15 +372,40 @@ public class SpotMarketOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The end date of the request. For a one-time request, the request remains active until all instances launch, the
-     * request is canceled, or this date is reached. If the request is persistent, it remains active until it is
-     * canceled or this date and time is reached. The default end date is 7 days from the current date.
+     * The end date of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * Supported only for persistent requests.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached.
+     * Otherwise, the request remains active until you cancel it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances
+     * launch or you cancel the request.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The end date of the request. For a one-time request, the request remains active until all instances
-     *         launch, the request is canceled, or this date is reached. If the request is persistent, it remains active
-     *         until it is canceled or this date and time is reached. The default end date is 7 days from the current
-     *         date.
+     * @return The end date of the request, in UTC format
+     *         (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). Supported only for persistent
+     *         requests.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is
+     *         reached. Otherwise, the request remains active until you cancel it.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all
+     *         instances launch or you cancel the request.
+     *         </p>
+     *         </li>
      */
 
     public java.util.Date getValidUntil() {
@@ -270,16 +414,41 @@ public class SpotMarketOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The end date of the request. For a one-time request, the request remains active until all instances launch, the
-     * request is canceled, or this date is reached. If the request is persistent, it remains active until it is
-     * canceled or this date and time is reached. The default end date is 7 days from the current date.
+     * The end date of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * Supported only for persistent requests.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached.
+     * Otherwise, the request remains active until you cancel it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances
+     * launch or you cancel the request.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param validUntil
-     *        The end date of the request. For a one-time request, the request remains active until all instances
-     *        launch, the request is canceled, or this date is reached. If the request is persistent, it remains active
-     *        until it is canceled or this date and time is reached. The default end date is 7 days from the current
-     *        date.
+     *        The end date of the request, in UTC format
+     *        (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). Supported only for persistent
+     *        requests.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is
+     *        reached. Otherwise, the request remains active until you cancel it.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all
+     *        instances launch or you cancel the request.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

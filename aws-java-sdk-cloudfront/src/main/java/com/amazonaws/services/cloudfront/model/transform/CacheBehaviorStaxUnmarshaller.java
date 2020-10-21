@@ -58,6 +58,11 @@ public class CacheBehaviorStaxUnmarshaller implements Unmarshaller<CacheBehavior
                     continue;
                 }
 
+                if (context.testExpression("TrustedKeyGroups", targetDepth)) {
+                    cacheBehavior.setTrustedKeyGroups(TrustedKeyGroupsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("ViewerProtocolPolicy", targetDepth)) {
                     cacheBehavior.setViewerProtocolPolicy(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

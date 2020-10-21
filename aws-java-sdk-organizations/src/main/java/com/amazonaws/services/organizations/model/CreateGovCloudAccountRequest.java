@@ -48,9 +48,9 @@ public class CreateGovCloudAccountRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * The name of an IAM role that AWS Organizations automatically preconfigures in the new member accounts in both the
-     * AWS GovCloud (US) Region and in the commercial Region. This role trusts the master account, allowing users in the
-     * master account to assume the role, as permitted by the master account administrator. The role has administrator
-     * permissions in the new member account.
+     * AWS GovCloud (US) Region and in the commercial Region. This role trusts the management account, allowing users in
+     * the management account to assume the role, as permitted by the management account administrator. The role has
+     * administrator permissions in the new member account.
      * </p>
      * <p>
      * If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.
@@ -223,9 +223,9 @@ public class CreateGovCloudAccountRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * The name of an IAM role that AWS Organizations automatically preconfigures in the new member accounts in both the
-     * AWS GovCloud (US) Region and in the commercial Region. This role trusts the master account, allowing users in the
-     * master account to assume the role, as permitted by the master account administrator. The role has administrator
-     * permissions in the new member account.
+     * AWS GovCloud (US) Region and in the commercial Region. This role trusts the management account, allowing users in
+     * the management account to assume the role, as permitted by the management account administrator. The role has
+     * administrator permissions in the new member account.
      * </p>
      * <p>
      * If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.
@@ -248,9 +248,9 @@ public class CreateGovCloudAccountRequest extends com.amazonaws.AmazonWebService
      *        (Optional)</p>
      *        <p>
      *        The name of an IAM role that AWS Organizations automatically preconfigures in the new member accounts in
-     *        both the AWS GovCloud (US) Region and in the commercial Region. This role trusts the master account,
-     *        allowing users in the master account to assume the role, as permitted by the master account administrator.
-     *        The role has administrator permissions in the new member account.
+     *        both the AWS GovCloud (US) Region and in the commercial Region. This role trusts the management account,
+     *        allowing users in the management account to assume the role, as permitted by the management account
+     *        administrator. The role has administrator permissions in the new member account.
      *        </p>
      *        <p>
      *        If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.
@@ -279,9 +279,9 @@ public class CreateGovCloudAccountRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * The name of an IAM role that AWS Organizations automatically preconfigures in the new member accounts in both the
-     * AWS GovCloud (US) Region and in the commercial Region. This role trusts the master account, allowing users in the
-     * master account to assume the role, as permitted by the master account administrator. The role has administrator
-     * permissions in the new member account.
+     * AWS GovCloud (US) Region and in the commercial Region. This role trusts the management account, allowing users in
+     * the management account to assume the role, as permitted by the management account administrator. The role has
+     * administrator permissions in the new member account.
      * </p>
      * <p>
      * If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.
@@ -303,8 +303,8 @@ public class CreateGovCloudAccountRequest extends com.amazonaws.AmazonWebService
      * @return (Optional)</p>
      *         <p>
      *         The name of an IAM role that AWS Organizations automatically preconfigures in the new member accounts in
-     *         both the AWS GovCloud (US) Region and in the commercial Region. This role trusts the master account,
-     *         allowing users in the master account to assume the role, as permitted by the master account
+     *         both the AWS GovCloud (US) Region and in the commercial Region. This role trusts the management account,
+     *         allowing users in the management account to assume the role, as permitted by the management account
      *         administrator. The role has administrator permissions in the new member account.
      *         </p>
      *         <p>
@@ -335,9 +335,9 @@ public class CreateGovCloudAccountRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * The name of an IAM role that AWS Organizations automatically preconfigures in the new member accounts in both the
-     * AWS GovCloud (US) Region and in the commercial Region. This role trusts the master account, allowing users in the
-     * master account to assume the role, as permitted by the master account administrator. The role has administrator
-     * permissions in the new member account.
+     * AWS GovCloud (US) Region and in the commercial Region. This role trusts the management account, allowing users in
+     * the management account to assume the role, as permitted by the management account administrator. The role has
+     * administrator permissions in the new member account.
      * </p>
      * <p>
      * If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.
@@ -360,9 +360,9 @@ public class CreateGovCloudAccountRequest extends com.amazonaws.AmazonWebService
      *        (Optional)</p>
      *        <p>
      *        The name of an IAM role that AWS Organizations automatically preconfigures in the new member accounts in
-     *        both the AWS GovCloud (US) Region and in the commercial Region. This role trusts the master account,
-     *        allowing users in the master account to assume the role, as permitted by the master account administrator.
-     *        The role has administrator permissions in the new member account.
+     *        both the AWS GovCloud (US) Region and in the commercial Region. This role trusts the management account,
+     *        allowing users in the management account to assume the role, as permitted by the management account
+     *        administrator. The role has administrator permissions in the new member account.
      *        </p>
      *        <p>
      *        If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.

@@ -53,7 +53,7 @@ public class DescribeEffectivePolicyRequest extends com.amazonaws.AmazonWebServi
     private String policyType;
     /**
      * <p>
-     * When you're signed in as the master account, specify the ID of the account that you want details about.
+     * When you're signed in as the management account, specify the ID of the account that you want details about.
      * Specifying an organization root or organizational unit (OU) as the target is not supported.
      * </p>
      */
@@ -281,13 +281,13 @@ public class DescribeEffectivePolicyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * When you're signed in as the master account, specify the ID of the account that you want details about.
+     * When you're signed in as the management account, specify the ID of the account that you want details about.
      * Specifying an organization root or organizational unit (OU) as the target is not supported.
      * </p>
      * 
      * @param targetId
-     *        When you're signed in as the master account, specify the ID of the account that you want details about.
-     *        Specifying an organization root or organizational unit (OU) as the target is not supported.
+     *        When you're signed in as the management account, specify the ID of the account that you want details
+     *        about. Specifying an organization root or organizational unit (OU) as the target is not supported.
      */
 
     public void setTargetId(String targetId) {
@@ -296,12 +296,12 @@ public class DescribeEffectivePolicyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * When you're signed in as the master account, specify the ID of the account that you want details about.
+     * When you're signed in as the management account, specify the ID of the account that you want details about.
      * Specifying an organization root or organizational unit (OU) as the target is not supported.
      * </p>
      * 
-     * @return When you're signed in as the master account, specify the ID of the account that you want details about.
-     *         Specifying an organization root or organizational unit (OU) as the target is not supported.
+     * @return When you're signed in as the management account, specify the ID of the account that you want details
+     *         about. Specifying an organization root or organizational unit (OU) as the target is not supported.
      */
 
     public String getTargetId() {
@@ -310,13 +310,13 @@ public class DescribeEffectivePolicyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * When you're signed in as the master account, specify the ID of the account that you want details about.
+     * When you're signed in as the management account, specify the ID of the account that you want details about.
      * Specifying an organization root or organizational unit (OU) as the target is not supported.
      * </p>
      * 
      * @param targetId
-     *        When you're signed in as the master account, specify the ID of the account that you want details about.
-     *        Specifying an organization root or organizational unit (OU) as the target is not supported.
+     *        When you're signed in as the management account, specify the ID of the account that you want details
+     *        about. Specifying an organization root or organizational unit (OU) as the target is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

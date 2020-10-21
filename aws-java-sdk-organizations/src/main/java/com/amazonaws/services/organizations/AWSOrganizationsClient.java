@@ -432,7 +432,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </li>
      * <li>
      * <p>
-     * <b>Enable all features final confirmation</b> handshake: only a principal from the master account.
+     * <b>Enable all features final confirmation</b> handshake: only a principal from the management account.
      * </p>
      * <p>
      * For more information about invitations, see <a
@@ -755,7 +755,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </li>
      * </ul>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param attachPolicyRequest
@@ -782,9 +782,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from the organization. You
-     *         can't remove the master account. Instead, after you remove all member accounts, delete the organization
-     *         itself.
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
      *         </p>
      *         </li>
      *         <li>
@@ -836,8 +836,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master account of the
-     *         organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
      *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
@@ -876,7 +876,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
@@ -891,12 +891,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
-     *         address and phone number for the master account. Then try the operation again.
+     *         address and phone number for the management account. Then try the operation again.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -904,9 +904,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -1435,12 +1435,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </p>
      * <p>
      * AWS Organizations preconfigures the new member account with a role (named
-     * <code>OrganizationAccountAccessRole</code> by default) that grants users in the master account administrator
-     * permissions in the new member account. Principals in the master account can assume the role. AWS Organizations
-     * clones the company name and address information for the new account from the organization's master account.
+     * <code>OrganizationAccountAccessRole</code> by default) that grants users in the management account administrator
+     * permissions in the new member account. Principals in the management account can assume the role. AWS
+     * Organizations clones the company name and address information for the new account from the organization's
+     * management account.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * <p>
      * For more information about creating accounts, see <a
@@ -1517,9 +1518,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from the organization. You
-     *         can't remove the master account. Instead, after you remove all member accounts, delete the organization
-     *         itself.
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
      *         </p>
      *         </li>
      *         <li>
@@ -1571,8 +1572,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master account of the
-     *         organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
      *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
@@ -1611,7 +1612,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
@@ -1626,12 +1627,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
-     *         address and phone number for the master account. Then try the operation again.
+     *         address and phone number for the management account. Then try the operation again.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -1639,9 +1640,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -1920,13 +1921,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </li>
      * <li>
      * <p>
-     * You already have an account in the AWS GovCloud (US) Region that is paired with a master account of an
+     * You already have an account in the AWS GovCloud (US) Region that is paired with a management account of an
      * organization in the commercial Region.
      * </p>
      * </li>
      * <li>
      * <p>
-     * You call this action from the master account of your organization in the commercial Region.
+     * You call this action from the management account of your organization in the commercial Region.
      * </p>
      * </li>
      * <li>
@@ -1968,10 +1969,10 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * after the new GovCloud account exists.
      * </p>
      * <p>
-     * You call this action from the master account of your organization in the commercial Region to create a standalone
-     * AWS account in the AWS GovCloud (US) Region. After the account is created, the master account of an organization
-     * in the AWS GovCloud (US) Region can invite it to that organization. For more information on inviting standalone
-     * accounts in the AWS GovCloud (US) to join an organization, see <a
+     * You call this action from the management account of your organization in the commercial Region to create a
+     * standalone AWS account in the AWS GovCloud (US) Region. After the account is created, the management account of
+     * an organization in the AWS GovCloud (US) Region can invite it to that organization. For more information on
+     * inviting standalone accounts in the AWS GovCloud (US) to join an organization, see <a
      * href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS Organizations</a>
      * in the <i>AWS GovCloud User Guide.</i>
      * </p>
@@ -2005,13 +2006,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * request. Both accounts are associated with the same email address.
      * </p>
      * <p>
-     * A role is created in the new account in the commercial Region that allows the master account in the organization
-     * in the commercial Region to assume it. An AWS GovCloud (US) account is then created and associated with the
-     * commercial account that you just created. A role is also created in the new AWS GovCloud (US) account that can be
-     * assumed by the AWS GovCloud (US) account that is associated with the master account of the commercial
-     * organization. For more information and to view a diagram that explains how account access works, see <a
-     * href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS Organizations</a>
-     * in the <i>AWS GovCloud User Guide.</i>
+     * A role is created in the new account in the commercial Region that allows the management account in the
+     * organization in the commercial Region to assume it. An AWS GovCloud (US) account is then created and associated
+     * with the commercial account that you just created. A role is also created in the new AWS GovCloud (US) account
+     * that can be assumed by the AWS GovCloud (US) account that is associated with the management account of the
+     * commercial organization. For more information and to view a diagram that explains how account access works, see
+     * <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
+     * Organizations</a> in the <i>AWS GovCloud User Guide.</i>
      * </p>
      * <p>
      * For more information about creating accounts, see <a
@@ -2089,9 +2090,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from the organization. You
-     *         can't remove the master account. Instead, after you remove all member accounts, delete the organization
-     *         itself.
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
      *         </p>
      *         </li>
      *         <li>
@@ -2143,8 +2144,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master account of the
-     *         organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
      *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
@@ -2183,7 +2184,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
@@ -2198,12 +2199,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
-     *         address and phone number for the master account. Then try the operation again.
+     *         address and phone number for the management account. Then try the operation again.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -2211,9 +2212,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -2484,11 +2485,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * Creates an AWS organization. The account whose user is calling the <code>CreateOrganization</code> operation
      * automatically becomes the <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account"
-     * >master account</a> of the new organization.
+     * >management account</a> of the new organization.
      * </p>
      * <p>
-     * This operation must be called using credentials from the account that is to become the new organization's master
-     * account. The principal must also have the relevant IAM permissions.
+     * This operation must be called using credentials from the account that is to become the new organization's
+     * management account. The principal must also have the relevant IAM permissions.
      * </p>
      * <p>
      * By default (or if you set the <code>FeatureSet</code> parameter to <code>ALL</code>), the new organization is
@@ -2522,9 +2523,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from the organization. You
-     *         can't remove the master account. Instead, after you remove all member accounts, delete the organization
-     *         itself.
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
      *         </p>
      *         </li>
      *         <li>
@@ -2576,8 +2577,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master account of the
-     *         organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
      *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
@@ -2616,7 +2617,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
@@ -2631,12 +2632,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
-     *         address and phone number for the master account. Then try the operation again.
+     *         address and phone number for the management account. Then try the operation again.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -2644,9 +2645,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -2925,7 +2926,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param createOrganizationalUnitRequest
@@ -2952,9 +2953,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from the organization. You
-     *         can't remove the master account. Instead, after you remove all member accounts, delete the organization
-     *         itself.
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
      *         </p>
      *         </li>
      *         <li>
@@ -3006,8 +3007,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master account of the
-     *         organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
      *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
@@ -3046,7 +3047,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
@@ -3061,12 +3062,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
-     *         address and phone number for the master account. Then try the operation again.
+     *         address and phone number for the management account. Then try the operation again.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -3074,9 +3075,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -3355,7 +3356,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param createPolicyRequest
@@ -3382,9 +3383,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from the organization. You
-     *         can't remove the master account. Instead, after you remove all member accounts, delete the organization
-     *         itself.
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
      *         </p>
      *         </li>
      *         <li>
@@ -3436,8 +3437,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master account of the
-     *         organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
      *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
@@ -3476,7 +3477,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
@@ -3491,12 +3492,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
-     *         address and phone number for the master account. Then try the operation again.
+     *         address and phone number for the management account. Then try the operation again.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -3504,9 +3505,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -4000,8 +4001,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Deletes the organization. You can delete an organization only by using credentials from the master account. The
-     * organization must be empty of member accounts.
+     * Deletes the organization. You can delete an organization only by using credentials from the management account.
+     * The organization must be empty of member accounts.
      * </p>
      * 
      * @param deleteOrganizationRequest
@@ -4148,7 +4149,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      * @throws OrganizationNotEmptyException
      *         The organization isn't empty. To delete an organization, you must first remove all accounts except the
-     *         master account, delete all OUs, and delete all policies.
+     *         management account, delete all OUs, and delete all policies.
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
@@ -4211,7 +4212,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * from the OU that you want to delete.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param deleteOrganizationalUnitRequest
@@ -4425,7 +4426,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * policy from all organizational units (OUs), roots, and accounts.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param deletePolicyRequest
@@ -4651,7 +4652,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * that you can use with AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param deregisterDelegatedAdministratorRequest
@@ -4683,9 +4684,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from the organization. You
-     *         can't remove the master account. Instead, after you remove all member accounts, delete the organization
-     *         itself.
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
      *         </p>
      *         </li>
      *         <li>
@@ -4737,8 +4738,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master account of the
-     *         organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
      *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
@@ -4777,7 +4778,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
@@ -4792,12 +4793,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
-     *         address and phone number for the master account. Then try the operation again.
+     *         address and phone number for the management account. Then try the operation again.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -4805,9 +4806,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -5076,7 +5077,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * Retrieves AWS Organizations-related information about the specified account.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -5284,7 +5285,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * Retrieves the current status of an asynchronous request to create an account.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -5505,7 +5506,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * Inheritance Works</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -5531,9 +5532,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from the organization. You
-     *         can't remove the master account. Instead, after you remove all member accounts, delete the organization
-     *         itself.
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
      *         </p>
      *         </li>
      *         <li>
@@ -5585,8 +5586,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master account of the
-     *         organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
      *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
@@ -5625,7 +5626,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
@@ -5640,12 +5641,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
-     *         address and phone number for the master account. Then try the operation again.
+     *         address and phone number for the management account. Then try the operation again.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -5653,9 +5654,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -5740,9 +5741,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * @throws TargetNotFoundException
      *         We can't find a root, OU, account, or policy with the <code>TargetId</code> that you specified.
      * @throws EffectivePolicyNotFoundException
-     *         If you ran this action on the master account, this policy type is not enabled. If you ran the action on a
-     *         member account, the account doesn't have an effective policy of this type. Contact the administrator of
-     *         your organization about attaching a policy of this type to the account.
+     *         If you ran this action on the management account, this policy type is not enabled. If you ran the action
+     *         on a member account, the account doesn't have an effective policy of this type. Contact the administrator
+     *         of your organization about attaching a policy of this type to the account.
      * @throws InvalidInputException
      *         The requested operation failed because you provided invalid values for one or more of the request
      *         parameters. This exception includes a reason that contains additional information about the violated
@@ -6223,7 +6224,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * Retrieves information about an organizational unit (OU).
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -6432,7 +6433,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * Retrieves information about a policy.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -6659,7 +6660,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * .html#orgs_policies_denylist">deny list</a>".
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param detachPolicyRequest
@@ -6686,9 +6687,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from the organization. You
-     *         can't remove the master account. Instead, after you remove all member accounts, delete the organization
-     *         itself.
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
      *         </p>
      *         </li>
      *         <li>
@@ -6740,8 +6741,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master account of the
-     *         organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
      *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
@@ -6780,7 +6781,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
@@ -6795,12 +6796,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
-     *         address and phone number for the master account. Then try the operation again.
+     *         address and phone number for the management account. Then try the operation again.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -6808,9 +6809,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -7111,7 +7112,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * Organizations with Other AWS Services</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param disableAWSServiceAccessRequest
@@ -7138,9 +7139,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from the organization. You
-     *         can't remove the master account. Instead, after you remove all member accounts, delete the organization
-     *         itself.
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
      *         </p>
      *         </li>
      *         <li>
@@ -7192,8 +7193,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master account of the
-     *         organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
      *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
@@ -7232,7 +7233,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
@@ -7247,12 +7248,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
-     *         address and phone number for the master account. Then try the operation again.
+     *         address and phone number for the management account. Then try the operation again.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -7260,9 +7261,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -7540,7 +7541,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * status of policy types for a specified root, and then use this operation.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * <p>
      * To view the status of available policy types in the organization, use <a>DescribeOrganization</a>.
@@ -7570,9 +7571,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from the organization. You
-     *         can't remove the master account. Instead, after you remove all member accounts, delete the organization
-     *         itself.
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
      *         </p>
      *         </li>
      *         <li>
@@ -7624,8 +7625,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master account of the
-     *         organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
      *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
@@ -7664,7 +7665,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
@@ -7679,12 +7680,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
-     *         address and phone number for the master account. Then try the operation again.
+     *         address and phone number for the management account. Then try the operation again.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -7692,9 +7693,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -7989,10 +7990,10 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * Organizations with Other AWS Services</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account and only if the organization has <a
-     * href=
-     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">enabled all
-     * features</a>.
+     * This operation can be called only from the organization's management account and only if the organization has <a
+     * href
+     * ="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">enabled
+     * all features</a>.
      * </p>
      * 
      * @param enableAWSServiceAccessRequest
@@ -8019,9 +8020,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from the organization. You
-     *         can't remove the master account. Instead, after you remove all member accounts, delete the organization
-     *         itself.
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
      *         </p>
      *         </li>
      *         <li>
@@ -8073,8 +8074,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master account of the
-     *         organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
      *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
@@ -8113,7 +8114,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
@@ -8128,12 +8129,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
-     *         address and phone number for the master account. Then try the operation again.
+     *         address and phone number for the management account. Then try the operation again.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -8141,9 +8142,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -8432,13 +8433,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * handshake that contains <code>"Action": "ENABLE_ALL_FEATURES"</code>. This completes the change.
      * </p>
      * <p>
-     * After you enable all features in your organization, the master account in the organization can apply policies on
-     * all member accounts. These policies can restrict what users and even administrators in those accounts can do. The
-     * master account can apply policies that prevent accounts from leaving the organization. Ensure that your account
-     * administrators are aware of this.
+     * After you enable all features in your organization, the management account in the organization can apply policies
+     * on all member accounts. These policies can restrict what users and even administrators in those accounts can do.
+     * The management account can apply policies that prevent accounts from leaving the organization. Ensure that your
+     * account administrators are aware of this.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param enableAllFeaturesRequest
@@ -8713,7 +8714,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * <a>ListRoots</a> to see the status of policy types for a specified root, and then use this operation.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * <p>
      * You can enable a policy type in a root only if that policy type is available in the organization. To view the
@@ -8744,9 +8745,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from the organization. You
-     *         can't remove the master account. Instead, after you remove all member accounts, delete the organization
-     *         itself.
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
      *         </p>
      *         </li>
      *         <li>
@@ -8798,8 +8799,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master account of the
-     *         organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
      *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
@@ -8838,7 +8839,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
@@ -8853,12 +8854,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
-     *         address and phone number for the master account. Then try the operation again.
+     *         address and phone number for the management account. Then try the operation again.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -8866,9 +8867,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -9152,10 +9153,10 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * <ul>
      * <li>
      * <p>
-     * You can invite AWS accounts only from the same seller as the master account. For example, if your organization's
-     * master account was created by Amazon Internet Services Pvt. Ltd (AISPL), an AWS seller in India, you can invite
-     * only other AISPL accounts to your organization. You can't combine accounts from AISPL and AWS or from any other
-     * AWS seller. For more information, see <a
+     * You can invite AWS accounts only from the same seller as the management account. For example, if your
+     * organization's management account was created by Amazon Internet Services Pvt. Ltd (AISPL), an AWS seller in
+     * India, you can invite only other AISPL accounts to your organization. You can't combine accounts from AISPL and
+     * AWS or from any other AWS seller. For more information, see <a
      * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html"
      * >Consolidated Billing in India</a>.
      * </p>
@@ -9173,7 +9174,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param inviteAccountToOrganizationRequest
@@ -9188,7 +9189,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         account that belongs to an organization.
      * @throws AccountOwnerNotVerifiedException
      *         You can't invite an existing account to your organization until you verify that you own the email address
-     *         associated with the master account. For more information, see <a href=
+     *         associated with the management account. For more information, see <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_create.html#about-email-verification"
      *         >Email Address Verification</a> in the <i>AWS Organizations User Guide.</i>
      * @throws ConcurrentModificationException
@@ -9273,9 +9274,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from the organization. You
-     *         can't remove the master account. Instead, after you remove all member accounts, delete the organization
-     *         itself.
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
      *         </p>
      *         </li>
      *         <li>
@@ -9327,8 +9328,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master account of the
-     *         organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
      *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
@@ -9367,7 +9368,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
@@ -9382,12 +9383,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
-     *         address and phone number for the master account. Then try the operation again.
+     *         address and phone number for the management account. Then try the operation again.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -9395,9 +9396,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -9665,7 +9666,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
     /**
      * <p>
      * Removes a member account from its parent organization. This version of the operation is performed by the account
-     * that wants to leave. To remove a member account as a user in the master account, use
+     * that wants to leave. To remove a member account as a user in the management account, use
      * <a>RemoveAccountFromOrganization</a> instead.
      * </p>
      * <p>
@@ -9675,9 +9676,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * <ul>
      * <li>
      * <p>
-     * The master account in an organization with all features enabled can set service control policies (SCPs) that can
-     * restrict what administrators of member accounts can do. This includes preventing them from successfully calling
-     * <code>LeaveOrganization</code> and leaving the organization.
+     * The management account in an organization with all features enabled can set service control policies (SCPs) that
+     * can restrict what administrators of member accounts can do. This includes preventing them from successfully
+     * calling <code>LeaveOrganization</code> and leaving the organization.
      * </p>
      * </li>
      * <li>
@@ -9758,9 +9759,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from the organization. You
-     *         can't remove the master account. Instead, after you remove all member accounts, delete the organization
-     *         itself.
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
      *         </p>
      *         </li>
      *         <li>
@@ -9812,8 +9813,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master account of the
-     *         organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
      *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
@@ -9852,7 +9853,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
@@ -9867,12 +9868,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
-     *         address and phone number for the master account. Then try the operation again.
+     *         address and phone number for the management account. Then try the operation again.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -9880,9 +9881,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -10086,8 +10087,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </p>
      *         </li>
      * @throws MasterCannotLeaveOrganizationException
-     *         You can't remove a master account from an organization. If you want the master account to become a member
-     *         account in another organization, you must first delete the current organization of the master account.
+     *         You can't remove a management account from an organization. If you want the management account to become
+     *         a member account in another organization, you must first delete the current organization of the
+     *         management account.
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
@@ -10157,7 +10159,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * Organizations with Other AWS Services</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -10183,9 +10185,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from the organization. You
-     *         can't remove the master account. Instead, after you remove all member accounts, delete the organization
-     *         itself.
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
      *         </p>
      *         </li>
      *         <li>
@@ -10237,8 +10239,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master account of the
-     *         organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
      *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
@@ -10277,7 +10279,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
@@ -10292,12 +10294,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
-     *         address and phone number for the master account. Then try the operation again.
+     *         address and phone number for the management account. Then try the operation again.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -10305,9 +10307,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -10586,7 +10588,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -10802,7 +10804,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -11019,7 +11021,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -11235,7 +11237,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -11444,7 +11446,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * Lists the AWS accounts that are designated as delegated administrators in this organization.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -11470,9 +11472,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from the organization. You
-     *         can't remove the master account. Instead, after you remove all member accounts, delete the organization
-     *         itself.
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
      *         </p>
      *         </li>
      *         <li>
@@ -11524,8 +11526,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master account of the
-     *         organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
      *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
@@ -11564,7 +11566,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
@@ -11579,12 +11581,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
-     *         address and phone number for the master account. Then try the operation again.
+     *         address and phone number for the management account. Then try the operation again.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -11592,9 +11594,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -11862,7 +11864,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * List the AWS services for which the specified account is a delegated administrator.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -11893,9 +11895,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from the organization. You
-     *         can't remove the master account. Instead, after you remove all member accounts, delete the organization
-     *         itself.
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
      *         </p>
      *         </li>
      *         <li>
@@ -11947,8 +11949,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master account of the
-     *         organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
      *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
@@ -11987,7 +11989,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
@@ -12002,12 +12004,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
-     *         address and phone number for the master account. Then try the operation again.
+     *         address and phone number for the management account. Then try the operation again.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -12015,9 +12017,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -12517,7 +12519,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -12734,7 +12736,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -12954,7 +12956,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * <note>
@@ -13175,7 +13177,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -13391,7 +13393,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -13609,7 +13611,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * <note>
@@ -13847,7 +13849,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </li>
      * </ul>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -14062,7 +14064,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -14272,7 +14274,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * parent root or OU.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param moveAccountRequest
@@ -14495,7 +14497,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * that you can use with AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param registerDelegatedAdministratorRequest
@@ -14527,9 +14529,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from the organization. You
-     *         can't remove the master account. Instead, after you remove all member accounts, delete the organization
-     *         itself.
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
      *         </p>
      *         </li>
      *         <li>
@@ -14581,8 +14583,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master account of the
-     *         organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
      *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
@@ -14621,7 +14623,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
@@ -14636,12 +14638,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
-     *         address and phone number for the master account. Then try the operation again.
+     *         address and phone number for the management account. Then try the operation again.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -14649,9 +14651,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -14920,12 +14922,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </p>
      * <p>
      * The removed account becomes a standalone account that isn't a member of any organization. It's no longer subject
-     * to any policies and is responsible for its own bill payments. The organization's master account is no longer
+     * to any policies and is responsible for its own bill payments. The organization's management account is no longer
      * charged for any expenses accrued by the member account after it's removed from the organization.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account. Member accounts can remove themselves
-     * with <a>LeaveOrganization</a> instead.
+     * This operation can be called only from the organization's management account. Member accounts can remove
+     * themselves with <a>LeaveOrganization</a> instead.
      * </p>
      * <important>
      * <ul>
@@ -14980,9 +14982,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from the organization. You
-     *         can't remove the master account. Instead, after you remove all member accounts, delete the organization
-     *         itself.
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
      *         </p>
      *         </li>
      *         <li>
@@ -15034,8 +15036,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master account of the
-     *         organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
      *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
@@ -15074,7 +15076,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
@@ -15089,12 +15091,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
-     *         address and phone number for the master account. Then try the operation again.
+     *         address and phone number for the management account. Then try the operation again.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -15102,9 +15104,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -15308,8 +15310,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </p>
      *         </li>
      * @throws MasterCannotLeaveOrganizationException
-     *         You can't remove a master account from an organization. If you want the master account to become a member
-     *         account in another organization, you must first delete the current organization of the master account.
+     *         You can't remove a management account from an organization. If you want the management account to become
+     *         a member account in another organization, you must first delete the current organization of the
+     *         management account.
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
@@ -15398,7 +15401,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </li>
      * </ul>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param tagResourceRequest
@@ -15427,9 +15430,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from the organization. You
-     *         can't remove the master account. Instead, after you remove all member accounts, delete the organization
-     *         itself.
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
      *         </p>
      *         </li>
      *         <li>
@@ -15481,8 +15484,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master account of the
-     *         organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
      *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
@@ -15521,7 +15524,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
@@ -15536,12 +15539,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
-     *         address and phone number for the master account. Then try the operation again.
+     *         address and phone number for the management account. Then try the operation again.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -15549,9 +15552,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -15840,7 +15843,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </li>
      * </ul>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param untagResourceRequest
@@ -15869,9 +15872,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from the organization. You
-     *         can't remove the master account. Instead, after you remove all member accounts, delete the organization
-     *         itself.
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
      *         </p>
      *         </li>
      *         <li>
@@ -15923,8 +15926,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master account of the
-     *         organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
      *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
@@ -15963,7 +15966,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
@@ -15978,12 +15981,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
-     *         address and phone number for the master account. Then try the operation again.
+     *         address and phone number for the management account. Then try the operation again.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -15991,9 +15994,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -16258,7 +16261,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * place, and any attached policies of the OU remain attached.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param updateOrganizationalUnitRequest
@@ -16471,7 +16474,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * value remains unchanged. You can't change a policy's type.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param updatePolicyRequest
@@ -16498,9 +16501,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from the organization. You
-     *         can't remove the master account. Instead, after you remove all member accounts, delete the organization
-     *         itself.
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
      *         </p>
      *         </li>
      *         <li>
@@ -16552,8 +16555,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master account of the
-     *         organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
      *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
@@ -16592,7 +16595,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
@@ -16607,12 +16610,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
-     *         address and phone number for the master account. Then try the operation again.
+     *         address and phone number for the management account. Then try the operation again.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -16620,9 +16623,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>

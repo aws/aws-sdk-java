@@ -46,7 +46,8 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      * <li>
      * <p>
      * <code>product-description</code> - The product description for the Spot price (<code>Linux/UNIX</code> |
-     * <code>SUSE Linux</code> | <code>Windows</code> | <code>Linux/UNIX (Amazon VPC)</code> |
+     * <code>Red Hat Enterprise Linux</code> | <code>SUSE Linux</code> | <code>Windows</code> |
+     * <code>Linux/UNIX (Amazon VPC)</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> |
      * <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon VPC)</code>).
      * </p>
      * </li>
@@ -130,7 +131,8 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      * <li>
      * <p>
      * <code>product-description</code> - The product description for the Spot price (<code>Linux/UNIX</code> |
-     * <code>SUSE Linux</code> | <code>Windows</code> | <code>Linux/UNIX (Amazon VPC)</code> |
+     * <code>Red Hat Enterprise Linux</code> | <code>SUSE Linux</code> | <code>Windows</code> |
+     * <code>Linux/UNIX (Amazon VPC)</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> |
      * <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon VPC)</code>).
      * </p>
      * </li>
@@ -164,7 +166,8 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      *         <li>
      *         <p>
      *         <code>product-description</code> - The product description for the Spot price (<code>Linux/UNIX</code> |
-     *         <code>SUSE Linux</code> | <code>Windows</code> | <code>Linux/UNIX (Amazon VPC)</code> |
+     *         <code>Red Hat Enterprise Linux</code> | <code>SUSE Linux</code> | <code>Windows</code> |
+     *         <code>Linux/UNIX (Amazon VPC)</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> |
      *         <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon VPC)</code>).
      *         </p>
      *         </li>
@@ -208,7 +211,8 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      * <li>
      * <p>
      * <code>product-description</code> - The product description for the Spot price (<code>Linux/UNIX</code> |
-     * <code>SUSE Linux</code> | <code>Windows</code> | <code>Linux/UNIX (Amazon VPC)</code> |
+     * <code>Red Hat Enterprise Linux</code> | <code>SUSE Linux</code> | <code>Windows</code> |
+     * <code>Linux/UNIX (Amazon VPC)</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> |
      * <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon VPC)</code>).
      * </p>
      * </li>
@@ -243,7 +247,8 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      *        <li>
      *        <p>
      *        <code>product-description</code> - The product description for the Spot price (<code>Linux/UNIX</code> |
-     *        <code>SUSE Linux</code> | <code>Windows</code> | <code>Linux/UNIX (Amazon VPC)</code> |
+     *        <code>Red Hat Enterprise Linux</code> | <code>SUSE Linux</code> | <code>Windows</code> |
+     *        <code>Linux/UNIX (Amazon VPC)</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> |
      *        <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon VPC)</code>).
      *        </p>
      *        </li>
@@ -289,7 +294,8 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      * <li>
      * <p>
      * <code>product-description</code> - The product description for the Spot price (<code>Linux/UNIX</code> |
-     * <code>SUSE Linux</code> | <code>Windows</code> | <code>Linux/UNIX (Amazon VPC)</code> |
+     * <code>Red Hat Enterprise Linux</code> | <code>SUSE Linux</code> | <code>Windows</code> |
+     * <code>Linux/UNIX (Amazon VPC)</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> |
      * <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon VPC)</code>).
      * </p>
      * </li>
@@ -329,7 +335,8 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      *        <li>
      *        <p>
      *        <code>product-description</code> - The product description for the Spot price (<code>Linux/UNIX</code> |
-     *        <code>SUSE Linux</code> | <code>Windows</code> | <code>Linux/UNIX (Amazon VPC)</code> |
+     *        <code>Red Hat Enterprise Linux</code> | <code>SUSE Linux</code> | <code>Windows</code> |
+     *        <code>Linux/UNIX (Amazon VPC)</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> |
      *        <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon VPC)</code>).
      *        </p>
      *        </li>
@@ -377,7 +384,8 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      * <li>
      * <p>
      * <code>product-description</code> - The product description for the Spot price (<code>Linux/UNIX</code> |
-     * <code>SUSE Linux</code> | <code>Windows</code> | <code>Linux/UNIX (Amazon VPC)</code> |
+     * <code>Red Hat Enterprise Linux</code> | <code>SUSE Linux</code> | <code>Windows</code> |
+     * <code>Linux/UNIX (Amazon VPC)</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> |
      * <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon VPC)</code>).
      * </p>
      * </li>
@@ -412,7 +420,8 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      *        <li>
      *        <p>
      *        <code>product-description</code> - The product description for the Spot price (<code>Linux/UNIX</code> |
-     *        <code>SUSE Linux</code> | <code>Windows</code> | <code>Linux/UNIX (Amazon VPC)</code> |
+     *        <code>Red Hat Enterprise Linux</code> | <code>SUSE Linux</code> | <code>Windows</code> |
+     *        <code>Linux/UNIX (Amazon VPC)</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> |
      *        <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon VPC)</code>).
      *        </p>
      *        </li>

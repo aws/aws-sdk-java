@@ -17928,7 +17928,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * terminated instances are ignored.
      * </p>
      * <p>
-     * If an instance does not cleanly shut down within four minutes, Amazon EC2 performs a hard reboot.
+     * If an instance does not cleanly shut down within a few minutes, Amazon EC2 performs a hard reboot.
      * </p>
      * <p>
      * For more information about troubleshooting, see <a
@@ -17951,7 +17951,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * terminated instances are ignored.
      * </p>
      * <p>
-     * If an instance does not cleanly shut down within four minutes, Amazon EC2 performs a hard reboot.
+     * If an instance does not cleanly shut down within a few minutes, Amazon EC2 performs a hard reboot.
      * </p>
      * <p>
      * For more information about troubleshooting, see <a

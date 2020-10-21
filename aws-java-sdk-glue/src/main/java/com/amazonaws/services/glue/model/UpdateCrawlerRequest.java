@@ -87,6 +87,13 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
     private SchemaChangePolicy schemaChangePolicy;
     /**
      * <p>
+     * A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since
+     * the last crawler run.
+     * </p>
+     */
+    private RecrawlPolicy recrawlPolicy;
+    /**
+     * <p>
      * Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's
      * behavior. For more information, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
@@ -534,6 +541,52 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since
+     * the last crawler run.
+     * </p>
+     * 
+     * @param recrawlPolicy
+     *        A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were
+     *        added since the last crawler run.
+     */
+
+    public void setRecrawlPolicy(RecrawlPolicy recrawlPolicy) {
+        this.recrawlPolicy = recrawlPolicy;
+    }
+
+    /**
+     * <p>
+     * A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since
+     * the last crawler run.
+     * </p>
+     * 
+     * @return A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were
+     *         added since the last crawler run.
+     */
+
+    public RecrawlPolicy getRecrawlPolicy() {
+        return this.recrawlPolicy;
+    }
+
+    /**
+     * <p>
+     * A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since
+     * the last crawler run.
+     * </p>
+     * 
+     * @param recrawlPolicy
+     *        A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were
+     *        added since the last crawler run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateCrawlerRequest withRecrawlPolicy(RecrawlPolicy recrawlPolicy) {
+        setRecrawlPolicy(recrawlPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
      * Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's
      * behavior. For more information, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
@@ -654,6 +707,8 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("TablePrefix: ").append(getTablePrefix()).append(",");
         if (getSchemaChangePolicy() != null)
             sb.append("SchemaChangePolicy: ").append(getSchemaChangePolicy()).append(",");
+        if (getRecrawlPolicy() != null)
+            sb.append("RecrawlPolicy: ").append(getRecrawlPolicy()).append(",");
         if (getConfiguration() != null)
             sb.append("Configuration: ").append(getConfiguration()).append(",");
         if (getCrawlerSecurityConfiguration() != null)
@@ -708,6 +763,10 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getSchemaChangePolicy() != null && other.getSchemaChangePolicy().equals(this.getSchemaChangePolicy()) == false)
             return false;
+        if (other.getRecrawlPolicy() == null ^ this.getRecrawlPolicy() == null)
+            return false;
+        if (other.getRecrawlPolicy() != null && other.getRecrawlPolicy().equals(this.getRecrawlPolicy()) == false)
+            return false;
         if (other.getConfiguration() == null ^ this.getConfiguration() == null)
             return false;
         if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
@@ -733,6 +792,7 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getClassifiers() == null) ? 0 : getClassifiers().hashCode());
         hashCode = prime * hashCode + ((getTablePrefix() == null) ? 0 : getTablePrefix().hashCode());
         hashCode = prime * hashCode + ((getSchemaChangePolicy() == null) ? 0 : getSchemaChangePolicy().hashCode());
+        hashCode = prime * hashCode + ((getRecrawlPolicy() == null) ? 0 : getRecrawlPolicy().hashCode());
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCrawlerSecurityConfiguration() == null) ? 0 : getCrawlerSecurityConfiguration().hashCode());
         return hashCode;

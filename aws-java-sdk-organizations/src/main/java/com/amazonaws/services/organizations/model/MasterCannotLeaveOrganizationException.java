@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You can't remove a master account from an organization. If you want the master account to become a member account in
- * another organization, you must first delete the current organization of the master account.
+ * You can't remove a management account from an organization. If you want the management account to become a member
+ * account in another organization, you must first delete the current organization of the management account.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

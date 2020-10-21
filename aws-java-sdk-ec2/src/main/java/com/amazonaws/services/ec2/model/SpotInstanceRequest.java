@@ -137,12 +137,23 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     private java.util.Date validFrom;
     /**
      * <p>
-     * The end date of the request, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If this is a one-time request, it remains active
-     * until all instances launch, the request is canceled, or this date is reached. If the request is persistent, it
-     * remains active until it is canceled or this date is reached. The default end date is 7 days from the current
-     * date.
+     * The end date of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For a persistent request, the request remains active until the <code>validUntil</code> date and time is reached.
+     * Otherwise, the request remains active until you cancel it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For a one-time request, the request remains active until all instances launch, the request is canceled, or the
+     * <code>validUntil</code> date and time is reached. By default, the request is valid for 7 days from the date the
+     * request was created.
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.Date validUntil;
     /**
@@ -1021,19 +1032,41 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The end date of the request, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If this is a one-time request, it remains active
-     * until all instances launch, the request is canceled, or this date is reached. If the request is persistent, it
-     * remains active until it is canceled or this date is reached. The default end date is 7 days from the current
-     * date.
+     * The end date of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For a persistent request, the request remains active until the <code>validUntil</code> date and time is reached.
+     * Otherwise, the request remains active until you cancel it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For a one-time request, the request remains active until all instances launch, the request is canceled, or the
+     * <code>validUntil</code> date and time is reached. By default, the request is valid for 7 days from the date the
+     * request was created.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param validUntil
-     *        The end date of the request, in UTC format (for example,
-     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If this is a one-time request, it remains
-     *        active until all instances launch, the request is canceled, or this date is reached. If the request is
-     *        persistent, it remains active until it is canceled or this date is reached. The default end date is 7 days
-     *        from the current date.
+     *        The end date of the request, in UTC format
+     *        (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For a persistent request, the request remains active until the <code>validUntil</code> date and time is
+     *        reached. Otherwise, the request remains active until you cancel it.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For a one-time request, the request remains active until all instances launch, the request is canceled, or
+     *        the <code>validUntil</code> date and time is reached. By default, the request is valid for 7 days from the
+     *        date the request was created.
+     *        </p>
+     *        </li>
      */
 
     public void setValidUntil(java.util.Date validUntil) {
@@ -1042,18 +1075,40 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The end date of the request, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If this is a one-time request, it remains active
-     * until all instances launch, the request is canceled, or this date is reached. If the request is persistent, it
-     * remains active until it is canceled or this date is reached. The default end date is 7 days from the current
-     * date.
+     * The end date of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For a persistent request, the request remains active until the <code>validUntil</code> date and time is reached.
+     * Otherwise, the request remains active until you cancel it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For a one-time request, the request remains active until all instances launch, the request is canceled, or the
+     * <code>validUntil</code> date and time is reached. By default, the request is valid for 7 days from the date the
+     * request was created.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The end date of the request, in UTC format (for example,
-     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If this is a one-time request, it
-     *         remains active until all instances launch, the request is canceled, or this date is reached. If the
-     *         request is persistent, it remains active until it is canceled or this date is reached. The default end
-     *         date is 7 days from the current date.
+     * @return The end date of the request, in UTC format
+     *         (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For a persistent request, the request remains active until the <code>validUntil</code> date and time is
+     *         reached. Otherwise, the request remains active until you cancel it.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For a one-time request, the request remains active until all instances launch, the request is canceled,
+     *         or the <code>validUntil</code> date and time is reached. By default, the request is valid for 7 days from
+     *         the date the request was created.
+     *         </p>
+     *         </li>
      */
 
     public java.util.Date getValidUntil() {
@@ -1062,19 +1117,41 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The end date of the request, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If this is a one-time request, it remains active
-     * until all instances launch, the request is canceled, or this date is reached. If the request is persistent, it
-     * remains active until it is canceled or this date is reached. The default end date is 7 days from the current
-     * date.
+     * The end date of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For a persistent request, the request remains active until the <code>validUntil</code> date and time is reached.
+     * Otherwise, the request remains active until you cancel it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For a one-time request, the request remains active until all instances launch, the request is canceled, or the
+     * <code>validUntil</code> date and time is reached. By default, the request is valid for 7 days from the date the
+     * request was created.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param validUntil
-     *        The end date of the request, in UTC format (for example,
-     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If this is a one-time request, it remains
-     *        active until all instances launch, the request is canceled, or this date is reached. If the request is
-     *        persistent, it remains active until it is canceled or this date is reached. The default end date is 7 days
-     *        from the current date.
+     *        The end date of the request, in UTC format
+     *        (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For a persistent request, the request remains active until the <code>validUntil</code> date and time is
+     *        reached. Otherwise, the request remains active until you cancel it.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For a one-time request, the request remains active until all instances launch, the request is canceled, or
+     *        the <code>validUntil</code> date and time is reached. By default, the request is valid for 7 days from the
+     *        date the request was created.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,18 +27,18 @@ public class CreatePublicKeyRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The request to add a public key to CloudFront.
+     * A CloudFront public key configuration.
      * </p>
      */
     private PublicKeyConfig publicKeyConfig;
 
     /**
      * <p>
-     * The request to add a public key to CloudFront.
+     * A CloudFront public key configuration.
      * </p>
      * 
      * @param publicKeyConfig
-     *        The request to add a public key to CloudFront.
+     *        A CloudFront public key configuration.
      */
 
     public void setPublicKeyConfig(PublicKeyConfig publicKeyConfig) {
@@ -47,10 +47,10 @@ public class CreatePublicKeyRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The request to add a public key to CloudFront.
+     * A CloudFront public key configuration.
      * </p>
      * 
-     * @return The request to add a public key to CloudFront.
+     * @return A CloudFront public key configuration.
      */
 
     public PublicKeyConfig getPublicKeyConfig() {
@@ -59,11 +59,11 @@ public class CreatePublicKeyRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The request to add a public key to CloudFront.
+     * A CloudFront public key configuration.
      * </p>
      * 
      * @param publicKeyConfig
-     *        The request to add a public key to CloudFront.
+     *        A CloudFront public key configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

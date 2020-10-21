@@ -1,3 +1,28 @@
+# __1.11.885__ __2020-10-21__
+## __AWS Global Accelerator__
+  - ### Features
+    - This release adds support for specifying port overrides on AWS Global Accelerator endpoint groups.
+
+## __AWS Glue__
+  - ### Features
+    - AWS Glue crawlers now support incremental crawls for the Amazon Simple Storage Service (Amazon S3) data source.
+
+## __AWS Organizations__
+  - ### Features
+    - AWS Organizations renamed the 'master account' to 'management account'.
+
+## __AWSKendraFrontendService__
+  - ### Features
+    - This release adds custom data sources: a new data source type that gives you full control of the documents added, modified or deleted during a data source sync while providing run history metrics.
+
+## __Amazon CloudFront__
+  - ### Features
+    - CloudFront adds support for managing the public keys for signed URLs and signed cookies directly in CloudFront (it no longer requires the AWS root account).
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - instance-storage-info nvmeSupport added to DescribeInstanceTypes API
+
 # __1.11.884__ __2020-10-20__
 ## __AWS AppSync__
   - ### Features

@@ -46,6 +46,8 @@ public class UpdateCrawlerRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TablePrefix").build();
     private static final MarshallingInfo<StructuredPojo> SCHEMACHANGEPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SchemaChangePolicy").build();
+    private static final MarshallingInfo<StructuredPojo> RECRAWLPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecrawlPolicy").build();
     private static final MarshallingInfo<String> CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Configuration").build();
     private static final MarshallingInfo<String> CRAWLERSECURITYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -76,6 +78,7 @@ public class UpdateCrawlerRequestMarshaller {
             protocolMarshaller.marshall(updateCrawlerRequest.getClassifiers(), CLASSIFIERS_BINDING);
             protocolMarshaller.marshall(updateCrawlerRequest.getTablePrefix(), TABLEPREFIX_BINDING);
             protocolMarshaller.marshall(updateCrawlerRequest.getSchemaChangePolicy(), SCHEMACHANGEPOLICY_BINDING);
+            protocolMarshaller.marshall(updateCrawlerRequest.getRecrawlPolicy(), RECRAWLPOLICY_BINDING);
             protocolMarshaller.marshall(updateCrawlerRequest.getConfiguration(), CONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateCrawlerRequest.getCrawlerSecurityConfiguration(), CRAWLERSECURITYCONFIGURATION_BINDING);
         } catch (Exception e) {

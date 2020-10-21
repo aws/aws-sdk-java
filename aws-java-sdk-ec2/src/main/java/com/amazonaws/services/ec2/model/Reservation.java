@@ -17,7 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes a reservation.
+ * Describes a launch request for one or more instances, and includes owner, requester, and security group information
+ * that applies to all instances in the launch request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Reservation" target="_top">AWS API

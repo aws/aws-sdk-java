@@ -342,6 +342,18 @@ public interface AmazonCloudFront {
      *         more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
      *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyDistributionsAssociatedToKeyGroupException
+     *         The number of distributions that reference this key group is more than the maximum allowed. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyKeyGroupsAssociatedToDistributionException
+     *         The number of key groups referenced by this distribution is more than the maximum allowed. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TrustedKeyGroupDoesNotExistException
+     *         The specified key group does not exist.
      * @sample AmazonCloudFront.CreateDistribution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistribution" target="_top">AWS
      *      API Documentation</a>
@@ -475,6 +487,18 @@ public interface AmazonCloudFront {
      *         more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
      *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyDistributionsAssociatedToKeyGroupException
+     *         The number of distributions that reference this key group is more than the maximum allowed. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyKeyGroupsAssociatedToDistributionException
+     *         The number of key groups referenced by this distribution is more than the maximum allowed. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TrustedKeyGroupDoesNotExistException
+     *         The specified key group does not exist.
      * @sample AmazonCloudFront.CreateDistributionWithTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistributionWithTags"
      *      target="_top">AWS API Documentation</a>
@@ -568,6 +592,46 @@ public interface AmazonCloudFront {
      *      API Documentation</a>
      */
     CreateInvalidationResult createInvalidation(CreateInvalidationRequest createInvalidationRequest);
+
+    /**
+     * <p>
+     * Creates a key group that you can use with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">CloudFront signed
+     * URLs and signed cookies</a>.
+     * </p>
+     * <p>
+     * To create a key group, you must specify at least one public key for the key group. After you create a key group,
+     * you can reference it from one or more cache behaviors. When you reference a key group in a cache behavior,
+     * CloudFront requires signed URLs or signed cookies for all requests that match the cache behavior. The URLs or
+     * cookies must be signed with a private key whose corresponding public key is in the key group. The signed URL or
+     * cookie contains information about which public key CloudFront should use to verify the signature. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private
+     * content</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param createKeyGroupRequest
+     * @return Result of the CreateKeyGroup operation returned by the service.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @throws KeyGroupAlreadyExistsException
+     *         A key group with this name already exists. You must provide a unique name. To modify an existing key
+     *         group, use <code>UpdateKeyGroup</code>.
+     * @throws TooManyKeyGroupsException
+     *         You have reached the maximum number of key groups for this AWS account. For more information, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+     *         (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyPublicKeysInKeyGroupException
+     *         The number of public keys in this key group is more than the maximum allowed. For more information, see
+     *         <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas
+     *         </a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @sample AmazonCloudFront.CreateKeyGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateKeyGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateKeyGroupResult createKeyGroup(CreateKeyGroupRequest createKeyGroupRequest);
 
     /**
      * <p>
@@ -670,8 +734,11 @@ public interface AmazonCloudFront {
 
     /**
      * <p>
-     * Add a new public key to CloudFront to use, for example, for field-level encryption. You can add a maximum of 10
-     * public keys with one AWS account.
+     * Uploads a public key to CloudFront that you can use with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and
+     * signed cookies</a>, or with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level
+     * encryption</a>.
      * </p>
      * 
      * @param createPublicKeyRequest
@@ -715,6 +782,8 @@ public interface AmazonCloudFront {
      *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
      * @throws InvalidArgumentException
      *         An argument is invalid.
+     * @throws AccessDeniedException
+     *         Access denied.
      * @sample AmazonCloudFront.CreateRealtimeLogConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateRealtimeLogConfig"
      *      target="_top">AWS API Documentation</a>
@@ -1023,6 +1092,35 @@ public interface AmazonCloudFront {
 
     /**
      * <p>
+     * Deletes a key group.
+     * </p>
+     * <p>
+     * You cannot delete a key group that is referenced in a cache behavior. First update your distributions to remove
+     * the key group from all cache behaviors, then delete the key group.
+     * </p>
+     * <p>
+     * To delete a key group, you must provide the key group’s identifier and version. To get these values, use
+     * <code>ListKeyGroups</code> followed by <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.
+     * </p>
+     * 
+     * @param deleteKeyGroupRequest
+     * @return Result of the DeleteKeyGroup operation returned by the service.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid.
+     * @throws NoSuchResourceException
+     *         A resource that was specified is not valid.
+     * @throws PreconditionFailedException
+     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     * @throws ResourceInUseException
+     *         Cannot delete this resource because it is in use.
+     * @sample AmazonCloudFront.DeleteKeyGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteKeyGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteKeyGroupResult deleteKeyGroup(DeleteKeyGroupRequest deleteKeyGroupRequest);
+
+    /**
+     * <p>
      * Disables additional CloudWatch metrics for the specified CloudFront distribution.
      * </p>
      * 
@@ -1118,6 +1216,8 @@ public interface AmazonCloudFront {
      *         Cannot delete the real-time log configuration because it is attached to one or more cache behaviors.
      * @throws InvalidArgumentException
      *         An argument is invalid.
+     * @throws AccessDeniedException
+     *         Access denied.
      * @sample AmazonCloudFront.DeleteRealtimeLogConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteRealtimeLogConfig"
      *      target="_top">AWS API Documentation</a>
@@ -1435,6 +1535,48 @@ public interface AmazonCloudFront {
 
     /**
      * <p>
+     * Gets a key group, including the date and time when the key group was last modified.
+     * </p>
+     * <p>
+     * To get a key group, you must provide the key group’s identifier. If the key group is referenced in a
+     * distribution’s cache behavior, you can get the key group’s identifier using <code>ListDistributions</code> or
+     * <code>GetDistribution</code>. If the key group is not referenced in a cache behavior, you can get the identifier
+     * using <code>ListKeyGroups</code>.
+     * </p>
+     * 
+     * @param getKeyGroupRequest
+     * @return Result of the GetKeyGroup operation returned by the service.
+     * @throws NoSuchResourceException
+     *         A resource that was specified is not valid.
+     * @sample AmazonCloudFront.GetKeyGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetKeyGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetKeyGroupResult getKeyGroup(GetKeyGroupRequest getKeyGroupRequest);
+
+    /**
+     * <p>
+     * Gets a key group configuration.
+     * </p>
+     * <p>
+     * To get a key group configuration, you must provide the key group’s identifier. If the key group is referenced in
+     * a distribution’s cache behavior, you can get the key group’s identifier using <code>ListDistributions</code> or
+     * <code>GetDistribution</code>. If the key group is not referenced in a cache behavior, you can get the identifier
+     * using <code>ListKeyGroups</code>.
+     * </p>
+     * 
+     * @param getKeyGroupConfigRequest
+     * @return Result of the GetKeyGroupConfig operation returned by the service.
+     * @throws NoSuchResourceException
+     *         A resource that was specified is not valid.
+     * @sample AmazonCloudFront.GetKeyGroupConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetKeyGroupConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetKeyGroupConfigResult getKeyGroupConfig(GetKeyGroupConfigRequest getKeyGroupConfigRequest);
+
+    /**
+     * <p>
      * Gets information about whether additional CloudWatch metrics are enabled for the specified CloudFront
      * distribution.
      * </p>
@@ -1511,7 +1653,7 @@ public interface AmazonCloudFront {
 
     /**
      * <p>
-     * Get the public key information.
+     * Gets a public key.
      * </p>
      * 
      * @param getPublicKeyRequest
@@ -1528,7 +1670,7 @@ public interface AmazonCloudFront {
 
     /**
      * <p>
-     * Return public key configuration informaation
+     * Gets a public key configuration.
      * </p>
      * 
      * @param getPublicKeyConfigRequest
@@ -1559,6 +1701,8 @@ public interface AmazonCloudFront {
      *         The real-time log configuration does not exist.
      * @throws InvalidArgumentException
      *         An argument is invalid.
+     * @throws AccessDeniedException
+     *         Access denied.
      * @sample AmazonCloudFront.GetRealtimeLogConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetRealtimeLogConfig"
      *      target="_top">AWS API Documentation</a>
@@ -1691,6 +1835,30 @@ public interface AmazonCloudFront {
 
     /**
      * <p>
+     * Gets a list of distribution IDs for distributions that have a cache behavior that references the specified key
+     * group.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listDistributionsByKeyGroupRequest
+     * @return Result of the ListDistributionsByKeyGroup operation returned by the service.
+     * @throws NoSuchResourceException
+     *         A resource that was specified is not valid.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @sample AmazonCloudFront.ListDistributionsByKeyGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByKeyGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListDistributionsByKeyGroupResult listDistributionsByKeyGroup(ListDistributionsByKeyGroupRequest listDistributionsByKeyGroupRequest);
+
+    /**
+     * <p>
      * Gets a list of distribution IDs for distributions that have a cache behavior that’s associated with the specified
      * origin request policy.
      * </p>
@@ -1819,6 +1987,27 @@ public interface AmazonCloudFront {
 
     /**
      * <p>
+     * Gets a list of key groups.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listKeyGroupsRequest
+     * @return Result of the ListKeyGroups operation returned by the service.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @sample AmazonCloudFront.ListKeyGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListKeyGroups" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListKeyGroupsResult listKeyGroups(ListKeyGroupsRequest listKeyGroupsRequest);
+
+    /**
+     * <p>
      * Gets a list of origin request policies.
      * </p>
      * <p>
@@ -1874,6 +2063,12 @@ public interface AmazonCloudFront {
      * 
      * @param listRealtimeLogConfigsRequest
      * @return Result of the ListRealtimeLogConfigs operation returned by the service.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws NoSuchRealtimeLogConfigException
+     *         The real-time log configuration does not exist.
      * @sample AmazonCloudFront.ListRealtimeLogConfigs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListRealtimeLogConfigs"
      *      target="_top">AWS API Documentation</a>
@@ -2289,6 +2484,18 @@ public interface AmazonCloudFront {
      *         more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
      *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyDistributionsAssociatedToKeyGroupException
+     *         The number of distributions that reference this key group is more than the maximum allowed. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyKeyGroupsAssociatedToDistributionException
+     *         The number of key groups referenced by this distribution is more than the maximum allowed. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TrustedKeyGroupDoesNotExistException
+     *         The specified key group does not exist.
      * @sample AmazonCloudFront.UpdateDistribution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistribution" target="_top">AWS
      *      API Documentation</a>
@@ -2366,6 +2573,57 @@ public interface AmazonCloudFront {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateFieldLevelEncryptionProfileResult updateFieldLevelEncryptionProfile(UpdateFieldLevelEncryptionProfileRequest updateFieldLevelEncryptionProfileRequest);
+
+    /**
+     * <p>
+     * Updates a key group.
+     * </p>
+     * <p>
+     * When you update a key group, all the fields are updated with the values provided in the request. You cannot
+     * update some fields independent of others. To update a key group:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Get the current key group with <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Locally modify the fields in the key group that you want to update. For example, add or remove public key IDs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Call <code>UpdateKeyGroup</code> with the entire key group object, including the fields that you modified and
+     * those that you didn’t.
+     * </p>
+     * </li>
+     * </ol>
+     * 
+     * @param updateKeyGroupRequest
+     * @return Result of the UpdateKeyGroup operation returned by the service.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid.
+     * @throws NoSuchResourceException
+     *         A resource that was specified is not valid.
+     * @throws PreconditionFailedException
+     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     * @throws KeyGroupAlreadyExistsException
+     *         A key group with this name already exists. You must provide a unique name. To modify an existing key
+     *         group, use <code>UpdateKeyGroup</code>.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @throws TooManyPublicKeysInKeyGroupException
+     *         The number of public keys in this key group is more than the maximum allowed. For more information, see
+     *         <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas
+     *         </a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @sample AmazonCloudFront.UpdateKeyGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateKeyGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateKeyGroupResult updateKeyGroup(UpdateKeyGroupRequest updateKeyGroupRequest);
 
     /**
      * <p>
@@ -2498,6 +2756,8 @@ public interface AmazonCloudFront {
      *         The real-time log configuration does not exist.
      * @throws InvalidArgumentException
      *         An argument is invalid.
+     * @throws AccessDeniedException
+     *         Access denied.
      * @sample AmazonCloudFront.UpdateRealtimeLogConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateRealtimeLogConfig"
      *      target="_top">AWS API Documentation</a>

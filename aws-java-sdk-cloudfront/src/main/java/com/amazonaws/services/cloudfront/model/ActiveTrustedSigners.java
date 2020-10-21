@@ -17,19 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A complex type that lists the AWS accounts, if any, that you included in the <code>TrustedSigners</code> complex type
- * for this distribution. These are the accounts that you want to allow to create signed URLs for private content.
- * </p>
- * <p>
- * The <code>Signer</code> complex type lists the AWS account number of the trusted signer or <code>self</code> if the
- * signer is the AWS account that created the distribution. The <code>Signer</code> element also includes the IDs of any
- * active CloudFront key pairs that are associated with the trusted signer's AWS account. If no <code>KeyPairId</code>
- * element appears for a <code>Signer</code>, that signer can't create signed URLs.
- * </p>
- * <p>
- * For more information, see <a
- * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content
- * through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
+ * A list of AWS accounts and the active CloudFront key pairs in each account that CloudFront can use to verify the
+ * signatures of signed URLs and signed cookies.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ActiveTrustedSigners" target="_top">AWS
@@ -40,21 +29,22 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Enabled is <code>true</code> if any of the AWS accounts listed in the <code>TrustedSigners</code> complex type
-     * for this distribution have active CloudFront key pairs. If not, <code>Enabled</code> is <code>false</code>.
+     * This field is <code>true</code> if any of the AWS accounts in the list have active CloudFront key pairs that
+     * CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
+     * <code>false</code>.
      * </p>
      */
     private Boolean enabled;
     /**
      * <p>
-     * The number of trusted signers specified in the <code>TrustedSigners</code> complex type.
+     * The number of AWS accounts in the list.
      * </p>
      */
     private Integer quantity;
     /**
      * <p>
-     * A complex type that contains one <code>Signer</code> complex type for each trusted signer that is specified in
-     * the <code>TrustedSigners</code> complex type.
+     * A list of AWS accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use
+     * to verify the signatures of signed URLs and signed cookies.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Signer> items;
@@ -71,8 +61,8 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
      * initialize any additional object members.
      * 
      * @param items
-     *        A complex type that contains one <code>Signer</code> complex type for each trusted signer that is
-     *        specified in the <code>TrustedSigners</code> complex type.
+     *        A list of AWS accounts and the identifiers of active CloudFront key pairs in each account that CloudFront
+     *        can use to verify the signatures of signed URLs and signed cookies.
      */
     public ActiveTrustedSigners(java.util.List<Signer> items) {
         setItems(items);
@@ -80,13 +70,14 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Enabled is <code>true</code> if any of the AWS accounts listed in the <code>TrustedSigners</code> complex type
-     * for this distribution have active CloudFront key pairs. If not, <code>Enabled</code> is <code>false</code>.
+     * This field is <code>true</code> if any of the AWS accounts in the list have active CloudFront key pairs that
+     * CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
+     * <code>false</code>.
      * </p>
      * 
      * @param enabled
-     *        Enabled is <code>true</code> if any of the AWS accounts listed in the <code>TrustedSigners</code> complex
-     *        type for this distribution have active CloudFront key pairs. If not, <code>Enabled</code> is
+     *        This field is <code>true</code> if any of the AWS accounts in the list have active CloudFront key pairs
+     *        that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
      *        <code>false</code>.
      */
 
@@ -96,12 +87,13 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Enabled is <code>true</code> if any of the AWS accounts listed in the <code>TrustedSigners</code> complex type
-     * for this distribution have active CloudFront key pairs. If not, <code>Enabled</code> is <code>false</code>.
+     * This field is <code>true</code> if any of the AWS accounts in the list have active CloudFront key pairs that
+     * CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
+     * <code>false</code>.
      * </p>
      * 
-     * @return Enabled is <code>true</code> if any of the AWS accounts listed in the <code>TrustedSigners</code> complex
-     *         type for this distribution have active CloudFront key pairs. If not, <code>Enabled</code> is
+     * @return This field is <code>true</code> if any of the AWS accounts in the list have active CloudFront key pairs
+     *         that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
      *         <code>false</code>.
      */
 
@@ -111,13 +103,14 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Enabled is <code>true</code> if any of the AWS accounts listed in the <code>TrustedSigners</code> complex type
-     * for this distribution have active CloudFront key pairs. If not, <code>Enabled</code> is <code>false</code>.
+     * This field is <code>true</code> if any of the AWS accounts in the list have active CloudFront key pairs that
+     * CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
+     * <code>false</code>.
      * </p>
      * 
      * @param enabled
-     *        Enabled is <code>true</code> if any of the AWS accounts listed in the <code>TrustedSigners</code> complex
-     *        type for this distribution have active CloudFront key pairs. If not, <code>Enabled</code> is
+     *        This field is <code>true</code> if any of the AWS accounts in the list have active CloudFront key pairs
+     *        that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
      *        <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -129,12 +122,13 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Enabled is <code>true</code> if any of the AWS accounts listed in the <code>TrustedSigners</code> complex type
-     * for this distribution have active CloudFront key pairs. If not, <code>Enabled</code> is <code>false</code>.
+     * This field is <code>true</code> if any of the AWS accounts in the list have active CloudFront key pairs that
+     * CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
+     * <code>false</code>.
      * </p>
      * 
-     * @return Enabled is <code>true</code> if any of the AWS accounts listed in the <code>TrustedSigners</code> complex
-     *         type for this distribution have active CloudFront key pairs. If not, <code>Enabled</code> is
+     * @return This field is <code>true</code> if any of the AWS accounts in the list have active CloudFront key pairs
+     *         that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
      *         <code>false</code>.
      */
 
@@ -144,11 +138,11 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of trusted signers specified in the <code>TrustedSigners</code> complex type.
+     * The number of AWS accounts in the list.
      * </p>
      * 
      * @param quantity
-     *        The number of trusted signers specified in the <code>TrustedSigners</code> complex type.
+     *        The number of AWS accounts in the list.
      */
 
     public void setQuantity(Integer quantity) {
@@ -157,10 +151,10 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of trusted signers specified in the <code>TrustedSigners</code> complex type.
+     * The number of AWS accounts in the list.
      * </p>
      * 
-     * @return The number of trusted signers specified in the <code>TrustedSigners</code> complex type.
+     * @return The number of AWS accounts in the list.
      */
 
     public Integer getQuantity() {
@@ -169,11 +163,11 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of trusted signers specified in the <code>TrustedSigners</code> complex type.
+     * The number of AWS accounts in the list.
      * </p>
      * 
      * @param quantity
-     *        The number of trusted signers specified in the <code>TrustedSigners</code> complex type.
+     *        The number of AWS accounts in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,12 +178,12 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains one <code>Signer</code> complex type for each trusted signer that is specified in
-     * the <code>TrustedSigners</code> complex type.
+     * A list of AWS accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use
+     * to verify the signatures of signed URLs and signed cookies.
      * </p>
      * 
-     * @return A complex type that contains one <code>Signer</code> complex type for each trusted signer that is
-     *         specified in the <code>TrustedSigners</code> complex type.
+     * @return A list of AWS accounts and the identifiers of active CloudFront key pairs in each account that CloudFront
+     *         can use to verify the signatures of signed URLs and signed cookies.
      */
 
     public java.util.List<Signer> getItems() {
@@ -201,13 +195,13 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains one <code>Signer</code> complex type for each trusted signer that is specified in
-     * the <code>TrustedSigners</code> complex type.
+     * A list of AWS accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use
+     * to verify the signatures of signed URLs and signed cookies.
      * </p>
      * 
      * @param items
-     *        A complex type that contains one <code>Signer</code> complex type for each trusted signer that is
-     *        specified in the <code>TrustedSigners</code> complex type.
+     *        A list of AWS accounts and the identifiers of active CloudFront key pairs in each account that CloudFront
+     *        can use to verify the signatures of signed URLs and signed cookies.
      */
 
     public void setItems(java.util.Collection<Signer> items) {
@@ -221,8 +215,8 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains one <code>Signer</code> complex type for each trusted signer that is specified in
-     * the <code>TrustedSigners</code> complex type.
+     * A list of AWS accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use
+     * to verify the signatures of signed URLs and signed cookies.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -231,8 +225,8 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
-     *        A complex type that contains one <code>Signer</code> complex type for each trusted signer that is
-     *        specified in the <code>TrustedSigners</code> complex type.
+     *        A list of AWS accounts and the identifiers of active CloudFront key pairs in each account that CloudFront
+     *        can use to verify the signatures of signed URLs and signed cookies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -248,13 +242,13 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains one <code>Signer</code> complex type for each trusted signer that is specified in
-     * the <code>TrustedSigners</code> complex type.
+     * A list of AWS accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use
+     * to verify the signatures of signed URLs and signed cookies.
      * </p>
      * 
      * @param items
-     *        A complex type that contains one <code>Signer</code> complex type for each trusted signer that is
-     *        specified in the <code>TrustedSigners</code> complex type.
+     *        A list of AWS accounts and the identifiers of active CloudFront key pairs in each account that CloudFront
+     *        can use to verify the signatures of signed URLs and signed cookies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

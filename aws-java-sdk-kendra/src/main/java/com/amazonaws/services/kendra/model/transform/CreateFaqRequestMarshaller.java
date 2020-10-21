@@ -18,6 +18,8 @@ import javax.annotation.Generated;
 import com.amazonaws.SdkClientException;
 import com.amazonaws.services.kendra.model.*;
 
+import com.amazonaws.util.IdempotentUtils;
+
 import com.amazonaws.protocol.*;
 import com.amazonaws.annotation.SdkInternalApi;
 
@@ -42,6 +44,9 @@ public class CreateFaqRequestMarshaller {
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<String> FILEFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileFormat").build();
+    private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientToken")
+            .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
 
     private static final CreateFaqRequestMarshaller instance = new CreateFaqRequestMarshaller();
 
@@ -66,6 +71,7 @@ public class CreateFaqRequestMarshaller {
             protocolMarshaller.marshall(createFaqRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(createFaqRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createFaqRequest.getFileFormat(), FILEFORMAT_BINDING);
+            protocolMarshaller.marshall(createFaqRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

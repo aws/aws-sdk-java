@@ -39,6 +39,8 @@ public enum CloudFrontActions implements Action {
     CreateFieldLevelEncryptionProfile("cloudfront:CreateFieldLevelEncryptionProfile"),
     /** Action for the CreateInvalidation operation. */
     CreateInvalidation("cloudfront:CreateInvalidation"),
+    /** Action for the CreateKeyGroup operation. */
+    CreateKeyGroup("cloudfront:CreateKeyGroup"),
     /** Action for the CreateMonitoringSubscription operation. */
     CreateMonitoringSubscription("cloudfront:CreateMonitoringSubscription"),
     /** Action for the CreateOriginRequestPolicy operation. */
@@ -61,6 +63,8 @@ public enum CloudFrontActions implements Action {
     DeleteFieldLevelEncryptionConfig("cloudfront:DeleteFieldLevelEncryptionConfig"),
     /** Action for the DeleteFieldLevelEncryptionProfile operation. */
     DeleteFieldLevelEncryptionProfile("cloudfront:DeleteFieldLevelEncryptionProfile"),
+    /** Action for the DeleteKeyGroup operation. */
+    DeleteKeyGroup("cloudfront:DeleteKeyGroup"),
     /** Action for the DeleteMonitoringSubscription operation. */
     DeleteMonitoringSubscription("cloudfront:DeleteMonitoringSubscription"),
     /** Action for the DeleteOriginRequestPolicy operation. */
@@ -93,6 +97,10 @@ public enum CloudFrontActions implements Action {
     GetFieldLevelEncryptionProfileConfig("cloudfront:GetFieldLevelEncryptionProfileConfig"),
     /** Action for the GetInvalidation operation. */
     GetInvalidation("cloudfront:GetInvalidation"),
+    /** Action for the GetKeyGroup operation. */
+    GetKeyGroup("cloudfront:GetKeyGroup"),
+    /** Action for the GetKeyGroupConfig operation. */
+    GetKeyGroupConfig("cloudfront:GetKeyGroupConfig"),
     /** Action for the GetMonitoringSubscription operation. */
     GetMonitoringSubscription("cloudfront:GetMonitoringSubscription"),
     /** Action for the GetOriginRequestPolicy operation. */
@@ -117,6 +125,8 @@ public enum CloudFrontActions implements Action {
     ListDistributions("cloudfront:ListDistributions"),
     /** Action for the ListDistributionsByCachePolicyId operation. */
     ListDistributionsByCachePolicyId("cloudfront:ListDistributionsByCachePolicyId"),
+    /** Action for the ListDistributionsByKeyGroup operation. */
+    ListDistributionsByKeyGroup("cloudfront:ListDistributionsByKeyGroup"),
     /** Action for the ListDistributionsByOriginRequestPolicyId operation. */
     ListDistributionsByOriginRequestPolicyId("cloudfront:ListDistributionsByOriginRequestPolicyId"),
     /** Action for the ListDistributionsByRealtimeLogConfig operation. */
@@ -129,6 +139,8 @@ public enum CloudFrontActions implements Action {
     ListFieldLevelEncryptionProfiles("cloudfront:ListFieldLevelEncryptionProfiles"),
     /** Action for the ListInvalidations operation. */
     ListInvalidations("cloudfront:ListInvalidations"),
+    /** Action for the ListKeyGroups operation. */
+    ListKeyGroups("cloudfront:ListKeyGroups"),
     /** Action for the ListOriginRequestPolicies operation. */
     ListOriginRequestPolicies("cloudfront:ListOriginRequestPolicies"),
     /** Action for the ListPublicKeys operation. */
@@ -153,6 +165,8 @@ public enum CloudFrontActions implements Action {
     UpdateFieldLevelEncryptionConfig("cloudfront:UpdateFieldLevelEncryptionConfig"),
     /** Action for the UpdateFieldLevelEncryptionProfile operation. */
     UpdateFieldLevelEncryptionProfile("cloudfront:UpdateFieldLevelEncryptionProfile"),
+    /** Action for the UpdateKeyGroup operation. */
+    UpdateKeyGroup("cloudfront:UpdateKeyGroup"),
     /** Action for the UpdateOriginRequestPolicy operation. */
     UpdateOriginRequestPolicy("cloudfront:UpdateOriginRequestPolicy"),
     /** Action for the UpdatePublicKey operation. */

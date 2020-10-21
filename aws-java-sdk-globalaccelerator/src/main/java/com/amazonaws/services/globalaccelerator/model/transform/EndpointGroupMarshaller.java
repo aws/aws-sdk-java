@@ -46,6 +46,8 @@ public class EndpointGroupMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HealthCheckIntervalSeconds").build();
     private static final MarshallingInfo<Integer> THRESHOLDCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ThresholdCount").build();
+    private static final MarshallingInfo<List> PORTOVERRIDES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("PortOverrides").build();
 
     private static final EndpointGroupMarshaller instance = new EndpointGroupMarshaller();
 
@@ -72,6 +74,7 @@ public class EndpointGroupMarshaller {
             protocolMarshaller.marshall(endpointGroup.getHealthCheckPath(), HEALTHCHECKPATH_BINDING);
             protocolMarshaller.marshall(endpointGroup.getHealthCheckIntervalSeconds(), HEALTHCHECKINTERVALSECONDS_BINDING);
             protocolMarshaller.marshall(endpointGroup.getThresholdCount(), THRESHOLDCOUNT_BINDING);
+            protocolMarshaller.marshall(endpointGroup.getPortOverrides(), PORTOVERRIDES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

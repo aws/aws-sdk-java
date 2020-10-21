@@ -33,7 +33,7 @@ public class UpdateEndpointGroupRequest extends com.amazonaws.AmazonWebServiceRe
     private String endpointGroupArn;
     /**
      * <p>
-     * The list of endpoint objects.
+     * The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.
      * </p>
      */
     private java.util.List<EndpointConfiguration> endpointConfigurations;
@@ -86,6 +86,19 @@ public class UpdateEndpointGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private Integer thresholdCount;
+    /**
+     * <p>
+     * Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For
+     * example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your
+     * accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Port
+     * overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * </p>
+     */
+    private java.util.List<PortOverride> portOverrides;
 
     /**
      * <p>
@@ -129,10 +142,10 @@ public class UpdateEndpointGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The list of endpoint objects.
+     * The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.
      * </p>
      * 
-     * @return The list of endpoint objects.
+     * @return The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.
      */
 
     public java.util.List<EndpointConfiguration> getEndpointConfigurations() {
@@ -141,11 +154,11 @@ public class UpdateEndpointGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The list of endpoint objects.
+     * The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.
      * </p>
      * 
      * @param endpointConfigurations
-     *        The list of endpoint objects.
+     *        The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.
      */
 
     public void setEndpointConfigurations(java.util.Collection<EndpointConfiguration> endpointConfigurations) {
@@ -159,7 +172,7 @@ public class UpdateEndpointGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The list of endpoint objects.
+     * The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -168,7 +181,7 @@ public class UpdateEndpointGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param endpointConfigurations
-     *        The list of endpoint objects.
+     *        The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,11 +197,11 @@ public class UpdateEndpointGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The list of endpoint objects.
+     * The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.
      * </p>
      * 
      * @param endpointConfigurations
-     *        The list of endpoint objects.
+     *        The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -535,6 +548,128 @@ public class UpdateEndpointGroupRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For
+     * example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your
+     * accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Port
+     * overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * </p>
+     * 
+     * @return Override specific listener ports used to route traffic to endpoints that are part of this endpoint group.
+     *         For example, you can create a port override in which the listener receives user traffic on ports 80 and
+     *         443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Port
+     *         overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     */
+
+    public java.util.List<PortOverride> getPortOverrides() {
+        return portOverrides;
+    }
+
+    /**
+     * <p>
+     * Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For
+     * example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your
+     * accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Port
+     * overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * </p>
+     * 
+     * @param portOverrides
+     *        Override specific listener ports used to route traffic to endpoints that are part of this endpoint group.
+     *        For example, you can create a port override in which the listener receives user traffic on ports 80 and
+     *        443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
+     *        Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     */
+
+    public void setPortOverrides(java.util.Collection<PortOverride> portOverrides) {
+        if (portOverrides == null) {
+            this.portOverrides = null;
+            return;
+        }
+
+        this.portOverrides = new java.util.ArrayList<PortOverride>(portOverrides);
+    }
+
+    /**
+     * <p>
+     * Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For
+     * example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your
+     * accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Port
+     * overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPortOverrides(java.util.Collection)} or {@link #withPortOverrides(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param portOverrides
+     *        Override specific listener ports used to route traffic to endpoints that are part of this endpoint group.
+     *        For example, you can create a port override in which the listener receives user traffic on ports 80 and
+     *        443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
+     *        Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateEndpointGroupRequest withPortOverrides(PortOverride... portOverrides) {
+        if (this.portOverrides == null) {
+            setPortOverrides(new java.util.ArrayList<PortOverride>(portOverrides.length));
+        }
+        for (PortOverride ele : portOverrides) {
+            this.portOverrides.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For
+     * example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your
+     * accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Port
+     * overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * </p>
+     * 
+     * @param portOverrides
+     *        Override specific listener ports used to route traffic to endpoints that are part of this endpoint group.
+     *        For example, you can create a port override in which the listener receives user traffic on ports 80 and
+     *        443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
+     *        Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateEndpointGroupRequest withPortOverrides(java.util.Collection<PortOverride> portOverrides) {
+        setPortOverrides(portOverrides);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -561,7 +696,9 @@ public class UpdateEndpointGroupRequest extends com.amazonaws.AmazonWebServiceRe
         if (getHealthCheckIntervalSeconds() != null)
             sb.append("HealthCheckIntervalSeconds: ").append(getHealthCheckIntervalSeconds()).append(",");
         if (getThresholdCount() != null)
-            sb.append("ThresholdCount: ").append(getThresholdCount());
+            sb.append("ThresholdCount: ").append(getThresholdCount()).append(",");
+        if (getPortOverrides() != null)
+            sb.append("PortOverrides: ").append(getPortOverrides());
         sb.append("}");
         return sb.toString();
     }
@@ -608,6 +745,10 @@ public class UpdateEndpointGroupRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getThresholdCount() != null && other.getThresholdCount().equals(this.getThresholdCount()) == false)
             return false;
+        if (other.getPortOverrides() == null ^ this.getPortOverrides() == null)
+            return false;
+        if (other.getPortOverrides() != null && other.getPortOverrides().equals(this.getPortOverrides()) == false)
+            return false;
         return true;
     }
 
@@ -624,6 +765,7 @@ public class UpdateEndpointGroupRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getHealthCheckPath() == null) ? 0 : getHealthCheckPath().hashCode());
         hashCode = prime * hashCode + ((getHealthCheckIntervalSeconds() == null) ? 0 : getHealthCheckIntervalSeconds().hashCode());
         hashCode = prime * hashCode + ((getThresholdCount() == null) ? 0 : getThresholdCount().hashCode());
+        hashCode = prime * hashCode + ((getPortOverrides() == null) ? 0 : getPortOverrides().hashCode());
         return hashCode;
     }
 

@@ -46,7 +46,14 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
     private String type;
     /**
      * <p>
-     * The data source connector configuration information that is required to access the repository.
+     * The connector configuration information that is required to access the repository.
+     * </p>
+     * <p>
+     * You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to
+     * <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
+     * </p>
+     * <p>
+     * The <code>Configuration</code> parameter is required for all other data sources.
      * </p>
      */
     private DataSourceConfiguration configuration;
@@ -62,12 +69,23 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * don't set a schedule Amazon Kendra will not periodically update the index. You can call the
      * <code>StartDataSourceSyncJob</code> operation to update the index.
      * </p>
+     * <p>
+     * You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to
+     * <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
+     * </p>
      */
     private String schedule;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.
+     * </p>
+     * <p>
+     * You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to
+     * <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
+     * </p>
+     * <p>
+     * The <code>RoleArn</code> parameter is required for all other data sources.
      * </p>
      */
     private String roleArn;
@@ -78,6 +96,13 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * A token that you provide to identify the request to create a data source. Multiple calls to the
+     * <code>CreateDataSource</code> operation with the same client token will create only one data source.
+     * </p>
+     */
+    private String clientToken;
 
     /**
      * <p>
@@ -226,11 +251,24 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The data source connector configuration information that is required to access the repository.
+     * The connector configuration information that is required to access the repository.
+     * </p>
+     * <p>
+     * You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to
+     * <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
+     * </p>
+     * <p>
+     * The <code>Configuration</code> parameter is required for all other data sources.
      * </p>
      * 
      * @param configuration
-     *        The data source connector configuration information that is required to access the repository.
+     *        The connector configuration information that is required to access the repository.</p>
+     *        <p>
+     *        You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to
+     *        <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
+     *        </p>
+     *        <p>
+     *        The <code>Configuration</code> parameter is required for all other data sources.
      */
 
     public void setConfiguration(DataSourceConfiguration configuration) {
@@ -239,10 +277,23 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The data source connector configuration information that is required to access the repository.
+     * The connector configuration information that is required to access the repository.
+     * </p>
+     * <p>
+     * You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to
+     * <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
+     * </p>
+     * <p>
+     * The <code>Configuration</code> parameter is required for all other data sources.
      * </p>
      * 
-     * @return The data source connector configuration information that is required to access the repository.
+     * @return The connector configuration information that is required to access the repository.</p>
+     *         <p>
+     *         You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to
+     *         <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
+     *         </p>
+     *         <p>
+     *         The <code>Configuration</code> parameter is required for all other data sources.
      */
 
     public DataSourceConfiguration getConfiguration() {
@@ -251,11 +302,24 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The data source connector configuration information that is required to access the repository.
+     * The connector configuration information that is required to access the repository.
+     * </p>
+     * <p>
+     * You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to
+     * <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
+     * </p>
+     * <p>
+     * The <code>Configuration</code> parameter is required for all other data sources.
      * </p>
      * 
      * @param configuration
-     *        The data source connector configuration information that is required to access the repository.
+     *        The connector configuration information that is required to access the repository.</p>
+     *        <p>
+     *        You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to
+     *        <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
+     *        </p>
+     *        <p>
+     *        The <code>Configuration</code> parameter is required for all other data sources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -310,11 +374,18 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * don't set a schedule Amazon Kendra will not periodically update the index. You can call the
      * <code>StartDataSourceSyncJob</code> operation to update the index.
      * </p>
+     * <p>
+     * You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to
+     * <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
+     * </p>
      * 
      * @param schedule
      *        Sets the frequency that Amazon Kendra will check the documents in your repository and update the index. If
      *        you don't set a schedule Amazon Kendra will not periodically update the index. You can call the
-     *        <code>StartDataSourceSyncJob</code> operation to update the index.
+     *        <code>StartDataSourceSyncJob</code> operation to update the index.</p>
+     *        <p>
+     *        You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to
+     *        <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
      */
 
     public void setSchedule(String schedule) {
@@ -327,10 +398,17 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * don't set a schedule Amazon Kendra will not periodically update the index. You can call the
      * <code>StartDataSourceSyncJob</code> operation to update the index.
      * </p>
+     * <p>
+     * You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to
+     * <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
+     * </p>
      * 
      * @return Sets the frequency that Amazon Kendra will check the documents in your repository and update the index.
      *         If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the
-     *         <code>StartDataSourceSyncJob</code> operation to update the index.
+     *         <code>StartDataSourceSyncJob</code> operation to update the index.</p>
+     *         <p>
+     *         You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to
+     *         <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
      */
 
     public String getSchedule() {
@@ -343,11 +421,18 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * don't set a schedule Amazon Kendra will not periodically update the index. You can call the
      * <code>StartDataSourceSyncJob</code> operation to update the index.
      * </p>
+     * <p>
+     * You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to
+     * <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
+     * </p>
      * 
      * @param schedule
      *        Sets the frequency that Amazon Kendra will check the documents in your repository and update the index. If
      *        you don't set a schedule Amazon Kendra will not periodically update the index. You can call the
-     *        <code>StartDataSourceSyncJob</code> operation to update the index.
+     *        <code>StartDataSourceSyncJob</code> operation to update the index.</p>
+     *        <p>
+     *        You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to
+     *        <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -361,10 +446,24 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.
      * </p>
+     * <p>
+     * You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to
+     * <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
+     * </p>
+     * <p>
+     * The <code>RoleArn</code> parameter is required for all other data sources.
+     * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information,
-     *        see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.
+     *        see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon
+     *        Kendra</a>.</p>
+     *        <p>
+     *        You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to
+     *        <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
+     *        </p>
+     *        <p>
+     *        The <code>RoleArn</code> parameter is required for all other data sources.
      */
 
     public void setRoleArn(String roleArn) {
@@ -376,10 +475,23 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.
      * </p>
+     * <p>
+     * You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to
+     * <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
+     * </p>
+     * <p>
+     * The <code>RoleArn</code> parameter is required for all other data sources.
+     * </p>
      * 
      * @return The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information,
      *         see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon
-     *         Kendra</a>.
+     *         Kendra</a>.</p>
+     *         <p>
+     *         You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to
+     *         <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
+     *         </p>
+     *         <p>
+     *         The <code>RoleArn</code> parameter is required for all other data sources.
      */
 
     public String getRoleArn() {
@@ -391,10 +503,24 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.
      * </p>
+     * <p>
+     * You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to
+     * <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
+     * </p>
+     * <p>
+     * The <code>RoleArn</code> parameter is required for all other data sources.
+     * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) of a role with permission to access the data source. For more information,
-     *        see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.
+     *        see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon
+     *        Kendra</a>.</p>
+     *        <p>
+     *        You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to
+     *        <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
+     *        </p>
+     *        <p>
+     *        The <code>RoleArn</code> parameter is required for all other data sources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -482,6 +608,52 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * A token that you provide to identify the request to create a data source. Multiple calls to the
+     * <code>CreateDataSource</code> operation with the same client token will create only one data source.
+     * </p>
+     * 
+     * @param clientToken
+     *        A token that you provide to identify the request to create a data source. Multiple calls to the
+     *        <code>CreateDataSource</code> operation with the same client token will create only one data source.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * A token that you provide to identify the request to create a data source. Multiple calls to the
+     * <code>CreateDataSource</code> operation with the same client token will create only one data source.
+     * </p>
+     * 
+     * @return A token that you provide to identify the request to create a data source. Multiple calls to the
+     *         <code>CreateDataSource</code> operation with the same client token will create only one data source.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * A token that you provide to identify the request to create a data source. Multiple calls to the
+     * <code>CreateDataSource</code> operation with the same client token will create only one data source.
+     * </p>
+     * 
+     * @param clientToken
+     *        A token that you provide to identify the request to create a data source. Multiple calls to the
+     *        <code>CreateDataSource</code> operation with the same client token will create only one data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDataSourceRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -508,7 +680,9 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }
@@ -555,6 +729,10 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
         return true;
     }
 
@@ -571,6 +749,7 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getSchedule() == null) ? 0 : getSchedule().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }
 

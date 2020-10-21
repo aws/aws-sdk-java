@@ -27,13 +27,13 @@ public class UpdatePublicKeyRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Request to update public key information.
+     * A public key configuration.
      * </p>
      */
     private PublicKeyConfig publicKeyConfig;
     /**
      * <p>
-     * ID of the public key to be updated.
+     * The identifier of the public key that you are updating.
      * </p>
      */
     private String id;
@@ -47,11 +47,11 @@ public class UpdatePublicKeyRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Request to update public key information.
+     * A public key configuration.
      * </p>
      * 
      * @param publicKeyConfig
-     *        Request to update public key information.
+     *        A public key configuration.
      */
 
     public void setPublicKeyConfig(PublicKeyConfig publicKeyConfig) {
@@ -60,10 +60,10 @@ public class UpdatePublicKeyRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Request to update public key information.
+     * A public key configuration.
      * </p>
      * 
-     * @return Request to update public key information.
+     * @return A public key configuration.
      */
 
     public PublicKeyConfig getPublicKeyConfig() {
@@ -72,11 +72,11 @@ public class UpdatePublicKeyRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Request to update public key information.
+     * A public key configuration.
      * </p>
      * 
      * @param publicKeyConfig
-     *        Request to update public key information.
+     *        A public key configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class UpdatePublicKeyRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * ID of the public key to be updated.
+     * The identifier of the public key that you are updating.
      * </p>
      * 
      * @param id
-     *        ID of the public key to be updated.
+     *        The identifier of the public key that you are updating.
      */
 
     public void setId(String id) {
@@ -100,10 +100,10 @@ public class UpdatePublicKeyRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * ID of the public key to be updated.
+     * The identifier of the public key that you are updating.
      * </p>
      * 
-     * @return ID of the public key to be updated.
+     * @return The identifier of the public key that you are updating.
      */
 
     public String getId() {
@@ -112,11 +112,11 @@ public class UpdatePublicKeyRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * ID of the public key to be updated.
+     * The identifier of the public key that you are updating.
      * </p>
      * 
      * @param id
-     *        ID of the public key to be updated.
+     *        The identifier of the public key that you are updating.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

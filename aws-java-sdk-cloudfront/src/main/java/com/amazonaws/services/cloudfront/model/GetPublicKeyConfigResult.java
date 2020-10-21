@@ -25,24 +25,24 @@ public class GetPublicKeyConfigResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Return the result for the public key configuration.
+     * A public key configuration.
      * </p>
      */
     private PublicKeyConfig publicKeyConfig;
     /**
      * <p>
-     * The current version of the public key configuration. For example: <code>E2QWRUHAPOMQZL</code>.
+     * The identifier for this version of the public key configuration.
      * </p>
      */
     private String eTag;
 
     /**
      * <p>
-     * Return the result for the public key configuration.
+     * A public key configuration.
      * </p>
      * 
      * @param publicKeyConfig
-     *        Return the result for the public key configuration.
+     *        A public key configuration.
      */
 
     public void setPublicKeyConfig(PublicKeyConfig publicKeyConfig) {
@@ -51,10 +51,10 @@ public class GetPublicKeyConfigResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Return the result for the public key configuration.
+     * A public key configuration.
      * </p>
      * 
-     * @return Return the result for the public key configuration.
+     * @return A public key configuration.
      */
 
     public PublicKeyConfig getPublicKeyConfig() {
@@ -63,11 +63,11 @@ public class GetPublicKeyConfigResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Return the result for the public key configuration.
+     * A public key configuration.
      * </p>
      * 
      * @param publicKeyConfig
-     *        Return the result for the public key configuration.
+     *        A public key configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,11 +78,11 @@ public class GetPublicKeyConfigResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The current version of the public key configuration. For example: <code>E2QWRUHAPOMQZL</code>.
+     * The identifier for this version of the public key configuration.
      * </p>
      * 
      * @param eTag
-     *        The current version of the public key configuration. For example: <code>E2QWRUHAPOMQZL</code>.
+     *        The identifier for this version of the public key configuration.
      */
 
     public void setETag(String eTag) {
@@ -91,10 +91,10 @@ public class GetPublicKeyConfigResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The current version of the public key configuration. For example: <code>E2QWRUHAPOMQZL</code>.
+     * The identifier for this version of the public key configuration.
      * </p>
      * 
-     * @return The current version of the public key configuration. For example: <code>E2QWRUHAPOMQZL</code>.
+     * @return The identifier for this version of the public key configuration.
      */
 
     public String getETag() {
@@ -103,11 +103,11 @@ public class GetPublicKeyConfigResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The current version of the public key configuration. For example: <code>E2QWRUHAPOMQZL</code>.
+     * The identifier for this version of the public key configuration.
      * </p>
      * 
      * @param eTag
-     *        The current version of the public key configuration. For example: <code>E2QWRUHAPOMQZL</code>.
+     *        The identifier for this version of the public key configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

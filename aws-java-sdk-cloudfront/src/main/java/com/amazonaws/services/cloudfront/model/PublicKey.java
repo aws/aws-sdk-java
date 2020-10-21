@@ -17,7 +17,11 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A complex data type of public keys you add to CloudFront to use with features like field-level encryption.
+ * A public key that you can use with <a
+ * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed
+ * cookies</a>, or with <a
+ * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level
+ * encryption</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PublicKey" target="_top">AWS API
@@ -28,30 +32,34 @@ public class PublicKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique ID assigned to a public key you've added to CloudFront.
+     * The identifier of the public key.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * A time you added a public key to CloudFront.
+     * The date and time when the public key was uploaded.
      * </p>
      */
     private java.util.Date createdTime;
     /**
      * <p>
-     * A complex data type for a public key you add to CloudFront to use with features like field-level encryption.
+     * Configuration information about a public key that you can use with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and
+     * signed cookies</a>, or with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level
+     * encryption</a>.
      * </p>
      */
     private PublicKeyConfig publicKeyConfig;
 
     /**
      * <p>
-     * A unique ID assigned to a public key you've added to CloudFront.
+     * The identifier of the public key.
      * </p>
      * 
      * @param id
-     *        A unique ID assigned to a public key you've added to CloudFront.
+     *        The identifier of the public key.
      */
 
     public void setId(String id) {
@@ -60,10 +68,10 @@ public class PublicKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique ID assigned to a public key you've added to CloudFront.
+     * The identifier of the public key.
      * </p>
      * 
-     * @return A unique ID assigned to a public key you've added to CloudFront.
+     * @return The identifier of the public key.
      */
 
     public String getId() {
@@ -72,11 +80,11 @@ public class PublicKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique ID assigned to a public key you've added to CloudFront.
+     * The identifier of the public key.
      * </p>
      * 
      * @param id
-     *        A unique ID assigned to a public key you've added to CloudFront.
+     *        The identifier of the public key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +95,11 @@ public class PublicKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A time you added a public key to CloudFront.
+     * The date and time when the public key was uploaded.
      * </p>
      * 
      * @param createdTime
-     *        A time you added a public key to CloudFront.
+     *        The date and time when the public key was uploaded.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -100,10 +108,10 @@ public class PublicKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A time you added a public key to CloudFront.
+     * The date and time when the public key was uploaded.
      * </p>
      * 
-     * @return A time you added a public key to CloudFront.
+     * @return The date and time when the public key was uploaded.
      */
 
     public java.util.Date getCreatedTime() {
@@ -112,11 +120,11 @@ public class PublicKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A time you added a public key to CloudFront.
+     * The date and time when the public key was uploaded.
      * </p>
      * 
      * @param createdTime
-     *        A time you added a public key to CloudFront.
+     *        The date and time when the public key was uploaded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,12 +135,19 @@ public class PublicKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex data type for a public key you add to CloudFront to use with features like field-level encryption.
+     * Configuration information about a public key that you can use with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and
+     * signed cookies</a>, or with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level
+     * encryption</a>.
      * </p>
      * 
      * @param publicKeyConfig
-     *        A complex data type for a public key you add to CloudFront to use with features like field-level
-     *        encryption.
+     *        Configuration information about a public key that you can use with <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs
+     *        and signed cookies</a>, or with <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html"
+     *        >field-level encryption</a>.
      */
 
     public void setPublicKeyConfig(PublicKeyConfig publicKeyConfig) {
@@ -141,11 +156,18 @@ public class PublicKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex data type for a public key you add to CloudFront to use with features like field-level encryption.
+     * Configuration information about a public key that you can use with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and
+     * signed cookies</a>, or with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level
+     * encryption</a>.
      * </p>
      * 
-     * @return A complex data type for a public key you add to CloudFront to use with features like field-level
-     *         encryption.
+     * @return Configuration information about a public key that you can use with <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs
+     *         and signed cookies</a>, or with <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html"
+     *         >field-level encryption</a>.
      */
 
     public PublicKeyConfig getPublicKeyConfig() {
@@ -154,12 +176,19 @@ public class PublicKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex data type for a public key you add to CloudFront to use with features like field-level encryption.
+     * Configuration information about a public key that you can use with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and
+     * signed cookies</a>, or with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level
+     * encryption</a>.
      * </p>
      * 
      * @param publicKeyConfig
-     *        A complex data type for a public key you add to CloudFront to use with features like field-level
-     *        encryption.
+     *        Configuration information about a public key that you can use with <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs
+     *        and signed cookies</a>, or with <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html"
+     *        >field-level encryption</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

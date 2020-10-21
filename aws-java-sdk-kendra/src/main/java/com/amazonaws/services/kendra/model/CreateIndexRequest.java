@@ -45,9 +45,9 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String edition;
     /**
      * <p>
-     * An IAM role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also
-     * the role used when you use the <code>BatchPutDocument</code> operation to index documents from an Amazon S3
-     * bucket.
+     * An AWS Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your Amazon
+     * CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> operation
+     * to index documents from an Amazon S3 bucket.
      * </p>
      */
     private String roleArn;
@@ -67,7 +67,7 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A token that you provide to identify the request to create an index. Multiple calls to the
-     * <code>CreateIndex</code> operation with the same client token will create only one index.”
+     * <code>CreateIndex</code> operation with the same client token will create only one index.
      * </p>
      */
     private String clientToken;
@@ -224,15 +224,15 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An IAM role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also
-     * the role used when you use the <code>BatchPutDocument</code> operation to index documents from an Amazon S3
-     * bucket.
+     * An AWS Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your Amazon
+     * CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> operation
+     * to index documents from an Amazon S3 bucket.
      * </p>
      * 
      * @param roleArn
-     *        An IAM role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This
-     *        is also the role used when you use the <code>BatchPutDocument</code> operation to index documents from an
-     *        Amazon S3 bucket.
+     *        An AWS Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your
+     *        Amazon CloudWatch logs and metrics. This is also the role used when you use the
+     *        <code>BatchPutDocument</code> operation to index documents from an Amazon S3 bucket.
      */
 
     public void setRoleArn(String roleArn) {
@@ -241,14 +241,14 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An IAM role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also
-     * the role used when you use the <code>BatchPutDocument</code> operation to index documents from an Amazon S3
-     * bucket.
+     * An AWS Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your Amazon
+     * CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> operation
+     * to index documents from an Amazon S3 bucket.
      * </p>
      * 
-     * @return An IAM role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This
-     *         is also the role used when you use the <code>BatchPutDocument</code> operation to index documents from an
-     *         Amazon S3 bucket.
+     * @return An AWS Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your
+     *         Amazon CloudWatch logs and metrics. This is also the role used when you use the
+     *         <code>BatchPutDocument</code> operation to index documents from an Amazon S3 bucket.
      */
 
     public String getRoleArn() {
@@ -257,15 +257,15 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An IAM role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also
-     * the role used when you use the <code>BatchPutDocument</code> operation to index documents from an Amazon S3
-     * bucket.
+     * An AWS Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your Amazon
+     * CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> operation
+     * to index documents from an Amazon S3 bucket.
      * </p>
      * 
      * @param roleArn
-     *        An IAM role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This
-     *        is also the role used when you use the <code>BatchPutDocument</code> operation to index documents from an
-     *        Amazon S3 bucket.
+     *        An AWS Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your
+     *        Amazon CloudWatch logs and metrics. This is also the role used when you use the
+     *        <code>BatchPutDocument</code> operation to index documents from an Amazon S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -363,12 +363,12 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A token that you provide to identify the request to create an index. Multiple calls to the
-     * <code>CreateIndex</code> operation with the same client token will create only one index.”
+     * <code>CreateIndex</code> operation with the same client token will create only one index.
      * </p>
      * 
      * @param clientToken
      *        A token that you provide to identify the request to create an index. Multiple calls to the
-     *        <code>CreateIndex</code> operation with the same client token will create only one index.”
+     *        <code>CreateIndex</code> operation with the same client token will create only one index.
      */
 
     public void setClientToken(String clientToken) {
@@ -378,11 +378,11 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A token that you provide to identify the request to create an index. Multiple calls to the
-     * <code>CreateIndex</code> operation with the same client token will create only one index.”
+     * <code>CreateIndex</code> operation with the same client token will create only one index.
      * </p>
      * 
      * @return A token that you provide to identify the request to create an index. Multiple calls to the
-     *         <code>CreateIndex</code> operation with the same client token will create only one index.”
+     *         <code>CreateIndex</code> operation with the same client token will create only one index.
      */
 
     public String getClientToken() {
@@ -392,12 +392,12 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A token that you provide to identify the request to create an index. Multiple calls to the
-     * <code>CreateIndex</code> operation with the same client token will create only one index.”
+     * <code>CreateIndex</code> operation with the same client token will create only one index.
      * </p>
      * 
      * @param clientToken
      *        A token that you provide to identify the request to create an index. Multiple calls to the
-     *        <code>CreateIndex</code> operation with the same client token will create only one index.”
+     *        <code>CreateIndex</code> operation with the same client token will create only one index.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

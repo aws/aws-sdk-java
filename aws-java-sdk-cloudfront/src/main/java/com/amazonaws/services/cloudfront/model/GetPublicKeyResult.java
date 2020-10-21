@@ -25,24 +25,24 @@ public class GetPublicKeyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Return the public key.
+     * The public key.
      * </p>
      */
     private PublicKey publicKey;
     /**
      * <p>
-     * The current version of the public key. For example: <code>E2QWRUHAPOMQZL</code>.
+     * The identifier for this version of the public key.
      * </p>
      */
     private String eTag;
 
     /**
      * <p>
-     * Return the public key.
+     * The public key.
      * </p>
      * 
      * @param publicKey
-     *        Return the public key.
+     *        The public key.
      */
 
     public void setPublicKey(PublicKey publicKey) {
@@ -51,10 +51,10 @@ public class GetPublicKeyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Return the public key.
+     * The public key.
      * </p>
      * 
-     * @return Return the public key.
+     * @return The public key.
      */
 
     public PublicKey getPublicKey() {
@@ -63,11 +63,11 @@ public class GetPublicKeyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Return the public key.
+     * The public key.
      * </p>
      * 
      * @param publicKey
-     *        Return the public key.
+     *        The public key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,11 +78,11 @@ public class GetPublicKeyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The current version of the public key. For example: <code>E2QWRUHAPOMQZL</code>.
+     * The identifier for this version of the public key.
      * </p>
      * 
      * @param eTag
-     *        The current version of the public key. For example: <code>E2QWRUHAPOMQZL</code>.
+     *        The identifier for this version of the public key.
      */
 
     public void setETag(String eTag) {
@@ -91,10 +91,10 @@ public class GetPublicKeyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The current version of the public key. For example: <code>E2QWRUHAPOMQZL</code>.
+     * The identifier for this version of the public key.
      * </p>
      * 
-     * @return The current version of the public key. For example: <code>E2QWRUHAPOMQZL</code>.
+     * @return The identifier for this version of the public key.
      */
 
     public String getETag() {
@@ -103,11 +103,11 @@ public class GetPublicKeyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The current version of the public key. For example: <code>E2QWRUHAPOMQZL</code>.
+     * The identifier for this version of the public key.
      * </p>
      * 
      * @param eTag
-     *        The current version of the public key. For example: <code>E2QWRUHAPOMQZL</code>.
+     *        The identifier for this version of the public key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -28,7 +28,7 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon S3 bucket where the Spot Instance data feed is located.
+     * The name of the Amazon S3 bucket where the Spot Instance data feed is located.
      * </p>
      */
     private String bucket;
@@ -46,7 +46,7 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
     private String ownerId;
     /**
      * <p>
-     * The prefix that is prepended to data feed files.
+     * The prefix for the data feed files.
      * </p>
      */
     private String prefix;
@@ -59,11 +59,11 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon S3 bucket where the Spot Instance data feed is located.
+     * The name of the Amazon S3 bucket where the Spot Instance data feed is located.
      * </p>
      * 
      * @param bucket
-     *        The Amazon S3 bucket where the Spot Instance data feed is located.
+     *        The name of the Amazon S3 bucket where the Spot Instance data feed is located.
      */
 
     public void setBucket(String bucket) {
@@ -72,10 +72,10 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon S3 bucket where the Spot Instance data feed is located.
+     * The name of the Amazon S3 bucket where the Spot Instance data feed is located.
      * </p>
      * 
-     * @return The Amazon S3 bucket where the Spot Instance data feed is located.
+     * @return The name of the Amazon S3 bucket where the Spot Instance data feed is located.
      */
 
     public String getBucket() {
@@ -84,11 +84,11 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon S3 bucket where the Spot Instance data feed is located.
+     * The name of the Amazon S3 bucket where the Spot Instance data feed is located.
      * </p>
      * 
      * @param bucket
-     *        The Amazon S3 bucket where the Spot Instance data feed is located.
+     *        The name of the Amazon S3 bucket where the Spot Instance data feed is located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,11 +179,11 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The prefix that is prepended to data feed files.
+     * The prefix for the data feed files.
      * </p>
      * 
      * @param prefix
-     *        The prefix that is prepended to data feed files.
+     *        The prefix for the data feed files.
      */
 
     public void setPrefix(String prefix) {
@@ -192,10 +192,10 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The prefix that is prepended to data feed files.
+     * The prefix for the data feed files.
      * </p>
      * 
-     * @return The prefix that is prepended to data feed files.
+     * @return The prefix for the data feed files.
      */
 
     public String getPrefix() {
@@ -204,11 +204,11 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The prefix that is prepended to data feed files.
+     * The prefix for the data feed files.
      * </p>
      * 
      * @param prefix
-     *        The prefix that is prepended to data feed files.
+     *        The prefix for the data feed files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

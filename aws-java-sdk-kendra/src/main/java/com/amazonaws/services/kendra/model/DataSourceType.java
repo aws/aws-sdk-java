@@ -25,7 +25,8 @@ public enum DataSourceType {
     DATABASE("DATABASE"),
     SALESFORCE("SALESFORCE"),
     ONEDRIVE("ONEDRIVE"),
-    SERVICENOW("SERVICENOW");
+    SERVICENOW("SERVICENOW"),
+    CUSTOM("CUSTOM");
 
     private String value;
 
