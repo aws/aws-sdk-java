@@ -91,6 +91,14 @@ public class PublishRequestMarshaller implements Marshaller<Request<PublishReque
             messageAttributesListIndex++;
         }
 
+        if (publishRequest.getMessageDeduplicationId() != null) {
+            request.addParameter("MessageDeduplicationId", StringUtils.fromString(publishRequest.getMessageDeduplicationId()));
+        }
+
+        if (publishRequest.getMessageGroupId() != null) {
+            request.addParameter("MessageGroupId", StringUtils.fromString(publishRequest.getMessageGroupId()));
+        }
+
         return request;
     }
 

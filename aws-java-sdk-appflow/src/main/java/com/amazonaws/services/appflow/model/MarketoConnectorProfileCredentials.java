@@ -36,7 +36,7 @@ public class MarketoConnectorProfileCredentials implements Serializable, Cloneab
     private String clientId;
     /**
      * <p>
-     * The client secret used by the oauth client to authenticate to the authorization server.
+     * The client secret used by the OAuth client to authenticate to the authorization server.
      * </p>
      */
     private String clientSecret;
@@ -48,7 +48,7 @@ public class MarketoConnectorProfileCredentials implements Serializable, Cloneab
     private String accessToken;
     /**
      * <p>
-     * The oauth requirement needed to request security tokens from the connector endpoint.
+     * The OAuth requirement needed to request security tokens from the connector endpoint.
      * </p>
      */
     private ConnectorOAuthRequest oAuthRequest;
@@ -95,11 +95,11 @@ public class MarketoConnectorProfileCredentials implements Serializable, Cloneab
 
     /**
      * <p>
-     * The client secret used by the oauth client to authenticate to the authorization server.
+     * The client secret used by the OAuth client to authenticate to the authorization server.
      * </p>
      * 
      * @param clientSecret
-     *        The client secret used by the oauth client to authenticate to the authorization server.
+     *        The client secret used by the OAuth client to authenticate to the authorization server.
      */
 
     public void setClientSecret(String clientSecret) {
@@ -108,10 +108,10 @@ public class MarketoConnectorProfileCredentials implements Serializable, Cloneab
 
     /**
      * <p>
-     * The client secret used by the oauth client to authenticate to the authorization server.
+     * The client secret used by the OAuth client to authenticate to the authorization server.
      * </p>
      * 
-     * @return The client secret used by the oauth client to authenticate to the authorization server.
+     * @return The client secret used by the OAuth client to authenticate to the authorization server.
      */
 
     public String getClientSecret() {
@@ -120,11 +120,11 @@ public class MarketoConnectorProfileCredentials implements Serializable, Cloneab
 
     /**
      * <p>
-     * The client secret used by the oauth client to authenticate to the authorization server.
+     * The client secret used by the OAuth client to authenticate to the authorization server.
      * </p>
      * 
      * @param clientSecret
-     *        The client secret used by the oauth client to authenticate to the authorization server.
+     *        The client secret used by the OAuth client to authenticate to the authorization server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +175,11 @@ public class MarketoConnectorProfileCredentials implements Serializable, Cloneab
 
     /**
      * <p>
-     * The oauth requirement needed to request security tokens from the connector endpoint.
+     * The OAuth requirement needed to request security tokens from the connector endpoint.
      * </p>
      * 
      * @param oAuthRequest
-     *        The oauth requirement needed to request security tokens from the connector endpoint.
+     *        The OAuth requirement needed to request security tokens from the connector endpoint.
      */
 
     public void setOAuthRequest(ConnectorOAuthRequest oAuthRequest) {
@@ -188,10 +188,10 @@ public class MarketoConnectorProfileCredentials implements Serializable, Cloneab
 
     /**
      * <p>
-     * The oauth requirement needed to request security tokens from the connector endpoint.
+     * The OAuth requirement needed to request security tokens from the connector endpoint.
      * </p>
      * 
-     * @return The oauth requirement needed to request security tokens from the connector endpoint.
+     * @return The OAuth requirement needed to request security tokens from the connector endpoint.
      */
 
     public ConnectorOAuthRequest getOAuthRequest() {
@@ -200,11 +200,11 @@ public class MarketoConnectorProfileCredentials implements Serializable, Cloneab
 
     /**
      * <p>
-     * The oauth requirement needed to request security tokens from the connector endpoint.
+     * The OAuth requirement needed to request security tokens from the connector endpoint.
      * </p>
      * 
      * @param oAuthRequest
-     *        The oauth requirement needed to request security tokens from the connector endpoint.
+     *        The OAuth requirement needed to request security tokens from the connector endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -42,10 +42,16 @@ public class SalesforceConnectorProfileCredentials implements Serializable, Clon
     private String refreshToken;
     /**
      * <p>
-     * The oauth requirement needed to request security tokens from the connector endpoint.
+     * The OAuth requirement needed to request security tokens from the connector endpoint.
      * </p>
      */
     private ConnectorOAuthRequest oAuthRequest;
+    /**
+     * <p>
+     * The secret manager ARN, which contains the client ID and client secret of the connected app.
+     * </p>
+     */
+    private String clientCredentialsArn;
 
     /**
      * <p>
@@ -129,11 +135,11 @@ public class SalesforceConnectorProfileCredentials implements Serializable, Clon
 
     /**
      * <p>
-     * The oauth requirement needed to request security tokens from the connector endpoint.
+     * The OAuth requirement needed to request security tokens from the connector endpoint.
      * </p>
      * 
      * @param oAuthRequest
-     *        The oauth requirement needed to request security tokens from the connector endpoint.
+     *        The OAuth requirement needed to request security tokens from the connector endpoint.
      */
 
     public void setOAuthRequest(ConnectorOAuthRequest oAuthRequest) {
@@ -142,10 +148,10 @@ public class SalesforceConnectorProfileCredentials implements Serializable, Clon
 
     /**
      * <p>
-     * The oauth requirement needed to request security tokens from the connector endpoint.
+     * The OAuth requirement needed to request security tokens from the connector endpoint.
      * </p>
      * 
-     * @return The oauth requirement needed to request security tokens from the connector endpoint.
+     * @return The OAuth requirement needed to request security tokens from the connector endpoint.
      */
 
     public ConnectorOAuthRequest getOAuthRequest() {
@@ -154,16 +160,56 @@ public class SalesforceConnectorProfileCredentials implements Serializable, Clon
 
     /**
      * <p>
-     * The oauth requirement needed to request security tokens from the connector endpoint.
+     * The OAuth requirement needed to request security tokens from the connector endpoint.
      * </p>
      * 
      * @param oAuthRequest
-     *        The oauth requirement needed to request security tokens from the connector endpoint.
+     *        The OAuth requirement needed to request security tokens from the connector endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SalesforceConnectorProfileCredentials withOAuthRequest(ConnectorOAuthRequest oAuthRequest) {
         setOAuthRequest(oAuthRequest);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The secret manager ARN, which contains the client ID and client secret of the connected app.
+     * </p>
+     * 
+     * @param clientCredentialsArn
+     *        The secret manager ARN, which contains the client ID and client secret of the connected app.
+     */
+
+    public void setClientCredentialsArn(String clientCredentialsArn) {
+        this.clientCredentialsArn = clientCredentialsArn;
+    }
+
+    /**
+     * <p>
+     * The secret manager ARN, which contains the client ID and client secret of the connected app.
+     * </p>
+     * 
+     * @return The secret manager ARN, which contains the client ID and client secret of the connected app.
+     */
+
+    public String getClientCredentialsArn() {
+        return this.clientCredentialsArn;
+    }
+
+    /**
+     * <p>
+     * The secret manager ARN, which contains the client ID and client secret of the connected app.
+     * </p>
+     * 
+     * @param clientCredentialsArn
+     *        The secret manager ARN, which contains the client ID and client secret of the connected app.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SalesforceConnectorProfileCredentials withClientCredentialsArn(String clientCredentialsArn) {
+        setClientCredentialsArn(clientCredentialsArn);
         return this;
     }
 
@@ -184,7 +230,9 @@ public class SalesforceConnectorProfileCredentials implements Serializable, Clon
         if (getRefreshToken() != null)
             sb.append("RefreshToken: ").append(getRefreshToken()).append(",");
         if (getOAuthRequest() != null)
-            sb.append("OAuthRequest: ").append(getOAuthRequest());
+            sb.append("OAuthRequest: ").append(getOAuthRequest()).append(",");
+        if (getClientCredentialsArn() != null)
+            sb.append("ClientCredentialsArn: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +259,10 @@ public class SalesforceConnectorProfileCredentials implements Serializable, Clon
             return false;
         if (other.getOAuthRequest() != null && other.getOAuthRequest().equals(this.getOAuthRequest()) == false)
             return false;
+        if (other.getClientCredentialsArn() == null ^ this.getClientCredentialsArn() == null)
+            return false;
+        if (other.getClientCredentialsArn() != null && other.getClientCredentialsArn().equals(this.getClientCredentialsArn()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +274,7 @@ public class SalesforceConnectorProfileCredentials implements Serializable, Clon
         hashCode = prime * hashCode + ((getAccessToken() == null) ? 0 : getAccessToken().hashCode());
         hashCode = prime * hashCode + ((getRefreshToken() == null) ? 0 : getRefreshToken().hashCode());
         hashCode = prime * hashCode + ((getOAuthRequest() == null) ? 0 : getOAuthRequest().hashCode());
+        hashCode = prime * hashCode + ((getClientCredentialsArn() == null) ? 0 : getClientCredentialsArn().hashCode());
         return hashCode;
     }
 

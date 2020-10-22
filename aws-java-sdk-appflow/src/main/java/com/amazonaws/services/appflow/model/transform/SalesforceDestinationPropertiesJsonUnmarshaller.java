@@ -52,9 +52,19 @@ public class SalesforceDestinationPropertiesJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     salesforceDestinationProperties.setObject(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("idFieldNames", targetDepth)) {
+                    context.nextToken();
+                    salesforceDestinationProperties.setIdFieldNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("errorHandlingConfig", targetDepth)) {
                     context.nextToken();
                     salesforceDestinationProperties.setErrorHandlingConfig(ErrorHandlingConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("writeOperationType", targetDepth)) {
+                    context.nextToken();
+                    salesforceDestinationProperties.setWriteOperationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

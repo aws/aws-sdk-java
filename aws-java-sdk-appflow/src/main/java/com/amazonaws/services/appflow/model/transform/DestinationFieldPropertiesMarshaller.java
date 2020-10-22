@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.appflow.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,10 @@ public class DestinationFieldPropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isNullable").build();
     private static final MarshallingInfo<Boolean> ISUPSERTABLE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isUpsertable").build();
+    private static final MarshallingInfo<Boolean> ISUPDATABLE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isUpdatable").build();
+    private static final MarshallingInfo<List> SUPPORTEDWRITEOPERATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("supportedWriteOperations").build();
 
     private static final DestinationFieldPropertiesMarshaller instance = new DestinationFieldPropertiesMarshaller();
 
@@ -53,6 +58,8 @@ public class DestinationFieldPropertiesMarshaller {
             protocolMarshaller.marshall(destinationFieldProperties.getIsCreatable(), ISCREATABLE_BINDING);
             protocolMarshaller.marshall(destinationFieldProperties.getIsNullable(), ISNULLABLE_BINDING);
             protocolMarshaller.marshall(destinationFieldProperties.getIsUpsertable(), ISUPSERTABLE_BINDING);
+            protocolMarshaller.marshall(destinationFieldProperties.getIsUpdatable(), ISUPDATABLE_BINDING);
+            protocolMarshaller.marshall(destinationFieldProperties.getSupportedWriteOperations(), SUPPORTEDWRITEOPERATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

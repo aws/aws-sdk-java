@@ -33,6 +33,8 @@ public class SalesforceConnectorProfileCredentialsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("refreshToken").build();
     private static final MarshallingInfo<StructuredPojo> OAUTHREQUEST_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("oAuthRequest").build();
+    private static final MarshallingInfo<String> CLIENTCREDENTIALSARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientCredentialsArn").build();
 
     private static final SalesforceConnectorProfileCredentialsMarshaller instance = new SalesforceConnectorProfileCredentialsMarshaller();
 
@@ -53,6 +55,7 @@ public class SalesforceConnectorProfileCredentialsMarshaller {
             protocolMarshaller.marshall(salesforceConnectorProfileCredentials.getAccessToken(), ACCESSTOKEN_BINDING);
             protocolMarshaller.marshall(salesforceConnectorProfileCredentials.getRefreshToken(), REFRESHTOKEN_BINDING);
             protocolMarshaller.marshall(salesforceConnectorProfileCredentials.getOAuthRequest(), OAUTHREQUEST_BINDING);
+            protocolMarshaller.marshall(salesforceConnectorProfileCredentials.getClientCredentialsArn(), CLIENTCREDENTIALSARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

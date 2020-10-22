@@ -47,6 +47,11 @@ public class PublishResultStaxUnmarshaller implements Unmarshaller<PublishResult
                     publishResult.setMessageId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("SequenceNumber", targetDepth)) {
+                    publishResult.setSequenceNumber(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return publishResult;

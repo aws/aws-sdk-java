@@ -60,6 +60,16 @@ public class DestinationFieldPropertiesJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     destinationFieldProperties.setIsUpsertable(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("isUpdatable", targetDepth)) {
+                    context.nextToken();
+                    destinationFieldProperties.setIsUpdatable(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("supportedWriteOperations", targetDepth)) {
+                    context.nextToken();
+                    destinationFieldProperties.setSupportedWriteOperations(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -60,6 +60,10 @@ public class SalesforceConnectorProfileCredentialsJsonUnmarshaller implements Un
                     context.nextToken();
                     salesforceConnectorProfileCredentials.setOAuthRequest(ConnectorOAuthRequestJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("clientCredentialsArn", targetDepth)) {
+                    context.nextToken();
+                    salesforceConnectorProfileCredentials.setClientCredentialsArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

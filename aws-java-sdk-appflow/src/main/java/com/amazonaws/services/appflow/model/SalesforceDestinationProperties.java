@@ -36,6 +36,13 @@ public class SalesforceDestinationProperties implements Serializable, Cloneable,
     private String object;
     /**
      * <p>
+     * The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update or
+     * delete.
+     * </p>
+     */
+    private java.util.List<String> idFieldNames;
+    /**
+     * <p>
      * The settings that determine how Amazon AppFlow handles an error when placing data in the Salesforce destination.
      * For example, this setting would determine if the flow should fail after one insertion error, or continue and
      * attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of
@@ -43,6 +50,13 @@ public class SalesforceDestinationProperties implements Serializable, Cloneable,
      * </p>
      */
     private ErrorHandlingConfig errorHandlingConfig;
+    /**
+     * <p>
+     * This specifies the type of write operation to be performed in Salesforce. When the value is <code>UPSERT</code>,
+     * then <code>idFieldNames</code> is required.
+     * </p>
+     */
+    private String writeOperationType;
 
     /**
      * <p>
@@ -81,6 +95,84 @@ public class SalesforceDestinationProperties implements Serializable, Cloneable,
 
     public SalesforceDestinationProperties withObject(String object) {
         setObject(object);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update or
+     * delete.
+     * </p>
+     * 
+     * @return The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update
+     *         or delete.
+     */
+
+    public java.util.List<String> getIdFieldNames() {
+        return idFieldNames;
+    }
+
+    /**
+     * <p>
+     * The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update or
+     * delete.
+     * </p>
+     * 
+     * @param idFieldNames
+     *        The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update
+     *        or delete.
+     */
+
+    public void setIdFieldNames(java.util.Collection<String> idFieldNames) {
+        if (idFieldNames == null) {
+            this.idFieldNames = null;
+            return;
+        }
+
+        this.idFieldNames = new java.util.ArrayList<String>(idFieldNames);
+    }
+
+    /**
+     * <p>
+     * The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update or
+     * delete.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIdFieldNames(java.util.Collection)} or {@link #withIdFieldNames(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param idFieldNames
+     *        The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update
+     *        or delete.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SalesforceDestinationProperties withIdFieldNames(String... idFieldNames) {
+        if (this.idFieldNames == null) {
+            setIdFieldNames(new java.util.ArrayList<String>(idFieldNames.length));
+        }
+        for (String ele : idFieldNames) {
+            this.idFieldNames.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update or
+     * delete.
+     * </p>
+     * 
+     * @param idFieldNames
+     *        The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update
+     *        or delete.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SalesforceDestinationProperties withIdFieldNames(java.util.Collection<String> idFieldNames) {
+        setIdFieldNames(idFieldNames);
         return this;
     }
 
@@ -143,6 +235,73 @@ public class SalesforceDestinationProperties implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * This specifies the type of write operation to be performed in Salesforce. When the value is <code>UPSERT</code>,
+     * then <code>idFieldNames</code> is required.
+     * </p>
+     * 
+     * @param writeOperationType
+     *        This specifies the type of write operation to be performed in Salesforce. When the value is
+     *        <code>UPSERT</code>, then <code>idFieldNames</code> is required.
+     * @see WriteOperationType
+     */
+
+    public void setWriteOperationType(String writeOperationType) {
+        this.writeOperationType = writeOperationType;
+    }
+
+    /**
+     * <p>
+     * This specifies the type of write operation to be performed in Salesforce. When the value is <code>UPSERT</code>,
+     * then <code>idFieldNames</code> is required.
+     * </p>
+     * 
+     * @return This specifies the type of write operation to be performed in Salesforce. When the value is
+     *         <code>UPSERT</code>, then <code>idFieldNames</code> is required.
+     * @see WriteOperationType
+     */
+
+    public String getWriteOperationType() {
+        return this.writeOperationType;
+    }
+
+    /**
+     * <p>
+     * This specifies the type of write operation to be performed in Salesforce. When the value is <code>UPSERT</code>,
+     * then <code>idFieldNames</code> is required.
+     * </p>
+     * 
+     * @param writeOperationType
+     *        This specifies the type of write operation to be performed in Salesforce. When the value is
+     *        <code>UPSERT</code>, then <code>idFieldNames</code> is required.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WriteOperationType
+     */
+
+    public SalesforceDestinationProperties withWriteOperationType(String writeOperationType) {
+        setWriteOperationType(writeOperationType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This specifies the type of write operation to be performed in Salesforce. When the value is <code>UPSERT</code>,
+     * then <code>idFieldNames</code> is required.
+     * </p>
+     * 
+     * @param writeOperationType
+     *        This specifies the type of write operation to be performed in Salesforce. When the value is
+     *        <code>UPSERT</code>, then <code>idFieldNames</code> is required.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WriteOperationType
+     */
+
+    public SalesforceDestinationProperties withWriteOperationType(WriteOperationType writeOperationType) {
+        this.writeOperationType = writeOperationType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -156,8 +315,12 @@ public class SalesforceDestinationProperties implements Serializable, Cloneable,
         sb.append("{");
         if (getObject() != null)
             sb.append("Object: ").append(getObject()).append(",");
+        if (getIdFieldNames() != null)
+            sb.append("IdFieldNames: ").append(getIdFieldNames()).append(",");
         if (getErrorHandlingConfig() != null)
-            sb.append("ErrorHandlingConfig: ").append(getErrorHandlingConfig());
+            sb.append("ErrorHandlingConfig: ").append(getErrorHandlingConfig()).append(",");
+        if (getWriteOperationType() != null)
+            sb.append("WriteOperationType: ").append(getWriteOperationType());
         sb.append("}");
         return sb.toString();
     }
@@ -176,9 +339,17 @@ public class SalesforceDestinationProperties implements Serializable, Cloneable,
             return false;
         if (other.getObject() != null && other.getObject().equals(this.getObject()) == false)
             return false;
+        if (other.getIdFieldNames() == null ^ this.getIdFieldNames() == null)
+            return false;
+        if (other.getIdFieldNames() != null && other.getIdFieldNames().equals(this.getIdFieldNames()) == false)
+            return false;
         if (other.getErrorHandlingConfig() == null ^ this.getErrorHandlingConfig() == null)
             return false;
         if (other.getErrorHandlingConfig() != null && other.getErrorHandlingConfig().equals(this.getErrorHandlingConfig()) == false)
+            return false;
+        if (other.getWriteOperationType() == null ^ this.getWriteOperationType() == null)
+            return false;
+        if (other.getWriteOperationType() != null && other.getWriteOperationType().equals(this.getWriteOperationType()) == false)
             return false;
         return true;
     }
@@ -189,7 +360,9 @@ public class SalesforceDestinationProperties implements Serializable, Cloneable,
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getObject() == null) ? 0 : getObject().hashCode());
+        hashCode = prime * hashCode + ((getIdFieldNames() == null) ? 0 : getIdFieldNames().hashCode());
         hashCode = prime * hashCode + ((getErrorHandlingConfig() == null) ? 0 : getErrorHandlingConfig().hashCode());
+        hashCode = prime * hashCode + ((getWriteOperationType() == null) ? 0 : getWriteOperationType().hashCode());
         return hashCode;
     }
 

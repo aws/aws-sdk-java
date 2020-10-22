@@ -60,6 +60,10 @@ public class SourceFlowConfigJsonUnmarshaller implements Unmarshaller<SourceFlow
                     context.nextToken();
                     sourceFlowConfig.setSourceConnectorProperties(SourceConnectorPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("incrementalPullConfig", targetDepth)) {
+                    context.nextToken();
+                    sourceFlowConfig.setIncrementalPullConfig(IncrementalPullConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -33,6 +33,8 @@ public class SourceFlowConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectorProfileName").build();
     private static final MarshallingInfo<StructuredPojo> SOURCECONNECTORPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceConnectorProperties").build();
+    private static final MarshallingInfo<StructuredPojo> INCREMENTALPULLCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("incrementalPullConfig").build();
 
     private static final SourceFlowConfigMarshaller instance = new SourceFlowConfigMarshaller();
 
@@ -53,6 +55,7 @@ public class SourceFlowConfigMarshaller {
             protocolMarshaller.marshall(sourceFlowConfig.getConnectorType(), CONNECTORTYPE_BINDING);
             protocolMarshaller.marshall(sourceFlowConfig.getConnectorProfileName(), CONNECTORPROFILENAME_BINDING);
             protocolMarshaller.marshall(sourceFlowConfig.getSourceConnectorProperties(), SOURCECONNECTORPROPERTIES_BINDING);
+            protocolMarshaller.marshall(sourceFlowConfig.getIncrementalPullConfig(), INCREMENTALPULLCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

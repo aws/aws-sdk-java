@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.appflow.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,8 +30,12 @@ public class SalesforceDestinationPropertiesMarshaller {
 
     private static final MarshallingInfo<String> OBJECT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("object").build();
+    private static final MarshallingInfo<List> IDFIELDNAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("idFieldNames").build();
     private static final MarshallingInfo<StructuredPojo> ERRORHANDLINGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("errorHandlingConfig").build();
+    private static final MarshallingInfo<String> WRITEOPERATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("writeOperationType").build();
 
     private static final SalesforceDestinationPropertiesMarshaller instance = new SalesforceDestinationPropertiesMarshaller();
 
@@ -49,7 +54,9 @@ public class SalesforceDestinationPropertiesMarshaller {
 
         try {
             protocolMarshaller.marshall(salesforceDestinationProperties.getObject(), OBJECT_BINDING);
+            protocolMarshaller.marshall(salesforceDestinationProperties.getIdFieldNames(), IDFIELDNAMES_BINDING);
             protocolMarshaller.marshall(salesforceDestinationProperties.getErrorHandlingConfig(), ERRORHANDLINGCONFIG_BINDING);
+            protocolMarshaller.marshall(salesforceDestinationProperties.getWriteOperationType(), WRITEOPERATIONTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

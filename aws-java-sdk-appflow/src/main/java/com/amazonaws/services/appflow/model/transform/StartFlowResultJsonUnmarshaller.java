@@ -56,6 +56,10 @@ public class StartFlowResultJsonUnmarshaller implements Unmarshaller<StartFlowRe
                     context.nextToken();
                     startFlowResult.setFlowStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("executionId", targetDepth)) {
+                    context.nextToken();
+                    startFlowResult.setExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

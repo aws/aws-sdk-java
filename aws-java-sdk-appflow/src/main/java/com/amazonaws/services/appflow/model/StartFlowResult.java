@@ -35,6 +35,13 @@ public class StartFlowResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      */
     private String flowStatus;
+    /**
+     * <p>
+     * Returns the internal execution ID of an on-demand flow when the flow is started. For scheduled or event-triggered
+     * flows, this value is null.
+     * </p>
+     */
+    private String executionId;
 
     /**
      * <p>
@@ -136,6 +143,52 @@ public class StartFlowResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
+     * <p>
+     * Returns the internal execution ID of an on-demand flow when the flow is started. For scheduled or event-triggered
+     * flows, this value is null.
+     * </p>
+     * 
+     * @param executionId
+     *        Returns the internal execution ID of an on-demand flow when the flow is started. For scheduled or
+     *        event-triggered flows, this value is null.
+     */
+
+    public void setExecutionId(String executionId) {
+        this.executionId = executionId;
+    }
+
+    /**
+     * <p>
+     * Returns the internal execution ID of an on-demand flow when the flow is started. For scheduled or event-triggered
+     * flows, this value is null.
+     * </p>
+     * 
+     * @return Returns the internal execution ID of an on-demand flow when the flow is started. For scheduled or
+     *         event-triggered flows, this value is null.
+     */
+
+    public String getExecutionId() {
+        return this.executionId;
+    }
+
+    /**
+     * <p>
+     * Returns the internal execution ID of an on-demand flow when the flow is started. For scheduled or event-triggered
+     * flows, this value is null.
+     * </p>
+     * 
+     * @param executionId
+     *        Returns the internal execution ID of an on-demand flow when the flow is started. For scheduled or
+     *        event-triggered flows, this value is null.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartFlowResult withExecutionId(String executionId) {
+        setExecutionId(executionId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -150,7 +203,9 @@ public class StartFlowResult extends com.amazonaws.AmazonWebServiceResult<com.am
         if (getFlowArn() != null)
             sb.append("FlowArn: ").append(getFlowArn()).append(",");
         if (getFlowStatus() != null)
-            sb.append("FlowStatus: ").append(getFlowStatus());
+            sb.append("FlowStatus: ").append(getFlowStatus()).append(",");
+        if (getExecutionId() != null)
+            sb.append("ExecutionId: ").append(getExecutionId());
         sb.append("}");
         return sb.toString();
     }
@@ -173,6 +228,10 @@ public class StartFlowResult extends com.amazonaws.AmazonWebServiceResult<com.am
             return false;
         if (other.getFlowStatus() != null && other.getFlowStatus().equals(this.getFlowStatus()) == false)
             return false;
+        if (other.getExecutionId() == null ^ this.getExecutionId() == null)
+            return false;
+        if (other.getExecutionId() != null && other.getExecutionId().equals(this.getExecutionId()) == false)
+            return false;
         return true;
     }
 
@@ -183,6 +242,7 @@ public class StartFlowResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
         hashCode = prime * hashCode + ((getFlowArn() == null) ? 0 : getFlowArn().hashCode());
         hashCode = prime * hashCode + ((getFlowStatus() == null) ? 0 : getFlowStatus().hashCode());
+        hashCode = prime * hashCode + ((getExecutionId() == null) ? 0 : getExecutionId().hashCode());
         return hashCode;
     }
 

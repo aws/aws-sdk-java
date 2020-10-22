@@ -46,6 +46,13 @@ public class SourceFlowConfig implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private SourceConnectorProperties sourceConnectorProperties;
+    /**
+     * <p>
+     * Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields
+     * specified in the configuration are used when querying for the incremental data pull.
+     * </p>
+     */
+    private IncrementalPullConfig incrementalPullConfig;
 
     /**
      * <p>
@@ -188,6 +195,52 @@ public class SourceFlowConfig implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields
+     * specified in the configuration are used when querying for the incremental data pull.
+     * </p>
+     * 
+     * @param incrementalPullConfig
+     *        Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the
+     *        fields specified in the configuration are used when querying for the incremental data pull.
+     */
+
+    public void setIncrementalPullConfig(IncrementalPullConfig incrementalPullConfig) {
+        this.incrementalPullConfig = incrementalPullConfig;
+    }
+
+    /**
+     * <p>
+     * Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields
+     * specified in the configuration are used when querying for the incremental data pull.
+     * </p>
+     * 
+     * @return Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided,
+     *         the fields specified in the configuration are used when querying for the incremental data pull.
+     */
+
+    public IncrementalPullConfig getIncrementalPullConfig() {
+        return this.incrementalPullConfig;
+    }
+
+    /**
+     * <p>
+     * Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields
+     * specified in the configuration are used when querying for the incremental data pull.
+     * </p>
+     * 
+     * @param incrementalPullConfig
+     *        Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the
+     *        fields specified in the configuration are used when querying for the incremental data pull.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SourceFlowConfig withIncrementalPullConfig(IncrementalPullConfig incrementalPullConfig) {
+        setIncrementalPullConfig(incrementalPullConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -204,7 +257,9 @@ public class SourceFlowConfig implements Serializable, Cloneable, StructuredPojo
         if (getConnectorProfileName() != null)
             sb.append("ConnectorProfileName: ").append(getConnectorProfileName()).append(",");
         if (getSourceConnectorProperties() != null)
-            sb.append("SourceConnectorProperties: ").append(getSourceConnectorProperties());
+            sb.append("SourceConnectorProperties: ").append(getSourceConnectorProperties()).append(",");
+        if (getIncrementalPullConfig() != null)
+            sb.append("IncrementalPullConfig: ").append(getIncrementalPullConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -231,6 +286,10 @@ public class SourceFlowConfig implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getSourceConnectorProperties() != null && other.getSourceConnectorProperties().equals(this.getSourceConnectorProperties()) == false)
             return false;
+        if (other.getIncrementalPullConfig() == null ^ this.getIncrementalPullConfig() == null)
+            return false;
+        if (other.getIncrementalPullConfig() != null && other.getIncrementalPullConfig().equals(this.getIncrementalPullConfig()) == false)
+            return false;
         return true;
     }
 
@@ -242,6 +301,7 @@ public class SourceFlowConfig implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getConnectorType() == null) ? 0 : getConnectorType().hashCode());
         hashCode = prime * hashCode + ((getConnectorProfileName() == null) ? 0 : getConnectorProfileName().hashCode());
         hashCode = prime * hashCode + ((getSourceConnectorProperties() == null) ? 0 : getSourceConnectorProperties().hashCode());
+        hashCode = prime * hashCode + ((getIncrementalPullConfig() == null) ? 0 : getIncrementalPullConfig().hashCode());
         return hashCode;
     }
 

@@ -47,6 +47,19 @@ public class DestinationFieldProperties implements Serializable, Cloneable, Stru
      * </p>
      */
     private Boolean isUpsertable;
+    /**
+     * <p>
+     * Specifies whether the field can be updated during an <code>UPDATE</code> or <code>UPSERT</code> write operation.
+     * </p>
+     */
+    private Boolean isUpdatable;
+    /**
+     * <p>
+     * A list of supported write operations. For each write operation listed, this field can be used in
+     * <code>idFieldNames</code> when that write operation is present as a destination option.
+     * </p>
+     */
+    private java.util.List<String> supportedWriteOperations;
 
     /**
      * <p>
@@ -213,6 +226,170 @@ public class DestinationFieldProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Specifies whether the field can be updated during an <code>UPDATE</code> or <code>UPSERT</code> write operation.
+     * </p>
+     * 
+     * @param isUpdatable
+     *        Specifies whether the field can be updated during an <code>UPDATE</code> or <code>UPSERT</code> write
+     *        operation.
+     */
+
+    public void setIsUpdatable(Boolean isUpdatable) {
+        this.isUpdatable = isUpdatable;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the field can be updated during an <code>UPDATE</code> or <code>UPSERT</code> write operation.
+     * </p>
+     * 
+     * @return Specifies whether the field can be updated during an <code>UPDATE</code> or <code>UPSERT</code> write
+     *         operation.
+     */
+
+    public Boolean getIsUpdatable() {
+        return this.isUpdatable;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the field can be updated during an <code>UPDATE</code> or <code>UPSERT</code> write operation.
+     * </p>
+     * 
+     * @param isUpdatable
+     *        Specifies whether the field can be updated during an <code>UPDATE</code> or <code>UPSERT</code> write
+     *        operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DestinationFieldProperties withIsUpdatable(Boolean isUpdatable) {
+        setIsUpdatable(isUpdatable);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the field can be updated during an <code>UPDATE</code> or <code>UPSERT</code> write operation.
+     * </p>
+     * 
+     * @return Specifies whether the field can be updated during an <code>UPDATE</code> or <code>UPSERT</code> write
+     *         operation.
+     */
+
+    public Boolean isUpdatable() {
+        return this.isUpdatable;
+    }
+
+    /**
+     * <p>
+     * A list of supported write operations. For each write operation listed, this field can be used in
+     * <code>idFieldNames</code> when that write operation is present as a destination option.
+     * </p>
+     * 
+     * @return A list of supported write operations. For each write operation listed, this field can be used in
+     *         <code>idFieldNames</code> when that write operation is present as a destination option.
+     * @see WriteOperationType
+     */
+
+    public java.util.List<String> getSupportedWriteOperations() {
+        return supportedWriteOperations;
+    }
+
+    /**
+     * <p>
+     * A list of supported write operations. For each write operation listed, this field can be used in
+     * <code>idFieldNames</code> when that write operation is present as a destination option.
+     * </p>
+     * 
+     * @param supportedWriteOperations
+     *        A list of supported write operations. For each write operation listed, this field can be used in
+     *        <code>idFieldNames</code> when that write operation is present as a destination option.
+     * @see WriteOperationType
+     */
+
+    public void setSupportedWriteOperations(java.util.Collection<String> supportedWriteOperations) {
+        if (supportedWriteOperations == null) {
+            this.supportedWriteOperations = null;
+            return;
+        }
+
+        this.supportedWriteOperations = new java.util.ArrayList<String>(supportedWriteOperations);
+    }
+
+    /**
+     * <p>
+     * A list of supported write operations. For each write operation listed, this field can be used in
+     * <code>idFieldNames</code> when that write operation is present as a destination option.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedWriteOperations(java.util.Collection)} or
+     * {@link #withSupportedWriteOperations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedWriteOperations
+     *        A list of supported write operations. For each write operation listed, this field can be used in
+     *        <code>idFieldNames</code> when that write operation is present as a destination option.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WriteOperationType
+     */
+
+    public DestinationFieldProperties withSupportedWriteOperations(String... supportedWriteOperations) {
+        if (this.supportedWriteOperations == null) {
+            setSupportedWriteOperations(new java.util.ArrayList<String>(supportedWriteOperations.length));
+        }
+        for (String ele : supportedWriteOperations) {
+            this.supportedWriteOperations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of supported write operations. For each write operation listed, this field can be used in
+     * <code>idFieldNames</code> when that write operation is present as a destination option.
+     * </p>
+     * 
+     * @param supportedWriteOperations
+     *        A list of supported write operations. For each write operation listed, this field can be used in
+     *        <code>idFieldNames</code> when that write operation is present as a destination option.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WriteOperationType
+     */
+
+    public DestinationFieldProperties withSupportedWriteOperations(java.util.Collection<String> supportedWriteOperations) {
+        setSupportedWriteOperations(supportedWriteOperations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of supported write operations. For each write operation listed, this field can be used in
+     * <code>idFieldNames</code> when that write operation is present as a destination option.
+     * </p>
+     * 
+     * @param supportedWriteOperations
+     *        A list of supported write operations. For each write operation listed, this field can be used in
+     *        <code>idFieldNames</code> when that write operation is present as a destination option.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WriteOperationType
+     */
+
+    public DestinationFieldProperties withSupportedWriteOperations(WriteOperationType... supportedWriteOperations) {
+        java.util.ArrayList<String> supportedWriteOperationsCopy = new java.util.ArrayList<String>(supportedWriteOperations.length);
+        for (WriteOperationType value : supportedWriteOperations) {
+            supportedWriteOperationsCopy.add(value.toString());
+        }
+        if (getSupportedWriteOperations() == null) {
+            setSupportedWriteOperations(supportedWriteOperationsCopy);
+        } else {
+            getSupportedWriteOperations().addAll(supportedWriteOperationsCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -229,7 +406,11 @@ public class DestinationFieldProperties implements Serializable, Cloneable, Stru
         if (getIsNullable() != null)
             sb.append("IsNullable: ").append(getIsNullable()).append(",");
         if (getIsUpsertable() != null)
-            sb.append("IsUpsertable: ").append(getIsUpsertable());
+            sb.append("IsUpsertable: ").append(getIsUpsertable()).append(",");
+        if (getIsUpdatable() != null)
+            sb.append("IsUpdatable: ").append(getIsUpdatable()).append(",");
+        if (getSupportedWriteOperations() != null)
+            sb.append("SupportedWriteOperations: ").append(getSupportedWriteOperations());
         sb.append("}");
         return sb.toString();
     }
@@ -256,6 +437,14 @@ public class DestinationFieldProperties implements Serializable, Cloneable, Stru
             return false;
         if (other.getIsUpsertable() != null && other.getIsUpsertable().equals(this.getIsUpsertable()) == false)
             return false;
+        if (other.getIsUpdatable() == null ^ this.getIsUpdatable() == null)
+            return false;
+        if (other.getIsUpdatable() != null && other.getIsUpdatable().equals(this.getIsUpdatable()) == false)
+            return false;
+        if (other.getSupportedWriteOperations() == null ^ this.getSupportedWriteOperations() == null)
+            return false;
+        if (other.getSupportedWriteOperations() != null && other.getSupportedWriteOperations().equals(this.getSupportedWriteOperations()) == false)
+            return false;
         return true;
     }
 
@@ -267,6 +456,8 @@ public class DestinationFieldProperties implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getIsCreatable() == null) ? 0 : getIsCreatable().hashCode());
         hashCode = prime * hashCode + ((getIsNullable() == null) ? 0 : getIsNullable().hashCode());
         hashCode = prime * hashCode + ((getIsUpsertable() == null) ? 0 : getIsUpsertable().hashCode());
+        hashCode = prime * hashCode + ((getIsUpdatable() == null) ? 0 : getIsUpdatable().hashCode());
+        hashCode = prime * hashCode + ((getSupportedWriteOperations() == null) ? 0 : getSupportedWriteOperations().hashCode());
         return hashCode;
     }
 
