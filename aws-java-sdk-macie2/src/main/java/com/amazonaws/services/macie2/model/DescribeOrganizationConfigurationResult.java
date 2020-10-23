@@ -32,8 +32,7 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
     private Boolean autoEnable;
     /**
      * <p>
-     * Specifies whether the maximum number of Amazon Macie member accounts are already associated with the AWS
-     * organization.
+     * Specifies whether the maximum number of Amazon Macie member accounts are part of the AWS organization.
      * </p>
      */
     private Boolean maxAccountLimitReached;
@@ -96,13 +95,11 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specifies whether the maximum number of Amazon Macie member accounts are already associated with the AWS
-     * organization.
+     * Specifies whether the maximum number of Amazon Macie member accounts are part of the AWS organization.
      * </p>
      * 
      * @param maxAccountLimitReached
-     *        Specifies whether the maximum number of Amazon Macie member accounts are already associated with the AWS
-     *        organization.
+     *        Specifies whether the maximum number of Amazon Macie member accounts are part of the AWS organization.
      */
 
     public void setMaxAccountLimitReached(Boolean maxAccountLimitReached) {
@@ -111,12 +108,10 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specifies whether the maximum number of Amazon Macie member accounts are already associated with the AWS
-     * organization.
+     * Specifies whether the maximum number of Amazon Macie member accounts are part of the AWS organization.
      * </p>
      * 
-     * @return Specifies whether the maximum number of Amazon Macie member accounts are already associated with the AWS
-     *         organization.
+     * @return Specifies whether the maximum number of Amazon Macie member accounts are part of the AWS organization.
      */
 
     public Boolean getMaxAccountLimitReached() {
@@ -125,13 +120,11 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specifies whether the maximum number of Amazon Macie member accounts are already associated with the AWS
-     * organization.
+     * Specifies whether the maximum number of Amazon Macie member accounts are part of the AWS organization.
      * </p>
      * 
      * @param maxAccountLimitReached
-     *        Specifies whether the maximum number of Amazon Macie member accounts are already associated with the AWS
-     *        organization.
+     *        Specifies whether the maximum number of Amazon Macie member accounts are part of the AWS organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,12 +135,10 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specifies whether the maximum number of Amazon Macie member accounts are already associated with the AWS
-     * organization.
+     * Specifies whether the maximum number of Amazon Macie member accounts are part of the AWS organization.
      * </p>
      * 
-     * @return Specifies whether the maximum number of Amazon Macie member accounts are already associated with the AWS
-     *         organization.
+     * @return Specifies whether the maximum number of Amazon Macie member accounts are part of the AWS organization.
      */
 
     public Boolean isMaxAccountLimitReached() {

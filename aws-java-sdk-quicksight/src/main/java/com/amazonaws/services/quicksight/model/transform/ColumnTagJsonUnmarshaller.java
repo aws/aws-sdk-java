@@ -52,6 +52,10 @@ public class ColumnTagJsonUnmarshaller implements Unmarshaller<ColumnTag, JsonUn
                     context.nextToken();
                     columnTag.setColumnGeographicRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ColumnDescription", targetDepth)) {
+                    context.nextToken();
+                    columnTag.setColumnDescription(ColumnDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -36,6 +36,12 @@ public class OutputColumn implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
+     * A description for a column.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
      * Type.
      * </p>
      */
@@ -78,6 +84,46 @@ public class OutputColumn implements Serializable, Cloneable, StructuredPojo {
 
     public OutputColumn withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A description for a column.
+     * </p>
+     * 
+     * @param description
+     *        A description for a column.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * A description for a column.
+     * </p>
+     * 
+     * @return A description for a column.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * A description for a column.
+     * </p>
+     * 
+     * @param description
+     *        A description for a column.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OutputColumn withDescription(String description) {
+        setDescription(description);
         return this;
     }
 
@@ -154,6 +200,8 @@ public class OutputColumn implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType());
         sb.append("}");
@@ -174,6 +222,10 @@ public class OutputColumn implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
@@ -187,6 +239,7 @@ public class OutputColumn implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }

@@ -72,6 +72,13 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
     private HlsConfiguration hlsConfiguration;
     /**
      * <p>
+     * The configuration for manifest processing rules. Manifest processing rules enable customization of the
+     * personalized manifests created by MediaTailor.
+     * </p>
+     */
+    private ManifestProcessingRules manifestProcessingRules;
+    /**
+     * <p>
      * The identifier for the playback configuration.
      * </p>
      */
@@ -404,6 +411,52 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
 
     public PlaybackConfiguration withHlsConfiguration(HlsConfiguration hlsConfiguration) {
         setHlsConfiguration(hlsConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration for manifest processing rules. Manifest processing rules enable customization of the
+     * personalized manifests created by MediaTailor.
+     * </p>
+     * 
+     * @param manifestProcessingRules
+     *        The configuration for manifest processing rules. Manifest processing rules enable customization of the
+     *        personalized manifests created by MediaTailor.
+     */
+
+    public void setManifestProcessingRules(ManifestProcessingRules manifestProcessingRules) {
+        this.manifestProcessingRules = manifestProcessingRules;
+    }
+
+    /**
+     * <p>
+     * The configuration for manifest processing rules. Manifest processing rules enable customization of the
+     * personalized manifests created by MediaTailor.
+     * </p>
+     * 
+     * @return The configuration for manifest processing rules. Manifest processing rules enable customization of the
+     *         personalized manifests created by MediaTailor.
+     */
+
+    public ManifestProcessingRules getManifestProcessingRules() {
+        return this.manifestProcessingRules;
+    }
+
+    /**
+     * <p>
+     * The configuration for manifest processing rules. Manifest processing rules enable customization of the
+     * personalized manifests created by MediaTailor.
+     * </p>
+     * 
+     * @param manifestProcessingRules
+     *        The configuration for manifest processing rules. Manifest processing rules enable customization of the
+     *        personalized manifests created by MediaTailor.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PlaybackConfiguration withManifestProcessingRules(ManifestProcessingRules manifestProcessingRules) {
+        setManifestProcessingRules(manifestProcessingRules);
         return this;
     }
 
@@ -861,6 +914,8 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
             sb.append("DashConfiguration: ").append(getDashConfiguration()).append(",");
         if (getHlsConfiguration() != null)
             sb.append("HlsConfiguration: ").append(getHlsConfiguration()).append(",");
+        if (getManifestProcessingRules() != null)
+            sb.append("ManifestProcessingRules: ").append(getManifestProcessingRules()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getPlaybackConfigurationArn() != null)
@@ -917,6 +972,10 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
             return false;
         if (other.getHlsConfiguration() != null && other.getHlsConfiguration().equals(this.getHlsConfiguration()) == false)
             return false;
+        if (other.getManifestProcessingRules() == null ^ this.getManifestProcessingRules() == null)
+            return false;
+        if (other.getManifestProcessingRules() != null && other.getManifestProcessingRules().equals(this.getManifestProcessingRules()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -969,6 +1028,7 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getCdnConfiguration() == null) ? 0 : getCdnConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDashConfiguration() == null) ? 0 : getDashConfiguration().hashCode());
         hashCode = prime * hashCode + ((getHlsConfiguration() == null) ? 0 : getHlsConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getManifestProcessingRules() == null) ? 0 : getManifestProcessingRules().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getPlaybackConfigurationArn() == null) ? 0 : getPlaybackConfigurationArn().hashCode());
         hashCode = prime * hashCode + ((getPlaybackEndpointPrefix() == null) ? 0 : getPlaybackEndpointPrefix().hashCode());

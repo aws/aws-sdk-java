@@ -35,17 +35,20 @@ public class Range implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * In an Occurrences.lineRanges array, the number of lines from the end of the file.
+     * In an Occurrences.lineRanges array, the number of lines from the beginning of the file to the end of the
+     * sensitive data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In an Occurrences.offsetRanges array, the number of characters from the end of the file.
+     * In an Occurrences.offsetRanges array, the number of characters from the beginning of the file to the end of the
+     * sensitive data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In a Page object, the number of lines (lineRange) or characters (offsetRange) from the end of the page.
+     * In a Page object, the number of lines (lineRange) or characters (offsetRange) from the beginning of the page to
+     * the end of the sensitive data.
      * </p>
      * </li>
      * </ul>
@@ -58,17 +61,20 @@ public class Range implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * In an Occurrences.lineRanges array, the number of lines from the start of the file.
+     * In an Occurrences.lineRanges array, the number of lines from the beginning of the file to the beginning of the
+     * sensitive data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In an Occurrences.offsetRanges array, the number of characters from the start of the file.
+     * In an Occurrences.offsetRanges array, the number of characters from the beginning of the file to the beginning of
+     * the sensitive data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In a Page object, the number of lines (lineRange) or characters (offsetRange) from the start of the page.
+     * In a Page object, the number of lines (lineRange) or characters (offsetRange) from the beginning of the page to
+     * the beginning of the sensitive data.
      * </p>
      * </li>
      * </ul>
@@ -88,17 +94,20 @@ public class Range implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * In an Occurrences.lineRanges array, the number of lines from the end of the file.
+     * In an Occurrences.lineRanges array, the number of lines from the beginning of the file to the end of the
+     * sensitive data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In an Occurrences.offsetRanges array, the number of characters from the end of the file.
+     * In an Occurrences.offsetRanges array, the number of characters from the beginning of the file to the end of the
+     * sensitive data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In a Page object, the number of lines (lineRange) or characters (offsetRange) from the end of the page.
+     * In a Page object, the number of lines (lineRange) or characters (offsetRange) from the beginning of the page to
+     * the end of the sensitive data.
      * </p>
      * </li>
      * </ul>
@@ -108,17 +117,20 @@ public class Range implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        In an Occurrences.lineRanges array, the number of lines from the end of the file.
+     *        In an Occurrences.lineRanges array, the number of lines from the beginning of the file to the end of the
+     *        sensitive data.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In an Occurrences.offsetRanges array, the number of characters from the end of the file.
+     *        In an Occurrences.offsetRanges array, the number of characters from the beginning of the file to the end
+     *        of the sensitive data.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In a Page object, the number of lines (lineRange) or characters (offsetRange) from the end of the page.
+     *        In a Page object, the number of lines (lineRange) or characters (offsetRange) from the beginning of the
+     *        page to the end of the sensitive data.
      *        </p>
      *        </li>
      */
@@ -134,17 +146,20 @@ public class Range implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * In an Occurrences.lineRanges array, the number of lines from the end of the file.
+     * In an Occurrences.lineRanges array, the number of lines from the beginning of the file to the end of the
+     * sensitive data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In an Occurrences.offsetRanges array, the number of characters from the end of the file.
+     * In an Occurrences.offsetRanges array, the number of characters from the beginning of the file to the end of the
+     * sensitive data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In a Page object, the number of lines (lineRange) or characters (offsetRange) from the end of the page.
+     * In a Page object, the number of lines (lineRange) or characters (offsetRange) from the beginning of the page to
+     * the end of the sensitive data.
      * </p>
      * </li>
      * </ul>
@@ -153,17 +168,20 @@ public class Range implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         In an Occurrences.lineRanges array, the number of lines from the end of the file.
+     *         In an Occurrences.lineRanges array, the number of lines from the beginning of the file to the end of the
+     *         sensitive data.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         In an Occurrences.offsetRanges array, the number of characters from the end of the file.
+     *         In an Occurrences.offsetRanges array, the number of characters from the beginning of the file to the end
+     *         of the sensitive data.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         In a Page object, the number of lines (lineRange) or characters (offsetRange) from the end of the page.
+     *         In a Page object, the number of lines (lineRange) or characters (offsetRange) from the beginning of the
+     *         page to the end of the sensitive data.
      *         </p>
      *         </li>
      */
@@ -179,17 +197,20 @@ public class Range implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * In an Occurrences.lineRanges array, the number of lines from the end of the file.
+     * In an Occurrences.lineRanges array, the number of lines from the beginning of the file to the end of the
+     * sensitive data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In an Occurrences.offsetRanges array, the number of characters from the end of the file.
+     * In an Occurrences.offsetRanges array, the number of characters from the beginning of the file to the end of the
+     * sensitive data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In a Page object, the number of lines (lineRange) or characters (offsetRange) from the end of the page.
+     * In a Page object, the number of lines (lineRange) or characters (offsetRange) from the beginning of the page to
+     * the end of the sensitive data.
      * </p>
      * </li>
      * </ul>
@@ -199,17 +220,20 @@ public class Range implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        In an Occurrences.lineRanges array, the number of lines from the end of the file.
+     *        In an Occurrences.lineRanges array, the number of lines from the beginning of the file to the end of the
+     *        sensitive data.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In an Occurrences.offsetRanges array, the number of characters from the end of the file.
+     *        In an Occurrences.offsetRanges array, the number of characters from the beginning of the file to the end
+     *        of the sensitive data.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In a Page object, the number of lines (lineRange) or characters (offsetRange) from the end of the page.
+     *        In a Page object, the number of lines (lineRange) or characters (offsetRange) from the beginning of the
+     *        page to the end of the sensitive data.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -227,17 +251,20 @@ public class Range implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * In an Occurrences.lineRanges array, the number of lines from the start of the file.
+     * In an Occurrences.lineRanges array, the number of lines from the beginning of the file to the beginning of the
+     * sensitive data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In an Occurrences.offsetRanges array, the number of characters from the start of the file.
+     * In an Occurrences.offsetRanges array, the number of characters from the beginning of the file to the beginning of
+     * the sensitive data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In a Page object, the number of lines (lineRange) or characters (offsetRange) from the start of the page.
+     * In a Page object, the number of lines (lineRange) or characters (offsetRange) from the beginning of the page to
+     * the beginning of the sensitive data.
      * </p>
      * </li>
      * </ul>
@@ -247,17 +274,20 @@ public class Range implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        In an Occurrences.lineRanges array, the number of lines from the start of the file.
+     *        In an Occurrences.lineRanges array, the number of lines from the beginning of the file to the beginning of
+     *        the sensitive data.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In an Occurrences.offsetRanges array, the number of characters from the start of the file.
+     *        In an Occurrences.offsetRanges array, the number of characters from the beginning of the file to the
+     *        beginning of the sensitive data.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In a Page object, the number of lines (lineRange) or characters (offsetRange) from the start of the page.
+     *        In a Page object, the number of lines (lineRange) or characters (offsetRange) from the beginning of the
+     *        page to the beginning of the sensitive data.
      *        </p>
      *        </li>
      */
@@ -273,17 +303,20 @@ public class Range implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * In an Occurrences.lineRanges array, the number of lines from the start of the file.
+     * In an Occurrences.lineRanges array, the number of lines from the beginning of the file to the beginning of the
+     * sensitive data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In an Occurrences.offsetRanges array, the number of characters from the start of the file.
+     * In an Occurrences.offsetRanges array, the number of characters from the beginning of the file to the beginning of
+     * the sensitive data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In a Page object, the number of lines (lineRange) or characters (offsetRange) from the start of the page.
+     * In a Page object, the number of lines (lineRange) or characters (offsetRange) from the beginning of the page to
+     * the beginning of the sensitive data.
      * </p>
      * </li>
      * </ul>
@@ -292,17 +325,20 @@ public class Range implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         In an Occurrences.lineRanges array, the number of lines from the start of the file.
+     *         In an Occurrences.lineRanges array, the number of lines from the beginning of the file to the beginning
+     *         of the sensitive data.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         In an Occurrences.offsetRanges array, the number of characters from the start of the file.
+     *         In an Occurrences.offsetRanges array, the number of characters from the beginning of the file to the
+     *         beginning of the sensitive data.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         In a Page object, the number of lines (lineRange) or characters (offsetRange) from the start of the page.
+     *         In a Page object, the number of lines (lineRange) or characters (offsetRange) from the beginning of the
+     *         page to the beginning of the sensitive data.
      *         </p>
      *         </li>
      */
@@ -318,17 +354,20 @@ public class Range implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * In an Occurrences.lineRanges array, the number of lines from the start of the file.
+     * In an Occurrences.lineRanges array, the number of lines from the beginning of the file to the beginning of the
+     * sensitive data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In an Occurrences.offsetRanges array, the number of characters from the start of the file.
+     * In an Occurrences.offsetRanges array, the number of characters from the beginning of the file to the beginning of
+     * the sensitive data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In a Page object, the number of lines (lineRange) or characters (offsetRange) from the start of the page.
+     * In a Page object, the number of lines (lineRange) or characters (offsetRange) from the beginning of the page to
+     * the beginning of the sensitive data.
      * </p>
      * </li>
      * </ul>
@@ -338,17 +377,20 @@ public class Range implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        In an Occurrences.lineRanges array, the number of lines from the start of the file.
+     *        In an Occurrences.lineRanges array, the number of lines from the beginning of the file to the beginning of
+     *        the sensitive data.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In an Occurrences.offsetRanges array, the number of characters from the start of the file.
+     *        In an Occurrences.offsetRanges array, the number of characters from the beginning of the file to the
+     *        beginning of the sensitive data.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In a Page object, the number of lines (lineRange) or characters (offsetRange) from the start of the page.
+     *        In a Page object, the number of lines (lineRange) or characters (offsetRange) from the beginning of the
+     *        page to the beginning of the sensitive data.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

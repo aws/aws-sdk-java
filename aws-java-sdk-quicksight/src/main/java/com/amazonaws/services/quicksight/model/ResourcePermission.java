@@ -35,7 +35,13 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * The ARN of an Amazon QuickSight user, group, or namespace. (This is most common.)
+     * The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or
+     * theme. (This is common.)
      * </p>
      * </li>
      * <li>
@@ -61,7 +67,13 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * The ARN of an Amazon QuickSight user, group, or namespace. (This is most common.)
+     * The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or
+     * theme. (This is common.)
      * </p>
      * </li>
      * <li>
@@ -77,7 +89,13 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
      *        <ul>
      *        <li>
      *        <p>
-     *        The ARN of an Amazon QuickSight user, group, or namespace. (This is most common.)
+     *        The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard,
+     *        template, or theme. (This is common.)
      *        </p>
      *        </li>
      *        <li>
@@ -99,7 +117,13 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * The ARN of an Amazon QuickSight user, group, or namespace. (This is most common.)
+     * The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or
+     * theme. (This is common.)
      * </p>
      * </li>
      * <li>
@@ -114,7 +138,13 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
      *         <ul>
      *         <li>
      *         <p>
-     *         The ARN of an Amazon QuickSight user, group, or namespace. (This is most common.)
+     *         The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard,
+     *         template, or theme. (This is common.)
      *         </p>
      *         </li>
      *         <li>
@@ -136,7 +166,13 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * The ARN of an Amazon QuickSight user, group, or namespace. (This is most common.)
+     * The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or
+     * theme. (This is common.)
      * </p>
      * </li>
      * <li>
@@ -152,7 +188,13 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
      *        <ul>
      *        <li>
      *        <p>
-     *        The ARN of an Amazon QuickSight user, group, or namespace. (This is most common.)
+     *        The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard,
+     *        template, or theme. (This is common.)
      *        </p>
      *        </li>
      *        <li>

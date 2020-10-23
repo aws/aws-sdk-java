@@ -52,6 +52,10 @@ public class OutputColumnJsonUnmarshaller implements Unmarshaller<OutputColumn, 
                     context.nextToken();
                     outputColumn.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Description", targetDepth)) {
+                    context.nextToken();
+                    outputColumn.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
                     outputColumn.setType(context.getUnmarshaller(String.class).unmarshall(context));

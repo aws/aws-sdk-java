@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The theme colors that are used for data colors in charts. The colors description is a hexidecimal color code that
+ * The theme colors that are used for data colors in charts. The colors description is a hexadecimal color code that
  * consists of six alphanumerical characters, prefixed with <code>#</code>, for example #37BFF5.
  * </p>
  * 

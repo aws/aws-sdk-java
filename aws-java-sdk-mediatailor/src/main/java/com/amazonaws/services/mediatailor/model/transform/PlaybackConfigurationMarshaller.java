@@ -41,6 +41,8 @@ public class PlaybackConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DashConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> HLSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HlsConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> MANIFESTPROCESSINGRULES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ManifestProcessingRules").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> PLAYBACKCONFIGURATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -82,6 +84,7 @@ public class PlaybackConfigurationMarshaller {
             protocolMarshaller.marshall(playbackConfiguration.getCdnConfiguration(), CDNCONFIGURATION_BINDING);
             protocolMarshaller.marshall(playbackConfiguration.getDashConfiguration(), DASHCONFIGURATION_BINDING);
             protocolMarshaller.marshall(playbackConfiguration.getHlsConfiguration(), HLSCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(playbackConfiguration.getManifestProcessingRules(), MANIFESTPROCESSINGRULES_BINDING);
             protocolMarshaller.marshall(playbackConfiguration.getName(), NAME_BINDING);
             protocolMarshaller.marshall(playbackConfiguration.getPlaybackConfigurationArn(), PLAYBACKCONFIGURATIONARN_BINDING);
             protocolMarshaller.marshall(playbackConfiguration.getPlaybackEndpointPrefix(), PLAYBACKENDPOINTPREFIX_BINDING);

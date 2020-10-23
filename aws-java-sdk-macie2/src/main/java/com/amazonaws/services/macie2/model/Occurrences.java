@@ -53,7 +53,7 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array of objects, one for each occurrence of sensitive data in a binary text file. Each object specifies the
-     * position of the data relative to the start of the file.
+     * position of the data relative to the beginning of the file.
      * </p>
      * <p>
      * This value is typically null. For binary text files, Macie adds location data to a lineRanges.Range or Page
@@ -292,7 +292,7 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array of objects, one for each occurrence of sensitive data in a binary text file. Each object specifies the
-     * position of the data relative to the start of the file.
+     * position of the data relative to the beginning of the file.
      * </p>
      * <p>
      * This value is typically null. For binary text files, Macie adds location data to a lineRanges.Range or Page
@@ -300,7 +300,7 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @return An array of objects, one for each occurrence of sensitive data in a binary text file. Each object
-     *         specifies the position of the data relative to the start of the file.</p>
+     *         specifies the position of the data relative to the beginning of the file.</p>
      *         <p>
      *         This value is typically null. For binary text files, Macie adds location data to a lineRanges.Range or
      *         Page object, depending on the file type.
@@ -313,7 +313,7 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array of objects, one for each occurrence of sensitive data in a binary text file. Each object specifies the
-     * position of the data relative to the start of the file.
+     * position of the data relative to the beginning of the file.
      * </p>
      * <p>
      * This value is typically null. For binary text files, Macie adds location data to a lineRanges.Range or Page
@@ -322,7 +322,7 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param offsetRanges
      *        An array of objects, one for each occurrence of sensitive data in a binary text file. Each object
-     *        specifies the position of the data relative to the start of the file.</p>
+     *        specifies the position of the data relative to the beginning of the file.</p>
      *        <p>
      *        This value is typically null. For binary text files, Macie adds location data to a lineRanges.Range or
      *        Page object, depending on the file type.
@@ -340,7 +340,7 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array of objects, one for each occurrence of sensitive data in a binary text file. Each object specifies the
-     * position of the data relative to the start of the file.
+     * position of the data relative to the beginning of the file.
      * </p>
      * <p>
      * This value is typically null. For binary text files, Macie adds location data to a lineRanges.Range or Page
@@ -354,7 +354,7 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param offsetRanges
      *        An array of objects, one for each occurrence of sensitive data in a binary text file. Each object
-     *        specifies the position of the data relative to the start of the file.</p>
+     *        specifies the position of the data relative to the beginning of the file.</p>
      *        <p>
      *        This value is typically null. For binary text files, Macie adds location data to a lineRanges.Range or
      *        Page object, depending on the file type.
@@ -374,7 +374,7 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array of objects, one for each occurrence of sensitive data in a binary text file. Each object specifies the
-     * position of the data relative to the start of the file.
+     * position of the data relative to the beginning of the file.
      * </p>
      * <p>
      * This value is typically null. For binary text files, Macie adds location data to a lineRanges.Range or Page
@@ -383,7 +383,7 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param offsetRanges
      *        An array of objects, one for each occurrence of sensitive data in a binary text file. Each object
-     *        specifies the position of the data relative to the start of the file.</p>
+     *        specifies the position of the data relative to the beginning of the file.</p>
      *        <p>
      *        This value is typically null. For binary text files, Macie adds location data to a lineRanges.Range or
      *        Page object, depending on the file type.

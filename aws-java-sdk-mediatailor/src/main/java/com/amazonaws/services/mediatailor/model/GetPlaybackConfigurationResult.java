@@ -73,6 +73,13 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
     private LivePreRollConfiguration livePreRollConfiguration;
     /**
      * <p>
+     * The configuration for manifest processing rules. Manifest processing rules enable customization of the
+     * personalized manifests created by MediaTailor.
+     * </p>
+     */
+    private ManifestProcessingRules manifestProcessingRules;
+    /**
+     * <p>
      * The identifier for the playback configuration.
      * </p>
      */
@@ -445,6 +452,52 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     public GetPlaybackConfigurationResult withLivePreRollConfiguration(LivePreRollConfiguration livePreRollConfiguration) {
         setLivePreRollConfiguration(livePreRollConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration for manifest processing rules. Manifest processing rules enable customization of the
+     * personalized manifests created by MediaTailor.
+     * </p>
+     * 
+     * @param manifestProcessingRules
+     *        The configuration for manifest processing rules. Manifest processing rules enable customization of the
+     *        personalized manifests created by MediaTailor.
+     */
+
+    public void setManifestProcessingRules(ManifestProcessingRules manifestProcessingRules) {
+        this.manifestProcessingRules = manifestProcessingRules;
+    }
+
+    /**
+     * <p>
+     * The configuration for manifest processing rules. Manifest processing rules enable customization of the
+     * personalized manifests created by MediaTailor.
+     * </p>
+     * 
+     * @return The configuration for manifest processing rules. Manifest processing rules enable customization of the
+     *         personalized manifests created by MediaTailor.
+     */
+
+    public ManifestProcessingRules getManifestProcessingRules() {
+        return this.manifestProcessingRules;
+    }
+
+    /**
+     * <p>
+     * The configuration for manifest processing rules. Manifest processing rules enable customization of the
+     * personalized manifests created by MediaTailor.
+     * </p>
+     * 
+     * @param manifestProcessingRules
+     *        The configuration for manifest processing rules. Manifest processing rules enable customization of the
+     *        personalized manifests created by MediaTailor.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPlaybackConfigurationResult withManifestProcessingRules(ManifestProcessingRules manifestProcessingRules) {
+        setManifestProcessingRules(manifestProcessingRules);
         return this;
     }
 
@@ -904,6 +957,8 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
             sb.append("HlsConfiguration: ").append(getHlsConfiguration()).append(",");
         if (getLivePreRollConfiguration() != null)
             sb.append("LivePreRollConfiguration: ").append(getLivePreRollConfiguration()).append(",");
+        if (getManifestProcessingRules() != null)
+            sb.append("ManifestProcessingRules: ").append(getManifestProcessingRules()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getPersonalizationThresholdSeconds() != null)
@@ -964,6 +1019,10 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getLivePreRollConfiguration() != null && other.getLivePreRollConfiguration().equals(this.getLivePreRollConfiguration()) == false)
             return false;
+        if (other.getManifestProcessingRules() == null ^ this.getManifestProcessingRules() == null)
+            return false;
+        if (other.getManifestProcessingRules() != null && other.getManifestProcessingRules().equals(this.getManifestProcessingRules()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -1017,6 +1076,7 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getDashConfiguration() == null) ? 0 : getDashConfiguration().hashCode());
         hashCode = prime * hashCode + ((getHlsConfiguration() == null) ? 0 : getHlsConfiguration().hashCode());
         hashCode = prime * hashCode + ((getLivePreRollConfiguration() == null) ? 0 : getLivePreRollConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getManifestProcessingRules() == null) ? 0 : getManifestProcessingRules().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getPersonalizationThresholdSeconds() == null) ? 0 : getPersonalizationThresholdSeconds().hashCode());
         hashCode = prime * hashCode + ((getPlaybackConfigurationArn() == null) ? 0 : getPlaybackConfigurationArn().hashCode());

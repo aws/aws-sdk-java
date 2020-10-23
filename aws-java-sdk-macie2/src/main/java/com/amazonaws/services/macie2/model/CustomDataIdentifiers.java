@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about the number of occurrences of the data that produced a sensitive data finding, and the
- * custom data identifiers that detected the data for the finding.
+ * Provides information about custom data identifiers that produced a sensitive data finding, and the number of
+ * occurrences of the data that they detected for the finding.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CustomDataIdentifiers" target="_top">AWS API

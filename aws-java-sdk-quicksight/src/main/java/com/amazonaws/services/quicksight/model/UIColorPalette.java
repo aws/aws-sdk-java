@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The theme colors that apply to UI and to charts, excluding data colors. The colors description is a hexidecimal color
+ * The theme colors that apply to UI and to charts, excluding data colors. The colors description is a hexadecimal color
  * code that consists of six alphanumerical characters, prefixed with <code>#</code>, for example #37BFF5. For more
  * information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html">Using Themes
  * in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide.</i>

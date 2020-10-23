@@ -26,8 +26,8 @@ public class ListOrganizationAdminAccountsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An array of objects, one for each account that's designated as a delegated administrator of Amazon Macie for the
-     * AWS organization. Of those accounts, only one can have a status of ENABLED.
+     * An array of objects, one for each delegated Amazon Macie administrator account for the organization. Only one of
+     * these accounts can have a status of ENABLED.
      * </p>
      */
     private java.util.List<AdminAccount> adminAccounts;
@@ -41,12 +41,12 @@ public class ListOrganizationAdminAccountsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An array of objects, one for each account that's designated as a delegated administrator of Amazon Macie for the
-     * AWS organization. Of those accounts, only one can have a status of ENABLED.
+     * An array of objects, one for each delegated Amazon Macie administrator account for the organization. Only one of
+     * these accounts can have a status of ENABLED.
      * </p>
      * 
-     * @return An array of objects, one for each account that's designated as a delegated administrator of Amazon Macie
-     *         for the AWS organization. Of those accounts, only one can have a status of ENABLED.
+     * @return An array of objects, one for each delegated Amazon Macie administrator account for the organization. Only
+     *         one of these accounts can have a status of ENABLED.
      */
 
     public java.util.List<AdminAccount> getAdminAccounts() {
@@ -55,13 +55,13 @@ public class ListOrganizationAdminAccountsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An array of objects, one for each account that's designated as a delegated administrator of Amazon Macie for the
-     * AWS organization. Of those accounts, only one can have a status of ENABLED.
+     * An array of objects, one for each delegated Amazon Macie administrator account for the organization. Only one of
+     * these accounts can have a status of ENABLED.
      * </p>
      * 
      * @param adminAccounts
-     *        An array of objects, one for each account that's designated as a delegated administrator of Amazon Macie
-     *        for the AWS organization. Of those accounts, only one can have a status of ENABLED.
+     *        An array of objects, one for each delegated Amazon Macie administrator account for the organization. Only
+     *        one of these accounts can have a status of ENABLED.
      */
 
     public void setAdminAccounts(java.util.Collection<AdminAccount> adminAccounts) {
@@ -75,8 +75,8 @@ public class ListOrganizationAdminAccountsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An array of objects, one for each account that's designated as a delegated administrator of Amazon Macie for the
-     * AWS organization. Of those accounts, only one can have a status of ENABLED.
+     * An array of objects, one for each delegated Amazon Macie administrator account for the organization. Only one of
+     * these accounts can have a status of ENABLED.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -85,8 +85,8 @@ public class ListOrganizationAdminAccountsResult extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param adminAccounts
-     *        An array of objects, one for each account that's designated as a delegated administrator of Amazon Macie
-     *        for the AWS organization. Of those accounts, only one can have a status of ENABLED.
+     *        An array of objects, one for each delegated Amazon Macie administrator account for the organization. Only
+     *        one of these accounts can have a status of ENABLED.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,13 +102,13 @@ public class ListOrganizationAdminAccountsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An array of objects, one for each account that's designated as a delegated administrator of Amazon Macie for the
-     * AWS organization. Of those accounts, only one can have a status of ENABLED.
+     * An array of objects, one for each delegated Amazon Macie administrator account for the organization. Only one of
+     * these accounts can have a status of ENABLED.
      * </p>
      * 
      * @param adminAccounts
-     *        An array of objects, one for each account that's designated as a delegated administrator of Amazon Macie
-     *        for the AWS organization. Of those accounts, only one can have a status of ENABLED.
+     *        An array of objects, one for each delegated Amazon Macie administrator account for the organization. Only
+     *        one of these accounts can have a status of ENABLED.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

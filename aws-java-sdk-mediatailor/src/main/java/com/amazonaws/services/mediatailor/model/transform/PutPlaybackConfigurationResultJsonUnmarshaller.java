@@ -76,6 +76,10 @@ public class PutPlaybackConfigurationResultJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     putPlaybackConfigurationResult.setLivePreRollConfiguration(LivePreRollConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ManifestProcessingRules", targetDepth)) {
+                    context.nextToken();
+                    putPlaybackConfigurationResult.setManifestProcessingRules(ManifestProcessingRulesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
                     putPlaybackConfigurationResult.setName(context.getUnmarshaller(String.class).unmarshall(context));

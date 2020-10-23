@@ -582,7 +582,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Disables an account as a delegated administrator of Amazon Macie for an AWS organization.
+     * Disables an account as the delegated Amazon Macie administrator account for an AWS organization.
      * </p>
      * 
      * @param disableOrganizationAdminAccountRequest
@@ -597,7 +597,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Disables an account as a delegated administrator of Amazon Macie for an AWS organization.
+     * Disables an account as the delegated Amazon Macie administrator account for an AWS organization.
      * </p>
      * 
      * @param disableOrganizationAdminAccountRequest
@@ -714,7 +714,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Enables an account as a delegated administrator of Amazon Macie for an AWS organization.
+     * Designates an account as the delegated Amazon Macie administrator account for an AWS organization.
      * </p>
      * 
      * @param enableOrganizationAdminAccountRequest
@@ -729,7 +729,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Enables an account as a delegated administrator of Amazon Macie for an AWS organization.
+     * Designates an account as the delegated Amazon Macie administrator account for an AWS organization.
      * </p>
      * 
      * @param enableOrganizationAdminAccountRequest
@@ -1313,8 +1313,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about the account that's designated as the delegated administrator of Amazon Macie for an
-     * AWS organization.
+     * Retrieves information about the delegated Amazon Macie administrator account for an AWS organization.
      * </p>
      * 
      * @param listOrganizationAdminAccountsRequest
@@ -1329,8 +1328,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about the account that's designated as the delegated administrator of Amazon Macie for an
-     * AWS organization.
+     * Retrieves information about the delegated Amazon Macie administrator account for an AWS organization.
      * </p>
      * 
      * @param listOrganizationAdminAccountsRequest
@@ -1639,7 +1637,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Updates Amazon Macie configuration settings for an AWS organization.
+     * Updates the Amazon Macie configuration settings for an AWS organization.
      * </p>
      * 
      * @param updateOrganizationConfigurationRequest
@@ -1654,7 +1652,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Updates Amazon Macie configuration settings for an AWS organization.
+     * Updates the Amazon Macie configuration settings for an AWS organization.
      * </p>
      * 
      * @param updateOrganizationConfigurationRequest

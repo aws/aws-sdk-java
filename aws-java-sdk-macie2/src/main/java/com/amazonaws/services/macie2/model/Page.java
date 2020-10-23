@@ -35,7 +35,7 @@ public class Page implements Serializable, Cloneable, StructuredPojo {
     private Range lineRange;
     /**
      * <p>
-     * The position of the data on the page, relative to the start and end of the page.
+     * The position of the data on the page, relative to the beginning of the page.
      * </p>
      */
     private Range offsetRange;
@@ -88,11 +88,11 @@ public class Page implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The position of the data on the page, relative to the start and end of the page.
+     * The position of the data on the page, relative to the beginning of the page.
      * </p>
      * 
      * @param offsetRange
-     *        The position of the data on the page, relative to the start and end of the page.
+     *        The position of the data on the page, relative to the beginning of the page.
      */
 
     public void setOffsetRange(Range offsetRange) {
@@ -101,10 +101,10 @@ public class Page implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The position of the data on the page, relative to the start and end of the page.
+     * The position of the data on the page, relative to the beginning of the page.
      * </p>
      * 
-     * @return The position of the data on the page, relative to the start and end of the page.
+     * @return The position of the data on the page, relative to the beginning of the page.
      */
 
     public Range getOffsetRange() {
@@ -113,11 +113,11 @@ public class Page implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The position of the data on the page, relative to the start and end of the page.
+     * The position of the data on the page, relative to the beginning of the page.
      * </p>
      * 
      * @param offsetRange
-     *        The position of the data on the page, relative to the start and end of the page.
+     *        The position of the data on the page, relative to the beginning of the page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

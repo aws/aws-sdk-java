@@ -29,6 +29,8 @@ public class ColumnTagMarshaller {
 
     private static final MarshallingInfo<String> COLUMNGEOGRAPHICROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ColumnGeographicRole").build();
+    private static final MarshallingInfo<StructuredPojo> COLUMNDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ColumnDescription").build();
 
     private static final ColumnTagMarshaller instance = new ColumnTagMarshaller();
 
@@ -47,6 +49,7 @@ public class ColumnTagMarshaller {
 
         try {
             protocolMarshaller.marshall(columnTag.getColumnGeographicRole(), COLUMNGEOGRAPHICROLE_BINDING);
+            protocolMarshaller.marshall(columnTag.getColumnDescription(), COLUMNDESCRIPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

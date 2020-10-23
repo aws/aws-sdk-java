@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about an account that's designated as a delegated administrator of Amazon Macie for an AWS
- * organization.
+ * Provides information about the delegated Amazon Macie administrator account for an AWS organization.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AdminAccount" target="_top">AWS API

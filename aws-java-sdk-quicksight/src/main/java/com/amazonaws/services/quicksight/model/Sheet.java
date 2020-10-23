@@ -19,10 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A sheet is an object that contains a set of visuals that are viewed together on one page in the Amazon QuickSight
- * console. Every analysis and dashboard contains at least one sheet. Each sheet contains at least one visualization
- * widget, for example a chart, pivot table, or narrative insight. Sheets can be associated with other components, such
- * as controls, filters, and so on.
+ * A <i>sheet</i>, which is an object that contains a set of visuals that are viewed together on one page in the Amazon
+ * QuickSight console. Every analysis and dashboard contains at least one sheet. Each sheet contains at least one
+ * visualization widget, for example a chart, pivot table, or narrative insight. Sheets can be associated with other
+ * components, such as controls, filters, and so on.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Sheet" target="_top">AWS API
@@ -39,7 +39,7 @@ public class Sheet implements Serializable, Cloneable, StructuredPojo {
     private String sheetId;
     /**
      * <p>
-     * The name of a sheet. This is displayed on the sheet's tab in the QuickSight console.
+     * The name of a sheet. This name is displayed on the sheet's tab in the QuickSight console.
      * </p>
      */
     private String name;
@@ -86,11 +86,11 @@ public class Sheet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a sheet. This is displayed on the sheet's tab in the QuickSight console.
+     * The name of a sheet. This name is displayed on the sheet's tab in the QuickSight console.
      * </p>
      * 
      * @param name
-     *        The name of a sheet. This is displayed on the sheet's tab in the QuickSight console.
+     *        The name of a sheet. This name is displayed on the sheet's tab in the QuickSight console.
      */
 
     public void setName(String name) {
@@ -99,10 +99,10 @@ public class Sheet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a sheet. This is displayed on the sheet's tab in the QuickSight console.
+     * The name of a sheet. This name is displayed on the sheet's tab in the QuickSight console.
      * </p>
      * 
-     * @return The name of a sheet. This is displayed on the sheet's tab in the QuickSight console.
+     * @return The name of a sheet. This name is displayed on the sheet's tab in the QuickSight console.
      */
 
     public String getName() {
@@ -111,11 +111,11 @@ public class Sheet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a sheet. This is displayed on the sheet's tab in the QuickSight console.
+     * The name of a sheet. This name is displayed on the sheet's tab in the QuickSight console.
      * </p>
      * 
      * @param name
-     *        The name of a sheet. This is displayed on the sheet's tab in the QuickSight console.
+     *        The name of a sheet. This name is displayed on the sheet's tab in the QuickSight console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
