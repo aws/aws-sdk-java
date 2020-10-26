@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.sagemaker.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +38,8 @@ public class CreateCompilationJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputConfig").build();
     private static final MarshallingInfo<StructuredPojo> STOPPINGCONDITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StoppingCondition").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateCompilationJobRequestMarshaller instance = new CreateCompilationJobRequestMarshaller();
 
@@ -59,6 +62,7 @@ public class CreateCompilationJobRequestMarshaller {
             protocolMarshaller.marshall(createCompilationJobRequest.getInputConfig(), INPUTCONFIG_BINDING);
             protocolMarshaller.marshall(createCompilationJobRequest.getOutputConfig(), OUTPUTCONFIG_BINDING);
             protocolMarshaller.marshall(createCompilationJobRequest.getStoppingCondition(), STOPPINGCONDITION_BINDING);
+            protocolMarshaller.marshall(createCompilationJobRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

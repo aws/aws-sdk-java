@@ -25,18 +25,18 @@ public class CreateAppResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The App's Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the app.
      * </p>
      */
     private String appArn;
 
     /**
      * <p>
-     * The App's Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the app.
      * </p>
      * 
      * @param appArn
-     *        The App's Amazon Resource Name (ARN).
+     *        The Amazon Resource Name (ARN) of the app.
      */
 
     public void setAppArn(String appArn) {
@@ -45,10 +45,10 @@ public class CreateAppResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The App's Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the app.
      * </p>
      * 
-     * @return The App's Amazon Resource Name (ARN).
+     * @return The Amazon Resource Name (ARN) of the app.
      */
 
     public String getAppArn() {
@@ -57,11 +57,11 @@ public class CreateAppResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The App's Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the app.
      * </p>
      * 
      * @param appArn
-     *        The App's Amazon Resource Name (ARN).
+     *        The Amazon Resource Name (ARN) of the app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

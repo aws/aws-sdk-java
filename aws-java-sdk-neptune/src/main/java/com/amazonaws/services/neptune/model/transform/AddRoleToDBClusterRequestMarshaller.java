@@ -48,6 +48,10 @@ public class AddRoleToDBClusterRequestMarshaller implements Marshaller<Request<A
             request.addParameter("RoleArn", StringUtils.fromString(addRoleToDBClusterRequest.getRoleArn()));
         }
 
+        if (addRoleToDBClusterRequest.getFeatureName() != null) {
+            request.addParameter("FeatureName", StringUtils.fromString(addRoleToDBClusterRequest.getFeatureName()));
+        }
+
         return request;
     }
 

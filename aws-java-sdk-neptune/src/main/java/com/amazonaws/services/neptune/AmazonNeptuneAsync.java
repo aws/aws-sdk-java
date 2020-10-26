@@ -340,6 +340,37 @@ public interface AmazonNeptuneAsync extends AmazonNeptune {
 
     /**
      * <p>
+     * Creates a new custom endpoint and associates it with an Amazon Neptune DB cluster.
+     * </p>
+     * 
+     * @param createDBClusterEndpointRequest
+     * @return A Java Future containing the result of the CreateDBClusterEndpoint operation returned by the service.
+     * @sample AmazonNeptuneAsync.CreateDBClusterEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBClusterEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDBClusterEndpointResult> createDBClusterEndpointAsync(CreateDBClusterEndpointRequest createDBClusterEndpointRequest);
+
+    /**
+     * <p>
+     * Creates a new custom endpoint and associates it with an Amazon Neptune DB cluster.
+     * </p>
+     * 
+     * @param createDBClusterEndpointRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateDBClusterEndpoint operation returned by the service.
+     * @sample AmazonNeptuneAsyncHandler.CreateDBClusterEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBClusterEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDBClusterEndpointResult> createDBClusterEndpointAsync(CreateDBClusterEndpointRequest createDBClusterEndpointRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateDBClusterEndpointRequest, CreateDBClusterEndpointResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new DB cluster parameter group.
      * </p>
      * <p>
@@ -689,6 +720,37 @@ public interface AmazonNeptuneAsync extends AmazonNeptune {
 
     /**
      * <p>
+     * Deletes a custom endpoint and removes it from an Amazon Neptune DB cluster.
+     * </p>
+     * 
+     * @param deleteDBClusterEndpointRequest
+     * @return A Java Future containing the result of the DeleteDBClusterEndpoint operation returned by the service.
+     * @sample AmazonNeptuneAsync.DeleteDBClusterEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBClusterEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDBClusterEndpointResult> deleteDBClusterEndpointAsync(DeleteDBClusterEndpointRequest deleteDBClusterEndpointRequest);
+
+    /**
+     * <p>
+     * Deletes a custom endpoint and removes it from an Amazon Neptune DB cluster.
+     * </p>
+     * 
+     * @param deleteDBClusterEndpointRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDBClusterEndpoint operation returned by the service.
+     * @sample AmazonNeptuneAsyncHandler.DeleteDBClusterEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBClusterEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDBClusterEndpointResult> deleteDBClusterEndpointAsync(DeleteDBClusterEndpointRequest deleteDBClusterEndpointRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDBClusterEndpointRequest, DeleteDBClusterEndpointResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a specified DB cluster parameter group. The DB cluster parameter group to be deleted can't be associated
      * with any DB clusters.
      * </p>
@@ -932,6 +994,49 @@ public interface AmazonNeptuneAsync extends AmazonNeptune {
      */
     java.util.concurrent.Future<EventSubscription> deleteEventSubscriptionAsync(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteEventSubscriptionRequest, EventSubscription> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about endpoints for an Amazon Neptune DB cluster.
+     * </p>
+     * <note>
+     * <p>
+     * This operation can also return information for Amazon RDS clusters and Amazon DocDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param describeDBClusterEndpointsRequest
+     * @return A Java Future containing the result of the DescribeDBClusterEndpoints operation returned by the service.
+     * @sample AmazonNeptuneAsync.DescribeDBClusterEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterEndpoints"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDBClusterEndpointsResult> describeDBClusterEndpointsAsync(
+            DescribeDBClusterEndpointsRequest describeDBClusterEndpointsRequest);
+
+    /**
+     * <p>
+     * Returns information about endpoints for an Amazon Neptune DB cluster.
+     * </p>
+     * <note>
+     * <p>
+     * This operation can also return information for Amazon RDS clusters and Amazon DocDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param describeDBClusterEndpointsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDBClusterEndpoints operation returned by the service.
+     * @sample AmazonNeptuneAsyncHandler.DescribeDBClusterEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterEndpoints"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDBClusterEndpointsResult> describeDBClusterEndpointsAsync(
+            DescribeDBClusterEndpointsRequest describeDBClusterEndpointsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDBClusterEndpointsRequest, DescribeDBClusterEndpointsResult> asyncHandler);
 
     /**
      * <p>
@@ -1711,6 +1816,37 @@ public interface AmazonNeptuneAsync extends AmazonNeptune {
      */
     java.util.concurrent.Future<DBCluster> modifyDBClusterAsync(ModifyDBClusterRequest modifyDBClusterRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyDBClusterRequest, DBCluster> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the properties of an endpoint in an Amazon Neptune DB cluster.
+     * </p>
+     * 
+     * @param modifyDBClusterEndpointRequest
+     * @return A Java Future containing the result of the ModifyDBClusterEndpoint operation returned by the service.
+     * @sample AmazonNeptuneAsync.ModifyDBClusterEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBClusterEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyDBClusterEndpointResult> modifyDBClusterEndpointAsync(ModifyDBClusterEndpointRequest modifyDBClusterEndpointRequest);
+
+    /**
+     * <p>
+     * Modifies the properties of an endpoint in an Amazon Neptune DB cluster.
+     * </p>
+     * 
+     * @param modifyDBClusterEndpointRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyDBClusterEndpoint operation returned by the service.
+     * @sample AmazonNeptuneAsyncHandler.ModifyDBClusterEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBClusterEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyDBClusterEndpointResult> modifyDBClusterEndpointAsync(ModifyDBClusterEndpointRequest modifyDBClusterEndpointRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyDBClusterEndpointRequest, ModifyDBClusterEndpointResult> asyncHandler);
 
     /**
      * <p>

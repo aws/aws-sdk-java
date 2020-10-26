@@ -223,6 +223,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAppImageConfigResult> createAppImageConfigAsync(CreateAppImageConfigRequest request) {
+
+        return createAppImageConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAppImageConfigResult> createAppImageConfigAsync(final CreateAppImageConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAppImageConfigRequest, CreateAppImageConfigResult> asyncHandler) {
+        final CreateAppImageConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateAppImageConfigResult>() {
+            @Override
+            public CreateAppImageConfigResult call() throws Exception {
+                CreateAppImageConfigResult result = null;
+
+                try {
+                    result = executeCreateAppImageConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAutoMLJobResult> createAutoMLJobAsync(CreateAutoMLJobRequest request) {
 
         return createAutoMLJobAsync(request, null);
@@ -538,6 +571,72 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeCreateHyperParameterTuningJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateImageResult> createImageAsync(CreateImageRequest request) {
+
+        return createImageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateImageResult> createImageAsync(final CreateImageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateImageRequest, CreateImageResult> asyncHandler) {
+        final CreateImageRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateImageResult>() {
+            @Override
+            public CreateImageResult call() throws Exception {
+                CreateImageResult result = null;
+
+                try {
+                    result = executeCreateImage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateImageVersionResult> createImageVersionAsync(CreateImageVersionRequest request) {
+
+        return createImageVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateImageVersionResult> createImageVersionAsync(final CreateImageVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateImageVersionRequest, CreateImageVersionResult> asyncHandler) {
+        final CreateImageVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateImageVersionResult>() {
+            @Override
+            public CreateImageVersionResult call() throws Exception {
+                CreateImageVersionResult result = null;
+
+                try {
+                    result = executeCreateImageVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1152,6 +1251,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteAppImageConfigResult> deleteAppImageConfigAsync(DeleteAppImageConfigRequest request) {
+
+        return deleteAppImageConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppImageConfigResult> deleteAppImageConfigAsync(final DeleteAppImageConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAppImageConfigRequest, DeleteAppImageConfigResult> asyncHandler) {
+        final DeleteAppImageConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAppImageConfigResult>() {
+            @Override
+            public DeleteAppImageConfigResult call() throws Exception {
+                DeleteAppImageConfigResult result = null;
+
+                try {
+                    result = executeDeleteAppImageConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteCodeRepositoryResult> deleteCodeRepositoryAsync(DeleteCodeRepositoryRequest request) {
 
         return deleteCodeRepositoryAsync(request, null);
@@ -1367,6 +1499,72 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeDeleteHumanTaskUi(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteImageResult> deleteImageAsync(DeleteImageRequest request) {
+
+        return deleteImageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteImageResult> deleteImageAsync(final DeleteImageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteImageRequest, DeleteImageResult> asyncHandler) {
+        final DeleteImageRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteImageResult>() {
+            @Override
+            public DeleteImageResult call() throws Exception {
+                DeleteImageResult result = null;
+
+                try {
+                    result = executeDeleteImage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteImageVersionResult> deleteImageVersionAsync(DeleteImageVersionRequest request) {
+
+        return deleteImageVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteImageVersionResult> deleteImageVersionAsync(final DeleteImageVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteImageVersionRequest, DeleteImageVersionResult> asyncHandler) {
+        final DeleteImageVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteImageVersionResult>() {
+            @Override
+            public DeleteImageVersionResult call() throws Exception {
+                DeleteImageVersionResult result = null;
+
+                try {
+                    result = executeDeleteImageVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1814,6 +2012,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAppImageConfigResult> describeAppImageConfigAsync(DescribeAppImageConfigRequest request) {
+
+        return describeAppImageConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAppImageConfigResult> describeAppImageConfigAsync(final DescribeAppImageConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAppImageConfigRequest, DescribeAppImageConfigResult> asyncHandler) {
+        final DescribeAppImageConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAppImageConfigResult>() {
+            @Override
+            public DescribeAppImageConfigResult call() throws Exception {
+                DescribeAppImageConfigResult result = null;
+
+                try {
+                    result = executeDescribeAppImageConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAutoMLJobResult> describeAutoMLJobAsync(DescribeAutoMLJobRequest request) {
 
         return describeAutoMLJobAsync(request, null);
@@ -2130,6 +2361,72 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeDescribeHyperParameterTuningJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeImageResult> describeImageAsync(DescribeImageRequest request) {
+
+        return describeImageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeImageResult> describeImageAsync(final DescribeImageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeImageRequest, DescribeImageResult> asyncHandler) {
+        final DescribeImageRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeImageResult>() {
+            @Override
+            public DescribeImageResult call() throws Exception {
+                DescribeImageResult result = null;
+
+                try {
+                    result = executeDescribeImage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeImageVersionResult> describeImageVersionAsync(DescribeImageVersionRequest request) {
+
+        return describeImageVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeImageVersionResult> describeImageVersionAsync(final DescribeImageVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeImageVersionRequest, DescribeImageVersionResult> asyncHandler) {
+        final DescribeImageVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeImageVersionResult>() {
+            @Override
+            public DescribeImageVersionResult call() throws Exception {
+                DescribeImageVersionResult result = null;
+
+                try {
+                    result = executeDescribeImageVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2742,6 +3039,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListAppImageConfigsResult> listAppImageConfigsAsync(ListAppImageConfigsRequest request) {
+
+        return listAppImageConfigsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppImageConfigsResult> listAppImageConfigsAsync(final ListAppImageConfigsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAppImageConfigsRequest, ListAppImageConfigsResult> asyncHandler) {
+        final ListAppImageConfigsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAppImageConfigsResult>() {
+            @Override
+            public ListAppImageConfigsResult call() throws Exception {
+                ListAppImageConfigsResult result = null;
+
+                try {
+                    result = executeListAppImageConfigs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAppsResult> listAppsAsync(ListAppsRequest request) {
 
         return listAppsAsync(request, null);
@@ -3122,6 +3452,72 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeListHyperParameterTuningJobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImageVersionsResult> listImageVersionsAsync(ListImageVersionsRequest request) {
+
+        return listImageVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImageVersionsResult> listImageVersionsAsync(final ListImageVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListImageVersionsRequest, ListImageVersionsResult> asyncHandler) {
+        final ListImageVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListImageVersionsResult>() {
+            @Override
+            public ListImageVersionsResult call() throws Exception {
+                ListImageVersionsResult result = null;
+
+                try {
+                    result = executeListImageVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImagesResult> listImagesAsync(ListImagesRequest request) {
+
+        return listImagesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImagesResult> listImagesAsync(final ListImagesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListImagesRequest, ListImagesResult> asyncHandler) {
+        final ListImagesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListImagesResult>() {
+            @Override
+            public ListImagesResult call() throws Exception {
+                ListImagesResult result = null;
+
+                try {
+                    result = executeListImages(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4198,6 +4594,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateAppImageConfigResult> updateAppImageConfigAsync(UpdateAppImageConfigRequest request) {
+
+        return updateAppImageConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAppImageConfigResult> updateAppImageConfigAsync(final UpdateAppImageConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAppImageConfigRequest, UpdateAppImageConfigResult> asyncHandler) {
+        final UpdateAppImageConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAppImageConfigResult>() {
+            @Override
+            public UpdateAppImageConfigResult call() throws Exception {
+                UpdateAppImageConfigResult result = null;
+
+                try {
+                    result = executeUpdateAppImageConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateCodeRepositoryResult> updateCodeRepositoryAsync(UpdateCodeRepositoryRequest request) {
 
         return updateCodeRepositoryAsync(request, null);
@@ -4349,6 +4778,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeUpdateExperiment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateImageResult> updateImageAsync(UpdateImageRequest request) {
+
+        return updateImageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateImageResult> updateImageAsync(final UpdateImageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateImageRequest, UpdateImageResult> asyncHandler) {
+        final UpdateImageRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateImageResult>() {
+            @Override
+            public UpdateImageResult call() throws Exception {
+                UpdateImageResult result = null;
+
+                try {
+                    result = executeUpdateImage(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

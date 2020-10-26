@@ -48,6 +48,7 @@ public enum TrainingInstanceType {
     MlP38xlarge("ml.p3.8xlarge"),
     MlP316xlarge("ml.p3.16xlarge"),
     MlP3dn24xlarge("ml.p3dn.24xlarge"),
+    MlP4d24xlarge("ml.p4d.24xlarge"),
     MlC5Xlarge("ml.c5.xlarge"),
     MlC52xlarge("ml.c5.2xlarge"),
     MlC54xlarge("ml.c5.4xlarge"),

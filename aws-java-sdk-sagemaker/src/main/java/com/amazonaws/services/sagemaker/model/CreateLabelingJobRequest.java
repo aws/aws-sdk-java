@@ -64,7 +64,7 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     private String roleArn;
     /**
      * <p>
-     * The S3 URL of the file that defines the categories used to label the data objects.
+     * The S3 URI of the file that defines the categories used to label the data objects.
      * </p>
      * <p>
      * For 3D point cloud task types, see <a
@@ -398,7 +398,7 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The S3 URL of the file that defines the categories used to label the data objects.
+     * The S3 URI of the file that defines the categories used to label the data objects.
      * </p>
      * <p>
      * For 3D point cloud task types, see <a
@@ -459,7 +459,7 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param labelCategoryConfigS3Uri
-     *        The S3 URL of the file that defines the categories used to label the data objects.</p>
+     *        The S3 URI of the file that defines the categories used to label the data objects.</p>
      *        <p>
      *        For 3D point cloud task types, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create a
@@ -524,7 +524,7 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The S3 URL of the file that defines the categories used to label the data objects.
+     * The S3 URI of the file that defines the categories used to label the data objects.
      * </p>
      * <p>
      * For 3D point cloud task types, see <a
@@ -584,7 +584,7 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>}</code>
      * </p>
      * 
-     * @return The S3 URL of the file that defines the categories used to label the data objects.</p>
+     * @return The S3 URI of the file that defines the categories used to label the data objects.</p>
      *         <p>
      *         For 3D point cloud task types, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create
@@ -649,7 +649,7 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The S3 URL of the file that defines the categories used to label the data objects.
+     * The S3 URI of the file that defines the categories used to label the data objects.
      * </p>
      * <p>
      * For 3D point cloud task types, see <a
@@ -710,7 +710,7 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param labelCategoryConfigS3Uri
-     *        The S3 URL of the file that defines the categories used to label the data objects.</p>
+     *        The S3 URI of the file that defines the categories used to label the data objects.</p>
      *        <p>
      *        For 3D point cloud task types, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create a

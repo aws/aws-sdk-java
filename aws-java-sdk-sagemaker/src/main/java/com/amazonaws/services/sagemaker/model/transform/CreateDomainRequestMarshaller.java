@@ -40,10 +40,10 @@ public class CreateDomainRequestMarshaller {
             .marshallLocationName("VpcId").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
-    private static final MarshallingInfo<String> HOMEEFSFILESYSTEMKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HomeEfsFileSystemKmsKeyId").build();
     private static final MarshallingInfo<String> APPNETWORKACCESSTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AppNetworkAccessType").build();
+    private static final MarshallingInfo<String> HOMEEFSFILESYSTEMKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HomeEfsFileSystemKmsKeyId").build();
 
     private static final CreateDomainRequestMarshaller instance = new CreateDomainRequestMarshaller();
 
@@ -67,8 +67,8 @@ public class CreateDomainRequestMarshaller {
             protocolMarshaller.marshall(createDomainRequest.getSubnetIds(), SUBNETIDS_BINDING);
             protocolMarshaller.marshall(createDomainRequest.getVpcId(), VPCID_BINDING);
             protocolMarshaller.marshall(createDomainRequest.getTags(), TAGS_BINDING);
-            protocolMarshaller.marshall(createDomainRequest.getHomeEfsFileSystemKmsKeyId(), HOMEEFSFILESYSTEMKMSKEYID_BINDING);
             protocolMarshaller.marshall(createDomainRequest.getAppNetworkAccessType(), APPNETWORKACCESSTYPE_BINDING);
+            protocolMarshaller.marshall(createDomainRequest.getHomeEfsFileSystemKmsKeyId(), HOMEEFSFILESYSTEMKMSKEYID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

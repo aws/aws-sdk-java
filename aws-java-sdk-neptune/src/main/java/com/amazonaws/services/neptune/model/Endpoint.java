@@ -19,6 +19,9 @@ import javax.annotation.Generated;
  * <p>
  * Specifies a connection endpoint.
  * </p>
+ * <p>
+ * For the data structure that represents Amazon Neptune DB cluster endpoints, see <code>DBClusterEndpoint</code>.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/Endpoint" target="_top">AWS API
  *      Documentation</a>

@@ -222,11 +222,16 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private CloudwatchLogsExportConfiguration cloudwatchLogsExportConfiguration;
     /**
      * <p>
-     * The version number of the database engine. Currently, setting this parameter has no effect. To upgrade your
-     * database engine to the most recent release, use the <a>ApplyPendingMaintenanceAction</a> API.
+     * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
+     * outage. The change is applied during the next maintenance window unless the <code>ApplyImmediately</code>
+     * parameter is set to true.
      * </p>
      * <p>
-     * For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
+     * For a list of valid engine versions, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for Amazon
+     * Neptune</a>, or call <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions"
+     * >DescribeDBEngineVersions</a>.
      * </p>
      */
     private String engineVersion;
@@ -1521,18 +1526,28 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the database engine. Currently, setting this parameter has no effect. To upgrade your
-     * database engine to the most recent release, use the <a>ApplyPendingMaintenanceAction</a> API.
+     * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
+     * outage. The change is applied during the next maintenance window unless the <code>ApplyImmediately</code>
+     * parameter is set to true.
      * </p>
      * <p>
-     * For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
+     * For a list of valid engine versions, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for Amazon
+     * Neptune</a>, or call <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions"
+     * >DescribeDBEngineVersions</a>.
      * </p>
      * 
      * @param engineVersion
-     *        The version number of the database engine. Currently, setting this parameter has no effect. To upgrade
-     *        your database engine to the most recent release, use the <a>ApplyPendingMaintenanceAction</a> API.</p>
+     *        The version number of the database engine to which you want to upgrade. Changing this parameter results in
+     *        an outage. The change is applied during the next maintenance window unless the
+     *        <code>ApplyImmediately</code> parameter is set to true.</p>
      *        <p>
-     *        For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
+     *        For a list of valid engine versions, see <a
+     *        href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for
+     *        Amazon Neptune</a>, or call <a
+     *        href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions"
+     *        >DescribeDBEngineVersions</a>.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -1541,18 +1556,27 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the database engine. Currently, setting this parameter has no effect. To upgrade your
-     * database engine to the most recent release, use the <a>ApplyPendingMaintenanceAction</a> API.
+     * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
+     * outage. The change is applied during the next maintenance window unless the <code>ApplyImmediately</code>
+     * parameter is set to true.
      * </p>
      * <p>
-     * For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
+     * For a list of valid engine versions, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for Amazon
+     * Neptune</a>, or call <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions"
+     * >DescribeDBEngineVersions</a>.
      * </p>
      * 
-     * @return The version number of the database engine. Currently, setting this parameter has no effect. To upgrade
-     *         your database engine to the most recent release, use the <a>ApplyPendingMaintenanceAction</a> API.</p>
+     * @return The version number of the database engine to which you want to upgrade. Changing this parameter results
+     *         in an outage. The change is applied during the next maintenance window unless the
+     *         <code>ApplyImmediately</code> parameter is set to true.</p>
      *         <p>
-     *         For a list of valid engine versions, see <a>CreateDBInstance</a>, or call
-     *         <a>DescribeDBEngineVersions</a>.
+     *         For a list of valid engine versions, see <a
+     *         href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for
+     *         Amazon Neptune</a>, or call <a href=
+     *         "https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions"
+     *         >DescribeDBEngineVersions</a>.
      */
 
     public String getEngineVersion() {
@@ -1561,18 +1585,28 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the database engine. Currently, setting this parameter has no effect. To upgrade your
-     * database engine to the most recent release, use the <a>ApplyPendingMaintenanceAction</a> API.
+     * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
+     * outage. The change is applied during the next maintenance window unless the <code>ApplyImmediately</code>
+     * parameter is set to true.
      * </p>
      * <p>
-     * For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
+     * For a list of valid engine versions, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for Amazon
+     * Neptune</a>, or call <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions"
+     * >DescribeDBEngineVersions</a>.
      * </p>
      * 
      * @param engineVersion
-     *        The version number of the database engine. Currently, setting this parameter has no effect. To upgrade
-     *        your database engine to the most recent release, use the <a>ApplyPendingMaintenanceAction</a> API.</p>
+     *        The version number of the database engine to which you want to upgrade. Changing this parameter results in
+     *        an outage. The change is applied during the next maintenance window unless the
+     *        <code>ApplyImmediately</code> parameter is set to true.</p>
      *        <p>
-     *        For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
+     *        For a list of valid engine versions, see <a
+     *        href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for
+     *        Amazon Neptune</a>, or call <a
+     *        href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions"
+     *        >DescribeDBEngineVersions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

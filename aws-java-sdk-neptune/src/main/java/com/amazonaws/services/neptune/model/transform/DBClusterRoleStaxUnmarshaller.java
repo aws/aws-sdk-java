@@ -52,6 +52,11 @@ public class DBClusterRoleStaxUnmarshaller implements Unmarshaller<DBClusterRole
                     dBClusterRole.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("FeatureName", targetDepth)) {
+                    dBClusterRole.setFeatureName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBClusterRole;

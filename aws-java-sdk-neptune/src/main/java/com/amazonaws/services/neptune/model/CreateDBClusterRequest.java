@@ -138,10 +138,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String engine;
     /**
      * <p>
-     * The version number of the database engine to use. Currently, setting this parameter has no effect.
+     * The version number of the database engine to use for the new DB cluster.
      * </p>
      * <p>
-     * Example: <code>1.0.1</code>
+     * Example: <code>1.0.2.1</code>
      * </p>
      */
     private String engineVersion;
@@ -319,11 +319,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String preSignedUrl;
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * Not supported by Neptune.
      * </p>
      */
     private Boolean enableIAMDatabaseAuthentication;
@@ -1090,16 +1086,16 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the database engine to use. Currently, setting this parameter has no effect.
+     * The version number of the database engine to use for the new DB cluster.
      * </p>
      * <p>
-     * Example: <code>1.0.1</code>
+     * Example: <code>1.0.2.1</code>
      * </p>
      * 
      * @param engineVersion
-     *        The version number of the database engine to use. Currently, setting this parameter has no effect.</p>
+     *        The version number of the database engine to use for the new DB cluster.</p>
      *        <p>
-     *        Example: <code>1.0.1</code>
+     *        Example: <code>1.0.2.1</code>
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -1108,15 +1104,15 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the database engine to use. Currently, setting this parameter has no effect.
+     * The version number of the database engine to use for the new DB cluster.
      * </p>
      * <p>
-     * Example: <code>1.0.1</code>
+     * Example: <code>1.0.2.1</code>
      * </p>
      * 
-     * @return The version number of the database engine to use. Currently, setting this parameter has no effect.</p>
+     * @return The version number of the database engine to use for the new DB cluster.</p>
      *         <p>
-     *         Example: <code>1.0.1</code>
+     *         Example: <code>1.0.2.1</code>
      */
 
     public String getEngineVersion() {
@@ -1125,16 +1121,16 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the database engine to use. Currently, setting this parameter has no effect.
+     * The version number of the database engine to use for the new DB cluster.
      * </p>
      * <p>
-     * Example: <code>1.0.1</code>
+     * Example: <code>1.0.2.1</code>
      * </p>
      * 
      * @param engineVersion
-     *        The version number of the database engine to use. Currently, setting this parameter has no effect.</p>
+     *        The version number of the database engine to use for the new DB cluster.</p>
      *        <p>
-     *        Example: <code>1.0.1</code>
+     *        Example: <code>1.0.2.1</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2248,18 +2244,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * Not supported by Neptune.
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
-     *        otherwise false.</p>
-     *        <p>
-     *        Default: <code>false</code>
+     *        Not supported by Neptune.
      */
 
     public void setEnableIAMDatabaseAuthentication(Boolean enableIAMDatabaseAuthentication) {
@@ -2268,17 +2257,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * Not supported by Neptune.
      * </p>
      * 
-     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
-     *         otherwise false.</p>
-     *         <p>
-     *         Default: <code>false</code>
+     * @return Not supported by Neptune.
      */
 
     public Boolean getEnableIAMDatabaseAuthentication() {
@@ -2287,18 +2269,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * Not supported by Neptune.
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
-     *        otherwise false.</p>
-     *        <p>
-     *        Default: <code>false</code>
+     *        Not supported by Neptune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2309,17 +2284,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * Not supported by Neptune.
      * </p>
      * 
-     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
-     *         otherwise false.</p>
-     *         <p>
-     *         Default: <code>false</code>
+     * @return Not supported by Neptune.
      */
 
     public Boolean isEnableIAMDatabaseAuthentication() {

@@ -64,13 +64,6 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
-     * supported.
-     * </p>
-     */
-    private String homeEfsFileSystemKmsKeyId;
-    /**
-     * <p>
      * Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.
      * </p>
      * <ul>
@@ -88,6 +81,13 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      */
     private String appNetworkAccessType;
+    /**
+     * <p>
+     * The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
+     * supported.
+     * </p>
+     */
+    private String homeEfsFileSystemKmsKeyId;
 
     /**
      * <p>
@@ -418,52 +418,6 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
-     * supported.
-     * </p>
-     * 
-     * @param homeEfsFileSystemKmsKeyId
-     *        The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
-     *        supported.
-     */
-
-    public void setHomeEfsFileSystemKmsKeyId(String homeEfsFileSystemKmsKeyId) {
-        this.homeEfsFileSystemKmsKeyId = homeEfsFileSystemKmsKeyId;
-    }
-
-    /**
-     * <p>
-     * The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
-     * supported.
-     * </p>
-     * 
-     * @return The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is
-     *         not supported.
-     */
-
-    public String getHomeEfsFileSystemKmsKeyId() {
-        return this.homeEfsFileSystemKmsKeyId;
-    }
-
-    /**
-     * <p>
-     * The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
-     * supported.
-     * </p>
-     * 
-     * @param homeEfsFileSystemKmsKeyId
-     *        The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
-     *        supported.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateDomainRequest withHomeEfsFileSystemKmsKeyId(String homeEfsFileSystemKmsKeyId) {
-        setHomeEfsFileSystemKmsKeyId(homeEfsFileSystemKmsKeyId);
-        return this;
-    }
-
-    /**
-     * <p>
      * Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.
      * </p>
      * <ul>
@@ -622,6 +576,52 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
+     * supported.
+     * </p>
+     * 
+     * @param homeEfsFileSystemKmsKeyId
+     *        The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
+     *        supported.
+     */
+
+    public void setHomeEfsFileSystemKmsKeyId(String homeEfsFileSystemKmsKeyId) {
+        this.homeEfsFileSystemKmsKeyId = homeEfsFileSystemKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
+     * supported.
+     * </p>
+     * 
+     * @return The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is
+     *         not supported.
+     */
+
+    public String getHomeEfsFileSystemKmsKeyId() {
+        return this.homeEfsFileSystemKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
+     * supported.
+     * </p>
+     * 
+     * @param homeEfsFileSystemKmsKeyId
+     *        The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
+     *        supported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDomainRequest withHomeEfsFileSystemKmsKeyId(String homeEfsFileSystemKmsKeyId) {
+        setHomeEfsFileSystemKmsKeyId(homeEfsFileSystemKmsKeyId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -645,10 +645,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
-        if (getHomeEfsFileSystemKmsKeyId() != null)
-            sb.append("HomeEfsFileSystemKmsKeyId: ").append(getHomeEfsFileSystemKmsKeyId()).append(",");
         if (getAppNetworkAccessType() != null)
-            sb.append("AppNetworkAccessType: ").append(getAppNetworkAccessType());
+            sb.append("AppNetworkAccessType: ").append(getAppNetworkAccessType()).append(",");
+        if (getHomeEfsFileSystemKmsKeyId() != null)
+            sb.append("HomeEfsFileSystemKmsKeyId: ").append(getHomeEfsFileSystemKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -687,13 +687,13 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
-        if (other.getHomeEfsFileSystemKmsKeyId() == null ^ this.getHomeEfsFileSystemKmsKeyId() == null)
-            return false;
-        if (other.getHomeEfsFileSystemKmsKeyId() != null && other.getHomeEfsFileSystemKmsKeyId().equals(this.getHomeEfsFileSystemKmsKeyId()) == false)
-            return false;
         if (other.getAppNetworkAccessType() == null ^ this.getAppNetworkAccessType() == null)
             return false;
         if (other.getAppNetworkAccessType() != null && other.getAppNetworkAccessType().equals(this.getAppNetworkAccessType()) == false)
+            return false;
+        if (other.getHomeEfsFileSystemKmsKeyId() == null ^ this.getHomeEfsFileSystemKmsKeyId() == null)
+            return false;
+        if (other.getHomeEfsFileSystemKmsKeyId() != null && other.getHomeEfsFileSystemKmsKeyId().equals(this.getHomeEfsFileSystemKmsKeyId()) == false)
             return false;
         return true;
     }
@@ -709,8 +709,8 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
-        hashCode = prime * hashCode + ((getHomeEfsFileSystemKmsKeyId() == null) ? 0 : getHomeEfsFileSystemKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getAppNetworkAccessType() == null) ? 0 : getAppNetworkAccessType().hashCode());
+        hashCode = prime * hashCode + ((getHomeEfsFileSystemKmsKeyId() == null) ? 0 : getHomeEfsFileSystemKmsKeyId().hashCode());
         return hashCode;
     }
 

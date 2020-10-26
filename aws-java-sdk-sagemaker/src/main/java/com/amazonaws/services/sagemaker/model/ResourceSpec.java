@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. The ARN is
- * stored as metadata in SageMaker Studio notebooks.
+ * Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ResourceSpec" target="_top">AWS API
@@ -31,24 +30,30 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SageMaker image created on the instance.
+     * The ARN of the SageMaker image that the image version belongs to.
      * </p>
      */
     private String sageMakerImageArn;
     /**
      * <p>
-     * The instance type.
+     * The ARN of the image version created on the instance.
+     * </p>
+     */
+    private String sageMakerImageVersionArn;
+    /**
+     * <p>
+     * The instance type that the image version runs on.
      * </p>
      */
     private String instanceType;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SageMaker image created on the instance.
+     * The ARN of the SageMaker image that the image version belongs to.
      * </p>
      * 
      * @param sageMakerImageArn
-     *        The Amazon Resource Name (ARN) of the SageMaker image created on the instance.
+     *        The ARN of the SageMaker image that the image version belongs to.
      */
 
     public void setSageMakerImageArn(String sageMakerImageArn) {
@@ -57,10 +62,10 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SageMaker image created on the instance.
+     * The ARN of the SageMaker image that the image version belongs to.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the SageMaker image created on the instance.
+     * @return The ARN of the SageMaker image that the image version belongs to.
      */
 
     public String getSageMakerImageArn() {
@@ -69,11 +74,11 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SageMaker image created on the instance.
+     * The ARN of the SageMaker image that the image version belongs to.
      * </p>
      * 
      * @param sageMakerImageArn
-     *        The Amazon Resource Name (ARN) of the SageMaker image created on the instance.
+     *        The ARN of the SageMaker image that the image version belongs to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,11 +89,51 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance type.
+     * The ARN of the image version created on the instance.
+     * </p>
+     * 
+     * @param sageMakerImageVersionArn
+     *        The ARN of the image version created on the instance.
+     */
+
+    public void setSageMakerImageVersionArn(String sageMakerImageVersionArn) {
+        this.sageMakerImageVersionArn = sageMakerImageVersionArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the image version created on the instance.
+     * </p>
+     * 
+     * @return The ARN of the image version created on the instance.
+     */
+
+    public String getSageMakerImageVersionArn() {
+        return this.sageMakerImageVersionArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the image version created on the instance.
+     * </p>
+     * 
+     * @param sageMakerImageVersionArn
+     *        The ARN of the image version created on the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceSpec withSageMakerImageVersionArn(String sageMakerImageVersionArn) {
+        setSageMakerImageVersionArn(sageMakerImageVersionArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance type that the image version runs on.
      * </p>
      * 
      * @param instanceType
-     *        The instance type.
+     *        The instance type that the image version runs on.
      * @see AppInstanceType
      */
 
@@ -98,10 +143,10 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance type.
+     * The instance type that the image version runs on.
      * </p>
      * 
-     * @return The instance type.
+     * @return The instance type that the image version runs on.
      * @see AppInstanceType
      */
 
@@ -111,11 +156,11 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance type.
+     * The instance type that the image version runs on.
      * </p>
      * 
      * @param instanceType
-     *        The instance type.
+     *        The instance type that the image version runs on.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AppInstanceType
      */
@@ -127,11 +172,11 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance type.
+     * The instance type that the image version runs on.
      * </p>
      * 
      * @param instanceType
-     *        The instance type.
+     *        The instance type that the image version runs on.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AppInstanceType
      */
@@ -155,6 +200,8 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getSageMakerImageArn() != null)
             sb.append("SageMakerImageArn: ").append(getSageMakerImageArn()).append(",");
+        if (getSageMakerImageVersionArn() != null)
+            sb.append("SageMakerImageVersionArn: ").append(getSageMakerImageVersionArn()).append(",");
         if (getInstanceType() != null)
             sb.append("InstanceType: ").append(getInstanceType());
         sb.append("}");
@@ -175,6 +222,10 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSageMakerImageArn() != null && other.getSageMakerImageArn().equals(this.getSageMakerImageArn()) == false)
             return false;
+        if (other.getSageMakerImageVersionArn() == null ^ this.getSageMakerImageVersionArn() == null)
+            return false;
+        if (other.getSageMakerImageVersionArn() != null && other.getSageMakerImageVersionArn().equals(this.getSageMakerImageVersionArn()) == false)
+            return false;
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
         if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
@@ -188,6 +239,7 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSageMakerImageArn() == null) ? 0 : getSageMakerImageArn().hashCode());
+        hashCode = prime * hashCode + ((getSageMakerImageVersionArn() == null) ? 0 : getSageMakerImageVersionArn().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         return hashCode;
     }

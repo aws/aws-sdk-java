@@ -36,7 +36,14 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
     private String executionRole;
     /**
      * <p>
-     * The security groups.
+     * The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+     * </p>
+     * <p>
+     * Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
+     * <code>PublicInternetOnly</code>.
+     * </p>
+     * <p>
+     * Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>.
      * </p>
      */
     private java.util.List<String> securityGroups;
@@ -107,10 +114,23 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The security groups.
+     * The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+     * </p>
+     * <p>
+     * Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
+     * <code>PublicInternetOnly</code>.
+     * </p>
+     * <p>
+     * Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>.
      * </p>
      * 
-     * @return The security groups.
+     * @return The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
+     *         <p>
+     *         Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
+     *         <code>PublicInternetOnly</code>.
+     *         </p>
+     *         <p>
+     *         Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>.
      */
 
     public java.util.List<String> getSecurityGroups() {
@@ -119,11 +139,24 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The security groups.
+     * The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+     * </p>
+     * <p>
+     * Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
+     * <code>PublicInternetOnly</code>.
+     * </p>
+     * <p>
+     * Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>.
      * </p>
      * 
      * @param securityGroups
-     *        The security groups.
+     *        The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
+     *        <p>
+     *        Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
+     *        <code>PublicInternetOnly</code>.
+     *        </p>
+     *        <p>
+     *        Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>.
      */
 
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
@@ -137,7 +170,14 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The security groups.
+     * The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+     * </p>
+     * <p>
+     * Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
+     * <code>PublicInternetOnly</code>.
+     * </p>
+     * <p>
+     * Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -146,7 +186,13 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param securityGroups
-     *        The security groups.
+     *        The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
+     *        <p>
+     *        Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
+     *        <code>PublicInternetOnly</code>.
+     *        </p>
+     *        <p>
+     *        Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,11 +208,24 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The security groups.
+     * The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+     * </p>
+     * <p>
+     * Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
+     * <code>PublicInternetOnly</code>.
+     * </p>
+     * <p>
+     * Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>.
      * </p>
      * 
      * @param securityGroups
-     *        The security groups.
+     *        The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
+     *        <p>
+     *        Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
+     *        <code>PublicInternetOnly</code>.
+     *        </p>
+     *        <p>
+     *        Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -52,6 +52,12 @@ public class KernelGatewayAppSettingsJsonUnmarshaller implements Unmarshaller<Ke
                     context.nextToken();
                     kernelGatewayAppSettings.setDefaultResourceSpec(ResourceSpecJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("CustomImages", targetDepth)) {
+                    context.nextToken();
+                    kernelGatewayAppSettings.setCustomImages(new ListUnmarshaller<CustomImage>(CustomImageJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

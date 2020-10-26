@@ -406,6 +406,62 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Creates a configuration for running an Amazon SageMaker image as a KernelGateway app.
+     * </p>
+     * 
+     * @param createAppImageConfigRequest
+     * @return Result of the CreateAppImageConfig operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @sample AmazonSageMaker.CreateAppImageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAppImageConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateAppImageConfigResult createAppImageConfig(CreateAppImageConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAppImageConfig(request);
+    }
+
+    @SdkInternalApi
+    final CreateAppImageConfigResult executeCreateAppImageConfig(CreateAppImageConfigRequest createAppImageConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createAppImageConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAppImageConfigRequest> request = null;
+        Response<CreateAppImageConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAppImageConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAppImageConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAppImageConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAppImageConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateAppImageConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates an Autopilot job.
      * </p>
      * <p>
@@ -668,59 +724,17 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * by default. To allow internet access, you must specify a NAT gateway.
      * </p>
      * <p>
-     * When internet access is disabled, you won't be able to train or host models unless your VPC has an interface
-     * endpoint (PrivateLink) or a NAT gateway and your security groups allow outbound connections.
+     * When internet access is disabled, you won't be able to run a Studio notebook or to train or host models unless
+     * your VPC has an interface endpoint to the SageMaker API and runtime or a NAT gateway and your security groups
+     * allow outbound connections.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * <b> <code>VpcOnly</code> network access type</b>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect
+     * SageMaker Studio Notebooks to Resources in a VPC</a>.
      * </p>
-     * <p>
-     * When you choose <code>VpcOnly</code>, you must specify the following:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Security group inbound and outbound rules to allow NFS traffic over TCP on port 2049 between the domain and the
-     * EFS volume
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Security group inbound and outbound rules to allow traffic between the JupyterServer app and the KernelGateway
-     * apps
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Interface endpoints to access the SageMaker API and SageMaker runtime
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For more information, see:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security groups for your
-     * VPC</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html">VPC with public and private subnets
-     * (NAT)</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/interface-vpc-endpoint.html">Connect to SageMaker
-     * through a VPC interface endpoint</a>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param createDomainRequest
      * @return Result of the CreateDomain operation returned by the service.
@@ -1243,6 +1257,128 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Creates a SageMaker <code>Image</code>. A SageMaker image represents a set of container images. Each of these
+     * container images is represented by a SageMaker <code>ImageVersion</code>.
+     * </p>
+     * 
+     * @param createImageRequest
+     * @return Result of the CreateImage operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.CreateImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateImageResult createImage(CreateImageRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateImage(request);
+    }
+
+    @SdkInternalApi
+    final CreateImageResult executeCreateImage(CreateImageRequest createImageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createImageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateImageRequest> request = null;
+        Response<CreateImageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateImageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createImageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateImage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateImageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateImageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a version of the SageMaker image specified by <code>ImageName</code>. The version represents the Amazon
+     * Container Registry (ECR) container image specified by <code>BaseImage</code>.
+     * </p>
+     * 
+     * @param createImageVersionRequest
+     * @return Result of the CreateImageVersion operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.CreateImageVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImageVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateImageVersionResult createImageVersion(CreateImageVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateImageVersion(request);
+    }
+
+    @SdkInternalApi
+    final CreateImageVersionResult executeCreateImageVersion(CreateImageVersionRequest createImageVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createImageVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateImageVersionRequest> request = null;
+        Response<CreateImageVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateImageVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createImageVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateImageVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateImageVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateImageVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a job that uses workers to label the data objects in your input dataset. You can use the labeled data to
      * train machine learning models.
      * </p>
@@ -1439,6 +1575,11 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * 
      * @param createModelPackageRequest
      * @return Result of the CreateModelPackage operation returned by the service.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify an experiment, trial, or trial component.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
      * @sample AmazonSageMaker.CreateModelPackage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelPackage" target="_top">AWS
      *      API Documentation</a>
@@ -2639,6 +2780,62 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Deletes an AppImageConfig.
+     * </p>
+     * 
+     * @param deleteAppImageConfigRequest
+     * @return Result of the DeleteAppImageConfig operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeleteAppImageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAppImageConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteAppImageConfigResult deleteAppImageConfig(DeleteAppImageConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAppImageConfig(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAppImageConfigResult executeDeleteAppImageConfig(DeleteAppImageConfigRequest deleteAppImageConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAppImageConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAppImageConfigRequest> request = null;
+        Response<DeleteAppImageConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAppImageConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAppImageConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAppImageConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAppImageConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAppImageConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified Git repository from your account.
      * </p>
      * 
@@ -3049,6 +3246,122 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Deletes a SageMaker image and all versions of the image. The container images aren't deleted.
+     * </p>
+     * 
+     * @param deleteImageRequest
+     * @return Result of the DeleteImage operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeleteImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteImageResult deleteImage(DeleteImageRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteImage(request);
+    }
+
+    @SdkInternalApi
+    final DeleteImageResult executeDeleteImage(DeleteImageRequest deleteImageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteImageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteImageRequest> request = null;
+        Response<DeleteImageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteImageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteImageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteImage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteImageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteImageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a version of a SageMaker image. The container image the version represents isn't deleted.
+     * </p>
+     * 
+     * @param deleteImageVersionRequest
+     * @return Result of the DeleteImageVersion operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeleteImageVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImageVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteImageVersionResult deleteImageVersion(DeleteImageVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteImageVersion(request);
+    }
+
+    @SdkInternalApi
+    final DeleteImageVersionResult executeDeleteImageVersion(DeleteImageVersionRequest deleteImageVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteImageVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteImageVersionRequest> request = null;
+        Response<DeleteImageVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteImageVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteImageVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteImageVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteImageVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteImageVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a model. The <code>DeleteModel</code> API deletes only the model entry that was created in Amazon
      * SageMaker when you called the <a>CreateModel</a> API. It does not delete model artifacts, inference code, or the
      * IAM role that you specified when creating the model.
@@ -3114,6 +3427,8 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * 
      * @param deleteModelPackageRequest
      * @return Result of the DeleteModelPackage operation returned by the service.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify an experiment, trial, or trial component.
      * @sample AmazonSageMaker.DeleteModelPackage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelPackage" target="_top">AWS
      *      API Documentation</a>
@@ -3810,6 +4125,63 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Describes an AppImageConfig.
+     * </p>
+     * 
+     * @param describeAppImageConfigRequest
+     * @return Result of the DescribeAppImageConfig operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeAppImageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAppImageConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAppImageConfigResult describeAppImageConfig(DescribeAppImageConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAppImageConfig(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAppImageConfigResult executeDescribeAppImageConfig(DescribeAppImageConfigRequest describeAppImageConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAppImageConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAppImageConfigRequest> request = null;
+        Response<DescribeAppImageConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAppImageConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAppImageConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAppImageConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAppImageConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeAppImageConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns information about an Amazon SageMaker job.
      * </p>
      * 
@@ -4363,6 +4735,118 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
             HttpResponseHandler<AmazonWebServiceResponse<DescribeHyperParameterTuningJobResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeHyperParameterTuningJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes a SageMaker image.
+     * </p>
+     * 
+     * @param describeImageRequest
+     * @return Result of the DescribeImage operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeImageResult describeImage(DescribeImageRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeImage(request);
+    }
+
+    @SdkInternalApi
+    final DescribeImageResult executeDescribeImage(DescribeImageRequest describeImageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeImageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeImageRequest> request = null;
+        Response<DescribeImageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeImageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeImageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeImage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeImageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeImageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes a version of a SageMaker image.
+     * </p>
+     * 
+     * @param describeImageVersionRequest
+     * @return Result of the DescribeImageVersion operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeImageVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImageVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeImageVersionResult describeImageVersion(DescribeImageVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeImageVersion(request);
+    }
+
+    @SdkInternalApi
+    final DescribeImageVersionResult executeDescribeImageVersion(DescribeImageVersionRequest describeImageVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeImageVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeImageVersionRequest> request = null;
+        Response<DescribeImageVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeImageVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeImageVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeImageVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeImageVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeImageVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5407,6 +5891,61 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Lists the AppImageConfigs in your account and their properties. The list can be filtered by creation time or
+     * modified time, and whether the AppImageConfig name contains a specified string.
+     * </p>
+     * 
+     * @param listAppImageConfigsRequest
+     * @return Result of the ListAppImageConfigs operation returned by the service.
+     * @sample AmazonSageMaker.ListAppImageConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAppImageConfigs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListAppImageConfigsResult listAppImageConfigs(ListAppImageConfigsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAppImageConfigs(request);
+    }
+
+    @SdkInternalApi
+    final ListAppImageConfigsResult executeListAppImageConfigs(ListAppImageConfigsRequest listAppImageConfigsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAppImageConfigsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAppImageConfigsRequest> request = null;
+        Response<ListAppImageConfigsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAppImageConfigsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAppImageConfigsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAppImageConfigs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAppImageConfigsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAppImageConfigsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists apps.
      * </p>
      * 
@@ -6055,6 +6594,118 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
             HttpResponseHandler<AmazonWebServiceResponse<ListHyperParameterTuningJobsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListHyperParameterTuningJobsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the versions of a specified image and their properties. The list can be filtered by creation time or
+     * modified time.
+     * </p>
+     * 
+     * @param listImageVersionsRequest
+     * @return Result of the ListImageVersions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.ListImageVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListImageVersions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListImageVersionsResult listImageVersions(ListImageVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListImageVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListImageVersionsResult executeListImageVersions(ListImageVersionsRequest listImageVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listImageVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListImageVersionsRequest> request = null;
+        Response<ListImageVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListImageVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listImageVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListImageVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListImageVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListImageVersionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the images in your account and their properties. The list can be filtered by creation time or modified
+     * time, and whether the image name contains a specified string.
+     * </p>
+     * 
+     * @param listImagesRequest
+     * @return Result of the ListImages operation returned by the service.
+     * @sample AmazonSageMaker.ListImages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListImages" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListImagesResult listImages(ListImagesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListImages(request);
+    }
+
+    @SdkInternalApi
+    final ListImagesResult executeListImages(ListImagesRequest listImagesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listImagesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListImagesRequest> request = null;
+        Response<ListImagesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListImagesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listImagesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListImages");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListImagesResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListImagesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7921,6 +8572,62 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Updates the properties of an AppImageConfig.
+     * </p>
+     * 
+     * @param updateAppImageConfigRequest
+     * @return Result of the UpdateAppImageConfig operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.UpdateAppImageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateAppImageConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateAppImageConfigResult updateAppImageConfig(UpdateAppImageConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAppImageConfig(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAppImageConfigResult executeUpdateAppImageConfig(UpdateAppImageConfigRequest updateAppImageConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAppImageConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAppImageConfigRequest> request = null;
+        Response<UpdateAppImageConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAppImageConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAppImageConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAppImageConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAppImageConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateAppImageConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates the specified Git repository with the specified values.
      * </p>
      * 
@@ -8221,6 +8928,65 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateExperimentResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateExperimentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the properties of a SageMaker image. To change the image's tags, use the <a>AddTags</a> and
+     * <a>DeleteTags</a> APIs.
+     * </p>
+     * 
+     * @param updateImageRequest
+     * @return Result of the UpdateImage operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.UpdateImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateImageResult updateImage(UpdateImageRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateImage(request);
+    }
+
+    @SdkInternalApi
+    final UpdateImageResult executeUpdateImage(UpdateImageRequest updateImageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateImageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateImageRequest> request = null;
+        Response<UpdateImageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateImageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateImageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateImage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateImageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateImageResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

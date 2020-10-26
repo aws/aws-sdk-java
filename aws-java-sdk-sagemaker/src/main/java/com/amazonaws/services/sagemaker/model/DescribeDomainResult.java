@@ -92,6 +92,25 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
     private UserSettings defaultUserSettings;
     /**
      * <p>
+     * Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows
+     * direct internet access
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String appNetworkAccessType;
+    /**
+     * <p>
      * The AWS Key Management Service encryption key ID.
      * </p>
      */
@@ -114,25 +133,6 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private String vpcId;
-    /**
-     * <p>
-     * Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows
-     * direct internet access
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
-     * </p>
-     * </li>
-     * </ul>
-     */
-    private String appNetworkAccessType;
 
     /**
      * <p>
@@ -620,6 +620,165 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
+     * Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows
+     * direct internet access
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param appNetworkAccessType
+     *        Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which
+     *        allows direct internet access
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     *        </p>
+     *        </li>
+     * @see AppNetworkAccessType
+     */
+
+    public void setAppNetworkAccessType(String appNetworkAccessType) {
+        this.appNetworkAccessType = appNetworkAccessType;
+    }
+
+    /**
+     * <p>
+     * Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows
+     * direct internet access
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which
+     *         allows direct internet access
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     *         </p>
+     *         </li>
+     * @see AppNetworkAccessType
+     */
+
+    public String getAppNetworkAccessType() {
+        return this.appNetworkAccessType;
+    }
+
+    /**
+     * <p>
+     * Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows
+     * direct internet access
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param appNetworkAccessType
+     *        Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which
+     *        allows direct internet access
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppNetworkAccessType
+     */
+
+    public DescribeDomainResult withAppNetworkAccessType(String appNetworkAccessType) {
+        setAppNetworkAccessType(appNetworkAccessType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows
+     * direct internet access
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param appNetworkAccessType
+     *        Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which
+     *        allows direct internet access
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppNetworkAccessType
+     */
+
+    public DescribeDomainResult withAppNetworkAccessType(AppNetworkAccessType appNetworkAccessType) {
+        this.appNetworkAccessType = appNetworkAccessType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The AWS Key Management Service encryption key ID.
      * </p>
      * 
@@ -809,165 +968,6 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * <p>
-     * Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows
-     * direct internet access
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
-     * </p>
-     * </li>
-     * </ul>
-     * 
-     * @param appNetworkAccessType
-     *        Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which
-     *        allows direct internet access
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
-     *        </p>
-     *        </li>
-     * @see AppNetworkAccessType
-     */
-
-    public void setAppNetworkAccessType(String appNetworkAccessType) {
-        this.appNetworkAccessType = appNetworkAccessType;
-    }
-
-    /**
-     * <p>
-     * Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows
-     * direct internet access
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
-     * </p>
-     * </li>
-     * </ul>
-     * 
-     * @return Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which
-     *         allows direct internet access
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
-     *         </p>
-     *         </li>
-     * @see AppNetworkAccessType
-     */
-
-    public String getAppNetworkAccessType() {
-        return this.appNetworkAccessType;
-    }
-
-    /**
-     * <p>
-     * Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows
-     * direct internet access
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
-     * </p>
-     * </li>
-     * </ul>
-     * 
-     * @param appNetworkAccessType
-     *        Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which
-     *        allows direct internet access
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
-     *        </p>
-     *        </li>
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see AppNetworkAccessType
-     */
-
-    public DescribeDomainResult withAppNetworkAccessType(String appNetworkAccessType) {
-        setAppNetworkAccessType(appNetworkAccessType);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows
-     * direct internet access
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
-     * </p>
-     * </li>
-     * </ul>
-     * 
-     * @param appNetworkAccessType
-     *        Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which
-     *        allows direct internet access
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
-     *        </p>
-     *        </li>
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see AppNetworkAccessType
-     */
-
-    public DescribeDomainResult withAppNetworkAccessType(AppNetworkAccessType appNetworkAccessType) {
-        this.appNetworkAccessType = appNetworkAccessType.toString();
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1001,6 +1001,8 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
             sb.append("AuthMode: ").append(getAuthMode()).append(",");
         if (getDefaultUserSettings() != null)
             sb.append("DefaultUserSettings: ").append(getDefaultUserSettings()).append(",");
+        if (getAppNetworkAccessType() != null)
+            sb.append("AppNetworkAccessType: ").append(getAppNetworkAccessType()).append(",");
         if (getHomeEfsFileSystemKmsKeyId() != null)
             sb.append("HomeEfsFileSystemKmsKeyId: ").append(getHomeEfsFileSystemKmsKeyId()).append(",");
         if (getSubnetIds() != null)
@@ -1008,9 +1010,7 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getUrl() != null)
             sb.append("Url: ").append(getUrl()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: ").append(getVpcId()).append(",");
-        if (getAppNetworkAccessType() != null)
-            sb.append("AppNetworkAccessType: ").append(getAppNetworkAccessType());
+            sb.append("VpcId: ").append(getVpcId());
         sb.append("}");
         return sb.toString();
     }
@@ -1070,6 +1070,10 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getDefaultUserSettings() != null && other.getDefaultUserSettings().equals(this.getDefaultUserSettings()) == false)
             return false;
+        if (other.getAppNetworkAccessType() == null ^ this.getAppNetworkAccessType() == null)
+            return false;
+        if (other.getAppNetworkAccessType() != null && other.getAppNetworkAccessType().equals(this.getAppNetworkAccessType()) == false)
+            return false;
         if (other.getHomeEfsFileSystemKmsKeyId() == null ^ this.getHomeEfsFileSystemKmsKeyId() == null)
             return false;
         if (other.getHomeEfsFileSystemKmsKeyId() != null && other.getHomeEfsFileSystemKmsKeyId().equals(this.getHomeEfsFileSystemKmsKeyId()) == false)
@@ -1085,10 +1089,6 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
         if (other.getVpcId() == null ^ this.getVpcId() == null)
             return false;
         if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
-            return false;
-        if (other.getAppNetworkAccessType() == null ^ this.getAppNetworkAccessType() == null)
-            return false;
-        if (other.getAppNetworkAccessType() != null && other.getAppNetworkAccessType().equals(this.getAppNetworkAccessType()) == false)
             return false;
         return true;
     }
@@ -1109,11 +1109,11 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getAuthMode() == null) ? 0 : getAuthMode().hashCode());
         hashCode = prime * hashCode + ((getDefaultUserSettings() == null) ? 0 : getDefaultUserSettings().hashCode());
+        hashCode = prime * hashCode + ((getAppNetworkAccessType() == null) ? 0 : getAppNetworkAccessType().hashCode());
         hashCode = prime * hashCode + ((getHomeEfsFileSystemKmsKeyId() == null) ? 0 : getHomeEfsFileSystemKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
         hashCode = prime * hashCode + ((getUrl() == null) ? 0 : getUrl().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
-        hashCode = prime * hashCode + ((getAppNetworkAccessType() == null) ? 0 : getAppNetworkAccessType().hashCode());
         return hashCode;
     }
 

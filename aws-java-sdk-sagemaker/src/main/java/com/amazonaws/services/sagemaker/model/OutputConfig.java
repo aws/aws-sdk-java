@@ -210,6 +210,17 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>INFERENTIA</code>: Compilation for target ml_inf1 uses compiler options passed in as a JSON string. For
+     * example, <code>"CompilerOptions": "\"--verbose 1 --num-neuroncores 2 -O2\""</code>.
+     * </p>
+     * <p>
+     * For information about supported compiler options, see <a
+     * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md"> Neuron
+     * Compiler CLI</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>CoreML</code>: Compilation for the CoreML <a>OutputConfig$TargetDevice</a> supports the following compiler
      * options:
      * </p>
@@ -891,6 +902,17 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>INFERENTIA</code>: Compilation for target ml_inf1 uses compiler options passed in as a JSON string. For
+     * example, <code>"CompilerOptions": "\"--verbose 1 --num-neuroncores 2 -O2\""</code>.
+     * </p>
+     * <p>
+     * For information about supported compiler options, see <a
+     * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md"> Neuron
+     * Compiler CLI</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>CoreML</code>: Compilation for the CoreML <a>OutputConfig$TargetDevice</a> supports the following compiler
      * options:
      * </p>
@@ -987,6 +1009,17 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INFERENTIA</code>: Compilation for target ml_inf1 uses compiler options passed in as a JSON string.
+     *        For example, <code>"CompilerOptions": "\"--verbose 1 --num-neuroncores 2 -O2\""</code>.
+     *        </p>
+     *        <p>
+     *        For information about supported compiler options, see <a
+     *        href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md"> Neuron
+     *        Compiler CLI</a>.
+     *        </p>
      *        </li>
      *        <li>
      *        <p>
@@ -1095,6 +1128,17 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>INFERENTIA</code>: Compilation for target ml_inf1 uses compiler options passed in as a JSON string. For
+     * example, <code>"CompilerOptions": "\"--verbose 1 --num-neuroncores 2 -O2\""</code>.
+     * </p>
+     * <p>
+     * For information about supported compiler options, see <a
+     * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md"> Neuron
+     * Compiler CLI</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>CoreML</code>: Compilation for the CoreML <a>OutputConfig$TargetDevice</a> supports the following compiler
      * options:
      * </p>
@@ -1190,6 +1234,17 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         </li>
      *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>INFERENTIA</code>: Compilation for target ml_inf1 uses compiler options passed in as a JSON string.
+     *         For example, <code>"CompilerOptions": "\"--verbose 1 --num-neuroncores 2 -O2\""</code>.
+     *         </p>
+     *         <p>
+     *         For information about supported compiler options, see <a
+     *         href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md"> Neuron
+     *         Compiler CLI</a>.
+     *         </p>
      *         </li>
      *         <li>
      *         <p>
@@ -1298,6 +1353,17 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>INFERENTIA</code>: Compilation for target ml_inf1 uses compiler options passed in as a JSON string. For
+     * example, <code>"CompilerOptions": "\"--verbose 1 --num-neuroncores 2 -O2\""</code>.
+     * </p>
+     * <p>
+     * For information about supported compiler options, see <a
+     * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md"> Neuron
+     * Compiler CLI</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>CoreML</code>: Compilation for the CoreML <a>OutputConfig$TargetDevice</a> supports the following compiler
      * options:
      * </p>
@@ -1394,6 +1460,17 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INFERENTIA</code>: Compilation for target ml_inf1 uses compiler options passed in as a JSON string.
+     *        For example, <code>"CompilerOptions": "\"--verbose 1 --num-neuroncores 2 -O2\""</code>.
+     *        </p>
+     *        <p>
+     *        For information about supported compiler options, see <a
+     *        href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md"> Neuron
+     *        Compiler CLI</a>.
+     *        </p>
      *        </li>
      *        <li>
      *        <p>

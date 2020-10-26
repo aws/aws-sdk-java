@@ -29,6 +29,8 @@ public class ResourceSpecMarshaller {
 
     private static final MarshallingInfo<String> SAGEMAKERIMAGEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SageMakerImageArn").build();
+    private static final MarshallingInfo<String> SAGEMAKERIMAGEVERSIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SageMakerImageVersionArn").build();
     private static final MarshallingInfo<String> INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceType").build();
 
@@ -49,6 +51,7 @@ public class ResourceSpecMarshaller {
 
         try {
             protocolMarshaller.marshall(resourceSpec.getSageMakerImageArn(), SAGEMAKERIMAGEARN_BINDING);
+            protocolMarshaller.marshall(resourceSpec.getSageMakerImageVersionArn(), SAGEMAKERIMAGEVERSIONARN_BINDING);
             protocolMarshaller.marshall(resourceSpec.getInstanceType(), INSTANCETYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

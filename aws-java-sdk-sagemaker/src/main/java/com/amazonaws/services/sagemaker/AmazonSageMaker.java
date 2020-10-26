@@ -143,6 +143,21 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Creates a configuration for running an Amazon SageMaker image as a KernelGateway app.
+     * </p>
+     * 
+     * @param createAppImageConfigRequest
+     * @return Result of the CreateAppImageConfig operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @sample AmazonSageMaker.CreateAppImageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAppImageConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateAppImageConfigResult createAppImageConfig(CreateAppImageConfigRequest createAppImageConfigRequest);
+
+    /**
+     * <p>
      * Creates an Autopilot job.
      * </p>
      * <p>
@@ -282,59 +297,17 @@ public interface AmazonSageMaker {
      * by default. To allow internet access, you must specify a NAT gateway.
      * </p>
      * <p>
-     * When internet access is disabled, you won't be able to train or host models unless your VPC has an interface
-     * endpoint (PrivateLink) or a NAT gateway and your security groups allow outbound connections.
+     * When internet access is disabled, you won't be able to run a Studio notebook or to train or host models unless
+     * your VPC has an interface endpoint to the SageMaker API and runtime or a NAT gateway and your security groups
+     * allow outbound connections.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * <b> <code>VpcOnly</code> network access type</b>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect
+     * SageMaker Studio Notebooks to Resources in a VPC</a>.
      * </p>
-     * <p>
-     * When you choose <code>VpcOnly</code>, you must specify the following:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Security group inbound and outbound rules to allow NFS traffic over TCP on port 2049 between the domain and the
-     * EFS volume
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Security group inbound and outbound rules to allow traffic between the JupyterServer app and the KernelGateway
-     * apps
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Interface endpoints to access the SageMaker API and SageMaker runtime
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For more information, see:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security groups for your
-     * VPC</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html">VPC with public and private subnets
-     * (NAT)</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/interface-vpc-endpoint.html">Connect to SageMaker
-     * through a VPC interface endpoint</a>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param createDomainRequest
      * @return Result of the CreateDomain operation returned by the service.
@@ -568,6 +541,46 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Creates a SageMaker <code>Image</code>. A SageMaker image represents a set of container images. Each of these
+     * container images is represented by a SageMaker <code>ImageVersion</code>.
+     * </p>
+     * 
+     * @param createImageRequest
+     * @return Result of the CreateImage operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.CreateImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateImageResult createImage(CreateImageRequest createImageRequest);
+
+    /**
+     * <p>
+     * Creates a version of the SageMaker image specified by <code>ImageName</code>. The version represents the Amazon
+     * Container Registry (ECR) container image specified by <code>BaseImage</code>.
+     * </p>
+     * 
+     * @param createImageVersionRequest
+     * @return Result of the CreateImageVersion operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.CreateImageVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImageVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateImageVersionResult createImageVersion(CreateImageVersionRequest createImageVersionRequest);
+
+    /**
+     * <p>
      * Creates a job that uses workers to label the data objects in your input dataset. You can use the labeled data to
      * train machine learning models.
      * </p>
@@ -682,6 +695,11 @@ public interface AmazonSageMaker {
      * 
      * @param createModelPackageRequest
      * @return Result of the CreateModelPackage operation returned by the service.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify an experiment, trial, or trial component.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
      * @sample AmazonSageMaker.CreateModelPackage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelPackage" target="_top">AWS
      *      API Documentation</a>
@@ -1217,6 +1235,21 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Deletes an AppImageConfig.
+     * </p>
+     * 
+     * @param deleteAppImageConfigRequest
+     * @return Result of the DeleteAppImageConfig operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeleteAppImageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAppImageConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteAppImageConfigResult deleteAppImageConfig(DeleteAppImageConfigRequest deleteAppImageConfigRequest);
+
+    /**
+     * <p>
      * Deletes the specified Git repository from your account.
      * </p>
      * 
@@ -1340,6 +1373,40 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Deletes a SageMaker image and all versions of the image. The container images aren't deleted.
+     * </p>
+     * 
+     * @param deleteImageRequest
+     * @return Result of the DeleteImage operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeleteImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteImageResult deleteImage(DeleteImageRequest deleteImageRequest);
+
+    /**
+     * <p>
+     * Deletes a version of a SageMaker image. The container image the version represents isn't deleted.
+     * </p>
+     * 
+     * @param deleteImageVersionRequest
+     * @return Result of the DeleteImageVersion operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeleteImageVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImageVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteImageVersionResult deleteImageVersion(DeleteImageVersionRequest deleteImageVersionRequest);
+
+    /**
+     * <p>
      * Deletes a model. The <code>DeleteModel</code> API deletes only the model entry that was created in Amazon
      * SageMaker when you called the <a>CreateModel</a> API. It does not delete model artifacts, inference code, or the
      * IAM role that you specified when creating the model.
@@ -1364,6 +1431,8 @@ public interface AmazonSageMaker {
      * 
      * @param deleteModelPackageRequest
      * @return Result of the DeleteModelPackage operation returned by the service.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify an experiment, trial, or trial component.
      * @sample AmazonSageMaker.DeleteModelPackage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelPackage" target="_top">AWS
      *      API Documentation</a>
@@ -1563,6 +1632,21 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Describes an AppImageConfig.
+     * </p>
+     * 
+     * @param describeAppImageConfigRequest
+     * @return Result of the DescribeAppImageConfig operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeAppImageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAppImageConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeAppImageConfigResult describeAppImageConfig(DescribeAppImageConfigRequest describeAppImageConfigRequest);
+
+    /**
+     * <p>
      * Returns information about an Amazon SageMaker job.
      * </p>
      * 
@@ -1708,6 +1792,36 @@ public interface AmazonSageMaker {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeHyperParameterTuningJobResult describeHyperParameterTuningJob(DescribeHyperParameterTuningJobRequest describeHyperParameterTuningJobRequest);
+
+    /**
+     * <p>
+     * Describes a SageMaker image.
+     * </p>
+     * 
+     * @param describeImageRequest
+     * @return Result of the DescribeImage operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeImageResult describeImage(DescribeImageRequest describeImageRequest);
+
+    /**
+     * <p>
+     * Describes a version of a SageMaker image.
+     * </p>
+     * 
+     * @param describeImageVersionRequest
+     * @return Result of the DescribeImageVersion operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeImageVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImageVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeImageVersionResult describeImageVersion(DescribeImageVersionRequest describeImageVersionRequest);
 
     /**
      * <p>
@@ -1993,6 +2107,20 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Lists the AppImageConfigs in your account and their properties. The list can be filtered by creation time or
+     * modified time, and whether the AppImageConfig name contains a specified string.
+     * </p>
+     * 
+     * @param listAppImageConfigsRequest
+     * @return Result of the ListAppImageConfigs operation returned by the service.
+     * @sample AmazonSageMaker.ListAppImageConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAppImageConfigs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListAppImageConfigsResult listAppImageConfigs(ListAppImageConfigsRequest listAppImageConfigsRequest);
+
+    /**
+     * <p>
      * Lists apps.
      * </p>
      * 
@@ -2154,6 +2282,36 @@ public interface AmazonSageMaker {
      *      target="_top">AWS API Documentation</a>
      */
     ListHyperParameterTuningJobsResult listHyperParameterTuningJobs(ListHyperParameterTuningJobsRequest listHyperParameterTuningJobsRequest);
+
+    /**
+     * <p>
+     * Lists the versions of a specified image and their properties. The list can be filtered by creation time or
+     * modified time.
+     * </p>
+     * 
+     * @param listImageVersionsRequest
+     * @return Result of the ListImageVersions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.ListImageVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListImageVersions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListImageVersionsResult listImageVersions(ListImageVersionsRequest listImageVersionsRequest);
+
+    /**
+     * <p>
+     * Lists the images in your account and their properties. The list can be filtered by creation time or modified
+     * time, and whether the image name contains a specified string.
+     * </p>
+     * 
+     * @param listImagesRequest
+     * @return Result of the ListImages operation returned by the service.
+     * @sample AmazonSageMaker.ListImages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListImages" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListImagesResult listImages(ListImagesRequest listImagesRequest);
 
     /**
      * <p>
@@ -2680,6 +2838,21 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Updates the properties of an AppImageConfig.
+     * </p>
+     * 
+     * @param updateAppImageConfigRequest
+     * @return Result of the UpdateAppImageConfig operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.UpdateAppImageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateAppImageConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateAppImageConfigResult updateAppImageConfig(UpdateAppImageConfigRequest updateAppImageConfigRequest);
+
+    /**
+     * <p>
      * Updates the specified Git repository with the specified values.
      * </p>
      * 
@@ -2782,6 +2955,24 @@ public interface AmazonSageMaker {
      *      Documentation</a>
      */
     UpdateExperimentResult updateExperiment(UpdateExperimentRequest updateExperimentRequest);
+
+    /**
+     * <p>
+     * Updates the properties of a SageMaker image. To change the image's tags, use the <a>AddTags</a> and
+     * <a>DeleteTags</a> APIs.
+     * </p>
+     * 
+     * @param updateImageRequest
+     * @return Result of the UpdateImage operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.UpdateImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateImageResult updateImage(UpdateImageRequest updateImageRequest);
 
     /**
      * <p>

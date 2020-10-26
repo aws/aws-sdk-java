@@ -130,20 +130,12 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
     }
 
     private void init() {
-        exceptionUnmarshallers.add(new DBSubnetGroupDoesNotCoverEnoughAZsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DBClusterSnapshotNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DBSubnetGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterRoleNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InstanceQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DBClusterParameterGroupNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new SnapshotQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DBInstanceNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSnapshotNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubscriptionCategoryNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidRestoreExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBInstanceAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSnapshotAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new SharedSnapshotQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterRoleQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SNSInvalidTopicExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBParameterGroupAlreadyExistsExceptionUnmarshaller());
@@ -153,41 +145,53 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
         exceptionUnmarshallers.add(new InvalidDBSubnetStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CertificateNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBSecurityGroupStateExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidDBClusterStateExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DBClusterAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSubnetQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBSnapshotStateExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidVPCNetworkStateExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new SNSTopicArnNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSecurityGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSubnetGroupQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StorageTypeNotSupportedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InsufficientDBInstanceCapacityExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBUpgradeDependencyFailureExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new SubscriptionAlreadyExistExceptionUnmarshaller());
         exceptionUnmarshallers.add(new KMSKeyNotAccessibleExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubscriptionNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DBClusterNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DBParameterGroupQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBClusterEndpointNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InsufficientStorageClusterCapacityExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubnetAlreadyInUseExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new OptionGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ProvisionedIopsNotAvailableInAZExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterSnapshotAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterRoleAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidDBClusterSnapshotStateExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new SourceNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidEventSubscriptionStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBParameterGroupNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidDBParameterGroupStateExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DomainNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidSubnetExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new EventSubscriptionQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new StorageQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSubnetGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SNSNoAuthorizationExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBSubnetGroupDoesNotCoverEnoughAZsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBClusterSnapshotNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBSubnetGroupNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBClusterEndpointQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InstanceQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBClusterParameterGroupNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SnapshotQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBInstanceNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SharedSnapshotQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidDBClusterEndpointStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidDBClusterStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBClusterAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidVPCNetworkStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SNSTopicArnNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SubscriptionAlreadyExistExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBClusterNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBParameterGroupQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new OptionGroupNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidDBClusterSnapshotStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SourceNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidDBParameterGroupStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DomainNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new EventSubscriptionQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new StorageQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBClusterEndpointAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AuthorizationNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.neptune.model.AmazonNeptuneException.class));
 
@@ -713,6 +717,72 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
             }
 
             StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new custom endpoint and associates it with an Amazon Neptune DB cluster.
+     * </p>
+     * 
+     * @param createDBClusterEndpointRequest
+     * @return Result of the CreateDBClusterEndpoint operation returned by the service.
+     * @throws DBClusterEndpointQuotaExceededException
+     *         The cluster already has the maximum number of custom endpoints.
+     * @throws DBClusterEndpointAlreadyExistsException
+     *         The specified custom endpoint cannot be created because it already exists.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster is not in a valid state.
+     * @throws DBInstanceNotFoundException
+     *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+     * @throws InvalidDBInstanceStateException
+     *         The specified DB instance is not in the <i>available</i> state.
+     * @sample AmazonNeptune.CreateDBClusterEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBClusterEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateDBClusterEndpointResult createDBClusterEndpoint(CreateDBClusterEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDBClusterEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final CreateDBClusterEndpointResult executeCreateDBClusterEndpoint(CreateDBClusterEndpointRequest createDBClusterEndpointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createDBClusterEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateDBClusterEndpointRequest> request = null;
+        Response<CreateDBClusterEndpointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateDBClusterEndpointRequestMarshaller().marshall(super.beforeMarshalling(createDBClusterEndpointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Neptune");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBClusterEndpoint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateDBClusterEndpointResult> responseHandler = new StaxResponseHandler<CreateDBClusterEndpointResult>(
+                    new CreateDBClusterEndpointResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1253,6 +1323,66 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Deletes a custom endpoint and removes it from an Amazon Neptune DB cluster.
+     * </p>
+     * 
+     * @param deleteDBClusterEndpointRequest
+     * @return Result of the DeleteDBClusterEndpoint operation returned by the service.
+     * @throws InvalidDBClusterEndpointStateException
+     *         The requested operation cannot be performed on the endpoint while the endpoint is in this state.
+     * @throws DBClusterEndpointNotFoundException
+     *         The specified custom endpoint doesn't exist.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster is not in a valid state.
+     * @sample AmazonNeptune.DeleteDBClusterEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBClusterEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteDBClusterEndpointResult deleteDBClusterEndpoint(DeleteDBClusterEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDBClusterEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDBClusterEndpointResult executeDeleteDBClusterEndpoint(DeleteDBClusterEndpointRequest deleteDBClusterEndpointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteDBClusterEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteDBClusterEndpointRequest> request = null;
+        Response<DeleteDBClusterEndpointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDBClusterEndpointRequestMarshaller().marshall(super.beforeMarshalling(deleteDBClusterEndpointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Neptune");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBClusterEndpoint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteDBClusterEndpointResult> responseHandler = new StaxResponseHandler<DeleteDBClusterEndpointResult>(
+                    new DeleteDBClusterEndpointResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a specified DB cluster parameter group. The DB cluster parameter group to be deleted can't be associated
      * with any DB clusters.
      * </p>
@@ -1624,6 +1754,67 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
             }
 
             StaxResponseHandler<EventSubscription> responseHandler = new StaxResponseHandler<EventSubscription>(new EventSubscriptionStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about endpoints for an Amazon Neptune DB cluster.
+     * </p>
+     * <note>
+     * <p>
+     * This operation can also return information for Amazon RDS clusters and Amazon DocDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param describeDBClusterEndpointsRequest
+     * @return Result of the DescribeDBClusterEndpoints operation returned by the service.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     * @sample AmazonNeptune.DescribeDBClusterEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterEndpoints"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeDBClusterEndpointsResult describeDBClusterEndpoints(DescribeDBClusterEndpointsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDBClusterEndpoints(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDBClusterEndpointsResult executeDescribeDBClusterEndpoints(DescribeDBClusterEndpointsRequest describeDBClusterEndpointsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDBClusterEndpointsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDBClusterEndpointsRequest> request = null;
+        Response<DescribeDBClusterEndpointsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDBClusterEndpointsRequestMarshaller().marshall(super.beforeMarshalling(describeDBClusterEndpointsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Neptune");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBClusterEndpoints");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeDBClusterEndpointsResult> responseHandler = new StaxResponseHandler<DescribeDBClusterEndpointsResult>(
+                    new DescribeDBClusterEndpointsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2870,6 +3061,70 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
             }
 
             StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the properties of an endpoint in an Amazon Neptune DB cluster.
+     * </p>
+     * 
+     * @param modifyDBClusterEndpointRequest
+     * @return Result of the ModifyDBClusterEndpoint operation returned by the service.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster is not in a valid state.
+     * @throws InvalidDBClusterEndpointStateException
+     *         The requested operation cannot be performed on the endpoint while the endpoint is in this state.
+     * @throws DBClusterEndpointNotFoundException
+     *         The specified custom endpoint doesn't exist.
+     * @throws DBInstanceNotFoundException
+     *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+     * @throws InvalidDBInstanceStateException
+     *         The specified DB instance is not in the <i>available</i> state.
+     * @sample AmazonNeptune.ModifyDBClusterEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBClusterEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ModifyDBClusterEndpointResult modifyDBClusterEndpoint(ModifyDBClusterEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyDBClusterEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final ModifyDBClusterEndpointResult executeModifyDBClusterEndpoint(ModifyDBClusterEndpointRequest modifyDBClusterEndpointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyDBClusterEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyDBClusterEndpointRequest> request = null;
+        Response<ModifyDBClusterEndpointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyDBClusterEndpointRequestMarshaller().marshall(super.beforeMarshalling(modifyDBClusterEndpointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Neptune");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBClusterEndpoint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyDBClusterEndpointResult> responseHandler = new StaxResponseHandler<ModifyDBClusterEndpointResult>(
+                    new ModifyDBClusterEndpointResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

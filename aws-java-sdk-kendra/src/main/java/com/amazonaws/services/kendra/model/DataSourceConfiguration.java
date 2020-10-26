@@ -64,6 +64,12 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
      * </p>
      */
     private ServiceNowConfiguration serviceNowConfiguration;
+    /**
+     * <p>
+     * Provides configuration information for connecting to a Confluence data source.
+     * </p>
+     */
+    private ConfluenceConfiguration confluenceConfiguration;
 
     /**
      * <p>
@@ -306,6 +312,46 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * Provides configuration information for connecting to a Confluence data source.
+     * </p>
+     * 
+     * @param confluenceConfiguration
+     *        Provides configuration information for connecting to a Confluence data source.
+     */
+
+    public void setConfluenceConfiguration(ConfluenceConfiguration confluenceConfiguration) {
+        this.confluenceConfiguration = confluenceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides configuration information for connecting to a Confluence data source.
+     * </p>
+     * 
+     * @return Provides configuration information for connecting to a Confluence data source.
+     */
+
+    public ConfluenceConfiguration getConfluenceConfiguration() {
+        return this.confluenceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides configuration information for connecting to a Confluence data source.
+     * </p>
+     * 
+     * @param confluenceConfiguration
+     *        Provides configuration information for connecting to a Confluence data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceConfiguration withConfluenceConfiguration(ConfluenceConfiguration confluenceConfiguration) {
+        setConfluenceConfiguration(confluenceConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -328,7 +374,9 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
         if (getOneDriveConfiguration() != null)
             sb.append("OneDriveConfiguration: ").append(getOneDriveConfiguration()).append(",");
         if (getServiceNowConfiguration() != null)
-            sb.append("ServiceNowConfiguration: ").append(getServiceNowConfiguration());
+            sb.append("ServiceNowConfiguration: ").append(getServiceNowConfiguration()).append(",");
+        if (getConfluenceConfiguration() != null)
+            sb.append("ConfluenceConfiguration: ").append(getConfluenceConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -367,6 +415,10 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
             return false;
         if (other.getServiceNowConfiguration() != null && other.getServiceNowConfiguration().equals(this.getServiceNowConfiguration()) == false)
             return false;
+        if (other.getConfluenceConfiguration() == null ^ this.getConfluenceConfiguration() == null)
+            return false;
+        if (other.getConfluenceConfiguration() != null && other.getConfluenceConfiguration().equals(this.getConfluenceConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -381,6 +433,7 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getSalesforceConfiguration() == null) ? 0 : getSalesforceConfiguration().hashCode());
         hashCode = prime * hashCode + ((getOneDriveConfiguration() == null) ? 0 : getOneDriveConfiguration().hashCode());
         hashCode = prime * hashCode + ((getServiceNowConfiguration() == null) ? 0 : getServiceNowConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getConfluenceConfiguration() == null) ? 0 : getConfluenceConfiguration().hashCode());
         return hashCode;
     }
 

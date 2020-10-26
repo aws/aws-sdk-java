@@ -69,6 +69,11 @@ public class AbstractAmazonNeptune implements AmazonNeptune {
     }
 
     @Override
+    public CreateDBClusterEndpointResult createDBClusterEndpoint(CreateDBClusterEndpointRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DBClusterParameterGroup createDBClusterParameterGroup(CreateDBClusterParameterGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -104,6 +109,11 @@ public class AbstractAmazonNeptune implements AmazonNeptune {
     }
 
     @Override
+    public DeleteDBClusterEndpointResult deleteDBClusterEndpoint(DeleteDBClusterEndpointRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDBClusterParameterGroupResult deleteDBClusterParameterGroup(DeleteDBClusterParameterGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -130,6 +140,11 @@ public class AbstractAmazonNeptune implements AmazonNeptune {
 
     @Override
     public EventSubscription deleteEventSubscription(DeleteEventSubscriptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeDBClusterEndpointsResult describeDBClusterEndpoints(DescribeDBClusterEndpointsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -235,6 +250,11 @@ public class AbstractAmazonNeptune implements AmazonNeptune {
 
     @Override
     public DBCluster modifyDBCluster(ModifyDBClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyDBClusterEndpointResult modifyDBClusterEndpoint(ModifyDBClusterEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

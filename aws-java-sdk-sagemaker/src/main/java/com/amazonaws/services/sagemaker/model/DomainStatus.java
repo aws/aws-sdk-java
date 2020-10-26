@@ -23,7 +23,10 @@ public enum DomainStatus {
     Deleting("Deleting"),
     Failed("Failed"),
     InService("InService"),
-    Pending("Pending");
+    Pending("Pending"),
+    Updating("Updating"),
+    Update_Failed("Update_Failed"),
+    Delete_Failed("Delete_Failed");
 
     private String value;
 

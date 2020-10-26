@@ -257,6 +257,31 @@ public interface AmazonNeptune {
 
     /**
      * <p>
+     * Creates a new custom endpoint and associates it with an Amazon Neptune DB cluster.
+     * </p>
+     * 
+     * @param createDBClusterEndpointRequest
+     * @return Result of the CreateDBClusterEndpoint operation returned by the service.
+     * @throws DBClusterEndpointQuotaExceededException
+     *         The cluster already has the maximum number of custom endpoints.
+     * @throws DBClusterEndpointAlreadyExistsException
+     *         The specified custom endpoint cannot be created because it already exists.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster is not in a valid state.
+     * @throws DBInstanceNotFoundException
+     *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+     * @throws InvalidDBInstanceStateException
+     *         The specified DB instance is not in the <i>available</i> state.
+     * @sample AmazonNeptune.CreateDBClusterEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBClusterEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateDBClusterEndpointResult createDBClusterEndpoint(CreateDBClusterEndpointRequest createDBClusterEndpointRequest);
+
+    /**
+     * <p>
      * Creates a new DB cluster parameter group.
      * </p>
      * <p>
@@ -504,6 +529,25 @@ public interface AmazonNeptune {
 
     /**
      * <p>
+     * Deletes a custom endpoint and removes it from an Amazon Neptune DB cluster.
+     * </p>
+     * 
+     * @param deleteDBClusterEndpointRequest
+     * @return Result of the DeleteDBClusterEndpoint operation returned by the service.
+     * @throws InvalidDBClusterEndpointStateException
+     *         The requested operation cannot be performed on the endpoint while the endpoint is in this state.
+     * @throws DBClusterEndpointNotFoundException
+     *         The specified custom endpoint doesn't exist.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster is not in a valid state.
+     * @sample AmazonNeptune.DeleteDBClusterEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBClusterEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteDBClusterEndpointResult deleteDBClusterEndpoint(DeleteDBClusterEndpointRequest deleteDBClusterEndpointRequest);
+
+    /**
+     * <p>
      * Deletes a specified DB cluster parameter group. The DB cluster parameter group to be deleted can't be associated
      * with any DB clusters.
      * </p>
@@ -641,6 +685,26 @@ public interface AmazonNeptune {
      *      target="_top">AWS API Documentation</a>
      */
     EventSubscription deleteEventSubscription(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest);
+
+    /**
+     * <p>
+     * Returns information about endpoints for an Amazon Neptune DB cluster.
+     * </p>
+     * <note>
+     * <p>
+     * This operation can also return information for Amazon RDS clusters and Amazon DocDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param describeDBClusterEndpointsRequest
+     * @return Result of the DescribeDBClusterEndpoints operation returned by the service.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     * @sample AmazonNeptune.DescribeDBClusterEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterEndpoints"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeDBClusterEndpointsResult describeDBClusterEndpoints(DescribeDBClusterEndpointsRequest describeDBClusterEndpointsRequest);
 
     /**
      * <p>
@@ -1022,6 +1086,29 @@ public interface AmazonNeptune {
      *      Documentation</a>
      */
     DBCluster modifyDBCluster(ModifyDBClusterRequest modifyDBClusterRequest);
+
+    /**
+     * <p>
+     * Modifies the properties of an endpoint in an Amazon Neptune DB cluster.
+     * </p>
+     * 
+     * @param modifyDBClusterEndpointRequest
+     * @return Result of the ModifyDBClusterEndpoint operation returned by the service.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster is not in a valid state.
+     * @throws InvalidDBClusterEndpointStateException
+     *         The requested operation cannot be performed on the endpoint while the endpoint is in this state.
+     * @throws DBClusterEndpointNotFoundException
+     *         The specified custom endpoint doesn't exist.
+     * @throws DBInstanceNotFoundException
+     *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+     * @throws InvalidDBInstanceStateException
+     *         The specified DB instance is not in the <i>available</i> state.
+     * @sample AmazonNeptune.ModifyDBClusterEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBClusterEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ModifyDBClusterEndpointResult modifyDBClusterEndpoint(ModifyDBClusterEndpointRequest modifyDBClusterEndpointRequest);
 
     /**
      * <p>

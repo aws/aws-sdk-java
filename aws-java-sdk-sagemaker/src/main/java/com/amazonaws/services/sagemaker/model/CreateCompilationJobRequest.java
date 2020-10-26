@@ -87,6 +87,15 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private StoppingCondition stoppingCondition;
+    /**
+     * <p>
+     * An array of key-value pairs that you want to use to organize and track your AWS resource costs. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -487,6 +496,100 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * An array of key-value pairs that you want to use to organize and track your AWS resource costs. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * </p>
+     * 
+     * @return An array of key-value pairs that you want to use to organize and track your AWS resource costs. For more
+     *         information, see <a href=
+     *         "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     *         Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * An array of key-value pairs that you want to use to organize and track your AWS resource costs. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        An array of key-value pairs that you want to use to organize and track your AWS resource costs. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
+     *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * An array of key-value pairs that you want to use to organize and track your AWS resource costs. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        An array of key-value pairs that you want to use to organize and track your AWS resource costs. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
+     *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCompilationJobRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of key-value pairs that you want to use to organize and track your AWS resource costs. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        An array of key-value pairs that you want to use to organize and track your AWS resource costs. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
+     *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCompilationJobRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -507,7 +610,9 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
         if (getOutputConfig() != null)
             sb.append("OutputConfig: ").append(getOutputConfig()).append(",");
         if (getStoppingCondition() != null)
-            sb.append("StoppingCondition: ").append(getStoppingCondition());
+            sb.append("StoppingCondition: ").append(getStoppingCondition()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -542,6 +647,10 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getStoppingCondition() != null && other.getStoppingCondition().equals(this.getStoppingCondition()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -555,6 +664,7 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getInputConfig() == null) ? 0 : getInputConfig().hashCode());
         hashCode = prime * hashCode + ((getOutputConfig() == null) ? 0 : getOutputConfig().hashCode());
         hashCode = prime * hashCode + ((getStoppingCondition() == null) ? 0 : getStoppingCondition().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

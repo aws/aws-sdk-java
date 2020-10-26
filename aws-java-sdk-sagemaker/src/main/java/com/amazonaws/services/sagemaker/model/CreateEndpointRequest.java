@@ -27,7 +27,8 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the endpoint. The name must be unique within an AWS Region in your AWS account.
+     * The name of the endpoint.The name must be unique within an AWS Region in your AWS account. The name is
+     * case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and must be matched in .
      * </p>
      */
     private String endpointName;
@@ -48,11 +49,13 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the endpoint. The name must be unique within an AWS Region in your AWS account.
+     * The name of the endpoint.The name must be unique within an AWS Region in your AWS account. The name is
+     * case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and must be matched in .
      * </p>
      * 
      * @param endpointName
-     *        The name of the endpoint. The name must be unique within an AWS Region in your AWS account.
+     *        The name of the endpoint.The name must be unique within an AWS Region in your AWS account. The name is
+     *        case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and must be matched in .
      */
 
     public void setEndpointName(String endpointName) {
@@ -61,10 +64,12 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the endpoint. The name must be unique within an AWS Region in your AWS account.
+     * The name of the endpoint.The name must be unique within an AWS Region in your AWS account. The name is
+     * case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and must be matched in .
      * </p>
      * 
-     * @return The name of the endpoint. The name must be unique within an AWS Region in your AWS account.
+     * @return The name of the endpoint.The name must be unique within an AWS Region in your AWS account. The name is
+     *         case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and must be matched in .
      */
 
     public String getEndpointName() {
@@ -73,11 +78,13 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the endpoint. The name must be unique within an AWS Region in your AWS account.
+     * The name of the endpoint.The name must be unique within an AWS Region in your AWS account. The name is
+     * case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and must be matched in .
      * </p>
      * 
      * @param endpointName
-     *        The name of the endpoint. The name must be unique within an AWS Region in your AWS account.
+     *        The name of the endpoint.The name must be unique within an AWS Region in your AWS account. The name is
+     *        case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and must be matched in .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

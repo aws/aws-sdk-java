@@ -215,6 +215,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Creates a configuration for running an Amazon SageMaker image as a KernelGateway app.
+     * </p>
+     * 
+     * @param createAppImageConfigRequest
+     * @return A Java Future containing the result of the CreateAppImageConfig operation returned by the service.
+     * @sample AmazonSageMakerAsync.CreateAppImageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAppImageConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAppImageConfigResult> createAppImageConfigAsync(CreateAppImageConfigRequest createAppImageConfigRequest);
+
+    /**
+     * <p>
+     * Creates a configuration for running an Amazon SageMaker image as a KernelGateway app.
+     * </p>
+     * 
+     * @param createAppImageConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAppImageConfig operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.CreateAppImageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAppImageConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAppImageConfigResult> createAppImageConfigAsync(CreateAppImageConfigRequest createAppImageConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAppImageConfigRequest, CreateAppImageConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an Autopilot job.
      * </p>
      * <p>
@@ -457,59 +488,17 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * by default. To allow internet access, you must specify a NAT gateway.
      * </p>
      * <p>
-     * When internet access is disabled, you won't be able to train or host models unless your VPC has an interface
-     * endpoint (PrivateLink) or a NAT gateway and your security groups allow outbound connections.
+     * When internet access is disabled, you won't be able to run a Studio notebook or to train or host models unless
+     * your VPC has an interface endpoint to the SageMaker API and runtime or a NAT gateway and your security groups
+     * allow outbound connections.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * <b> <code>VpcOnly</code> network access type</b>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect
+     * SageMaker Studio Notebooks to Resources in a VPC</a>.
      * </p>
-     * <p>
-     * When you choose <code>VpcOnly</code>, you must specify the following:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Security group inbound and outbound rules to allow NFS traffic over TCP on port 2049 between the domain and the
-     * EFS volume
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Security group inbound and outbound rules to allow traffic between the JupyterServer app and the KernelGateway
-     * apps
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Interface endpoints to access the SageMaker API and SageMaker runtime
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For more information, see:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security groups for your
-     * VPC</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html">VPC with public and private subnets
-     * (NAT)</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/interface-vpc-endpoint.html">Connect to SageMaker
-     * through a VPC interface endpoint</a>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param createDomainRequest
      * @return A Java Future containing the result of the CreateDomain operation returned by the service.
@@ -552,59 +541,17 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * by default. To allow internet access, you must specify a NAT gateway.
      * </p>
      * <p>
-     * When internet access is disabled, you won't be able to train or host models unless your VPC has an interface
-     * endpoint (PrivateLink) or a NAT gateway and your security groups allow outbound connections.
+     * When internet access is disabled, you won't be able to run a Studio notebook or to train or host models unless
+     * your VPC has an interface endpoint to the SageMaker API and runtime or a NAT gateway and your security groups
+     * allow outbound connections.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * <b> <code>VpcOnly</code> network access type</b>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect
+     * SageMaker Studio Notebooks to Resources in a VPC</a>.
      * </p>
-     * <p>
-     * When you choose <code>VpcOnly</code>, you must specify the following:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Security group inbound and outbound rules to allow NFS traffic over TCP on port 2049 between the domain and the
-     * EFS volume
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Security group inbound and outbound rules to allow traffic between the JupyterServer app and the KernelGateway
-     * apps
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Interface endpoints to access the SageMaker API and SageMaker runtime
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For more information, see:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security groups for your
-     * VPC</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html">VPC with public and private subnets
-     * (NAT)</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/interface-vpc-endpoint.html">Connect to SageMaker
-     * through a VPC interface endpoint</a>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param createDomainRequest
      * @param asyncHandler
@@ -1038,6 +985,72 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     java.util.concurrent.Future<CreateHyperParameterTuningJobResult> createHyperParameterTuningJobAsync(
             CreateHyperParameterTuningJobRequest createHyperParameterTuningJobRequest,
             com.amazonaws.handlers.AsyncHandler<CreateHyperParameterTuningJobRequest, CreateHyperParameterTuningJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a SageMaker <code>Image</code>. A SageMaker image represents a set of container images. Each of these
+     * container images is represented by a SageMaker <code>ImageVersion</code>.
+     * </p>
+     * 
+     * @param createImageRequest
+     * @return A Java Future containing the result of the CreateImage operation returned by the service.
+     * @sample AmazonSageMakerAsync.CreateImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateImageResult> createImageAsync(CreateImageRequest createImageRequest);
+
+    /**
+     * <p>
+     * Creates a SageMaker <code>Image</code>. A SageMaker image represents a set of container images. Each of these
+     * container images is represented by a SageMaker <code>ImageVersion</code>.
+     * </p>
+     * 
+     * @param createImageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateImage operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.CreateImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateImageResult> createImageAsync(CreateImageRequest createImageRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateImageRequest, CreateImageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a version of the SageMaker image specified by <code>ImageName</code>. The version represents the Amazon
+     * Container Registry (ECR) container image specified by <code>BaseImage</code>.
+     * </p>
+     * 
+     * @param createImageVersionRequest
+     * @return A Java Future containing the result of the CreateImageVersion operation returned by the service.
+     * @sample AmazonSageMakerAsync.CreateImageVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImageVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateImageVersionResult> createImageVersionAsync(CreateImageVersionRequest createImageVersionRequest);
+
+    /**
+     * <p>
+     * Creates a version of the SageMaker image specified by <code>ImageName</code>. The version represents the Amazon
+     * Container Registry (ECR) container image specified by <code>BaseImage</code>.
+     * </p>
+     * 
+     * @param createImageVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateImageVersion operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.CreateImageVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImageVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateImageVersionResult> createImageVersionAsync(CreateImageVersionRequest createImageVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateImageVersionRequest, CreateImageVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -2305,6 +2318,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Deletes an AppImageConfig.
+     * </p>
+     * 
+     * @param deleteAppImageConfigRequest
+     * @return A Java Future containing the result of the DeleteAppImageConfig operation returned by the service.
+     * @sample AmazonSageMakerAsync.DeleteAppImageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAppImageConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAppImageConfigResult> deleteAppImageConfigAsync(DeleteAppImageConfigRequest deleteAppImageConfigRequest);
+
+    /**
+     * <p>
+     * Deletes an AppImageConfig.
+     * </p>
+     * 
+     * @param deleteAppImageConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAppImageConfig operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DeleteAppImageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAppImageConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAppImageConfigResult> deleteAppImageConfigAsync(DeleteAppImageConfigRequest deleteAppImageConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAppImageConfigRequest, DeleteAppImageConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified Git repository from your account.
      * </p>
      * 
@@ -2559,6 +2603,68 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<DeleteHumanTaskUiResult> deleteHumanTaskUiAsync(DeleteHumanTaskUiRequest deleteHumanTaskUiRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteHumanTaskUiRequest, DeleteHumanTaskUiResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a SageMaker image and all versions of the image. The container images aren't deleted.
+     * </p>
+     * 
+     * @param deleteImageRequest
+     * @return A Java Future containing the result of the DeleteImage operation returned by the service.
+     * @sample AmazonSageMakerAsync.DeleteImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteImageResult> deleteImageAsync(DeleteImageRequest deleteImageRequest);
+
+    /**
+     * <p>
+     * Deletes a SageMaker image and all versions of the image. The container images aren't deleted.
+     * </p>
+     * 
+     * @param deleteImageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteImage operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DeleteImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteImageResult> deleteImageAsync(DeleteImageRequest deleteImageRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteImageRequest, DeleteImageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a version of a SageMaker image. The container image the version represents isn't deleted.
+     * </p>
+     * 
+     * @param deleteImageVersionRequest
+     * @return A Java Future containing the result of the DeleteImageVersion operation returned by the service.
+     * @sample AmazonSageMakerAsync.DeleteImageVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImageVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteImageVersionResult> deleteImageVersionAsync(DeleteImageVersionRequest deleteImageVersionRequest);
+
+    /**
+     * <p>
+     * Deletes a version of a SageMaker image. The container image the version represents isn't deleted.
+     * </p>
+     * 
+     * @param deleteImageVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteImageVersion operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DeleteImageVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImageVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteImageVersionResult> deleteImageVersionAsync(DeleteImageVersionRequest deleteImageVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteImageVersionRequest, DeleteImageVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -3045,6 +3151,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Describes an AppImageConfig.
+     * </p>
+     * 
+     * @param describeAppImageConfigRequest
+     * @return A Java Future containing the result of the DescribeAppImageConfig operation returned by the service.
+     * @sample AmazonSageMakerAsync.DescribeAppImageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAppImageConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAppImageConfigResult> describeAppImageConfigAsync(DescribeAppImageConfigRequest describeAppImageConfigRequest);
+
+    /**
+     * <p>
+     * Describes an AppImageConfig.
+     * </p>
+     * 
+     * @param describeAppImageConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAppImageConfig operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DescribeAppImageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAppImageConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAppImageConfigResult> describeAppImageConfigAsync(DescribeAppImageConfigRequest describeAppImageConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAppImageConfigRequest, DescribeAppImageConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about an Amazon SageMaker job.
      * </p>
      * 
@@ -3364,6 +3501,68 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     java.util.concurrent.Future<DescribeHyperParameterTuningJobResult> describeHyperParameterTuningJobAsync(
             DescribeHyperParameterTuningJobRequest describeHyperParameterTuningJobRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeHyperParameterTuningJobRequest, DescribeHyperParameterTuningJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes a SageMaker image.
+     * </p>
+     * 
+     * @param describeImageRequest
+     * @return A Java Future containing the result of the DescribeImage operation returned by the service.
+     * @sample AmazonSageMakerAsync.DescribeImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeImageResult> describeImageAsync(DescribeImageRequest describeImageRequest);
+
+    /**
+     * <p>
+     * Describes a SageMaker image.
+     * </p>
+     * 
+     * @param describeImageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeImage operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DescribeImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeImageResult> describeImageAsync(DescribeImageRequest describeImageRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeImageRequest, DescribeImageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes a version of a SageMaker image.
+     * </p>
+     * 
+     * @param describeImageVersionRequest
+     * @return A Java Future containing the result of the DescribeImageVersion operation returned by the service.
+     * @sample AmazonSageMakerAsync.DescribeImageVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImageVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeImageVersionResult> describeImageVersionAsync(DescribeImageVersionRequest describeImageVersionRequest);
+
+    /**
+     * <p>
+     * Describes a version of a SageMaker image.
+     * </p>
+     * 
+     * @param describeImageVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeImageVersion operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DescribeImageVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImageVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeImageVersionResult> describeImageVersionAsync(DescribeImageVersionRequest describeImageVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeImageVersionRequest, DescribeImageVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -3993,6 +4192,39 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Lists the AppImageConfigs in your account and their properties. The list can be filtered by creation time or
+     * modified time, and whether the AppImageConfig name contains a specified string.
+     * </p>
+     * 
+     * @param listAppImageConfigsRequest
+     * @return A Java Future containing the result of the ListAppImageConfigs operation returned by the service.
+     * @sample AmazonSageMakerAsync.ListAppImageConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAppImageConfigs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAppImageConfigsResult> listAppImageConfigsAsync(ListAppImageConfigsRequest listAppImageConfigsRequest);
+
+    /**
+     * <p>
+     * Lists the AppImageConfigs in your account and their properties. The list can be filtered by creation time or
+     * modified time, and whether the AppImageConfig name contains a specified string.
+     * </p>
+     * 
+     * @param listAppImageConfigsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAppImageConfigs operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.ListAppImageConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAppImageConfigs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAppImageConfigsResult> listAppImageConfigsAsync(ListAppImageConfigsRequest listAppImageConfigsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAppImageConfigsRequest, ListAppImageConfigsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists apps.
      * </p>
      * 
@@ -4380,6 +4612,72 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     java.util.concurrent.Future<ListHyperParameterTuningJobsResult> listHyperParameterTuningJobsAsync(
             ListHyperParameterTuningJobsRequest listHyperParameterTuningJobsRequest,
             com.amazonaws.handlers.AsyncHandler<ListHyperParameterTuningJobsRequest, ListHyperParameterTuningJobsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the versions of a specified image and their properties. The list can be filtered by creation time or
+     * modified time.
+     * </p>
+     * 
+     * @param listImageVersionsRequest
+     * @return A Java Future containing the result of the ListImageVersions operation returned by the service.
+     * @sample AmazonSageMakerAsync.ListImageVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListImageVersions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListImageVersionsResult> listImageVersionsAsync(ListImageVersionsRequest listImageVersionsRequest);
+
+    /**
+     * <p>
+     * Lists the versions of a specified image and their properties. The list can be filtered by creation time or
+     * modified time.
+     * </p>
+     * 
+     * @param listImageVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListImageVersions operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.ListImageVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListImageVersions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListImageVersionsResult> listImageVersionsAsync(ListImageVersionsRequest listImageVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListImageVersionsRequest, ListImageVersionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the images in your account and their properties. The list can be filtered by creation time or modified
+     * time, and whether the image name contains a specified string.
+     * </p>
+     * 
+     * @param listImagesRequest
+     * @return A Java Future containing the result of the ListImages operation returned by the service.
+     * @sample AmazonSageMakerAsync.ListImages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListImages" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListImagesResult> listImagesAsync(ListImagesRequest listImagesRequest);
+
+    /**
+     * <p>
+     * Lists the images in your account and their properties. The list can be filtered by creation time or modified
+     * time, and whether the image name contains a specified string.
+     * </p>
+     * 
+     * @param listImagesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListImages operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.ListImages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListImages" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListImagesResult> listImagesAsync(ListImagesRequest listImagesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListImagesRequest, ListImagesResult> asyncHandler);
 
     /**
      * <p>
@@ -5535,6 +5833,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Updates the properties of an AppImageConfig.
+     * </p>
+     * 
+     * @param updateAppImageConfigRequest
+     * @return A Java Future containing the result of the UpdateAppImageConfig operation returned by the service.
+     * @sample AmazonSageMakerAsync.UpdateAppImageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateAppImageConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAppImageConfigResult> updateAppImageConfigAsync(UpdateAppImageConfigRequest updateAppImageConfigRequest);
+
+    /**
+     * <p>
+     * Updates the properties of an AppImageConfig.
+     * </p>
+     * 
+     * @param updateAppImageConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAppImageConfig operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.UpdateAppImageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateAppImageConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAppImageConfigResult> updateAppImageConfigAsync(UpdateAppImageConfigRequest updateAppImageConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAppImageConfigRequest, UpdateAppImageConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates the specified Git repository with the specified values.
      * </p>
      * 
@@ -5735,6 +6064,39 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<UpdateExperimentResult> updateExperimentAsync(UpdateExperimentRequest updateExperimentRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateExperimentRequest, UpdateExperimentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the properties of a SageMaker image. To change the image's tags, use the <a>AddTags</a> and
+     * <a>DeleteTags</a> APIs.
+     * </p>
+     * 
+     * @param updateImageRequest
+     * @return A Java Future containing the result of the UpdateImage operation returned by the service.
+     * @sample AmazonSageMakerAsync.UpdateImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateImageResult> updateImageAsync(UpdateImageRequest updateImageRequest);
+
+    /**
+     * <p>
+     * Updates the properties of a SageMaker image. To change the image's tags, use the <a>AddTags</a> and
+     * <a>DeleteTags</a> APIs.
+     * </p>
+     * 
+     * @param updateImageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateImage operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.UpdateImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateImageResult> updateImageAsync(UpdateImageRequest updateImageRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateImageRequest, UpdateImageResult> asyncHandler);
 
     /**
      * <p>

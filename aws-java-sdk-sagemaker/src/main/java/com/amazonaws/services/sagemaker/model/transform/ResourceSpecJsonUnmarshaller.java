@@ -52,6 +52,10 @@ public class ResourceSpecJsonUnmarshaller implements Unmarshaller<ResourceSpec, 
                     context.nextToken();
                     resourceSpec.setSageMakerImageArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SageMakerImageVersionArn", targetDepth)) {
+                    context.nextToken();
+                    resourceSpec.setSageMakerImageVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("InstanceType", targetDepth)) {
                     context.nextToken();
                     resourceSpec.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
