@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Defines a column statistics.
+ * Represents the generated column-level statistics for a table or partition.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ColumnStatistics" target="_top">AWS API
@@ -30,36 +30,36 @@ public class ColumnStatistics implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the column.
+     * Name of column which statistics belong to.
      * </p>
      */
     private String columnName;
     /**
      * <p>
-     * The type of the column.
+     * The data type of the column.
      * </p>
      */
     private String columnType;
     /**
      * <p>
-     * The analyzed time of the column statistics.
+     * The timestamp of when column statistics were generated.
      * </p>
      */
     private java.util.Date analyzedTime;
     /**
      * <p>
-     * The statistics of the column.
+     * A <code>ColumnStatisticData</code> object that contains the statistics data values.
      * </p>
      */
     private ColumnStatisticsData statisticsData;
 
     /**
      * <p>
-     * The name of the column.
+     * Name of column which statistics belong to.
      * </p>
      * 
      * @param columnName
-     *        The name of the column.
+     *        Name of column which statistics belong to.
      */
 
     public void setColumnName(String columnName) {
@@ -68,10 +68,10 @@ public class ColumnStatistics implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the column.
+     * Name of column which statistics belong to.
      * </p>
      * 
-     * @return The name of the column.
+     * @return Name of column which statistics belong to.
      */
 
     public String getColumnName() {
@@ -80,11 +80,11 @@ public class ColumnStatistics implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the column.
+     * Name of column which statistics belong to.
      * </p>
      * 
      * @param columnName
-     *        The name of the column.
+     *        Name of column which statistics belong to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class ColumnStatistics implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of the column.
+     * The data type of the column.
      * </p>
      * 
      * @param columnType
-     *        The type of the column.
+     *        The data type of the column.
      */
 
     public void setColumnType(String columnType) {
@@ -108,10 +108,10 @@ public class ColumnStatistics implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of the column.
+     * The data type of the column.
      * </p>
      * 
-     * @return The type of the column.
+     * @return The data type of the column.
      */
 
     public String getColumnType() {
@@ -120,11 +120,11 @@ public class ColumnStatistics implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of the column.
+     * The data type of the column.
      * </p>
      * 
      * @param columnType
-     *        The type of the column.
+     *        The data type of the column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class ColumnStatistics implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The analyzed time of the column statistics.
+     * The timestamp of when column statistics were generated.
      * </p>
      * 
      * @param analyzedTime
-     *        The analyzed time of the column statistics.
+     *        The timestamp of when column statistics were generated.
      */
 
     public void setAnalyzedTime(java.util.Date analyzedTime) {
@@ -148,10 +148,10 @@ public class ColumnStatistics implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The analyzed time of the column statistics.
+     * The timestamp of when column statistics were generated.
      * </p>
      * 
-     * @return The analyzed time of the column statistics.
+     * @return The timestamp of when column statistics were generated.
      */
 
     public java.util.Date getAnalyzedTime() {
@@ -160,11 +160,11 @@ public class ColumnStatistics implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The analyzed time of the column statistics.
+     * The timestamp of when column statistics were generated.
      * </p>
      * 
      * @param analyzedTime
-     *        The analyzed time of the column statistics.
+     *        The timestamp of when column statistics were generated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +175,11 @@ public class ColumnStatistics implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The statistics of the column.
+     * A <code>ColumnStatisticData</code> object that contains the statistics data values.
      * </p>
      * 
      * @param statisticsData
-     *        The statistics of the column.
+     *        A <code>ColumnStatisticData</code> object that contains the statistics data values.
      */
 
     public void setStatisticsData(ColumnStatisticsData statisticsData) {
@@ -188,10 +188,10 @@ public class ColumnStatistics implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The statistics of the column.
+     * A <code>ColumnStatisticData</code> object that contains the statistics data values.
      * </p>
      * 
-     * @return The statistics of the column.
+     * @return A <code>ColumnStatisticData</code> object that contains the statistics data values.
      */
 
     public ColumnStatisticsData getStatisticsData() {
@@ -200,11 +200,11 @@ public class ColumnStatistics implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The statistics of the column.
+     * A <code>ColumnStatisticData</code> object that contains the statistics data values.
      * </p>
      * 
      * @param statisticsData
-     *        The statistics of the column.
+     *        A <code>ColumnStatisticData</code> object that contains the statistics data values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

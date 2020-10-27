@@ -1030,6 +1030,9 @@ public interface AWSGlueAsync extends AWSGlue {
      * <p>
      * Delete the partition column statistics of a column.
      * </p>
+     * <p>
+     * The Identity and Access Management (IAM) permission required for this operation is <code>DeletePartition</code>.
+     * </p>
      * 
      * @param deleteColumnStatisticsForPartitionRequest
      * @return A Java Future containing the result of the DeleteColumnStatisticsForPartition operation returned by the
@@ -1044,6 +1047,9 @@ public interface AWSGlueAsync extends AWSGlue {
     /**
      * <p>
      * Delete the partition column statistics of a column.
+     * </p>
+     * <p>
+     * The Identity and Access Management (IAM) permission required for this operation is <code>DeletePartition</code>.
      * </p>
      * 
      * @param deleteColumnStatisticsForPartitionRequest
@@ -1065,6 +1071,9 @@ public interface AWSGlueAsync extends AWSGlue {
      * <p>
      * Retrieves table statistics of columns.
      * </p>
+     * <p>
+     * The Identity and Access Management (IAM) permission required for this operation is <code>DeleteTable</code>.
+     * </p>
      * 
      * @param deleteColumnStatisticsForTableRequest
      * @return A Java Future containing the result of the DeleteColumnStatisticsForTable operation returned by the
@@ -1079,6 +1088,9 @@ public interface AWSGlueAsync extends AWSGlue {
     /**
      * <p>
      * Retrieves table statistics of columns.
+     * </p>
+     * <p>
+     * The Identity and Access Management (IAM) permission required for this operation is <code>DeleteTable</code>.
      * </p>
      * 
      * @param deleteColumnStatisticsForTableRequest
@@ -1689,6 +1701,9 @@ public interface AWSGlueAsync extends AWSGlue {
      * <p>
      * Retrieves partition statistics of columns.
      * </p>
+     * <p>
+     * The Identity and Access Management (IAM) permission required for this operation is <code>GetPartition</code>.
+     * </p>
      * 
      * @param getColumnStatisticsForPartitionRequest
      * @return A Java Future containing the result of the GetColumnStatisticsForPartition operation returned by the
@@ -1703,6 +1718,9 @@ public interface AWSGlueAsync extends AWSGlue {
     /**
      * <p>
      * Retrieves partition statistics of columns.
+     * </p>
+     * <p>
+     * The Identity and Access Management (IAM) permission required for this operation is <code>GetPartition</code>.
      * </p>
      * 
      * @param getColumnStatisticsForPartitionRequest
@@ -1724,6 +1742,9 @@ public interface AWSGlueAsync extends AWSGlue {
      * <p>
      * Retrieves table statistics of columns.
      * </p>
+     * <p>
+     * The Identity and Access Management (IAM) permission required for this operation is <code>GetTable</code>.
+     * </p>
      * 
      * @param getColumnStatisticsForTableRequest
      * @return A Java Future containing the result of the GetColumnStatisticsForTable operation returned by the service.
@@ -1737,6 +1758,9 @@ public interface AWSGlueAsync extends AWSGlue {
     /**
      * <p>
      * Retrieves table statistics of columns.
+     * </p>
+     * <p>
+     * The Identity and Access Management (IAM) permission required for this operation is <code>GetTable</code>.
      * </p>
      * 
      * @param getColumnStatisticsForTableRequest
@@ -4236,6 +4260,9 @@ public interface AWSGlueAsync extends AWSGlue {
      * <p>
      * Creates or updates partition statistics of columns.
      * </p>
+     * <p>
+     * The Identity and Access Management (IAM) permission required for this operation is <code>UpdatePartition</code>.
+     * </p>
      * 
      * @param updateColumnStatisticsForPartitionRequest
      * @return A Java Future containing the result of the UpdateColumnStatisticsForPartition operation returned by the
@@ -4250,6 +4277,9 @@ public interface AWSGlueAsync extends AWSGlue {
     /**
      * <p>
      * Creates or updates partition statistics of columns.
+     * </p>
+     * <p>
+     * The Identity and Access Management (IAM) permission required for this operation is <code>UpdatePartition</code>.
      * </p>
      * 
      * @param updateColumnStatisticsForPartitionRequest
@@ -4271,6 +4301,9 @@ public interface AWSGlueAsync extends AWSGlue {
      * <p>
      * Creates or updates table statistics of columns.
      * </p>
+     * <p>
+     * The Identity and Access Management (IAM) permission required for this operation is <code>UpdateTable</code>.
+     * </p>
      * 
      * @param updateColumnStatisticsForTableRequest
      * @return A Java Future containing the result of the UpdateColumnStatisticsForTable operation returned by the
@@ -4285,6 +4318,9 @@ public interface AWSGlueAsync extends AWSGlue {
     /**
      * <p>
      * Creates or updates table statistics of columns.
+     * </p>
+     * <p>
+     * The Identity and Access Management (IAM) permission required for this operation is <code>UpdateTable</code>.
      * </p>
      * 
      * @param updateColumnStatisticsForTableRequest

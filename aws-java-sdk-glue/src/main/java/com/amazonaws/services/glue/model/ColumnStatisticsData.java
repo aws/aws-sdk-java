@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Defines a column statistics data.
+ * Contains the individual types of column statistics data. Only one data object should be set and indicated by the
+ * <code>Type</code> attribute.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ColumnStatisticsData" target="_top">AWS API
@@ -30,60 +31,60 @@ public class ColumnStatisticsData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the column.
+     * The type of column statistics data.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * Boolean Column Statistics Data.
+     * Boolean column statistics data.
      * </p>
      */
     private BooleanColumnStatisticsData booleanColumnStatisticsData;
     /**
      * <p>
-     * Date Column Statistics Data.
+     * Date column statistics data.
      * </p>
      */
     private DateColumnStatisticsData dateColumnStatisticsData;
     /**
      * <p>
-     * Decimal Column Statistics Data.
+     * Decimal column statistics data.
      * </p>
      */
     private DecimalColumnStatisticsData decimalColumnStatisticsData;
     /**
      * <p>
-     * Double Column Statistics Data.
+     * Double column statistics data.
      * </p>
      */
     private DoubleColumnStatisticsData doubleColumnStatisticsData;
     /**
      * <p>
-     * Long Column Statistics Data.
+     * Long column statistics data.
      * </p>
      */
     private LongColumnStatisticsData longColumnStatisticsData;
     /**
      * <p>
-     * String Column Statistics Data.
+     * String column statistics data.
      * </p>
      */
     private StringColumnStatisticsData stringColumnStatisticsData;
     /**
      * <p>
-     * Binary Column Statistics Data.
+     * Binary column statistics data.
      * </p>
      */
     private BinaryColumnStatisticsData binaryColumnStatisticsData;
 
     /**
      * <p>
-     * The name of the column.
+     * The type of column statistics data.
      * </p>
      * 
      * @param type
-     *        The name of the column.
+     *        The type of column statistics data.
      * @see ColumnStatisticsType
      */
 
@@ -93,10 +94,10 @@ public class ColumnStatisticsData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the column.
+     * The type of column statistics data.
      * </p>
      * 
-     * @return The name of the column.
+     * @return The type of column statistics data.
      * @see ColumnStatisticsType
      */
 
@@ -106,11 +107,11 @@ public class ColumnStatisticsData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the column.
+     * The type of column statistics data.
      * </p>
      * 
      * @param type
-     *        The name of the column.
+     *        The type of column statistics data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ColumnStatisticsType
      */
@@ -122,11 +123,11 @@ public class ColumnStatisticsData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the column.
+     * The type of column statistics data.
      * </p>
      * 
      * @param type
-     *        The name of the column.
+     *        The type of column statistics data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ColumnStatisticsType
      */
@@ -138,11 +139,11 @@ public class ColumnStatisticsData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Boolean Column Statistics Data.
+     * Boolean column statistics data.
      * </p>
      * 
      * @param booleanColumnStatisticsData
-     *        Boolean Column Statistics Data.
+     *        Boolean column statistics data.
      */
 
     public void setBooleanColumnStatisticsData(BooleanColumnStatisticsData booleanColumnStatisticsData) {
@@ -151,10 +152,10 @@ public class ColumnStatisticsData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Boolean Column Statistics Data.
+     * Boolean column statistics data.
      * </p>
      * 
-     * @return Boolean Column Statistics Data.
+     * @return Boolean column statistics data.
      */
 
     public BooleanColumnStatisticsData getBooleanColumnStatisticsData() {
@@ -163,11 +164,11 @@ public class ColumnStatisticsData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Boolean Column Statistics Data.
+     * Boolean column statistics data.
      * </p>
      * 
      * @param booleanColumnStatisticsData
-     *        Boolean Column Statistics Data.
+     *        Boolean column statistics data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,11 +179,11 @@ public class ColumnStatisticsData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Date Column Statistics Data.
+     * Date column statistics data.
      * </p>
      * 
      * @param dateColumnStatisticsData
-     *        Date Column Statistics Data.
+     *        Date column statistics data.
      */
 
     public void setDateColumnStatisticsData(DateColumnStatisticsData dateColumnStatisticsData) {
@@ -191,10 +192,10 @@ public class ColumnStatisticsData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Date Column Statistics Data.
+     * Date column statistics data.
      * </p>
      * 
-     * @return Date Column Statistics Data.
+     * @return Date column statistics data.
      */
 
     public DateColumnStatisticsData getDateColumnStatisticsData() {
@@ -203,11 +204,11 @@ public class ColumnStatisticsData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Date Column Statistics Data.
+     * Date column statistics data.
      * </p>
      * 
      * @param dateColumnStatisticsData
-     *        Date Column Statistics Data.
+     *        Date column statistics data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,11 +219,11 @@ public class ColumnStatisticsData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Decimal Column Statistics Data.
+     * Decimal column statistics data.
      * </p>
      * 
      * @param decimalColumnStatisticsData
-     *        Decimal Column Statistics Data.
+     *        Decimal column statistics data.
      */
 
     public void setDecimalColumnStatisticsData(DecimalColumnStatisticsData decimalColumnStatisticsData) {
@@ -231,10 +232,10 @@ public class ColumnStatisticsData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Decimal Column Statistics Data.
+     * Decimal column statistics data.
      * </p>
      * 
-     * @return Decimal Column Statistics Data.
+     * @return Decimal column statistics data.
      */
 
     public DecimalColumnStatisticsData getDecimalColumnStatisticsData() {
@@ -243,11 +244,11 @@ public class ColumnStatisticsData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Decimal Column Statistics Data.
+     * Decimal column statistics data.
      * </p>
      * 
      * @param decimalColumnStatisticsData
-     *        Decimal Column Statistics Data.
+     *        Decimal column statistics data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,11 +259,11 @@ public class ColumnStatisticsData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Double Column Statistics Data.
+     * Double column statistics data.
      * </p>
      * 
      * @param doubleColumnStatisticsData
-     *        Double Column Statistics Data.
+     *        Double column statistics data.
      */
 
     public void setDoubleColumnStatisticsData(DoubleColumnStatisticsData doubleColumnStatisticsData) {
@@ -271,10 +272,10 @@ public class ColumnStatisticsData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Double Column Statistics Data.
+     * Double column statistics data.
      * </p>
      * 
-     * @return Double Column Statistics Data.
+     * @return Double column statistics data.
      */
 
     public DoubleColumnStatisticsData getDoubleColumnStatisticsData() {
@@ -283,11 +284,11 @@ public class ColumnStatisticsData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Double Column Statistics Data.
+     * Double column statistics data.
      * </p>
      * 
      * @param doubleColumnStatisticsData
-     *        Double Column Statistics Data.
+     *        Double column statistics data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -298,11 +299,11 @@ public class ColumnStatisticsData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Long Column Statistics Data.
+     * Long column statistics data.
      * </p>
      * 
      * @param longColumnStatisticsData
-     *        Long Column Statistics Data.
+     *        Long column statistics data.
      */
 
     public void setLongColumnStatisticsData(LongColumnStatisticsData longColumnStatisticsData) {
@@ -311,10 +312,10 @@ public class ColumnStatisticsData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Long Column Statistics Data.
+     * Long column statistics data.
      * </p>
      * 
-     * @return Long Column Statistics Data.
+     * @return Long column statistics data.
      */
 
     public LongColumnStatisticsData getLongColumnStatisticsData() {
@@ -323,11 +324,11 @@ public class ColumnStatisticsData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Long Column Statistics Data.
+     * Long column statistics data.
      * </p>
      * 
      * @param longColumnStatisticsData
-     *        Long Column Statistics Data.
+     *        Long column statistics data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -338,11 +339,11 @@ public class ColumnStatisticsData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * String Column Statistics Data.
+     * String column statistics data.
      * </p>
      * 
      * @param stringColumnStatisticsData
-     *        String Column Statistics Data.
+     *        String column statistics data.
      */
 
     public void setStringColumnStatisticsData(StringColumnStatisticsData stringColumnStatisticsData) {
@@ -351,10 +352,10 @@ public class ColumnStatisticsData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * String Column Statistics Data.
+     * String column statistics data.
      * </p>
      * 
-     * @return String Column Statistics Data.
+     * @return String column statistics data.
      */
 
     public StringColumnStatisticsData getStringColumnStatisticsData() {
@@ -363,11 +364,11 @@ public class ColumnStatisticsData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * String Column Statistics Data.
+     * String column statistics data.
      * </p>
      * 
      * @param stringColumnStatisticsData
-     *        String Column Statistics Data.
+     *        String column statistics data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -378,11 +379,11 @@ public class ColumnStatisticsData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Binary Column Statistics Data.
+     * Binary column statistics data.
      * </p>
      * 
      * @param binaryColumnStatisticsData
-     *        Binary Column Statistics Data.
+     *        Binary column statistics data.
      */
 
     public void setBinaryColumnStatisticsData(BinaryColumnStatisticsData binaryColumnStatisticsData) {
@@ -391,10 +392,10 @@ public class ColumnStatisticsData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Binary Column Statistics Data.
+     * Binary column statistics data.
      * </p>
      * 
-     * @return Binary Column Statistics Data.
+     * @return Binary column statistics data.
      */
 
     public BinaryColumnStatisticsData getBinaryColumnStatisticsData() {
@@ -403,11 +404,11 @@ public class ColumnStatisticsData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Binary Column Statistics Data.
+     * Binary column statistics data.
      * </p>
      * 
      * @param binaryColumnStatisticsData
-     *        Binary Column Statistics Data.
+     *        Binary column statistics data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

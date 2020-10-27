@@ -1,3 +1,8 @@
+# __1.11.889__ __2020-10-27__
+## __AWS Glue__
+  - ### Features
+    - AWS Glue machine learning transforms now support encryption-at-rest for labels and trained models.
+
 # __1.11.888__ __2020-10-26__
 ## __AWSKendraFrontendService__
   - ### Features

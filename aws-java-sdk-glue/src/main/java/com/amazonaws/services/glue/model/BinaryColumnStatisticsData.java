@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Defines a binary column statistics data.
+ * Defines column statistics supported for bit sequence data values.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BinaryColumnStatisticsData" target="_top">AWS
@@ -30,30 +30,30 @@ public class BinaryColumnStatisticsData implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Maximum length of the column.
+     * The size of the longest bit sequence in the column.
      * </p>
      */
     private Long maximumLength;
     /**
      * <p>
-     * Average length of the column.
+     * The average bit sequence length in the column.
      * </p>
      */
     private Double averageLength;
     /**
      * <p>
-     * Number of nulls.
+     * The number of null values in the column.
      * </p>
      */
     private Long numberOfNulls;
 
     /**
      * <p>
-     * Maximum length of the column.
+     * The size of the longest bit sequence in the column.
      * </p>
      * 
      * @param maximumLength
-     *        Maximum length of the column.
+     *        The size of the longest bit sequence in the column.
      */
 
     public void setMaximumLength(Long maximumLength) {
@@ -62,10 +62,10 @@ public class BinaryColumnStatisticsData implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Maximum length of the column.
+     * The size of the longest bit sequence in the column.
      * </p>
      * 
-     * @return Maximum length of the column.
+     * @return The size of the longest bit sequence in the column.
      */
 
     public Long getMaximumLength() {
@@ -74,11 +74,11 @@ public class BinaryColumnStatisticsData implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Maximum length of the column.
+     * The size of the longest bit sequence in the column.
      * </p>
      * 
      * @param maximumLength
-     *        Maximum length of the column.
+     *        The size of the longest bit sequence in the column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class BinaryColumnStatisticsData implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Average length of the column.
+     * The average bit sequence length in the column.
      * </p>
      * 
      * @param averageLength
-     *        Average length of the column.
+     *        The average bit sequence length in the column.
      */
 
     public void setAverageLength(Double averageLength) {
@@ -102,10 +102,10 @@ public class BinaryColumnStatisticsData implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Average length of the column.
+     * The average bit sequence length in the column.
      * </p>
      * 
-     * @return Average length of the column.
+     * @return The average bit sequence length in the column.
      */
 
     public Double getAverageLength() {
@@ -114,11 +114,11 @@ public class BinaryColumnStatisticsData implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Average length of the column.
+     * The average bit sequence length in the column.
      * </p>
      * 
      * @param averageLength
-     *        Average length of the column.
+     *        The average bit sequence length in the column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class BinaryColumnStatisticsData implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Number of nulls.
+     * The number of null values in the column.
      * </p>
      * 
      * @param numberOfNulls
-     *        Number of nulls.
+     *        The number of null values in the column.
      */
 
     public void setNumberOfNulls(Long numberOfNulls) {
@@ -142,10 +142,10 @@ public class BinaryColumnStatisticsData implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Number of nulls.
+     * The number of null values in the column.
      * </p>
      * 
-     * @return Number of nulls.
+     * @return The number of null values in the column.
      */
 
     public Long getNumberOfNulls() {
@@ -154,11 +154,11 @@ public class BinaryColumnStatisticsData implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Number of nulls.
+     * The number of null values in the column.
      * </p>
      * 
      * @param numberOfNulls
-     *        Number of nulls.
+     *        The number of null values in the column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

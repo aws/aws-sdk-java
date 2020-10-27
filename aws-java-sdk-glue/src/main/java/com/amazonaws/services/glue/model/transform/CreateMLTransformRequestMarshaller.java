@@ -53,6 +53,8 @@ public class CreateMLTransformRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxRetries").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<StructuredPojo> TRANSFORMENCRYPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TransformEncryption").build();
 
     private static final CreateMLTransformRequestMarshaller instance = new CreateMLTransformRequestMarshaller();
 
@@ -82,6 +84,7 @@ public class CreateMLTransformRequestMarshaller {
             protocolMarshaller.marshall(createMLTransformRequest.getTimeout(), TIMEOUT_BINDING);
             protocolMarshaller.marshall(createMLTransformRequest.getMaxRetries(), MAXRETRIES_BINDING);
             protocolMarshaller.marshall(createMLTransformRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createMLTransformRequest.getTransformEncryption(), TRANSFORMENCRYPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Defines a decimal column statistics data.
+ * Defines column statistics supported for fixed-point number data columns.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DecimalColumnStatisticsData" target="_top">AWS
@@ -30,36 +30,36 @@ public class DecimalColumnStatisticsData implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Minimum value of the column.
+     * The lowest value in the column.
      * </p>
      */
     private DecimalNumber minimumValue;
     /**
      * <p>
-     * Maximum value of the column.
+     * The highest value in the column.
      * </p>
      */
     private DecimalNumber maximumValue;
     /**
      * <p>
-     * Number of nulls.
+     * The number of null values in the column.
      * </p>
      */
     private Long numberOfNulls;
     /**
      * <p>
-     * Number of distinct values.
+     * The number of distinct values in a column.
      * </p>
      */
     private Long numberOfDistinctValues;
 
     /**
      * <p>
-     * Minimum value of the column.
+     * The lowest value in the column.
      * </p>
      * 
      * @param minimumValue
-     *        Minimum value of the column.
+     *        The lowest value in the column.
      */
 
     public void setMinimumValue(DecimalNumber minimumValue) {
@@ -68,10 +68,10 @@ public class DecimalColumnStatisticsData implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Minimum value of the column.
+     * The lowest value in the column.
      * </p>
      * 
-     * @return Minimum value of the column.
+     * @return The lowest value in the column.
      */
 
     public DecimalNumber getMinimumValue() {
@@ -80,11 +80,11 @@ public class DecimalColumnStatisticsData implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Minimum value of the column.
+     * The lowest value in the column.
      * </p>
      * 
      * @param minimumValue
-     *        Minimum value of the column.
+     *        The lowest value in the column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class DecimalColumnStatisticsData implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Maximum value of the column.
+     * The highest value in the column.
      * </p>
      * 
      * @param maximumValue
-     *        Maximum value of the column.
+     *        The highest value in the column.
      */
 
     public void setMaximumValue(DecimalNumber maximumValue) {
@@ -108,10 +108,10 @@ public class DecimalColumnStatisticsData implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Maximum value of the column.
+     * The highest value in the column.
      * </p>
      * 
-     * @return Maximum value of the column.
+     * @return The highest value in the column.
      */
 
     public DecimalNumber getMaximumValue() {
@@ -120,11 +120,11 @@ public class DecimalColumnStatisticsData implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Maximum value of the column.
+     * The highest value in the column.
      * </p>
      * 
      * @param maximumValue
-     *        Maximum value of the column.
+     *        The highest value in the column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class DecimalColumnStatisticsData implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Number of nulls.
+     * The number of null values in the column.
      * </p>
      * 
      * @param numberOfNulls
-     *        Number of nulls.
+     *        The number of null values in the column.
      */
 
     public void setNumberOfNulls(Long numberOfNulls) {
@@ -148,10 +148,10 @@ public class DecimalColumnStatisticsData implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Number of nulls.
+     * The number of null values in the column.
      * </p>
      * 
-     * @return Number of nulls.
+     * @return The number of null values in the column.
      */
 
     public Long getNumberOfNulls() {
@@ -160,11 +160,11 @@ public class DecimalColumnStatisticsData implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Number of nulls.
+     * The number of null values in the column.
      * </p>
      * 
      * @param numberOfNulls
-     *        Number of nulls.
+     *        The number of null values in the column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +175,11 @@ public class DecimalColumnStatisticsData implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Number of distinct values.
+     * The number of distinct values in a column.
      * </p>
      * 
      * @param numberOfDistinctValues
-     *        Number of distinct values.
+     *        The number of distinct values in a column.
      */
 
     public void setNumberOfDistinctValues(Long numberOfDistinctValues) {
@@ -188,10 +188,10 @@ public class DecimalColumnStatisticsData implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Number of distinct values.
+     * The number of distinct values in a column.
      * </p>
      * 
-     * @return Number of distinct values.
+     * @return The number of distinct values in a column.
      */
 
     public Long getNumberOfDistinctValues() {
@@ -200,11 +200,11 @@ public class DecimalColumnStatisticsData implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Number of distinct values.
+     * The number of distinct values in a column.
      * </p>
      * 
      * @param numberOfDistinctValues
-     *        Number of distinct values.
+     *        The number of distinct values in a column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

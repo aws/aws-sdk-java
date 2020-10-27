@@ -124,6 +124,10 @@ public class GetMLTransformResultJsonUnmarshaller implements Unmarshaller<GetMLT
                     context.nextToken();
                     getMLTransformResult.setMaxRetries(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("TransformEncryption", targetDepth)) {
+                    context.nextToken();
+                    getMLTransformResult.setTransformEncryption(TransformEncryptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -64,6 +64,8 @@ public class MLTransformMarshaller {
             .marshallLocationName("Timeout").build();
     private static final MarshallingInfo<Integer> MAXRETRIES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxRetries").build();
+    private static final MarshallingInfo<StructuredPojo> TRANSFORMENCRYPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TransformEncryption").build();
 
     private static final MLTransformMarshaller instance = new MLTransformMarshaller();
 
@@ -99,6 +101,7 @@ public class MLTransformMarshaller {
             protocolMarshaller.marshall(mLTransform.getNumberOfWorkers(), NUMBEROFWORKERS_BINDING);
             protocolMarshaller.marshall(mLTransform.getTimeout(), TIMEOUT_BINDING);
             protocolMarshaller.marshall(mLTransform.getMaxRetries(), MAXRETRIES_BINDING);
+            protocolMarshaller.marshall(mLTransform.getTransformEncryption(), TRANSFORMENCRYPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

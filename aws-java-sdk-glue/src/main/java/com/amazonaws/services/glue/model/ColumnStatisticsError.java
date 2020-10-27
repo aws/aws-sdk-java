@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Defines a column containing error.
+ * Encapsulates a <code>ColumnStatistics</code> object that failed and the reason for failure.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ColumnStatisticsError" target="_top">AWS API
@@ -30,24 +30,24 @@ public class ColumnStatisticsError implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ColumnStatistics of the column.
+     * The <code>ColumnStatistics</code> of the column.
      * </p>
      */
     private ColumnStatistics columnStatistics;
     /**
      * <p>
-     * The error message occurred during operation.
+     * An error message with the reason for the failure of an operation.
      * </p>
      */
     private ErrorDetail error;
 
     /**
      * <p>
-     * The ColumnStatistics of the column.
+     * The <code>ColumnStatistics</code> of the column.
      * </p>
      * 
      * @param columnStatistics
-     *        The ColumnStatistics of the column.
+     *        The <code>ColumnStatistics</code> of the column.
      */
 
     public void setColumnStatistics(ColumnStatistics columnStatistics) {
@@ -56,10 +56,10 @@ public class ColumnStatisticsError implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ColumnStatistics of the column.
+     * The <code>ColumnStatistics</code> of the column.
      * </p>
      * 
-     * @return The ColumnStatistics of the column.
+     * @return The <code>ColumnStatistics</code> of the column.
      */
 
     public ColumnStatistics getColumnStatistics() {
@@ -68,11 +68,11 @@ public class ColumnStatisticsError implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ColumnStatistics of the column.
+     * The <code>ColumnStatistics</code> of the column.
      * </p>
      * 
      * @param columnStatistics
-     *        The ColumnStatistics of the column.
+     *        The <code>ColumnStatistics</code> of the column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class ColumnStatisticsError implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The error message occurred during operation.
+     * An error message with the reason for the failure of an operation.
      * </p>
      * 
      * @param error
-     *        The error message occurred during operation.
+     *        An error message with the reason for the failure of an operation.
      */
 
     public void setError(ErrorDetail error) {
@@ -96,10 +96,10 @@ public class ColumnStatisticsError implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The error message occurred during operation.
+     * An error message with the reason for the failure of an operation.
      * </p>
      * 
-     * @return The error message occurred during operation.
+     * @return An error message with the reason for the failure of an operation.
      */
 
     public ErrorDetail getError() {
@@ -108,11 +108,11 @@ public class ColumnStatisticsError implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The error message occurred during operation.
+     * An error message with the reason for the failure of an operation.
      * </p>
      * 
      * @param error
-     *        The error message occurred during operation.
+     *        An error message with the reason for the failure of an operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

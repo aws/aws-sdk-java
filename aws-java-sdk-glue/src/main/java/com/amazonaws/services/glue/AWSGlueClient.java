@@ -2095,6 +2095,9 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      * <p>
      * Delete the partition column statistics of a column.
      * </p>
+     * <p>
+     * The Identity and Access Management (IAM) permission required for this operation is <code>DeletePartition</code>.
+     * </p>
      * 
      * @param deleteColumnStatisticsForPartitionRequest
      * @return Result of the DeleteColumnStatisticsForPartition operation returned by the service.
@@ -2161,6 +2164,9 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
     /**
      * <p>
      * Retrieves table statistics of columns.
+     * </p>
+     * <p>
+     * The Identity and Access Management (IAM) permission required for this operation is <code>DeleteTable</code>.
      * </p>
      * 
      * @param deleteColumnStatisticsForTableRequest
@@ -3298,6 +3304,9 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      * <p>
      * Retrieves partition statistics of columns.
      * </p>
+     * <p>
+     * The Identity and Access Management (IAM) permission required for this operation is <code>GetPartition</code>.
+     * </p>
      * 
      * @param getColumnStatisticsForPartitionRequest
      * @return Result of the GetColumnStatisticsForPartition operation returned by the service.
@@ -3364,6 +3373,9 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
     /**
      * <p>
      * Retrieves table statistics of columns.
+     * </p>
+     * <p>
+     * The Identity and Access Management (IAM) permission required for this operation is <code>GetTable</code>.
      * </p>
      * 
      * @param getColumnStatisticsForTableRequest
@@ -8011,6 +8023,9 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      * <p>
      * Creates or updates partition statistics of columns.
      * </p>
+     * <p>
+     * The Identity and Access Management (IAM) permission required for this operation is <code>UpdatePartition</code>.
+     * </p>
      * 
      * @param updateColumnStatisticsForPartitionRequest
      * @return Result of the UpdateColumnStatisticsForPartition operation returned by the service.
@@ -8077,6 +8092,9 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
     /**
      * <p>
      * Creates or updates table statistics of columns.
+     * </p>
+     * <p>
+     * The Identity and Access Management (IAM) permission required for this operation is <code>UpdateTable</code>.
      * </p>
      * 
      * @param updateColumnStatisticsForTableRequest

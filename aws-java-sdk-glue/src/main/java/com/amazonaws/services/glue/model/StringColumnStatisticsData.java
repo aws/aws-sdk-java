@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Defines a string column statistics data.
+ * Defines column statistics supported for character sequence data values.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StringColumnStatisticsData" target="_top">AWS
@@ -30,36 +30,36 @@ public class StringColumnStatisticsData implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Maximum value of the column.
+     * The size of the longest string in the column.
      * </p>
      */
     private Long maximumLength;
     /**
      * <p>
-     * Average value of the column.
+     * The average string length in the column.
      * </p>
      */
     private Double averageLength;
     /**
      * <p>
-     * Number of nulls.
+     * The number of null values in the column.
      * </p>
      */
     private Long numberOfNulls;
     /**
      * <p>
-     * Number of distinct values.
+     * The number of distinct values in a column.
      * </p>
      */
     private Long numberOfDistinctValues;
 
     /**
      * <p>
-     * Maximum value of the column.
+     * The size of the longest string in the column.
      * </p>
      * 
      * @param maximumLength
-     *        Maximum value of the column.
+     *        The size of the longest string in the column.
      */
 
     public void setMaximumLength(Long maximumLength) {
@@ -68,10 +68,10 @@ public class StringColumnStatisticsData implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Maximum value of the column.
+     * The size of the longest string in the column.
      * </p>
      * 
-     * @return Maximum value of the column.
+     * @return The size of the longest string in the column.
      */
 
     public Long getMaximumLength() {
@@ -80,11 +80,11 @@ public class StringColumnStatisticsData implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Maximum value of the column.
+     * The size of the longest string in the column.
      * </p>
      * 
      * @param maximumLength
-     *        Maximum value of the column.
+     *        The size of the longest string in the column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class StringColumnStatisticsData implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Average value of the column.
+     * The average string length in the column.
      * </p>
      * 
      * @param averageLength
-     *        Average value of the column.
+     *        The average string length in the column.
      */
 
     public void setAverageLength(Double averageLength) {
@@ -108,10 +108,10 @@ public class StringColumnStatisticsData implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Average value of the column.
+     * The average string length in the column.
      * </p>
      * 
-     * @return Average value of the column.
+     * @return The average string length in the column.
      */
 
     public Double getAverageLength() {
@@ -120,11 +120,11 @@ public class StringColumnStatisticsData implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Average value of the column.
+     * The average string length in the column.
      * </p>
      * 
      * @param averageLength
-     *        Average value of the column.
+     *        The average string length in the column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class StringColumnStatisticsData implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Number of nulls.
+     * The number of null values in the column.
      * </p>
      * 
      * @param numberOfNulls
-     *        Number of nulls.
+     *        The number of null values in the column.
      */
 
     public void setNumberOfNulls(Long numberOfNulls) {
@@ -148,10 +148,10 @@ public class StringColumnStatisticsData implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Number of nulls.
+     * The number of null values in the column.
      * </p>
      * 
-     * @return Number of nulls.
+     * @return The number of null values in the column.
      */
 
     public Long getNumberOfNulls() {
@@ -160,11 +160,11 @@ public class StringColumnStatisticsData implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Number of nulls.
+     * The number of null values in the column.
      * </p>
      * 
      * @param numberOfNulls
-     *        Number of nulls.
+     *        The number of null values in the column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +175,11 @@ public class StringColumnStatisticsData implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Number of distinct values.
+     * The number of distinct values in a column.
      * </p>
      * 
      * @param numberOfDistinctValues
-     *        Number of distinct values.
+     *        The number of distinct values in a column.
      */
 
     public void setNumberOfDistinctValues(Long numberOfDistinctValues) {
@@ -188,10 +188,10 @@ public class StringColumnStatisticsData implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Number of distinct values.
+     * The number of distinct values in a column.
      * </p>
      * 
-     * @return Number of distinct values.
+     * @return The number of distinct values in a column.
      */
 
     public Long getNumberOfDistinctValues() {
@@ -200,11 +200,11 @@ public class StringColumnStatisticsData implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Number of distinct values.
+     * The number of distinct values in a column.
      * </p>
      * 
      * @param numberOfDistinctValues
-     *        Number of distinct values.
+     *        The number of distinct values in a column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

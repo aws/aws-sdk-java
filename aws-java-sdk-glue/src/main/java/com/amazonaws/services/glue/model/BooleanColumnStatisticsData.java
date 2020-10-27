@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Defines a boolean column statistics.
+ * Defines column statistics supported for Boolean data columns.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BooleanColumnStatisticsData" target="_top">AWS
@@ -30,30 +30,30 @@ public class BooleanColumnStatisticsData implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Number of true value.
+     * The number of true values in the column.
      * </p>
      */
     private Long numberOfTrues;
     /**
      * <p>
-     * Number of false value.
+     * The number of false values in the column.
      * </p>
      */
     private Long numberOfFalses;
     /**
      * <p>
-     * Number of nulls.
+     * The number of null values in the column.
      * </p>
      */
     private Long numberOfNulls;
 
     /**
      * <p>
-     * Number of true value.
+     * The number of true values in the column.
      * </p>
      * 
      * @param numberOfTrues
-     *        Number of true value.
+     *        The number of true values in the column.
      */
 
     public void setNumberOfTrues(Long numberOfTrues) {
@@ -62,10 +62,10 @@ public class BooleanColumnStatisticsData implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Number of true value.
+     * The number of true values in the column.
      * </p>
      * 
-     * @return Number of true value.
+     * @return The number of true values in the column.
      */
 
     public Long getNumberOfTrues() {
@@ -74,11 +74,11 @@ public class BooleanColumnStatisticsData implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Number of true value.
+     * The number of true values in the column.
      * </p>
      * 
      * @param numberOfTrues
-     *        Number of true value.
+     *        The number of true values in the column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class BooleanColumnStatisticsData implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Number of false value.
+     * The number of false values in the column.
      * </p>
      * 
      * @param numberOfFalses
-     *        Number of false value.
+     *        The number of false values in the column.
      */
 
     public void setNumberOfFalses(Long numberOfFalses) {
@@ -102,10 +102,10 @@ public class BooleanColumnStatisticsData implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Number of false value.
+     * The number of false values in the column.
      * </p>
      * 
-     * @return Number of false value.
+     * @return The number of false values in the column.
      */
 
     public Long getNumberOfFalses() {
@@ -114,11 +114,11 @@ public class BooleanColumnStatisticsData implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Number of false value.
+     * The number of false values in the column.
      * </p>
      * 
      * @param numberOfFalses
-     *        Number of false value.
+     *        The number of false values in the column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class BooleanColumnStatisticsData implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Number of nulls.
+     * The number of null values in the column.
      * </p>
      * 
      * @param numberOfNulls
-     *        Number of nulls.
+     *        The number of null values in the column.
      */
 
     public void setNumberOfNulls(Long numberOfNulls) {
@@ -142,10 +142,10 @@ public class BooleanColumnStatisticsData implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Number of nulls.
+     * The number of null values in the column.
      * </p>
      * 
-     * @return Number of nulls.
+     * @return The number of null values in the column.
      */
 
     public Long getNumberOfNulls() {
@@ -154,11 +154,11 @@ public class BooleanColumnStatisticsData implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Number of nulls.
+     * The number of null values in the column.
      * </p>
      * 
      * @param numberOfNulls
-     *        Number of nulls.
+     *        The number of null values in the column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
