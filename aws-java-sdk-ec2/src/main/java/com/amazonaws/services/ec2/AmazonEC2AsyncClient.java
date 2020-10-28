@@ -805,6 +805,41 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateEnclaveCertificateIamRoleResult> associateEnclaveCertificateIamRoleAsync(
+            AssociateEnclaveCertificateIamRoleRequest request) {
+
+        return associateEnclaveCertificateIamRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateEnclaveCertificateIamRoleResult> associateEnclaveCertificateIamRoleAsync(
+            final AssociateEnclaveCertificateIamRoleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateEnclaveCertificateIamRoleRequest, AssociateEnclaveCertificateIamRoleResult> asyncHandler) {
+        final AssociateEnclaveCertificateIamRoleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateEnclaveCertificateIamRoleResult>() {
+            @Override
+            public AssociateEnclaveCertificateIamRoleResult call() throws Exception {
+                AssociateEnclaveCertificateIamRoleResult result = null;
+
+                try {
+                    result = executeAssociateEnclaveCertificateIamRole(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateIamInstanceProfileResult> associateIamInstanceProfileAsync(AssociateIamInstanceProfileRequest request) {
 
         return associateIamInstanceProfileAsync(request, null);
@@ -10890,6 +10925,41 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateEnclaveCertificateIamRoleResult> disassociateEnclaveCertificateIamRoleAsync(
+            DisassociateEnclaveCertificateIamRoleRequest request) {
+
+        return disassociateEnclaveCertificateIamRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateEnclaveCertificateIamRoleResult> disassociateEnclaveCertificateIamRoleAsync(
+            final DisassociateEnclaveCertificateIamRoleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateEnclaveCertificateIamRoleRequest, DisassociateEnclaveCertificateIamRoleResult> asyncHandler) {
+        final DisassociateEnclaveCertificateIamRoleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateEnclaveCertificateIamRoleResult>() {
+            @Override
+            public DisassociateEnclaveCertificateIamRoleResult call() throws Exception {
+                DisassociateEnclaveCertificateIamRoleResult result = null;
+
+                try {
+                    result = executeDisassociateEnclaveCertificateIamRole(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateIamInstanceProfileResult> disassociateIamInstanceProfileAsync(DisassociateIamInstanceProfileRequest request) {
 
         return disassociateIamInstanceProfileAsync(request, null);
@@ -11447,6 +11517,41 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeExportTransitGatewayRoutes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAssociatedEnclaveCertificateIamRolesResult> getAssociatedEnclaveCertificateIamRolesAsync(
+            GetAssociatedEnclaveCertificateIamRolesRequest request) {
+
+        return getAssociatedEnclaveCertificateIamRolesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAssociatedEnclaveCertificateIamRolesResult> getAssociatedEnclaveCertificateIamRolesAsync(
+            final GetAssociatedEnclaveCertificateIamRolesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAssociatedEnclaveCertificateIamRolesRequest, GetAssociatedEnclaveCertificateIamRolesResult> asyncHandler) {
+        final GetAssociatedEnclaveCertificateIamRolesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAssociatedEnclaveCertificateIamRolesResult>() {
+            @Override
+            public GetAssociatedEnclaveCertificateIamRolesResult call() throws Exception {
+                GetAssociatedEnclaveCertificateIamRolesResult result = null;
+
+                try {
+                    result = executeGetAssociatedEnclaveCertificateIamRoles(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

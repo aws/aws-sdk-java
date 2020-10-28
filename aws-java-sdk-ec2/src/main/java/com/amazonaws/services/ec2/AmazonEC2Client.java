@@ -1229,6 +1229,79 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Associates an AWS Identity and Access Management (IAM) role with an AWS Certificate Manager (ACM) certificate.
+     * This enables the certificate to be used by the ACM for Nitro Enclaves application inside an enclave. For more
+     * information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html">AWS
+     * Certificate Manager for Nitro Enclaves</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * When the IAM role is associated with the ACM certificate, places the certificate, certificate chain, and
+     * encrypted private key in an Amazon S3 bucket that only the associated IAM role can access. The private key of the
+     * certificate is encrypted with an AWS-managed KMS key that has an attached attestation-based key policy.
+     * </p>
+     * <p>
+     * To enable the IAM role to access the Amazon S3 object, you must grant it permission to call
+     * <code>s3:GetObject</code> on the Amazon S3 bucket returned by the command. To enable the IAM role to access the
+     * AWS KMS key, you must grant it permission to call <code>kms:Decrypt</code> on AWS KMS key returned by the
+     * command. For more information, see <a
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html#add-policy"> Grant the role
+     * permission to access the certificate and encryption key</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param associateEnclaveCertificateIamRoleRequest
+     * @return Result of the AssociateEnclaveCertificateIamRole operation returned by the service.
+     * @sample AmazonEC2.AssociateEnclaveCertificateIamRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateEnclaveCertificateIamRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateEnclaveCertificateIamRoleResult associateEnclaveCertificateIamRole(AssociateEnclaveCertificateIamRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateEnclaveCertificateIamRole(request);
+    }
+
+    @SdkInternalApi
+    final AssociateEnclaveCertificateIamRoleResult executeAssociateEnclaveCertificateIamRole(
+            AssociateEnclaveCertificateIamRoleRequest associateEnclaveCertificateIamRoleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateEnclaveCertificateIamRoleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateEnclaveCertificateIamRoleRequest> request = null;
+        Response<AssociateEnclaveCertificateIamRoleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateEnclaveCertificateIamRoleRequestMarshaller()
+                        .marshall(super.beforeMarshalling(associateEnclaveCertificateIamRoleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateEnclaveCertificateIamRole");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<AssociateEnclaveCertificateIamRoleResult> responseHandler = new StaxResponseHandler<AssociateEnclaveCertificateIamRoleResult>(
+                    new AssociateEnclaveCertificateIamRoleResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Associates an IAM instance profile with a running or stopped instance. You cannot associate more than one IAM
      * instance profile with an instance.
      * </p>
@@ -17571,6 +17644,66 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Disassociates an IAM role from an AWS Certificate Manager (ACM) certificate. Disassociating an IAM role from an
+     * ACM certificate removes the Amazon S3 object that contains the certificate, certificate chain, and encrypted
+     * private key from the Amazon S3 bucket. It also revokes the IAM role's permission to use the AWS Key Management
+     * Service (KMS) key used to encrypt the private key. This effectively revokes the role's permission to use the
+     * certificate.
+     * </p>
+     * 
+     * @param disassociateEnclaveCertificateIamRoleRequest
+     * @return Result of the DisassociateEnclaveCertificateIamRole operation returned by the service.
+     * @sample AmazonEC2.DisassociateEnclaveCertificateIamRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateEnclaveCertificateIamRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateEnclaveCertificateIamRoleResult disassociateEnclaveCertificateIamRole(DisassociateEnclaveCertificateIamRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateEnclaveCertificateIamRole(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateEnclaveCertificateIamRoleResult executeDisassociateEnclaveCertificateIamRole(
+            DisassociateEnclaveCertificateIamRoleRequest disassociateEnclaveCertificateIamRoleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateEnclaveCertificateIamRoleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateEnclaveCertificateIamRoleRequest> request = null;
+        Response<DisassociateEnclaveCertificateIamRoleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateEnclaveCertificateIamRoleRequestMarshaller().marshall(super
+                        .beforeMarshalling(disassociateEnclaveCertificateIamRoleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateEnclaveCertificateIamRole");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DisassociateEnclaveCertificateIamRoleResult> responseHandler = new StaxResponseHandler<DisassociateEnclaveCertificateIamRoleResult>(
+                    new DisassociateEnclaveCertificateIamRoleResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Disassociates an IAM instance profile from a running or stopped instance.
      * </p>
      * <p>
@@ -18559,6 +18692,65 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ExportTransitGatewayRoutesResult> responseHandler = new StaxResponseHandler<ExportTransitGatewayRoutesResult>(
                     new ExportTransitGatewayRoutesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the IAM roles that are associated with the specified AWS Certificate Manager (ACM) certificate. It also
+     * returns the name of the Amazon S3 bucket and the Amazon S3 object key where the certificate, certificate chain,
+     * and encrypted private key bundle are stored, and the ARN of the AWS Key Management Service (KMS) key that's used
+     * to encrypt the private key.
+     * </p>
+     * 
+     * @param getAssociatedEnclaveCertificateIamRolesRequest
+     * @return Result of the GetAssociatedEnclaveCertificateIamRoles operation returned by the service.
+     * @sample AmazonEC2.GetAssociatedEnclaveCertificateIamRoles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAssociatedEnclaveCertificateIamRoles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetAssociatedEnclaveCertificateIamRolesResult getAssociatedEnclaveCertificateIamRoles(GetAssociatedEnclaveCertificateIamRolesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAssociatedEnclaveCertificateIamRoles(request);
+    }
+
+    @SdkInternalApi
+    final GetAssociatedEnclaveCertificateIamRolesResult executeGetAssociatedEnclaveCertificateIamRoles(
+            GetAssociatedEnclaveCertificateIamRolesRequest getAssociatedEnclaveCertificateIamRolesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAssociatedEnclaveCertificateIamRolesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAssociatedEnclaveCertificateIamRolesRequest> request = null;
+        Response<GetAssociatedEnclaveCertificateIamRolesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAssociatedEnclaveCertificateIamRolesRequestMarshaller().marshall(super
+                        .beforeMarshalling(getAssociatedEnclaveCertificateIamRolesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAssociatedEnclaveCertificateIamRoles");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetAssociatedEnclaveCertificateIamRolesResult> responseHandler = new StaxResponseHandler<GetAssociatedEnclaveCertificateIamRolesResult>(
+                    new GetAssociatedEnclaveCertificateIamRolesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

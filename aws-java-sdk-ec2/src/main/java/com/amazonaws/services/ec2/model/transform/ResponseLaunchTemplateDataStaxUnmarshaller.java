@@ -218,6 +218,11 @@ public class ResponseLaunchTemplateDataStaxUnmarshaller implements Unmarshaller<
                     responseLaunchTemplateData.setMetadataOptions(LaunchTemplateInstanceMetadataOptionsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("enclaveOptions", targetDepth)) {
+                    responseLaunchTemplateData.setEnclaveOptions(LaunchTemplateEnclaveOptionsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return responseLaunchTemplateData;

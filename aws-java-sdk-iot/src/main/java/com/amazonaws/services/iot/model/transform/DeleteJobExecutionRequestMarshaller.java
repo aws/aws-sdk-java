@@ -35,6 +35,8 @@ public class DeleteJobExecutionRequestMarshaller {
             .marshallLocationName("executionNumber").build();
     private static final MarshallingInfo<Boolean> FORCE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("force").build();
+    private static final MarshallingInfo<String> NAMESPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("namespaceId").build();
 
     private static final DeleteJobExecutionRequestMarshaller instance = new DeleteJobExecutionRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class DeleteJobExecutionRequestMarshaller {
             protocolMarshaller.marshall(deleteJobExecutionRequest.getThingName(), THINGNAME_BINDING);
             protocolMarshaller.marshall(deleteJobExecutionRequest.getExecutionNumber(), EXECUTIONNUMBER_BINDING);
             protocolMarshaller.marshall(deleteJobExecutionRequest.getForce(), FORCE_BINDING);
+            protocolMarshaller.marshall(deleteJobExecutionRequest.getNamespaceId(), NAMESPACEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

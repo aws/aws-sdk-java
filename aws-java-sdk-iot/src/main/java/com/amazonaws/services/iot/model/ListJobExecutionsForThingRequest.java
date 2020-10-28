@@ -34,6 +34,24 @@ public class ListJobExecutionsForThingRequest extends com.amazonaws.AmazonWebSer
     private String status;
     /**
      * <p>
+     * The namespace used to indicate that a job is a customer-managed job.
+     * </p>
+     * <p>
+     * When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that contain
+     * the value in the following format.
+     * </p>
+     * <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>
+     * <note>
+     * <p>
+     * The <code>namespaceId</code> feature is in public preview.
+     * </p>
+     * </note>
+     */
+    private String namespaceId;
+    /**
+     * <p>
      * The maximum number of results to be returned per request.
      * </p>
      */
@@ -146,6 +164,115 @@ public class ListJobExecutionsForThingRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
+     * The namespace used to indicate that a job is a customer-managed job.
+     * </p>
+     * <p>
+     * When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that contain
+     * the value in the following format.
+     * </p>
+     * <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>
+     * <note>
+     * <p>
+     * The <code>namespaceId</code> feature is in public preview.
+     * </p>
+     * </note>
+     * 
+     * @param namespaceId
+     *        The namespace used to indicate that a job is a customer-managed job.</p>
+     *        <p>
+     *        When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that
+     *        contain the value in the following format.
+     *        </p>
+     *        <p>
+     *        <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The <code>namespaceId</code> feature is in public preview.
+     *        </p>
+     */
+
+    public void setNamespaceId(String namespaceId) {
+        this.namespaceId = namespaceId;
+    }
+
+    /**
+     * <p>
+     * The namespace used to indicate that a job is a customer-managed job.
+     * </p>
+     * <p>
+     * When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that contain
+     * the value in the following format.
+     * </p>
+     * <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>
+     * <note>
+     * <p>
+     * The <code>namespaceId</code> feature is in public preview.
+     * </p>
+     * </note>
+     * 
+     * @return The namespace used to indicate that a job is a customer-managed job.</p>
+     *         <p>
+     *         When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that
+     *         contain the value in the following format.
+     *         </p>
+     *         <p>
+     *         <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     *         </p>
+     *         <note>
+     *         <p>
+     *         The <code>namespaceId</code> feature is in public preview.
+     *         </p>
+     */
+
+    public String getNamespaceId() {
+        return this.namespaceId;
+    }
+
+    /**
+     * <p>
+     * The namespace used to indicate that a job is a customer-managed job.
+     * </p>
+     * <p>
+     * When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that contain
+     * the value in the following format.
+     * </p>
+     * <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>
+     * <note>
+     * <p>
+     * The <code>namespaceId</code> feature is in public preview.
+     * </p>
+     * </note>
+     * 
+     * @param namespaceId
+     *        The namespace used to indicate that a job is a customer-managed job.</p>
+     *        <p>
+     *        When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that
+     *        contain the value in the following format.
+     *        </p>
+     *        <p>
+     *        <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The <code>namespaceId</code> feature is in public preview.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListJobExecutionsForThingRequest withNamespaceId(String namespaceId) {
+        setNamespaceId(namespaceId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The maximum number of results to be returned per request.
      * </p>
      * 
@@ -240,6 +367,8 @@ public class ListJobExecutionsForThingRequest extends com.amazonaws.AmazonWebSer
             sb.append("ThingName: ").append(getThingName()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getNamespaceId() != null)
+            sb.append("NamespaceId: ").append(getNamespaceId()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
@@ -266,6 +395,10 @@ public class ListJobExecutionsForThingRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getNamespaceId() == null ^ this.getNamespaceId() == null)
+            return false;
+        if (other.getNamespaceId() != null && other.getNamespaceId().equals(this.getNamespaceId()) == false)
+            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -284,6 +417,7 @@ public class ListJobExecutionsForThingRequest extends com.amazonaws.AmazonWebSer
 
         hashCode = prime * hashCode + ((getThingName() == null) ? 0 : getThingName().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getNamespaceId() == null) ? 0 : getNamespaceId().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;

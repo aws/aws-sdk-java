@@ -551,6 +551,14 @@ public class CreateLaunchTemplateRequestMarshaller implements Marshaller<Request
                     request.addParameter("LaunchTemplateData.MetadataOptions.HttpEndpoint", StringUtils.fromString(metadataOptions.getHttpEndpoint()));
                 }
             }
+
+            LaunchTemplateEnclaveOptionsRequest enclaveOptions = launchTemplateData.getEnclaveOptions();
+            if (enclaveOptions != null) {
+
+                if (enclaveOptions.getEnabled() != null) {
+                    request.addParameter("LaunchTemplateData.EnclaveOptions.Enabled", StringUtils.fromBoolean(enclaveOptions.getEnabled()));
+                }
+            }
         }
 
         com.amazonaws.internal.SdkInternalList<TagSpecification> createLaunchTemplateRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) createLaunchTemplateRequest

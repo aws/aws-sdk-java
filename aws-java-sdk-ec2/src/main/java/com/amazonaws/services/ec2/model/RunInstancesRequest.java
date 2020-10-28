@@ -361,6 +361,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
+     * <p>
+     * You can't enable hibernation and AWS Nitro Enclaves on the same instance.
+     * </p>
      */
     private HibernationOptionsRequest hibernationOptions;
     /**
@@ -377,6 +380,20 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      */
     private InstanceMetadataOptionsRequest metadataOptions;
+    /**
+     * <p>
+     * Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html"> AWS Nitro Enclaves</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * You can't enable AWS Nitro Enclaves and hibernation on the same instance. For more information about AWS Nitro
+     * Enclaves requirements, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html#nitro-enclave-reqs"> AWS Nitro
+     * Enclaves</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     */
+    private EnclaveOptionsRequest enclaveOptions;
 
     /**
      * Default constructor for RunInstancesRequest object. Callers should use the setter or fluent setter (with...)
@@ -2963,11 +2980,16 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
+     * <p>
+     * You can't enable hibernation and AWS Nitro Enclaves on the same instance.
+     * </p>
      * 
      * @param hibernationOptions
      *        Indicates whether an instance is enabled for hibernation. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in
-     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        <p>
+     *        You can't enable hibernation and AWS Nitro Enclaves on the same instance.
      */
 
     public void setHibernationOptions(HibernationOptionsRequest hibernationOptions) {
@@ -2980,10 +3002,15 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
+     * <p>
+     * You can't enable hibernation and AWS Nitro Enclaves on the same instance.
+     * </p>
      * 
      * @return Indicates whether an instance is enabled for hibernation. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in
-     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *         <p>
+     *         You can't enable hibernation and AWS Nitro Enclaves on the same instance.
      */
 
     public HibernationOptionsRequest getHibernationOptions() {
@@ -2996,11 +3023,16 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
+     * <p>
+     * You can't enable hibernation and AWS Nitro Enclaves on the same instance.
+     * </p>
      * 
      * @param hibernationOptions
      *        Indicates whether an instance is enabled for hibernation. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in
-     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        <p>
+     *        You can't enable hibernation and AWS Nitro Enclaves on the same instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3135,6 +3167,91 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
+     * <p>
+     * Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html"> AWS Nitro Enclaves</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * You can't enable AWS Nitro Enclaves and hibernation on the same instance. For more information about AWS Nitro
+     * Enclaves requirements, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html#nitro-enclave-reqs"> AWS Nitro
+     * Enclaves</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param enclaveOptions
+     *        Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html"> AWS Nitro Enclaves</a> in
+     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        <p>
+     *        You can't enable AWS Nitro Enclaves and hibernation on the same instance. For more information about AWS
+     *        Nitro Enclaves requirements, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html#nitro-enclave-reqs"> AWS
+     *        Nitro Enclaves</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public void setEnclaveOptions(EnclaveOptionsRequest enclaveOptions) {
+        this.enclaveOptions = enclaveOptions;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html"> AWS Nitro Enclaves</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * You can't enable AWS Nitro Enclaves and hibernation on the same instance. For more information about AWS Nitro
+     * Enclaves requirements, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html#nitro-enclave-reqs"> AWS Nitro
+     * Enclaves</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @return Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html"> AWS Nitro Enclaves</a> in
+     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *         <p>
+     *         You can't enable AWS Nitro Enclaves and hibernation on the same instance. For more information about AWS
+     *         Nitro Enclaves requirements, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html#nitro-enclave-reqs"> AWS
+     *         Nitro Enclaves</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public EnclaveOptionsRequest getEnclaveOptions() {
+        return this.enclaveOptions;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html"> AWS Nitro Enclaves</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * You can't enable AWS Nitro Enclaves and hibernation on the same instance. For more information about AWS Nitro
+     * Enclaves requirements, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html#nitro-enclave-reqs"> AWS Nitro
+     * Enclaves</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param enclaveOptions
+     *        Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html"> AWS Nitro Enclaves</a> in
+     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        <p>
+     *        You can't enable AWS Nitro Enclaves and hibernation on the same instance. For more information about AWS
+     *        Nitro Enclaves requirements, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html#nitro-enclave-reqs"> AWS
+     *        Nitro Enclaves</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunInstancesRequest withEnclaveOptions(EnclaveOptionsRequest enclaveOptions) {
+        setEnclaveOptions(enclaveOptions);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -3226,7 +3343,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         if (getLicenseSpecifications() != null)
             sb.append("LicenseSpecifications: ").append(getLicenseSpecifications()).append(",");
         if (getMetadataOptions() != null)
-            sb.append("MetadataOptions: ").append(getMetadataOptions());
+            sb.append("MetadataOptions: ").append(getMetadataOptions()).append(",");
+        if (getEnclaveOptions() != null)
+            sb.append("EnclaveOptions: ").append(getEnclaveOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -3383,6 +3502,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
             return false;
         if (other.getMetadataOptions() != null && other.getMetadataOptions().equals(this.getMetadataOptions()) == false)
             return false;
+        if (other.getEnclaveOptions() == null ^ this.getEnclaveOptions() == null)
+            return false;
+        if (other.getEnclaveOptions() != null && other.getEnclaveOptions().equals(this.getEnclaveOptions()) == false)
+            return false;
         return true;
     }
 
@@ -3426,6 +3549,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         hashCode = prime * hashCode + ((getHibernationOptions() == null) ? 0 : getHibernationOptions().hashCode());
         hashCode = prime * hashCode + ((getLicenseSpecifications() == null) ? 0 : getLicenseSpecifications().hashCode());
         hashCode = prime * hashCode + ((getMetadataOptions() == null) ? 0 : getMetadataOptions().hashCode());
+        hashCode = prime * hashCode + ((getEnclaveOptions() == null) ? 0 : getEnclaveOptions().hashCode());
         return hashCode;
     }
 

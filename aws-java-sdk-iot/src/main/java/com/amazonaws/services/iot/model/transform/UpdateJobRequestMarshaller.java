@@ -39,6 +39,8 @@ public class UpdateJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("abortConfig").build();
     private static final MarshallingInfo<StructuredPojo> TIMEOUTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeoutConfig").build();
+    private static final MarshallingInfo<String> NAMESPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("namespaceId").build();
 
     private static final UpdateJobRequestMarshaller instance = new UpdateJobRequestMarshaller();
 
@@ -62,6 +64,7 @@ public class UpdateJobRequestMarshaller {
             protocolMarshaller.marshall(updateJobRequest.getJobExecutionsRolloutConfig(), JOBEXECUTIONSROLLOUTCONFIG_BINDING);
             protocolMarshaller.marshall(updateJobRequest.getAbortConfig(), ABORTCONFIG_BINDING);
             protocolMarshaller.marshall(updateJobRequest.getTimeoutConfig(), TIMEOUTCONFIG_BINDING);
+            protocolMarshaller.marshall(updateJobRequest.getNamespaceId(), NAMESPACEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

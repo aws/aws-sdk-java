@@ -578,6 +578,14 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
             }
         }
 
+        EnclaveOptionsRequest enclaveOptions = runInstancesRequest.getEnclaveOptions();
+        if (enclaveOptions != null) {
+
+            if (enclaveOptions.getEnabled() != null) {
+                request.addParameter("EnclaveOptions.Enabled", StringUtils.fromBoolean(enclaveOptions.getEnabled()));
+            }
+        }
+
         return request;
     }
 

@@ -34,6 +34,8 @@ public class AssociateTargetsWithJobRequestMarshaller {
             .marshallLocationName("jobId").build();
     private static final MarshallingInfo<String> COMMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("comment").build();
+    private static final MarshallingInfo<String> NAMESPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("namespaceId").build();
 
     private static final AssociateTargetsWithJobRequestMarshaller instance = new AssociateTargetsWithJobRequestMarshaller();
 
@@ -54,6 +56,7 @@ public class AssociateTargetsWithJobRequestMarshaller {
             protocolMarshaller.marshall(associateTargetsWithJobRequest.getTargets(), TARGETS_BINDING);
             protocolMarshaller.marshall(associateTargetsWithJobRequest.getJobId(), JOBID_BINDING);
             protocolMarshaller.marshall(associateTargetsWithJobRequest.getComment(), COMMENT_BINDING);
+            protocolMarshaller.marshall(associateTargetsWithJobRequest.getNamespaceId(), NAMESPACEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

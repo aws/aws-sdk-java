@@ -222,6 +222,11 @@ public class RequestLaunchTemplateDataStaxUnmarshaller implements Unmarshaller<R
                             .setMetadataOptions(LaunchTemplateInstanceMetadataOptionsRequestStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("EnclaveOptions", targetDepth)) {
+                    requestLaunchTemplateData.setEnclaveOptions(LaunchTemplateEnclaveOptionsRequestStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return requestLaunchTemplateData;

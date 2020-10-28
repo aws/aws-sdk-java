@@ -57,6 +57,24 @@ public class DeleteJobExecutionRequest extends com.amazonaws.AmazonWebServiceReq
      * </note>
      */
     private Boolean force;
+    /**
+     * <p>
+     * The namespace used to indicate that a job is a customer-managed job.
+     * </p>
+     * <p>
+     * When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that contain
+     * the value in the following format.
+     * </p>
+     * <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>
+     * <note>
+     * <p>
+     * The <code>namespaceId</code> feature is in public preview.
+     * </p>
+     * </note>
+     */
+    private String namespaceId;
 
     /**
      * <p>
@@ -318,6 +336,115 @@ public class DeleteJobExecutionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The namespace used to indicate that a job is a customer-managed job.
+     * </p>
+     * <p>
+     * When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that contain
+     * the value in the following format.
+     * </p>
+     * <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>
+     * <note>
+     * <p>
+     * The <code>namespaceId</code> feature is in public preview.
+     * </p>
+     * </note>
+     * 
+     * @param namespaceId
+     *        The namespace used to indicate that a job is a customer-managed job.</p>
+     *        <p>
+     *        When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that
+     *        contain the value in the following format.
+     *        </p>
+     *        <p>
+     *        <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The <code>namespaceId</code> feature is in public preview.
+     *        </p>
+     */
+
+    public void setNamespaceId(String namespaceId) {
+        this.namespaceId = namespaceId;
+    }
+
+    /**
+     * <p>
+     * The namespace used to indicate that a job is a customer-managed job.
+     * </p>
+     * <p>
+     * When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that contain
+     * the value in the following format.
+     * </p>
+     * <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>
+     * <note>
+     * <p>
+     * The <code>namespaceId</code> feature is in public preview.
+     * </p>
+     * </note>
+     * 
+     * @return The namespace used to indicate that a job is a customer-managed job.</p>
+     *         <p>
+     *         When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that
+     *         contain the value in the following format.
+     *         </p>
+     *         <p>
+     *         <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     *         </p>
+     *         <note>
+     *         <p>
+     *         The <code>namespaceId</code> feature is in public preview.
+     *         </p>
+     */
+
+    public String getNamespaceId() {
+        return this.namespaceId;
+    }
+
+    /**
+     * <p>
+     * The namespace used to indicate that a job is a customer-managed job.
+     * </p>
+     * <p>
+     * When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that contain
+     * the value in the following format.
+     * </p>
+     * <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>
+     * <note>
+     * <p>
+     * The <code>namespaceId</code> feature is in public preview.
+     * </p>
+     * </note>
+     * 
+     * @param namespaceId
+     *        The namespace used to indicate that a job is a customer-managed job.</p>
+     *        <p>
+     *        When you specify a value for this parameter, AWS IoT Core sends jobs notifications to MQTT topics that
+     *        contain the value in the following format.
+     *        </p>
+     *        <p>
+     *        <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The <code>namespaceId</code> feature is in public preview.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteJobExecutionRequest withNamespaceId(String namespaceId) {
+        setNamespaceId(namespaceId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -336,7 +463,9 @@ public class DeleteJobExecutionRequest extends com.amazonaws.AmazonWebServiceReq
         if (getExecutionNumber() != null)
             sb.append("ExecutionNumber: ").append(getExecutionNumber()).append(",");
         if (getForce() != null)
-            sb.append("Force: ").append(getForce());
+            sb.append("Force: ").append(getForce()).append(",");
+        if (getNamespaceId() != null)
+            sb.append("NamespaceId: ").append(getNamespaceId());
         sb.append("}");
         return sb.toString();
     }
@@ -367,6 +496,10 @@ public class DeleteJobExecutionRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getForce() != null && other.getForce().equals(this.getForce()) == false)
             return false;
+        if (other.getNamespaceId() == null ^ this.getNamespaceId() == null)
+            return false;
+        if (other.getNamespaceId() != null && other.getNamespaceId().equals(this.getNamespaceId()) == false)
+            return false;
         return true;
     }
 
@@ -379,6 +512,7 @@ public class DeleteJobExecutionRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getThingName() == null) ? 0 : getThingName().hashCode());
         hashCode = prime * hashCode + ((getExecutionNumber() == null) ? 0 : getExecutionNumber().hashCode());
         hashCode = prime * hashCode + ((getForce() == null) ? 0 : getForce().hashCode());
+        hashCode = prime * hashCode + ((getNamespaceId() == null) ? 0 : getNamespaceId().hashCode());
         return hashCode;
     }
 

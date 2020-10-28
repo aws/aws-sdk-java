@@ -75,6 +75,11 @@ public class InstanceAttributeStaxUnmarshaller implements Unmarshaller<InstanceA
                     continue;
                 }
 
+                if (context.testExpression("enclaveOptions", targetDepth)) {
+                    instanceAttribute.setEnclaveOptions(EnclaveOptionsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("ebsOptimized/value", targetDepth)) {
                     instanceAttribute.setEbsOptimized(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

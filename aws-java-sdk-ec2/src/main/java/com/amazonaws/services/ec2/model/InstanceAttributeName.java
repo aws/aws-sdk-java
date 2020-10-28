@@ -33,7 +33,8 @@ public enum InstanceAttributeName {
     GroupSet("groupSet"),
     EbsOptimized("ebsOptimized"),
     SriovNetSupport("sriovNetSupport"),
-    EnaSupport("enaSupport");
+    EnaSupport("enaSupport"),
+    EnclaveOptions("enclaveOptions");
 
     private String value;
 

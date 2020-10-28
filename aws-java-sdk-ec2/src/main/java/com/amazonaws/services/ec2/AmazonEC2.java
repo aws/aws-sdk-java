@@ -470,6 +470,37 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Associates an AWS Identity and Access Management (IAM) role with an AWS Certificate Manager (ACM) certificate.
+     * This enables the certificate to be used by the ACM for Nitro Enclaves application inside an enclave. For more
+     * information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html">AWS
+     * Certificate Manager for Nitro Enclaves</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * When the IAM role is associated with the ACM certificate, places the certificate, certificate chain, and
+     * encrypted private key in an Amazon S3 bucket that only the associated IAM role can access. The private key of the
+     * certificate is encrypted with an AWS-managed KMS key that has an attached attestation-based key policy.
+     * </p>
+     * <p>
+     * To enable the IAM role to access the Amazon S3 object, you must grant it permission to call
+     * <code>s3:GetObject</code> on the Amazon S3 bucket returned by the command. To enable the IAM role to access the
+     * AWS KMS key, you must grant it permission to call <code>kms:Decrypt</code> on AWS KMS key returned by the
+     * command. For more information, see <a
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html#add-policy"> Grant the role
+     * permission to access the certificate and encryption key</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param associateEnclaveCertificateIamRoleRequest
+     * @return Result of the AssociateEnclaveCertificateIamRole operation returned by the service.
+     * @sample AmazonEC2.AssociateEnclaveCertificateIamRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateEnclaveCertificateIamRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateEnclaveCertificateIamRoleResult associateEnclaveCertificateIamRole(
+            AssociateEnclaveCertificateIamRoleRequest associateEnclaveCertificateIamRoleRequest);
+
+    /**
+     * <p>
      * Associates an IAM instance profile with a running or stopped instance. You cannot associate more than one IAM
      * instance profile with an instance.
      * </p>
@@ -5969,6 +6000,24 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Disassociates an IAM role from an AWS Certificate Manager (ACM) certificate. Disassociating an IAM role from an
+     * ACM certificate removes the Amazon S3 object that contains the certificate, certificate chain, and encrypted
+     * private key from the Amazon S3 bucket. It also revokes the IAM role's permission to use the AWS Key Management
+     * Service (KMS) key used to encrypt the private key. This effectively revokes the role's permission to use the
+     * certificate.
+     * </p>
+     * 
+     * @param disassociateEnclaveCertificateIamRoleRequest
+     * @return Result of the DisassociateEnclaveCertificateIamRole operation returned by the service.
+     * @sample AmazonEC2.DisassociateEnclaveCertificateIamRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateEnclaveCertificateIamRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateEnclaveCertificateIamRoleResult disassociateEnclaveCertificateIamRole(
+            DisassociateEnclaveCertificateIamRoleRequest disassociateEnclaveCertificateIamRoleRequest);
+
+    /**
+     * <p>
      * Disassociates an IAM instance profile from a running or stopped instance.
      * </p>
      * <p>
@@ -6264,6 +6313,23 @@ public interface AmazonEC2 {
      *      API Documentation</a>
      */
     ExportTransitGatewayRoutesResult exportTransitGatewayRoutes(ExportTransitGatewayRoutesRequest exportTransitGatewayRoutesRequest);
+
+    /**
+     * <p>
+     * Returns the IAM roles that are associated with the specified AWS Certificate Manager (ACM) certificate. It also
+     * returns the name of the Amazon S3 bucket and the Amazon S3 object key where the certificate, certificate chain,
+     * and encrypted private key bundle are stored, and the ARN of the AWS Key Management Service (KMS) key that's used
+     * to encrypt the private key.
+     * </p>
+     * 
+     * @param getAssociatedEnclaveCertificateIamRolesRequest
+     * @return Result of the GetAssociatedEnclaveCertificateIamRoles operation returned by the service.
+     * @sample AmazonEC2.GetAssociatedEnclaveCertificateIamRoles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAssociatedEnclaveCertificateIamRoles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetAssociatedEnclaveCertificateIamRolesResult getAssociatedEnclaveCertificateIamRoles(
+            GetAssociatedEnclaveCertificateIamRolesRequest getAssociatedEnclaveCertificateIamRolesRequest);
 
     /**
      * <p>

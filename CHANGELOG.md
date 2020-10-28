@@ -1,3 +1,16 @@
+# __1.11.890__ __2020-10-28__
+## __AWS IoT__
+  - ### Features
+    - This release adds support for GG-Managed Job Namespace
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - AWS Nitro Enclaves general availability. Added support to RunInstances for creating enclave-enabled EC2 instances. New APIs to associate an ACM certificate with an IAM role, for enclave consumption.
+
+## __Amazon WorkMail__
+  - ### Features
+    - Documentation update for Amazon WorkMail
+
 # __1.11.889__ __2020-10-27__
 ## __AWS Glue__
   - ### Features
