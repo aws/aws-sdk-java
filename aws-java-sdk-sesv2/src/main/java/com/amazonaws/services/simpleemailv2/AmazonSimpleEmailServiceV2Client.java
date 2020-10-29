@@ -335,6 +335,130 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Creates a contact, which is an end-user who is receiving the email, and adds them to a contact list.
+     * </p>
+     * 
+     * @param createContactRequest
+     * @return Result of the CreateContact operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws AlreadyExistsException
+     *         The resource specified in your request already exists.
+     * @sample AmazonSimpleEmailServiceV2.CreateContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateContactResult createContact(CreateContactRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateContact(request);
+    }
+
+    @SdkInternalApi
+    final CreateContactResult executeCreateContact(CreateContactRequest createContactRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createContactRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateContactRequest> request = null;
+        Response<CreateContactResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateContactRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createContactRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateContact");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateContactResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateContactResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a contact list.
+     * </p>
+     * 
+     * @param createContactListRequest
+     * @return Result of the CreateContactList operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws AlreadyExistsException
+     *         The resource specified in your request already exists.
+     * @throws LimitExceededException
+     *         There are too many instances of the specified resource type.
+     * @sample AmazonSimpleEmailServiceV2.CreateContactList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateContactList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateContactListResult createContactList(CreateContactListRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateContactList(request);
+    }
+
+    @SdkInternalApi
+    final CreateContactListResult executeCreateContactList(CreateContactListRequest createContactListRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createContactListRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateContactListRequest> request = null;
+        Response<CreateContactListResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateContactListRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createContactListRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateContactList");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateContactListResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateContactListResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new custom verification email template.
      * </p>
      * <p>
@@ -1006,6 +1130,128 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Removes a contact from a contact list.
+     * </p>
+     * 
+     * @param deleteContactRequest
+     * @return Result of the DeleteContact operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @sample AmazonSimpleEmailServiceV2.DeleteContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteContactResult deleteContact(DeleteContactRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteContact(request);
+    }
+
+    @SdkInternalApi
+    final DeleteContactResult executeDeleteContact(DeleteContactRequest deleteContactRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteContactRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteContactRequest> request = null;
+        Response<DeleteContactResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteContactRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteContactRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteContact");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteContactResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteContactResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a contact list and all of the contacts on that list.
+     * </p>
+     * 
+     * @param deleteContactListRequest
+     * @return Result of the DeleteContactList operation returned by the service.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
+     * @sample AmazonSimpleEmailServiceV2.DeleteContactList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteContactList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteContactListResult deleteContactList(DeleteContactListRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteContactList(request);
+    }
+
+    @SdkInternalApi
+    final DeleteContactListResult executeDeleteContactList(DeleteContactListRequest deleteContactListRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteContactListRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteContactListRequest> request = null;
+        Response<DeleteContactListResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteContactListRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteContactListRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteContactList");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteContactListResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteContactListResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes an existing custom verification email template.
      * </p>
      * <p>
@@ -1664,6 +1910,126 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<GetConfigurationSetEventDestinationsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetConfigurationSetEventDestinationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a contact from a contact list.
+     * </p>
+     * 
+     * @param getContactRequest
+     * @return Result of the GetContact operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @sample AmazonSimpleEmailServiceV2.GetContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetContactResult getContact(GetContactRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetContact(request);
+    }
+
+    @SdkInternalApi
+    final GetContactResult executeGetContact(GetContactRequest getContactRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getContactRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetContactRequest> request = null;
+        Response<GetContactResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetContactRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getContactRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetContact");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetContactResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetContactResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns contact list metadata. It does not return any information about the contacts present in the list.
+     * </p>
+     * 
+     * @param getContactListRequest
+     * @return Result of the GetContactList operation returned by the service.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.GetContactList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetContactList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetContactListResult getContactList(GetContactListRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetContactList(request);
+    }
+
+    @SdkInternalApi
+    final GetContactListResult executeGetContactList(GetContactListRequest getContactListRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getContactListRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetContactListRequest> request = null;
+        Response<GetContactListResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetContactListRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getContactListRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetContactList");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetContactListResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetContactListResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2526,6 +2892,124 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<ListConfigurationSetsResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new ListConfigurationSetsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all of the contact lists available.
+     * </p>
+     * 
+     * @param listContactListsRequest
+     * @return Result of the ListContactLists operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @sample AmazonSimpleEmailServiceV2.ListContactLists
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListContactLists" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListContactListsResult listContactLists(ListContactListsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListContactLists(request);
+    }
+
+    @SdkInternalApi
+    final ListContactListsResult executeListContactLists(ListContactListsRequest listContactListsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listContactListsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListContactListsRequest> request = null;
+        Response<ListContactListsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListContactListsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listContactListsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListContactLists");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListContactListsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListContactListsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the contacts present in a specific contact list.
+     * </p>
+     * 
+     * @param listContactsRequest
+     * @return Result of the ListContacts operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @sample AmazonSimpleEmailServiceV2.ListContacts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListContacts" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListContactsResult listContacts(ListContactsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListContacts(request);
+    }
+
+    @SdkInternalApi
+    final ListContactsResult executeListContacts(ListContactsRequest listContactsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listContactsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListContactsRequest> request = null;
+        Response<ListContactsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListContactsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listContactsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListContacts");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListContactsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListContactsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4757,6 +5241,131 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<UpdateConfigurationSetEventDestinationResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new UpdateConfigurationSetEventDestinationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a contact's preferences for a list. It is not necessary to specify all existing topic preferences in the
+     * TopicPreferences object, just the ones that need updating.
+     * </p>
+     * 
+     * @param updateContactRequest
+     * @return Result of the UpdateContact operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
+     * @sample AmazonSimpleEmailServiceV2.UpdateContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateContactResult updateContact(UpdateContactRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateContact(request);
+    }
+
+    @SdkInternalApi
+    final UpdateContactResult executeUpdateContact(UpdateContactRequest updateContactRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateContactRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateContactRequest> request = null;
+        Response<UpdateContactResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateContactRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateContactRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateContact");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateContactResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateContactResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates contact list metadata. This operation does a complete replacement.
+     * </p>
+     * 
+     * @param updateContactListRequest
+     * @return Result of the UpdateContactList operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
+     * @sample AmazonSimpleEmailServiceV2.UpdateContactList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateContactList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateContactListResult updateContactList(UpdateContactListRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateContactList(request);
+    }
+
+    @SdkInternalApi
+    final UpdateContactListResult executeUpdateContactList(UpdateContactListRequest updateContactListRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateContactListRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateContactListRequest> request = null;
+        Response<UpdateContactListResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateContactListRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateContactListRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateContactList");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateContactListResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateContactListResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

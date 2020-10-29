@@ -46,6 +46,14 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     private String protocol;
     /**
      * <p>
+     * [HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests to targets using gRPC.
+     * Specify <code>HTTP2</code> to send requests to targets using HTTP/2. The default is <code>HTTP1</code>, which
+     * sends requests to targets using HTTP/1.1.
+     * </p>
+     */
+    private String protocolVersion;
+    /**
+     * <p>
      * The port on which the targets receive traffic. This port is used unless you specify a port override when
      * registering the target. If the target is a Lambda function, this parameter does not apply.
      * </p>
@@ -84,8 +92,14 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     private Boolean healthCheckEnabled;
     /**
      * <p>
-     * [HTTP/HTTPS health checks] The ping path that is the destination on the targets for health checks. The default is
-     * /.
+     * [HTTP/HTTPS health checks] The destination for health checks on the targets.
+     * </p>
+     * <p>
+     * [HTTP1 or HTTP2 protocol version] The ping path. The default is /.
+     * </p>
+     * <p>
+     * [GRPC protocol version] The path of a custom health check method with the format /package.service/method. The
+     * default is /AWS.ALB/healthcheck.
      * </p>
      */
     private String healthCheckPath;
@@ -125,7 +139,7 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     private Integer unhealthyThresholdCount;
     /**
      * <p>
-     * [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
+     * [HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.
      * </p>
      */
     private Matcher matcher;
@@ -323,6 +337,58 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     public CreateTargetGroupRequest withProtocol(ProtocolEnum protocol) {
         this.protocol = protocol.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * [HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests to targets using gRPC.
+     * Specify <code>HTTP2</code> to send requests to targets using HTTP/2. The default is <code>HTTP1</code>, which
+     * sends requests to targets using HTTP/1.1.
+     * </p>
+     * 
+     * @param protocolVersion
+     *        [HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests to targets using
+     *        gRPC. Specify <code>HTTP2</code> to send requests to targets using HTTP/2. The default is
+     *        <code>HTTP1</code>, which sends requests to targets using HTTP/1.1.
+     */
+
+    public void setProtocolVersion(String protocolVersion) {
+        this.protocolVersion = protocolVersion;
+    }
+
+    /**
+     * <p>
+     * [HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests to targets using gRPC.
+     * Specify <code>HTTP2</code> to send requests to targets using HTTP/2. The default is <code>HTTP1</code>, which
+     * sends requests to targets using HTTP/1.1.
+     * </p>
+     * 
+     * @return [HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests to targets using
+     *         gRPC. Specify <code>HTTP2</code> to send requests to targets using HTTP/2. The default is
+     *         <code>HTTP1</code>, which sends requests to targets using HTTP/1.1.
+     */
+
+    public String getProtocolVersion() {
+        return this.protocolVersion;
+    }
+
+    /**
+     * <p>
+     * [HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests to targets using gRPC.
+     * Specify <code>HTTP2</code> to send requests to targets using HTTP/2. The default is <code>HTTP1</code>, which
+     * sends requests to targets using HTTP/1.1.
+     * </p>
+     * 
+     * @param protocolVersion
+     *        [HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests to targets using
+     *        gRPC. Specify <code>HTTP2</code> to send requests to targets using HTTP/2. The default is
+     *        <code>HTTP1</code>, which sends requests to targets using HTTP/1.1.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTargetGroupRequest withProtocolVersion(String protocolVersion) {
+        setProtocolVersion(protocolVersion);
         return this;
     }
 
@@ -638,13 +704,24 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * [HTTP/HTTPS health checks] The ping path that is the destination on the targets for health checks. The default is
-     * /.
+     * [HTTP/HTTPS health checks] The destination for health checks on the targets.
+     * </p>
+     * <p>
+     * [HTTP1 or HTTP2 protocol version] The ping path. The default is /.
+     * </p>
+     * <p>
+     * [GRPC protocol version] The path of a custom health check method with the format /package.service/method. The
+     * default is /AWS.ALB/healthcheck.
      * </p>
      * 
      * @param healthCheckPath
-     *        [HTTP/HTTPS health checks] The ping path that is the destination on the targets for health checks. The
-     *        default is /.
+     *        [HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
+     *        <p>
+     *        [HTTP1 or HTTP2 protocol version] The ping path. The default is /.
+     *        </p>
+     *        <p>
+     *        [GRPC protocol version] The path of a custom health check method with the format /package.service/method.
+     *        The default is /AWS.ALB/healthcheck.
      */
 
     public void setHealthCheckPath(String healthCheckPath) {
@@ -653,12 +730,23 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * [HTTP/HTTPS health checks] The ping path that is the destination on the targets for health checks. The default is
-     * /.
+     * [HTTP/HTTPS health checks] The destination for health checks on the targets.
+     * </p>
+     * <p>
+     * [HTTP1 or HTTP2 protocol version] The ping path. The default is /.
+     * </p>
+     * <p>
+     * [GRPC protocol version] The path of a custom health check method with the format /package.service/method. The
+     * default is /AWS.ALB/healthcheck.
      * </p>
      * 
-     * @return [HTTP/HTTPS health checks] The ping path that is the destination on the targets for health checks. The
-     *         default is /.
+     * @return [HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
+     *         <p>
+     *         [HTTP1 or HTTP2 protocol version] The ping path. The default is /.
+     *         </p>
+     *         <p>
+     *         [GRPC protocol version] The path of a custom health check method with the format /package.service/method.
+     *         The default is /AWS.ALB/healthcheck.
      */
 
     public String getHealthCheckPath() {
@@ -667,13 +755,24 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * [HTTP/HTTPS health checks] The ping path that is the destination on the targets for health checks. The default is
-     * /.
+     * [HTTP/HTTPS health checks] The destination for health checks on the targets.
+     * </p>
+     * <p>
+     * [HTTP1 or HTTP2 protocol version] The ping path. The default is /.
+     * </p>
+     * <p>
+     * [GRPC protocol version] The path of a custom health check method with the format /package.service/method. The
+     * default is /AWS.ALB/healthcheck.
      * </p>
      * 
      * @param healthCheckPath
-     *        [HTTP/HTTPS health checks] The ping path that is the destination on the targets for health checks. The
-     *        default is /.
+     *        [HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
+     *        <p>
+     *        [HTTP1 or HTTP2 protocol version] The ping path. The default is /.
+     *        </p>
+     *        <p>
+     *        [GRPC protocol version] The path of a custom health check method with the format /package.service/method.
+     *        The default is /AWS.ALB/healthcheck.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -907,11 +1006,12 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
+     * [HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.
      * </p>
      * 
      * @param matcher
-     *        [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
+     *        [HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a
+     *        target.
      */
 
     public void setMatcher(Matcher matcher) {
@@ -920,10 +1020,11 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
+     * [HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.
      * </p>
      * 
-     * @return [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
+     * @return [HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a
+     *         target.
      */
 
     public Matcher getMatcher() {
@@ -932,11 +1033,12 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
+     * [HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.
      * </p>
      * 
      * @param matcher
-     *        [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
+     *        [HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a
+     *        target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1300,6 +1402,8 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("Name: ").append(getName()).append(",");
         if (getProtocol() != null)
             sb.append("Protocol: ").append(getProtocol()).append(",");
+        if (getProtocolVersion() != null)
+            sb.append("ProtocolVersion: ").append(getProtocolVersion()).append(",");
         if (getPort() != null)
             sb.append("Port: ").append(getPort()).append(",");
         if (getVpcId() != null)
@@ -1347,6 +1451,10 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
         if (other.getProtocol() == null ^ this.getProtocol() == null)
             return false;
         if (other.getProtocol() != null && other.getProtocol().equals(this.getProtocol()) == false)
+            return false;
+        if (other.getProtocolVersion() == null ^ this.getProtocolVersion() == null)
+            return false;
+        if (other.getProtocolVersion() != null && other.getProtocolVersion().equals(this.getProtocolVersion()) == false)
             return false;
         if (other.getPort() == null ^ this.getPort() == null)
             return false;
@@ -1410,6 +1518,7 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
+        hashCode = prime * hashCode + ((getProtocolVersion() == null) ? 0 : getProtocolVersion().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getHealthCheckProtocol() == null) ? 0 : getHealthCheckProtocol().hashCode());

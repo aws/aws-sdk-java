@@ -100,13 +100,13 @@ public class TargetGroup implements Serializable, Cloneable {
     private Integer unhealthyThresholdCount;
     /**
      * <p>
-     * The destination for the health check request.
+     * The destination for health checks on the targets.
      * </p>
      */
     private String healthCheckPath;
     /**
      * <p>
-     * The HTTP codes to use when checking for a successful response from a target.
+     * The HTTP or gRPC codes to use when checking for a successful response from a target.
      * </p>
      */
     private Matcher matcher;
@@ -124,6 +124,13 @@ public class TargetGroup implements Serializable, Cloneable {
      * </p>
      */
     private String targetType;
+    /**
+     * <p>
+     * [HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>, <code>HTTP1</code>, and
+     * <code>HTTP2</code>.
+     * </p>
+     */
+    private String protocolVersion;
 
     /**
      * <p>
@@ -686,11 +693,11 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The destination for the health check request.
+     * The destination for health checks on the targets.
      * </p>
      * 
      * @param healthCheckPath
-     *        The destination for the health check request.
+     *        The destination for health checks on the targets.
      */
 
     public void setHealthCheckPath(String healthCheckPath) {
@@ -699,10 +706,10 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The destination for the health check request.
+     * The destination for health checks on the targets.
      * </p>
      * 
-     * @return The destination for the health check request.
+     * @return The destination for health checks on the targets.
      */
 
     public String getHealthCheckPath() {
@@ -711,11 +718,11 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The destination for the health check request.
+     * The destination for health checks on the targets.
      * </p>
      * 
      * @param healthCheckPath
-     *        The destination for the health check request.
+     *        The destination for health checks on the targets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -726,11 +733,11 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The HTTP codes to use when checking for a successful response from a target.
+     * The HTTP or gRPC codes to use when checking for a successful response from a target.
      * </p>
      * 
      * @param matcher
-     *        The HTTP codes to use when checking for a successful response from a target.
+     *        The HTTP or gRPC codes to use when checking for a successful response from a target.
      */
 
     public void setMatcher(Matcher matcher) {
@@ -739,10 +746,10 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The HTTP codes to use when checking for a successful response from a target.
+     * The HTTP or gRPC codes to use when checking for a successful response from a target.
      * </p>
      * 
-     * @return The HTTP codes to use when checking for a successful response from a target.
+     * @return The HTTP or gRPC codes to use when checking for a successful response from a target.
      */
 
     public Matcher getMatcher() {
@@ -751,11 +758,11 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The HTTP codes to use when checking for a successful response from a target.
+     * The HTTP or gRPC codes to use when checking for a successful response from a target.
      * </p>
      * 
      * @param matcher
-     *        The HTTP codes to use when checking for a successful response from a target.
+     *        The HTTP or gRPC codes to use when checking for a successful response from a target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -928,6 +935,52 @@ public class TargetGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * [HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>, <code>HTTP1</code>, and
+     * <code>HTTP2</code>.
+     * </p>
+     * 
+     * @param protocolVersion
+     *        [HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>, <code>HTTP1</code>,
+     *        and <code>HTTP2</code>.
+     */
+
+    public void setProtocolVersion(String protocolVersion) {
+        this.protocolVersion = protocolVersion;
+    }
+
+    /**
+     * <p>
+     * [HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>, <code>HTTP1</code>, and
+     * <code>HTTP2</code>.
+     * </p>
+     * 
+     * @return [HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>, <code>HTTP1</code>
+     *         , and <code>HTTP2</code>.
+     */
+
+    public String getProtocolVersion() {
+        return this.protocolVersion;
+    }
+
+    /**
+     * <p>
+     * [HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>, <code>HTTP1</code>, and
+     * <code>HTTP2</code>.
+     * </p>
+     * 
+     * @param protocolVersion
+     *        [HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>, <code>HTTP1</code>,
+     *        and <code>HTTP2</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TargetGroup withProtocolVersion(String protocolVersion) {
+        setProtocolVersion(protocolVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -970,7 +1023,9 @@ public class TargetGroup implements Serializable, Cloneable {
         if (getLoadBalancerArns() != null)
             sb.append("LoadBalancerArns: ").append(getLoadBalancerArns()).append(",");
         if (getTargetType() != null)
-            sb.append("TargetType: ").append(getTargetType());
+            sb.append("TargetType: ").append(getTargetType()).append(",");
+        if (getProtocolVersion() != null)
+            sb.append("ProtocolVersion: ").append(getProtocolVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -1049,6 +1104,10 @@ public class TargetGroup implements Serializable, Cloneable {
             return false;
         if (other.getTargetType() != null && other.getTargetType().equals(this.getTargetType()) == false)
             return false;
+        if (other.getProtocolVersion() == null ^ this.getProtocolVersion() == null)
+            return false;
+        if (other.getProtocolVersion() != null && other.getProtocolVersion().equals(this.getProtocolVersion()) == false)
+            return false;
         return true;
     }
 
@@ -1073,6 +1132,7 @@ public class TargetGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMatcher() == null) ? 0 : getMatcher().hashCode());
         hashCode = prime * hashCode + ((getLoadBalancerArns() == null) ? 0 : getLoadBalancerArns().hashCode());
         hashCode = prime * hashCode + ((getTargetType() == null) ? 0 : getTargetType().hashCode());
+        hashCode = prime * hashCode + ((getProtocolVersion() == null) ? 0 : getProtocolVersion().hashCode());
         return hashCode;
     }
 

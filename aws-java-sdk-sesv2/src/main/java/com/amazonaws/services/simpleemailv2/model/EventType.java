@@ -30,7 +30,8 @@ public enum EventType {
     OPEN("OPEN"),
     CLICK("CLICK"),
     RENDERING_FAILURE("RENDERING_FAILURE"),
-    DELIVERY_DELAY("DELIVERY_DELAY");
+    DELIVERY_DELAY("DELIVERY_DELAY"),
+    SUBSCRIPTION("SUBSCRIPTION");
 
     private String value;
 

@@ -43,6 +43,8 @@ public class DomainDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("repositoryCount").build();
     private static final MarshallingInfo<Long> ASSETSIZEBYTES_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assetSizeBytes").build();
+    private static final MarshallingInfo<String> S3BUCKETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("s3BucketArn").build();
 
     private static final DomainDescriptionMarshaller instance = new DomainDescriptionMarshaller();
 
@@ -68,6 +70,7 @@ public class DomainDescriptionMarshaller {
             protocolMarshaller.marshall(domainDescription.getEncryptionKey(), ENCRYPTIONKEY_BINDING);
             protocolMarshaller.marshall(domainDescription.getRepositoryCount(), REPOSITORYCOUNT_BINDING);
             protocolMarshaller.marshall(domainDescription.getAssetSizeBytes(), ASSETSIZEBYTES_BINDING);
+            protocolMarshaller.marshall(domainDescription.getS3BucketArn(), S3BUCKETARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

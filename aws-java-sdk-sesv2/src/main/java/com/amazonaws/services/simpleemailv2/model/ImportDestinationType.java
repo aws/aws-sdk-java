@@ -23,7 +23,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ImportDestinationType {
 
-    SUPPRESSION_LIST("SUPPRESSION_LIST");
+    SUPPRESSION_LIST("SUPPRESSION_LIST"),
+    CONTACT_LIST("CONTACT_LIST");
 
     private String value;
 

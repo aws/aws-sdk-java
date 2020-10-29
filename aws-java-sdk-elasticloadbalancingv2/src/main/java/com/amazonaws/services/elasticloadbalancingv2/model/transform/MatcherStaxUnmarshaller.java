@@ -47,6 +47,11 @@ public class MatcherStaxUnmarshaller implements Unmarshaller<Matcher, StaxUnmars
                     matcher.setHttpCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("GrpcCode", targetDepth)) {
+                    matcher.setGrpcCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return matcher;

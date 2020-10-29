@@ -129,6 +129,11 @@ public class TargetGroupStaxUnmarshaller implements Unmarshaller<TargetGroup, St
                     targetGroup.setTargetType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ProtocolVersion", targetDepth)) {
+                    targetGroup.setProtocolVersion(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return targetGroup;

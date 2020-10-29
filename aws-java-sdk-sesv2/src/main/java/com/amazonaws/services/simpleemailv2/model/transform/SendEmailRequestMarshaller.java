@@ -46,6 +46,8 @@ public class SendEmailRequestMarshaller {
             .marshallLocationName("EmailTags").build();
     private static final MarshallingInfo<String> CONFIGURATIONSETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigurationSetName").build();
+    private static final MarshallingInfo<StructuredPojo> LISTMANAGEMENTOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ListManagementOptions").build();
 
     private static final SendEmailRequestMarshaller instance = new SendEmailRequestMarshaller();
 
@@ -72,6 +74,7 @@ public class SendEmailRequestMarshaller {
             protocolMarshaller.marshall(sendEmailRequest.getContent(), CONTENT_BINDING);
             protocolMarshaller.marshall(sendEmailRequest.getEmailTags(), EMAILTAGS_BINDING);
             protocolMarshaller.marshall(sendEmailRequest.getConfigurationSetName(), CONFIGURATIONSETNAME_BINDING);
+            protocolMarshaller.marshall(sendEmailRequest.getListManagementOptions(), LISTMANAGEMENTOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

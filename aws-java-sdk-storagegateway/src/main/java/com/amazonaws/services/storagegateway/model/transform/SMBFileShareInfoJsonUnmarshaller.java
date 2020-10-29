@@ -108,6 +108,10 @@ public class SMBFileShareInfoJsonUnmarshaller implements Unmarshaller<SMBFileSha
                     context.nextToken();
                     sMBFileShareInfo.setSMBACLEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("AccessBasedEnumeration", targetDepth)) {
+                    context.nextToken();
+                    sMBFileShareInfo.setAccessBasedEnumeration(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("AdminUserList", targetDepth)) {
                     context.nextToken();
                     sMBFileShareInfo.setAdminUserList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -151,6 +155,10 @@ public class SMBFileShareInfoJsonUnmarshaller implements Unmarshaller<SMBFileSha
                 if (context.testExpression("CacheAttributes", targetDepth)) {
                     context.nextToken();
                     sMBFileShareInfo.setCacheAttributes(CacheAttributesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("NotificationPolicy", targetDepth)) {
+                    context.nextToken();
+                    sMBFileShareInfo.setNotificationPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -52,6 +52,8 @@ public class CreateSMBFileShareRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequesterPays").build();
     private static final MarshallingInfo<Boolean> SMBACLENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SMBACLEnabled").build();
+    private static final MarshallingInfo<Boolean> ACCESSBASEDENUMERATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessBasedEnumeration").build();
     private static final MarshallingInfo<List> ADMINUSERLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("AdminUserList").build();
     private static final MarshallingInfo<List> VALIDUSERLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -70,6 +72,8 @@ public class CreateSMBFileShareRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileShareName").build();
     private static final MarshallingInfo<StructuredPojo> CACHEATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CacheAttributes").build();
+    private static final MarshallingInfo<String> NOTIFICATIONPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotificationPolicy").build();
 
     private static final CreateSMBFileShareRequestMarshaller instance = new CreateSMBFileShareRequestMarshaller();
 
@@ -99,6 +103,7 @@ public class CreateSMBFileShareRequestMarshaller {
             protocolMarshaller.marshall(createSMBFileShareRequest.getGuessMIMETypeEnabled(), GUESSMIMETYPEENABLED_BINDING);
             protocolMarshaller.marshall(createSMBFileShareRequest.getRequesterPays(), REQUESTERPAYS_BINDING);
             protocolMarshaller.marshall(createSMBFileShareRequest.getSMBACLEnabled(), SMBACLENABLED_BINDING);
+            protocolMarshaller.marshall(createSMBFileShareRequest.getAccessBasedEnumeration(), ACCESSBASEDENUMERATION_BINDING);
             protocolMarshaller.marshall(createSMBFileShareRequest.getAdminUserList(), ADMINUSERLIST_BINDING);
             protocolMarshaller.marshall(createSMBFileShareRequest.getValidUserList(), VALIDUSERLIST_BINDING);
             protocolMarshaller.marshall(createSMBFileShareRequest.getInvalidUserList(), INVALIDUSERLIST_BINDING);
@@ -108,6 +113,7 @@ public class CreateSMBFileShareRequestMarshaller {
             protocolMarshaller.marshall(createSMBFileShareRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createSMBFileShareRequest.getFileShareName(), FILESHARENAME_BINDING);
             protocolMarshaller.marshall(createSMBFileShareRequest.getCacheAttributes(), CACHEATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(createSMBFileShareRequest.getNotificationPolicy(), NOTIFICATIONPOLICY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

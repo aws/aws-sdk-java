@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.codeartifact.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class CreateDomainRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("domain").build();
     private static final MarshallingInfo<String> ENCRYPTIONKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryptionKey").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateDomainRequestMarshaller instance = new CreateDomainRequestMarshaller();
 
@@ -50,6 +53,7 @@ public class CreateDomainRequestMarshaller {
         try {
             protocolMarshaller.marshall(createDomainRequest.getDomain(), DOMAIN_BINDING);
             protocolMarshaller.marshall(createDomainRequest.getEncryptionKey(), ENCRYPTIONKEY_BINDING);
+            protocolMarshaller.marshall(createDomainRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

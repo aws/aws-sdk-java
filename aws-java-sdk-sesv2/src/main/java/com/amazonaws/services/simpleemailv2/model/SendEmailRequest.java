@@ -120,6 +120,13 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private String configurationSetName;
+    /**
+     * <p>
+     * An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to
+     * unsubscribe.
+     * </p>
+     */
+    private ListManagementOptions listManagementOptions;
 
     /**
      * <p>
@@ -764,6 +771,52 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to
+     * unsubscribe.
+     * </p>
+     * 
+     * @param listManagementOptions
+     *        An object used to specify a list or topic to which an email belongs, which will be used when a contact
+     *        chooses to unsubscribe.
+     */
+
+    public void setListManagementOptions(ListManagementOptions listManagementOptions) {
+        this.listManagementOptions = listManagementOptions;
+    }
+
+    /**
+     * <p>
+     * An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to
+     * unsubscribe.
+     * </p>
+     * 
+     * @return An object used to specify a list or topic to which an email belongs, which will be used when a contact
+     *         chooses to unsubscribe.
+     */
+
+    public ListManagementOptions getListManagementOptions() {
+        return this.listManagementOptions;
+    }
+
+    /**
+     * <p>
+     * An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to
+     * unsubscribe.
+     * </p>
+     * 
+     * @param listManagementOptions
+     *        An object used to specify a list or topic to which an email belongs, which will be used when a contact
+     *        chooses to unsubscribe.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SendEmailRequest withListManagementOptions(ListManagementOptions listManagementOptions) {
+        setListManagementOptions(listManagementOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -792,7 +845,9 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getEmailTags() != null)
             sb.append("EmailTags: ").append(getEmailTags()).append(",");
         if (getConfigurationSetName() != null)
-            sb.append("ConfigurationSetName: ").append(getConfigurationSetName());
+            sb.append("ConfigurationSetName: ").append(getConfigurationSetName()).append(",");
+        if (getListManagementOptions() != null)
+            sb.append("ListManagementOptions: ").append(getListManagementOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -845,6 +900,10 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getConfigurationSetName() != null && other.getConfigurationSetName().equals(this.getConfigurationSetName()) == false)
             return false;
+        if (other.getListManagementOptions() == null ^ this.getListManagementOptions() == null)
+            return false;
+        if (other.getListManagementOptions() != null && other.getListManagementOptions().equals(this.getListManagementOptions()) == false)
+            return false;
         return true;
     }
 
@@ -863,6 +922,7 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getContent() == null) ? 0 : getContent().hashCode());
         hashCode = prime * hashCode + ((getEmailTags() == null) ? 0 : getEmailTags().hashCode());
         hashCode = prime * hashCode + ((getConfigurationSetName() == null) ? 0 : getConfigurationSetName().hashCode());
+        hashCode = prime * hashCode + ((getListManagementOptions() == null) ? 0 : getListManagementOptions().hashCode());
         return hashCode;
     }
 

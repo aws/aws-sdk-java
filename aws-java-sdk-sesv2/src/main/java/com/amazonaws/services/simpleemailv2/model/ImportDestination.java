@@ -34,6 +34,12 @@ public class ImportDestination implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private SuppressionListDestination suppressionListDestination;
+    /**
+     * <p>
+     * An object that contains the action of the import job towards a contact list.
+     * </p>
+     */
+    private ContactListDestination contactListDestination;
 
     /**
      * <p>
@@ -76,6 +82,46 @@ public class ImportDestination implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * An object that contains the action of the import job towards a contact list.
+     * </p>
+     * 
+     * @param contactListDestination
+     *        An object that contains the action of the import job towards a contact list.
+     */
+
+    public void setContactListDestination(ContactListDestination contactListDestination) {
+        this.contactListDestination = contactListDestination;
+    }
+
+    /**
+     * <p>
+     * An object that contains the action of the import job towards a contact list.
+     * </p>
+     * 
+     * @return An object that contains the action of the import job towards a contact list.
+     */
+
+    public ContactListDestination getContactListDestination() {
+        return this.contactListDestination;
+    }
+
+    /**
+     * <p>
+     * An object that contains the action of the import job towards a contact list.
+     * </p>
+     * 
+     * @param contactListDestination
+     *        An object that contains the action of the import job towards a contact list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportDestination withContactListDestination(ContactListDestination contactListDestination) {
+        setContactListDestination(contactListDestination);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +134,9 @@ public class ImportDestination implements Serializable, Cloneable, StructuredPoj
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSuppressionListDestination() != null)
-            sb.append("SuppressionListDestination: ").append(getSuppressionListDestination());
+            sb.append("SuppressionListDestination: ").append(getSuppressionListDestination()).append(",");
+        if (getContactListDestination() != null)
+            sb.append("ContactListDestination: ").append(getContactListDestination());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +155,10 @@ public class ImportDestination implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getSuppressionListDestination() != null && other.getSuppressionListDestination().equals(this.getSuppressionListDestination()) == false)
             return false;
+        if (other.getContactListDestination() == null ^ this.getContactListDestination() == null)
+            return false;
+        if (other.getContactListDestination() != null && other.getContactListDestination().equals(this.getContactListDestination()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +168,7 @@ public class ImportDestination implements Serializable, Cloneable, StructuredPoj
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSuppressionListDestination() == null) ? 0 : getSuppressionListDestination().hashCode());
+        hashCode = prime * hashCode + ((getContactListDestination() == null) ? 0 : getContactListDestination().hashCode());
         return hashCode;
     }
 

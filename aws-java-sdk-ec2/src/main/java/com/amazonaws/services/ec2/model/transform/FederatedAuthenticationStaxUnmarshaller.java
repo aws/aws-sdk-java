@@ -47,6 +47,11 @@ public class FederatedAuthenticationStaxUnmarshaller implements Unmarshaller<Fed
                     federatedAuthentication.setSamlProviderArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("selfServiceSamlProviderArn", targetDepth)) {
+                    federatedAuthentication.setSelfServiceSamlProviderArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return federatedAuthentication;

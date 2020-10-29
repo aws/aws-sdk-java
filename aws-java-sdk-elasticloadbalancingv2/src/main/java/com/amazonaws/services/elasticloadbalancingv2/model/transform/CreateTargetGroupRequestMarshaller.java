@@ -50,6 +50,10 @@ public class CreateTargetGroupRequestMarshaller implements Marshaller<Request<Cr
             request.addParameter("Protocol", StringUtils.fromString(createTargetGroupRequest.getProtocol()));
         }
 
+        if (createTargetGroupRequest.getProtocolVersion() != null) {
+            request.addParameter("ProtocolVersion", StringUtils.fromString(createTargetGroupRequest.getProtocolVersion()));
+        }
+
         if (createTargetGroupRequest.getPort() != null) {
             request.addParameter("Port", StringUtils.fromInteger(createTargetGroupRequest.getPort()));
         }
@@ -96,6 +100,10 @@ public class CreateTargetGroupRequestMarshaller implements Marshaller<Request<Cr
 
                 if (matcher.getHttpCode() != null) {
                     request.addParameter("Matcher.HttpCode", StringUtils.fromString(matcher.getHttpCode()));
+                }
+
+                if (matcher.getGrpcCode() != null) {
+                    request.addParameter("Matcher.GrpcCode", StringUtils.fromString(matcher.getGrpcCode()));
                 }
             }
         }

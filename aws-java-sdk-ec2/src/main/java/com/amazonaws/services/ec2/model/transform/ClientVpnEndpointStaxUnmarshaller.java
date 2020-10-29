@@ -164,6 +164,11 @@ public class ClientVpnEndpointStaxUnmarshaller implements Unmarshaller<ClientVpn
                     clientVpnEndpoint.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("selfServicePortalUrl", targetDepth)) {
+                    clientVpnEndpoint.setSelfServicePortalUrl(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return clientVpnEndpoint;

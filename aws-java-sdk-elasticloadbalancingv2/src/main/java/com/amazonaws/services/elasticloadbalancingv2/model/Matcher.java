@@ -17,7 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Information to use when checking for a successful response from a target.
+ * The codes to use when checking for a successful response from a target. If the protocol version is gRPC, these are
+ * gRPC codes. Otherwise, these are HTTP codes.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/Matcher" target="_top">AWS API
@@ -28,38 +29,37 @@ public class Matcher implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The HTTP codes.
-     * </p>
-     * <p>
      * For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200. You can
      * specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
      * </p>
      * <p>
-     * For Network Load Balancers, this is 200–399.
+     * For Network Load Balancers, this is "200–399".
      * </p>
      */
     private String httpCode;
-
     /**
      * <p>
-     * The HTTP codes.
+     * You can specify values between 0 and 99. You can specify multiple values (for example, "0,1") or a range of
+     * values (for example, "0-5"). The default value is 12.
      * </p>
+     */
+    private String grpcCode;
+
+    /**
      * <p>
      * For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200. You can
      * specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
      * </p>
      * <p>
-     * For Network Load Balancers, this is 200–399.
+     * For Network Load Balancers, this is "200–399".
      * </p>
      * 
      * @param httpCode
-     *        The HTTP codes.</p>
-     *        <p>
      *        For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200.
-     *        You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
-     *        </p>
+     *        You can specify multiple values (for example, "200,202") or a range of values (for example,
+     *        "200-299").</p>
      *        <p>
-     *        For Network Load Balancers, this is 200–399.
+     *        For Network Load Balancers, this is "200–399".
      */
 
     public void setHttpCode(String httpCode) {
@@ -68,23 +68,18 @@ public class Matcher implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The HTTP codes.
-     * </p>
-     * <p>
      * For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200. You can
      * specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
      * </p>
      * <p>
-     * For Network Load Balancers, this is 200–399.
+     * For Network Load Balancers, this is "200–399".
      * </p>
      * 
-     * @return The HTTP codes.</p>
+     * @return For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200.
+     *         You can specify multiple values (for example, "200,202") or a range of values (for example,
+     *         "200-299").</p>
      *         <p>
-     *         For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200.
-     *         You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
-     *         </p>
-     *         <p>
-     *         For Network Load Balancers, this is 200–399.
+     *         For Network Load Balancers, this is "200–399".
      */
 
     public String getHttpCode() {
@@ -93,29 +88,70 @@ public class Matcher implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The HTTP codes.
-     * </p>
-     * <p>
      * For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200. You can
      * specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
      * </p>
      * <p>
-     * For Network Load Balancers, this is 200–399.
+     * For Network Load Balancers, this is "200–399".
      * </p>
      * 
      * @param httpCode
-     *        The HTTP codes.</p>
-     *        <p>
      *        For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200.
-     *        You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
-     *        </p>
+     *        You can specify multiple values (for example, "200,202") or a range of values (for example,
+     *        "200-299").</p>
      *        <p>
-     *        For Network Load Balancers, this is 200–399.
+     *        For Network Load Balancers, this is "200–399".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Matcher withHttpCode(String httpCode) {
         setHttpCode(httpCode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * You can specify values between 0 and 99. You can specify multiple values (for example, "0,1") or a range of
+     * values (for example, "0-5"). The default value is 12.
+     * </p>
+     * 
+     * @param grpcCode
+     *        You can specify values between 0 and 99. You can specify multiple values (for example, "0,1") or a range
+     *        of values (for example, "0-5"). The default value is 12.
+     */
+
+    public void setGrpcCode(String grpcCode) {
+        this.grpcCode = grpcCode;
+    }
+
+    /**
+     * <p>
+     * You can specify values between 0 and 99. You can specify multiple values (for example, "0,1") or a range of
+     * values (for example, "0-5"). The default value is 12.
+     * </p>
+     * 
+     * @return You can specify values between 0 and 99. You can specify multiple values (for example, "0,1") or a range
+     *         of values (for example, "0-5"). The default value is 12.
+     */
+
+    public String getGrpcCode() {
+        return this.grpcCode;
+    }
+
+    /**
+     * <p>
+     * You can specify values between 0 and 99. You can specify multiple values (for example, "0,1") or a range of
+     * values (for example, "0-5"). The default value is 12.
+     * </p>
+     * 
+     * @param grpcCode
+     *        You can specify values between 0 and 99. You can specify multiple values (for example, "0,1") or a range
+     *        of values (for example, "0-5"). The default value is 12.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Matcher withGrpcCode(String grpcCode) {
+        setGrpcCode(grpcCode);
         return this;
     }
 
@@ -132,7 +168,9 @@ public class Matcher implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHttpCode() != null)
-            sb.append("HttpCode: ").append(getHttpCode());
+            sb.append("HttpCode: ").append(getHttpCode()).append(",");
+        if (getGrpcCode() != null)
+            sb.append("GrpcCode: ").append(getGrpcCode());
         sb.append("}");
         return sb.toString();
     }
@@ -151,6 +189,10 @@ public class Matcher implements Serializable, Cloneable {
             return false;
         if (other.getHttpCode() != null && other.getHttpCode().equals(this.getHttpCode()) == false)
             return false;
+        if (other.getGrpcCode() == null ^ this.getGrpcCode() == null)
+            return false;
+        if (other.getGrpcCode() != null && other.getGrpcCode().equals(this.getGrpcCode()) == false)
+            return false;
         return true;
     }
 
@@ -160,6 +202,7 @@ public class Matcher implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getHttpCode() == null) ? 0 : getHttpCode().hashCode());
+        hashCode = prime * hashCode + ((getGrpcCode() == null) ? 0 : getGrpcCode().hashCode());
         return hashCode;
     }
 

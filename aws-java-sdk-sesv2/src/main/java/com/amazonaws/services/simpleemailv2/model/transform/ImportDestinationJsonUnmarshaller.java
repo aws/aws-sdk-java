@@ -52,6 +52,10 @@ public class ImportDestinationJsonUnmarshaller implements Unmarshaller<ImportDes
                     context.nextToken();
                     importDestination.setSuppressionListDestination(SuppressionListDestinationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ContactListDestination", targetDepth)) {
+                    context.nextToken();
+                    importDestination.setContactListDestination(ContactListDestinationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

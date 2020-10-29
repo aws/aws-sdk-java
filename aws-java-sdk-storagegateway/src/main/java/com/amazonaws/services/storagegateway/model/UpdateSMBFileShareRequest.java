@@ -125,6 +125,12 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private Boolean sMBACLEnabled;
     /**
      * <p>
+     * The files and folders on this share will only be visible to users with read access.
+     * </p>
+     */
+    private Boolean accessBasedEnumeration;
+    /**
+     * <p>
      * A list of users or groups in the Active Directory that have administrator rights to the file share. A group must
      * be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
      * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
@@ -181,6 +187,12 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private CacheAttributes cacheAttributes;
+    /**
+     * <p>
+     * The notification policy of the file share.
+     * </p>
+     */
+    private String notificationPolicy;
 
     /**
      * <p>
@@ -910,6 +922,58 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
+     * The files and folders on this share will only be visible to users with read access.
+     * </p>
+     * 
+     * @param accessBasedEnumeration
+     *        The files and folders on this share will only be visible to users with read access.
+     */
+
+    public void setAccessBasedEnumeration(Boolean accessBasedEnumeration) {
+        this.accessBasedEnumeration = accessBasedEnumeration;
+    }
+
+    /**
+     * <p>
+     * The files and folders on this share will only be visible to users with read access.
+     * </p>
+     * 
+     * @return The files and folders on this share will only be visible to users with read access.
+     */
+
+    public Boolean getAccessBasedEnumeration() {
+        return this.accessBasedEnumeration;
+    }
+
+    /**
+     * <p>
+     * The files and folders on this share will only be visible to users with read access.
+     * </p>
+     * 
+     * @param accessBasedEnumeration
+     *        The files and folders on this share will only be visible to users with read access.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSMBFileShareRequest withAccessBasedEnumeration(Boolean accessBasedEnumeration) {
+        setAccessBasedEnumeration(accessBasedEnumeration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The files and folders on this share will only be visible to users with read access.
+     * </p>
+     * 
+     * @return The files and folders on this share will only be visible to users with read access.
+     */
+
+    public Boolean isAccessBasedEnumeration() {
+        return this.accessBasedEnumeration;
+    }
+
+    /**
+     * <p>
      * A list of users or groups in the Active Directory that have administrator rights to the file share. A group must
      * be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
      * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to
@@ -1419,6 +1483,46 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The notification policy of the file share.
+     * </p>
+     * 
+     * @param notificationPolicy
+     *        The notification policy of the file share.
+     */
+
+    public void setNotificationPolicy(String notificationPolicy) {
+        this.notificationPolicy = notificationPolicy;
+    }
+
+    /**
+     * <p>
+     * The notification policy of the file share.
+     * </p>
+     * 
+     * @return The notification policy of the file share.
+     */
+
+    public String getNotificationPolicy() {
+        return this.notificationPolicy;
+    }
+
+    /**
+     * <p>
+     * The notification policy of the file share.
+     * </p>
+     * 
+     * @param notificationPolicy
+     *        The notification policy of the file share.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSMBFileShareRequest withNotificationPolicy(String notificationPolicy) {
+        setNotificationPolicy(notificationPolicy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1448,6 +1552,8 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
             sb.append("RequesterPays: ").append(getRequesterPays()).append(",");
         if (getSMBACLEnabled() != null)
             sb.append("SMBACLEnabled: ").append(getSMBACLEnabled()).append(",");
+        if (getAccessBasedEnumeration() != null)
+            sb.append("AccessBasedEnumeration: ").append(getAccessBasedEnumeration()).append(",");
         if (getAdminUserList() != null)
             sb.append("AdminUserList: ").append(getAdminUserList()).append(",");
         if (getValidUserList() != null)
@@ -1461,7 +1567,9 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
         if (getFileShareName() != null)
             sb.append("FileShareName: ").append(getFileShareName()).append(",");
         if (getCacheAttributes() != null)
-            sb.append("CacheAttributes: ").append(getCacheAttributes());
+            sb.append("CacheAttributes: ").append(getCacheAttributes()).append(",");
+        if (getNotificationPolicy() != null)
+            sb.append("NotificationPolicy: ").append(getNotificationPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -1512,6 +1620,10 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getSMBACLEnabled() != null && other.getSMBACLEnabled().equals(this.getSMBACLEnabled()) == false)
             return false;
+        if (other.getAccessBasedEnumeration() == null ^ this.getAccessBasedEnumeration() == null)
+            return false;
+        if (other.getAccessBasedEnumeration() != null && other.getAccessBasedEnumeration().equals(this.getAccessBasedEnumeration()) == false)
+            return false;
         if (other.getAdminUserList() == null ^ this.getAdminUserList() == null)
             return false;
         if (other.getAdminUserList() != null && other.getAdminUserList().equals(this.getAdminUserList()) == false)
@@ -1540,6 +1652,10 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getCacheAttributes() != null && other.getCacheAttributes().equals(this.getCacheAttributes()) == false)
             return false;
+        if (other.getNotificationPolicy() == null ^ this.getNotificationPolicy() == null)
+            return false;
+        if (other.getNotificationPolicy() != null && other.getNotificationPolicy().equals(this.getNotificationPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -1557,6 +1673,7 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getGuessMIMETypeEnabled() == null) ? 0 : getGuessMIMETypeEnabled().hashCode());
         hashCode = prime * hashCode + ((getRequesterPays() == null) ? 0 : getRequesterPays().hashCode());
         hashCode = prime * hashCode + ((getSMBACLEnabled() == null) ? 0 : getSMBACLEnabled().hashCode());
+        hashCode = prime * hashCode + ((getAccessBasedEnumeration() == null) ? 0 : getAccessBasedEnumeration().hashCode());
         hashCode = prime * hashCode + ((getAdminUserList() == null) ? 0 : getAdminUserList().hashCode());
         hashCode = prime * hashCode + ((getValidUserList() == null) ? 0 : getValidUserList().hashCode());
         hashCode = prime * hashCode + ((getInvalidUserList() == null) ? 0 : getInvalidUserList().hashCode());
@@ -1564,6 +1681,7 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getCaseSensitivity() == null) ? 0 : getCaseSensitivity().hashCode());
         hashCode = prime * hashCode + ((getFileShareName() == null) ? 0 : getFileShareName().hashCode());
         hashCode = prime * hashCode + ((getCacheAttributes() == null) ? 0 : getCacheAttributes().hashCode());
+        hashCode = prime * hashCode + ((getNotificationPolicy() == null) ? 0 : getNotificationPolicy().hashCode());
         return hashCode;
     }
 

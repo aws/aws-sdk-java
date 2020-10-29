@@ -117,28 +117,7 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
     private java.util.List<Certificate> certificates;
     /**
      * <p>
-     * The actions for the default rule. The rule must include one forward action or one or more fixed-response actions.
-     * </p>
-     * <p>
-     * If the action type is <code>forward</code>, you specify one or more target groups. The protocol of the target
-     * group must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS,
-     * UDP, or TCP_UDP for a Network Load Balancer.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
-     * identity provider that is OpenID Connect (OIDC) compliant.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through the
-     * user pools supported by Amazon Cognito.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
-     * from one URL to another.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client requests
-     * and return a custom HTTP response.
+     * The actions for the default rule.
      * </p>
      */
     private java.util.List<Action> defaultActions;
@@ -827,52 +806,10 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The actions for the default rule. The rule must include one forward action or one or more fixed-response actions.
-     * </p>
-     * <p>
-     * If the action type is <code>forward</code>, you specify one or more target groups. The protocol of the target
-     * group must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS,
-     * UDP, or TCP_UDP for a Network Load Balancer.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
-     * identity provider that is OpenID Connect (OIDC) compliant.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through the
-     * user pools supported by Amazon Cognito.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
-     * from one URL to another.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client requests
-     * and return a custom HTTP response.
+     * The actions for the default rule.
      * </p>
      * 
-     * @return The actions for the default rule. The rule must include one forward action or one or more fixed-response
-     *         actions.</p>
-     *         <p>
-     *         If the action type is <code>forward</code>, you specify one or more target groups. The protocol of the
-     *         target group must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group
-     *         must be TCP, TLS, UDP, or TCP_UDP for a Network Load Balancer.
-     *         </p>
-     *         <p>
-     *         [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
-     *         identity provider that is OpenID Connect (OIDC) compliant.
-     *         </p>
-     *         <p>
-     *         [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through
-     *         the user pools supported by Amazon Cognito.
-     *         </p>
-     *         <p>
-     *         [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client
-     *         requests from one URL to another.
-     *         </p>
-     *         <p>
-     *         [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client
-     *         requests and return a custom HTTP response.
+     * @return The actions for the default rule.
      */
 
     public java.util.List<Action> getDefaultActions() {
@@ -881,53 +818,11 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The actions for the default rule. The rule must include one forward action or one or more fixed-response actions.
-     * </p>
-     * <p>
-     * If the action type is <code>forward</code>, you specify one or more target groups. The protocol of the target
-     * group must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS,
-     * UDP, or TCP_UDP for a Network Load Balancer.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
-     * identity provider that is OpenID Connect (OIDC) compliant.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through the
-     * user pools supported by Amazon Cognito.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
-     * from one URL to another.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client requests
-     * and return a custom HTTP response.
+     * The actions for the default rule.
      * </p>
      * 
      * @param defaultActions
-     *        The actions for the default rule. The rule must include one forward action or one or more fixed-response
-     *        actions.</p>
-     *        <p>
-     *        If the action type is <code>forward</code>, you specify one or more target groups. The protocol of the
-     *        target group must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must
-     *        be TCP, TLS, UDP, or TCP_UDP for a Network Load Balancer.
-     *        </p>
-     *        <p>
-     *        [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
-     *        identity provider that is OpenID Connect (OIDC) compliant.
-     *        </p>
-     *        <p>
-     *        [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through
-     *        the user pools supported by Amazon Cognito.
-     *        </p>
-     *        <p>
-     *        [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client
-     *        requests from one URL to another.
-     *        </p>
-     *        <p>
-     *        [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client
-     *        requests and return a custom HTTP response.
+     *        The actions for the default rule.
      */
 
     public void setDefaultActions(java.util.Collection<Action> defaultActions) {
@@ -941,28 +836,7 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The actions for the default rule. The rule must include one forward action or one or more fixed-response actions.
-     * </p>
-     * <p>
-     * If the action type is <code>forward</code>, you specify one or more target groups. The protocol of the target
-     * group must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS,
-     * UDP, or TCP_UDP for a Network Load Balancer.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
-     * identity provider that is OpenID Connect (OIDC) compliant.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through the
-     * user pools supported by Amazon Cognito.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
-     * from one URL to another.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client requests
-     * and return a custom HTTP response.
+     * The actions for the default rule.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -971,28 +845,7 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param defaultActions
-     *        The actions for the default rule. The rule must include one forward action or one or more fixed-response
-     *        actions.</p>
-     *        <p>
-     *        If the action type is <code>forward</code>, you specify one or more target groups. The protocol of the
-     *        target group must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must
-     *        be TCP, TLS, UDP, or TCP_UDP for a Network Load Balancer.
-     *        </p>
-     *        <p>
-     *        [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
-     *        identity provider that is OpenID Connect (OIDC) compliant.
-     *        </p>
-     *        <p>
-     *        [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through
-     *        the user pools supported by Amazon Cognito.
-     *        </p>
-     *        <p>
-     *        [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client
-     *        requests from one URL to another.
-     *        </p>
-     *        <p>
-     *        [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client
-     *        requests and return a custom HTTP response.
+     *        The actions for the default rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1008,53 +861,11 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The actions for the default rule. The rule must include one forward action or one or more fixed-response actions.
-     * </p>
-     * <p>
-     * If the action type is <code>forward</code>, you specify one or more target groups. The protocol of the target
-     * group must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS,
-     * UDP, or TCP_UDP for a Network Load Balancer.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
-     * identity provider that is OpenID Connect (OIDC) compliant.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through the
-     * user pools supported by Amazon Cognito.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
-     * from one URL to another.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client requests
-     * and return a custom HTTP response.
+     * The actions for the default rule.
      * </p>
      * 
      * @param defaultActions
-     *        The actions for the default rule. The rule must include one forward action or one or more fixed-response
-     *        actions.</p>
-     *        <p>
-     *        If the action type is <code>forward</code>, you specify one or more target groups. The protocol of the
-     *        target group must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must
-     *        be TCP, TLS, UDP, or TCP_UDP for a Network Load Balancer.
-     *        </p>
-     *        <p>
-     *        [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
-     *        identity provider that is OpenID Connect (OIDC) compliant.
-     *        </p>
-     *        <p>
-     *        [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through
-     *        the user pools supported by Amazon Cognito.
-     *        </p>
-     *        <p>
-     *        [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client
-     *        requests from one URL to another.
-     *        </p>
-     *        <p>
-     *        [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client
-     *        requests and return a custom HTTP response.
+     *        The actions for the default rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

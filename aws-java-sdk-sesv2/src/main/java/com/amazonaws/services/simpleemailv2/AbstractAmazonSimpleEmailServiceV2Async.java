@@ -56,6 +56,32 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     }
 
     @Override
+    public java.util.concurrent.Future<CreateContactResult> createContactAsync(CreateContactRequest request) {
+
+        return createContactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateContactResult> createContactAsync(CreateContactRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateContactRequest, CreateContactResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateContactListResult> createContactListAsync(CreateContactListRequest request) {
+
+        return createContactListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateContactListResult> createContactListAsync(CreateContactListRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateContactListRequest, CreateContactListResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateCustomVerificationEmailTemplateResult> createCustomVerificationEmailTemplateAsync(
             CreateCustomVerificationEmailTemplateRequest request) {
 
@@ -172,6 +198,32 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<DeleteConfigurationSetEventDestinationResult> deleteConfigurationSetEventDestinationAsync(
             DeleteConfigurationSetEventDestinationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteConfigurationSetEventDestinationRequest, DeleteConfigurationSetEventDestinationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContactResult> deleteContactAsync(DeleteContactRequest request) {
+
+        return deleteContactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContactResult> deleteContactAsync(DeleteContactRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteContactRequest, DeleteContactResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContactListResult> deleteContactListAsync(DeleteContactListRequest request) {
+
+        return deleteContactListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContactListResult> deleteContactListAsync(DeleteContactListRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteContactListRequest, DeleteContactListResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -306,6 +358,32 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<GetConfigurationSetEventDestinationsResult> getConfigurationSetEventDestinationsAsync(
             GetConfigurationSetEventDestinationsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetConfigurationSetEventDestinationsRequest, GetConfigurationSetEventDestinationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContactResult> getContactAsync(GetContactRequest request) {
+
+        return getContactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContactResult> getContactAsync(GetContactRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetContactRequest, GetContactResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContactListResult> getContactListAsync(GetContactListRequest request) {
+
+        return getContactListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContactListResult> getContactListAsync(GetContactListRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetContactListRequest, GetContactListResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -481,6 +559,32 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     @Override
     public java.util.concurrent.Future<ListConfigurationSetsResult> listConfigurationSetsAsync(ListConfigurationSetsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListConfigurationSetsRequest, ListConfigurationSetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListContactListsResult> listContactListsAsync(ListContactListsRequest request) {
+
+        return listContactListsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListContactListsResult> listContactListsAsync(ListContactListsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListContactListsRequest, ListContactListsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListContactsResult> listContactsAsync(ListContactsRequest request) {
+
+        return listContactsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListContactsResult> listContactsAsync(ListContactsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListContactsRequest, ListContactsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -938,6 +1042,32 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<UpdateConfigurationSetEventDestinationResult> updateConfigurationSetEventDestinationAsync(
             UpdateConfigurationSetEventDestinationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateConfigurationSetEventDestinationRequest, UpdateConfigurationSetEventDestinationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactResult> updateContactAsync(UpdateContactRequest request) {
+
+        return updateContactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactResult> updateContactAsync(UpdateContactRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateContactRequest, UpdateContactResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactListResult> updateContactListAsync(UpdateContactListRequest request) {
+
+        return updateContactListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactListResult> updateContactListAsync(UpdateContactListRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateContactListRequest, UpdateContactListResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

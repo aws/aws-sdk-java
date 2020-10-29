@@ -62,6 +62,8 @@ public class CreateNFSFileShareRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileShareName").build();
     private static final MarshallingInfo<StructuredPojo> CACHEATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CacheAttributes").build();
+    private static final MarshallingInfo<String> NOTIFICATIONPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotificationPolicy").build();
 
     private static final CreateNFSFileShareRequestMarshaller instance = new CreateNFSFileShareRequestMarshaller();
 
@@ -96,6 +98,7 @@ public class CreateNFSFileShareRequestMarshaller {
             protocolMarshaller.marshall(createNFSFileShareRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createNFSFileShareRequest.getFileShareName(), FILESHARENAME_BINDING);
             protocolMarshaller.marshall(createNFSFileShareRequest.getCacheAttributes(), CACHEATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(createNFSFileShareRequest.getNotificationPolicy(), NOTIFICATIONPOLICY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

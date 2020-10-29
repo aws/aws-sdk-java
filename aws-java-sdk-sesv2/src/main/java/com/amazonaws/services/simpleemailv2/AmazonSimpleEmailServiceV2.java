@@ -130,6 +130,48 @@ public interface AmazonSimpleEmailServiceV2 {
 
     /**
      * <p>
+     * Creates a contact, which is an end-user who is receiving the email, and adds them to a contact list.
+     * </p>
+     * 
+     * @param createContactRequest
+     * @return Result of the CreateContact operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws AlreadyExistsException
+     *         The resource specified in your request already exists.
+     * @sample AmazonSimpleEmailServiceV2.CreateContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateContactResult createContact(CreateContactRequest createContactRequest);
+
+    /**
+     * <p>
+     * Creates a contact list.
+     * </p>
+     * 
+     * @param createContactListRequest
+     * @return Result of the CreateContactList operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws AlreadyExistsException
+     *         The resource specified in your request already exists.
+     * @throws LimitExceededException
+     *         There are too many instances of the specified resource type.
+     * @sample AmazonSimpleEmailServiceV2.CreateContactList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateContactList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateContactListResult createContactList(CreateContactListRequest createContactListRequest);
+
+    /**
+     * <p>
      * Creates a new custom verification email template.
      * </p>
      * <p>
@@ -422,6 +464,46 @@ public interface AmazonSimpleEmailServiceV2 {
 
     /**
      * <p>
+     * Removes a contact from a contact list.
+     * </p>
+     * 
+     * @param deleteContactRequest
+     * @return Result of the DeleteContact operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @sample AmazonSimpleEmailServiceV2.DeleteContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteContactResult deleteContact(DeleteContactRequest deleteContactRequest);
+
+    /**
+     * <p>
+     * Deletes a contact list and all of the contacts on that list.
+     * </p>
+     * 
+     * @param deleteContactListRequest
+     * @return Result of the DeleteContactList operation returned by the service.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
+     * @sample AmazonSimpleEmailServiceV2.DeleteContactList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteContactList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteContactListResult deleteContactList(DeleteContactListRequest deleteContactListRequest);
+
+    /**
+     * <p>
      * Deletes an existing custom verification email template.
      * </p>
      * <p>
@@ -670,6 +752,44 @@ public interface AmazonSimpleEmailServiceV2 {
      */
     GetConfigurationSetEventDestinationsResult getConfigurationSetEventDestinations(
             GetConfigurationSetEventDestinationsRequest getConfigurationSetEventDestinationsRequest);
+
+    /**
+     * <p>
+     * Returns a contact from a contact list.
+     * </p>
+     * 
+     * @param getContactRequest
+     * @return Result of the GetContact operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @sample AmazonSimpleEmailServiceV2.GetContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetContactResult getContact(GetContactRequest getContactRequest);
+
+    /**
+     * <p>
+     * Returns contact list metadata. It does not return any information about the contacts present in the list.
+     * </p>
+     * 
+     * @param getContactListRequest
+     * @return Result of the GetContactList operation returned by the service.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.GetContactList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetContactList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetContactListResult getContactList(GetContactListRequest getContactListRequest);
 
     /**
      * <p>
@@ -982,6 +1102,42 @@ public interface AmazonSimpleEmailServiceV2 {
      *      API Documentation</a>
      */
     ListConfigurationSetsResult listConfigurationSets(ListConfigurationSetsRequest listConfigurationSetsRequest);
+
+    /**
+     * <p>
+     * Lists all of the contact lists available.
+     * </p>
+     * 
+     * @param listContactListsRequest
+     * @return Result of the ListContactLists operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @sample AmazonSimpleEmailServiceV2.ListContactLists
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListContactLists" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListContactListsResult listContactLists(ListContactListsRequest listContactListsRequest);
+
+    /**
+     * <p>
+     * Lists the contacts present in a specific contact list.
+     * </p>
+     * 
+     * @param listContactsRequest
+     * @return Result of the ListContacts operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @sample AmazonSimpleEmailServiceV2.ListContacts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListContacts" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListContactsResult listContacts(ListContactsRequest listContactsRequest);
 
     /**
      * <p>
@@ -1812,6 +1968,49 @@ public interface AmazonSimpleEmailServiceV2 {
      */
     UpdateConfigurationSetEventDestinationResult updateConfigurationSetEventDestination(
             UpdateConfigurationSetEventDestinationRequest updateConfigurationSetEventDestinationRequest);
+
+    /**
+     * <p>
+     * Updates a contact's preferences for a list. It is not necessary to specify all existing topic preferences in the
+     * TopicPreferences object, just the ones that need updating.
+     * </p>
+     * 
+     * @param updateContactRequest
+     * @return Result of the UpdateContact operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
+     * @sample AmazonSimpleEmailServiceV2.UpdateContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateContactResult updateContact(UpdateContactRequest updateContactRequest);
+
+    /**
+     * <p>
+     * Updates contact list metadata. This operation does a complete replacement.
+     * </p>
+     * 
+     * @param updateContactListRequest
+     * @return Result of the UpdateContactList operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
+     * @sample AmazonSimpleEmailServiceV2.UpdateContactList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateContactList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateContactListResult updateContactList(UpdateContactListRequest updateContactListRequest);
 
     /**
      * <p>

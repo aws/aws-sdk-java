@@ -33,7 +33,11 @@ public class ImportJobSummary implements Serializable, Cloneable, StructuredPojo
     private ImportDestination importDestination;
 
     private String jobStatus;
-
+    /**
+     * <p>
+     * The date and time when the import job was created.
+     * </p>
+     */
     private java.util.Date createdTimestamp;
 
     /**
@@ -129,7 +133,12 @@ public class ImportJobSummary implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The date and time when the import job was created.
+     * </p>
+     * 
      * @param createdTimestamp
+     *        The date and time when the import job was created.
      */
 
     public void setCreatedTimestamp(java.util.Date createdTimestamp) {
@@ -137,7 +146,11 @@ public class ImportJobSummary implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * <p>
+     * The date and time when the import job was created.
+     * </p>
+     * 
+     * @return The date and time when the import job was created.
      */
 
     public java.util.Date getCreatedTimestamp() {
@@ -145,7 +158,12 @@ public class ImportJobSummary implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The date and time when the import job was created.
+     * </p>
+     * 
      * @param createdTimestamp
+     *        The date and time when the import job was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

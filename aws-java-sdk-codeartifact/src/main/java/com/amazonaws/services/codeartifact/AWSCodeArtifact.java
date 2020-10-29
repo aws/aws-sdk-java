@@ -47,7 +47,7 @@ import com.amazonaws.services.codeartifact.model.*;
  * versions</a>, each of which maps to a set of assets, or files. Repositories are polyglot, so a single repository can
  * contain packages of any supported type. Each repository exposes endpoints for fetching and publishing packages using
  * tools like the <b> <code>npm</code> </b> CLI, the Maven CLI (<b> <code>mvn</code> </b>), and <b> <code>pip</code>
- * </b>. You can create up to 100 repositories per AWS account.
+ * </b>.
  * </p>
  * </li>
  * <li>
@@ -466,8 +466,6 @@ public interface AWSCodeArtifact {
      *         The operation did not succeed because prerequisites are not met.
      * @throws InternalServerException
      *         The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
-     * @throws ResourceNotFoundException
-     *         The operation did not succeed because the resource requested is not found in the service.
      * @throws ThrottlingException
      *         The operation did not succeed because too many requests are sent to the service.
      * @throws ValidationException
@@ -701,18 +699,16 @@ public interface AWSCodeArtifact {
      * package version cannot be restored in your repository because its assets are deleted.
      * </p>
      * <p>
-     * To view all disposed package versions in a repository, use
-     * <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListackageVersions</a> </code>
-     * and set the
-     * <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">status</a> </code>
-     * parameter to <code>Disposed</code>.
+     * To view all disposed package versions in a repository, use <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">
+     * <code>ListPackageVersions</code> </a> and set the <a href=
+     * "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax"
+     * > <code>status</code> </a> parameter to <code>Disposed</code>.
      * </p>
      * <p>
-     * To view information about a disposed package version, use
-     * <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a> </code>
-     * and set the
-     * <code> <a href="https://docs.aws.amazon.com/API_ListPackageVersions.html#codeartifact-ListPackageVersions-response-status">status</a> </code>
-     * parameter to <code>Disposed</code>.
+     * To view information about a disposed package version, use <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html">
+     * <code>DescribePackageVersion</code> </a>..
      * </p>
      * 
      * @param disposePackageVersionsRequest
@@ -737,8 +733,11 @@ public interface AWSCodeArtifact {
 
     /**
      * <p>
-     * Generates a temporary authentication token for accessing repositories in the domain. This API requires the
-     * <code>codeartifact:GetAuthorizationToken</code> and <code>sts:GetServiceBearerToken</code> permissions.
+     * Generates a temporary authorization token for accessing repositories in the domain. This API requires the
+     * <code>codeartifact:GetAuthorizationToken</code> and <code>sts:GetServiceBearerToken</code> permissions. For more
+     * information about authorization tokens, see <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html">AWS CodeArtifact
+     * authentication and tokens</a>.
      * </p>
      * <note>
      * <p>
@@ -827,6 +826,8 @@ public interface AWSCodeArtifact {
      *         The operation did not succeed because too many requests are sent to the service.
      * @throws ValidationException
      *         The operation did not succeed because a parameter in the request was sent with an invalid value.
+     * @throws ConflictException
+     *         The operation did not succeed because prerequisites are not met.
      * @sample AWSCodeArtifact.GetPackageVersionAsset
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetPackageVersionAsset"
      *      target="_top">AWS API Documentation</a>
@@ -1104,7 +1105,33 @@ public interface AWSCodeArtifact {
 
     /**
      * <p>
+     * Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS CodeArtifact.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws AccessDeniedException
+     *         The operation did not succeed because of an unauthorized access attempt.
+     * @throws ResourceNotFoundException
+     *         The operation did not succeed because the resource requested is not found in the service.
+     * @throws ThrottlingException
+     *         The operation did not succeed because too many requests are sent to the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a parameter in the request was sent with an invalid value.
+     * @sample AWSCodeArtifact.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Sets a resource policy on a domain that specifies permissions to access it.
+     * </p>
+     * <p>
+     * When you call <code>PutDomainPermissionsPolicy</code>, the resource policy on the domain is ignored when
+     * evaluting permissions. This ensures that the owner of a domain cannot lock themselves out of the domain, which
+     * would prevent them from being able to update the resource policy.
      * </p>
      * 
      * @param putDomainPermissionsPolicyRequest
@@ -1133,6 +1160,11 @@ public interface AWSCodeArtifact {
      * <p>
      * Sets the resource policy on a repository that specifies permissions to access it.
      * </p>
+     * <p>
+     * When you call <code>PutRepositoryPermissionsPolicy</code>, the resource policy on the repository is ignored when
+     * evaluting permissions. This ensures that the owner of a repository cannot lock themselves out of the repository,
+     * which would prevent them from being able to update the resource policy.
+     * </p>
      * 
      * @param putRepositoryPermissionsPolicyRequest
      * @return Result of the PutRepositoryPermissionsPolicy operation returned by the service.
@@ -1155,6 +1187,50 @@ public interface AWSCodeArtifact {
      *      target="_top">AWS API Documentation</a>
      */
     PutRepositoryPermissionsPolicyResult putRepositoryPermissionsPolicy(PutRepositoryPermissionsPolicyRequest putRepositoryPermissionsPolicyRequest);
+
+    /**
+     * <p>
+     * Adds or updates tags for a resource in AWS CodeArtifact.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws AccessDeniedException
+     *         The operation did not succeed because of an unauthorized access attempt.
+     * @throws ResourceNotFoundException
+     *         The operation did not succeed because the resource requested is not found in the service.
+     * @throws ServiceQuotaExceededException
+     *         The operation did not succeed because it would have exceeded a service limit for your account.
+     * @throws ThrottlingException
+     *         The operation did not succeed because too many requests are sent to the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a parameter in the request was sent with an invalid value.
+     * @sample AWSCodeArtifact.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes tags from a resource in AWS CodeArtifact.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws AccessDeniedException
+     *         The operation did not succeed because of an unauthorized access attempt.
+     * @throws ResourceNotFoundException
+     *         The operation did not succeed because the resource requested is not found in the service.
+     * @throws ThrottlingException
+     *         The operation did not succeed because too many requests are sent to the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a parameter in the request was sent with an invalid value.
+     * @sample AWSCodeArtifact.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

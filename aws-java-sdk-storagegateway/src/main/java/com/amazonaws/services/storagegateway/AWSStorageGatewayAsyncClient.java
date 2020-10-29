@@ -3007,6 +3007,39 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateSMBFileShareVisibilityResult> updateSMBFileShareVisibilityAsync(UpdateSMBFileShareVisibilityRequest request) {
+
+        return updateSMBFileShareVisibilityAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSMBFileShareVisibilityResult> updateSMBFileShareVisibilityAsync(final UpdateSMBFileShareVisibilityRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateSMBFileShareVisibilityRequest, UpdateSMBFileShareVisibilityResult> asyncHandler) {
+        final UpdateSMBFileShareVisibilityRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateSMBFileShareVisibilityResult>() {
+            @Override
+            public UpdateSMBFileShareVisibilityResult call() throws Exception {
+                UpdateSMBFileShareVisibilityResult result = null;
+
+                try {
+                    result = executeUpdateSMBFileShareVisibility(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateSMBSecurityStrategyResult> updateSMBSecurityStrategyAsync(UpdateSMBSecurityStrategyRequest request) {
 
         return updateSMBSecurityStrategyAsync(request, null);

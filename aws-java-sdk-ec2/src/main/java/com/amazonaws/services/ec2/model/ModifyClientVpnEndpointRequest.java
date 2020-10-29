@@ -119,6 +119,12 @@ public class ModifyClientVpnEndpointRequest extends AmazonWebServiceRequest impl
      * </p>
      */
     private String vpcId;
+    /**
+     * <p>
+     * Specify whether to enable the self-service portal for the Client VPN endpoint.
+     * </p>
+     */
+    private String selfServicePortal;
 
     /**
      * <p>
@@ -760,6 +766,65 @@ public class ModifyClientVpnEndpointRequest extends AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * Specify whether to enable the self-service portal for the Client VPN endpoint.
+     * </p>
+     * 
+     * @param selfServicePortal
+     *        Specify whether to enable the self-service portal for the Client VPN endpoint.
+     * @see SelfServicePortal
+     */
+
+    public void setSelfServicePortal(String selfServicePortal) {
+        this.selfServicePortal = selfServicePortal;
+    }
+
+    /**
+     * <p>
+     * Specify whether to enable the self-service portal for the Client VPN endpoint.
+     * </p>
+     * 
+     * @return Specify whether to enable the self-service portal for the Client VPN endpoint.
+     * @see SelfServicePortal
+     */
+
+    public String getSelfServicePortal() {
+        return this.selfServicePortal;
+    }
+
+    /**
+     * <p>
+     * Specify whether to enable the self-service portal for the Client VPN endpoint.
+     * </p>
+     * 
+     * @param selfServicePortal
+     *        Specify whether to enable the self-service portal for the Client VPN endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SelfServicePortal
+     */
+
+    public ModifyClientVpnEndpointRequest withSelfServicePortal(String selfServicePortal) {
+        setSelfServicePortal(selfServicePortal);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify whether to enable the self-service portal for the Client VPN endpoint.
+     * </p>
+     * 
+     * @param selfServicePortal
+     *        Specify whether to enable the self-service portal for the Client VPN endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SelfServicePortal
+     */
+
+    public ModifyClientVpnEndpointRequest withSelfServicePortal(SelfServicePortal selfServicePortal) {
+        this.selfServicePortal = selfServicePortal.toString();
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -799,7 +864,9 @@ public class ModifyClientVpnEndpointRequest extends AmazonWebServiceRequest impl
         if (getSecurityGroupIds() != null)
             sb.append("SecurityGroupIds: ").append(getSecurityGroupIds()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: ").append(getVpcId());
+            sb.append("VpcId: ").append(getVpcId()).append(",");
+        if (getSelfServicePortal() != null)
+            sb.append("SelfServicePortal: ").append(getSelfServicePortal());
         sb.append("}");
         return sb.toString();
     }
@@ -850,6 +917,10 @@ public class ModifyClientVpnEndpointRequest extends AmazonWebServiceRequest impl
             return false;
         if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
+        if (other.getSelfServicePortal() == null ^ this.getSelfServicePortal() == null)
+            return false;
+        if (other.getSelfServicePortal() != null && other.getSelfServicePortal().equals(this.getSelfServicePortal()) == false)
+            return false;
         return true;
     }
 
@@ -867,6 +938,7 @@ public class ModifyClientVpnEndpointRequest extends AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getSplitTunnel() == null) ? 0 : getSplitTunnel().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getSelfServicePortal() == null) ? 0 : getSelfServicePortal().hashCode());
         return hashCode;
     }
 

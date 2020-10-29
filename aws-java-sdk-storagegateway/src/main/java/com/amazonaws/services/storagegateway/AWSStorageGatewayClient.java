@@ -5808,7 +5808,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * </p>
      * </note>
      * <p>
-     * Updates the following file share setting:
+     * Updates the following file share settings:
      * </p>
      * <ul>
      * <li>
@@ -5837,12 +5837,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * To leave a file share field unchanged, set the corresponding input field to null. This operation is only
-     * supported in file gateways.
-     * </p>
-     * </note>
      * 
      * @param updateNFSFileShareRequest
      *        UpdateNFSFileShareInput
@@ -5902,12 +5896,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Updates a Server Message Block (SMB) file share.
+     * Updates a Server Message Block (SMB) file share. This operation is only supported for file gateways.
      * </p>
      * <note>
      * <p>
-     * To leave a file share field unchanged, set the corresponding input field to null. This operation is only
-     * supported for file gateways.
+     * To leave a file share field unchanged, set the corresponding input field to null.
      * </p>
      * </note> <important>
      * <p>
@@ -5968,6 +5961,68 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateSMBFileShareResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateSMBFileShareResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Controls whether the shares on a gateway are visible in a net view or browse list.
+     * </p>
+     * 
+     * @param updateSMBFileShareVisibilityRequest
+     * @return Result of the UpdateSMBFileShareVisibility operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.UpdateSMBFileShareVisibility
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShareVisibility"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateSMBFileShareVisibilityResult updateSMBFileShareVisibility(UpdateSMBFileShareVisibilityRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSMBFileShareVisibility(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSMBFileShareVisibilityResult executeUpdateSMBFileShareVisibility(UpdateSMBFileShareVisibilityRequest updateSMBFileShareVisibilityRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateSMBFileShareVisibilityRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateSMBFileShareVisibilityRequest> request = null;
+        Response<UpdateSMBFileShareVisibilityResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateSMBFileShareVisibilityRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateSMBFileShareVisibilityRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSMBFileShareVisibility");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateSMBFileShareVisibilityResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateSMBFileShareVisibilityResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

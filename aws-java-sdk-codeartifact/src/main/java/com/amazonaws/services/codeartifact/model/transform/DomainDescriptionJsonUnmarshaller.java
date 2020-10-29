@@ -80,6 +80,10 @@ public class DomainDescriptionJsonUnmarshaller implements Unmarshaller<DomainDes
                     context.nextToken();
                     domainDescription.setAssetSizeBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("s3BucketArn", targetDepth)) {
+                    context.nextToken();
+                    domainDescription.setS3BucketArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

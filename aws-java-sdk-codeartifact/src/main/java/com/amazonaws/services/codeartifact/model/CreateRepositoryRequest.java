@@ -58,6 +58,12 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private java.util.List<UpstreamRepository> upstreams;
+    /**
+     * <p>
+     * One or more tag key-value pairs for the repository.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -319,6 +325,76 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * One or more tag key-value pairs for the repository.
+     * </p>
+     * 
+     * @return One or more tag key-value pairs for the repository.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * One or more tag key-value pairs for the repository.
+     * </p>
+     * 
+     * @param tags
+     *        One or more tag key-value pairs for the repository.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * One or more tag key-value pairs for the repository.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        One or more tag key-value pairs for the repository.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRepositoryRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more tag key-value pairs for the repository.
+     * </p>
+     * 
+     * @param tags
+     *        One or more tag key-value pairs for the repository.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRepositoryRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -339,7 +415,9 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getUpstreams() != null)
-            sb.append("Upstreams: ").append(getUpstreams());
+            sb.append("Upstreams: ").append(getUpstreams()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -374,6 +452,10 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getUpstreams() != null && other.getUpstreams().equals(this.getUpstreams()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -387,6 +469,7 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getRepository() == null) ? 0 : getRepository().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getUpstreams() == null) ? 0 : getUpstreams().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -169,6 +169,72 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
     }
 
     @Override
+    public java.util.concurrent.Future<CreateContactResult> createContactAsync(CreateContactRequest request) {
+
+        return createContactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateContactResult> createContactAsync(final CreateContactRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateContactRequest, CreateContactResult> asyncHandler) {
+        final CreateContactRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateContactResult>() {
+            @Override
+            public CreateContactResult call() throws Exception {
+                CreateContactResult result = null;
+
+                try {
+                    result = executeCreateContact(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateContactListResult> createContactListAsync(CreateContactListRequest request) {
+
+        return createContactListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateContactListResult> createContactListAsync(final CreateContactListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateContactListRequest, CreateContactListResult> asyncHandler) {
+        final CreateContactListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateContactListResult>() {
+            @Override
+            public CreateContactListResult call() throws Exception {
+                CreateContactListResult result = null;
+
+                try {
+                    result = executeCreateContactList(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateCustomVerificationEmailTemplateResult> createCustomVerificationEmailTemplateAsync(
             CreateCustomVerificationEmailTemplateRequest request) {
 
@@ -455,6 +521,72 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
 
                 try {
                     result = executeDeleteConfigurationSetEventDestination(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContactResult> deleteContactAsync(DeleteContactRequest request) {
+
+        return deleteContactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContactResult> deleteContactAsync(final DeleteContactRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteContactRequest, DeleteContactResult> asyncHandler) {
+        final DeleteContactRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteContactResult>() {
+            @Override
+            public DeleteContactResult call() throws Exception {
+                DeleteContactResult result = null;
+
+                try {
+                    result = executeDeleteContact(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContactListResult> deleteContactListAsync(DeleteContactListRequest request) {
+
+        return deleteContactListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContactListResult> deleteContactListAsync(final DeleteContactListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteContactListRequest, DeleteContactListResult> asyncHandler) {
+        final DeleteContactListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteContactListResult>() {
+            @Override
+            public DeleteContactListResult call() throws Exception {
+                DeleteContactListResult result = null;
+
+                try {
+                    result = executeDeleteContactList(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -789,6 +921,72 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
 
                 try {
                     result = executeGetConfigurationSetEventDestinations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContactResult> getContactAsync(GetContactRequest request) {
+
+        return getContactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContactResult> getContactAsync(final GetContactRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetContactRequest, GetContactResult> asyncHandler) {
+        final GetContactRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetContactResult>() {
+            @Override
+            public GetContactResult call() throws Exception {
+                GetContactResult result = null;
+
+                try {
+                    result = executeGetContact(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContactListResult> getContactListAsync(GetContactListRequest request) {
+
+        return getContactListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContactListResult> getContactListAsync(final GetContactListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetContactListRequest, GetContactListResult> asyncHandler) {
+        final GetContactListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetContactListResult>() {
+            @Override
+            public GetContactListResult call() throws Exception {
+                GetContactListResult result = null;
+
+                try {
+                    result = executeGetContactList(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1224,6 +1422,72 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
 
                 try {
                     result = executeListConfigurationSets(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListContactListsResult> listContactListsAsync(ListContactListsRequest request) {
+
+        return listContactListsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListContactListsResult> listContactListsAsync(final ListContactListsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListContactListsRequest, ListContactListsResult> asyncHandler) {
+        final ListContactListsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListContactListsResult>() {
+            @Override
+            public ListContactListsResult call() throws Exception {
+                ListContactListsResult result = null;
+
+                try {
+                    result = executeListContactLists(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListContactsResult> listContactsAsync(ListContactsRequest request) {
+
+        return listContactsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListContactsResult> listContactsAsync(final ListContactsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListContactsRequest, ListContactsResult> asyncHandler) {
+        final ListContactsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListContactsResult>() {
+            @Override
+            public ListContactsResult call() throws Exception {
+                ListContactsResult result = null;
+
+                try {
+                    result = executeListContacts(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2344,6 +2608,72 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
 
                 try {
                     result = executeUpdateConfigurationSetEventDestination(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactResult> updateContactAsync(UpdateContactRequest request) {
+
+        return updateContactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactResult> updateContactAsync(final UpdateContactRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateContactRequest, UpdateContactResult> asyncHandler) {
+        final UpdateContactRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateContactResult>() {
+            @Override
+            public UpdateContactResult call() throws Exception {
+                UpdateContactResult result = null;
+
+                try {
+                    result = executeUpdateContact(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactListResult> updateContactListAsync(UpdateContactListRequest request) {
+
+        return updateContactListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactListResult> updateContactListAsync(final UpdateContactListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateContactListRequest, UpdateContactListResult> asyncHandler) {
+        final UpdateContactListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateContactListResult>() {
+            @Override
+            public UpdateContactListResult call() throws Exception {
+                UpdateContactListResult result = null;
+
+                try {
+                    result = executeUpdateContactList(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

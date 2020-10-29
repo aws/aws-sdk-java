@@ -53,6 +53,11 @@ public class CreateTransitGatewayVpcAttachmentRequestOptionsStaxUnmarshaller imp
                     createTransitGatewayVpcAttachmentRequestOptions.setIpv6Support(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ApplianceModeSupport", targetDepth)) {
+                    createTransitGatewayVpcAttachmentRequestOptions.setApplianceModeSupport(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return createTransitGatewayVpcAttachmentRequestOptions;

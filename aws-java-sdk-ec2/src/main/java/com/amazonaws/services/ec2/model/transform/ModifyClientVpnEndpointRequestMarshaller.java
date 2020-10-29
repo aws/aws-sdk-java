@@ -116,6 +116,10 @@ public class ModifyClientVpnEndpointRequestMarshaller implements Marshaller<Requ
             request.addParameter("VpcId", StringUtils.fromString(modifyClientVpnEndpointRequest.getVpcId()));
         }
 
+        if (modifyClientVpnEndpointRequest.getSelfServicePortal() != null) {
+            request.addParameter("SelfServicePortal", StringUtils.fromString(modifyClientVpnEndpointRequest.getSelfServicePortal()));
+        }
+
         return request;
     }
 

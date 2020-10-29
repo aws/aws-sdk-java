@@ -39,7 +39,9 @@ public class GetAuthorizationTokenRequest extends com.amazonaws.AmazonWebService
     private String domainOwner;
     /**
      * <p>
-     * The time, in seconds, that the generated authorization token is valid.
+     * The time, in seconds, that the generated authorization token is valid. Valid values are <code>0</code> and any
+     * number between <code>900</code> (15 minutes) and <code>43200</code> (12 hours). A value of <code>0</code> will
+     * set the expiration of the authorization token to the same expiration of the user's role's temporary credentials.
      * </p>
      */
     private Long durationSeconds;
@@ -127,11 +129,16 @@ public class GetAuthorizationTokenRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The time, in seconds, that the generated authorization token is valid.
+     * The time, in seconds, that the generated authorization token is valid. Valid values are <code>0</code> and any
+     * number between <code>900</code> (15 minutes) and <code>43200</code> (12 hours). A value of <code>0</code> will
+     * set the expiration of the authorization token to the same expiration of the user's role's temporary credentials.
      * </p>
      * 
      * @param durationSeconds
-     *        The time, in seconds, that the generated authorization token is valid.
+     *        The time, in seconds, that the generated authorization token is valid. Valid values are <code>0</code> and
+     *        any number between <code>900</code> (15 minutes) and <code>43200</code> (12 hours). A value of
+     *        <code>0</code> will set the expiration of the authorization token to the same expiration of the user's
+     *        role's temporary credentials.
      */
 
     public void setDurationSeconds(Long durationSeconds) {
@@ -140,10 +147,15 @@ public class GetAuthorizationTokenRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The time, in seconds, that the generated authorization token is valid.
+     * The time, in seconds, that the generated authorization token is valid. Valid values are <code>0</code> and any
+     * number between <code>900</code> (15 minutes) and <code>43200</code> (12 hours). A value of <code>0</code> will
+     * set the expiration of the authorization token to the same expiration of the user's role's temporary credentials.
      * </p>
      * 
-     * @return The time, in seconds, that the generated authorization token is valid.
+     * @return The time, in seconds, that the generated authorization token is valid. Valid values are <code>0</code>
+     *         and any number between <code>900</code> (15 minutes) and <code>43200</code> (12 hours). A value of
+     *         <code>0</code> will set the expiration of the authorization token to the same expiration of the user's
+     *         role's temporary credentials.
      */
 
     public Long getDurationSeconds() {
@@ -152,11 +164,16 @@ public class GetAuthorizationTokenRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The time, in seconds, that the generated authorization token is valid.
+     * The time, in seconds, that the generated authorization token is valid. Valid values are <code>0</code> and any
+     * number between <code>900</code> (15 minutes) and <code>43200</code> (12 hours). A value of <code>0</code> will
+     * set the expiration of the authorization token to the same expiration of the user's role's temporary credentials.
      * </p>
      * 
      * @param durationSeconds
-     *        The time, in seconds, that the generated authorization token is valid.
+     *        The time, in seconds, that the generated authorization token is valid. Valid values are <code>0</code> and
+     *        any number between <code>900</code> (15 minutes) and <code>43200</code> (12 hours). A value of
+     *        <code>0</code> will set the expiration of the authorization token to the same expiration of the user's
+     *        role's temporary credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

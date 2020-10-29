@@ -83,6 +83,10 @@ public class ModifyTargetGroupRequestMarshaller implements Marshaller<Request<Mo
                 if (matcher.getHttpCode() != null) {
                     request.addParameter("Matcher.HttpCode", StringUtils.fromString(matcher.getHttpCode()));
                 }
+
+                if (matcher.getGrpcCode() != null) {
+                    request.addParameter("Matcher.GrpcCode", StringUtils.fromString(matcher.getGrpcCode()));
+                }
             }
         }
 

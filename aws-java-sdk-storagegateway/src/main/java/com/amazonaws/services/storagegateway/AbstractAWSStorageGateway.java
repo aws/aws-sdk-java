@@ -448,6 +448,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
+    public UpdateSMBFileShareVisibilityResult updateSMBFileShareVisibility(UpdateSMBFileShareVisibilityRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateSMBSecurityStrategyResult updateSMBSecurityStrategy(UpdateSMBSecurityStrategyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

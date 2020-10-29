@@ -38,6 +38,16 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
     }
 
     @Override
+    public CreateContactResult createContact(CreateContactRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateContactListResult createContactList(CreateContactListRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateCustomVerificationEmailTemplateResult createCustomVerificationEmailTemplate(CreateCustomVerificationEmailTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,6 +89,16 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
 
     @Override
     public DeleteConfigurationSetEventDestinationResult deleteConfigurationSetEventDestination(DeleteConfigurationSetEventDestinationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteContactResult deleteContact(DeleteContactRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteContactListResult deleteContactList(DeleteContactListRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -129,6 +149,16 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
 
     @Override
     public GetConfigurationSetEventDestinationsResult getConfigurationSetEventDestinations(GetConfigurationSetEventDestinationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetContactResult getContact(GetContactRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetContactListResult getContactList(GetContactListRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -194,6 +224,16 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
 
     @Override
     public ListConfigurationSetsResult listConfigurationSets(ListConfigurationSetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListContactListsResult listContactLists(ListContactListsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListContactsResult listContacts(ListContactsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -359,6 +399,16 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
 
     @Override
     public UpdateConfigurationSetEventDestinationResult updateConfigurationSetEventDestination(UpdateConfigurationSetEventDestinationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateContactResult updateContact(UpdateContactRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateContactListResult updateContactList(UpdateContactListRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

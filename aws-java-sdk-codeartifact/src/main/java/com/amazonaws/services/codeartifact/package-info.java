@@ -33,7 +33,7 @@
  * versions</a>, each of which maps to a set of assets, or files. Repositories are polyglot, so a single repository can
  * contain packages of any supported type. Each repository exposes endpoints for fetching and publishing packages using
  * tools like the <b> <code>npm</code> </b> CLI, the Maven CLI (<b> <code>mvn</code> </b>), and <b> <code>pip</code>
- * </b>. You can create up to 100 repositories per AWS account.
+ * </b>.
  * </p>
  * </li>
  * <li>

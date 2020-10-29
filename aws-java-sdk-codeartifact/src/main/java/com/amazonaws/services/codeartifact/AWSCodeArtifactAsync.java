@@ -46,7 +46,7 @@ import com.amazonaws.services.codeartifact.model.*;
  * versions</a>, each of which maps to a set of assets, or files. Repositories are polyglot, so a single repository can
  * contain packages of any supported type. Each repository exposes endpoints for fetching and publishing packages using
  * tools like the <b> <code>npm</code> </b> CLI, the Maven CLI (<b> <code>mvn</code> </b>), and <b> <code>pip</code>
- * </b>. You can create up to 100 repositories per AWS account.
+ * </b>.
  * </p>
  * </li>
  * <li>
@@ -815,18 +815,16 @@ public interface AWSCodeArtifactAsync extends AWSCodeArtifact {
      * package version cannot be restored in your repository because its assets are deleted.
      * </p>
      * <p>
-     * To view all disposed package versions in a repository, use
-     * <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListackageVersions</a> </code>
-     * and set the
-     * <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">status</a> </code>
-     * parameter to <code>Disposed</code>.
+     * To view all disposed package versions in a repository, use <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">
+     * <code>ListPackageVersions</code> </a> and set the <a href=
+     * "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax"
+     * > <code>status</code> </a> parameter to <code>Disposed</code>.
      * </p>
      * <p>
-     * To view information about a disposed package version, use
-     * <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a> </code>
-     * and set the
-     * <code> <a href="https://docs.aws.amazon.com/API_ListPackageVersions.html#codeartifact-ListPackageVersions-response-status">status</a> </code>
-     * parameter to <code>Disposed</code>.
+     * To view information about a disposed package version, use <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html">
+     * <code>DescribePackageVersion</code> </a>..
      * </p>
      * 
      * @param disposePackageVersionsRequest
@@ -843,18 +841,16 @@ public interface AWSCodeArtifactAsync extends AWSCodeArtifact {
      * package version cannot be restored in your repository because its assets are deleted.
      * </p>
      * <p>
-     * To view all disposed package versions in a repository, use
-     * <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListackageVersions</a> </code>
-     * and set the
-     * <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">status</a> </code>
-     * parameter to <code>Disposed</code>.
+     * To view all disposed package versions in a repository, use <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">
+     * <code>ListPackageVersions</code> </a> and set the <a href=
+     * "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax"
+     * > <code>status</code> </a> parameter to <code>Disposed</code>.
      * </p>
      * <p>
-     * To view information about a disposed package version, use
-     * <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a> </code>
-     * and set the
-     * <code> <a href="https://docs.aws.amazon.com/API_ListPackageVersions.html#codeartifact-ListPackageVersions-response-status">status</a> </code>
-     * parameter to <code>Disposed</code>.
+     * To view information about a disposed package version, use <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html">
+     * <code>DescribePackageVersion</code> </a>..
      * </p>
      * 
      * @param disposePackageVersionsRequest
@@ -872,8 +868,11 @@ public interface AWSCodeArtifactAsync extends AWSCodeArtifact {
 
     /**
      * <p>
-     * Generates a temporary authentication token for accessing repositories in the domain. This API requires the
-     * <code>codeartifact:GetAuthorizationToken</code> and <code>sts:GetServiceBearerToken</code> permissions.
+     * Generates a temporary authorization token for accessing repositories in the domain. This API requires the
+     * <code>codeartifact:GetAuthorizationToken</code> and <code>sts:GetServiceBearerToken</code> permissions. For more
+     * information about authorization tokens, see <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html">AWS CodeArtifact
+     * authentication and tokens</a>.
      * </p>
      * <note>
      * <p>
@@ -905,8 +904,11 @@ public interface AWSCodeArtifactAsync extends AWSCodeArtifact {
 
     /**
      * <p>
-     * Generates a temporary authentication token for accessing repositories in the domain. This API requires the
-     * <code>codeartifact:GetAuthorizationToken</code> and <code>sts:GetServiceBearerToken</code> permissions.
+     * Generates a temporary authorization token for accessing repositories in the domain. This API requires the
+     * <code>codeartifact:GetAuthorizationToken</code> and <code>sts:GetServiceBearerToken</code> permissions. For more
+     * information about authorization tokens, see <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html">AWS CodeArtifact
+     * authentication and tokens</a>.
      * </p>
      * <note>
      * <p>
@@ -1429,7 +1431,43 @@ public interface AWSCodeArtifactAsync extends AWSCodeArtifact {
 
     /**
      * <p>
+     * Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS CodeArtifact.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSCodeArtifactAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS CodeArtifact.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSCodeArtifactAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Sets a resource policy on a domain that specifies permissions to access it.
+     * </p>
+     * <p>
+     * When you call <code>PutDomainPermissionsPolicy</code>, the resource policy on the domain is ignored when
+     * evaluting permissions. This ensures that the owner of a domain cannot lock themselves out of the domain, which
+     * would prevent them from being able to update the resource policy.
      * </p>
      * 
      * @param putDomainPermissionsPolicyRequest
@@ -1444,6 +1482,11 @@ public interface AWSCodeArtifactAsync extends AWSCodeArtifact {
     /**
      * <p>
      * Sets a resource policy on a domain that specifies permissions to access it.
+     * </p>
+     * <p>
+     * When you call <code>PutDomainPermissionsPolicy</code>, the resource policy on the domain is ignored when
+     * evaluting permissions. This ensures that the owner of a domain cannot lock themselves out of the domain, which
+     * would prevent them from being able to update the resource policy.
      * </p>
      * 
      * @param putDomainPermissionsPolicyRequest
@@ -1464,6 +1507,11 @@ public interface AWSCodeArtifactAsync extends AWSCodeArtifact {
      * <p>
      * Sets the resource policy on a repository that specifies permissions to access it.
      * </p>
+     * <p>
+     * When you call <code>PutRepositoryPermissionsPolicy</code>, the resource policy on the repository is ignored when
+     * evaluting permissions. This ensures that the owner of a repository cannot lock themselves out of the repository,
+     * which would prevent them from being able to update the resource policy.
+     * </p>
      * 
      * @param putRepositoryPermissionsPolicyRequest
      * @return A Java Future containing the result of the PutRepositoryPermissionsPolicy operation returned by the
@@ -1478,6 +1526,11 @@ public interface AWSCodeArtifactAsync extends AWSCodeArtifact {
     /**
      * <p>
      * Sets the resource policy on a repository that specifies permissions to access it.
+     * </p>
+     * <p>
+     * When you call <code>PutRepositoryPermissionsPolicy</code>, the resource policy on the repository is ignored when
+     * evaluting permissions. This ensures that the owner of a repository cannot lock themselves out of the repository,
+     * which would prevent them from being able to update the resource policy.
      * </p>
      * 
      * @param putRepositoryPermissionsPolicyRequest
@@ -1494,6 +1547,68 @@ public interface AWSCodeArtifactAsync extends AWSCodeArtifact {
     java.util.concurrent.Future<PutRepositoryPermissionsPolicyResult> putRepositoryPermissionsPolicyAsync(
             PutRepositoryPermissionsPolicyRequest putRepositoryPermissionsPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<PutRepositoryPermissionsPolicyRequest, PutRepositoryPermissionsPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds or updates tags for a resource in AWS CodeArtifact.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSCodeArtifactAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Adds or updates tags for a resource in AWS CodeArtifact.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSCodeArtifactAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes tags from a resource in AWS CodeArtifact.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSCodeArtifactAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes tags from a resource in AWS CodeArtifact.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSCodeArtifactAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
      * <p>

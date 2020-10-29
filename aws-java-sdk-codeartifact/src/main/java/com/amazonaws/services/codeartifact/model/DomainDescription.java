@@ -89,6 +89,12 @@ public class DomainDescription implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private Long assetSizeBytes;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon S3 bucket that is used to store package assets in the domain.
+     * </p>
+     */
+    private String s3BucketArn;
 
     /**
      * <p>
@@ -522,6 +528,47 @@ public class DomainDescription implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon S3 bucket that is used to store package assets in the domain.
+     * </p>
+     * 
+     * @param s3BucketArn
+     *        The Amazon Resource Name (ARN) of the Amazon S3 bucket that is used to store package assets in the domain.
+     */
+
+    public void setS3BucketArn(String s3BucketArn) {
+        this.s3BucketArn = s3BucketArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon S3 bucket that is used to store package assets in the domain.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Amazon S3 bucket that is used to store package assets in the
+     *         domain.
+     */
+
+    public String getS3BucketArn() {
+        return this.s3BucketArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon S3 bucket that is used to store package assets in the domain.
+     * </p>
+     * 
+     * @param s3BucketArn
+     *        The Amazon Resource Name (ARN) of the Amazon S3 bucket that is used to store package assets in the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainDescription withS3BucketArn(String s3BucketArn) {
+        setS3BucketArn(s3BucketArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -548,7 +595,9 @@ public class DomainDescription implements Serializable, Cloneable, StructuredPoj
         if (getRepositoryCount() != null)
             sb.append("RepositoryCount: ").append(getRepositoryCount()).append(",");
         if (getAssetSizeBytes() != null)
-            sb.append("AssetSizeBytes: ").append(getAssetSizeBytes());
+            sb.append("AssetSizeBytes: ").append(getAssetSizeBytes()).append(",");
+        if (getS3BucketArn() != null)
+            sb.append("S3BucketArn: ").append(getS3BucketArn());
         sb.append("}");
         return sb.toString();
     }
@@ -595,6 +644,10 @@ public class DomainDescription implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getAssetSizeBytes() != null && other.getAssetSizeBytes().equals(this.getAssetSizeBytes()) == false)
             return false;
+        if (other.getS3BucketArn() == null ^ this.getS3BucketArn() == null)
+            return false;
+        if (other.getS3BucketArn() != null && other.getS3BucketArn().equals(this.getS3BucketArn()) == false)
+            return false;
         return true;
     }
 
@@ -611,6 +664,7 @@ public class DomainDescription implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getEncryptionKey() == null) ? 0 : getEncryptionKey().hashCode());
         hashCode = prime * hashCode + ((getRepositoryCount() == null) ? 0 : getRepositoryCount().hashCode());
         hashCode = prime * hashCode + ((getAssetSizeBytes() == null) ? 0 : getAssetSizeBytes().hashCode());
+        hashCode = prime * hashCode + ((getS3BucketArn() == null) ? 0 : getS3BucketArn().hashCode());
         return hashCode;
     }
 

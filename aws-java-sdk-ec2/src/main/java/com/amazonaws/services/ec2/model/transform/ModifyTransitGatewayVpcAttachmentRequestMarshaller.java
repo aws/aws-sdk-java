@@ -85,6 +85,10 @@ public class ModifyTransitGatewayVpcAttachmentRequestMarshaller implements
             if (options.getIpv6Support() != null) {
                 request.addParameter("Options.Ipv6Support", StringUtils.fromString(options.getIpv6Support()));
             }
+
+            if (options.getApplianceModeSupport() != null) {
+                request.addParameter("Options.ApplianceModeSupport", StringUtils.fromString(options.getApplianceModeSupport()));
+            }
         }
 
         return request;

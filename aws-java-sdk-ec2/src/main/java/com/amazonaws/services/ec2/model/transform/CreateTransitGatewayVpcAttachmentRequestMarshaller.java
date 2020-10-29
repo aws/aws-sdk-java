@@ -73,6 +73,10 @@ public class CreateTransitGatewayVpcAttachmentRequestMarshaller implements
             if (options.getIpv6Support() != null) {
                 request.addParameter("Options.Ipv6Support", StringUtils.fromString(options.getIpv6Support()));
             }
+
+            if (options.getApplianceModeSupport() != null) {
+                request.addParameter("Options.ApplianceModeSupport", StringUtils.fromString(options.getApplianceModeSupport()));
+            }
         }
 
         com.amazonaws.internal.SdkInternalList<TagSpecification> createTransitGatewayVpcAttachmentRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) createTransitGatewayVpcAttachmentRequest

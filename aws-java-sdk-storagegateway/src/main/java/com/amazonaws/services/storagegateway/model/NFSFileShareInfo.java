@@ -136,6 +136,12 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private CacheAttributes cacheAttributes;
+    /**
+     * <p>
+     * The notification policy of the file share.
+     * </p>
+     */
+    private String notificationPolicy;
 
     /**
      * @param nFSFileShareDefaults
@@ -1133,6 +1139,46 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The notification policy of the file share.
+     * </p>
+     * 
+     * @param notificationPolicy
+     *        The notification policy of the file share.
+     */
+
+    public void setNotificationPolicy(String notificationPolicy) {
+        this.notificationPolicy = notificationPolicy;
+    }
+
+    /**
+     * <p>
+     * The notification policy of the file share.
+     * </p>
+     * 
+     * @return The notification policy of the file share.
+     */
+
+    public String getNotificationPolicy() {
+        return this.notificationPolicy;
+    }
+
+    /**
+     * <p>
+     * The notification policy of the file share.
+     * </p>
+     * 
+     * @param notificationPolicy
+     *        The notification policy of the file share.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NFSFileShareInfo withNotificationPolicy(String notificationPolicy) {
+        setNotificationPolicy(notificationPolicy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1183,7 +1229,9 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
         if (getFileShareName() != null)
             sb.append("FileShareName: ").append(getFileShareName()).append(",");
         if (getCacheAttributes() != null)
-            sb.append("CacheAttributes: ").append(getCacheAttributes());
+            sb.append("CacheAttributes: ").append(getCacheAttributes()).append(",");
+        if (getNotificationPolicy() != null)
+            sb.append("NotificationPolicy: ").append(getNotificationPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -1278,6 +1326,10 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getCacheAttributes() != null && other.getCacheAttributes().equals(this.getCacheAttributes()) == false)
             return false;
+        if (other.getNotificationPolicy() == null ^ this.getNotificationPolicy() == null)
+            return false;
+        if (other.getNotificationPolicy() != null && other.getNotificationPolicy().equals(this.getNotificationPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -1306,6 +1358,7 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getFileShareName() == null) ? 0 : getFileShareName().hashCode());
         hashCode = prime * hashCode + ((getCacheAttributes() == null) ? 0 : getCacheAttributes().hashCode());
+        hashCode = prime * hashCode + ((getNotificationPolicy() == null) ? 0 : getNotificationPolicy().hashCode());
         return hashCode;
     }
 

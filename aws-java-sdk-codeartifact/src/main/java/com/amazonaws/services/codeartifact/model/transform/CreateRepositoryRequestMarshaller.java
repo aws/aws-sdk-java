@@ -38,6 +38,8 @@ public class CreateRepositoryRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<List> UPSTREAMS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("upstreams").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateRepositoryRequestMarshaller instance = new CreateRepositoryRequestMarshaller();
 
@@ -60,6 +62,7 @@ public class CreateRepositoryRequestMarshaller {
             protocolMarshaller.marshall(createRepositoryRequest.getRepository(), REPOSITORY_BINDING);
             protocolMarshaller.marshall(createRepositoryRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createRepositoryRequest.getUpstreams(), UPSTREAMS_BINDING);
+            protocolMarshaller.marshall(createRepositoryRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -4154,7 +4154,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * </p>
      * </note>
      * <p>
-     * Updates the following file share setting:
+     * Updates the following file share settings:
      * </p>
      * <ul>
      * <li>
@@ -4183,12 +4183,6 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * To leave a file share field unchanged, set the corresponding input field to null. This operation is only
-     * supported in file gateways.
-     * </p>
-     * </note>
      * 
      * @param updateNFSFileShareRequest
      *        UpdateNFSFileShareInput
@@ -4209,7 +4203,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * </p>
      * </note>
      * <p>
-     * Updates the following file share setting:
+     * Updates the following file share settings:
      * </p>
      * <ul>
      * <li>
@@ -4238,12 +4232,6 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * To leave a file share field unchanged, set the corresponding input field to null. This operation is only
-     * supported in file gateways.
-     * </p>
-     * </note>
      * 
      * @param updateNFSFileShareRequest
      *        UpdateNFSFileShareInput
@@ -4261,12 +4249,11 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Updates a Server Message Block (SMB) file share.
+     * Updates a Server Message Block (SMB) file share. This operation is only supported for file gateways.
      * </p>
      * <note>
      * <p>
-     * To leave a file share field unchanged, set the corresponding input field to null. This operation is only
-     * supported for file gateways.
+     * To leave a file share field unchanged, set the corresponding input field to null.
      * </p>
      * </note> <important>
      * <p>
@@ -4292,12 +4279,11 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Updates a Server Message Block (SMB) file share.
+     * Updates a Server Message Block (SMB) file share. This operation is only supported for file gateways.
      * </p>
      * <note>
      * <p>
-     * To leave a file share field unchanged, set the corresponding input field to null. This operation is only
-     * supported for file gateways.
+     * To leave a file share field unchanged, set the corresponding input field to null.
      * </p>
      * </note> <important>
      * <p>
@@ -4325,6 +4311,41 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      */
     java.util.concurrent.Future<UpdateSMBFileShareResult> updateSMBFileShareAsync(UpdateSMBFileShareRequest updateSMBFileShareRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateSMBFileShareRequest, UpdateSMBFileShareResult> asyncHandler);
+
+    /**
+     * <p>
+     * Controls whether the shares on a gateway are visible in a net view or browse list.
+     * </p>
+     * 
+     * @param updateSMBFileShareVisibilityRequest
+     * @return A Java Future containing the result of the UpdateSMBFileShareVisibility operation returned by the
+     *         service.
+     * @sample AWSStorageGatewayAsync.UpdateSMBFileShareVisibility
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShareVisibility"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSMBFileShareVisibilityResult> updateSMBFileShareVisibilityAsync(
+            UpdateSMBFileShareVisibilityRequest updateSMBFileShareVisibilityRequest);
+
+    /**
+     * <p>
+     * Controls whether the shares on a gateway are visible in a net view or browse list.
+     * </p>
+     * 
+     * @param updateSMBFileShareVisibilityRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateSMBFileShareVisibility operation returned by the
+     *         service.
+     * @sample AWSStorageGatewayAsyncHandler.UpdateSMBFileShareVisibility
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShareVisibility"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSMBFileShareVisibilityResult> updateSMBFileShareVisibilityAsync(
+            UpdateSMBFileShareVisibilityRequest updateSMBFileShareVisibilityRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateSMBFileShareVisibilityRequest, UpdateSMBFileShareVisibilityResult> asyncHandler);
 
     /**
      * <p>

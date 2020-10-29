@@ -163,12 +163,27 @@ public class AbstractAWSCodeArtifact implements AWSCodeArtifact {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutDomainPermissionsPolicyResult putDomainPermissionsPolicy(PutDomainPermissionsPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public PutRepositoryPermissionsPolicyResult putRepositoryPermissionsPolicy(PutRepositoryPermissionsPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

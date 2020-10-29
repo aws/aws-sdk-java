@@ -49,6 +49,8 @@ public class CreateRestApiRequestMarshaller {
             .marshallLocationName("policy").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<Boolean> DISABLEEXECUTEAPIENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("disableExecuteApiEndpoint").build();
 
     private static final CreateRestApiRequestMarshaller instance = new CreateRestApiRequestMarshaller();
 
@@ -76,6 +78,7 @@ public class CreateRestApiRequestMarshaller {
             protocolMarshaller.marshall(createRestApiRequest.getEndpointConfiguration(), ENDPOINTCONFIGURATION_BINDING);
             protocolMarshaller.marshall(createRestApiRequest.getPolicy(), POLICY_BINDING);
             protocolMarshaller.marshall(createRestApiRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createRestApiRequest.getDisableExecuteApiEndpoint(), DISABLEEXECUTEAPIENDPOINT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

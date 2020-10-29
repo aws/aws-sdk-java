@@ -53,6 +53,12 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </important>
      */
     private String encryptionKey;
+    /**
+     * <p>
+     * One or more tag key-value pairs for the domain.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -231,6 +237,76 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * One or more tag key-value pairs for the domain.
+     * </p>
+     * 
+     * @return One or more tag key-value pairs for the domain.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * One or more tag key-value pairs for the domain.
+     * </p>
+     * 
+     * @param tags
+     *        One or more tag key-value pairs for the domain.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * One or more tag key-value pairs for the domain.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        One or more tag key-value pairs for the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDomainRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more tag key-value pairs for the domain.
+     * </p>
+     * 
+     * @param tags
+     *        One or more tag key-value pairs for the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDomainRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -245,7 +321,9 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getDomain() != null)
             sb.append("Domain: ").append(getDomain()).append(",");
         if (getEncryptionKey() != null)
-            sb.append("EncryptionKey: ").append(getEncryptionKey());
+            sb.append("EncryptionKey: ").append(getEncryptionKey()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -268,6 +346,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getEncryptionKey() != null && other.getEncryptionKey().equals(this.getEncryptionKey()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -278,6 +360,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
         hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
         hashCode = prime * hashCode + ((getEncryptionKey() == null) ? 0 : getEncryptionKey().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -29,6 +29,8 @@ public class ImportDestinationMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> SUPPRESSIONLISTDESTINATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SuppressionListDestination").build();
+    private static final MarshallingInfo<StructuredPojo> CONTACTLISTDESTINATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContactListDestination").build();
 
     private static final ImportDestinationMarshaller instance = new ImportDestinationMarshaller();
 
@@ -47,6 +49,7 @@ public class ImportDestinationMarshaller {
 
         try {
             protocolMarshaller.marshall(importDestination.getSuppressionListDestination(), SUPPRESSIONLISTDESTINATION_BINDING);
+            protocolMarshaller.marshall(importDestination.getContactListDestination(), CONTACTLISTDESTINATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

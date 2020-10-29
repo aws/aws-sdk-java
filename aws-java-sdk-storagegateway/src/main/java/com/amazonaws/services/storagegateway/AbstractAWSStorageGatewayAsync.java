@@ -1144,6 +1144,19 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateSMBFileShareVisibilityResult> updateSMBFileShareVisibilityAsync(UpdateSMBFileShareVisibilityRequest request) {
+
+        return updateSMBFileShareVisibilityAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSMBFileShareVisibilityResult> updateSMBFileShareVisibilityAsync(UpdateSMBFileShareVisibilityRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateSMBFileShareVisibilityRequest, UpdateSMBFileShareVisibilityResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateSMBSecurityStrategyResult> updateSMBSecurityStrategyAsync(UpdateSMBSecurityStrategyRequest request) {
 
         return updateSMBSecurityStrategyAsync(request, null);

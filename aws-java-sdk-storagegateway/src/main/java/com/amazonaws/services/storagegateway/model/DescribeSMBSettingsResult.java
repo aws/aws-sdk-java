@@ -116,6 +116,12 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
      * </ul>
      */
     private String sMBSecurityStrategy;
+    /**
+     * <p>
+     * The shares on this gateway appear when listing shares.
+     * </p>
+     */
+    private Boolean fileSharesVisible;
 
     /**
      * @param gatewayARN
@@ -886,6 +892,58 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * The shares on this gateway appear when listing shares.
+     * </p>
+     * 
+     * @param fileSharesVisible
+     *        The shares on this gateway appear when listing shares.
+     */
+
+    public void setFileSharesVisible(Boolean fileSharesVisible) {
+        this.fileSharesVisible = fileSharesVisible;
+    }
+
+    /**
+     * <p>
+     * The shares on this gateway appear when listing shares.
+     * </p>
+     * 
+     * @return The shares on this gateway appear when listing shares.
+     */
+
+    public Boolean getFileSharesVisible() {
+        return this.fileSharesVisible;
+    }
+
+    /**
+     * <p>
+     * The shares on this gateway appear when listing shares.
+     * </p>
+     * 
+     * @param fileSharesVisible
+     *        The shares on this gateway appear when listing shares.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSMBSettingsResult withFileSharesVisible(Boolean fileSharesVisible) {
+        setFileSharesVisible(fileSharesVisible);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The shares on this gateway appear when listing shares.
+     * </p>
+     * 
+     * @return The shares on this gateway appear when listing shares.
+     */
+
+    public Boolean isFileSharesVisible() {
+        return this.fileSharesVisible;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -906,7 +964,9 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
         if (getSMBGuestPasswordSet() != null)
             sb.append("SMBGuestPasswordSet: ").append(getSMBGuestPasswordSet()).append(",");
         if (getSMBSecurityStrategy() != null)
-            sb.append("SMBSecurityStrategy: ").append(getSMBSecurityStrategy());
+            sb.append("SMBSecurityStrategy: ").append(getSMBSecurityStrategy()).append(",");
+        if (getFileSharesVisible() != null)
+            sb.append("FileSharesVisible: ").append(getFileSharesVisible());
         sb.append("}");
         return sb.toString();
     }
@@ -941,6 +1001,10 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getSMBSecurityStrategy() != null && other.getSMBSecurityStrategy().equals(this.getSMBSecurityStrategy()) == false)
             return false;
+        if (other.getFileSharesVisible() == null ^ this.getFileSharesVisible() == null)
+            return false;
+        if (other.getFileSharesVisible() != null && other.getFileSharesVisible().equals(this.getFileSharesVisible()) == false)
+            return false;
         return true;
     }
 
@@ -954,6 +1018,7 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getActiveDirectoryStatus() == null) ? 0 : getActiveDirectoryStatus().hashCode());
         hashCode = prime * hashCode + ((getSMBGuestPasswordSet() == null) ? 0 : getSMBGuestPasswordSet().hashCode());
         hashCode = prime * hashCode + ((getSMBSecurityStrategy() == null) ? 0 : getSMBSecurityStrategy().hashCode());
+        hashCode = prime * hashCode + ((getFileSharesVisible() == null) ? 0 : getFileSharesVisible().hashCode());
         return hashCode;
     }
 

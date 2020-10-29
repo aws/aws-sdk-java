@@ -149,6 +149,68 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
+     * Creates a contact, which is an end-user who is receiving the email, and adds them to a contact list.
+     * </p>
+     * 
+     * @param createContactRequest
+     * @return A Java Future containing the result of the CreateContact operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.CreateContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateContactResult> createContactAsync(CreateContactRequest createContactRequest);
+
+    /**
+     * <p>
+     * Creates a contact, which is an end-user who is receiving the email, and adds them to a contact list.
+     * </p>
+     * 
+     * @param createContactRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateContact operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.CreateContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateContactResult> createContactAsync(CreateContactRequest createContactRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateContactRequest, CreateContactResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a contact list.
+     * </p>
+     * 
+     * @param createContactListRequest
+     * @return A Java Future containing the result of the CreateContactList operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.CreateContactList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateContactList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateContactListResult> createContactListAsync(CreateContactListRequest createContactListRequest);
+
+    /**
+     * <p>
+     * Creates a contact list.
+     * </p>
+     * 
+     * @param createContactListRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateContactList operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.CreateContactList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateContactList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateContactListResult> createContactListAsync(CreateContactListRequest createContactListRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateContactListRequest, CreateContactListResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new custom verification email template.
      * </p>
      * <p>
@@ -616,6 +678,68 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
+     * Removes a contact from a contact list.
+     * </p>
+     * 
+     * @param deleteContactRequest
+     * @return A Java Future containing the result of the DeleteContact operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.DeleteContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteContactResult> deleteContactAsync(DeleteContactRequest deleteContactRequest);
+
+    /**
+     * <p>
+     * Removes a contact from a contact list.
+     * </p>
+     * 
+     * @param deleteContactRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteContact operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.DeleteContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteContactResult> deleteContactAsync(DeleteContactRequest deleteContactRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteContactRequest, DeleteContactResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a contact list and all of the contacts on that list.
+     * </p>
+     * 
+     * @param deleteContactListRequest
+     * @return A Java Future containing the result of the DeleteContactList operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.DeleteContactList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteContactList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteContactListResult> deleteContactListAsync(DeleteContactListRequest deleteContactListRequest);
+
+    /**
+     * <p>
+     * Deletes a contact list and all of the contacts on that list.
+     * </p>
+     * 
+     * @param deleteContactListRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteContactList operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.DeleteContactList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteContactList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteContactListResult> deleteContactListAsync(DeleteContactListRequest deleteContactListRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteContactListRequest, DeleteContactListResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes an existing custom verification email template.
      * </p>
      * <p>
@@ -1049,6 +1173,68 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
     java.util.concurrent.Future<GetConfigurationSetEventDestinationsResult> getConfigurationSetEventDestinationsAsync(
             GetConfigurationSetEventDestinationsRequest getConfigurationSetEventDestinationsRequest,
             com.amazonaws.handlers.AsyncHandler<GetConfigurationSetEventDestinationsRequest, GetConfigurationSetEventDestinationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a contact from a contact list.
+     * </p>
+     * 
+     * @param getContactRequest
+     * @return A Java Future containing the result of the GetContact operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.GetContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetContactResult> getContactAsync(GetContactRequest getContactRequest);
+
+    /**
+     * <p>
+     * Returns a contact from a contact list.
+     * </p>
+     * 
+     * @param getContactRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetContact operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.GetContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetContactResult> getContactAsync(GetContactRequest getContactRequest,
+            com.amazonaws.handlers.AsyncHandler<GetContactRequest, GetContactResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns contact list metadata. It does not return any information about the contacts present in the list.
+     * </p>
+     * 
+     * @param getContactListRequest
+     * @return A Java Future containing the result of the GetContactList operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.GetContactList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetContactList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetContactListResult> getContactListAsync(GetContactListRequest getContactListRequest);
+
+    /**
+     * <p>
+     * Returns contact list metadata. It does not return any information about the contacts present in the list.
+     * </p>
+     * 
+     * @param getContactListRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetContactList operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.GetContactList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetContactList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetContactListResult> getContactListAsync(GetContactListRequest getContactListRequest,
+            com.amazonaws.handlers.AsyncHandler<GetContactListRequest, GetContactListResult> asyncHandler);
 
     /**
      * <p>
@@ -1600,6 +1786,68 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      */
     java.util.concurrent.Future<ListConfigurationSetsResult> listConfigurationSetsAsync(ListConfigurationSetsRequest listConfigurationSetsRequest,
             com.amazonaws.handlers.AsyncHandler<ListConfigurationSetsRequest, ListConfigurationSetsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all of the contact lists available.
+     * </p>
+     * 
+     * @param listContactListsRequest
+     * @return A Java Future containing the result of the ListContactLists operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.ListContactLists
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListContactLists" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListContactListsResult> listContactListsAsync(ListContactListsRequest listContactListsRequest);
+
+    /**
+     * <p>
+     * Lists all of the contact lists available.
+     * </p>
+     * 
+     * @param listContactListsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListContactLists operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.ListContactLists
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListContactLists" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListContactListsResult> listContactListsAsync(ListContactListsRequest listContactListsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListContactListsRequest, ListContactListsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the contacts present in a specific contact list.
+     * </p>
+     * 
+     * @param listContactsRequest
+     * @return A Java Future containing the result of the ListContacts operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.ListContacts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListContacts" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListContactsResult> listContactsAsync(ListContactsRequest listContactsRequest);
+
+    /**
+     * <p>
+     * Lists the contacts present in a specific contact list.
+     * </p>
+     * 
+     * @param listContactsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListContacts operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.ListContacts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListContacts" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListContactsResult> listContactsAsync(ListContactsRequest listContactsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListContactsRequest, ListContactsResult> asyncHandler);
 
     /**
      * <p>
@@ -3047,6 +3295,70 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
     java.util.concurrent.Future<UpdateConfigurationSetEventDestinationResult> updateConfigurationSetEventDestinationAsync(
             UpdateConfigurationSetEventDestinationRequest updateConfigurationSetEventDestinationRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateConfigurationSetEventDestinationRequest, UpdateConfigurationSetEventDestinationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a contact's preferences for a list. It is not necessary to specify all existing topic preferences in the
+     * TopicPreferences object, just the ones that need updating.
+     * </p>
+     * 
+     * @param updateContactRequest
+     * @return A Java Future containing the result of the UpdateContact operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.UpdateContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateContactResult> updateContactAsync(UpdateContactRequest updateContactRequest);
+
+    /**
+     * <p>
+     * Updates a contact's preferences for a list. It is not necessary to specify all existing topic preferences in the
+     * TopicPreferences object, just the ones that need updating.
+     * </p>
+     * 
+     * @param updateContactRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateContact operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.UpdateContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateContactResult> updateContactAsync(UpdateContactRequest updateContactRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateContactRequest, UpdateContactResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates contact list metadata. This operation does a complete replacement.
+     * </p>
+     * 
+     * @param updateContactListRequest
+     * @return A Java Future containing the result of the UpdateContactList operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.UpdateContactList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateContactList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateContactListResult> updateContactListAsync(UpdateContactListRequest updateContactListRequest);
+
+    /**
+     * <p>
+     * Updates contact list metadata. This operation does a complete replacement.
+     * </p>
+     * 
+     * @param updateContactListRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateContactList operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.UpdateContactList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateContactList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateContactListResult> updateContactListAsync(UpdateContactListRequest updateContactListRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateContactListRequest, UpdateContactListResult> asyncHandler);
 
     /**
      * <p>

@@ -1,3 +1,32 @@
+# __1.11.891__ __2020-10-29__
+## __AWS Marketplace Commerce Analytics__
+  - ### Features
+    - Documentation updates for marketplacecommerceanalytics to specify four data sets which are deprecated.
+
+## __AWS Storage Gateway__
+  - ### Features
+    - Adding support for access based enumeration on SMB file shares, file share visibility on SMB file shares, and file upload notifications for all file shares
+
+## __Amazon API Gateway__
+  - ### Features
+    - Support disabling the default execute-api endpoint for REST APIs.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Support for Appliance mode on Transit Gateway that simplifies deployment of stateful network appliances. Added support for AWS Client VPN Self-Service Portal.
+
+## __Amazon Simple Email Service__
+  - ### Features
+    - This release enables customers to manage their own contact lists and end-user subscription preferences.
+
+## __CodeArtifact__
+  - ### Features
+    - Add support for tagging of CodeArtifact domain and repository resources.
+
+## __Elastic Load Balancing__
+  - ### Features
+    - Application Load Balancer (ALB) now supports the gRPC protocol-version. With this release, customers can use ALB to route and load balance gRPC traffic between gRPC enabled clients and microservices.
+
 # __1.11.890__ __2020-10-28__
 ## __AWS IoT__
   - ### Features
