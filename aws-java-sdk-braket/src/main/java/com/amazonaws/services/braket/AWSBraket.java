@@ -57,7 +57,7 @@ public interface AWSBraket {
      * @throws ThrottlingException
      *         The throttling rate limit is met.
      * @throws InternalServiceException
-     *         The request processing has failed because of an unknown error, exception or failure.
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by an AWS service.
      * @sample AWSBraket.CancelQuantumTask
@@ -80,9 +80,9 @@ public interface AWSBraket {
      * @throws DeviceOfflineException
      *         The specified device is currently offline.
      * @throws InternalServiceException
-     *         The request processing has failed because of an unknown error, exception or failure.
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws ServiceQuotaExceededException
-     *         The request failed because a service quota is met.
+     *         The request failed because a service quota is exceeded.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by an AWS service.
      * @sample AWSBraket.CreateQuantumTask
@@ -105,7 +105,7 @@ public interface AWSBraket {
      * @throws ThrottlingException
      *         The throttling rate limit is met.
      * @throws InternalServiceException
-     *         The request processing has failed because of an unknown error, exception or failure.
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by an AWS service.
      * @sample AWSBraket.GetDevice
@@ -128,7 +128,7 @@ public interface AWSBraket {
      * @throws ThrottlingException
      *         The throttling rate limit is met.
      * @throws InternalServiceException
-     *         The request processing has failed because of an unknown error, exception or failure.
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by an AWS service.
      * @sample AWSBraket.GetQuantumTask
@@ -136,6 +136,25 @@ public interface AWSBraket {
      *      Documentation</a>
      */
     GetQuantumTaskResult getQuantumTask(GetQuantumTaskRequest getQuantumTaskRequest);
+
+    /**
+     * <p>
+     * Shows the tags associated with this resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @sample AWSBraket.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
      * <p>
@@ -149,7 +168,7 @@ public interface AWSBraket {
      * @throws ThrottlingException
      *         The throttling rate limit is met.
      * @throws InternalServiceException
-     *         The request processing has failed because of an unknown error, exception or failure.
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by an AWS service.
      * @sample AWSBraket.SearchDevices
@@ -170,7 +189,7 @@ public interface AWSBraket {
      * @throws ThrottlingException
      *         The throttling rate limit is met.
      * @throws InternalServiceException
-     *         The request processing has failed because of an unknown error, exception or failure.
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by an AWS service.
      * @sample AWSBraket.SearchQuantumTasks
@@ -178,6 +197,44 @@ public interface AWSBraket {
      *      Documentation</a>
      */
     SearchQuantumTasksResult searchQuantumTasks(SearchQuantumTasksRequest searchQuantumTasksRequest);
+
+    /**
+     * <p>
+     * Add a tag to the specified resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @sample AWSBraket.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Remove tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @sample AWSBraket.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

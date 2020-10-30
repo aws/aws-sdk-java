@@ -165,7 +165,7 @@ public class AWSBraketClient extends AmazonWebServiceClient implements AWSBraket
      * @throws ThrottlingException
      *         The throttling rate limit is met.
      * @throws InternalServiceException
-     *         The request processing has failed because of an unknown error, exception or failure.
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by an AWS service.
      * @sample AWSBraket.CancelQuantumTask
@@ -229,9 +229,9 @@ public class AWSBraketClient extends AmazonWebServiceClient implements AWSBraket
      * @throws DeviceOfflineException
      *         The specified device is currently offline.
      * @throws InternalServiceException
-     *         The request processing has failed because of an unknown error, exception or failure.
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws ServiceQuotaExceededException
-     *         The request failed because a service quota is met.
+     *         The request failed because a service quota is exceeded.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by an AWS service.
      * @sample AWSBraket.CreateQuantumTask
@@ -295,7 +295,7 @@ public class AWSBraketClient extends AmazonWebServiceClient implements AWSBraket
      * @throws ThrottlingException
      *         The throttling rate limit is met.
      * @throws InternalServiceException
-     *         The request processing has failed because of an unknown error, exception or failure.
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by an AWS service.
      * @sample AWSBraket.GetDevice
@@ -359,7 +359,7 @@ public class AWSBraketClient extends AmazonWebServiceClient implements AWSBraket
      * @throws ThrottlingException
      *         The throttling rate limit is met.
      * @throws InternalServiceException
-     *         The request processing has failed because of an unknown error, exception or failure.
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by an AWS service.
      * @sample AWSBraket.GetQuantumTask
@@ -411,6 +411,66 @@ public class AWSBraketClient extends AmazonWebServiceClient implements AWSBraket
 
     /**
      * <p>
+     * Shows the tags associated with this resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @sample AWSBraket.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Braket");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Searches for devices using the specified filters.
      * </p>
      * 
@@ -421,7 +481,7 @@ public class AWSBraketClient extends AmazonWebServiceClient implements AWSBraket
      * @throws ThrottlingException
      *         The throttling rate limit is met.
      * @throws InternalServiceException
-     *         The request processing has failed because of an unknown error, exception or failure.
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by an AWS service.
      * @sample AWSBraket.SearchDevices
@@ -483,7 +543,7 @@ public class AWSBraketClient extends AmazonWebServiceClient implements AWSBraket
      * @throws ThrottlingException
      *         The throttling rate limit is met.
      * @throws InternalServiceException
-     *         The request processing has failed because of an unknown error, exception or failure.
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by an AWS service.
      * @sample AWSBraket.SearchQuantumTasks
@@ -523,6 +583,126 @@ public class AWSBraketClient extends AmazonWebServiceClient implements AWSBraket
 
             HttpResponseHandler<AmazonWebServiceResponse<SearchQuantumTasksResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SearchQuantumTasksResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Add a tag to the specified resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @sample AWSBraket.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Braket");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Remove tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @sample AWSBraket.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Braket");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

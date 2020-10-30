@@ -1467,7 +1467,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * For Redis engine version 6.04 onwards: Creates a Redis user. For more information, see <a
+     * For Redis engine version 6.x onwards: Creates a Redis user. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access
      * Control (RBAC)</a>.
      * </p>
@@ -1532,7 +1532,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * For Redis engine version 6.04 onwards: Creates a Redis user group. For more information, see <a
+     * For Redis engine version 6.x onwards: Creates a Redis user group. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access
      * Control (RBAC)</a>
      * </p>
@@ -5052,13 +5052,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      * <li>
      * <p>
      * Cache cluster message:
-     * <code>Failover from master node &lt;primary-node-id&gt; to replica node &lt;node-id&gt; completed</code>
+     * <code>Failover from primary node &lt;primary-node-id&gt; to replica node &lt;node-id&gt; completed</code>
      * </p>
      * </li>
      * <li>
      * <p>
      * Replication group message:
-     * <code>Failover from master node &lt;primary-node-id&gt; to replica node &lt;node-id&gt; completed</code>
+     * <code>Failover from primary node &lt;primary-node-id&gt; to replica node &lt;node-id&gt; completed</code>
      * </p>
      * </li>
      * <li>

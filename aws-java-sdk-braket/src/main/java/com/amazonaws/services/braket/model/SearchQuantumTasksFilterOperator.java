@@ -20,12 +20,12 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum SearchQuantumTasksFilterOperator {
 
-    BETWEEN("BETWEEN"),
+    LT("LT"),
+    LTE("LTE"),
     EQUAL("EQUAL"),
     GT("GT"),
     GTE("GTE"),
-    LT("LT"),
-    LTE("LTE");
+    BETWEEN("BETWEEN");
 
     private String value;
 

@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -2932,12 +2932,12 @@
         "c2jName" : "description",
         "c2jShape" : "NonEmptyString",
         "deprecated" : false,
-        "documentation" : "<p>The description of the EC2 AMI. </p>",
+        "documentation" : "<p>The description of the EC2 AMI. Minimum and maximum length are in characters.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The description of the EC2 AMI. </p>\n@param description The description of the EC2 AMI.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The description of the EC2 AMI. Minimum and maximum length are in characters.</p>\n@param description The description of the EC2 AMI. Minimum and maximum length are in characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withDescription",
-        "getterDocumentation" : "/**<p>The description of the EC2 AMI. </p>\n@return The description of the EC2 AMI.*/",
+        "getterDocumentation" : "/**<p>The description of the EC2 AMI. Minimum and maximum length are in characters.</p>\n@return The description of the EC2 AMI. Minimum and maximum length are in characters.*/",
         "getterMethodName" : "getDescription",
         "getterModel" : {
           "returnType" : "String",
@@ -2971,7 +2971,7 @@
         "marshallingType" : "STRING",
         "name" : "Description",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The description of the EC2 AMI. </p>\n@param description The description of the EC2 AMI.*/",
+        "setterDocumentation" : "/**<p>The description of the EC2 AMI. Minimum and maximum length are in characters.</p>\n@param description The description of the EC2 AMI. Minimum and maximum length are in characters.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
           "timestampFormat" : null,
@@ -2986,13 +2986,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The description of the EC2 AMI. </p>\n@param description The description of the EC2 AMI.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The description of the EC2 AMI. Minimum and maximum length are in characters.</p>\n@param description The description of the EC2 AMI. Minimum and maximum length are in characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "description",
           "variableType" : "String",
-          "documentation" : "<p>The description of the EC2 AMI. </p>",
+          "documentation" : "<p>The description of the EC2 AMI. Minimum and maximum length are in characters.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -3211,12 +3211,12 @@
           "c2jName" : "description",
           "c2jShape" : "NonEmptyString",
           "deprecated" : false,
-          "documentation" : "<p>The description of the EC2 AMI. </p>",
+          "documentation" : "<p>The description of the EC2 AMI. Minimum and maximum length are in characters.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The description of the EC2 AMI. </p>\n@param description The description of the EC2 AMI.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The description of the EC2 AMI. Minimum and maximum length are in characters.</p>\n@param description The description of the EC2 AMI. Minimum and maximum length are in characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withDescription",
-          "getterDocumentation" : "/**<p>The description of the EC2 AMI. </p>\n@return The description of the EC2 AMI.*/",
+          "getterDocumentation" : "/**<p>The description of the EC2 AMI. Minimum and maximum length are in characters.</p>\n@return The description of the EC2 AMI. Minimum and maximum length are in characters.*/",
           "getterMethodName" : "getDescription",
           "getterModel" : {
             "returnType" : "String",
@@ -3250,7 +3250,7 @@
           "marshallingType" : "STRING",
           "name" : "Description",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The description of the EC2 AMI. </p>\n@param description The description of the EC2 AMI.*/",
+          "setterDocumentation" : "/**<p>The description of the EC2 AMI. Minimum and maximum length are in characters.</p>\n@param description The description of the EC2 AMI. Minimum and maximum length are in characters.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
             "timestampFormat" : null,
@@ -3265,13 +3265,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The description of the EC2 AMI. </p>\n@param description The description of the EC2 AMI.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The description of the EC2 AMI. Minimum and maximum length are in characters.</p>\n@param description The description of the EC2 AMI. Minimum and maximum length are in characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "description",
             "variableType" : "String",
-            "documentation" : "<p>The description of the EC2 AMI. </p>",
+            "documentation" : "<p>The description of the EC2 AMI. Minimum and maximum length are in characters.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -3673,12 +3673,12 @@
         "c2jName" : "description",
         "c2jShape" : "NonEmptyString",
         "deprecated" : false,
-        "documentation" : "<p>The description of the distribution configuration. </p>",
+        "documentation" : "<p>The description of the distribution configuration. Minimum and maximum length are in characters.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The description of the distribution configuration. </p>\n@param description The description of the distribution configuration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The description of the distribution configuration. Minimum and maximum length are in characters.</p>\n@param description The description of the distribution configuration. Minimum and maximum length are in characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withDescription",
-        "getterDocumentation" : "/**<p>The description of the distribution configuration. </p>\n@return The description of the distribution configuration.*/",
+        "getterDocumentation" : "/**<p>The description of the distribution configuration. Minimum and maximum length are in characters.</p>\n@return The description of the distribution configuration. Minimum and maximum length are in characters.*/",
         "getterMethodName" : "getDescription",
         "getterModel" : {
           "returnType" : "String",
@@ -3712,7 +3712,7 @@
         "marshallingType" : "STRING",
         "name" : "Description",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The description of the distribution configuration. </p>\n@param description The description of the distribution configuration.*/",
+        "setterDocumentation" : "/**<p>The description of the distribution configuration. Minimum and maximum length are in characters.</p>\n@param description The description of the distribution configuration. Minimum and maximum length are in characters.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
           "timestampFormat" : null,
@@ -3727,13 +3727,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The description of the distribution configuration. </p>\n@param description The description of the distribution configuration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The description of the distribution configuration. Minimum and maximum length are in characters.</p>\n@param description The description of the distribution configuration. Minimum and maximum length are in characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "description",
           "variableType" : "String",
-          "documentation" : "<p>The description of the distribution configuration. </p>",
+          "documentation" : "<p>The description of the distribution configuration. Minimum and maximum length are in characters.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4342,12 +4342,12 @@
           "c2jName" : "description",
           "c2jShape" : "NonEmptyString",
           "deprecated" : false,
-          "documentation" : "<p>The description of the distribution configuration. </p>",
+          "documentation" : "<p>The description of the distribution configuration. Minimum and maximum length are in characters.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The description of the distribution configuration. </p>\n@param description The description of the distribution configuration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The description of the distribution configuration. Minimum and maximum length are in characters.</p>\n@param description The description of the distribution configuration. Minimum and maximum length are in characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withDescription",
-          "getterDocumentation" : "/**<p>The description of the distribution configuration. </p>\n@return The description of the distribution configuration.*/",
+          "getterDocumentation" : "/**<p>The description of the distribution configuration. Minimum and maximum length are in characters.</p>\n@return The description of the distribution configuration. Minimum and maximum length are in characters.*/",
           "getterMethodName" : "getDescription",
           "getterModel" : {
             "returnType" : "String",
@@ -4381,7 +4381,7 @@
           "marshallingType" : "STRING",
           "name" : "Description",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The description of the distribution configuration. </p>\n@param description The description of the distribution configuration.*/",
+          "setterDocumentation" : "/**<p>The description of the distribution configuration. Minimum and maximum length are in characters.</p>\n@param description The description of the distribution configuration. Minimum and maximum length are in characters.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
             "timestampFormat" : null,
@@ -4396,13 +4396,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The description of the distribution configuration. </p>\n@param description The description of the distribution configuration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The description of the distribution configuration. Minimum and maximum length are in characters.</p>\n@param description The description of the distribution configuration. Minimum and maximum length are in characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "description",
             "variableType" : "String",
-            "documentation" : "<p>The description of the distribution configuration. </p>",
+            "documentation" : "<p>The description of the distribution configuration. Minimum and maximum length are in characters.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -56967,7 +56967,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "nextToken",
-        "c2jShape" : "NonEmptyString",
+        "c2jShape" : "PaginationToken",
         "deprecated" : false,
         "documentation" : "<p>A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>",
         "endpointDiscoveryId" : false,
@@ -57178,7 +57178,7 @@
         },
         "NextToken" : {
           "c2jName" : "nextToken",
-          "c2jShape" : "NonEmptyString",
+          "c2jShape" : "PaginationToken",
           "deprecated" : false,
           "documentation" : "<p>A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>",
           "endpointDiscoveryId" : false,
@@ -57510,7 +57510,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "nextToken",
-        "c2jShape" : "NonEmptyString",
+        "c2jShape" : "PaginationToken",
         "deprecated" : false,
         "documentation" : "<p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>",
         "endpointDiscoveryId" : false,
@@ -57735,7 +57735,7 @@
         },
         "NextToken" : {
           "c2jName" : "nextToken",
-          "c2jShape" : "NonEmptyString",
+          "c2jShape" : "PaginationToken",
           "deprecated" : false,
           "documentation" : "<p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>",
           "endpointDiscoveryId" : false,
@@ -58216,7 +58216,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "nextToken",
-        "c2jShape" : "NonEmptyString",
+        "c2jShape" : "PaginationToken",
         "deprecated" : false,
         "documentation" : "<p>A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>",
         "endpointDiscoveryId" : false,
@@ -58511,7 +58511,7 @@
         },
         "NextToken" : {
           "c2jName" : "nextToken",
-          "c2jShape" : "NonEmptyString",
+          "c2jShape" : "PaginationToken",
           "deprecated" : false,
           "documentation" : "<p>A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>",
           "endpointDiscoveryId" : false,
@@ -58913,7 +58913,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "nextToken",
-        "c2jShape" : "NonEmptyString",
+        "c2jShape" : "PaginationToken",
         "deprecated" : false,
         "documentation" : "<p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>",
         "endpointDiscoveryId" : false,
@@ -59138,7 +59138,7 @@
         },
         "NextToken" : {
           "c2jName" : "nextToken",
-          "c2jShape" : "NonEmptyString",
+          "c2jShape" : "PaginationToken",
           "deprecated" : false,
           "documentation" : "<p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>",
           "endpointDiscoveryId" : false,
@@ -59550,7 +59550,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "nextToken",
-        "c2jShape" : "NonEmptyString",
+        "c2jShape" : "PaginationToken",
         "deprecated" : false,
         "documentation" : "<p>A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>",
         "endpointDiscoveryId" : false,
@@ -59845,7 +59845,7 @@
         },
         "NextToken" : {
           "c2jName" : "nextToken",
-          "c2jShape" : "NonEmptyString",
+          "c2jShape" : "PaginationToken",
           "deprecated" : false,
           "documentation" : "<p>A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>",
           "endpointDiscoveryId" : false,
@@ -60177,7 +60177,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "nextToken",
-        "c2jShape" : "NonEmptyString",
+        "c2jShape" : "PaginationToken",
         "deprecated" : false,
         "documentation" : "<p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>",
         "endpointDiscoveryId" : false,
@@ -60402,7 +60402,7 @@
         },
         "NextToken" : {
           "c2jName" : "nextToken",
-          "c2jShape" : "NonEmptyString",
+          "c2jShape" : "PaginationToken",
           "deprecated" : false,
           "documentation" : "<p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>",
           "endpointDiscoveryId" : false,
@@ -60883,7 +60883,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "nextToken",
-        "c2jShape" : "NonEmptyString",
+        "c2jShape" : "PaginationToken",
         "deprecated" : false,
         "documentation" : "<p>A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>",
         "endpointDiscoveryId" : false,
@@ -61248,7 +61248,7 @@
         },
         "NextToken" : {
           "c2jName" : "nextToken",
-          "c2jShape" : "NonEmptyString",
+          "c2jShape" : "PaginationToken",
           "deprecated" : false,
           "documentation" : "<p>A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>",
           "endpointDiscoveryId" : false,
@@ -61580,7 +61580,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "nextToken",
-        "c2jShape" : "NonEmptyString",
+        "c2jShape" : "PaginationToken",
         "deprecated" : false,
         "documentation" : "<p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>",
         "endpointDiscoveryId" : false,
@@ -61805,7 +61805,7 @@
         },
         "NextToken" : {
           "c2jName" : "nextToken",
-          "c2jShape" : "NonEmptyString",
+          "c2jShape" : "PaginationToken",
           "deprecated" : false,
           "documentation" : "<p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>",
           "endpointDiscoveryId" : false,
@@ -62286,7 +62286,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "nextToken",
-        "c2jShape" : "NonEmptyString",
+        "c2jShape" : "PaginationToken",
         "deprecated" : false,
         "documentation" : "<p>A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>",
         "endpointDiscoveryId" : false,
@@ -62651,7 +62651,7 @@
         },
         "NextToken" : {
           "c2jName" : "nextToken",
-          "c2jShape" : "NonEmptyString",
+          "c2jShape" : "PaginationToken",
           "deprecated" : false,
           "documentation" : "<p>A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>",
           "endpointDiscoveryId" : false,
@@ -62983,7 +62983,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "nextToken",
-        "c2jShape" : "NonEmptyString",
+        "c2jShape" : "PaginationToken",
         "deprecated" : false,
         "documentation" : "<p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>",
         "endpointDiscoveryId" : false,
@@ -63208,7 +63208,7 @@
         },
         "NextToken" : {
           "c2jName" : "nextToken",
-          "c2jShape" : "NonEmptyString",
+          "c2jShape" : "PaginationToken",
           "deprecated" : false,
           "documentation" : "<p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>",
           "endpointDiscoveryId" : false,
@@ -63620,7 +63620,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "nextToken",
-        "c2jShape" : "NonEmptyString",
+        "c2jShape" : "PaginationToken",
         "deprecated" : false,
         "documentation" : "<p>A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>",
         "endpointDiscoveryId" : false,
@@ -63915,7 +63915,7 @@
         },
         "NextToken" : {
           "c2jName" : "nextToken",
-          "c2jShape" : "NonEmptyString",
+          "c2jShape" : "PaginationToken",
           "deprecated" : false,
           "documentation" : "<p>A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>",
           "endpointDiscoveryId" : false,
@@ -64247,7 +64247,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "nextToken",
-        "c2jShape" : "NonEmptyString",
+        "c2jShape" : "PaginationToken",
         "deprecated" : false,
         "documentation" : "<p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>",
         "endpointDiscoveryId" : false,
@@ -64472,7 +64472,7 @@
         },
         "NextToken" : {
           "c2jName" : "nextToken",
-          "c2jShape" : "NonEmptyString",
+          "c2jShape" : "PaginationToken",
           "deprecated" : false,
           "documentation" : "<p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>",
           "endpointDiscoveryId" : false,
@@ -64953,7 +64953,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "nextToken",
-        "c2jShape" : "NonEmptyString",
+        "c2jShape" : "PaginationToken",
         "deprecated" : false,
         "documentation" : "<p>A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>",
         "endpointDiscoveryId" : false,
@@ -65248,7 +65248,7 @@
         },
         "NextToken" : {
           "c2jName" : "nextToken",
-          "c2jShape" : "NonEmptyString",
+          "c2jShape" : "PaginationToken",
           "deprecated" : false,
           "documentation" : "<p>A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>",
           "endpointDiscoveryId" : false,
@@ -65650,7 +65650,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "nextToken",
-        "c2jShape" : "NonEmptyString",
+        "c2jShape" : "PaginationToken",
         "deprecated" : false,
         "documentation" : "<p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>",
         "endpointDiscoveryId" : false,
@@ -65875,7 +65875,7 @@
         },
         "NextToken" : {
           "c2jName" : "nextToken",
-          "c2jShape" : "NonEmptyString",
+          "c2jShape" : "PaginationToken",
           "deprecated" : false,
           "documentation" : "<p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>",
           "endpointDiscoveryId" : false,
@@ -66356,7 +66356,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "nextToken",
-        "c2jShape" : "NonEmptyString",
+        "c2jShape" : "PaginationToken",
         "deprecated" : false,
         "documentation" : "<p>A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>",
         "endpointDiscoveryId" : false,
@@ -66651,7 +66651,7 @@
         },
         "NextToken" : {
           "c2jName" : "nextToken",
-          "c2jShape" : "NonEmptyString",
+          "c2jShape" : "PaginationToken",
           "deprecated" : false,
           "documentation" : "<p>A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>",
           "endpointDiscoveryId" : false,
@@ -67053,7 +67053,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "nextToken",
-        "c2jShape" : "NonEmptyString",
+        "c2jShape" : "PaginationToken",
         "deprecated" : false,
         "documentation" : "<p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>",
         "endpointDiscoveryId" : false,
@@ -67278,7 +67278,7 @@
         },
         "NextToken" : {
           "c2jName" : "nextToken",
-          "c2jShape" : "NonEmptyString",
+          "c2jShape" : "PaginationToken",
           "deprecated" : false,
           "documentation" : "<p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>",
           "endpointDiscoveryId" : false,
@@ -67690,7 +67690,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "nextToken",
-        "c2jShape" : "NonEmptyString",
+        "c2jShape" : "PaginationToken",
         "deprecated" : false,
         "documentation" : "<p>A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>",
         "endpointDiscoveryId" : false,
@@ -67985,7 +67985,7 @@
         },
         "NextToken" : {
           "c2jName" : "nextToken",
-          "c2jShape" : "NonEmptyString",
+          "c2jShape" : "PaginationToken",
           "deprecated" : false,
           "documentation" : "<p>A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>",
           "endpointDiscoveryId" : false,
@@ -68317,7 +68317,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "nextToken",
-        "c2jShape" : "NonEmptyString",
+        "c2jShape" : "PaginationToken",
         "deprecated" : false,
         "documentation" : "<p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>",
         "endpointDiscoveryId" : false,
@@ -68542,7 +68542,7 @@
         },
         "NextToken" : {
           "c2jName" : "nextToken",
-          "c2jShape" : "NonEmptyString",
+          "c2jShape" : "PaginationToken",
           "deprecated" : false,
           "documentation" : "<p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>",
           "endpointDiscoveryId" : false,

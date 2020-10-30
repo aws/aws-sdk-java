@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.braket.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -43,6 +45,8 @@ public class QuantumTaskSummaryMarshaller {
             .marshallLocationName("shots").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final QuantumTaskSummaryMarshaller instance = new QuantumTaskSummaryMarshaller();
 
@@ -68,6 +72,7 @@ public class QuantumTaskSummaryMarshaller {
             protocolMarshaller.marshall(quantumTaskSummary.getQuantumTaskArn(), QUANTUMTASKARN_BINDING);
             protocolMarshaller.marshall(quantumTaskSummary.getShots(), SHOTS_BINDING);
             protocolMarshaller.marshall(quantumTaskSummary.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(quantumTaskSummary.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

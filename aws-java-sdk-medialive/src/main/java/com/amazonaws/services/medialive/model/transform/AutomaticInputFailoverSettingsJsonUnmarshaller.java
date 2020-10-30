@@ -48,6 +48,17 @@ public class AutomaticInputFailoverSettingsJsonUnmarshaller implements Unmarshal
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("errorClearTimeMsec", targetDepth)) {
+                    context.nextToken();
+                    automaticInputFailoverSettings.setErrorClearTimeMsec(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("failoverConditions", targetDepth)) {
+                    context.nextToken();
+                    automaticInputFailoverSettings.setFailoverConditions(new ListUnmarshaller<FailoverCondition>(FailoverConditionJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("inputPreference", targetDepth)) {
                     context.nextToken();
                     automaticInputFailoverSettings.setInputPreference(context.getUnmarshaller(String.class).unmarshall(context));

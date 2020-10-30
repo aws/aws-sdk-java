@@ -409,9 +409,9 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit dates. The
-     * default value is <code>false</code>. For more information about date-based folder partitoning, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     * >Using date-based folder partitioning</a>
+     * default value is <code>false</code>. For more information about date-based folder partitoning, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning">Using
+     * date-based folder partitioning</a>.
      * </p>
      */
     private Boolean datePartitionEnabled;
@@ -3587,17 +3587,17 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit dates. The
-     * default value is <code>false</code>. For more information about date-based folder partitoning, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     * >Using date-based folder partitioning</a>
+     * default value is <code>false</code>. For more information about date-based folder partitoning, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning">Using
+     * date-based folder partitioning</a>.
      * </p>
      * 
      * @param datePartitionEnabled
      *        When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit
      *        dates. The default value is <code>false</code>. For more information about date-based folder partitoning,
      *        see <a href=
-     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     *        >Using date-based folder partitioning</a>
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning"
+     *        >Using date-based folder partitioning</a>.
      */
 
     public void setDatePartitionEnabled(Boolean datePartitionEnabled) {
@@ -3607,16 +3607,16 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit dates. The
-     * default value is <code>false</code>. For more information about date-based folder partitoning, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     * >Using date-based folder partitioning</a>
+     * default value is <code>false</code>. For more information about date-based folder partitoning, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning">Using
+     * date-based folder partitioning</a>.
      * </p>
      * 
      * @return When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit
      *         dates. The default value is <code>false</code>. For more information about date-based folder partitoning,
      *         see <a href=
-     *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     *         >Using date-based folder partitioning</a>
+     *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning"
+     *         >Using date-based folder partitioning</a>.
      */
 
     public Boolean getDatePartitionEnabled() {
@@ -3626,17 +3626,17 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit dates. The
-     * default value is <code>false</code>. For more information about date-based folder partitoning, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     * >Using date-based folder partitioning</a>
+     * default value is <code>false</code>. For more information about date-based folder partitoning, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning">Using
+     * date-based folder partitioning</a>.
      * </p>
      * 
      * @param datePartitionEnabled
      *        When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit
      *        dates. The default value is <code>false</code>. For more information about date-based folder partitoning,
      *        see <a href=
-     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     *        >Using date-based folder partitioning</a>
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning"
+     *        >Using date-based folder partitioning</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3648,16 +3648,16 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit dates. The
-     * default value is <code>false</code>. For more information about date-based folder partitoning, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     * >Using date-based folder partitioning</a>
+     * default value is <code>false</code>. For more information about date-based folder partitoning, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning">Using
+     * date-based folder partitioning</a>.
      * </p>
      * 
      * @return When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit
      *         dates. The default value is <code>false</code>. For more information about date-based folder partitoning,
      *         see <a href=
-     *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     *         >Using date-based folder partitioning</a>
+     *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning"
+     *         >Using date-based folder partitioning</a>.
      */
 
     public Boolean isDatePartitionEnabled() {

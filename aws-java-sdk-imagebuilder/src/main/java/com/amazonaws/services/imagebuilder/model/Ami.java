@@ -48,7 +48,7 @@ public class Ami implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The description of the EC2 AMI.
+     * The description of the EC2 AMI. Minimum and maximum length are in characters.
      * </p>
      */
     private String description;
@@ -183,11 +183,11 @@ public class Ami implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description of the EC2 AMI.
+     * The description of the EC2 AMI. Minimum and maximum length are in characters.
      * </p>
      * 
      * @param description
-     *        The description of the EC2 AMI.
+     *        The description of the EC2 AMI. Minimum and maximum length are in characters.
      */
 
     public void setDescription(String description) {
@@ -196,10 +196,10 @@ public class Ami implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description of the EC2 AMI.
+     * The description of the EC2 AMI. Minimum and maximum length are in characters.
      * </p>
      * 
-     * @return The description of the EC2 AMI.
+     * @return The description of the EC2 AMI. Minimum and maximum length are in characters.
      */
 
     public String getDescription() {
@@ -208,11 +208,11 @@ public class Ami implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description of the EC2 AMI.
+     * The description of the EC2 AMI. Minimum and maximum length are in characters.
      * </p>
      * 
      * @param description
-     *        The description of the EC2 AMI.
+     *        The description of the EC2 AMI. Minimum and maximum length are in characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

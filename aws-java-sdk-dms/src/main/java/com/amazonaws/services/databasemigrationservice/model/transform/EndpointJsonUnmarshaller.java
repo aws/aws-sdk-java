@@ -176,6 +176,10 @@ public class EndpointJsonUnmarshaller implements Unmarshaller<Endpoint, JsonUnma
                     context.nextToken();
                     endpoint.setIBMDb2Settings(IBMDb2SettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DocDbSettings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setDocDbSettings(DocDbSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

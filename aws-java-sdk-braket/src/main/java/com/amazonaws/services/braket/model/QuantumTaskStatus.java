@@ -20,13 +20,13 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum QuantumTaskStatus {
 
-    CANCELLED("CANCELLED"),
-    CANCELLING("CANCELLING"),
-    COMPLETED("COMPLETED"),
     CREATED("CREATED"),
-    FAILED("FAILED"),
     QUEUED("QUEUED"),
-    RUNNING("RUNNING");
+    RUNNING("RUNNING"),
+    COMPLETED("COMPLETED"),
+    FAILED("FAILED"),
+    CANCELLING("CANCELLING"),
+    CANCELLED("CANCELLED");
 
     private String value;
 

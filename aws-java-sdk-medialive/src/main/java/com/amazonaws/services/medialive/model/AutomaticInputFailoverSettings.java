@@ -26,10 +26,144 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AutomaticInputFailoverSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * This clear time defines the requirement a recovered input must meet to be considered healthy. The input must have
+     * no failover conditions for this length of time. Enter a time in milliseconds. This value is particularly
+     * important if the input_preference for the failover pair is set to PRIMARY_INPUT_PREFERRED, because after this
+     * time, MediaLive will switch back to the primary input.
+     */
+    private Integer errorClearTimeMsec;
+    /**
+     * A list of failover conditions. If any of these conditions occur, MediaLive will perform a failover to the other
+     * input.
+     */
+    private java.util.List<FailoverCondition> failoverConditions;
     /** Input preference when deciding which input to make active when a previously failed input has recovered. */
     private String inputPreference;
     /** The input ID of the secondary input in the automatic input failover pair. */
     private String secondaryInputId;
+
+    /**
+     * This clear time defines the requirement a recovered input must meet to be considered healthy. The input must have
+     * no failover conditions for this length of time. Enter a time in milliseconds. This value is particularly
+     * important if the input_preference for the failover pair is set to PRIMARY_INPUT_PREFERRED, because after this
+     * time, MediaLive will switch back to the primary input.
+     * 
+     * @param errorClearTimeMsec
+     *        This clear time defines the requirement a recovered input must meet to be considered healthy. The input
+     *        must have no failover conditions for this length of time. Enter a time in milliseconds. This value is
+     *        particularly important if the input_preference for the failover pair is set to PRIMARY_INPUT_PREFERRED,
+     *        because after this time, MediaLive will switch back to the primary input.
+     */
+
+    public void setErrorClearTimeMsec(Integer errorClearTimeMsec) {
+        this.errorClearTimeMsec = errorClearTimeMsec;
+    }
+
+    /**
+     * This clear time defines the requirement a recovered input must meet to be considered healthy. The input must have
+     * no failover conditions for this length of time. Enter a time in milliseconds. This value is particularly
+     * important if the input_preference for the failover pair is set to PRIMARY_INPUT_PREFERRED, because after this
+     * time, MediaLive will switch back to the primary input.
+     * 
+     * @return This clear time defines the requirement a recovered input must meet to be considered healthy. The input
+     *         must have no failover conditions for this length of time. Enter a time in milliseconds. This value is
+     *         particularly important if the input_preference for the failover pair is set to PRIMARY_INPUT_PREFERRED,
+     *         because after this time, MediaLive will switch back to the primary input.
+     */
+
+    public Integer getErrorClearTimeMsec() {
+        return this.errorClearTimeMsec;
+    }
+
+    /**
+     * This clear time defines the requirement a recovered input must meet to be considered healthy. The input must have
+     * no failover conditions for this length of time. Enter a time in milliseconds. This value is particularly
+     * important if the input_preference for the failover pair is set to PRIMARY_INPUT_PREFERRED, because after this
+     * time, MediaLive will switch back to the primary input.
+     * 
+     * @param errorClearTimeMsec
+     *        This clear time defines the requirement a recovered input must meet to be considered healthy. The input
+     *        must have no failover conditions for this length of time. Enter a time in milliseconds. This value is
+     *        particularly important if the input_preference for the failover pair is set to PRIMARY_INPUT_PREFERRED,
+     *        because after this time, MediaLive will switch back to the primary input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomaticInputFailoverSettings withErrorClearTimeMsec(Integer errorClearTimeMsec) {
+        setErrorClearTimeMsec(errorClearTimeMsec);
+        return this;
+    }
+
+    /**
+     * A list of failover conditions. If any of these conditions occur, MediaLive will perform a failover to the other
+     * input.
+     * 
+     * @return A list of failover conditions. If any of these conditions occur, MediaLive will perform a failover to the
+     *         other input.
+     */
+
+    public java.util.List<FailoverCondition> getFailoverConditions() {
+        return failoverConditions;
+    }
+
+    /**
+     * A list of failover conditions. If any of these conditions occur, MediaLive will perform a failover to the other
+     * input.
+     * 
+     * @param failoverConditions
+     *        A list of failover conditions. If any of these conditions occur, MediaLive will perform a failover to the
+     *        other input.
+     */
+
+    public void setFailoverConditions(java.util.Collection<FailoverCondition> failoverConditions) {
+        if (failoverConditions == null) {
+            this.failoverConditions = null;
+            return;
+        }
+
+        this.failoverConditions = new java.util.ArrayList<FailoverCondition>(failoverConditions);
+    }
+
+    /**
+     * A list of failover conditions. If any of these conditions occur, MediaLive will perform a failover to the other
+     * input.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFailoverConditions(java.util.Collection)} or {@link #withFailoverConditions(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param failoverConditions
+     *        A list of failover conditions. If any of these conditions occur, MediaLive will perform a failover to the
+     *        other input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomaticInputFailoverSettings withFailoverConditions(FailoverCondition... failoverConditions) {
+        if (this.failoverConditions == null) {
+            setFailoverConditions(new java.util.ArrayList<FailoverCondition>(failoverConditions.length));
+        }
+        for (FailoverCondition ele : failoverConditions) {
+            this.failoverConditions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * A list of failover conditions. If any of these conditions occur, MediaLive will perform a failover to the other
+     * input.
+     * 
+     * @param failoverConditions
+     *        A list of failover conditions. If any of these conditions occur, MediaLive will perform a failover to the
+     *        other input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomaticInputFailoverSettings withFailoverConditions(java.util.Collection<FailoverCondition> failoverConditions) {
+        setFailoverConditions(failoverConditions);
+        return this;
+    }
 
     /**
      * Input preference when deciding which input to make active when a previously failed input has recovered.
@@ -128,6 +262,10 @@ public class AutomaticInputFailoverSettings implements Serializable, Cloneable, 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getErrorClearTimeMsec() != null)
+            sb.append("ErrorClearTimeMsec: ").append(getErrorClearTimeMsec()).append(",");
+        if (getFailoverConditions() != null)
+            sb.append("FailoverConditions: ").append(getFailoverConditions()).append(",");
         if (getInputPreference() != null)
             sb.append("InputPreference: ").append(getInputPreference()).append(",");
         if (getSecondaryInputId() != null)
@@ -146,6 +284,14 @@ public class AutomaticInputFailoverSettings implements Serializable, Cloneable, 
         if (obj instanceof AutomaticInputFailoverSettings == false)
             return false;
         AutomaticInputFailoverSettings other = (AutomaticInputFailoverSettings) obj;
+        if (other.getErrorClearTimeMsec() == null ^ this.getErrorClearTimeMsec() == null)
+            return false;
+        if (other.getErrorClearTimeMsec() != null && other.getErrorClearTimeMsec().equals(this.getErrorClearTimeMsec()) == false)
+            return false;
+        if (other.getFailoverConditions() == null ^ this.getFailoverConditions() == null)
+            return false;
+        if (other.getFailoverConditions() != null && other.getFailoverConditions().equals(this.getFailoverConditions()) == false)
+            return false;
         if (other.getInputPreference() == null ^ this.getInputPreference() == null)
             return false;
         if (other.getInputPreference() != null && other.getInputPreference().equals(this.getInputPreference()) == false)
@@ -162,6 +308,8 @@ public class AutomaticInputFailoverSettings implements Serializable, Cloneable, 
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getErrorClearTimeMsec() == null) ? 0 : getErrorClearTimeMsec().hashCode());
+        hashCode = prime * hashCode + ((getFailoverConditions() == null) ? 0 : getFailoverConditions().hashCode());
         hashCode = prime * hashCode + ((getInputPreference() == null) ? 0 : getInputPreference().hashCode());
         hashCode = prime * hashCode + ((getSecondaryInputId() == null) ? 0 : getSecondaryInputId().hashCode());
         return hashCode;

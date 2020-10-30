@@ -2258,8 +2258,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * <p>
      * You can override some of these settings for a single message when you use the <code>Publish</code> action with
      * the <code>MessageAttributes.entry.N</code> parameter. For more information, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Sending an SMS Message</a> in the
-     * <i>Amazon SNS Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Publishing to a mobile phone</a> in
+     * the <i>Amazon SNS Developer Guide</i>.
      * </p>
      * 
      * @param setSMSAttributesRequest

@@ -54,6 +54,12 @@ public class CriterionAdditionalPropertiesJsonUnmarshaller implements Unmarshall
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("eqExactMatch", targetDepth)) {
+                    context.nextToken();
+                    criterionAdditionalProperties.setEqExactMatch(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("gt", targetDepth)) {
                     context.nextToken();
                     criterionAdditionalProperties.setGt(context.getUnmarshaller(Long.class).unmarshall(context));

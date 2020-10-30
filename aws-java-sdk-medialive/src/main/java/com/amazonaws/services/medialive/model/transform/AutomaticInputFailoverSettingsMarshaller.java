@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.medialive.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -27,6 +28,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AutomaticInputFailoverSettingsMarshaller {
 
+    private static final MarshallingInfo<Integer> ERRORCLEARTIMEMSEC_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("errorClearTimeMsec").build();
+    private static final MarshallingInfo<List> FAILOVERCONDITIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("failoverConditions").build();
     private static final MarshallingInfo<String> INPUTPREFERENCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputPreference").build();
     private static final MarshallingInfo<String> SECONDARYINPUTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -48,6 +53,8 @@ public class AutomaticInputFailoverSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(automaticInputFailoverSettings.getErrorClearTimeMsec(), ERRORCLEARTIMEMSEC_BINDING);
+            protocolMarshaller.marshall(automaticInputFailoverSettings.getFailoverConditions(), FAILOVERCONDITIONS_BINDING);
             protocolMarshaller.marshall(automaticInputFailoverSettings.getInputPreference(), INPUTPREFERENCE_BINDING);
             protocolMarshaller.marshall(automaticInputFailoverSettings.getSecondaryInputId(), SECONDARYINPUTID_BINDING);
         } catch (Exception e) {

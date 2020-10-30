@@ -309,6 +309,8 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      */
     private String resourceIdentifier;
 
+    private DocDbSettings docDbSettings;
+
     /**
      * <p>
      * The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters,
@@ -2253,6 +2255,32 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * @param docDbSettings
+     */
+
+    public void setDocDbSettings(DocDbSettings docDbSettings) {
+        this.docDbSettings = docDbSettings;
+    }
+
+    /**
+     * @return
+     */
+
+    public DocDbSettings getDocDbSettings() {
+        return this.docDbSettings;
+    }
+
+    /**
+     * @param docDbSettings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEndpointRequest withDocDbSettings(DocDbSettings docDbSettings) {
+        setDocDbSettings(docDbSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2325,7 +2353,9 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getIBMDb2Settings() != null)
             sb.append("IBMDb2Settings: ").append(getIBMDb2Settings()).append(",");
         if (getResourceIdentifier() != null)
-            sb.append("ResourceIdentifier: ").append(getResourceIdentifier());
+            sb.append("ResourceIdentifier: ").append(getResourceIdentifier()).append(",");
+        if (getDocDbSettings() != null)
+            sb.append("DocDbSettings: ").append(getDocDbSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -2464,6 +2494,10 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getResourceIdentifier() != null && other.getResourceIdentifier().equals(this.getResourceIdentifier()) == false)
             return false;
+        if (other.getDocDbSettings() == null ^ this.getDocDbSettings() == null)
+            return false;
+        if (other.getDocDbSettings() != null && other.getDocDbSettings().equals(this.getDocDbSettings()) == false)
+            return false;
         return true;
     }
 
@@ -2503,6 +2537,7 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getMicrosoftSQLServerSettings() == null) ? 0 : getMicrosoftSQLServerSettings().hashCode());
         hashCode = prime * hashCode + ((getIBMDb2Settings() == null) ? 0 : getIBMDb2Settings().hashCode());
         hashCode = prime * hashCode + ((getResourceIdentifier() == null) ? 0 : getResourceIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getDocDbSettings() == null) ? 0 : getDocDbSettings().hashCode());
         return hashCode;
     }
 

@@ -20,8 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum CancellationStatus {
 
-    CANCELLED("CANCELLED"),
-    CANCELLING("CANCELLING");
+    CANCELLING("CANCELLING"),
+    CANCELLED("CANCELLED");
 
     private String value;
 

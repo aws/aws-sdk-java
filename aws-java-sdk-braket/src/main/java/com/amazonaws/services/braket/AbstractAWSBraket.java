@@ -48,12 +48,27 @@ public class AbstractAWSBraket implements AWSBraket {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SearchDevicesResult searchDevices(SearchDevicesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public SearchQuantumTasksResult searchQuantumTasks(SearchQuantumTasksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

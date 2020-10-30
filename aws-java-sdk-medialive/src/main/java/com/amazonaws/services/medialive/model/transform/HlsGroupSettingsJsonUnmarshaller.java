@@ -101,6 +101,10 @@ public class HlsGroupSettingsJsonUnmarshaller implements Unmarshaller<HlsGroupSe
                     context.nextToken();
                     hlsGroupSettings.setDirectoryStructure(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("discontinuityTags", targetDepth)) {
+                    context.nextToken();
+                    hlsGroupSettings.setDiscontinuityTags(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("encryptionType", targetDepth)) {
                     context.nextToken();
                     hlsGroupSettings.setEncryptionType(context.getUnmarshaller(String.class).unmarshall(context));
@@ -116,6 +120,10 @@ public class HlsGroupSettingsJsonUnmarshaller implements Unmarshaller<HlsGroupSe
                 if (context.testExpression("iFrameOnlyPlaylists", targetDepth)) {
                     context.nextToken();
                     hlsGroupSettings.setIFrameOnlyPlaylists(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("incompleteSegmentBehavior", targetDepth)) {
+                    context.nextToken();
+                    hlsGroupSettings.setIncompleteSegmentBehavior(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("indexNSegments", targetDepth)) {
                     context.nextToken();

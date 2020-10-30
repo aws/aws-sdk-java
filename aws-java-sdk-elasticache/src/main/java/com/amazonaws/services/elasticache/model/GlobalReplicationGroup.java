@@ -68,7 +68,7 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
     private String engine;
     /**
      * <p>
-     * The Elasticache Redis engine version. For preview, it is Redis version 5.0.5 only.
+     * The Elasticache Redis engine version.
      * </p>
      */
     private String engineVersion;
@@ -331,11 +331,11 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Elasticache Redis engine version. For preview, it is Redis version 5.0.5 only.
+     * The Elasticache Redis engine version.
      * </p>
      * 
      * @param engineVersion
-     *        The Elasticache Redis engine version. For preview, it is Redis version 5.0.5 only.
+     *        The Elasticache Redis engine version.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -344,10 +344,10 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Elasticache Redis engine version. For preview, it is Redis version 5.0.5 only.
+     * The Elasticache Redis engine version.
      * </p>
      * 
-     * @return The Elasticache Redis engine version. For preview, it is Redis version 5.0.5 only.
+     * @return The Elasticache Redis engine version.
      */
 
     public String getEngineVersion() {
@@ -356,11 +356,11 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Elasticache Redis engine version. For preview, it is Redis version 5.0.5 only.
+     * The Elasticache Redis engine version.
      * </p>
      * 
      * @param engineVersion
-     *        The Elasticache Redis engine version. For preview, it is Redis version 5.0.5 only.
+     *        The Elasticache Redis engine version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -299,6 +299,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      */
     private IBMDb2Settings iBMDb2Settings;
 
+    private DocDbSettings docDbSettings;
+
     /**
      * <p>
      * The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters,
@@ -1985,6 +1987,32 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param docDbSettings
+     */
+
+    public void setDocDbSettings(DocDbSettings docDbSettings) {
+        this.docDbSettings = docDbSettings;
+    }
+
+    /**
+     * @return
+     */
+
+    public DocDbSettings getDocDbSettings() {
+        return this.docDbSettings;
+    }
+
+    /**
+     * @param docDbSettings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withDocDbSettings(DocDbSettings docDbSettings) {
+        setDocDbSettings(docDbSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2059,7 +2087,9 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
         if (getMicrosoftSQLServerSettings() != null)
             sb.append("MicrosoftSQLServerSettings: ").append(getMicrosoftSQLServerSettings()).append(",");
         if (getIBMDb2Settings() != null)
-            sb.append("IBMDb2Settings: ").append(getIBMDb2Settings());
+            sb.append("IBMDb2Settings: ").append(getIBMDb2Settings()).append(",");
+        if (getDocDbSettings() != null)
+            sb.append("DocDbSettings: ").append(getDocDbSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -2202,6 +2232,10 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getIBMDb2Settings() != null && other.getIBMDb2Settings().equals(this.getIBMDb2Settings()) == false)
             return false;
+        if (other.getDocDbSettings() == null ^ this.getDocDbSettings() == null)
+            return false;
+        if (other.getDocDbSettings() != null && other.getDocDbSettings().equals(this.getDocDbSettings()) == false)
+            return false;
         return true;
     }
 
@@ -2242,6 +2276,7 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSybaseSettings() == null) ? 0 : getSybaseSettings().hashCode());
         hashCode = prime * hashCode + ((getMicrosoftSQLServerSettings() == null) ? 0 : getMicrosoftSQLServerSettings().hashCode());
         hashCode = prime * hashCode + ((getIBMDb2Settings() == null) ? 0 : getIBMDb2Settings().hashCode());
+        hashCode = prime * hashCode + ((getDocDbSettings() == null) ? 0 : getDocDbSettings().hashCode());
         return hashCode;
     }
 

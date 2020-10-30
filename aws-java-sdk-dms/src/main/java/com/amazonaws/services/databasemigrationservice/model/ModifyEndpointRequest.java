@@ -284,6 +284,15 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private IBMDb2Settings iBMDb2Settings;
+    /**
+     * <p>
+     * Settings in JSON format for the source DocumentDB endpoint. For more information about the available settings,
+     * see the configuration properties section in <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html"> Using DocumentDB as a Target
+     * for AWS Database Migration Service</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * </p>
+     */
+    private DocDbSettings docDbSettings;
 
     /**
      * <p>
@@ -2044,6 +2053,64 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Settings in JSON format for the source DocumentDB endpoint. For more information about the available settings,
+     * see the configuration properties section in <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html"> Using DocumentDB as a Target
+     * for AWS Database Migration Service</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * </p>
+     * 
+     * @param docDbSettings
+     *        Settings in JSON format for the source DocumentDB endpoint. For more information about the available
+     *        settings, see the configuration properties section in <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html"> Using DocumentDB as a
+     *        Target for AWS Database Migration Service</a> in the <i>AWS Database Migration Service User Guide.</i>
+     */
+
+    public void setDocDbSettings(DocDbSettings docDbSettings) {
+        this.docDbSettings = docDbSettings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the source DocumentDB endpoint. For more information about the available settings,
+     * see the configuration properties section in <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html"> Using DocumentDB as a Target
+     * for AWS Database Migration Service</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * </p>
+     * 
+     * @return Settings in JSON format for the source DocumentDB endpoint. For more information about the available
+     *         settings, see the configuration properties section in <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html"> Using DocumentDB as
+     *         a Target for AWS Database Migration Service</a> in the <i>AWS Database Migration Service User Guide.</i>
+     */
+
+    public DocDbSettings getDocDbSettings() {
+        return this.docDbSettings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the source DocumentDB endpoint. For more information about the available settings,
+     * see the configuration properties section in <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html"> Using DocumentDB as a Target
+     * for AWS Database Migration Service</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * </p>
+     * 
+     * @param docDbSettings
+     *        Settings in JSON format for the source DocumentDB endpoint. For more information about the available
+     *        settings, see the configuration properties section in <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html"> Using DocumentDB as a
+     *        Target for AWS Database Migration Service</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyEndpointRequest withDocDbSettings(DocDbSettings docDbSettings) {
+        setDocDbSettings(docDbSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2112,7 +2179,9 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getMicrosoftSQLServerSettings() != null)
             sb.append("MicrosoftSQLServerSettings: ").append(getMicrosoftSQLServerSettings()).append(",");
         if (getIBMDb2Settings() != null)
-            sb.append("IBMDb2Settings: ").append(getIBMDb2Settings());
+            sb.append("IBMDb2Settings: ").append(getIBMDb2Settings()).append(",");
+        if (getDocDbSettings() != null)
+            sb.append("DocDbSettings: ").append(getDocDbSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -2243,6 +2312,10 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getIBMDb2Settings() != null && other.getIBMDb2Settings().equals(this.getIBMDb2Settings()) == false)
             return false;
+        if (other.getDocDbSettings() == null ^ this.getDocDbSettings() == null)
+            return false;
+        if (other.getDocDbSettings() != null && other.getDocDbSettings().equals(this.getDocDbSettings()) == false)
+            return false;
         return true;
     }
 
@@ -2280,6 +2353,7 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getSybaseSettings() == null) ? 0 : getSybaseSettings().hashCode());
         hashCode = prime * hashCode + ((getMicrosoftSQLServerSettings() == null) ? 0 : getMicrosoftSQLServerSettings().hashCode());
         hashCode = prime * hashCode + ((getIBMDb2Settings() == null) ? 0 : getIBMDb2Settings().hashCode());
+        hashCode = prime * hashCode + ((getDocDbSettings() == null) ? 0 : getDocDbSettings().hashCode());
         return hashCode;
     }
 

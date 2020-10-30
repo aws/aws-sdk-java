@@ -36,7 +36,7 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
     private String name;
     /**
      * <p>
-     * The description of the distribution configuration.
+     * The description of the distribution configuration. Minimum and maximum length are in characters.
      * </p>
      */
     private String description;
@@ -107,11 +107,11 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The description of the distribution configuration.
+     * The description of the distribution configuration. Minimum and maximum length are in characters.
      * </p>
      * 
      * @param description
-     *        The description of the distribution configuration.
+     *        The description of the distribution configuration. Minimum and maximum length are in characters.
      */
 
     public void setDescription(String description) {
@@ -120,10 +120,10 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The description of the distribution configuration.
+     * The description of the distribution configuration. Minimum and maximum length are in characters.
      * </p>
      * 
-     * @return The description of the distribution configuration.
+     * @return The description of the distribution configuration. Minimum and maximum length are in characters.
      */
 
     public String getDescription() {
@@ -132,11 +132,11 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The description of the distribution configuration.
+     * The description of the distribution configuration. Minimum and maximum length are in characters.
      * </p>
      * 
      * @param description
-     *        The description of the distribution configuration.
+     *        The description of the distribution configuration. Minimum and maximum length are in characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

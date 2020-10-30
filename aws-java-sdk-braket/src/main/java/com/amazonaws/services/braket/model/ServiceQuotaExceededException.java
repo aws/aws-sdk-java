@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The request failed because a service quota is met.
+ * The request failed because a service quota is exceeded.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

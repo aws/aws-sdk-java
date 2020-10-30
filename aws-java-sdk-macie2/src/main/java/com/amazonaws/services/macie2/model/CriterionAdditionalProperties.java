@@ -36,6 +36,55 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
     private java.util.List<String> eq;
     /**
      * <p>
+     * A condition that requires an array field on a finding to exactly match the specified property values. You can use
+     * this operator with the following properties:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * customDataIdentifiers.detections.arn
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * customDataIdentifiers.detections.name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resourcesAffected.s3Bucket.tags.key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resourcesAffected.s3Bucket.tags.value
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resourcesAffected.s3Object.tags.key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resourcesAffected.s3Object.tags.value
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * sensitiveData.category
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * sensitiveData.detections.type
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private java.util.List<String> eqExactMatch;
+    /**
+     * <p>
      * A greater than condition to apply to a specified property value for findings.
      * </p>
      */
@@ -132,6 +181,416 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     public CriterionAdditionalProperties withEq(java.util.Collection<String> eq) {
         setEq(eq);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A condition that requires an array field on a finding to exactly match the specified property values. You can use
+     * this operator with the following properties:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * customDataIdentifiers.detections.arn
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * customDataIdentifiers.detections.name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resourcesAffected.s3Bucket.tags.key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resourcesAffected.s3Bucket.tags.value
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resourcesAffected.s3Object.tags.key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resourcesAffected.s3Object.tags.value
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * sensitiveData.category
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * sensitiveData.detections.type
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return A condition that requires an array field on a finding to exactly match the specified property values. You
+     *         can use this operator with the following properties:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         customDataIdentifiers.detections.arn
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         customDataIdentifiers.detections.name
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         resourcesAffected.s3Bucket.tags.key
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         resourcesAffected.s3Bucket.tags.value
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         resourcesAffected.s3Object.tags.key
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         resourcesAffected.s3Object.tags.value
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         sensitiveData.category
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         sensitiveData.detections.type
+     *         </p>
+     *         </li>
+     */
+
+    public java.util.List<String> getEqExactMatch() {
+        return eqExactMatch;
+    }
+
+    /**
+     * <p>
+     * A condition that requires an array field on a finding to exactly match the specified property values. You can use
+     * this operator with the following properties:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * customDataIdentifiers.detections.arn
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * customDataIdentifiers.detections.name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resourcesAffected.s3Bucket.tags.key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resourcesAffected.s3Bucket.tags.value
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resourcesAffected.s3Object.tags.key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resourcesAffected.s3Object.tags.value
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * sensitiveData.category
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * sensitiveData.detections.type
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param eqExactMatch
+     *        A condition that requires an array field on a finding to exactly match the specified property values. You
+     *        can use this operator with the following properties:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        customDataIdentifiers.detections.arn
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        customDataIdentifiers.detections.name
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resourcesAffected.s3Bucket.tags.key
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resourcesAffected.s3Bucket.tags.value
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resourcesAffected.s3Object.tags.key
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resourcesAffected.s3Object.tags.value
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        sensitiveData.category
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        sensitiveData.detections.type
+     *        </p>
+     *        </li>
+     */
+
+    public void setEqExactMatch(java.util.Collection<String> eqExactMatch) {
+        if (eqExactMatch == null) {
+            this.eqExactMatch = null;
+            return;
+        }
+
+        this.eqExactMatch = new java.util.ArrayList<String>(eqExactMatch);
+    }
+
+    /**
+     * <p>
+     * A condition that requires an array field on a finding to exactly match the specified property values. You can use
+     * this operator with the following properties:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * customDataIdentifiers.detections.arn
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * customDataIdentifiers.detections.name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resourcesAffected.s3Bucket.tags.key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resourcesAffected.s3Bucket.tags.value
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resourcesAffected.s3Object.tags.key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resourcesAffected.s3Object.tags.value
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * sensitiveData.category
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * sensitiveData.detections.type
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEqExactMatch(java.util.Collection)} or {@link #withEqExactMatch(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param eqExactMatch
+     *        A condition that requires an array field on a finding to exactly match the specified property values. You
+     *        can use this operator with the following properties:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        customDataIdentifiers.detections.arn
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        customDataIdentifiers.detections.name
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resourcesAffected.s3Bucket.tags.key
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resourcesAffected.s3Bucket.tags.value
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resourcesAffected.s3Object.tags.key
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resourcesAffected.s3Object.tags.value
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        sensitiveData.category
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        sensitiveData.detections.type
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CriterionAdditionalProperties withEqExactMatch(String... eqExactMatch) {
+        if (this.eqExactMatch == null) {
+            setEqExactMatch(new java.util.ArrayList<String>(eqExactMatch.length));
+        }
+        for (String ele : eqExactMatch) {
+            this.eqExactMatch.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A condition that requires an array field on a finding to exactly match the specified property values. You can use
+     * this operator with the following properties:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * customDataIdentifiers.detections.arn
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * customDataIdentifiers.detections.name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resourcesAffected.s3Bucket.tags.key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resourcesAffected.s3Bucket.tags.value
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resourcesAffected.s3Object.tags.key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resourcesAffected.s3Object.tags.value
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * sensitiveData.category
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * sensitiveData.detections.type
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param eqExactMatch
+     *        A condition that requires an array field on a finding to exactly match the specified property values. You
+     *        can use this operator with the following properties:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        customDataIdentifiers.detections.arn
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        customDataIdentifiers.detections.name
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resourcesAffected.s3Bucket.tags.key
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resourcesAffected.s3Bucket.tags.value
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resourcesAffected.s3Object.tags.key
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resourcesAffected.s3Object.tags.value
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        sensitiveData.category
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        sensitiveData.detections.type
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CriterionAdditionalProperties withEqExactMatch(java.util.Collection<String> eqExactMatch) {
+        setEqExactMatch(eqExactMatch);
         return this;
     }
 
@@ -379,6 +838,8 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
         sb.append("{");
         if (getEq() != null)
             sb.append("Eq: ").append(getEq()).append(",");
+        if (getEqExactMatch() != null)
+            sb.append("EqExactMatch: ").append(getEqExactMatch()).append(",");
         if (getGt() != null)
             sb.append("Gt: ").append(getGt()).append(",");
         if (getGte() != null)
@@ -406,6 +867,10 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
         if (other.getEq() == null ^ this.getEq() == null)
             return false;
         if (other.getEq() != null && other.getEq().equals(this.getEq()) == false)
+            return false;
+        if (other.getEqExactMatch() == null ^ this.getEqExactMatch() == null)
+            return false;
+        if (other.getEqExactMatch() != null && other.getEqExactMatch().equals(this.getEqExactMatch()) == false)
             return false;
         if (other.getGt() == null ^ this.getGt() == null)
             return false;
@@ -436,6 +901,7 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getEq() == null) ? 0 : getEq().hashCode());
+        hashCode = prime * hashCode + ((getEqExactMatch() == null) ? 0 : getEqExactMatch().hashCode());
         hashCode = prime * hashCode + ((getGt() == null) ? 0 : getGt().hashCode());
         hashCode = prime * hashCode + ((getGte() == null) ? 0 : getGte().hashCode());
         hashCode = prime * hashCode + ((getLt() == null) ? 0 : getLt().hashCode());
