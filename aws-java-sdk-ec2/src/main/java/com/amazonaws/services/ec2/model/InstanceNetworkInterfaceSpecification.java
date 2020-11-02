@@ -136,9 +136,12 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
     private Boolean associateCarrierIpAddress;
     /**
      * <p>
-     * The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more
-     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric
-     * Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The type of network interface.
+     * </p>
+     * <p>
+     * To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
@@ -148,6 +151,13 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * </p>
      */
     private String interfaceType;
+    /**
+     * <p>
+     * The index of the network card. Some instance types support multiple network cards. The primary network interface
+     * must be assigned to network card index 0. The default is network card index 0.
+     * </p>
+     */
+    private Integer networkCardIndex;
 
     /**
      * <p>
@@ -1019,9 +1029,12 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
 
     /**
      * <p>
-     * The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more
-     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric
-     * Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The type of network interface.
+     * </p>
+     * <p>
+     * To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
@@ -1031,9 +1044,12 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * </p>
      * 
      * @param interfaceType
-     *        The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For
-     *        more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
-     *        Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        The type of network interface.</p>
+     *        <p>
+     *        To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the
+     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        </p>
      *        <p>
      *        If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
      *        </p>
@@ -1047,9 +1063,12 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
 
     /**
      * <p>
-     * The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more
-     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric
-     * Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The type of network interface.
+     * </p>
+     * <p>
+     * To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
@@ -1058,9 +1077,12 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * Valid values: <code>interface</code> | <code>efa</code>
      * </p>
      * 
-     * @return The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For
-     *         more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
-     *         Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * @return The type of network interface.</p>
+     *         <p>
+     *         To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the
+     *         <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         </p>
      *         <p>
      *         If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
      *         </p>
@@ -1074,9 +1096,12 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
 
     /**
      * <p>
-     * The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more
-     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric
-     * Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The type of network interface.
+     * </p>
+     * <p>
+     * To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
@@ -1086,9 +1111,12 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * </p>
      * 
      * @param interfaceType
-     *        The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For
-     *        more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
-     *        Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        The type of network interface.</p>
+     *        <p>
+     *        To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the
+     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        </p>
      *        <p>
      *        If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
      *        </p>
@@ -1099,6 +1127,52 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
 
     public InstanceNetworkInterfaceSpecification withInterfaceType(String interfaceType) {
         setInterfaceType(interfaceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The index of the network card. Some instance types support multiple network cards. The primary network interface
+     * must be assigned to network card index 0. The default is network card index 0.
+     * </p>
+     * 
+     * @param networkCardIndex
+     *        The index of the network card. Some instance types support multiple network cards. The primary network
+     *        interface must be assigned to network card index 0. The default is network card index 0.
+     */
+
+    public void setNetworkCardIndex(Integer networkCardIndex) {
+        this.networkCardIndex = networkCardIndex;
+    }
+
+    /**
+     * <p>
+     * The index of the network card. Some instance types support multiple network cards. The primary network interface
+     * must be assigned to network card index 0. The default is network card index 0.
+     * </p>
+     * 
+     * @return The index of the network card. Some instance types support multiple network cards. The primary network
+     *         interface must be assigned to network card index 0. The default is network card index 0.
+     */
+
+    public Integer getNetworkCardIndex() {
+        return this.networkCardIndex;
+    }
+
+    /**
+     * <p>
+     * The index of the network card. Some instance types support multiple network cards. The primary network interface
+     * must be assigned to network card index 0. The default is network card index 0.
+     * </p>
+     * 
+     * @param networkCardIndex
+     *        The index of the network card. Some instance types support multiple network cards. The primary network
+     *        interface must be assigned to network card index 0. The default is network card index 0.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceNetworkInterfaceSpecification withNetworkCardIndex(Integer networkCardIndex) {
+        setNetworkCardIndex(networkCardIndex);
         return this;
     }
 
@@ -1141,7 +1215,9 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
         if (getAssociateCarrierIpAddress() != null)
             sb.append("AssociateCarrierIpAddress: ").append(getAssociateCarrierIpAddress()).append(",");
         if (getInterfaceType() != null)
-            sb.append("InterfaceType: ").append(getInterfaceType());
+            sb.append("InterfaceType: ").append(getInterfaceType()).append(",");
+        if (getNetworkCardIndex() != null)
+            sb.append("NetworkCardIndex: ").append(getNetworkCardIndex());
         sb.append("}");
         return sb.toString();
     }
@@ -1213,6 +1289,10 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
             return false;
         if (other.getInterfaceType() != null && other.getInterfaceType().equals(this.getInterfaceType()) == false)
             return false;
+        if (other.getNetworkCardIndex() == null ^ this.getNetworkCardIndex() == null)
+            return false;
+        if (other.getNetworkCardIndex() != null && other.getNetworkCardIndex().equals(this.getNetworkCardIndex()) == false)
+            return false;
         return true;
     }
 
@@ -1235,6 +1315,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         hashCode = prime * hashCode + ((getAssociateCarrierIpAddress() == null) ? 0 : getAssociateCarrierIpAddress().hashCode());
         hashCode = prime * hashCode + ((getInterfaceType() == null) ? 0 : getInterfaceType().hashCode());
+        hashCode = prime * hashCode + ((getNetworkCardIndex() == null) ? 0 : getNetworkCardIndex().hashCode());
         return hashCode;
     }
 

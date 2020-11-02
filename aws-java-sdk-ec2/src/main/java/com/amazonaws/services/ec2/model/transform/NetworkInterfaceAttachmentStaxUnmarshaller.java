@@ -63,6 +63,11 @@ public class NetworkInterfaceAttachmentStaxUnmarshaller implements Unmarshaller<
                     continue;
                 }
 
+                if (context.testExpression("networkCardIndex", targetDepth)) {
+                    networkInterfaceAttachment.setNetworkCardIndex(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("instanceId", targetDepth)) {
                     networkInterfaceAttachment.setInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

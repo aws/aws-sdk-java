@@ -130,6 +130,11 @@ public class InstanceNetworkInterfaceSpecificationStaxUnmarshaller implements Un
                     instanceNetworkInterfaceSpecification.setInterfaceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("NetworkCardIndex", targetDepth)) {
+                    instanceNetworkInterfaceSpecification.setNetworkCardIndex(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return instanceNetworkInterfaceSpecification;

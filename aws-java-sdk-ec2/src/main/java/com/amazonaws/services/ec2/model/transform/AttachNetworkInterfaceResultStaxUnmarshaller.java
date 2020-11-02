@@ -47,6 +47,11 @@ public class AttachNetworkInterfaceResultStaxUnmarshaller implements Unmarshalle
                     attachNetworkInterfaceResult.setAttachmentId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("networkCardIndex", targetDepth)) {
+                    attachNetworkInterfaceResult.setNetworkCardIndex(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return attachNetworkInterfaceResult;

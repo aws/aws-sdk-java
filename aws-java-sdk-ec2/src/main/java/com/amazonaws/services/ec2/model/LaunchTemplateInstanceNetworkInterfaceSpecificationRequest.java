@@ -127,6 +127,13 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationRequest implemen
      * </p>
      */
     private String subnetId;
+    /**
+     * <p>
+     * The index of the network card. Some instance types support multiple network cards. The primary network interface
+     * must be assigned to network card index 0. The default is network card index 0.
+     * </p>
+     */
+    private Integer networkCardIndex;
 
     /**
      * <p>
@@ -928,6 +935,52 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationRequest implemen
     }
 
     /**
+     * <p>
+     * The index of the network card. Some instance types support multiple network cards. The primary network interface
+     * must be assigned to network card index 0. The default is network card index 0.
+     * </p>
+     * 
+     * @param networkCardIndex
+     *        The index of the network card. Some instance types support multiple network cards. The primary network
+     *        interface must be assigned to network card index 0. The default is network card index 0.
+     */
+
+    public void setNetworkCardIndex(Integer networkCardIndex) {
+        this.networkCardIndex = networkCardIndex;
+    }
+
+    /**
+     * <p>
+     * The index of the network card. Some instance types support multiple network cards. The primary network interface
+     * must be assigned to network card index 0. The default is network card index 0.
+     * </p>
+     * 
+     * @return The index of the network card. Some instance types support multiple network cards. The primary network
+     *         interface must be assigned to network card index 0. The default is network card index 0.
+     */
+
+    public Integer getNetworkCardIndex() {
+        return this.networkCardIndex;
+    }
+
+    /**
+     * <p>
+     * The index of the network card. Some instance types support multiple network cards. The primary network interface
+     * must be assigned to network card index 0. The default is network card index 0.
+     * </p>
+     * 
+     * @param networkCardIndex
+     *        The index of the network card. Some instance types support multiple network cards. The primary network
+     *        interface must be assigned to network card index 0. The default is network card index 0.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchTemplateInstanceNetworkInterfaceSpecificationRequest withNetworkCardIndex(Integer networkCardIndex) {
+        setNetworkCardIndex(networkCardIndex);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -966,7 +1019,9 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationRequest implemen
         if (getSecondaryPrivateIpAddressCount() != null)
             sb.append("SecondaryPrivateIpAddressCount: ").append(getSecondaryPrivateIpAddressCount()).append(",");
         if (getSubnetId() != null)
-            sb.append("SubnetId: ").append(getSubnetId());
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
+        if (getNetworkCardIndex() != null)
+            sb.append("NetworkCardIndex: ").append(getNetworkCardIndex());
         sb.append("}");
         return sb.toString();
     }
@@ -1038,6 +1093,10 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationRequest implemen
             return false;
         if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
+        if (other.getNetworkCardIndex() == null ^ this.getNetworkCardIndex() == null)
+            return false;
+        if (other.getNetworkCardIndex() != null && other.getNetworkCardIndex().equals(this.getNetworkCardIndex()) == false)
+            return false;
         return true;
     }
 
@@ -1060,6 +1119,7 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationRequest implemen
         hashCode = prime * hashCode + ((getPrivateIpAddresses() == null) ? 0 : getPrivateIpAddresses().hashCode());
         hashCode = prime * hashCode + ((getSecondaryPrivateIpAddressCount() == null) ? 0 : getSecondaryPrivateIpAddressCount().hashCode());
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode + ((getNetworkCardIndex() == null) ? 0 : getNetworkCardIndex().hashCode());
         return hashCode;
     }
 

@@ -46,6 +46,13 @@ public class AttachNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      * </p>
      */
     private String networkInterfaceId;
+    /**
+     * <p>
+     * The index of the network card. Some instance types support multiple network cards. The primary network interface
+     * must be assigned to network card index 0. The default is network card index 0.
+     * </p>
+     */
+    private Integer networkCardIndex;
 
     /**
      * <p>
@@ -168,6 +175,52 @@ public class AttachNetworkInterfaceRequest extends AmazonWebServiceRequest imple
     }
 
     /**
+     * <p>
+     * The index of the network card. Some instance types support multiple network cards. The primary network interface
+     * must be assigned to network card index 0. The default is network card index 0.
+     * </p>
+     * 
+     * @param networkCardIndex
+     *        The index of the network card. Some instance types support multiple network cards. The primary network
+     *        interface must be assigned to network card index 0. The default is network card index 0.
+     */
+
+    public void setNetworkCardIndex(Integer networkCardIndex) {
+        this.networkCardIndex = networkCardIndex;
+    }
+
+    /**
+     * <p>
+     * The index of the network card. Some instance types support multiple network cards. The primary network interface
+     * must be assigned to network card index 0. The default is network card index 0.
+     * </p>
+     * 
+     * @return The index of the network card. Some instance types support multiple network cards. The primary network
+     *         interface must be assigned to network card index 0. The default is network card index 0.
+     */
+
+    public Integer getNetworkCardIndex() {
+        return this.networkCardIndex;
+    }
+
+    /**
+     * <p>
+     * The index of the network card. Some instance types support multiple network cards. The primary network interface
+     * must be assigned to network card index 0. The default is network card index 0.
+     * </p>
+     * 
+     * @param networkCardIndex
+     *        The index of the network card. Some instance types support multiple network cards. The primary network
+     *        interface must be assigned to network card index 0. The default is network card index 0.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AttachNetworkInterfaceRequest withNetworkCardIndex(Integer networkCardIndex) {
+        setNetworkCardIndex(networkCardIndex);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -195,7 +248,9 @@ public class AttachNetworkInterfaceRequest extends AmazonWebServiceRequest imple
         if (getInstanceId() != null)
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId());
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
+        if (getNetworkCardIndex() != null)
+            sb.append("NetworkCardIndex: ").append(getNetworkCardIndex());
         sb.append("}");
         return sb.toString();
     }
@@ -222,6 +277,10 @@ public class AttachNetworkInterfaceRequest extends AmazonWebServiceRequest imple
             return false;
         if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
             return false;
+        if (other.getNetworkCardIndex() == null ^ this.getNetworkCardIndex() == null)
+            return false;
+        if (other.getNetworkCardIndex() != null && other.getNetworkCardIndex().equals(this.getNetworkCardIndex()) == false)
+            return false;
         return true;
     }
 
@@ -233,6 +292,7 @@ public class AttachNetworkInterfaceRequest extends AmazonWebServiceRequest imple
         hashCode = prime * hashCode + ((getDeviceIndex() == null) ? 0 : getDeviceIndex().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
+        hashCode = prime * hashCode + ((getNetworkCardIndex() == null) ? 0 : getNetworkCardIndex().hashCode());
         return hashCode;
     }
 

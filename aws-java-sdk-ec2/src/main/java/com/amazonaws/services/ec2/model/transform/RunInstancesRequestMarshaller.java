@@ -368,6 +368,11 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
                     request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".InterfaceType",
                             StringUtils.fromString(runInstancesRequestNetworkInterfacesListValue.getInterfaceType()));
                 }
+
+                if (runInstancesRequestNetworkInterfacesListValue.getNetworkCardIndex() != null) {
+                    request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".NetworkCardIndex",
+                            StringUtils.fromInteger(runInstancesRequestNetworkInterfacesListValue.getNetworkCardIndex()));
+                }
                 networkInterfacesListIndex++;
             }
         }

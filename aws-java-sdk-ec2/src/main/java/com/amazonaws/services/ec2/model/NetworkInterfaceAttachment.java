@@ -52,6 +52,12 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
     private Integer deviceIndex;
     /**
      * <p>
+     * The index of the network card.
+     * </p>
+     */
+    private Integer networkCardIndex;
+    /**
+     * <p>
      * The ID of the instance.
      * </p>
      */
@@ -243,6 +249,46 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The index of the network card.
+     * </p>
+     * 
+     * @param networkCardIndex
+     *        The index of the network card.
+     */
+
+    public void setNetworkCardIndex(Integer networkCardIndex) {
+        this.networkCardIndex = networkCardIndex;
+    }
+
+    /**
+     * <p>
+     * The index of the network card.
+     * </p>
+     * 
+     * @return The index of the network card.
+     */
+
+    public Integer getNetworkCardIndex() {
+        return this.networkCardIndex;
+    }
+
+    /**
+     * <p>
+     * The index of the network card.
+     * </p>
+     * 
+     * @param networkCardIndex
+     *        The index of the network card.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInterfaceAttachment withNetworkCardIndex(Integer networkCardIndex) {
+        setNetworkCardIndex(networkCardIndex);
+        return this;
+    }
+
+    /**
+     * <p>
      * The ID of the instance.
      * </p>
      * 
@@ -414,6 +460,8 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
             sb.append("DeleteOnTermination: ").append(getDeleteOnTermination()).append(",");
         if (getDeviceIndex() != null)
             sb.append("DeviceIndex: ").append(getDeviceIndex()).append(",");
+        if (getNetworkCardIndex() != null)
+            sb.append("NetworkCardIndex: ").append(getNetworkCardIndex()).append(",");
         if (getInstanceId() != null)
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getInstanceOwnerId() != null)
@@ -450,6 +498,10 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
             return false;
         if (other.getDeviceIndex() != null && other.getDeviceIndex().equals(this.getDeviceIndex()) == false)
             return false;
+        if (other.getNetworkCardIndex() == null ^ this.getNetworkCardIndex() == null)
+            return false;
+        if (other.getNetworkCardIndex() != null && other.getNetworkCardIndex().equals(this.getNetworkCardIndex()) == false)
+            return false;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
         if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
@@ -474,6 +526,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAttachmentId() == null) ? 0 : getAttachmentId().hashCode());
         hashCode = prime * hashCode + ((getDeleteOnTermination() == null) ? 0 : getDeleteOnTermination().hashCode());
         hashCode = prime * hashCode + ((getDeviceIndex() == null) ? 0 : getDeviceIndex().hashCode());
+        hashCode = prime * hashCode + ((getNetworkCardIndex() == null) ? 0 : getNetworkCardIndex().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getInstanceOwnerId() == null) ? 0 : getInstanceOwnerId().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());

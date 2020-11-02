@@ -361,6 +361,12 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
                                         + networkInterfacesListIndex + ".InterfaceType",
                                         StringUtils.fromString(spotFleetLaunchSpecificationNetworkInterfacesListValue.getInterfaceType()));
                             }
+
+                            if (spotFleetLaunchSpecificationNetworkInterfacesListValue.getNetworkCardIndex() != null) {
+                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterfaceSet."
+                                        + networkInterfacesListIndex + ".NetworkCardIndex",
+                                        StringUtils.fromInteger(spotFleetLaunchSpecificationNetworkInterfacesListValue.getNetworkCardIndex()));
+                            }
                             networkInterfacesListIndex++;
                         }
                     }

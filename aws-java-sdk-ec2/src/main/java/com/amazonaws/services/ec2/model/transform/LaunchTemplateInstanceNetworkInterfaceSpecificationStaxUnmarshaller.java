@@ -133,6 +133,11 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationStaxUnmarshaller
                     launchTemplateInstanceNetworkInterfaceSpecification.setSubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("networkCardIndex", targetDepth)) {
+                    launchTemplateInstanceNetworkInterfaceSpecification.setNetworkCardIndex(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return launchTemplateInstanceNetworkInterfaceSpecification;

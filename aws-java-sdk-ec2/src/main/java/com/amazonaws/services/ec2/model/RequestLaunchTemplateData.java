@@ -241,14 +241,11 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html"> AWS Nitro Enclaves</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro Enclaves?</a> in
+     * the <i>AWS Nitro Enclaves User Guide</i>.
      * </p>
      * <p>
-     * You can't enable AWS Nitro Enclaves and hibernation on the same instance. For more information about AWS Nitro
-     * Enclaves requirements, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html#nitro-enclave-reqs"> AWS Nitro
-     * Enclaves</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * You can't enable AWS Nitro Enclaves and hibernation on the same instance.
      * </p>
      */
     private LaunchTemplateEnclaveOptionsRequest enclaveOptions;
@@ -1991,25 +1988,19 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html"> AWS Nitro Enclaves</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro Enclaves?</a> in
+     * the <i>AWS Nitro Enclaves User Guide</i>.
      * </p>
      * <p>
-     * You can't enable AWS Nitro Enclaves and hibernation on the same instance. For more information about AWS Nitro
-     * Enclaves requirements, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html#nitro-enclave-reqs"> AWS Nitro
-     * Enclaves</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * You can't enable AWS Nitro Enclaves and hibernation on the same instance.
      * </p>
      * 
      * @param enclaveOptions
      *        Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html"> AWS Nitro Enclaves</a> in
-     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro
+     *        Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.</p>
      *        <p>
-     *        You can't enable AWS Nitro Enclaves and hibernation on the same instance. For more information about AWS
-     *        Nitro Enclaves requirements, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html#nitro-enclave-reqs"> AWS
-     *        Nitro Enclaves</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        You can't enable AWS Nitro Enclaves and hibernation on the same instance.
      */
 
     public void setEnclaveOptions(LaunchTemplateEnclaveOptionsRequest enclaveOptions) {
@@ -2019,24 +2010,18 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html"> AWS Nitro Enclaves</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro Enclaves?</a> in
+     * the <i>AWS Nitro Enclaves User Guide</i>.
      * </p>
      * <p>
-     * You can't enable AWS Nitro Enclaves and hibernation on the same instance. For more information about AWS Nitro
-     * Enclaves requirements, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html#nitro-enclave-reqs"> AWS Nitro
-     * Enclaves</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * You can't enable AWS Nitro Enclaves and hibernation on the same instance.
      * </p>
      * 
      * @return Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html"> AWS Nitro Enclaves</a> in
-     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *         href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro
+     *         Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.</p>
      *         <p>
-     *         You can't enable AWS Nitro Enclaves and hibernation on the same instance. For more information about AWS
-     *         Nitro Enclaves requirements, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html#nitro-enclave-reqs"> AWS
-     *         Nitro Enclaves</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         You can't enable AWS Nitro Enclaves and hibernation on the same instance.
      */
 
     public LaunchTemplateEnclaveOptionsRequest getEnclaveOptions() {
@@ -2046,25 +2031,19 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html"> AWS Nitro Enclaves</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro Enclaves?</a> in
+     * the <i>AWS Nitro Enclaves User Guide</i>.
      * </p>
      * <p>
-     * You can't enable AWS Nitro Enclaves and hibernation on the same instance. For more information about AWS Nitro
-     * Enclaves requirements, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html#nitro-enclave-reqs"> AWS Nitro
-     * Enclaves</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * You can't enable AWS Nitro Enclaves and hibernation on the same instance.
      * </p>
      * 
      * @param enclaveOptions
      *        Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html"> AWS Nitro Enclaves</a> in
-     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro
+     *        Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.</p>
      *        <p>
-     *        You can't enable AWS Nitro Enclaves and hibernation on the same instance. For more information about AWS
-     *        Nitro Enclaves requirements, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html#nitro-enclave-reqs"> AWS
-     *        Nitro Enclaves</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        You can't enable AWS Nitro Enclaves and hibernation on the same instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

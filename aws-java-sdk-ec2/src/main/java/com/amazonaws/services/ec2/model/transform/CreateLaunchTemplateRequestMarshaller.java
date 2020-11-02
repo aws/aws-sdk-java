@@ -256,6 +256,11 @@ public class CreateLaunchTemplateRequestMarshaller implements Marshaller<Request
                         request.addParameter("LaunchTemplateData.NetworkInterface." + networkInterfacesListIndex + ".SubnetId",
                                 StringUtils.fromString(requestLaunchTemplateDataNetworkInterfacesListValue.getSubnetId()));
                     }
+
+                    if (requestLaunchTemplateDataNetworkInterfacesListValue.getNetworkCardIndex() != null) {
+                        request.addParameter("LaunchTemplateData.NetworkInterface." + networkInterfacesListIndex + ".NetworkCardIndex",
+                                StringUtils.fromInteger(requestLaunchTemplateDataNetworkInterfacesListValue.getNetworkCardIndex()));
+                    }
                     networkInterfacesListIndex++;
                 }
             }

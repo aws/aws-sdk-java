@@ -52,6 +52,10 @@ public class AttachNetworkInterfaceRequestMarshaller implements Marshaller<Reque
             request.addParameter("NetworkInterfaceId", StringUtils.fromString(attachNetworkInterfaceRequest.getNetworkInterfaceId()));
         }
 
+        if (attachNetworkInterfaceRequest.getNetworkCardIndex() != null) {
+            request.addParameter("NetworkCardIndex", StringUtils.fromInteger(attachNetworkInterfaceRequest.getNetworkCardIndex()));
+        }
+
         return request;
     }
 

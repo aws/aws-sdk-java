@@ -117,6 +117,12 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecification implements Seri
      * </p>
      */
     private String subnetId;
+    /**
+     * <p>
+     * The index of the network card.
+     * </p>
+     */
+    private Integer networkCardIndex;
 
     /**
      * <p>
@@ -858,6 +864,46 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecification implements Seri
     }
 
     /**
+     * <p>
+     * The index of the network card.
+     * </p>
+     * 
+     * @param networkCardIndex
+     *        The index of the network card.
+     */
+
+    public void setNetworkCardIndex(Integer networkCardIndex) {
+        this.networkCardIndex = networkCardIndex;
+    }
+
+    /**
+     * <p>
+     * The index of the network card.
+     * </p>
+     * 
+     * @return The index of the network card.
+     */
+
+    public Integer getNetworkCardIndex() {
+        return this.networkCardIndex;
+    }
+
+    /**
+     * <p>
+     * The index of the network card.
+     * </p>
+     * 
+     * @param networkCardIndex
+     *        The index of the network card.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchTemplateInstanceNetworkInterfaceSpecification withNetworkCardIndex(Integer networkCardIndex) {
+        setNetworkCardIndex(networkCardIndex);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -896,7 +942,9 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecification implements Seri
         if (getSecondaryPrivateIpAddressCount() != null)
             sb.append("SecondaryPrivateIpAddressCount: ").append(getSecondaryPrivateIpAddressCount()).append(",");
         if (getSubnetId() != null)
-            sb.append("SubnetId: ").append(getSubnetId());
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
+        if (getNetworkCardIndex() != null)
+            sb.append("NetworkCardIndex: ").append(getNetworkCardIndex());
         sb.append("}");
         return sb.toString();
     }
@@ -968,6 +1016,10 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecification implements Seri
             return false;
         if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
+        if (other.getNetworkCardIndex() == null ^ this.getNetworkCardIndex() == null)
+            return false;
+        if (other.getNetworkCardIndex() != null && other.getNetworkCardIndex().equals(this.getNetworkCardIndex()) == false)
+            return false;
         return true;
     }
 
@@ -990,6 +1042,7 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecification implements Seri
         hashCode = prime * hashCode + ((getPrivateIpAddresses() == null) ? 0 : getPrivateIpAddresses().hashCode());
         hashCode = prime * hashCode + ((getSecondaryPrivateIpAddressCount() == null) ? 0 : getSecondaryPrivateIpAddressCount().hashCode());
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode + ((getNetworkCardIndex() == null) ? 0 : getNetworkCardIndex().hashCode());
         return hashCode;
     }
 

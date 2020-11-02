@@ -53,7 +53,7 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
     private String publicDnsName;
     /**
      * <p>
-     * The address of the Elastic IP address or Carrier IP address bound to the network interface.
+     * The address of the Elastic IP address bound to the network interface.
      * </p>
      */
     private String publicIp;
@@ -236,11 +236,11 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The address of the Elastic IP address or Carrier IP address bound to the network interface.
+     * The address of the Elastic IP address bound to the network interface.
      * </p>
      * 
      * @param publicIp
-     *        The address of the Elastic IP address or Carrier IP address bound to the network interface.
+     *        The address of the Elastic IP address bound to the network interface.
      */
 
     public void setPublicIp(String publicIp) {
@@ -249,10 +249,10 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The address of the Elastic IP address or Carrier IP address bound to the network interface.
+     * The address of the Elastic IP address bound to the network interface.
      * </p>
      * 
-     * @return The address of the Elastic IP address or Carrier IP address bound to the network interface.
+     * @return The address of the Elastic IP address bound to the network interface.
      */
 
     public String getPublicIp() {
@@ -261,11 +261,11 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The address of the Elastic IP address or Carrier IP address bound to the network interface.
+     * The address of the Elastic IP address bound to the network interface.
      * </p>
      * 
      * @param publicIp
-     *        The address of the Elastic IP address or Carrier IP address bound to the network interface.
+     *        The address of the Elastic IP address bound to the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

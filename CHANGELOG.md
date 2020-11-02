@@ -1,3 +1,12 @@
+# __1.11.893__ __2020-11-02__
+## __AWS SDK for Java__
+  - ### Features
+    - Upgrade Apache version to `4.5.13`.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release adds support for the following features: 1. P4d instances based on NVIDIA A100 GPUs.  2. NetworkCardIndex attribute to support multiple network cards.
+
 # __1.11.892__ __2020-10-30__
 ## __AWS Database Migration Service__
   - ### Features
