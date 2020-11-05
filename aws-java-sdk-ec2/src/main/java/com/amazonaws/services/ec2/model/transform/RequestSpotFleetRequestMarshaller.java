@@ -52,6 +52,19 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
                         StringUtils.fromString(spotFleetRequestConfig.getOnDemandAllocationStrategy()));
             }
 
+            SpotMaintenanceStrategies spotMaintenanceStrategies = spotFleetRequestConfig.getSpotMaintenanceStrategies();
+            if (spotMaintenanceStrategies != null) {
+
+                SpotCapacityRebalance capacityRebalance = spotMaintenanceStrategies.getCapacityRebalance();
+                if (capacityRebalance != null) {
+
+                    if (capacityRebalance.getReplacementStrategy() != null) {
+                        request.addParameter("SpotFleetRequestConfig.SpotMaintenanceStrategies.CapacityRebalance.ReplacementStrategy",
+                                StringUtils.fromString(capacityRebalance.getReplacementStrategy()));
+                    }
+                }
+            }
+
             if (spotFleetRequestConfig.getClientToken() != null) {
                 request.addParameter("SpotFleetRequestConfig.ClientToken", StringUtils.fromString(spotFleetRequestConfig.getClientToken()));
             }

@@ -64,6 +64,13 @@ public class GetTimeSeriesServiceStatisticsRequest extends com.amazonaws.AmazonW
     private Integer period;
     /**
      * <p>
+     * The forecasted high and low fault count values. Forecast enabled requests require the EntitySelectorExpression ID
+     * be provided.
+     * </p>
+     */
+    private Boolean forecastStatistics;
+    /**
+     * <p>
      * Pagination token.
      * </p>
      */
@@ -317,6 +324,66 @@ public class GetTimeSeriesServiceStatisticsRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
+     * The forecasted high and low fault count values. Forecast enabled requests require the EntitySelectorExpression ID
+     * be provided.
+     * </p>
+     * 
+     * @param forecastStatistics
+     *        The forecasted high and low fault count values. Forecast enabled requests require the
+     *        EntitySelectorExpression ID be provided.
+     */
+
+    public void setForecastStatistics(Boolean forecastStatistics) {
+        this.forecastStatistics = forecastStatistics;
+    }
+
+    /**
+     * <p>
+     * The forecasted high and low fault count values. Forecast enabled requests require the EntitySelectorExpression ID
+     * be provided.
+     * </p>
+     * 
+     * @return The forecasted high and low fault count values. Forecast enabled requests require the
+     *         EntitySelectorExpression ID be provided.
+     */
+
+    public Boolean getForecastStatistics() {
+        return this.forecastStatistics;
+    }
+
+    /**
+     * <p>
+     * The forecasted high and low fault count values. Forecast enabled requests require the EntitySelectorExpression ID
+     * be provided.
+     * </p>
+     * 
+     * @param forecastStatistics
+     *        The forecasted high and low fault count values. Forecast enabled requests require the
+     *        EntitySelectorExpression ID be provided.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTimeSeriesServiceStatisticsRequest withForecastStatistics(Boolean forecastStatistics) {
+        setForecastStatistics(forecastStatistics);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The forecasted high and low fault count values. Forecast enabled requests require the EntitySelectorExpression ID
+     * be provided.
+     * </p>
+     * 
+     * @return The forecasted high and low fault count values. Forecast enabled requests require the
+     *         EntitySelectorExpression ID be provided.
+     */
+
+    public Boolean isForecastStatistics() {
+        return this.forecastStatistics;
+    }
+
+    /**
+     * <p>
      * Pagination token.
      * </p>
      * 
@@ -379,6 +446,8 @@ public class GetTimeSeriesServiceStatisticsRequest extends com.amazonaws.AmazonW
             sb.append("EntitySelectorExpression: ").append(getEntitySelectorExpression()).append(",");
         if (getPeriod() != null)
             sb.append("Period: ").append(getPeriod()).append(",");
+        if (getForecastStatistics() != null)
+            sb.append("ForecastStatistics: ").append(getForecastStatistics()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
@@ -419,6 +488,10 @@ public class GetTimeSeriesServiceStatisticsRequest extends com.amazonaws.AmazonW
             return false;
         if (other.getPeriod() != null && other.getPeriod().equals(this.getPeriod()) == false)
             return false;
+        if (other.getForecastStatistics() == null ^ this.getForecastStatistics() == null)
+            return false;
+        if (other.getForecastStatistics() != null && other.getForecastStatistics().equals(this.getForecastStatistics()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -437,6 +510,7 @@ public class GetTimeSeriesServiceStatisticsRequest extends com.amazonaws.AmazonW
         hashCode = prime * hashCode + ((getGroupARN() == null) ? 0 : getGroupARN().hashCode());
         hashCode = prime * hashCode + ((getEntitySelectorExpression() == null) ? 0 : getEntitySelectorExpression().hashCode());
         hashCode = prime * hashCode + ((getPeriod() == null) ? 0 : getPeriod().hashCode());
+        hashCode = prime * hashCode + ((getForecastStatistics() == null) ? 0 : getForecastStatistics().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }

@@ -3700,6 +3700,8 @@ public interface AWSIot {
      *         An unexpected error has occurred.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
      * @sample AWSIot.ListThingGroups
      */
     ListThingGroupsResult listThingGroups(ListThingGroupsRequest listThingGroupsRequest);
@@ -3717,6 +3719,8 @@ public interface AWSIot {
      *         An unexpected error has occurred.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
      * @sample AWSIot.ListThingGroupsForThing
      */
     ListThingGroupsForThingResult listThingGroupsForThing(ListThingGroupsForThingRequest listThingGroupsForThingRequest);
@@ -3869,6 +3873,8 @@ public interface AWSIot {
      *         An unexpected error has occurred.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
      * @sample AWSIot.ListThingsInThingGroup
      */
     ListThingsInThingGroupResult listThingsInThingGroup(ListThingsInThingGroupRequest listThingsInThingGroupRequest);

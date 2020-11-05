@@ -253,6 +253,10 @@ public class CreateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
                     StringUtils.fromBoolean(createAutoScalingGroupRequest.getNewInstancesProtectedFromScaleIn()));
         }
 
+        if (createAutoScalingGroupRequest.getCapacityRebalance() != null) {
+            request.addParameter("CapacityRebalance", StringUtils.fromBoolean(createAutoScalingGroupRequest.getCapacityRebalance()));
+        }
+
         if (!createAutoScalingGroupRequest.getLifecycleHookSpecificationList().isEmpty()
                 || !((com.amazonaws.internal.SdkInternalList<LifecycleHookSpecification>) createAutoScalingGroupRequest.getLifecycleHookSpecificationList())
                         .isAutoConstruct()) {

@@ -39,6 +39,8 @@ public class GetTimeSeriesServiceStatisticsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EntitySelectorExpression").build();
     private static final MarshallingInfo<Integer> PERIOD_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Period").build();
+    private static final MarshallingInfo<Boolean> FORECASTSTATISTICS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ForecastStatistics").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
 
@@ -64,6 +66,7 @@ public class GetTimeSeriesServiceStatisticsRequestMarshaller {
             protocolMarshaller.marshall(getTimeSeriesServiceStatisticsRequest.getGroupARN(), GROUPARN_BINDING);
             protocolMarshaller.marshall(getTimeSeriesServiceStatisticsRequest.getEntitySelectorExpression(), ENTITYSELECTOREXPRESSION_BINDING);
             protocolMarshaller.marshall(getTimeSeriesServiceStatisticsRequest.getPeriod(), PERIOD_BINDING);
+            protocolMarshaller.marshall(getTimeSeriesServiceStatisticsRequest.getForecastStatistics(), FORECASTSTATISTICS_BINDING);
             protocolMarshaller.marshall(getTimeSeriesServiceStatisticsRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

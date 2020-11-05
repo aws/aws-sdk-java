@@ -26,7 +26,7 @@ public class ListThingGroupsResult extends com.amazonaws.AmazonWebServiceResult<
     private java.util.List<GroupNameAndArn> thingGroups;
     /**
      * <p>
-     * The token used to get the next set of results. Will not be returned if operation has returned all results.
+     * The token to use to get the next set of results. Will not be returned if operation has returned all results.
      * </p>
      */
     private String nextToken;
@@ -103,11 +103,12 @@ public class ListThingGroupsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The token used to get the next set of results. Will not be returned if operation has returned all results.
+     * The token to use to get the next set of results. Will not be returned if operation has returned all results.
      * </p>
      * 
      * @param nextToken
-     *        The token used to get the next set of results. Will not be returned if operation has returned all results.
+     *        The token to use to get the next set of results. Will not be returned if operation has returned all
+     *        results.
      */
 
     public void setNextToken(String nextToken) {
@@ -116,10 +117,10 @@ public class ListThingGroupsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The token used to get the next set of results. Will not be returned if operation has returned all results.
+     * The token to use to get the next set of results. Will not be returned if operation has returned all results.
      * </p>
      * 
-     * @return The token used to get the next set of results. Will not be returned if operation has returned all
+     * @return The token to use to get the next set of results. Will not be returned if operation has returned all
      *         results.
      */
 
@@ -129,11 +130,12 @@ public class ListThingGroupsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The token used to get the next set of results. Will not be returned if operation has returned all results.
+     * The token to use to get the next set of results. Will not be returned if operation has returned all results.
      * </p>
      * 
      * @param nextToken
-     *        The token used to get the next set of results. Will not be returned if operation has returned all results.
+     *        The token to use to get the next set of results. Will not be returned if operation has returned all
+     *        results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

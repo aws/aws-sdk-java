@@ -25,7 +25,7 @@ public class DescribeInsightRulesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Reserved for future use.
+     * If this parameter is present, it is a token that marks the start of the next batch of returned results.
      * </p>
      */
     private String nextToken;
@@ -38,11 +38,11 @@ public class DescribeInsightRulesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Reserved for future use.
+     * If this parameter is present, it is a token that marks the start of the next batch of returned results.
      * </p>
      * 
      * @param nextToken
-     *        Reserved for future use.
+     *        If this parameter is present, it is a token that marks the start of the next batch of returned results.
      */
 
     public void setNextToken(String nextToken) {
@@ -51,10 +51,10 @@ public class DescribeInsightRulesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Reserved for future use.
+     * If this parameter is present, it is a token that marks the start of the next batch of returned results.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return If this parameter is present, it is a token that marks the start of the next batch of returned results.
      */
 
     public String getNextToken() {
@@ -63,11 +63,11 @@ public class DescribeInsightRulesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Reserved for future use.
+     * If this parameter is present, it is a token that marks the start of the next batch of returned results.
      * </p>
      * 
      * @param nextToken
-     *        Reserved for future use.
+     *        If this parameter is present, it is a token that marks the start of the next batch of returned results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

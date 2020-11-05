@@ -18,8 +18,8 @@ import javax.annotation.Generated;
 /**
  * <p>
  * Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
- * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html"> AWS Nitro Enclaves</a> in the
- * <i>Amazon Elastic Compute Cloud User Guide</i>.
+ * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro Enclaves?</a> in the
+ * <i>AWS Nitro Enclaves User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnclaveOptionsRequest" target="_top">AWS API

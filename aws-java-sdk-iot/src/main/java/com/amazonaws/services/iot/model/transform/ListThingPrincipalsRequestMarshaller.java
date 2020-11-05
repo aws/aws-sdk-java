@@ -27,6 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListThingPrincipalsRequestMarshaller {
 
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> THINGNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("thingName").build();
 
@@ -46,6 +50,8 @@ public class ListThingPrincipalsRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(listThingPrincipalsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listThingPrincipalsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listThingPrincipalsRequest.getThingName(), THINGNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

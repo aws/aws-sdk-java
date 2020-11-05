@@ -18,14 +18,14 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * An ActiveMQ user associated with the broker.
+ * A user associated with the broker.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/User" target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class User implements Serializable, Cloneable, StructuredPojo {
 
-    /** Enables access to the the ActiveMQ Web Console for the ActiveMQ user. */
+    /** Enables access to the ActiveMQ Web Console for the ActiveMQ user (Does not apply to RabbitMQ brokers). */
     private Boolean consoleAccess;
     /**
      * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric
@@ -33,21 +33,21 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      */
     private java.util.List<String> groups;
     /**
-     * Required. The password of the ActiveMQ user. This value must be at least 12 characters long, must contain at
-     * least 4 unique characters, and must not contain commas.
+     * Required. The password of the broker user. This value must be at least 12 characters long, must contain at least
+     * 4 unique characters, and must not contain commas.
      */
     private String password;
     /**
-     * Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes,
-     * periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods,
+     * underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
      */
     private String username;
 
     /**
-     * Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     * Enables access to the ActiveMQ Web Console for the ActiveMQ user (Does not apply to RabbitMQ brokers).
      * 
      * @param consoleAccess
-     *        Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     *        Enables access to the ActiveMQ Web Console for the ActiveMQ user (Does not apply to RabbitMQ brokers).
      */
 
     public void setConsoleAccess(Boolean consoleAccess) {
@@ -55,9 +55,9 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     * Enables access to the ActiveMQ Web Console for the ActiveMQ user (Does not apply to RabbitMQ brokers).
      * 
-     * @return Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     * @return Enables access to the ActiveMQ Web Console for the ActiveMQ user (Does not apply to RabbitMQ brokers).
      */
 
     public Boolean getConsoleAccess() {
@@ -65,10 +65,10 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     * Enables access to the ActiveMQ Web Console for the ActiveMQ user (Does not apply to RabbitMQ brokers).
      * 
      * @param consoleAccess
-     *        Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     *        Enables access to the ActiveMQ Web Console for the ActiveMQ user (Does not apply to RabbitMQ brokers).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,9 +78,9 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     * Enables access to the ActiveMQ Web Console for the ActiveMQ user (Does not apply to RabbitMQ brokers).
      * 
-     * @return Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     * @return Enables access to the ActiveMQ Web Console for the ActiveMQ user (Does not apply to RabbitMQ brokers).
      */
 
     public Boolean isConsoleAccess() {
@@ -162,12 +162,12 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required. The password of the ActiveMQ user. This value must be at least 12 characters long, must contain at
-     * least 4 unique characters, and must not contain commas.
+     * Required. The password of the broker user. This value must be at least 12 characters long, must contain at least
+     * 4 unique characters, and must not contain commas.
      * 
      * @param password
-     *        Required. The password of the ActiveMQ user. This value must be at least 12 characters long, must contain
-     *        at least 4 unique characters, and must not contain commas.
+     *        Required. The password of the broker user. This value must be at least 12 characters long, must contain at
+     *        least 4 unique characters, and must not contain commas.
      */
 
     public void setPassword(String password) {
@@ -175,10 +175,10 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required. The password of the ActiveMQ user. This value must be at least 12 characters long, must contain at
-     * least 4 unique characters, and must not contain commas.
+     * Required. The password of the broker user. This value must be at least 12 characters long, must contain at least
+     * 4 unique characters, and must not contain commas.
      * 
-     * @return Required. The password of the ActiveMQ user. This value must be at least 12 characters long, must contain
+     * @return Required. The password of the broker user. This value must be at least 12 characters long, must contain
      *         at least 4 unique characters, and must not contain commas.
      */
 
@@ -187,12 +187,12 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required. The password of the ActiveMQ user. This value must be at least 12 characters long, must contain at
-     * least 4 unique characters, and must not contain commas.
+     * Required. The password of the broker user. This value must be at least 12 characters long, must contain at least
+     * 4 unique characters, and must not contain commas.
      * 
      * @param password
-     *        Required. The password of the ActiveMQ user. This value must be at least 12 characters long, must contain
-     *        at least 4 unique characters, and must not contain commas.
+     *        Required. The password of the broker user. This value must be at least 12 characters long, must contain at
+     *        least 4 unique characters, and must not contain commas.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,11 +202,11 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes,
-     * periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods,
+     * underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
      * 
      * @param username
-     *        Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes,
+     *        Required. The username of the broker user. This value can contain only alphanumeric characters, dashes,
      *        periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
      */
 
@@ -215,10 +215,10 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes,
-     * periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods,
+     * underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
      * 
-     * @return Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes,
+     * @return Required. The username of the broker user. This value can contain only alphanumeric characters, dashes,
      *         periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
      */
 
@@ -227,11 +227,11 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes,
-     * periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods,
+     * underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
      * 
      * @param username
-     *        Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes,
+     *        Required. The username of the broker user. This value can contain only alphanumeric characters, dashes,
      *        periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

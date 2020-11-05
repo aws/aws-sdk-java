@@ -27,19 +27,19 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The namespace to filter against.
+     * The metric namespace to filter against. Only the namespace that matches exactly will be returned.
      * </p>
      */
     private String namespace;
     /**
      * <p>
-     * The name of the metric to filter against.
+     * The name of the metric to filter against. Only the metrics with names that match exactly will be returned.
      * </p>
      */
     private String metricName;
     /**
      * <p>
-     * The dimensions to filter against.
+     * The dimensions to filter against. Only the dimensions that match exactly will be returned.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DimensionFilter> dimensions;
@@ -64,11 +64,11 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The namespace to filter against.
+     * The metric namespace to filter against. Only the namespace that matches exactly will be returned.
      * </p>
      * 
      * @param namespace
-     *        The namespace to filter against.
+     *        The metric namespace to filter against. Only the namespace that matches exactly will be returned.
      */
 
     public void setNamespace(String namespace) {
@@ -77,10 +77,10 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The namespace to filter against.
+     * The metric namespace to filter against. Only the namespace that matches exactly will be returned.
      * </p>
      * 
-     * @return The namespace to filter against.
+     * @return The metric namespace to filter against. Only the namespace that matches exactly will be returned.
      */
 
     public String getNamespace() {
@@ -89,11 +89,11 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The namespace to filter against.
+     * The metric namespace to filter against. Only the namespace that matches exactly will be returned.
      * </p>
      * 
      * @param namespace
-     *        The namespace to filter against.
+     *        The metric namespace to filter against. Only the namespace that matches exactly will be returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,11 +104,11 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the metric to filter against.
+     * The name of the metric to filter against. Only the metrics with names that match exactly will be returned.
      * </p>
      * 
      * @param metricName
-     *        The name of the metric to filter against.
+     *        The name of the metric to filter against. Only the metrics with names that match exactly will be returned.
      */
 
     public void setMetricName(String metricName) {
@@ -117,10 +117,11 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the metric to filter against.
+     * The name of the metric to filter against. Only the metrics with names that match exactly will be returned.
      * </p>
      * 
-     * @return The name of the metric to filter against.
+     * @return The name of the metric to filter against. Only the metrics with names that match exactly will be
+     *         returned.
      */
 
     public String getMetricName() {
@@ -129,11 +130,11 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the metric to filter against.
+     * The name of the metric to filter against. Only the metrics with names that match exactly will be returned.
      * </p>
      * 
      * @param metricName
-     *        The name of the metric to filter against.
+     *        The name of the metric to filter against. Only the metrics with names that match exactly will be returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,10 +145,10 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The dimensions to filter against.
+     * The dimensions to filter against. Only the dimensions that match exactly will be returned.
      * </p>
      * 
-     * @return The dimensions to filter against.
+     * @return The dimensions to filter against. Only the dimensions that match exactly will be returned.
      */
 
     public java.util.List<DimensionFilter> getDimensions() {
@@ -159,11 +160,11 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The dimensions to filter against.
+     * The dimensions to filter against. Only the dimensions that match exactly will be returned.
      * </p>
      * 
      * @param dimensions
-     *        The dimensions to filter against.
+     *        The dimensions to filter against. Only the dimensions that match exactly will be returned.
      */
 
     public void setDimensions(java.util.Collection<DimensionFilter> dimensions) {
@@ -177,7 +178,7 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The dimensions to filter against.
+     * The dimensions to filter against. Only the dimensions that match exactly will be returned.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -186,7 +187,7 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param dimensions
-     *        The dimensions to filter against.
+     *        The dimensions to filter against. Only the dimensions that match exactly will be returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,11 +203,11 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The dimensions to filter against.
+     * The dimensions to filter against. Only the dimensions that match exactly will be returned.
      * </p>
      * 
      * @param dimensions
-     *        The dimensions to filter against.
+     *        The dimensions to filter against. Only the dimensions that match exactly will be returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

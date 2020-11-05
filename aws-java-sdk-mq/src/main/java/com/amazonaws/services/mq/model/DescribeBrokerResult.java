@@ -52,7 +52,7 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     private String deploymentMode;
     /** Encryption options for the broker. */
     private EncryptionOptions encryptionOptions;
-    /** Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ. */
+    /** Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ. */
     private String engineType;
     /**
      * The version of the broker engine. For a list of supported engine versions, see
@@ -93,14 +93,15 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     /** The broker's storage type. */
     private String storageType;
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the broker can use from different
-     * Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones.
+     * A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ
+     * deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no subnet requirements
+     * when deployed with public accessibility, deployment without public accessibility requires at least one subnet.
      */
     private java.util.List<String> subnetIds;
     /** The list of all tags associated with this broker. */
     private java.util.Map<String, String> tags;
-    /** The list of all ActiveMQ usernames for the specified broker. */
+    /** The list of all broker usernames for the specified broker. */
     private java.util.List<UserSummary> users;
 
     /**
@@ -587,10 +588,10 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * 
      * @param engineType
-     *        Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
+     *        Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * @see EngineType
      */
 
@@ -599,9 +600,9 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * 
-     * @return Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
+     * @return Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * @see EngineType
      */
 
@@ -610,10 +611,10 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * 
      * @param engineType
-     *        Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
+     *        Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EngineType
      */
@@ -624,10 +625,10 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * 
      * @param engineType
-     *        Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
+     *        Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EngineType
      */
@@ -1204,13 +1205,16 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the broker can use from different
-     * Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones.
+     * A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ
+     * deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no subnet requirements
+     * when deployed with public accessibility, deployment without public accessibility requires at least one subnet.
      * 
-     * @return The list of groups (2 maximum) that define which subnets and IP ranges the broker can use from different
-     *         Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet).
-     *         An ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * @return The list of groups that define which subnets and IP ranges the broker can use from different Availability
+     *         Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
+     *         ACTIVE_STANDBY_MULTI_AZ deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment
+     *         (RABBITMQ) has no subnet requirements when deployed with public accessibility, deployment without public
+     *         accessibility requires at least one subnet.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -1218,14 +1222,17 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the broker can use from different
-     * Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones.
+     * A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ
+     * deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no subnet requirements
+     * when deployed with public accessibility, deployment without public accessibility requires at least one subnet.
      * 
      * @param subnetIds
-     *        The list of groups (2 maximum) that define which subnets and IP ranges the broker can use from different
-     *        Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
-     *        ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     *        The list of groups that define which subnets and IP ranges the broker can use from different Availability
+     *        Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
+     *        ACTIVE_STANDBY_MULTI_AZ deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment
+     *        (RABBITMQ) has no subnet requirements when deployed with public accessibility, deployment without public
+     *        accessibility requires at least one subnet.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -1238,9 +1245,10 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the broker can use from different
-     * Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones.
+     * A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ
+     * deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no subnet requirements
+     * when deployed with public accessibility, deployment without public accessibility requires at least one subnet.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSubnetIds(java.util.Collection)} or {@link #withSubnetIds(java.util.Collection)} if you want to
@@ -1248,9 +1256,11 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param subnetIds
-     *        The list of groups (2 maximum) that define which subnets and IP ranges the broker can use from different
-     *        Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
-     *        ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     *        The list of groups that define which subnets and IP ranges the broker can use from different Availability
+     *        Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
+     *        ACTIVE_STANDBY_MULTI_AZ deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment
+     *        (RABBITMQ) has no subnet requirements when deployed with public accessibility, deployment without public
+     *        accessibility requires at least one subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1265,14 +1275,17 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the broker can use from different
-     * Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones.
+     * A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ
+     * deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no subnet requirements
+     * when deployed with public accessibility, deployment without public accessibility requires at least one subnet.
      * 
      * @param subnetIds
-     *        The list of groups (2 maximum) that define which subnets and IP ranges the broker can use from different
-     *        Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
-     *        ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     *        The list of groups that define which subnets and IP ranges the broker can use from different Availability
+     *        Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
+     *        ACTIVE_STANDBY_MULTI_AZ deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment
+     *        (RABBITMQ) has no subnet requirements when deployed with public accessibility, deployment without public
+     *        accessibility requires at least one subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1344,9 +1357,9 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * The list of all ActiveMQ usernames for the specified broker.
+     * The list of all broker usernames for the specified broker.
      * 
-     * @return The list of all ActiveMQ usernames for the specified broker.
+     * @return The list of all broker usernames for the specified broker.
      */
 
     public java.util.List<UserSummary> getUsers() {
@@ -1354,10 +1367,10 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * The list of all ActiveMQ usernames for the specified broker.
+     * The list of all broker usernames for the specified broker.
      * 
      * @param users
-     *        The list of all ActiveMQ usernames for the specified broker.
+     *        The list of all broker usernames for the specified broker.
      */
 
     public void setUsers(java.util.Collection<UserSummary> users) {
@@ -1370,7 +1383,7 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * The list of all ActiveMQ usernames for the specified broker.
+     * The list of all broker usernames for the specified broker.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setUsers(java.util.Collection)} or {@link #withUsers(java.util.Collection)} if you want to override the
@@ -1378,7 +1391,7 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param users
-     *        The list of all ActiveMQ usernames for the specified broker.
+     *        The list of all broker usernames for the specified broker.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1393,10 +1406,10 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * The list of all ActiveMQ usernames for the specified broker.
+     * The list of all broker usernames for the specified broker.
      * 
      * @param users
-     *        The list of all ActiveMQ usernames for the specified broker.
+     *        The list of all broker usernames for the specified broker.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

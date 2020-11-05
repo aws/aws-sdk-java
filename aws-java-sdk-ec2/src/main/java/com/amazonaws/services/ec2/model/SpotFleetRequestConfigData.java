@@ -57,6 +57,12 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     private String onDemandAllocationStrategy;
     /**
      * <p>
+     * The strategies for managing your Spot Instances that are at an elevated risk of being interrupted.
+     * </p>
+     */
+    private SpotMaintenanceStrategies spotMaintenanceStrategies;
+    /**
+     * <p>
      * A unique, case-sensitive identifier that you provide to ensure the idempotency of your listings. This helps to
      * avoid duplicate listings. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
@@ -548,6 +554,46 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     public SpotFleetRequestConfigData withOnDemandAllocationStrategy(OnDemandAllocationStrategy onDemandAllocationStrategy) {
         this.onDemandAllocationStrategy = onDemandAllocationStrategy.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The strategies for managing your Spot Instances that are at an elevated risk of being interrupted.
+     * </p>
+     * 
+     * @param spotMaintenanceStrategies
+     *        The strategies for managing your Spot Instances that are at an elevated risk of being interrupted.
+     */
+
+    public void setSpotMaintenanceStrategies(SpotMaintenanceStrategies spotMaintenanceStrategies) {
+        this.spotMaintenanceStrategies = spotMaintenanceStrategies;
+    }
+
+    /**
+     * <p>
+     * The strategies for managing your Spot Instances that are at an elevated risk of being interrupted.
+     * </p>
+     * 
+     * @return The strategies for managing your Spot Instances that are at an elevated risk of being interrupted.
+     */
+
+    public SpotMaintenanceStrategies getSpotMaintenanceStrategies() {
+        return this.spotMaintenanceStrategies;
+    }
+
+    /**
+     * <p>
+     * The strategies for managing your Spot Instances that are at an elevated risk of being interrupted.
+     * </p>
+     * 
+     * @param spotMaintenanceStrategies
+     *        The strategies for managing your Spot Instances that are at an elevated risk of being interrupted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotFleetRequestConfigData withSpotMaintenanceStrategies(SpotMaintenanceStrategies spotMaintenanceStrategies) {
+        setSpotMaintenanceStrategies(spotMaintenanceStrategies);
         return this;
     }
 
@@ -2037,6 +2083,8 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
             sb.append("AllocationStrategy: ").append(getAllocationStrategy()).append(",");
         if (getOnDemandAllocationStrategy() != null)
             sb.append("OnDemandAllocationStrategy: ").append(getOnDemandAllocationStrategy()).append(",");
+        if (getSpotMaintenanceStrategies() != null)
+            sb.append("SpotMaintenanceStrategies: ").append(getSpotMaintenanceStrategies()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getExcessCapacityTerminationPolicy() != null)
@@ -2100,6 +2148,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
         if (other.getOnDemandAllocationStrategy() == null ^ this.getOnDemandAllocationStrategy() == null)
             return false;
         if (other.getOnDemandAllocationStrategy() != null && other.getOnDemandAllocationStrategy().equals(this.getOnDemandAllocationStrategy()) == false)
+            return false;
+        if (other.getSpotMaintenanceStrategies() == null ^ this.getSpotMaintenanceStrategies() == null)
+            return false;
+        if (other.getSpotMaintenanceStrategies() != null && other.getSpotMaintenanceStrategies().equals(this.getSpotMaintenanceStrategies()) == false)
             return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
@@ -2197,6 +2249,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getAllocationStrategy() == null) ? 0 : getAllocationStrategy().hashCode());
         hashCode = prime * hashCode + ((getOnDemandAllocationStrategy() == null) ? 0 : getOnDemandAllocationStrategy().hashCode());
+        hashCode = prime * hashCode + ((getSpotMaintenanceStrategies() == null) ? 0 : getSpotMaintenanceStrategies().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getExcessCapacityTerminationPolicy() == null) ? 0 : getExcessCapacityTerminationPolicy().hashCode());
         hashCode = prime * hashCode + ((getFulfilledCapacity() == null) ? 0 : getFulfilledCapacity().hashCode());

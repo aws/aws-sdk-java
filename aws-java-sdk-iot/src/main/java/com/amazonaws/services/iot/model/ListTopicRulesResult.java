@@ -31,7 +31,7 @@ public class ListTopicRulesResult extends com.amazonaws.AmazonWebServiceResult<c
     private java.util.List<TopicRuleListItem> rules;
     /**
      * <p>
-     * A token used to retrieve the next value.
+     * The token to use to get the next set of results, or <b>null</b> if there are no additional results.
      * </p>
      */
     private String nextToken;
@@ -108,11 +108,11 @@ public class ListTopicRulesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A token used to retrieve the next value.
+     * The token to use to get the next set of results, or <b>null</b> if there are no additional results.
      * </p>
      * 
      * @param nextToken
-     *        A token used to retrieve the next value.
+     *        The token to use to get the next set of results, or <b>null</b> if there are no additional results.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +121,10 @@ public class ListTopicRulesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A token used to retrieve the next value.
+     * The token to use to get the next set of results, or <b>null</b> if there are no additional results.
      * </p>
      * 
-     * @return A token used to retrieve the next value.
+     * @return The token to use to get the next set of results, or <b>null</b> if there are no additional results.
      */
 
     public String getNextToken() {
@@ -133,11 +133,11 @@ public class ListTopicRulesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A token used to retrieve the next value.
+     * The token to use to get the next set of results, or <b>null</b> if there are no additional results.
      * </p>
      * 
      * @param nextToken
-     *        A token used to retrieve the next value.
+     *        The token to use to get the next set of results, or <b>null</b> if there are no additional results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

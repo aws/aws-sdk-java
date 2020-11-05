@@ -190,6 +190,12 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * </p>
      */
     private Integer maxInstanceLifetime;
+    /**
+     * <p>
+     * Indicates whether capacity rebalance is enabled.
+     * </p>
+     */
+    private Boolean capacityRebalance;
 
     /**
      * <p>
@@ -1555,6 +1561,58 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether capacity rebalance is enabled.
+     * </p>
+     * 
+     * @param capacityRebalance
+     *        Indicates whether capacity rebalance is enabled.
+     */
+
+    public void setCapacityRebalance(Boolean capacityRebalance) {
+        this.capacityRebalance = capacityRebalance;
+    }
+
+    /**
+     * <p>
+     * Indicates whether capacity rebalance is enabled.
+     * </p>
+     * 
+     * @return Indicates whether capacity rebalance is enabled.
+     */
+
+    public Boolean getCapacityRebalance() {
+        return this.capacityRebalance;
+    }
+
+    /**
+     * <p>
+     * Indicates whether capacity rebalance is enabled.
+     * </p>
+     * 
+     * @param capacityRebalance
+     *        Indicates whether capacity rebalance is enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoScalingGroup withCapacityRebalance(Boolean capacityRebalance) {
+        setCapacityRebalance(capacityRebalance);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether capacity rebalance is enabled.
+     * </p>
+     * 
+     * @return Indicates whether capacity rebalance is enabled.
+     */
+
+    public Boolean isCapacityRebalance() {
+        return this.capacityRebalance;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1617,7 +1675,9 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         if (getServiceLinkedRoleARN() != null)
             sb.append("ServiceLinkedRoleARN: ").append(getServiceLinkedRoleARN()).append(",");
         if (getMaxInstanceLifetime() != null)
-            sb.append("MaxInstanceLifetime: ").append(getMaxInstanceLifetime());
+            sb.append("MaxInstanceLifetime: ").append(getMaxInstanceLifetime()).append(",");
+        if (getCapacityRebalance() != null)
+            sb.append("CapacityRebalance: ").append(getCapacityRebalance());
         sb.append("}");
         return sb.toString();
     }
@@ -1737,6 +1797,10 @@ public class AutoScalingGroup implements Serializable, Cloneable {
             return false;
         if (other.getMaxInstanceLifetime() != null && other.getMaxInstanceLifetime().equals(this.getMaxInstanceLifetime()) == false)
             return false;
+        if (other.getCapacityRebalance() == null ^ this.getCapacityRebalance() == null)
+            return false;
+        if (other.getCapacityRebalance() != null && other.getCapacityRebalance().equals(this.getCapacityRebalance()) == false)
+            return false;
         return true;
     }
 
@@ -1771,6 +1835,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getNewInstancesProtectedFromScaleIn() == null) ? 0 : getNewInstancesProtectedFromScaleIn().hashCode());
         hashCode = prime * hashCode + ((getServiceLinkedRoleARN() == null) ? 0 : getServiceLinkedRoleARN().hashCode());
         hashCode = prime * hashCode + ((getMaxInstanceLifetime() == null) ? 0 : getMaxInstanceLifetime().hashCode());
+        hashCode = prime * hashCode + ((getCapacityRebalance() == null) ? 0 : getCapacityRebalance().hashCode());
         return hashCode;
     }
 

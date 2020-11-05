@@ -3418,6 +3418,9 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html">Getting Amazon SNS
      * Notifications When Your Auto Scaling Group Scales</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
+     * <p>
+     * If you exceed your maximum limit of SNS topics, which is 10 per Auto Scaling group, the call fails.
+     * </p>
      * 
      * @param putNotificationConfigurationRequest
      * @return Result of the PutNotificationConfiguration operation returned by the service.
@@ -3918,6 +3921,9 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * in, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
      * >Instance Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
+     * If you exceed your maximum limit of instance IDs, which is 50 per Auto Scaling group, the call fails.
      * </p>
      * 
      * @param setInstanceProtectionRequest

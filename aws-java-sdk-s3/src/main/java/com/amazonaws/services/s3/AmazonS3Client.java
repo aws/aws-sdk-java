@@ -2273,18 +2273,15 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.addHeader("Content-Length", String.valueOf(content.length));
         request.addHeader("Content-Type", "application/xml");
         request.setContent(new ByteArrayInputStream(content));
-        try {
-            byte[] md5 = Md5Utils.computeMD5Hash(content);
-            String md5Base64 = BinaryUtils.toBase64(md5);
-            request.addHeader("Content-MD5", md5Base64);
-        } catch ( Exception e ) {
-            throw new SdkClientException("Couldn't compute md5 sum", e);
-        }
+        populateRequestHeaderWithMd5(request, content);
 
         @SuppressWarnings("unchecked")
         ResponseHeaderHandlerChain<DeleteObjectsResponse> responseHandler = new ResponseHeaderHandlerChain<DeleteObjectsResponse>(
                 new Unmarshallers.DeleteObjectsResultUnmarshaller(),
                 new S3RequesterChargedHeaderHandler<DeleteObjectsResponse>());
+
+
+
 
         DeleteObjectsResponse response = invoke(request, responseHandler, deleteObjectsRequest.getBucketName(), null);
 
@@ -2377,6 +2374,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         byte[] bytes = bucketConfigurationXmlFactory.convertToXmlByteArray(versioningConfiguration);
         request.setContent(new ByteArrayInputStream(bytes));
+        populateRequestHeaderWithMd5(request, bytes);
 
         invoke(request, voidResponseHandler, bucketName, null);
     }
@@ -2487,14 +2485,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.addHeader("Content-Length", String.valueOf(content.length));
         request.addHeader("Content-Type", "application/xml");
         request.setContent(new ByteArrayInputStream(content));
-        try {
-            byte[] md5 = Md5Utils.computeMD5Hash(content);
-            String md5Base64 = BinaryUtils.toBase64(md5);
-            request.addHeader("Content-MD5", md5Base64);
-        } catch ( Exception e ) {
-            throw new SdkClientException("Couldn't compute md5 sum", e);
-        }
-
+        populateRequestHeaderWithMd5(request, content);
         invoke(request, voidResponseHandler, bucketName, null);
     }
 
@@ -2577,13 +2568,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.addHeader("Content-Length", String.valueOf(content.length));
         request.addHeader("Content-Type", "application/xml");
         request.setContent(new ByteArrayInputStream(content));
-        try {
-            byte[] md5 = Md5Utils.computeMD5Hash(content);
-            String md5Base64 = BinaryUtils.toBase64(md5);
-            request.addHeader("Content-MD5", md5Base64);
-        } catch ( Exception e ) {
-            throw new SdkClientException("Couldn't compute md5 sum", e);
-        }
+        populateRequestHeaderWithMd5(request, content);
 
         invoke(request, voidResponseHandler, bucketName, null);
     }
@@ -2666,13 +2651,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.addHeader("Content-Length", String.valueOf(content.length));
         request.addHeader("Content-Type", "application/xml");
         request.setContent(new ByteArrayInputStream(content));
-        try {
-            byte[] md5 = Md5Utils.computeMD5Hash(content);
-            String md5Base64 = BinaryUtils.toBase64(md5);
-            request.addHeader("Content-MD5", md5Base64);
-        } catch ( Exception e ) {
-            throw new SdkClientException("Couldn't compute md5 sum", e);
-        }
+        populateRequestHeaderWithMd5(request, content);
 
         invoke(request, voidResponseHandler, bucketName, null);
     }
@@ -2729,6 +2708,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         byte[] bytes = bucketConfigurationXmlFactory.convertToXmlByteArray(configuration);
         request.setContent(new ByteArrayInputStream(bytes));
+        populateRequestHeaderWithMd5(request, bytes);
 
         invoke(request, voidResponseHandler, bucketName, null);
     }
@@ -2784,7 +2764,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         byte[] bytes = bucketConfigurationXmlFactory.convertToXmlByteArray(bucketNotificationConfiguration);
         request.setContent(new ByteArrayInputStream(bytes));
-
         invoke(request, voidResponseHandler, bucketName, null);
     }
 
@@ -2854,6 +2833,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         byte[] bytes = bucketConfigurationXmlFactory.convertToXmlByteArray(loggingConfiguration);
         request.setContent(new ByteArrayInputStream(bytes));
+        populateRequestHeaderWithMd5(request, bytes);
 
         invoke(request, voidResponseHandler, bucketName, null);
     }
@@ -2992,7 +2972,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         Request<SetBucketPolicyRequest> request = createRequest(bucketName, null, setBucketPolicyRequest, HttpMethodName.PUT);
         request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutBucketPolicy");
         request.addParameter("policy", null);
-        request.setContent(new ByteArrayInputStream(ServiceUtils.toByteArray(policyText)));
+        byte[] content = ServiceUtils.toByteArray(policyText);
+        request.setContent(new ByteArrayInputStream(content));
+        populateRequestHeaderWithMd5(request, content);
 
         if (setBucketPolicyRequest.getConfirmRemoveSelfBucketAccess() != null &&
             setBucketPolicyRequest.getConfirmRemoveSelfBucketAccess()) {
@@ -3087,6 +3069,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         byte[] bytes = bucketConfigurationXmlFactory.convertToXmlByteArray(sseConfig);
         request.setContent(new ByteArrayInputStream(bytes));
+        populateRequestHeaderWithMd5(request, bytes);
 
         return invoke(request, new Unmarshallers.SetBucketEncryptionUnmarshaller(), bucketName, null);
     }
@@ -3110,6 +3093,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         byte[] bytes = bucketConfigurationXmlFactory.convertToXmlByteArray(config);
         request.setContent(new ByteArrayInputStream(bytes));
+        populateRequestHeaderWithMd5(request, bytes);
 
         return invoke(request, new Unmarshallers.SetPublicAccessBlockUnmarshaller(), bucketName, null);
     }
@@ -4008,6 +3992,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.addHeader("Content-Type", "application/xml");
         request.addHeader("Content-Length", String.valueOf(aclAsXml.length));
         request.setContent(new ByteArrayInputStream(aclAsXml));
+        populateRequestHeaderWithMd5(request, aclAsXml);
 
         invoke(request, voidResponseHandler, bucketName, key);
     }
@@ -4392,6 +4377,23 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         populateSourceSSE_C(request, copyPartRequest.getSourceSSECustomerKey());
         populateSSE_C(request, copyPartRequest.getDestinationSSECustomerKey());
     }
+
+
+    /**
+     * Populates the specified request header with Content-MD5.
+     * @param request The request to populate with Content-MD5 header.
+     * @param content Content for which MD5Hash is calculated.
+     */
+    private void populateRequestHeaderWithMd5(Request<?> request, byte[] content) {
+        try {
+            byte[] md5 = Md5Utils.computeMD5Hash(content);
+            String md5Base64 = BinaryUtils.toBase64(md5);
+            request.addHeader("Content-MD5", md5Base64);
+        } catch ( Exception e ) {
+            throw new SdkClientException("Couldn't compute md5 sum", e);
+        }
+    }
+
 
     /**
      * Assemble copy source header (x-amz-copy-source) from copy source bucket name, object key, and version ID.
@@ -5357,6 +5359,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         byte[] bytes = requestPaymentConfigurationXmlFactory
                 .convertToXmlByteArray(configuration);
         request.setContent(new ByteArrayInputStream(bytes));
+        populateRequestHeaderWithMd5(request, bytes);
 
         invoke(request, voidResponseHandler, bucketName, null);
     }
@@ -5582,15 +5585,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.addHeader("Content-Type", "application/xml");
         request.setContent(new ByteArrayInputStream(bytes));
 
+        populateRequestHeaderWithMd5(request, bytes);
 
-        try {
-            request.addHeader("Content-MD5",
-                    BinaryUtils.toBase64(Md5Utils.computeMD5Hash(bytes)));
-        } catch (Exception e) {
-            throw new SdkClientException(
-                    "Not able to compute MD5 of the replication rule configuration. Exception Message : "
-                            + e.getMessage(), e);
-        }
         invoke(request, voidResponseHandler, bucketName, null);
     }
 

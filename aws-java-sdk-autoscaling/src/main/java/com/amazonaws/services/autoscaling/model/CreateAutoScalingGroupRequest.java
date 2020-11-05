@@ -261,6 +261,20 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     private Boolean newInstancesProtectedFromScaleIn;
     /**
      * <p>
+     * Indicates whether capacity rebalance is enabled. Otherwise, capacity rebalance is disabled.
+     * </p>
+     * <p>
+     * You can enable capacity rebalancing for your Auto Scaling groups when using Spot Instances. When you turn on
+     * capacity rebalancing, Amazon EC2 Auto Scaling attempts to launch a Spot Instance whenever Amazon EC2 predicts
+     * that a Spot Instance is at an elevated risk of interruption. After launching a new instance, it then terminates
+     * an old instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon EC2 Auto Scaling
+     * capacity rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     */
+    private Boolean capacityRebalance;
+    /**
+     * <p>
      * One or more lifecycle hooks.
      * </p>
      */
@@ -1960,6 +1974,118 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
+     * Indicates whether capacity rebalance is enabled. Otherwise, capacity rebalance is disabled.
+     * </p>
+     * <p>
+     * You can enable capacity rebalancing for your Auto Scaling groups when using Spot Instances. When you turn on
+     * capacity rebalancing, Amazon EC2 Auto Scaling attempts to launch a Spot Instance whenever Amazon EC2 predicts
+     * that a Spot Instance is at an elevated risk of interruption. After launching a new instance, it then terminates
+     * an old instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon EC2 Auto Scaling
+     * capacity rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * 
+     * @param capacityRebalance
+     *        Indicates whether capacity rebalance is enabled. Otherwise, capacity rebalance is disabled.</p>
+     *        <p>
+     *        You can enable capacity rebalancing for your Auto Scaling groups when using Spot Instances. When you turn
+     *        on capacity rebalancing, Amazon EC2 Auto Scaling attempts to launch a Spot Instance whenever Amazon EC2
+     *        predicts that a Spot Instance is at an elevated risk of interruption. After launching a new instance, it
+     *        then terminates an old instance. For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon EC2 Auto
+     *        Scaling capacity rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     */
+
+    public void setCapacityRebalance(Boolean capacityRebalance) {
+        this.capacityRebalance = capacityRebalance;
+    }
+
+    /**
+     * <p>
+     * Indicates whether capacity rebalance is enabled. Otherwise, capacity rebalance is disabled.
+     * </p>
+     * <p>
+     * You can enable capacity rebalancing for your Auto Scaling groups when using Spot Instances. When you turn on
+     * capacity rebalancing, Amazon EC2 Auto Scaling attempts to launch a Spot Instance whenever Amazon EC2 predicts
+     * that a Spot Instance is at an elevated risk of interruption. After launching a new instance, it then terminates
+     * an old instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon EC2 Auto Scaling
+     * capacity rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * 
+     * @return Indicates whether capacity rebalance is enabled. Otherwise, capacity rebalance is disabled.</p>
+     *         <p>
+     *         You can enable capacity rebalancing for your Auto Scaling groups when using Spot Instances. When you turn
+     *         on capacity rebalancing, Amazon EC2 Auto Scaling attempts to launch a Spot Instance whenever Amazon EC2
+     *         predicts that a Spot Instance is at an elevated risk of interruption. After launching a new instance, it
+     *         then terminates an old instance. For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon EC2 Auto
+     *         Scaling capacity rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     */
+
+    public Boolean getCapacityRebalance() {
+        return this.capacityRebalance;
+    }
+
+    /**
+     * <p>
+     * Indicates whether capacity rebalance is enabled. Otherwise, capacity rebalance is disabled.
+     * </p>
+     * <p>
+     * You can enable capacity rebalancing for your Auto Scaling groups when using Spot Instances. When you turn on
+     * capacity rebalancing, Amazon EC2 Auto Scaling attempts to launch a Spot Instance whenever Amazon EC2 predicts
+     * that a Spot Instance is at an elevated risk of interruption. After launching a new instance, it then terminates
+     * an old instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon EC2 Auto Scaling
+     * capacity rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * 
+     * @param capacityRebalance
+     *        Indicates whether capacity rebalance is enabled. Otherwise, capacity rebalance is disabled.</p>
+     *        <p>
+     *        You can enable capacity rebalancing for your Auto Scaling groups when using Spot Instances. When you turn
+     *        on capacity rebalancing, Amazon EC2 Auto Scaling attempts to launch a Spot Instance whenever Amazon EC2
+     *        predicts that a Spot Instance is at an elevated risk of interruption. After launching a new instance, it
+     *        then terminates an old instance. For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon EC2 Auto
+     *        Scaling capacity rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAutoScalingGroupRequest withCapacityRebalance(Boolean capacityRebalance) {
+        setCapacityRebalance(capacityRebalance);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether capacity rebalance is enabled. Otherwise, capacity rebalance is disabled.
+     * </p>
+     * <p>
+     * You can enable capacity rebalancing for your Auto Scaling groups when using Spot Instances. When you turn on
+     * capacity rebalancing, Amazon EC2 Auto Scaling attempts to launch a Spot Instance whenever Amazon EC2 predicts
+     * that a Spot Instance is at an elevated risk of interruption. After launching a new instance, it then terminates
+     * an old instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon EC2 Auto Scaling
+     * capacity rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * 
+     * @return Indicates whether capacity rebalance is enabled. Otherwise, capacity rebalance is disabled.</p>
+     *         <p>
+     *         You can enable capacity rebalancing for your Auto Scaling groups when using Spot Instances. When you turn
+     *         on capacity rebalancing, Amazon EC2 Auto Scaling attempts to launch a Spot Instance whenever Amazon EC2
+     *         predicts that a Spot Instance is at an elevated risk of interruption. After launching a new instance, it
+     *         then terminates an old instance. For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon EC2 Auto
+     *         Scaling capacity rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     */
+
+    public Boolean isCapacityRebalance() {
+        return this.capacityRebalance;
+    }
+
+    /**
+     * <p>
      * One or more lifecycle hooks.
      * </p>
      * 
@@ -2418,6 +2544,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
             sb.append("TerminationPolicies: ").append(getTerminationPolicies()).append(",");
         if (getNewInstancesProtectedFromScaleIn() != null)
             sb.append("NewInstancesProtectedFromScaleIn: ").append(getNewInstancesProtectedFromScaleIn()).append(",");
+        if (getCapacityRebalance() != null)
+            sb.append("CapacityRebalance: ").append(getCapacityRebalance()).append(",");
         if (getLifecycleHookSpecificationList() != null)
             sb.append("LifecycleHookSpecificationList: ").append(getLifecycleHookSpecificationList()).append(",");
         if (getTags() != null)
@@ -2513,6 +2641,10 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
         if (other.getNewInstancesProtectedFromScaleIn() != null
                 && other.getNewInstancesProtectedFromScaleIn().equals(this.getNewInstancesProtectedFromScaleIn()) == false)
             return false;
+        if (other.getCapacityRebalance() == null ^ this.getCapacityRebalance() == null)
+            return false;
+        if (other.getCapacityRebalance() != null && other.getCapacityRebalance().equals(this.getCapacityRebalance()) == false)
+            return false;
         if (other.getLifecycleHookSpecificationList() == null ^ this.getLifecycleHookSpecificationList() == null)
             return false;
         if (other.getLifecycleHookSpecificationList() != null
@@ -2556,6 +2688,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getVPCZoneIdentifier() == null) ? 0 : getVPCZoneIdentifier().hashCode());
         hashCode = prime * hashCode + ((getTerminationPolicies() == null) ? 0 : getTerminationPolicies().hashCode());
         hashCode = prime * hashCode + ((getNewInstancesProtectedFromScaleIn() == null) ? 0 : getNewInstancesProtectedFromScaleIn().hashCode());
+        hashCode = prime * hashCode + ((getCapacityRebalance() == null) ? 0 : getCapacityRebalance().hashCode());
         hashCode = prime * hashCode + ((getLifecycleHookSpecificationList() == null) ? 0 : getLifecycleHookSpecificationList().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getServiceLinkedRoleARN() == null) ? 0 : getServiceLinkedRoleARN().hashCode());

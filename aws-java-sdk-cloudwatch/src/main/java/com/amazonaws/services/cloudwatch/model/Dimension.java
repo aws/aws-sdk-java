@@ -36,7 +36,7 @@ public class Dimension implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * The value of the dimension.
+     * The value of the dimension. Dimension values cannot contain blank spaces or non-ASCII characters.
      * </p>
      */
     private String value;
@@ -83,11 +83,11 @@ public class Dimension implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of the dimension.
+     * The value of the dimension. Dimension values cannot contain blank spaces or non-ASCII characters.
      * </p>
      * 
      * @param value
-     *        The value of the dimension.
+     *        The value of the dimension. Dimension values cannot contain blank spaces or non-ASCII characters.
      */
 
     public void setValue(String value) {
@@ -96,10 +96,10 @@ public class Dimension implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of the dimension.
+     * The value of the dimension. Dimension values cannot contain blank spaces or non-ASCII characters.
      * </p>
      * 
-     * @return The value of the dimension.
+     * @return The value of the dimension. Dimension values cannot contain blank spaces or non-ASCII characters.
      */
 
     public String getValue() {
@@ -108,11 +108,11 @@ public class Dimension implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of the dimension.
+     * The value of the dimension. Dimension values cannot contain blank spaces or non-ASCII characters.
      * </p>
      * 
      * @param value
-     *        The value of the dimension.
+     *        The value of the dimension. Dimension values cannot contain blank spaces or non-ASCII characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

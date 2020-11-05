@@ -40,6 +40,12 @@ public class TimeSeriesServiceStatistics implements Serializable, Cloneable, Str
     private ServiceStatistics serviceSummaryStatistics;
     /**
      * <p>
+     * The forecasted high and low fault count values.
+     * </p>
+     */
+    private ForecastStatistics serviceForecastStatistics;
+    /**
+     * <p>
      * The response time histogram for the selected entities.
      * </p>
      */
@@ -139,6 +145,46 @@ public class TimeSeriesServiceStatistics implements Serializable, Cloneable, Str
 
     /**
      * <p>
+     * The forecasted high and low fault count values.
+     * </p>
+     * 
+     * @param serviceForecastStatistics
+     *        The forecasted high and low fault count values.
+     */
+
+    public void setServiceForecastStatistics(ForecastStatistics serviceForecastStatistics) {
+        this.serviceForecastStatistics = serviceForecastStatistics;
+    }
+
+    /**
+     * <p>
+     * The forecasted high and low fault count values.
+     * </p>
+     * 
+     * @return The forecasted high and low fault count values.
+     */
+
+    public ForecastStatistics getServiceForecastStatistics() {
+        return this.serviceForecastStatistics;
+    }
+
+    /**
+     * <p>
+     * The forecasted high and low fault count values.
+     * </p>
+     * 
+     * @param serviceForecastStatistics
+     *        The forecasted high and low fault count values.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TimeSeriesServiceStatistics withServiceForecastStatistics(ForecastStatistics serviceForecastStatistics) {
+        setServiceForecastStatistics(serviceForecastStatistics);
+        return this;
+    }
+
+    /**
+     * <p>
      * The response time histogram for the selected entities.
      * </p>
      * 
@@ -225,6 +271,8 @@ public class TimeSeriesServiceStatistics implements Serializable, Cloneable, Str
             sb.append("EdgeSummaryStatistics: ").append(getEdgeSummaryStatistics()).append(",");
         if (getServiceSummaryStatistics() != null)
             sb.append("ServiceSummaryStatistics: ").append(getServiceSummaryStatistics()).append(",");
+        if (getServiceForecastStatistics() != null)
+            sb.append("ServiceForecastStatistics: ").append(getServiceForecastStatistics()).append(",");
         if (getResponseTimeHistogram() != null)
             sb.append("ResponseTimeHistogram: ").append(getResponseTimeHistogram());
         sb.append("}");
@@ -253,6 +301,10 @@ public class TimeSeriesServiceStatistics implements Serializable, Cloneable, Str
             return false;
         if (other.getServiceSummaryStatistics() != null && other.getServiceSummaryStatistics().equals(this.getServiceSummaryStatistics()) == false)
             return false;
+        if (other.getServiceForecastStatistics() == null ^ this.getServiceForecastStatistics() == null)
+            return false;
+        if (other.getServiceForecastStatistics() != null && other.getServiceForecastStatistics().equals(this.getServiceForecastStatistics()) == false)
+            return false;
         if (other.getResponseTimeHistogram() == null ^ this.getResponseTimeHistogram() == null)
             return false;
         if (other.getResponseTimeHistogram() != null && other.getResponseTimeHistogram().equals(this.getResponseTimeHistogram()) == false)
@@ -268,6 +320,7 @@ public class TimeSeriesServiceStatistics implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
         hashCode = prime * hashCode + ((getEdgeSummaryStatistics() == null) ? 0 : getEdgeSummaryStatistics().hashCode());
         hashCode = prime * hashCode + ((getServiceSummaryStatistics() == null) ? 0 : getServiceSummaryStatistics().hashCode());
+        hashCode = prime * hashCode + ((getServiceForecastStatistics() == null) ? 0 : getServiceForecastStatistics().hashCode());
         hashCode = prime * hashCode + ((getResponseTimeHistogram() == null) ? 0 : getResponseTimeHistogram().hashCode());
         return hashCode;
     }

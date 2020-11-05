@@ -521,6 +521,138 @@ public class AWSXRayAsyncClient extends AWSXRayClient implements AWSXRayAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetInsightResult> getInsightAsync(GetInsightRequest request) {
+
+        return getInsightAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInsightResult> getInsightAsync(final GetInsightRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetInsightRequest, GetInsightResult> asyncHandler) {
+        final GetInsightRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetInsightResult>() {
+            @Override
+            public GetInsightResult call() throws Exception {
+                GetInsightResult result = null;
+
+                try {
+                    result = executeGetInsight(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInsightEventsResult> getInsightEventsAsync(GetInsightEventsRequest request) {
+
+        return getInsightEventsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInsightEventsResult> getInsightEventsAsync(final GetInsightEventsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetInsightEventsRequest, GetInsightEventsResult> asyncHandler) {
+        final GetInsightEventsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetInsightEventsResult>() {
+            @Override
+            public GetInsightEventsResult call() throws Exception {
+                GetInsightEventsResult result = null;
+
+                try {
+                    result = executeGetInsightEvents(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInsightImpactGraphResult> getInsightImpactGraphAsync(GetInsightImpactGraphRequest request) {
+
+        return getInsightImpactGraphAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInsightImpactGraphResult> getInsightImpactGraphAsync(final GetInsightImpactGraphRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetInsightImpactGraphRequest, GetInsightImpactGraphResult> asyncHandler) {
+        final GetInsightImpactGraphRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetInsightImpactGraphResult>() {
+            @Override
+            public GetInsightImpactGraphResult call() throws Exception {
+                GetInsightImpactGraphResult result = null;
+
+                try {
+                    result = executeGetInsightImpactGraph(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInsightSummariesResult> getInsightSummariesAsync(GetInsightSummariesRequest request) {
+
+        return getInsightSummariesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInsightSummariesResult> getInsightSummariesAsync(final GetInsightSummariesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetInsightSummariesRequest, GetInsightSummariesResult> asyncHandler) {
+        final GetInsightSummariesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetInsightSummariesResult>() {
+            @Override
+            public GetInsightSummariesResult call() throws Exception {
+                GetInsightSummariesResult result = null;
+
+                try {
+                    result = executeGetInsightSummaries(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSamplingRulesResult> getSamplingRulesAsync(GetSamplingRulesRequest request) {
 
         return getSamplingRulesAsync(request, null);

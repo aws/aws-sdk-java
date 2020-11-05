@@ -38,6 +38,12 @@ public class AdvancedSecurityOptions implements Serializable, Cloneable, Structu
      * </p>
      */
     private Boolean internalUserDatabaseEnabled;
+    /**
+     * <p>
+     * Describes the SAML application configured for a domain.
+     * </p>
+     */
+    private SAMLOptionsOutput sAMLOptions;
 
     /**
      * <p>
@@ -144,6 +150,46 @@ public class AdvancedSecurityOptions implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * Describes the SAML application configured for a domain.
+     * </p>
+     * 
+     * @param sAMLOptions
+     *        Describes the SAML application configured for a domain.
+     */
+
+    public void setSAMLOptions(SAMLOptionsOutput sAMLOptions) {
+        this.sAMLOptions = sAMLOptions;
+    }
+
+    /**
+     * <p>
+     * Describes the SAML application configured for a domain.
+     * </p>
+     * 
+     * @return Describes the SAML application configured for a domain.
+     */
+
+    public SAMLOptionsOutput getSAMLOptions() {
+        return this.sAMLOptions;
+    }
+
+    /**
+     * <p>
+     * Describes the SAML application configured for a domain.
+     * </p>
+     * 
+     * @param sAMLOptions
+     *        Describes the SAML application configured for a domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AdvancedSecurityOptions withSAMLOptions(SAMLOptionsOutput sAMLOptions) {
+        setSAMLOptions(sAMLOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -158,7 +204,9 @@ public class AdvancedSecurityOptions implements Serializable, Cloneable, Structu
         if (getEnabled() != null)
             sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getInternalUserDatabaseEnabled() != null)
-            sb.append("InternalUserDatabaseEnabled: ").append(getInternalUserDatabaseEnabled());
+            sb.append("InternalUserDatabaseEnabled: ").append(getInternalUserDatabaseEnabled()).append(",");
+        if (getSAMLOptions() != null)
+            sb.append("SAMLOptions: ").append(getSAMLOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -181,6 +229,10 @@ public class AdvancedSecurityOptions implements Serializable, Cloneable, Structu
             return false;
         if (other.getInternalUserDatabaseEnabled() != null && other.getInternalUserDatabaseEnabled().equals(this.getInternalUserDatabaseEnabled()) == false)
             return false;
+        if (other.getSAMLOptions() == null ^ this.getSAMLOptions() == null)
+            return false;
+        if (other.getSAMLOptions() != null && other.getSAMLOptions().equals(this.getSAMLOptions()) == false)
+            return false;
         return true;
     }
 
@@ -191,6 +243,7 @@ public class AdvancedSecurityOptions implements Serializable, Cloneable, Structu
 
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         hashCode = prime * hashCode + ((getInternalUserDatabaseEnabled() == null) ? 0 : getInternalUserDatabaseEnabled().hashCode());
+        hashCode = prime * hashCode + ((getSAMLOptions() == null) ? 0 : getSAMLOptions().hashCode());
         return hashCode;
     }
 

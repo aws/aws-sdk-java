@@ -131,6 +131,58 @@ public class AbstractAWSXRayAsync extends AbstractAWSXRay implements AWSXRayAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<GetInsightResult> getInsightAsync(GetInsightRequest request) {
+
+        return getInsightAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInsightResult> getInsightAsync(GetInsightRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetInsightRequest, GetInsightResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInsightEventsResult> getInsightEventsAsync(GetInsightEventsRequest request) {
+
+        return getInsightEventsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInsightEventsResult> getInsightEventsAsync(GetInsightEventsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetInsightEventsRequest, GetInsightEventsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInsightImpactGraphResult> getInsightImpactGraphAsync(GetInsightImpactGraphRequest request) {
+
+        return getInsightImpactGraphAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInsightImpactGraphResult> getInsightImpactGraphAsync(GetInsightImpactGraphRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetInsightImpactGraphRequest, GetInsightImpactGraphResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInsightSummariesResult> getInsightSummariesAsync(GetInsightSummariesRequest request) {
+
+        return getInsightSummariesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInsightSummariesResult> getInsightSummariesAsync(GetInsightSummariesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetInsightSummariesRequest, GetInsightSummariesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSamplingRulesResult> getSamplingRulesAsync(GetSamplingRulesRequest request) {
 
         return getSamplingRulesAsync(request, null);

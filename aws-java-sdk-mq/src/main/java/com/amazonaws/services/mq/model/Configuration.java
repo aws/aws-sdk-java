@@ -34,7 +34,7 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date created;
     /** Required. The description of the configuration. */
     private String description;
-    /** Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ. */
+    /** Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ. */
     private String engineType;
     /**
      * Required. The version of the broker engine. For a list of supported engine versions, see
@@ -207,10 +207,10 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * 
      * @param engineType
-     *        Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
+     *        Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * @see EngineType
      */
 
@@ -219,9 +219,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * 
-     * @return Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
+     * @return Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * @see EngineType
      */
 
@@ -230,10 +230,10 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * 
      * @param engineType
-     *        Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
+     *        Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EngineType
      */
@@ -244,10 +244,10 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * 
      * @param engineType
-     *        Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
+     *        Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EngineType
      */

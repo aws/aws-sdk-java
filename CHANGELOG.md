@@ -1,3 +1,44 @@
+# __1.11.894__ __2020-11-04__
+## __AWS IoT__
+  - ### Features
+    - Updated API documentation and added paginator for AWS Iot Registry ListThingPrincipals API.
+
+## __AWS Service Catalog__
+  - ### Features
+    - Service Catalog API ListPortfolioAccess can now support a maximum PageSize of 100.
+
+## __AWS X-Ray__
+  - ### Features
+    - Releasing new APIs GetInsightSummaries, GetInsightEvents, GetInsight, GetInsightImpactGraph and updating GetTimeSeriesServiceStatistics API for AWS X-Ray Insights feature
+
+## __AWSMarketplace Metering__
+  - ### Features
+    - Adding Vendor Tagging Support in MeterUsage and BatchMeterUsage API.
+
+## __Amazon CloudWatch__
+  - ### Features
+    - Documentation updates for monitoring
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Added support for Client Connect Handler for AWS Client VPN. Fleet supports launching replacement instances in response to Capacity Rebalance recommendation.
+
+## __Amazon Elasticsearch Service__
+  - ### Features
+    - Amazon Elasticsearch Service now supports native SAML authentication that seamlessly integrates with the customers' existing SAML 2.0 Identity Provider (IdP).
+
+## __Amazon Transcribe Streaming Service__
+  - ### Features
+    - With this release, Amazon Transcribe now supports real-time transcription from audio sources in Italian (it-IT) and German(de-DE).
+
+## __AmazonMQ__
+  - ### Features
+    - Amazon MQ introduces support for RabbitMQ, a popular message-broker with native support for AMQP 0.9.1. You can now create fully-managed RabbitMQ brokers in the cloud.
+
+## __Auto Scaling__
+  - ### Features
+    - Capacity Rebalance helps you manage and maintain workload availability during Spot interruptions by proactively augmenting your Auto Scaling group with a new instance before interrupting an old one.
+
 # __1.11.893__ __2020-11-02__
 ## __AWS SDK for Java__
   - ### Features

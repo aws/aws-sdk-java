@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.marketplacemetering.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +38,8 @@ public class MeterUsageRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UsageQuantity").build();
     private static final MarshallingInfo<Boolean> DRYRUN_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("DryRun").build();
+    private static final MarshallingInfo<List> USAGEALLOCATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UsageAllocations").build();
 
     private static final MeterUsageRequestMarshaller instance = new MeterUsageRequestMarshaller();
 
@@ -59,6 +62,7 @@ public class MeterUsageRequestMarshaller {
             protocolMarshaller.marshall(meterUsageRequest.getUsageDimension(), USAGEDIMENSION_BINDING);
             protocolMarshaller.marshall(meterUsageRequest.getUsageQuantity(), USAGEQUANTITY_BINDING);
             protocolMarshaller.marshall(meterUsageRequest.getDryRun(), DRYRUN_BINDING);
+            protocolMarshaller.marshall(meterUsageRequest.getUsageAllocations(), USAGEALLOCATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

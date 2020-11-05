@@ -229,6 +229,10 @@ public class UpdateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("MaxInstanceLifetime", StringUtils.fromInteger(updateAutoScalingGroupRequest.getMaxInstanceLifetime()));
         }
 
+        if (updateAutoScalingGroupRequest.getCapacityRebalance() != null) {
+            request.addParameter("CapacityRebalance", StringUtils.fromBoolean(updateAutoScalingGroupRequest.getCapacityRebalance()));
+        }
+
         return request;
     }
 

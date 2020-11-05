@@ -272,7 +272,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this
-     * expression by setting <code>ReturnValue</code> to true for this object in the array. For more information, see <a
+     * expression by setting <code>ReturnData</code> to true for this object in the array. For more information, see <a
      * href
      * ="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.
      * </p>
@@ -2214,7 +2214,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this
-     * expression by setting <code>ReturnValue</code> to true for this object in the array. For more information, see <a
+     * expression by setting <code>ReturnData</code> to true for this object in the array. For more information, see <a
      * href
      * ="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.
      * </p>
@@ -2233,10 +2233,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </p>
      *         <p>
      *         One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this
-     *         expression by setting <code>ReturnValue</code> to true for this object in the array. For more
-     *         information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html"
-     *         >MetricDataQuery</a>.
+     *         expression by setting <code>ReturnData</code> to true for this object in the array. For more information,
+     *         see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">
+     *         MetricDataQuery</a>.
      *         </p>
      *         <p>
      *         If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
@@ -2263,7 +2262,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this
-     * expression by setting <code>ReturnValue</code> to true for this object in the array. For more information, see <a
+     * expression by setting <code>ReturnData</code> to true for this object in the array. For more information, see <a
      * href
      * ="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.
      * </p>
@@ -2283,7 +2282,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </p>
      *        <p>
      *        One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this
-     *        expression by setting <code>ReturnValue</code> to true for this object in the array. For more information,
+     *        expression by setting <code>ReturnData</code> to true for this object in the array. For more information,
      *        see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">
      *        MetricDataQuery</a>.
      *        </p>
@@ -2314,7 +2313,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this
-     * expression by setting <code>ReturnValue</code> to true for this object in the array. For more information, see <a
+     * expression by setting <code>ReturnData</code> to true for this object in the array. For more information, see <a
      * href
      * ="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.
      * </p>
@@ -2339,7 +2338,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </p>
      *        <p>
      *        One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this
-     *        expression by setting <code>ReturnValue</code> to true for this object in the array. For more information,
+     *        expression by setting <code>ReturnData</code> to true for this object in the array. For more information,
      *        see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">
      *        MetricDataQuery</a>.
      *        </p>
@@ -2372,7 +2371,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this
-     * expression by setting <code>ReturnValue</code> to true for this object in the array. For more information, see <a
+     * expression by setting <code>ReturnData</code> to true for this object in the array. For more information, see <a
      * href
      * ="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.
      * </p>
@@ -2392,7 +2391,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </p>
      *        <p>
      *        One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this
-     *        expression by setting <code>ReturnValue</code> to true for this object in the array. For more information,
+     *        expression by setting <code>ReturnData</code> to true for this object in the array. For more information,
      *        see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">
      *        MetricDataQuery</a>.
      *        </p>

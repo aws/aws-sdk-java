@@ -170,6 +170,13 @@ public interface AWSMarketplaceMetering {
      * <p>
      * BatchMeterUsage can process up to 25 UsageRecords at a time.
      * </p>
+     * <p>
+     * A UsageRecord can optionally include multiple usage allocations, to provide customers with usagedata split into
+     * buckets by tags that you define (or allow the customer to define).
+     * </p>
+     * <p>
+     * BatchMeterUsage requests must be less than 1MB in size.
+     * </p>
      * 
      * @param batchMeterUsageRequest
      *        A BatchMeterUsageRequest contains UsageRecords, which indicate quantities of usage within your
@@ -182,6 +189,11 @@ public interface AWSMarketplaceMetering {
      *         The product code passed does not match the product code used for publishing the product.
      * @throws InvalidUsageDimensionException
      *         The usage dimension does not match one of the UsageDimensions associated with products.
+     * @throws InvalidTagException
+     *         The tag is invalid, or the number of tags is greater than 5.
+     * @throws InvalidUsageAllocationsException
+     *         The usage allocation objects are invalid, or the number of allocations is greater than 500 for a single
+     *         usage record.
      * @throws InvalidCustomerIdentifierException
      *         You have metered usage for a CustomerIdentifier that does not exist.
      * @throws TimestampOutOfBoundsException
@@ -205,6 +217,10 @@ public interface AWSMarketplaceMetering {
      * MeterUsage is authenticated on the buyer's AWS account using credentials from the EC2 instance, ECS task, or EKS
      * pod.
      * </p>
+     * <p>
+     * MeterUsage can optionally include multiple usage allocations, to provide customers with usage data split into
+     * buckets by tags that you define (or allow the customer to define).
+     * </p>
      * 
      * @param meterUsageRequest
      * @return Result of the MeterUsage operation returned by the service.
@@ -215,6 +231,11 @@ public interface AWSMarketplaceMetering {
      *         The product code passed does not match the product code used for publishing the product.
      * @throws InvalidUsageDimensionException
      *         The usage dimension does not match one of the UsageDimensions associated with products.
+     * @throws InvalidTagException
+     *         The tag is invalid, or the number of tags is greater than 5.
+     * @throws InvalidUsageAllocationsException
+     *         The usage allocation objects are invalid, or the number of allocations is greater than 500 for a single
+     *         usage record.
      * @throws InvalidEndpointRegionException
      *         The endpoint being called is in a AWS Region different from your EC2 instance, ECS task, or EKS pod. The
      *         Region of the Metering Service endpoint and the AWS Region of the resource must match.

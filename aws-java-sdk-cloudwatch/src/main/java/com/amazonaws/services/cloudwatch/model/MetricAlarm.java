@@ -188,7 +188,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * <p>
      * An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure either
      * retrieves a metric or performs a math expression. One item in the Metrics array is the math expression that the
-     * alarm watches. This expression by designated by having <code>ReturnValue</code> set to true.
+     * alarm watches. This expression by designated by having <code>ReturnData</code> set to true.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<MetricDataQuery> metrics;
@@ -1545,12 +1545,12 @@ public class MetricAlarm implements Serializable, Cloneable {
      * <p>
      * An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure either
      * retrieves a metric or performs a math expression. One item in the Metrics array is the math expression that the
-     * alarm watches. This expression by designated by having <code>ReturnValue</code> set to true.
+     * alarm watches. This expression by designated by having <code>ReturnData</code> set to true.
      * </p>
      * 
      * @return An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each
      *         structure either retrieves a metric or performs a math expression. One item in the Metrics array is the
-     *         math expression that the alarm watches. This expression by designated by having <code>ReturnValue</code>
+     *         math expression that the alarm watches. This expression by designated by having <code>ReturnData</code>
      *         set to true.
      */
 
@@ -1565,13 +1565,13 @@ public class MetricAlarm implements Serializable, Cloneable {
      * <p>
      * An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure either
      * retrieves a metric or performs a math expression. One item in the Metrics array is the math expression that the
-     * alarm watches. This expression by designated by having <code>ReturnValue</code> set to true.
+     * alarm watches. This expression by designated by having <code>ReturnData</code> set to true.
      * </p>
      * 
      * @param metrics
      *        An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure
      *        either retrieves a metric or performs a math expression. One item in the Metrics array is the math
-     *        expression that the alarm watches. This expression by designated by having <code>ReturnValue</code> set to
+     *        expression that the alarm watches. This expression by designated by having <code>ReturnData</code> set to
      *        true.
      */
 
@@ -1588,7 +1588,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * <p>
      * An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure either
      * retrieves a metric or performs a math expression. One item in the Metrics array is the math expression that the
-     * alarm watches. This expression by designated by having <code>ReturnValue</code> set to true.
+     * alarm watches. This expression by designated by having <code>ReturnData</code> set to true.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1599,7 +1599,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @param metrics
      *        An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure
      *        either retrieves a metric or performs a math expression. One item in the Metrics array is the math
-     *        expression that the alarm watches. This expression by designated by having <code>ReturnValue</code> set to
+     *        expression that the alarm watches. This expression by designated by having <code>ReturnData</code> set to
      *        true.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1618,13 +1618,13 @@ public class MetricAlarm implements Serializable, Cloneable {
      * <p>
      * An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure either
      * retrieves a metric or performs a math expression. One item in the Metrics array is the math expression that the
-     * alarm watches. This expression by designated by having <code>ReturnValue</code> set to true.
+     * alarm watches. This expression by designated by having <code>ReturnData</code> set to true.
      * </p>
      * 
      * @param metrics
      *        An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure
      *        either retrieves a metric or performs a math expression. One item in the Metrics array is the math
-     *        expression that the alarm watches. This expression by designated by having <code>ReturnValue</code> set to
+     *        expression that the alarm watches. This expression by designated by having <code>ReturnData</code> set to
      *        true.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

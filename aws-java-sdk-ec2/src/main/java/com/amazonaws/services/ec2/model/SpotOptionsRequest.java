@@ -47,6 +47,12 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
     private String allocationStrategy;
     /**
      * <p>
+     * The strategies for managing your Spot Instances that are at an elevated risk of being interrupted.
+     * </p>
+     */
+    private FleetSpotMaintenanceStrategiesRequest maintenanceStrategies;
+    /**
+     * <p>
      * The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
      * </p>
      */
@@ -243,6 +249,46 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
 
     public SpotOptionsRequest withAllocationStrategy(SpotAllocationStrategy allocationStrategy) {
         this.allocationStrategy = allocationStrategy.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The strategies for managing your Spot Instances that are at an elevated risk of being interrupted.
+     * </p>
+     * 
+     * @param maintenanceStrategies
+     *        The strategies for managing your Spot Instances that are at an elevated risk of being interrupted.
+     */
+
+    public void setMaintenanceStrategies(FleetSpotMaintenanceStrategiesRequest maintenanceStrategies) {
+        this.maintenanceStrategies = maintenanceStrategies;
+    }
+
+    /**
+     * <p>
+     * The strategies for managing your Spot Instances that are at an elevated risk of being interrupted.
+     * </p>
+     * 
+     * @return The strategies for managing your Spot Instances that are at an elevated risk of being interrupted.
+     */
+
+    public FleetSpotMaintenanceStrategiesRequest getMaintenanceStrategies() {
+        return this.maintenanceStrategies;
+    }
+
+    /**
+     * <p>
+     * The strategies for managing your Spot Instances that are at an elevated risk of being interrupted.
+     * </p>
+     * 
+     * @param maintenanceStrategies
+     *        The strategies for managing your Spot Instances that are at an elevated risk of being interrupted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotOptionsRequest withMaintenanceStrategies(FleetSpotMaintenanceStrategiesRequest maintenanceStrategies) {
+        setMaintenanceStrategies(maintenanceStrategies);
         return this;
     }
 
@@ -577,6 +623,8 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
         sb.append("{");
         if (getAllocationStrategy() != null)
             sb.append("AllocationStrategy: ").append(getAllocationStrategy()).append(",");
+        if (getMaintenanceStrategies() != null)
+            sb.append("MaintenanceStrategies: ").append(getMaintenanceStrategies()).append(",");
         if (getInstanceInterruptionBehavior() != null)
             sb.append("InstanceInterruptionBehavior: ").append(getInstanceInterruptionBehavior()).append(",");
         if (getInstancePoolsToUseCount() != null)
@@ -606,6 +654,10 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
         if (other.getAllocationStrategy() == null ^ this.getAllocationStrategy() == null)
             return false;
         if (other.getAllocationStrategy() != null && other.getAllocationStrategy().equals(this.getAllocationStrategy()) == false)
+            return false;
+        if (other.getMaintenanceStrategies() == null ^ this.getMaintenanceStrategies() == null)
+            return false;
+        if (other.getMaintenanceStrategies() != null && other.getMaintenanceStrategies().equals(this.getMaintenanceStrategies()) == false)
             return false;
         if (other.getInstanceInterruptionBehavior() == null ^ this.getInstanceInterruptionBehavior() == null)
             return false;
@@ -640,6 +692,7 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAllocationStrategy() == null) ? 0 : getAllocationStrategy().hashCode());
+        hashCode = prime * hashCode + ((getMaintenanceStrategies() == null) ? 0 : getMaintenanceStrategies().hashCode());
         hashCode = prime * hashCode + ((getInstanceInterruptionBehavior() == null) ? 0 : getInstanceInterruptionBehavior().hashCode());
         hashCode = prime * hashCode + ((getInstancePoolsToUseCount() == null) ? 0 : getInstancePoolsToUseCount().hashCode());
         hashCode = prime * hashCode + ((getSingleInstanceType() == null) ? 0 : getSingleInstanceType().hashCode());

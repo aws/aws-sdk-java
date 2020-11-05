@@ -78,6 +78,26 @@ public class AbstractAWSXRay implements AWSXRay {
     }
 
     @Override
+    public GetInsightResult getInsight(GetInsightRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetInsightEventsResult getInsightEvents(GetInsightEventsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetInsightImpactGraphResult getInsightImpactGraph(GetInsightImpactGraphRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetInsightSummariesResult getInsightSummaries(GetInsightSummariesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetSamplingRulesResult getSamplingRules(GetSamplingRulesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

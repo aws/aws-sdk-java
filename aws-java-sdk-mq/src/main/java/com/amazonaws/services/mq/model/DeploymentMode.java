@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum DeploymentMode {
 
     SINGLE_INSTANCE("SINGLE_INSTANCE"),
-    ACTIVE_STANDBY_MULTI_AZ("ACTIVE_STANDBY_MULTI_AZ");
+    ACTIVE_STANDBY_MULTI_AZ("ACTIVE_STANDBY_MULTI_AZ"),
+    CLUSTER_MULTI_AZ("CLUSTER_MULTI_AZ");
 
     private String value;
 

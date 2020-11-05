@@ -51,7 +51,7 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String deploymentMode;
     /** Encryption options for the broker. */
     private EncryptionOptions encryptionOptions;
-    /** Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ. */
+    /** Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ. */
     private String engineType;
     /**
      * Required. The version of the broker engine. For a list of supported engine versions, see
@@ -73,17 +73,20 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /** The broker's storage type. */
     private String storageType;
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the broker can use from different
-     * Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones.
+     * A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ
+     * deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no subnet requirements
+     * when deployed with public accessibility, deployment without public accessibility requires at least one subnet.
      */
     private java.util.List<String> subnetIds;
     /** Create tags when creating the broker. */
     private java.util.Map<String, String> tags;
     /**
-     * Required. The list of ActiveMQ users (persons or applications) who can access queues and topics. This value can
-     * contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be
-     * 2-100 characters long.
+     * Required. The list of broker users (persons or applications) who can access queues and topics. For RabbitMQ
+     * brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All
+     * subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ Web
+     * Console. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~).
+     * This value must be 2-100 characters long.
      */
     private java.util.List<User> users;
 
@@ -402,10 +405,10 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * 
      * @param engineType
-     *        Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
+     *        Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * @see EngineType
      */
 
@@ -414,9 +417,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * 
-     * @return Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
+     * @return Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * @see EngineType
      */
 
@@ -425,10 +428,10 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * 
      * @param engineType
-     *        Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
+     *        Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EngineType
      */
@@ -439,10 +442,10 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * 
      * @param engineType
-     *        Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
+     *        Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EngineType
      */
@@ -786,13 +789,16 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the broker can use from different
-     * Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones.
+     * A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ
+     * deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no subnet requirements
+     * when deployed with public accessibility, deployment without public accessibility requires at least one subnet.
      * 
-     * @return The list of groups (2 maximum) that define which subnets and IP ranges the broker can use from different
-     *         Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet).
-     *         An ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * @return The list of groups that define which subnets and IP ranges the broker can use from different Availability
+     *         Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
+     *         ACTIVE_STANDBY_MULTI_AZ deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment
+     *         (RABBITMQ) has no subnet requirements when deployed with public accessibility, deployment without public
+     *         accessibility requires at least one subnet.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -800,14 +806,17 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the broker can use from different
-     * Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones.
+     * A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ
+     * deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no subnet requirements
+     * when deployed with public accessibility, deployment without public accessibility requires at least one subnet.
      * 
      * @param subnetIds
-     *        The list of groups (2 maximum) that define which subnets and IP ranges the broker can use from different
-     *        Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
-     *        ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     *        The list of groups that define which subnets and IP ranges the broker can use from different Availability
+     *        Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
+     *        ACTIVE_STANDBY_MULTI_AZ deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment
+     *        (RABBITMQ) has no subnet requirements when deployed with public accessibility, deployment without public
+     *        accessibility requires at least one subnet.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -820,9 +829,10 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the broker can use from different
-     * Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones.
+     * A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ
+     * deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no subnet requirements
+     * when deployed with public accessibility, deployment without public accessibility requires at least one subnet.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSubnetIds(java.util.Collection)} or {@link #withSubnetIds(java.util.Collection)} if you want to
@@ -830,9 +840,11 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param subnetIds
-     *        The list of groups (2 maximum) that define which subnets and IP ranges the broker can use from different
-     *        Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
-     *        ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     *        The list of groups that define which subnets and IP ranges the broker can use from different Availability
+     *        Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
+     *        ACTIVE_STANDBY_MULTI_AZ deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment
+     *        (RABBITMQ) has no subnet requirements when deployed with public accessibility, deployment without public
+     *        accessibility requires at least one subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -847,14 +859,17 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * The list of groups (2 maximum) that define which subnets and IP ranges the broker can use from different
-     * Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
-     * ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     * The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones.
+     * A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ
+     * deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no subnet requirements
+     * when deployed with public accessibility, deployment without public accessibility requires at least one subnet.
      * 
      * @param subnetIds
-     *        The list of groups (2 maximum) that define which subnets and IP ranges the broker can use from different
-     *        Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
-     *        ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+     *        The list of groups that define which subnets and IP ranges the broker can use from different Availability
+     *        Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
+     *        ACTIVE_STANDBY_MULTI_AZ deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment
+     *        (RABBITMQ) has no subnet requirements when deployed with public accessibility, deployment without public
+     *        accessibility requires at least one subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -926,13 +941,17 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. The list of ActiveMQ users (persons or applications) who can access queues and topics. This value can
-     * contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be
-     * 2-100 characters long.
+     * Required. The list of broker users (persons or applications) who can access queues and topics. For RabbitMQ
+     * brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All
+     * subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ Web
+     * Console. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~).
+     * This value must be 2-100 characters long.
      * 
-     * @return Required. The list of ActiveMQ users (persons or applications) who can access queues and topics. This
-     *         value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This
-     *         value must be 2-100 characters long.
+     * @return Required. The list of broker users (persons or applications) who can access queues and topics. For
+     *         RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first
+     *         provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or
+     *         via the RabbitMQ Web Console. This value can contain only alphanumeric characters, dashes, periods,
+     *         underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
      */
 
     public java.util.List<User> getUsers() {
@@ -940,14 +959,18 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. The list of ActiveMQ users (persons or applications) who can access queues and topics. This value can
-     * contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be
-     * 2-100 characters long.
+     * Required. The list of broker users (persons or applications) who can access queues and topics. For RabbitMQ
+     * brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All
+     * subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ Web
+     * Console. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~).
+     * This value must be 2-100 characters long.
      * 
      * @param users
-     *        Required. The list of ActiveMQ users (persons or applications) who can access queues and topics. This
-     *        value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This
-     *        value must be 2-100 characters long.
+     *        Required. The list of broker users (persons or applications) who can access queues and topics. For
+     *        RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first
+     *        provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or
+     *        via the RabbitMQ Web Console. This value can contain only alphanumeric characters, dashes, periods,
+     *        underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
      */
 
     public void setUsers(java.util.Collection<User> users) {
@@ -960,9 +983,11 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. The list of ActiveMQ users (persons or applications) who can access queues and topics. This value can
-     * contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be
-     * 2-100 characters long.
+     * Required. The list of broker users (persons or applications) who can access queues and topics. For RabbitMQ
+     * brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All
+     * subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ Web
+     * Console. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~).
+     * This value must be 2-100 characters long.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setUsers(java.util.Collection)} or {@link #withUsers(java.util.Collection)} if you want to override the
@@ -970,9 +995,11 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param users
-     *        Required. The list of ActiveMQ users (persons or applications) who can access queues and topics. This
-     *        value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This
-     *        value must be 2-100 characters long.
+     *        Required. The list of broker users (persons or applications) who can access queues and topics. For
+     *        RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first
+     *        provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or
+     *        via the RabbitMQ Web Console. This value can contain only alphanumeric characters, dashes, periods,
+     *        underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -987,14 +1014,18 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. The list of ActiveMQ users (persons or applications) who can access queues and topics. This value can
-     * contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be
-     * 2-100 characters long.
+     * Required. The list of broker users (persons or applications) who can access queues and topics. For RabbitMQ
+     * brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All
+     * subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ Web
+     * Console. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~).
+     * This value must be 2-100 characters long.
      * 
      * @param users
-     *        Required. The list of ActiveMQ users (persons or applications) who can access queues and topics. This
-     *        value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This
-     *        value must be 2-100 characters long.
+     *        Required. The list of broker users (persons or applications) who can access queues and topics. For
+     *        RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first
+     *        provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or
+     *        via the RabbitMQ Web Console. This value can contain only alphanumeric characters, dashes, periods,
+     *        underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

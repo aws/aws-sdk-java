@@ -29,6 +29,12 @@ public class ListThingPrincipalsResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private java.util.List<String> principals;
+    /**
+     * <p>
+     * The token to use to get the next set of results, or <b>null</b> if there are no additional results.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
@@ -101,6 +107,46 @@ public class ListThingPrincipalsResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * The token to use to get the next set of results, or <b>null</b> if there are no additional results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use to get the next set of results, or <b>null</b> if there are no additional results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use to get the next set of results, or <b>null</b> if there are no additional results.
+     * </p>
+     * 
+     * @return The token to use to get the next set of results, or <b>null</b> if there are no additional results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use to get the next set of results, or <b>null</b> if there are no additional results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use to get the next set of results, or <b>null</b> if there are no additional results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListThingPrincipalsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -113,7 +159,9 @@ public class ListThingPrincipalsResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPrincipals() != null)
-            sb.append("Principals: ").append(getPrincipals());
+            sb.append("Principals: ").append(getPrincipals()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -132,6 +180,10 @@ public class ListThingPrincipalsResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getPrincipals() != null && other.getPrincipals().equals(this.getPrincipals()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -141,6 +193,7 @@ public class ListThingPrincipalsResult extends com.amazonaws.AmazonWebServiceRes
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getPrincipals() == null) ? 0 : getPrincipals().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

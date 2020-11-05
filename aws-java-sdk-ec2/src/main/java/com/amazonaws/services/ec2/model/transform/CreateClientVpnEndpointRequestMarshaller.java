@@ -201,6 +201,18 @@ public class CreateClientVpnEndpointRequestMarshaller implements Marshaller<Requ
             request.addParameter("SelfServicePortal", StringUtils.fromString(createClientVpnEndpointRequest.getSelfServicePortal()));
         }
 
+        ClientConnectOptions clientConnectOptions = createClientVpnEndpointRequest.getClientConnectOptions();
+        if (clientConnectOptions != null) {
+
+            if (clientConnectOptions.getEnabled() != null) {
+                request.addParameter("ClientConnectOptions.Enabled", StringUtils.fromBoolean(clientConnectOptions.getEnabled()));
+            }
+
+            if (clientConnectOptions.getLambdaFunctionArn() != null) {
+                request.addParameter("ClientConnectOptions.LambdaFunctionArn", StringUtils.fromString(clientConnectOptions.getLambdaFunctionArn()));
+            }
+        }
+
         return request;
     }
 

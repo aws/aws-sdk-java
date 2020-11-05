@@ -72,6 +72,10 @@ public class BrokerSummaryJsonUnmarshaller implements Unmarshaller<BrokerSummary
                     context.nextToken();
                     brokerSummary.setDeploymentMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("engineType", targetDepth)) {
+                    context.nextToken();
+                    brokerSummary.setEngineType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("hostInstanceType", targetDepth)) {
                     context.nextToken();
                     brokerSummary.setHostInstanceType(context.getUnmarshaller(String.class).unmarshall(context));

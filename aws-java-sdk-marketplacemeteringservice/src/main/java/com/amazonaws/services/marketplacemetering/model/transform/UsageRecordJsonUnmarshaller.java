@@ -64,6 +64,12 @@ public class UsageRecordJsonUnmarshaller implements Unmarshaller<UsageRecord, Js
                     context.nextToken();
                     usageRecord.setQuantity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("UsageAllocations", targetDepth)) {
+                    context.nextToken();
+                    usageRecord.setUsageAllocations(new ListUnmarshaller<UsageAllocation>(UsageAllocationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -238,6 +238,77 @@ public interface AWSXRay {
 
     /**
      * <p>
+     * Retrieves the summary information of an insight. This includes impact to clients and root cause services, the top
+     * anomalous services, the category, the state of the insight, and the start and end time of the insight.
+     * </p>
+     * 
+     * @param getInsightRequest
+     * @return Result of the GetInsight operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.GetInsight
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsight" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetInsightResult getInsight(GetInsightRequest getInsightRequest);
+
+    /**
+     * <p>
+     * X-Ray reevaluates insights periodically until they're resolved, and records each intermediate state as an event.
+     * You can review an insight's events in the Impact Timeline on the Inspect page in the X-Ray console.
+     * </p>
+     * 
+     * @param getInsightEventsRequest
+     * @return Result of the GetInsightEvents operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.GetInsightEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightEvents" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetInsightEventsResult getInsightEvents(GetInsightEventsRequest getInsightEventsRequest);
+
+    /**
+     * <p>
+     * Retrieves a service graph structure filtered by the specified insight. The service graph is limited to only
+     * structural information. For a complete service graph, use this API with the GetServiceGraph API.
+     * </p>
+     * 
+     * @param getInsightImpactGraphRequest
+     * @return Result of the GetInsightImpactGraph operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.GetInsightImpactGraph
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightImpactGraph" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetInsightImpactGraphResult getInsightImpactGraph(GetInsightImpactGraphRequest getInsightImpactGraphRequest);
+
+    /**
+     * <p>
+     * Retrieves the summaries of all insights in the specified group matching the provided filter values.
+     * </p>
+     * 
+     * @param getInsightSummariesRequest
+     * @return Result of the GetInsightSummaries operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.GetInsightSummaries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightSummaries" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetInsightSummariesResult getInsightSummaries(GetInsightSummariesRequest getInsightSummariesRequest);
+
+    /**
+     * <p>
      * Retrieves all sampling rules.
      * </p>
      * 

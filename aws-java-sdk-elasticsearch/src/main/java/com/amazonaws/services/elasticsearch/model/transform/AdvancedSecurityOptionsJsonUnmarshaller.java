@@ -56,6 +56,10 @@ public class AdvancedSecurityOptionsJsonUnmarshaller implements Unmarshaller<Adv
                     context.nextToken();
                     advancedSecurityOptions.setInternalUserDatabaseEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("SAMLOptions", targetDepth)) {
+                    context.nextToken();
+                    advancedSecurityOptions.setSAMLOptions(SAMLOptionsOutputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

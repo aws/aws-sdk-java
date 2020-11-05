@@ -26,7 +26,7 @@ public class ListTopicRuleDestinationsResult extends com.amazonaws.AmazonWebServ
     private java.util.List<TopicRuleDestinationSummary> destinationSummaries;
     /**
      * <p>
-     * The token to retrieve the next set of results.
+     * The token to use to get the next set of results, or <b>null</b> if there are no additional results.
      * </p>
      */
     private String nextToken;
@@ -103,11 +103,11 @@ public class ListTopicRuleDestinationsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The token to retrieve the next set of results.
+     * The token to use to get the next set of results, or <b>null</b> if there are no additional results.
      * </p>
      * 
      * @param nextToken
-     *        The token to retrieve the next set of results.
+     *        The token to use to get the next set of results, or <b>null</b> if there are no additional results.
      */
 
     public void setNextToken(String nextToken) {
@@ -116,10 +116,10 @@ public class ListTopicRuleDestinationsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The token to retrieve the next set of results.
+     * The token to use to get the next set of results, or <b>null</b> if there are no additional results.
      * </p>
      * 
-     * @return The token to retrieve the next set of results.
+     * @return The token to use to get the next set of results, or <b>null</b> if there are no additional results.
      */
 
     public String getNextToken() {
@@ -128,11 +128,11 @@ public class ListTopicRuleDestinationsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The token to retrieve the next set of results.
+     * The token to use to get the next set of results, or <b>null</b> if there are no additional results.
      * </p>
      * 
      * @param nextToken
-     *        The token to retrieve the next set of results.
+     *        The token to use to get the next set of results, or <b>null</b> if there are no additional results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -766,6 +766,242 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
 
     /**
      * <p>
+     * Retrieves the summary information of an insight. This includes impact to clients and root cause services, the top
+     * anomalous services, the category, the state of the insight, and the start and end time of the insight.
+     * </p>
+     * 
+     * @param getInsightRequest
+     * @return Result of the GetInsight operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.GetInsight
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsight" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetInsightResult getInsight(GetInsightRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetInsight(request);
+    }
+
+    @SdkInternalApi
+    final GetInsightResult executeGetInsight(GetInsightRequest getInsightRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getInsightRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetInsightRequest> request = null;
+        Response<GetInsightResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetInsightRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInsightRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInsight");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetInsightResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetInsightResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * X-Ray reevaluates insights periodically until they're resolved, and records each intermediate state as an event.
+     * You can review an insight's events in the Impact Timeline on the Inspect page in the X-Ray console.
+     * </p>
+     * 
+     * @param getInsightEventsRequest
+     * @return Result of the GetInsightEvents operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.GetInsightEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightEvents" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetInsightEventsResult getInsightEvents(GetInsightEventsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetInsightEvents(request);
+    }
+
+    @SdkInternalApi
+    final GetInsightEventsResult executeGetInsightEvents(GetInsightEventsRequest getInsightEventsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getInsightEventsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetInsightEventsRequest> request = null;
+        Response<GetInsightEventsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetInsightEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInsightEventsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInsightEvents");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetInsightEventsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetInsightEventsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a service graph structure filtered by the specified insight. The service graph is limited to only
+     * structural information. For a complete service graph, use this API with the GetServiceGraph API.
+     * </p>
+     * 
+     * @param getInsightImpactGraphRequest
+     * @return Result of the GetInsightImpactGraph operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.GetInsightImpactGraph
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightImpactGraph" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetInsightImpactGraphResult getInsightImpactGraph(GetInsightImpactGraphRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetInsightImpactGraph(request);
+    }
+
+    @SdkInternalApi
+    final GetInsightImpactGraphResult executeGetInsightImpactGraph(GetInsightImpactGraphRequest getInsightImpactGraphRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getInsightImpactGraphRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetInsightImpactGraphRequest> request = null;
+        Response<GetInsightImpactGraphResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetInsightImpactGraphRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInsightImpactGraphRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInsightImpactGraph");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetInsightImpactGraphResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetInsightImpactGraphResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the summaries of all insights in the specified group matching the provided filter values.
+     * </p>
+     * 
+     * @param getInsightSummariesRequest
+     * @return Result of the GetInsightSummaries operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.GetInsightSummaries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightSummaries" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetInsightSummariesResult getInsightSummaries(GetInsightSummariesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetInsightSummaries(request);
+    }
+
+    @SdkInternalApi
+    final GetInsightSummariesResult executeGetInsightSummaries(GetInsightSummariesRequest getInsightSummariesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getInsightSummariesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetInsightSummariesRequest> request = null;
+        Response<GetInsightSummariesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetInsightSummariesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInsightSummariesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInsightSummaries");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetInsightSummariesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetInsightSummariesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves all sampling rules.
      * </p>
      * 

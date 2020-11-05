@@ -166,6 +166,12 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
      * </p>
      */
     private String selfServicePortal;
+    /**
+     * <p>
+     * The options for managing connection authorization for new client connections.
+     * </p>
+     */
+    private ClientConnectOptions clientConnectOptions;
 
     /**
      * <p>
@@ -1264,6 +1270,46 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * The options for managing connection authorization for new client connections.
+     * </p>
+     * 
+     * @param clientConnectOptions
+     *        The options for managing connection authorization for new client connections.
+     */
+
+    public void setClientConnectOptions(ClientConnectOptions clientConnectOptions) {
+        this.clientConnectOptions = clientConnectOptions;
+    }
+
+    /**
+     * <p>
+     * The options for managing connection authorization for new client connections.
+     * </p>
+     * 
+     * @return The options for managing connection authorization for new client connections.
+     */
+
+    public ClientConnectOptions getClientConnectOptions() {
+        return this.clientConnectOptions;
+    }
+
+    /**
+     * <p>
+     * The options for managing connection authorization for new client connections.
+     * </p>
+     * 
+     * @param clientConnectOptions
+     *        The options for managing connection authorization for new client connections.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClientVpnEndpointRequest withClientConnectOptions(ClientConnectOptions clientConnectOptions) {
+        setClientConnectOptions(clientConnectOptions);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -1313,7 +1359,9 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
         if (getVpcId() != null)
             sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getSelfServicePortal() != null)
-            sb.append("SelfServicePortal: ").append(getSelfServicePortal());
+            sb.append("SelfServicePortal: ").append(getSelfServicePortal()).append(",");
+        if (getClientConnectOptions() != null)
+            sb.append("ClientConnectOptions: ").append(getClientConnectOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -1384,6 +1432,10 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
             return false;
         if (other.getSelfServicePortal() != null && other.getSelfServicePortal().equals(this.getSelfServicePortal()) == false)
             return false;
+        if (other.getClientConnectOptions() == null ^ this.getClientConnectOptions() == null)
+            return false;
+        if (other.getClientConnectOptions() != null && other.getClientConnectOptions().equals(this.getClientConnectOptions()) == false)
+            return false;
         return true;
     }
 
@@ -1406,6 +1458,7 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getSelfServicePortal() == null) ? 0 : getSelfServicePortal().hashCode());
+        hashCode = prime * hashCode + ((getClientConnectOptions() == null) ? 0 : getClientConnectOptions().hashCode());
         return hashCode;
     }
 

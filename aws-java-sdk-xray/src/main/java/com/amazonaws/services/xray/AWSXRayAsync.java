@@ -293,6 +293,136 @@ public interface AWSXRayAsync extends AWSXRay {
 
     /**
      * <p>
+     * Retrieves the summary information of an insight. This includes impact to clients and root cause services, the top
+     * anomalous services, the category, the state of the insight, and the start and end time of the insight.
+     * </p>
+     * 
+     * @param getInsightRequest
+     * @return A Java Future containing the result of the GetInsight operation returned by the service.
+     * @sample AWSXRayAsync.GetInsight
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsight" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetInsightResult> getInsightAsync(GetInsightRequest getInsightRequest);
+
+    /**
+     * <p>
+     * Retrieves the summary information of an insight. This includes impact to clients and root cause services, the top
+     * anomalous services, the category, the state of the insight, and the start and end time of the insight.
+     * </p>
+     * 
+     * @param getInsightRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetInsight operation returned by the service.
+     * @sample AWSXRayAsyncHandler.GetInsight
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsight" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetInsightResult> getInsightAsync(GetInsightRequest getInsightRequest,
+            com.amazonaws.handlers.AsyncHandler<GetInsightRequest, GetInsightResult> asyncHandler);
+
+    /**
+     * <p>
+     * X-Ray reevaluates insights periodically until they're resolved, and records each intermediate state as an event.
+     * You can review an insight's events in the Impact Timeline on the Inspect page in the X-Ray console.
+     * </p>
+     * 
+     * @param getInsightEventsRequest
+     * @return A Java Future containing the result of the GetInsightEvents operation returned by the service.
+     * @sample AWSXRayAsync.GetInsightEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightEvents" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetInsightEventsResult> getInsightEventsAsync(GetInsightEventsRequest getInsightEventsRequest);
+
+    /**
+     * <p>
+     * X-Ray reevaluates insights periodically until they're resolved, and records each intermediate state as an event.
+     * You can review an insight's events in the Impact Timeline on the Inspect page in the X-Ray console.
+     * </p>
+     * 
+     * @param getInsightEventsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetInsightEvents operation returned by the service.
+     * @sample AWSXRayAsyncHandler.GetInsightEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightEvents" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetInsightEventsResult> getInsightEventsAsync(GetInsightEventsRequest getInsightEventsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetInsightEventsRequest, GetInsightEventsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a service graph structure filtered by the specified insight. The service graph is limited to only
+     * structural information. For a complete service graph, use this API with the GetServiceGraph API.
+     * </p>
+     * 
+     * @param getInsightImpactGraphRequest
+     * @return A Java Future containing the result of the GetInsightImpactGraph operation returned by the service.
+     * @sample AWSXRayAsync.GetInsightImpactGraph
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightImpactGraph" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetInsightImpactGraphResult> getInsightImpactGraphAsync(GetInsightImpactGraphRequest getInsightImpactGraphRequest);
+
+    /**
+     * <p>
+     * Retrieves a service graph structure filtered by the specified insight. The service graph is limited to only
+     * structural information. For a complete service graph, use this API with the GetServiceGraph API.
+     * </p>
+     * 
+     * @param getInsightImpactGraphRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetInsightImpactGraph operation returned by the service.
+     * @sample AWSXRayAsyncHandler.GetInsightImpactGraph
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightImpactGraph" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetInsightImpactGraphResult> getInsightImpactGraphAsync(GetInsightImpactGraphRequest getInsightImpactGraphRequest,
+            com.amazonaws.handlers.AsyncHandler<GetInsightImpactGraphRequest, GetInsightImpactGraphResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the summaries of all insights in the specified group matching the provided filter values.
+     * </p>
+     * 
+     * @param getInsightSummariesRequest
+     * @return A Java Future containing the result of the GetInsightSummaries operation returned by the service.
+     * @sample AWSXRayAsync.GetInsightSummaries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightSummaries" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetInsightSummariesResult> getInsightSummariesAsync(GetInsightSummariesRequest getInsightSummariesRequest);
+
+    /**
+     * <p>
+     * Retrieves the summaries of all insights in the specified group matching the provided filter values.
+     * </p>
+     * 
+     * @param getInsightSummariesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetInsightSummaries operation returned by the service.
+     * @sample AWSXRayAsyncHandler.GetInsightSummaries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightSummaries" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetInsightSummariesResult> getInsightSummariesAsync(GetInsightSummariesRequest getInsightSummariesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetInsightSummariesRequest, GetInsightSummariesResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves all sampling rules.
      * </p>
      * 

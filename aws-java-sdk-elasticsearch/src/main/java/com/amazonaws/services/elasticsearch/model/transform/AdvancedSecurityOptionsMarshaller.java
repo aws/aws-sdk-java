@@ -31,6 +31,8 @@ public class AdvancedSecurityOptionsMarshaller {
             .marshallLocationName("Enabled").build();
     private static final MarshallingInfo<Boolean> INTERNALUSERDATABASEENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InternalUserDatabaseEnabled").build();
+    private static final MarshallingInfo<StructuredPojo> SAMLOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SAMLOptions").build();
 
     private static final AdvancedSecurityOptionsMarshaller instance = new AdvancedSecurityOptionsMarshaller();
 
@@ -50,6 +52,7 @@ public class AdvancedSecurityOptionsMarshaller {
         try {
             protocolMarshaller.marshall(advancedSecurityOptions.getEnabled(), ENABLED_BINDING);
             protocolMarshaller.marshall(advancedSecurityOptions.getInternalUserDatabaseEnabled(), INTERNALUSERDATABASEENABLED_BINDING);
+            protocolMarshaller.marshall(advancedSecurityOptions.getSAMLOptions(), SAMLOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

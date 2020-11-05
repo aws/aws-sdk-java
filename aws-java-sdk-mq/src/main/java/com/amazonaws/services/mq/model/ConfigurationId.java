@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * A list of information about the configuration.
+ * A list of information about the configuration. <important>Does not apply to RabbitMQ brokers.</important>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ConfigurationId" target="_top">AWS API
  *      Documentation</a>

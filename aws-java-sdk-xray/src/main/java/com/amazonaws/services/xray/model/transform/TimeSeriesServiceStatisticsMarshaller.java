@@ -34,6 +34,8 @@ public class TimeSeriesServiceStatisticsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EdgeSummaryStatistics").build();
     private static final MarshallingInfo<StructuredPojo> SERVICESUMMARYSTATISTICS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceSummaryStatistics").build();
+    private static final MarshallingInfo<StructuredPojo> SERVICEFORECASTSTATISTICS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceForecastStatistics").build();
     private static final MarshallingInfo<List> RESPONSETIMEHISTOGRAM_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResponseTimeHistogram").build();
 
@@ -56,6 +58,7 @@ public class TimeSeriesServiceStatisticsMarshaller {
             protocolMarshaller.marshall(timeSeriesServiceStatistics.getTimestamp(), TIMESTAMP_BINDING);
             protocolMarshaller.marshall(timeSeriesServiceStatistics.getEdgeSummaryStatistics(), EDGESUMMARYSTATISTICS_BINDING);
             protocolMarshaller.marshall(timeSeriesServiceStatistics.getServiceSummaryStatistics(), SERVICESUMMARYSTATISTICS_BINDING);
+            protocolMarshaller.marshall(timeSeriesServiceStatistics.getServiceForecastStatistics(), SERVICEFORECASTSTATISTICS_BINDING);
             protocolMarshaller.marshall(timeSeriesServiceStatistics.getResponseTimeHistogram(), RESPONSETIMEHISTOGRAM_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

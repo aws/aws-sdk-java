@@ -55,6 +55,11 @@ public class SpotFleetRequestConfigDataStaxUnmarshaller implements Unmarshaller<
                     continue;
                 }
 
+                if (context.testExpression("spotMaintenanceStrategies", targetDepth)) {
+                    spotFleetRequestConfigData.setSpotMaintenanceStrategies(SpotMaintenanceStrategiesStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("clientToken", targetDepth)) {
                     spotFleetRequestConfigData.setClientToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

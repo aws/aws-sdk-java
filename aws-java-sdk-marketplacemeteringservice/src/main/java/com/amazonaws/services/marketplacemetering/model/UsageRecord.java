@@ -62,6 +62,13 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer quantity;
+    /**
+     * <p>
+     * The set of UsageAllocations to submit. The sum of all UsageAllocation quantities must equal the Quantity of the
+     * UsageRecord.
+     * </p>
+     */
+    private java.util.List<UsageAllocation> usageAllocations;
 
     /**
      * <p>
@@ -263,6 +270,84 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The set of UsageAllocations to submit. The sum of all UsageAllocation quantities must equal the Quantity of the
+     * UsageRecord.
+     * </p>
+     * 
+     * @return The set of UsageAllocations to submit. The sum of all UsageAllocation quantities must equal the Quantity
+     *         of the UsageRecord.
+     */
+
+    public java.util.List<UsageAllocation> getUsageAllocations() {
+        return usageAllocations;
+    }
+
+    /**
+     * <p>
+     * The set of UsageAllocations to submit. The sum of all UsageAllocation quantities must equal the Quantity of the
+     * UsageRecord.
+     * </p>
+     * 
+     * @param usageAllocations
+     *        The set of UsageAllocations to submit. The sum of all UsageAllocation quantities must equal the Quantity
+     *        of the UsageRecord.
+     */
+
+    public void setUsageAllocations(java.util.Collection<UsageAllocation> usageAllocations) {
+        if (usageAllocations == null) {
+            this.usageAllocations = null;
+            return;
+        }
+
+        this.usageAllocations = new java.util.ArrayList<UsageAllocation>(usageAllocations);
+    }
+
+    /**
+     * <p>
+     * The set of UsageAllocations to submit. The sum of all UsageAllocation quantities must equal the Quantity of the
+     * UsageRecord.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUsageAllocations(java.util.Collection)} or {@link #withUsageAllocations(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param usageAllocations
+     *        The set of UsageAllocations to submit. The sum of all UsageAllocation quantities must equal the Quantity
+     *        of the UsageRecord.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UsageRecord withUsageAllocations(UsageAllocation... usageAllocations) {
+        if (this.usageAllocations == null) {
+            setUsageAllocations(new java.util.ArrayList<UsageAllocation>(usageAllocations.length));
+        }
+        for (UsageAllocation ele : usageAllocations) {
+            this.usageAllocations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The set of UsageAllocations to submit. The sum of all UsageAllocation quantities must equal the Quantity of the
+     * UsageRecord.
+     * </p>
+     * 
+     * @param usageAllocations
+     *        The set of UsageAllocations to submit. The sum of all UsageAllocation quantities must equal the Quantity
+     *        of the UsageRecord.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UsageRecord withUsageAllocations(java.util.Collection<UsageAllocation> usageAllocations) {
+        setUsageAllocations(usageAllocations);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -281,7 +366,9 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
         if (getDimension() != null)
             sb.append("Dimension: ").append(getDimension()).append(",");
         if (getQuantity() != null)
-            sb.append("Quantity: ").append(getQuantity());
+            sb.append("Quantity: ").append(getQuantity()).append(",");
+        if (getUsageAllocations() != null)
+            sb.append("UsageAllocations: ").append(getUsageAllocations());
         sb.append("}");
         return sb.toString();
     }
@@ -312,6 +399,10 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getQuantity() != null && other.getQuantity().equals(this.getQuantity()) == false)
             return false;
+        if (other.getUsageAllocations() == null ^ this.getUsageAllocations() == null)
+            return false;
+        if (other.getUsageAllocations() != null && other.getUsageAllocations().equals(this.getUsageAllocations()) == false)
+            return false;
         return true;
     }
 
@@ -324,6 +415,7 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCustomerIdentifier() == null) ? 0 : getCustomerIdentifier().hashCode());
         hashCode = prime * hashCode + ((getDimension() == null) ? 0 : getDimension().hashCode());
         hashCode = prime * hashCode + ((getQuantity() == null) ? 0 : getQuantity().hashCode());
+        hashCode = prime * hashCode + ((getUsageAllocations() == null) ? 0 : getUsageAllocations().hashCode());
         return hashCode;
     }
 

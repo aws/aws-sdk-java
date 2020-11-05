@@ -47,6 +47,13 @@ public class SpotOptions implements Serializable, Cloneable {
     private String allocationStrategy;
     /**
      * <p>
+     * The strategies for managing your workloads on your Spot Instances that will be interrupted. Currently only the
+     * capacity rebalance strategy is available.
+     * </p>
+     */
+    private FleetSpotMaintenanceStrategies maintenanceStrategies;
+    /**
+     * <p>
      * The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
      * </p>
      */
@@ -243,6 +250,52 @@ public class SpotOptions implements Serializable, Cloneable {
 
     public SpotOptions withAllocationStrategy(SpotAllocationStrategy allocationStrategy) {
         this.allocationStrategy = allocationStrategy.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The strategies for managing your workloads on your Spot Instances that will be interrupted. Currently only the
+     * capacity rebalance strategy is available.
+     * </p>
+     * 
+     * @param maintenanceStrategies
+     *        The strategies for managing your workloads on your Spot Instances that will be interrupted. Currently only
+     *        the capacity rebalance strategy is available.
+     */
+
+    public void setMaintenanceStrategies(FleetSpotMaintenanceStrategies maintenanceStrategies) {
+        this.maintenanceStrategies = maintenanceStrategies;
+    }
+
+    /**
+     * <p>
+     * The strategies for managing your workloads on your Spot Instances that will be interrupted. Currently only the
+     * capacity rebalance strategy is available.
+     * </p>
+     * 
+     * @return The strategies for managing your workloads on your Spot Instances that will be interrupted. Currently
+     *         only the capacity rebalance strategy is available.
+     */
+
+    public FleetSpotMaintenanceStrategies getMaintenanceStrategies() {
+        return this.maintenanceStrategies;
+    }
+
+    /**
+     * <p>
+     * The strategies for managing your workloads on your Spot Instances that will be interrupted. Currently only the
+     * capacity rebalance strategy is available.
+     * </p>
+     * 
+     * @param maintenanceStrategies
+     *        The strategies for managing your workloads on your Spot Instances that will be interrupted. Currently only
+     *        the capacity rebalance strategy is available.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotOptions withMaintenanceStrategies(FleetSpotMaintenanceStrategies maintenanceStrategies) {
+        setMaintenanceStrategies(maintenanceStrategies);
         return this;
     }
 
@@ -577,6 +630,8 @@ public class SpotOptions implements Serializable, Cloneable {
         sb.append("{");
         if (getAllocationStrategy() != null)
             sb.append("AllocationStrategy: ").append(getAllocationStrategy()).append(",");
+        if (getMaintenanceStrategies() != null)
+            sb.append("MaintenanceStrategies: ").append(getMaintenanceStrategies()).append(",");
         if (getInstanceInterruptionBehavior() != null)
             sb.append("InstanceInterruptionBehavior: ").append(getInstanceInterruptionBehavior()).append(",");
         if (getInstancePoolsToUseCount() != null)
@@ -606,6 +661,10 @@ public class SpotOptions implements Serializable, Cloneable {
         if (other.getAllocationStrategy() == null ^ this.getAllocationStrategy() == null)
             return false;
         if (other.getAllocationStrategy() != null && other.getAllocationStrategy().equals(this.getAllocationStrategy()) == false)
+            return false;
+        if (other.getMaintenanceStrategies() == null ^ this.getMaintenanceStrategies() == null)
+            return false;
+        if (other.getMaintenanceStrategies() != null && other.getMaintenanceStrategies().equals(this.getMaintenanceStrategies()) == false)
             return false;
         if (other.getInstanceInterruptionBehavior() == null ^ this.getInstanceInterruptionBehavior() == null)
             return false;
@@ -640,6 +699,7 @@ public class SpotOptions implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAllocationStrategy() == null) ? 0 : getAllocationStrategy().hashCode());
+        hashCode = prime * hashCode + ((getMaintenanceStrategies() == null) ? 0 : getMaintenanceStrategies().hashCode());
         hashCode = prime * hashCode + ((getInstanceInterruptionBehavior() == null) ? 0 : getInstanceInterruptionBehavior().hashCode());
         hashCode = prime * hashCode + ((getInstancePoolsToUseCount() == null) ? 0 : getInstancePoolsToUseCount().hashCode());
         hashCode = prime * hashCode + ((getSingleInstanceType() == null) ? 0 : getSingleInstanceType().hashCode());

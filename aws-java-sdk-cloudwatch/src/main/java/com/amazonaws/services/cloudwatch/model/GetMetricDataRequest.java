@@ -95,7 +95,8 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
     private java.util.Date endTime;
     /**
      * <p>
-     * Include this value, if it was returned by the previous call, to get the next set of data points.
+     * Include this value, if it was returned by the previous <code>GetMetricData</code> operation, to get the next set
+     * of data points.
      * </p>
      */
     private String nextToken;
@@ -573,11 +574,13 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Include this value, if it was returned by the previous call, to get the next set of data points.
+     * Include this value, if it was returned by the previous <code>GetMetricData</code> operation, to get the next set
+     * of data points.
      * </p>
      * 
      * @param nextToken
-     *        Include this value, if it was returned by the previous call, to get the next set of data points.
+     *        Include this value, if it was returned by the previous <code>GetMetricData</code> operation, to get the
+     *        next set of data points.
      */
 
     public void setNextToken(String nextToken) {
@@ -586,10 +589,12 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Include this value, if it was returned by the previous call, to get the next set of data points.
+     * Include this value, if it was returned by the previous <code>GetMetricData</code> operation, to get the next set
+     * of data points.
      * </p>
      * 
-     * @return Include this value, if it was returned by the previous call, to get the next set of data points.
+     * @return Include this value, if it was returned by the previous <code>GetMetricData</code> operation, to get the
+     *         next set of data points.
      */
 
     public String getNextToken() {
@@ -598,11 +603,13 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Include this value, if it was returned by the previous call, to get the next set of data points.
+     * Include this value, if it was returned by the previous <code>GetMetricData</code> operation, to get the next set
+     * of data points.
      * </p>
      * 
      * @param nextToken
-     *        Include this value, if it was returned by the previous call, to get the next set of data points.
+     *        Include this value, if it was returned by the previous <code>GetMetricData</code> operation, to get the
+     *        next set of data points.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

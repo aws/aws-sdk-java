@@ -29,7 +29,7 @@ import javax.annotation.Generated;
  * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">On-Demand Capacity
  * Reservations</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For examples of using Capacity Reservations
  * in an EC2 Fleet, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-examples.html">EC2 Fleet
- * Example Configurations</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+ * example configurations</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CapacityReservationOptions" target="_top">AWS API

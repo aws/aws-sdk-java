@@ -48,6 +48,11 @@ public class SpotOptionsRequestStaxUnmarshaller implements Unmarshaller<SpotOpti
                     continue;
                 }
 
+                if (context.testExpression("MaintenanceStrategies", targetDepth)) {
+                    spotOptionsRequest.setMaintenanceStrategies(FleetSpotMaintenanceStrategiesRequestStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("InstanceInterruptionBehavior", targetDepth)) {
                     spotOptionsRequest.setInstanceInterruptionBehavior(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

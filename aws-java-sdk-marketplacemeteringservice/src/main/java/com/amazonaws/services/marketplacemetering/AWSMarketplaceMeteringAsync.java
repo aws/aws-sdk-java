@@ -108,6 +108,13 @@ public interface AWSMarketplaceMeteringAsync extends AWSMarketplaceMetering {
      * <p>
      * BatchMeterUsage can process up to 25 UsageRecords at a time.
      * </p>
+     * <p>
+     * A UsageRecord can optionally include multiple usage allocations, to provide customers with usagedata split into
+     * buckets by tags that you define (or allow the customer to define).
+     * </p>
+     * <p>
+     * BatchMeterUsage requests must be less than 1MB in size.
+     * </p>
      * 
      * @param batchMeterUsageRequest
      *        A BatchMeterUsageRequest contains UsageRecords, which indicate quantities of usage within your
@@ -135,6 +142,13 @@ public interface AWSMarketplaceMeteringAsync extends AWSMarketplaceMetering {
      * <p>
      * BatchMeterUsage can process up to 25 UsageRecords at a time.
      * </p>
+     * <p>
+     * A UsageRecord can optionally include multiple usage allocations, to provide customers with usagedata split into
+     * buckets by tags that you define (or allow the customer to define).
+     * </p>
+     * <p>
+     * BatchMeterUsage requests must be less than 1MB in size.
+     * </p>
      * 
      * @param batchMeterUsageRequest
      *        A BatchMeterUsageRequest contains UsageRecords, which indicate quantities of usage within your
@@ -160,6 +174,10 @@ public interface AWSMarketplaceMeteringAsync extends AWSMarketplaceMetering {
      * MeterUsage is authenticated on the buyer's AWS account using credentials from the EC2 instance, ECS task, or EKS
      * pod.
      * </p>
+     * <p>
+     * MeterUsage can optionally include multiple usage allocations, to provide customers with usage data split into
+     * buckets by tags that you define (or allow the customer to define).
+     * </p>
      * 
      * @param meterUsageRequest
      * @return A Java Future containing the result of the MeterUsage operation returned by the service.
@@ -177,6 +195,10 @@ public interface AWSMarketplaceMeteringAsync extends AWSMarketplaceMetering {
      * <p>
      * MeterUsage is authenticated on the buyer's AWS account using credentials from the EC2 instance, ECS task, or EKS
      * pod.
+     * </p>
+     * <p>
+     * MeterUsage can optionally include multiple usage allocations, to provide customers with usage data split into
+     * buckets by tags that you define (or allow the customer to define).
      * </p>
      * 
      * @param meterUsageRequest

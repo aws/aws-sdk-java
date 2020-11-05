@@ -39,7 +39,8 @@ public class ListTopicRulesRequest extends com.amazonaws.AmazonWebServiceRequest
     private Integer maxResults;
     /**
      * <p>
-     * A token used to retrieve the next value.
+     * To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise
+     * <b>null</b> to receive the first set of results.
      * </p>
      */
     private String nextToken;
@@ -132,11 +133,13 @@ public class ListTopicRulesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A token used to retrieve the next value.
+     * To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise
+     * <b>null</b> to receive the first set of results.
      * </p>
      * 
      * @param nextToken
-     *        A token used to retrieve the next value.
+     *        To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise
+     *        <b>null</b> to receive the first set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -145,10 +148,12 @@ public class ListTopicRulesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A token used to retrieve the next value.
+     * To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise
+     * <b>null</b> to receive the first set of results.
      * </p>
      * 
-     * @return A token used to retrieve the next value.
+     * @return To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise
+     *         <b>null</b> to receive the first set of results.
      */
 
     public String getNextToken() {
@@ -157,11 +162,13 @@ public class ListTopicRulesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A token used to retrieve the next value.
+     * To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise
+     * <b>null</b> to receive the first set of results.
      * </p>
      * 
      * @param nextToken
-     *        A token used to retrieve the next value.
+     *        To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise
+     *        <b>null</b> to receive the first set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

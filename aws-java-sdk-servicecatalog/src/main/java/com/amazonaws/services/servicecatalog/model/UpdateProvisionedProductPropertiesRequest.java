@@ -63,7 +63,10 @@ public class UpdateProvisionedProductPropertiesRequest extends com.amazonaws.Ama
      * <code>UpdateProvisionedProductProperties</code> to update the launch role that is associated with a provisioned
      * product. This role is used when an end-user calls a provisioning operation such as
      * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>, or
-     * <code>ExecuteProvisionedProductServiceAction</code>. Only an ARN role is valid. A user ARN is invalid.
+     * <code>ExecuteProvisionedProductServiceAction</code>. Only an ARN role or <code>null</code> is valid. A user ARN
+     * is invalid. For example, if an admin user passes <code>null</code> as the value for the key
+     * <code>LAUNCH_ROLE</code>, the admin removes the launch role that is associated with the provisioned product. As a
+     * result, the end user operations use the credentials of the end user.
      * </p>
      * <p>
      * The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to see,
@@ -279,7 +282,10 @@ public class UpdateProvisionedProductPropertiesRequest extends com.amazonaws.Ama
      * <code>UpdateProvisionedProductProperties</code> to update the launch role that is associated with a provisioned
      * product. This role is used when an end-user calls a provisioning operation such as
      * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>, or
-     * <code>ExecuteProvisionedProductServiceAction</code>. Only an ARN role is valid. A user ARN is invalid.
+     * <code>ExecuteProvisionedProductServiceAction</code>. Only an ARN role or <code>null</code> is valid. A user ARN
+     * is invalid. For example, if an admin user passes <code>null</code> as the value for the key
+     * <code>LAUNCH_ROLE</code>, the admin removes the launch role that is associated with the provisioned product. As a
+     * result, the end user operations use the credentials of the end user.
      * </p>
      * <p>
      * The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to see,
@@ -305,7 +311,10 @@ public class UpdateProvisionedProductPropertiesRequest extends com.amazonaws.Ama
      *         call <code>UpdateProvisionedProductProperties</code> to update the launch role that is associated with a
      *         provisioned product. This role is used when an end-user calls a provisioning operation such as
      *         <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>, or
-     *         <code>ExecuteProvisionedProductServiceAction</code>. Only an ARN role is valid. A user ARN is invalid.
+     *         <code>ExecuteProvisionedProductServiceAction</code>. Only an ARN role or <code>null</code> is valid. A
+     *         user ARN is invalid. For example, if an admin user passes <code>null</code> as the value for the key
+     *         <code>LAUNCH_ROLE</code>, the admin removes the launch role that is associated with the provisioned
+     *         product. As a result, the end user operations use the credentials of the end user.
      *         </p>
      *         <p>
      *         The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to
@@ -339,7 +348,10 @@ public class UpdateProvisionedProductPropertiesRequest extends com.amazonaws.Ama
      * <code>UpdateProvisionedProductProperties</code> to update the launch role that is associated with a provisioned
      * product. This role is used when an end-user calls a provisioning operation such as
      * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>, or
-     * <code>ExecuteProvisionedProductServiceAction</code>. Only an ARN role is valid. A user ARN is invalid.
+     * <code>ExecuteProvisionedProductServiceAction</code>. Only an ARN role or <code>null</code> is valid. A user ARN
+     * is invalid. For example, if an admin user passes <code>null</code> as the value for the key
+     * <code>LAUNCH_ROLE</code>, the admin removes the launch role that is associated with the provisioned product. As a
+     * result, the end user operations use the credentials of the end user.
      * </p>
      * <p>
      * The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to see,
@@ -366,7 +378,10 @@ public class UpdateProvisionedProductPropertiesRequest extends com.amazonaws.Ama
      *        <code>UpdateProvisionedProductProperties</code> to update the launch role that is associated with a
      *        provisioned product. This role is used when an end-user calls a provisioning operation such as
      *        <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>, or
-     *        <code>ExecuteProvisionedProductServiceAction</code>. Only an ARN role is valid. A user ARN is invalid.
+     *        <code>ExecuteProvisionedProductServiceAction</code>. Only an ARN role or <code>null</code> is valid. A
+     *        user ARN is invalid. For example, if an admin user passes <code>null</code> as the value for the key
+     *        <code>LAUNCH_ROLE</code>, the admin removes the launch role that is associated with the provisioned
+     *        product. As a result, the end user operations use the credentials of the end user.
      *        </p>
      *        <p>
      *        The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to
@@ -400,7 +415,10 @@ public class UpdateProvisionedProductPropertiesRequest extends com.amazonaws.Ama
      * <code>UpdateProvisionedProductProperties</code> to update the launch role that is associated with a provisioned
      * product. This role is used when an end-user calls a provisioning operation such as
      * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>, or
-     * <code>ExecuteProvisionedProductServiceAction</code>. Only an ARN role is valid. A user ARN is invalid.
+     * <code>ExecuteProvisionedProductServiceAction</code>. Only an ARN role or <code>null</code> is valid. A user ARN
+     * is invalid. For example, if an admin user passes <code>null</code> as the value for the key
+     * <code>LAUNCH_ROLE</code>, the admin removes the launch role that is associated with the provisioned product. As a
+     * result, the end user operations use the credentials of the end user.
      * </p>
      * <p>
      * The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to see,
@@ -427,7 +445,10 @@ public class UpdateProvisionedProductPropertiesRequest extends com.amazonaws.Ama
      *        <code>UpdateProvisionedProductProperties</code> to update the launch role that is associated with a
      *        provisioned product. This role is used when an end-user calls a provisioning operation such as
      *        <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>, or
-     *        <code>ExecuteProvisionedProductServiceAction</code>. Only an ARN role is valid. A user ARN is invalid.
+     *        <code>ExecuteProvisionedProductServiceAction</code>. Only an ARN role or <code>null</code> is valid. A
+     *        user ARN is invalid. For example, if an admin user passes <code>null</code> as the value for the key
+     *        <code>LAUNCH_ROLE</code>, the admin removes the launch role that is associated with the provisioned
+     *        product. As a result, the end user operations use the credentials of the end user.
      *        </p>
      *        <p>
      *        The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to

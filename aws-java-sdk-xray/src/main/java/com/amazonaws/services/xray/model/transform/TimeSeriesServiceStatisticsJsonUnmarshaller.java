@@ -60,6 +60,10 @@ public class TimeSeriesServiceStatisticsJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     timeSeriesServiceStatistics.setServiceSummaryStatistics(ServiceStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ServiceForecastStatistics", targetDepth)) {
+                    context.nextToken();
+                    timeSeriesServiceStatistics.setServiceForecastStatistics(ForecastStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ResponseTimeHistogram", targetDepth)) {
                     context.nextToken();
                     timeSeriesServiceStatistics.setResponseTimeHistogram(new ListUnmarshaller<HistogramEntry>(HistogramEntryJsonUnmarshaller.getInstance())

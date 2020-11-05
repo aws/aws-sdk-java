@@ -147,9 +147,9 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * <code>false</code>) monitoring.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics"
-     * >Configure Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
+     * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      */
     private InstanceMonitoring instanceMonitoring;
@@ -219,9 +219,9 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     private String placementTenancy;
     /**
      * <p>
-     * The metadata options for the instances. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
-     * Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * The metadata options for the instances. For more information, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds"
+     * >Configuring the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      */
     private InstanceMetadataOptions metadataOptions;
@@ -1079,18 +1079,18 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * <code>false</code>) monitoring.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics"
-     * >Configure Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
+     * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param instanceMonitoring
      *        Controls whether instances in this group are launched with detailed (<code>true</code>) or basic (
      *        <code>false</code>) monitoring.</p>
      *        <p>
-     *        For more information, see <a href=
-     *        "https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics"
-     *        >Configure Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
+     *        Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public void setInstanceMonitoring(InstanceMonitoring instanceMonitoring) {
@@ -1103,17 +1103,17 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * <code>false</code>) monitoring.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics"
-     * >Configure Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
+     * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return Controls whether instances in this group are launched with detailed (<code>true</code>) or basic (
      *         <code>false</code>) monitoring.</p>
      *         <p>
-     *         For more information, see <a href=
-     *         "https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics"
-     *         >Configure Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
+     *         Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public InstanceMonitoring getInstanceMonitoring() {
@@ -1126,18 +1126,18 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * <code>false</code>) monitoring.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics"
-     * >Configure Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
+     * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param instanceMonitoring
      *        Controls whether instances in this group are launched with detailed (<code>true</code>) or basic (
      *        <code>false</code>) monitoring.</p>
      *        <p>
-     *        For more information, see <a href=
-     *        "https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics"
-     *        >Configure Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
+     *        Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1595,15 +1595,15 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The metadata options for the instances. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
-     * Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * The metadata options for the instances. For more information, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds"
+     * >Configuring the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param metadataOptions
-     *        The metadata options for the instances. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata
-     *        and User Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     *        The metadata options for the instances. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds"
+     *        >Configuring the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public void setMetadataOptions(InstanceMetadataOptions metadataOptions) {
@@ -1612,14 +1612,14 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The metadata options for the instances. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
-     * Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * The metadata options for the instances. For more information, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds"
+     * >Configuring the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
-     * @return The metadata options for the instances. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata
-     *         and User Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * @return The metadata options for the instances. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds"
+     *         >Configuring the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public InstanceMetadataOptions getMetadataOptions() {
@@ -1628,15 +1628,15 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The metadata options for the instances. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
-     * Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * The metadata options for the instances. For more information, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds"
+     * >Configuring the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param metadataOptions
-     *        The metadata options for the instances. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata
-     *        and User Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     *        The metadata options for the instances. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds"
+     *        >Configuring the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

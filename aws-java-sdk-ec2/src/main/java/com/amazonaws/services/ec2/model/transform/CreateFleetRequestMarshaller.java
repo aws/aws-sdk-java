@@ -51,6 +51,19 @@ public class CreateFleetRequestMarshaller implements Marshaller<Request<CreateFl
                 request.addParameter("SpotOptions.AllocationStrategy", StringUtils.fromString(spotOptions.getAllocationStrategy()));
             }
 
+            FleetSpotMaintenanceStrategiesRequest maintenanceStrategies = spotOptions.getMaintenanceStrategies();
+            if (maintenanceStrategies != null) {
+
+                FleetSpotCapacityRebalanceRequest capacityRebalance = maintenanceStrategies.getCapacityRebalance();
+                if (capacityRebalance != null) {
+
+                    if (capacityRebalance.getReplacementStrategy() != null) {
+                        request.addParameter("SpotOptions.MaintenanceStrategies.CapacityRebalance.ReplacementStrategy",
+                                StringUtils.fromString(capacityRebalance.getReplacementStrategy()));
+                    }
+                }
+            }
+
             if (spotOptions.getInstanceInterruptionBehavior() != null) {
                 request.addParameter("SpotOptions.InstanceInterruptionBehavior", StringUtils.fromString(spotOptions.getInstanceInterruptionBehavior()));
             }

@@ -10353,6 +10353,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         An unexpected error has occurred.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
      * @sample AWSIot.ListThingGroups
      */
     @Override
@@ -10411,6 +10413,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         An unexpected error has occurred.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
      * @sample AWSIot.ListThingGroupsForThing
      */
     @Override
@@ -10859,6 +10863,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         An unexpected error has occurred.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
      * @sample AWSIot.ListThingsInThingGroup
      */
     @Override

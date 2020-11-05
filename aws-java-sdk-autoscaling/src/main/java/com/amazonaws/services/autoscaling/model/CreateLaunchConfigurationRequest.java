@@ -167,9 +167,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * When detailed monitoring is enabled, Amazon CloudWatch generates metrics every minute and your account is charged
      * a fee. When you disable detailed monitoring, CloudWatch generates metrics every 5 minutes. For more information,
-     * see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics"
-     * >Configure Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * see <a href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
+     * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * </important>
      */
@@ -261,9 +260,9 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     private String placementTenancy;
     /**
      * <p>
-     * The metadata options for the instances. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
-     * Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * The metadata options for the instances. For more information, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds"
+     * >Configuring the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      */
     private InstanceMetadataOptions metadataOptions;
@@ -1227,9 +1226,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * When detailed monitoring is enabled, Amazon CloudWatch generates metrics every minute and your account is charged
      * a fee. When you disable detailed monitoring, CloudWatch generates metrics every 5 minutes. For more information,
-     * see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics"
-     * >Configure Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * see <a href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
+     * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * </important>
      * 
@@ -1243,9 +1241,9 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      *        <p>
      *        When detailed monitoring is enabled, Amazon CloudWatch generates metrics every minute and your account is
      *        charged a fee. When you disable detailed monitoring, CloudWatch generates metrics every 5 minutes. For
-     *        more information, see <a href=
-     *        "https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics"
-     *        >Configure Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
+     *        Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      *        </p>
      */
 
@@ -1265,9 +1263,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * When detailed monitoring is enabled, Amazon CloudWatch generates metrics every minute and your account is charged
      * a fee. When you disable detailed monitoring, CloudWatch generates metrics every 5 minutes. For more information,
-     * see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics"
-     * >Configure Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * see <a href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
+     * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * </important>
      * 
@@ -1280,9 +1277,9 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      *         <p>
      *         When detailed monitoring is enabled, Amazon CloudWatch generates metrics every minute and your account is
      *         charged a fee. When you disable detailed monitoring, CloudWatch generates metrics every 5 minutes. For
-     *         more information, see <a href=
-     *         "https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics"
-     *         >Configure Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
+     *         Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      *         </p>
      */
 
@@ -1302,9 +1299,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * When detailed monitoring is enabled, Amazon CloudWatch generates metrics every minute and your account is charged
      * a fee. When you disable detailed monitoring, CloudWatch generates metrics every 5 minutes. For more information,
-     * see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics"
-     * >Configure Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * see <a href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
+     * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * </important>
      * 
@@ -1318,9 +1314,9 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      *        <p>
      *        When detailed monitoring is enabled, Amazon CloudWatch generates metrics every minute and your account is
      *        charged a fee. When you disable detailed monitoring, CloudWatch generates metrics every 5 minutes. For
-     *        more information, see <a href=
-     *        "https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics"
-     *        >Configure Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
+     *        Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1926,15 +1922,15 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The metadata options for the instances. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
-     * Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * The metadata options for the instances. For more information, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds"
+     * >Configuring the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param metadataOptions
-     *        The metadata options for the instances. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata
-     *        and User Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     *        The metadata options for the instances. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds"
+     *        >Configuring the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public void setMetadataOptions(InstanceMetadataOptions metadataOptions) {
@@ -1943,14 +1939,14 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The metadata options for the instances. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
-     * Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * The metadata options for the instances. For more information, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds"
+     * >Configuring the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
-     * @return The metadata options for the instances. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata
-     *         and User Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * @return The metadata options for the instances. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds"
+     *         >Configuring the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public InstanceMetadataOptions getMetadataOptions() {
@@ -1959,15 +1955,15 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The metadata options for the instances. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
-     * Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * The metadata options for the instances. For more information, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds"
+     * >Configuring the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param metadataOptions
-     *        The metadata options for the instances. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata
-     *        and User Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     *        The metadata options for the instances. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds"
+     *        >Configuring the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

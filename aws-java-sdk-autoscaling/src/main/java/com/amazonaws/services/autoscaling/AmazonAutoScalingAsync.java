@@ -2513,6 +2513,9 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html">Getting Amazon SNS
      * Notifications When Your Auto Scaling Group Scales</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
+     * <p>
+     * If you exceed your maximum limit of SNS topics, which is 10 per Auto Scaling group, the call fails.
+     * </p>
      * 
      * @param putNotificationConfigurationRequest
      * @return A Java Future containing the result of the PutNotificationConfiguration operation returned by the
@@ -2536,6 +2539,9 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html">Getting Amazon SNS
      * Notifications When Your Auto Scaling Group Scales</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
+     * If you exceed your maximum limit of SNS topics, which is 10 per Auto Scaling group, the call fails.
      * </p>
      * 
      * @param putNotificationConfigurationRequest
@@ -2899,6 +2905,9 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
      * >Instance Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
+     * <p>
+     * If you exceed your maximum limit of instance IDs, which is 50 per Auto Scaling group, the call fails.
+     * </p>
      * 
      * @param setInstanceProtectionRequest
      * @return A Java Future containing the result of the SetInstanceProtection operation returned by the service.
@@ -2917,6 +2926,9 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * in, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
      * >Instance Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
+     * If you exceed your maximum limit of instance IDs, which is 50 per Auto Scaling group, the call fails.
      * </p>
      * 
      * @param setInstanceProtectionRequest

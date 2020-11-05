@@ -39,6 +39,8 @@ public class BrokerSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("created").timestampFormat("iso8601").build();
     private static final MarshallingInfo<String> DEPLOYMENTMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentMode").build();
+    private static final MarshallingInfo<String> ENGINETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("engineType").build();
     private static final MarshallingInfo<String> HOSTINSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hostInstanceType").build();
 
@@ -64,6 +66,7 @@ public class BrokerSummaryMarshaller {
             protocolMarshaller.marshall(brokerSummary.getBrokerState(), BROKERSTATE_BINDING);
             protocolMarshaller.marshall(brokerSummary.getCreated(), CREATED_BINDING);
             protocolMarshaller.marshall(brokerSummary.getDeploymentMode(), DEPLOYMENTMODE_BINDING);
+            protocolMarshaller.marshall(brokerSummary.getEngineType(), ENGINETYPE_BINDING);
             protocolMarshaller.marshall(brokerSummary.getHostInstanceType(), HOSTINSTANCETYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
