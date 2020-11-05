@@ -20,9 +20,9 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum VirtualGatewayListenerTlsMode {
 
-    DISABLED("DISABLED"),
+    STRICT("STRICT"),
     PERMISSIVE("PERMISSIVE"),
-    STRICT("STRICT");
+    DISABLED("DISABLED");
 
     private String value;
 

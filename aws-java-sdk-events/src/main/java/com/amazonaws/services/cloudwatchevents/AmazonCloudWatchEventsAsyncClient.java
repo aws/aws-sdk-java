@@ -318,6 +318,72 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
     }
 
     @Override
+    public java.util.concurrent.Future<CancelReplayResult> cancelReplayAsync(CancelReplayRequest request) {
+
+        return cancelReplayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelReplayResult> cancelReplayAsync(final CancelReplayRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelReplayRequest, CancelReplayResult> asyncHandler) {
+        final CancelReplayRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelReplayResult>() {
+            @Override
+            public CancelReplayResult call() throws Exception {
+                CancelReplayResult result = null;
+
+                try {
+                    result = executeCancelReplay(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateArchiveResult> createArchiveAsync(CreateArchiveRequest request) {
+
+        return createArchiveAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateArchiveResult> createArchiveAsync(final CreateArchiveRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateArchiveRequest, CreateArchiveResult> asyncHandler) {
+        final CreateArchiveRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateArchiveResult>() {
+            @Override
+            public CreateArchiveResult call() throws Exception {
+                CreateArchiveResult result = null;
+
+                try {
+                    result = executeCreateArchive(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateEventBusResult> createEventBusAsync(CreateEventBusRequest request) {
 
         return createEventBusAsync(request, null);
@@ -401,6 +467,39 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
 
                 try {
                     result = executeDeactivateEventSource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteArchiveResult> deleteArchiveAsync(DeleteArchiveRequest request) {
+
+        return deleteArchiveAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteArchiveResult> deleteArchiveAsync(final DeleteArchiveRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteArchiveRequest, DeleteArchiveResult> asyncHandler) {
+        final DeleteArchiveRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteArchiveResult>() {
+            @Override
+            public DeleteArchiveResult call() throws Exception {
+                DeleteArchiveResult result = null;
+
+                try {
+                    result = executeDeleteArchive(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -516,6 +615,39 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeArchiveResult> describeArchiveAsync(DescribeArchiveRequest request) {
+
+        return describeArchiveAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeArchiveResult> describeArchiveAsync(final DescribeArchiveRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeArchiveRequest, DescribeArchiveResult> asyncHandler) {
+        final DescribeArchiveRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeArchiveResult>() {
+            @Override
+            public DescribeArchiveResult call() throws Exception {
+                DescribeArchiveResult result = null;
+
+                try {
+                    result = executeDescribeArchive(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeEventBusResult> describeEventBusAsync(DescribeEventBusRequest request) {
 
         return describeEventBusAsync(request, null);
@@ -615,6 +747,39 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeReplayResult> describeReplayAsync(DescribeReplayRequest request) {
+
+        return describeReplayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReplayResult> describeReplayAsync(final DescribeReplayRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeReplayRequest, DescribeReplayResult> asyncHandler) {
+        final DescribeReplayRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeReplayResult>() {
+            @Override
+            public DescribeReplayResult call() throws Exception {
+                DescribeReplayResult result = null;
+
+                try {
+                    result = executeDescribeReplay(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeRuleResult> describeRuleAsync(DescribeRuleRequest request) {
 
         return describeRuleAsync(request, null);
@@ -698,6 +863,39 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
 
                 try {
                     result = executeEnableRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListArchivesResult> listArchivesAsync(ListArchivesRequest request) {
+
+        return listArchivesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListArchivesResult> listArchivesAsync(final ListArchivesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListArchivesRequest, ListArchivesResult> asyncHandler) {
+        final ListArchivesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListArchivesResult>() {
+            @Override
+            public ListArchivesResult call() throws Exception {
+                ListArchivesResult result = null;
+
+                try {
+                    result = executeListArchives(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -831,6 +1029,39 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
 
                 try {
                     result = executeListPartnerEventSources(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReplaysResult> listReplaysAsync(ListReplaysRequest request) {
+
+        return listReplaysAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReplaysResult> listReplaysAsync(final ListReplaysRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListReplaysRequest, ListReplaysResult> asyncHandler) {
+        final ListReplaysRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListReplaysResult>() {
+            @Override
+            public ListReplaysResult call() throws Exception {
+                ListReplaysResult result = null;
+
+                try {
+                    result = executeListReplays(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1210,6 +1441,39 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
     }
 
     @Override
+    public java.util.concurrent.Future<StartReplayResult> startReplayAsync(StartReplayRequest request) {
+
+        return startReplayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartReplayResult> startReplayAsync(final StartReplayRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartReplayRequest, StartReplayResult> asyncHandler) {
+        final StartReplayRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartReplayResult>() {
+            @Override
+            public StartReplayResult call() throws Exception {
+                StartReplayResult result = null;
+
+                try {
+                    result = executeStartReplay(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);
@@ -1293,6 +1557,39 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateArchiveResult> updateArchiveAsync(UpdateArchiveRequest request) {
+
+        return updateArchiveAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateArchiveResult> updateArchiveAsync(final UpdateArchiveRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateArchiveRequest, UpdateArchiveResult> asyncHandler) {
+        final UpdateArchiveRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateArchiveResult>() {
+            @Override
+            public UpdateArchiveResult call() throws Exception {
+                UpdateArchiveResult result = null;
+
+                try {
+                    result = executeUpdateArchive(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

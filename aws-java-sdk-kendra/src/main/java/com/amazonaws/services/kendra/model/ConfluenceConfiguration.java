@@ -44,7 +44,7 @@ public class ConfluenceConfiguration implements Serializable, Cloneable, Structu
      * <ul>
      * <li>
      * <p>
-     * username - The user name of a user with administrative privileges for the Confluence server.
+     * username - The user name or email address of a user with administrative privileges for the Confluence server.
      * </p>
      * </li>
      * <li>
@@ -170,7 +170,7 @@ public class ConfluenceConfiguration implements Serializable, Cloneable, Structu
      * <ul>
      * <li>
      * <p>
-     * username - The user name of a user with administrative privileges for the Confluence server.
+     * username - The user name or email address of a user with administrative privileges for the Confluence server.
      * </p>
      * </li>
      * <li>
@@ -187,7 +187,8 @@ public class ConfluenceConfiguration implements Serializable, Cloneable, Structu
      *        <ul>
      *        <li>
      *        <p>
-     *        username - The user name of a user with administrative privileges for the Confluence server.
+     *        username - The user name or email address of a user with administrative privileges for the Confluence
+     *        server.
      *        </p>
      *        </li>
      *        <li>
@@ -209,7 +210,7 @@ public class ConfluenceConfiguration implements Serializable, Cloneable, Structu
      * <ul>
      * <li>
      * <p>
-     * username - The user name of a user with administrative privileges for the Confluence server.
+     * username - The user name or email address of a user with administrative privileges for the Confluence server.
      * </p>
      * </li>
      * <li>
@@ -225,7 +226,8 @@ public class ConfluenceConfiguration implements Serializable, Cloneable, Structu
      *         <ul>
      *         <li>
      *         <p>
-     *         username - The user name of a user with administrative privileges for the Confluence server.
+     *         username - The user name or email address of a user with administrative privileges for the Confluence
+     *         server.
      *         </p>
      *         </li>
      *         <li>
@@ -247,7 +249,7 @@ public class ConfluenceConfiguration implements Serializable, Cloneable, Structu
      * <ul>
      * <li>
      * <p>
-     * username - The user name of a user with administrative privileges for the Confluence server.
+     * username - The user name or email address of a user with administrative privileges for the Confluence server.
      * </p>
      * </li>
      * <li>
@@ -264,7 +266,8 @@ public class ConfluenceConfiguration implements Serializable, Cloneable, Structu
      *        <ul>
      *        <li>
      *        <p>
-     *        username - The user name of a user with administrative privileges for the Confluence server.
+     *        username - The user name or email address of a user with administrative privileges for the Confluence
+     *        server.
      *        </p>
      *        </li>
      *        <li>

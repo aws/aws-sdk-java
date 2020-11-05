@@ -47,7 +47,7 @@ public class AssociatedRole implements Serializable, Cloneable {
     private String certificateS3ObjectKey;
     /**
      * <p>
-     * The ID of the KMS key used to encrypt the private key.
+     * The ID of the KMS customer master key (CMK) used to encrypt the private key.
      * </p>
      */
     private String encryptionKmsKeyId;
@@ -183,11 +183,11 @@ public class AssociatedRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the KMS key used to encrypt the private key.
+     * The ID of the KMS customer master key (CMK) used to encrypt the private key.
      * </p>
      * 
      * @param encryptionKmsKeyId
-     *        The ID of the KMS key used to encrypt the private key.
+     *        The ID of the KMS customer master key (CMK) used to encrypt the private key.
      */
 
     public void setEncryptionKmsKeyId(String encryptionKmsKeyId) {
@@ -196,10 +196,10 @@ public class AssociatedRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the KMS key used to encrypt the private key.
+     * The ID of the KMS customer master key (CMK) used to encrypt the private key.
      * </p>
      * 
-     * @return The ID of the KMS key used to encrypt the private key.
+     * @return The ID of the KMS customer master key (CMK) used to encrypt the private key.
      */
 
     public String getEncryptionKmsKeyId() {
@@ -208,11 +208,11 @@ public class AssociatedRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the KMS key used to encrypt the private key.
+     * The ID of the KMS customer master key (CMK) used to encrypt the private key.
      * </p>
      * 
      * @param encryptionKmsKeyId
-     *        The ID of the KMS key used to encrypt the private key.
+     *        The ID of the KMS customer master key (CMK) used to encrypt the private key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

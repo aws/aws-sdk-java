@@ -48,6 +48,8 @@ public class SharePointConfigurationMarshaller {
             .marshallLocationName("FieldMappings").build();
     private static final MarshallingInfo<String> DOCUMENTTITLEFIELDNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentTitleFieldName").build();
+    private static final MarshallingInfo<Boolean> DISABLELOCALGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisableLocalGroups").build();
 
     private static final SharePointConfigurationMarshaller instance = new SharePointConfigurationMarshaller();
 
@@ -75,6 +77,7 @@ public class SharePointConfigurationMarshaller {
             protocolMarshaller.marshall(sharePointConfiguration.getVpcConfiguration(), VPCCONFIGURATION_BINDING);
             protocolMarshaller.marshall(sharePointConfiguration.getFieldMappings(), FIELDMAPPINGS_BINDING);
             protocolMarshaller.marshall(sharePointConfiguration.getDocumentTitleFieldName(), DOCUMENTTITLEFIELDNAME_BINDING);
+            protocolMarshaller.marshall(sharePointConfiguration.getDisableLocalGroups(), DISABLELOCALGROUPS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

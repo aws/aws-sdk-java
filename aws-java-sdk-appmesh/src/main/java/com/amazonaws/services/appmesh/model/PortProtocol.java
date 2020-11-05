@@ -20,10 +20,10 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum PortProtocol {
 
-    Grpc("grpc"),
     Http("http"),
+    Tcp("tcp"),
     Http2("http2"),
-    Tcp("tcp");
+    Grpc("grpc");
 
     private String value;
 

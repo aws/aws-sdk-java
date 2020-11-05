@@ -121,6 +121,9 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                             new JsonErrorShapeMetadata().withErrorCode("OperationDisabledException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudwatchevents.model.transform.OperationDisabledExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IllegalStatusException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudwatchevents.model.transform.IllegalStatusExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudwatchevents.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -345,7 +348,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @throws ResourceNotFoundException
      *         An entity that you specified does not exist.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws InvalidStateException
      *         The specified state is not a valid state for an event source.
      * @throws InternalException
@@ -401,6 +404,135 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Cancels the specified replay.
+     * </p>
+     * 
+     * @param cancelReplayRequest
+     * @return Result of the CancelReplay operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws ConcurrentModificationException
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws IllegalStatusException
+     *         An error occurred because a replay can be canceled only when the state is Running or Starting.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.CancelReplay
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CancelReplay" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CancelReplayResult cancelReplay(CancelReplayRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelReplay(request);
+    }
+
+    @SdkInternalApi
+    final CancelReplayResult executeCancelReplay(CancelReplayRequest cancelReplayRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelReplayRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelReplayRequest> request = null;
+        Response<CancelReplayResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelReplayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelReplayRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelReplay");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelReplayResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CancelReplayResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an archive of events with the specified settings. When you create an archive, incoming events might not
+     * immediately start being sent to the archive. Allow a short period of time for changes to take effect.
+     * </p>
+     * 
+     * @param createArchiveRequest
+     * @return Result of the CreateArchive operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are trying to create already exists.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @throws LimitExceededException
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
+     * @throws InvalidEventPatternException
+     *         The event pattern is not valid.
+     * @sample AmazonCloudWatchEvents.CreateArchive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateArchive" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateArchiveResult createArchive(CreateArchiveRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateArchive(request);
+    }
+
+    @SdkInternalApi
+    final CreateArchiveResult executeCreateArchive(CreateArchiveRequest createArchiveRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createArchiveRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateArchiveRequest> request = null;
+        Response<CreateArchiveResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateArchiveRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createArchiveRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateArchive");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateArchiveResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateArchiveResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new event bus within your account. This can be a custom event bus which you can use to receive events
      * from your custom applications and services, or it can be a partner event bus which can be matched to a partner
      * event source.
@@ -417,9 +549,9 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws LimitExceededException
-     *         You tried to create more rules or add more targets to a rule than is allowed.
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
      * @throws OperationDisabledException
      *         The operation you are attempting is not available in this region.
      * @sample AmazonCloudWatchEvents.CreateEventBus
@@ -506,9 +638,9 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws LimitExceededException
-     *         You tried to create more rules or add more targets to a rule than is allowed.
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
      * @throws OperationDisabledException
      *         The operation you are attempting is not available in this region.
      * @sample AmazonCloudWatchEvents.CreatePartnerEventSource
@@ -578,7 +710,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @throws ResourceNotFoundException
      *         An entity that you specified does not exist.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws InvalidStateException
      *         The specified state is not a valid state for an event source.
      * @throws InternalException
@@ -635,6 +767,66 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Deletes the specified archive.
+     * </p>
+     * 
+     * @param deleteArchiveRequest
+     * @return Result of the DeleteArchive operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.DeleteArchive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteArchive" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteArchiveResult deleteArchive(DeleteArchiveRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteArchive(request);
+    }
+
+    @SdkInternalApi
+    final DeleteArchiveResult executeDeleteArchive(DeleteArchiveRequest deleteArchiveRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteArchiveRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteArchiveRequest> request = null;
+        Response<DeleteArchiveResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteArchiveRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteArchiveRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteArchive");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteArchiveResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteArchiveResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified custom event bus or partner event bus. All rules associated with this event bus need to be
      * deleted. You can't delete your account's default event bus.
      * </p>
@@ -644,7 +836,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @sample AmazonCloudWatchEvents.DeleteEventBus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteEventBus" target="_top">AWS API
      *      Documentation</a>
@@ -708,7 +900,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws OperationDisabledException
      *         The operation you are attempting is not available in this region.
      * @sample AmazonCloudWatchEvents.DeletePartnerEventSource
@@ -781,7 +973,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @param deleteRuleRequest
      * @return Result of the DeleteRule operation returned by the service.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws ManagedRuleException
      *         This rule was created by an AWS service on behalf of your account. It is managed by that service. If you
      *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
@@ -829,6 +1021,66 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteRuleResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves details about an archive.
+     * </p>
+     * 
+     * @param describeArchiveRequest
+     * @return Result of the DescribeArchive operation returned by the service.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are trying to create already exists.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.DescribeArchive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeArchive" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeArchiveResult describeArchive(DescribeArchiveRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeArchive(request);
+    }
+
+    @SdkInternalApi
+    final DescribeArchiveResult executeDescribeArchive(DescribeArchiveRequest describeArchiveRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeArchiveRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeArchiveRequest> request = null;
+        Response<DescribeArchiveResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeArchiveRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeArchiveRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeArchive");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeArchiveResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeArchiveResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1031,6 +1283,70 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Retrieves details about a replay. Use <code>DescribeReplay</code> to determine the progress of a running replay.
+     * A replay processes events to replay based on the time in the event, and replays them using 1 minute intervals. If
+     * you use <code>StartReplay</code> and specify an <code>EventStartTime</code> and an <code>EventEndTime</code> that
+     * covers a 20 minute time range, the events are replayed from the first minute of that 20 minute range first. Then
+     * the events from the second minute are replayed. You can use <code>DescribeReplay</code> to determine the progress
+     * of a replay. The value returned for <code>EventLastReplayedTime</code> indicates the time within the specified
+     * time range associated with the last event replayed.
+     * </p>
+     * 
+     * @param describeReplayRequest
+     * @return Result of the DescribeReplay operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.DescribeReplay
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeReplay" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeReplayResult describeReplay(DescribeReplayRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeReplay(request);
+    }
+
+    @SdkInternalApi
+    final DescribeReplayResult executeDescribeReplay(DescribeReplayRequest describeReplayRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeReplayRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeReplayRequest> request = null;
+        Response<DescribeReplayResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeReplayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeReplayRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReplay");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeReplayResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeReplayResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes the specified rule.
      * </p>
      * <p>
@@ -1106,7 +1422,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @throws ResourceNotFoundException
      *         An entity that you specified does not exist.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws ManagedRuleException
      *         This rule was created by an AWS service on behalf of your account. It is managed by that service. If you
      *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
@@ -1176,7 +1492,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @throws ResourceNotFoundException
      *         An entity that you specified does not exist.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws ManagedRuleException
      *         This rule was created by an AWS service on behalf of your account. It is managed by that service. If you
      *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
@@ -1222,6 +1538,65 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<EnableRuleResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new EnableRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists your archives. You can either list all the archives or you can provide a prefix to match to the archive
+     * names. Filter parameters are exclusive.
+     * </p>
+     * 
+     * @param listArchivesRequest
+     * @return Result of the ListArchives operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.ListArchives
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListArchives" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListArchivesResult listArchives(ListArchivesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListArchives(request);
+    }
+
+    @SdkInternalApi
+    final ListArchivesResult executeListArchives(ListArchivesRequest listArchivesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listArchivesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListArchivesRequest> request = null;
+        Response<ListArchivesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListArchivesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listArchivesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListArchives");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListArchivesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListArchivesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1462,6 +1837,63 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
             HttpResponseHandler<AmazonWebServiceResponse<ListPartnerEventSourcesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListPartnerEventSourcesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists your replays. You can either list all the replays or you can provide a prefix to match to the replay names.
+     * Filter parameters are exclusive.
+     * </p>
+     * 
+     * @param listReplaysRequest
+     * @return Result of the ListReplays operation returned by the service.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.ListReplays
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListReplays" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListReplaysResult listReplays(ListReplaysRequest request) {
+        request = beforeClientExecution(request);
+        return executeListReplays(request);
+    }
+
+    @SdkInternalApi
+    final ListReplaysResult executeListReplays(ListReplaysRequest listReplaysRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listReplaysRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListReplaysRequest> request = null;
+        Response<ListReplaysResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListReplaysRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listReplaysRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListReplays");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListReplaysResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListReplaysResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1862,7 +2294,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @sample AmazonCloudWatchEvents.PutPermission
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutPermission" target="_top">AWS API
      *      Documentation</a>
@@ -1973,9 +2405,9 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @throws InvalidEventPatternException
      *         The event pattern is not valid.
      * @throws LimitExceededException
-     *         You tried to create more rules or add more targets to a rule than is allowed.
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws ManagedRuleException
      *         This rule was created by an AWS service on behalf of your account. It is managed by that service. If you
      *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
@@ -2226,9 +2658,9 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @throws ResourceNotFoundException
      *         An entity that you specified does not exist.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws LimitExceededException
-     *         You tried to create more rules or add more targets to a rule than is allowed.
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
      * @throws ManagedRuleException
      *         This rule was created by an AWS service on behalf of your account. It is managed by that service. If you
      *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
@@ -2299,7 +2731,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @sample AmazonCloudWatchEvents.RemovePermission
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemovePermission" target="_top">AWS API
      *      Documentation</a>
@@ -2367,7 +2799,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @throws ResourceNotFoundException
      *         An entity that you specified does not exist.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws ManagedRuleException
      *         This rule was created by an AWS service on behalf of your account. It is managed by that service. If you
      *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
@@ -2425,6 +2857,76 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Starts the specified replay. Events are not necessarily replayed in the exact same order that they were added to
+     * the archive. A replay processes events to replay based on the time in the event, and replays them using 1 minute
+     * intervals. If you specify an <code>EventStartTime</code> and an <code>EventEndTime</code> that covers a 20 minute
+     * time range, the events are replayed from the first minute of that 20 minute range first. Then the events from the
+     * second minute are replayed. You can use <code>DescribeReplay</code> to determine the progress of a replay. The
+     * value returned for <code>EventLastReplayedTime</code> indicates the time within the specified time range
+     * associated with the last event replayed.
+     * </p>
+     * 
+     * @param startReplayRequest
+     * @return Result of the StartReplay operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are trying to create already exists.
+     * @throws InvalidEventPatternException
+     *         The event pattern is not valid.
+     * @throws LimitExceededException
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.StartReplay
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/StartReplay" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StartReplayResult startReplay(StartReplayRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartReplay(request);
+    }
+
+    @SdkInternalApi
+    final StartReplayResult executeStartReplay(StartReplayRequest startReplayRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startReplayRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartReplayRequest> request = null;
+        Response<StartReplayResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartReplayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startReplayRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartReplay");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartReplayResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartReplayResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Assigns one or more tags (key-value pairs) to the specified EventBridge resource. Tags can help you organize and
      * categorize your resources. You can also use them to scope user permissions by granting a user permission to
      * access or change only resources with certain tag values. In EventBridge, rules and event buses can be tagged.
@@ -2447,7 +2949,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @throws ResourceNotFoundException
      *         An entity that you specified does not exist.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @throws ManagedRuleException
@@ -2579,7 +3081,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws ManagedRuleException
      *         This rule was created by an AWS service on behalf of your account. It is managed by that service. If you
      *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
@@ -2623,6 +3125,70 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the specified archive.
+     * </p>
+     * 
+     * @param updateArchiveRequest
+     * @return Result of the UpdateArchive operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @throws LimitExceededException
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
+     * @throws InvalidEventPatternException
+     *         The event pattern is not valid.
+     * @sample AmazonCloudWatchEvents.UpdateArchive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateArchive" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateArchiveResult updateArchive(UpdateArchiveRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateArchive(request);
+    }
+
+    @SdkInternalApi
+    final UpdateArchiveResult executeUpdateArchive(UpdateArchiveRequest updateArchiveRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateArchiveRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateArchiveRequest> request = null;
+        Response<UpdateArchiveResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateArchiveRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateArchiveRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateArchive");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateArchiveResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateArchiveResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

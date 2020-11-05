@@ -42,13 +42,14 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
     private Integer batchSize;
     /**
      * <p>
-     * (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
+     * (Streams) The maximum amount of time to gather records before invoking the function, in seconds. The default
+     * value is zero.
      * </p>
      */
     private Integer maximumBatchingWindowInSeconds;
     /**
      * <p>
-     * (Streams) The number of batches to process from each shard concurrently.
+     * (Streams) The number of batches to process from each shard concurrently. The default value is 1.
      * </p>
      */
     private Integer parallelizationFactor;
@@ -98,25 +99,48 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
     private DestinationConfig destinationConfig;
     /**
      * <p>
-     * (MSK) The name of the Kafka topic.
+     * (MSK) The name of the Kafka topic to consume.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> topics;
     /**
      * <p>
-     * (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     * (MQ) The name of the Amazon MQ broker destination queue to consume.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> queues;
+    /**
+     * <p>
+     * (MQ) The Secrets Manager secret that stores your broker credentials. To store your secret, use the following
+     * format: <code> { "username": "your username", "password": "your password" }</code>
+     * </p>
+     * <p>
+     * To reference the secret, use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" } ]</code>
+     * </p>
+     * <p>
+     * The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or
+     * service managed keys. When using a customer managed KMS key, the Lambda execution role requires
+     * <code>kms:Decrypt</code> permissions.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<SourceAccessConfiguration> sourceAccessConfigurations;
+    /**
+     * <p>
+     * (Streams) Discard records older than the specified age. The default value is infinite (-1). When set to infinite
+     * (-1), failed records are retried until the record expires.
      * </p>
      */
     private Integer maximumRecordAgeInSeconds;
     /**
      * <p>
-     * (Streams) If the function returns an error, split the batch in two and retry.
+     * (Streams) If the function returns an error, split the batch in two and retry. The default value is false.
      * </p>
      */
     private Boolean bisectBatchOnFunctionError;
     /**
      * <p>
-     * (Streams) The maximum number of times to retry when the function returns an error.
+     * (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to
+     * infinite (-1), failed records are retried until the record expires.
      * </p>
      */
     private Integer maximumRetryAttempts;
@@ -203,11 +227,13 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
+     * (Streams) The maximum amount of time to gather records before invoking the function, in seconds. The default
+     * value is zero.
      * </p>
      * 
      * @param maximumBatchingWindowInSeconds
-     *        (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
+     *        (Streams) The maximum amount of time to gather records before invoking the function, in seconds. The
+     *        default value is zero.
      */
 
     public void setMaximumBatchingWindowInSeconds(Integer maximumBatchingWindowInSeconds) {
@@ -216,10 +242,12 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
+     * (Streams) The maximum amount of time to gather records before invoking the function, in seconds. The default
+     * value is zero.
      * </p>
      * 
-     * @return (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
+     * @return (Streams) The maximum amount of time to gather records before invoking the function, in seconds. The
+     *         default value is zero.
      */
 
     public Integer getMaximumBatchingWindowInSeconds() {
@@ -228,11 +256,13 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
+     * (Streams) The maximum amount of time to gather records before invoking the function, in seconds. The default
+     * value is zero.
      * </p>
      * 
      * @param maximumBatchingWindowInSeconds
-     *        (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
+     *        (Streams) The maximum amount of time to gather records before invoking the function, in seconds. The
+     *        default value is zero.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,11 +273,11 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) The number of batches to process from each shard concurrently.
+     * (Streams) The number of batches to process from each shard concurrently. The default value is 1.
      * </p>
      * 
      * @param parallelizationFactor
-     *        (Streams) The number of batches to process from each shard concurrently.
+     *        (Streams) The number of batches to process from each shard concurrently. The default value is 1.
      */
 
     public void setParallelizationFactor(Integer parallelizationFactor) {
@@ -256,10 +286,10 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) The number of batches to process from each shard concurrently.
+     * (Streams) The number of batches to process from each shard concurrently. The default value is 1.
      * </p>
      * 
-     * @return (Streams) The number of batches to process from each shard concurrently.
+     * @return (Streams) The number of batches to process from each shard concurrently. The default value is 1.
      */
 
     public Integer getParallelizationFactor() {
@@ -268,11 +298,11 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) The number of batches to process from each shard concurrently.
+     * (Streams) The number of batches to process from each shard concurrently. The default value is 1.
      * </p>
      * 
      * @param parallelizationFactor
-     *        (Streams) The number of batches to process from each shard concurrently.
+     *        (Streams) The number of batches to process from each shard concurrently. The default value is 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -578,10 +608,10 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (MSK) The name of the Kafka topic.
+     * (MSK) The name of the Kafka topic to consume.
      * </p>
      * 
-     * @return (MSK) The name of the Kafka topic.
+     * @return (MSK) The name of the Kafka topic to consume.
      */
 
     public java.util.List<String> getTopics() {
@@ -593,11 +623,11 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (MSK) The name of the Kafka topic.
+     * (MSK) The name of the Kafka topic to consume.
      * </p>
      * 
      * @param topics
-     *        (MSK) The name of the Kafka topic.
+     *        (MSK) The name of the Kafka topic to consume.
      */
 
     public void setTopics(java.util.Collection<String> topics) {
@@ -611,7 +641,7 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (MSK) The name of the Kafka topic.
+     * (MSK) The name of the Kafka topic to consume.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -620,7 +650,7 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
      * </p>
      * 
      * @param topics
-     *        (MSK) The name of the Kafka topic.
+     *        (MSK) The name of the Kafka topic to consume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -636,11 +666,11 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (MSK) The name of the Kafka topic.
+     * (MSK) The name of the Kafka topic to consume.
      * </p>
      * 
      * @param topics
-     *        (MSK) The name of the Kafka topic.
+     *        (MSK) The name of the Kafka topic to consume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -651,11 +681,231 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     * (MQ) The name of the Amazon MQ broker destination queue to consume.
+     * </p>
+     * 
+     * @return (MQ) The name of the Amazon MQ broker destination queue to consume.
+     */
+
+    public java.util.List<String> getQueues() {
+        if (queues == null) {
+            queues = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return queues;
+    }
+
+    /**
+     * <p>
+     * (MQ) The name of the Amazon MQ broker destination queue to consume.
+     * </p>
+     * 
+     * @param queues
+     *        (MQ) The name of the Amazon MQ broker destination queue to consume.
+     */
+
+    public void setQueues(java.util.Collection<String> queues) {
+        if (queues == null) {
+            this.queues = null;
+            return;
+        }
+
+        this.queues = new com.amazonaws.internal.SdkInternalList<String>(queues);
+    }
+
+    /**
+     * <p>
+     * (MQ) The name of the Amazon MQ broker destination queue to consume.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setQueues(java.util.Collection)} or {@link #withQueues(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param queues
+     *        (MQ) The name of the Amazon MQ broker destination queue to consume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EventSourceMappingConfiguration withQueues(String... queues) {
+        if (this.queues == null) {
+            setQueues(new com.amazonaws.internal.SdkInternalList<String>(queues.length));
+        }
+        for (String ele : queues) {
+            this.queues.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * (MQ) The name of the Amazon MQ broker destination queue to consume.
+     * </p>
+     * 
+     * @param queues
+     *        (MQ) The name of the Amazon MQ broker destination queue to consume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EventSourceMappingConfiguration withQueues(java.util.Collection<String> queues) {
+        setQueues(queues);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (MQ) The Secrets Manager secret that stores your broker credentials. To store your secret, use the following
+     * format: <code> { "username": "your username", "password": "your password" }</code>
+     * </p>
+     * <p>
+     * To reference the secret, use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" } ]</code>
+     * </p>
+     * <p>
+     * The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or
+     * service managed keys. When using a customer managed KMS key, the Lambda execution role requires
+     * <code>kms:Decrypt</code> permissions.
+     * </p>
+     * 
+     * @return (MQ) The Secrets Manager secret that stores your broker credentials. To store your secret, use the
+     *         following format: <code> { "username": "your username", "password": "your password" }</code> </p>
+     *         <p>
+     *         To reference the secret, use the following format:
+     *         <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" } ]</code>
+     *         </p>
+     *         <p>
+     *         The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret, you can use
+     *         customer or service managed keys. When using a customer managed KMS key, the Lambda execution role
+     *         requires <code>kms:Decrypt</code> permissions.
+     */
+
+    public java.util.List<SourceAccessConfiguration> getSourceAccessConfigurations() {
+        if (sourceAccessConfigurations == null) {
+            sourceAccessConfigurations = new com.amazonaws.internal.SdkInternalList<SourceAccessConfiguration>();
+        }
+        return sourceAccessConfigurations;
+    }
+
+    /**
+     * <p>
+     * (MQ) The Secrets Manager secret that stores your broker credentials. To store your secret, use the following
+     * format: <code> { "username": "your username", "password": "your password" }</code>
+     * </p>
+     * <p>
+     * To reference the secret, use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" } ]</code>
+     * </p>
+     * <p>
+     * The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or
+     * service managed keys. When using a customer managed KMS key, the Lambda execution role requires
+     * <code>kms:Decrypt</code> permissions.
+     * </p>
+     * 
+     * @param sourceAccessConfigurations
+     *        (MQ) The Secrets Manager secret that stores your broker credentials. To store your secret, use the
+     *        following format: <code> { "username": "your username", "password": "your password" }</code> </p>
+     *        <p>
+     *        To reference the secret, use the following format:
+     *        <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" } ]</code>
+     *        </p>
+     *        <p>
+     *        The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret, you can use
+     *        customer or service managed keys. When using a customer managed KMS key, the Lambda execution role
+     *        requires <code>kms:Decrypt</code> permissions.
+     */
+
+    public void setSourceAccessConfigurations(java.util.Collection<SourceAccessConfiguration> sourceAccessConfigurations) {
+        if (sourceAccessConfigurations == null) {
+            this.sourceAccessConfigurations = null;
+            return;
+        }
+
+        this.sourceAccessConfigurations = new com.amazonaws.internal.SdkInternalList<SourceAccessConfiguration>(sourceAccessConfigurations);
+    }
+
+    /**
+     * <p>
+     * (MQ) The Secrets Manager secret that stores your broker credentials. To store your secret, use the following
+     * format: <code> { "username": "your username", "password": "your password" }</code>
+     * </p>
+     * <p>
+     * To reference the secret, use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" } ]</code>
+     * </p>
+     * <p>
+     * The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or
+     * service managed keys. When using a customer managed KMS key, the Lambda execution role requires
+     * <code>kms:Decrypt</code> permissions.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSourceAccessConfigurations(java.util.Collection)} or
+     * {@link #withSourceAccessConfigurations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param sourceAccessConfigurations
+     *        (MQ) The Secrets Manager secret that stores your broker credentials. To store your secret, use the
+     *        following format: <code> { "username": "your username", "password": "your password" }</code> </p>
+     *        <p>
+     *        To reference the secret, use the following format:
+     *        <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" } ]</code>
+     *        </p>
+     *        <p>
+     *        The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret, you can use
+     *        customer or service managed keys. When using a customer managed KMS key, the Lambda execution role
+     *        requires <code>kms:Decrypt</code> permissions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EventSourceMappingConfiguration withSourceAccessConfigurations(SourceAccessConfiguration... sourceAccessConfigurations) {
+        if (this.sourceAccessConfigurations == null) {
+            setSourceAccessConfigurations(new com.amazonaws.internal.SdkInternalList<SourceAccessConfiguration>(sourceAccessConfigurations.length));
+        }
+        for (SourceAccessConfiguration ele : sourceAccessConfigurations) {
+            this.sourceAccessConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * (MQ) The Secrets Manager secret that stores your broker credentials. To store your secret, use the following
+     * format: <code> { "username": "your username", "password": "your password" }</code>
+     * </p>
+     * <p>
+     * To reference the secret, use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" } ]</code>
+     * </p>
+     * <p>
+     * The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or
+     * service managed keys. When using a customer managed KMS key, the Lambda execution role requires
+     * <code>kms:Decrypt</code> permissions.
+     * </p>
+     * 
+     * @param sourceAccessConfigurations
+     *        (MQ) The Secrets Manager secret that stores your broker credentials. To store your secret, use the
+     *        following format: <code> { "username": "your username", "password": "your password" }</code> </p>
+     *        <p>
+     *        To reference the secret, use the following format:
+     *        <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" } ]</code>
+     *        </p>
+     *        <p>
+     *        The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret, you can use
+     *        customer or service managed keys. When using a customer managed KMS key, the Lambda execution role
+     *        requires <code>kms:Decrypt</code> permissions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EventSourceMappingConfiguration withSourceAccessConfigurations(java.util.Collection<SourceAccessConfiguration> sourceAccessConfigurations) {
+        setSourceAccessConfigurations(sourceAccessConfigurations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Streams) Discard records older than the specified age. The default value is infinite (-1). When set to infinite
+     * (-1), failed records are retried until the record expires.
      * </p>
      * 
      * @param maximumRecordAgeInSeconds
-     *        (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     *        (Streams) Discard records older than the specified age. The default value is infinite (-1). When set to
+     *        infinite (-1), failed records are retried until the record expires.
      */
 
     public void setMaximumRecordAgeInSeconds(Integer maximumRecordAgeInSeconds) {
@@ -664,10 +914,12 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     * (Streams) Discard records older than the specified age. The default value is infinite (-1). When set to infinite
+     * (-1), failed records are retried until the record expires.
      * </p>
      * 
-     * @return (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     * @return (Streams) Discard records older than the specified age. The default value is infinite (-1). When set to
+     *         infinite (-1), failed records are retried until the record expires.
      */
 
     public Integer getMaximumRecordAgeInSeconds() {
@@ -676,11 +928,13 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     * (Streams) Discard records older than the specified age. The default value is infinite (-1). When set to infinite
+     * (-1), failed records are retried until the record expires.
      * </p>
      * 
      * @param maximumRecordAgeInSeconds
-     *        (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     *        (Streams) Discard records older than the specified age. The default value is infinite (-1). When set to
+     *        infinite (-1), failed records are retried until the record expires.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -691,11 +945,11 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) If the function returns an error, split the batch in two and retry.
+     * (Streams) If the function returns an error, split the batch in two and retry. The default value is false.
      * </p>
      * 
      * @param bisectBatchOnFunctionError
-     *        (Streams) If the function returns an error, split the batch in two and retry.
+     *        (Streams) If the function returns an error, split the batch in two and retry. The default value is false.
      */
 
     public void setBisectBatchOnFunctionError(Boolean bisectBatchOnFunctionError) {
@@ -704,10 +958,10 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) If the function returns an error, split the batch in two and retry.
+     * (Streams) If the function returns an error, split the batch in two and retry. The default value is false.
      * </p>
      * 
-     * @return (Streams) If the function returns an error, split the batch in two and retry.
+     * @return (Streams) If the function returns an error, split the batch in two and retry. The default value is false.
      */
 
     public Boolean getBisectBatchOnFunctionError() {
@@ -716,11 +970,11 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) If the function returns an error, split the batch in two and retry.
+     * (Streams) If the function returns an error, split the batch in two and retry. The default value is false.
      * </p>
      * 
      * @param bisectBatchOnFunctionError
-     *        (Streams) If the function returns an error, split the batch in two and retry.
+     *        (Streams) If the function returns an error, split the batch in two and retry. The default value is false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -731,10 +985,10 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) If the function returns an error, split the batch in two and retry.
+     * (Streams) If the function returns an error, split the batch in two and retry. The default value is false.
      * </p>
      * 
-     * @return (Streams) If the function returns an error, split the batch in two and retry.
+     * @return (Streams) If the function returns an error, split the batch in two and retry. The default value is false.
      */
 
     public Boolean isBisectBatchOnFunctionError() {
@@ -743,11 +997,13 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) The maximum number of times to retry when the function returns an error.
+     * (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to
+     * infinite (-1), failed records are retried until the record expires.
      * </p>
      * 
      * @param maximumRetryAttempts
-     *        (Streams) The maximum number of times to retry when the function returns an error.
+     *        (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When
+     *        set to infinite (-1), failed records are retried until the record expires.
      */
 
     public void setMaximumRetryAttempts(Integer maximumRetryAttempts) {
@@ -756,10 +1012,12 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) The maximum number of times to retry when the function returns an error.
+     * (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to
+     * infinite (-1), failed records are retried until the record expires.
      * </p>
      * 
-     * @return (Streams) The maximum number of times to retry when the function returns an error.
+     * @return (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When
+     *         set to infinite (-1), failed records are retried until the record expires.
      */
 
     public Integer getMaximumRetryAttempts() {
@@ -768,11 +1026,13 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) The maximum number of times to retry when the function returns an error.
+     * (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to
+     * infinite (-1), failed records are retried until the record expires.
      * </p>
      * 
      * @param maximumRetryAttempts
-     *        (Streams) The maximum number of times to retry when the function returns an error.
+     *        (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When
+     *        set to infinite (-1), failed records are retried until the record expires.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -817,6 +1077,10 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
             sb.append("DestinationConfig: ").append(getDestinationConfig()).append(",");
         if (getTopics() != null)
             sb.append("Topics: ").append(getTopics()).append(",");
+        if (getQueues() != null)
+            sb.append("Queues: ").append(getQueues()).append(",");
+        if (getSourceAccessConfigurations() != null)
+            sb.append("SourceAccessConfigurations: ").append(getSourceAccessConfigurations()).append(",");
         if (getMaximumRecordAgeInSeconds() != null)
             sb.append("MaximumRecordAgeInSeconds: ").append(getMaximumRecordAgeInSeconds()).append(",");
         if (getBisectBatchOnFunctionError() != null)
@@ -886,6 +1150,14 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
             return false;
         if (other.getTopics() != null && other.getTopics().equals(this.getTopics()) == false)
             return false;
+        if (other.getQueues() == null ^ this.getQueues() == null)
+            return false;
+        if (other.getQueues() != null && other.getQueues().equals(this.getQueues()) == false)
+            return false;
+        if (other.getSourceAccessConfigurations() == null ^ this.getSourceAccessConfigurations() == null)
+            return false;
+        if (other.getSourceAccessConfigurations() != null && other.getSourceAccessConfigurations().equals(this.getSourceAccessConfigurations()) == false)
+            return false;
         if (other.getMaximumRecordAgeInSeconds() == null ^ this.getMaximumRecordAgeInSeconds() == null)
             return false;
         if (other.getMaximumRecordAgeInSeconds() != null && other.getMaximumRecordAgeInSeconds().equals(this.getMaximumRecordAgeInSeconds()) == false)
@@ -918,6 +1190,8 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
         hashCode = prime * hashCode + ((getStateTransitionReason() == null) ? 0 : getStateTransitionReason().hashCode());
         hashCode = prime * hashCode + ((getDestinationConfig() == null) ? 0 : getDestinationConfig().hashCode());
         hashCode = prime * hashCode + ((getTopics() == null) ? 0 : getTopics().hashCode());
+        hashCode = prime * hashCode + ((getQueues() == null) ? 0 : getQueues().hashCode());
+        hashCode = prime * hashCode + ((getSourceAccessConfigurations() == null) ? 0 : getSourceAccessConfigurations().hashCode());
         hashCode = prime * hashCode + ((getMaximumRecordAgeInSeconds() == null) ? 0 : getMaximumRecordAgeInSeconds().hashCode());
         hashCode = prime * hashCode + ((getBisectBatchOnFunctionError() == null) ? 0 : getBisectBatchOnFunctionError().hashCode());
         hashCode = prime * hashCode + ((getMaximumRetryAttempts() == null) ? 0 : getMaximumRetryAttempts().hashCode());

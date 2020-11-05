@@ -20,8 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DurationUnit {
 
-    Ms("ms"),
-    S("s");
+    S("s"),
+    Ms("ms");
 
     private String value;
 

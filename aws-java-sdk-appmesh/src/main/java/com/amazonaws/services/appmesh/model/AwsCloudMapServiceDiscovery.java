@@ -21,6 +21,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * An object that represents the AWS Cloud Map service discovery information for your virtual node.
  * </p>
+ * <note>
+ * <p>
+ * AWS Cloud Map is not available in the eu-south-1 Region.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/AwsCloudMapServiceDiscovery"
  *      target="_top">AWS API Documentation</a>

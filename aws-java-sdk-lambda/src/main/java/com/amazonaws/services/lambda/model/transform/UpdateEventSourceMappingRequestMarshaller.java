@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.lambda.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -47,6 +48,8 @@ public class UpdateEventSourceMappingRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaximumRetryAttempts").build();
     private static final MarshallingInfo<Integer> PARALLELIZATIONFACTOR_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ParallelizationFactor").build();
+    private static final MarshallingInfo<List> SOURCEACCESSCONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceAccessConfigurations").build();
 
     private static final UpdateEventSourceMappingRequestMarshaller instance = new UpdateEventSourceMappingRequestMarshaller();
 
@@ -74,6 +77,7 @@ public class UpdateEventSourceMappingRequestMarshaller {
             protocolMarshaller.marshall(updateEventSourceMappingRequest.getBisectBatchOnFunctionError(), BISECTBATCHONFUNCTIONERROR_BINDING);
             protocolMarshaller.marshall(updateEventSourceMappingRequest.getMaximumRetryAttempts(), MAXIMUMRETRYATTEMPTS_BINDING);
             protocolMarshaller.marshall(updateEventSourceMappingRequest.getParallelizationFactor(), PARALLELIZATIONFACTOR_BINDING);
+            protocolMarshaller.marshall(updateEventSourceMappingRequest.getSourceAccessConfigurations(), SOURCEACCESSCONFIGURATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

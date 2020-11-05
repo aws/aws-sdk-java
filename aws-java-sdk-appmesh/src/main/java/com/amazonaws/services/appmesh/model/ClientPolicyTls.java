@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object that represents a Transport Layer Security (TLS) client policy.
+ * A reference to an object that represents a Transport Layer Security (TLS) client policy.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ClientPolicyTls" target="_top">AWS API

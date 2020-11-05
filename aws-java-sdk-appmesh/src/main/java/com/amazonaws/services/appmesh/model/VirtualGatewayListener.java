@@ -30,6 +30,12 @@ public class VirtualGatewayListener implements Serializable, Cloneable, Structur
 
     /**
      * <p>
+     * The connection pool information for the virtual gateway listener.
+     * </p>
+     */
+    private VirtualGatewayConnectionPool connectionPool;
+    /**
+     * <p>
      * The health check information for the listener.
      * </p>
      */
@@ -46,6 +52,46 @@ public class VirtualGatewayListener implements Serializable, Cloneable, Structur
      * </p>
      */
     private VirtualGatewayListenerTls tls;
+
+    /**
+     * <p>
+     * The connection pool information for the virtual gateway listener.
+     * </p>
+     * 
+     * @param connectionPool
+     *        The connection pool information for the virtual gateway listener.
+     */
+
+    public void setConnectionPool(VirtualGatewayConnectionPool connectionPool) {
+        this.connectionPool = connectionPool;
+    }
+
+    /**
+     * <p>
+     * The connection pool information for the virtual gateway listener.
+     * </p>
+     * 
+     * @return The connection pool information for the virtual gateway listener.
+     */
+
+    public VirtualGatewayConnectionPool getConnectionPool() {
+        return this.connectionPool;
+    }
+
+    /**
+     * <p>
+     * The connection pool information for the virtual gateway listener.
+     * </p>
+     * 
+     * @param connectionPool
+     *        The connection pool information for the virtual gateway listener.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VirtualGatewayListener withConnectionPool(VirtualGatewayConnectionPool connectionPool) {
+        setConnectionPool(connectionPool);
+        return this;
+    }
 
     /**
      * <p>
@@ -179,6 +225,8 @@ public class VirtualGatewayListener implements Serializable, Cloneable, Structur
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getConnectionPool() != null)
+            sb.append("ConnectionPool: ").append(getConnectionPool()).append(",");
         if (getHealthCheck() != null)
             sb.append("HealthCheck: ").append(getHealthCheck()).append(",");
         if (getPortMapping() != null)
@@ -199,6 +247,10 @@ public class VirtualGatewayListener implements Serializable, Cloneable, Structur
         if (obj instanceof VirtualGatewayListener == false)
             return false;
         VirtualGatewayListener other = (VirtualGatewayListener) obj;
+        if (other.getConnectionPool() == null ^ this.getConnectionPool() == null)
+            return false;
+        if (other.getConnectionPool() != null && other.getConnectionPool().equals(this.getConnectionPool()) == false)
+            return false;
         if (other.getHealthCheck() == null ^ this.getHealthCheck() == null)
             return false;
         if (other.getHealthCheck() != null && other.getHealthCheck().equals(this.getHealthCheck()) == false)
@@ -219,6 +271,7 @@ public class VirtualGatewayListener implements Serializable, Cloneable, Structur
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getConnectionPool() == null) ? 0 : getConnectionPool().hashCode());
         hashCode = prime * hashCode + ((getHealthCheck() == null) ? 0 : getHealthCheck().hashCode());
         hashCode = prime * hashCode + ((getPortMapping() == null) ? 0 : getPortMapping().hashCode());
         hashCode = prime * hashCode + ((getTls() == null) ? 0 : getTls().hashCode());

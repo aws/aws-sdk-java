@@ -43,7 +43,7 @@ public class DBSnapshot implements Serializable, Cloneable {
     private String dBInstanceIdentifier;
     /**
      * <p>
-     * Specifies when the snapshot was taken in Coodinated Universal Time (UTC).
+     * Specifies when the snapshot was taken in Coordinated Universal Time (UTC).
      * </p>
      */
     private java.util.Date snapshotCreateTime;
@@ -288,11 +288,11 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies when the snapshot was taken in Coodinated Universal Time (UTC).
+     * Specifies when the snapshot was taken in Coordinated Universal Time (UTC).
      * </p>
      * 
      * @param snapshotCreateTime
-     *        Specifies when the snapshot was taken in Coodinated Universal Time (UTC).
+     *        Specifies when the snapshot was taken in Coordinated Universal Time (UTC).
      */
 
     public void setSnapshotCreateTime(java.util.Date snapshotCreateTime) {
@@ -301,10 +301,10 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies when the snapshot was taken in Coodinated Universal Time (UTC).
+     * Specifies when the snapshot was taken in Coordinated Universal Time (UTC).
      * </p>
      * 
-     * @return Specifies when the snapshot was taken in Coodinated Universal Time (UTC).
+     * @return Specifies when the snapshot was taken in Coordinated Universal Time (UTC).
      */
 
     public java.util.Date getSnapshotCreateTime() {
@@ -313,11 +313,11 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies when the snapshot was taken in Coodinated Universal Time (UTC).
+     * Specifies when the snapshot was taken in Coordinated Universal Time (UTC).
      * </p>
      * 
      * @param snapshotCreateTime
-     *        Specifies when the snapshot was taken in Coodinated Universal Time (UTC).
+     *        Specifies when the snapshot was taken in Coordinated Universal Time (UTC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -28,12 +28,32 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class HttpTimeout implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be
+     * idle. The default value is none.
+     * </p>
+     */
     private Duration idle;
-
+    /**
+     * <p>
+     * An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout,
+     * then make sure that the higher value is set for each App Mesh resource in a conversation. For example, if a
+     * virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be
+     * greater than 15 seconds for the source and destination virtual node and the route.
+     * </p>
+     */
     private Duration perRequest;
 
     /**
+     * <p>
+     * An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be
+     * idle. The default value is none.
+     * </p>
+     * 
      * @param idle
+     *        An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may
+     *        be idle. The default value is none.
      */
 
     public void setIdle(Duration idle) {
@@ -41,7 +61,13 @@ public class HttpTimeout implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be
+     * idle. The default value is none.
+     * </p>
+     * 
+     * @return An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection
+     *         may be idle. The default value is none.
      */
 
     public Duration getIdle() {
@@ -49,7 +75,14 @@ public class HttpTimeout implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be
+     * idle. The default value is none.
+     * </p>
+     * 
      * @param idle
+     *        An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may
+     *        be idle. The default value is none.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -59,7 +92,18 @@ public class HttpTimeout implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout,
+     * then make sure that the higher value is set for each App Mesh resource in a conversation. For example, if a
+     * virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be
+     * greater than 15 seconds for the source and destination virtual node and the route.
+     * </p>
+     * 
      * @param perRequest
+     *        An object that represents a per request timeout. The default value is 15 seconds. If you set a higher
+     *        timeout, then make sure that the higher value is set for each App Mesh resource in a conversation. For
+     *        example, if a virtual node backend uses a virtual router provider to route to another virtual node, then
+     *        the timeout should be greater than 15 seconds for the source and destination virtual node and the route.
      */
 
     public void setPerRequest(Duration perRequest) {
@@ -67,7 +111,17 @@ public class HttpTimeout implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout,
+     * then make sure that the higher value is set for each App Mesh resource in a conversation. For example, if a
+     * virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be
+     * greater than 15 seconds for the source and destination virtual node and the route.
+     * </p>
+     * 
+     * @return An object that represents a per request timeout. The default value is 15 seconds. If you set a higher
+     *         timeout, then make sure that the higher value is set for each App Mesh resource in a conversation. For
+     *         example, if a virtual node backend uses a virtual router provider to route to another virtual node, then
+     *         the timeout should be greater than 15 seconds for the source and destination virtual node and the route.
      */
 
     public Duration getPerRequest() {
@@ -75,7 +129,18 @@ public class HttpTimeout implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout,
+     * then make sure that the higher value is set for each App Mesh resource in a conversation. For example, if a
+     * virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be
+     * greater than 15 seconds for the source and destination virtual node and the route.
+     * </p>
+     * 
      * @param perRequest
+     *        An object that represents a per request timeout. The default value is 15 seconds. If you set a higher
+     *        timeout, then make sure that the higher value is set for each App Mesh resource in a conversation. For
+     *        example, if a virtual node backend uses a virtual router provider to route to another virtual node, then
+     *        the timeout should be greater than 15 seconds for the source and destination virtual node and the route.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

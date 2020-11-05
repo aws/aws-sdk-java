@@ -78,6 +78,34 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * The user token configuration.
+     * </p>
+     */
+    private java.util.List<UserTokenConfiguration> userTokenConfigurations;
+    /**
+     * <p>
+     * The user context policy.
+     * </p>
+     * <dl>
+     * <dt>ATTRIBUTE_FILTER</dt>
+     * <dd>
+     * <p>
+     * All indexed content is searchable and displayable for all users. If there is an access control list, it is
+     * ignored. You can filter on user and group attributes.
+     * </p>
+     * </dd>
+     * <dt>USER_TOKEN</dt>
+     * <dd>
+     * <p>
+     * Enables SSO and token-based user access control. All documents with no access control and all documents
+     * accessible to the user will be searchable and displayable.
+     * </p>
+     * </dd>
+     * </dl>
+     */
+    private String userContextPolicy;
 
     /**
      * <p>
@@ -485,6 +513,259 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The user token configuration.
+     * </p>
+     * 
+     * @return The user token configuration.
+     */
+
+    public java.util.List<UserTokenConfiguration> getUserTokenConfigurations() {
+        return userTokenConfigurations;
+    }
+
+    /**
+     * <p>
+     * The user token configuration.
+     * </p>
+     * 
+     * @param userTokenConfigurations
+     *        The user token configuration.
+     */
+
+    public void setUserTokenConfigurations(java.util.Collection<UserTokenConfiguration> userTokenConfigurations) {
+        if (userTokenConfigurations == null) {
+            this.userTokenConfigurations = null;
+            return;
+        }
+
+        this.userTokenConfigurations = new java.util.ArrayList<UserTokenConfiguration>(userTokenConfigurations);
+    }
+
+    /**
+     * <p>
+     * The user token configuration.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUserTokenConfigurations(java.util.Collection)} or
+     * {@link #withUserTokenConfigurations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param userTokenConfigurations
+     *        The user token configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateIndexRequest withUserTokenConfigurations(UserTokenConfiguration... userTokenConfigurations) {
+        if (this.userTokenConfigurations == null) {
+            setUserTokenConfigurations(new java.util.ArrayList<UserTokenConfiguration>(userTokenConfigurations.length));
+        }
+        for (UserTokenConfiguration ele : userTokenConfigurations) {
+            this.userTokenConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user token configuration.
+     * </p>
+     * 
+     * @param userTokenConfigurations
+     *        The user token configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateIndexRequest withUserTokenConfigurations(java.util.Collection<UserTokenConfiguration> userTokenConfigurations) {
+        setUserTokenConfigurations(userTokenConfigurations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user context policy.
+     * </p>
+     * <dl>
+     * <dt>ATTRIBUTE_FILTER</dt>
+     * <dd>
+     * <p>
+     * All indexed content is searchable and displayable for all users. If there is an access control list, it is
+     * ignored. You can filter on user and group attributes.
+     * </p>
+     * </dd>
+     * <dt>USER_TOKEN</dt>
+     * <dd>
+     * <p>
+     * Enables SSO and token-based user access control. All documents with no access control and all documents
+     * accessible to the user will be searchable and displayable.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param userContextPolicy
+     *        The user context policy.</p>
+     *        <dl>
+     *        <dt>ATTRIBUTE_FILTER</dt>
+     *        <dd>
+     *        <p>
+     *        All indexed content is searchable and displayable for all users. If there is an access control list, it is
+     *        ignored. You can filter on user and group attributes.
+     *        </p>
+     *        </dd>
+     *        <dt>USER_TOKEN</dt>
+     *        <dd>
+     *        <p>
+     *        Enables SSO and token-based user access control. All documents with no access control and all documents
+     *        accessible to the user will be searchable and displayable.
+     *        </p>
+     *        </dd>
+     * @see UserContextPolicy
+     */
+
+    public void setUserContextPolicy(String userContextPolicy) {
+        this.userContextPolicy = userContextPolicy;
+    }
+
+    /**
+     * <p>
+     * The user context policy.
+     * </p>
+     * <dl>
+     * <dt>ATTRIBUTE_FILTER</dt>
+     * <dd>
+     * <p>
+     * All indexed content is searchable and displayable for all users. If there is an access control list, it is
+     * ignored. You can filter on user and group attributes.
+     * </p>
+     * </dd>
+     * <dt>USER_TOKEN</dt>
+     * <dd>
+     * <p>
+     * Enables SSO and token-based user access control. All documents with no access control and all documents
+     * accessible to the user will be searchable and displayable.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @return The user context policy.</p>
+     *         <dl>
+     *         <dt>ATTRIBUTE_FILTER</dt>
+     *         <dd>
+     *         <p>
+     *         All indexed content is searchable and displayable for all users. If there is an access control list, it
+     *         is ignored. You can filter on user and group attributes.
+     *         </p>
+     *         </dd>
+     *         <dt>USER_TOKEN</dt>
+     *         <dd>
+     *         <p>
+     *         Enables SSO and token-based user access control. All documents with no access control and all documents
+     *         accessible to the user will be searchable and displayable.
+     *         </p>
+     *         </dd>
+     * @see UserContextPolicy
+     */
+
+    public String getUserContextPolicy() {
+        return this.userContextPolicy;
+    }
+
+    /**
+     * <p>
+     * The user context policy.
+     * </p>
+     * <dl>
+     * <dt>ATTRIBUTE_FILTER</dt>
+     * <dd>
+     * <p>
+     * All indexed content is searchable and displayable for all users. If there is an access control list, it is
+     * ignored. You can filter on user and group attributes.
+     * </p>
+     * </dd>
+     * <dt>USER_TOKEN</dt>
+     * <dd>
+     * <p>
+     * Enables SSO and token-based user access control. All documents with no access control and all documents
+     * accessible to the user will be searchable and displayable.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param userContextPolicy
+     *        The user context policy.</p>
+     *        <dl>
+     *        <dt>ATTRIBUTE_FILTER</dt>
+     *        <dd>
+     *        <p>
+     *        All indexed content is searchable and displayable for all users. If there is an access control list, it is
+     *        ignored. You can filter on user and group attributes.
+     *        </p>
+     *        </dd>
+     *        <dt>USER_TOKEN</dt>
+     *        <dd>
+     *        <p>
+     *        Enables SSO and token-based user access control. All documents with no access control and all documents
+     *        accessible to the user will be searchable and displayable.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UserContextPolicy
+     */
+
+    public CreateIndexRequest withUserContextPolicy(String userContextPolicy) {
+        setUserContextPolicy(userContextPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user context policy.
+     * </p>
+     * <dl>
+     * <dt>ATTRIBUTE_FILTER</dt>
+     * <dd>
+     * <p>
+     * All indexed content is searchable and displayable for all users. If there is an access control list, it is
+     * ignored. You can filter on user and group attributes.
+     * </p>
+     * </dd>
+     * <dt>USER_TOKEN</dt>
+     * <dd>
+     * <p>
+     * Enables SSO and token-based user access control. All documents with no access control and all documents
+     * accessible to the user will be searchable and displayable.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param userContextPolicy
+     *        The user context policy.</p>
+     *        <dl>
+     *        <dt>ATTRIBUTE_FILTER</dt>
+     *        <dd>
+     *        <p>
+     *        All indexed content is searchable and displayable for all users. If there is an access control list, it is
+     *        ignored. You can filter on user and group attributes.
+     *        </p>
+     *        </dd>
+     *        <dt>USER_TOKEN</dt>
+     *        <dd>
+     *        <p>
+     *        Enables SSO and token-based user access control. All documents with no access control and all documents
+     *        accessible to the user will be searchable and displayable.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UserContextPolicy
+     */
+
+    public CreateIndexRequest withUserContextPolicy(UserContextPolicy userContextPolicy) {
+        this.userContextPolicy = userContextPolicy.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -509,7 +790,11 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getUserTokenConfigurations() != null)
+            sb.append("UserTokenConfigurations: ").append(getUserTokenConfigurations()).append(",");
+        if (getUserContextPolicy() != null)
+            sb.append("UserContextPolicy: ").append(getUserContextPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -553,6 +838,14 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getUserTokenConfigurations() == null ^ this.getUserTokenConfigurations() == null)
+            return false;
+        if (other.getUserTokenConfigurations() != null && other.getUserTokenConfigurations().equals(this.getUserTokenConfigurations()) == false)
+            return false;
+        if (other.getUserContextPolicy() == null ^ this.getUserContextPolicy() == null)
+            return false;
+        if (other.getUserContextPolicy() != null && other.getUserContextPolicy().equals(this.getUserContextPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -568,6 +861,8 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getUserTokenConfigurations() == null) ? 0 : getUserTokenConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getUserContextPolicy() == null) ? 0 : getUserContextPolicy().hashCode());
         return hashCode;
     }
 

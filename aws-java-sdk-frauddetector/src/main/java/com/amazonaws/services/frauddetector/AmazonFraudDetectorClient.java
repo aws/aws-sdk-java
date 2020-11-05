@@ -598,6 +598,10 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
      * Deletes the detector. Before deleting a detector, you must first delete all detector versions and rule versions
      * associated with the detector.
      * </p>
+     * <p>
+     * When you delete a detector, Amazon Fraud Detector permanently deletes the detector and the data is no longer
+     * stored in Amazon Fraud Detector.
+     * </p>
      * 
      * @param deleteDetectorRequest
      * @return Result of the DeleteDetector operation returned by the service.
@@ -684,6 +688,10 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * Deletes the detector version. You cannot delete detector versions that are in <code>ACTIVE</code> status.
+     * </p>
+     * <p>
+     * When you delete a detector version, Amazon Fraud Detector permanently deletes the detector and the data is no
+     * longer stored in Amazon Fraud Detector.
      * </p>
      * 
      * @param deleteDetectorVersionRequest
@@ -773,7 +781,103 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Deletes an entity type.
+     * </p>
+     * <p>
+     * You cannot delete an entity type that is included in an event type.
+     * </p>
+     * <p>
+     * When you delete an entity type, Amazon Fraud Detector permanently deletes that entity type from the evaluation
+     * history, and the data is no longer stored in Amazon Fraud Detector.
+     * </p>
+     * 
+     * @param deleteEntityTypeRequest
+     * @return Result of the DeleteEntityType operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws ConflictException
+     *         An exception indicating there was a conflict during a delete operation. The following delete operations
+     *         can cause a conflict exception:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code> or
+     *         <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code> or
+     *         <code>DetectorVersions</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code> status is
+     *         <code>ACTIVE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in use by an associated
+     *         <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+     *         </p>
+     *         </li>
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.DeleteEntityType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEntityType" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteEntityTypeResult deleteEntityType(DeleteEntityTypeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteEntityType(request);
+    }
+
+    @SdkInternalApi
+    final DeleteEntityTypeResult executeDeleteEntityType(DeleteEntityTypeRequest deleteEntityTypeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteEntityTypeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteEntityTypeRequest> request = null;
+        Response<DeleteEntityTypeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteEntityTypeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteEntityTypeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEntityType");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteEntityTypeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteEntityTypeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified event.
+     * </p>
+     * <p>
+     * When you delete an event, Amazon Fraud Detector permanently deletes that event from the evaluation history, and
+     * the event data is no longer stored in Amazon Fraud Detector.
      * </p>
      * 
      * @param deleteEventRequest
@@ -786,6 +890,8 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
      *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
      *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
      *         account.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
      * @sample AmazonFraudDetector.DeleteEvent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEvent" target="_top">AWS API
      *      Documentation</a>
@@ -835,8 +941,566 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Deletes an event type.
+     * </p>
+     * <p>
+     * You cannot delete an event type that is used in a detector or a model.
+     * </p>
+     * <p>
+     * When you delete an entity type, Amazon Fraud Detector permanently deletes that entity type from the evaluation
+     * history, and the data is no longer stored in Amazon Fraud Detector.
+     * </p>
+     * 
+     * @param deleteEventTypeRequest
+     * @return Result of the DeleteEventType operation returned by the service.
+     * @throws ConflictException
+     *         An exception indicating there was a conflict during a delete operation. The following delete operations
+     *         can cause a conflict exception:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code> or
+     *         <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code> or
+     *         <code>DetectorVersions</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code> status is
+     *         <code>ACTIVE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in use by an associated
+     *         <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+     *         </p>
+     *         </li>
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.DeleteEventType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEventType" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteEventTypeResult deleteEventType(DeleteEventTypeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteEventType(request);
+    }
+
+    @SdkInternalApi
+    final DeleteEventTypeResult executeDeleteEventType(DeleteEventTypeRequest deleteEventTypeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteEventTypeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteEventTypeRequest> request = null;
+        Response<DeleteEventTypeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteEventTypeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteEventTypeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEventType");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteEventTypeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteEventTypeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes a SageMaker model from Amazon Fraud Detector.
+     * </p>
+     * <p>
+     * You can remove an Amazon SageMaker model if it is not associated with a detector version. Removing a SageMaker
+     * model disconnects it from Amazon Fraud Detector, but the model remains available in SageMaker.
+     * </p>
+     * 
+     * @param deleteExternalModelRequest
+     * @return Result of the DeleteExternalModel operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws ConflictException
+     *         An exception indicating there was a conflict during a delete operation. The following delete operations
+     *         can cause a conflict exception:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code> or
+     *         <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code> or
+     *         <code>DetectorVersions</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code> status is
+     *         <code>ACTIVE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in use by an associated
+     *         <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+     *         </p>
+     *         </li>
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws ThrottlingException
+     *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.DeleteExternalModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteExternalModel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteExternalModelResult deleteExternalModel(DeleteExternalModelRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteExternalModel(request);
+    }
+
+    @SdkInternalApi
+    final DeleteExternalModelResult executeDeleteExternalModel(DeleteExternalModelRequest deleteExternalModelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteExternalModelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteExternalModelRequest> request = null;
+        Response<DeleteExternalModelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteExternalModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteExternalModelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteExternalModel");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteExternalModelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteExternalModelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a label.
+     * </p>
+     * <p>
+     * You cannot delete labels that are included in an event type in Amazon Fraud Detector.
+     * </p>
+     * <p>
+     * You cannot delete a label assigned to an event ID. You must first delete the relevant event ID.
+     * </p>
+     * <p>
+     * When you delete a label, Amazon Fraud Detector permanently deletes that label from the evaluation history, and
+     * the data is no longer stored in Amazon Fraud Detector.
+     * </p>
+     * 
+     * @param deleteLabelRequest
+     * @return Result of the DeleteLabel operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws ConflictException
+     *         An exception indicating there was a conflict during a delete operation. The following delete operations
+     *         can cause a conflict exception:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code> or
+     *         <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code> or
+     *         <code>DetectorVersions</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code> status is
+     *         <code>ACTIVE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in use by an associated
+     *         <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+     *         </p>
+     *         </li>
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @sample AmazonFraudDetector.DeleteLabel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteLabel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteLabelResult deleteLabel(DeleteLabelRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLabel(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLabelResult executeDeleteLabel(DeleteLabelRequest deleteLabelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteLabelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteLabelRequest> request = null;
+        Response<DeleteLabelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteLabelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLabelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLabel");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteLabelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteLabelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a model.
+     * </p>
+     * <p>
+     * You can delete models and model versions in Amazon Fraud Detector, provided that they are not associated with a
+     * detector version.
+     * </p>
+     * <p>
+     * When you delete a model, Amazon Fraud Detector permanently deletes that model from the evaluation history, and
+     * the data is no longer stored in Amazon Fraud Detector.
+     * </p>
+     * 
+     * @param deleteModelRequest
+     * @return Result of the DeleteModel operation returned by the service.
+     * @throws ConflictException
+     *         An exception indicating there was a conflict during a delete operation. The following delete operations
+     *         can cause a conflict exception:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code> or
+     *         <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code> or
+     *         <code>DetectorVersions</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code> status is
+     *         <code>ACTIVE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in use by an associated
+     *         <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+     *         </p>
+     *         </li>
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.DeleteModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteModel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteModelResult deleteModel(DeleteModelRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteModel(request);
+    }
+
+    @SdkInternalApi
+    final DeleteModelResult executeDeleteModel(DeleteModelRequest deleteModelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteModelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteModelRequest> request = null;
+        Response<DeleteModelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteModelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteModel");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteModelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteModelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a model version.
+     * </p>
+     * <p>
+     * You can delete models and model versions in Amazon Fraud Detector, provided that they are not associated with a
+     * detector version.
+     * </p>
+     * <p>
+     * When you delete a model version, Amazon Fraud Detector permanently deletes that model version from the evaluation
+     * history, and the data is no longer stored in Amazon Fraud Detector.
+     * </p>
+     * 
+     * @param deleteModelVersionRequest
+     * @return Result of the DeleteModelVersion operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @throws ConflictException
+     *         An exception indicating there was a conflict during a delete operation. The following delete operations
+     *         can cause a conflict exception:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code> or
+     *         <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code> or
+     *         <code>DetectorVersions</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code> status is
+     *         <code>ACTIVE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in use by an associated
+     *         <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+     *         </p>
+     *         </li>
+     * @sample AmazonFraudDetector.DeleteModelVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteModelVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteModelVersionResult deleteModelVersion(DeleteModelVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteModelVersion(request);
+    }
+
+    @SdkInternalApi
+    final DeleteModelVersionResult executeDeleteModelVersion(DeleteModelVersionRequest deleteModelVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteModelVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteModelVersionRequest> request = null;
+        Response<DeleteModelVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteModelVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteModelVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteModelVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteModelVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteModelVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an outcome.
+     * </p>
+     * <p>
+     * You cannot delete an outcome that is used in a rule version.
+     * </p>
+     * <p>
+     * When you delete an outcome, Amazon Fraud Detector permanently deletes that outcome from the evaluation history,
+     * and the data is no longer stored in Amazon Fraud Detector.
+     * </p>
+     * 
+     * @param deleteOutcomeRequest
+     * @return Result of the DeleteOutcome operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws ThrottlingException
+     *         An exception indicating a throttling error.
+     * @throws ConflictException
+     *         An exception indicating there was a conflict during a delete operation. The following delete operations
+     *         can cause a conflict exception:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code> or
+     *         <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code> or
+     *         <code>DetectorVersions</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code> status is
+     *         <code>ACTIVE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in use by an associated
+     *         <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+     *         </p>
+     *         </li>
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.DeleteOutcome
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteOutcome" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteOutcomeResult deleteOutcome(DeleteOutcomeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteOutcome(request);
+    }
+
+    @SdkInternalApi
+    final DeleteOutcomeResult executeDeleteOutcome(DeleteOutcomeRequest deleteOutcomeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteOutcomeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteOutcomeRequest> request = null;
+        Response<DeleteOutcomeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteOutcomeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteOutcomeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOutcome");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteOutcomeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteOutcomeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the rule. You cannot delete a rule if it is used by an <code>ACTIVE</code> or <code>INACTIVE</code>
      * detector version.
+     * </p>
+     * <p>
+     * When you delete a rule, Amazon Fraud Detector permanently deletes that rule from the evaluation history, and the
+     * data is no longer stored in Amazon Fraud Detector.
      * </p>
      * 
      * @param deleteRuleRequest
@@ -911,6 +1575,104 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteRuleResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a variable.
+     * </p>
+     * <p>
+     * You can't delete variables that are included in an event type in Amazon Fraud Detector.
+     * </p>
+     * <p>
+     * Amazon Fraud Detector automatically deletes model output variables and SageMaker model output variables when you
+     * delete the model. You can't delete these variables manually.
+     * </p>
+     * <p>
+     * When you delete a variable, Amazon Fraud Detector permanently deletes that variable from the evaluation history,
+     * and the data is no longer stored in Amazon Fraud Detector.
+     * </p>
+     * 
+     * @param deleteVariableRequest
+     * @return Result of the DeleteVariable operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws ConflictException
+     *         An exception indicating there was a conflict during a delete operation. The following delete operations
+     *         can cause a conflict exception:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code> or
+     *         <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code> or
+     *         <code>DetectorVersions</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code> status is
+     *         <code>ACTIVE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in use by an associated
+     *         <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+     *         </p>
+     *         </li>
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws ThrottlingException
+     *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.DeleteVariable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteVariable" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteVariableResult deleteVariable(DeleteVariableRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVariable(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVariableResult executeDeleteVariable(DeleteVariableRequest deleteVariableRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteVariableRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteVariableRequest> request = null;
+        Response<DeleteVariableResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteVariableRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVariableRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVariable");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteVariableResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteVariableResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1277,6 +2039,29 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
      *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
      *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
      *         account.
+     * @throws ConflictException
+     *         An exception indicating there was a conflict during a delete operation. The following delete operations
+     *         can cause a conflict exception:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code> or
+     *         <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code> or
+     *         <code>DetectorVersions</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code> status is
+     *         <code>ACTIVE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in use by an associated
+     *         <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+     *         </p>
+     *         </li>
      * @sample AmazonFraudDetector.GetEventPrediction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEventPrediction"
      *      target="_top">AWS API Documentation</a>

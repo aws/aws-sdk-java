@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class VirtualGatewayListenerMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> CONNECTIONPOOL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectionPool").build();
     private static final MarshallingInfo<StructuredPojo> HEALTHCHECK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("healthCheck").build();
     private static final MarshallingInfo<StructuredPojo> PORTMAPPING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -50,6 +52,7 @@ public class VirtualGatewayListenerMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(virtualGatewayListener.getConnectionPool(), CONNECTIONPOOL_BINDING);
             protocolMarshaller.marshall(virtualGatewayListener.getHealthCheck(), HEALTHCHECK_BINDING);
             protocolMarshaller.marshall(virtualGatewayListener.getPortMapping(), PORTMAPPING_BINDING);
             protocolMarshaller.marshall(virtualGatewayListener.getTls(), TLS_BINDING);

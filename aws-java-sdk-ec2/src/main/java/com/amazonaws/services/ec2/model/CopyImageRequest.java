@@ -53,43 +53,41 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
     private Boolean encrypted;
     /**
      * <p>
-     * An identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) to use when
-     * creating the encrypted volume. This parameter is only required if you want to use a non-default CMK; if this
-     * parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
-     * <code>Encrypted</code> flag must also be set.
+     * The identifier of the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) to use when
+     * creating encrypted volumes. If this parameter is not specified, your AWS managed CMK for EBS is used. If you
+     * specify a CMK, you must also set the encrypted state to <code>true</code>.
      * </p>
      * <p>
-     * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with "alias/". For example:
+     * You can specify a CMK using any of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key alias. For example, alias/ExampleAlias.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Alias name: <code>alias/ExampleAlias</code>
+     * Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
+     * Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete even
-     * though you provided an invalid identifier. This action will eventually report failure.
+     * AWS authenticates the CMK asynchronously. Therefore, if you specify an identifier that is not valid, the action
+     * can appear to complete, but eventually fails.
      * </p>
      * <p>
-     * The specified CMK must exist in the Region that the snapshot is being copied to.
+     * The specified CMK must exist in the destination Region.
      * </p>
      * <p>
      * Amazon EBS does not support asymmetric CMKs.
@@ -297,85 +295,81 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * <p>
-     * An identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) to use when
-     * creating the encrypted volume. This parameter is only required if you want to use a non-default CMK; if this
-     * parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
-     * <code>Encrypted</code> flag must also be set.
+     * The identifier of the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) to use when
+     * creating encrypted volumes. If this parameter is not specified, your AWS managed CMK for EBS is used. If you
+     * specify a CMK, you must also set the encrypted state to <code>true</code>.
      * </p>
      * <p>
-     * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with "alias/". For example:
+     * You can specify a CMK using any of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key alias. For example, alias/ExampleAlias.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Alias name: <code>alias/ExampleAlias</code>
+     * Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
+     * Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete even
-     * though you provided an invalid identifier. This action will eventually report failure.
+     * AWS authenticates the CMK asynchronously. Therefore, if you specify an identifier that is not valid, the action
+     * can appear to complete, but eventually fails.
      * </p>
      * <p>
-     * The specified CMK must exist in the Region that the snapshot is being copied to.
+     * The specified CMK must exist in the destination Region.
      * </p>
      * <p>
      * Amazon EBS does not support asymmetric CMKs.
      * </p>
      * 
      * @param kmsKeyId
-     *        An identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) to use when
-     *        creating the encrypted volume. This parameter is only required if you want to use a non-default CMK; if
-     *        this parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified,
-     *        the <code>Encrypted</code> flag must also be set. </p>
+     *        The identifier of the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) to use when
+     *        creating encrypted volumes. If this parameter is not specified, your AWS managed CMK for EBS is used. If
+     *        you specify a CMK, you must also set the encrypted state to <code>true</code>.</p>
      *        <p>
-     *        To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
-     *        alias name, prefix it with "alias/". For example:
+     *        You can specify a CMK using any of the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        Key alias. For example, alias/ExampleAlias.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Alias name: <code>alias/ExampleAlias</code>
+     *        Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
+     *        Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete
-     *        even though you provided an invalid identifier. This action will eventually report failure.
+     *        AWS authenticates the CMK asynchronously. Therefore, if you specify an identifier that is not valid, the
+     *        action can appear to complete, but eventually fails.
      *        </p>
      *        <p>
-     *        The specified CMK must exist in the Region that the snapshot is being copied to.
+     *        The specified CMK must exist in the destination Region.
      *        </p>
      *        <p>
      *        Amazon EBS does not support asymmetric CMKs.
@@ -387,84 +381,80 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * <p>
-     * An identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) to use when
-     * creating the encrypted volume. This parameter is only required if you want to use a non-default CMK; if this
-     * parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
-     * <code>Encrypted</code> flag must also be set.
+     * The identifier of the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) to use when
+     * creating encrypted volumes. If this parameter is not specified, your AWS managed CMK for EBS is used. If you
+     * specify a CMK, you must also set the encrypted state to <code>true</code>.
      * </p>
      * <p>
-     * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with "alias/". For example:
+     * You can specify a CMK using any of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key alias. For example, alias/ExampleAlias.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Alias name: <code>alias/ExampleAlias</code>
+     * Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
+     * Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete even
-     * though you provided an invalid identifier. This action will eventually report failure.
+     * AWS authenticates the CMK asynchronously. Therefore, if you specify an identifier that is not valid, the action
+     * can appear to complete, but eventually fails.
      * </p>
      * <p>
-     * The specified CMK must exist in the Region that the snapshot is being copied to.
+     * The specified CMK must exist in the destination Region.
      * </p>
      * <p>
      * Amazon EBS does not support asymmetric CMKs.
      * </p>
      * 
-     * @return An identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) to use
-     *         when creating the encrypted volume. This parameter is only required if you want to use a non-default CMK;
-     *         if this parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is
-     *         specified, the <code>Encrypted</code> flag must also be set. </p>
+     * @return The identifier of the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) to use
+     *         when creating encrypted volumes. If this parameter is not specified, your AWS managed CMK for EBS is
+     *         used. If you specify a CMK, you must also set the encrypted state to <code>true</code>.</p>
      *         <p>
-     *         To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
-     *         alias name, prefix it with "alias/". For example:
+     *         You can specify a CMK using any of the following:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *         Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *         Key alias. For example, alias/ExampleAlias.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Alias name: <code>alias/ExampleAlias</code>
+     *         Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
+     *         Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete
-     *         even though you provided an invalid identifier. This action will eventually report failure.
+     *         AWS authenticates the CMK asynchronously. Therefore, if you specify an identifier that is not valid, the
+     *         action can appear to complete, but eventually fails.
      *         </p>
      *         <p>
-     *         The specified CMK must exist in the Region that the snapshot is being copied to.
+     *         The specified CMK must exist in the destination Region.
      *         </p>
      *         <p>
      *         Amazon EBS does not support asymmetric CMKs.
@@ -476,85 +466,81 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * <p>
-     * An identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) to use when
-     * creating the encrypted volume. This parameter is only required if you want to use a non-default CMK; if this
-     * parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
-     * <code>Encrypted</code> flag must also be set.
+     * The identifier of the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) to use when
+     * creating encrypted volumes. If this parameter is not specified, your AWS managed CMK for EBS is used. If you
+     * specify a CMK, you must also set the encrypted state to <code>true</code>.
      * </p>
      * <p>
-     * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with "alias/". For example:
+     * You can specify a CMK using any of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key alias. For example, alias/ExampleAlias.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Alias name: <code>alias/ExampleAlias</code>
+     * Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
+     * Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete even
-     * though you provided an invalid identifier. This action will eventually report failure.
+     * AWS authenticates the CMK asynchronously. Therefore, if you specify an identifier that is not valid, the action
+     * can appear to complete, but eventually fails.
      * </p>
      * <p>
-     * The specified CMK must exist in the Region that the snapshot is being copied to.
+     * The specified CMK must exist in the destination Region.
      * </p>
      * <p>
      * Amazon EBS does not support asymmetric CMKs.
      * </p>
      * 
      * @param kmsKeyId
-     *        An identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) to use when
-     *        creating the encrypted volume. This parameter is only required if you want to use a non-default CMK; if
-     *        this parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified,
-     *        the <code>Encrypted</code> flag must also be set. </p>
+     *        The identifier of the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) to use when
+     *        creating encrypted volumes. If this parameter is not specified, your AWS managed CMK for EBS is used. If
+     *        you specify a CMK, you must also set the encrypted state to <code>true</code>.</p>
      *        <p>
-     *        To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
-     *        alias name, prefix it with "alias/". For example:
+     *        You can specify a CMK using any of the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        Key alias. For example, alias/ExampleAlias.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Alias name: <code>alias/ExampleAlias</code>
+     *        Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
+     *        Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete
-     *        even though you provided an invalid identifier. This action will eventually report failure.
+     *        AWS authenticates the CMK asynchronously. Therefore, if you specify an identifier that is not valid, the
+     *        action can appear to complete, but eventually fails.
      *        </p>
      *        <p>
-     *        The specified CMK must exist in the Region that the snapshot is being copied to.
+     *        The specified CMK must exist in the destination Region.
      *        </p>
      *        <p>
      *        Amazon EBS does not support asymmetric CMKs.

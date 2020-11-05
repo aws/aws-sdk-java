@@ -137,6 +137,21 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private Integer parallelizationFactor;
+    /**
+     * <p>
+     * (MQ) The Secrets Manager secret that stores your broker credentials. To store your secret, use the following
+     * format: <code> { "username": "your username", "password": "your password" }</code>
+     * </p>
+     * <p>
+     * To reference the secret, use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" } ]</code>
+     * </p>
+     * <p>
+     * The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or
+     * service managed keys. When using a customer managed KMS key, the Lambda execution role requires
+     * <code>kms:Decrypt</code> permissions.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<SourceAccessConfiguration> sourceAccessConfigurations;
 
     /**
      * <p>
@@ -870,6 +885,151 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * (MQ) The Secrets Manager secret that stores your broker credentials. To store your secret, use the following
+     * format: <code> { "username": "your username", "password": "your password" }</code>
+     * </p>
+     * <p>
+     * To reference the secret, use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" } ]</code>
+     * </p>
+     * <p>
+     * The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or
+     * service managed keys. When using a customer managed KMS key, the Lambda execution role requires
+     * <code>kms:Decrypt</code> permissions.
+     * </p>
+     * 
+     * @return (MQ) The Secrets Manager secret that stores your broker credentials. To store your secret, use the
+     *         following format: <code> { "username": "your username", "password": "your password" }</code> </p>
+     *         <p>
+     *         To reference the secret, use the following format:
+     *         <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" } ]</code>
+     *         </p>
+     *         <p>
+     *         The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret, you can use
+     *         customer or service managed keys. When using a customer managed KMS key, the Lambda execution role
+     *         requires <code>kms:Decrypt</code> permissions.
+     */
+
+    public java.util.List<SourceAccessConfiguration> getSourceAccessConfigurations() {
+        if (sourceAccessConfigurations == null) {
+            sourceAccessConfigurations = new com.amazonaws.internal.SdkInternalList<SourceAccessConfiguration>();
+        }
+        return sourceAccessConfigurations;
+    }
+
+    /**
+     * <p>
+     * (MQ) The Secrets Manager secret that stores your broker credentials. To store your secret, use the following
+     * format: <code> { "username": "your username", "password": "your password" }</code>
+     * </p>
+     * <p>
+     * To reference the secret, use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" } ]</code>
+     * </p>
+     * <p>
+     * The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or
+     * service managed keys. When using a customer managed KMS key, the Lambda execution role requires
+     * <code>kms:Decrypt</code> permissions.
+     * </p>
+     * 
+     * @param sourceAccessConfigurations
+     *        (MQ) The Secrets Manager secret that stores your broker credentials. To store your secret, use the
+     *        following format: <code> { "username": "your username", "password": "your password" }</code> </p>
+     *        <p>
+     *        To reference the secret, use the following format:
+     *        <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" } ]</code>
+     *        </p>
+     *        <p>
+     *        The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret, you can use
+     *        customer or service managed keys. When using a customer managed KMS key, the Lambda execution role
+     *        requires <code>kms:Decrypt</code> permissions.
+     */
+
+    public void setSourceAccessConfigurations(java.util.Collection<SourceAccessConfiguration> sourceAccessConfigurations) {
+        if (sourceAccessConfigurations == null) {
+            this.sourceAccessConfigurations = null;
+            return;
+        }
+
+        this.sourceAccessConfigurations = new com.amazonaws.internal.SdkInternalList<SourceAccessConfiguration>(sourceAccessConfigurations);
+    }
+
+    /**
+     * <p>
+     * (MQ) The Secrets Manager secret that stores your broker credentials. To store your secret, use the following
+     * format: <code> { "username": "your username", "password": "your password" }</code>
+     * </p>
+     * <p>
+     * To reference the secret, use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" } ]</code>
+     * </p>
+     * <p>
+     * The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or
+     * service managed keys. When using a customer managed KMS key, the Lambda execution role requires
+     * <code>kms:Decrypt</code> permissions.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSourceAccessConfigurations(java.util.Collection)} or
+     * {@link #withSourceAccessConfigurations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param sourceAccessConfigurations
+     *        (MQ) The Secrets Manager secret that stores your broker credentials. To store your secret, use the
+     *        following format: <code> { "username": "your username", "password": "your password" }</code> </p>
+     *        <p>
+     *        To reference the secret, use the following format:
+     *        <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" } ]</code>
+     *        </p>
+     *        <p>
+     *        The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret, you can use
+     *        customer or service managed keys. When using a customer managed KMS key, the Lambda execution role
+     *        requires <code>kms:Decrypt</code> permissions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateEventSourceMappingRequest withSourceAccessConfigurations(SourceAccessConfiguration... sourceAccessConfigurations) {
+        if (this.sourceAccessConfigurations == null) {
+            setSourceAccessConfigurations(new com.amazonaws.internal.SdkInternalList<SourceAccessConfiguration>(sourceAccessConfigurations.length));
+        }
+        for (SourceAccessConfiguration ele : sourceAccessConfigurations) {
+            this.sourceAccessConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * (MQ) The Secrets Manager secret that stores your broker credentials. To store your secret, use the following
+     * format: <code> { "username": "your username", "password": "your password" }</code>
+     * </p>
+     * <p>
+     * To reference the secret, use the following format: <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" } ]</code>
+     * </p>
+     * <p>
+     * The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret, you can use customer or
+     * service managed keys. When using a customer managed KMS key, the Lambda execution role requires
+     * <code>kms:Decrypt</code> permissions.
+     * </p>
+     * 
+     * @param sourceAccessConfigurations
+     *        (MQ) The Secrets Manager secret that stores your broker credentials. To store your secret, use the
+     *        following format: <code> { "username": "your username", "password": "your password" }</code> </p>
+     *        <p>
+     *        To reference the secret, use the following format:
+     *        <code>[ { "Type": "BASIC_AUTH", "URI": "secretARN" } ]</code>
+     *        </p>
+     *        <p>
+     *        The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret, you can use
+     *        customer or service managed keys. When using a customer managed KMS key, the Lambda execution role
+     *        requires <code>kms:Decrypt</code> permissions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateEventSourceMappingRequest withSourceAccessConfigurations(java.util.Collection<SourceAccessConfiguration> sourceAccessConfigurations) {
+        setSourceAccessConfigurations(sourceAccessConfigurations);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -900,7 +1060,9 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
         if (getMaximumRetryAttempts() != null)
             sb.append("MaximumRetryAttempts: ").append(getMaximumRetryAttempts()).append(",");
         if (getParallelizationFactor() != null)
-            sb.append("ParallelizationFactor: ").append(getParallelizationFactor());
+            sb.append("ParallelizationFactor: ").append(getParallelizationFactor()).append(",");
+        if (getSourceAccessConfigurations() != null)
+            sb.append("SourceAccessConfigurations: ").append(getSourceAccessConfigurations());
         sb.append("}");
         return sb.toString();
     }
@@ -956,6 +1118,10 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getParallelizationFactor() != null && other.getParallelizationFactor().equals(this.getParallelizationFactor()) == false)
             return false;
+        if (other.getSourceAccessConfigurations() == null ^ this.getSourceAccessConfigurations() == null)
+            return false;
+        if (other.getSourceAccessConfigurations() != null && other.getSourceAccessConfigurations().equals(this.getSourceAccessConfigurations()) == false)
+            return false;
         return true;
     }
 
@@ -974,6 +1140,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getBisectBatchOnFunctionError() == null) ? 0 : getBisectBatchOnFunctionError().hashCode());
         hashCode = prime * hashCode + ((getMaximumRetryAttempts() == null) ? 0 : getMaximumRetryAttempts().hashCode());
         hashCode = prime * hashCode + ((getParallelizationFactor() == null) ? 0 : getParallelizationFactor().hashCode());
+        hashCode = prime * hashCode + ((getSourceAccessConfigurations() == null) ? 0 : getSourceAccessConfigurations().hashCode());
         return hashCode;
     }
 

@@ -105,6 +105,13 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * </p>
      */
     private String documentTitleFieldName;
+    /**
+     * <p>
+     * A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
+     * <code>False</code>).
+     * </p>
+     */
+    private Boolean disableLocalGroups;
 
     /**
      * <p>
@@ -810,6 +817,66 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
+     * <code>False</code>).
+     * </p>
+     * 
+     * @param disableLocalGroups
+     *        A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
+     *        <code>False</code>).
+     */
+
+    public void setDisableLocalGroups(Boolean disableLocalGroups) {
+        this.disableLocalGroups = disableLocalGroups;
+    }
+
+    /**
+     * <p>
+     * A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
+     * <code>False</code>).
+     * </p>
+     * 
+     * @return A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
+     *         <code>False</code>).
+     */
+
+    public Boolean getDisableLocalGroups() {
+        return this.disableLocalGroups;
+    }
+
+    /**
+     * <p>
+     * A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
+     * <code>False</code>).
+     * </p>
+     * 
+     * @param disableLocalGroups
+     *        A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
+     *        <code>False</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SharePointConfiguration withDisableLocalGroups(Boolean disableLocalGroups) {
+        setDisableLocalGroups(disableLocalGroups);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
+     * <code>False</code>).
+     * </p>
+     * 
+     * @return A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
+     *         <code>False</code>).
+     */
+
+    public Boolean isDisableLocalGroups() {
+        return this.disableLocalGroups;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -840,7 +907,9 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
         if (getFieldMappings() != null)
             sb.append("FieldMappings: ").append(getFieldMappings()).append(",");
         if (getDocumentTitleFieldName() != null)
-            sb.append("DocumentTitleFieldName: ").append(getDocumentTitleFieldName());
+            sb.append("DocumentTitleFieldName: ").append(getDocumentTitleFieldName()).append(",");
+        if (getDisableLocalGroups() != null)
+            sb.append("DisableLocalGroups: ").append(getDisableLocalGroups());
         sb.append("}");
         return sb.toString();
     }
@@ -895,6 +964,10 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
             return false;
         if (other.getDocumentTitleFieldName() != null && other.getDocumentTitleFieldName().equals(this.getDocumentTitleFieldName()) == false)
             return false;
+        if (other.getDisableLocalGroups() == null ^ this.getDisableLocalGroups() == null)
+            return false;
+        if (other.getDisableLocalGroups() != null && other.getDisableLocalGroups().equals(this.getDisableLocalGroups()) == false)
+            return false;
         return true;
     }
 
@@ -913,6 +986,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getVpcConfiguration() == null) ? 0 : getVpcConfiguration().hashCode());
         hashCode = prime * hashCode + ((getFieldMappings() == null) ? 0 : getFieldMappings().hashCode());
         hashCode = prime * hashCode + ((getDocumentTitleFieldName() == null) ? 0 : getDocumentTitleFieldName().hashCode());
+        hashCode = prime * hashCode + ((getDisableLocalGroups() == null) ? 0 : getDisableLocalGroups().hashCode());
         return hashCode;
     }
 

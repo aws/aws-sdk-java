@@ -30,18 +30,18 @@ public class Backend implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies a virtual service to use as a backend for a virtual node.
+     * Specifies a virtual service to use as a backend.
      * </p>
      */
     private VirtualServiceBackend virtualService;
 
     /**
      * <p>
-     * Specifies a virtual service to use as a backend for a virtual node.
+     * Specifies a virtual service to use as a backend.
      * </p>
      * 
      * @param virtualService
-     *        Specifies a virtual service to use as a backend for a virtual node.
+     *        Specifies a virtual service to use as a backend.
      */
 
     public void setVirtualService(VirtualServiceBackend virtualService) {
@@ -50,10 +50,10 @@ public class Backend implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies a virtual service to use as a backend for a virtual node.
+     * Specifies a virtual service to use as a backend.
      * </p>
      * 
-     * @return Specifies a virtual service to use as a backend for a virtual node.
+     * @return Specifies a virtual service to use as a backend.
      */
 
     public VirtualServiceBackend getVirtualService() {
@@ -62,11 +62,11 @@ public class Backend implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies a virtual service to use as a backend for a virtual node.
+     * Specifies a virtual service to use as a backend.
      * </p>
      * 
      * @param virtualService
-     *        Specifies a virtual service to use as a backend for a virtual node.
+     *        Specifies a virtual service to use as a backend.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

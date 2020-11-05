@@ -104,6 +104,17 @@ public class DescribeIndexResultJsonUnmarshaller implements Unmarshaller<Describ
                     context.nextToken();
                     describeIndexResult.setCapacityUnits(CapacityUnitsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("UserTokenConfigurations", targetDepth)) {
+                    context.nextToken();
+                    describeIndexResult.setUserTokenConfigurations(new ListUnmarshaller<UserTokenConfiguration>(UserTokenConfigurationJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("UserContextPolicy", targetDepth)) {
+                    context.nextToken();
+                    describeIndexResult.setUserContextPolicy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

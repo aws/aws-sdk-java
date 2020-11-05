@@ -94,6 +94,12 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      */
     private SortingConfiguration sortingConfiguration;
+    /**
+     * <p>
+     * The user context token.
+     * </p>
+     */
+    private UserContext userContext;
 
     /**
      * <p>
@@ -632,6 +638,46 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     }
 
     /**
+     * <p>
+     * The user context token.
+     * </p>
+     * 
+     * @param userContext
+     *        The user context token.
+     */
+
+    public void setUserContext(UserContext userContext) {
+        this.userContext = userContext;
+    }
+
+    /**
+     * <p>
+     * The user context token.
+     * </p>
+     * 
+     * @return The user context token.
+     */
+
+    public UserContext getUserContext() {
+        return this.userContext;
+    }
+
+    /**
+     * <p>
+     * The user context token.
+     * </p>
+     * 
+     * @param userContext
+     *        The user context token.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public QueryRequest withUserContext(UserContext userContext) {
+        setUserContext(userContext);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -660,7 +706,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
         if (getPageSize() != null)
             sb.append("PageSize: ").append(getPageSize()).append(",");
         if (getSortingConfiguration() != null)
-            sb.append("SortingConfiguration: ").append(getSortingConfiguration());
+            sb.append("SortingConfiguration: ").append(getSortingConfiguration()).append(",");
+        if (getUserContext() != null)
+            sb.append("UserContext: ").append(getUserContext());
         sb.append("}");
         return sb.toString();
     }
@@ -711,6 +759,10 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
             return false;
         if (other.getSortingConfiguration() != null && other.getSortingConfiguration().equals(this.getSortingConfiguration()) == false)
             return false;
+        if (other.getUserContext() == null ^ this.getUserContext() == null)
+            return false;
+        if (other.getUserContext() != null && other.getUserContext().equals(this.getUserContext()) == false)
+            return false;
         return true;
     }
 
@@ -728,6 +780,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
         hashCode = prime * hashCode + ((getPageNumber() == null) ? 0 : getPageNumber().hashCode());
         hashCode = prime * hashCode + ((getPageSize() == null) ? 0 : getPageSize().hashCode());
         hashCode = prime * hashCode + ((getSortingConfiguration() == null) ? 0 : getSortingConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getUserContext() == null) ? 0 : getUserContext().hashCode());
         return hashCode;
     }
 

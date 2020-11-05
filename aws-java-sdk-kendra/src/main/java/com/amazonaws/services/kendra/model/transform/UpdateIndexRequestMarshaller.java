@@ -40,6 +40,10 @@ public class UpdateIndexRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentMetadataConfigurationUpdates").build();
     private static final MarshallingInfo<StructuredPojo> CAPACITYUNITS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CapacityUnits").build();
+    private static final MarshallingInfo<List> USERTOKENCONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserTokenConfigurations").build();
+    private static final MarshallingInfo<String> USERCONTEXTPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserContextPolicy").build();
 
     private static final UpdateIndexRequestMarshaller instance = new UpdateIndexRequestMarshaller();
 
@@ -63,6 +67,8 @@ public class UpdateIndexRequestMarshaller {
             protocolMarshaller.marshall(updateIndexRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateIndexRequest.getDocumentMetadataConfigurationUpdates(), DOCUMENTMETADATACONFIGURATIONUPDATES_BINDING);
             protocolMarshaller.marshall(updateIndexRequest.getCapacityUnits(), CAPACITYUNITS_BINDING);
+            protocolMarshaller.marshall(updateIndexRequest.getUserTokenConfigurations(), USERTOKENCONFIGURATIONS_BINDING);
+            protocolMarshaller.marshall(updateIndexRequest.getUserContextPolicy(), USERCONTEXTPOLICY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

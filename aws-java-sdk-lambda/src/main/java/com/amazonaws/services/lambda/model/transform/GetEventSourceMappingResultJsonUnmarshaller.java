@@ -98,6 +98,19 @@ public class GetEventSourceMappingResultJsonUnmarshaller implements Unmarshaller
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("Queues", targetDepth)) {
+                    context.nextToken();
+                    getEventSourceMappingResult.setQueues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("SourceAccessConfigurations", targetDepth)) {
+                    context.nextToken();
+                    getEventSourceMappingResult.setSourceAccessConfigurations(new ListUnmarshaller<SourceAccessConfiguration>(
+                            SourceAccessConfigurationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("MaximumRecordAgeInSeconds", targetDepth)) {
                     context.nextToken();
                     getEventSourceMappingResult.setMaximumRecordAgeInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));

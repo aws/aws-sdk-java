@@ -145,6 +145,19 @@ public class AbstractAmazonFraudDetectorAsync extends AbstractAmazonFraudDetecto
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteEntityTypeResult> deleteEntityTypeAsync(DeleteEntityTypeRequest request) {
+
+        return deleteEntityTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEntityTypeResult> deleteEntityTypeAsync(DeleteEntityTypeRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteEntityTypeRequest, DeleteEntityTypeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteEventResult> deleteEventAsync(DeleteEventRequest request) {
 
         return deleteEventAsync(request, null);
@@ -158,6 +171,84 @@ public class AbstractAmazonFraudDetectorAsync extends AbstractAmazonFraudDetecto
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteEventTypeResult> deleteEventTypeAsync(DeleteEventTypeRequest request) {
+
+        return deleteEventTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEventTypeResult> deleteEventTypeAsync(DeleteEventTypeRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteEventTypeRequest, DeleteEventTypeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteExternalModelResult> deleteExternalModelAsync(DeleteExternalModelRequest request) {
+
+        return deleteExternalModelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteExternalModelResult> deleteExternalModelAsync(DeleteExternalModelRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteExternalModelRequest, DeleteExternalModelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLabelResult> deleteLabelAsync(DeleteLabelRequest request) {
+
+        return deleteLabelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLabelResult> deleteLabelAsync(DeleteLabelRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteLabelRequest, DeleteLabelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteModelResult> deleteModelAsync(DeleteModelRequest request) {
+
+        return deleteModelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteModelResult> deleteModelAsync(DeleteModelRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteModelRequest, DeleteModelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteModelVersionResult> deleteModelVersionAsync(DeleteModelVersionRequest request) {
+
+        return deleteModelVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteModelVersionResult> deleteModelVersionAsync(DeleteModelVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteModelVersionRequest, DeleteModelVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOutcomeResult> deleteOutcomeAsync(DeleteOutcomeRequest request) {
+
+        return deleteOutcomeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOutcomeResult> deleteOutcomeAsync(DeleteOutcomeRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteOutcomeRequest, DeleteOutcomeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(DeleteRuleRequest request) {
 
         return deleteRuleAsync(request, null);
@@ -166,6 +257,19 @@ public class AbstractAmazonFraudDetectorAsync extends AbstractAmazonFraudDetecto
     @Override
     public java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(DeleteRuleRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteRuleRequest, DeleteRuleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVariableResult> deleteVariableAsync(DeleteVariableRequest request) {
+
+        return deleteVariableAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVariableResult> deleteVariableAsync(DeleteVariableRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteVariableRequest, DeleteVariableResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

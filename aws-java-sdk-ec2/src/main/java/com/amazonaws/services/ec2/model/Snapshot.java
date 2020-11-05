@@ -107,9 +107,8 @@ public class Snapshot implements Serializable, Cloneable {
     private Integer volumeSize;
     /**
      * <p>
-     * The AWS owner alias, as maintained by Amazon. The possible values are: <code>amazon</code> | <code>self</code> |
-     * <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>. This AWS owner alias is not to be
-     * confused with the user-configured AWS account alias, which is set from the IAM console.
+     * The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the user-configured AWS
+     * account alias set using the IAM console.
      * </p>
      */
     private String ownerAlias;
@@ -698,16 +697,13 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS owner alias, as maintained by Amazon. The possible values are: <code>amazon</code> | <code>self</code> |
-     * <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>. This AWS owner alias is not to be
-     * confused with the user-configured AWS account alias, which is set from the IAM console.
+     * The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the user-configured AWS
+     * account alias set using the IAM console.
      * </p>
      * 
      * @param ownerAlias
-     *        The AWS owner alias, as maintained by Amazon. The possible values are: <code>amazon</code> |
-     *        <code>self</code> | <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>. This AWS
-     *        owner alias is not to be confused with the user-configured AWS account alias, which is set from the IAM
-     *        console.
+     *        The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the user-configured
+     *        AWS account alias set using the IAM console.
      */
 
     public void setOwnerAlias(String ownerAlias) {
@@ -716,15 +712,12 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS owner alias, as maintained by Amazon. The possible values are: <code>amazon</code> | <code>self</code> |
-     * <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>. This AWS owner alias is not to be
-     * confused with the user-configured AWS account alias, which is set from the IAM console.
+     * The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the user-configured AWS
+     * account alias set using the IAM console.
      * </p>
      * 
-     * @return The AWS owner alias, as maintained by Amazon. The possible values are: <code>amazon</code> |
-     *         <code>self</code> | <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>. This AWS
-     *         owner alias is not to be confused with the user-configured AWS account alias, which is set from the IAM
-     *         console.
+     * @return The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the
+     *         user-configured AWS account alias set using the IAM console.
      */
 
     public String getOwnerAlias() {
@@ -733,16 +726,13 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS owner alias, as maintained by Amazon. The possible values are: <code>amazon</code> | <code>self</code> |
-     * <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>. This AWS owner alias is not to be
-     * confused with the user-configured AWS account alias, which is set from the IAM console.
+     * The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the user-configured AWS
+     * account alias set using the IAM console.
      * </p>
      * 
      * @param ownerAlias
-     *        The AWS owner alias, as maintained by Amazon. The possible values are: <code>amazon</code> |
-     *        <code>self</code> | <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>. This AWS
-     *        owner alias is not to be confused with the user-configured AWS account alias, which is set from the IAM
-     *        console.
+     *        The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the user-configured
+     *        AWS account alias set using the IAM console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

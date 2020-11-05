@@ -42,6 +42,24 @@ public class DomainEndpointOptions implements Serializable, Cloneable, Structure
      * </p>
      */
     private String tLSSecurityPolicy;
+    /**
+     * <p>
+     * Specify if custom endpoint should be enabled for the Elasticsearch domain.
+     * </p>
+     */
+    private Boolean customEndpointEnabled;
+    /**
+     * <p>
+     * Specify the fully qualified domain for your custom endpoint.
+     * </p>
+     */
+    private String customEndpoint;
+    /**
+     * <p>
+     * Specify ACM certificate ARN for your custom endpoint.
+     * </p>
+     */
+    private String customEndpointCertificateArn;
 
     /**
      * <p>
@@ -195,6 +213,138 @@ public class DomainEndpointOptions implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * Specify if custom endpoint should be enabled for the Elasticsearch domain.
+     * </p>
+     * 
+     * @param customEndpointEnabled
+     *        Specify if custom endpoint should be enabled for the Elasticsearch domain.
+     */
+
+    public void setCustomEndpointEnabled(Boolean customEndpointEnabled) {
+        this.customEndpointEnabled = customEndpointEnabled;
+    }
+
+    /**
+     * <p>
+     * Specify if custom endpoint should be enabled for the Elasticsearch domain.
+     * </p>
+     * 
+     * @return Specify if custom endpoint should be enabled for the Elasticsearch domain.
+     */
+
+    public Boolean getCustomEndpointEnabled() {
+        return this.customEndpointEnabled;
+    }
+
+    /**
+     * <p>
+     * Specify if custom endpoint should be enabled for the Elasticsearch domain.
+     * </p>
+     * 
+     * @param customEndpointEnabled
+     *        Specify if custom endpoint should be enabled for the Elasticsearch domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainEndpointOptions withCustomEndpointEnabled(Boolean customEndpointEnabled) {
+        setCustomEndpointEnabled(customEndpointEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify if custom endpoint should be enabled for the Elasticsearch domain.
+     * </p>
+     * 
+     * @return Specify if custom endpoint should be enabled for the Elasticsearch domain.
+     */
+
+    public Boolean isCustomEndpointEnabled() {
+        return this.customEndpointEnabled;
+    }
+
+    /**
+     * <p>
+     * Specify the fully qualified domain for your custom endpoint.
+     * </p>
+     * 
+     * @param customEndpoint
+     *        Specify the fully qualified domain for your custom endpoint.
+     */
+
+    public void setCustomEndpoint(String customEndpoint) {
+        this.customEndpoint = customEndpoint;
+    }
+
+    /**
+     * <p>
+     * Specify the fully qualified domain for your custom endpoint.
+     * </p>
+     * 
+     * @return Specify the fully qualified domain for your custom endpoint.
+     */
+
+    public String getCustomEndpoint() {
+        return this.customEndpoint;
+    }
+
+    /**
+     * <p>
+     * Specify the fully qualified domain for your custom endpoint.
+     * </p>
+     * 
+     * @param customEndpoint
+     *        Specify the fully qualified domain for your custom endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainEndpointOptions withCustomEndpoint(String customEndpoint) {
+        setCustomEndpoint(customEndpoint);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify ACM certificate ARN for your custom endpoint.
+     * </p>
+     * 
+     * @param customEndpointCertificateArn
+     *        Specify ACM certificate ARN for your custom endpoint.
+     */
+
+    public void setCustomEndpointCertificateArn(String customEndpointCertificateArn) {
+        this.customEndpointCertificateArn = customEndpointCertificateArn;
+    }
+
+    /**
+     * <p>
+     * Specify ACM certificate ARN for your custom endpoint.
+     * </p>
+     * 
+     * @return Specify ACM certificate ARN for your custom endpoint.
+     */
+
+    public String getCustomEndpointCertificateArn() {
+        return this.customEndpointCertificateArn;
+    }
+
+    /**
+     * <p>
+     * Specify ACM certificate ARN for your custom endpoint.
+     * </p>
+     * 
+     * @param customEndpointCertificateArn
+     *        Specify ACM certificate ARN for your custom endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainEndpointOptions withCustomEndpointCertificateArn(String customEndpointCertificateArn) {
+        setCustomEndpointCertificateArn(customEndpointCertificateArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -209,7 +359,13 @@ public class DomainEndpointOptions implements Serializable, Cloneable, Structure
         if (getEnforceHTTPS() != null)
             sb.append("EnforceHTTPS: ").append(getEnforceHTTPS()).append(",");
         if (getTLSSecurityPolicy() != null)
-            sb.append("TLSSecurityPolicy: ").append(getTLSSecurityPolicy());
+            sb.append("TLSSecurityPolicy: ").append(getTLSSecurityPolicy()).append(",");
+        if (getCustomEndpointEnabled() != null)
+            sb.append("CustomEndpointEnabled: ").append(getCustomEndpointEnabled()).append(",");
+        if (getCustomEndpoint() != null)
+            sb.append("CustomEndpoint: ").append(getCustomEndpoint()).append(",");
+        if (getCustomEndpointCertificateArn() != null)
+            sb.append("CustomEndpointCertificateArn: ").append(getCustomEndpointCertificateArn());
         sb.append("}");
         return sb.toString();
     }
@@ -232,6 +388,18 @@ public class DomainEndpointOptions implements Serializable, Cloneable, Structure
             return false;
         if (other.getTLSSecurityPolicy() != null && other.getTLSSecurityPolicy().equals(this.getTLSSecurityPolicy()) == false)
             return false;
+        if (other.getCustomEndpointEnabled() == null ^ this.getCustomEndpointEnabled() == null)
+            return false;
+        if (other.getCustomEndpointEnabled() != null && other.getCustomEndpointEnabled().equals(this.getCustomEndpointEnabled()) == false)
+            return false;
+        if (other.getCustomEndpoint() == null ^ this.getCustomEndpoint() == null)
+            return false;
+        if (other.getCustomEndpoint() != null && other.getCustomEndpoint().equals(this.getCustomEndpoint()) == false)
+            return false;
+        if (other.getCustomEndpointCertificateArn() == null ^ this.getCustomEndpointCertificateArn() == null)
+            return false;
+        if (other.getCustomEndpointCertificateArn() != null && other.getCustomEndpointCertificateArn().equals(this.getCustomEndpointCertificateArn()) == false)
+            return false;
         return true;
     }
 
@@ -242,6 +410,9 @@ public class DomainEndpointOptions implements Serializable, Cloneable, Structure
 
         hashCode = prime * hashCode + ((getEnforceHTTPS() == null) ? 0 : getEnforceHTTPS().hashCode());
         hashCode = prime * hashCode + ((getTLSSecurityPolicy() == null) ? 0 : getTLSSecurityPolicy().hashCode());
+        hashCode = prime * hashCode + ((getCustomEndpointEnabled() == null) ? 0 : getCustomEndpointEnabled().hashCode());
+        hashCode = prime * hashCode + ((getCustomEndpoint() == null) ? 0 : getCustomEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getCustomEndpointCertificateArn() == null) ? 0 : getCustomEndpointCertificateArn().hashCode());
         return hashCode;
     }
 

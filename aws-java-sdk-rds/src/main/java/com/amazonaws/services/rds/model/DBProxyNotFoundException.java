@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS Region.
+ * The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS Region.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

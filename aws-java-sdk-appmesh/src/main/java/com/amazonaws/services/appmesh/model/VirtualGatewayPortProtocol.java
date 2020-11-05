@@ -20,9 +20,9 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum VirtualGatewayPortProtocol {
 
-    Grpc("grpc"),
     Http("http"),
-    Http2("http2");
+    Http2("http2"),
+    Grpc("grpc");
 
     private String value;
 

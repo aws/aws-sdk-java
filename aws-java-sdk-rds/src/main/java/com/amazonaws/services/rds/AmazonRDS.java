@@ -257,7 +257,7 @@ public interface AmazonRDS {
      * @throws DBSnapshotNotFoundException
      *         <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
      *         Region.
      * @throws DBProxyTargetGroupNotFoundException
      *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
@@ -1393,7 +1393,7 @@ public interface AmazonRDS {
      * @param deleteDBProxyRequest
      * @return Result of the DeleteDBProxy operation returned by the service.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
      *         Region.
      * @throws InvalidDBProxyStateException
      *         The requested operation can't be performed while the proxy is in this state.
@@ -1557,7 +1557,7 @@ public interface AmazonRDS {
      *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
      *         Region.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
      *         Region.
      * @throws InvalidDBProxyStateException
      *         The requested operation can't be performed while the proxy is in this state.
@@ -1968,7 +1968,7 @@ public interface AmazonRDS {
      * @param describeDBProxiesRequest
      * @return Result of the DescribeDBProxies operation returned by the service.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
      *         Region.
      * @sample AmazonRDS.DescribeDBProxies
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxies" target="_top">AWS API
@@ -1984,7 +1984,7 @@ public interface AmazonRDS {
      * @param describeDBProxyTargetGroupsRequest
      * @return Result of the DescribeDBProxyTargetGroups operation returned by the service.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
      *         Region.
      * @throws DBProxyTargetGroupNotFoundException
      *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
@@ -2005,7 +2005,7 @@ public interface AmazonRDS {
      * @param describeDBProxyTargetsRequest
      * @return Result of the DescribeDBProxyTargets operation returned by the service.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
      *         Region.
      * @throws DBProxyTargetNotFoundException
      *         The specified RDS DB instance or Aurora DB cluster isn't available for a proxy owned by your AWS account
@@ -2538,7 +2538,7 @@ public interface AmazonRDS {
      * @throws DBClusterNotFoundException
      *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
      *         Region.
      * @throws DBProxyTargetGroupNotFoundException
      *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
@@ -2917,7 +2917,7 @@ public interface AmazonRDS {
      * @param modifyDBProxyRequest
      * @return Result of the ModifyDBProxy operation returned by the service.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
      *         Region.
      * @throws DBProxyAlreadyExistsException
      *         The specified proxy name must be unique for all proxies owned by your AWS account in the specified AWS
@@ -2938,7 +2938,7 @@ public interface AmazonRDS {
      * @param modifyDBProxyTargetGroupRequest
      * @return Result of the ModifyDBProxyTargetGroup operation returned by the service.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
      *         Region.
      * @throws DBProxyTargetGroupNotFoundException
      *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
@@ -3220,7 +3220,7 @@ public interface AmazonRDS {
      * @param registerDBProxyTargetsRequest
      * @return Result of the RegisterDBProxyTargets operation returned by the service.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
      *         Region.
      * @throws DBProxyTargetGroupNotFoundException
      *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
@@ -3354,7 +3354,7 @@ public interface AmazonRDS {
      * @throws DBClusterNotFoundException
      *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
      *         Region.
      * @throws DBProxyTargetGroupNotFoundException
      *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS

@@ -43,6 +43,16 @@ public class AbstractAmazonCloudWatchEvents implements AmazonCloudWatchEvents {
     }
 
     @Override
+    public CancelReplayResult cancelReplay(CancelReplayRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateArchiveResult createArchive(CreateArchiveRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateEventBusResult createEventBus(CreateEventBusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -54,6 +64,11 @@ public class AbstractAmazonCloudWatchEvents implements AmazonCloudWatchEvents {
 
     @Override
     public DeactivateEventSourceResult deactivateEventSource(DeactivateEventSourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteArchiveResult deleteArchive(DeleteArchiveRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -73,6 +88,11 @@ public class AbstractAmazonCloudWatchEvents implements AmazonCloudWatchEvents {
     }
 
     @Override
+    public DescribeArchiveResult describeArchive(DescribeArchiveRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeEventBusResult describeEventBus(DescribeEventBusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -88,6 +108,11 @@ public class AbstractAmazonCloudWatchEvents implements AmazonCloudWatchEvents {
     }
 
     @Override
+    public DescribeReplayResult describeReplay(DescribeReplayRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeRuleResult describeRule(DescribeRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -99,6 +124,11 @@ public class AbstractAmazonCloudWatchEvents implements AmazonCloudWatchEvents {
 
     @Override
     public EnableRuleResult enableRule(EnableRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListArchivesResult listArchives(ListArchivesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -119,6 +149,11 @@ public class AbstractAmazonCloudWatchEvents implements AmazonCloudWatchEvents {
 
     @Override
     public ListPartnerEventSourcesResult listPartnerEventSources(ListPartnerEventSourcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListReplaysResult listReplays(ListReplaysRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -178,6 +213,11 @@ public class AbstractAmazonCloudWatchEvents implements AmazonCloudWatchEvents {
     }
 
     @Override
+    public StartReplayResult startReplay(StartReplayRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -189,6 +229,11 @@ public class AbstractAmazonCloudWatchEvents implements AmazonCloudWatchEvents {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateArchiveResult updateArchive(UpdateArchiveRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

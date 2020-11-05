@@ -48,6 +48,10 @@ public class VirtualGatewayListenerJsonUnmarshaller implements Unmarshaller<Virt
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("connectionPool", targetDepth)) {
+                    context.nextToken();
+                    virtualGatewayListener.setConnectionPool(VirtualGatewayConnectionPoolJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("healthCheck", targetDepth)) {
                     context.nextToken();
                     virtualGatewayListener.setHealthCheck(VirtualGatewayHealthCheckPolicyJsonUnmarshaller.getInstance().unmarshall(context));

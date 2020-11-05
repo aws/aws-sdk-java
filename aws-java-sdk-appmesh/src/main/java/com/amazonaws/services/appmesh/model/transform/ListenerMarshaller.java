@@ -27,8 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListenerMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> CONNECTIONPOOL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectionPool").build();
     private static final MarshallingInfo<StructuredPojo> HEALTHCHECK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("healthCheck").build();
+    private static final MarshallingInfo<StructuredPojo> OUTLIERDETECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("outlierDetection").build();
     private static final MarshallingInfo<StructuredPojo> PORTMAPPING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("portMapping").build();
     private static final MarshallingInfo<StructuredPojo> TIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -52,7 +56,9 @@ public class ListenerMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(listener.getConnectionPool(), CONNECTIONPOOL_BINDING);
             protocolMarshaller.marshall(listener.getHealthCheck(), HEALTHCHECK_BINDING);
+            protocolMarshaller.marshall(listener.getOutlierDetection(), OUTLIERDETECTION_BINDING);
             protocolMarshaller.marshall(listener.getPortMapping(), PORTMAPPING_BINDING);
             protocolMarshaller.marshall(listener.getTimeout(), TIMEOUT_BINDING);
             protocolMarshaller.marshall(listener.getTls(), TLS_BINDING);

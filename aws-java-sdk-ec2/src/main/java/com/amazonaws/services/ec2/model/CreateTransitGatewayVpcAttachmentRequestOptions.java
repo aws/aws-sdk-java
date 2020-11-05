@@ -34,7 +34,7 @@ public class CreateTransitGatewayVpcAttachmentRequestOptions implements Serializ
     private String dnsSupport;
     /**
      * <p>
-     * Enable or disable IPv6 support. The default is <code>enable</code>.
+     * Enable or disable IPv6 support.
      * </p>
      */
     private String ipv6Support;
@@ -108,11 +108,11 @@ public class CreateTransitGatewayVpcAttachmentRequestOptions implements Serializ
 
     /**
      * <p>
-     * Enable or disable IPv6 support. The default is <code>enable</code>.
+     * Enable or disable IPv6 support.
      * </p>
      * 
      * @param ipv6Support
-     *        Enable or disable IPv6 support. The default is <code>enable</code>.
+     *        Enable or disable IPv6 support.
      * @see Ipv6SupportValue
      */
 
@@ -122,10 +122,10 @@ public class CreateTransitGatewayVpcAttachmentRequestOptions implements Serializ
 
     /**
      * <p>
-     * Enable or disable IPv6 support. The default is <code>enable</code>.
+     * Enable or disable IPv6 support.
      * </p>
      * 
-     * @return Enable or disable IPv6 support. The default is <code>enable</code>.
+     * @return Enable or disable IPv6 support.
      * @see Ipv6SupportValue
      */
 
@@ -135,11 +135,11 @@ public class CreateTransitGatewayVpcAttachmentRequestOptions implements Serializ
 
     /**
      * <p>
-     * Enable or disable IPv6 support. The default is <code>enable</code>.
+     * Enable or disable IPv6 support.
      * </p>
      * 
      * @param ipv6Support
-     *        Enable or disable IPv6 support. The default is <code>enable</code>.
+     *        Enable or disable IPv6 support.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Ipv6SupportValue
      */
@@ -151,11 +151,11 @@ public class CreateTransitGatewayVpcAttachmentRequestOptions implements Serializ
 
     /**
      * <p>
-     * Enable or disable IPv6 support. The default is <code>enable</code>.
+     * Enable or disable IPv6 support.
      * </p>
      * 
      * @param ipv6Support
-     *        Enable or disable IPv6 support. The default is <code>enable</code>.
+     *        Enable or disable IPv6 support.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Ipv6SupportValue
      */

@@ -48,9 +48,17 @@ public class ListenerJsonUnmarshaller implements Unmarshaller<Listener, JsonUnma
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("connectionPool", targetDepth)) {
+                    context.nextToken();
+                    listener.setConnectionPool(VirtualNodeConnectionPoolJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("healthCheck", targetDepth)) {
                     context.nextToken();
                     listener.setHealthCheck(HealthCheckPolicyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("outlierDetection", targetDepth)) {
+                    context.nextToken();
+                    listener.setOutlierDetection(OutlierDetectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("portMapping", targetDepth)) {
                     context.nextToken();

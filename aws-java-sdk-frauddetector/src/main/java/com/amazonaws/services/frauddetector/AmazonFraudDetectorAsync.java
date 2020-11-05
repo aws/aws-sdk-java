@@ -256,6 +256,10 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
      * Deletes the detector. Before deleting a detector, you must first delete all detector versions and rule versions
      * associated with the detector.
      * </p>
+     * <p>
+     * When you delete a detector, Amazon Fraud Detector permanently deletes the detector and the data is no longer
+     * stored in Amazon Fraud Detector.
+     * </p>
      * 
      * @param deleteDetectorRequest
      * @return A Java Future containing the result of the DeleteDetector operation returned by the service.
@@ -269,6 +273,10 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
      * <p>
      * Deletes the detector. Before deleting a detector, you must first delete all detector versions and rule versions
      * associated with the detector.
+     * </p>
+     * <p>
+     * When you delete a detector, Amazon Fraud Detector permanently deletes the detector and the data is no longer
+     * stored in Amazon Fraud Detector.
      * </p>
      * 
      * @param deleteDetectorRequest
@@ -288,6 +296,10 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
      * <p>
      * Deletes the detector version. You cannot delete detector versions that are in <code>ACTIVE</code> status.
      * </p>
+     * <p>
+     * When you delete a detector version, Amazon Fraud Detector permanently deletes the detector and the data is no
+     * longer stored in Amazon Fraud Detector.
+     * </p>
      * 
      * @param deleteDetectorVersionRequest
      * @return A Java Future containing the result of the DeleteDetectorVersion operation returned by the service.
@@ -300,6 +312,10 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
     /**
      * <p>
      * Deletes the detector version. You cannot delete detector versions that are in <code>ACTIVE</code> status.
+     * </p>
+     * <p>
+     * When you delete a detector version, Amazon Fraud Detector permanently deletes the detector and the data is no
+     * longer stored in Amazon Fraud Detector.
      * </p>
      * 
      * @param deleteDetectorVersionRequest
@@ -317,7 +333,56 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
+     * Deletes an entity type.
+     * </p>
+     * <p>
+     * You cannot delete an entity type that is included in an event type.
+     * </p>
+     * <p>
+     * When you delete an entity type, Amazon Fraud Detector permanently deletes that entity type from the evaluation
+     * history, and the data is no longer stored in Amazon Fraud Detector.
+     * </p>
+     * 
+     * @param deleteEntityTypeRequest
+     * @return A Java Future containing the result of the DeleteEntityType operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.DeleteEntityType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEntityType" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEntityTypeResult> deleteEntityTypeAsync(DeleteEntityTypeRequest deleteEntityTypeRequest);
+
+    /**
+     * <p>
+     * Deletes an entity type.
+     * </p>
+     * <p>
+     * You cannot delete an entity type that is included in an event type.
+     * </p>
+     * <p>
+     * When you delete an entity type, Amazon Fraud Detector permanently deletes that entity type from the evaluation
+     * history, and the data is no longer stored in Amazon Fraud Detector.
+     * </p>
+     * 
+     * @param deleteEntityTypeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteEntityType operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.DeleteEntityType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEntityType" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEntityTypeResult> deleteEntityTypeAsync(DeleteEntityTypeRequest deleteEntityTypeRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteEntityTypeRequest, DeleteEntityTypeResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified event.
+     * </p>
+     * <p>
+     * When you delete an event, Amazon Fraud Detector permanently deletes that event from the evaluation history, and
+     * the event data is no longer stored in Amazon Fraud Detector.
      * </p>
      * 
      * @param deleteEventRequest
@@ -331,6 +396,10 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
     /**
      * <p>
      * Deletes the specified event.
+     * </p>
+     * <p>
+     * When you delete an event, Amazon Fraud Detector permanently deletes that event from the evaluation history, and
+     * the event data is no longer stored in Amazon Fraud Detector.
      * </p>
      * 
      * @param deleteEventRequest
@@ -348,8 +417,286 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
+     * Deletes an event type.
+     * </p>
+     * <p>
+     * You cannot delete an event type that is used in a detector or a model.
+     * </p>
+     * <p>
+     * When you delete an entity type, Amazon Fraud Detector permanently deletes that entity type from the evaluation
+     * history, and the data is no longer stored in Amazon Fraud Detector.
+     * </p>
+     * 
+     * @param deleteEventTypeRequest
+     * @return A Java Future containing the result of the DeleteEventType operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.DeleteEventType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEventType" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEventTypeResult> deleteEventTypeAsync(DeleteEventTypeRequest deleteEventTypeRequest);
+
+    /**
+     * <p>
+     * Deletes an event type.
+     * </p>
+     * <p>
+     * You cannot delete an event type that is used in a detector or a model.
+     * </p>
+     * <p>
+     * When you delete an entity type, Amazon Fraud Detector permanently deletes that entity type from the evaluation
+     * history, and the data is no longer stored in Amazon Fraud Detector.
+     * </p>
+     * 
+     * @param deleteEventTypeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteEventType operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.DeleteEventType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEventType" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEventTypeResult> deleteEventTypeAsync(DeleteEventTypeRequest deleteEventTypeRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteEventTypeRequest, DeleteEventTypeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes a SageMaker model from Amazon Fraud Detector.
+     * </p>
+     * <p>
+     * You can remove an Amazon SageMaker model if it is not associated with a detector version. Removing a SageMaker
+     * model disconnects it from Amazon Fraud Detector, but the model remains available in SageMaker.
+     * </p>
+     * 
+     * @param deleteExternalModelRequest
+     * @return A Java Future containing the result of the DeleteExternalModel operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.DeleteExternalModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteExternalModel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteExternalModelResult> deleteExternalModelAsync(DeleteExternalModelRequest deleteExternalModelRequest);
+
+    /**
+     * <p>
+     * Removes a SageMaker model from Amazon Fraud Detector.
+     * </p>
+     * <p>
+     * You can remove an Amazon SageMaker model if it is not associated with a detector version. Removing a SageMaker
+     * model disconnects it from Amazon Fraud Detector, but the model remains available in SageMaker.
+     * </p>
+     * 
+     * @param deleteExternalModelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteExternalModel operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.DeleteExternalModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteExternalModel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteExternalModelResult> deleteExternalModelAsync(DeleteExternalModelRequest deleteExternalModelRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteExternalModelRequest, DeleteExternalModelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a label.
+     * </p>
+     * <p>
+     * You cannot delete labels that are included in an event type in Amazon Fraud Detector.
+     * </p>
+     * <p>
+     * You cannot delete a label assigned to an event ID. You must first delete the relevant event ID.
+     * </p>
+     * <p>
+     * When you delete a label, Amazon Fraud Detector permanently deletes that label from the evaluation history, and
+     * the data is no longer stored in Amazon Fraud Detector.
+     * </p>
+     * 
+     * @param deleteLabelRequest
+     * @return A Java Future containing the result of the DeleteLabel operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.DeleteLabel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteLabel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLabelResult> deleteLabelAsync(DeleteLabelRequest deleteLabelRequest);
+
+    /**
+     * <p>
+     * Deletes a label.
+     * </p>
+     * <p>
+     * You cannot delete labels that are included in an event type in Amazon Fraud Detector.
+     * </p>
+     * <p>
+     * You cannot delete a label assigned to an event ID. You must first delete the relevant event ID.
+     * </p>
+     * <p>
+     * When you delete a label, Amazon Fraud Detector permanently deletes that label from the evaluation history, and
+     * the data is no longer stored in Amazon Fraud Detector.
+     * </p>
+     * 
+     * @param deleteLabelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLabel operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.DeleteLabel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteLabel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLabelResult> deleteLabelAsync(DeleteLabelRequest deleteLabelRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteLabelRequest, DeleteLabelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a model.
+     * </p>
+     * <p>
+     * You can delete models and model versions in Amazon Fraud Detector, provided that they are not associated with a
+     * detector version.
+     * </p>
+     * <p>
+     * When you delete a model, Amazon Fraud Detector permanently deletes that model from the evaluation history, and
+     * the data is no longer stored in Amazon Fraud Detector.
+     * </p>
+     * 
+     * @param deleteModelRequest
+     * @return A Java Future containing the result of the DeleteModel operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.DeleteModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteModel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteModelResult> deleteModelAsync(DeleteModelRequest deleteModelRequest);
+
+    /**
+     * <p>
+     * Deletes a model.
+     * </p>
+     * <p>
+     * You can delete models and model versions in Amazon Fraud Detector, provided that they are not associated with a
+     * detector version.
+     * </p>
+     * <p>
+     * When you delete a model, Amazon Fraud Detector permanently deletes that model from the evaluation history, and
+     * the data is no longer stored in Amazon Fraud Detector.
+     * </p>
+     * 
+     * @param deleteModelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteModel operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.DeleteModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteModel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteModelResult> deleteModelAsync(DeleteModelRequest deleteModelRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteModelRequest, DeleteModelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a model version.
+     * </p>
+     * <p>
+     * You can delete models and model versions in Amazon Fraud Detector, provided that they are not associated with a
+     * detector version.
+     * </p>
+     * <p>
+     * When you delete a model version, Amazon Fraud Detector permanently deletes that model version from the evaluation
+     * history, and the data is no longer stored in Amazon Fraud Detector.
+     * </p>
+     * 
+     * @param deleteModelVersionRequest
+     * @return A Java Future containing the result of the DeleteModelVersion operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.DeleteModelVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteModelVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteModelVersionResult> deleteModelVersionAsync(DeleteModelVersionRequest deleteModelVersionRequest);
+
+    /**
+     * <p>
+     * Deletes a model version.
+     * </p>
+     * <p>
+     * You can delete models and model versions in Amazon Fraud Detector, provided that they are not associated with a
+     * detector version.
+     * </p>
+     * <p>
+     * When you delete a model version, Amazon Fraud Detector permanently deletes that model version from the evaluation
+     * history, and the data is no longer stored in Amazon Fraud Detector.
+     * </p>
+     * 
+     * @param deleteModelVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteModelVersion operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.DeleteModelVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteModelVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteModelVersionResult> deleteModelVersionAsync(DeleteModelVersionRequest deleteModelVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteModelVersionRequest, DeleteModelVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an outcome.
+     * </p>
+     * <p>
+     * You cannot delete an outcome that is used in a rule version.
+     * </p>
+     * <p>
+     * When you delete an outcome, Amazon Fraud Detector permanently deletes that outcome from the evaluation history,
+     * and the data is no longer stored in Amazon Fraud Detector.
+     * </p>
+     * 
+     * @param deleteOutcomeRequest
+     * @return A Java Future containing the result of the DeleteOutcome operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.DeleteOutcome
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteOutcome" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteOutcomeResult> deleteOutcomeAsync(DeleteOutcomeRequest deleteOutcomeRequest);
+
+    /**
+     * <p>
+     * Deletes an outcome.
+     * </p>
+     * <p>
+     * You cannot delete an outcome that is used in a rule version.
+     * </p>
+     * <p>
+     * When you delete an outcome, Amazon Fraud Detector permanently deletes that outcome from the evaluation history,
+     * and the data is no longer stored in Amazon Fraud Detector.
+     * </p>
+     * 
+     * @param deleteOutcomeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteOutcome operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.DeleteOutcome
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteOutcome" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteOutcomeResult> deleteOutcomeAsync(DeleteOutcomeRequest deleteOutcomeRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteOutcomeRequest, DeleteOutcomeResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the rule. You cannot delete a rule if it is used by an <code>ACTIVE</code> or <code>INACTIVE</code>
      * detector version.
+     * </p>
+     * <p>
+     * When you delete a rule, Amazon Fraud Detector permanently deletes that rule from the evaluation history, and the
+     * data is no longer stored in Amazon Fraud Detector.
      * </p>
      * 
      * @param deleteRuleRequest
@@ -365,6 +712,10 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
      * Deletes the rule. You cannot delete a rule if it is used by an <code>ACTIVE</code> or <code>INACTIVE</code>
      * detector version.
      * </p>
+     * <p>
+     * When you delete a rule, Amazon Fraud Detector permanently deletes that rule from the evaluation history, and the
+     * data is no longer stored in Amazon Fraud Detector.
+     * </p>
      * 
      * @param deleteRuleRequest
      * @param asyncHandler
@@ -378,6 +729,59 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
      */
     java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(DeleteRuleRequest deleteRuleRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteRuleRequest, DeleteRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a variable.
+     * </p>
+     * <p>
+     * You can't delete variables that are included in an event type in Amazon Fraud Detector.
+     * </p>
+     * <p>
+     * Amazon Fraud Detector automatically deletes model output variables and SageMaker model output variables when you
+     * delete the model. You can't delete these variables manually.
+     * </p>
+     * <p>
+     * When you delete a variable, Amazon Fraud Detector permanently deletes that variable from the evaluation history,
+     * and the data is no longer stored in Amazon Fraud Detector.
+     * </p>
+     * 
+     * @param deleteVariableRequest
+     * @return A Java Future containing the result of the DeleteVariable operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.DeleteVariable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteVariable" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVariableResult> deleteVariableAsync(DeleteVariableRequest deleteVariableRequest);
+
+    /**
+     * <p>
+     * Deletes a variable.
+     * </p>
+     * <p>
+     * You can't delete variables that are included in an event type in Amazon Fraud Detector.
+     * </p>
+     * <p>
+     * Amazon Fraud Detector automatically deletes model output variables and SageMaker model output variables when you
+     * delete the model. You can't delete these variables manually.
+     * </p>
+     * <p>
+     * When you delete a variable, Amazon Fraud Detector permanently deletes that variable from the evaluation history,
+     * and the data is no longer stored in Amazon Fraud Detector.
+     * </p>
+     * 
+     * @param deleteVariableRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVariable operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.DeleteVariable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteVariable" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVariableResult> deleteVariableAsync(DeleteVariableRequest deleteVariableRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteVariableRequest, DeleteVariableResult> asyncHandler);
 
     /**
      * <p>

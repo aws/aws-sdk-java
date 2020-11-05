@@ -28,10 +28,23 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TcpTimeout implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be
+     * idle. The default value is none.
+     * </p>
+     */
     private Duration idle;
 
     /**
+     * <p>
+     * An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be
+     * idle. The default value is none.
+     * </p>
+     * 
      * @param idle
+     *        An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may
+     *        be idle. The default value is none.
      */
 
     public void setIdle(Duration idle) {
@@ -39,7 +52,13 @@ public class TcpTimeout implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be
+     * idle. The default value is none.
+     * </p>
+     * 
+     * @return An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection
+     *         may be idle. The default value is none.
      */
 
     public Duration getIdle() {
@@ -47,7 +66,14 @@ public class TcpTimeout implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be
+     * idle. The default value is none.
+     * </p>
+     * 
      * @param idle
+     *        An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may
+     *        be idle. The default value is none.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

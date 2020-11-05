@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You tried to create more rules or add more targets to a rule than is allowed.
+ * The request failed because it attempted to create resource beyond the allowed service quota.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

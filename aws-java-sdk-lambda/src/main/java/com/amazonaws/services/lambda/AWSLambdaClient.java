@@ -663,14 +663,14 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age. Default -1 (infinite).
-     * Minimum 60. Maximum 604800.
+     * <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the record expires
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries. Default -1 (infinite).
-     * Minimum 0. Maximum 10000. When infinite, failed records will be retried until the record expires.
+     * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the record expires.
      * </p>
      * </li>
      * <li>
@@ -3633,14 +3633,14 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age. Default -1 (infinite).
-     * Minimum 60. Maximum 604800.
+     * <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the record expires
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries. Default -1 (infinite).
-     * Minimum 0. Maximum 10000. When infinite, failed records will be retried until the record expires.
+     * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the record expires.
      * </p>
      * </li>
      * <li>

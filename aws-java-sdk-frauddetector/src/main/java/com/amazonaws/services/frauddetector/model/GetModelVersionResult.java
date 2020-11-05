@@ -63,6 +63,56 @@ public class GetModelVersionResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * The model version status.
      * </p>
+     * <p>
+     * Possible values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TRAINING_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TRAINING_COMPLETE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVATE_REQUESTED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVATE_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVATE_REQUESTED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVATE_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ERROR</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String status;
     /**
@@ -354,9 +404,108 @@ public class GetModelVersionResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * The model version status.
      * </p>
+     * <p>
+     * Possible values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TRAINING_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TRAINING_COMPLETE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVATE_REQUESTED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVATE_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVATE_REQUESTED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVATE_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ERROR</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The model version status.
+     *        The model version status.</p>
+     *        <p>
+     *        Possible values are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>TRAINING_IN_PROGRESS</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TRAINING_COMPLETE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVATE_REQUESTED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVATE_IN_PROGRESS</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACTIVATE_REQUESTED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACTIVATE_IN_PROGRESS</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACTIVE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ERROR</code>
+     *        </p>
+     *        </li>
      */
 
     public void setStatus(String status) {
@@ -367,8 +516,107 @@ public class GetModelVersionResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * The model version status.
      * </p>
+     * <p>
+     * Possible values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TRAINING_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TRAINING_COMPLETE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVATE_REQUESTED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVATE_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVATE_REQUESTED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVATE_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ERROR</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The model version status.
+     * @return The model version status.</p>
+     *         <p>
+     *         Possible values are:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>TRAINING_IN_PROGRESS</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TRAINING_COMPLETE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ACTIVATE_REQUESTED</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ACTIVATE_IN_PROGRESS</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ACTIVE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>INACTIVATE_REQUESTED</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>INACTIVATE_IN_PROGRESS</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>INACTIVE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ERROR</code>
+     *         </p>
+     *         </li>
      */
 
     public String getStatus() {
@@ -379,9 +627,108 @@ public class GetModelVersionResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * The model version status.
      * </p>
+     * <p>
+     * Possible values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TRAINING_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TRAINING_COMPLETE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVATE_REQUESTED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVATE_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVATE_REQUESTED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVATE_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ERROR</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The model version status.
+     *        The model version status.</p>
+     *        <p>
+     *        Possible values are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>TRAINING_IN_PROGRESS</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TRAINING_COMPLETE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVATE_REQUESTED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVATE_IN_PROGRESS</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACTIVATE_REQUESTED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACTIVATE_IN_PROGRESS</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACTIVE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ERROR</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

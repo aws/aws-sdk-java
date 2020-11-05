@@ -21,8 +21,8 @@ import javax.annotation.Generated;
 public enum VirtualServiceStatusCode {
 
     ACTIVE("ACTIVE"),
-    DELETED("DELETED"),
-    INACTIVE("INACTIVE");
+    INACTIVE("INACTIVE"),
+    DELETED("DELETED");
 
     private String value;
 

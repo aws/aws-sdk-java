@@ -93,6 +93,70 @@ public interface AmazonEventBridgeAsync extends AmazonEventBridge {
 
     /**
      * <p>
+     * Cancels the specified replay.
+     * </p>
+     * 
+     * @param cancelReplayRequest
+     * @return A Java Future containing the result of the CancelReplay operation returned by the service.
+     * @sample AmazonEventBridgeAsync.CancelReplay
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CancelReplay" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CancelReplayResult> cancelReplayAsync(CancelReplayRequest cancelReplayRequest);
+
+    /**
+     * <p>
+     * Cancels the specified replay.
+     * </p>
+     * 
+     * @param cancelReplayRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelReplay operation returned by the service.
+     * @sample AmazonEventBridgeAsyncHandler.CancelReplay
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CancelReplay" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CancelReplayResult> cancelReplayAsync(CancelReplayRequest cancelReplayRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelReplayRequest, CancelReplayResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an archive of events with the specified settings. When you create an archive, incoming events might not
+     * immediately start being sent to the archive. Allow a short period of time for changes to take effect.
+     * </p>
+     * 
+     * @param createArchiveRequest
+     * @return A Java Future containing the result of the CreateArchive operation returned by the service.
+     * @sample AmazonEventBridgeAsync.CreateArchive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateArchive" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateArchiveResult> createArchiveAsync(CreateArchiveRequest createArchiveRequest);
+
+    /**
+     * <p>
+     * Creates an archive of events with the specified settings. When you create an archive, incoming events might not
+     * immediately start being sent to the archive. Allow a short period of time for changes to take effect.
+     * </p>
+     * 
+     * @param createArchiveRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateArchive operation returned by the service.
+     * @sample AmazonEventBridgeAsyncHandler.CreateArchive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateArchive" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateArchiveResult> createArchiveAsync(CreateArchiveRequest createArchiveRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateArchiveRequest, CreateArchiveResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new event bus within your account. This can be a custom event bus which you can use to receive events
      * from your custom applications and services, or it can be a partner event bus which can be matched to a partner
      * event source.
@@ -256,6 +320,37 @@ public interface AmazonEventBridgeAsync extends AmazonEventBridge {
 
     /**
      * <p>
+     * Deletes the specified archive.
+     * </p>
+     * 
+     * @param deleteArchiveRequest
+     * @return A Java Future containing the result of the DeleteArchive operation returned by the service.
+     * @sample AmazonEventBridgeAsync.DeleteArchive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteArchive" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteArchiveResult> deleteArchiveAsync(DeleteArchiveRequest deleteArchiveRequest);
+
+    /**
+     * <p>
+     * Deletes the specified archive.
+     * </p>
+     * 
+     * @param deleteArchiveRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteArchive operation returned by the service.
+     * @sample AmazonEventBridgeAsyncHandler.DeleteArchive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteArchive" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteArchiveResult> deleteArchiveAsync(DeleteArchiveRequest deleteArchiveRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteArchiveRequest, DeleteArchiveResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified custom event bus or partner event bus. All rules associated with this event bus need to be
      * deleted. You can't delete your account's default event bus.
      * </p>
@@ -389,6 +484,37 @@ public interface AmazonEventBridgeAsync extends AmazonEventBridge {
 
     /**
      * <p>
+     * Retrieves details about an archive.
+     * </p>
+     * 
+     * @param describeArchiveRequest
+     * @return A Java Future containing the result of the DescribeArchive operation returned by the service.
+     * @sample AmazonEventBridgeAsync.DescribeArchive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeArchive" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeArchiveResult> describeArchiveAsync(DescribeArchiveRequest describeArchiveRequest);
+
+    /**
+     * <p>
+     * Retrieves details about an archive.
+     * </p>
+     * 
+     * @param describeArchiveRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeArchive operation returned by the service.
+     * @sample AmazonEventBridgeAsyncHandler.DescribeArchive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeArchive" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeArchiveResult> describeArchiveAsync(DescribeArchiveRequest describeArchiveRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeArchiveRequest, DescribeArchiveResult> asyncHandler);
+
+    /**
+     * <p>
      * Displays details about an event bus in your account. This can include the external AWS accounts that are
      * permitted to write events to your default event bus, and the associated policy. For custom event buses and
      * partner event buses, it displays the name, ARN, policy, state, and creation time.
@@ -501,6 +627,49 @@ public interface AmazonEventBridgeAsync extends AmazonEventBridge {
     java.util.concurrent.Future<DescribePartnerEventSourceResult> describePartnerEventSourceAsync(
             DescribePartnerEventSourceRequest describePartnerEventSourceRequest,
             com.amazonaws.handlers.AsyncHandler<DescribePartnerEventSourceRequest, DescribePartnerEventSourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves details about a replay. Use <code>DescribeReplay</code> to determine the progress of a running replay.
+     * A replay processes events to replay based on the time in the event, and replays them using 1 minute intervals. If
+     * you use <code>StartReplay</code> and specify an <code>EventStartTime</code> and an <code>EventEndTime</code> that
+     * covers a 20 minute time range, the events are replayed from the first minute of that 20 minute range first. Then
+     * the events from the second minute are replayed. You can use <code>DescribeReplay</code> to determine the progress
+     * of a replay. The value returned for <code>EventLastReplayedTime</code> indicates the time within the specified
+     * time range associated with the last event replayed.
+     * </p>
+     * 
+     * @param describeReplayRequest
+     * @return A Java Future containing the result of the DescribeReplay operation returned by the service.
+     * @sample AmazonEventBridgeAsync.DescribeReplay
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeReplay" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeReplayResult> describeReplayAsync(DescribeReplayRequest describeReplayRequest);
+
+    /**
+     * <p>
+     * Retrieves details about a replay. Use <code>DescribeReplay</code> to determine the progress of a running replay.
+     * A replay processes events to replay based on the time in the event, and replays them using 1 minute intervals. If
+     * you use <code>StartReplay</code> and specify an <code>EventStartTime</code> and an <code>EventEndTime</code> that
+     * covers a 20 minute time range, the events are replayed from the first minute of that 20 minute range first. Then
+     * the events from the second minute are replayed. You can use <code>DescribeReplay</code> to determine the progress
+     * of a replay. The value returned for <code>EventLastReplayedTime</code> indicates the time within the specified
+     * time range associated with the last event replayed.
+     * </p>
+     * 
+     * @param describeReplayRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeReplay operation returned by the service.
+     * @sample AmazonEventBridgeAsyncHandler.DescribeReplay
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeReplay" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeReplayResult> describeReplayAsync(DescribeReplayRequest describeReplayRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeReplayRequest, DescribeReplayResult> asyncHandler);
 
     /**
      * <p>
@@ -620,6 +789,39 @@ public interface AmazonEventBridgeAsync extends AmazonEventBridge {
      */
     java.util.concurrent.Future<EnableRuleResult> enableRuleAsync(EnableRuleRequest enableRuleRequest,
             com.amazonaws.handlers.AsyncHandler<EnableRuleRequest, EnableRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists your archives. You can either list all the archives or you can provide a prefix to match to the archive
+     * names. Filter parameters are exclusive.
+     * </p>
+     * 
+     * @param listArchivesRequest
+     * @return A Java Future containing the result of the ListArchives operation returned by the service.
+     * @sample AmazonEventBridgeAsync.ListArchives
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListArchives" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListArchivesResult> listArchivesAsync(ListArchivesRequest listArchivesRequest);
+
+    /**
+     * <p>
+     * Lists your archives. You can either list all the archives or you can provide a prefix to match to the archive
+     * names. Filter parameters are exclusive.
+     * </p>
+     * 
+     * @param listArchivesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListArchives operation returned by the service.
+     * @sample AmazonEventBridgeAsyncHandler.ListArchives
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListArchives" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListArchivesResult> listArchivesAsync(ListArchivesRequest listArchivesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListArchivesRequest, ListArchivesResult> asyncHandler);
 
     /**
      * <p>
@@ -756,6 +958,39 @@ public interface AmazonEventBridgeAsync extends AmazonEventBridge {
      */
     java.util.concurrent.Future<ListPartnerEventSourcesResult> listPartnerEventSourcesAsync(ListPartnerEventSourcesRequest listPartnerEventSourcesRequest,
             com.amazonaws.handlers.AsyncHandler<ListPartnerEventSourcesRequest, ListPartnerEventSourcesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists your replays. You can either list all the replays or you can provide a prefix to match to the replay names.
+     * Filter parameters are exclusive.
+     * </p>
+     * 
+     * @param listReplaysRequest
+     * @return A Java Future containing the result of the ListReplays operation returned by the service.
+     * @sample AmazonEventBridgeAsync.ListReplays
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListReplays" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListReplaysResult> listReplaysAsync(ListReplaysRequest listReplaysRequest);
+
+    /**
+     * <p>
+     * Lists your replays. You can either list all the replays or you can provide a prefix to match to the replay names.
+     * Filter parameters are exclusive.
+     * </p>
+     * 
+     * @param listReplaysRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListReplays operation returned by the service.
+     * @sample AmazonEventBridgeAsyncHandler.ListReplays
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListReplays" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListReplaysResult> listReplaysAsync(ListReplaysRequest listReplaysRequest,
+            com.amazonaws.handlers.AsyncHandler<ListReplaysRequest, ListReplaysResult> asyncHandler);
 
     /**
      * <p>
@@ -1656,6 +1891,49 @@ public interface AmazonEventBridgeAsync extends AmazonEventBridge {
 
     /**
      * <p>
+     * Starts the specified replay. Events are not necessarily replayed in the exact same order that they were added to
+     * the archive. A replay processes events to replay based on the time in the event, and replays them using 1 minute
+     * intervals. If you specify an <code>EventStartTime</code> and an <code>EventEndTime</code> that covers a 20 minute
+     * time range, the events are replayed from the first minute of that 20 minute range first. Then the events from the
+     * second minute are replayed. You can use <code>DescribeReplay</code> to determine the progress of a replay. The
+     * value returned for <code>EventLastReplayedTime</code> indicates the time within the specified time range
+     * associated with the last event replayed.
+     * </p>
+     * 
+     * @param startReplayRequest
+     * @return A Java Future containing the result of the StartReplay operation returned by the service.
+     * @sample AmazonEventBridgeAsync.StartReplay
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/StartReplay" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartReplayResult> startReplayAsync(StartReplayRequest startReplayRequest);
+
+    /**
+     * <p>
+     * Starts the specified replay. Events are not necessarily replayed in the exact same order that they were added to
+     * the archive. A replay processes events to replay based on the time in the event, and replays them using 1 minute
+     * intervals. If you specify an <code>EventStartTime</code> and an <code>EventEndTime</code> that covers a 20 minute
+     * time range, the events are replayed from the first minute of that 20 minute range first. Then the events from the
+     * second minute are replayed. You can use <code>DescribeReplay</code> to determine the progress of a replay. The
+     * value returned for <code>EventLastReplayedTime</code> indicates the time within the specified time range
+     * associated with the last event replayed.
+     * </p>
+     * 
+     * @param startReplayRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartReplay operation returned by the service.
+     * @sample AmazonEventBridgeAsyncHandler.StartReplay
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/StartReplay" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartReplayResult> startReplayAsync(StartReplayRequest startReplayRequest,
+            com.amazonaws.handlers.AsyncHandler<StartReplayRequest, StartReplayResult> asyncHandler);
+
+    /**
+     * <p>
      * Assigns one or more tags (key-value pairs) to the specified EventBridge resource. Tags can help you organize and
      * categorize your resources. You can also use them to scope user permissions by granting a user permission to
      * access or change only resources with certain tag values. In EventBridge, rules and event buses can be tagged.
@@ -1786,5 +2064,36 @@ public interface AmazonEventBridgeAsync extends AmazonEventBridge {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the specified archive.
+     * </p>
+     * 
+     * @param updateArchiveRequest
+     * @return A Java Future containing the result of the UpdateArchive operation returned by the service.
+     * @sample AmazonEventBridgeAsync.UpdateArchive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateArchive" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateArchiveResult> updateArchiveAsync(UpdateArchiveRequest updateArchiveRequest);
+
+    /**
+     * <p>
+     * Updates the specified archive.
+     * </p>
+     * 
+     * @param updateArchiveRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateArchive operation returned by the service.
+     * @sample AmazonEventBridgeAsyncHandler.UpdateArchive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateArchive" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateArchiveResult> updateArchiveAsync(UpdateArchiveRequest updateArchiveRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateArchiveRequest, UpdateArchiveResult> asyncHandler);
 
 }

@@ -38,7 +38,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      * <li>
      * <p>
      * <code>log-destination-type</code> - The type of destination to which the flow log publishes data. Possible
-     * destination types include <code>cloud-watch-logs</code> and <code>S3</code>.
+     * destination types include <code>cloud-watch-logs</code> and <code>s3</code>.
      * </p>
      * </li>
      * <li>
@@ -114,7 +114,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      * <li>
      * <p>
      * <code>log-destination-type</code> - The type of destination to which the flow log publishes data. Possible
-     * destination types include <code>cloud-watch-logs</code> and <code>S3</code>.
+     * destination types include <code>cloud-watch-logs</code> and <code>s3</code>.
      * </p>
      * </li>
      * <li>
@@ -164,7 +164,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      *         <li>
      *         <p>
      *         <code>log-destination-type</code> - The type of destination to which the flow log publishes data.
-     *         Possible destination types include <code>cloud-watch-logs</code> and <code>S3</code>.
+     *         Possible destination types include <code>cloud-watch-logs</code> and <code>s3</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -224,7 +224,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      * <li>
      * <p>
      * <code>log-destination-type</code> - The type of destination to which the flow log publishes data. Possible
-     * destination types include <code>cloud-watch-logs</code> and <code>S3</code>.
+     * destination types include <code>cloud-watch-logs</code> and <code>s3</code>.
      * </p>
      * </li>
      * <li>
@@ -275,7 +275,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      *        <li>
      *        <p>
      *        <code>log-destination-type</code> - The type of destination to which the flow log publishes data. Possible
-     *        destination types include <code>cloud-watch-logs</code> and <code>S3</code>.
+     *        destination types include <code>cloud-watch-logs</code> and <code>s3</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -337,7 +337,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      * <li>
      * <p>
      * <code>log-destination-type</code> - The type of destination to which the flow log publishes data. Possible
-     * destination types include <code>cloud-watch-logs</code> and <code>S3</code>.
+     * destination types include <code>cloud-watch-logs</code> and <code>s3</code>.
      * </p>
      * </li>
      * <li>
@@ -393,7 +393,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      *        <li>
      *        <p>
      *        <code>log-destination-type</code> - The type of destination to which the flow log publishes data. Possible
-     *        destination types include <code>cloud-watch-logs</code> and <code>S3</code>.
+     *        destination types include <code>cloud-watch-logs</code> and <code>s3</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -457,7 +457,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      * <li>
      * <p>
      * <code>log-destination-type</code> - The type of destination to which the flow log publishes data. Possible
-     * destination types include <code>cloud-watch-logs</code> and <code>S3</code>.
+     * destination types include <code>cloud-watch-logs</code> and <code>s3</code>.
      * </p>
      * </li>
      * <li>
@@ -508,7 +508,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      *        <li>
      *        <p>
      *        <code>log-destination-type</code> - The type of destination to which the flow log publishes data. Possible
-     *        destination types include <code>cloud-watch-logs</code> and <code>S3</code>.
+     *        destination types include <code>cloud-watch-logs</code> and <code>s3</code>.
      *        </p>
      *        </li>
      *        <li>

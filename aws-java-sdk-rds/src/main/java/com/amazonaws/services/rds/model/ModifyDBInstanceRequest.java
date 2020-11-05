@@ -347,7 +347,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The version number of the database engine to upgrade to. Changing this parameter results in an outage and the
      * change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is
-     * eanbled for this request.
+     * enabled for this request.
      * </p>
      * <p>
      * For major version upgrades, if a nondefault DB parameter group is currently in use, a new DB parameter group in
@@ -687,8 +687,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled. For information about the supported DB engines, see
-     * <a>CreateDBInstance</a>.
+     * accounts. By default, mapping is disabled.
+     * </p>
+     * <p>
+     * This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by the DB
+     * cluster.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -2942,7 +2945,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The version number of the database engine to upgrade to. Changing this parameter results in an outage and the
      * change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is
-     * eanbled for this request.
+     * enabled for this request.
      * </p>
      * <p>
      * For major version upgrades, if a nondefault DB parameter group is currently in use, a new DB parameter group in
@@ -2957,7 +2960,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * @param engineVersion
      *        The version number of the database engine to upgrade to. Changing this parameter results in an outage and
      *        the change is applied during the next maintenance window unless the <code>ApplyImmediately</code>
-     *        parameter is eanbled for this request. </p>
+     *        parameter is enabled for this request. </p>
      *        <p>
      *        For major version upgrades, if a nondefault DB parameter group is currently in use, a new DB parameter
      *        group in the DB parameter group family for the new engine version must be specified. The new DB parameter
@@ -2976,7 +2979,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The version number of the database engine to upgrade to. Changing this parameter results in an outage and the
      * change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is
-     * eanbled for this request.
+     * enabled for this request.
      * </p>
      * <p>
      * For major version upgrades, if a nondefault DB parameter group is currently in use, a new DB parameter group in
@@ -2990,7 +2993,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @return The version number of the database engine to upgrade to. Changing this parameter results in an outage and
      *         the change is applied during the next maintenance window unless the <code>ApplyImmediately</code>
-     *         parameter is eanbled for this request. </p>
+     *         parameter is enabled for this request. </p>
      *         <p>
      *         For major version upgrades, if a nondefault DB parameter group is currently in use, a new DB parameter
      *         group in the DB parameter group family for the new engine version must be specified. The new DB parameter
@@ -3009,7 +3012,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The version number of the database engine to upgrade to. Changing this parameter results in an outage and the
      * change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is
-     * eanbled for this request.
+     * enabled for this request.
      * </p>
      * <p>
      * For major version upgrades, if a nondefault DB parameter group is currently in use, a new DB parameter group in
@@ -3024,7 +3027,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * @param engineVersion
      *        The version number of the database engine to upgrade to. Changing this parameter results in an outage and
      *        the change is applied during the next maintenance window unless the <code>ApplyImmediately</code>
-     *        parameter is eanbled for this request. </p>
+     *        parameter is enabled for this request. </p>
      *        <p>
      *        For major version upgrades, if a nondefault DB parameter group is currently in use, a new DB parameter
      *        group in the DB parameter group family for the new engine version must be specified. The new DB parameter
@@ -5154,8 +5157,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled. For information about the supported DB engines, see
-     * <a>CreateDBInstance</a>.
+     * accounts. By default, mapping is disabled.
+     * </p>
+     * <p>
+     * This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by the DB
+     * cluster.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -5165,8 +5171,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param enableIAMDatabaseAuthentication
      *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled. For information about the supported DB engines, see
-     *        <a>CreateDBInstance</a>.</p>
+     *        database accounts. By default, mapping is disabled.</p>
+     *        <p>
+     *        This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by
+     *        the DB cluster.
+     *        </p>
      *        <p>
      *        For more information about IAM database authentication, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -5180,8 +5189,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled. For information about the supported DB engines, see
-     * <a>CreateDBInstance</a>.
+     * accounts. By default, mapping is disabled.
+     * </p>
+     * <p>
+     * This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by the DB
+     * cluster.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -5190,8 +5202,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled. For information about the supported DB engines, see
-     *         <a>CreateDBInstance</a>.</p>
+     *         database accounts. By default, mapping is disabled.</p>
+     *         <p>
+     *         This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by
+     *         the DB cluster.
+     *         </p>
      *         <p>
      *         For more information about IAM database authentication, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -5205,8 +5220,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled. For information about the supported DB engines, see
-     * <a>CreateDBInstance</a>.
+     * accounts. By default, mapping is disabled.
+     * </p>
+     * <p>
+     * This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by the DB
+     * cluster.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -5216,8 +5234,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param enableIAMDatabaseAuthentication
      *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled. For information about the supported DB engines, see
-     *        <a>CreateDBInstance</a>.</p>
+     *        database accounts. By default, mapping is disabled.</p>
+     *        <p>
+     *        This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by
+     *        the DB cluster.
+     *        </p>
      *        <p>
      *        For more information about IAM database authentication, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -5233,8 +5254,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled. For information about the supported DB engines, see
-     * <a>CreateDBInstance</a>.
+     * accounts. By default, mapping is disabled.
+     * </p>
+     * <p>
+     * This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by the DB
+     * cluster.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -5243,8 +5267,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled. For information about the supported DB engines, see
-     *         <a>CreateDBInstance</a>.</p>
+     *         database accounts. By default, mapping is disabled.</p>
+     *         <p>
+     *         This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by
+     *         the DB cluster.
+     *         </p>
      *         <p>
      *         For more information about IAM database authentication, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
