@@ -36,7 +36,7 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
     private String instanceType;
     /**
      * <p>
-     * Indicates whether the instance type is a current generation.
+     * Indicates whether the instance type is current generation.
      * </p>
      */
     private Boolean currentGeneration;
@@ -54,7 +54,7 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> supportedUsageClasses;
     /**
      * <p>
-     * Indicates the supported root device types.
+     * The supported root device types.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> supportedRootDeviceTypes;
@@ -66,13 +66,13 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> supportedVirtualizationTypes;
     /**
      * <p>
-     * Indicates whether the instance is bare metal.
+     * Indicates whether the instance is a bare metal instance type.
      * </p>
      */
     private Boolean bareMetal;
     /**
      * <p>
-     * Indicates the hypervisor used for the instance type.
+     * The hypervisor for the instance type.
      * </p>
      */
     private String hypervisor;
@@ -102,7 +102,7 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
     private Boolean instanceStorageSupported;
     /**
      * <p>
-     * Describes the disks for the instance type.
+     * Describes the instance storage for the instance type.
      * </p>
      */
     private InstanceStorageInfo instanceStorageInfo;
@@ -244,11 +244,11 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance type is a current generation.
+     * Indicates whether the instance type is current generation.
      * </p>
      * 
      * @param currentGeneration
-     *        Indicates whether the instance type is a current generation.
+     *        Indicates whether the instance type is current generation.
      */
 
     public void setCurrentGeneration(Boolean currentGeneration) {
@@ -257,10 +257,10 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance type is a current generation.
+     * Indicates whether the instance type is current generation.
      * </p>
      * 
-     * @return Indicates whether the instance type is a current generation.
+     * @return Indicates whether the instance type is current generation.
      */
 
     public Boolean getCurrentGeneration() {
@@ -269,11 +269,11 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance type is a current generation.
+     * Indicates whether the instance type is current generation.
      * </p>
      * 
      * @param currentGeneration
-     *        Indicates whether the instance type is a current generation.
+     *        Indicates whether the instance type is current generation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -284,10 +284,10 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance type is a current generation.
+     * Indicates whether the instance type is current generation.
      * </p>
      * 
-     * @return Indicates whether the instance type is a current generation.
+     * @return Indicates whether the instance type is current generation.
      */
 
     public Boolean isCurrentGeneration() {
@@ -450,10 +450,10 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the supported root device types.
+     * The supported root device types.
      * </p>
      * 
-     * @return Indicates the supported root device types.
+     * @return The supported root device types.
      * @see RootDeviceType
      */
 
@@ -466,11 +466,11 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the supported root device types.
+     * The supported root device types.
      * </p>
      * 
      * @param supportedRootDeviceTypes
-     *        Indicates the supported root device types.
+     *        The supported root device types.
      * @see RootDeviceType
      */
 
@@ -485,7 +485,7 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the supported root device types.
+     * The supported root device types.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -494,7 +494,7 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
      * </p>
      * 
      * @param supportedRootDeviceTypes
-     *        Indicates the supported root device types.
+     *        The supported root device types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RootDeviceType
      */
@@ -511,11 +511,11 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the supported root device types.
+     * The supported root device types.
      * </p>
      * 
      * @param supportedRootDeviceTypes
-     *        Indicates the supported root device types.
+     *        The supported root device types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RootDeviceType
      */
@@ -527,11 +527,11 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the supported root device types.
+     * The supported root device types.
      * </p>
      * 
      * @param supportedRootDeviceTypes
-     *        Indicates the supported root device types.
+     *        The supported root device types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RootDeviceType
      */
@@ -654,11 +654,11 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is bare metal.
+     * Indicates whether the instance is a bare metal instance type.
      * </p>
      * 
      * @param bareMetal
-     *        Indicates whether the instance is bare metal.
+     *        Indicates whether the instance is a bare metal instance type.
      */
 
     public void setBareMetal(Boolean bareMetal) {
@@ -667,10 +667,10 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is bare metal.
+     * Indicates whether the instance is a bare metal instance type.
      * </p>
      * 
-     * @return Indicates whether the instance is bare metal.
+     * @return Indicates whether the instance is a bare metal instance type.
      */
 
     public Boolean getBareMetal() {
@@ -679,11 +679,11 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is bare metal.
+     * Indicates whether the instance is a bare metal instance type.
      * </p>
      * 
      * @param bareMetal
-     *        Indicates whether the instance is bare metal.
+     *        Indicates whether the instance is a bare metal instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -694,10 +694,10 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is bare metal.
+     * Indicates whether the instance is a bare metal instance type.
      * </p>
      * 
-     * @return Indicates whether the instance is bare metal.
+     * @return Indicates whether the instance is a bare metal instance type.
      */
 
     public Boolean isBareMetal() {
@@ -706,11 +706,11 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the hypervisor used for the instance type.
+     * The hypervisor for the instance type.
      * </p>
      * 
      * @param hypervisor
-     *        Indicates the hypervisor used for the instance type.
+     *        The hypervisor for the instance type.
      * @see InstanceTypeHypervisor
      */
 
@@ -720,10 +720,10 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the hypervisor used for the instance type.
+     * The hypervisor for the instance type.
      * </p>
      * 
-     * @return Indicates the hypervisor used for the instance type.
+     * @return The hypervisor for the instance type.
      * @see InstanceTypeHypervisor
      */
 
@@ -733,11 +733,11 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the hypervisor used for the instance type.
+     * The hypervisor for the instance type.
      * </p>
      * 
      * @param hypervisor
-     *        Indicates the hypervisor used for the instance type.
+     *        The hypervisor for the instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceTypeHypervisor
      */
@@ -749,11 +749,11 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the hypervisor used for the instance type.
+     * The hypervisor for the instance type.
      * </p>
      * 
      * @param hypervisor
-     *        Indicates the hypervisor used for the instance type.
+     *        The hypervisor for the instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceTypeHypervisor
      */
@@ -937,11 +937,11 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the disks for the instance type.
+     * Describes the instance storage for the instance type.
      * </p>
      * 
      * @param instanceStorageInfo
-     *        Describes the disks for the instance type.
+     *        Describes the instance storage for the instance type.
      */
 
     public void setInstanceStorageInfo(InstanceStorageInfo instanceStorageInfo) {
@@ -950,10 +950,10 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the disks for the instance type.
+     * Describes the instance storage for the instance type.
      * </p>
      * 
-     * @return Describes the disks for the instance type.
+     * @return Describes the instance storage for the instance type.
      */
 
     public InstanceStorageInfo getInstanceStorageInfo() {
@@ -962,11 +962,11 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the disks for the instance type.
+     * Describes the instance storage for the instance type.
      * </p>
      * 
      * @param instanceStorageInfo
-     *        Describes the disks for the instance type.
+     *        Describes the instance storage for the instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

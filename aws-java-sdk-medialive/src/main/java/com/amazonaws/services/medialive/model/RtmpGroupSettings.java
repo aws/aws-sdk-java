@@ -26,6 +26,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RtmpGroupSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * Choose the ad marker type for this output group. MediaLive will create a message based on the content of each
+     * SCTE-35 message, format it for that marker type, and insert it in the datastream.
+     */
+    private java.util.List<String> adMarkers;
     /** Authentication scheme to use when connecting with CDN */
     private String authenticationScheme;
     /**
@@ -56,6 +61,104 @@ public class RtmpGroupSettings implements Serializable, Cloneable, StructuredPoj
      * restart.
      */
     private Integer restartDelay;
+
+    /**
+     * Choose the ad marker type for this output group. MediaLive will create a message based on the content of each
+     * SCTE-35 message, format it for that marker type, and insert it in the datastream.
+     * 
+     * @return Choose the ad marker type for this output group. MediaLive will create a message based on the content of
+     *         each SCTE-35 message, format it for that marker type, and insert it in the datastream.
+     * @see RtmpAdMarkers
+     */
+
+    public java.util.List<String> getAdMarkers() {
+        return adMarkers;
+    }
+
+    /**
+     * Choose the ad marker type for this output group. MediaLive will create a message based on the content of each
+     * SCTE-35 message, format it for that marker type, and insert it in the datastream.
+     * 
+     * @param adMarkers
+     *        Choose the ad marker type for this output group. MediaLive will create a message based on the content of
+     *        each SCTE-35 message, format it for that marker type, and insert it in the datastream.
+     * @see RtmpAdMarkers
+     */
+
+    public void setAdMarkers(java.util.Collection<String> adMarkers) {
+        if (adMarkers == null) {
+            this.adMarkers = null;
+            return;
+        }
+
+        this.adMarkers = new java.util.ArrayList<String>(adMarkers);
+    }
+
+    /**
+     * Choose the ad marker type for this output group. MediaLive will create a message based on the content of each
+     * SCTE-35 message, format it for that marker type, and insert it in the datastream.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdMarkers(java.util.Collection)} or {@link #withAdMarkers(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param adMarkers
+     *        Choose the ad marker type for this output group. MediaLive will create a message based on the content of
+     *        each SCTE-35 message, format it for that marker type, and insert it in the datastream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RtmpAdMarkers
+     */
+
+    public RtmpGroupSettings withAdMarkers(String... adMarkers) {
+        if (this.adMarkers == null) {
+            setAdMarkers(new java.util.ArrayList<String>(adMarkers.length));
+        }
+        for (String ele : adMarkers) {
+            this.adMarkers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * Choose the ad marker type for this output group. MediaLive will create a message based on the content of each
+     * SCTE-35 message, format it for that marker type, and insert it in the datastream.
+     * 
+     * @param adMarkers
+     *        Choose the ad marker type for this output group. MediaLive will create a message based on the content of
+     *        each SCTE-35 message, format it for that marker type, and insert it in the datastream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RtmpAdMarkers
+     */
+
+    public RtmpGroupSettings withAdMarkers(java.util.Collection<String> adMarkers) {
+        setAdMarkers(adMarkers);
+        return this;
+    }
+
+    /**
+     * Choose the ad marker type for this output group. MediaLive will create a message based on the content of each
+     * SCTE-35 message, format it for that marker type, and insert it in the datastream.
+     * 
+     * @param adMarkers
+     *        Choose the ad marker type for this output group. MediaLive will create a message based on the content of
+     *        each SCTE-35 message, format it for that marker type, and insert it in the datastream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RtmpAdMarkers
+     */
+
+    public RtmpGroupSettings withAdMarkers(RtmpAdMarkers... adMarkers) {
+        java.util.ArrayList<String> adMarkersCopy = new java.util.ArrayList<String>(adMarkers.length);
+        for (RtmpAdMarkers value : adMarkers) {
+            adMarkersCopy.add(value.toString());
+        }
+        if (getAdMarkers() == null) {
+            setAdMarkers(adMarkersCopy);
+        } else {
+            getAdMarkers().addAll(adMarkersCopy);
+        }
+        return this;
+    }
 
     /**
      * Authentication scheme to use when connecting with CDN
@@ -427,6 +530,8 @@ public class RtmpGroupSettings implements Serializable, Cloneable, StructuredPoj
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAdMarkers() != null)
+            sb.append("AdMarkers: ").append(getAdMarkers()).append(",");
         if (getAuthenticationScheme() != null)
             sb.append("AuthenticationScheme: ").append(getAuthenticationScheme()).append(",");
         if (getCacheFullBehavior() != null)
@@ -453,6 +558,10 @@ public class RtmpGroupSettings implements Serializable, Cloneable, StructuredPoj
         if (obj instanceof RtmpGroupSettings == false)
             return false;
         RtmpGroupSettings other = (RtmpGroupSettings) obj;
+        if (other.getAdMarkers() == null ^ this.getAdMarkers() == null)
+            return false;
+        if (other.getAdMarkers() != null && other.getAdMarkers().equals(this.getAdMarkers()) == false)
+            return false;
         if (other.getAuthenticationScheme() == null ^ this.getAuthenticationScheme() == null)
             return false;
         if (other.getAuthenticationScheme() != null && other.getAuthenticationScheme().equals(this.getAuthenticationScheme()) == false)
@@ -485,6 +594,7 @@ public class RtmpGroupSettings implements Serializable, Cloneable, StructuredPoj
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAdMarkers() == null) ? 0 : getAdMarkers().hashCode());
         hashCode = prime * hashCode + ((getAuthenticationScheme() == null) ? 0 : getAuthenticationScheme().hashCode());
         hashCode = prime * hashCode + ((getCacheFullBehavior() == null) ? 0 : getCacheFullBehavior().hashCode());
         hashCode = prime * hashCode + ((getCacheLength() == null) ? 0 : getCacheLength().hashCode());

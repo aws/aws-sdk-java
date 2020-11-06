@@ -28,18 +28,18 @@ public class FpgaDeviceMemoryInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The size (in MiB) for the memory available to the FPGA accelerator.
+     * The size of the memory available to the FPGA accelerator, in MiB.
      * </p>
      */
     private Integer sizeInMiB;
 
     /**
      * <p>
-     * The size (in MiB) for the memory available to the FPGA accelerator.
+     * The size of the memory available to the FPGA accelerator, in MiB.
      * </p>
      * 
      * @param sizeInMiB
-     *        The size (in MiB) for the memory available to the FPGA accelerator.
+     *        The size of the memory available to the FPGA accelerator, in MiB.
      */
 
     public void setSizeInMiB(Integer sizeInMiB) {
@@ -48,10 +48,10 @@ public class FpgaDeviceMemoryInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The size (in MiB) for the memory available to the FPGA accelerator.
+     * The size of the memory available to the FPGA accelerator, in MiB.
      * </p>
      * 
-     * @return The size (in MiB) for the memory available to the FPGA accelerator.
+     * @return The size of the memory available to the FPGA accelerator, in MiB.
      */
 
     public Integer getSizeInMiB() {
@@ -60,11 +60,11 @@ public class FpgaDeviceMemoryInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The size (in MiB) for the memory available to the FPGA accelerator.
+     * The size of the memory available to the FPGA accelerator, in MiB.
      * </p>
      * 
      * @param sizeInMiB
-     *        The size (in MiB) for the memory available to the FPGA accelerator.
+     *        The size of the memory available to the FPGA accelerator, in MiB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

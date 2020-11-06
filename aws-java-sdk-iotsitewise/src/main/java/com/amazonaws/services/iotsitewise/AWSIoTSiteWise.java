@@ -480,33 +480,6 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Creates a pre-signed URL to a portal. Use this operation to create URLs to portals that use AWS Identity and
-     * Access Management (IAM) to authenticate users. An IAM user with access to a portal can call this API to get a URL
-     * to that portal. The URL contains a session token that lets the IAM user access the portal.
-     * </p>
-     * 
-     * @param createPresignedPortalUrlRequest
-     * @return Result of the CreatePresignedPortalUrl operation returned by the service.
-     * @throws InvalidRequestException
-     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
-     *         characters. Check your request and try again.
-     * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
-     * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
-     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
-     *         <p>
-     *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     *         SiteWise User Guide</i>.
-     * @sample AWSIoTSiteWise.CreatePresignedPortalUrl
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePresignedPortalUrl"
-     *      target="_top">AWS API Documentation</a>
-     */
-    CreatePresignedPortalUrlResult createPresignedPortalUrl(CreatePresignedPortalUrlRequest createPresignedPortalUrlRequest);
-
-    /**
-     * <p>
      * Creates a project in the specified portal.
      * </p>
      * 

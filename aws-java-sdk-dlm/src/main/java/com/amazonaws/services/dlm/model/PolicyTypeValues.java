@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum PolicyTypeValues {
 
-    EBS_SNAPSHOT_MANAGEMENT("EBS_SNAPSHOT_MANAGEMENT");
+    EBS_SNAPSHOT_MANAGEMENT("EBS_SNAPSHOT_MANAGEMENT"),
+    IMAGE_MANAGEMENT("IMAGE_MANAGEMENT");
 
     private String value;
 

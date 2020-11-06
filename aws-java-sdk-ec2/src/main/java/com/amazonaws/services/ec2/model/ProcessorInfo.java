@@ -28,7 +28,7 @@ public class ProcessorInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of architectures supported by the instance type.
+     * The architectures supported by the instance type.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> supportedArchitectures;
@@ -41,10 +41,10 @@ public class ProcessorInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of architectures supported by the instance type.
+     * The architectures supported by the instance type.
      * </p>
      * 
-     * @return A list of architectures supported by the instance type.
+     * @return The architectures supported by the instance type.
      * @see ArchitectureType
      */
 
@@ -57,11 +57,11 @@ public class ProcessorInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of architectures supported by the instance type.
+     * The architectures supported by the instance type.
      * </p>
      * 
      * @param supportedArchitectures
-     *        A list of architectures supported by the instance type.
+     *        The architectures supported by the instance type.
      * @see ArchitectureType
      */
 
@@ -76,7 +76,7 @@ public class ProcessorInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of architectures supported by the instance type.
+     * The architectures supported by the instance type.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -85,7 +85,7 @@ public class ProcessorInfo implements Serializable, Cloneable {
      * </p>
      * 
      * @param supportedArchitectures
-     *        A list of architectures supported by the instance type.
+     *        The architectures supported by the instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ArchitectureType
      */
@@ -102,11 +102,11 @@ public class ProcessorInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of architectures supported by the instance type.
+     * The architectures supported by the instance type.
      * </p>
      * 
      * @param supportedArchitectures
-     *        A list of architectures supported by the instance type.
+     *        The architectures supported by the instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ArchitectureType
      */
@@ -118,11 +118,11 @@ public class ProcessorInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of architectures supported by the instance type.
+     * The architectures supported by the instance type.
      * </p>
      * 
      * @param supportedArchitectures
-     *        A list of architectures supported by the instance type.
+     *        The architectures supported by the instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ArchitectureType
      */

@@ -93,17 +93,11 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotsitewise.model.transform.InvalidRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.iotsitewise.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.iotsitewise.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.iotsitewise.model.transform.ResourceAlreadyExistsExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotsitewise.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iotsitewise.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotsitewise.model.transform.TooManyTagsExceptionUnmarshaller.getInstance()))
@@ -111,8 +105,14 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                             new JsonErrorShapeMetadata().withErrorCode("ConflictingOperationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotsitewise.model.transform.ConflictingOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iotsitewise.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotsitewise.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iotsitewise.model.transform.ResourceAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.iotsitewise.model.AWSIoTSiteWiseException.class));
 
     public static AWSIoTSiteWiseClientBuilder builder() {
@@ -1087,85 +1087,6 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
 
             HttpResponseHandler<AmazonWebServiceResponse<CreatePortalResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreatePortalResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * <p>
-     * Creates a pre-signed URL to a portal. Use this operation to create URLs to portals that use AWS Identity and
-     * Access Management (IAM) to authenticate users. An IAM user with access to a portal can call this API to get a URL
-     * to that portal. The URL contains a session token that lets the IAM user access the portal.
-     * </p>
-     * 
-     * @param createPresignedPortalUrlRequest
-     * @return Result of the CreatePresignedPortalUrl operation returned by the service.
-     * @throws InvalidRequestException
-     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
-     *         characters. Check your request and try again.
-     * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
-     * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
-     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
-     *         <p>
-     *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     *         SiteWise User Guide</i>.
-     * @sample AWSIoTSiteWise.CreatePresignedPortalUrl
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePresignedPortalUrl"
-     *      target="_top">AWS API Documentation</a>
-     */
-    @Override
-    public CreatePresignedPortalUrlResult createPresignedPortalUrl(CreatePresignedPortalUrlRequest request) {
-        request = beforeClientExecution(request);
-        return executeCreatePresignedPortalUrl(request);
-    }
-
-    @SdkInternalApi
-    final CreatePresignedPortalUrlResult executeCreatePresignedPortalUrl(CreatePresignedPortalUrlRequest createPresignedPortalUrlRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(createPresignedPortalUrlRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreatePresignedPortalUrlRequest> request = null;
-        Response<CreatePresignedPortalUrlResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new CreatePresignedPortalUrlRequestProtocolMarshaller(protocolFactory).marshall(super
-                        .beforeMarshalling(createPresignedPortalUrlRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
-                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
-                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePresignedPortalUrl");
-                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
-
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            URI endpointTraitHost = null;
-            if (!clientConfiguration.isDisableHostPrefixInjection()) {
-
-                String hostPrefix = "monitor.";
-                String resolvedHostPrefix = String.format("monitor.");
-
-                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
-            }
-
-            HttpResponseHandler<AmazonWebServiceResponse<CreatePresignedPortalUrlResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
-                    new CreatePresignedPortalUrlResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();

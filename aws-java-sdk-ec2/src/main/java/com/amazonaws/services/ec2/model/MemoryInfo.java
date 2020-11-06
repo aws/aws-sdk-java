@@ -28,18 +28,18 @@ public class MemoryInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Size of the memory, in MiB.
+     * The size of the memory, in MiB.
      * </p>
      */
     private Long sizeInMiB;
 
     /**
      * <p>
-     * Size of the memory, in MiB.
+     * The size of the memory, in MiB.
      * </p>
      * 
      * @param sizeInMiB
-     *        Size of the memory, in MiB.
+     *        The size of the memory, in MiB.
      */
 
     public void setSizeInMiB(Long sizeInMiB) {
@@ -48,10 +48,10 @@ public class MemoryInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Size of the memory, in MiB.
+     * The size of the memory, in MiB.
      * </p>
      * 
-     * @return Size of the memory, in MiB.
+     * @return The size of the memory, in MiB.
      */
 
     public Long getSizeInMiB() {
@@ -60,11 +60,11 @@ public class MemoryInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Size of the memory, in MiB.
+     * The size of the memory, in MiB.
      * </p>
      * 
      * @param sizeInMiB
-     *        Size of the memory, in MiB.
+     *        The size of the memory, in MiB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

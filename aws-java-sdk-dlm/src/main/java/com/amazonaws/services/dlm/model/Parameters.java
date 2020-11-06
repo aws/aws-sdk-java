@@ -38,6 +38,15 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean excludeBootVolume;
+    /**
+     * <p>
+     * Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the lifecycle
+     * policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
+     * <code>false</code> indicates that target instances are rebooted when the policy runs. The default is
+     * <code>true</code> (instance are not rebooted).
+     * </p>
+     */
+    private Boolean noReboot;
 
     /**
      * <p>
@@ -116,6 +125,82 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the lifecycle
+     * policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
+     * <code>false</code> indicates that target instances are rebooted when the policy runs. The default is
+     * <code>true</code> (instance are not rebooted).
+     * </p>
+     * 
+     * @param noReboot
+     *        Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the
+     *        lifecycle policy runs. <code>true</code> indicates that targeted instances are not rebooted when the
+     *        policy runs. <code>false</code> indicates that target instances are rebooted when the policy runs. The
+     *        default is <code>true</code> (instance are not rebooted).
+     */
+
+    public void setNoReboot(Boolean noReboot) {
+        this.noReboot = noReboot;
+    }
+
+    /**
+     * <p>
+     * Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the lifecycle
+     * policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
+     * <code>false</code> indicates that target instances are rebooted when the policy runs. The default is
+     * <code>true</code> (instance are not rebooted).
+     * </p>
+     * 
+     * @return Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the
+     *         lifecycle policy runs. <code>true</code> indicates that targeted instances are not rebooted when the
+     *         policy runs. <code>false</code> indicates that target instances are rebooted when the policy runs. The
+     *         default is <code>true</code> (instance are not rebooted).
+     */
+
+    public Boolean getNoReboot() {
+        return this.noReboot;
+    }
+
+    /**
+     * <p>
+     * Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the lifecycle
+     * policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
+     * <code>false</code> indicates that target instances are rebooted when the policy runs. The default is
+     * <code>true</code> (instance are not rebooted).
+     * </p>
+     * 
+     * @param noReboot
+     *        Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the
+     *        lifecycle policy runs. <code>true</code> indicates that targeted instances are not rebooted when the
+     *        policy runs. <code>false</code> indicates that target instances are rebooted when the policy runs. The
+     *        default is <code>true</code> (instance are not rebooted).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Parameters withNoReboot(Boolean noReboot) {
+        setNoReboot(noReboot);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the lifecycle
+     * policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
+     * <code>false</code> indicates that target instances are rebooted when the policy runs. The default is
+     * <code>true</code> (instance are not rebooted).
+     * </p>
+     * 
+     * @return Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the
+     *         lifecycle policy runs. <code>true</code> indicates that targeted instances are not rebooted when the
+     *         policy runs. <code>false</code> indicates that target instances are rebooted when the policy runs. The
+     *         default is <code>true</code> (instance are not rebooted).
+     */
+
+    public Boolean isNoReboot() {
+        return this.noReboot;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -128,7 +213,9 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExcludeBootVolume() != null)
-            sb.append("ExcludeBootVolume: ").append(getExcludeBootVolume());
+            sb.append("ExcludeBootVolume: ").append(getExcludeBootVolume()).append(",");
+        if (getNoReboot() != null)
+            sb.append("NoReboot: ").append(getNoReboot());
         sb.append("}");
         return sb.toString();
     }
@@ -147,6 +234,10 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getExcludeBootVolume() != null && other.getExcludeBootVolume().equals(this.getExcludeBootVolume()) == false)
             return false;
+        if (other.getNoReboot() == null ^ this.getNoReboot() == null)
+            return false;
+        if (other.getNoReboot() != null && other.getNoReboot().equals(this.getNoReboot()) == false)
+            return false;
         return true;
     }
 
@@ -156,6 +247,7 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getExcludeBootVolume() == null) ? 0 : getExcludeBootVolume().hashCode());
+        hashCode = prime * hashCode + ((getNoReboot() == null) ? 0 : getNoReboot().hashCode());
         return hashCode;
     }
 

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.medialive.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -27,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class RtmpGroupSettingsMarshaller {
 
+    private static final MarshallingInfo<List> ADMARKERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("adMarkers").build();
     private static final MarshallingInfo<String> AUTHENTICATIONSCHEME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authenticationScheme").build();
     private static final MarshallingInfo<String> CACHEFULLBEHAVIOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -56,6 +59,7 @@ public class RtmpGroupSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(rtmpGroupSettings.getAdMarkers(), ADMARKERS_BINDING);
             protocolMarshaller.marshall(rtmpGroupSettings.getAuthenticationScheme(), AUTHENTICATIONSCHEME_BINDING);
             protocolMarshaller.marshall(rtmpGroupSettings.getCacheFullBehavior(), CACHEFULLBEHAVIOR_BINDING);
             protocolMarshaller.marshall(rtmpGroupSettings.getCacheLength(), CACHELENGTH_BINDING);

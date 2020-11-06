@@ -34,7 +34,7 @@ public class EbsOptimizedInfo implements Serializable, Cloneable {
     private Integer baselineBandwidthInMbps;
     /**
      * <p>
-     * The baseline throughput performance for an EBS-optimized instance type, in MBps.
+     * The baseline throughput performance for an EBS-optimized instance type, in MB/s.
      * </p>
      */
     private Double baselineThroughputInMBps;
@@ -52,7 +52,7 @@ public class EbsOptimizedInfo implements Serializable, Cloneable {
     private Integer maximumBandwidthInMbps;
     /**
      * <p>
-     * The maximum throughput performance for an EBS-optimized instance type, in MBps.
+     * The maximum throughput performance for an EBS-optimized instance type, in MB/s.
      * </p>
      */
     private Double maximumThroughputInMBps;
@@ -105,11 +105,11 @@ public class EbsOptimizedInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The baseline throughput performance for an EBS-optimized instance type, in MBps.
+     * The baseline throughput performance for an EBS-optimized instance type, in MB/s.
      * </p>
      * 
      * @param baselineThroughputInMBps
-     *        The baseline throughput performance for an EBS-optimized instance type, in MBps.
+     *        The baseline throughput performance for an EBS-optimized instance type, in MB/s.
      */
 
     public void setBaselineThroughputInMBps(Double baselineThroughputInMBps) {
@@ -118,10 +118,10 @@ public class EbsOptimizedInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The baseline throughput performance for an EBS-optimized instance type, in MBps.
+     * The baseline throughput performance for an EBS-optimized instance type, in MB/s.
      * </p>
      * 
-     * @return The baseline throughput performance for an EBS-optimized instance type, in MBps.
+     * @return The baseline throughput performance for an EBS-optimized instance type, in MB/s.
      */
 
     public Double getBaselineThroughputInMBps() {
@@ -130,11 +130,11 @@ public class EbsOptimizedInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The baseline throughput performance for an EBS-optimized instance type, in MBps.
+     * The baseline throughput performance for an EBS-optimized instance type, in MB/s.
      * </p>
      * 
      * @param baselineThroughputInMBps
-     *        The baseline throughput performance for an EBS-optimized instance type, in MBps.
+     *        The baseline throughput performance for an EBS-optimized instance type, in MB/s.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,11 +225,11 @@ public class EbsOptimizedInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum throughput performance for an EBS-optimized instance type, in MBps.
+     * The maximum throughput performance for an EBS-optimized instance type, in MB/s.
      * </p>
      * 
      * @param maximumThroughputInMBps
-     *        The maximum throughput performance for an EBS-optimized instance type, in MBps.
+     *        The maximum throughput performance for an EBS-optimized instance type, in MB/s.
      */
 
     public void setMaximumThroughputInMBps(Double maximumThroughputInMBps) {
@@ -238,10 +238,10 @@ public class EbsOptimizedInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum throughput performance for an EBS-optimized instance type, in MBps.
+     * The maximum throughput performance for an EBS-optimized instance type, in MB/s.
      * </p>
      * 
-     * @return The maximum throughput performance for an EBS-optimized instance type, in MBps.
+     * @return The maximum throughput performance for an EBS-optimized instance type, in MB/s.
      */
 
     public Double getMaximumThroughputInMBps() {
@@ -250,11 +250,11 @@ public class EbsOptimizedInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum throughput performance for an EBS-optimized instance type, in MBps.
+     * The maximum throughput performance for an EBS-optimized instance type, in MB/s.
      * </p>
      * 
      * @param maximumThroughputInMBps
-     *        The maximum throughput performance for an EBS-optimized instance type, in MBps.
+     *        The maximum throughput performance for an EBS-optimized instance type, in MB/s.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -52,6 +52,14 @@ public class LifecyclePolicySummary implements Serializable, Cloneable, Structur
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle of
+     * Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of EBS-backed
+     * AMIs.
+     * </p>
+     */
+    private String policyType;
 
     /**
      * <p>
@@ -261,6 +269,81 @@ public class LifecyclePolicySummary implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle of
+     * Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of EBS-backed
+     * AMIs.
+     * </p>
+     * 
+     * @param policyType
+     *        The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle
+     *        of Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of
+     *        EBS-backed AMIs.
+     * @see PolicyTypeValues
+     */
+
+    public void setPolicyType(String policyType) {
+        this.policyType = policyType;
+    }
+
+    /**
+     * <p>
+     * The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle of
+     * Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of EBS-backed
+     * AMIs.
+     * </p>
+     * 
+     * @return The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle
+     *         of Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of
+     *         EBS-backed AMIs.
+     * @see PolicyTypeValues
+     */
+
+    public String getPolicyType() {
+        return this.policyType;
+    }
+
+    /**
+     * <p>
+     * The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle of
+     * Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of EBS-backed
+     * AMIs.
+     * </p>
+     * 
+     * @param policyType
+     *        The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle
+     *        of Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of
+     *        EBS-backed AMIs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PolicyTypeValues
+     */
+
+    public LifecyclePolicySummary withPolicyType(String policyType) {
+        setPolicyType(policyType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle of
+     * Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of EBS-backed
+     * AMIs.
+     * </p>
+     * 
+     * @param policyType
+     *        The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle
+     *        of Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of
+     *        EBS-backed AMIs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PolicyTypeValues
+     */
+
+    public LifecyclePolicySummary withPolicyType(PolicyTypeValues policyType) {
+        this.policyType = policyType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -279,7 +362,9 @@ public class LifecyclePolicySummary implements Serializable, Cloneable, Structur
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getPolicyType() != null)
+            sb.append("PolicyType: ").append(getPolicyType());
         sb.append("}");
         return sb.toString();
     }
@@ -310,6 +395,10 @@ public class LifecyclePolicySummary implements Serializable, Cloneable, Structur
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getPolicyType() == null ^ this.getPolicyType() == null)
+            return false;
+        if (other.getPolicyType() != null && other.getPolicyType().equals(this.getPolicyType()) == false)
+            return false;
         return true;
     }
 
@@ -322,6 +411,7 @@ public class LifecyclePolicySummary implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getPolicyType() == null) ? 0 : getPolicyType().hashCode());
         return hashCode;
     }
 

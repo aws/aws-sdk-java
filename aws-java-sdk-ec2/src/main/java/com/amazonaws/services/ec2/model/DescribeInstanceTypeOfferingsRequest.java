@@ -45,7 +45,7 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>instance-type</code> - The instance type.
+     * <code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.
      * </p>
      * </li>
      * </ul>
@@ -137,7 +137,7 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>instance-type</code> - The instance type.
+     * <code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.
      * </p>
      * </li>
      * </ul>
@@ -152,7 +152,7 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
      *         </li>
      *         <li>
      *         <p>
-     *         <code>instance-type</code> - The instance type.
+     *         <code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.
      *         </p>
      *         </li>
      */
@@ -177,7 +177,7 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>instance-type</code> - The instance type.
+     * <code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.
      * </p>
      * </li>
      * </ul>
@@ -193,7 +193,7 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instance-type</code> - The instance type.
+     *        <code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.
      *        </p>
      *        </li>
      */
@@ -220,7 +220,7 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>instance-type</code> - The instance type.
+     * <code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.
      * </p>
      * </li>
      * </ul>
@@ -241,7 +241,7 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instance-type</code> - The instance type.
+     *        <code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -270,7 +270,7 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>instance-type</code> - The instance type.
+     * <code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.
      * </p>
      * </li>
      * </ul>
@@ -286,7 +286,7 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instance-type</code> - The instance type.
+     *        <code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

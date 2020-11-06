@@ -37,6 +37,8 @@ public class LifecyclePolicySummaryMarshaller {
             .marshallLocationName("State").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> POLICYTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PolicyType").build();
 
     private static final LifecyclePolicySummaryMarshaller instance = new LifecyclePolicySummaryMarshaller();
 
@@ -58,6 +60,7 @@ public class LifecyclePolicySummaryMarshaller {
             protocolMarshaller.marshall(lifecyclePolicySummary.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(lifecyclePolicySummary.getState(), STATE_BINDING);
             protocolMarshaller.marshall(lifecyclePolicySummary.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(lifecyclePolicySummary.getPolicyType(), POLICYTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

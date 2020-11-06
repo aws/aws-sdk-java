@@ -29,6 +29,8 @@ public class ParametersMarshaller {
 
     private static final MarshallingInfo<Boolean> EXCLUDEBOOTVOLUME_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExcludeBootVolume").build();
+    private static final MarshallingInfo<Boolean> NOREBOOT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NoReboot").build();
 
     private static final ParametersMarshaller instance = new ParametersMarshaller();
 
@@ -47,6 +49,7 @@ public class ParametersMarshaller {
 
         try {
             protocolMarshaller.marshall(parameters.getExcludeBootVolume(), EXCLUDEBOOTVOLUME_BINDING);
+            protocolMarshaller.marshall(parameters.getNoReboot(), NOREBOOT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -34,7 +34,7 @@ public class InstanceStorageInfo implements Serializable, Cloneable {
     private Long totalSizeInGB;
     /**
      * <p>
-     * Array describing the disks that are available for the instance type.
+     * Describes the disks that are available for the instance type.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DiskInfo> disks;
@@ -87,10 +87,10 @@ public class InstanceStorageInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Array describing the disks that are available for the instance type.
+     * Describes the disks that are available for the instance type.
      * </p>
      * 
-     * @return Array describing the disks that are available for the instance type.
+     * @return Describes the disks that are available for the instance type.
      */
 
     public java.util.List<DiskInfo> getDisks() {
@@ -102,11 +102,11 @@ public class InstanceStorageInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Array describing the disks that are available for the instance type.
+     * Describes the disks that are available for the instance type.
      * </p>
      * 
      * @param disks
-     *        Array describing the disks that are available for the instance type.
+     *        Describes the disks that are available for the instance type.
      */
 
     public void setDisks(java.util.Collection<DiskInfo> disks) {
@@ -120,7 +120,7 @@ public class InstanceStorageInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Array describing the disks that are available for the instance type.
+     * Describes the disks that are available for the instance type.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -129,7 +129,7 @@ public class InstanceStorageInfo implements Serializable, Cloneable {
      * </p>
      * 
      * @param disks
-     *        Array describing the disks that are available for the instance type.
+     *        Describes the disks that are available for the instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,11 +145,11 @@ public class InstanceStorageInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Array describing the disks that are available for the instance type.
+     * Describes the disks that are available for the instance type.
      * </p>
      * 
      * @param disks
-     *        Array describing the disks that are available for the instance type.
+     *        Describes the disks that are available for the instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

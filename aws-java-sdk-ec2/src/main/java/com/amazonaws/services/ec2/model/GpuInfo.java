@@ -33,7 +33,7 @@ public class GpuInfo implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<GpuDeviceInfo> gpus;
     /**
      * <p>
-     * The total size of the memory for the GPU accelerators for the instance type.
+     * The total size of the memory for the GPU accelerators for the instance type, in MiB.
      * </p>
      */
     private Integer totalGpuMemoryInMiB;
@@ -113,11 +113,11 @@ public class GpuInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The total size of the memory for the GPU accelerators for the instance type.
+     * The total size of the memory for the GPU accelerators for the instance type, in MiB.
      * </p>
      * 
      * @param totalGpuMemoryInMiB
-     *        The total size of the memory for the GPU accelerators for the instance type.
+     *        The total size of the memory for the GPU accelerators for the instance type, in MiB.
      */
 
     public void setTotalGpuMemoryInMiB(Integer totalGpuMemoryInMiB) {
@@ -126,10 +126,10 @@ public class GpuInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The total size of the memory for the GPU accelerators for the instance type.
+     * The total size of the memory for the GPU accelerators for the instance type, in MiB.
      * </p>
      * 
-     * @return The total size of the memory for the GPU accelerators for the instance type.
+     * @return The total size of the memory for the GPU accelerators for the instance type, in MiB.
      */
 
     public Integer getTotalGpuMemoryInMiB() {
@@ -138,11 +138,11 @@ public class GpuInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The total size of the memory for the GPU accelerators for the instance type.
+     * The total size of the memory for the GPU accelerators for the instance type, in MiB.
      * </p>
      * 
      * @param totalGpuMemoryInMiB
-     *        The total size of the memory for the GPU accelerators for the instance type.
+     *        The total size of the memory for the GPU accelerators for the instance type, in MiB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

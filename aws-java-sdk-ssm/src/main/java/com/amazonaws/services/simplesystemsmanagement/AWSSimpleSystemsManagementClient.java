@@ -7322,7 +7322,22 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @throws InvalidAllowedPatternException
      *         The request does not meet the regular expression requirement.
      * @throws ParameterMaxVersionLimitExceededException
-     *         The parameter exceeded the maximum number of allowed versions.
+     *         Parameter Store retains the 100 most recently created versions of a parameter. After this number of
+     *         versions has been created, Parameter Store deletes the oldest version when a new one is created. However,
+     *         if the oldest version has a <i>label</i> attached to it, Parameter Store will not delete the version and
+     *         instead presents this error message:</p>
+     *         <p>
+     *         <code>An error occurred (ParameterMaxVersionLimitExceeded) when calling the PutParameter operation: You attempted to create a new version of <i>parameter-name</i> by calling the PutParameter API with the overwrite flag. Version <i>version-number</i>, the oldest version, can't be deleted because it has a label associated with it. Move the label to another version of the parameter, and try again.</code>
+     *         </p>
+     *         <p>
+     *         This safeguard is to prevent parameter versions with mission critical labels assigned to them from being
+     *         deleted. To continue creating new parameters, first move the label from the oldest version of the
+     *         parameter to a newer one for use in your operations. For information about moving parameter labels, see
+     *         <a href=
+     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-console-move"
+     *         >Move a parameter label (console)</a> or <a href=
+     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-cli-move"
+     *         >Move a parameter label (CLI) </a> in the <i>AWS Systems Manager User Guide</i>.
      * @throws ParameterPatternMismatchException
      *         The parameter name is not valid.
      * @throws UnsupportedParameterTypeException

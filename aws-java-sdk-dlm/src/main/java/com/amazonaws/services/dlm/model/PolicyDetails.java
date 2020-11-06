@@ -30,7 +30,10 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The valid target resource types and actions a policy can manage. The default is EBS_SNAPSHOT_MANAGEMENT.
+     * The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to
+     * create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify
+     * <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. The
+     * default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.
      * </p>
      */
     private String policyType;
@@ -63,11 +66,17 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The valid target resource types and actions a policy can manage. The default is EBS_SNAPSHOT_MANAGEMENT.
+     * The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to
+     * create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify
+     * <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. The
+     * default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.
      * </p>
      * 
      * @param policyType
-     *        The valid target resource types and actions a policy can manage. The default is EBS_SNAPSHOT_MANAGEMENT.
+     *        The valid target resource types and actions a policy can manage. Specify
+     *        <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of Amazon EBS
+     *        snapshots. Specify <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle
+     *        of EBS-backed AMIs. The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.
      * @see PolicyTypeValues
      */
 
@@ -77,10 +86,16 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The valid target resource types and actions a policy can manage. The default is EBS_SNAPSHOT_MANAGEMENT.
+     * The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to
+     * create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify
+     * <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. The
+     * default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.
      * </p>
      * 
-     * @return The valid target resource types and actions a policy can manage. The default is EBS_SNAPSHOT_MANAGEMENT.
+     * @return The valid target resource types and actions a policy can manage. Specify
+     *         <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of Amazon
+     *         EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the
+     *         lifecycle of EBS-backed AMIs. The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.
      * @see PolicyTypeValues
      */
 
@@ -90,11 +105,17 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The valid target resource types and actions a policy can manage. The default is EBS_SNAPSHOT_MANAGEMENT.
+     * The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to
+     * create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify
+     * <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. The
+     * default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.
      * </p>
      * 
      * @param policyType
-     *        The valid target resource types and actions a policy can manage. The default is EBS_SNAPSHOT_MANAGEMENT.
+     *        The valid target resource types and actions a policy can manage. Specify
+     *        <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of Amazon EBS
+     *        snapshots. Specify <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle
+     *        of EBS-backed AMIs. The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyTypeValues
      */
@@ -106,11 +127,17 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The valid target resource types and actions a policy can manage. The default is EBS_SNAPSHOT_MANAGEMENT.
+     * The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to
+     * create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify
+     * <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. The
+     * default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.
      * </p>
      * 
      * @param policyType
-     *        The valid target resource types and actions a policy can manage. The default is EBS_SNAPSHOT_MANAGEMENT.
+     *        The valid target resource types and actions a policy can manage. Specify
+     *        <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of Amazon EBS
+     *        snapshots. Specify <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle
+     *        of EBS-backed AMIs. The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyTypeValues
      */

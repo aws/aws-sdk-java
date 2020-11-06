@@ -28,17 +28,17 @@ public class PlacementGroupInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of supported placement groups types.
+     * The supported placement group types.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> supportedStrategies;
 
     /**
      * <p>
-     * A list of supported placement groups types.
+     * The supported placement group types.
      * </p>
      * 
-     * @return A list of supported placement groups types.
+     * @return The supported placement group types.
      * @see PlacementGroupStrategy
      */
 
@@ -51,11 +51,11 @@ public class PlacementGroupInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of supported placement groups types.
+     * The supported placement group types.
      * </p>
      * 
      * @param supportedStrategies
-     *        A list of supported placement groups types.
+     *        The supported placement group types.
      * @see PlacementGroupStrategy
      */
 
@@ -70,7 +70,7 @@ public class PlacementGroupInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of supported placement groups types.
+     * The supported placement group types.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +79,7 @@ public class PlacementGroupInfo implements Serializable, Cloneable {
      * </p>
      * 
      * @param supportedStrategies
-     *        A list of supported placement groups types.
+     *        The supported placement group types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlacementGroupStrategy
      */
@@ -96,11 +96,11 @@ public class PlacementGroupInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of supported placement groups types.
+     * The supported placement group types.
      * </p>
      * 
      * @param supportedStrategies
-     *        A list of supported placement groups types.
+     *        The supported placement group types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlacementGroupStrategy
      */
@@ -112,11 +112,11 @@ public class PlacementGroupInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of supported placement groups types.
+     * The supported placement group types.
      * </p>
      * 
      * @param supportedStrategies
-     *        A list of supported placement groups types.
+     *        The supported placement group types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlacementGroupStrategy
      */

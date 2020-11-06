@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.ec2.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -50,6 +52,26 @@ public class NetworkInfoStaxUnmarshaller implements Unmarshaller<NetworkInfo, St
 
                 if (context.testExpression("maximumNetworkInterfaces", targetDepth)) {
                     networkInfo.setMaximumNetworkInterfaces(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("maximumNetworkCards", targetDepth)) {
+                    networkInfo.setMaximumNetworkCards(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("defaultNetworkCardIndex", targetDepth)) {
+                    networkInfo.setDefaultNetworkCardIndex(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("networkCards", targetDepth)) {
+                    networkInfo.withNetworkCards(new ArrayList<NetworkCardInfo>());
+                    continue;
+                }
+
+                if (context.testExpression("networkCards/item", targetDepth)) {
+                    networkInfo.withNetworkCards(NetworkCardInfoStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

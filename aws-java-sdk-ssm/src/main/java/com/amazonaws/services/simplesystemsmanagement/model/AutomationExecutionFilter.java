@@ -32,7 +32,8 @@ public class AutomationExecutionFilter implements Serializable, Cloneable, Struc
     /**
      * <p>
      * One or more keys to limit the results. Valid filter keys include the following: DocumentNamePrefix,
-     * ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter.
+     * ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter,
+     * TargetResourceGroup.
      * </p>
      */
     private String key;
@@ -46,12 +47,14 @@ public class AutomationExecutionFilter implements Serializable, Cloneable, Struc
     /**
      * <p>
      * One or more keys to limit the results. Valid filter keys include the following: DocumentNamePrefix,
-     * ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter.
+     * ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter,
+     * TargetResourceGroup.
      * </p>
      * 
      * @param key
      *        One or more keys to limit the results. Valid filter keys include the following: DocumentNamePrefix,
-     *        ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter.
+     *        ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter,
+     *        TargetResourceGroup.
      * @see AutomationExecutionFilterKey
      */
 
@@ -62,11 +65,13 @@ public class AutomationExecutionFilter implements Serializable, Cloneable, Struc
     /**
      * <p>
      * One or more keys to limit the results. Valid filter keys include the following: DocumentNamePrefix,
-     * ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter.
+     * ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter,
+     * TargetResourceGroup.
      * </p>
      * 
      * @return One or more keys to limit the results. Valid filter keys include the following: DocumentNamePrefix,
-     *         ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter.
+     *         ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter,
+     *         TargetResourceGroup.
      * @see AutomationExecutionFilterKey
      */
 
@@ -77,12 +82,14 @@ public class AutomationExecutionFilter implements Serializable, Cloneable, Struc
     /**
      * <p>
      * One or more keys to limit the results. Valid filter keys include the following: DocumentNamePrefix,
-     * ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter.
+     * ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter,
+     * TargetResourceGroup.
      * </p>
      * 
      * @param key
      *        One or more keys to limit the results. Valid filter keys include the following: DocumentNamePrefix,
-     *        ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter.
+     *        ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter,
+     *        TargetResourceGroup.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutomationExecutionFilterKey
      */
@@ -95,12 +102,14 @@ public class AutomationExecutionFilter implements Serializable, Cloneable, Struc
     /**
      * <p>
      * One or more keys to limit the results. Valid filter keys include the following: DocumentNamePrefix,
-     * ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter.
+     * ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter,
+     * TargetResourceGroup.
      * </p>
      * 
      * @param key
      *        One or more keys to limit the results. Valid filter keys include the following: DocumentNamePrefix,
-     *        ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter.
+     *        ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter,
+     *        TargetResourceGroup.
      * @see AutomationExecutionFilterKey
      */
 
@@ -111,12 +120,14 @@ public class AutomationExecutionFilter implements Serializable, Cloneable, Struc
     /**
      * <p>
      * One or more keys to limit the results. Valid filter keys include the following: DocumentNamePrefix,
-     * ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter.
+     * ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter,
+     * TargetResourceGroup.
      * </p>
      * 
      * @param key
      *        One or more keys to limit the results. Valid filter keys include the following: DocumentNamePrefix,
-     *        ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter.
+     *        ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter,
+     *        TargetResourceGroup.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutomationExecutionFilterKey
      */
