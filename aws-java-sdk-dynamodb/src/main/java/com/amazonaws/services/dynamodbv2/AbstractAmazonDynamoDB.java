@@ -136,6 +136,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     }
 
     @Override
+    public DescribeExportResult describeExport(DescribeExportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeGlobalTableResult describeGlobalTable(DescribeGlobalTableRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -171,6 +176,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     }
 
     @Override
+    public ExportTableToPointInTimeResult exportTableToPointInTime(ExportTableToPointInTimeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetItemResult getItem(GetItemRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -192,6 +202,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
 
     @Override
     public ListContributorInsightsResult listContributorInsights(ListContributorInsightsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListExportsResult listExports(ListExportsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

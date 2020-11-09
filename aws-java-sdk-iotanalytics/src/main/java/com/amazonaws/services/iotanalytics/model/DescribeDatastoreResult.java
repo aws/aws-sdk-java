@@ -31,8 +31,8 @@ public class DescribeDatastoreResult extends com.amazonaws.AmazonWebServiceResul
     private Datastore datastore;
     /**
      * <p>
-     * Additional statistical information about the data store. Included if the 'includeStatistics' parameter is set to
-     * true in the request.
+     * Additional statistical information about the data store. Included if the <code>includeStatistics</code> parameter
+     * is set to <code>true</code> in the request.
      * </p>
      */
     private DatastoreStatistics statistics;
@@ -79,13 +79,13 @@ public class DescribeDatastoreResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Additional statistical information about the data store. Included if the 'includeStatistics' parameter is set to
-     * true in the request.
+     * Additional statistical information about the data store. Included if the <code>includeStatistics</code> parameter
+     * is set to <code>true</code> in the request.
      * </p>
      * 
      * @param statistics
-     *        Additional statistical information about the data store. Included if the 'includeStatistics' parameter is
-     *        set to true in the request.
+     *        Additional statistical information about the data store. Included if the <code>includeStatistics</code>
+     *        parameter is set to <code>true</code> in the request.
      */
 
     public void setStatistics(DatastoreStatistics statistics) {
@@ -94,12 +94,12 @@ public class DescribeDatastoreResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Additional statistical information about the data store. Included if the 'includeStatistics' parameter is set to
-     * true in the request.
+     * Additional statistical information about the data store. Included if the <code>includeStatistics</code> parameter
+     * is set to <code>true</code> in the request.
      * </p>
      * 
-     * @return Additional statistical information about the data store. Included if the 'includeStatistics' parameter is
-     *         set to true in the request.
+     * @return Additional statistical information about the data store. Included if the <code>includeStatistics</code>
+     *         parameter is set to <code>true</code> in the request.
      */
 
     public DatastoreStatistics getStatistics() {
@@ -108,13 +108,13 @@ public class DescribeDatastoreResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Additional statistical information about the data store. Included if the 'includeStatistics' parameter is set to
-     * true in the request.
+     * Additional statistical information about the data store. Included if the <code>includeStatistics</code> parameter
+     * is set to <code>true</code> in the request.
      * </p>
      * 
      * @param statistics
-     *        Additional statistical information about the data store. Included if the 'includeStatistics' parameter is
-     *        set to true in the request.
+     *        Additional statistical information about the data store. Included if the <code>includeStatistics</code>
+     *        parameter is set to <code>true</code> in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

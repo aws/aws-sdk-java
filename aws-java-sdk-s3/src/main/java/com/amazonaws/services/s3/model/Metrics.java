@@ -17,9 +17,7 @@ package com.amazonaws.services.s3.model;
 import java.io.Serializable;
 
 /**
- *  A container specifying replication metrics-related information including whether emitting metrics and Amazon S3
- *  events for replication are enabled. In addition, contains configurations related to specific metrics or events. Must
- *  be specified together with a <code>ReplicationTime</code> block. <code>ReplicationTime</code> block.
+ *  A container specifying settings for configuring replication metrics and events.
  */
 public class Metrics implements Serializable {
     private String status;

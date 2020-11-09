@@ -56,7 +56,7 @@ public class TaskExecutionResultDetail implements Serializable, Cloneable, Struc
     private Long transferDuration;
     /**
      * <p>
-     * The status of the TRANSFERRING Phase.
+     * The status of the TRANSFERRING phase.
      * </p>
      */
     private String transferStatus;
@@ -68,7 +68,7 @@ public class TaskExecutionResultDetail implements Serializable, Cloneable, Struc
     private Long verifyDuration;
     /**
      * <p>
-     * The status of the VERIFYING Phase.
+     * The status of the VERIFYING phase.
      * </p>
      */
     private String verifyStatus;
@@ -274,11 +274,11 @@ public class TaskExecutionResultDetail implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The status of the TRANSFERRING Phase.
+     * The status of the TRANSFERRING phase.
      * </p>
      * 
      * @param transferStatus
-     *        The status of the TRANSFERRING Phase.
+     *        The status of the TRANSFERRING phase.
      * @see PhaseStatus
      */
 
@@ -288,10 +288,10 @@ public class TaskExecutionResultDetail implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The status of the TRANSFERRING Phase.
+     * The status of the TRANSFERRING phase.
      * </p>
      * 
-     * @return The status of the TRANSFERRING Phase.
+     * @return The status of the TRANSFERRING phase.
      * @see PhaseStatus
      */
 
@@ -301,11 +301,11 @@ public class TaskExecutionResultDetail implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The status of the TRANSFERRING Phase.
+     * The status of the TRANSFERRING phase.
      * </p>
      * 
      * @param transferStatus
-     *        The status of the TRANSFERRING Phase.
+     *        The status of the TRANSFERRING phase.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PhaseStatus
      */
@@ -317,11 +317,11 @@ public class TaskExecutionResultDetail implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The status of the TRANSFERRING Phase.
+     * The status of the TRANSFERRING phase.
      * </p>
      * 
      * @param transferStatus
-     *        The status of the TRANSFERRING Phase.
+     *        The status of the TRANSFERRING phase.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PhaseStatus
      */
@@ -373,11 +373,11 @@ public class TaskExecutionResultDetail implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The status of the VERIFYING Phase.
+     * The status of the VERIFYING phase.
      * </p>
      * 
      * @param verifyStatus
-     *        The status of the VERIFYING Phase.
+     *        The status of the VERIFYING phase.
      * @see PhaseStatus
      */
 
@@ -387,10 +387,10 @@ public class TaskExecutionResultDetail implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The status of the VERIFYING Phase.
+     * The status of the VERIFYING phase.
      * </p>
      * 
-     * @return The status of the VERIFYING Phase.
+     * @return The status of the VERIFYING phase.
      * @see PhaseStatus
      */
 
@@ -400,11 +400,11 @@ public class TaskExecutionResultDetail implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The status of the VERIFYING Phase.
+     * The status of the VERIFYING phase.
      * </p>
      * 
      * @param verifyStatus
-     *        The status of the VERIFYING Phase.
+     *        The status of the VERIFYING phase.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PhaseStatus
      */
@@ -416,11 +416,11 @@ public class TaskExecutionResultDetail implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The status of the VERIFYING Phase.
+     * The status of the VERIFYING phase.
      * </p>
      * 
      * @param verifyStatus
-     *        The status of the VERIFYING Phase.
+     *        The status of the VERIFYING phase.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PhaseStatus
      */

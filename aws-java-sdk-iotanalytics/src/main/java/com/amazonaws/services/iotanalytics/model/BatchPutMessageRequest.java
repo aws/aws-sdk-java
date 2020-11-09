@@ -33,15 +33,15 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
     private String channelName;
     /**
      * <p>
-     * The list of messages to be sent. Each message has format: '{ "messageId": "string", "payload": "string"}'.
+     * The list of messages to be sent. Each message has the format: { "messageId": "string", "payload": "string"}.
      * </p>
      * <p>
-     * Note that the field names of message payloads (data) that you send to AWS IoT Analytics:
+     * The field names of message payloads (data) that you send to AWS IoT Analytics:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Must contain only alphanumeric characters and undescores (_); no other special characters are allowed.
+     * Must contain only alphanumeric characters and undescores (_). No other special characters are allowed.
      * </p>
      * </li>
      * <li>
@@ -61,12 +61,12 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * Cannot be greater than 255 characters.
+     * Cannot be more than 255 characters.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Are case-insensitive. (Fields named "foo" and "FOO" in the same payload are considered duplicates.)
+     * Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)
      * </p>
      * </li>
      * </ul>
@@ -119,15 +119,15 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The list of messages to be sent. Each message has format: '{ "messageId": "string", "payload": "string"}'.
+     * The list of messages to be sent. Each message has the format: { "messageId": "string", "payload": "string"}.
      * </p>
      * <p>
-     * Note that the field names of message payloads (data) that you send to AWS IoT Analytics:
+     * The field names of message payloads (data) that you send to AWS IoT Analytics:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Must contain only alphanumeric characters and undescores (_); no other special characters are allowed.
+     * Must contain only alphanumeric characters and undescores (_). No other special characters are allowed.
      * </p>
      * </li>
      * <li>
@@ -147,12 +147,12 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * Cannot be greater than 255 characters.
+     * Cannot be more than 255 characters.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Are case-insensitive. (Fields named "foo" and "FOO" in the same payload are considered duplicates.)
+     * Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)
      * </p>
      * </li>
      * </ul>
@@ -161,15 +161,15 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
      * 29} are invalid in message payloads.
      * </p>
      * 
-     * @return The list of messages to be sent. Each message has format: '{ "messageId": "string", "payload":
-     *         "string"}'.</p>
+     * @return The list of messages to be sent. Each message has the format: { "messageId": "string", "payload":
+     *         "string"}.</p>
      *         <p>
-     *         Note that the field names of message payloads (data) that you send to AWS IoT Analytics:
+     *         The field names of message payloads (data) that you send to AWS IoT Analytics:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain only alphanumeric characters and undescores (_); no other special characters are allowed.
+     *         Must contain only alphanumeric characters and undescores (_). No other special characters are allowed.
      *         </p>
      *         </li>
      *         <li>
@@ -189,12 +189,12 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
      *         </li>
      *         <li>
      *         <p>
-     *         Cannot be greater than 255 characters.
+     *         Cannot be more than 255 characters.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Are case-insensitive. (Fields named "foo" and "FOO" in the same payload are considered duplicates.)
+     *         Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)
      *         </p>
      *         </li>
      *         </ul>
@@ -209,15 +209,15 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The list of messages to be sent. Each message has format: '{ "messageId": "string", "payload": "string"}'.
+     * The list of messages to be sent. Each message has the format: { "messageId": "string", "payload": "string"}.
      * </p>
      * <p>
-     * Note that the field names of message payloads (data) that you send to AWS IoT Analytics:
+     * The field names of message payloads (data) that you send to AWS IoT Analytics:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Must contain only alphanumeric characters and undescores (_); no other special characters are allowed.
+     * Must contain only alphanumeric characters and undescores (_). No other special characters are allowed.
      * </p>
      * </li>
      * <li>
@@ -237,12 +237,12 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * Cannot be greater than 255 characters.
+     * Cannot be more than 255 characters.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Are case-insensitive. (Fields named "foo" and "FOO" in the same payload are considered duplicates.)
+     * Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)
      * </p>
      * </li>
      * </ul>
@@ -252,15 +252,15 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param messages
-     *        The list of messages to be sent. Each message has format: '{ "messageId": "string", "payload":
-     *        "string"}'.</p>
+     *        The list of messages to be sent. Each message has the format: { "messageId": "string", "payload":
+     *        "string"}.</p>
      *        <p>
-     *        Note that the field names of message payloads (data) that you send to AWS IoT Analytics:
+     *        The field names of message payloads (data) that you send to AWS IoT Analytics:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain only alphanumeric characters and undescores (_); no other special characters are allowed.
+     *        Must contain only alphanumeric characters and undescores (_). No other special characters are allowed.
      *        </p>
      *        </li>
      *        <li>
@@ -280,12 +280,12 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot be greater than 255 characters.
+     *        Cannot be more than 255 characters.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Are case-insensitive. (Fields named "foo" and "FOO" in the same payload are considered duplicates.)
+     *        Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)
      *        </p>
      *        </li>
      *        </ul>
@@ -305,15 +305,15 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The list of messages to be sent. Each message has format: '{ "messageId": "string", "payload": "string"}'.
+     * The list of messages to be sent. Each message has the format: { "messageId": "string", "payload": "string"}.
      * </p>
      * <p>
-     * Note that the field names of message payloads (data) that you send to AWS IoT Analytics:
+     * The field names of message payloads (data) that you send to AWS IoT Analytics:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Must contain only alphanumeric characters and undescores (_); no other special characters are allowed.
+     * Must contain only alphanumeric characters and undescores (_). No other special characters are allowed.
      * </p>
      * </li>
      * <li>
@@ -333,12 +333,12 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * Cannot be greater than 255 characters.
+     * Cannot be more than 255 characters.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Are case-insensitive. (Fields named "foo" and "FOO" in the same payload are considered duplicates.)
+     * Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)
      * </p>
      * </li>
      * </ul>
@@ -353,15 +353,15 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param messages
-     *        The list of messages to be sent. Each message has format: '{ "messageId": "string", "payload":
-     *        "string"}'.</p>
+     *        The list of messages to be sent. Each message has the format: { "messageId": "string", "payload":
+     *        "string"}.</p>
      *        <p>
-     *        Note that the field names of message payloads (data) that you send to AWS IoT Analytics:
+     *        The field names of message payloads (data) that you send to AWS IoT Analytics:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain only alphanumeric characters and undescores (_); no other special characters are allowed.
+     *        Must contain only alphanumeric characters and undescores (_). No other special characters are allowed.
      *        </p>
      *        </li>
      *        <li>
@@ -381,12 +381,12 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot be greater than 255 characters.
+     *        Cannot be more than 255 characters.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Are case-insensitive. (Fields named "foo" and "FOO" in the same payload are considered duplicates.)
+     *        Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)
      *        </p>
      *        </li>
      *        </ul>
@@ -408,15 +408,15 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The list of messages to be sent. Each message has format: '{ "messageId": "string", "payload": "string"}'.
+     * The list of messages to be sent. Each message has the format: { "messageId": "string", "payload": "string"}.
      * </p>
      * <p>
-     * Note that the field names of message payloads (data) that you send to AWS IoT Analytics:
+     * The field names of message payloads (data) that you send to AWS IoT Analytics:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Must contain only alphanumeric characters and undescores (_); no other special characters are allowed.
+     * Must contain only alphanumeric characters and undescores (_). No other special characters are allowed.
      * </p>
      * </li>
      * <li>
@@ -436,12 +436,12 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * Cannot be greater than 255 characters.
+     * Cannot be more than 255 characters.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Are case-insensitive. (Fields named "foo" and "FOO" in the same payload are considered duplicates.)
+     * Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)
      * </p>
      * </li>
      * </ul>
@@ -451,15 +451,15 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param messages
-     *        The list of messages to be sent. Each message has format: '{ "messageId": "string", "payload":
-     *        "string"}'.</p>
+     *        The list of messages to be sent. Each message has the format: { "messageId": "string", "payload":
+     *        "string"}.</p>
      *        <p>
-     *        Note that the field names of message payloads (data) that you send to AWS IoT Analytics:
+     *        The field names of message payloads (data) that you send to AWS IoT Analytics:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain only alphanumeric characters and undescores (_); no other special characters are allowed.
+     *        Must contain only alphanumeric characters and undescores (_). No other special characters are allowed.
      *        </p>
      *        </li>
      *        <li>
@@ -479,12 +479,12 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot be greater than 255 characters.
+     *        Cannot be more than 255 characters.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Are case-insensitive. (Fields named "foo" and "FOO" in the same payload are considered duplicates.)
+     *        Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)
      *        </p>
      *        </li>
      *        </ul>

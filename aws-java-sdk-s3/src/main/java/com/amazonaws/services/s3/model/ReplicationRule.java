@@ -68,7 +68,16 @@ public class ReplicationRule implements Serializable {
     private DeleteMarkerReplication deleteMarkerReplication;
 
     /**
-     * Returns the priority of current rule.
+     * Returns priority associated with the rule. If you specify multiple rules in a replication configuration, Amazon
+     * S3 prioritizes the rules to prevent conflicts when filtering. If two or more rules identify the same object based
+     * on a specified filter, the rule with higher priority takes precedence. For example:
+     * <ul>
+     *   <li> Same object quality prefix-based filter criteria if prefixes you specified in multiple rules overlap </li>
+     *   <li> Same object qualify tag-based filter criteria specified in multiple rules </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html\">Replication</a>
+     * in the <i>Amazon Simple Storage Service Developer Guide</i>.
      */
     public Integer getPriority() {
         return priority;

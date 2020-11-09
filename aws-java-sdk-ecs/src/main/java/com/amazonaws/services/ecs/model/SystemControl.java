@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a
  * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a
  * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a
- * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+ * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
  * </p>
  * <p>
  * It is not recommended that you specify network-related <code>systemControls</code> parameters for multiple containers

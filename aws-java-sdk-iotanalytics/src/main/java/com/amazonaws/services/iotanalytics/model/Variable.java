@@ -19,8 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An instance of a variable to be passed to the "containerAction" execution. Each variable must have a name and a value
- * given by one of "stringValue", "datasetContentVersionValue", or "outputFileUriValue".
+ * An instance of a variable to be passed to the <code>containerAction</code> execution. Each variable must have a name
+ * and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>, or
+ * <code>outputFileUriValue</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/Variable" target="_top">AWS API
@@ -49,7 +50,7 @@ public class Variable implements Serializable, Cloneable, StructuredPojo {
     private Double doubleValue;
     /**
      * <p>
-     * The value of the variable as a structure that specifies a data set content version.
+     * The value of the variable as a structure that specifies a dataset content version.
      * </p>
      */
     private DatasetContentVersionValue datasetContentVersionValue;
@@ -182,11 +183,11 @@ public class Variable implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value of the variable as a structure that specifies a data set content version.
+     * The value of the variable as a structure that specifies a dataset content version.
      * </p>
      * 
      * @param datasetContentVersionValue
-     *        The value of the variable as a structure that specifies a data set content version.
+     *        The value of the variable as a structure that specifies a dataset content version.
      */
 
     public void setDatasetContentVersionValue(DatasetContentVersionValue datasetContentVersionValue) {
@@ -195,10 +196,10 @@ public class Variable implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value of the variable as a structure that specifies a data set content version.
+     * The value of the variable as a structure that specifies a dataset content version.
      * </p>
      * 
-     * @return The value of the variable as a structure that specifies a data set content version.
+     * @return The value of the variable as a structure that specifies a dataset content version.
      */
 
     public DatasetContentVersionValue getDatasetContentVersionValue() {
@@ -207,11 +208,11 @@ public class Variable implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value of the variable as a structure that specifies a data set content version.
+     * The value of the variable as a structure that specifies a dataset content version.
      * </p>
      * 
      * @param datasetContentVersionValue
-     *        The value of the variable as a structure that specifies a data set content version.
+     *        The value of the variable as a structure that specifies a dataset content version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

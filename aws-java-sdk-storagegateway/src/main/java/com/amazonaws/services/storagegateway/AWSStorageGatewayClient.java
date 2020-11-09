@@ -2556,6 +2556,86 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Returns information about the bandwidth rate limit schedule of a gateway. By default, gateways do not have
+     * bandwidth rate limit schedules, which means no bandwidth rate limiting is in effect. This operation is supported
+     * only in the volume and tape gateway types.
+     * </p>
+     * <p>
+     * This operation returns information about a gateway's bandwidth rate limit schedule. A bandwidth rate limit
+     * schedule consists of one or more bandwidth rate limit intervals. A bandwidth rate limit interval defines a period
+     * of time on one or more days of the week, during which bandwidth rate limits are specified for uploading,
+     * downloading, or both.
+     * </p>
+     * <p>
+     * A bandwidth rate limit interval consists of one or more days of the week, a start hour and minute, an ending hour
+     * and minute, and bandwidth rate limits for uploading and downloading
+     * </p>
+     * <p>
+     * If no bandwidth rate limit schedule intervals are set for the gateway, this operation returns an empty response.
+     * To specify which gateway to describe, use the Amazon Resource Name (ARN) of the gateway in your request.
+     * </p>
+     * 
+     * @param describeBandwidthRateLimitScheduleRequest
+     * @return Result of the DescribeBandwidthRateLimitSchedule operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.DescribeBandwidthRateLimitSchedule
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimitSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeBandwidthRateLimitScheduleResult describeBandwidthRateLimitSchedule(DescribeBandwidthRateLimitScheduleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeBandwidthRateLimitSchedule(request);
+    }
+
+    @SdkInternalApi
+    final DescribeBandwidthRateLimitScheduleResult executeDescribeBandwidthRateLimitSchedule(
+            DescribeBandwidthRateLimitScheduleRequest describeBandwidthRateLimitScheduleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeBandwidthRateLimitScheduleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeBandwidthRateLimitScheduleRequest> request = null;
+        Response<DescribeBandwidthRateLimitScheduleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeBandwidthRateLimitScheduleRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeBandwidthRateLimitScheduleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBandwidthRateLimitSchedule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeBandwidthRateLimitScheduleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeBandwidthRateLimitScheduleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns information about the cache of a gateway. This operation is only supported in the cached volume, tape,
      * and file gateway types.
      * </p>
@@ -5463,6 +5543,71 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
             HttpResponseHandler<AmazonWebServiceResponse<UpdateBandwidthRateLimitResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateBandwidthRateLimitResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the bandwidth rate limit schedule for a specified gateway. By default, gateways do not have bandwidth
+     * rate limit schedules, which means no bandwidth rate limiting is in effect. Use this to initiate or update a
+     * gateway's bandwidth rate limit schedule. This operation is supported in the volume and tape gateway types.
+     * </p>
+     * 
+     * @param updateBandwidthRateLimitScheduleRequest
+     * @return Result of the UpdateBandwidthRateLimitSchedule operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.UpdateBandwidthRateLimitSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimitSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateBandwidthRateLimitScheduleResult updateBandwidthRateLimitSchedule(UpdateBandwidthRateLimitScheduleRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateBandwidthRateLimitSchedule(request);
+    }
+
+    @SdkInternalApi
+    final UpdateBandwidthRateLimitScheduleResult executeUpdateBandwidthRateLimitSchedule(
+            UpdateBandwidthRateLimitScheduleRequest updateBandwidthRateLimitScheduleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateBandwidthRateLimitScheduleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateBandwidthRateLimitScheduleRequest> request = null;
+        Response<UpdateBandwidthRateLimitScheduleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateBandwidthRateLimitScheduleRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateBandwidthRateLimitScheduleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateBandwidthRateLimitSchedule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateBandwidthRateLimitScheduleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateBandwidthRateLimitScheduleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

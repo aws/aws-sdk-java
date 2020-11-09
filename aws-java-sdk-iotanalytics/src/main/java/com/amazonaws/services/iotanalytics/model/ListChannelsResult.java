@@ -25,7 +25,7 @@ public class ListChannelsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of "ChannelSummary" objects.
+     * A list of <code>ChannelSummary</code> objects.
      * </p>
      */
     private java.util.List<ChannelSummary> channelSummaries;
@@ -38,10 +38,10 @@ public class ListChannelsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of "ChannelSummary" objects.
+     * A list of <code>ChannelSummary</code> objects.
      * </p>
      * 
-     * @return A list of "ChannelSummary" objects.
+     * @return A list of <code>ChannelSummary</code> objects.
      */
 
     public java.util.List<ChannelSummary> getChannelSummaries() {
@@ -50,11 +50,11 @@ public class ListChannelsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of "ChannelSummary" objects.
+     * A list of <code>ChannelSummary</code> objects.
      * </p>
      * 
      * @param channelSummaries
-     *        A list of "ChannelSummary" objects.
+     *        A list of <code>ChannelSummary</code> objects.
      */
 
     public void setChannelSummaries(java.util.Collection<ChannelSummary> channelSummaries) {
@@ -68,7 +68,7 @@ public class ListChannelsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of "ChannelSummary" objects.
+     * A list of <code>ChannelSummary</code> objects.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListChannelsResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param channelSummaries
-     *        A list of "ChannelSummary" objects.
+     *        A list of <code>ChannelSummary</code> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListChannelsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of "ChannelSummary" objects.
+     * A list of <code>ChannelSummary</code> objects.
      * </p>
      * 
      * @param channelSummaries
-     *        A list of "ChannelSummary" objects.
+     *        A list of <code>ChannelSummary</code> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

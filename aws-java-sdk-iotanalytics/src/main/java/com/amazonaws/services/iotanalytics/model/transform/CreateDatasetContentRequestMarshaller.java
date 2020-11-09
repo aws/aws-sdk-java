@@ -29,6 +29,8 @@ public class CreateDatasetContentRequestMarshaller {
 
     private static final MarshallingInfo<String> DATASETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("datasetName").build();
+    private static final MarshallingInfo<String> VERSIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("versionId").build();
 
     private static final CreateDatasetContentRequestMarshaller instance = new CreateDatasetContentRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class CreateDatasetContentRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createDatasetContentRequest.getDatasetName(), DATASETNAME_BINDING);
+            protocolMarshaller.marshall(createDatasetContentRequest.getVersionId(), VERSIONID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

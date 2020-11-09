@@ -136,6 +136,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                             new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatchException").withExceptionUnmarshaller(
                                     com.amazonaws.services.dynamodbv2.model.transform.IdempotentParameterMismatchExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ExportNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.ExportNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TransactionInProgressException").withExceptionUnmarshaller(
                                     com.amazonaws.services.dynamodbv2.model.transform.TransactionInProgressExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -153,6 +156,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TableAlreadyExistsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.dynamodbv2.model.transform.TableAlreadyExistsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ExportConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.ExportConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TransactionConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.dynamodbv2.model.transform.TransactionConflictExceptionUnmarshaller.getInstance()))
@@ -174,6 +180,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TransactionCanceledException").withExceptionUnmarshaller(
                                     com.amazonaws.services.dynamodbv2.model.transform.TransactionCanceledExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidExportTimeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.InvalidExportTimeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withExceptionUnmarshaller(
                                     com.amazonaws.services.dynamodbv2.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
@@ -1655,6 +1664,79 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Describes an existing table export.
+     * </p>
+     * 
+     * @param describeExportRequest
+     * @return Result of the DescribeExport operation returned by the service.
+     * @throws ExportNotFoundException
+     *         The specified export was not found.
+     * @throws LimitExceededException
+     *         There is no limit to the number of daily on-demand backups that can be taken. </p>
+     *         <p>
+     *         Up to 50 simultaneous table operations are allowed per account. These operations include
+     *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
+     *         <code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and
+     *         <code>RestoreTableToPointInTime</code>.
+     *         </p>
+     *         <p>
+     *         The only exception is when you are creating a table with one or more secondary indexes. You can have up
+     *         to 25 such requests running at a time; however, if the table or index specifications are complex,
+     *         DynamoDB might temporarily reduce the number of concurrent operations.
+     *         </p>
+     *         <p>
+     *         There is a soft account quota of 256 tables.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.DescribeExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeExportResult describeExport(DescribeExportRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeExport(request);
+    }
+
+    @SdkInternalApi
+    final DescribeExportResult executeDescribeExport(DescribeExportRequest describeExportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeExportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeExportRequest> request = null;
+        Response<DescribeExportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeExportRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeExportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeExport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeExportResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeExportResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns information about the specified global table.
      * </p>
      * <note>
@@ -2163,6 +2245,89 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Exports table data to an S3 bucket. The table must have point in time recovery enabled, and you can export data
+     * from any time within the point in time recovery window.
+     * </p>
+     * 
+     * @param exportTableToPointInTimeRequest
+     * @return Result of the ExportTableToPointInTime operation returned by the service.
+     * @throws TableNotFoundException
+     *         A source table with the name <code>TableName</code> does not currently exist within the subscriber's
+     *         account.
+     * @throws PointInTimeRecoveryUnavailableException
+     *         Point in time recovery has not yet been enabled for this source table.
+     * @throws LimitExceededException
+     *         There is no limit to the number of daily on-demand backups that can be taken. </p>
+     *         <p>
+     *         Up to 50 simultaneous table operations are allowed per account. These operations include
+     *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
+     *         <code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and
+     *         <code>RestoreTableToPointInTime</code>.
+     *         </p>
+     *         <p>
+     *         The only exception is when you are creating a table with one or more secondary indexes. You can have up
+     *         to 25 such requests running at a time; however, if the table or index specifications are complex,
+     *         DynamoDB might temporarily reduce the number of concurrent operations.
+     *         </p>
+     *         <p>
+     *         There is a soft account quota of 256 tables.
+     * @throws InvalidExportTimeException
+     *         The specified <code>ExportTime</code> is outside of the point in time recovery window.
+     * @throws ExportConflictException
+     *         There was a conflict when writing to the specified S3 bucket.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.ExportTableToPointInTime
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExportTableToPointInTime"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ExportTableToPointInTimeResult exportTableToPointInTime(ExportTableToPointInTimeRequest request) {
+        request = beforeClientExecution(request);
+        return executeExportTableToPointInTime(request);
+    }
+
+    @SdkInternalApi
+    final ExportTableToPointInTimeResult executeExportTableToPointInTime(ExportTableToPointInTimeRequest exportTableToPointInTimeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(exportTableToPointInTimeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ExportTableToPointInTimeRequest> request = null;
+        Response<ExportTableToPointInTimeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ExportTableToPointInTimeRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(exportTableToPointInTimeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportTableToPointInTime");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ExportTableToPointInTimeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ExportTableToPointInTimeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * The <code>GetItem</code> operation returns a set of attributes for the item with the given primary key. If there
      * is no matching item, <code>GetItem</code> does not return any data and there will be no <code>Item</code> element
      * in the response.
@@ -2373,6 +2538,77 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             HttpResponseHandler<AmazonWebServiceResponse<ListContributorInsightsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListContributorInsightsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists completed exports within the past 90 days.
+     * </p>
+     * 
+     * @param listExportsRequest
+     * @return Result of the ListExports operation returned by the service.
+     * @throws LimitExceededException
+     *         There is no limit to the number of daily on-demand backups that can be taken. </p>
+     *         <p>
+     *         Up to 50 simultaneous table operations are allowed per account. These operations include
+     *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
+     *         <code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and
+     *         <code>RestoreTableToPointInTime</code>.
+     *         </p>
+     *         <p>
+     *         The only exception is when you are creating a table with one or more secondary indexes. You can have up
+     *         to 25 such requests running at a time; however, if the table or index specifications are complex,
+     *         DynamoDB might temporarily reduce the number of concurrent operations.
+     *         </p>
+     *         <p>
+     *         There is a soft account quota of 256 tables.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.ListExports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListExports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListExportsResult listExports(ListExportsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListExports(request);
+    }
+
+    @SdkInternalApi
+    final ListExportsResult executeListExports(ListExportsRequest listExportsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listExportsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListExportsRequest> request = null;
+        Response<ListExportsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListExportsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listExportsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListExports");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListExportsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListExportsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

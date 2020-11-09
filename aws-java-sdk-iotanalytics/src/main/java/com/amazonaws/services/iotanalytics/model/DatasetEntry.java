@@ -36,7 +36,7 @@ public class DatasetEntry implements Serializable, Cloneable, StructuredPojo {
     private String entryName;
     /**
      * <p>
-     * The pre-signed URI of the data set item.
+     * The presigned URI of the data set item.
      * </p>
      */
     private String dataURI;
@@ -83,11 +83,11 @@ public class DatasetEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The pre-signed URI of the data set item.
+     * The presigned URI of the data set item.
      * </p>
      * 
      * @param dataURI
-     *        The pre-signed URI of the data set item.
+     *        The presigned URI of the data set item.
      */
 
     public void setDataURI(String dataURI) {
@@ -96,10 +96,10 @@ public class DatasetEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The pre-signed URI of the data set item.
+     * The presigned URI of the data set item.
      * </p>
      * 
-     * @return The pre-signed URI of the data set item.
+     * @return The presigned URI of the data set item.
      */
 
     public String getDataURI() {
@@ -108,11 +108,11 @@ public class DatasetEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The pre-signed URI of the data set item.
+     * The presigned URI of the data set item.
      * </p>
      * 
      * @param dataURI
-     *        The pre-signed URI of the data set item.
+     *        The presigned URI of the data set item.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

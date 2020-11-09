@@ -866,6 +866,17 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
     }
 
     /**
+     * @return The archive status for the object. Returns null if the object is not archived.
+     */
+    public String getArchiveStatus() {
+        final Object archiveStatus = metadata.get(Headers.ARCHIVE_STATUS);
+        if (archiveStatus == null) {
+            return null;
+        }
+        return archiveStatus.toString();
+    }
+
+    /**
      * Returns the value of the specified user meta datum.
      */
     public String getUserMetaDataOf(String key) {
@@ -990,4 +1001,5 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
     public String getObjectLockLegalHoldStatus() {
         return (String) metadata.get(Headers.OBJECT_LOCK_LEGAL_HOLD_STATUS);
     }
+
 }

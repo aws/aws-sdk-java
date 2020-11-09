@@ -77,6 +77,9 @@ public interface Headers {
     /** Header describing what class of storage a user wants */
     String STORAGE_CLASS = "x-amz-storage-class";
 
+    /** Header describing what archive tier the object is in, if any */
+    String ARCHIVE_STATUS = "x-amz-archive-status";
+
     /** Header for optional server-side encryption algorithm */
     String SERVER_SIDE_ENCRYPTION = "x-amz-server-side-encryption";
 

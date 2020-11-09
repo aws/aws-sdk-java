@@ -30,7 +30,7 @@ public class ChannelActivity implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the 'channel' activity.
+     * The name of the channel activity.
      * </p>
      */
     private String name;
@@ -49,11 +49,11 @@ public class ChannelActivity implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the 'channel' activity.
+     * The name of the channel activity.
      * </p>
      * 
      * @param name
-     *        The name of the 'channel' activity.
+     *        The name of the channel activity.
      */
 
     public void setName(String name) {
@@ -62,10 +62,10 @@ public class ChannelActivity implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the 'channel' activity.
+     * The name of the channel activity.
      * </p>
      * 
-     * @return The name of the 'channel' activity.
+     * @return The name of the channel activity.
      */
 
     public String getName() {
@@ -74,11 +74,11 @@ public class ChannelActivity implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the 'channel' activity.
+     * The name of the channel activity.
      * </p>
      * 
      * @param name
-     *        The name of the 'channel' activity.
+     *        The name of the channel activity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

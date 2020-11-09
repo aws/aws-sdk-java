@@ -1232,6 +1232,37 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
 
     /**
      * <p>
+     * Describes an existing table export.
+     * </p>
+     * 
+     * @param describeExportRequest
+     * @return A Java Future containing the result of the DescribeExport operation returned by the service.
+     * @sample AmazonDynamoDBAsync.DescribeExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeExportResult> describeExportAsync(DescribeExportRequest describeExportRequest);
+
+    /**
+     * <p>
+     * Describes an existing table export.
+     * </p>
+     * 
+     * @param describeExportRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeExport operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.DescribeExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeExportResult> describeExportAsync(DescribeExportRequest describeExportRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeExportRequest, DescribeExportResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about the specified global table.
      * </p>
      * <note>
@@ -1687,6 +1718,39 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
 
     /**
      * <p>
+     * Exports table data to an S3 bucket. The table must have point in time recovery enabled, and you can export data
+     * from any time within the point in time recovery window.
+     * </p>
+     * 
+     * @param exportTableToPointInTimeRequest
+     * @return A Java Future containing the result of the ExportTableToPointInTime operation returned by the service.
+     * @sample AmazonDynamoDBAsync.ExportTableToPointInTime
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExportTableToPointInTime"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ExportTableToPointInTimeResult> exportTableToPointInTimeAsync(ExportTableToPointInTimeRequest exportTableToPointInTimeRequest);
+
+    /**
+     * <p>
+     * Exports table data to an S3 bucket. The table must have point in time recovery enabled, and you can export data
+     * from any time within the point in time recovery window.
+     * </p>
+     * 
+     * @param exportTableToPointInTimeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ExportTableToPointInTime operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.ExportTableToPointInTime
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExportTableToPointInTime"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ExportTableToPointInTimeResult> exportTableToPointInTimeAsync(ExportTableToPointInTimeRequest exportTableToPointInTimeRequest,
+            com.amazonaws.handlers.AsyncHandler<ExportTableToPointInTimeRequest, ExportTableToPointInTimeResult> asyncHandler);
+
+    /**
+     * <p>
      * The <code>GetItem</code> operation returns a set of attributes for the item with the given primary key. If there
      * is no matching item, <code>GetItem</code> does not return any data and there will be no <code>Item</code> element
      * in the response.
@@ -1841,6 +1905,37 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      */
     java.util.concurrent.Future<ListContributorInsightsResult> listContributorInsightsAsync(ListContributorInsightsRequest listContributorInsightsRequest,
             com.amazonaws.handlers.AsyncHandler<ListContributorInsightsRequest, ListContributorInsightsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists completed exports within the past 90 days.
+     * </p>
+     * 
+     * @param listExportsRequest
+     * @return A Java Future containing the result of the ListExports operation returned by the service.
+     * @sample AmazonDynamoDBAsync.ListExports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListExports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListExportsResult> listExportsAsync(ListExportsRequest listExportsRequest);
+
+    /**
+     * <p>
+     * Lists completed exports within the past 90 days.
+     * </p>
+     * 
+     * @param listExportsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListExports operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.ListExports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListExports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListExportsResult> listExportsAsync(ListExportsRequest listExportsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListExportsRequest, ListExportsResult> asyncHandler);
 
     /**
      * <p>

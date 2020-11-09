@@ -75,6 +75,39 @@ public class AmazonFSxAsyncClient extends AmazonFSxClient implements AmazonFSxAs
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateFileSystemAliasesResult> associateFileSystemAliasesAsync(AssociateFileSystemAliasesRequest request) {
+
+        return associateFileSystemAliasesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateFileSystemAliasesResult> associateFileSystemAliasesAsync(final AssociateFileSystemAliasesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateFileSystemAliasesRequest, AssociateFileSystemAliasesResult> asyncHandler) {
+        final AssociateFileSystemAliasesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateFileSystemAliasesResult>() {
+            @Override
+            public AssociateFileSystemAliasesResult call() throws Exception {
+                AssociateFileSystemAliasesResult result = null;
+
+                try {
+                    result = executeAssociateFileSystemAliases(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelDataRepositoryTaskResult> cancelDataRepositoryTaskAsync(CancelDataRepositoryTaskRequest request) {
 
         return cancelDataRepositoryTaskAsync(request, null);
@@ -372,6 +405,39 @@ public class AmazonFSxAsyncClient extends AmazonFSxClient implements AmazonFSxAs
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeFileSystemAliasesResult> describeFileSystemAliasesAsync(DescribeFileSystemAliasesRequest request) {
+
+        return describeFileSystemAliasesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFileSystemAliasesResult> describeFileSystemAliasesAsync(final DescribeFileSystemAliasesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeFileSystemAliasesRequest, DescribeFileSystemAliasesResult> asyncHandler) {
+        final DescribeFileSystemAliasesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeFileSystemAliasesResult>() {
+            @Override
+            public DescribeFileSystemAliasesResult call() throws Exception {
+                DescribeFileSystemAliasesResult result = null;
+
+                try {
+                    result = executeDescribeFileSystemAliases(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeFileSystemsResult> describeFileSystemsAsync(DescribeFileSystemsRequest request) {
 
         return describeFileSystemsAsync(request, null);
@@ -389,6 +455,40 @@ public class AmazonFSxAsyncClient extends AmazonFSxClient implements AmazonFSxAs
 
                 try {
                     result = executeDescribeFileSystems(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateFileSystemAliasesResult> disassociateFileSystemAliasesAsync(DisassociateFileSystemAliasesRequest request) {
+
+        return disassociateFileSystemAliasesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateFileSystemAliasesResult> disassociateFileSystemAliasesAsync(
+            final DisassociateFileSystemAliasesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateFileSystemAliasesRequest, DisassociateFileSystemAliasesResult> asyncHandler) {
+        final DisassociateFileSystemAliasesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateFileSystemAliasesResult>() {
+            @Override
+            public DisassociateFileSystemAliasesResult call() throws Exception {
+                DisassociateFileSystemAliasesResult result = null;
+
+                try {
+                    result = executeDisassociateFileSystemAliases(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

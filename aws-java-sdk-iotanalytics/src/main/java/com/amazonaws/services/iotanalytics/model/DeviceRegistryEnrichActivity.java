@@ -30,7 +30,7 @@ public class DeviceRegistryEnrichActivity implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The name of the 'deviceRegistryEnrich' activity.
+     * The name of the <code>deviceRegistryEnrich</code> activity.
      * </p>
      */
     private String name;
@@ -61,11 +61,11 @@ public class DeviceRegistryEnrichActivity implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The name of the 'deviceRegistryEnrich' activity.
+     * The name of the <code>deviceRegistryEnrich</code> activity.
      * </p>
      * 
      * @param name
-     *        The name of the 'deviceRegistryEnrich' activity.
+     *        The name of the <code>deviceRegistryEnrich</code> activity.
      */
 
     public void setName(String name) {
@@ -74,10 +74,10 @@ public class DeviceRegistryEnrichActivity implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The name of the 'deviceRegistryEnrich' activity.
+     * The name of the <code>deviceRegistryEnrich</code> activity.
      * </p>
      * 
-     * @return The name of the 'deviceRegistryEnrich' activity.
+     * @return The name of the <code>deviceRegistryEnrich</code> activity.
      */
 
     public String getName() {
@@ -86,11 +86,11 @@ public class DeviceRegistryEnrichActivity implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The name of the 'deviceRegistryEnrich' activity.
+     * The name of the <code>deviceRegistryEnrich</code> activity.
      * </p>
      * 
      * @param name
-     *        The name of the 'deviceRegistryEnrich' activity.
+     *        The name of the <code>deviceRegistryEnrich</code> activity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

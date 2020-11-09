@@ -25,18 +25,18 @@ public class DescribePipelineResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A "Pipeline" object that contains information about the pipeline.
+     * A <code>Pipeline</code> object that contains information about the pipeline.
      * </p>
      */
     private Pipeline pipeline;
 
     /**
      * <p>
-     * A "Pipeline" object that contains information about the pipeline.
+     * A <code>Pipeline</code> object that contains information about the pipeline.
      * </p>
      * 
      * @param pipeline
-     *        A "Pipeline" object that contains information about the pipeline.
+     *        A <code>Pipeline</code> object that contains information about the pipeline.
      */
 
     public void setPipeline(Pipeline pipeline) {
@@ -45,10 +45,10 @@ public class DescribePipelineResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A "Pipeline" object that contains information about the pipeline.
+     * A <code>Pipeline</code> object that contains information about the pipeline.
      * </p>
      * 
-     * @return A "Pipeline" object that contains information about the pipeline.
+     * @return A <code>Pipeline</code> object that contains information about the pipeline.
      */
 
     public Pipeline getPipeline() {
@@ -57,11 +57,11 @@ public class DescribePipelineResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A "Pipeline" object that contains information about the pipeline.
+     * A <code>Pipeline</code> object that contains information about the pipeline.
      * </p>
      * 
      * @param pipeline
-     *        A "Pipeline" object that contains information about the pipeline.
+     *        A <code>Pipeline</code> object that contains information about the pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

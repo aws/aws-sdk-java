@@ -35,7 +35,7 @@ public class CreateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
      * path. The path should be such that it can be mounted by other NFS clients in your network.
      * </p>
      * <p>
-     * To see all the paths exported by your NFS server. run "<code>showmount -e nfs-server-name</code>" from an NFS
+     * To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS
      * client that has access to your server. You can specify any directory that appears in the results, and any
      * subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication.
      * </p>
@@ -105,7 +105,7 @@ public class CreateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
      * path. The path should be such that it can be mounted by other NFS clients in your network.
      * </p>
      * <p>
-     * To see all the paths exported by your NFS server. run "<code>showmount -e nfs-server-name</code>" from an NFS
+     * To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS
      * client that has access to your server. You can specify any directory that appears in the results, and any
      * subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication.
      * </p>
@@ -131,7 +131,7 @@ public class CreateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
      *        subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your
      *        network. </p>
      *        <p>
-     *        To see all the paths exported by your NFS server. run "<code>showmount -e nfs-server-name</code>" from an
+     *        To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an
      *        NFS client that has access to your server. You can specify any directory that appears in the results, and
      *        any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos
      *        authentication.
@@ -164,7 +164,7 @@ public class CreateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
      * path. The path should be such that it can be mounted by other NFS clients in your network.
      * </p>
      * <p>
-     * To see all the paths exported by your NFS server. run "<code>showmount -e nfs-server-name</code>" from an NFS
+     * To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS
      * client that has access to your server. You can specify any directory that appears in the results, and any
      * subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication.
      * </p>
@@ -189,7 +189,7 @@ public class CreateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
      *         subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your
      *         network. </p>
      *         <p>
-     *         To see all the paths exported by your NFS server. run "<code>showmount -e nfs-server-name</code>" from an
+     *         To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an
      *         NFS client that has access to your server. You can specify any directory that appears in the results, and
      *         any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos
      *         authentication.
@@ -222,7 +222,7 @@ public class CreateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
      * path. The path should be such that it can be mounted by other NFS clients in your network.
      * </p>
      * <p>
-     * To see all the paths exported by your NFS server. run "<code>showmount -e nfs-server-name</code>" from an NFS
+     * To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS
      * client that has access to your server. You can specify any directory that appears in the results, and any
      * subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication.
      * </p>
@@ -248,7 +248,7 @@ public class CreateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
      *        subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your
      *        network. </p>
      *        <p>
-     *        To see all the paths exported by your NFS server. run "<code>showmount -e nfs-server-name</code>" from an
+     *        To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an
      *        NFS client that has access to your server. You can specify any directory that appears in the results, and
      *        any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos
      *        authentication.

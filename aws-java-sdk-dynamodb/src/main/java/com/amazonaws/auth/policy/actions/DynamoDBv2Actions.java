@@ -49,6 +49,8 @@ public enum DynamoDBv2Actions implements Action {
     DescribeContributorInsights("dynamodb:DescribeContributorInsights"),
     /** Action for the DescribeEndpoints operation. */
     DescribeEndpoints("dynamodb:DescribeEndpoints"),
+    /** Action for the DescribeExport operation. */
+    DescribeExport("dynamodb:DescribeExport"),
     /** Action for the DescribeGlobalTable operation. */
     DescribeGlobalTable("dynamodb:DescribeGlobalTable"),
     /** Action for the DescribeGlobalTableSettings operation. */
@@ -61,12 +63,16 @@ public enum DynamoDBv2Actions implements Action {
     DescribeTableReplicaAutoScaling("dynamodb:DescribeTableReplicaAutoScaling"),
     /** Action for the DescribeTimeToLive operation. */
     DescribeTimeToLive("dynamodb:DescribeTimeToLive"),
+    /** Action for the ExportTableToPointInTime operation. */
+    ExportTableToPointInTime("dynamodb:ExportTableToPointInTime"),
     /** Action for the GetItem operation. */
     GetItem("dynamodb:GetItem"),
     /** Action for the ListBackups operation. */
     ListBackups("dynamodb:ListBackups"),
     /** Action for the ListContributorInsights operation. */
     ListContributorInsights("dynamodb:ListContributorInsights"),
+    /** Action for the ListExports operation. */
+    ListExports("dynamodb:ListExports"),
     /** Action for the ListGlobalTables operation. */
     ListGlobalTables("dynamodb:ListGlobalTables"),
     /** Action for the ListTables operation. */

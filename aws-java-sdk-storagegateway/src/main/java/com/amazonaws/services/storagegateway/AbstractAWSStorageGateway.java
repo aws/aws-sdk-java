@@ -188,6 +188,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
+    public DescribeBandwidthRateLimitScheduleResult describeBandwidthRateLimitSchedule(DescribeBandwidthRateLimitScheduleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeCacheResult describeCache(DescribeCacheRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -414,6 +419,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
 
     @Override
     public UpdateBandwidthRateLimitResult updateBandwidthRateLimit(UpdateBandwidthRateLimitRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateBandwidthRateLimitScheduleResult updateBandwidthRateLimitSchedule(UpdateBandwidthRateLimitScheduleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

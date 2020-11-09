@@ -1327,6 +1327,41 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeBandwidthRateLimitScheduleResult> describeBandwidthRateLimitScheduleAsync(
+            DescribeBandwidthRateLimitScheduleRequest request) {
+
+        return describeBandwidthRateLimitScheduleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBandwidthRateLimitScheduleResult> describeBandwidthRateLimitScheduleAsync(
+            final DescribeBandwidthRateLimitScheduleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeBandwidthRateLimitScheduleRequest, DescribeBandwidthRateLimitScheduleResult> asyncHandler) {
+        final DescribeBandwidthRateLimitScheduleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeBandwidthRateLimitScheduleResult>() {
+            @Override
+            public DescribeBandwidthRateLimitScheduleResult call() throws Exception {
+                DescribeBandwidthRateLimitScheduleResult result = null;
+
+                try {
+                    result = executeDescribeBandwidthRateLimitSchedule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeCacheResult> describeCacheAsync(DescribeCacheRequest request) {
 
         return describeCacheAsync(request, null);
@@ -2793,6 +2828,41 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
 
                 try {
                     result = executeUpdateBandwidthRateLimit(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBandwidthRateLimitScheduleResult> updateBandwidthRateLimitScheduleAsync(
+            UpdateBandwidthRateLimitScheduleRequest request) {
+
+        return updateBandwidthRateLimitScheduleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBandwidthRateLimitScheduleResult> updateBandwidthRateLimitScheduleAsync(
+            final UpdateBandwidthRateLimitScheduleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateBandwidthRateLimitScheduleRequest, UpdateBandwidthRateLimitScheduleResult> asyncHandler) {
+        final UpdateBandwidthRateLimitScheduleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateBandwidthRateLimitScheduleResult>() {
+            @Override
+            public UpdateBandwidthRateLimitScheduleResult call() throws Exception {
+                UpdateBandwidthRateLimitScheduleResult result = null;
+
+                try {
+                    result = executeUpdateBandwidthRateLimitSchedule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

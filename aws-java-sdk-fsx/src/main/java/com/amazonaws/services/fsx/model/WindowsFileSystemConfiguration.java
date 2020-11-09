@@ -152,6 +152,8 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      */
     private Boolean copyTagsToBackups;
 
+    private java.util.List<Alias> aliases;
+
     /**
      * <p>
      * The ID for an existing Microsoft Active Directory instance that the file system should join when it's created.
@@ -1093,6 +1095,58 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<Alias> getAliases() {
+        return aliases;
+    }
+
+    /**
+     * @param aliases
+     */
+
+    public void setAliases(java.util.Collection<Alias> aliases) {
+        if (aliases == null) {
+            this.aliases = null;
+            return;
+        }
+
+        this.aliases = new java.util.ArrayList<Alias>(aliases);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAliases(java.util.Collection)} or {@link #withAliases(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param aliases
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WindowsFileSystemConfiguration withAliases(Alias... aliases) {
+        if (this.aliases == null) {
+            setAliases(new java.util.ArrayList<Alias>(aliases.length));
+        }
+        for (Alias ele : aliases) {
+            this.aliases.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param aliases
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WindowsFileSystemConfiguration withAliases(java.util.Collection<Alias> aliases) {
+        setAliases(aliases);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1127,7 +1181,9 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
         if (getAutomaticBackupRetentionDays() != null)
             sb.append("AutomaticBackupRetentionDays: ").append(getAutomaticBackupRetentionDays()).append(",");
         if (getCopyTagsToBackups() != null)
-            sb.append("CopyTagsToBackups: ").append(getCopyTagsToBackups());
+            sb.append("CopyTagsToBackups: ").append(getCopyTagsToBackups()).append(",");
+        if (getAliases() != null)
+            sb.append("Aliases: ").append(getAliases());
         sb.append("}");
         return sb.toString();
     }
@@ -1193,6 +1249,10 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
             return false;
         if (other.getCopyTagsToBackups() != null && other.getCopyTagsToBackups().equals(this.getCopyTagsToBackups()) == false)
             return false;
+        if (other.getAliases() == null ^ this.getAliases() == null)
+            return false;
+        if (other.getAliases() != null && other.getAliases().equals(this.getAliases()) == false)
+            return false;
         return true;
     }
 
@@ -1213,6 +1273,7 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
         hashCode = prime * hashCode + ((getDailyAutomaticBackupStartTime() == null) ? 0 : getDailyAutomaticBackupStartTime().hashCode());
         hashCode = prime * hashCode + ((getAutomaticBackupRetentionDays() == null) ? 0 : getAutomaticBackupRetentionDays().hashCode());
         hashCode = prime * hashCode + ((getCopyTagsToBackups() == null) ? 0 : getCopyTagsToBackups().hashCode());
+        hashCode = prime * hashCode + ((getAliases() == null) ? 0 : getAliases().hashCode());
         return hashCode;
     }
 

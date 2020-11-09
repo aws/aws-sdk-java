@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Provides details about the location of an occurrence of sensitive data in an Adobe Portable Document Format file,
- * Apache Avro object container, Microsoft Word document, or non-binary text file.
+ * Microsoft Word document, or non-binary text file.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Range" target="_top">AWS API Documentation</a>

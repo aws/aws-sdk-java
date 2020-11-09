@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the versioning of data set contents.
+ * Information about the versioning of dataset contents.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/VersioningConfiguration"
@@ -30,24 +30,24 @@ public class VersioningConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * If true, unlimited versions of data set contents will be kept.
+     * If true, unlimited versions of dataset contents are kept.
      * </p>
      */
     private Boolean unlimited;
     /**
      * <p>
-     * How many versions of data set contents will be kept. The "unlimited" parameter must be false.
+     * How many versions of dataset contents are kept. The <code>unlimited</code> parameter must be <code>false</code>.
      * </p>
      */
     private Integer maxVersions;
 
     /**
      * <p>
-     * If true, unlimited versions of data set contents will be kept.
+     * If true, unlimited versions of dataset contents are kept.
      * </p>
      * 
      * @param unlimited
-     *        If true, unlimited versions of data set contents will be kept.
+     *        If true, unlimited versions of dataset contents are kept.
      */
 
     public void setUnlimited(Boolean unlimited) {
@@ -56,10 +56,10 @@ public class VersioningConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * If true, unlimited versions of data set contents will be kept.
+     * If true, unlimited versions of dataset contents are kept.
      * </p>
      * 
-     * @return If true, unlimited versions of data set contents will be kept.
+     * @return If true, unlimited versions of dataset contents are kept.
      */
 
     public Boolean getUnlimited() {
@@ -68,11 +68,11 @@ public class VersioningConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * If true, unlimited versions of data set contents will be kept.
+     * If true, unlimited versions of dataset contents are kept.
      * </p>
      * 
      * @param unlimited
-     *        If true, unlimited versions of data set contents will be kept.
+     *        If true, unlimited versions of dataset contents are kept.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +83,10 @@ public class VersioningConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * If true, unlimited versions of data set contents will be kept.
+     * If true, unlimited versions of dataset contents are kept.
      * </p>
      * 
-     * @return If true, unlimited versions of data set contents will be kept.
+     * @return If true, unlimited versions of dataset contents are kept.
      */
 
     public Boolean isUnlimited() {
@@ -95,11 +95,12 @@ public class VersioningConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * How many versions of data set contents will be kept. The "unlimited" parameter must be false.
+     * How many versions of dataset contents are kept. The <code>unlimited</code> parameter must be <code>false</code>.
      * </p>
      * 
      * @param maxVersions
-     *        How many versions of data set contents will be kept. The "unlimited" parameter must be false.
+     *        How many versions of dataset contents are kept. The <code>unlimited</code> parameter must be
+     *        <code>false</code>.
      */
 
     public void setMaxVersions(Integer maxVersions) {
@@ -108,10 +109,11 @@ public class VersioningConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * How many versions of data set contents will be kept. The "unlimited" parameter must be false.
+     * How many versions of dataset contents are kept. The <code>unlimited</code> parameter must be <code>false</code>.
      * </p>
      * 
-     * @return How many versions of data set contents will be kept. The "unlimited" parameter must be false.
+     * @return How many versions of dataset contents are kept. The <code>unlimited</code> parameter must be
+     *         <code>false</code>.
      */
 
     public Integer getMaxVersions() {
@@ -120,11 +122,12 @@ public class VersioningConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * How many versions of data set contents will be kept. The "unlimited" parameter must be false.
+     * How many versions of dataset contents are kept. The <code>unlimited</code> parameter must be <code>false</code>.
      * </p>
      * 
      * @param maxVersions
-     *        How many versions of data set contents will be kept. The "unlimited" parameter must be false.
+     *        How many versions of dataset contents are kept. The <code>unlimited</code> parameter must be
+     *        <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configuration information for delivery of data set contents to Amazon S3.
+ * Configuration information for delivery of dataset contents to Amazon Simple Storage Service (Amazon S3).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/S3DestinationConfiguration"
@@ -30,29 +30,58 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket to which data set contents are delivered.
+     * The name of the S3 bucket to which dataset contents are delivered.
      * </p>
      */
     private String bucket;
     /**
      * <p>
-     * The key of the data set contents object. Each object in an Amazon S3 bucket has a key that is its unique
-     * identifier within the bucket (each object in a bucket has exactly one key). To produce a unique key, you can use
-     * "!{iotanalytics:scheduledTime}" to insert the time of the scheduled SQL query run, or
-     * "!{iotanalytics:versioned} to insert a unique hash identifying the data set, for example: "
-     * /DataSet/!{iotanalytics:scheduledTime}/!{iotanalytics:versioned}.csv".
+     * The key of the dataset contents object in an S3 bucket. Each object has a key that is a unique identifier. Each
+     * object has exactly one key.
      * </p>
+     * <p>
+     * You can create a unique key with the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL query run.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies a dataset content.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset content.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following example creates a unique key for a CSV file:
+     * <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code>
+     * </p>
+     * <note>
+     * <p>
+     * If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might get duplicate keys. For
+     * example, you might have two dataset contents with the same <code>scheduleTime</code> but different
+     * <code>versionId</code>s. This means that one dataset content overwrites the other.
+     * </p>
+     * </note>
      */
     private String key;
     /**
      * <p>
-     * Configuration information for coordination with the AWS Glue ETL (extract, transform and load) service.
+     * Configuration information for coordination with AWS Glue, a fully managed extract, transform and load (ETL)
+     * service.
      * </p>
      */
     private GlueConfiguration glueConfiguration;
     /**
      * <p>
-     * The ARN of the role which grants AWS IoT Analytics permission to interact with your Amazon S3 and AWS Glue
+     * The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 and AWS Glue
      * resources.
      * </p>
      */
@@ -60,11 +89,11 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket to which data set contents are delivered.
+     * The name of the S3 bucket to which dataset contents are delivered.
      * </p>
      * 
      * @param bucket
-     *        The name of the Amazon S3 bucket to which data set contents are delivered.
+     *        The name of the S3 bucket to which dataset contents are delivered.
      */
 
     public void setBucket(String bucket) {
@@ -73,10 +102,10 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket to which data set contents are delivered.
+     * The name of the S3 bucket to which dataset contents are delivered.
      * </p>
      * 
-     * @return The name of the Amazon S3 bucket to which data set contents are delivered.
+     * @return The name of the S3 bucket to which dataset contents are delivered.
      */
 
     public String getBucket() {
@@ -85,11 +114,11 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket to which data set contents are delivered.
+     * The name of the S3 bucket to which dataset contents are delivered.
      * </p>
      * 
      * @param bucket
-     *        The name of the Amazon S3 bucket to which data set contents are delivered.
+     *        The name of the S3 bucket to which dataset contents are delivered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,19 +129,74 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The key of the data set contents object. Each object in an Amazon S3 bucket has a key that is its unique
-     * identifier within the bucket (each object in a bucket has exactly one key). To produce a unique key, you can use
-     * "!{iotanalytics:scheduledTime}" to insert the time of the scheduled SQL query run, or
-     * "!{iotanalytics:versioned} to insert a unique hash identifying the data set, for example: "
-     * /DataSet/!{iotanalytics:scheduledTime}/!{iotanalytics:versioned}.csv".
+     * The key of the dataset contents object in an S3 bucket. Each object has a key that is a unique identifier. Each
+     * object has exactly one key.
      * </p>
+     * <p>
+     * You can create a unique key with the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL query run.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies a dataset content.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset content.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following example creates a unique key for a CSV file:
+     * <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code>
+     * </p>
+     * <note>
+     * <p>
+     * If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might get duplicate keys. For
+     * example, you might have two dataset contents with the same <code>scheduleTime</code> but different
+     * <code>versionId</code>s. This means that one dataset content overwrites the other.
+     * </p>
+     * </note>
      * 
      * @param key
-     *        The key of the data set contents object. Each object in an Amazon S3 bucket has a key that is its unique
-     *        identifier within the bucket (each object in a bucket has exactly one key). To produce a unique key, you
-     *        can use "!{iotanalytics:scheduledTime}" to insert the time of the scheduled SQL query run, or
-     *        "!{iotanalytics:versioned} to insert a unique hash identifying the data set, for example: "
-     *        /DataSet/!{iotanalytics:scheduledTime}/!{iotanalytics:versioned}.csv".
+     *        The key of the dataset contents object in an S3 bucket. Each object has a key that is a unique identifier.
+     *        Each object has exactly one key.</p>
+     *        <p>
+     *        You can create a unique key with the following options:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL query run.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies a dataset content.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset content.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following example creates a unique key for a CSV file:
+     *        <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might get duplicate keys.
+     *        For example, you might have two dataset contents with the same <code>scheduleTime</code> but different
+     *        <code>versionId</code>s. This means that one dataset content overwrites the other.
+     *        </p>
      */
 
     public void setKey(String key) {
@@ -121,18 +205,73 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The key of the data set contents object. Each object in an Amazon S3 bucket has a key that is its unique
-     * identifier within the bucket (each object in a bucket has exactly one key). To produce a unique key, you can use
-     * "!{iotanalytics:scheduledTime}" to insert the time of the scheduled SQL query run, or
-     * "!{iotanalytics:versioned} to insert a unique hash identifying the data set, for example: "
-     * /DataSet/!{iotanalytics:scheduledTime}/!{iotanalytics:versioned}.csv".
+     * The key of the dataset contents object in an S3 bucket. Each object has a key that is a unique identifier. Each
+     * object has exactly one key.
      * </p>
+     * <p>
+     * You can create a unique key with the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL query run.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies a dataset content.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset content.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following example creates a unique key for a CSV file:
+     * <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code>
+     * </p>
+     * <note>
+     * <p>
+     * If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might get duplicate keys. For
+     * example, you might have two dataset contents with the same <code>scheduleTime</code> but different
+     * <code>versionId</code>s. This means that one dataset content overwrites the other.
+     * </p>
+     * </note>
      * 
-     * @return The key of the data set contents object. Each object in an Amazon S3 bucket has a key that is its unique
-     *         identifier within the bucket (each object in a bucket has exactly one key). To produce a unique key, you
-     *         can use "!{iotanalytics:scheduledTime}" to insert the time of the scheduled SQL query run, or
-     *         "!{iotanalytics:versioned} to insert a unique hash identifying the data set, for example: "
-     *         /DataSet/!{iotanalytics:scheduledTime}/!{iotanalytics:versioned}.csv".
+     * @return The key of the dataset contents object in an S3 bucket. Each object has a key that is a unique
+     *         identifier. Each object has exactly one key.</p>
+     *         <p>
+     *         You can create a unique key with the following options:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL query run.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies a dataset content.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset content.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The following example creates a unique key for a CSV file:
+     *         <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code>
+     *         </p>
+     *         <note>
+     *         <p>
+     *         If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might get duplicate keys.
+     *         For example, you might have two dataset contents with the same <code>scheduleTime</code> but different
+     *         <code>versionId</code>s. This means that one dataset content overwrites the other.
+     *         </p>
      */
 
     public String getKey() {
@@ -141,19 +280,74 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The key of the data set contents object. Each object in an Amazon S3 bucket has a key that is its unique
-     * identifier within the bucket (each object in a bucket has exactly one key). To produce a unique key, you can use
-     * "!{iotanalytics:scheduledTime}" to insert the time of the scheduled SQL query run, or
-     * "!{iotanalytics:versioned} to insert a unique hash identifying the data set, for example: "
-     * /DataSet/!{iotanalytics:scheduledTime}/!{iotanalytics:versioned}.csv".
+     * The key of the dataset contents object in an S3 bucket. Each object has a key that is a unique identifier. Each
+     * object has exactly one key.
      * </p>
+     * <p>
+     * You can create a unique key with the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL query run.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies a dataset content.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset content.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following example creates a unique key for a CSV file:
+     * <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code>
+     * </p>
+     * <note>
+     * <p>
+     * If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might get duplicate keys. For
+     * example, you might have two dataset contents with the same <code>scheduleTime</code> but different
+     * <code>versionId</code>s. This means that one dataset content overwrites the other.
+     * </p>
+     * </note>
      * 
      * @param key
-     *        The key of the data set contents object. Each object in an Amazon S3 bucket has a key that is its unique
-     *        identifier within the bucket (each object in a bucket has exactly one key). To produce a unique key, you
-     *        can use "!{iotanalytics:scheduledTime}" to insert the time of the scheduled SQL query run, or
-     *        "!{iotanalytics:versioned} to insert a unique hash identifying the data set, for example: "
-     *        /DataSet/!{iotanalytics:scheduledTime}/!{iotanalytics:versioned}.csv".
+     *        The key of the dataset contents object in an S3 bucket. Each object has a key that is a unique identifier.
+     *        Each object has exactly one key.</p>
+     *        <p>
+     *        You can create a unique key with the following options:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL query run.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies a dataset content.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset content.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following example creates a unique key for a CSV file:
+     *        <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might get duplicate keys.
+     *        For example, you might have two dataset contents with the same <code>scheduleTime</code> but different
+     *        <code>versionId</code>s. This means that one dataset content overwrites the other.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -164,11 +358,13 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Configuration information for coordination with the AWS Glue ETL (extract, transform and load) service.
+     * Configuration information for coordination with AWS Glue, a fully managed extract, transform and load (ETL)
+     * service.
      * </p>
      * 
      * @param glueConfiguration
-     *        Configuration information for coordination with the AWS Glue ETL (extract, transform and load) service.
+     *        Configuration information for coordination with AWS Glue, a fully managed extract, transform and load
+     *        (ETL) service.
      */
 
     public void setGlueConfiguration(GlueConfiguration glueConfiguration) {
@@ -177,10 +373,12 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Configuration information for coordination with the AWS Glue ETL (extract, transform and load) service.
+     * Configuration information for coordination with AWS Glue, a fully managed extract, transform and load (ETL)
+     * service.
      * </p>
      * 
-     * @return Configuration information for coordination with the AWS Glue ETL (extract, transform and load) service.
+     * @return Configuration information for coordination with AWS Glue, a fully managed extract, transform and load
+     *         (ETL) service.
      */
 
     public GlueConfiguration getGlueConfiguration() {
@@ -189,11 +387,13 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Configuration information for coordination with the AWS Glue ETL (extract, transform and load) service.
+     * Configuration information for coordination with AWS Glue, a fully managed extract, transform and load (ETL)
+     * service.
      * </p>
      * 
      * @param glueConfiguration
-     *        Configuration information for coordination with the AWS Glue ETL (extract, transform and load) service.
+     *        Configuration information for coordination with AWS Glue, a fully managed extract, transform and load
+     *        (ETL) service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,12 +404,12 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The ARN of the role which grants AWS IoT Analytics permission to interact with your Amazon S3 and AWS Glue
+     * The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 and AWS Glue
      * resources.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the role which grants AWS IoT Analytics permission to interact with your Amazon S3 and AWS Glue
+     *        The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 and AWS Glue
      *        resources.
      */
 
@@ -219,12 +419,12 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The ARN of the role which grants AWS IoT Analytics permission to interact with your Amazon S3 and AWS Glue
+     * The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 and AWS Glue
      * resources.
      * </p>
      * 
-     * @return The ARN of the role which grants AWS IoT Analytics permission to interact with your Amazon S3 and AWS
-     *         Glue resources.
+     * @return The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 and AWS Glue
+     *         resources.
      */
 
     public String getRoleArn() {
@@ -233,12 +433,12 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The ARN of the role which grants AWS IoT Analytics permission to interact with your Amazon S3 and AWS Glue
+     * The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 and AWS Glue
      * resources.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the role which grants AWS IoT Analytics permission to interact with your Amazon S3 and AWS Glue
+     *        The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 and AWS Glue
      *        resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

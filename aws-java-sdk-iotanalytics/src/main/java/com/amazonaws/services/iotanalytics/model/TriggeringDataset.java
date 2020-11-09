@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the data set whose content generation triggers the new data set content generation.
+ * Information about the dataset whose content generation triggers the new dataset content generation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/TriggeringDataset" target="_top">AWS API
@@ -30,18 +30,18 @@ public class TriggeringDataset implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the data set whose content generation triggers the new data set content generation.
+     * The name of the dataset whose content generation triggers the new dataset content generation.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The name of the data set whose content generation triggers the new data set content generation.
+     * The name of the dataset whose content generation triggers the new dataset content generation.
      * </p>
      * 
      * @param name
-     *        The name of the data set whose content generation triggers the new data set content generation.
+     *        The name of the dataset whose content generation triggers the new dataset content generation.
      */
 
     public void setName(String name) {
@@ -50,10 +50,10 @@ public class TriggeringDataset implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the data set whose content generation triggers the new data set content generation.
+     * The name of the dataset whose content generation triggers the new dataset content generation.
      * </p>
      * 
-     * @return The name of the data set whose content generation triggers the new data set content generation.
+     * @return The name of the dataset whose content generation triggers the new dataset content generation.
      */
 
     public String getName() {
@@ -62,11 +62,11 @@ public class TriggeringDataset implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the data set whose content generation triggers the new data set content generation.
+     * The name of the dataset whose content generation triggers the new dataset content generation.
      * </p>
      * 
      * @param name
-     *        The name of the data set whose content generation triggers the new data set content generation.
+     *        The name of the dataset whose content generation triggers the new dataset content generation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

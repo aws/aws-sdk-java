@@ -19,8 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not
- * specified, the default is "serviceManagedS3". This cannot be changed after the data store is created.
+ * Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
+ * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You cannot
+ * change this storage option after the data store is created.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatastoreStorage" target="_top">AWS API
@@ -31,29 +32,29 @@ public class DatastoreStorage implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Use this to store data store data in an S3 bucket managed by the AWS IoT Analytics service. The choice of
-     * service-managed or customer-managed S3 storage cannot be changed after creation of the data store.
+     * Use this to store data store data in an S3 bucket managed by AWS IoT Analytics. You cannot change the choice of
+     * service-managed or customer-managed S3 storage after the data store is created.
      * </p>
      */
     private ServiceManagedDatastoreS3Storage serviceManagedS3;
     /**
      * <p>
      * Use this to store data store data in an S3 bucket that you manage. When customer managed storage is selected, the
-     * "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be
-     * changed after creation of the data store.
+     * <code>retentionPeriod</code> parameter is ignored. The choice of service-managed or customer-managed S3 storage
+     * cannot be changed after creation of the data store.
      * </p>
      */
     private CustomerManagedDatastoreS3Storage customerManagedS3;
 
     /**
      * <p>
-     * Use this to store data store data in an S3 bucket managed by the AWS IoT Analytics service. The choice of
-     * service-managed or customer-managed S3 storage cannot be changed after creation of the data store.
+     * Use this to store data store data in an S3 bucket managed by AWS IoT Analytics. You cannot change the choice of
+     * service-managed or customer-managed S3 storage after the data store is created.
      * </p>
      * 
      * @param serviceManagedS3
-     *        Use this to store data store data in an S3 bucket managed by the AWS IoT Analytics service. The choice of
-     *        service-managed or customer-managed S3 storage cannot be changed after creation of the data store.
+     *        Use this to store data store data in an S3 bucket managed by AWS IoT Analytics. You cannot change the
+     *        choice of service-managed or customer-managed S3 storage after the data store is created.
      */
 
     public void setServiceManagedS3(ServiceManagedDatastoreS3Storage serviceManagedS3) {
@@ -62,12 +63,12 @@ public class DatastoreStorage implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Use this to store data store data in an S3 bucket managed by the AWS IoT Analytics service. The choice of
-     * service-managed or customer-managed S3 storage cannot be changed after creation of the data store.
+     * Use this to store data store data in an S3 bucket managed by AWS IoT Analytics. You cannot change the choice of
+     * service-managed or customer-managed S3 storage after the data store is created.
      * </p>
      * 
-     * @return Use this to store data store data in an S3 bucket managed by the AWS IoT Analytics service. The choice of
-     *         service-managed or customer-managed S3 storage cannot be changed after creation of the data store.
+     * @return Use this to store data store data in an S3 bucket managed by AWS IoT Analytics. You cannot change the
+     *         choice of service-managed or customer-managed S3 storage after the data store is created.
      */
 
     public ServiceManagedDatastoreS3Storage getServiceManagedS3() {
@@ -76,13 +77,13 @@ public class DatastoreStorage implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Use this to store data store data in an S3 bucket managed by the AWS IoT Analytics service. The choice of
-     * service-managed or customer-managed S3 storage cannot be changed after creation of the data store.
+     * Use this to store data store data in an S3 bucket managed by AWS IoT Analytics. You cannot change the choice of
+     * service-managed or customer-managed S3 storage after the data store is created.
      * </p>
      * 
      * @param serviceManagedS3
-     *        Use this to store data store data in an S3 bucket managed by the AWS IoT Analytics service. The choice of
-     *        service-managed or customer-managed S3 storage cannot be changed after creation of the data store.
+     *        Use this to store data store data in an S3 bucket managed by AWS IoT Analytics. You cannot change the
+     *        choice of service-managed or customer-managed S3 storage after the data store is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,14 +95,14 @@ public class DatastoreStorage implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Use this to store data store data in an S3 bucket that you manage. When customer managed storage is selected, the
-     * "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be
-     * changed after creation of the data store.
+     * <code>retentionPeriod</code> parameter is ignored. The choice of service-managed or customer-managed S3 storage
+     * cannot be changed after creation of the data store.
      * </p>
      * 
      * @param customerManagedS3
      *        Use this to store data store data in an S3 bucket that you manage. When customer managed storage is
-     *        selected, the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3
-     *        storage cannot be changed after creation of the data store.
+     *        selected, the <code>retentionPeriod</code> parameter is ignored. The choice of service-managed or
+     *        customer-managed S3 storage cannot be changed after creation of the data store.
      */
 
     public void setCustomerManagedS3(CustomerManagedDatastoreS3Storage customerManagedS3) {
@@ -111,13 +112,13 @@ public class DatastoreStorage implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Use this to store data store data in an S3 bucket that you manage. When customer managed storage is selected, the
-     * "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be
-     * changed after creation of the data store.
+     * <code>retentionPeriod</code> parameter is ignored. The choice of service-managed or customer-managed S3 storage
+     * cannot be changed after creation of the data store.
      * </p>
      * 
      * @return Use this to store data store data in an S3 bucket that you manage. When customer managed storage is
-     *         selected, the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed
-     *         S3 storage cannot be changed after creation of the data store.
+     *         selected, the <code>retentionPeriod</code> parameter is ignored. The choice of service-managed or
+     *         customer-managed S3 storage cannot be changed after creation of the data store.
      */
 
     public CustomerManagedDatastoreS3Storage getCustomerManagedS3() {
@@ -127,14 +128,14 @@ public class DatastoreStorage implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Use this to store data store data in an S3 bucket that you manage. When customer managed storage is selected, the
-     * "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be
-     * changed after creation of the data store.
+     * <code>retentionPeriod</code> parameter is ignored. The choice of service-managed or customer-managed S3 storage
+     * cannot be changed after creation of the data store.
      * </p>
      * 
      * @param customerManagedS3
      *        Use this to store data store data in an S3 bucket that you manage. When customer managed storage is
-     *        selected, the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3
-     *        storage cannot be changed after creation of the data store.
+     *        selected, the <code>retentionPeriod</code> parameter is ignored. The choice of service-managed or
+     *        customer-managed S3 storage cannot be changed after creation of the data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

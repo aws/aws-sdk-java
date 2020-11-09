@@ -32,21 +32,21 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array of objects, one for each occurrence of sensitive data in a Microsoft Excel workbook, CSV file, or TSV
-     * file. Each object specifies the cell that contains the data. This value is null for all other types of files.
+     * file. Each object specifies the cell or field that contains the data. This value is null for all other types of
+     * files.
      * </p>
      */
     private java.util.List<Cell> cells;
     /**
      * <p>
-     * An array of objects, one for each occurrence of sensitive data in an Apache Avro object container, Microsoft Word
-     * document, or non-binary text file, such as an HTML, JSON, TXT, or XML file. Each object specifies the line that
-     * contains the data, and the position of the data on that line.
+     * An array of objects, one for each occurrence of sensitive data in a Microsoft Word document or non-binary text
+     * file, such as an HTML, JSON, TXT, or XML file. Each object specifies the line that contains the data, and the
+     * position of the data on that line.
      * </p>
      * <p>
      * This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the
-     * locations of: full names and addresses in a Microsoft Excel workbook, CSV file, or TSV file; data in unstructured
-     * sections of an otherwise structured file, such as a comment in a file; and, data in a malformed file that Amazon
-     * Macie analyzes as plain text.
+     * locations of: data in unstructured sections of an otherwise structured file, such as a comment in a file; and,
+     * data in a malformed file that Amazon Macie analyzes as plain text.
      * </p>
      */
     private java.util.List<Range> lineRanges;
@@ -71,8 +71,9 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Page> pages;
     /**
      * <p>
-     * An array of objects, one for each occurrence of sensitive data in an Apache Parquet file. Each object specifies
-     * the row that contains the data. This value is null for all other types of files.
+     * An array of objects, one for each occurrence of sensitive data in an Apache Avro object container or Apache
+     * Parquet file. Each object specifies the field or record that contains the data. This value is null for all other
+     * types of files.
      * </p>
      */
     private java.util.List<Record> records;
@@ -80,12 +81,13 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array of objects, one for each occurrence of sensitive data in a Microsoft Excel workbook, CSV file, or TSV
-     * file. Each object specifies the cell that contains the data. This value is null for all other types of files.
+     * file. Each object specifies the cell or field that contains the data. This value is null for all other types of
+     * files.
      * </p>
      * 
      * @return An array of objects, one for each occurrence of sensitive data in a Microsoft Excel workbook, CSV file,
-     *         or TSV file. Each object specifies the cell that contains the data. This value is null for all other
-     *         types of files.
+     *         or TSV file. Each object specifies the cell or field that contains the data. This value is null for all
+     *         other types of files.
      */
 
     public java.util.List<Cell> getCells() {
@@ -95,13 +97,14 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array of objects, one for each occurrence of sensitive data in a Microsoft Excel workbook, CSV file, or TSV
-     * file. Each object specifies the cell that contains the data. This value is null for all other types of files.
+     * file. Each object specifies the cell or field that contains the data. This value is null for all other types of
+     * files.
      * </p>
      * 
      * @param cells
      *        An array of objects, one for each occurrence of sensitive data in a Microsoft Excel workbook, CSV file, or
-     *        TSV file. Each object specifies the cell that contains the data. This value is null for all other types of
-     *        files.
+     *        TSV file. Each object specifies the cell or field that contains the data. This value is null for all other
+     *        types of files.
      */
 
     public void setCells(java.util.Collection<Cell> cells) {
@@ -116,7 +119,8 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array of objects, one for each occurrence of sensitive data in a Microsoft Excel workbook, CSV file, or TSV
-     * file. Each object specifies the cell that contains the data. This value is null for all other types of files.
+     * file. Each object specifies the cell or field that contains the data. This value is null for all other types of
+     * files.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -126,8 +130,8 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param cells
      *        An array of objects, one for each occurrence of sensitive data in a Microsoft Excel workbook, CSV file, or
-     *        TSV file. Each object specifies the cell that contains the data. This value is null for all other types of
-     *        files.
+     *        TSV file. Each object specifies the cell or field that contains the data. This value is null for all other
+     *        types of files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,13 +148,14 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array of objects, one for each occurrence of sensitive data in a Microsoft Excel workbook, CSV file, or TSV
-     * file. Each object specifies the cell that contains the data. This value is null for all other types of files.
+     * file. Each object specifies the cell or field that contains the data. This value is null for all other types of
+     * files.
      * </p>
      * 
      * @param cells
      *        An array of objects, one for each occurrence of sensitive data in a Microsoft Excel workbook, CSV file, or
-     *        TSV file. Each object specifies the cell that contains the data. This value is null for all other types of
-     *        files.
+     *        TSV file. Each object specifies the cell or field that contains the data. This value is null for all other
+     *        types of files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,25 +166,23 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of objects, one for each occurrence of sensitive data in an Apache Avro object container, Microsoft Word
-     * document, or non-binary text file, such as an HTML, JSON, TXT, or XML file. Each object specifies the line that
-     * contains the data, and the position of the data on that line.
+     * An array of objects, one for each occurrence of sensitive data in a Microsoft Word document or non-binary text
+     * file, such as an HTML, JSON, TXT, or XML file. Each object specifies the line that contains the data, and the
+     * position of the data on that line.
      * </p>
      * <p>
      * This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the
-     * locations of: full names and addresses in a Microsoft Excel workbook, CSV file, or TSV file; data in unstructured
-     * sections of an otherwise structured file, such as a comment in a file; and, data in a malformed file that Amazon
-     * Macie analyzes as plain text.
+     * locations of: data in unstructured sections of an otherwise structured file, such as a comment in a file; and,
+     * data in a malformed file that Amazon Macie analyzes as plain text.
      * </p>
      * 
-     * @return An array of objects, one for each occurrence of sensitive data in an Apache Avro object container,
-     *         Microsoft Word document, or non-binary text file, such as an HTML, JSON, TXT, or XML file. Each object
-     *         specifies the line that contains the data, and the position of the data on that line.</p>
+     * @return An array of objects, one for each occurrence of sensitive data in a Microsoft Word document or non-binary
+     *         text file, such as an HTML, JSON, TXT, or XML file. Each object specifies the line that contains the
+     *         data, and the position of the data on that line.</p>
      *         <p>
      *         This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions
-     *         are the locations of: full names and addresses in a Microsoft Excel workbook, CSV file, or TSV file; data
-     *         in unstructured sections of an otherwise structured file, such as a comment in a file; and, data in a
-     *         malformed file that Amazon Macie analyzes as plain text.
+     *         are the locations of: data in unstructured sections of an otherwise structured file, such as a comment in
+     *         a file; and, data in a malformed file that Amazon Macie analyzes as plain text.
      */
 
     public java.util.List<Range> getLineRanges() {
@@ -188,26 +191,24 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of objects, one for each occurrence of sensitive data in an Apache Avro object container, Microsoft Word
-     * document, or non-binary text file, such as an HTML, JSON, TXT, or XML file. Each object specifies the line that
-     * contains the data, and the position of the data on that line.
+     * An array of objects, one for each occurrence of sensitive data in a Microsoft Word document or non-binary text
+     * file, such as an HTML, JSON, TXT, or XML file. Each object specifies the line that contains the data, and the
+     * position of the data on that line.
      * </p>
      * <p>
      * This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the
-     * locations of: full names and addresses in a Microsoft Excel workbook, CSV file, or TSV file; data in unstructured
-     * sections of an otherwise structured file, such as a comment in a file; and, data in a malformed file that Amazon
-     * Macie analyzes as plain text.
+     * locations of: data in unstructured sections of an otherwise structured file, such as a comment in a file; and,
+     * data in a malformed file that Amazon Macie analyzes as plain text.
      * </p>
      * 
      * @param lineRanges
-     *        An array of objects, one for each occurrence of sensitive data in an Apache Avro object container,
-     *        Microsoft Word document, or non-binary text file, such as an HTML, JSON, TXT, or XML file. Each object
-     *        specifies the line that contains the data, and the position of the data on that line.</p>
+     *        An array of objects, one for each occurrence of sensitive data in a Microsoft Word document or non-binary
+     *        text file, such as an HTML, JSON, TXT, or XML file. Each object specifies the line that contains the data,
+     *        and the position of the data on that line.</p>
      *        <p>
      *        This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions
-     *        are the locations of: full names and addresses in a Microsoft Excel workbook, CSV file, or TSV file; data
-     *        in unstructured sections of an otherwise structured file, such as a comment in a file; and, data in a
-     *        malformed file that Amazon Macie analyzes as plain text.
+     *        are the locations of: data in unstructured sections of an otherwise structured file, such as a comment in
+     *        a file; and, data in a malformed file that Amazon Macie analyzes as plain text.
      */
 
     public void setLineRanges(java.util.Collection<Range> lineRanges) {
@@ -221,15 +222,14 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of objects, one for each occurrence of sensitive data in an Apache Avro object container, Microsoft Word
-     * document, or non-binary text file, such as an HTML, JSON, TXT, or XML file. Each object specifies the line that
-     * contains the data, and the position of the data on that line.
+     * An array of objects, one for each occurrence of sensitive data in a Microsoft Word document or non-binary text
+     * file, such as an HTML, JSON, TXT, or XML file. Each object specifies the line that contains the data, and the
+     * position of the data on that line.
      * </p>
      * <p>
      * This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the
-     * locations of: full names and addresses in a Microsoft Excel workbook, CSV file, or TSV file; data in unstructured
-     * sections of an otherwise structured file, such as a comment in a file; and, data in a malformed file that Amazon
-     * Macie analyzes as plain text.
+     * locations of: data in unstructured sections of an otherwise structured file, such as a comment in a file; and,
+     * data in a malformed file that Amazon Macie analyzes as plain text.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -238,14 +238,13 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param lineRanges
-     *        An array of objects, one for each occurrence of sensitive data in an Apache Avro object container,
-     *        Microsoft Word document, or non-binary text file, such as an HTML, JSON, TXT, or XML file. Each object
-     *        specifies the line that contains the data, and the position of the data on that line.</p>
+     *        An array of objects, one for each occurrence of sensitive data in a Microsoft Word document or non-binary
+     *        text file, such as an HTML, JSON, TXT, or XML file. Each object specifies the line that contains the data,
+     *        and the position of the data on that line.</p>
      *        <p>
      *        This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions
-     *        are the locations of: full names and addresses in a Microsoft Excel workbook, CSV file, or TSV file; data
-     *        in unstructured sections of an otherwise structured file, such as a comment in a file; and, data in a
-     *        malformed file that Amazon Macie analyzes as plain text.
+     *        are the locations of: data in unstructured sections of an otherwise structured file, such as a comment in
+     *        a file; and, data in a malformed file that Amazon Macie analyzes as plain text.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -261,26 +260,24 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of objects, one for each occurrence of sensitive data in an Apache Avro object container, Microsoft Word
-     * document, or non-binary text file, such as an HTML, JSON, TXT, or XML file. Each object specifies the line that
-     * contains the data, and the position of the data on that line.
+     * An array of objects, one for each occurrence of sensitive data in a Microsoft Word document or non-binary text
+     * file, such as an HTML, JSON, TXT, or XML file. Each object specifies the line that contains the data, and the
+     * position of the data on that line.
      * </p>
      * <p>
      * This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the
-     * locations of: full names and addresses in a Microsoft Excel workbook, CSV file, or TSV file; data in unstructured
-     * sections of an otherwise structured file, such as a comment in a file; and, data in a malformed file that Amazon
-     * Macie analyzes as plain text.
+     * locations of: data in unstructured sections of an otherwise structured file, such as a comment in a file; and,
+     * data in a malformed file that Amazon Macie analyzes as plain text.
      * </p>
      * 
      * @param lineRanges
-     *        An array of objects, one for each occurrence of sensitive data in an Apache Avro object container,
-     *        Microsoft Word document, or non-binary text file, such as an HTML, JSON, TXT, or XML file. Each object
-     *        specifies the line that contains the data, and the position of the data on that line.</p>
+     *        An array of objects, one for each occurrence of sensitive data in a Microsoft Word document or non-binary
+     *        text file, such as an HTML, JSON, TXT, or XML file. Each object specifies the line that contains the data,
+     *        and the position of the data on that line.</p>
      *        <p>
      *        This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions
-     *        are the locations of: full names and addresses in a Microsoft Excel workbook, CSV file, or TSV file; data
-     *        in unstructured sections of an otherwise structured file, such as a comment in a file; and, data in a
-     *        malformed file that Amazon Macie analyzes as plain text.
+     *        are the locations of: data in unstructured sections of an otherwise structured file, such as a comment in
+     *        a file; and, data in a malformed file that Amazon Macie analyzes as plain text.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -483,12 +480,14 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of objects, one for each occurrence of sensitive data in an Apache Parquet file. Each object specifies
-     * the row that contains the data. This value is null for all other types of files.
+     * An array of objects, one for each occurrence of sensitive data in an Apache Avro object container or Apache
+     * Parquet file. Each object specifies the field or record that contains the data. This value is null for all other
+     * types of files.
      * </p>
      * 
-     * @return An array of objects, one for each occurrence of sensitive data in an Apache Parquet file. Each object
-     *         specifies the row that contains the data. This value is null for all other types of files.
+     * @return An array of objects, one for each occurrence of sensitive data in an Apache Avro object container or
+     *         Apache Parquet file. Each object specifies the field or record that contains the data. This value is null
+     *         for all other types of files.
      */
 
     public java.util.List<Record> getRecords() {
@@ -497,13 +496,15 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of objects, one for each occurrence of sensitive data in an Apache Parquet file. Each object specifies
-     * the row that contains the data. This value is null for all other types of files.
+     * An array of objects, one for each occurrence of sensitive data in an Apache Avro object container or Apache
+     * Parquet file. Each object specifies the field or record that contains the data. This value is null for all other
+     * types of files.
      * </p>
      * 
      * @param records
-     *        An array of objects, one for each occurrence of sensitive data in an Apache Parquet file. Each object
-     *        specifies the row that contains the data. This value is null for all other types of files.
+     *        An array of objects, one for each occurrence of sensitive data in an Apache Avro object container or
+     *        Apache Parquet file. Each object specifies the field or record that contains the data. This value is null
+     *        for all other types of files.
      */
 
     public void setRecords(java.util.Collection<Record> records) {
@@ -517,8 +518,9 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of objects, one for each occurrence of sensitive data in an Apache Parquet file. Each object specifies
-     * the row that contains the data. This value is null for all other types of files.
+     * An array of objects, one for each occurrence of sensitive data in an Apache Avro object container or Apache
+     * Parquet file. Each object specifies the field or record that contains the data. This value is null for all other
+     * types of files.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -527,8 +529,9 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param records
-     *        An array of objects, one for each occurrence of sensitive data in an Apache Parquet file. Each object
-     *        specifies the row that contains the data. This value is null for all other types of files.
+     *        An array of objects, one for each occurrence of sensitive data in an Apache Avro object container or
+     *        Apache Parquet file. Each object specifies the field or record that contains the data. This value is null
+     *        for all other types of files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -544,13 +547,15 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of objects, one for each occurrence of sensitive data in an Apache Parquet file. Each object specifies
-     * the row that contains the data. This value is null for all other types of files.
+     * An array of objects, one for each occurrence of sensitive data in an Apache Avro object container or Apache
+     * Parquet file. Each object specifies the field or record that contains the data. This value is null for all other
+     * types of files.
      * </p>
      * 
      * @param records
-     *        An array of objects, one for each occurrence of sensitive data in an Apache Parquet file. Each object
-     *        specifies the row that contains the data. This value is null for all other types of files.
+     *        An array of objects, one for each occurrence of sensitive data in an Apache Avro object container or
+     *        Apache Parquet file. Each object specifies the field or record that contains the data. This value is null
+     *        for all other types of files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

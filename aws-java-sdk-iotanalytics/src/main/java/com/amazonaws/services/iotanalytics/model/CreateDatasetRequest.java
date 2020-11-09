@@ -41,33 +41,34 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * A list of triggers. A trigger causes data set contents to be populated at a specified time interval or when
      * another data set's contents are created. The list of triggers can be empty or contain up to five
-     * <b>DataSetTrigger</b> objects.
+     * <code>DataSetTrigger</code> objects.
      * </p>
      */
     private java.util.List<DatasetTrigger> triggers;
     /**
      * <p>
-     * When data set contents are created they are delivered to destinations specified here.
+     * When dataset contents are created, they are delivered to destinations specified here.
      * </p>
      */
     private java.util.List<DatasetContentDeliveryRule> contentDeliveryRules;
     /**
      * <p>
-     * [Optional] How long, in days, versions of data set contents are kept for the data set. If not specified or set to
-     * null, versions of data set contents are retained for at most 90 days. The number of versions of data set contents
-     * retained is determined by the <code>versioningConfiguration</code> parameter. (For more information, see
-     * https://docs
-     * .aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)
+     * Optional. How long, in days, versions of dataset contents are kept for the dataset. If not specified or set to
+     * <code>null</code>, versions of dataset contents are retained for at most 90 days. The number of versions of
+     * dataset contents retained is determined by the <code>versioningConfiguration</code> parameter. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"
+     * >Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User Guide</i>.
      * </p>
      */
     private RetentionPeriod retentionPeriod;
     /**
      * <p>
-     * [Optional] How many versions of data set contents are kept. If not specified or set to null, only the latest
+     * Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest
      * version plus the latest succeeded version (if they are different) are kept for the time period specified by the
-     * "retentionPeriod" parameter. (For more information, see
-     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/
-     * getting-started.html#aws-iot-analytics-dataset-versions)
+     * <code>retentionPeriod</code> parameter. For more information, see <a href=
+     * "https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"
+     * >Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User Guide</i>.
      * </p>
      */
     private VersioningConfiguration versioningConfiguration;
@@ -77,6 +78,14 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To specify
+     * <code>lateDataRules</code>, the dataset must use a <a
+     * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.
+     * </p>
+     */
+    private java.util.List<LateDataRule> lateDataRules;
 
     /**
      * <p>
@@ -192,12 +201,12 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * A list of triggers. A trigger causes data set contents to be populated at a specified time interval or when
      * another data set's contents are created. The list of triggers can be empty or contain up to five
-     * <b>DataSetTrigger</b> objects.
+     * <code>DataSetTrigger</code> objects.
      * </p>
      * 
      * @return A list of triggers. A trigger causes data set contents to be populated at a specified time interval or
      *         when another data set's contents are created. The list of triggers can be empty or contain up to five
-     *         <b>DataSetTrigger</b> objects.
+     *         <code>DataSetTrigger</code> objects.
      */
 
     public java.util.List<DatasetTrigger> getTriggers() {
@@ -208,13 +217,13 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * A list of triggers. A trigger causes data set contents to be populated at a specified time interval or when
      * another data set's contents are created. The list of triggers can be empty or contain up to five
-     * <b>DataSetTrigger</b> objects.
+     * <code>DataSetTrigger</code> objects.
      * </p>
      * 
      * @param triggers
      *        A list of triggers. A trigger causes data set contents to be populated at a specified time interval or
      *        when another data set's contents are created. The list of triggers can be empty or contain up to five
-     *        <b>DataSetTrigger</b> objects.
+     *        <code>DataSetTrigger</code> objects.
      */
 
     public void setTriggers(java.util.Collection<DatasetTrigger> triggers) {
@@ -230,7 +239,7 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * A list of triggers. A trigger causes data set contents to be populated at a specified time interval or when
      * another data set's contents are created. The list of triggers can be empty or contain up to five
-     * <b>DataSetTrigger</b> objects.
+     * <code>DataSetTrigger</code> objects.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -241,7 +250,7 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param triggers
      *        A list of triggers. A trigger causes data set contents to be populated at a specified time interval or
      *        when another data set's contents are created. The list of triggers can be empty or contain up to five
-     *        <b>DataSetTrigger</b> objects.
+     *        <code>DataSetTrigger</code> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -259,13 +268,13 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * A list of triggers. A trigger causes data set contents to be populated at a specified time interval or when
      * another data set's contents are created. The list of triggers can be empty or contain up to five
-     * <b>DataSetTrigger</b> objects.
+     * <code>DataSetTrigger</code> objects.
      * </p>
      * 
      * @param triggers
      *        A list of triggers. A trigger causes data set contents to be populated at a specified time interval or
      *        when another data set's contents are created. The list of triggers can be empty or contain up to five
-     *        <b>DataSetTrigger</b> objects.
+     *        <code>DataSetTrigger</code> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -276,10 +285,10 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * When data set contents are created they are delivered to destinations specified here.
+     * When dataset contents are created, they are delivered to destinations specified here.
      * </p>
      * 
-     * @return When data set contents are created they are delivered to destinations specified here.
+     * @return When dataset contents are created, they are delivered to destinations specified here.
      */
 
     public java.util.List<DatasetContentDeliveryRule> getContentDeliveryRules() {
@@ -288,11 +297,11 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * When data set contents are created they are delivered to destinations specified here.
+     * When dataset contents are created, they are delivered to destinations specified here.
      * </p>
      * 
      * @param contentDeliveryRules
-     *        When data set contents are created they are delivered to destinations specified here.
+     *        When dataset contents are created, they are delivered to destinations specified here.
      */
 
     public void setContentDeliveryRules(java.util.Collection<DatasetContentDeliveryRule> contentDeliveryRules) {
@@ -306,7 +315,7 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * When data set contents are created they are delivered to destinations specified here.
+     * When dataset contents are created, they are delivered to destinations specified here.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -315,7 +324,7 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param contentDeliveryRules
-     *        When data set contents are created they are delivered to destinations specified here.
+     *        When dataset contents are created, they are delivered to destinations specified here.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -331,11 +340,11 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * When data set contents are created they are delivered to destinations specified here.
+     * When dataset contents are created, they are delivered to destinations specified here.
      * </p>
      * 
      * @param contentDeliveryRules
-     *        When data set contents are created they are delivered to destinations specified here.
+     *        When dataset contents are created, they are delivered to destinations specified here.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -346,20 +355,21 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Optional] How long, in days, versions of data set contents are kept for the data set. If not specified or set to
-     * null, versions of data set contents are retained for at most 90 days. The number of versions of data set contents
-     * retained is determined by the <code>versioningConfiguration</code> parameter. (For more information, see
-     * https://docs
-     * .aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)
+     * Optional. How long, in days, versions of dataset contents are kept for the dataset. If not specified or set to
+     * <code>null</code>, versions of dataset contents are retained for at most 90 days. The number of versions of
+     * dataset contents retained is determined by the <code>versioningConfiguration</code> parameter. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"
+     * >Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User Guide</i>.
      * </p>
      * 
      * @param retentionPeriod
-     *        [Optional] How long, in days, versions of data set contents are kept for the data set. If not specified or
-     *        set to null, versions of data set contents are retained for at most 90 days. The number of versions of
-     *        data set contents retained is determined by the <code>versioningConfiguration</code> parameter. (For more
-     *        information, see
-     *        https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics
-     *        -dataset-versions)
+     *        Optional. How long, in days, versions of dataset contents are kept for the dataset. If not specified or
+     *        set to <code>null</code>, versions of dataset contents are retained for at most 90 days. The number of
+     *        versions of dataset contents retained is determined by the <code>versioningConfiguration</code> parameter.
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"
+     *        >Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User Guide</i>.
      */
 
     public void setRetentionPeriod(RetentionPeriod retentionPeriod) {
@@ -368,19 +378,20 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Optional] How long, in days, versions of data set contents are kept for the data set. If not specified or set to
-     * null, versions of data set contents are retained for at most 90 days. The number of versions of data set contents
-     * retained is determined by the <code>versioningConfiguration</code> parameter. (For more information, see
-     * https://docs
-     * .aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)
+     * Optional. How long, in days, versions of dataset contents are kept for the dataset. If not specified or set to
+     * <code>null</code>, versions of dataset contents are retained for at most 90 days. The number of versions of
+     * dataset contents retained is determined by the <code>versioningConfiguration</code> parameter. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"
+     * >Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User Guide</i>.
      * </p>
      * 
-     * @return [Optional] How long, in days, versions of data set contents are kept for the data set. If not specified
-     *         or set to null, versions of data set contents are retained for at most 90 days. The number of versions of
-     *         data set contents retained is determined by the <code>versioningConfiguration</code> parameter. (For more
-     *         information, see
-     *         https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics
-     *         -dataset-versions)
+     * @return Optional. How long, in days, versions of dataset contents are kept for the dataset. If not specified or
+     *         set to <code>null</code>, versions of dataset contents are retained for at most 90 days. The number of
+     *         versions of dataset contents retained is determined by the <code>versioningConfiguration</code>
+     *         parameter. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"
+     *         >Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User Guide</i>.
      */
 
     public RetentionPeriod getRetentionPeriod() {
@@ -389,20 +400,21 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Optional] How long, in days, versions of data set contents are kept for the data set. If not specified or set to
-     * null, versions of data set contents are retained for at most 90 days. The number of versions of data set contents
-     * retained is determined by the <code>versioningConfiguration</code> parameter. (For more information, see
-     * https://docs
-     * .aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)
+     * Optional. How long, in days, versions of dataset contents are kept for the dataset. If not specified or set to
+     * <code>null</code>, versions of dataset contents are retained for at most 90 days. The number of versions of
+     * dataset contents retained is determined by the <code>versioningConfiguration</code> parameter. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"
+     * >Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User Guide</i>.
      * </p>
      * 
      * @param retentionPeriod
-     *        [Optional] How long, in days, versions of data set contents are kept for the data set. If not specified or
-     *        set to null, versions of data set contents are retained for at most 90 days. The number of versions of
-     *        data set contents retained is determined by the <code>versioningConfiguration</code> parameter. (For more
-     *        information, see
-     *        https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics
-     *        -dataset-versions)
+     *        Optional. How long, in days, versions of dataset contents are kept for the dataset. If not specified or
+     *        set to <code>null</code>, versions of dataset contents are retained for at most 90 days. The number of
+     *        versions of dataset contents retained is determined by the <code>versioningConfiguration</code> parameter.
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"
+     *        >Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -413,19 +425,19 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Optional] How many versions of data set contents are kept. If not specified or set to null, only the latest
+     * Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest
      * version plus the latest succeeded version (if they are different) are kept for the time period specified by the
-     * "retentionPeriod" parameter. (For more information, see
-     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/
-     * getting-started.html#aws-iot-analytics-dataset-versions)
+     * <code>retentionPeriod</code> parameter. For more information, see <a href=
+     * "https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"
+     * >Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User Guide</i>.
      * </p>
      * 
      * @param versioningConfiguration
-     *        [Optional] How many versions of data set contents are kept. If not specified or set to null, only the
-     *        latest version plus the latest succeeded version (if they are different) are kept for the time period
-     *        specified by the "retentionPeriod" parameter. (For more information, see
-     *        https://docs.aws.amazon.com/iotanalytics
-     *        /latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)
+     *        Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest
+     *        version plus the latest succeeded version (if they are different) are kept for the time period specified
+     *        by the <code>retentionPeriod</code> parameter. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"
+     *        >Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User Guide</i>.
      */
 
     public void setVersioningConfiguration(VersioningConfiguration versioningConfiguration) {
@@ -434,18 +446,18 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Optional] How many versions of data set contents are kept. If not specified or set to null, only the latest
+     * Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest
      * version plus the latest succeeded version (if they are different) are kept for the time period specified by the
-     * "retentionPeriod" parameter. (For more information, see
-     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/
-     * getting-started.html#aws-iot-analytics-dataset-versions)
+     * <code>retentionPeriod</code> parameter. For more information, see <a href=
+     * "https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"
+     * >Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User Guide</i>.
      * </p>
      * 
-     * @return [Optional] How many versions of data set contents are kept. If not specified or set to null, only the
+     * @return Optional. How many versions of dataset contents are kept. If not specified or set to null, only the
      *         latest version plus the latest succeeded version (if they are different) are kept for the time period
-     *         specified by the "retentionPeriod" parameter. (For more information, see
-     *         https://docs.aws.amazon.com/iotanalytics
-     *         /latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)
+     *         specified by the <code>retentionPeriod</code> parameter. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"
+     *         >Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User Guide</i>.
      */
 
     public VersioningConfiguration getVersioningConfiguration() {
@@ -454,19 +466,19 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Optional] How many versions of data set contents are kept. If not specified or set to null, only the latest
+     * Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest
      * version plus the latest succeeded version (if they are different) are kept for the time period specified by the
-     * "retentionPeriod" parameter. (For more information, see
-     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/
-     * getting-started.html#aws-iot-analytics-dataset-versions)
+     * <code>retentionPeriod</code> parameter. For more information, see <a href=
+     * "https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"
+     * >Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User Guide</i>.
      * </p>
      * 
      * @param versioningConfiguration
-     *        [Optional] How many versions of data set contents are kept. If not specified or set to null, only the
-     *        latest version plus the latest succeeded version (if they are different) are kept for the time period
-     *        specified by the "retentionPeriod" parameter. (For more information, see
-     *        https://docs.aws.amazon.com/iotanalytics
-     *        /latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)
+     *        Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest
+     *        version plus the latest succeeded version (if they are different) are kept for the time period specified
+     *        by the <code>retentionPeriod</code> parameter. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"
+     *        >Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -546,6 +558,96 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To specify
+     * <code>lateDataRules</code>, the dataset must use a <a
+     * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.
+     * </p>
+     * 
+     * @return A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To specify
+     *         <code>lateDataRules</code>, the dataset must use a <a
+     *         href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
+     *         filter.
+     */
+
+    public java.util.List<LateDataRule> getLateDataRules() {
+        return lateDataRules;
+    }
+
+    /**
+     * <p>
+     * A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To specify
+     * <code>lateDataRules</code>, the dataset must use a <a
+     * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.
+     * </p>
+     * 
+     * @param lateDataRules
+     *        A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To specify
+     *        <code>lateDataRules</code>, the dataset must use a <a
+     *        href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
+     *        filter.
+     */
+
+    public void setLateDataRules(java.util.Collection<LateDataRule> lateDataRules) {
+        if (lateDataRules == null) {
+            this.lateDataRules = null;
+            return;
+        }
+
+        this.lateDataRules = new java.util.ArrayList<LateDataRule>(lateDataRules);
+    }
+
+    /**
+     * <p>
+     * A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To specify
+     * <code>lateDataRules</code>, the dataset must use a <a
+     * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLateDataRules(java.util.Collection)} or {@link #withLateDataRules(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param lateDataRules
+     *        A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To specify
+     *        <code>lateDataRules</code>, the dataset must use a <a
+     *        href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
+     *        filter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDatasetRequest withLateDataRules(LateDataRule... lateDataRules) {
+        if (this.lateDataRules == null) {
+            setLateDataRules(new java.util.ArrayList<LateDataRule>(lateDataRules.length));
+        }
+        for (LateDataRule ele : lateDataRules) {
+            this.lateDataRules.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To specify
+     * <code>lateDataRules</code>, the dataset must use a <a
+     * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.
+     * </p>
+     * 
+     * @param lateDataRules
+     *        A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To specify
+     *        <code>lateDataRules</code>, the dataset must use a <a
+     *        href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
+     *        filter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDatasetRequest withLateDataRules(java.util.Collection<LateDataRule> lateDataRules) {
+        setLateDataRules(lateDataRules);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -570,7 +672,9 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getVersioningConfiguration() != null)
             sb.append("VersioningConfiguration: ").append(getVersioningConfiguration()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getLateDataRules() != null)
+            sb.append("LateDataRules: ").append(getLateDataRules());
         sb.append("}");
         return sb.toString();
     }
@@ -613,6 +717,10 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getLateDataRules() == null ^ this.getLateDataRules() == null)
+            return false;
+        if (other.getLateDataRules() != null && other.getLateDataRules().equals(this.getLateDataRules()) == false)
+            return false;
         return true;
     }
 
@@ -628,6 +736,7 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getRetentionPeriod() == null) ? 0 : getRetentionPeriod().hashCode());
         hashCode = prime * hashCode + ((getVersioningConfiguration() == null) ? 0 : getVersioningConfiguration().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getLateDataRules() == null) ? 0 : getLateDataRules().hashCode());
         return hashCode;
     }
 

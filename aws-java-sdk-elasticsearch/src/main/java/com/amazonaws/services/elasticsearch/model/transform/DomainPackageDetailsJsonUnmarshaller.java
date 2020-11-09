@@ -72,6 +72,10 @@ public class DomainPackageDetailsJsonUnmarshaller implements Unmarshaller<Domain
                     context.nextToken();
                     domainPackageDetails.setDomainPackageStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PackageVersion", targetDepth)) {
+                    context.nextToken();
+                    domainPackageDetails.setPackageVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ReferencePath", targetDepth)) {
                     context.nextToken();
                     domainPackageDetails.setReferencePath(context.getUnmarshaller(String.class).unmarshall(context));

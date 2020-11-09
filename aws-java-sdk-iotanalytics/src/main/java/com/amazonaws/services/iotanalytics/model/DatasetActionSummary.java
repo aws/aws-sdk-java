@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the action which automatically creates the data set's contents.
+ * Information about the action that automatically creates the dataset's contents.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatasetActionSummary" target="_top">AWS
@@ -30,24 +30,24 @@ public class DatasetActionSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the action which automatically creates the data set's contents.
+     * The name of the action that automatically creates the dataset's contents.
      * </p>
      */
     private String actionName;
     /**
      * <p>
-     * The type of action by which the data set's contents are automatically created.
+     * The type of action by which the dataset's contents are automatically created.
      * </p>
      */
     private String actionType;
 
     /**
      * <p>
-     * The name of the action which automatically creates the data set's contents.
+     * The name of the action that automatically creates the dataset's contents.
      * </p>
      * 
      * @param actionName
-     *        The name of the action which automatically creates the data set's contents.
+     *        The name of the action that automatically creates the dataset's contents.
      */
 
     public void setActionName(String actionName) {
@@ -56,10 +56,10 @@ public class DatasetActionSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the action which automatically creates the data set's contents.
+     * The name of the action that automatically creates the dataset's contents.
      * </p>
      * 
-     * @return The name of the action which automatically creates the data set's contents.
+     * @return The name of the action that automatically creates the dataset's contents.
      */
 
     public String getActionName() {
@@ -68,11 +68,11 @@ public class DatasetActionSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the action which automatically creates the data set's contents.
+     * The name of the action that automatically creates the dataset's contents.
      * </p>
      * 
      * @param actionName
-     *        The name of the action which automatically creates the data set's contents.
+     *        The name of the action that automatically creates the dataset's contents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class DatasetActionSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The type of action by which the data set's contents are automatically created.
+     * The type of action by which the dataset's contents are automatically created.
      * </p>
      * 
      * @param actionType
-     *        The type of action by which the data set's contents are automatically created.
+     *        The type of action by which the dataset's contents are automatically created.
      * @see DatasetActionType
      */
 
@@ -97,10 +97,10 @@ public class DatasetActionSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The type of action by which the data set's contents are automatically created.
+     * The type of action by which the dataset's contents are automatically created.
      * </p>
      * 
-     * @return The type of action by which the data set's contents are automatically created.
+     * @return The type of action by which the dataset's contents are automatically created.
      * @see DatasetActionType
      */
 
@@ -110,11 +110,11 @@ public class DatasetActionSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The type of action by which the data set's contents are automatically created.
+     * The type of action by which the dataset's contents are automatically created.
      * </p>
      * 
      * @param actionType
-     *        The type of action by which the data set's contents are automatically created.
+     *        The type of action by which the dataset's contents are automatically created.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DatasetActionType
      */
@@ -126,11 +126,11 @@ public class DatasetActionSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The type of action by which the data set's contents are automatically created.
+     * The type of action by which the dataset's contents are automatically created.
      * </p>
      * 
      * @param actionType
-     *        The type of action by which the data set's contents are automatically created.
+     *        The type of action by which the dataset's contents are automatically created.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DatasetActionType
      */

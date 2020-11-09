@@ -430,4 +430,17 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Override
+    public java.util.concurrent.Future<UpdateTaskExecutionResult> updateTaskExecutionAsync(UpdateTaskExecutionRequest request) {
+
+        return updateTaskExecutionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTaskExecutionResult> updateTaskExecutionAsync(UpdateTaskExecutionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateTaskExecutionRequest, UpdateTaskExecutionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
 }

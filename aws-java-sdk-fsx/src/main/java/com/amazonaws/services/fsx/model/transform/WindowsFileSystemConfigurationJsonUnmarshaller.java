@@ -99,6 +99,12 @@ public class WindowsFileSystemConfigurationJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     windowsFileSystemConfiguration.setCopyTagsToBackups(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("Aliases", targetDepth)) {
+                    context.nextToken();
+                    windowsFileSystemConfiguration.setAliases(new ListUnmarshaller<Alias>(AliasJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

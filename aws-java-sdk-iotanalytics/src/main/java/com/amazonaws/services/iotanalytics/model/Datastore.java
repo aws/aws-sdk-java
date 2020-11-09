@@ -36,8 +36,9 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not
-     * specified, the default is "serviceManagedS3". This cannot be changed after the data store is created.
+     * Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
+     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You
+     * cannot change this storage option after the data store is created.
      * </p>
      */
     private DatastoreStorage storage;
@@ -75,8 +76,8 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * How long, in days, message data is kept for the data store. When "customerManagedS3" storage is selected, this
-     * parameter is ignored.
+     * How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is
+     * selected, this parameter is ignored.
      * </p>
      */
     private RetentionPeriod retentionPeriod;
@@ -92,6 +93,19 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date lastUpdateTime;
+    /**
+     * <p>
+     * The last time when a new message arrived in the data store.
+     * </p>
+     * <p>
+     * AWS IoT Analytics updates this value at most once per minute for one data store. Hence, the
+     * <code>lastMessageArrivalTime</code> value is an approximation.
+     * </p>
+     * <p>
+     * This feature only applies to messages that arrived in the data store after October 23, 2020.
+     * </p>
+     */
+    private java.util.Date lastMessageArrivalTime;
 
     /**
      * <p>
@@ -135,14 +149,15 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not
-     * specified, the default is "serviceManagedS3". This cannot be changed after the data store is created.
+     * Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
+     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You
+     * cannot change this storage option after the data store is created.
      * </p>
      * 
      * @param storage
-     *        Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage.
-     *        If not specified, the default is "serviceManagedS3". This cannot be changed after the data store is
-     *        created.
+     *        Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
+     *        <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
+     *        You cannot change this storage option after the data store is created.
      */
 
     public void setStorage(DatastoreStorage storage) {
@@ -151,13 +166,14 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not
-     * specified, the default is "serviceManagedS3". This cannot be changed after the data store is created.
+     * Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
+     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You
+     * cannot change this storage option after the data store is created.
      * </p>
      * 
-     * @return Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage.
-     *         If not specified, the default is "serviceManagedS3". This cannot be changed after the data store is
-     *         created.
+     * @return Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
+     *         <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
+     *         You cannot change this storage option after the data store is created.
      */
 
     public DatastoreStorage getStorage() {
@@ -166,14 +182,15 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not
-     * specified, the default is "serviceManagedS3". This cannot be changed after the data store is created.
+     * Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
+     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You
+     * cannot change this storage option after the data store is created.
      * </p>
      * 
      * @param storage
-     *        Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage.
-     *        If not specified, the default is "serviceManagedS3". This cannot be changed after the data store is
-     *        created.
+     *        Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
+     *        <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
+     *        You cannot change this storage option after the data store is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -439,13 +456,13 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * How long, in days, message data is kept for the data store. When "customerManagedS3" storage is selected, this
-     * parameter is ignored.
+     * How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is
+     * selected, this parameter is ignored.
      * </p>
      * 
      * @param retentionPeriod
-     *        How long, in days, message data is kept for the data store. When "customerManagedS3" storage is selected,
-     *        this parameter is ignored.
+     *        How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is
+     *        selected, this parameter is ignored.
      */
 
     public void setRetentionPeriod(RetentionPeriod retentionPeriod) {
@@ -454,12 +471,12 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * How long, in days, message data is kept for the data store. When "customerManagedS3" storage is selected, this
-     * parameter is ignored.
+     * How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is
+     * selected, this parameter is ignored.
      * </p>
      * 
-     * @return How long, in days, message data is kept for the data store. When "customerManagedS3" storage is selected,
-     *         this parameter is ignored.
+     * @return How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage
+     *         is selected, this parameter is ignored.
      */
 
     public RetentionPeriod getRetentionPeriod() {
@@ -468,13 +485,13 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * How long, in days, message data is kept for the data store. When "customerManagedS3" storage is selected, this
-     * parameter is ignored.
+     * How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is
+     * selected, this parameter is ignored.
      * </p>
      * 
      * @param retentionPeriod
-     *        How long, in days, message data is kept for the data store. When "customerManagedS3" storage is selected,
-     *        this parameter is ignored.
+     *        How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is
+     *        selected, this parameter is ignored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -564,6 +581,85 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The last time when a new message arrived in the data store.
+     * </p>
+     * <p>
+     * AWS IoT Analytics updates this value at most once per minute for one data store. Hence, the
+     * <code>lastMessageArrivalTime</code> value is an approximation.
+     * </p>
+     * <p>
+     * This feature only applies to messages that arrived in the data store after October 23, 2020.
+     * </p>
+     * 
+     * @param lastMessageArrivalTime
+     *        The last time when a new message arrived in the data store.</p>
+     *        <p>
+     *        AWS IoT Analytics updates this value at most once per minute for one data store. Hence, the
+     *        <code>lastMessageArrivalTime</code> value is an approximation.
+     *        </p>
+     *        <p>
+     *        This feature only applies to messages that arrived in the data store after October 23, 2020.
+     */
+
+    public void setLastMessageArrivalTime(java.util.Date lastMessageArrivalTime) {
+        this.lastMessageArrivalTime = lastMessageArrivalTime;
+    }
+
+    /**
+     * <p>
+     * The last time when a new message arrived in the data store.
+     * </p>
+     * <p>
+     * AWS IoT Analytics updates this value at most once per minute for one data store. Hence, the
+     * <code>lastMessageArrivalTime</code> value is an approximation.
+     * </p>
+     * <p>
+     * This feature only applies to messages that arrived in the data store after October 23, 2020.
+     * </p>
+     * 
+     * @return The last time when a new message arrived in the data store.</p>
+     *         <p>
+     *         AWS IoT Analytics updates this value at most once per minute for one data store. Hence, the
+     *         <code>lastMessageArrivalTime</code> value is an approximation.
+     *         </p>
+     *         <p>
+     *         This feature only applies to messages that arrived in the data store after October 23, 2020.
+     */
+
+    public java.util.Date getLastMessageArrivalTime() {
+        return this.lastMessageArrivalTime;
+    }
+
+    /**
+     * <p>
+     * The last time when a new message arrived in the data store.
+     * </p>
+     * <p>
+     * AWS IoT Analytics updates this value at most once per minute for one data store. Hence, the
+     * <code>lastMessageArrivalTime</code> value is an approximation.
+     * </p>
+     * <p>
+     * This feature only applies to messages that arrived in the data store after October 23, 2020.
+     * </p>
+     * 
+     * @param lastMessageArrivalTime
+     *        The last time when a new message arrived in the data store.</p>
+     *        <p>
+     *        AWS IoT Analytics updates this value at most once per minute for one data store. Hence, the
+     *        <code>lastMessageArrivalTime</code> value is an approximation.
+     *        </p>
+     *        <p>
+     *        This feature only applies to messages that arrived in the data store after October 23, 2020.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Datastore withLastMessageArrivalTime(java.util.Date lastMessageArrivalTime) {
+        setLastMessageArrivalTime(lastMessageArrivalTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -588,7 +684,9 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLastUpdateTime() != null)
-            sb.append("LastUpdateTime: ").append(getLastUpdateTime());
+            sb.append("LastUpdateTime: ").append(getLastUpdateTime()).append(",");
+        if (getLastMessageArrivalTime() != null)
+            sb.append("LastMessageArrivalTime: ").append(getLastMessageArrivalTime());
         sb.append("}");
         return sb.toString();
     }
@@ -631,6 +729,10 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLastUpdateTime() != null && other.getLastUpdateTime().equals(this.getLastUpdateTime()) == false)
             return false;
+        if (other.getLastMessageArrivalTime() == null ^ this.getLastMessageArrivalTime() == null)
+            return false;
+        if (other.getLastMessageArrivalTime() != null && other.getLastMessageArrivalTime().equals(this.getLastMessageArrivalTime()) == false)
+            return false;
         return true;
     }
 
@@ -646,6 +748,7 @@ public class Datastore implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRetentionPeriod() == null) ? 0 : getRetentionPeriod().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateTime() == null) ? 0 : getLastUpdateTime().hashCode());
+        hashCode = prime * hashCode + ((getLastMessageArrivalTime() == null) ? 0 : getLastMessageArrivalTime().hashCode());
         return hashCode;
     }
 

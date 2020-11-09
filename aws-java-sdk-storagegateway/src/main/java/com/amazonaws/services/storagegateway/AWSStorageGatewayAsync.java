@@ -1787,6 +1787,75 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
+     * Returns information about the bandwidth rate limit schedule of a gateway. By default, gateways do not have
+     * bandwidth rate limit schedules, which means no bandwidth rate limiting is in effect. This operation is supported
+     * only in the volume and tape gateway types.
+     * </p>
+     * <p>
+     * This operation returns information about a gateway's bandwidth rate limit schedule. A bandwidth rate limit
+     * schedule consists of one or more bandwidth rate limit intervals. A bandwidth rate limit interval defines a period
+     * of time on one or more days of the week, during which bandwidth rate limits are specified for uploading,
+     * downloading, or both.
+     * </p>
+     * <p>
+     * A bandwidth rate limit interval consists of one or more days of the week, a start hour and minute, an ending hour
+     * and minute, and bandwidth rate limits for uploading and downloading
+     * </p>
+     * <p>
+     * If no bandwidth rate limit schedule intervals are set for the gateway, this operation returns an empty response.
+     * To specify which gateway to describe, use the Amazon Resource Name (ARN) of the gateway in your request.
+     * </p>
+     * 
+     * @param describeBandwidthRateLimitScheduleRequest
+     * @return A Java Future containing the result of the DescribeBandwidthRateLimitSchedule operation returned by the
+     *         service.
+     * @sample AWSStorageGatewayAsync.DescribeBandwidthRateLimitSchedule
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimitSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeBandwidthRateLimitScheduleResult> describeBandwidthRateLimitScheduleAsync(
+            DescribeBandwidthRateLimitScheduleRequest describeBandwidthRateLimitScheduleRequest);
+
+    /**
+     * <p>
+     * Returns information about the bandwidth rate limit schedule of a gateway. By default, gateways do not have
+     * bandwidth rate limit schedules, which means no bandwidth rate limiting is in effect. This operation is supported
+     * only in the volume and tape gateway types.
+     * </p>
+     * <p>
+     * This operation returns information about a gateway's bandwidth rate limit schedule. A bandwidth rate limit
+     * schedule consists of one or more bandwidth rate limit intervals. A bandwidth rate limit interval defines a period
+     * of time on one or more days of the week, during which bandwidth rate limits are specified for uploading,
+     * downloading, or both.
+     * </p>
+     * <p>
+     * A bandwidth rate limit interval consists of one or more days of the week, a start hour and minute, an ending hour
+     * and minute, and bandwidth rate limits for uploading and downloading
+     * </p>
+     * <p>
+     * If no bandwidth rate limit schedule intervals are set for the gateway, this operation returns an empty response.
+     * To specify which gateway to describe, use the Amazon Resource Name (ARN) of the gateway in your request.
+     * </p>
+     * 
+     * @param describeBandwidthRateLimitScheduleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeBandwidthRateLimitSchedule operation returned by the
+     *         service.
+     * @sample AWSStorageGatewayAsyncHandler.DescribeBandwidthRateLimitSchedule
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimitSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeBandwidthRateLimitScheduleResult> describeBandwidthRateLimitScheduleAsync(
+            DescribeBandwidthRateLimitScheduleRequest describeBandwidthRateLimitScheduleRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeBandwidthRateLimitScheduleRequest, DescribeBandwidthRateLimitScheduleResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about the cache of a gateway. This operation is only supported in the cached volume, tape,
      * and file gateway types.
      * </p>
@@ -3861,6 +3930,45 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      */
     java.util.concurrent.Future<UpdateBandwidthRateLimitResult> updateBandwidthRateLimitAsync(UpdateBandwidthRateLimitRequest updateBandwidthRateLimitRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateBandwidthRateLimitRequest, UpdateBandwidthRateLimitResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the bandwidth rate limit schedule for a specified gateway. By default, gateways do not have bandwidth
+     * rate limit schedules, which means no bandwidth rate limiting is in effect. Use this to initiate or update a
+     * gateway's bandwidth rate limit schedule. This operation is supported in the volume and tape gateway types.
+     * </p>
+     * 
+     * @param updateBandwidthRateLimitScheduleRequest
+     * @return A Java Future containing the result of the UpdateBandwidthRateLimitSchedule operation returned by the
+     *         service.
+     * @sample AWSStorageGatewayAsync.UpdateBandwidthRateLimitSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimitSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateBandwidthRateLimitScheduleResult> updateBandwidthRateLimitScheduleAsync(
+            UpdateBandwidthRateLimitScheduleRequest updateBandwidthRateLimitScheduleRequest);
+
+    /**
+     * <p>
+     * Updates the bandwidth rate limit schedule for a specified gateway. By default, gateways do not have bandwidth
+     * rate limit schedules, which means no bandwidth rate limiting is in effect. Use this to initiate or update a
+     * gateway's bandwidth rate limit schedule. This operation is supported in the volume and tape gateway types.
+     * </p>
+     * 
+     * @param updateBandwidthRateLimitScheduleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateBandwidthRateLimitSchedule operation returned by the
+     *         service.
+     * @sample AWSStorageGatewayAsyncHandler.UpdateBandwidthRateLimitSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimitSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateBandwidthRateLimitScheduleResult> updateBandwidthRateLimitScheduleAsync(
+            UpdateBandwidthRateLimitScheduleRequest updateBandwidthRateLimitScheduleRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateBandwidthRateLimitScheduleRequest, UpdateBandwidthRateLimitScheduleResult> asyncHandler);
 
     /**
      * <p>

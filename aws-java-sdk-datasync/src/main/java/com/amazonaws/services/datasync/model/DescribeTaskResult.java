@@ -38,7 +38,7 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * For detailed information about task execution statuses, see Understanding Task Statuses in the <i>AWS DataSync
-     * User Guide.</i>
+     * User Guide</i>.
      * </p>
      */
     private String status;
@@ -185,14 +185,14 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * For detailed information about task execution statuses, see Understanding Task Statuses in the <i>AWS DataSync
-     * User Guide.</i>
+     * User Guide</i>.
      * </p>
      * 
      * @param status
      *        The status of the task that was described.</p>
      *        <p>
      *        For detailed information about task execution statuses, see Understanding Task Statuses in the <i>AWS
-     *        DataSync User Guide.</i>
+     *        DataSync User Guide</i>.
      * @see TaskStatus
      */
 
@@ -206,13 +206,13 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * For detailed information about task execution statuses, see Understanding Task Statuses in the <i>AWS DataSync
-     * User Guide.</i>
+     * User Guide</i>.
      * </p>
      * 
      * @return The status of the task that was described.</p>
      *         <p>
      *         For detailed information about task execution statuses, see Understanding Task Statuses in the <i>AWS
-     *         DataSync User Guide.</i>
+     *         DataSync User Guide</i>.
      * @see TaskStatus
      */
 
@@ -226,14 +226,14 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * For detailed information about task execution statuses, see Understanding Task Statuses in the <i>AWS DataSync
-     * User Guide.</i>
+     * User Guide</i>.
      * </p>
      * 
      * @param status
      *        The status of the task that was described.</p>
      *        <p>
      *        For detailed information about task execution statuses, see Understanding Task Statuses in the <i>AWS
-     *        DataSync User Guide.</i>
+     *        DataSync User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaskStatus
      */
@@ -249,14 +249,14 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * For detailed information about task execution statuses, see Understanding Task Statuses in the <i>AWS DataSync
-     * User Guide.</i>
+     * User Guide</i>.
      * </p>
      * 
      * @param status
      *        The status of the task that was described.</p>
      *        <p>
      *        For detailed information about task execution statuses, see Understanding Task Statuses in the <i>AWS
-     *        DataSync User Guide.</i>
+     *        DataSync User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaskStatus
      */

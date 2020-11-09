@@ -36,51 +36,12 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
     private java.util.List<String> eq;
     /**
      * <p>
-     * A condition that requires an array field on a finding to exactly match the specified property values. You can use
-     * this operator with the following properties:
+     * A condition that requires an array field of a finding to exactly match the specified property values. You can use
+     * this operator with the following properties: customDataIdentifiers.detections.arn,
+     * customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
+     * resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key,
+     * resourcesAffected.s3Object.tags.value, sensitiveData.category, and sensitiveData.detections.type.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * customDataIdentifiers.detections.arn
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * customDataIdentifiers.detections.name
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * resourcesAffected.s3Bucket.tags.key
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * resourcesAffected.s3Bucket.tags.value
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * resourcesAffected.s3Object.tags.key
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * resourcesAffected.s3Object.tags.value
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * sensitiveData.category
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * sensitiveData.detections.type
-     * </p>
-     * </li>
-     * </ul>
      */
     private java.util.List<String> eqExactMatch;
     /**
@@ -186,95 +147,18 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A condition that requires an array field on a finding to exactly match the specified property values. You can use
-     * this operator with the following properties:
+     * A condition that requires an array field of a finding to exactly match the specified property values. You can use
+     * this operator with the following properties: customDataIdentifiers.detections.arn,
+     * customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
+     * resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key,
+     * resourcesAffected.s3Object.tags.value, sensitiveData.category, and sensitiveData.detections.type.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * customDataIdentifiers.detections.arn
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * customDataIdentifiers.detections.name
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * resourcesAffected.s3Bucket.tags.key
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * resourcesAffected.s3Bucket.tags.value
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * resourcesAffected.s3Object.tags.key
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * resourcesAffected.s3Object.tags.value
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * sensitiveData.category
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * sensitiveData.detections.type
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return A condition that requires an array field on a finding to exactly match the specified property values. You
-     *         can use this operator with the following properties:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         customDataIdentifiers.detections.arn
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         customDataIdentifiers.detections.name
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         resourcesAffected.s3Bucket.tags.key
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         resourcesAffected.s3Bucket.tags.value
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         resourcesAffected.s3Object.tags.key
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         resourcesAffected.s3Object.tags.value
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         sensitiveData.category
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         sensitiveData.detections.type
-     *         </p>
-     *         </li>
+     * @return A condition that requires an array field of a finding to exactly match the specified property values. You
+     *         can use this operator with the following properties: customDataIdentifiers.detections.arn,
+     *         customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
+     *         resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key,
+     *         resourcesAffected.s3Object.tags.value, sensitiveData.category, and sensitiveData.detections.type.
      */
 
     public java.util.List<String> getEqExactMatch() {
@@ -283,96 +167,19 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A condition that requires an array field on a finding to exactly match the specified property values. You can use
-     * this operator with the following properties:
+     * A condition that requires an array field of a finding to exactly match the specified property values. You can use
+     * this operator with the following properties: customDataIdentifiers.detections.arn,
+     * customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
+     * resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key,
+     * resourcesAffected.s3Object.tags.value, sensitiveData.category, and sensitiveData.detections.type.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * customDataIdentifiers.detections.arn
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * customDataIdentifiers.detections.name
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * resourcesAffected.s3Bucket.tags.key
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * resourcesAffected.s3Bucket.tags.value
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * resourcesAffected.s3Object.tags.key
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * resourcesAffected.s3Object.tags.value
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * sensitiveData.category
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * sensitiveData.detections.type
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param eqExactMatch
-     *        A condition that requires an array field on a finding to exactly match the specified property values. You
-     *        can use this operator with the following properties:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        customDataIdentifiers.detections.arn
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        customDataIdentifiers.detections.name
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        resourcesAffected.s3Bucket.tags.key
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        resourcesAffected.s3Bucket.tags.value
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        resourcesAffected.s3Object.tags.key
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        resourcesAffected.s3Object.tags.value
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        sensitiveData.category
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        sensitiveData.detections.type
-     *        </p>
-     *        </li>
+     *        A condition that requires an array field of a finding to exactly match the specified property values. You
+     *        can use this operator with the following properties: customDataIdentifiers.detections.arn,
+     *        customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
+     *        resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key,
+     *        resourcesAffected.s3Object.tags.value, sensitiveData.category, and sensitiveData.detections.type.
      */
 
     public void setEqExactMatch(java.util.Collection<String> eqExactMatch) {
@@ -386,51 +193,12 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A condition that requires an array field on a finding to exactly match the specified property values. You can use
-     * this operator with the following properties:
+     * A condition that requires an array field of a finding to exactly match the specified property values. You can use
+     * this operator with the following properties: customDataIdentifiers.detections.arn,
+     * customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
+     * resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key,
+     * resourcesAffected.s3Object.tags.value, sensitiveData.category, and sensitiveData.detections.type.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * customDataIdentifiers.detections.arn
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * customDataIdentifiers.detections.name
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * resourcesAffected.s3Bucket.tags.key
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * resourcesAffected.s3Bucket.tags.value
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * resourcesAffected.s3Object.tags.key
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * resourcesAffected.s3Object.tags.value
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * sensitiveData.category
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * sensitiveData.detections.type
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setEqExactMatch(java.util.Collection)} or {@link #withEqExactMatch(java.util.Collection)} if you want to
@@ -438,49 +206,11 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
      * </p>
      * 
      * @param eqExactMatch
-     *        A condition that requires an array field on a finding to exactly match the specified property values. You
-     *        can use this operator with the following properties:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        customDataIdentifiers.detections.arn
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        customDataIdentifiers.detections.name
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        resourcesAffected.s3Bucket.tags.key
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        resourcesAffected.s3Bucket.tags.value
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        resourcesAffected.s3Object.tags.key
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        resourcesAffected.s3Object.tags.value
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        sensitiveData.category
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        sensitiveData.detections.type
-     *        </p>
-     *        </li>
+     *        A condition that requires an array field of a finding to exactly match the specified property values. You
+     *        can use this operator with the following properties: customDataIdentifiers.detections.arn,
+     *        customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
+     *        resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key,
+     *        resourcesAffected.s3Object.tags.value, sensitiveData.category, and sensitiveData.detections.type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -496,96 +226,19 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A condition that requires an array field on a finding to exactly match the specified property values. You can use
-     * this operator with the following properties:
+     * A condition that requires an array field of a finding to exactly match the specified property values. You can use
+     * this operator with the following properties: customDataIdentifiers.detections.arn,
+     * customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
+     * resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key,
+     * resourcesAffected.s3Object.tags.value, sensitiveData.category, and sensitiveData.detections.type.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * customDataIdentifiers.detections.arn
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * customDataIdentifiers.detections.name
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * resourcesAffected.s3Bucket.tags.key
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * resourcesAffected.s3Bucket.tags.value
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * resourcesAffected.s3Object.tags.key
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * resourcesAffected.s3Object.tags.value
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * sensitiveData.category
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * sensitiveData.detections.type
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param eqExactMatch
-     *        A condition that requires an array field on a finding to exactly match the specified property values. You
-     *        can use this operator with the following properties:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        customDataIdentifiers.detections.arn
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        customDataIdentifiers.detections.name
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        resourcesAffected.s3Bucket.tags.key
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        resourcesAffected.s3Bucket.tags.value
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        resourcesAffected.s3Object.tags.key
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        resourcesAffected.s3Object.tags.value
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        sensitiveData.category
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        sensitiveData.detections.type
-     *        </p>
-     *        </li>
+     *        A condition that requires an array field of a finding to exactly match the specified property values. You
+     *        can use this operator with the following properties: customDataIdentifiers.detections.arn,
+     *        customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
+     *        resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key,
+     *        resourcesAffected.s3Object.tags.value, sensitiveData.category, and sensitiveData.detections.type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

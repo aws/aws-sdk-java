@@ -2046,6 +2046,76 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
     }
 
     /**
+     * <p>
+     * Updates execution of a task.
+     * </p>
+     * <p>
+     * You can modify bandwidth throttling for a task execution that is running or queued. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/working-with-task-executions.html#adjust-bandwidth-throttling">
+     * Adjusting Bandwidth Throttling for a Task Execution</a>.
+     * </p>
+     * <note>
+     * <p>
+     * The only <code>Option</code> that can be modified by <code>UpdateTaskExecution</code> is
+     * <code> <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a> </code>
+     * .
+     * </p>
+     * </note>
+     * 
+     * @param updateTaskExecutionRequest
+     * @return Result of the UpdateTaskExecution operation returned by the service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalException
+     *         This exception is thrown when an error occurs in the AWS DataSync service.
+     * @sample AWSDataSync.UpdateTaskExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTaskExecution" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateTaskExecutionResult updateTaskExecution(UpdateTaskExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTaskExecution(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTaskExecutionResult executeUpdateTaskExecution(UpdateTaskExecutionRequest updateTaskExecutionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateTaskExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateTaskExecutionRequest> request = null;
+        Response<UpdateTaskExecutionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateTaskExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTaskExecutionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTaskExecution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateTaskExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateTaskExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Returns additional metadata for a previously executed successful, request, typically used for debugging issues
      * where a service isn't acting as expected. This data isn't considered part of the result data returned by an
      * operation, so it's available through this separate, diagnostic interface.

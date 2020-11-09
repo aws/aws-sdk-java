@@ -424,6 +424,21 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeBandwidthRateLimitScheduleResult> describeBandwidthRateLimitScheduleAsync(
+            DescribeBandwidthRateLimitScheduleRequest request) {
+
+        return describeBandwidthRateLimitScheduleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBandwidthRateLimitScheduleResult> describeBandwidthRateLimitScheduleAsync(
+            DescribeBandwidthRateLimitScheduleRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeBandwidthRateLimitScheduleRequest, DescribeBandwidthRateLimitScheduleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeCacheResult> describeCacheAsync(DescribeCacheRequest request) {
 
         return describeCacheAsync(request, null);
@@ -1061,6 +1076,21 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
     @Override
     public java.util.concurrent.Future<UpdateBandwidthRateLimitResult> updateBandwidthRateLimitAsync(UpdateBandwidthRateLimitRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateBandwidthRateLimitRequest, UpdateBandwidthRateLimitResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBandwidthRateLimitScheduleResult> updateBandwidthRateLimitScheduleAsync(
+            UpdateBandwidthRateLimitScheduleRequest request) {
+
+        return updateBandwidthRateLimitScheduleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBandwidthRateLimitScheduleResult> updateBandwidthRateLimitScheduleAsync(
+            UpdateBandwidthRateLimitScheduleRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateBandwidthRateLimitScheduleRequest, UpdateBandwidthRateLimitScheduleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

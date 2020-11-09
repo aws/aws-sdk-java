@@ -48,6 +48,10 @@ public class RecordJsonUnmarshaller implements Unmarshaller<Record, JsonUnmarsha
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("jsonPath", targetDepth)) {
+                    context.nextToken();
+                    record.setJsonPath(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("recordIndex", targetDepth)) {
                     context.nextToken();
                     record.setRecordIndex(context.getUnmarshaller(Long.class).unmarshall(context));

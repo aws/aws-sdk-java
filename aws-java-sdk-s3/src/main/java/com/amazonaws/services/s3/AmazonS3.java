@@ -14,6 +14,12 @@
  */
 package com.amazonaws.services.s3;
 
+import java.io.File;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.Date;
+import java.util.List;
+
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.ClientConfiguration;
@@ -49,6 +55,8 @@ import com.amazonaws.services.s3.model.DeleteBucketAnalyticsConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketCrossOriginConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketEncryptionRequest;
 import com.amazonaws.services.s3.model.DeleteBucketEncryptionResult;
+import com.amazonaws.services.s3.model.DeleteBucketIntelligentTieringConfigurationRequest;
+import com.amazonaws.services.s3.model.DeleteBucketIntelligentTieringConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketInventoryConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketLifecycleConfigurationRequest;
@@ -77,6 +85,8 @@ import com.amazonaws.services.s3.model.GetBucketAnalyticsConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketCrossOriginConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketEncryptionRequest;
 import com.amazonaws.services.s3.model.GetBucketEncryptionResult;
+import com.amazonaws.services.s3.model.GetBucketIntelligentTieringConfigurationRequest;
+import com.amazonaws.services.s3.model.GetBucketIntelligentTieringConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketInventoryConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketLifecycleConfigurationRequest;
@@ -115,6 +125,8 @@ import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
 import com.amazonaws.services.s3.model.ListBucketAnalyticsConfigurationsRequest;
 import com.amazonaws.services.s3.model.ListBucketAnalyticsConfigurationsResult;
+import com.amazonaws.services.s3.model.ListBucketIntelligentTieringConfigurationsRequest;
+import com.amazonaws.services.s3.model.ListBucketIntelligentTieringConfigurationsResult;
 import com.amazonaws.services.s3.model.ListBucketInventoryConfigurationsRequest;
 import com.amazonaws.services.s3.model.ListBucketInventoryConfigurationsResult;
 import com.amazonaws.services.s3.model.ListBucketMetricsConfigurationsRequest;
@@ -154,6 +166,8 @@ import com.amazonaws.services.s3.model.SetBucketAnalyticsConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketCrossOriginConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketEncryptionRequest;
 import com.amazonaws.services.s3.model.SetBucketEncryptionResult;
+import com.amazonaws.services.s3.model.SetBucketIntelligentTieringConfigurationRequest;
+import com.amazonaws.services.s3.model.SetBucketIntelligentTieringConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketInventoryConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketLifecycleConfigurationRequest;
@@ -185,15 +199,11 @@ import com.amazonaws.services.s3.model.UploadPartRequest;
 import com.amazonaws.services.s3.model.UploadPartResult;
 import com.amazonaws.services.s3.model.VersionListing;
 import com.amazonaws.services.s3.model.analytics.AnalyticsConfiguration;
+import com.amazonaws.services.s3.model.intelligenttiering.IntelligentTieringConfiguration;
 import com.amazonaws.services.s3.model.inventory.InventoryConfiguration;
 import com.amazonaws.services.s3.model.metrics.MetricsConfiguration;
 import com.amazonaws.services.s3.model.ownership.OwnershipControls;
 import com.amazonaws.services.s3.waiters.AmazonS3Waiters;
-import java.io.File;
-import java.io.InputStream;
-import java.net.URL;
-import java.util.Date;
-import java.util.List;
 
 /**
  * <p>
@@ -2191,6 +2201,14 @@ public interface AmazonS3 extends S3DirectSpi {
      * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
      * specify-signature-version
      * </p>
+     * <p>
+     * If the object you are retrieving is stored in the S3 Glacier, S3 Glacier Deep Archive,
+     * S3 Intelligent-Tiering Archive, or S3 Intelligent-Tiering Deep Archive storage classes,
+     * before you can retrieve the object you must first restore a copy using
+     * <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html\">RestoreObject</a>. Otherwise,
+     * this operation returns an <code>InvalidObjectStateError</code> error. For information aboutrestoring archived objects,
+     * see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html\">Restoring Archived Objects</a>.
+     * </p>
      *
      * @param bucketName
      *            The name of the bucket containing the desired object.
@@ -2259,6 +2277,14 @@ public interface AmazonS3 extends S3DirectSpi {
      * security. For more information on how to do this, see
      * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
      * specify-signature-version
+     * </p>
+     * <p>
+     * If the object you are retrieving is stored in the S3 Glacier, S3 Glacier Deep Archive,
+     * S3 Intelligent-Tiering Archive, or S3 Intelligent-Tiering Deep Archive storage classes,
+     * before you can retrieve the object you must first restore a copy using
+     * <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html\">RestoreObject</a>. Otherwise,
+     * this operation returns an <code>InvalidObjectStateError</code> error. For information aboutrestoring archived objects,
+     * see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html\">Restoring Archived Objects</a>.
      * </p>
      *
      * @param getObjectRequest
@@ -4608,14 +4634,347 @@ public interface AmazonS3 extends S3DirectSpi {
             throws AmazonServiceException;
 
     /**
-     * Restore an object, which was transitioned to Amazon Glacier from Amazon
-     * S3 when it was expired, into Amazon S3 again. This copy is by nature temporary
-     * and is always stored as RRS in Amazon S3. The customer will be able to set /
-     * re-adjust the lifetime of this copy. By re-adjust we mean the customer
-     * can call this API to shorten or extend the lifetime of the copy. Note the
-     * request will only be accepted when there is no ongoing restore request. One
-     * needs to have the new s3:RestoreObject permission to perform this
-     * operation.
+     * <p>
+     * Restores an archived copy of an object back into Amazon S3
+     * </p>
+     * <p>
+     * This action is not supported by Amazon S3 on Outposts.
+     * </p>
+     * <p>
+     * This action performs the following types of requests:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>select</code> - Perform a select query on an archived object
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>restore an archive</code> - Restore an archived object
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To use this operation, you must have permissions to perform the <code>s3:RestoreObject</code> action. The bucket
+     * owner has this permission by default and can grant this permission to others. For more information about
+     * permissions, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources"
+     * >Permissions Related to Bucket Subresource Operations</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing Access Permissions to Your
+     * Amazon S3 Resources</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * <b>Querying Archives with Select Requests</b>
+     * </p>
+     * <p>
+     * You use a select type of request to perform SQL queries on archived objects. The archived objects that are being
+     * queried by the select request must be formatted as uncompressed comma-separated values (CSV) files. You can run
+     * queries and custom analytics on your archived data without having to restore your data to a hotter Amazon S3
+     * tier. For an overview about select requests, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying Archived
+     * Objects</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * When making a select request, do the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Define an output location for the select query's output. This must be an Amazon S3 bucket in the same AWS Region
+     * as the bucket that contains the archive object that is being queried. The AWS account that initiates the job must
+     * have permissions to write to the S3 bucket. You can specify the storage class and encryption for the output
+     * objects stored in the bucket. For more information about output, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying Archived
+     * Objects</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * For more information about the <code>S3</code> structure in the request body, see the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Managing Access with ACLs</a> in
+     * the <i>Amazon Simple Storage Service Developer Guide</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data Using
+     * Server-Side Encryption</a> in the <i>Amazon Simple Storage Service Developer Guide</i>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Define the SQL expression for the <code>SELECT</code> type of restoration for your query in the request body's
+     * <code>SelectParameters</code> structure. You can use expressions like the following examples.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The following expression returns all records from the specified object.
+     * </p>
+     * <p>
+     * <code>SELECT * FROM Object</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Assuming that you are not using any headers for data stored in the object, you can specify columns with
+     * positional headers.
+     * </p>
+     * <p>
+     * <code>SELECT s._1, s._2 FROM Object s WHERE s._3 &gt; 100</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you have headers and you set the <code>fileHeaderInfo</code> in the <code>CSV</code> structure in the request
+     * body to <code>USE</code>, you can specify headers in the query. (If you set the <code>fileHeaderInfo</code> field
+     * to <code>IGNORE</code>, the first row is skipped for the query.) You cannot mix ordinal positions with header
+     * column names.
+     * </p>
+     * <p>
+     * <code>SELECT s.Id, s.FirstName, s.SSN FROM S3Object s</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about using SQL with S3 Glacier Select restore, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html">SQL Reference for
+     * Amazon S3 Select and S3 Glacier Select</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * When making a select request, you can also do the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To expedite your queries, specify the <code>Expedited</code> tier. For more information about tiers, see
+     * "Restoring Archives," later in this topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify details about the data serialization format of both the input object that is being queried and the
+     * serialization of the CSV-encoded query results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following are additional important facts about the select feature:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The output results are new Amazon S3 objects. Unlike archive retrievals, they are stored until explicitly
+     * deleted-manually or through a lifecycle policy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can issue more than one select request on the same Amazon S3 object. Amazon S3 doesn't deduplicate requests,
+     * so avoid issuing duplicate requests.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon S3 accepts a select request even if the object has already been restored. A select request doesn’t return
+     * error response <code>409</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Restoring Archives</b>
+     * </p>
+     * <p>
+     * Objects in the GLACIER and DEEP_ARCHIVE storage classes are archived. To access an archived object, you must
+     * first initiate a restore request. This restores a temporary copy of the archived object. In a restore request,
+     * you must specify the number of days that you want the restored copy to exist. After the specified period, Amazon
+     * S3 deletes the temporary copy but the object remains archived in the GLACIER or DEEP_ARCHIVE storage class that
+     * object was restored from.
+     * </p>
+     * <p>
+     * To restore a specific object version, you can provide a version ID. If you don't provide a version ID, Amazon S3
+     * restores the current version.
+     * </p>
+     * <p>
+     * The time it takes restore jobs to finish depends on which storage class the object is being restored from and
+     * which data access tier you specify.
+     * </p>
+     * <p>
+     * When restoring an archived object (or using a select request), you can specify one of the following data access
+     * tier options in the <code>Tier</code> element of the request body:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>Expedited</code> </b> - Expedited retrievals allow you to quickly access your data stored in the
+     * GLACIER storage class when occasional urgent requests for a subset of archives are required. For all but the
+     * largest archived objects (250 MB+), data accessed using Expedited retrievals are typically made available within
+     * 1–5 minutes. Provisioned capacity ensures that retrieval capacity for Expedited retrievals is available when you
+     * need it. Expedited retrievals and provisioned capacity are not available for the DEEP_ARCHIVE storage class.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>Standard</code> </b> - S3 Standard retrievals allow you to access any of your archived objects within
+     * several hours. This is the default option for the GLACIER and DEEP_ARCHIVE retrieval requests that do not specify
+     * the retrieval option. S3 Standard retrievals typically complete within 3-5 hours from the GLACIER storage class
+     * and typically complete within 12 hours from the DEEP_ARCHIVE storage class.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>Bulk</code> </b> - Bulk retrievals are Amazon S3 Glacier’s lowest-cost retrieval option, enabling you
+     * to retrieve large amounts, even petabytes, of data inexpensively in a day. Bulk retrievals typically complete
+     * within 5-12 hours from the GLACIER storage class and typically complete within 48 hours from the DEEP_ARCHIVE
+     * storage class.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about archive retrieval options and provisioned capacity for <code>Expedited</code> data
+     * access, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring Archived
+     * Objects</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can use Amazon S3 restore speed upgrade to change the restore speed to a faster speed while it is in
+     * progress. You upgrade the speed of an in-progress restoration by issuing another restore request to the same
+     * object, setting a new <code>Tier</code> request element. When issuing a request to upgrade the restore tier, you
+     * must choose a tier that is faster than the tier that the in-progress restore is using. You must not change any
+     * other parameters, such as the <code>Days</code> request element. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html#restoring-objects-upgrade-tier.title.html"
+     * > Upgrading the Speed of an In-Progress Restore</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * To get the status of object restoration, you can send a <code>HEAD</code> request. Operations return the
+     * <code>x-amz-restore</code> header, which provides information about the restoration status, in the response. You
+     * can use Amazon S3 event notifications to notify you when a restore is initiated or completed. For more
+     * information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
+     * Amazon S3 Event Notifications</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * After restoring an archived object, you can update the restoration period by reissuing the request with a new
+     * period. Amazon S3 updates the restoration period relative to the current time and charges only for the
+     * request-there are no data transfer charges. You cannot update the restoration period when Amazon S3 is actively
+     * processing your current restore request for the object.
+     * </p>
+     * <p>
+     * If your bucket has a lifecycle configuration with a rule that includes an expiration action, the object
+     * expiration overrides the life span that you specify in a restore request. For example, if you restore an object
+     * copy for 10 days, but the object is scheduled to expire in 3 days, Amazon S3 deletes the object in 3 days. For
+     * more information about lifecycle configuration, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html"
+     * >PutBucketLifecycleConfiguration</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object Lifecycle Management</a>
+     * in <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * <b>Responses</b>
+     * </p>
+     * <p>
+     * A successful operation returns either the <code>200 OK</code> or <code>202 Accepted</code> status code.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the object copy is not previously restored, then Amazon S3 returns <code>202 Accepted</code> in the response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the object copy is previously restored, Amazon S3 returns <code>200 OK</code> in the response.
+     * </p>
+     * </li>
+     * </ul>
+     * <p class="title">
+     * <b>Special Errors</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <ul>
+     * <li>
+     * <p>
+     * <i>Code: RestoreAlreadyInProgress</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>Cause: Object restore is already in progress. (This error does not apply to SELECT type requests.)</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>HTTP Status Code: 409 Conflict</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>SOAP Fault Code Prefix: Client</i>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <ul>
+     * <li>
+     * <p>
+     * <i>Code: GlacierExpeditedRetrievalNotAvailable</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>Cause: S3 Glacier expedited retrievals are currently not available. Try again later. (Returned if there is
+     * insufficient capacity to process the Expedited request. This error applies only to Expedited retrievals and not
+     * to S3 Standard or Bulk retrievals.)</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>HTTP Status Code: 503</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>SOAP Fault Code Prefix: N/A</i>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     * <p class="title">
+     * <b>Related Resources</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">
+     * PutBucketLifecycleConfiguration</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">
+     * GetBucketNotificationConfiguration</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html">SQL Reference for
+     * Amazon S3 Select and S3 Glacier Select </a> in the <i>Amazon Simple Storage Service Developer Guide</i>
+     * </p>
+     * </li>
+     * </ul>
      *
      * @param request
      *            The request object containing all the options for restoring an
@@ -5242,6 +5601,225 @@ public interface AmazonS3 extends S3DirectSpi {
             ListBucketAnalyticsConfigurationsRequest listBucketAnalyticsConfigurationsRequest)
             throws AmazonServiceException, SdkClientException;
 
+    /**
+     * <p>Deletes the S3 Intelligent-Tiering configuration from the specified bucket.</p>
+     *
+     * <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to
+     * the most cost-effective storage access tier, without additional operational overhead. S3 Intelligent-Tiering
+     * delivers automatic cost savings by moving data between access tiers, when access patterns change.</p>
+     *
+     * <p>The S3 Intelligent-Tiering storage class is suitable for objects larger than 128 KB that you plan to store
+     * for at least 30 days. If the size of an object is less than 128 KB, it is not eligible for auto-tiering.
+     * Smaller objects can be stored, but they are always charged at the frequent access tier rates in the
+     * S3 Intelligent-Tiering storage class. </p>
+     *
+     * <p>If you delete an object before the end of the 30-day minimum storage duration period, you are charged for 30 days.
+     * For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access\">
+     * Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
+     *
+     * <p>Operations related to <code>DeleteBucketIntelligentTieringConfiguration</code> include: </p>
+     * <ul>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketIntelligentTieringConfiguration.html\">GetBucketIntelligentTieringConfiguration</a> </p> </li>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketIntelligentTieringConfiguration.html\">PutBucketIntelligentTieringConfiguration</a> </p> </li>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html\">ListBucketIntelligentTieringConfigurations</a> </p> </li>
+     * </ul>
+     *
+     * @param bucketName
+     *              The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.
+     * @param id
+     *              The ID used to identify the S3 Intelligent-Tiering configuration.
+     */
+    public DeleteBucketIntelligentTieringConfigurationResult deleteBucketIntelligentTieringConfiguration(
+            String bucketName, String id) throws AmazonServiceException, SdkClientException;
+
+    /**
+     * <p>Deletes the S3 Intelligent-Tiering configuration from the specified bucket.</p>
+     *
+     * <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to
+     * the most cost-effective storage access tier, without additional operational overhead. S3 Intelligent-Tiering
+     * delivers automatic cost savings by moving data between access tiers, when access patterns change.</p>
+     *
+     * <p>The S3 Intelligent-Tiering storage class is suitable for objects larger than 128 KB that you plan to store
+     * for at least 30 days. If the size of an object is less than 128 KB, it is not eligible for auto-tiering.
+     * Smaller objects can be stored, but they are always charged at the frequent access tier rates in the
+     * S3 Intelligent-Tiering storage class. </p>
+     *
+     * <p>If you delete an object before the end of the 30-day minimum storage duration period, you are charged for 30 days.
+     * For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access\">
+     * Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
+     *
+     * <p>Operations related to <code>DeleteBucketIntelligentTieringConfiguration</code> include: </p>
+     * <ul>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketIntelligentTieringConfiguration.html\">GetBucketIntelligentTieringConfiguration</a> </p> </li>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketIntelligentTieringConfiguration.html\">PutBucketIntelligentTieringConfiguration</a> </p> </li>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html\">ListBucketIntelligentTieringConfigurations</a> </p> </li>
+     * </ul>
+     *
+     * @param deleteBucketIntelligentTieringConfigurationRequest
+     *              The request object used to delete the S3 Intelligent-Tiering configuration.
+     */
+    public DeleteBucketIntelligentTieringConfigurationResult deleteBucketIntelligentTieringConfiguration(
+            DeleteBucketIntelligentTieringConfigurationRequest deleteBucketIntelligentTieringConfigurationRequest)
+            throws AmazonServiceException, SdkClientException;
+
+    /**
+     * <p>Gets the S3 Intelligent-Tiering configuration from the specified bucket.</p>
+     *
+     * <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to
+     * the most cost-effective storage access tier, without additional operational overhead. S3 Intelligent-Tiering
+     * delivers automatic cost savings by moving data between access tiers, when access patterns change.</p>
+     *
+     * <p>The S3 Intelligent-Tiering storage class is suitable for objects larger than 128 KB that you plan to store
+     * for at least 30 days. If the size of an object is less than 128 KB, it is not eligible for auto-tiering.
+     * Smaller objects can be stored, but they are always charged at the frequent access tier rates in the
+     * S3 Intelligent-Tiering storage class. </p>
+     *
+     * <p>If you delete an object before the end of the 30-day minimum storage duration period, you are charged for 30 days.
+     * For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access\">
+     * Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
+     *
+     * <p>Operations related to <code>GetBucketIntelligentTieringConfiguration</code> include: </p>
+     * <ul>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketIntelligentTieringConfiguration.html\">DeleteBucketIntelligentTieringConfiguration</a> </p> </li>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketIntelligentTieringConfiguration.html\">PutBucketIntelligentTieringConfiguration</a> </p> </li>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html\">ListBucketIntelligentTieringConfigurations</a> </p> </li>
+     * </ul>
+     *
+     * @param bucketName
+     *              The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.
+     * @param id
+     *              The ID used to identify the S3 Intelligent-Tiering configuration.
+     * @return
+     *              The result containing the requested S3 Intelligent-Tiering configuration.
+     */
+    public GetBucketIntelligentTieringConfigurationResult getBucketIntelligentTieringConfiguration(
+            String bucketName, String id) throws AmazonServiceException, SdkClientException;
+
+    /**
+     * <p>Gets the S3 Intelligent-Tiering configuration from the specified bucket.</p>
+     *
+     * <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to
+     * the most cost-effective storage access tier, without additional operational overhead. S3 Intelligent-Tiering
+     * delivers automatic cost savings by moving data between access tiers, when access patterns change.</p>
+     *
+     * <p>The S3 Intelligent-Tiering storage class is suitable for objects larger than 128 KB that you plan to store
+     * for at least 30 days. If the size of an object is less than 128 KB, it is not eligible for auto-tiering.
+     * Smaller objects can be stored, but they are always charged at the frequent access tier rates in the
+     * S3 Intelligent-Tiering storage class. </p>
+     *
+     * <p>If you delete an object before the end of the 30-day minimum storage duration period, you are charged for 30 days.
+     * For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access\">
+     * Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
+     *
+     * <p>Operations related to <code>GetBucketIntelligentTieringConfiguration</code> include: </p>
+     * <ul>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketIntelligentTieringConfiguration.html\">DeleteBucketIntelligentTieringConfiguration</a> </p> </li>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketIntelligentTieringConfiguration.html\">PutBucketIntelligentTieringConfiguration</a> </p> </li>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html\">ListBucketIntelligentTieringConfigurations</a> </p> </li>
+     * </ul>
+     *
+     * @param getBucketIntelligentTieringConfigurationRequest
+     *              The request object to retrieve the S3 Intelligent-Tiering configuration.
+     * @return
+     *              The result containing the requested S3 Intelligent-Tiering configuration.
+     */
+    public GetBucketIntelligentTieringConfigurationResult getBucketIntelligentTieringConfiguration(
+            GetBucketIntelligentTieringConfigurationRequest getBucketIntelligentTieringConfigurationRequest)
+            throws AmazonServiceException, SdkClientException;
+
+    /**
+     * <p>Creates or modifies an S3 Intelligent-Tiering configuration in the specified bucket.</p>
+     *
+     * <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to
+     * the most cost-effective storage access tier, without additional operational overhead. S3 Intelligent-Tiering
+     * delivers automatic cost savings by moving data between access tiers, when access patterns change.</p>
+     *
+     * <p>The S3 Intelligent-Tiering storage class is suitable for objects larger than 128 KB that you plan to store
+     * for at least 30 days. If the size of an object is less than 128 KB, it is not eligible for auto-tiering.
+     * Smaller objects can be stored, but they are always charged at the frequent access tier rates in the
+     * S3 Intelligent-Tiering storage class. </p>
+     *
+     * <p>If you delete an object before the end of the 30-day minimum storage duration period, you are charged for 30 days.
+     * For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access\">
+     * Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
+     *
+     * <p>Operations related to <code>SetBucketIntelligentTieringConfiguration/PutBucketIntelligentTieringConfiguration</code> include: </p>
+     * <ul>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketIntelligentTieringConfiguration.html\">DeleteBucketIntelligentTieringConfiguration</a> </p> </li>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketIntelligentTieringConfiguration.html\">GetBucketIntelligentTieringConfiguration</a> </p> </li>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html\">ListBucketIntelligentTieringConfigurations</a> </p> </li>
+     * </ul>
+     *
+     * @param bucketName
+     *              The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.
+     * @param intelligentTieringConfiguration
+     *              Container for S3 Intelligent-Tiering configuration.
+     */
+    public SetBucketIntelligentTieringConfigurationResult setBucketIntelligentTieringConfiguration(
+            String bucketName, IntelligentTieringConfiguration intelligentTieringConfiguration)
+            throws AmazonServiceException, SdkClientException;
+
+    /**
+     * <p>Creates or modifies an S3 Intelligent-Tiering configuration in the specified bucket.</p>
+     *
+     * <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to
+     * the most cost-effective storage access tier, without additional operational overhead. S3 Intelligent-Tiering
+     * delivers automatic cost savings by moving data between access tiers, when access patterns change.</p>
+     *
+     * <p>The S3 Intelligent-Tiering storage class is suitable for objects larger than 128 KB that you plan to store
+     * for at least 30 days. If the size of an object is less than 128 KB, it is not eligible for auto-tiering.
+     * Smaller objects can be stored, but they are always charged at the frequent access tier rates in the
+     * S3 Intelligent-Tiering storage class. </p>
+     *
+     * <p>If you delete an object before the end of the 30-day minimum storage duration period, you are charged for 30 days.
+     * For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access\">
+     * Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
+     *
+     * <p>Operations related to <code>SetBucketIntelligentTieringConfiguration/PutBucketIntelligentTieringConfiguration</code> include: </p>
+     * <ul>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketIntelligentTieringConfiguration.html\">DeleteBucketIntelligentTieringConfiguration</a> </p> </li>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketIntelligentTieringConfiguration.html\">GetBucketIntelligentTieringConfiguration</a> </p> </li>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html\">ListBucketIntelligentTieringConfigurations</a> </p> </li>
+     * </ul>
+     *
+     * @param setBucketIntelligentTieringConfigurationRequest
+     *              The request object to set the S3 Intelligent-Tiering configuration.
+     */
+    public SetBucketIntelligentTieringConfigurationResult setBucketIntelligentTieringConfiguration(
+            SetBucketIntelligentTieringConfigurationRequest setBucketIntelligentTieringConfigurationRequest)
+            throws AmazonServiceException, SdkClientException;
+
+    /**
+     * <p>Lists the S3 Intelligent-Tiering configuration from the specified bucket.</p>
+     *
+     * <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to
+     * the most cost-effective storage access tier, without additional operational overhead. S3 Intelligent-Tiering
+     * delivers automatic cost savings by moving data between access tiers, when access patterns change.</p>
+     *
+     * <p>The S3 Intelligent-Tiering storage class is suitable for objects larger than 128 KB that you plan to store
+     * for at least 30 days. If the size of an object is less than 128 KB, it is not eligible for auto-tiering.
+     * Smaller objects can be stored, but they are always charged at the frequent access tier rates in the
+     * S3 Intelligent-Tiering storage class. </p>
+     *
+     * <p>If you delete an object before the end of the 30-day minimum storage duration period, you are charged for 30 days.
+     * For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access\">
+     * Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
+     *
+     * <p>Operations related to <code>ListBucketIntelligentTieringConfigurations</code> include: </p>
+     * <ul>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketIntelligentTieringConfiguration.html\">DeleteBucketIntelligentTieringConfiguration</a> </p> </li>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketIntelligentTieringConfiguration.html\">PutBucketIntelligentTieringConfiguration</a> </p> </li>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketIntelligentTieringConfiguration.html\">GetBucketIntelligentTieringConfiguration</a> </p> </li>
+     * </ul>
+     *
+     * @param listBucketIntelligentTieringConfigurationsRequest
+     *              The request object to list all the S3 Intelligent-Tiering configurations for a bucket.
+     * @return
+     *              The result containing the list of all the S3 Intelligent-Tiering configurations for the bucket.
+     */
+    public ListBucketIntelligentTieringConfigurationsResult listBucketIntelligentTieringConfigurations(
+            ListBucketIntelligentTieringConfigurationsRequest listBucketIntelligentTieringConfigurationsRequest)
+            throws AmazonServiceException, SdkClientException;
 
     /**
      * Deletes an inventory configuration (identified by the inventory ID) from the bucket.

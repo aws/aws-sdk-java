@@ -144,6 +144,8 @@ import com.amazonaws.services.s3.model.DeleteBucketAnalyticsConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketCrossOriginConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketEncryptionRequest;
 import com.amazonaws.services.s3.model.DeleteBucketEncryptionResult;
+import com.amazonaws.services.s3.model.DeleteBucketIntelligentTieringConfigurationRequest;
+import com.amazonaws.services.s3.model.DeleteBucketIntelligentTieringConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketInventoryConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketLifecycleConfigurationRequest;
@@ -175,6 +177,8 @@ import com.amazonaws.services.s3.model.GetBucketAnalyticsConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketCrossOriginConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketEncryptionRequest;
 import com.amazonaws.services.s3.model.GetBucketEncryptionResult;
+import com.amazonaws.services.s3.model.GetBucketIntelligentTieringConfigurationRequest;
+import com.amazonaws.services.s3.model.GetBucketIntelligentTieringConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketInventoryConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketLifecycleConfigurationRequest;
@@ -216,6 +220,8 @@ import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
 import com.amazonaws.services.s3.model.ListBucketAnalyticsConfigurationsRequest;
 import com.amazonaws.services.s3.model.ListBucketAnalyticsConfigurationsResult;
+import com.amazonaws.services.s3.model.ListBucketIntelligentTieringConfigurationsRequest;
+import com.amazonaws.services.s3.model.ListBucketIntelligentTieringConfigurationsResult;
 import com.amazonaws.services.s3.model.ListBucketInventoryConfigurationsRequest;
 import com.amazonaws.services.s3.model.ListBucketInventoryConfigurationsResult;
 import com.amazonaws.services.s3.model.ListBucketMetricsConfigurationsRequest;
@@ -272,6 +278,8 @@ import com.amazonaws.services.s3.model.SetBucketAnalyticsConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketCrossOriginConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketEncryptionRequest;
 import com.amazonaws.services.s3.model.SetBucketEncryptionResult;
+import com.amazonaws.services.s3.model.SetBucketIntelligentTieringConfigurationRequest;
+import com.amazonaws.services.s3.model.SetBucketIntelligentTieringConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketInventoryConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketLifecycleConfigurationRequest;
@@ -305,6 +313,7 @@ import com.amazonaws.services.s3.model.UploadPartRequest;
 import com.amazonaws.services.s3.model.UploadPartResult;
 import com.amazonaws.services.s3.model.VersionListing;
 import com.amazonaws.services.s3.model.analytics.AnalyticsConfiguration;
+import com.amazonaws.services.s3.model.intelligenttiering.IntelligentTieringConfiguration;
 import com.amazonaws.services.s3.model.inventory.InventoryConfiguration;
 import com.amazonaws.services.s3.model.metrics.MetricsConfiguration;
 import com.amazonaws.services.s3.model.ownership.OwnershipControls;
@@ -376,6 +385,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.entity.ContentType;
+
 
 /**
  * <p>
@@ -3795,7 +3805,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         restoreObjectRequest = beforeClientExecution(restoreObjectRequest);
         String bucketName = restoreObjectRequest.getBucketName();
         String key = restoreObjectRequest.getKey();
-        int expirationInDays = restoreObjectRequest.getExpirationInDays();
 
         rejectNull(bucketName, "The bucket name parameter must be specified when restoring a glacier object");
         rejectNull(key, "The key parameter must be specified when restoring a glacier object");
@@ -3807,12 +3816,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 rejectNull(restoreObjectRequest.getSelectParameters(),
                            "The select parameters must be specified when restoring a glacier object with SELECT restore request type");
             }
-        } else if (expirationInDays == -1) {
-            throw new IllegalArgumentException("The expiration in days parameter must be specified when restoring a glacier object without OutputLocation");
         }
 
-        Request<RestoreObjectRequest> request =
-            createRestoreObjectRequest(restoreObjectRequest);
+        Request<RestoreObjectRequest> request = createRestoreObjectRequest(restoreObjectRequest);
 
         @SuppressWarnings("unchecked")
         ResponseHeaderHandlerChain<RestoreObjectResult> responseHandler = new ResponseHeaderHandlerChain<RestoreObjectResult>(
@@ -5908,6 +5914,113 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         return invoke(request, new Unmarshallers.ListBucketAnalyticsConfigurationUnmarshaller(), bucketName, null);
     }
+
+    @Override
+    public DeleteBucketIntelligentTieringConfigurationResult deleteBucketIntelligentTieringConfiguration(
+            String bucketName, String id) throws AmazonServiceException, SdkClientException {
+        return deleteBucketIntelligentTieringConfiguration(new DeleteBucketIntelligentTieringConfigurationRequest(bucketName, id));
+    }
+
+    @Override
+    public DeleteBucketIntelligentTieringConfigurationResult deleteBucketIntelligentTieringConfiguration(
+            DeleteBucketIntelligentTieringConfigurationRequest deleteBucketIntelligentTieringConfigurationRequest)
+            throws AmazonServiceException, SdkClientException {
+        deleteBucketIntelligentTieringConfigurationRequest = beforeClientExecution(deleteBucketIntelligentTieringConfigurationRequest);
+        rejectNull(deleteBucketIntelligentTieringConfigurationRequest, "The request cannot be null");
+        final String bucketName = assertStringNotEmpty(
+                deleteBucketIntelligentTieringConfigurationRequest.getBucketName(), "BucketName");
+        final String id = assertStringNotEmpty(
+                deleteBucketIntelligentTieringConfigurationRequest.getId(), "IntelligentTiering Id");
+
+        Request<DeleteBucketIntelligentTieringConfigurationRequest> request =
+                createRequest(bucketName, null, deleteBucketIntelligentTieringConfigurationRequest, HttpMethodName.DELETE);
+        request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBucketIntelligentTieringConfiguration");
+        request.addParameter("intelligent-tiering", null);
+        request.addParameter("id", id);
+
+        return invoke(request, new Unmarshallers.DeleteBucketIntelligenTieringConfigurationUnmarshaller(), bucketName, null);
+    }
+
+    @Override
+    public GetBucketIntelligentTieringConfigurationResult getBucketIntelligentTieringConfiguration(
+            String bucketName, String id) throws AmazonServiceException, SdkClientException {
+        return getBucketIntelligentTieringConfiguration(new GetBucketIntelligentTieringConfigurationRequest(bucketName, id));
+    }
+
+    @Override
+    public GetBucketIntelligentTieringConfigurationResult getBucketIntelligentTieringConfiguration(
+            GetBucketIntelligentTieringConfigurationRequest getBucketIntelligentTieringConfigurationRequest)
+            throws AmazonServiceException, SdkClientException {
+        getBucketIntelligentTieringConfigurationRequest = beforeClientExecution(getBucketIntelligentTieringConfigurationRequest);
+
+        rejectNull(getBucketIntelligentTieringConfigurationRequest, "The request cannot be null");
+        final String bucketName = assertStringNotEmpty(
+                getBucketIntelligentTieringConfigurationRequest.getBucketName(), "BucketName");
+        final String id = assertStringNotEmpty(
+                getBucketIntelligentTieringConfigurationRequest.getId(), "IntelligentTiering Id");
+
+        Request<GetBucketIntelligentTieringConfigurationRequest> request =
+                createRequest(bucketName, null, getBucketIntelligentTieringConfigurationRequest, HttpMethodName.GET);
+        request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBucketIntelligentTieringConfiguration");
+        request.addParameter("intelligent-tiering", null);
+        request.addParameter("id", id);
+
+        return invoke(request, new Unmarshallers.GetBucketIntelligenTieringConfigurationUnmarshaller(), bucketName, null);
+    }
+
+    @Override
+    public SetBucketIntelligentTieringConfigurationResult setBucketIntelligentTieringConfiguration(
+            String bucketName, IntelligentTieringConfiguration intelligentTieringConfiguration)
+            throws AmazonServiceException, SdkClientException {
+        return setBucketIntelligentTieringConfiguration(
+                new SetBucketIntelligentTieringConfigurationRequest(bucketName, intelligentTieringConfiguration));
+    }
+
+    @Override
+    public SetBucketIntelligentTieringConfigurationResult setBucketIntelligentTieringConfiguration(
+            SetBucketIntelligentTieringConfigurationRequest setBucketIntelligentTieringConfigurationRequest)
+            throws AmazonServiceException, SdkClientException {
+        setBucketIntelligentTieringConfigurationRequest = beforeClientExecution(setBucketIntelligentTieringConfigurationRequest);
+        rejectNull(setBucketIntelligentTieringConfigurationRequest, "The request cannot be null");
+        final String bucketName = assertStringNotEmpty(
+                setBucketIntelligentTieringConfigurationRequest.getBucketName(), "BucketName");
+        final IntelligentTieringConfiguration intelligentTieringConfiguration = assertNotNull(
+                setBucketIntelligentTieringConfigurationRequest.getIntelligentTierinConfiguration(),
+                "Intelligent Tiering Configuration");
+        final String id = assertNotNull(intelligentTieringConfiguration.getId(), "Intelligent Tiering Id");
+
+        Request<SetBucketIntelligentTieringConfigurationRequest> request =
+                createRequest(bucketName, null, setBucketIntelligentTieringConfigurationRequest, HttpMethodName.PUT);
+        request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutBucketIntelligentTieringConfiguration");
+        request.addParameter("intelligent-tiering", null);
+        request.addParameter("id", id);
+
+        byte[] bytes = bucketConfigurationXmlFactory.convertToXmlByteArray(intelligentTieringConfiguration);
+        request.addHeader("Content-Length", String.valueOf(bytes.length));
+        request.addHeader("Content-Type", "application/xml");
+        request.setContent(new ByteArrayInputStream(bytes));
+
+        return invoke(request, new Unmarshallers.SetBucketIntelligentTieringConfigurationUnmarshaller(), bucketName, null);
+    }
+
+    @Override
+    public ListBucketIntelligentTieringConfigurationsResult listBucketIntelligentTieringConfigurations(
+            ListBucketIntelligentTieringConfigurationsRequest listBucketIntelligentTieringConfigurationsRequest)
+            throws AmazonServiceException, SdkClientException {
+        listBucketIntelligentTieringConfigurationsRequest = beforeClientExecution(listBucketIntelligentTieringConfigurationsRequest);
+        rejectNull(listBucketIntelligentTieringConfigurationsRequest, "The request cannot be null");
+        final String bucketName = assertStringNotEmpty(
+                listBucketIntelligentTieringConfigurationsRequest.getBucketName(), "BucketName");
+
+        Request<ListBucketIntelligentTieringConfigurationsRequest> request =
+                createRequest(bucketName, null, listBucketIntelligentTieringConfigurationsRequest, HttpMethodName.GET);
+        request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBucketIntelligentTieringConfigurations");
+        request.addParameter("intelligent-tiering", null);
+        addParameterIfNotNull(request, "continuation-token", listBucketIntelligentTieringConfigurationsRequest.getContinuationToken());
+
+        return invoke(request, new Unmarshallers.ListBucketIntelligenTieringConfigurationUnmarshaller(), bucketName, null);
+    }
+
 
     @Override
     public DeleteBucketInventoryConfigurationResult deleteBucketInventoryConfiguration(

@@ -1211,4 +1211,59 @@ public interface AWSDataSyncAsync extends AWSDataSync {
     java.util.concurrent.Future<UpdateTaskResult> updateTaskAsync(UpdateTaskRequest updateTaskRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateTaskRequest, UpdateTaskResult> asyncHandler);
 
+    /**
+     * <p>
+     * Updates execution of a task.
+     * </p>
+     * <p>
+     * You can modify bandwidth throttling for a task execution that is running or queued. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/working-with-task-executions.html#adjust-bandwidth-throttling">
+     * Adjusting Bandwidth Throttling for a Task Execution</a>.
+     * </p>
+     * <note>
+     * <p>
+     * The only <code>Option</code> that can be modified by <code>UpdateTaskExecution</code> is
+     * <code> <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a> </code>
+     * .
+     * </p>
+     * </note>
+     * 
+     * @param updateTaskExecutionRequest
+     * @return A Java Future containing the result of the UpdateTaskExecution operation returned by the service.
+     * @sample AWSDataSyncAsync.UpdateTaskExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTaskExecution" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTaskExecutionResult> updateTaskExecutionAsync(UpdateTaskExecutionRequest updateTaskExecutionRequest);
+
+    /**
+     * <p>
+     * Updates execution of a task.
+     * </p>
+     * <p>
+     * You can modify bandwidth throttling for a task execution that is running or queued. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/working-with-task-executions.html#adjust-bandwidth-throttling">
+     * Adjusting Bandwidth Throttling for a Task Execution</a>.
+     * </p>
+     * <note>
+     * <p>
+     * The only <code>Option</code> that can be modified by <code>UpdateTaskExecution</code> is
+     * <code> <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a> </code>
+     * .
+     * </p>
+     * </note>
+     * 
+     * @param updateTaskExecutionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateTaskExecution operation returned by the service.
+     * @sample AWSDataSyncAsyncHandler.UpdateTaskExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTaskExecution" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTaskExecutionResult> updateTaskExecutionAsync(UpdateTaskExecutionRequest updateTaskExecutionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateTaskExecutionRequest, UpdateTaskExecutionResult> asyncHandler);
+
 }

@@ -22,7 +22,7 @@ import javax.annotation.Generated;
  * <li>
  * <p>
  * <code>FILE_SYSTEM_UPDATE</code> - A file system update administrative action initiated by the user from the Amazon
- * FSx console, API (UpdateFileSystem), or CLI (update-file-system). A
+ * FSx console, API (UpdateFileSystem), or CLI (update-file-system).
  * </p>
  * </li>
  * <li>
@@ -36,13 +36,27 @@ import javax.annotation.Generated;
  * Capacity</a>.
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * <code>FILE_SYSTEM_ALIAS_ASSOCIATION</code> - A file system update to associate a new DNS alias with the file system.
+ * For more information, see .
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>FILE_SYSTEM_ALIAS_DISASSOCIATION</code> - A file system update to disassociate a DNS alias from the file
+ * system. For more information, see .
+ * </p>
+ * </li>
  * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AdministrativeActionType {
 
     FILE_SYSTEM_UPDATE("FILE_SYSTEM_UPDATE"),
-    STORAGE_OPTIMIZATION("STORAGE_OPTIMIZATION");
+    STORAGE_OPTIMIZATION("STORAGE_OPTIMIZATION"),
+    FILE_SYSTEM_ALIAS_ASSOCIATION("FILE_SYSTEM_ALIAS_ASSOCIATION"),
+    FILE_SYSTEM_ALIAS_DISASSOCIATION("FILE_SYSTEM_ALIAS_DISASSOCIATION");
 
     private String value;
 

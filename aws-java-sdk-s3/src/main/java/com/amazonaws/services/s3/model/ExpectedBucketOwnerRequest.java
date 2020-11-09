@@ -14,20 +14,20 @@ package com.amazonaws.services.s3.model;
 
 public interface ExpectedBucketOwnerRequest {
     /**
-     * The account id of the expected bucket owner. If the bucket is owned by a different account than the expected owner, the
-     * request will fail.
+     * Returns he account id of the expected bucket owner. If the bucket is owned by a different account, the request
+     * will fail with an HTTP <code>403 (Access Denied)</code> error.
      */
     String getExpectedBucketOwner();
 
     /**
-     * The account id of the expected bucket owner. If the bucket is owned by a different account than the expected owner, the
-     * request will fail.
+     * Set the account id of the expected bucket owner. If the bucket is owned by a different account, the request will
+     * fail with an HTTP <code>403 (Access Denied)</code> error.
      */
     ExpectedBucketOwnerRequest withExpectedBucketOwner(String expectedBucketOwner);
 
     /**
-     * The account id of the expected bucket owner. If the bucket is owned by a different account than the expected owner, the
-     * request will fail.
+     * Set the account id of the expected bucket owner. If the bucket is owned by a different account, the request will
+     * fail with an HTTP <code>403 (Access Denied)</code> error.
      */
     void setExpectedBucketOwner(String expectedBucketOwner);
 }

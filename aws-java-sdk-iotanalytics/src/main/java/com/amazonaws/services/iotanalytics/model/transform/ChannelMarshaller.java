@@ -41,6 +41,8 @@ public class ChannelMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdateTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> LASTMESSAGEARRIVALTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastMessageArrivalTime").timestampFormat("unixTimestamp").build();
 
     private static final ChannelMarshaller instance = new ChannelMarshaller();
 
@@ -65,6 +67,7 @@ public class ChannelMarshaller {
             protocolMarshaller.marshall(channel.getRetentionPeriod(), RETENTIONPERIOD_BINDING);
             protocolMarshaller.marshall(channel.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(channel.getLastUpdateTime(), LASTUPDATETIME_BINDING);
+            protocolMarshaller.marshall(channel.getLastMessageArrivalTime(), LASTMESSAGEARRIVALTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

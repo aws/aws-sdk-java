@@ -30,7 +30,7 @@ public class EstimatedResourceSize implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The estimated size of the resource in bytes.
+     * The estimated size of the resource, in bytes.
      * </p>
      */
     private Double estimatedSizeInBytes;
@@ -43,11 +43,11 @@ public class EstimatedResourceSize implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The estimated size of the resource in bytes.
+     * The estimated size of the resource, in bytes.
      * </p>
      * 
      * @param estimatedSizeInBytes
-     *        The estimated size of the resource in bytes.
+     *        The estimated size of the resource, in bytes.
      */
 
     public void setEstimatedSizeInBytes(Double estimatedSizeInBytes) {
@@ -56,10 +56,10 @@ public class EstimatedResourceSize implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The estimated size of the resource in bytes.
+     * The estimated size of the resource, in bytes.
      * </p>
      * 
-     * @return The estimated size of the resource in bytes.
+     * @return The estimated size of the resource, in bytes.
      */
 
     public Double getEstimatedSizeInBytes() {
@@ -68,11 +68,11 @@ public class EstimatedResourceSize implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The estimated size of the resource in bytes.
+     * The estimated size of the resource, in bytes.
      * </p>
      * 
      * @param estimatedSizeInBytes
-     *        The estimated size of the resource in bytes.
+     *        The estimated size of the resource, in bytes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

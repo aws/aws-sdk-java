@@ -23,7 +23,8 @@ import javax.annotation.Generated;
 public enum BackupType {
 
     AUTOMATIC("AUTOMATIC"),
-    USER_INITIATED("USER_INITIATED");
+    USER_INITIATED("USER_INITIATED"),
+    AWS_BACKUP("AWS_BACKUP");
 
     private String value;
 

@@ -666,6 +666,30 @@ public interface AWSElasticsearch {
 
     /**
      * <p>
+     * Returns a list of versions of the package, along with their creation time and commit message.
+     * </p>
+     * 
+     * @param getPackageVersionHistoryRequest
+     *        Container for request parameters to <code> <a>GetPackageVersionHistory</a> </code> operation.
+     * @return Result of the GetPackageVersionHistory operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws AccessDeniedException
+     *         An error occurred because user does not have permissions to access the resource. Returns HTTP status code
+     *         403.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.GetPackageVersionHistory
+     */
+    GetPackageVersionHistoryResult getPackageVersionHistory(GetPackageVersionHistoryRequest getPackageVersionHistoryRequest);
+
+    /**
+     * <p>
      * Retrieves the complete history of the last 10 upgrades that were performed on the domain.
      * </p>
      * 
@@ -965,6 +989,33 @@ public interface AWSElasticsearch {
      * @sample AWSElasticsearch.UpdateElasticsearchDomainConfig
      */
     UpdateElasticsearchDomainConfigResult updateElasticsearchDomainConfig(UpdateElasticsearchDomainConfigRequest updateElasticsearchDomainConfigRequest);
+
+    /**
+     * <p>
+     * Updates a package for use with Amazon ES domains.
+     * </p>
+     * 
+     * @param updatePackageRequest
+     *        Container for request parameters to <code> <a>UpdatePackage</a> </code> operation.
+     * @return Result of the UpdatePackage operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws LimitExceededException
+     *         An exception for trying to create more than allowed resources or sub-resources. Gives http status code of
+     *         409.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws AccessDeniedException
+     *         An error occurred because user does not have permissions to access the resource. Returns HTTP status code
+     *         403.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.UpdatePackage
+     */
+    UpdatePackageResult updatePackage(UpdatePackageRequest updatePackageRequest);
 
     /**
      * <p>

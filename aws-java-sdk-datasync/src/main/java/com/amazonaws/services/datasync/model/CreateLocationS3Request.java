@@ -37,8 +37,7 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
     private String subdirectory;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon S3 bucket. If the bucket is on an AWS Outpost, this must be an
-     * access point ARN.
+     * The ARN of the Amazon S3 bucket. If the bucket is on an AWS Outpost, this must be an access point ARN.
      * </p>
      */
     private String s3BucketArn;
@@ -49,9 +48,9 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
      * storage class defaults to AWS S3 Outposts.
      * </p>
      * <p>
-     * For more information about S3 storage classes, see <a href="https://aws.amazon.com/s3/storage-classes/">Amazon S3
-     * Storage Classes</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. Some storage classes have
-     * behaviors that can affect your S3 storage cost. For detailed information, see <a>using-storage-classes</a>.
+     * For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3
+     * Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed
+     * information, see <a>using-storage-classes</a>.
      * </p>
      */
     private String s3StorageClass;
@@ -60,7 +59,7 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * If you are using DataSync on an AWS Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents
-     * deployed on your AWS Outpost. For more information about launching a DataSync agent on an Amazon Outpost, see
+     * deployed on your Outpost. For more information about launching a DataSync agent on an AWS Outpost, see
      * <a>outposts-agent</a>.
      * </p>
      */
@@ -121,13 +120,11 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon S3 bucket. If the bucket is on an AWS Outpost, this must be an
-     * access point ARN.
+     * The ARN of the Amazon S3 bucket. If the bucket is on an AWS Outpost, this must be an access point ARN.
      * </p>
      * 
      * @param s3BucketArn
-     *        The Amazon Resource Name (ARN) of the Amazon S3 bucket. If the bucket is on an AWS Outpost, this must be
-     *        an access point ARN.
+     *        The ARN of the Amazon S3 bucket. If the bucket is on an AWS Outpost, this must be an access point ARN.
      */
 
     public void setS3BucketArn(String s3BucketArn) {
@@ -136,12 +133,10 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon S3 bucket. If the bucket is on an AWS Outpost, this must be an
-     * access point ARN.
+     * The ARN of the Amazon S3 bucket. If the bucket is on an AWS Outpost, this must be an access point ARN.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon S3 bucket. If the bucket is on an AWS Outpost, this must be
-     *         an access point ARN.
+     * @return The ARN of the Amazon S3 bucket. If the bucket is on an AWS Outpost, this must be an access point ARN.
      */
 
     public String getS3BucketArn() {
@@ -150,13 +145,11 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon S3 bucket. If the bucket is on an AWS Outpost, this must be an
-     * access point ARN.
+     * The ARN of the Amazon S3 bucket. If the bucket is on an AWS Outpost, this must be an access point ARN.
      * </p>
      * 
      * @param s3BucketArn
-     *        The Amazon Resource Name (ARN) of the Amazon S3 bucket. If the bucket is on an AWS Outpost, this must be
-     *        an access point ARN.
+     *        The ARN of the Amazon S3 bucket. If the bucket is on an AWS Outpost, this must be an access point ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,9 +165,9 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
      * storage class defaults to AWS S3 Outposts.
      * </p>
      * <p>
-     * For more information about S3 storage classes, see <a href="https://aws.amazon.com/s3/storage-classes/">Amazon S3
-     * Storage Classes</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. Some storage classes have
-     * behaviors that can affect your S3 storage cost. For detailed information, see <a>using-storage-classes</a>.
+     * For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3
+     * Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed
+     * information, see <a>using-storage-classes</a>.
      * </p>
      * 
      * @param s3StorageClass
@@ -183,9 +176,9 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
      *        Outposts, the storage class defaults to AWS S3 Outposts.</p>
      *        <p>
      *        For more information about S3 storage classes, see <a
-     *        href="https://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a> in the <i>Amazon Simple
-     *        Storage Service Developer Guide</i>. Some storage classes have behaviors that can affect your S3 storage
-     *        cost. For detailed information, see <a>using-storage-classes</a>.
+     *        href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have
+     *        behaviors that can affect your S3 storage cost. For detailed information, see
+     *        <a>using-storage-classes</a>.
      * @see S3StorageClass
      */
 
@@ -200,9 +193,9 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
      * storage class defaults to AWS S3 Outposts.
      * </p>
      * <p>
-     * For more information about S3 storage classes, see <a href="https://aws.amazon.com/s3/storage-classes/">Amazon S3
-     * Storage Classes</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. Some storage classes have
-     * behaviors that can affect your S3 storage cost. For detailed information, see <a>using-storage-classes</a>.
+     * For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3
+     * Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed
+     * information, see <a>using-storage-classes</a>.
      * </p>
      * 
      * @return The Amazon S3 storage class that you want to store your files in when this location is used as a task
@@ -210,9 +203,9 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
      *         Outposts, the storage class defaults to AWS S3 Outposts.</p>
      *         <p>
      *         For more information about S3 storage classes, see <a
-     *         href="https://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a> in the <i>Amazon Simple
-     *         Storage Service Developer Guide</i>. Some storage classes have behaviors that can affect your S3 storage
-     *         cost. For detailed information, see <a>using-storage-classes</a>.
+     *         href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have
+     *         behaviors that can affect your S3 storage cost. For detailed information, see
+     *         <a>using-storage-classes</a>.
      * @see S3StorageClass
      */
 
@@ -227,9 +220,9 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
      * storage class defaults to AWS S3 Outposts.
      * </p>
      * <p>
-     * For more information about S3 storage classes, see <a href="https://aws.amazon.com/s3/storage-classes/">Amazon S3
-     * Storage Classes</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. Some storage classes have
-     * behaviors that can affect your S3 storage cost. For detailed information, see <a>using-storage-classes</a>.
+     * For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3
+     * Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed
+     * information, see <a>using-storage-classes</a>.
      * </p>
      * 
      * @param s3StorageClass
@@ -238,9 +231,9 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
      *        Outposts, the storage class defaults to AWS S3 Outposts.</p>
      *        <p>
      *        For more information about S3 storage classes, see <a
-     *        href="https://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a> in the <i>Amazon Simple
-     *        Storage Service Developer Guide</i>. Some storage classes have behaviors that can affect your S3 storage
-     *        cost. For detailed information, see <a>using-storage-classes</a>.
+     *        href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have
+     *        behaviors that can affect your S3 storage cost. For detailed information, see
+     *        <a>using-storage-classes</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3StorageClass
      */
@@ -257,9 +250,9 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
      * storage class defaults to AWS S3 Outposts.
      * </p>
      * <p>
-     * For more information about S3 storage classes, see <a href="https://aws.amazon.com/s3/storage-classes/">Amazon S3
-     * Storage Classes</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. Some storage classes have
-     * behaviors that can affect your S3 storage cost. For detailed information, see <a>using-storage-classes</a>.
+     * For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3
+     * Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed
+     * information, see <a>using-storage-classes</a>.
      * </p>
      * 
      * @param s3StorageClass
@@ -268,9 +261,9 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
      *        Outposts, the storage class defaults to AWS S3 Outposts.</p>
      *        <p>
      *        For more information about S3 storage classes, see <a
-     *        href="https://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a> in the <i>Amazon Simple
-     *        Storage Service Developer Guide</i>. Some storage classes have behaviors that can affect your S3 storage
-     *        cost. For detailed information, see <a>using-storage-classes</a>.
+     *        href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have
+     *        behaviors that can affect your S3 storage cost. For detailed information, see
+     *        <a>using-storage-classes</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3StorageClass
      */
@@ -309,13 +302,13 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * If you are using DataSync on an AWS Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents
-     * deployed on your AWS Outpost. For more information about launching a DataSync agent on an Amazon Outpost, see
+     * deployed on your Outpost. For more information about launching a DataSync agent on an AWS Outpost, see
      * <a>outposts-agent</a>.
      * </p>
      * 
      * @return If you are using DataSync on an AWS Outpost, specify the Amazon Resource Names (ARNs) of the DataSync
-     *         agents deployed on your AWS Outpost. For more information about launching a DataSync agent on an Amazon
-     *         Outpost, see <a>outposts-agent</a>.
+     *         agents deployed on your Outpost. For more information about launching a DataSync agent on an AWS Outpost,
+     *         see <a>outposts-agent</a>.
      */
 
     public java.util.List<String> getAgentArns() {
@@ -325,14 +318,14 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * If you are using DataSync on an AWS Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents
-     * deployed on your AWS Outpost. For more information about launching a DataSync agent on an Amazon Outpost, see
+     * deployed on your Outpost. For more information about launching a DataSync agent on an AWS Outpost, see
      * <a>outposts-agent</a>.
      * </p>
      * 
      * @param agentArns
      *        If you are using DataSync on an AWS Outpost, specify the Amazon Resource Names (ARNs) of the DataSync
-     *        agents deployed on your AWS Outpost. For more information about launching a DataSync agent on an Amazon
-     *        Outpost, see <a>outposts-agent</a>.
+     *        agents deployed on your Outpost. For more information about launching a DataSync agent on an AWS Outpost,
+     *        see <a>outposts-agent</a>.
      */
 
     public void setAgentArns(java.util.Collection<String> agentArns) {
@@ -347,7 +340,7 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * If you are using DataSync on an AWS Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents
-     * deployed on your AWS Outpost. For more information about launching a DataSync agent on an Amazon Outpost, see
+     * deployed on your Outpost. For more information about launching a DataSync agent on an AWS Outpost, see
      * <a>outposts-agent</a>.
      * </p>
      * <p>
@@ -358,8 +351,8 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param agentArns
      *        If you are using DataSync on an AWS Outpost, specify the Amazon Resource Names (ARNs) of the DataSync
-     *        agents deployed on your AWS Outpost. For more information about launching a DataSync agent on an Amazon
-     *        Outpost, see <a>outposts-agent</a>.
+     *        agents deployed on your Outpost. For more information about launching a DataSync agent on an AWS Outpost,
+     *        see <a>outposts-agent</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -376,14 +369,14 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * If you are using DataSync on an AWS Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents
-     * deployed on your AWS Outpost. For more information about launching a DataSync agent on an Amazon Outpost, see
+     * deployed on your Outpost. For more information about launching a DataSync agent on an AWS Outpost, see
      * <a>outposts-agent</a>.
      * </p>
      * 
      * @param agentArns
      *        If you are using DataSync on an AWS Outpost, specify the Amazon Resource Names (ARNs) of the DataSync
-     *        agents deployed on your AWS Outpost. For more information about launching a DataSync agent on an Amazon
-     *        Outpost, see <a>outposts-agent</a>.
+     *        agents deployed on your Outpost. For more information about launching a DataSync agent on an AWS Outpost,
+     *        see <a>outposts-agent</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

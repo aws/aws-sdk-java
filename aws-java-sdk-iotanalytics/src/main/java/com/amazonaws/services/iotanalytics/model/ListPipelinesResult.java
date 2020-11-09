@@ -25,7 +25,7 @@ public class ListPipelinesResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of "PipelineSummary" objects.
+     * A list of <code>PipelineSummary</code> objects.
      * </p>
      */
     private java.util.List<PipelineSummary> pipelineSummaries;
@@ -38,10 +38,10 @@ public class ListPipelinesResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of "PipelineSummary" objects.
+     * A list of <code>PipelineSummary</code> objects.
      * </p>
      * 
-     * @return A list of "PipelineSummary" objects.
+     * @return A list of <code>PipelineSummary</code> objects.
      */
 
     public java.util.List<PipelineSummary> getPipelineSummaries() {
@@ -50,11 +50,11 @@ public class ListPipelinesResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of "PipelineSummary" objects.
+     * A list of <code>PipelineSummary</code> objects.
      * </p>
      * 
      * @param pipelineSummaries
-     *        A list of "PipelineSummary" objects.
+     *        A list of <code>PipelineSummary</code> objects.
      */
 
     public void setPipelineSummaries(java.util.Collection<PipelineSummary> pipelineSummaries) {
@@ -68,7 +68,7 @@ public class ListPipelinesResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of "PipelineSummary" objects.
+     * A list of <code>PipelineSummary</code> objects.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListPipelinesResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param pipelineSummaries
-     *        A list of "PipelineSummary" objects.
+     *        A list of <code>PipelineSummary</code> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListPipelinesResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of "PipelineSummary" objects.
+     * A list of <code>PipelineSummary</code> objects.
      * </p>
      * 
      * @param pipelineSummaries
-     *        A list of "PipelineSummary" objects.
+     *        A list of <code>PipelineSummary</code> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A "DatasetAction" object that specifies how data set contents are automatically created.
+ * A <code>DatasetAction</code> object that specifies how data set contents are automatically created.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatasetAction" target="_top">AWS API
@@ -36,14 +36,14 @@ public class DatasetAction implements Serializable, Cloneable, StructuredPojo {
     private String actionName;
     /**
      * <p>
-     * An "SqlQueryDatasetAction" object that uses an SQL query to automatically create data set contents.
+     * An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create data set contents.
      * </p>
      */
     private SqlQueryDatasetAction queryAction;
     /**
      * <p>
-     * Information which allows the system to run a containerized application in order to create the data set contents.
-     * The application must be in a Docker container along with any needed support libraries.
+     * Information that allows the system to run a containerized application to create the dataset contents. The
+     * application must be in a Docker container along with any required support libraries.
      * </p>
      */
     private ContainerDatasetAction containerAction;
@@ -90,11 +90,12 @@ public class DatasetAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An "SqlQueryDatasetAction" object that uses an SQL query to automatically create data set contents.
+     * An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create data set contents.
      * </p>
      * 
      * @param queryAction
-     *        An "SqlQueryDatasetAction" object that uses an SQL query to automatically create data set contents.
+     *        An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create data set
+     *        contents.
      */
 
     public void setQueryAction(SqlQueryDatasetAction queryAction) {
@@ -103,10 +104,11 @@ public class DatasetAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An "SqlQueryDatasetAction" object that uses an SQL query to automatically create data set contents.
+     * An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create data set contents.
      * </p>
      * 
-     * @return An "SqlQueryDatasetAction" object that uses an SQL query to automatically create data set contents.
+     * @return An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create data set
+     *         contents.
      */
 
     public SqlQueryDatasetAction getQueryAction() {
@@ -115,11 +117,12 @@ public class DatasetAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An "SqlQueryDatasetAction" object that uses an SQL query to automatically create data set contents.
+     * An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create data set contents.
      * </p>
      * 
      * @param queryAction
-     *        An "SqlQueryDatasetAction" object that uses an SQL query to automatically create data set contents.
+     *        An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create data set
+     *        contents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,13 +133,13 @@ public class DatasetAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information which allows the system to run a containerized application in order to create the data set contents.
-     * The application must be in a Docker container along with any needed support libraries.
+     * Information that allows the system to run a containerized application to create the dataset contents. The
+     * application must be in a Docker container along with any required support libraries.
      * </p>
      * 
      * @param containerAction
-     *        Information which allows the system to run a containerized application in order to create the data set
-     *        contents. The application must be in a Docker container along with any needed support libraries.
+     *        Information that allows the system to run a containerized application to create the dataset contents. The
+     *        application must be in a Docker container along with any required support libraries.
      */
 
     public void setContainerAction(ContainerDatasetAction containerAction) {
@@ -145,12 +148,12 @@ public class DatasetAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information which allows the system to run a containerized application in order to create the data set contents.
-     * The application must be in a Docker container along with any needed support libraries.
+     * Information that allows the system to run a containerized application to create the dataset contents. The
+     * application must be in a Docker container along with any required support libraries.
      * </p>
      * 
-     * @return Information which allows the system to run a containerized application in order to create the data set
-     *         contents. The application must be in a Docker container along with any needed support libraries.
+     * @return Information that allows the system to run a containerized application to create the dataset contents. The
+     *         application must be in a Docker container along with any required support libraries.
      */
 
     public ContainerDatasetAction getContainerAction() {
@@ -159,13 +162,13 @@ public class DatasetAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information which allows the system to run a containerized application in order to create the data set contents.
-     * The application must be in a Docker container along with any needed support libraries.
+     * Information that allows the system to run a containerized application to create the dataset contents. The
+     * application must be in a Docker container along with any required support libraries.
      * </p>
      * 
      * @param containerAction
-     *        Information which allows the system to run a containerized application in order to create the data set
-     *        contents. The application must be in a Docker container along with any needed support libraries.
+     *        Information that allows the system to run a containerized application to create the dataset contents. The
+     *        application must be in a Docker container along with any required support libraries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

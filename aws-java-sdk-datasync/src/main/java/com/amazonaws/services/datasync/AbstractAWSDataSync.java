@@ -183,6 +183,11 @@ public class AbstractAWSDataSync implements AWSDataSync {
     }
 
     @Override
+    public UpdateTaskExecutionResult updateTaskExecution(UpdateTaskExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public void shutdown() {
         throw new java.lang.UnsupportedOperationException();
     }

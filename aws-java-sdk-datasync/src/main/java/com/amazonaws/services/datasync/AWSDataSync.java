@@ -677,6 +677,35 @@ public interface AWSDataSync {
     UpdateTaskResult updateTask(UpdateTaskRequest updateTaskRequest);
 
     /**
+     * <p>
+     * Updates execution of a task.
+     * </p>
+     * <p>
+     * You can modify bandwidth throttling for a task execution that is running or queued. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/working-with-task-executions.html#adjust-bandwidth-throttling">
+     * Adjusting Bandwidth Throttling for a Task Execution</a>.
+     * </p>
+     * <note>
+     * <p>
+     * The only <code>Option</code> that can be modified by <code>UpdateTaskExecution</code> is
+     * <code> <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a> </code>
+     * .
+     * </p>
+     * </note>
+     * 
+     * @param updateTaskExecutionRequest
+     * @return Result of the UpdateTaskExecution operation returned by the service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalException
+     *         This exception is thrown when an error occurs in the AWS DataSync service.
+     * @sample AWSDataSync.UpdateTaskExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTaskExecution" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateTaskExecutionResult updateTaskExecution(UpdateTaskExecutionRequest updateTaskExecutionRequest);
+
+    /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and
      * callers are not expected to call it, but can if they want to explicitly release any open resources. Once a client
      * has been shutdown, it should not be used to make any more requests.

@@ -35,6 +35,8 @@ public class VolumeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dockerVolumeConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> EFSVOLUMECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("efsVolumeConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> FSXWINDOWSFILESERVERVOLUMECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fsxWindowsFileServerVolumeConfiguration").build();
 
     private static final VolumeMarshaller instance = new VolumeMarshaller();
 
@@ -56,6 +58,7 @@ public class VolumeMarshaller {
             protocolMarshaller.marshall(volume.getHost(), HOST_BINDING);
             protocolMarshaller.marshall(volume.getDockerVolumeConfiguration(), DOCKERVOLUMECONFIGURATION_BINDING);
             protocolMarshaller.marshall(volume.getEfsVolumeConfiguration(), EFSVOLUMECONFIGURATION_BINDING);
+            protocolMarshaller.marshall(volume.getFsxWindowsFileServerVolumeConfiguration(), FSXWINDOWSFILESERVERVOLUMECONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

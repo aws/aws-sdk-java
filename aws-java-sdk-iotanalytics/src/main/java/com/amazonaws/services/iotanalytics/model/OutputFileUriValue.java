@@ -30,18 +30,18 @@ public class OutputFileUriValue implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The URI of the location where data set contents are stored, usually the URI of a file in an S3 bucket.
+     * The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.
      * </p>
      */
     private String fileName;
 
     /**
      * <p>
-     * The URI of the location where data set contents are stored, usually the URI of a file in an S3 bucket.
+     * The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.
      * </p>
      * 
      * @param fileName
-     *        The URI of the location where data set contents are stored, usually the URI of a file in an S3 bucket.
+     *        The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.
      */
 
     public void setFileName(String fileName) {
@@ -50,10 +50,10 @@ public class OutputFileUriValue implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The URI of the location where data set contents are stored, usually the URI of a file in an S3 bucket.
+     * The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.
      * </p>
      * 
-     * @return The URI of the location where data set contents are stored, usually the URI of a file in an S3 bucket.
+     * @return The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.
      */
 
     public String getFileName() {
@@ -62,11 +62,11 @@ public class OutputFileUriValue implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The URI of the location where data set contents are stored, usually the URI of a file in an S3 bucket.
+     * The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.
      * </p>
      * 
      * @param fileName
-     *        The URI of the location where data set contents are stored, usually the URI of a file in an S3 bucket.
+     *        The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

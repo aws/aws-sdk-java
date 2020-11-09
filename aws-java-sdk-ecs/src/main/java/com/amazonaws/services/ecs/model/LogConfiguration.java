@@ -19,19 +19,17 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The log configuration specification for the container.
- * </p>
- * <p>
- * This parameter maps to <code>LogConfig</code> in the <a
+ * The log configuration for the container. This parameter maps to <code>LogConfig</code> in the <a
  * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a
  * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--log-driver</code> option to <a
- * href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>. By default,
- * containers use the same logging driver that the Docker daemon uses; however the container may use a different logging
- * driver than the Docker daemon by specifying a log driver with this parameter in the container definition. To use a
- * different logging driver for a container, the log system must be configured properly on the container instance (or on
- * a different log server for remote logging options). For more information on the options for different supported log
- * drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the
- * Docker documentation.
+ * href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>.
+ * </p>
+ * <p>
+ * By default, containers use the same logging driver that the Docker daemon uses; however the container may use a
+ * different logging driver than the Docker daemon by specifying a log driver configuration in the container definition.
+ * For more information on the options for different supported log drivers, see <a
+ * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker
+ * documentation.
  * </p>
  * <p>
  * The following should be noted when specifying a log configuration for your containers:
@@ -50,18 +48,18 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
- * For tasks using the EC2 launch type, the Amazon ECS container agent running on a container instance must register the
- * logging drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable
- * before containers placed on that instance can use these log configuration options. For more information, see <a
- * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container Agent
- * Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+ * For tasks hosted on Amazon EC2 instances, the Amazon ECS container agent must register the available logging drivers
+ * with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance
+ * can use these log configuration options. For more information, see <a
+ * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS container agent
+ * configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
  * </p>
  * </li>
  * <li>
  * <p>
- * For tasks using the Fargate launch type, because you do not have access to the underlying infrastructure your tasks
- * are hosted on, any additional software needed will have to be installed outside of the task. For example, the Fluentd
- * output aggregators or a remote host running Logstash to send Gelf logs to.
+ * For tasks on AWS Fargate, because you do not have access to the underlying infrastructure your tasks are hosted on,
+ * any additional software needed will have to be installed outside of the task. For example, the Fluentd output
+ * aggregators or a remote host running Logstash to send Gelf logs to.
  * </p>
  * </li>
  * </ul>
@@ -74,26 +72,25 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The log driver to use for the container. The valid values listed earlier are log drivers that the Amazon ECS
-     * container agent can communicate with by default.
+     * The log driver to use for the container.
      * </p>
      * <p>
-     * For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code>, <code>splunk</code>,
-     * and <code>awsfirelens</code>.
+     * For tasks on AWS Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and
+     * <code>awsfirelens</code>.
      * </p>
      * <p>
-     * For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
-     * <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>,<code>syslog</code>,
-     * <code>splunk</code>, and <code>awsfirelens</code>.
+     * For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>,
+     * <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>,
+     * <code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.
      * </p>
      * <p>
      * For more information about using the <code>awslogs</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
-     * Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs log
+     * driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * For more information about using the <code>awsfirelens</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a> in
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log routing</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
@@ -126,26 +123,25 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The log driver to use for the container. The valid values listed earlier are log drivers that the Amazon ECS
-     * container agent can communicate with by default.
+     * The log driver to use for the container.
      * </p>
      * <p>
-     * For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code>, <code>splunk</code>,
-     * and <code>awsfirelens</code>.
+     * For tasks on AWS Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and
+     * <code>awsfirelens</code>.
      * </p>
      * <p>
-     * For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
-     * <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>,<code>syslog</code>,
-     * <code>splunk</code>, and <code>awsfirelens</code>.
+     * For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>,
+     * <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>,
+     * <code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.
      * </p>
      * <p>
      * For more information about using the <code>awslogs</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
-     * Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs log
+     * driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * For more information about using the <code>awsfirelens</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a> in
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log routing</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
@@ -158,26 +154,25 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * </note>
      * 
      * @param logDriver
-     *        The log driver to use for the container. The valid values listed earlier are log drivers that the Amazon
-     *        ECS container agent can communicate with by default.</p>
+     *        The log driver to use for the container.</p>
      *        <p>
-     *        For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code>,
-     *        <code>splunk</code>, and <code>awsfirelens</code>.
+     *        For tasks on AWS Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and
+     *        <code>awsfirelens</code>.
      *        </p>
      *        <p>
-     *        For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
+     *        For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>,
      *        <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
      *        <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.
      *        </p>
      *        <p>
      *        For more information about using the <code>awslogs</code> log driver, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs
-     *        Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        log driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <p>
      *        For more information about using the <code>awsfirelens</code> log driver, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log
-     *        Routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log
+     *        routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <note>
      *        <p>
@@ -195,26 +190,25 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The log driver to use for the container. The valid values listed earlier are log drivers that the Amazon ECS
-     * container agent can communicate with by default.
+     * The log driver to use for the container.
      * </p>
      * <p>
-     * For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code>, <code>splunk</code>,
-     * and <code>awsfirelens</code>.
+     * For tasks on AWS Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and
+     * <code>awsfirelens</code>.
      * </p>
      * <p>
-     * For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
-     * <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>,<code>syslog</code>,
-     * <code>splunk</code>, and <code>awsfirelens</code>.
+     * For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>,
+     * <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>,
+     * <code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.
      * </p>
      * <p>
      * For more information about using the <code>awslogs</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
-     * Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs log
+     * driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * For more information about using the <code>awsfirelens</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a> in
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log routing</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
@@ -226,26 +220,25 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * </p>
      * </note>
      * 
-     * @return The log driver to use for the container. The valid values listed earlier are log drivers that the Amazon
-     *         ECS container agent can communicate with by default.</p>
+     * @return The log driver to use for the container.</p>
      *         <p>
-     *         For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code>,
-     *         <code>splunk</code>, and <code>awsfirelens</code>.
+     *         For tasks on AWS Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and
+     *         <code>awsfirelens</code>.
      *         </p>
      *         <p>
-     *         For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
+     *         For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>,
      *         <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
      *         <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.
      *         </p>
      *         <p>
      *         For more information about using the <code>awslogs</code> log driver, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs
-     *         Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         log driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *         </p>
      *         <p>
      *         For more information about using the <code>awsfirelens</code> log driver, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log
-     *         Routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log
+     *         routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *         </p>
      *         <note>
      *         <p>
@@ -263,26 +256,25 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The log driver to use for the container. The valid values listed earlier are log drivers that the Amazon ECS
-     * container agent can communicate with by default.
+     * The log driver to use for the container.
      * </p>
      * <p>
-     * For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code>, <code>splunk</code>,
-     * and <code>awsfirelens</code>.
+     * For tasks on AWS Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and
+     * <code>awsfirelens</code>.
      * </p>
      * <p>
-     * For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
-     * <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>,<code>syslog</code>,
-     * <code>splunk</code>, and <code>awsfirelens</code>.
+     * For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>,
+     * <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>,
+     * <code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.
      * </p>
      * <p>
      * For more information about using the <code>awslogs</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
-     * Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs log
+     * driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * For more information about using the <code>awsfirelens</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a> in
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log routing</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
@@ -295,26 +287,25 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * </note>
      * 
      * @param logDriver
-     *        The log driver to use for the container. The valid values listed earlier are log drivers that the Amazon
-     *        ECS container agent can communicate with by default.</p>
+     *        The log driver to use for the container.</p>
      *        <p>
-     *        For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code>,
-     *        <code>splunk</code>, and <code>awsfirelens</code>.
+     *        For tasks on AWS Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and
+     *        <code>awsfirelens</code>.
      *        </p>
      *        <p>
-     *        For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
+     *        For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>,
      *        <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
      *        <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.
      *        </p>
      *        <p>
      *        For more information about using the <code>awslogs</code> log driver, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs
-     *        Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        log driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <p>
      *        For more information about using the <code>awsfirelens</code> log driver, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log
-     *        Routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log
+     *        routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <note>
      *        <p>
@@ -334,26 +325,25 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The log driver to use for the container. The valid values listed earlier are log drivers that the Amazon ECS
-     * container agent can communicate with by default.
+     * The log driver to use for the container.
      * </p>
      * <p>
-     * For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code>, <code>splunk</code>,
-     * and <code>awsfirelens</code>.
+     * For tasks on AWS Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and
+     * <code>awsfirelens</code>.
      * </p>
      * <p>
-     * For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
-     * <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>,<code>syslog</code>,
-     * <code>splunk</code>, and <code>awsfirelens</code>.
+     * For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>,
+     * <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>,
+     * <code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.
      * </p>
      * <p>
      * For more information about using the <code>awslogs</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
-     * Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs log
+     * driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * For more information about using the <code>awsfirelens</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a> in
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log routing</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
@@ -366,26 +356,25 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * </note>
      * 
      * @param logDriver
-     *        The log driver to use for the container. The valid values listed earlier are log drivers that the Amazon
-     *        ECS container agent can communicate with by default.</p>
+     *        The log driver to use for the container.</p>
      *        <p>
-     *        For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code>,
-     *        <code>splunk</code>, and <code>awsfirelens</code>.
+     *        For tasks on AWS Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and
+     *        <code>awsfirelens</code>.
      *        </p>
      *        <p>
-     *        For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
+     *        For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>,
      *        <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
      *        <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.
      *        </p>
      *        <p>
      *        For more information about using the <code>awslogs</code> log driver, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs
-     *        Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        log driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <p>
      *        For more information about using the <code>awsfirelens</code> log driver, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log
-     *        Routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log
+     *        routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <note>
      *        <p>
@@ -403,26 +392,25 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The log driver to use for the container. The valid values listed earlier are log drivers that the Amazon ECS
-     * container agent can communicate with by default.
+     * The log driver to use for the container.
      * </p>
      * <p>
-     * For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code>, <code>splunk</code>,
-     * and <code>awsfirelens</code>.
+     * For tasks on AWS Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and
+     * <code>awsfirelens</code>.
      * </p>
      * <p>
-     * For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
-     * <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>,<code>syslog</code>,
-     * <code>splunk</code>, and <code>awsfirelens</code>.
+     * For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>,
+     * <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>,
+     * <code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.
      * </p>
      * <p>
      * For more information about using the <code>awslogs</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
-     * Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs log
+     * driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * For more information about using the <code>awsfirelens</code> log driver, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a> in
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log routing</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
@@ -435,26 +423,25 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * </note>
      * 
      * @param logDriver
-     *        The log driver to use for the container. The valid values listed earlier are log drivers that the Amazon
-     *        ECS container agent can communicate with by default.</p>
+     *        The log driver to use for the container.</p>
      *        <p>
-     *        For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code>,
-     *        <code>splunk</code>, and <code>awsfirelens</code>.
+     *        For tasks on AWS Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and
+     *        <code>awsfirelens</code>.
      *        </p>
      *        <p>
-     *        For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
+     *        For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>,
      *        <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
      *        <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.
      *        </p>
      *        <p>
      *        For more information about using the <code>awslogs</code> log driver, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs
-     *        Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        log driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <p>
      *        For more information about using the <code>awsfirelens</code> log driver, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log
-     *        Routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log
+     *        routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <note>
      *        <p>

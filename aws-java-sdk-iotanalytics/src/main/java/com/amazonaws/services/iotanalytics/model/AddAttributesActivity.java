@@ -30,18 +30,18 @@ public class AddAttributesActivity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the 'addAttributes' activity.
+     * The name of the addAttributes activity.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * A list of 1-50 "AttributeNameMapping" objects that map an existing attribute to a new attribute.
+     * A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to a new attribute.
      * </p>
      * <note>
      * <p>
      * The existing attributes remain in the message, so if you want to remove the originals, use
-     * "RemoveAttributeActivity".
+     * <code>RemoveAttributeActivity</code>.
      * </p>
      * </note>
      */
@@ -55,11 +55,11 @@ public class AddAttributesActivity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the 'addAttributes' activity.
+     * The name of the addAttributes activity.
      * </p>
      * 
      * @param name
-     *        The name of the 'addAttributes' activity.
+     *        The name of the addAttributes activity.
      */
 
     public void setName(String name) {
@@ -68,10 +68,10 @@ public class AddAttributesActivity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the 'addAttributes' activity.
+     * The name of the addAttributes activity.
      * </p>
      * 
-     * @return The name of the 'addAttributes' activity.
+     * @return The name of the addAttributes activity.
      */
 
     public String getName() {
@@ -80,11 +80,11 @@ public class AddAttributesActivity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the 'addAttributes' activity.
+     * The name of the addAttributes activity.
      * </p>
      * 
      * @param name
-     *        The name of the 'addAttributes' activity.
+     *        The name of the addAttributes activity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,20 +95,20 @@ public class AddAttributesActivity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A list of 1-50 "AttributeNameMapping" objects that map an existing attribute to a new attribute.
+     * A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to a new attribute.
      * </p>
      * <note>
      * <p>
      * The existing attributes remain in the message, so if you want to remove the originals, use
-     * "RemoveAttributeActivity".
+     * <code>RemoveAttributeActivity</code>.
      * </p>
      * </note>
      * 
-     * @return A list of 1-50 "AttributeNameMapping" objects that map an existing attribute to a new attribute.</p>
-     *         <note>
+     * @return A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to a new
+     *         attribute.</p> <note>
      *         <p>
      *         The existing attributes remain in the message, so if you want to remove the originals, use
-     *         "RemoveAttributeActivity".
+     *         <code>RemoveAttributeActivity</code>.
      *         </p>
      */
 
@@ -118,21 +118,21 @@ public class AddAttributesActivity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A list of 1-50 "AttributeNameMapping" objects that map an existing attribute to a new attribute.
+     * A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to a new attribute.
      * </p>
      * <note>
      * <p>
      * The existing attributes remain in the message, so if you want to remove the originals, use
-     * "RemoveAttributeActivity".
+     * <code>RemoveAttributeActivity</code>.
      * </p>
      * </note>
      * 
      * @param attributes
-     *        A list of 1-50 "AttributeNameMapping" objects that map an existing attribute to a new attribute.</p>
-     *        <note>
+     *        A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to a new
+     *        attribute.</p> <note>
      *        <p>
      *        The existing attributes remain in the message, so if you want to remove the originals, use
-     *        "RemoveAttributeActivity".
+     *        <code>RemoveAttributeActivity</code>.
      *        </p>
      */
 
@@ -142,21 +142,21 @@ public class AddAttributesActivity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A list of 1-50 "AttributeNameMapping" objects that map an existing attribute to a new attribute.
+     * A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to a new attribute.
      * </p>
      * <note>
      * <p>
      * The existing attributes remain in the message, so if you want to remove the originals, use
-     * "RemoveAttributeActivity".
+     * <code>RemoveAttributeActivity</code>.
      * </p>
      * </note>
      * 
      * @param attributes
-     *        A list of 1-50 "AttributeNameMapping" objects that map an existing attribute to a new attribute.</p>
-     *        <note>
+     *        A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to a new
+     *        attribute.</p> <note>
      *        <p>
      *        The existing attributes remain in the message, so if you want to remove the originals, use
-     *        "RemoveAttributeActivity".
+     *        <code>RemoveAttributeActivity</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

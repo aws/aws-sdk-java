@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.fsx.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -45,6 +46,8 @@ public class CreateFileSystemWindowsConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutomaticBackupRetentionDays").build();
     private static final MarshallingInfo<Boolean> COPYTAGSTOBACKUPS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CopyTagsToBackups").build();
+    private static final MarshallingInfo<List> ALIASES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Aliases").build();
 
     private static final CreateFileSystemWindowsConfigurationMarshaller instance = new CreateFileSystemWindowsConfigurationMarshaller();
 
@@ -72,6 +75,7 @@ public class CreateFileSystemWindowsConfigurationMarshaller {
             protocolMarshaller.marshall(createFileSystemWindowsConfiguration.getDailyAutomaticBackupStartTime(), DAILYAUTOMATICBACKUPSTARTTIME_BINDING);
             protocolMarshaller.marshall(createFileSystemWindowsConfiguration.getAutomaticBackupRetentionDays(), AUTOMATICBACKUPRETENTIONDAYS_BINDING);
             protocolMarshaller.marshall(createFileSystemWindowsConfiguration.getCopyTagsToBackups(), COPYTAGSTOBACKUPS_BINDING);
+            protocolMarshaller.marshall(createFileSystemWindowsConfiguration.getAliases(), ALIASES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

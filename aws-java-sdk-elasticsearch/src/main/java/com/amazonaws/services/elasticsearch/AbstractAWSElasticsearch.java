@@ -156,6 +156,11 @@ public class AbstractAWSElasticsearch implements AWSElasticsearch {
     }
 
     @Override
+    public GetPackageVersionHistoryResult getPackageVersionHistory(GetPackageVersionHistoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetUpgradeHistoryResult getUpgradeHistory(GetUpgradeHistoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -218,6 +223,11 @@ public class AbstractAWSElasticsearch implements AWSElasticsearch {
 
     @Override
     public UpdateElasticsearchDomainConfigResult updateElasticsearchDomainConfig(UpdateElasticsearchDomainConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdatePackageResult updatePackage(UpdatePackageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

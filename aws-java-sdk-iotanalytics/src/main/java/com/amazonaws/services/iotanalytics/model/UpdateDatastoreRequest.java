@@ -40,8 +40,9 @@ public class UpdateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
     private RetentionPeriod retentionPeriod;
     /**
      * <p>
-     * Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not
-     * specified, the default is "serviceManagedS3". This cannot be changed after the data store is created.
+     * Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
+     * <code>customerManagedS3</code> storage. If not specified, the default is<code>serviceManagedS3</code>. You cannot
+     * change this storage option after the data store is created.
      * </p>
      */
     private DatastoreStorage datastoreStorage;
@@ -134,14 +135,15 @@ public class UpdateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not
-     * specified, the default is "serviceManagedS3". This cannot be changed after the data store is created.
+     * Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
+     * <code>customerManagedS3</code> storage. If not specified, the default is<code>serviceManagedS3</code>. You cannot
+     * change this storage option after the data store is created.
      * </p>
      * 
      * @param datastoreStorage
-     *        Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage.
-     *        If not specified, the default is "serviceManagedS3". This cannot be changed after the data store is
-     *        created.
+     *        Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
+     *        <code>customerManagedS3</code> storage. If not specified, the default is<code>serviceManagedS3</code>. You
+     *        cannot change this storage option after the data store is created.
      */
 
     public void setDatastoreStorage(DatastoreStorage datastoreStorage) {
@@ -150,13 +152,14 @@ public class UpdateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not
-     * specified, the default is "serviceManagedS3". This cannot be changed after the data store is created.
+     * Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
+     * <code>customerManagedS3</code> storage. If not specified, the default is<code>serviceManagedS3</code>. You cannot
+     * change this storage option after the data store is created.
      * </p>
      * 
-     * @return Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage.
-     *         If not specified, the default is "serviceManagedS3". This cannot be changed after the data store is
-     *         created.
+     * @return Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
+     *         <code>customerManagedS3</code> storage. If not specified, the default is<code>serviceManagedS3</code>.
+     *         You cannot change this storage option after the data store is created.
      */
 
     public DatastoreStorage getDatastoreStorage() {
@@ -165,14 +168,15 @@ public class UpdateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not
-     * specified, the default is "serviceManagedS3". This cannot be changed after the data store is created.
+     * Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
+     * <code>customerManagedS3</code> storage. If not specified, the default is<code>serviceManagedS3</code>. You cannot
+     * change this storage option after the data store is created.
      * </p>
      * 
      * @param datastoreStorage
-     *        Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage.
-     *        If not specified, the default is "serviceManagedS3". This cannot be changed after the data store is
-     *        created.
+     *        Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
+     *        <code>customerManagedS3</code> storage. If not specified, the default is<code>serviceManagedS3</code>. You
+     *        cannot change this storage option after the data store is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

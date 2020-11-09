@@ -27,13 +27,13 @@ public class DeleteDatasetContentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the data set whose content is deleted.
+     * The name of the dataset whose content is deleted.
      * </p>
      */
     private String datasetName;
     /**
      * <p>
-     * The version of the data set whose content is deleted. You can also use the strings "$LATEST" or
+     * The version of the dataset whose content is deleted. You can also use the strings "$LATEST" or
      * "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data set. If not specified,
      * "$LATEST_SUCCEEDED" is the default.
      * </p>
@@ -42,11 +42,11 @@ public class DeleteDatasetContentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the data set whose content is deleted.
+     * The name of the dataset whose content is deleted.
      * </p>
      * 
      * @param datasetName
-     *        The name of the data set whose content is deleted.
+     *        The name of the dataset whose content is deleted.
      */
 
     public void setDatasetName(String datasetName) {
@@ -55,10 +55,10 @@ public class DeleteDatasetContentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the data set whose content is deleted.
+     * The name of the dataset whose content is deleted.
      * </p>
      * 
-     * @return The name of the data set whose content is deleted.
+     * @return The name of the dataset whose content is deleted.
      */
 
     public String getDatasetName() {
@@ -67,11 +67,11 @@ public class DeleteDatasetContentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the data set whose content is deleted.
+     * The name of the dataset whose content is deleted.
      * </p>
      * 
      * @param datasetName
-     *        The name of the data set whose content is deleted.
+     *        The name of the dataset whose content is deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,13 +82,13 @@ public class DeleteDatasetContentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The version of the data set whose content is deleted. You can also use the strings "$LATEST" or
+     * The version of the dataset whose content is deleted. You can also use the strings "$LATEST" or
      * "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data set. If not specified,
      * "$LATEST_SUCCEEDED" is the default.
      * </p>
      * 
      * @param versionId
-     *        The version of the data set whose content is deleted. You can also use the strings "$LATEST" or
+     *        The version of the dataset whose content is deleted. You can also use the strings "$LATEST" or
      *        "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data set. If not specified,
      *        "$LATEST_SUCCEEDED" is the default.
      */
@@ -99,12 +99,12 @@ public class DeleteDatasetContentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The version of the data set whose content is deleted. You can also use the strings "$LATEST" or
+     * The version of the dataset whose content is deleted. You can also use the strings "$LATEST" or
      * "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data set. If not specified,
      * "$LATEST_SUCCEEDED" is the default.
      * </p>
      * 
-     * @return The version of the data set whose content is deleted. You can also use the strings "$LATEST" or
+     * @return The version of the dataset whose content is deleted. You can also use the strings "$LATEST" or
      *         "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data set. If not specified,
      *         "$LATEST_SUCCEEDED" is the default.
      */
@@ -115,13 +115,13 @@ public class DeleteDatasetContentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The version of the data set whose content is deleted. You can also use the strings "$LATEST" or
+     * The version of the dataset whose content is deleted. You can also use the strings "$LATEST" or
      * "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data set. If not specified,
      * "$LATEST_SUCCEEDED" is the default.
      * </p>
      * 
      * @param versionId
-     *        The version of the data set whose content is deleted. You can also use the strings "$LATEST" or
+     *        The version of the dataset whose content is deleted. You can also use the strings "$LATEST" or
      *        "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data set. If not specified,
      *        "$LATEST_SUCCEEDED" is the default.
      * @return Returns a reference to this object so that method calls can be chained together.

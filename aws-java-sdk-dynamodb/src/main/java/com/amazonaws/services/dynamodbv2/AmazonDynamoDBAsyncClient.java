@@ -833,6 +833,39 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeExportResult> describeExportAsync(DescribeExportRequest request) {
+
+        return describeExportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeExportResult> describeExportAsync(final DescribeExportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeExportRequest, DescribeExportResult> asyncHandler) {
+        final DescribeExportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeExportResult>() {
+            @Override
+            public DescribeExportResult call() throws Exception {
+                DescribeExportResult result = null;
+
+                try {
+                    result = executeDescribeExport(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeGlobalTableResult> describeGlobalTableAsync(DescribeGlobalTableRequest request) {
 
         return describeGlobalTableAsync(request, null);
@@ -1056,6 +1089,39 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<ExportTableToPointInTimeResult> exportTableToPointInTimeAsync(ExportTableToPointInTimeRequest request) {
+
+        return exportTableToPointInTimeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportTableToPointInTimeResult> exportTableToPointInTimeAsync(final ExportTableToPointInTimeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ExportTableToPointInTimeRequest, ExportTableToPointInTimeResult> asyncHandler) {
+        final ExportTableToPointInTimeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ExportTableToPointInTimeResult>() {
+            @Override
+            public ExportTableToPointInTimeResult call() throws Exception {
+                ExportTableToPointInTimeResult result = null;
+
+                try {
+                    result = executeExportTableToPointInTime(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetItemResult> getItemAsync(GetItemRequest request) {
 
         return getItemAsync(request, null);
@@ -1185,6 +1251,39 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements A
 
                 try {
                     result = executeListContributorInsights(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExportsResult> listExportsAsync(ListExportsRequest request) {
+
+        return listExportsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExportsResult> listExportsAsync(final ListExportsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListExportsRequest, ListExportsResult> asyncHandler) {
+        final ListExportsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListExportsResult>() {
+            @Override
+            public ListExportsResult call() throws Exception {
+                ListExportsResult result = null;
+
+                try {
+                    result = executeListExports(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

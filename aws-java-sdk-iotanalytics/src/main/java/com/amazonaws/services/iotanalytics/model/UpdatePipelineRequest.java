@@ -33,14 +33,14 @@ public class UpdatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
     private String pipelineName;
     /**
      * <p>
-     * A list of "PipelineActivity" objects. Activities perform transformations on your messages, such as removing,
-     * renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda
-     * functions on messages for advanced processing; or performing mathematical transformations to normalize device
-     * data.
+     * A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as
+     * removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your
+     * Lambda functions on messages for advanced processing; or performing mathematical transformations to normalize
+     * device data.
      * </p>
      * <p>
-     * The list can be 2-25 <b>PipelineActivity</b> objects and must contain both a <code>channel</code> and a
-     * <code>datastore</code> activity. Each entry in the list must contain only one activity, for example:
+     * The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a
+     * <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:
      * </p>
      * <p>
      * <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code>
@@ -90,26 +90,27 @@ public class UpdatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of "PipelineActivity" objects. Activities perform transformations on your messages, such as removing,
-     * renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda
-     * functions on messages for advanced processing; or performing mathematical transformations to normalize device
-     * data.
+     * A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as
+     * removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your
+     * Lambda functions on messages for advanced processing; or performing mathematical transformations to normalize
+     * device data.
      * </p>
      * <p>
-     * The list can be 2-25 <b>PipelineActivity</b> objects and must contain both a <code>channel</code> and a
-     * <code>datastore</code> activity. Each entry in the list must contain only one activity, for example:
+     * The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a
+     * <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:
      * </p>
      * <p>
      * <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code>
      * </p>
      * 
-     * @return A list of "PipelineActivity" objects. Activities perform transformations on your messages, such as
-     *         removing, renaming or adding message attributes; filtering messages based on attribute values; invoking
-     *         your Lambda functions on messages for advanced processing; or performing mathematical transformations to
-     *         normalize device data.</p>
+     * @return A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages,
+     *         such as removing, renaming or adding message attributes; filtering messages based on attribute values;
+     *         invoking your Lambda functions on messages for advanced processing; or performing mathematical
+     *         transformations to normalize device data.</p>
      *         <p>
-     *         The list can be 2-25 <b>PipelineActivity</b> objects and must contain both a <code>channel</code> and a
-     *         <code>datastore</code> activity. Each entry in the list must contain only one activity, for example:
+     *         The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code>
+     *         and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For
+     *         example:
      *         </p>
      *         <p>
      *         <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code>
@@ -121,27 +122,27 @@ public class UpdatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of "PipelineActivity" objects. Activities perform transformations on your messages, such as removing,
-     * renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda
-     * functions on messages for advanced processing; or performing mathematical transformations to normalize device
-     * data.
+     * A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as
+     * removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your
+     * Lambda functions on messages for advanced processing; or performing mathematical transformations to normalize
+     * device data.
      * </p>
      * <p>
-     * The list can be 2-25 <b>PipelineActivity</b> objects and must contain both a <code>channel</code> and a
-     * <code>datastore</code> activity. Each entry in the list must contain only one activity, for example:
+     * The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a
+     * <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:
      * </p>
      * <p>
      * <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code>
      * </p>
      * 
      * @param pipelineActivities
-     *        A list of "PipelineActivity" objects. Activities perform transformations on your messages, such as
-     *        removing, renaming or adding message attributes; filtering messages based on attribute values; invoking
+     *        A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such
+     *        as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking
      *        your Lambda functions on messages for advanced processing; or performing mathematical transformations to
      *        normalize device data.</p>
      *        <p>
-     *        The list can be 2-25 <b>PipelineActivity</b> objects and must contain both a <code>channel</code> and a
-     *        <code>datastore</code> activity. Each entry in the list must contain only one activity, for example:
+     *        The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code>
+     *        and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:
      *        </p>
      *        <p>
      *        <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code>
@@ -158,14 +159,14 @@ public class UpdatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of "PipelineActivity" objects. Activities perform transformations on your messages, such as removing,
-     * renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda
-     * functions on messages for advanced processing; or performing mathematical transformations to normalize device
-     * data.
+     * A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as
+     * removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your
+     * Lambda functions on messages for advanced processing; or performing mathematical transformations to normalize
+     * device data.
      * </p>
      * <p>
-     * The list can be 2-25 <b>PipelineActivity</b> objects and must contain both a <code>channel</code> and a
-     * <code>datastore</code> activity. Each entry in the list must contain only one activity, for example:
+     * The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a
+     * <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:
      * </p>
      * <p>
      * <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code>
@@ -177,13 +178,13 @@ public class UpdatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param pipelineActivities
-     *        A list of "PipelineActivity" objects. Activities perform transformations on your messages, such as
-     *        removing, renaming or adding message attributes; filtering messages based on attribute values; invoking
+     *        A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such
+     *        as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking
      *        your Lambda functions on messages for advanced processing; or performing mathematical transformations to
      *        normalize device data.</p>
      *        <p>
-     *        The list can be 2-25 <b>PipelineActivity</b> objects and must contain both a <code>channel</code> and a
-     *        <code>datastore</code> activity. Each entry in the list must contain only one activity, for example:
+     *        The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code>
+     *        and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:
      *        </p>
      *        <p>
      *        <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code>
@@ -202,27 +203,27 @@ public class UpdatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of "PipelineActivity" objects. Activities perform transformations on your messages, such as removing,
-     * renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda
-     * functions on messages for advanced processing; or performing mathematical transformations to normalize device
-     * data.
+     * A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as
+     * removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your
+     * Lambda functions on messages for advanced processing; or performing mathematical transformations to normalize
+     * device data.
      * </p>
      * <p>
-     * The list can be 2-25 <b>PipelineActivity</b> objects and must contain both a <code>channel</code> and a
-     * <code>datastore</code> activity. Each entry in the list must contain only one activity, for example:
+     * The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a
+     * <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:
      * </p>
      * <p>
      * <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code>
      * </p>
      * 
      * @param pipelineActivities
-     *        A list of "PipelineActivity" objects. Activities perform transformations on your messages, such as
-     *        removing, renaming or adding message attributes; filtering messages based on attribute values; invoking
+     *        A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such
+     *        as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking
      *        your Lambda functions on messages for advanced processing; or performing mathematical transformations to
      *        normalize device data.</p>
      *        <p>
-     *        The list can be 2-25 <b>PipelineActivity</b> objects and must contain both a <code>channel</code> and a
-     *        <code>datastore</code> activity. Each entry in the list must contain only one activity, for example:
+     *        The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code>
+     *        and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:
      *        </p>
      *        <p>
      *        <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code>

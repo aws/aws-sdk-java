@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information which is used to filter message data, to segregate it according to the time frame in which it arrives.
+ * Information that is used to filter message data, to segregate it according to the timeframe in which it arrives.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/QueryFilter" target="_top">AWS API

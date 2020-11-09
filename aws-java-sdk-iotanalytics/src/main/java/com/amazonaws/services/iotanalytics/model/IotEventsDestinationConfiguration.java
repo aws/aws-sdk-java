@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configuration information for delivery of data set contents to AWS IoT Events.
+ * Configuration information for delivery of dataset contents to AWS IoT Events.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/IotEventsDestinationConfiguration"
@@ -30,13 +30,13 @@ public class IotEventsDestinationConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The name of the AWS IoT Events input to which data set contents are delivered.
+     * The name of the AWS IoT Events input to which dataset contents are delivered.
      * </p>
      */
     private String inputName;
     /**
      * <p>
-     * The ARN of the role which grants AWS IoT Analytics permission to deliver data set contents to an AWS IoT Events
+     * The ARN of the role that grants AWS IoT Analytics permission to deliver dataset contents to an AWS IoT Events
      * input.
      * </p>
      */
@@ -44,11 +44,11 @@ public class IotEventsDestinationConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The name of the AWS IoT Events input to which data set contents are delivered.
+     * The name of the AWS IoT Events input to which dataset contents are delivered.
      * </p>
      * 
      * @param inputName
-     *        The name of the AWS IoT Events input to which data set contents are delivered.
+     *        The name of the AWS IoT Events input to which dataset contents are delivered.
      */
 
     public void setInputName(String inputName) {
@@ -57,10 +57,10 @@ public class IotEventsDestinationConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The name of the AWS IoT Events input to which data set contents are delivered.
+     * The name of the AWS IoT Events input to which dataset contents are delivered.
      * </p>
      * 
-     * @return The name of the AWS IoT Events input to which data set contents are delivered.
+     * @return The name of the AWS IoT Events input to which dataset contents are delivered.
      */
 
     public String getInputName() {
@@ -69,11 +69,11 @@ public class IotEventsDestinationConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The name of the AWS IoT Events input to which data set contents are delivered.
+     * The name of the AWS IoT Events input to which dataset contents are delivered.
      * </p>
      * 
      * @param inputName
-     *        The name of the AWS IoT Events input to which data set contents are delivered.
+     *        The name of the AWS IoT Events input to which dataset contents are delivered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,12 +84,12 @@ public class IotEventsDestinationConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The ARN of the role which grants AWS IoT Analytics permission to deliver data set contents to an AWS IoT Events
+     * The ARN of the role that grants AWS IoT Analytics permission to deliver dataset contents to an AWS IoT Events
      * input.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the role which grants AWS IoT Analytics permission to deliver data set contents to an AWS IoT
+     *        The ARN of the role that grants AWS IoT Analytics permission to deliver dataset contents to an AWS IoT
      *        Events input.
      */
 
@@ -99,11 +99,11 @@ public class IotEventsDestinationConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The ARN of the role which grants AWS IoT Analytics permission to deliver data set contents to an AWS IoT Events
+     * The ARN of the role that grants AWS IoT Analytics permission to deliver dataset contents to an AWS IoT Events
      * input.
      * </p>
      * 
-     * @return The ARN of the role which grants AWS IoT Analytics permission to deliver data set contents to an AWS IoT
+     * @return The ARN of the role that grants AWS IoT Analytics permission to deliver dataset contents to an AWS IoT
      *         Events input.
      */
 
@@ -113,12 +113,12 @@ public class IotEventsDestinationConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The ARN of the role which grants AWS IoT Analytics permission to deliver data set contents to an AWS IoT Events
+     * The ARN of the role that grants AWS IoT Analytics permission to deliver dataset contents to an AWS IoT Events
      * input.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the role which grants AWS IoT Analytics permission to deliver data set contents to an AWS IoT
+     *        The ARN of the role that grants AWS IoT Analytics permission to deliver dataset contents to an AWS IoT
      *        Events input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

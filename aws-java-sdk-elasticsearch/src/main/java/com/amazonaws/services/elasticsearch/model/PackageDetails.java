@@ -61,6 +61,10 @@ public class PackageDetails implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date createdAt;
+
+    private java.util.Date lastUpdatedAt;
+
+    private String availablePackageVersion;
     /**
      * <p>
      * Additional information if the package is in an error state. Null otherwise.
@@ -347,6 +351,58 @@ public class PackageDetails implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param lastUpdatedAt
+     */
+
+    public void setLastUpdatedAt(java.util.Date lastUpdatedAt) {
+        this.lastUpdatedAt = lastUpdatedAt;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.Date getLastUpdatedAt() {
+        return this.lastUpdatedAt;
+    }
+
+    /**
+     * @param lastUpdatedAt
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PackageDetails withLastUpdatedAt(java.util.Date lastUpdatedAt) {
+        setLastUpdatedAt(lastUpdatedAt);
+        return this;
+    }
+
+    /**
+     * @param availablePackageVersion
+     */
+
+    public void setAvailablePackageVersion(String availablePackageVersion) {
+        this.availablePackageVersion = availablePackageVersion;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getAvailablePackageVersion() {
+        return this.availablePackageVersion;
+    }
+
+    /**
+     * @param availablePackageVersion
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PackageDetails withAvailablePackageVersion(String availablePackageVersion) {
+        setAvailablePackageVersion(availablePackageVersion);
+        return this;
+    }
+
+    /**
      * <p>
      * Additional information if the package is in an error state. Null otherwise.
      * </p>
@@ -410,6 +466,10 @@ public class PackageDetails implements Serializable, Cloneable, StructuredPojo {
             sb.append("PackageStatus: ").append(getPackageStatus()).append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
+        if (getLastUpdatedAt() != null)
+            sb.append("LastUpdatedAt: ").append(getLastUpdatedAt()).append(",");
+        if (getAvailablePackageVersion() != null)
+            sb.append("AvailablePackageVersion: ").append(getAvailablePackageVersion()).append(",");
         if (getErrorDetails() != null)
             sb.append("ErrorDetails: ").append(getErrorDetails());
         sb.append("}");
@@ -450,6 +510,14 @@ public class PackageDetails implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
+        if (other.getLastUpdatedAt() == null ^ this.getLastUpdatedAt() == null)
+            return false;
+        if (other.getLastUpdatedAt() != null && other.getLastUpdatedAt().equals(this.getLastUpdatedAt()) == false)
+            return false;
+        if (other.getAvailablePackageVersion() == null ^ this.getAvailablePackageVersion() == null)
+            return false;
+        if (other.getAvailablePackageVersion() != null && other.getAvailablePackageVersion().equals(this.getAvailablePackageVersion()) == false)
+            return false;
         if (other.getErrorDetails() == null ^ this.getErrorDetails() == null)
             return false;
         if (other.getErrorDetails() != null && other.getErrorDetails().equals(this.getErrorDetails()) == false)
@@ -468,6 +536,8 @@ public class PackageDetails implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPackageDescription() == null) ? 0 : getPackageDescription().hashCode());
         hashCode = prime * hashCode + ((getPackageStatus() == null) ? 0 : getPackageStatus().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdatedAt() == null) ? 0 : getLastUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getAvailablePackageVersion() == null) ? 0 : getAvailablePackageVersion().hashCode());
         hashCode = prime * hashCode + ((getErrorDetails() == null) ? 0 : getErrorDetails().hashCode());
         return hashCode;
     }

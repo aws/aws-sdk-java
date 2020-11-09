@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The 'datastore' activity that specifies where to store the processed data.
+ * The datastore activity that specifies where to store the processed data.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatastoreActivity" target="_top">AWS API
@@ -30,7 +30,7 @@ public class DatastoreActivity implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the 'datastore' activity.
+     * The name of the datastore activity.
      * </p>
      */
     private String name;
@@ -43,11 +43,11 @@ public class DatastoreActivity implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the 'datastore' activity.
+     * The name of the datastore activity.
      * </p>
      * 
      * @param name
-     *        The name of the 'datastore' activity.
+     *        The name of the datastore activity.
      */
 
     public void setName(String name) {
@@ -56,10 +56,10 @@ public class DatastoreActivity implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the 'datastore' activity.
+     * The name of the datastore activity.
      * </p>
      * 
-     * @return The name of the 'datastore' activity.
+     * @return The name of the datastore activity.
      */
 
     public String getName() {
@@ -68,11 +68,11 @@ public class DatastoreActivity implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the 'datastore' activity.
+     * The name of the datastore activity.
      * </p>
      * 
      * @param name
-     *        The name of the 'datastore' activity.
+     *        The name of the datastore activity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -32,11 +32,6 @@ public class AssociationFilter implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The name of the filter.
      * </p>
-     * <note>
-     * <p>
-     * <code>InstanceId</code> has been deprecated.
-     * </p>
-     * </note>
      */
     private String key;
     /**
@@ -50,17 +45,9 @@ public class AssociationFilter implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The name of the filter.
      * </p>
-     * <note>
-     * <p>
-     * <code>InstanceId</code> has been deprecated.
-     * </p>
-     * </note>
      * 
      * @param key
-     *        The name of the filter.</p> <note>
-     *        <p>
-     *        <code>InstanceId</code> has been deprecated.
-     *        </p>
+     *        The name of the filter.
      * @see AssociationFilterKey
      */
 
@@ -72,16 +59,8 @@ public class AssociationFilter implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The name of the filter.
      * </p>
-     * <note>
-     * <p>
-     * <code>InstanceId</code> has been deprecated.
-     * </p>
-     * </note>
      * 
-     * @return The name of the filter.</p> <note>
-     *         <p>
-     *         <code>InstanceId</code> has been deprecated.
-     *         </p>
+     * @return The name of the filter.
      * @see AssociationFilterKey
      */
 
@@ -93,17 +72,9 @@ public class AssociationFilter implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The name of the filter.
      * </p>
-     * <note>
-     * <p>
-     * <code>InstanceId</code> has been deprecated.
-     * </p>
-     * </note>
      * 
      * @param key
-     *        The name of the filter.</p> <note>
-     *        <p>
-     *        <code>InstanceId</code> has been deprecated.
-     *        </p>
+     *        The name of the filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssociationFilterKey
      */
@@ -117,17 +88,9 @@ public class AssociationFilter implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The name of the filter.
      * </p>
-     * <note>
-     * <p>
-     * <code>InstanceId</code> has been deprecated.
-     * </p>
-     * </note>
      * 
      * @param key
-     *        The name of the filter.</p> <note>
-     *        <p>
-     *        <code>InstanceId</code> has been deprecated.
-     *        </p>
+     *        The name of the filter.
      * @see AssociationFilterKey
      */
 
@@ -139,17 +102,9 @@ public class AssociationFilter implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The name of the filter.
      * </p>
-     * <note>
-     * <p>
-     * <code>InstanceId</code> has been deprecated.
-     * </p>
-     * </note>
      * 
      * @param key
-     *        The name of the filter.</p> <note>
-     *        <p>
-     *        <code>InstanceId</code> has been deprecated.
-     *        </p>
+     *        The name of the filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssociationFilterKey
      */

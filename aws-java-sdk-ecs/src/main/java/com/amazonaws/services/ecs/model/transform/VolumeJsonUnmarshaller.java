@@ -64,6 +64,10 @@ public class VolumeJsonUnmarshaller implements Unmarshaller<Volume, JsonUnmarsha
                     context.nextToken();
                     volume.setEfsVolumeConfiguration(EFSVolumeConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("fsxWindowsFileServerVolumeConfiguration", targetDepth)) {
+                    context.nextToken();
+                    volume.setFsxWindowsFileServerVolumeConfiguration(FSxWindowsFileServerVolumeConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

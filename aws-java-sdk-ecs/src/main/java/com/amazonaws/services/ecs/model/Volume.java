@@ -19,8 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A data volume used in a task definition. For tasks that use Amazon Elastic File System (Amazon EFS) file storage,
- * specify an <code>efsVolumeConfiguration</code>. For tasks that use a Docker volume, specify a
+ * A data volume used in a task definition. For tasks that use the Amazon Elastic File System (Amazon EFS), specify an
+ * <code>efsVolumeConfiguration</code>. For Windows tasks that use Amazon FSx for Windows File Server file system,
+ * specify a <code>fsxWindowsFileServerVolumeConfiguration</code>. For tasks that use a Docker volume, specify a
  * <code>DockerVolumeConfiguration</code>. For tasks that use a bind mount host volume, specify a <code>host</code> and
  * optional <code>sourcePath</code>. For more information, see <a
  * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using Data Volumes in
@@ -68,6 +69,12 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private EFSVolumeConfiguration efsVolumeConfiguration;
+    /**
+     * <p>
+     * This parameter is specified when you are using Amazon FSx for Windows File Server file system for task storage.
+     * </p>
+     */
+    private FSxWindowsFileServerVolumeConfiguration fsxWindowsFileServerVolumeConfiguration;
 
     /**
      * <p>
@@ -306,6 +313,49 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * This parameter is specified when you are using Amazon FSx for Windows File Server file system for task storage.
+     * </p>
+     * 
+     * @param fsxWindowsFileServerVolumeConfiguration
+     *        This parameter is specified when you are using Amazon FSx for Windows File Server file system for task
+     *        storage.
+     */
+
+    public void setFsxWindowsFileServerVolumeConfiguration(FSxWindowsFileServerVolumeConfiguration fsxWindowsFileServerVolumeConfiguration) {
+        this.fsxWindowsFileServerVolumeConfiguration = fsxWindowsFileServerVolumeConfiguration;
+    }
+
+    /**
+     * <p>
+     * This parameter is specified when you are using Amazon FSx for Windows File Server file system for task storage.
+     * </p>
+     * 
+     * @return This parameter is specified when you are using Amazon FSx for Windows File Server file system for task
+     *         storage.
+     */
+
+    public FSxWindowsFileServerVolumeConfiguration getFsxWindowsFileServerVolumeConfiguration() {
+        return this.fsxWindowsFileServerVolumeConfiguration;
+    }
+
+    /**
+     * <p>
+     * This parameter is specified when you are using Amazon FSx for Windows File Server file system for task storage.
+     * </p>
+     * 
+     * @param fsxWindowsFileServerVolumeConfiguration
+     *        This parameter is specified when you are using Amazon FSx for Windows File Server file system for task
+     *        storage.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Volume withFsxWindowsFileServerVolumeConfiguration(FSxWindowsFileServerVolumeConfiguration fsxWindowsFileServerVolumeConfiguration) {
+        setFsxWindowsFileServerVolumeConfiguration(fsxWindowsFileServerVolumeConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -324,7 +374,9 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
         if (getDockerVolumeConfiguration() != null)
             sb.append("DockerVolumeConfiguration: ").append(getDockerVolumeConfiguration()).append(",");
         if (getEfsVolumeConfiguration() != null)
-            sb.append("EfsVolumeConfiguration: ").append(getEfsVolumeConfiguration());
+            sb.append("EfsVolumeConfiguration: ").append(getEfsVolumeConfiguration()).append(",");
+        if (getFsxWindowsFileServerVolumeConfiguration() != null)
+            sb.append("FsxWindowsFileServerVolumeConfiguration: ").append(getFsxWindowsFileServerVolumeConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -355,6 +407,11 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEfsVolumeConfiguration() != null && other.getEfsVolumeConfiguration().equals(this.getEfsVolumeConfiguration()) == false)
             return false;
+        if (other.getFsxWindowsFileServerVolumeConfiguration() == null ^ this.getFsxWindowsFileServerVolumeConfiguration() == null)
+            return false;
+        if (other.getFsxWindowsFileServerVolumeConfiguration() != null
+                && other.getFsxWindowsFileServerVolumeConfiguration().equals(this.getFsxWindowsFileServerVolumeConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -367,6 +424,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getHost() == null) ? 0 : getHost().hashCode());
         hashCode = prime * hashCode + ((getDockerVolumeConfiguration() == null) ? 0 : getDockerVolumeConfiguration().hashCode());
         hashCode = prime * hashCode + ((getEfsVolumeConfiguration() == null) ? 0 : getEfsVolumeConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getFsxWindowsFileServerVolumeConfiguration() == null) ? 0 : getFsxWindowsFileServerVolumeConfiguration().hashCode());
         return hashCode;
     }
 

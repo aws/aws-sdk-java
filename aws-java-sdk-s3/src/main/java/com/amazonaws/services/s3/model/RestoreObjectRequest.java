@@ -309,28 +309,28 @@ public class RestoreObjectRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
-     * Sets the time, in days, between when an object is uploaded to the bucket
-     * and when it expires.
-     *
-     * <p>Do not use with restores that specify OutputLocation.</p>
+     * Set the lifetime of the active copy in days. Do not use with restores that specify <code>OutputLocation</code>.
+     * <p>
+     * The Days element is required for regular restores, and must not be provided for select requests.
      */
     public void setExpirationInDays(int expirationInDays) {
         this.expirationInDays = expirationInDays;
     }
 
     /**
-     * Returns the time in days from an object's creation to its expiration.
+     * Returns the lifetime of the active copy in days. Do not use with restores that specify
+     * <code>OutputLocation</code>.
+     * <p>
+     * The Days element is required for regular restores, and must not be provided for select requests.
      */
     public int getExpirationInDays() {
         return expirationInDays;
     }
 
     /**
-     * Sets the time, in days, between when an object is uploaded to the bucket
-     * and when it expires, and returns a reference to this object(RestoreObjectRequest) for method
-     * chaining.
-     *
-     * <p>Do not use with restores that specify OutputLocation.</p>
+     * Set the lifetime of the active copy in days. Do not use with restores that specify <code>OutputLocation</code>.
+     * <p>
+     * The Days element is required for regular restores, and must not be provided for select requests.
      */
     public RestoreObjectRequest withExpirationInDays(int expirationInDays) {
         this.expirationInDays = expirationInDays;

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the location of an occurrence of sensitive data in an Apache Parquet file.
+ * Specifies the location of an occurrence of sensitive data in an Apache Avro object container or Apache Parquet file.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Record" target="_top">AWS API
@@ -30,18 +30,103 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The row index, starting from 0, for the row that contains the data.
+     * The path, as a JSONPath expression, to the field (in an Apache Avro object container) or record (in an Apache
+     * Parquet file) that contains the data.
+     * </p>
+     * <p>
+     * If the name of an element exceeds 20 characters, Amazon Macie truncates the name by removing characters from the
+     * beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates the path, starting
+     * with the first element in the path, until the path contains 250 or fewer characters.
+     * </p>
+     */
+    private String jsonPath;
+    /**
+     * <p>
+     * The record index, starting from 0, for the record that contains the data.
      * </p>
      */
     private Long recordIndex;
 
     /**
      * <p>
-     * The row index, starting from 0, for the row that contains the data.
+     * The path, as a JSONPath expression, to the field (in an Apache Avro object container) or record (in an Apache
+     * Parquet file) that contains the data.
+     * </p>
+     * <p>
+     * If the name of an element exceeds 20 characters, Amazon Macie truncates the name by removing characters from the
+     * beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates the path, starting
+     * with the first element in the path, until the path contains 250 or fewer characters.
+     * </p>
+     * 
+     * @param jsonPath
+     *        The path, as a JSONPath expression, to the field (in an Apache Avro object container) or record (in an
+     *        Apache Parquet file) that contains the data.</p>
+     *        <p>
+     *        If the name of an element exceeds 20 characters, Amazon Macie truncates the name by removing characters
+     *        from the beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates
+     *        the path, starting with the first element in the path, until the path contains 250 or fewer characters.
+     */
+
+    public void setJsonPath(String jsonPath) {
+        this.jsonPath = jsonPath;
+    }
+
+    /**
+     * <p>
+     * The path, as a JSONPath expression, to the field (in an Apache Avro object container) or record (in an Apache
+     * Parquet file) that contains the data.
+     * </p>
+     * <p>
+     * If the name of an element exceeds 20 characters, Amazon Macie truncates the name by removing characters from the
+     * beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates the path, starting
+     * with the first element in the path, until the path contains 250 or fewer characters.
+     * </p>
+     * 
+     * @return The path, as a JSONPath expression, to the field (in an Apache Avro object container) or record (in an
+     *         Apache Parquet file) that contains the data.</p>
+     *         <p>
+     *         If the name of an element exceeds 20 characters, Amazon Macie truncates the name by removing characters
+     *         from the beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates
+     *         the path, starting with the first element in the path, until the path contains 250 or fewer characters.
+     */
+
+    public String getJsonPath() {
+        return this.jsonPath;
+    }
+
+    /**
+     * <p>
+     * The path, as a JSONPath expression, to the field (in an Apache Avro object container) or record (in an Apache
+     * Parquet file) that contains the data.
+     * </p>
+     * <p>
+     * If the name of an element exceeds 20 characters, Amazon Macie truncates the name by removing characters from the
+     * beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates the path, starting
+     * with the first element in the path, until the path contains 250 or fewer characters.
+     * </p>
+     * 
+     * @param jsonPath
+     *        The path, as a JSONPath expression, to the field (in an Apache Avro object container) or record (in an
+     *        Apache Parquet file) that contains the data.</p>
+     *        <p>
+     *        If the name of an element exceeds 20 characters, Amazon Macie truncates the name by removing characters
+     *        from the beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates
+     *        the path, starting with the first element in the path, until the path contains 250 or fewer characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Record withJsonPath(String jsonPath) {
+        setJsonPath(jsonPath);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The record index, starting from 0, for the record that contains the data.
      * </p>
      * 
      * @param recordIndex
-     *        The row index, starting from 0, for the row that contains the data.
+     *        The record index, starting from 0, for the record that contains the data.
      */
 
     public void setRecordIndex(Long recordIndex) {
@@ -50,10 +135,10 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The row index, starting from 0, for the row that contains the data.
+     * The record index, starting from 0, for the record that contains the data.
      * </p>
      * 
-     * @return The row index, starting from 0, for the row that contains the data.
+     * @return The record index, starting from 0, for the record that contains the data.
      */
 
     public Long getRecordIndex() {
@@ -62,11 +147,11 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The row index, starting from 0, for the row that contains the data.
+     * The record index, starting from 0, for the record that contains the data.
      * </p>
      * 
      * @param recordIndex
-     *        The row index, starting from 0, for the row that contains the data.
+     *        The record index, starting from 0, for the record that contains the data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,6 +172,8 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getJsonPath() != null)
+            sb.append("JsonPath: ").append(getJsonPath()).append(",");
         if (getRecordIndex() != null)
             sb.append("RecordIndex: ").append(getRecordIndex());
         sb.append("}");
@@ -103,6 +190,10 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Record == false)
             return false;
         Record other = (Record) obj;
+        if (other.getJsonPath() == null ^ this.getJsonPath() == null)
+            return false;
+        if (other.getJsonPath() != null && other.getJsonPath().equals(this.getJsonPath()) == false)
+            return false;
         if (other.getRecordIndex() == null ^ this.getRecordIndex() == null)
             return false;
         if (other.getRecordIndex() != null && other.getRecordIndex().equals(this.getRecordIndex()) == false)
@@ -115,6 +206,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getJsonPath() == null) ? 0 : getJsonPath().hashCode());
         hashCode = prime * hashCode + ((getRecordIndex() == null) ? 0 : getRecordIndex().hashCode());
         return hashCode;
     }

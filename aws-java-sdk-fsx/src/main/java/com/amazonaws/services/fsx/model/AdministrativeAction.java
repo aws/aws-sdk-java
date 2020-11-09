@@ -31,7 +31,8 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
     private String administrativeActionType;
     /**
      * <p>
-     * Provides the percent complete of a <code>STORAGE_OPTIMIZATION</code> administrative action.
+     * Provides the percent complete of a <code>STORAGE_OPTIMIZATION</code> administrative action. Does not apply to any
+     * other administrative action type.
      * </p>
      */
     private Integer progressPercent;
@@ -79,8 +80,8 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
     private String status;
     /**
      * <p>
-     * Describes the target <code>StorageCapacity</code> or <code>ThroughputCapacity</code> value provided in the
-     * <code>UpdateFileSystem</code> operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions.
+     * Describes the target value for the administration action, provided in the <code>UpdateFileSystem</code>
+     * operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions.
      * </p>
      */
     private FileSystem targetFileSystemValues;
@@ -129,11 +130,13 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Provides the percent complete of a <code>STORAGE_OPTIMIZATION</code> administrative action.
+     * Provides the percent complete of a <code>STORAGE_OPTIMIZATION</code> administrative action. Does not apply to any
+     * other administrative action type.
      * </p>
      * 
      * @param progressPercent
-     *        Provides the percent complete of a <code>STORAGE_OPTIMIZATION</code> administrative action.
+     *        Provides the percent complete of a <code>STORAGE_OPTIMIZATION</code> administrative action. Does not apply
+     *        to any other administrative action type.
      */
 
     public void setProgressPercent(Integer progressPercent) {
@@ -142,10 +145,12 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Provides the percent complete of a <code>STORAGE_OPTIMIZATION</code> administrative action.
+     * Provides the percent complete of a <code>STORAGE_OPTIMIZATION</code> administrative action. Does not apply to any
+     * other administrative action type.
      * </p>
      * 
-     * @return Provides the percent complete of a <code>STORAGE_OPTIMIZATION</code> administrative action.
+     * @return Provides the percent complete of a <code>STORAGE_OPTIMIZATION</code> administrative action. Does not
+     *         apply to any other administrative action type.
      */
 
     public Integer getProgressPercent() {
@@ -154,11 +159,13 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Provides the percent complete of a <code>STORAGE_OPTIMIZATION</code> administrative action.
+     * Provides the percent complete of a <code>STORAGE_OPTIMIZATION</code> administrative action. Does not apply to any
+     * other administrative action type.
      * </p>
      * 
      * @param progressPercent
-     *        Provides the percent complete of a <code>STORAGE_OPTIMIZATION</code> administrative action.
+     *        Provides the percent complete of a <code>STORAGE_OPTIMIZATION</code> administrative action. Does not apply
+     *        to any other administrative action type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -508,14 +515,13 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Describes the target <code>StorageCapacity</code> or <code>ThroughputCapacity</code> value provided in the
-     * <code>UpdateFileSystem</code> operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions.
+     * Describes the target value for the administration action, provided in the <code>UpdateFileSystem</code>
+     * operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions.
      * </p>
      * 
      * @param targetFileSystemValues
-     *        Describes the target <code>StorageCapacity</code> or <code>ThroughputCapacity</code> value provided in the
-     *        <code>UpdateFileSystem</code> operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative
-     *        actions.
+     *        Describes the target value for the administration action, provided in the <code>UpdateFileSystem</code>
+     *        operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions.
      */
 
     public void setTargetFileSystemValues(FileSystem targetFileSystemValues) {
@@ -524,13 +530,12 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Describes the target <code>StorageCapacity</code> or <code>ThroughputCapacity</code> value provided in the
-     * <code>UpdateFileSystem</code> operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions.
+     * Describes the target value for the administration action, provided in the <code>UpdateFileSystem</code>
+     * operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions.
      * </p>
      * 
-     * @return Describes the target <code>StorageCapacity</code> or <code>ThroughputCapacity</code> value provided in
-     *         the <code>UpdateFileSystem</code> operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative
-     *         actions.
+     * @return Describes the target value for the administration action, provided in the <code>UpdateFileSystem</code>
+     *         operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions.
      */
 
     public FileSystem getTargetFileSystemValues() {
@@ -539,14 +544,13 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Describes the target <code>StorageCapacity</code> or <code>ThroughputCapacity</code> value provided in the
-     * <code>UpdateFileSystem</code> operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions.
+     * Describes the target value for the administration action, provided in the <code>UpdateFileSystem</code>
+     * operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions.
      * </p>
      * 
      * @param targetFileSystemValues
-     *        Describes the target <code>StorageCapacity</code> or <code>ThroughputCapacity</code> value provided in the
-     *        <code>UpdateFileSystem</code> operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative
-     *        actions.
+     *        Describes the target value for the administration action, provided in the <code>UpdateFileSystem</code>
+     *        operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

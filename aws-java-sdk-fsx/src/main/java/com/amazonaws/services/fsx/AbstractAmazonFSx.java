@@ -28,6 +28,11 @@ public class AbstractAmazonFSx implements AmazonFSx {
     }
 
     @Override
+    public AssociateFileSystemAliasesResult associateFileSystemAliases(AssociateFileSystemAliasesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CancelDataRepositoryTaskResult cancelDataRepositoryTask(CancelDataRepositoryTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -73,7 +78,17 @@ public class AbstractAmazonFSx implements AmazonFSx {
     }
 
     @Override
+    public DescribeFileSystemAliasesResult describeFileSystemAliases(DescribeFileSystemAliasesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeFileSystemsResult describeFileSystems(DescribeFileSystemsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisassociateFileSystemAliasesResult disassociateFileSystemAliases(DisassociateFileSystemAliasesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

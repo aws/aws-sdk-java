@@ -30,7 +30,7 @@ public class SelectAttributesActivity implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of the 'selectAttributes' activity.
+     * The name of the <code>selectAttributes</code> activity.
      * </p>
      */
     private String name;
@@ -49,11 +49,11 @@ public class SelectAttributesActivity implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of the 'selectAttributes' activity.
+     * The name of the <code>selectAttributes</code> activity.
      * </p>
      * 
      * @param name
-     *        The name of the 'selectAttributes' activity.
+     *        The name of the <code>selectAttributes</code> activity.
      */
 
     public void setName(String name) {
@@ -62,10 +62,10 @@ public class SelectAttributesActivity implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of the 'selectAttributes' activity.
+     * The name of the <code>selectAttributes</code> activity.
      * </p>
      * 
-     * @return The name of the 'selectAttributes' activity.
+     * @return The name of the <code>selectAttributes</code> activity.
      */
 
     public String getName() {
@@ -74,11 +74,11 @@ public class SelectAttributesActivity implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of the 'selectAttributes' activity.
+     * The name of the <code>selectAttributes</code> activity.
      * </p>
      * 
      * @param name
-     *        The name of the 'selectAttributes' activity.
+     *        The name of the <code>selectAttributes</code> activity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

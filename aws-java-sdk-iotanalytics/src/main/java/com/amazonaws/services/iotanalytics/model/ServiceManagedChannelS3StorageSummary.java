@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Used to store channel data in an S3 bucket managed by the AWS IoT Analytics service.
+ * Used to store channel data in an S3 bucket managed by AWS IoT Analytics.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ServiceManagedChannelS3StorageSummary"

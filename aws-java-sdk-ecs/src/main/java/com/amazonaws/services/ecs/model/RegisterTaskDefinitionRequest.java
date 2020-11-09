@@ -117,7 +117,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     private com.amazonaws.internal.SdkInternalList<TaskDefinitionPlacementConstraint> placementConstraints;
     /**
      * <p>
-     * The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     * The task launch type that Amazon ECS should validate the task definition against. This ensures that the task
+     * definition parameters are compatible with the specified launch type. If no value is specified, it defaults to
+     * <code>EC2</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> requiresCompatibilities;
@@ -1216,10 +1218,14 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     * The task launch type that Amazon ECS should validate the task definition against. This ensures that the task
+     * definition parameters are compatible with the specified launch type. If no value is specified, it defaults to
+     * <code>EC2</code>.
      * </p>
      * 
-     * @return The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     * @return The task launch type that Amazon ECS should validate the task definition against. This ensures that the
+     *         task definition parameters are compatible with the specified launch type. If no value is specified, it
+     *         defaults to <code>EC2</code>.
      * @see Compatibility
      */
 
@@ -1232,11 +1238,15 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     * The task launch type that Amazon ECS should validate the task definition against. This ensures that the task
+     * definition parameters are compatible with the specified launch type. If no value is specified, it defaults to
+     * <code>EC2</code>.
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     *        The task launch type that Amazon ECS should validate the task definition against. This ensures that the
+     *        task definition parameters are compatible with the specified launch type. If no value is specified, it
+     *        defaults to <code>EC2</code>.
      * @see Compatibility
      */
 
@@ -1251,7 +1261,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     * The task launch type that Amazon ECS should validate the task definition against. This ensures that the task
+     * definition parameters are compatible with the specified launch type. If no value is specified, it defaults to
+     * <code>EC2</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1260,7 +1272,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     *        The task launch type that Amazon ECS should validate the task definition against. This ensures that the
+     *        task definition parameters are compatible with the specified launch type. If no value is specified, it
+     *        defaults to <code>EC2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility
      */
@@ -1277,11 +1291,15 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     * The task launch type that Amazon ECS should validate the task definition against. This ensures that the task
+     * definition parameters are compatible with the specified launch type. If no value is specified, it defaults to
+     * <code>EC2</code>.
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     *        The task launch type that Amazon ECS should validate the task definition against. This ensures that the
+     *        task definition parameters are compatible with the specified launch type. If no value is specified, it
+     *        defaults to <code>EC2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility
      */
@@ -1293,11 +1311,15 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     * The task launch type that Amazon ECS should validate the task definition against. This ensures that the task
+     * definition parameters are compatible with the specified launch type. If no value is specified, it defaults to
+     * <code>EC2</code>.
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     *        The task launch type that Amazon ECS should validate the task definition against. This ensures that the
+     *        task definition parameters are compatible with the specified launch type. If no value is specified, it
+     *        defaults to <code>EC2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility
      */

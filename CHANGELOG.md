@@ -1,3 +1,48 @@
+# __1.11.897__ __2020-11-09__
+## __AWS DataSync__
+  - ### Features
+    - DataSync now enables customers to adjust the network bandwidth used by a running AWS DataSync task.
+
+## __AWS IoT Analytics__
+  - ### Features
+    - AWS IoT Analytics now supports Late Data Notifications for datasets, dataset content creation using previous version IDs, and includes the LastMessageArrivalTime attribute for channels and datastores.
+
+## __AWS Storage Gateway__
+  - ### Features
+    - Added bandwidth rate limit schedule for Tape and Volume Gateways
+
+## __Amazon DynamoDB__
+  - ### Features
+    - This release adds supports for exporting Amazon DynamoDB table data to Amazon S3 to perform analytics at any scale.
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - This release provides native support for specifying Amazon FSx for Windows File Server file systems as volumes in your Amazon ECS task definitions.
+
+## __Amazon Elasticsearch Service__
+  - ### Features
+    - Adding support for package versioning in Amazon Elasticsearch Service
+
+## __Amazon FSx__
+  - ### Features
+    - This release adds support for creating DNS aliases for Amazon FSx for Windows File Server, and using AWS Backup to automate scheduled, policy-driven backup plans for Amazon FSx file systems.
+
+## __Amazon Macie 2__
+  - ### Features
+    - Sensitive data findings in Amazon Macie now include enhanced location data for Apache Avro object containers and Apache Parquet files.
+
+## __Amazon S3__
+  - ### Features
+    - S3 Intelligent-Tiering adds support for Archive and Deep Archive Access tiers; S3 Replication adds replication metrics and failure notifications, brings feature parity for delete marker replication.
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - S3 Intelligent-Tiering adds support for Archive and Deep Archive Access tiers; S3 Replication adds replication metrics and failure notifications, brings feature parity for delete marker replication
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - add a new filter to allow customer to filter automation executions by using resource-group which used for execute automation
+
 # __1.11.896__ __2020-11-06__
 ## __AWS Elemental MediaLive__
   - ### Features

@@ -1056,6 +1056,39 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetPackageVersionHistoryResult> getPackageVersionHistoryAsync(GetPackageVersionHistoryRequest request) {
+
+        return getPackageVersionHistoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPackageVersionHistoryResult> getPackageVersionHistoryAsync(final GetPackageVersionHistoryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPackageVersionHistoryRequest, GetPackageVersionHistoryResult> asyncHandler) {
+        final GetPackageVersionHistoryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetPackageVersionHistoryResult>() {
+            @Override
+            public GetPackageVersionHistoryResult call() throws Exception {
+                GetPackageVersionHistoryResult result = null;
+
+                try {
+                    result = executeGetPackageVersionHistory(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetUpgradeHistoryResult> getUpgradeHistoryAsync(GetUpgradeHistoryRequest request) {
 
         return getUpgradeHistoryAsync(request, null);
@@ -1478,6 +1511,39 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
 
                 try {
                     result = executeUpdateElasticsearchDomainConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePackageResult> updatePackageAsync(UpdatePackageRequest request) {
+
+        return updatePackageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePackageResult> updatePackageAsync(final UpdatePackageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdatePackageRequest, UpdatePackageResult> asyncHandler) {
+        final UpdatePackageRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdatePackageResult>() {
+            @Override
+            public UpdatePackageResult call() throws Exception {
+                UpdatePackageResult result = null;
+
+                try {
+                    result = executeUpdatePackage(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

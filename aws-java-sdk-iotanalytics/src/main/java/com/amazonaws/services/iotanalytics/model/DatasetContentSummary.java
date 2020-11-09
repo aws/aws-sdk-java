@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Summary information about data set contents.
+ * Summary information about dataset contents.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatasetContentSummary" target="_top">AWS
@@ -30,7 +30,7 @@ public class DatasetContentSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The version of the data set contents.
+     * The version of the dataset contents.
      * </p>
      */
     private String version;
@@ -42,13 +42,13 @@ public class DatasetContentSummary implements Serializable, Cloneable, Structure
     private DatasetContentStatus status;
     /**
      * <p>
-     * The actual time the creation of the data set contents was started.
+     * The actual time the creation of the dataset contents was started.
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * The time the creation of the data set contents was scheduled to start.
+     * The time the creation of the dataset contents was scheduled to start.
      * </p>
      */
     private java.util.Date scheduleTime;
@@ -61,11 +61,11 @@ public class DatasetContentSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The version of the data set contents.
+     * The version of the dataset contents.
      * </p>
      * 
      * @param version
-     *        The version of the data set contents.
+     *        The version of the dataset contents.
      */
 
     public void setVersion(String version) {
@@ -74,10 +74,10 @@ public class DatasetContentSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The version of the data set contents.
+     * The version of the dataset contents.
      * </p>
      * 
-     * @return The version of the data set contents.
+     * @return The version of the dataset contents.
      */
 
     public String getVersion() {
@@ -86,11 +86,11 @@ public class DatasetContentSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The version of the data set contents.
+     * The version of the dataset contents.
      * </p>
      * 
      * @param version
-     *        The version of the data set contents.
+     *        The version of the dataset contents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,11 @@ public class DatasetContentSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The actual time the creation of the data set contents was started.
+     * The actual time the creation of the dataset contents was started.
      * </p>
      * 
      * @param creationTime
-     *        The actual time the creation of the data set contents was started.
+     *        The actual time the creation of the dataset contents was started.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -154,10 +154,10 @@ public class DatasetContentSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The actual time the creation of the data set contents was started.
+     * The actual time the creation of the dataset contents was started.
      * </p>
      * 
-     * @return The actual time the creation of the data set contents was started.
+     * @return The actual time the creation of the dataset contents was started.
      */
 
     public java.util.Date getCreationTime() {
@@ -166,11 +166,11 @@ public class DatasetContentSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The actual time the creation of the data set contents was started.
+     * The actual time the creation of the dataset contents was started.
      * </p>
      * 
      * @param creationTime
-     *        The actual time the creation of the data set contents was started.
+     *        The actual time the creation of the dataset contents was started.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +181,11 @@ public class DatasetContentSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The time the creation of the data set contents was scheduled to start.
+     * The time the creation of the dataset contents was scheduled to start.
      * </p>
      * 
      * @param scheduleTime
-     *        The time the creation of the data set contents was scheduled to start.
+     *        The time the creation of the dataset contents was scheduled to start.
      */
 
     public void setScheduleTime(java.util.Date scheduleTime) {
@@ -194,10 +194,10 @@ public class DatasetContentSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The time the creation of the data set contents was scheduled to start.
+     * The time the creation of the dataset contents was scheduled to start.
      * </p>
      * 
-     * @return The time the creation of the data set contents was scheduled to start.
+     * @return The time the creation of the dataset contents was scheduled to start.
      */
 
     public java.util.Date getScheduleTime() {
@@ -206,11 +206,11 @@ public class DatasetContentSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The time the creation of the data set contents was scheduled to start.
+     * The time the creation of the dataset contents was scheduled to start.
      * </p>
      * 
      * @param scheduleTime
-     *        The time the creation of the data set contents was scheduled to start.
+     *        The time the creation of the dataset contents was scheduled to start.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

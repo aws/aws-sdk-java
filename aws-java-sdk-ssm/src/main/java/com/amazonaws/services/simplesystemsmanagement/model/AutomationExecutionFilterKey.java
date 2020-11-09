@@ -28,7 +28,8 @@ public enum AutomationExecutionFilterKey {
     StartTimeBefore("StartTimeBefore"),
     StartTimeAfter("StartTimeAfter"),
     AutomationType("AutomationType"),
-    TagKey("TagKey");
+    TagKey("TagKey"),
+    TargetResourceGroup("TargetResourceGroup");
 
     private String value;
 

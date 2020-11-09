@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class RecordMarshaller {
 
+    private static final MarshallingInfo<String> JSONPATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("jsonPath").build();
     private static final MarshallingInfo<Long> RECORDINDEX_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("recordIndex").build();
 
@@ -46,6 +48,7 @@ public class RecordMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(record.getJsonPath(), JSONPATH_BINDING);
             protocolMarshaller.marshall(record.getRecordIndex(), RECORDINDEX_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

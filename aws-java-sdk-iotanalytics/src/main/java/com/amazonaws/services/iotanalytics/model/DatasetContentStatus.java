@@ -30,7 +30,7 @@ public class DatasetContentStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The state of the data set contents. Can be one of "READY", "CREATING", "SUCCEEDED" or "FAILED".
+     * The state of the data set contents. Can be one of READY, CREATING, SUCCEEDED, or FAILED.
      * </p>
      */
     private String state;
@@ -43,11 +43,11 @@ public class DatasetContentStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The state of the data set contents. Can be one of "READY", "CREATING", "SUCCEEDED" or "FAILED".
+     * The state of the data set contents. Can be one of READY, CREATING, SUCCEEDED, or FAILED.
      * </p>
      * 
      * @param state
-     *        The state of the data set contents. Can be one of "READY", "CREATING", "SUCCEEDED" or "FAILED".
+     *        The state of the data set contents. Can be one of READY, CREATING, SUCCEEDED, or FAILED.
      * @see DatasetContentState
      */
 
@@ -57,10 +57,10 @@ public class DatasetContentStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The state of the data set contents. Can be one of "READY", "CREATING", "SUCCEEDED" or "FAILED".
+     * The state of the data set contents. Can be one of READY, CREATING, SUCCEEDED, or FAILED.
      * </p>
      * 
-     * @return The state of the data set contents. Can be one of "READY", "CREATING", "SUCCEEDED" or "FAILED".
+     * @return The state of the data set contents. Can be one of READY, CREATING, SUCCEEDED, or FAILED.
      * @see DatasetContentState
      */
 
@@ -70,11 +70,11 @@ public class DatasetContentStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The state of the data set contents. Can be one of "READY", "CREATING", "SUCCEEDED" or "FAILED".
+     * The state of the data set contents. Can be one of READY, CREATING, SUCCEEDED, or FAILED.
      * </p>
      * 
      * @param state
-     *        The state of the data set contents. Can be one of "READY", "CREATING", "SUCCEEDED" or "FAILED".
+     *        The state of the data set contents. Can be one of READY, CREATING, SUCCEEDED, or FAILED.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DatasetContentState
      */
@@ -86,11 +86,11 @@ public class DatasetContentStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The state of the data set contents. Can be one of "READY", "CREATING", "SUCCEEDED" or "FAILED".
+     * The state of the data set contents. Can be one of READY, CREATING, SUCCEEDED, or FAILED.
      * </p>
      * 
      * @param state
-     *        The state of the data set contents. Can be one of "READY", "CREATING", "SUCCEEDED" or "FAILED".
+     *        The state of the data set contents. Can be one of READY, CREATING, SUCCEEDED, or FAILED.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DatasetContentState
      */

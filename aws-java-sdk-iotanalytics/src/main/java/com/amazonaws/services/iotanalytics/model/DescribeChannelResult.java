@@ -31,7 +31,8 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
     private Channel channel;
     /**
      * <p>
-     * Statistics about the channel. Included if the 'includeStatistics' parameter is set to true in the request.
+     * Statistics about the channel. Included if the <code>includeStatistics</code> parameter is set to
+     * <code>true</code> in the request.
      * </p>
      */
     private ChannelStatistics statistics;
@@ -78,11 +79,13 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Statistics about the channel. Included if the 'includeStatistics' parameter is set to true in the request.
+     * Statistics about the channel. Included if the <code>includeStatistics</code> parameter is set to
+     * <code>true</code> in the request.
      * </p>
      * 
      * @param statistics
-     *        Statistics about the channel. Included if the 'includeStatistics' parameter is set to true in the request.
+     *        Statistics about the channel. Included if the <code>includeStatistics</code> parameter is set to
+     *        <code>true</code> in the request.
      */
 
     public void setStatistics(ChannelStatistics statistics) {
@@ -91,11 +94,12 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Statistics about the channel. Included if the 'includeStatistics' parameter is set to true in the request.
+     * Statistics about the channel. Included if the <code>includeStatistics</code> parameter is set to
+     * <code>true</code> in the request.
      * </p>
      * 
-     * @return Statistics about the channel. Included if the 'includeStatistics' parameter is set to true in the
-     *         request.
+     * @return Statistics about the channel. Included if the <code>includeStatistics</code> parameter is set to
+     *         <code>true</code> in the request.
      */
 
     public ChannelStatistics getStatistics() {
@@ -104,11 +108,13 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Statistics about the channel. Included if the 'includeStatistics' parameter is set to true in the request.
+     * Statistics about the channel. Included if the <code>includeStatistics</code> parameter is set to
+     * <code>true</code> in the request.
      * </p>
      * 
      * @param statistics
-     *        Statistics about the channel. Included if the 'includeStatistics' parameter is set to true in the request.
+     *        Statistics about the channel. Included if the <code>includeStatistics</code> parameter is set to
+     *        <code>true</code> in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

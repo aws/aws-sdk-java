@@ -72,6 +72,14 @@ public class PackageDetailsJsonUnmarshaller implements Unmarshaller<PackageDetai
                     context.nextToken();
                     packageDetails.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("LastUpdatedAt", targetDepth)) {
+                    context.nextToken();
+                    packageDetails.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("AvailablePackageVersion", targetDepth)) {
+                    context.nextToken();
+                    packageDetails.setAvailablePackageVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ErrorDetails", targetDepth)) {
                     context.nextToken();
                     packageDetails.setErrorDetails(ErrorDetailsJsonUnmarshaller.getInstance().unmarshall(context));

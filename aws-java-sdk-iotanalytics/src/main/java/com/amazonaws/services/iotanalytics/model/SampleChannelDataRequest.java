@@ -33,7 +33,7 @@ public class SampleChannelDataRequest extends com.amazonaws.AmazonWebServiceRequ
     private String channelName;
     /**
      * <p>
-     * The number of sample messages to be retrieved. The limit is 10, the default is also 10.
+     * The number of sample messages to be retrieved. The limit is 10. The default is also 10.
      * </p>
      */
     private Integer maxMessages;
@@ -92,11 +92,11 @@ public class SampleChannelDataRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of sample messages to be retrieved. The limit is 10, the default is also 10.
+     * The number of sample messages to be retrieved. The limit is 10. The default is also 10.
      * </p>
      * 
      * @param maxMessages
-     *        The number of sample messages to be retrieved. The limit is 10, the default is also 10.
+     *        The number of sample messages to be retrieved. The limit is 10. The default is also 10.
      */
 
     public void setMaxMessages(Integer maxMessages) {
@@ -105,10 +105,10 @@ public class SampleChannelDataRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of sample messages to be retrieved. The limit is 10, the default is also 10.
+     * The number of sample messages to be retrieved. The limit is 10. The default is also 10.
      * </p>
      * 
-     * @return The number of sample messages to be retrieved. The limit is 10, the default is also 10.
+     * @return The number of sample messages to be retrieved. The limit is 10. The default is also 10.
      */
 
     public Integer getMaxMessages() {
@@ -117,11 +117,11 @@ public class SampleChannelDataRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of sample messages to be retrieved. The limit is 10, the default is also 10.
+     * The number of sample messages to be retrieved. The limit is 10. The default is also 10.
      * </p>
      * 
      * @param maxMessages
-     *        The number of sample messages to be retrieved. The limit is 10, the default is also 10.
+     *        The number of sample messages to be retrieved. The limit is 10. The default is also 10.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

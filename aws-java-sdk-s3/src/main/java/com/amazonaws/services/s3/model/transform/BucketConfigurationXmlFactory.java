@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -68,6 +68,10 @@ import com.amazonaws.services.s3.model.analytics.AnalyticsFilterPredicate;
 import com.amazonaws.services.s3.model.analytics.AnalyticsS3BucketDestination;
 import com.amazonaws.services.s3.model.analytics.StorageClassAnalysis;
 import com.amazonaws.services.s3.model.analytics.StorageClassAnalysisDataExport;
+import com.amazonaws.services.s3.model.intelligenttiering.IntelligentTieringConfiguration;
+import com.amazonaws.services.s3.model.intelligenttiering.IntelligentTieringFilter;
+import com.amazonaws.services.s3.model.intelligenttiering.IntelligentTieringFilterPredicate;
+import com.amazonaws.services.s3.model.intelligenttiering.Tiering;
 import com.amazonaws.services.s3.model.inventory.InventoryConfiguration;
 import com.amazonaws.services.s3.model.inventory.InventoryDestination;
 import com.amazonaws.services.s3.model.inventory.InventoryEncryption;
@@ -1136,6 +1140,61 @@ public class BucketConfigurationXmlFactory {
 
         xml.end(); // </Destination>
     }
+
+    /**
+     * Converts the specified {@link com.amazonaws.services.s3.model.intelligenttiering.IntelligentTieringConfiguration}
+     * object to an XML fragment that can be sent to Amazon S3.
+     *
+     * @param config
+     *            The {@link com.amazonaws.services.s3.model.intelligenttiering.IntelligentTieringConfiguration}
+     */
+    public byte[] convertToXmlByteArray(IntelligentTieringConfiguration config) throws SdkClientException {
+        XmlWriter xml = new XmlWriter();
+
+        xml.start("IntelligentTieringConfiguration", "xmlns", Constants.XML_NAMESPACE);
+
+        addParameterIfNotNull(xml, "Id", config.getId());
+        writeIntelligentTieringFilter(xml, config.getFilter());
+        addParameterIfNotNull(xml, "Status", config.getStatus().name());
+        writeIntelligentTierings(xml, config.getTierings());
+
+        xml.end();
+
+        return xml.getBytes();
+    }
+
+    private void writeIntelligentTieringFilter(XmlWriter xml, IntelligentTieringFilter filter) {
+        if (filter == null) {
+            return;
+        }
+
+        xml.start("Filter");
+        writeIntelligentTieringFilterPredicate(xml, filter.getPredicate());
+        xml.end();
+    }
+
+    private void writeIntelligentTieringFilterPredicate(XmlWriter xml, IntelligentTieringFilterPredicate predicate) {
+        if (predicate == null) {
+            return;
+        }
+
+        predicate.accept(new XmlIntelligentTieringPredicateVisitor(xml));
+    }
+
+    private void writeIntelligentTierings(XmlWriter xml, List<Tiering> tierings) {
+        if (tierings == null) {
+            return;
+        }
+
+        for (Tiering tiering : tierings) {
+            xml.start("Tiering");
+            addParameterIfNotNull(xml, "AccessTier", tiering.getAccessTier().name());
+            addParameterIfNotNull(xml, "Days", Integer.toString(tiering.getDays()));
+            xml.end();
+        }
+
+    }
+
 
     /**
      * Converts the specified {@link com.amazonaws.services.s3.model.metrics.MetricsConfiguration}

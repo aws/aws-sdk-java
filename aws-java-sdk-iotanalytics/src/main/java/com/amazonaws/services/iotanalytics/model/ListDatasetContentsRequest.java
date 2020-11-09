@@ -46,14 +46,14 @@ public class ListDatasetContentsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * A filter to limit results to those data set contents whose creation is scheduled on or after the given time. See
-     * the field <code>triggers.schedule</code> in the CreateDataset request. (timestamp)
+     * the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
      * </p>
      */
     private java.util.Date scheduledOnOrAfter;
     /**
      * <p>
      * A filter to limit results to those data set contents whose creation is scheduled before the given time. See the
-     * field <code>triggers.schedule</code> in the CreateDataset request. (timestamp)
+     * field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
      * </p>
      */
     private java.util.Date scheduledBefore;
@@ -181,12 +181,12 @@ public class ListDatasetContentsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * A filter to limit results to those data set contents whose creation is scheduled on or after the given time. See
-     * the field <code>triggers.schedule</code> in the CreateDataset request. (timestamp)
+     * the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
      * </p>
      * 
      * @param scheduledOnOrAfter
      *        A filter to limit results to those data set contents whose creation is scheduled on or after the given
-     *        time. See the field <code>triggers.schedule</code> in the CreateDataset request. (timestamp)
+     *        time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
      */
 
     public void setScheduledOnOrAfter(java.util.Date scheduledOnOrAfter) {
@@ -196,11 +196,11 @@ public class ListDatasetContentsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * A filter to limit results to those data set contents whose creation is scheduled on or after the given time. See
-     * the field <code>triggers.schedule</code> in the CreateDataset request. (timestamp)
+     * the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
      * </p>
      * 
      * @return A filter to limit results to those data set contents whose creation is scheduled on or after the given
-     *         time. See the field <code>triggers.schedule</code> in the CreateDataset request. (timestamp)
+     *         time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
      */
 
     public java.util.Date getScheduledOnOrAfter() {
@@ -210,12 +210,12 @@ public class ListDatasetContentsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * A filter to limit results to those data set contents whose creation is scheduled on or after the given time. See
-     * the field <code>triggers.schedule</code> in the CreateDataset request. (timestamp)
+     * the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
      * </p>
      * 
      * @param scheduledOnOrAfter
      *        A filter to limit results to those data set contents whose creation is scheduled on or after the given
-     *        time. See the field <code>triggers.schedule</code> in the CreateDataset request. (timestamp)
+     *        time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,12 +227,12 @@ public class ListDatasetContentsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * A filter to limit results to those data set contents whose creation is scheduled before the given time. See the
-     * field <code>triggers.schedule</code> in the CreateDataset request. (timestamp)
+     * field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
      * </p>
      * 
      * @param scheduledBefore
      *        A filter to limit results to those data set contents whose creation is scheduled before the given time.
-     *        See the field <code>triggers.schedule</code> in the CreateDataset request. (timestamp)
+     *        See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
      */
 
     public void setScheduledBefore(java.util.Date scheduledBefore) {
@@ -242,11 +242,11 @@ public class ListDatasetContentsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * A filter to limit results to those data set contents whose creation is scheduled before the given time. See the
-     * field <code>triggers.schedule</code> in the CreateDataset request. (timestamp)
+     * field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
      * </p>
      * 
      * @return A filter to limit results to those data set contents whose creation is scheduled before the given time.
-     *         See the field <code>triggers.schedule</code> in the CreateDataset request. (timestamp)
+     *         See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
      */
 
     public java.util.Date getScheduledBefore() {
@@ -256,12 +256,12 @@ public class ListDatasetContentsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * A filter to limit results to those data set contents whose creation is scheduled before the given time. See the
-     * field <code>triggers.schedule</code> in the CreateDataset request. (timestamp)
+     * field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
      * </p>
      * 
      * @param scheduledBefore
      *        A filter to limit results to those data set contents whose creation is scheduled before the given time.
-     *        See the field <code>triggers.schedule</code> in the CreateDataset request. (timestamp)
+     *        See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

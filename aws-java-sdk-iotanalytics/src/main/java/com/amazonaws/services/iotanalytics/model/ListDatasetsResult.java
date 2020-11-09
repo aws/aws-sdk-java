@@ -25,7 +25,7 @@ public class ListDatasetsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of "DatasetSummary" objects.
+     * A list of <code>DatasetSummary</code> objects.
      * </p>
      */
     private java.util.List<DatasetSummary> datasetSummaries;
@@ -38,10 +38,10 @@ public class ListDatasetsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of "DatasetSummary" objects.
+     * A list of <code>DatasetSummary</code> objects.
      * </p>
      * 
-     * @return A list of "DatasetSummary" objects.
+     * @return A list of <code>DatasetSummary</code> objects.
      */
 
     public java.util.List<DatasetSummary> getDatasetSummaries() {
@@ -50,11 +50,11 @@ public class ListDatasetsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of "DatasetSummary" objects.
+     * A list of <code>DatasetSummary</code> objects.
      * </p>
      * 
      * @param datasetSummaries
-     *        A list of "DatasetSummary" objects.
+     *        A list of <code>DatasetSummary</code> objects.
      */
 
     public void setDatasetSummaries(java.util.Collection<DatasetSummary> datasetSummaries) {
@@ -68,7 +68,7 @@ public class ListDatasetsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of "DatasetSummary" objects.
+     * A list of <code>DatasetSummary</code> objects.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListDatasetsResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param datasetSummaries
-     *        A list of "DatasetSummary" objects.
+     *        A list of <code>DatasetSummary</code> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListDatasetsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of "DatasetSummary" objects.
+     * A list of <code>DatasetSummary</code> objects.
      * </p>
      * 
      * @param datasetSummaries
-     *        A list of "DatasetSummary" objects.
+     *        A list of <code>DatasetSummary</code> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -21,6 +21,15 @@ import com.amazonaws.services.s3.model.*;
 
 import static com.amazonaws.util.StringUtils.UTF8;
 
+import com.amazonaws.services.s3.model.intelligenttiering.IntelligentTieringAccessTier;
+import com.amazonaws.services.s3.model.intelligenttiering.IntelligentTieringAndOperator;
+import com.amazonaws.services.s3.model.intelligenttiering.IntelligentTieringConfiguration;
+import com.amazonaws.services.s3.model.intelligenttiering.IntelligentTieringFilter;
+import com.amazonaws.services.s3.model.intelligenttiering.IntelligentTieringFilterPredicate;
+import com.amazonaws.services.s3.model.intelligenttiering.IntelligentTieringPrefixPredicate;
+import com.amazonaws.services.s3.model.intelligenttiering.IntelligentTieringStatus;
+import com.amazonaws.services.s3.model.intelligenttiering.IntelligentTieringTagPredicate;
+import com.amazonaws.services.s3.model.intelligenttiering.Tiering;
 import com.amazonaws.services.s3.model.inventory.ServerSideEncryptionKMS;
 import com.amazonaws.services.s3.model.inventory.ServerSideEncryptionS3;
 import com.amazonaws.services.s3.model.ownership.OwnershipControls;
@@ -547,6 +556,21 @@ public class XmlResponsesSaxParser {
     public ListBucketAnalyticsConfigurationHandler parseListBucketAnalyticsConfigurationResponse(InputStream inputStream)
             throws IOException {
         ListBucketAnalyticsConfigurationHandler handler = new ListBucketAnalyticsConfigurationHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+
+
+    public GetBucketIntelligentTieringConfigurationHandler parseGetBucketIntelligentTieringConfigurationResponse(InputStream inputStream)
+            throws IOException {
+        GetBucketIntelligentTieringConfigurationHandler handler = new GetBucketIntelligentTieringConfigurationHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+
+    public ListBucketIntelligentTieringConfigurationHandler parseListBucketIntelligentTieringConfigurationResponse(InputStream inputStream)
+            throws IOException {
+        ListBucketIntelligentTieringConfigurationHandler handler = new ListBucketIntelligentTieringConfigurationHandler();
         parseXmlInputStream(handler, inputStream);
         return handler;
     }
@@ -3613,6 +3637,239 @@ public class XmlResponsesSaxParser {
                     s3BucketDestination.setPrefix(getText());
                 }
             }
+        }
+
+    }
+
+    public static class GetBucketIntelligentTieringConfigurationHandler extends AbstractHandler {
+
+        private final IntelligentTieringConfiguration configuration = new IntelligentTieringConfiguration();
+
+        private IntelligentTieringFilter filter;
+        private List<IntelligentTieringFilterPredicate> andOperandsList;
+        private Tiering currentTiering;
+
+        private String currentTagKey;
+        private String currentTagValue;
+
+        public GetBucketIntelligentTieringConfigurationResult getResult() {
+            return new GetBucketIntelligentTieringConfigurationResult().withIntelligentTieringConfiguration(configuration);
+        }
+
+        @Override
+        protected void doStartElement(
+                String uri,
+                String name,
+                String qName,
+                Attributes attrs) {
+
+            if (in("IntelligentTieringConfiguration")) {
+                if (name.equals("Filter")) {
+                    filter = new IntelligentTieringFilter();
+                } else if (name.equals("Tiering")) {
+                    currentTiering = new Tiering();
+                }
+            } else if (in("IntelligentTieringConfiguration", "Filter")) {
+                if (name.equals("And")) {
+                    andOperandsList = new ArrayList<>();
+                }
+
+            }
+        }
+
+        @Override
+        protected void doEndElement(String uri, String name, String qName) {
+            if (in("IntelligentTieringConfiguration")) {
+                if (name.equals("Id")) {
+                    configuration.setId(getText());
+                } else if (name.equals("Filter")) {
+                    configuration.setFilter(filter);
+                } else if (name.equals("Status")) {
+                    configuration.setStatus(IntelligentTieringStatus.fromValue(getText()));
+                } else if (name.equals("Tiering")) {
+                    if (configuration.getTierings() == null) {
+                        configuration.setTierings(new ArrayList<Tiering>());
+                    }
+                    configuration.getTierings().add(currentTiering);
+                    currentTiering = null;
+                }
+            }
+
+            else if (in("IntelligentTieringConfiguration", "Filter")) {
+                if (name.equals("Prefix")) {
+                    filter.setPredicate(new IntelligentTieringPrefixPredicate(getText()));
+                } else if (name.equals("Tag")) {
+                    filter.setPredicate(new IntelligentTieringTagPredicate(new Tag(currentTagKey, currentTagValue)));
+                    currentTagKey = null;
+                    currentTagValue = null;
+                } else if (name.equals("And")) {
+                    filter.setPredicate(new IntelligentTieringAndOperator(andOperandsList));
+                    andOperandsList = null;
+                }
+            }
+
+            else if (in("IntelligentTieringConfiguration", "Filter", "Tag")) {
+                if (name.equals("Key")) {
+                    currentTagKey = getText();
+                } else if (name.equals("Value")) {
+                    currentTagValue = getText();
+                }
+            }
+
+            else if (in("IntelligentTieringConfiguration", "Filter", "And")) {
+                if (name.equals("Prefix")) {
+                    andOperandsList.add(new IntelligentTieringPrefixPredicate(getText()));
+                } else if (name.equals("Tag")) {
+                    andOperandsList.add(new IntelligentTieringTagPredicate(new Tag(currentTagKey, currentTagValue)));
+                    currentTagKey = null;
+                    currentTagValue = null;
+                }
+            }
+
+            else if (in("IntelligentTieringConfiguration", "Filter", "And", "Tag")) {
+                if (name.equals("Key")) {
+                    currentTagKey = getText();
+                } else if (name.equals("Value")) {
+                    currentTagValue = getText();
+                }
+            }
+
+            else if (in("IntelligentTieringConfiguration", "Tiering")) {
+                if (name.equals("AccessTier")) {
+                    currentTiering.setAccessTier(IntelligentTieringAccessTier.fromValue(getText()));
+                } else if (name.equals("Days")) {
+                    currentTiering.setDays(Integer.parseInt(getText()));
+                }
+            }
+        }
+    }
+
+    public static class ListBucketIntelligentTieringConfigurationHandler extends AbstractHandler {
+
+        private final ListBucketIntelligentTieringConfigurationsResult result =
+                new ListBucketIntelligentTieringConfigurationsResult();
+
+        private IntelligentTieringConfiguration currentConfiguration;
+        private IntelligentTieringFilter currentFilter;
+        private List<IntelligentTieringFilterPredicate> andOperandsList;
+        private Tiering currentTiering;
+
+        private String currentTagKey;
+        private String currentTagValue;
+
+        public ListBucketIntelligentTieringConfigurationsResult getResult() {
+            return result;
+        }
+
+        @Override
+        protected void doStartElement(
+                String uri,
+                String name,
+                String qName,
+                Attributes attrs) {
+
+            if (in("ListIntelligentTieringConfigurationsResult")) {
+                if (name.equals("IntelligentTieringConfiguration")) {
+                    currentConfiguration = new IntelligentTieringConfiguration();
+                }
+
+            } else if (in("ListIntelligentTieringConfigurationsResult", "IntelligentTieringConfiguration")) {
+                if (name.equals("Filter")) {
+                    currentFilter = new IntelligentTieringFilter();
+                } else if (name.equals("Tiering")) {
+                    currentTiering = new Tiering();
+                }
+
+            } else if (in("ListIntelligentTieringConfigurationsResult", "IntelligentTieringConfiguration", "Filter")) {
+                if (name.equals("And")) {
+                    andOperandsList = new ArrayList<IntelligentTieringFilterPredicate>();
+                }
+
+            }
+        }
+
+        @Override
+        protected void doEndElement(String uri, String name, String qName) {
+
+            if (in("ListIntelligentTieringConfigurationsResult")) {
+                if (name.equals("IntelligentTieringConfiguration")) {
+                    if (result.getIntelligentTieringConfigurationList() == null) {
+                        result.setIntelligentTieringConfigurationList(new ArrayList<IntelligentTieringConfiguration>());
+                    }
+                    result.getIntelligentTieringConfigurationList().add(currentConfiguration);
+                    currentConfiguration = null;
+                } else if (name.equals("IsTruncated")) {
+                    result.setTruncated("true".equals(getText()));
+                } else if (name.equals("ContinuationToken")) {
+                    result.setContinuationToken(getText());
+                } else if (name.equals("NextContinuationToken")) {
+                    result.setNextContinuationToken(getText());
+                }
+            }
+
+            else if (in("ListIntelligentTieringConfigurationsResult", "IntelligentTieringConfiguration")) {
+                if (name.equals("Id")) {
+                    currentConfiguration.setId(getText());
+                } else if (name.equals("Filter")) {
+                    currentConfiguration.setFilter(currentFilter);
+                } else if (name.equals("Status")) {
+                    currentConfiguration.setStatus(IntelligentTieringStatus.fromValue(getText()));
+                } else if (name.equals("Tiering")) {
+                    if (currentConfiguration.getTierings() == null) {
+                        currentConfiguration.setTierings(new ArrayList<Tiering>());
+                    }
+                    currentConfiguration.getTierings().add(currentTiering);
+                    currentTiering = null;
+                }
+            }
+
+            else if (in("ListIntelligentTieringConfigurationsResult", "IntelligentTieringConfiguration", "Filter")) {
+                if (name.equals("Prefix")) {
+                    currentFilter.setPredicate(new IntelligentTieringPrefixPredicate(getText()));
+                } else if (name.equals("Tag")) {
+                    currentFilter.setPredicate(new IntelligentTieringTagPredicate(new Tag(currentTagKey, currentTagValue)));
+                    currentTagKey = null;
+                    currentTagValue = null;
+                } else if (name.equals("And")) {
+                    currentFilter.setPredicate(new IntelligentTieringAndOperator(andOperandsList));
+                    andOperandsList = null;
+                }
+            }
+
+            else if (in("ListIntelligentTieringConfigurationsResult", "IntelligentTieringConfiguration", "Filter", "Tag")) {
+                if (name.equals("Key")) {
+                    currentTagKey = getText();
+                } else if (name.equals("Value")) {
+                    currentTagValue = getText();
+                }
+            }
+
+            else if (in("ListIntelligentTieringConfigurationsResult", "IntelligentTieringConfiguration", "Filter", "And")) {
+                if (name.equals("Prefix")) {
+                    andOperandsList.add(new IntelligentTieringPrefixPredicate(getText()));
+                } else if (name.equals("Tag")) {
+                    andOperandsList.add(new IntelligentTieringTagPredicate(new Tag(currentTagKey, currentTagValue)));
+                    currentTagKey = null;
+                    currentTagValue = null;
+                }
+            }
+
+            else if (in("ListIntelligentTieringConfigurationsResult", "IntelligentTieringConfiguration", "Filter", "And", "Tag")) {
+                if (name.equals("Key")) {
+                    currentTagKey = getText();
+                } else if (name.equals("Value")) {
+                    currentTagValue = getText();
+                }
+            }
+
+            else if (in("ListIntelligentTieringConfigurationsResult", "IntelligentTieringConfiguration", "Tiering")) {
+                if (name.equals("AccessTier")) {
+                    currentTiering.setAccessTier(IntelligentTieringAccessTier.fromValue(getText()));
+                } else if (name.equals("Days")) {
+                    currentTiering.setDays(Integer.parseInt(getText()));
+                }
+            }
+
         }
 
     }

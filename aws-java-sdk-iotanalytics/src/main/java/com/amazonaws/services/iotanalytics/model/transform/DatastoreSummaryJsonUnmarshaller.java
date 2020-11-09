@@ -68,6 +68,10 @@ public class DatastoreSummaryJsonUnmarshaller implements Unmarshaller<DatastoreS
                     context.nextToken();
                     datastoreSummary.setLastUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("lastMessageArrivalTime", targetDepth)) {
+                    context.nextToken();
+                    datastoreSummary.setLastMessageArrivalTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

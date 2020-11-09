@@ -20,7 +20,17 @@ import com.amazonaws.services.s3.model.ownership.OwnershipControls;
 import java.io.Serializable;
 
 /**
- * Request object to set ownership controls to a bucket.
+ * Creates or modifies <code>OwnershipControls</code> for an Amazon S3 bucket. To use this operation, you must have
+ * the <code>s3:PutBucketOwnershipControls</code> permission. For more information about Amazon S3 permissions, see <a
+ * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying Permissions in a
+ * Policy</a>. </p> <p>For information about Amazon S3 Object Ownership, see <a
+ * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html">Using Object Ownership</a>.
+ * <p>
+ * The following operations are related to <code>PutBucketOwnershipControls</code>:
+ * <ul>
+ *  <li> GetBucketOwnershipControls </li>
+ *  <li> DeleteBucketOwnershipControls </li>
+ * </ul>
  */
 public class SetBucketOwnershipControlsRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 

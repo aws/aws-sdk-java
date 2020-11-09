@@ -19,8 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not
- * specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel.
+ * Where channel data is stored. You may choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code>
+ * storage. If not specified, the default is <code>serviceManagedS3</code>. This cannot be changed after creation of the
+ * channel.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ChannelStorage" target="_top">AWS API
@@ -31,29 +32,29 @@ public class ChannelStorage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Use this to store channel data in an S3 bucket managed by the AWS IoT Analytics service. The choice of
-     * service-managed or customer-managed S3 storage cannot be changed after creation of the channel.
+     * Use this to store channel data in an S3 bucket managed by AWS IoT Analytics. You cannot change the choice of
+     * service-managed or customer-managed S3 storage after the channel is created.
      * </p>
      */
     private ServiceManagedChannelS3Storage serviceManagedS3;
     /**
      * <p>
      * Use this to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the
-     * "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be
-     * changed after creation of the channel.
+     * <code>retentionPeriod</code> parameter is ignored. You cannot change the choice of service-managed or
+     * customer-managed S3 storage after the channel is created.
      * </p>
      */
     private CustomerManagedChannelS3Storage customerManagedS3;
 
     /**
      * <p>
-     * Use this to store channel data in an S3 bucket managed by the AWS IoT Analytics service. The choice of
-     * service-managed or customer-managed S3 storage cannot be changed after creation of the channel.
+     * Use this to store channel data in an S3 bucket managed by AWS IoT Analytics. You cannot change the choice of
+     * service-managed or customer-managed S3 storage after the channel is created.
      * </p>
      * 
      * @param serviceManagedS3
-     *        Use this to store channel data in an S3 bucket managed by the AWS IoT Analytics service. The choice of
-     *        service-managed or customer-managed S3 storage cannot be changed after creation of the channel.
+     *        Use this to store channel data in an S3 bucket managed by AWS IoT Analytics. You cannot change the choice
+     *        of service-managed or customer-managed S3 storage after the channel is created.
      */
 
     public void setServiceManagedS3(ServiceManagedChannelS3Storage serviceManagedS3) {
@@ -62,12 +63,12 @@ public class ChannelStorage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Use this to store channel data in an S3 bucket managed by the AWS IoT Analytics service. The choice of
-     * service-managed or customer-managed S3 storage cannot be changed after creation of the channel.
+     * Use this to store channel data in an S3 bucket managed by AWS IoT Analytics. You cannot change the choice of
+     * service-managed or customer-managed S3 storage after the channel is created.
      * </p>
      * 
-     * @return Use this to store channel data in an S3 bucket managed by the AWS IoT Analytics service. The choice of
-     *         service-managed or customer-managed S3 storage cannot be changed after creation of the channel.
+     * @return Use this to store channel data in an S3 bucket managed by AWS IoT Analytics. You cannot change the choice
+     *         of service-managed or customer-managed S3 storage after the channel is created.
      */
 
     public ServiceManagedChannelS3Storage getServiceManagedS3() {
@@ -76,13 +77,13 @@ public class ChannelStorage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Use this to store channel data in an S3 bucket managed by the AWS IoT Analytics service. The choice of
-     * service-managed or customer-managed S3 storage cannot be changed after creation of the channel.
+     * Use this to store channel data in an S3 bucket managed by AWS IoT Analytics. You cannot change the choice of
+     * service-managed or customer-managed S3 storage after the channel is created.
      * </p>
      * 
      * @param serviceManagedS3
-     *        Use this to store channel data in an S3 bucket managed by the AWS IoT Analytics service. The choice of
-     *        service-managed or customer-managed S3 storage cannot be changed after creation of the channel.
+     *        Use this to store channel data in an S3 bucket managed by AWS IoT Analytics. You cannot change the choice
+     *        of service-managed or customer-managed S3 storage after the channel is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,14 +95,14 @@ public class ChannelStorage implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Use this to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the
-     * "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be
-     * changed after creation of the channel.
+     * <code>retentionPeriod</code> parameter is ignored. You cannot change the choice of service-managed or
+     * customer-managed S3 storage after the channel is created.
      * </p>
      * 
      * @param customerManagedS3
      *        Use this to store channel data in an S3 bucket that you manage. If customer managed storage is selected,
-     *        the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage
-     *        cannot be changed after creation of the channel.
+     *        the <code>retentionPeriod</code> parameter is ignored. You cannot change the choice of service-managed or
+     *        customer-managed S3 storage after the channel is created.
      */
 
     public void setCustomerManagedS3(CustomerManagedChannelS3Storage customerManagedS3) {
@@ -111,13 +112,13 @@ public class ChannelStorage implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Use this to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the
-     * "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be
-     * changed after creation of the channel.
+     * <code>retentionPeriod</code> parameter is ignored. You cannot change the choice of service-managed or
+     * customer-managed S3 storage after the channel is created.
      * </p>
      * 
      * @return Use this to store channel data in an S3 bucket that you manage. If customer managed storage is selected,
-     *         the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage
-     *         cannot be changed after creation of the channel.
+     *         the <code>retentionPeriod</code> parameter is ignored. You cannot change the choice of service-managed or
+     *         customer-managed S3 storage after the channel is created.
      */
 
     public CustomerManagedChannelS3Storage getCustomerManagedS3() {
@@ -127,14 +128,14 @@ public class ChannelStorage implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Use this to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the
-     * "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be
-     * changed after creation of the channel.
+     * <code>retentionPeriod</code> parameter is ignored. You cannot change the choice of service-managed or
+     * customer-managed S3 storage after the channel is created.
      * </p>
      * 
      * @param customerManagedS3
      *        Use this to store channel data in an S3 bucket that you manage. If customer managed storage is selected,
-     *        the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage
-     *        cannot be changed after creation of the channel.
+     *        the <code>retentionPeriod</code> parameter is ignored. You cannot change the choice of service-managed or
+     *        customer-managed S3 storage after the channel is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

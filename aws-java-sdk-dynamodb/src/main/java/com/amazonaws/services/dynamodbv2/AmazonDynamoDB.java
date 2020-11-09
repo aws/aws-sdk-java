@@ -847,6 +847,38 @@ public interface AmazonDynamoDB {
 
     /**
      * <p>
+     * Describes an existing table export.
+     * </p>
+     * 
+     * @param describeExportRequest
+     * @return Result of the DescribeExport operation returned by the service.
+     * @throws ExportNotFoundException
+     *         The specified export was not found.
+     * @throws LimitExceededException
+     *         There is no limit to the number of daily on-demand backups that can be taken. </p>
+     *         <p>
+     *         Up to 50 simultaneous table operations are allowed per account. These operations include
+     *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
+     *         <code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and
+     *         <code>RestoreTableToPointInTime</code>.
+     *         </p>
+     *         <p>
+     *         The only exception is when you are creating a table with one or more secondary indexes. You can have up
+     *         to 25 such requests running at a time; however, if the table or index specifications are complex,
+     *         DynamoDB might temporarily reduce the number of concurrent operations.
+     *         </p>
+     *         <p>
+     *         There is a soft account quota of 256 tables.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.DescribeExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeExportResult describeExport(DescribeExportRequest describeExportRequest);
+
+    /**
+     * <p>
      * Returns information about the specified global table.
      * </p>
      * <note>
@@ -1081,6 +1113,46 @@ public interface AmazonDynamoDB {
 
     /**
      * <p>
+     * Exports table data to an S3 bucket. The table must have point in time recovery enabled, and you can export data
+     * from any time within the point in time recovery window.
+     * </p>
+     * 
+     * @param exportTableToPointInTimeRequest
+     * @return Result of the ExportTableToPointInTime operation returned by the service.
+     * @throws TableNotFoundException
+     *         A source table with the name <code>TableName</code> does not currently exist within the subscriber's
+     *         account.
+     * @throws PointInTimeRecoveryUnavailableException
+     *         Point in time recovery has not yet been enabled for this source table.
+     * @throws LimitExceededException
+     *         There is no limit to the number of daily on-demand backups that can be taken. </p>
+     *         <p>
+     *         Up to 50 simultaneous table operations are allowed per account. These operations include
+     *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
+     *         <code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and
+     *         <code>RestoreTableToPointInTime</code>.
+     *         </p>
+     *         <p>
+     *         The only exception is when you are creating a table with one or more secondary indexes. You can have up
+     *         to 25 such requests running at a time; however, if the table or index specifications are complex,
+     *         DynamoDB might temporarily reduce the number of concurrent operations.
+     *         </p>
+     *         <p>
+     *         There is a soft account quota of 256 tables.
+     * @throws InvalidExportTimeException
+     *         The specified <code>ExportTime</code> is outside of the point in time recovery window.
+     * @throws ExportConflictException
+     *         There was a conflict when writing to the specified S3 bucket.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.ExportTableToPointInTime
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExportTableToPointInTime"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ExportTableToPointInTimeResult exportTableToPointInTime(ExportTableToPointInTimeRequest exportTableToPointInTimeRequest);
+
+    /**
+     * <p>
      * The <code>GetItem</code> operation returns a set of attributes for the item with the given primary key. If there
      * is no matching item, <code>GetItem</code> does not return any data and there will be no <code>Item</code> element
      * in the response.
@@ -1169,6 +1241,36 @@ public interface AmazonDynamoDB {
      *      target="_top">AWS API Documentation</a>
      */
     ListContributorInsightsResult listContributorInsights(ListContributorInsightsRequest listContributorInsightsRequest);
+
+    /**
+     * <p>
+     * Lists completed exports within the past 90 days.
+     * </p>
+     * 
+     * @param listExportsRequest
+     * @return Result of the ListExports operation returned by the service.
+     * @throws LimitExceededException
+     *         There is no limit to the number of daily on-demand backups that can be taken. </p>
+     *         <p>
+     *         Up to 50 simultaneous table operations are allowed per account. These operations include
+     *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
+     *         <code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and
+     *         <code>RestoreTableToPointInTime</code>.
+     *         </p>
+     *         <p>
+     *         The only exception is when you are creating a table with one or more secondary indexes. You can have up
+     *         to 25 such requests running at a time; however, if the table or index specifications are complex,
+     *         DynamoDB might temporarily reduce the number of concurrent operations.
+     *         </p>
+     *         <p>
+     *         There is a soft account quota of 256 tables.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.ListExports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListExports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListExportsResult listExports(ListExportsRequest listExportsRequest);
 
     /**
      * <p>

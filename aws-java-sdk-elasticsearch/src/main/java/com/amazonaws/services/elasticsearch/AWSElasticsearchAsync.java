@@ -835,6 +835,35 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
 
     /**
      * <p>
+     * Returns a list of versions of the package, along with their creation time and commit message.
+     * </p>
+     * 
+     * @param getPackageVersionHistoryRequest
+     *        Container for request parameters to <code> <a>GetPackageVersionHistory</a> </code> operation.
+     * @return A Java Future containing the result of the GetPackageVersionHistory operation returned by the service.
+     * @sample AWSElasticsearchAsync.GetPackageVersionHistory
+     */
+    java.util.concurrent.Future<GetPackageVersionHistoryResult> getPackageVersionHistoryAsync(GetPackageVersionHistoryRequest getPackageVersionHistoryRequest);
+
+    /**
+     * <p>
+     * Returns a list of versions of the package, along with their creation time and commit message.
+     * </p>
+     * 
+     * @param getPackageVersionHistoryRequest
+     *        Container for request parameters to <code> <a>GetPackageVersionHistory</a> </code> operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPackageVersionHistory operation returned by the service.
+     * @sample AWSElasticsearchAsyncHandler.GetPackageVersionHistory
+     */
+    java.util.concurrent.Future<GetPackageVersionHistoryResult> getPackageVersionHistoryAsync(GetPackageVersionHistoryRequest getPackageVersionHistoryRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPackageVersionHistoryRequest, GetPackageVersionHistoryResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the complete history of the last 10 upgrades that were performed on the domain.
      * </p>
      * 
@@ -1257,6 +1286,35 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
     java.util.concurrent.Future<UpdateElasticsearchDomainConfigResult> updateElasticsearchDomainConfigAsync(
             UpdateElasticsearchDomainConfigRequest updateElasticsearchDomainConfigRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateElasticsearchDomainConfigRequest, UpdateElasticsearchDomainConfigResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a package for use with Amazon ES domains.
+     * </p>
+     * 
+     * @param updatePackageRequest
+     *        Container for request parameters to <code> <a>UpdatePackage</a> </code> operation.
+     * @return A Java Future containing the result of the UpdatePackage operation returned by the service.
+     * @sample AWSElasticsearchAsync.UpdatePackage
+     */
+    java.util.concurrent.Future<UpdatePackageResult> updatePackageAsync(UpdatePackageRequest updatePackageRequest);
+
+    /**
+     * <p>
+     * Updates a package for use with Amazon ES domains.
+     * </p>
+     * 
+     * @param updatePackageRequest
+     *        Container for request parameters to <code> <a>UpdatePackage</a> </code> operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdatePackage operation returned by the service.
+     * @sample AWSElasticsearchAsyncHandler.UpdatePackage
+     */
+    java.util.concurrent.Future<UpdatePackageResult> updatePackageAsync(UpdatePackageRequest updatePackageRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdatePackageRequest, UpdatePackageResult> asyncHandler);
 
     /**
      * <p>

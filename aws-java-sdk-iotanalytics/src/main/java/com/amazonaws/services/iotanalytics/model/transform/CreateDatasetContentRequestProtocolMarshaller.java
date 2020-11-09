@@ -33,7 +33,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class CreateDatasetContentRequestProtocolMarshaller implements Marshaller<Request<CreateDatasetContentRequest>, CreateDatasetContentRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/datasets/{datasetName}/content").httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(false)
+            .requestUri("/datasets/{datasetName}/content").httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(true)
             .serviceName("AWSIoTAnalytics").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;

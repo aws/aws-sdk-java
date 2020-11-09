@@ -190,6 +190,81 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
 
     /**
      * <p>
+     * Use this action to associate one or more Domain Name Server (DNS) aliases with an existing Amazon FSx for Windows
+     * File Server file system. A file systen can have a maximum of 50 DNS aliases associated with it at any one time.
+     * If you try to associate a DNS alias that is already associated with the file system, FSx takes no action on that
+     * alias in the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS Aliases</a>
+     * and <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">
+     * Walkthrough 5: Using DNS aliases to access your file system</a>, including additional steps you must take to be
+     * able to access your file system using a DNS alias.
+     * </p>
+     * <p>
+     * The system response shows the DNS aliases that Amazon FSx is attempting to associate with the file system. Use
+     * the API operation to monitor the status of the aliases Amazon FSx is associating with the file system.
+     * </p>
+     * 
+     * @param associateFileSystemAliasesRequest
+     *        The request object specifying one or more DNS alias names to associate with an Amazon FSx for Windows File
+     *        Server file system.
+     * @return Result of the AssociateFileSystemAliases operation returned by the service.
+     * @throws BadRequestException
+     *         A generic error indicating a failure with a client request.
+     * @throws FileSystemNotFoundException
+     *         No Amazon FSx file systems were found based upon supplied parameters.
+     * @throws InternalServerErrorException
+     *         A generic error indicating a server-side failure.
+     * @sample AmazonFSx.AssociateFileSystemAliases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/AssociateFileSystemAliases" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public AssociateFileSystemAliasesResult associateFileSystemAliases(AssociateFileSystemAliasesRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateFileSystemAliases(request);
+    }
+
+    @SdkInternalApi
+    final AssociateFileSystemAliasesResult executeAssociateFileSystemAliases(AssociateFileSystemAliasesRequest associateFileSystemAliasesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateFileSystemAliasesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateFileSystemAliasesRequest> request = null;
+        Response<AssociateFileSystemAliasesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateFileSystemAliasesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateFileSystemAliasesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FSx");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateFileSystemAliases");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateFileSystemAliasesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssociateFileSystemAliasesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Cancels an existing Amazon FSx for Lustre data repository task if that task is in either the <code>PENDING</code>
      * or <code>EXECUTING</code> state. When you cancel a task, Amazon FSx does the following.
      * </p>
@@ -1057,6 +1132,71 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
 
     /**
      * <p>
+     * Returns the DNS aliases that are associated with the specified Amazon FSx for Windows File Server file system. A
+     * history of all DNS aliases that have been associated with and disassociated from the file system is available in
+     * the list of <a>AdministrativeAction</a> provided in the <a>DescribeFileSystems</a> operation response.
+     * </p>
+     * 
+     * @param describeFileSystemAliasesRequest
+     *        The request object for <code>DescribeFileSystemAliases</code> operation.
+     * @return Result of the DescribeFileSystemAliases operation returned by the service.
+     * @throws BadRequestException
+     *         A generic error indicating a failure with a client request.
+     * @throws FileSystemNotFoundException
+     *         No Amazon FSx file systems were found based upon supplied parameters.
+     * @throws InternalServerErrorException
+     *         A generic error indicating a server-side failure.
+     * @sample AmazonFSx.DescribeFileSystemAliases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeFileSystemAliases" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeFileSystemAliasesResult describeFileSystemAliases(DescribeFileSystemAliasesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFileSystemAliases(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFileSystemAliasesResult executeDescribeFileSystemAliases(DescribeFileSystemAliasesRequest describeFileSystemAliasesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeFileSystemAliasesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeFileSystemAliasesRequest> request = null;
+        Response<DescribeFileSystemAliasesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeFileSystemAliasesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeFileSystemAliasesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FSx");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFileSystemAliases");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeFileSystemAliasesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeFileSystemAliasesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the description of specific Amazon FSx file systems, if a <code>FileSystemIds</code> value is provided
      * for that file system. Otherwise, it returns descriptions of all file systems owned by your AWS account in the AWS
      * Region of the endpoint that you're calling.
@@ -1137,6 +1277,78 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeFileSystemsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeFileSystemsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Use this action to disassociate, or remove, one or more Domain Name Service (DNS) aliases from an Amazon FSx for
+     * Windows File Server file system. If you attempt to disassociate a DNS alias that is not associated with the file
+     * system, Amazon FSx responds with a 400 Bad Request. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS
+     * Aliases</a>.
+     * </p>
+     * <p>
+     * The system generated response showing the DNS aliases that Amazon FSx is attempting to disassociate from the file
+     * system. Use the API operation to monitor the status of the aliases Amazon FSx is disassociating with the file
+     * system.
+     * </p>
+     * 
+     * @param disassociateFileSystemAliasesRequest
+     *        The request object of DNS aliases to disassociate from an Amazon FSx for Windows File Server file system.
+     * @return Result of the DisassociateFileSystemAliases operation returned by the service.
+     * @throws BadRequestException
+     *         A generic error indicating a failure with a client request.
+     * @throws FileSystemNotFoundException
+     *         No Amazon FSx file systems were found based upon supplied parameters.
+     * @throws InternalServerErrorException
+     *         A generic error indicating a server-side failure.
+     * @sample AmazonFSx.DisassociateFileSystemAliases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DisassociateFileSystemAliases"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateFileSystemAliasesResult disassociateFileSystemAliases(DisassociateFileSystemAliasesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateFileSystemAliases(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateFileSystemAliasesResult executeDisassociateFileSystemAliases(DisassociateFileSystemAliasesRequest disassociateFileSystemAliasesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateFileSystemAliasesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateFileSystemAliasesRequest> request = null;
+        Response<DisassociateFileSystemAliasesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateFileSystemAliasesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateFileSystemAliasesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FSx");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateFileSystemAliases");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateFileSystemAliasesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateFileSystemAliasesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

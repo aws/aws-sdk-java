@@ -30,32 +30,32 @@ public class CustomerManagedChannelS3StorageSummary implements Serializable, Clo
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket in which channel data is stored.
+     * The name of the S3 bucket in which channel data is stored.
      * </p>
      */
     private String bucket;
     /**
      * <p>
-     * [Optional] The prefix used to create the keys of the channel data objects. Each object in an Amazon S3 bucket has
-     * a key that is its unique identifier within the bucket (each object in a bucket has exactly one key). The prefix
-     * must end with a '/'.
+     * Optional. The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has a key
+     * that is its unique identifier within the bucket (each object in a bucket has exactly one key). The prefix must
+     * end with a forward slash (/).
      * </p>
      */
     private String keyPrefix;
     /**
      * <p>
-     * The ARN of the role which grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
+     * The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
      * </p>
      */
     private String roleArn;
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket in which channel data is stored.
+     * The name of the S3 bucket in which channel data is stored.
      * </p>
      * 
      * @param bucket
-     *        The name of the Amazon S3 bucket in which channel data is stored.
+     *        The name of the S3 bucket in which channel data is stored.
      */
 
     public void setBucket(String bucket) {
@@ -64,10 +64,10 @@ public class CustomerManagedChannelS3StorageSummary implements Serializable, Clo
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket in which channel data is stored.
+     * The name of the S3 bucket in which channel data is stored.
      * </p>
      * 
-     * @return The name of the Amazon S3 bucket in which channel data is stored.
+     * @return The name of the S3 bucket in which channel data is stored.
      */
 
     public String getBucket() {
@@ -76,11 +76,11 @@ public class CustomerManagedChannelS3StorageSummary implements Serializable, Clo
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket in which channel data is stored.
+     * The name of the S3 bucket in which channel data is stored.
      * </p>
      * 
      * @param bucket
-     *        The name of the Amazon S3 bucket in which channel data is stored.
+     *        The name of the S3 bucket in which channel data is stored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,15 +91,15 @@ public class CustomerManagedChannelS3StorageSummary implements Serializable, Clo
 
     /**
      * <p>
-     * [Optional] The prefix used to create the keys of the channel data objects. Each object in an Amazon S3 bucket has
-     * a key that is its unique identifier within the bucket (each object in a bucket has exactly one key). The prefix
-     * must end with a '/'.
+     * Optional. The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has a key
+     * that is its unique identifier within the bucket (each object in a bucket has exactly one key). The prefix must
+     * end with a forward slash (/).
      * </p>
      * 
      * @param keyPrefix
-     *        [Optional] The prefix used to create the keys of the channel data objects. Each object in an Amazon S3
-     *        bucket has a key that is its unique identifier within the bucket (each object in a bucket has exactly one
-     *        key). The prefix must end with a '/'.
+     *        Optional. The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has
+     *        a key that is its unique identifier within the bucket (each object in a bucket has exactly one key). The
+     *        prefix must end with a forward slash (/).
      */
 
     public void setKeyPrefix(String keyPrefix) {
@@ -108,14 +108,14 @@ public class CustomerManagedChannelS3StorageSummary implements Serializable, Clo
 
     /**
      * <p>
-     * [Optional] The prefix used to create the keys of the channel data objects. Each object in an Amazon S3 bucket has
-     * a key that is its unique identifier within the bucket (each object in a bucket has exactly one key). The prefix
-     * must end with a '/'.
+     * Optional. The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has a key
+     * that is its unique identifier within the bucket (each object in a bucket has exactly one key). The prefix must
+     * end with a forward slash (/).
      * </p>
      * 
-     * @return [Optional] The prefix used to create the keys of the channel data objects. Each object in an Amazon S3
-     *         bucket has a key that is its unique identifier within the bucket (each object in a bucket has exactly one
-     *         key). The prefix must end with a '/'.
+     * @return Optional. The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has
+     *         a key that is its unique identifier within the bucket (each object in a bucket has exactly one key). The
+     *         prefix must end with a forward slash (/).
      */
 
     public String getKeyPrefix() {
@@ -124,15 +124,15 @@ public class CustomerManagedChannelS3StorageSummary implements Serializable, Clo
 
     /**
      * <p>
-     * [Optional] The prefix used to create the keys of the channel data objects. Each object in an Amazon S3 bucket has
-     * a key that is its unique identifier within the bucket (each object in a bucket has exactly one key). The prefix
-     * must end with a '/'.
+     * Optional. The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has a key
+     * that is its unique identifier within the bucket (each object in a bucket has exactly one key). The prefix must
+     * end with a forward slash (/).
      * </p>
      * 
      * @param keyPrefix
-     *        [Optional] The prefix used to create the keys of the channel data objects. Each object in an Amazon S3
-     *        bucket has a key that is its unique identifier within the bucket (each object in a bucket has exactly one
-     *        key). The prefix must end with a '/'.
+     *        Optional. The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has
+     *        a key that is its unique identifier within the bucket (each object in a bucket has exactly one key). The
+     *        prefix must end with a forward slash (/).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,11 +143,11 @@ public class CustomerManagedChannelS3StorageSummary implements Serializable, Clo
 
     /**
      * <p>
-     * The ARN of the role which grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
+     * The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the role which grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
+     *        The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
      */
 
     public void setRoleArn(String roleArn) {
@@ -156,10 +156,10 @@ public class CustomerManagedChannelS3StorageSummary implements Serializable, Clo
 
     /**
      * <p>
-     * The ARN of the role which grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
+     * The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
      * </p>
      * 
-     * @return The ARN of the role which grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
+     * @return The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
      */
 
     public String getRoleArn() {
@@ -168,11 +168,11 @@ public class CustomerManagedChannelS3StorageSummary implements Serializable, Clo
 
     /**
      * <p>
-     * The ARN of the role which grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
+     * The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the role which grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
+     *        The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

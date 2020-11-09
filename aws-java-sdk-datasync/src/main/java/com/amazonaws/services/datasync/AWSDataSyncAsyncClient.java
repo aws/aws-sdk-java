@@ -1103,6 +1103,39 @@ public class AWSDataSyncAsyncClient extends AWSDataSyncClient implements AWSData
         });
     }
 
+    @Override
+    public java.util.concurrent.Future<UpdateTaskExecutionResult> updateTaskExecutionAsync(UpdateTaskExecutionRequest request) {
+
+        return updateTaskExecutionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTaskExecutionResult> updateTaskExecutionAsync(final UpdateTaskExecutionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateTaskExecutionRequest, UpdateTaskExecutionResult> asyncHandler) {
+        final UpdateTaskExecutionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateTaskExecutionResult>() {
+            @Override
+            public UpdateTaskExecutionResult call() throws Exception {
+                UpdateTaskExecutionResult result = null;
+
+                try {
+                    result = executeUpdateTaskExecution(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
     /**
      * Shuts down the client, releasing all managed resources. This includes forcibly terminating all pending
      * asynchronous service calls. Clients who wish to give pending asynchronous service calls time to complete should

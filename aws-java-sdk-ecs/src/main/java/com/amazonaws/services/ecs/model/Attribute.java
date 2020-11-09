@@ -33,15 +33,16 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the attribute. Up to 128 letters (uppercase and lowercase), numbers, hyphens, underscores, and
-     * periods are allowed.
+     * The name of the attribute. The <code>name</code> must contain between 1 and 128 characters and name may contain
+     * letters (uppercase and lowercase), numbers, hyphens, underscores, forward slashes, back slashes, or periods.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The value of the attribute. Up to 128 letters (uppercase and lowercase), numbers, hyphens, underscores, periods,
-     * at signs (@), forward slashes, colons, and spaces are allowed.
+     * The value of the attribute. The <code>value</code> must contain between 1 and 128 characters and may contain
+     * letters (uppercase and lowercase), numbers, hyphens, underscores, periods, at signs (@), forward slashes, back
+     * slashes, colons, or spaces. The value cannot contain any leading or trailing whitespace.
      * </p>
      */
     private String value;
@@ -61,13 +62,14 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the attribute. Up to 128 letters (uppercase and lowercase), numbers, hyphens, underscores, and
-     * periods are allowed.
+     * The name of the attribute. The <code>name</code> must contain between 1 and 128 characters and name may contain
+     * letters (uppercase and lowercase), numbers, hyphens, underscores, forward slashes, back slashes, or periods.
      * </p>
      * 
      * @param name
-     *        The name of the attribute. Up to 128 letters (uppercase and lowercase), numbers, hyphens, underscores, and
-     *        periods are allowed.
+     *        The name of the attribute. The <code>name</code> must contain between 1 and 128 characters and name may
+     *        contain letters (uppercase and lowercase), numbers, hyphens, underscores, forward slashes, back slashes,
+     *        or periods.
      */
 
     public void setName(String name) {
@@ -76,12 +78,13 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the attribute. Up to 128 letters (uppercase and lowercase), numbers, hyphens, underscores, and
-     * periods are allowed.
+     * The name of the attribute. The <code>name</code> must contain between 1 and 128 characters and name may contain
+     * letters (uppercase and lowercase), numbers, hyphens, underscores, forward slashes, back slashes, or periods.
      * </p>
      * 
-     * @return The name of the attribute. Up to 128 letters (uppercase and lowercase), numbers, hyphens, underscores,
-     *         and periods are allowed.
+     * @return The name of the attribute. The <code>name</code> must contain between 1 and 128 characters and name may
+     *         contain letters (uppercase and lowercase), numbers, hyphens, underscores, forward slashes, back slashes,
+     *         or periods.
      */
 
     public String getName() {
@@ -90,13 +93,14 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the attribute. Up to 128 letters (uppercase and lowercase), numbers, hyphens, underscores, and
-     * periods are allowed.
+     * The name of the attribute. The <code>name</code> must contain between 1 and 128 characters and name may contain
+     * letters (uppercase and lowercase), numbers, hyphens, underscores, forward slashes, back slashes, or periods.
      * </p>
      * 
      * @param name
-     *        The name of the attribute. Up to 128 letters (uppercase and lowercase), numbers, hyphens, underscores, and
-     *        periods are allowed.
+     *        The name of the attribute. The <code>name</code> must contain between 1 and 128 characters and name may
+     *        contain letters (uppercase and lowercase), numbers, hyphens, underscores, forward slashes, back slashes,
+     *        or periods.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,13 +111,15 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value of the attribute. Up to 128 letters (uppercase and lowercase), numbers, hyphens, underscores, periods,
-     * at signs (@), forward slashes, colons, and spaces are allowed.
+     * The value of the attribute. The <code>value</code> must contain between 1 and 128 characters and may contain
+     * letters (uppercase and lowercase), numbers, hyphens, underscores, periods, at signs (@), forward slashes, back
+     * slashes, colons, or spaces. The value cannot contain any leading or trailing whitespace.
      * </p>
      * 
      * @param value
-     *        The value of the attribute. Up to 128 letters (uppercase and lowercase), numbers, hyphens, underscores,
-     *        periods, at signs (@), forward slashes, colons, and spaces are allowed.
+     *        The value of the attribute. The <code>value</code> must contain between 1 and 128 characters and may
+     *        contain letters (uppercase and lowercase), numbers, hyphens, underscores, periods, at signs (@), forward
+     *        slashes, back slashes, colons, or spaces. The value cannot contain any leading or trailing whitespace.
      */
 
     public void setValue(String value) {
@@ -122,12 +128,14 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value of the attribute. Up to 128 letters (uppercase and lowercase), numbers, hyphens, underscores, periods,
-     * at signs (@), forward slashes, colons, and spaces are allowed.
+     * The value of the attribute. The <code>value</code> must contain between 1 and 128 characters and may contain
+     * letters (uppercase and lowercase), numbers, hyphens, underscores, periods, at signs (@), forward slashes, back
+     * slashes, colons, or spaces. The value cannot contain any leading or trailing whitespace.
      * </p>
      * 
-     * @return The value of the attribute. Up to 128 letters (uppercase and lowercase), numbers, hyphens, underscores,
-     *         periods, at signs (@), forward slashes, colons, and spaces are allowed.
+     * @return The value of the attribute. The <code>value</code> must contain between 1 and 128 characters and may
+     *         contain letters (uppercase and lowercase), numbers, hyphens, underscores, periods, at signs (@), forward
+     *         slashes, back slashes, colons, or spaces. The value cannot contain any leading or trailing whitespace.
      */
 
     public String getValue() {
@@ -136,13 +144,15 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value of the attribute. Up to 128 letters (uppercase and lowercase), numbers, hyphens, underscores, periods,
-     * at signs (@), forward slashes, colons, and spaces are allowed.
+     * The value of the attribute. The <code>value</code> must contain between 1 and 128 characters and may contain
+     * letters (uppercase and lowercase), numbers, hyphens, underscores, periods, at signs (@), forward slashes, back
+     * slashes, colons, or spaces. The value cannot contain any leading or trailing whitespace.
      * </p>
      * 
      * @param value
-     *        The value of the attribute. Up to 128 letters (uppercase and lowercase), numbers, hyphens, underscores,
-     *        periods, at signs (@), forward slashes, colons, and spaces are allowed.
+     *        The value of the attribute. The <code>value</code> must contain between 1 and 128 characters and may
+     *        contain letters (uppercase and lowercase), numbers, hyphens, underscores, periods, at signs (@), forward
+     *        slashes, back slashes, colons, or spaces. The value cannot contain any leading or trailing whitespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -84,7 +84,7 @@ public class PipelineActivity implements Serializable, Cloneable, StructuredPojo
     private DeviceRegistryEnrichActivity deviceRegistryEnrich;
     /**
      * <p>
-     * Adds information from the AWS IoT Device Shadows service to a message.
+     * Adds information from the AWS IoT Device Shadow service to a message.
      * </p>
      */
     private DeviceShadowEnrichActivity deviceShadowEnrich;
@@ -451,11 +451,11 @@ public class PipelineActivity implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Adds information from the AWS IoT Device Shadows service to a message.
+     * Adds information from the AWS IoT Device Shadow service to a message.
      * </p>
      * 
      * @param deviceShadowEnrich
-     *        Adds information from the AWS IoT Device Shadows service to a message.
+     *        Adds information from the AWS IoT Device Shadow service to a message.
      */
 
     public void setDeviceShadowEnrich(DeviceShadowEnrichActivity deviceShadowEnrich) {
@@ -464,10 +464,10 @@ public class PipelineActivity implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Adds information from the AWS IoT Device Shadows service to a message.
+     * Adds information from the AWS IoT Device Shadow service to a message.
      * </p>
      * 
-     * @return Adds information from the AWS IoT Device Shadows service to a message.
+     * @return Adds information from the AWS IoT Device Shadow service to a message.
      */
 
     public DeviceShadowEnrichActivity getDeviceShadowEnrich() {
@@ -476,11 +476,11 @@ public class PipelineActivity implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Adds information from the AWS IoT Device Shadows service to a message.
+     * Adds information from the AWS IoT Device Shadow service to a message.
      * </p>
      * 
      * @param deviceShadowEnrich
-     *        Adds information from the AWS IoT Device Shadows service to a message.
+     *        Adds information from the AWS IoT Device Shadow service to a message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

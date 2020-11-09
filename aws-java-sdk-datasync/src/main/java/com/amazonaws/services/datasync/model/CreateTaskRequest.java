@@ -69,7 +69,7 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of filter rules that determines which files to exclude from a task. The list should contain a single
      * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>
+     * example, <code>"/folder1|/folder2"</code>.
      * </p>
      * <p>
      * </p>
@@ -333,14 +333,14 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of filter rules that determines which files to exclude from a task. The list should contain a single
      * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>
+     * example, <code>"/folder1|/folder2"</code>.
      * </p>
      * <p>
      * </p>
      * 
      * @return A list of filter rules that determines which files to exclude from a task. The list should contain a
      *         single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that
-     *         is, a pipe), for example, <code>"/folder1|/folder2"</code> </p>
+     *         is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
      *         <p>
      */
 
@@ -352,7 +352,7 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of filter rules that determines which files to exclude from a task. The list should contain a single
      * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>
+     * example, <code>"/folder1|/folder2"</code>.
      * </p>
      * <p>
      * </p>
@@ -360,7 +360,7 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param excludes
      *        A list of filter rules that determines which files to exclude from a task. The list should contain a
      *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
-     *        a pipe), for example, <code>"/folder1|/folder2"</code> </p>
+     *        a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
      *        <p>
      */
 
@@ -377,7 +377,7 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of filter rules that determines which files to exclude from a task. The list should contain a single
      * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>
+     * example, <code>"/folder1|/folder2"</code>.
      * </p>
      * <p>
      * </p>
@@ -390,7 +390,7 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param excludes
      *        A list of filter rules that determines which files to exclude from a task. The list should contain a
      *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
-     *        a pipe), for example, <code>"/folder1|/folder2"</code> </p>
+     *        a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
      *        <p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -409,7 +409,7 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of filter rules that determines which files to exclude from a task. The list should contain a single
      * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>
+     * example, <code>"/folder1|/folder2"</code>.
      * </p>
      * <p>
      * </p>
@@ -417,7 +417,7 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param excludes
      *        A list of filter rules that determines which files to exclude from a task. The list should contain a
      *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
-     *        a pipe), for example, <code>"/folder1|/folder2"</code> </p>
+     *        a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
      *        <p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -35,7 +35,7 @@ public enum CompressionType {
      * Use this in place of valueOf.
      *
      * @param value real value
-     * @return TableStatus corresponding to the value
+     * @return enum corresponding to the value
      */
     public static CompressionType fromValue(String value) {
         if (value == null || "".equals(value)) {

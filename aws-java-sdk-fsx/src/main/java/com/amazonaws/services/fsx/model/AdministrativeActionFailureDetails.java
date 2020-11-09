@@ -30,18 +30,18 @@ public class AdministrativeActionFailureDetails implements Serializable, Cloneab
 
     /**
      * <p>
-     * Error message providing details about the failure.
+     * Error message providing details about the failed administrative action.
      * </p>
      */
     private String message;
 
     /**
      * <p>
-     * Error message providing details about the failure.
+     * Error message providing details about the failed administrative action.
      * </p>
      * 
      * @param message
-     *        Error message providing details about the failure.
+     *        Error message providing details about the failed administrative action.
      */
 
     public void setMessage(String message) {
@@ -50,10 +50,10 @@ public class AdministrativeActionFailureDetails implements Serializable, Cloneab
 
     /**
      * <p>
-     * Error message providing details about the failure.
+     * Error message providing details about the failed administrative action.
      * </p>
      * 
-     * @return Error message providing details about the failure.
+     * @return Error message providing details about the failed administrative action.
      */
 
     public String getMessage() {
@@ -62,11 +62,11 @@ public class AdministrativeActionFailureDetails implements Serializable, Cloneab
 
     /**
      * <p>
-     * Error message providing details about the failure.
+     * Error message providing details about the failed administrative action.
      * </p>
      * 
      * @param message
-     *        Error message providing details about the failure.
+     *        Error message providing details about the failed administrative action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

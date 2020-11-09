@@ -27,12 +27,14 @@ import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
 import com.amazonaws.services.s3.model.BucketWebsiteConfiguration;
 import com.amazonaws.services.s3.model.DeleteBucketAnalyticsConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketEncryptionResult;
+import com.amazonaws.services.s3.model.DeleteBucketIntelligentTieringConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketMetricsConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketOwnershipControlsResult;
 import com.amazonaws.services.s3.model.DeleteObjectTaggingResult;
 import com.amazonaws.services.s3.model.DeletePublicAccessBlockResult;
 import com.amazonaws.services.s3.model.GetBucketAnalyticsConfigurationResult;
+import com.amazonaws.services.s3.model.GetBucketIntelligentTieringConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketMetricsConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketOwnershipControlsResult;
@@ -42,6 +44,7 @@ import com.amazonaws.services.s3.model.GetObjectRetentionResult;
 import com.amazonaws.services.s3.model.GetObjectTaggingResult;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
 import com.amazonaws.services.s3.model.ListBucketAnalyticsConfigurationsResult;
+import com.amazonaws.services.s3.model.ListBucketIntelligentTieringConfigurationsResult;
 import com.amazonaws.services.s3.model.ListBucketInventoryConfigurationsResult;
 import com.amazonaws.services.s3.model.ListBucketMetricsConfigurationsResult;
 import com.amazonaws.services.s3.model.ListObjectsV2Result;
@@ -53,6 +56,7 @@ import com.amazonaws.services.s3.model.RequestPaymentConfiguration;
 import com.amazonaws.services.s3.model.RestoreObjectResult;
 import com.amazonaws.services.s3.model.SetBucketAnalyticsConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketEncryptionResult;
+import com.amazonaws.services.s3.model.SetBucketIntelligentTieringConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketMetricsConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketOwnershipControlsResult;
@@ -433,6 +437,47 @@ public class Unmarshallers {
             return new SetBucketAnalyticsConfigurationResult();
         }
     }
+
+    /**
+     * Unmarshaller for the GetBucketIntelligenTieringConfiguration XML response.
+     */
+    public static final class GetBucketIntelligenTieringConfigurationUnmarshaller implements
+            Unmarshaller<GetBucketIntelligentTieringConfigurationResult, InputStream> {
+        public GetBucketIntelligentTieringConfigurationResult unmarshall(InputStream in) throws Exception {
+            return new XmlResponsesSaxParser().parseGetBucketIntelligentTieringConfigurationResponse(in).getResult();
+        }
+    }
+
+    /**
+     * Unmarshaller for the ListBucketIntelligenTieringConfigurations XML response.
+     */
+    public static final class ListBucketIntelligenTieringConfigurationUnmarshaller implements
+            Unmarshaller<ListBucketIntelligentTieringConfigurationsResult, InputStream> {
+        public ListBucketIntelligentTieringConfigurationsResult unmarshall(InputStream in) throws Exception {
+            return new XmlResponsesSaxParser().parseListBucketIntelligentTieringConfigurationResponse(in).getResult();
+        }
+    }
+
+    /**
+     * Unmarshaller for the DeleteBucketIntelligenTieringConfiguration XML response.
+     */
+    public static final class DeleteBucketIntelligenTieringConfigurationUnmarshaller implements
+            Unmarshaller<DeleteBucketIntelligentTieringConfigurationResult, InputStream> {
+        public DeleteBucketIntelligentTieringConfigurationResult unmarshall(InputStream in) throws Exception {
+            return new DeleteBucketIntelligentTieringConfigurationResult();
+        }
+    }
+
+    /**
+     * Unmarshaller for the SetBucketIntelligenTieringConfiguration XML response.
+     */
+    public static final class SetBucketIntelligentTieringConfigurationUnmarshaller implements
+            Unmarshaller<SetBucketIntelligentTieringConfigurationResult, InputStream> {
+        public SetBucketIntelligentTieringConfigurationResult unmarshall(InputStream in) throws Exception {
+            return new SetBucketIntelligentTieringConfigurationResult();
+        }
+    }
+
 
     /**
      * Unmarshaller for the GetBucketMetricsConfiguration XML response.
