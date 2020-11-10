@@ -63,14 +63,29 @@ import com.amazonaws.services.elasticloadbalancingv2.model.transform.*;
  * </p>
  * <p>
  * Elastic Load Balancing supports the following types of load balancers: Application Load Balancers, Network Load
- * Balancers, and Classic Load Balancers. This reference covers Application Load Balancers and Network Load Balancers.
+ * Balancers, Gateway Load Balancers, and Classic Load Balancers. This reference covers the following load balancer
+ * types:
  * </p>
+ * <ul>
+ * <li>
  * <p>
- * An Application Load Balancer makes routing and load balancing decisions at the application layer (HTTP/HTTPS). A
- * Network Load Balancer makes routing and load balancing decisions at the transport layer (TCP/TLS). Both Application
- * Load Balancers and Network Load Balancers can route requests to one or more ports on each EC2 instance or container
- * instance in your virtual private cloud (VPC). For more information, see the <a
- * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic Load Balancing User Guide</a>.
+ * Application Load Balancer - Operates at the application layer (layer 7) and supports HTTP and HTTPS.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Network Load Balancer - Operates at the transport layer (layer 4) and supports TCP, TLS, and UDP.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Gateway Load Balancer - Operates at the network layer (layer 3).
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * For more information, see the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic
+ * Load Balancing User Guide</a>.
  * </p>
  * <p>
  * All Elastic Load Balancing operations are idempotent, which means that they complete at most one time. If you repeat
@@ -351,14 +366,11 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * again.
      * </p>
      * <p>
-     * To get the certificate list for a listener, use <a>DescribeListenerCertificates</a>. To remove certificates from
-     * the certificate list for a listener, use <a>RemoveListenerCertificates</a>. To replace the default certificate
-     * for a listener, use <a>ModifyListener</a>.
-     * </p>
-     * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#https-listener-certificates"
-     * >SSL Certificates</a> in the <i>Application Load Balancers Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html">HTTPS
+     * listeners</a> in the <i>Application Load Balancers Guide</i> or <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html">TLS listeners</a>
+     * in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
      * @param addListenerCertificatesRequest
@@ -419,15 +431,11 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Adds the specified tags to the specified Elastic Load Balancing resource. You can tag your Application Load
-     * Balancers, Network Load Balancers, target groups, listeners, and rules.
+     * Balancers, Network Load Balancers, Gateway Load Balancers, target groups, listeners, and rules.
      * </p>
      * <p>
      * Each tag consists of a key and an optional value. If a resource already has a tag with the same key,
      * <code>AddTags</code> updates its value.
-     * </p>
-     * <p>
-     * To list the current tags for your resources, use <a>DescribeTags</a>. To remove tags from your resources, use
-     * <a>RemoveTags</a>.
      * </p>
      * 
      * @param addTagsRequest
@@ -488,23 +496,34 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Creates a listener for the specified Application Load Balancer or Network Load Balancer.
+     * Creates a listener for the specified Application Load Balancer, Network Load Balancer. or Gateway Load Balancer.
      * </p>
      * <p>
-     * To update a listener, use <a>ModifyListener</a>. When you are finished with a listener, you can delete it using
-     * <a>DeleteListener</a>. If you are finished with both the listener and the load balancer, you can delete them both
-     * using <a>DeleteLoadBalancer</a>.
+     * For more information, see the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">
+     * Listeners for your Application Load Balancers</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html">Listeners
+     * for your Network Load Balancers</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/gateway-listeners.html">Listeners for
+     * your Gateway Load Balancers</a>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * This operation is idempotent, which means that it completes at most one time. If you attempt to create multiple
      * listeners with the same settings, each call succeeds.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
-     * for Your Application Load Balancers</a> in the <i>Application Load Balancers Guide</i> and <a
-     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html">Listeners for
-     * Your Network Load Balancers</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
      * @param createListenerRequest
@@ -595,35 +614,34 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Creates an Application Load Balancer or a Network Load Balancer.
+     * Creates an Application Load Balancer, Network Load Balancer, or Gateway Load Balancer.
      * </p>
      * <p>
-     * When you create a load balancer, you can specify security groups, public subnets, IP address type, and tags.
-     * Otherwise, you could do so later using <a>SetSecurityGroups</a>, <a>SetSubnets</a>, <a>SetIpAddressType</a>, and
-     * <a>AddTags</a>.
+     * For more information, see the following:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * To create listeners for your load balancer, use <a>CreateListener</a>. To describe your current load balancers,
-     * see <a>DescribeLoadBalancers</a>. When you are finished with a load balancer, you can delete it using
-     * <a>DeleteLoadBalancer</a>.
+     * <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html">
+     * Application Load Balancers</a>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * For limit information, see <a
-     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits for
-     * Your Application Load Balancer</a> in the <i>Application Load Balancers Guide</i> and <a
-     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits for Your
-     * Network Load Balancer</a> in the <i>Network Load Balancers Guide</i>.
+     * <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html">Network
+     * Load Balancers</a>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/gateway-load-balancers.html">Gateway
+     * Load Balancers</a>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * This operation is idempotent, which means that it completes at most one time. If you attempt to create multiple
      * load balancers with the same settings, each call succeeds.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html"
-     * >Application Load Balancers</a> in the <i>Application Load Balancers Guide</i> and <a
-     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html">Network Load
-     * Balancers</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
      * @param createLoadBalancerRequest
@@ -711,11 +729,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * are performed. If the conditions for no rules are met, the actions for the default rule are performed. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules"
-     * >Listener Rules</a> in the <i>Application Load Balancers Guide</i>.
-     * </p>
-     * <p>
-     * To view your current rules, use <a>DescribeRules</a>. To update a rule, use <a>ModifyRule</a>. To set the
-     * priorities of your rules, use <a>SetRulePriorities</a>. To delete a rule, use <a>DeleteRule</a>.
+     * >Listener rules</a> in the <i>Application Load Balancers Guide</i>.
      * </p>
      * 
      * @param createRuleRequest
@@ -802,27 +816,31 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * Creates a target group.
      * </p>
      * <p>
-     * To register targets with the target group, use <a>RegisterTargets</a>. To update the health check settings for
-     * the target group, use <a>ModifyTargetGroup</a>. To monitor the health of targets in the target group, use
-     * <a>DescribeTargetHealth</a>.
+     * For more information, see the following:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * To route traffic to the targets in a target group, specify the target group in an action using
-     * <a>CreateListener</a> or <a>CreateRule</a>.
+     * <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html">
+     * Target groups for your Application Load Balancers</a>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * To delete a target group, use <a>DeleteTargetGroup</a>.
+     * <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html">Target
+     * groups for your Network Load Balancers</a>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/target-groups.html">Target groups for
+     * your Gateway Load Balancers</a>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * This operation is idempotent, which means that it completes at most one time. If you attempt to create multiple
      * target groups with the same settings, each call succeeds.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html"
-     * >Target Groups for Your Application Load Balancers</a> in the <i>Application Load Balancers Guide</i> or <a
-     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html">Target
-     * Groups for Your Network Load Balancers</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
      * @param createTargetGroupRequest
@@ -887,8 +905,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * Deletes the specified listener.
      * </p>
      * <p>
-     * Alternatively, your listener is deleted when you delete the load balancer to which it is attached, using
-     * <a>DeleteLoadBalancer</a>.
+     * Alternatively, your listener is deleted when you delete the load balancer to which it is attached.
      * </p>
      * 
      * @param deleteListenerRequest
@@ -944,7 +961,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Deletes the specified Application Load Balancer or Network Load Balancer and its attached listeners.
+     * Deletes the specified Application Load Balancer, Network Load Balancer, or Gateway Load Balancer. Deleting a load
+     * balancer also deletes its listeners.
      * </p>
      * <p>
      * You can't delete a load balancer if deletion protection is enabled. If the load balancer does not exist or has
@@ -1077,7 +1095,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * </p>
      * <p>
      * You can delete a target group if it is not referenced by any actions. Deleting a target group also deletes any
-     * associated health checks.
+     * associated health checks. Deleting a target group does not affect its registered targets. For example, any EC2
+     * instances continue to run until you stop or terminate them.
      * </p>
      * 
      * @param deleteTargetGroupRequest
@@ -1196,12 +1215,28 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * Describes the current Elastic Load Balancing resource limits for your AWS account.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits for
-     * Your Application Load Balancers</a> in the <i>Application Load Balancer Guide</i> or <a
-     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits for Your
-     * Network Load Balancers</a> in the <i>Network Load Balancers Guide</i>.
+     * For more information, see the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Quotas
+     * for your Application Load Balancers</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Quotas for
+     * your Network Load Balancers</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/quotas-limits.html">Quotas for your
+     * Gateway Load Balancers</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param describeAccountLimitsRequest
      * @return Result of the DescribeAccountLimits operation returned by the service.
@@ -1263,7 +1298,9 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#https-listener-certificates"
-     * >SSL Certificates</a> in the <i>Application Load Balancers Guide</i>.
+     * >SSL certificates</a> in the <i>Application Load Balancers Guide</i> or <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#tls-listener-certificate"
+     * >Server certificates</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
      * @param describeListenerCertificatesRequest
@@ -1320,12 +1357,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Describes the specified listeners or the listeners for the specified Application Load Balancer or Network Load
-     * Balancer. You must specify either a load balancer or one or more listeners.
-     * </p>
-     * <p>
-     * For an HTTPS or TLS listener, the output includes the default certificate for the listener. To describe the
-     * certificate list for the listener, use <a>DescribeListenerCertificates</a>.
+     * Describes the specified listeners or the listeners for the specified Application Load Balancer, Network Load
+     * Balancer, or Gateway Load Balancer. You must specify either a load balancer or one or more listeners.
      * </p>
      * 
      * @param describeListenersRequest
@@ -1385,15 +1418,35 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Describes the attributes for the specified Application Load Balancer or Network Load Balancer.
+     * Describes the attributes for the specified Application Load Balancer, Network Load Balancer, or Gateway Load
+     * Balancer.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes"
-     * >Load Balancer Attributes</a> in the <i>Application Load Balancers Guide</i> or <a href=
-     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#load-balancer-attributes"
-     * >Load Balancer Attributes</a> in the <i>Network Load Balancers Guide</i>.
+     * For more information, see the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes"
+     * >Load balancer attributes</a> in the <i>Application Load Balancers Guide</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#load-balancer-attributes"
+     * >Load balancer attributes</a> in the <i>Network Load Balancers Guide</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/gateway-load-balancers.html#load-balancer-attributes"
+     * >Load balancer attributes</a> in the <i>Gateway Load Balancers Guide</i>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param describeLoadBalancerAttributesRequest
      * @return Result of the DescribeLoadBalancerAttributes operation returned by the service.
@@ -1450,10 +1503,6 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Describes the specified load balancers or all of your load balancers.
-     * </p>
-     * <p>
-     * To describe the listeners for a load balancer, use <a>DescribeListeners</a>. To describe the attributes for a
-     * load balancer, use <a>DescribeLoadBalancerAttributes</a>.
      * </p>
      * 
      * @param describeLoadBalancersRequest
@@ -1574,7 +1623,9 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
-     * >Security Policies</a> in the <i>Application Load Balancers Guide</i>.
+     * >Security policies</a> in the <i>Application Load Balancers Guide</i> or <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies"
+     * >Security policies</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
      * @param describeSSLPoliciesRequest
@@ -1631,7 +1682,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Describes the tags for the specified Elastic Load Balancing resources. You can describe the tags for one or more
-     * Application Load Balancers, Network Load Balancers, target groups, listeners, or rules.
+     * Application Load Balancers, Network Load Balancers, Gateway Load Balancers, target groups, listeners, or rules.
      * </p>
      * 
      * @param describeTagsRequest
@@ -1695,12 +1746,31 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * Describes the attributes for the specified target group.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#target-group-attributes"
-     * >Target Group Attributes</a> in the <i>Application Load Balancers Guide</i> or <a href=
-     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes"
-     * >Target Group Attributes</a> in the <i>Network Load Balancers Guide</i>.
+     * For more information, see the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#target-group-attributes"
+     * >Target group attributes</a> in the <i>Application Load Balancers Guide</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes"
+     * >Target group attributes</a> in the <i>Network Load Balancers Guide</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/target-groups.html#target-group-attributes"
+     * >Target group attributes</a> in the <i>Gateway Load Balancers Guide</i>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param describeTargetGroupAttributesRequest
      * @return Result of the DescribeTargetGroupAttributes operation returned by the service.
@@ -1759,10 +1829,6 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * Describes the specified target groups or all of your target groups. By default, all target groups are described.
      * Alternatively, you can specify one of the following to filter the results: the ARN of the load balancer, the
      * names of one or more target groups, or the ARNs of one or more target groups.
-     * </p>
-     * <p>
-     * To describe the targets for a target group, use <a>DescribeTargetHealth</a>. To describe the attributes of a
-     * target group, use <a>DescribeTargetGroupAttributes</a>.
      * </p>
      * 
      * @param describeTargetGroupsRequest
@@ -1980,7 +2046,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Modifies the specified attributes of the specified Application Load Balancer or Network Load Balancer.
+     * Modifies the specified attributes of the specified Application Load Balancer, Network Load Balancer, or Gateway
+     * Load Balancer.
      * </p>
      * <p>
      * If any of the specified attributes can't be modified as requested, the call fails. Any existing attributes that
@@ -2048,9 +2115,6 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * <p>
      * To add an item to a list, remove an item from a list, or update an item in a list, you must provide the entire
      * list. For example, to add an action, specify a list with the current actions plus the new action.
-     * </p>
-     * <p>
-     * To modify the actions for the default rule, use <a>ModifyListener</a>.
      * </p>
      * 
      * @param modifyRuleRequest
@@ -2127,9 +2191,6 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Modifies the health checks used when evaluating the health state of the targets in the specified target group.
-     * </p>
-     * <p>
-     * To monitor the health of the targets, use <a>DescribeTargetHealth</a>.
      * </p>
      * 
      * @param modifyTargetGroupRequest
@@ -2261,9 +2322,6 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1. You can register instances of
      * these types by IP address.
      * </p>
-     * <p>
-     * To remove a target from a target group, use <a>DeregisterTargets</a>.
-     * </p>
      * 
      * @param registerTargetsRequest
      * @return Result of the RegisterTargets operation returned by the service.
@@ -2327,13 +2385,6 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * <p>
      * Removes the specified certificate from the certificate list for the specified HTTPS or TLS listener.
      * </p>
-     * <p>
-     * You can't remove the default certificate for a listener. To replace the default certificate, call
-     * <a>ModifyListener</a>.
-     * </p>
-     * <p>
-     * To list the certificates for your listener, use <a>DescribeListenerCertificates</a>.
-     * </p>
      * 
      * @param removeListenerCertificatesRequest
      * @return Result of the RemoveListenerCertificates operation returned by the service.
@@ -2392,10 +2443,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Removes the specified tags from the specified Elastic Load Balancing resources. You can remove the tags for one
-     * or more Application Load Balancers, Network Load Balancers, target groups, listeners, or rules.
-     * </p>
-     * <p>
-     * To list the current tags for your resources, use <a>DescribeTags</a>.
+     * or more Application Load Balancers, Network Load Balancers, Gateway Load Balancers, target groups, listeners, or
+     * rules.
      * </p>
      * 
      * @param removeTagsRequest
@@ -2587,7 +2636,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * groups override the previously associated security groups.
      * </p>
      * <p>
-     * You can't specify a security group for a Network Load Balancer.
+     * You can't specify a security group for a Network Load Balancer or Gateway Load Balancer.
      * </p>
      * 
      * @param setSecurityGroupsRequest
@@ -2647,8 +2696,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Enables the Availability Zones for the specified public subnets for the specified load balancer. The specified
-     * subnets replace the previously enabled subnets.
+     * Enables the Availability Zones for the specified public subnets for the specified Application Load Balancer or
+     * Network Load Balancer. The specified subnets replace the previously enabled subnets.
      * </p>
      * <p>
      * When you specify subnets for a Network Load Balancer, you must include all subnets that were enabled previously,

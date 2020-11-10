@@ -89,6 +89,36 @@ public class ModifyVpcEndpointServiceConfigurationRequestMarshaller implements
             }
         }
 
+        com.amazonaws.internal.SdkInternalList<String> modifyVpcEndpointServiceConfigurationRequestAddGatewayLoadBalancerArnsList = (com.amazonaws.internal.SdkInternalList<String>) modifyVpcEndpointServiceConfigurationRequest
+                .getAddGatewayLoadBalancerArns();
+        if (!modifyVpcEndpointServiceConfigurationRequestAddGatewayLoadBalancerArnsList.isEmpty()
+                || !modifyVpcEndpointServiceConfigurationRequestAddGatewayLoadBalancerArnsList.isAutoConstruct()) {
+            int addGatewayLoadBalancerArnsListIndex = 1;
+
+            for (String modifyVpcEndpointServiceConfigurationRequestAddGatewayLoadBalancerArnsListValue : modifyVpcEndpointServiceConfigurationRequestAddGatewayLoadBalancerArnsList) {
+                if (modifyVpcEndpointServiceConfigurationRequestAddGatewayLoadBalancerArnsListValue != null) {
+                    request.addParameter("AddGatewayLoadBalancerArn." + addGatewayLoadBalancerArnsListIndex,
+                            StringUtils.fromString(modifyVpcEndpointServiceConfigurationRequestAddGatewayLoadBalancerArnsListValue));
+                }
+                addGatewayLoadBalancerArnsListIndex++;
+            }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> modifyVpcEndpointServiceConfigurationRequestRemoveGatewayLoadBalancerArnsList = (com.amazonaws.internal.SdkInternalList<String>) modifyVpcEndpointServiceConfigurationRequest
+                .getRemoveGatewayLoadBalancerArns();
+        if (!modifyVpcEndpointServiceConfigurationRequestRemoveGatewayLoadBalancerArnsList.isEmpty()
+                || !modifyVpcEndpointServiceConfigurationRequestRemoveGatewayLoadBalancerArnsList.isAutoConstruct()) {
+            int removeGatewayLoadBalancerArnsListIndex = 1;
+
+            for (String modifyVpcEndpointServiceConfigurationRequestRemoveGatewayLoadBalancerArnsListValue : modifyVpcEndpointServiceConfigurationRequestRemoveGatewayLoadBalancerArnsList) {
+                if (modifyVpcEndpointServiceConfigurationRequestRemoveGatewayLoadBalancerArnsListValue != null) {
+                    request.addParameter("RemoveGatewayLoadBalancerArn." + removeGatewayLoadBalancerArnsListIndex,
+                            StringUtils.fromString(modifyVpcEndpointServiceConfigurationRequestRemoveGatewayLoadBalancerArnsListValue));
+                }
+                removeGatewayLoadBalancerArnsListIndex++;
+            }
+        }
+
         return request;
     }
 

@@ -37,32 +37,26 @@ public class LaunchTemplate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch template to use. You must specify either the launch template ID or launch template name in the
-     * request.
+     * The launch template to use.
      * </p>
      */
     private LaunchTemplateSpecification launchTemplateSpecification;
     /**
      * <p>
      * Any parameters that you specify override the same parameters in the launch template. Currently, the only
-     * supported override is instance type. You can specify between 1 and 20 instance types.
-     * </p>
-     * <p>
-     * If not provided, Amazon EC2 Auto Scaling will use the instance type specified in the launch template to launch
-     * instances.
+     * supported override is instance type. You can specify between 1 and 20 instance types. If not provided, Amazon EC2
+     * Auto Scaling will use the instance type specified in the launch template when it launches an instance.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<LaunchTemplateOverrides> overrides;
 
     /**
      * <p>
-     * The launch template to use. You must specify either the launch template ID or launch template name in the
-     * request.
+     * The launch template to use.
      * </p>
      * 
      * @param launchTemplateSpecification
-     *        The launch template to use. You must specify either the launch template ID or launch template name in the
-     *        request.
+     *        The launch template to use.
      */
 
     public void setLaunchTemplateSpecification(LaunchTemplateSpecification launchTemplateSpecification) {
@@ -71,12 +65,10 @@ public class LaunchTemplate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch template to use. You must specify either the launch template ID or launch template name in the
-     * request.
+     * The launch template to use.
      * </p>
      * 
-     * @return The launch template to use. You must specify either the launch template ID or launch template name in the
-     *         request.
+     * @return The launch template to use.
      */
 
     public LaunchTemplateSpecification getLaunchTemplateSpecification() {
@@ -85,13 +77,11 @@ public class LaunchTemplate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch template to use. You must specify either the launch template ID or launch template name in the
-     * request.
+     * The launch template to use.
      * </p>
      * 
      * @param launchTemplateSpecification
-     *        The launch template to use. You must specify either the launch template ID or launch template name in the
-     *        request.
+     *        The launch template to use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,18 +93,14 @@ public class LaunchTemplate implements Serializable, Cloneable {
     /**
      * <p>
      * Any parameters that you specify override the same parameters in the launch template. Currently, the only
-     * supported override is instance type. You can specify between 1 and 20 instance types.
-     * </p>
-     * <p>
-     * If not provided, Amazon EC2 Auto Scaling will use the instance type specified in the launch template to launch
-     * instances.
+     * supported override is instance type. You can specify between 1 and 20 instance types. If not provided, Amazon EC2
+     * Auto Scaling will use the instance type specified in the launch template when it launches an instance.
      * </p>
      * 
      * @return Any parameters that you specify override the same parameters in the launch template. Currently, the only
-     *         supported override is instance type. You can specify between 1 and 20 instance types.</p>
-     *         <p>
-     *         If not provided, Amazon EC2 Auto Scaling will use the instance type specified in the launch template to
-     *         launch instances.
+     *         supported override is instance type. You can specify between 1 and 20 instance types. If not provided,
+     *         Amazon EC2 Auto Scaling will use the instance type specified in the launch template when it launches an
+     *         instance.
      */
 
     public java.util.List<LaunchTemplateOverrides> getOverrides() {
@@ -127,19 +113,15 @@ public class LaunchTemplate implements Serializable, Cloneable {
     /**
      * <p>
      * Any parameters that you specify override the same parameters in the launch template. Currently, the only
-     * supported override is instance type. You can specify between 1 and 20 instance types.
-     * </p>
-     * <p>
-     * If not provided, Amazon EC2 Auto Scaling will use the instance type specified in the launch template to launch
-     * instances.
+     * supported override is instance type. You can specify between 1 and 20 instance types. If not provided, Amazon EC2
+     * Auto Scaling will use the instance type specified in the launch template when it launches an instance.
      * </p>
      * 
      * @param overrides
      *        Any parameters that you specify override the same parameters in the launch template. Currently, the only
-     *        supported override is instance type. You can specify between 1 and 20 instance types.</p>
-     *        <p>
-     *        If not provided, Amazon EC2 Auto Scaling will use the instance type specified in the launch template to
-     *        launch instances.
+     *        supported override is instance type. You can specify between 1 and 20 instance types. If not provided,
+     *        Amazon EC2 Auto Scaling will use the instance type specified in the launch template when it launches an
+     *        instance.
      */
 
     public void setOverrides(java.util.Collection<LaunchTemplateOverrides> overrides) {
@@ -154,11 +136,8 @@ public class LaunchTemplate implements Serializable, Cloneable {
     /**
      * <p>
      * Any parameters that you specify override the same parameters in the launch template. Currently, the only
-     * supported override is instance type. You can specify between 1 and 20 instance types.
-     * </p>
-     * <p>
-     * If not provided, Amazon EC2 Auto Scaling will use the instance type specified in the launch template to launch
-     * instances.
+     * supported override is instance type. You can specify between 1 and 20 instance types. If not provided, Amazon EC2
+     * Auto Scaling will use the instance type specified in the launch template when it launches an instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -168,10 +147,9 @@ public class LaunchTemplate implements Serializable, Cloneable {
      * 
      * @param overrides
      *        Any parameters that you specify override the same parameters in the launch template. Currently, the only
-     *        supported override is instance type. You can specify between 1 and 20 instance types.</p>
-     *        <p>
-     *        If not provided, Amazon EC2 Auto Scaling will use the instance type specified in the launch template to
-     *        launch instances.
+     *        supported override is instance type. You can specify between 1 and 20 instance types. If not provided,
+     *        Amazon EC2 Auto Scaling will use the instance type specified in the launch template when it launches an
+     *        instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,19 +166,15 @@ public class LaunchTemplate implements Serializable, Cloneable {
     /**
      * <p>
      * Any parameters that you specify override the same parameters in the launch template. Currently, the only
-     * supported override is instance type. You can specify between 1 and 20 instance types.
-     * </p>
-     * <p>
-     * If not provided, Amazon EC2 Auto Scaling will use the instance type specified in the launch template to launch
-     * instances.
+     * supported override is instance type. You can specify between 1 and 20 instance types. If not provided, Amazon EC2
+     * Auto Scaling will use the instance type specified in the launch template when it launches an instance.
      * </p>
      * 
      * @param overrides
      *        Any parameters that you specify override the same parameters in the launch template. Currently, the only
-     *        supported override is instance type. You can specify between 1 and 20 instance types.</p>
-     *        <p>
-     *        If not provided, Amazon EC2 Auto Scaling will use the instance type specified in the launch template to
-     *        launch instances.
+     *        supported override is instance type. You can specify between 1 and 20 instance types. If not provided,
+     *        Amazon EC2 Auto Scaling will use the instance type specified in the launch template when it launches an
+     *        instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

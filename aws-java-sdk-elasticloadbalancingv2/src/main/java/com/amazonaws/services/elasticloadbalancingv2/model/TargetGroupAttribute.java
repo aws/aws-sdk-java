@@ -31,7 +31,7 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
-     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     * The following attribute is supported by all load balancers:
      * </p>
      * <ul>
      * <li>
@@ -42,6 +42,11 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * not supported.
      * </p>
      * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     * </p>
+     * <ul>
      * <li>
      * <p>
      * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is <code>true</code>
@@ -122,7 +127,7 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
-     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     * The following attribute is supported by all load balancers:
      * </p>
      * <ul>
      * <li>
@@ -133,6 +138,11 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * not supported.
      * </p>
      * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     * </p>
+     * <ul>
      * <li>
      * <p>
      * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is <code>true</code>
@@ -203,7 +213,7 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * @param key
      *        The name of the attribute.</p>
      *        <p>
-     *        The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     *        The following attribute is supported by all load balancers:
      *        </p>
      *        <ul>
      *        <li>
@@ -214,6 +224,11 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        Lambda function, this attribute is not supported.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     *        </p>
+     *        <ul>
      *        <li>
      *        <p>
      *        <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is
@@ -292,7 +307,7 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
-     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     * The following attribute is supported by all load balancers:
      * </p>
      * <ul>
      * <li>
@@ -303,6 +318,11 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * not supported.
      * </p>
      * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     * </p>
+     * <ul>
      * <li>
      * <p>
      * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is <code>true</code>
@@ -372,7 +392,7 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * 
      * @return The name of the attribute.</p>
      *         <p>
-     *         The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     *         The following attribute is supported by all load balancers:
      *         </p>
      *         <ul>
      *         <li>
@@ -383,6 +403,11 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *         Lambda function, this attribute is not supported.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     *         </p>
+     *         <ul>
      *         <li>
      *         <p>
      *         <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is
@@ -462,7 +487,7 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
-     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     * The following attribute is supported by all load balancers:
      * </p>
      * <ul>
      * <li>
@@ -473,6 +498,11 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * not supported.
      * </p>
      * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     * </p>
+     * <ul>
      * <li>
      * <p>
      * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is <code>true</code>
@@ -543,7 +573,7 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * @param key
      *        The name of the attribute.</p>
      *        <p>
-     *        The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     *        The following attribute is supported by all load balancers:
      *        </p>
      *        <ul>
      *        <li>
@@ -554,6 +584,11 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        Lambda function, this attribute is not supported.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     *        </p>
+     *        <ul>
      *        <li>
      *        <p>
      *        <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is

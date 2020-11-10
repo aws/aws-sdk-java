@@ -90,6 +90,16 @@ public class VpcEndpointConnectionStaxUnmarshaller implements Unmarshaller<VpcEn
                     continue;
                 }
 
+                if (context.testExpression("gatewayLoadBalancerArnSet", targetDepth)) {
+                    vpcEndpointConnection.withGatewayLoadBalancerArns(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("gatewayLoadBalancerArnSet/item", targetDepth)) {
+                    vpcEndpointConnection.withGatewayLoadBalancerArns(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return vpcEndpointConnection;

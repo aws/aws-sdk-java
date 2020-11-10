@@ -25,7 +25,8 @@ public enum ProtocolEnum {
     TCP("TCP"),
     TLS("TLS"),
     UDP("UDP"),
-    TCP_UDP("TCP_UDP");
+    TCP_UDP("TCP_UDP"),
+    GENEVE("GENEVE");
 
     private String value;
 

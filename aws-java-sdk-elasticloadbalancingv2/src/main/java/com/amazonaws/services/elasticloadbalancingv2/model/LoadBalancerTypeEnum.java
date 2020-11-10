@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum LoadBalancerTypeEnum {
 
     Application("application"),
-    Network("network");
+    Network("network"),
+    Gateway("gateway");
 
     private String value;
 

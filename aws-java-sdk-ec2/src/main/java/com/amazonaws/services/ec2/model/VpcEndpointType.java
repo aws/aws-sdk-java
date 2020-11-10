@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum VpcEndpointType {
 
     Interface("Interface"),
-    Gateway("Gateway");
+    Gateway("Gateway"),
+    GatewayLoadBalancer("GatewayLoadBalancer");
 
     private String value;
 

@@ -22,7 +22,7 @@ import javax.annotation.Generated;
  * <p>
  * The instances distribution specifies the distribution of On-Demand Instances and Spot Instances, the maximum price to
  * pay for Spot Instances, and how the Auto Scaling group allocates instance types to fulfill On-Demand and Spot
- * capacity.
+ * capacities.
  * </p>
  * <p>
  * When you update <code>SpotAllocationStrategy</code>, <code>SpotInstancePools</code>, or <code>SpotMaxPrice</code>,
@@ -40,83 +40,47 @@ public class InstancesDistribution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates how to allocate instance types to fulfill On-Demand capacity.
-     * </p>
-     * <p>
-     * The only valid value is <code>prioritized</code>, which is also the default value. This strategy uses the order
-     * of instance type overrides for the <a>LaunchTemplate</a> to define the launch priority of each instance type. The
-     * first instance type in the array is prioritized higher than the last. If all your On-Demand capacity cannot be
-     * fulfilled using your highest priority instance, then the Auto Scaling groups launches the remaining capacity
-     * using the second priority instance type, and so on.
+     * Indicates how to allocate instance types to fulfill On-Demand capacity. The only valid value is
+     * <code>prioritized</code>, which is also the default value. This strategy uses the order of instance types in the
+     * overrides to define the launch priority of each instance type. The first instance type in the array is
+     * prioritized higher than the last. If all your On-Demand capacity cannot be fulfilled using your highest priority
+     * instance, then the Auto Scaling groups launches the remaining capacity using the second priority instance type,
+     * and so on.
      * </p>
      */
     private String onDemandAllocationStrategy;
     /**
      * <p>
      * The minimum amount of the Auto Scaling group's capacity that must be fulfilled by On-Demand Instances. This base
-     * portion is provisioned first as your group scales.
+     * portion is provisioned first as your group scales. Defaults to 0 if not specified. If you specify weights for the
+     * instance types in the overrides, set the value of <code>OnDemandBaseCapacity</code> in terms of the number of
+     * capacity units, and not the number of instances.
      * </p>
-     * <p>
-     * Default if not set is 0. If you leave it set to 0, On-Demand Instances are launched as a percentage of the Auto
-     * Scaling group's desired capacity, per the <code>OnDemandPercentageAboveBaseCapacity</code> setting.
-     * </p>
-     * <note>
-     * <p>
-     * An update to this setting means a gradual replacement of instances to maintain the specified number of On-Demand
-     * Instances for your base capacity. When replacing instances, Amazon EC2 Auto Scaling launches new instances before
-     * terminating the old ones.
-     * </p>
-     * </note>
      */
     private Integer onDemandBaseCapacity;
     /**
      * <p>
      * Controls the percentages of On-Demand Instances and Spot Instances for your additional capacity beyond
-     * <code>OnDemandBaseCapacity</code>.
-     * </p>
-     * <p>
-     * Default if not set is 100. If you leave it set to 100, the percentages are 100% for On-Demand Instances and 0%
-     * for Spot Instances.
-     * </p>
-     * <note>
-     * <p>
-     * An update to this setting means a gradual replacement of instances to maintain the percentage of On-Demand
-     * Instances for your additional capacity above the base capacity. When replacing instances, Amazon EC2 Auto Scaling
-     * launches new instances before terminating the old ones.
-     * </p>
-     * </note>
-     * <p>
-     * Valid Range: Minimum value of 0. Maximum value of 100.
+     * <code>OnDemandBaseCapacity</code>. Expressed as a number (for example, 20 specifies 20% On-Demand Instances, 80%
+     * Spot Instances). Defaults to 100 if not specified. If set to 100, only On-Demand Instances are provisioned.
      * </p>
      */
     private Integer onDemandPercentageAboveBaseCapacity;
     /**
      * <p>
-     * Indicates how to allocate instances across Spot Instance pools.
-     * </p>
-     * <p>
-     * If the allocation strategy is <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot
-     * pools with the lowest price, and evenly allocates your instances across the number of Spot pools that you
-     * specify. If the allocation strategy is <code>capacity-optimized</code>, the Auto Scaling group launches instances
-     * using Spot pools that are optimally chosen based on the available Spot capacity.
-     * </p>
-     * <p>
-     * The default Spot allocation strategy for calls that you make through the API, the AWS CLI, or the AWS SDKs is
-     * <code>lowest-price</code>. The default Spot allocation strategy for the AWS Management Console is
-     * <code>capacity-optimized</code>.
-     * </p>
-     * <p>
-     * Valid values: <code>lowest-price</code> | <code>capacity-optimized</code>
+     * Indicates how to allocate instances across Spot Instance pools. If the allocation strategy is
+     * <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot pools with the lowest price,
+     * and evenly allocates your instances across the number of Spot pools that you specify. If the allocation strategy
+     * is <code>capacity-optimized</code>, the Auto Scaling group launches instances using Spot pools that are optimally
+     * chosen based on the available Spot capacity. Defaults to <code>lowest-price</code> if not specified.
      * </p>
      */
     private String spotAllocationStrategy;
     /**
      * <p>
      * The number of Spot Instance pools across which to allocate your Spot Instances. The Spot pools are determined
-     * from the different instance types in the Overrides array of <a>LaunchTemplate</a>. Default if not set is 2.
-     * </p>
-     * <p>
-     * Used only when the Spot allocation strategy is <code>lowest-price</code>.
+     * from the different instance types in the overrides. Defaults to 2 if not specified. Valid only when the Spot
+     * allocation strategy is <code>lowest-price</code>.
      * </p>
      * <p>
      * Valid Range: Minimum value of 1. Maximum value of 20.
@@ -126,34 +90,29 @@ public class InstancesDistribution implements Serializable, Cloneable {
     /**
      * <p>
      * The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave the value of this
-     * parameter blank (which is the default), the maximum Spot price is set at the On-Demand price.
-     * </p>
-     * <p>
-     * To remove a value that you previously set, include the parameter but leave the value blank.
+     * parameter blank (which is the default), the maximum Spot price is set at the On-Demand price. To remove a value
+     * that you previously set, include the parameter but leave the value blank.
      * </p>
      */
     private String spotMaxPrice;
 
     /**
      * <p>
-     * Indicates how to allocate instance types to fulfill On-Demand capacity.
-     * </p>
-     * <p>
-     * The only valid value is <code>prioritized</code>, which is also the default value. This strategy uses the order
-     * of instance type overrides for the <a>LaunchTemplate</a> to define the launch priority of each instance type. The
-     * first instance type in the array is prioritized higher than the last. If all your On-Demand capacity cannot be
-     * fulfilled using your highest priority instance, then the Auto Scaling groups launches the remaining capacity
-     * using the second priority instance type, and so on.
+     * Indicates how to allocate instance types to fulfill On-Demand capacity. The only valid value is
+     * <code>prioritized</code>, which is also the default value. This strategy uses the order of instance types in the
+     * overrides to define the launch priority of each instance type. The first instance type in the array is
+     * prioritized higher than the last. If all your On-Demand capacity cannot be fulfilled using your highest priority
+     * instance, then the Auto Scaling groups launches the remaining capacity using the second priority instance type,
+     * and so on.
      * </p>
      * 
      * @param onDemandAllocationStrategy
-     *        Indicates how to allocate instance types to fulfill On-Demand capacity.</p>
-     *        <p>
-     *        The only valid value is <code>prioritized</code>, which is also the default value. This strategy uses the
-     *        order of instance type overrides for the <a>LaunchTemplate</a> to define the launch priority of each
-     *        instance type. The first instance type in the array is prioritized higher than the last. If all your
-     *        On-Demand capacity cannot be fulfilled using your highest priority instance, then the Auto Scaling groups
-     *        launches the remaining capacity using the second priority instance type, and so on.
+     *        Indicates how to allocate instance types to fulfill On-Demand capacity. The only valid value is
+     *        <code>prioritized</code>, which is also the default value. This strategy uses the order of instance types
+     *        in the overrides to define the launch priority of each instance type. The first instance type in the array
+     *        is prioritized higher than the last. If all your On-Demand capacity cannot be fulfilled using your highest
+     *        priority instance, then the Auto Scaling groups launches the remaining capacity using the second priority
+     *        instance type, and so on.
      */
 
     public void setOnDemandAllocationStrategy(String onDemandAllocationStrategy) {
@@ -162,23 +121,20 @@ public class InstancesDistribution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates how to allocate instance types to fulfill On-Demand capacity.
-     * </p>
-     * <p>
-     * The only valid value is <code>prioritized</code>, which is also the default value. This strategy uses the order
-     * of instance type overrides for the <a>LaunchTemplate</a> to define the launch priority of each instance type. The
-     * first instance type in the array is prioritized higher than the last. If all your On-Demand capacity cannot be
-     * fulfilled using your highest priority instance, then the Auto Scaling groups launches the remaining capacity
-     * using the second priority instance type, and so on.
+     * Indicates how to allocate instance types to fulfill On-Demand capacity. The only valid value is
+     * <code>prioritized</code>, which is also the default value. This strategy uses the order of instance types in the
+     * overrides to define the launch priority of each instance type. The first instance type in the array is
+     * prioritized higher than the last. If all your On-Demand capacity cannot be fulfilled using your highest priority
+     * instance, then the Auto Scaling groups launches the remaining capacity using the second priority instance type,
+     * and so on.
      * </p>
      * 
-     * @return Indicates how to allocate instance types to fulfill On-Demand capacity.</p>
-     *         <p>
-     *         The only valid value is <code>prioritized</code>, which is also the default value. This strategy uses the
-     *         order of instance type overrides for the <a>LaunchTemplate</a> to define the launch priority of each
-     *         instance type. The first instance type in the array is prioritized higher than the last. If all your
-     *         On-Demand capacity cannot be fulfilled using your highest priority instance, then the Auto Scaling groups
-     *         launches the remaining capacity using the second priority instance type, and so on.
+     * @return Indicates how to allocate instance types to fulfill On-Demand capacity. The only valid value is
+     *         <code>prioritized</code>, which is also the default value. This strategy uses the order of instance types
+     *         in the overrides to define the launch priority of each instance type. The first instance type in the
+     *         array is prioritized higher than the last. If all your On-Demand capacity cannot be fulfilled using your
+     *         highest priority instance, then the Auto Scaling groups launches the remaining capacity using the second
+     *         priority instance type, and so on.
      */
 
     public String getOnDemandAllocationStrategy() {
@@ -187,24 +143,21 @@ public class InstancesDistribution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates how to allocate instance types to fulfill On-Demand capacity.
-     * </p>
-     * <p>
-     * The only valid value is <code>prioritized</code>, which is also the default value. This strategy uses the order
-     * of instance type overrides for the <a>LaunchTemplate</a> to define the launch priority of each instance type. The
-     * first instance type in the array is prioritized higher than the last. If all your On-Demand capacity cannot be
-     * fulfilled using your highest priority instance, then the Auto Scaling groups launches the remaining capacity
-     * using the second priority instance type, and so on.
+     * Indicates how to allocate instance types to fulfill On-Demand capacity. The only valid value is
+     * <code>prioritized</code>, which is also the default value. This strategy uses the order of instance types in the
+     * overrides to define the launch priority of each instance type. The first instance type in the array is
+     * prioritized higher than the last. If all your On-Demand capacity cannot be fulfilled using your highest priority
+     * instance, then the Auto Scaling groups launches the remaining capacity using the second priority instance type,
+     * and so on.
      * </p>
      * 
      * @param onDemandAllocationStrategy
-     *        Indicates how to allocate instance types to fulfill On-Demand capacity.</p>
-     *        <p>
-     *        The only valid value is <code>prioritized</code>, which is also the default value. This strategy uses the
-     *        order of instance type overrides for the <a>LaunchTemplate</a> to define the launch priority of each
-     *        instance type. The first instance type in the array is prioritized higher than the last. If all your
-     *        On-Demand capacity cannot be fulfilled using your highest priority instance, then the Auto Scaling groups
-     *        launches the remaining capacity using the second priority instance type, and so on.
+     *        Indicates how to allocate instance types to fulfill On-Demand capacity. The only valid value is
+     *        <code>prioritized</code>, which is also the default value. This strategy uses the order of instance types
+     *        in the overrides to define the launch priority of each instance type. The first instance type in the array
+     *        is prioritized higher than the last. If all your On-Demand capacity cannot be fulfilled using your highest
+     *        priority instance, then the Auto Scaling groups launches the remaining capacity using the second priority
+     *        instance type, and so on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -216,33 +169,17 @@ public class InstancesDistribution implements Serializable, Cloneable {
     /**
      * <p>
      * The minimum amount of the Auto Scaling group's capacity that must be fulfilled by On-Demand Instances. This base
-     * portion is provisioned first as your group scales.
+     * portion is provisioned first as your group scales. Defaults to 0 if not specified. If you specify weights for the
+     * instance types in the overrides, set the value of <code>OnDemandBaseCapacity</code> in terms of the number of
+     * capacity units, and not the number of instances.
      * </p>
-     * <p>
-     * Default if not set is 0. If you leave it set to 0, On-Demand Instances are launched as a percentage of the Auto
-     * Scaling group's desired capacity, per the <code>OnDemandPercentageAboveBaseCapacity</code> setting.
-     * </p>
-     * <note>
-     * <p>
-     * An update to this setting means a gradual replacement of instances to maintain the specified number of On-Demand
-     * Instances for your base capacity. When replacing instances, Amazon EC2 Auto Scaling launches new instances before
-     * terminating the old ones.
-     * </p>
-     * </note>
      * 
      * @param onDemandBaseCapacity
      *        The minimum amount of the Auto Scaling group's capacity that must be fulfilled by On-Demand Instances.
-     *        This base portion is provisioned first as your group scales.</p>
-     *        <p>
-     *        Default if not set is 0. If you leave it set to 0, On-Demand Instances are launched as a percentage of the
-     *        Auto Scaling group's desired capacity, per the <code>OnDemandPercentageAboveBaseCapacity</code> setting.
-     *        </p>
-     *        <note>
-     *        <p>
-     *        An update to this setting means a gradual replacement of instances to maintain the specified number of
-     *        On-Demand Instances for your base capacity. When replacing instances, Amazon EC2 Auto Scaling launches new
-     *        instances before terminating the old ones.
-     *        </p>
+     *        This base portion is provisioned first as your group scales. Defaults to 0 if not specified. If you
+     *        specify weights for the instance types in the overrides, set the value of
+     *        <code>OnDemandBaseCapacity</code> in terms of the number of capacity units, and not the number of
+     *        instances.
      */
 
     public void setOnDemandBaseCapacity(Integer onDemandBaseCapacity) {
@@ -252,33 +189,16 @@ public class InstancesDistribution implements Serializable, Cloneable {
     /**
      * <p>
      * The minimum amount of the Auto Scaling group's capacity that must be fulfilled by On-Demand Instances. This base
-     * portion is provisioned first as your group scales.
+     * portion is provisioned first as your group scales. Defaults to 0 if not specified. If you specify weights for the
+     * instance types in the overrides, set the value of <code>OnDemandBaseCapacity</code> in terms of the number of
+     * capacity units, and not the number of instances.
      * </p>
-     * <p>
-     * Default if not set is 0. If you leave it set to 0, On-Demand Instances are launched as a percentage of the Auto
-     * Scaling group's desired capacity, per the <code>OnDemandPercentageAboveBaseCapacity</code> setting.
-     * </p>
-     * <note>
-     * <p>
-     * An update to this setting means a gradual replacement of instances to maintain the specified number of On-Demand
-     * Instances for your base capacity. When replacing instances, Amazon EC2 Auto Scaling launches new instances before
-     * terminating the old ones.
-     * </p>
-     * </note>
      * 
      * @return The minimum amount of the Auto Scaling group's capacity that must be fulfilled by On-Demand Instances.
-     *         This base portion is provisioned first as your group scales.</p>
-     *         <p>
-     *         Default if not set is 0. If you leave it set to 0, On-Demand Instances are launched as a percentage of
-     *         the Auto Scaling group's desired capacity, per the <code>OnDemandPercentageAboveBaseCapacity</code>
-     *         setting.
-     *         </p>
-     *         <note>
-     *         <p>
-     *         An update to this setting means a gradual replacement of instances to maintain the specified number of
-     *         On-Demand Instances for your base capacity. When replacing instances, Amazon EC2 Auto Scaling launches
-     *         new instances before terminating the old ones.
-     *         </p>
+     *         This base portion is provisioned first as your group scales. Defaults to 0 if not specified. If you
+     *         specify weights for the instance types in the overrides, set the value of
+     *         <code>OnDemandBaseCapacity</code> in terms of the number of capacity units, and not the number of
+     *         instances.
      */
 
     public Integer getOnDemandBaseCapacity() {
@@ -288,33 +208,17 @@ public class InstancesDistribution implements Serializable, Cloneable {
     /**
      * <p>
      * The minimum amount of the Auto Scaling group's capacity that must be fulfilled by On-Demand Instances. This base
-     * portion is provisioned first as your group scales.
+     * portion is provisioned first as your group scales. Defaults to 0 if not specified. If you specify weights for the
+     * instance types in the overrides, set the value of <code>OnDemandBaseCapacity</code> in terms of the number of
+     * capacity units, and not the number of instances.
      * </p>
-     * <p>
-     * Default if not set is 0. If you leave it set to 0, On-Demand Instances are launched as a percentage of the Auto
-     * Scaling group's desired capacity, per the <code>OnDemandPercentageAboveBaseCapacity</code> setting.
-     * </p>
-     * <note>
-     * <p>
-     * An update to this setting means a gradual replacement of instances to maintain the specified number of On-Demand
-     * Instances for your base capacity. When replacing instances, Amazon EC2 Auto Scaling launches new instances before
-     * terminating the old ones.
-     * </p>
-     * </note>
      * 
      * @param onDemandBaseCapacity
      *        The minimum amount of the Auto Scaling group's capacity that must be fulfilled by On-Demand Instances.
-     *        This base portion is provisioned first as your group scales.</p>
-     *        <p>
-     *        Default if not set is 0. If you leave it set to 0, On-Demand Instances are launched as a percentage of the
-     *        Auto Scaling group's desired capacity, per the <code>OnDemandPercentageAboveBaseCapacity</code> setting.
-     *        </p>
-     *        <note>
-     *        <p>
-     *        An update to this setting means a gradual replacement of instances to maintain the specified number of
-     *        On-Demand Instances for your base capacity. When replacing instances, Amazon EC2 Auto Scaling launches new
-     *        instances before terminating the old ones.
-     *        </p>
+     *        This base portion is provisioned first as your group scales. Defaults to 0 if not specified. If you
+     *        specify weights for the instance types in the overrides, set the value of
+     *        <code>OnDemandBaseCapacity</code> in terms of the number of capacity units, and not the number of
+     *        instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -326,39 +230,15 @@ public class InstancesDistribution implements Serializable, Cloneable {
     /**
      * <p>
      * Controls the percentages of On-Demand Instances and Spot Instances for your additional capacity beyond
-     * <code>OnDemandBaseCapacity</code>.
-     * </p>
-     * <p>
-     * Default if not set is 100. If you leave it set to 100, the percentages are 100% for On-Demand Instances and 0%
-     * for Spot Instances.
-     * </p>
-     * <note>
-     * <p>
-     * An update to this setting means a gradual replacement of instances to maintain the percentage of On-Demand
-     * Instances for your additional capacity above the base capacity. When replacing instances, Amazon EC2 Auto Scaling
-     * launches new instances before terminating the old ones.
-     * </p>
-     * </note>
-     * <p>
-     * Valid Range: Minimum value of 0. Maximum value of 100.
+     * <code>OnDemandBaseCapacity</code>. Expressed as a number (for example, 20 specifies 20% On-Demand Instances, 80%
+     * Spot Instances). Defaults to 100 if not specified. If set to 100, only On-Demand Instances are provisioned.
      * </p>
      * 
      * @param onDemandPercentageAboveBaseCapacity
      *        Controls the percentages of On-Demand Instances and Spot Instances for your additional capacity beyond
-     *        <code>OnDemandBaseCapacity</code>.</p>
-     *        <p>
-     *        Default if not set is 100. If you leave it set to 100, the percentages are 100% for On-Demand Instances
-     *        and 0% for Spot Instances.
-     *        </p>
-     *        <note>
-     *        <p>
-     *        An update to this setting means a gradual replacement of instances to maintain the percentage of On-Demand
-     *        Instances for your additional capacity above the base capacity. When replacing instances, Amazon EC2 Auto
-     *        Scaling launches new instances before terminating the old ones.
-     *        </p>
-     *        </note>
-     *        <p>
-     *        Valid Range: Minimum value of 0. Maximum value of 100.
+     *        <code>OnDemandBaseCapacity</code>. Expressed as a number (for example, 20 specifies 20% On-Demand
+     *        Instances, 80% Spot Instances). Defaults to 100 if not specified. If set to 100, only On-Demand Instances
+     *        are provisioned.
      */
 
     public void setOnDemandPercentageAboveBaseCapacity(Integer onDemandPercentageAboveBaseCapacity) {
@@ -368,38 +248,14 @@ public class InstancesDistribution implements Serializable, Cloneable {
     /**
      * <p>
      * Controls the percentages of On-Demand Instances and Spot Instances for your additional capacity beyond
-     * <code>OnDemandBaseCapacity</code>.
-     * </p>
-     * <p>
-     * Default if not set is 100. If you leave it set to 100, the percentages are 100% for On-Demand Instances and 0%
-     * for Spot Instances.
-     * </p>
-     * <note>
-     * <p>
-     * An update to this setting means a gradual replacement of instances to maintain the percentage of On-Demand
-     * Instances for your additional capacity above the base capacity. When replacing instances, Amazon EC2 Auto Scaling
-     * launches new instances before terminating the old ones.
-     * </p>
-     * </note>
-     * <p>
-     * Valid Range: Minimum value of 0. Maximum value of 100.
+     * <code>OnDemandBaseCapacity</code>. Expressed as a number (for example, 20 specifies 20% On-Demand Instances, 80%
+     * Spot Instances). Defaults to 100 if not specified. If set to 100, only On-Demand Instances are provisioned.
      * </p>
      * 
      * @return Controls the percentages of On-Demand Instances and Spot Instances for your additional capacity beyond
-     *         <code>OnDemandBaseCapacity</code>.</p>
-     *         <p>
-     *         Default if not set is 100. If you leave it set to 100, the percentages are 100% for On-Demand Instances
-     *         and 0% for Spot Instances.
-     *         </p>
-     *         <note>
-     *         <p>
-     *         An update to this setting means a gradual replacement of instances to maintain the percentage of
-     *         On-Demand Instances for your additional capacity above the base capacity. When replacing instances,
-     *         Amazon EC2 Auto Scaling launches new instances before terminating the old ones.
-     *         </p>
-     *         </note>
-     *         <p>
-     *         Valid Range: Minimum value of 0. Maximum value of 100.
+     *         <code>OnDemandBaseCapacity</code>. Expressed as a number (for example, 20 specifies 20% On-Demand
+     *         Instances, 80% Spot Instances). Defaults to 100 if not specified. If set to 100, only On-Demand Instances
+     *         are provisioned.
      */
 
     public Integer getOnDemandPercentageAboveBaseCapacity() {
@@ -409,39 +265,15 @@ public class InstancesDistribution implements Serializable, Cloneable {
     /**
      * <p>
      * Controls the percentages of On-Demand Instances and Spot Instances for your additional capacity beyond
-     * <code>OnDemandBaseCapacity</code>.
-     * </p>
-     * <p>
-     * Default if not set is 100. If you leave it set to 100, the percentages are 100% for On-Demand Instances and 0%
-     * for Spot Instances.
-     * </p>
-     * <note>
-     * <p>
-     * An update to this setting means a gradual replacement of instances to maintain the percentage of On-Demand
-     * Instances for your additional capacity above the base capacity. When replacing instances, Amazon EC2 Auto Scaling
-     * launches new instances before terminating the old ones.
-     * </p>
-     * </note>
-     * <p>
-     * Valid Range: Minimum value of 0. Maximum value of 100.
+     * <code>OnDemandBaseCapacity</code>. Expressed as a number (for example, 20 specifies 20% On-Demand Instances, 80%
+     * Spot Instances). Defaults to 100 if not specified. If set to 100, only On-Demand Instances are provisioned.
      * </p>
      * 
      * @param onDemandPercentageAboveBaseCapacity
      *        Controls the percentages of On-Demand Instances and Spot Instances for your additional capacity beyond
-     *        <code>OnDemandBaseCapacity</code>.</p>
-     *        <p>
-     *        Default if not set is 100. If you leave it set to 100, the percentages are 100% for On-Demand Instances
-     *        and 0% for Spot Instances.
-     *        </p>
-     *        <note>
-     *        <p>
-     *        An update to this setting means a gradual replacement of instances to maintain the percentage of On-Demand
-     *        Instances for your additional capacity above the base capacity. When replacing instances, Amazon EC2 Auto
-     *        Scaling launches new instances before terminating the old ones.
-     *        </p>
-     *        </note>
-     *        <p>
-     *        Valid Range: Minimum value of 0. Maximum value of 100.
+     *        <code>OnDemandBaseCapacity</code>. Expressed as a number (for example, 20 specifies 20% On-Demand
+     *        Instances, 80% Spot Instances). Defaults to 100 if not specified. If set to 100, only On-Demand Instances
+     *        are provisioned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -452,38 +284,20 @@ public class InstancesDistribution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates how to allocate instances across Spot Instance pools.
-     * </p>
-     * <p>
-     * If the allocation strategy is <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot
-     * pools with the lowest price, and evenly allocates your instances across the number of Spot pools that you
-     * specify. If the allocation strategy is <code>capacity-optimized</code>, the Auto Scaling group launches instances
-     * using Spot pools that are optimally chosen based on the available Spot capacity.
-     * </p>
-     * <p>
-     * The default Spot allocation strategy for calls that you make through the API, the AWS CLI, or the AWS SDKs is
-     * <code>lowest-price</code>. The default Spot allocation strategy for the AWS Management Console is
-     * <code>capacity-optimized</code>.
-     * </p>
-     * <p>
-     * Valid values: <code>lowest-price</code> | <code>capacity-optimized</code>
+     * Indicates how to allocate instances across Spot Instance pools. If the allocation strategy is
+     * <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot pools with the lowest price,
+     * and evenly allocates your instances across the number of Spot pools that you specify. If the allocation strategy
+     * is <code>capacity-optimized</code>, the Auto Scaling group launches instances using Spot pools that are optimally
+     * chosen based on the available Spot capacity. Defaults to <code>lowest-price</code> if not specified.
      * </p>
      * 
      * @param spotAllocationStrategy
-     *        Indicates how to allocate instances across Spot Instance pools.</p>
-     *        <p>
-     *        If the allocation strategy is <code>lowest-price</code>, the Auto Scaling group launches instances using
-     *        the Spot pools with the lowest price, and evenly allocates your instances across the number of Spot pools
-     *        that you specify. If the allocation strategy is <code>capacity-optimized</code>, the Auto Scaling group
-     *        launches instances using Spot pools that are optimally chosen based on the available Spot capacity.
-     *        </p>
-     *        <p>
-     *        The default Spot allocation strategy for calls that you make through the API, the AWS CLI, or the AWS SDKs
-     *        is <code>lowest-price</code>. The default Spot allocation strategy for the AWS Management Console is
-     *        <code>capacity-optimized</code>.
-     *        </p>
-     *        <p>
-     *        Valid values: <code>lowest-price</code> | <code>capacity-optimized</code>
+     *        Indicates how to allocate instances across Spot Instance pools. If the allocation strategy is
+     *        <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot pools with the lowest
+     *        price, and evenly allocates your instances across the number of Spot pools that you specify. If the
+     *        allocation strategy is <code>capacity-optimized</code>, the Auto Scaling group launches instances using
+     *        Spot pools that are optimally chosen based on the available Spot capacity. Defaults to
+     *        <code>lowest-price</code> if not specified.
      */
 
     public void setSpotAllocationStrategy(String spotAllocationStrategy) {
@@ -492,37 +306,19 @@ public class InstancesDistribution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates how to allocate instances across Spot Instance pools.
-     * </p>
-     * <p>
-     * If the allocation strategy is <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot
-     * pools with the lowest price, and evenly allocates your instances across the number of Spot pools that you
-     * specify. If the allocation strategy is <code>capacity-optimized</code>, the Auto Scaling group launches instances
-     * using Spot pools that are optimally chosen based on the available Spot capacity.
-     * </p>
-     * <p>
-     * The default Spot allocation strategy for calls that you make through the API, the AWS CLI, or the AWS SDKs is
-     * <code>lowest-price</code>. The default Spot allocation strategy for the AWS Management Console is
-     * <code>capacity-optimized</code>.
-     * </p>
-     * <p>
-     * Valid values: <code>lowest-price</code> | <code>capacity-optimized</code>
+     * Indicates how to allocate instances across Spot Instance pools. If the allocation strategy is
+     * <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot pools with the lowest price,
+     * and evenly allocates your instances across the number of Spot pools that you specify. If the allocation strategy
+     * is <code>capacity-optimized</code>, the Auto Scaling group launches instances using Spot pools that are optimally
+     * chosen based on the available Spot capacity. Defaults to <code>lowest-price</code> if not specified.
      * </p>
      * 
-     * @return Indicates how to allocate instances across Spot Instance pools.</p>
-     *         <p>
-     *         If the allocation strategy is <code>lowest-price</code>, the Auto Scaling group launches instances using
-     *         the Spot pools with the lowest price, and evenly allocates your instances across the number of Spot pools
-     *         that you specify. If the allocation strategy is <code>capacity-optimized</code>, the Auto Scaling group
-     *         launches instances using Spot pools that are optimally chosen based on the available Spot capacity.
-     *         </p>
-     *         <p>
-     *         The default Spot allocation strategy for calls that you make through the API, the AWS CLI, or the AWS
-     *         SDKs is <code>lowest-price</code>. The default Spot allocation strategy for the AWS Management Console is
-     *         <code>capacity-optimized</code>.
-     *         </p>
-     *         <p>
-     *         Valid values: <code>lowest-price</code> | <code>capacity-optimized</code>
+     * @return Indicates how to allocate instances across Spot Instance pools. If the allocation strategy is
+     *         <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot pools with the lowest
+     *         price, and evenly allocates your instances across the number of Spot pools that you specify. If the
+     *         allocation strategy is <code>capacity-optimized</code>, the Auto Scaling group launches instances using
+     *         Spot pools that are optimally chosen based on the available Spot capacity. Defaults to
+     *         <code>lowest-price</code> if not specified.
      */
 
     public String getSpotAllocationStrategy() {
@@ -531,38 +327,20 @@ public class InstancesDistribution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates how to allocate instances across Spot Instance pools.
-     * </p>
-     * <p>
-     * If the allocation strategy is <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot
-     * pools with the lowest price, and evenly allocates your instances across the number of Spot pools that you
-     * specify. If the allocation strategy is <code>capacity-optimized</code>, the Auto Scaling group launches instances
-     * using Spot pools that are optimally chosen based on the available Spot capacity.
-     * </p>
-     * <p>
-     * The default Spot allocation strategy for calls that you make through the API, the AWS CLI, or the AWS SDKs is
-     * <code>lowest-price</code>. The default Spot allocation strategy for the AWS Management Console is
-     * <code>capacity-optimized</code>.
-     * </p>
-     * <p>
-     * Valid values: <code>lowest-price</code> | <code>capacity-optimized</code>
+     * Indicates how to allocate instances across Spot Instance pools. If the allocation strategy is
+     * <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot pools with the lowest price,
+     * and evenly allocates your instances across the number of Spot pools that you specify. If the allocation strategy
+     * is <code>capacity-optimized</code>, the Auto Scaling group launches instances using Spot pools that are optimally
+     * chosen based on the available Spot capacity. Defaults to <code>lowest-price</code> if not specified.
      * </p>
      * 
      * @param spotAllocationStrategy
-     *        Indicates how to allocate instances across Spot Instance pools.</p>
-     *        <p>
-     *        If the allocation strategy is <code>lowest-price</code>, the Auto Scaling group launches instances using
-     *        the Spot pools with the lowest price, and evenly allocates your instances across the number of Spot pools
-     *        that you specify. If the allocation strategy is <code>capacity-optimized</code>, the Auto Scaling group
-     *        launches instances using Spot pools that are optimally chosen based on the available Spot capacity.
-     *        </p>
-     *        <p>
-     *        The default Spot allocation strategy for calls that you make through the API, the AWS CLI, or the AWS SDKs
-     *        is <code>lowest-price</code>. The default Spot allocation strategy for the AWS Management Console is
-     *        <code>capacity-optimized</code>.
-     *        </p>
-     *        <p>
-     *        Valid values: <code>lowest-price</code> | <code>capacity-optimized</code>
+     *        Indicates how to allocate instances across Spot Instance pools. If the allocation strategy is
+     *        <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot pools with the lowest
+     *        price, and evenly allocates your instances across the number of Spot pools that you specify. If the
+     *        allocation strategy is <code>capacity-optimized</code>, the Auto Scaling group launches instances using
+     *        Spot pools that are optimally chosen based on the available Spot capacity. Defaults to
+     *        <code>lowest-price</code> if not specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -574,10 +352,8 @@ public class InstancesDistribution implements Serializable, Cloneable {
     /**
      * <p>
      * The number of Spot Instance pools across which to allocate your Spot Instances. The Spot pools are determined
-     * from the different instance types in the Overrides array of <a>LaunchTemplate</a>. Default if not set is 2.
-     * </p>
-     * <p>
-     * Used only when the Spot allocation strategy is <code>lowest-price</code>.
+     * from the different instance types in the overrides. Defaults to 2 if not specified. Valid only when the Spot
+     * allocation strategy is <code>lowest-price</code>.
      * </p>
      * <p>
      * Valid Range: Minimum value of 1. Maximum value of 20.
@@ -585,11 +361,8 @@ public class InstancesDistribution implements Serializable, Cloneable {
      * 
      * @param spotInstancePools
      *        The number of Spot Instance pools across which to allocate your Spot Instances. The Spot pools are
-     *        determined from the different instance types in the Overrides array of <a>LaunchTemplate</a>. Default if
-     *        not set is 2.</p>
-     *        <p>
-     *        Used only when the Spot allocation strategy is <code>lowest-price</code>.
-     *        </p>
+     *        determined from the different instance types in the overrides. Defaults to 2 if not specified. Valid only
+     *        when the Spot allocation strategy is <code>lowest-price</code>.</p>
      *        <p>
      *        Valid Range: Minimum value of 1. Maximum value of 20.
      */
@@ -601,21 +374,16 @@ public class InstancesDistribution implements Serializable, Cloneable {
     /**
      * <p>
      * The number of Spot Instance pools across which to allocate your Spot Instances. The Spot pools are determined
-     * from the different instance types in the Overrides array of <a>LaunchTemplate</a>. Default if not set is 2.
-     * </p>
-     * <p>
-     * Used only when the Spot allocation strategy is <code>lowest-price</code>.
+     * from the different instance types in the overrides. Defaults to 2 if not specified. Valid only when the Spot
+     * allocation strategy is <code>lowest-price</code>.
      * </p>
      * <p>
      * Valid Range: Minimum value of 1. Maximum value of 20.
      * </p>
      * 
      * @return The number of Spot Instance pools across which to allocate your Spot Instances. The Spot pools are
-     *         determined from the different instance types in the Overrides array of <a>LaunchTemplate</a>. Default if
-     *         not set is 2.</p>
-     *         <p>
-     *         Used only when the Spot allocation strategy is <code>lowest-price</code>.
-     *         </p>
+     *         determined from the different instance types in the overrides. Defaults to 2 if not specified. Valid only
+     *         when the Spot allocation strategy is <code>lowest-price</code>.</p>
      *         <p>
      *         Valid Range: Minimum value of 1. Maximum value of 20.
      */
@@ -627,10 +395,8 @@ public class InstancesDistribution implements Serializable, Cloneable {
     /**
      * <p>
      * The number of Spot Instance pools across which to allocate your Spot Instances. The Spot pools are determined
-     * from the different instance types in the Overrides array of <a>LaunchTemplate</a>. Default if not set is 2.
-     * </p>
-     * <p>
-     * Used only when the Spot allocation strategy is <code>lowest-price</code>.
+     * from the different instance types in the overrides. Defaults to 2 if not specified. Valid only when the Spot
+     * allocation strategy is <code>lowest-price</code>.
      * </p>
      * <p>
      * Valid Range: Minimum value of 1. Maximum value of 20.
@@ -638,11 +404,8 @@ public class InstancesDistribution implements Serializable, Cloneable {
      * 
      * @param spotInstancePools
      *        The number of Spot Instance pools across which to allocate your Spot Instances. The Spot pools are
-     *        determined from the different instance types in the Overrides array of <a>LaunchTemplate</a>. Default if
-     *        not set is 2.</p>
-     *        <p>
-     *        Used only when the Spot allocation strategy is <code>lowest-price</code>.
-     *        </p>
+     *        determined from the different instance types in the overrides. Defaults to 2 if not specified. Valid only
+     *        when the Spot allocation strategy is <code>lowest-price</code>.</p>
      *        <p>
      *        Valid Range: Minimum value of 1. Maximum value of 20.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -656,17 +419,14 @@ public class InstancesDistribution implements Serializable, Cloneable {
     /**
      * <p>
      * The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave the value of this
-     * parameter blank (which is the default), the maximum Spot price is set at the On-Demand price.
-     * </p>
-     * <p>
-     * To remove a value that you previously set, include the parameter but leave the value blank.
+     * parameter blank (which is the default), the maximum Spot price is set at the On-Demand price. To remove a value
+     * that you previously set, include the parameter but leave the value blank.
      * </p>
      * 
      * @param spotMaxPrice
      *        The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave the value of
-     *        this parameter blank (which is the default), the maximum Spot price is set at the On-Demand price.</p>
-     *        <p>
-     *        To remove a value that you previously set, include the parameter but leave the value blank.
+     *        this parameter blank (which is the default), the maximum Spot price is set at the On-Demand price. To
+     *        remove a value that you previously set, include the parameter but leave the value blank.
      */
 
     public void setSpotMaxPrice(String spotMaxPrice) {
@@ -676,16 +436,13 @@ public class InstancesDistribution implements Serializable, Cloneable {
     /**
      * <p>
      * The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave the value of this
-     * parameter blank (which is the default), the maximum Spot price is set at the On-Demand price.
-     * </p>
-     * <p>
-     * To remove a value that you previously set, include the parameter but leave the value blank.
+     * parameter blank (which is the default), the maximum Spot price is set at the On-Demand price. To remove a value
+     * that you previously set, include the parameter but leave the value blank.
      * </p>
      * 
      * @return The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave the value
-     *         of this parameter blank (which is the default), the maximum Spot price is set at the On-Demand price.</p>
-     *         <p>
-     *         To remove a value that you previously set, include the parameter but leave the value blank.
+     *         of this parameter blank (which is the default), the maximum Spot price is set at the On-Demand price. To
+     *         remove a value that you previously set, include the parameter but leave the value blank.
      */
 
     public String getSpotMaxPrice() {
@@ -695,17 +452,14 @@ public class InstancesDistribution implements Serializable, Cloneable {
     /**
      * <p>
      * The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave the value of this
-     * parameter blank (which is the default), the maximum Spot price is set at the On-Demand price.
-     * </p>
-     * <p>
-     * To remove a value that you previously set, include the parameter but leave the value blank.
+     * parameter blank (which is the default), the maximum Spot price is set at the On-Demand price. To remove a value
+     * that you previously set, include the parameter but leave the value blank.
      * </p>
      * 
      * @param spotMaxPrice
      *        The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave the value of
-     *        this parameter blank (which is the default), the maximum Spot price is set at the On-Demand price.</p>
-     *        <p>
-     *        To remove a value that you previously set, include the parameter but leave the value blank.
+     *        this parameter blank (which is the default), the maximum Spot price is set at the On-Demand price. To
+     *        remove a value that you previously set, include the parameter but leave the value blank.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

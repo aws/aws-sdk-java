@@ -58,7 +58,8 @@ public class TargetGroup implements Serializable, Cloneable {
     private String vpcId;
     /**
      * <p>
-     * The protocol to use to connect with the target.
+     * The protocol to use to connect with the target. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for
+     * health checks.
      * </p>
      */
     private String healthCheckProtocol;
@@ -119,8 +120,8 @@ public class TargetGroup implements Serializable, Cloneable {
     /**
      * <p>
      * The type of target that you must specify when registering targets with this target group. The possible values are
-     * <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are specified by IP
-     * address).
+     * <code>instance</code> (register targets by instance ID), <code>ip</code> (register targets by IP address), or
+     * <code>lambda</code> (register a single Lambda function as a target).
      * </p>
      */
     private String targetType;
@@ -367,11 +368,13 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The protocol to use to connect with the target.
+     * The protocol to use to connect with the target. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for
+     * health checks.
      * </p>
      * 
      * @param healthCheckProtocol
-     *        The protocol to use to connect with the target.
+     *        The protocol to use to connect with the target. The GENEVE, TLS, UDP, and TCP_UDP protocols are not
+     *        supported for health checks.
      * @see ProtocolEnum
      */
 
@@ -381,10 +384,12 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The protocol to use to connect with the target.
+     * The protocol to use to connect with the target. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for
+     * health checks.
      * </p>
      * 
-     * @return The protocol to use to connect with the target.
+     * @return The protocol to use to connect with the target. The GENEVE, TLS, UDP, and TCP_UDP protocols are not
+     *         supported for health checks.
      * @see ProtocolEnum
      */
 
@@ -394,11 +399,13 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The protocol to use to connect with the target.
+     * The protocol to use to connect with the target. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for
+     * health checks.
      * </p>
      * 
      * @param healthCheckProtocol
-     *        The protocol to use to connect with the target.
+     *        The protocol to use to connect with the target. The GENEVE, TLS, UDP, and TCP_UDP protocols are not
+     *        supported for health checks.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
@@ -410,11 +417,13 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The protocol to use to connect with the target.
+     * The protocol to use to connect with the target. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for
+     * health checks.
      * </p>
      * 
      * @param healthCheckProtocol
-     *        The protocol to use to connect with the target.
+     *        The protocol to use to connect with the target. The GENEVE, TLS, UDP, and TCP_UDP protocols are not
+     *        supported for health checks.
      * @see ProtocolEnum
      */
 
@@ -424,11 +433,13 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The protocol to use to connect with the target.
+     * The protocol to use to connect with the target. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for
+     * health checks.
      * </p>
      * 
      * @param healthCheckProtocol
-     *        The protocol to use to connect with the target.
+     *        The protocol to use to connect with the target. The GENEVE, TLS, UDP, and TCP_UDP protocols are not
+     *        supported for health checks.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
@@ -844,14 +855,14 @@ public class TargetGroup implements Serializable, Cloneable {
     /**
      * <p>
      * The type of target that you must specify when registering targets with this target group. The possible values are
-     * <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are specified by IP
-     * address).
+     * <code>instance</code> (register targets by instance ID), <code>ip</code> (register targets by IP address), or
+     * <code>lambda</code> (register a single Lambda function as a target).
      * </p>
      * 
      * @param targetType
      *        The type of target that you must specify when registering targets with this target group. The possible
-     *        values are <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are
-     *        specified by IP address).
+     *        values are <code>instance</code> (register targets by instance ID), <code>ip</code> (register targets by
+     *        IP address), or <code>lambda</code> (register a single Lambda function as a target).
      * @see TargetTypeEnum
      */
 
@@ -862,13 +873,13 @@ public class TargetGroup implements Serializable, Cloneable {
     /**
      * <p>
      * The type of target that you must specify when registering targets with this target group. The possible values are
-     * <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are specified by IP
-     * address).
+     * <code>instance</code> (register targets by instance ID), <code>ip</code> (register targets by IP address), or
+     * <code>lambda</code> (register a single Lambda function as a target).
      * </p>
      * 
      * @return The type of target that you must specify when registering targets with this target group. The possible
-     *         values are <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are
-     *         specified by IP address).
+     *         values are <code>instance</code> (register targets by instance ID), <code>ip</code> (register targets by
+     *         IP address), or <code>lambda</code> (register a single Lambda function as a target).
      * @see TargetTypeEnum
      */
 
@@ -879,14 +890,14 @@ public class TargetGroup implements Serializable, Cloneable {
     /**
      * <p>
      * The type of target that you must specify when registering targets with this target group. The possible values are
-     * <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are specified by IP
-     * address).
+     * <code>instance</code> (register targets by instance ID), <code>ip</code> (register targets by IP address), or
+     * <code>lambda</code> (register a single Lambda function as a target).
      * </p>
      * 
      * @param targetType
      *        The type of target that you must specify when registering targets with this target group. The possible
-     *        values are <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are
-     *        specified by IP address).
+     *        values are <code>instance</code> (register targets by instance ID), <code>ip</code> (register targets by
+     *        IP address), or <code>lambda</code> (register a single Lambda function as a target).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetTypeEnum
      */
@@ -899,14 +910,14 @@ public class TargetGroup implements Serializable, Cloneable {
     /**
      * <p>
      * The type of target that you must specify when registering targets with this target group. The possible values are
-     * <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are specified by IP
-     * address).
+     * <code>instance</code> (register targets by instance ID), <code>ip</code> (register targets by IP address), or
+     * <code>lambda</code> (register a single Lambda function as a target).
      * </p>
      * 
      * @param targetType
      *        The type of target that you must specify when registering targets with this target group. The possible
-     *        values are <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are
-     *        specified by IP address).
+     *        values are <code>instance</code> (register targets by instance ID), <code>ip</code> (register targets by
+     *        IP address), or <code>lambda</code> (register a single Lambda function as a target).
      * @see TargetTypeEnum
      */
 
@@ -917,14 +928,14 @@ public class TargetGroup implements Serializable, Cloneable {
     /**
      * <p>
      * The type of target that you must specify when registering targets with this target group. The possible values are
-     * <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are specified by IP
-     * address).
+     * <code>instance</code> (register targets by instance ID), <code>ip</code> (register targets by IP address), or
+     * <code>lambda</code> (register a single Lambda function as a target).
      * </p>
      * 
      * @param targetType
      *        The type of target that you must specify when registering targets with this target group. The possible
-     *        values are <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are
-     *        specified by IP address).
+     *        values are <code>instance</code> (register targets by instance ID), <code>ip</code> (register targets by
+     *        IP address), or <code>lambda</code> (register a single Lambda function as a target).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetTypeEnum
      */

@@ -52,6 +52,10 @@ public class CreateRouteRequestMarshaller implements Marshaller<Request<CreateRo
             request.addParameter("DestinationPrefixListId", StringUtils.fromString(createRouteRequest.getDestinationPrefixListId()));
         }
 
+        if (createRouteRequest.getVpcEndpointId() != null) {
+            request.addParameter("VpcEndpointId", StringUtils.fromString(createRouteRequest.getVpcEndpointId()));
+        }
+
         if (createRouteRequest.getEgressOnlyInternetGatewayId() != null) {
             request.addParameter("EgressOnlyInternetGatewayId", StringUtils.fromString(createRouteRequest.getEgressOnlyInternetGatewayId()));
         }

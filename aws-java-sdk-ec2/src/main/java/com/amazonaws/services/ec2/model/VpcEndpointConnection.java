@@ -68,6 +68,12 @@ public class VpcEndpointConnection implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> networkLoadBalancerArns;
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> gatewayLoadBalancerArns;
 
     /**
      * <p>
@@ -435,6 +441,79 @@ public class VpcEndpointConnection implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.
+     * </p>
+     * 
+     * @return The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.
+     */
+
+    public java.util.List<String> getGatewayLoadBalancerArns() {
+        if (gatewayLoadBalancerArns == null) {
+            gatewayLoadBalancerArns = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return gatewayLoadBalancerArns;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.
+     * </p>
+     * 
+     * @param gatewayLoadBalancerArns
+     *        The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.
+     */
+
+    public void setGatewayLoadBalancerArns(java.util.Collection<String> gatewayLoadBalancerArns) {
+        if (gatewayLoadBalancerArns == null) {
+            this.gatewayLoadBalancerArns = null;
+            return;
+        }
+
+        this.gatewayLoadBalancerArns = new com.amazonaws.internal.SdkInternalList<String>(gatewayLoadBalancerArns);
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGatewayLoadBalancerArns(java.util.Collection)} or
+     * {@link #withGatewayLoadBalancerArns(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param gatewayLoadBalancerArns
+     *        The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcEndpointConnection withGatewayLoadBalancerArns(String... gatewayLoadBalancerArns) {
+        if (this.gatewayLoadBalancerArns == null) {
+            setGatewayLoadBalancerArns(new com.amazonaws.internal.SdkInternalList<String>(gatewayLoadBalancerArns.length));
+        }
+        for (String ele : gatewayLoadBalancerArns) {
+            this.gatewayLoadBalancerArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.
+     * </p>
+     * 
+     * @param gatewayLoadBalancerArns
+     *        The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcEndpointConnection withGatewayLoadBalancerArns(java.util.Collection<String> gatewayLoadBalancerArns) {
+        setGatewayLoadBalancerArns(gatewayLoadBalancerArns);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -459,7 +538,9 @@ public class VpcEndpointConnection implements Serializable, Cloneable {
         if (getDnsEntries() != null)
             sb.append("DnsEntries: ").append(getDnsEntries()).append(",");
         if (getNetworkLoadBalancerArns() != null)
-            sb.append("NetworkLoadBalancerArns: ").append(getNetworkLoadBalancerArns());
+            sb.append("NetworkLoadBalancerArns: ").append(getNetworkLoadBalancerArns()).append(",");
+        if (getGatewayLoadBalancerArns() != null)
+            sb.append("GatewayLoadBalancerArns: ").append(getGatewayLoadBalancerArns());
         sb.append("}");
         return sb.toString();
     }
@@ -502,6 +583,10 @@ public class VpcEndpointConnection implements Serializable, Cloneable {
             return false;
         if (other.getNetworkLoadBalancerArns() != null && other.getNetworkLoadBalancerArns().equals(this.getNetworkLoadBalancerArns()) == false)
             return false;
+        if (other.getGatewayLoadBalancerArns() == null ^ this.getGatewayLoadBalancerArns() == null)
+            return false;
+        if (other.getGatewayLoadBalancerArns() != null && other.getGatewayLoadBalancerArns().equals(this.getGatewayLoadBalancerArns()) == false)
+            return false;
         return true;
     }
 
@@ -517,6 +602,7 @@ public class VpcEndpointConnection implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCreationTimestamp() == null) ? 0 : getCreationTimestamp().hashCode());
         hashCode = prime * hashCode + ((getDnsEntries() == null) ? 0 : getDnsEntries().hashCode());
         hashCode = prime * hashCode + ((getNetworkLoadBalancerArns() == null) ? 0 : getNetworkLoadBalancerArns().hashCode());
+        hashCode = prime * hashCode + ((getGatewayLoadBalancerArns() == null) ? 0 : getGatewayLoadBalancerArns().hashCode());
         return hashCode;
     }
 

@@ -52,6 +52,10 @@ public class ReplaceRouteRequestMarshaller implements Marshaller<Request<Replace
             request.addParameter("DestinationPrefixListId", StringUtils.fromString(replaceRouteRequest.getDestinationPrefixListId()));
         }
 
+        if (replaceRouteRequest.getVpcEndpointId() != null) {
+            request.addParameter("VpcEndpointId", StringUtils.fromString(replaceRouteRequest.getVpcEndpointId()));
+        }
+
         if (replaceRouteRequest.getEgressOnlyInternetGatewayId() != null) {
             request.addParameter("EgressOnlyInternetGatewayId", StringUtils.fromString(replaceRouteRequest.getEgressOnlyInternetGatewayId()));
         }

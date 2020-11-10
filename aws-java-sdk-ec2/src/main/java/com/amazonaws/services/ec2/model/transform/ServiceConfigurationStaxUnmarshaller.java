@@ -100,6 +100,16 @@ public class ServiceConfigurationStaxUnmarshaller implements Unmarshaller<Servic
                     continue;
                 }
 
+                if (context.testExpression("gatewayLoadBalancerArnSet", targetDepth)) {
+                    serviceConfiguration.withGatewayLoadBalancerArns(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("gatewayLoadBalancerArnSet/item", targetDepth)) {
+                    serviceConfiguration.withGatewayLoadBalancerArns(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("baseEndpointDnsNameSet", targetDepth)) {
                     serviceConfiguration.withBaseEndpointDnsNames(new ArrayList<String>());
                     continue;

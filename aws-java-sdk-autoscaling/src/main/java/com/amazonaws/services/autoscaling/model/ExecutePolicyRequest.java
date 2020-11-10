@@ -43,7 +43,7 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns for Amazon EC2 Auto
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto
      * Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      */
@@ -160,7 +160,7 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns for Amazon EC2 Auto
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto
      * Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
@@ -169,7 +169,7 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        policy.</p>
      *        <p>
      *        Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a
-     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns for Amazon
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon
      *        EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
@@ -183,7 +183,7 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns for Amazon EC2 Auto
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto
      * Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
@@ -191,7 +191,7 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         policy.</p>
      *         <p>
      *         Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a
-     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns for Amazon
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon
      *         EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
@@ -205,7 +205,7 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns for Amazon EC2 Auto
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto
      * Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
@@ -214,7 +214,7 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        policy.</p>
      *        <p>
      *        Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a
-     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns for Amazon
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon
      *        EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -230,7 +230,7 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns for Amazon EC2 Auto
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto
      * Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
@@ -238,7 +238,7 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         policy.</p>
      *         <p>
      *         Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a
-     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns for Amazon
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon
      *         EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 

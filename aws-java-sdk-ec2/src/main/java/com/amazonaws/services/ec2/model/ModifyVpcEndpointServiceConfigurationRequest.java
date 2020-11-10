@@ -34,13 +34,13 @@ public class ModifyVpcEndpointServiceConfigurationRequest extends AmazonWebServi
     private String serviceId;
     /**
      * <p>
-     * The private DNS name to assign to the endpoint service.
+     * (Interface endpoint configuration) The private DNS name to assign to the endpoint service.
      * </p>
      */
     private String privateDnsName;
     /**
      * <p>
-     * Removes the private DNS name of the endpoint service.
+     * (Interface endpoint configuration) Removes the private DNS name of the endpoint service.
      * </p>
      */
     private Boolean removePrivateDnsName;
@@ -62,6 +62,18 @@ public class ModifyVpcEndpointServiceConfigurationRequest extends AmazonWebServi
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> removeNetworkLoadBalancerArns;
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to your service configuration.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> addGatewayLoadBalancerArns;
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from your service configuration.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> removeGatewayLoadBalancerArns;
 
     /**
      * <p>
@@ -105,11 +117,11 @@ public class ModifyVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
-     * The private DNS name to assign to the endpoint service.
+     * (Interface endpoint configuration) The private DNS name to assign to the endpoint service.
      * </p>
      * 
      * @param privateDnsName
-     *        The private DNS name to assign to the endpoint service.
+     *        (Interface endpoint configuration) The private DNS name to assign to the endpoint service.
      */
 
     public void setPrivateDnsName(String privateDnsName) {
@@ -118,10 +130,10 @@ public class ModifyVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
-     * The private DNS name to assign to the endpoint service.
+     * (Interface endpoint configuration) The private DNS name to assign to the endpoint service.
      * </p>
      * 
-     * @return The private DNS name to assign to the endpoint service.
+     * @return (Interface endpoint configuration) The private DNS name to assign to the endpoint service.
      */
 
     public String getPrivateDnsName() {
@@ -130,11 +142,11 @@ public class ModifyVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
-     * The private DNS name to assign to the endpoint service.
+     * (Interface endpoint configuration) The private DNS name to assign to the endpoint service.
      * </p>
      * 
      * @param privateDnsName
-     *        The private DNS name to assign to the endpoint service.
+     *        (Interface endpoint configuration) The private DNS name to assign to the endpoint service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,11 +157,11 @@ public class ModifyVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
-     * Removes the private DNS name of the endpoint service.
+     * (Interface endpoint configuration) Removes the private DNS name of the endpoint service.
      * </p>
      * 
      * @param removePrivateDnsName
-     *        Removes the private DNS name of the endpoint service.
+     *        (Interface endpoint configuration) Removes the private DNS name of the endpoint service.
      */
 
     public void setRemovePrivateDnsName(Boolean removePrivateDnsName) {
@@ -158,10 +170,10 @@ public class ModifyVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
-     * Removes the private DNS name of the endpoint service.
+     * (Interface endpoint configuration) Removes the private DNS name of the endpoint service.
      * </p>
      * 
-     * @return Removes the private DNS name of the endpoint service.
+     * @return (Interface endpoint configuration) Removes the private DNS name of the endpoint service.
      */
 
     public Boolean getRemovePrivateDnsName() {
@@ -170,11 +182,11 @@ public class ModifyVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
-     * Removes the private DNS name of the endpoint service.
+     * (Interface endpoint configuration) Removes the private DNS name of the endpoint service.
      * </p>
      * 
      * @param removePrivateDnsName
-     *        Removes the private DNS name of the endpoint service.
+     *        (Interface endpoint configuration) Removes the private DNS name of the endpoint service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,10 +197,10 @@ public class ModifyVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
-     * Removes the private DNS name of the endpoint service.
+     * (Interface endpoint configuration) Removes the private DNS name of the endpoint service.
      * </p>
      * 
-     * @return Removes the private DNS name of the endpoint service.
+     * @return (Interface endpoint configuration) Removes the private DNS name of the endpoint service.
      */
 
     public Boolean isRemovePrivateDnsName() {
@@ -394,6 +406,152 @@ public class ModifyVpcEndpointServiceConfigurationRequest extends AmazonWebServi
     }
 
     /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to your service configuration.
+     * </p>
+     * 
+     * @return The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to your service configuration.
+     */
+
+    public java.util.List<String> getAddGatewayLoadBalancerArns() {
+        if (addGatewayLoadBalancerArns == null) {
+            addGatewayLoadBalancerArns = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return addGatewayLoadBalancerArns;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to your service configuration.
+     * </p>
+     * 
+     * @param addGatewayLoadBalancerArns
+     *        The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to your service configuration.
+     */
+
+    public void setAddGatewayLoadBalancerArns(java.util.Collection<String> addGatewayLoadBalancerArns) {
+        if (addGatewayLoadBalancerArns == null) {
+            this.addGatewayLoadBalancerArns = null;
+            return;
+        }
+
+        this.addGatewayLoadBalancerArns = new com.amazonaws.internal.SdkInternalList<String>(addGatewayLoadBalancerArns);
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to your service configuration.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAddGatewayLoadBalancerArns(java.util.Collection)} or
+     * {@link #withAddGatewayLoadBalancerArns(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param addGatewayLoadBalancerArns
+     *        The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to your service configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVpcEndpointServiceConfigurationRequest withAddGatewayLoadBalancerArns(String... addGatewayLoadBalancerArns) {
+        if (this.addGatewayLoadBalancerArns == null) {
+            setAddGatewayLoadBalancerArns(new com.amazonaws.internal.SdkInternalList<String>(addGatewayLoadBalancerArns.length));
+        }
+        for (String ele : addGatewayLoadBalancerArns) {
+            this.addGatewayLoadBalancerArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to your service configuration.
+     * </p>
+     * 
+     * @param addGatewayLoadBalancerArns
+     *        The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to your service configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVpcEndpointServiceConfigurationRequest withAddGatewayLoadBalancerArns(java.util.Collection<String> addGatewayLoadBalancerArns) {
+        setAddGatewayLoadBalancerArns(addGatewayLoadBalancerArns);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from your service configuration.
+     * </p>
+     * 
+     * @return The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from your service configuration.
+     */
+
+    public java.util.List<String> getRemoveGatewayLoadBalancerArns() {
+        if (removeGatewayLoadBalancerArns == null) {
+            removeGatewayLoadBalancerArns = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return removeGatewayLoadBalancerArns;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from your service configuration.
+     * </p>
+     * 
+     * @param removeGatewayLoadBalancerArns
+     *        The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from your service configuration.
+     */
+
+    public void setRemoveGatewayLoadBalancerArns(java.util.Collection<String> removeGatewayLoadBalancerArns) {
+        if (removeGatewayLoadBalancerArns == null) {
+            this.removeGatewayLoadBalancerArns = null;
+            return;
+        }
+
+        this.removeGatewayLoadBalancerArns = new com.amazonaws.internal.SdkInternalList<String>(removeGatewayLoadBalancerArns);
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from your service configuration.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRemoveGatewayLoadBalancerArns(java.util.Collection)} or
+     * {@link #withRemoveGatewayLoadBalancerArns(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param removeGatewayLoadBalancerArns
+     *        The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from your service configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVpcEndpointServiceConfigurationRequest withRemoveGatewayLoadBalancerArns(String... removeGatewayLoadBalancerArns) {
+        if (this.removeGatewayLoadBalancerArns == null) {
+            setRemoveGatewayLoadBalancerArns(new com.amazonaws.internal.SdkInternalList<String>(removeGatewayLoadBalancerArns.length));
+        }
+        for (String ele : removeGatewayLoadBalancerArns) {
+            this.removeGatewayLoadBalancerArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from your service configuration.
+     * </p>
+     * 
+     * @param removeGatewayLoadBalancerArns
+     *        The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from your service configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVpcEndpointServiceConfigurationRequest withRemoveGatewayLoadBalancerArns(java.util.Collection<String> removeGatewayLoadBalancerArns) {
+        setRemoveGatewayLoadBalancerArns(removeGatewayLoadBalancerArns);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -427,7 +585,11 @@ public class ModifyVpcEndpointServiceConfigurationRequest extends AmazonWebServi
         if (getAddNetworkLoadBalancerArns() != null)
             sb.append("AddNetworkLoadBalancerArns: ").append(getAddNetworkLoadBalancerArns()).append(",");
         if (getRemoveNetworkLoadBalancerArns() != null)
-            sb.append("RemoveNetworkLoadBalancerArns: ").append(getRemoveNetworkLoadBalancerArns());
+            sb.append("RemoveNetworkLoadBalancerArns: ").append(getRemoveNetworkLoadBalancerArns()).append(",");
+        if (getAddGatewayLoadBalancerArns() != null)
+            sb.append("AddGatewayLoadBalancerArns: ").append(getAddGatewayLoadBalancerArns()).append(",");
+        if (getRemoveGatewayLoadBalancerArns() != null)
+            sb.append("RemoveGatewayLoadBalancerArns: ").append(getRemoveGatewayLoadBalancerArns());
         sb.append("}");
         return sb.toString();
     }
@@ -467,6 +629,15 @@ public class ModifyVpcEndpointServiceConfigurationRequest extends AmazonWebServi
         if (other.getRemoveNetworkLoadBalancerArns() != null
                 && other.getRemoveNetworkLoadBalancerArns().equals(this.getRemoveNetworkLoadBalancerArns()) == false)
             return false;
+        if (other.getAddGatewayLoadBalancerArns() == null ^ this.getAddGatewayLoadBalancerArns() == null)
+            return false;
+        if (other.getAddGatewayLoadBalancerArns() != null && other.getAddGatewayLoadBalancerArns().equals(this.getAddGatewayLoadBalancerArns()) == false)
+            return false;
+        if (other.getRemoveGatewayLoadBalancerArns() == null ^ this.getRemoveGatewayLoadBalancerArns() == null)
+            return false;
+        if (other.getRemoveGatewayLoadBalancerArns() != null
+                && other.getRemoveGatewayLoadBalancerArns().equals(this.getRemoveGatewayLoadBalancerArns()) == false)
+            return false;
         return true;
     }
 
@@ -481,6 +652,8 @@ public class ModifyVpcEndpointServiceConfigurationRequest extends AmazonWebServi
         hashCode = prime * hashCode + ((getAcceptanceRequired() == null) ? 0 : getAcceptanceRequired().hashCode());
         hashCode = prime * hashCode + ((getAddNetworkLoadBalancerArns() == null) ? 0 : getAddNetworkLoadBalancerArns().hashCode());
         hashCode = prime * hashCode + ((getRemoveNetworkLoadBalancerArns() == null) ? 0 : getRemoveNetworkLoadBalancerArns().hashCode());
+        hashCode = prime * hashCode + ((getAddGatewayLoadBalancerArns() == null) ? 0 : getAddGatewayLoadBalancerArns().hashCode());
+        hashCode = prime * hashCode + ((getRemoveGatewayLoadBalancerArns() == null) ? 0 : getRemoveGatewayLoadBalancerArns().hashCode());
         return hashCode;
     }
 

@@ -31,6 +31,17 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
+     * The following attribute is supported by all load balancers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
      * </p>
      * <ul>
@@ -50,12 +61,6 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
-     * <code>true</code> or <code>false</code>. The default is <code>false</code>.
      * </p>
      * </li>
      * </ul>
@@ -92,7 +97,7 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The following attributes are supported by only Network Load Balancers:
+     * The following attribute is supported by Network Load Balancers and Gateway Load Balancers:
      * </p>
      * <ul>
      * <li>
@@ -116,6 +121,17 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
+     * The following attribute is supported by all load balancers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
      * </p>
      * <ul>
@@ -135,12 +151,6 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
-     * <code>true</code> or <code>false</code>. The default is <code>false</code>.
      * </p>
      * </li>
      * </ul>
@@ -177,7 +187,7 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The following attributes are supported by only Network Load Balancers:
+     * The following attribute is supported by Network Load Balancers and Gateway Load Balancers:
      * </p>
      * <ul>
      * <li>
@@ -190,6 +200,17 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * 
      * @param key
      *        The name of the attribute.</p>
+     *        <p>
+     *        The following attribute is supported by all load balancers:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
+     *        <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        The following attributes are supported by both Application Load Balancers and Network Load Balancers:
      *        </p>
@@ -210,12 +231,6 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
-     *        <code>true</code> or <code>false</code>. The default is <code>false</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -252,7 +267,7 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        The following attributes are supported by only Network Load Balancers:
+     *        The following attribute is supported by Network Load Balancers and Gateway Load Balancers:
      *        </p>
      *        <ul>
      *        <li>
@@ -271,6 +286,17 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <p>
      * The name of the attribute.
      * </p>
+     * <p>
+     * The following attribute is supported by all load balancers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
      * </p>
@@ -291,12 +317,6 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
-     * <code>true</code> or <code>false</code>. The default is <code>false</code>.
      * </p>
      * </li>
      * </ul>
@@ -333,7 +353,7 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The following attributes are supported by only Network Load Balancers:
+     * The following attribute is supported by Network Load Balancers and Gateway Load Balancers:
      * </p>
      * <ul>
      * <li>
@@ -345,6 +365,17 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * </ul>
      * 
      * @return The name of the attribute.</p>
+     *         <p>
+     *         The following attribute is supported by all load balancers:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
+     *         <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      *         The following attributes are supported by both Application Load Balancers and Network Load Balancers:
      *         </p>
@@ -365,12 +396,6 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
-     *         <code>true</code> or <code>false</code>. The default is <code>false</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -407,7 +432,7 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         <p>
-     *         The following attributes are supported by only Network Load Balancers:
+     *         The following attribute is supported by Network Load Balancers and Gateway Load Balancers:
      *         </p>
      *         <ul>
      *         <li>
@@ -426,6 +451,17 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <p>
      * The name of the attribute.
      * </p>
+     * <p>
+     * The following attribute is supported by all load balancers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
      * </p>
@@ -446,12 +482,6 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
-     * <code>true</code> or <code>false</code>. The default is <code>false</code>.
      * </p>
      * </li>
      * </ul>
@@ -488,7 +518,7 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The following attributes are supported by only Network Load Balancers:
+     * The following attribute is supported by Network Load Balancers and Gateway Load Balancers:
      * </p>
      * <ul>
      * <li>
@@ -501,6 +531,17 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * 
      * @param key
      *        The name of the attribute.</p>
+     *        <p>
+     *        The following attribute is supported by all load balancers:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
+     *        <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        The following attributes are supported by both Application Load Balancers and Network Load Balancers:
      *        </p>
@@ -521,12 +562,6 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
-     *        <code>true</code> or <code>false</code>. The default is <code>false</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -563,7 +598,7 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        The following attributes are supported by only Network Load Balancers:
+     *        The following attribute is supported by Network Load Balancers and Gateway Load Balancers:
      *        </p>
      *        <ul>
      *        <li>

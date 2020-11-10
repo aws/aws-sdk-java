@@ -47,6 +47,12 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
     private String destinationPrefixListId;
     /**
      * <p>
+     * The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.
+     * </p>
+     */
+    private String vpcEndpointId;
+    /**
+     * <p>
      * [IPv6 traffic only] The ID of an egress-only internet gateway.
      * </p>
      */
@@ -242,6 +248,46 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
 
     public CreateRouteRequest withDestinationPrefixListId(String destinationPrefixListId) {
         setDestinationPrefixListId(destinationPrefixListId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.
+     * </p>
+     * 
+     * @param vpcEndpointId
+     *        The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.
+     */
+
+    public void setVpcEndpointId(String vpcEndpointId) {
+        this.vpcEndpointId = vpcEndpointId;
+    }
+
+    /**
+     * <p>
+     * The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.
+     * </p>
+     * 
+     * @return The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.
+     */
+
+    public String getVpcEndpointId() {
+        return this.vpcEndpointId;
+    }
+
+    /**
+     * <p>
+     * The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.
+     * </p>
+     * 
+     * @param vpcEndpointId
+     *        The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRouteRequest withVpcEndpointId(String vpcEndpointId) {
+        setVpcEndpointId(vpcEndpointId);
         return this;
     }
 
@@ -695,6 +741,8 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
             sb.append("DestinationIpv6CidrBlock: ").append(getDestinationIpv6CidrBlock()).append(",");
         if (getDestinationPrefixListId() != null)
             sb.append("DestinationPrefixListId: ").append(getDestinationPrefixListId()).append(",");
+        if (getVpcEndpointId() != null)
+            sb.append("VpcEndpointId: ").append(getVpcEndpointId()).append(",");
         if (getEgressOnlyInternetGatewayId() != null)
             sb.append("EgressOnlyInternetGatewayId: ").append(getEgressOnlyInternetGatewayId()).append(",");
         if (getGatewayId() != null)
@@ -740,6 +788,10 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
         if (other.getDestinationPrefixListId() == null ^ this.getDestinationPrefixListId() == null)
             return false;
         if (other.getDestinationPrefixListId() != null && other.getDestinationPrefixListId().equals(this.getDestinationPrefixListId()) == false)
+            return false;
+        if (other.getVpcEndpointId() == null ^ this.getVpcEndpointId() == null)
+            return false;
+        if (other.getVpcEndpointId() != null && other.getVpcEndpointId().equals(this.getVpcEndpointId()) == false)
             return false;
         if (other.getEgressOnlyInternetGatewayId() == null ^ this.getEgressOnlyInternetGatewayId() == null)
             return false;
@@ -792,6 +844,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
         hashCode = prime * hashCode + ((getDestinationCidrBlock() == null) ? 0 : getDestinationCidrBlock().hashCode());
         hashCode = prime * hashCode + ((getDestinationIpv6CidrBlock() == null) ? 0 : getDestinationIpv6CidrBlock().hashCode());
         hashCode = prime * hashCode + ((getDestinationPrefixListId() == null) ? 0 : getDestinationPrefixListId().hashCode());
+        hashCode = prime * hashCode + ((getVpcEndpointId() == null) ? 0 : getVpcEndpointId().hashCode());
         hashCode = prime * hashCode + ((getEgressOnlyInternetGatewayId() == null) ? 0 : getEgressOnlyInternetGatewayId().hashCode());
         hashCode = prime * hashCode + ((getGatewayId() == null) ? 0 : getGatewayId().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());

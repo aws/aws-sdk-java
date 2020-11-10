@@ -34,8 +34,7 @@ public class SetIpAddressTypeRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code>
-     * (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>. Network Load Balancers must
-     * use <code>ipv4</code>.
+     * (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.
      * </p>
      */
     private String ipAddressType;
@@ -83,14 +82,12 @@ public class SetIpAddressTypeRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code>
-     * (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>. Network Load Balancers must
-     * use <code>ipv4</code>.
+     * (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.
      * </p>
      * 
      * @param ipAddressType
      *        The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and
      *        <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.
-     *        Network Load Balancers must use <code>ipv4</code>.
      * @see IpAddressType
      */
 
@@ -101,13 +98,11 @@ public class SetIpAddressTypeRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code>
-     * (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>. Network Load Balancers must
-     * use <code>ipv4</code>.
+     * (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.
      * </p>
      * 
      * @return The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and
      *         <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.
-     *         Network Load Balancers must use <code>ipv4</code>.
      * @see IpAddressType
      */
 
@@ -118,14 +113,12 @@ public class SetIpAddressTypeRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code>
-     * (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>. Network Load Balancers must
-     * use <code>ipv4</code>.
+     * (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.
      * </p>
      * 
      * @param ipAddressType
      *        The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and
      *        <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.
-     *        Network Load Balancers must use <code>ipv4</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpAddressType
      */
@@ -138,14 +131,12 @@ public class SetIpAddressTypeRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code>
-     * (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>. Network Load Balancers must
-     * use <code>ipv4</code>.
+     * (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.
      * </p>
      * 
      * @param ipAddressType
      *        The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and
      *        <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.
-     *        Network Load Balancers must use <code>ipv4</code>.
      * @see IpAddressType
      */
 
@@ -156,14 +147,12 @@ public class SetIpAddressTypeRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code>
-     * (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>. Network Load Balancers must
-     * use <code>ipv4</code>.
+     * (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.
      * </p>
      * 
      * @param ipAddressType
      *        The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and
      *        <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.
-     *        Network Load Balancers must use <code>ipv4</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpAddressType
      */

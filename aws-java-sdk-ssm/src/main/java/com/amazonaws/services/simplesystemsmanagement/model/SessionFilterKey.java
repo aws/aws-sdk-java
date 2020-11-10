@@ -24,7 +24,8 @@ public enum SessionFilterKey {
     InvokedBefore("InvokedBefore"),
     Target("Target"),
     Owner("Owner"),
-    Status("Status");
+    Status("Status"),
+    SessionId("SessionId");
 
     private String value;
 

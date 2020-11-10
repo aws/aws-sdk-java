@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ServiceType {
 
     Interface("Interface"),
-    Gateway("Gateway");
+    Gateway("Gateway"),
+    GatewayLoadBalancer("GatewayLoadBalancer");
 
     private String value;
 

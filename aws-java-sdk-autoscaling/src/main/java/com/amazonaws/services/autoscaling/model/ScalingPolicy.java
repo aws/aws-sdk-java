@@ -67,10 +67,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target Tracking
-     * Scaling Policies</a> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and Simple Scaling
-     * Policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target tracking
+     * scaling policies</a> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple scaling
+     * policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      */
     private String policyType;
@@ -287,10 +287,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target Tracking
-     * Scaling Policies</a> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and Simple Scaling
-     * Policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target tracking
+     * scaling policies</a> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple scaling
+     * policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param policyType
@@ -315,9 +315,9 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
-     *        Tracking Scaling Policies</a> and <a
-     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and Simple
-     *        Scaling Policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        tracking scaling policies</a> and <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple
+     *        scaling policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public void setPolicyType(String policyType) {
@@ -347,10 +347,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target Tracking
-     * Scaling Policies</a> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and Simple Scaling
-     * Policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target tracking
+     * scaling policies</a> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple scaling
+     * policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return One of the following policy types: </p>
@@ -374,9 +374,9 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
-     *         Tracking Scaling Policies</a> and <a
-     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and Simple
-     *         Scaling Policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *         tracking scaling policies</a> and <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple
+     *         scaling policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public String getPolicyType() {
@@ -406,10 +406,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target Tracking
-     * Scaling Policies</a> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and Simple Scaling
-     * Policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target tracking
+     * scaling policies</a> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple scaling
+     * policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param policyType
@@ -434,9 +434,9 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
-     *        Tracking Scaling Policies</a> and <a
-     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and Simple
-     *        Scaling Policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        tracking scaling policies</a> and <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple
+     *        scaling policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

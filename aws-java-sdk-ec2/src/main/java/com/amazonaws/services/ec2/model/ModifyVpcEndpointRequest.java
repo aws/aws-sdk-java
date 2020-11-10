@@ -42,7 +42,8 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
     private Boolean resetPolicy;
     /**
      * <p>
-     * A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format.
+     * (Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the service. The
+     * policy must be in valid JSON format.
      * </p>
      */
     private String policyDocument;
@@ -60,7 +61,8 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.SdkInternalList<String> removeRouteTableIds;
     /**
      * <p>
-     * (Interface endpoint) One or more subnet IDs in which to serve the endpoint.
+     * (Interface and Gateway Load Balancer endpoints) One or more subnet IDs in which to serve the endpoint. For a
+     * Gateway Load Balancer endpoint, you can specify only one subnet.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> addSubnetIds;
@@ -191,12 +193,13 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format.
+     * (Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the service. The
+     * policy must be in valid JSON format.
      * </p>
      * 
      * @param policyDocument
-     *        A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON
-     *        format.
+     *        (Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the service.
+     *        The policy must be in valid JSON format.
      */
 
     public void setPolicyDocument(String policyDocument) {
@@ -205,11 +208,12 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format.
+     * (Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the service. The
+     * policy must be in valid JSON format.
      * </p>
      * 
-     * @return A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON
-     *         format.
+     * @return (Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the service.
+     *         The policy must be in valid JSON format.
      */
 
     public String getPolicyDocument() {
@@ -218,12 +222,13 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format.
+     * (Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the service. The
+     * policy must be in valid JSON format.
      * </p>
      * 
      * @param policyDocument
-     *        A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON
-     *        format.
+     *        (Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the service.
+     *        The policy must be in valid JSON format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -380,10 +385,12 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) One or more subnet IDs in which to serve the endpoint.
+     * (Interface and Gateway Load Balancer endpoints) One or more subnet IDs in which to serve the endpoint. For a
+     * Gateway Load Balancer endpoint, you can specify only one subnet.
      * </p>
      * 
-     * @return (Interface endpoint) One or more subnet IDs in which to serve the endpoint.
+     * @return (Interface and Gateway Load Balancer endpoints) One or more subnet IDs in which to serve the endpoint.
+     *         For a Gateway Load Balancer endpoint, you can specify only one subnet.
      */
 
     public java.util.List<String> getAddSubnetIds() {
@@ -395,11 +402,13 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) One or more subnet IDs in which to serve the endpoint.
+     * (Interface and Gateway Load Balancer endpoints) One or more subnet IDs in which to serve the endpoint. For a
+     * Gateway Load Balancer endpoint, you can specify only one subnet.
      * </p>
      * 
      * @param addSubnetIds
-     *        (Interface endpoint) One or more subnet IDs in which to serve the endpoint.
+     *        (Interface and Gateway Load Balancer endpoints) One or more subnet IDs in which to serve the endpoint. For
+     *        a Gateway Load Balancer endpoint, you can specify only one subnet.
      */
 
     public void setAddSubnetIds(java.util.Collection<String> addSubnetIds) {
@@ -413,7 +422,8 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) One or more subnet IDs in which to serve the endpoint.
+     * (Interface and Gateway Load Balancer endpoints) One or more subnet IDs in which to serve the endpoint. For a
+     * Gateway Load Balancer endpoint, you can specify only one subnet.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -422,7 +432,8 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param addSubnetIds
-     *        (Interface endpoint) One or more subnet IDs in which to serve the endpoint.
+     *        (Interface and Gateway Load Balancer endpoints) One or more subnet IDs in which to serve the endpoint. For
+     *        a Gateway Load Balancer endpoint, you can specify only one subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -438,11 +449,13 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) One or more subnet IDs in which to serve the endpoint.
+     * (Interface and Gateway Load Balancer endpoints) One or more subnet IDs in which to serve the endpoint. For a
+     * Gateway Load Balancer endpoint, you can specify only one subnet.
      * </p>
      * 
      * @param addSubnetIds
-     *        (Interface endpoint) One or more subnet IDs in which to serve the endpoint.
+     *        (Interface and Gateway Load Balancer endpoints) One or more subnet IDs in which to serve the endpoint. For
+     *        a Gateway Load Balancer endpoint, you can specify only one subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

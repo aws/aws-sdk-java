@@ -66,6 +66,21 @@ public class CreateVpcEndpointServiceConfigurationRequestMarshaller implements
             }
         }
 
+        com.amazonaws.internal.SdkInternalList<String> createVpcEndpointServiceConfigurationRequestGatewayLoadBalancerArnsList = (com.amazonaws.internal.SdkInternalList<String>) createVpcEndpointServiceConfigurationRequest
+                .getGatewayLoadBalancerArns();
+        if (!createVpcEndpointServiceConfigurationRequestGatewayLoadBalancerArnsList.isEmpty()
+                || !createVpcEndpointServiceConfigurationRequestGatewayLoadBalancerArnsList.isAutoConstruct()) {
+            int gatewayLoadBalancerArnsListIndex = 1;
+
+            for (String createVpcEndpointServiceConfigurationRequestGatewayLoadBalancerArnsListValue : createVpcEndpointServiceConfigurationRequestGatewayLoadBalancerArnsList) {
+                if (createVpcEndpointServiceConfigurationRequestGatewayLoadBalancerArnsListValue != null) {
+                    request.addParameter("GatewayLoadBalancerArn." + gatewayLoadBalancerArnsListIndex,
+                            StringUtils.fromString(createVpcEndpointServiceConfigurationRequestGatewayLoadBalancerArnsListValue));
+                }
+                gatewayLoadBalancerArnsListIndex++;
+            }
+        }
+
         if (createVpcEndpointServiceConfigurationRequest.getClientToken() != null) {
             request.addParameter("ClientToken", StringUtils.fromString(createVpcEndpointServiceConfigurationRequest.getClientToken()));
         }

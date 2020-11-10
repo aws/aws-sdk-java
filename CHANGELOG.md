@@ -1,3 +1,20 @@
+# __1.11.898__ __2020-11-10__
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release adds support for Gateway Load Balancer VPC endpoints and VPC endpoint services
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Add SessionId as a filter for DescribeSessions API
+
+## __Auto Scaling__
+  - ### Features
+    - Documentation updates and corrections for Amazon EC2 Auto Scaling API Reference and SDKs.
+
+## __Elastic Load Balancing__
+  - ### Features
+    - Added support for Gateway Load Balancers, which make it easy to deploy, scale, and run third-party virtual networking appliances.
+
 # __1.11.897__ __2020-11-09__
 ## __AWS DataSync__
   - ### Features

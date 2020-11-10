@@ -27,7 +27,7 @@ public class SetInstanceProtectionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * One or more instance IDs.
+     * One or more instance IDs. You can specify up to 50 instances.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
@@ -46,10 +46,10 @@ public class SetInstanceProtectionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * One or more instance IDs.
+     * One or more instance IDs. You can specify up to 50 instances.
      * </p>
      * 
-     * @return One or more instance IDs.
+     * @return One or more instance IDs. You can specify up to 50 instances.
      */
 
     public java.util.List<String> getInstanceIds() {
@@ -61,11 +61,11 @@ public class SetInstanceProtectionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * One or more instance IDs.
+     * One or more instance IDs. You can specify up to 50 instances.
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs.
+     *        One or more instance IDs. You can specify up to 50 instances.
      */
 
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
@@ -79,7 +79,7 @@ public class SetInstanceProtectionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * One or more instance IDs.
+     * One or more instance IDs. You can specify up to 50 instances.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -88,7 +88,7 @@ public class SetInstanceProtectionRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs.
+     *        One or more instance IDs. You can specify up to 50 instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,11 +104,11 @@ public class SetInstanceProtectionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * One or more instance IDs.
+     * One or more instance IDs. You can specify up to 50 instances.
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs.
+     *        One or more instance IDs. You can specify up to 50 instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

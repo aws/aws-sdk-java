@@ -192,7 +192,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     private Integer maxInstanceLifetime;
     /**
      * <p>
-     * Indicates whether capacity rebalance is enabled.
+     * Indicates whether Capacity Rebalancing is enabled.
      * </p>
      */
     private Boolean capacityRebalance;
@@ -1562,11 +1562,11 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether capacity rebalance is enabled.
+     * Indicates whether Capacity Rebalancing is enabled.
      * </p>
      * 
      * @param capacityRebalance
-     *        Indicates whether capacity rebalance is enabled.
+     *        Indicates whether Capacity Rebalancing is enabled.
      */
 
     public void setCapacityRebalance(Boolean capacityRebalance) {
@@ -1575,10 +1575,10 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether capacity rebalance is enabled.
+     * Indicates whether Capacity Rebalancing is enabled.
      * </p>
      * 
-     * @return Indicates whether capacity rebalance is enabled.
+     * @return Indicates whether Capacity Rebalancing is enabled.
      */
 
     public Boolean getCapacityRebalance() {
@@ -1587,11 +1587,11 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether capacity rebalance is enabled.
+     * Indicates whether Capacity Rebalancing is enabled.
      * </p>
      * 
      * @param capacityRebalance
-     *        Indicates whether capacity rebalance is enabled.
+     *        Indicates whether Capacity Rebalancing is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1602,10 +1602,10 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether capacity rebalance is enabled.
+     * Indicates whether Capacity Rebalancing is enabled.
      * </p>
      * 
-     * @return Indicates whether capacity rebalance is enabled.
+     * @return Indicates whether Capacity Rebalancing is enabled.
      */
 
     public Boolean isCapacityRebalance() {

@@ -21,8 +21,8 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * For more information, see <a
- * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging Auto Scaling Groups and
- * Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+ * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging Auto Scaling groups and
+ * instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/Filter" target="_top">AWS API

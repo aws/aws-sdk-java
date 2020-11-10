@@ -31,27 +31,23 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type. You must use an instance type that is supported in your requested Region and Availability
-     * Zones.
-     * </p>
-     * <p>
-     * For information about available instance types, see <a
+     * The instance type, such as <code>m3.xlarge</code>. You must use an instance type that is supported in your
+     * requested Region and Availability Zones. For information about available instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
+     * instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      * </p>
      */
     private String instanceType;
     /**
      * <p>
-     * The number of capacity units, which gives the instance type a proportional weight to other instance types. For
-     * example, larger instance types are generally weighted more than smaller instance types. These are the same units
-     * that you chose to set the desired capacity in terms of instances, or a performance attribute such as vCPUs,
-     * memory, or I/O.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance Weighting for
-     * Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * The number of capacity units provided by the specified instance type in terms of virtual CPUs, memory, storage,
+     * throughput, or other relative performance characteristic. When a Spot or On-Demand Instance is provisioned, the
+     * capacity units count toward the desired capacity. Amazon EC2 Auto Scaling provisions instances until the desired
+     * capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to
+     * fulfill capacity, and Amazon EC2 Auto Scaling can only provision an instance with a <code>WeightedCapacity</code>
+     * of 5 units, the instance is provisioned, and the desired capacity is exceeded by 3 units. For more information,
+     * see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
+     * weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * Valid Range: Minimum value of 1. Maximum value of 999.
@@ -61,22 +57,17 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type. You must use an instance type that is supported in your requested Region and Availability
-     * Zones.
-     * </p>
-     * <p>
-     * For information about available instance types, see <a
+     * The instance type, such as <code>m3.xlarge</code>. You must use an instance type that is supported in your
+     * requested Region and Availability Zones. For information about available instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
+     * instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      * </p>
      * 
      * @param instanceType
-     *        The instance type. You must use an instance type that is supported in your requested Region and
-     *        Availability Zones. </p>
-     *        <p>
-     *        For information about available instance types, see <a
+     *        The instance type, such as <code>m3.xlarge</code>. You must use an instance type that is supported in your
+     *        requested Region and Availability Zones. For information about available instance types, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
-     *        >Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
+     *        >Available instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      */
 
     public void setInstanceType(String instanceType) {
@@ -85,21 +76,16 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type. You must use an instance type that is supported in your requested Region and Availability
-     * Zones.
-     * </p>
-     * <p>
-     * For information about available instance types, see <a
+     * The instance type, such as <code>m3.xlarge</code>. You must use an instance type that is supported in your
+     * requested Region and Availability Zones. For information about available instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
+     * instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      * </p>
      * 
-     * @return The instance type. You must use an instance type that is supported in your requested Region and
-     *         Availability Zones. </p>
-     *         <p>
-     *         For information about available instance types, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
-     *         >Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
+     * @return The instance type, such as <code>m3.xlarge</code>. You must use an instance type that is supported in
+     *         your requested Region and Availability Zones. For information about available instance types, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">
+     *         Available instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      */
 
     public String getInstanceType() {
@@ -108,22 +94,17 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type. You must use an instance type that is supported in your requested Region and Availability
-     * Zones.
-     * </p>
-     * <p>
-     * For information about available instance types, see <a
+     * The instance type, such as <code>m3.xlarge</code>. You must use an instance type that is supported in your
+     * requested Region and Availability Zones. For information about available instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
+     * instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      * </p>
      * 
      * @param instanceType
-     *        The instance type. You must use an instance type that is supported in your requested Region and
-     *        Availability Zones. </p>
-     *        <p>
-     *        For information about available instance types, see <a
+     *        The instance type, such as <code>m3.xlarge</code>. You must use an instance type that is supported in your
+     *        requested Region and Availability Zones. For information about available instance types, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
-     *        >Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
+     *        >Available instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,30 +115,29 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of capacity units, which gives the instance type a proportional weight to other instance types. For
-     * example, larger instance types are generally weighted more than smaller instance types. These are the same units
-     * that you chose to set the desired capacity in terms of instances, or a performance attribute such as vCPUs,
-     * memory, or I/O.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance Weighting for
-     * Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * The number of capacity units provided by the specified instance type in terms of virtual CPUs, memory, storage,
+     * throughput, or other relative performance characteristic. When a Spot or On-Demand Instance is provisioned, the
+     * capacity units count toward the desired capacity. Amazon EC2 Auto Scaling provisions instances until the desired
+     * capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to
+     * fulfill capacity, and Amazon EC2 Auto Scaling can only provision an instance with a <code>WeightedCapacity</code>
+     * of 5 units, the instance is provisioned, and the desired capacity is exceeded by 3 units. For more information,
+     * see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
+     * weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * Valid Range: Minimum value of 1. Maximum value of 999.
      * </p>
      * 
      * @param weightedCapacity
-     *        The number of capacity units, which gives the instance type a proportional weight to other instance types.
-     *        For example, larger instance types are generally weighted more than smaller instance types. These are the
-     *        same units that you chose to set the desired capacity in terms of instances, or a performance attribute
-     *        such as vCPUs, memory, or I/O.</p>
-     *        <p>
-     *        For more information, see <a
+     *        The number of capacity units provided by the specified instance type in terms of virtual CPUs, memory,
+     *        storage, throughput, or other relative performance characteristic. When a Spot or On-Demand Instance is
+     *        provisioned, the capacity units count toward the desired capacity. Amazon EC2 Auto Scaling provisions
+     *        instances until the desired capacity is totally fulfilled, even if this results in an overage. For
+     *        example, if there are 2 units remaining to fulfill capacity, and Amazon EC2 Auto Scaling can only
+     *        provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and
+     *        the desired capacity is exceeded by 3 units. For more information, see <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
-     *        Weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
-     *        </p>
+     *        weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
      *        <p>
      *        Valid Range: Minimum value of 1. Maximum value of 999.
      */
@@ -168,29 +148,28 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of capacity units, which gives the instance type a proportional weight to other instance types. For
-     * example, larger instance types are generally weighted more than smaller instance types. These are the same units
-     * that you chose to set the desired capacity in terms of instances, or a performance attribute such as vCPUs,
-     * memory, or I/O.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance Weighting for
-     * Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * The number of capacity units provided by the specified instance type in terms of virtual CPUs, memory, storage,
+     * throughput, or other relative performance characteristic. When a Spot or On-Demand Instance is provisioned, the
+     * capacity units count toward the desired capacity. Amazon EC2 Auto Scaling provisions instances until the desired
+     * capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to
+     * fulfill capacity, and Amazon EC2 Auto Scaling can only provision an instance with a <code>WeightedCapacity</code>
+     * of 5 units, the instance is provisioned, and the desired capacity is exceeded by 3 units. For more information,
+     * see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
+     * weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * Valid Range: Minimum value of 1. Maximum value of 999.
      * </p>
      * 
-     * @return The number of capacity units, which gives the instance type a proportional weight to other instance
-     *         types. For example, larger instance types are generally weighted more than smaller instance types. These
-     *         are the same units that you chose to set the desired capacity in terms of instances, or a performance
-     *         attribute such as vCPUs, memory, or I/O.</p>
-     *         <p>
-     *         For more information, see <a
+     * @return The number of capacity units provided by the specified instance type in terms of virtual CPUs, memory,
+     *         storage, throughput, or other relative performance characteristic. When a Spot or On-Demand Instance is
+     *         provisioned, the capacity units count toward the desired capacity. Amazon EC2 Auto Scaling provisions
+     *         instances until the desired capacity is totally fulfilled, even if this results in an overage. For
+     *         example, if there are 2 units remaining to fulfill capacity, and Amazon EC2 Auto Scaling can only
+     *         provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and
+     *         the desired capacity is exceeded by 3 units. For more information, see <a
      *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
-     *         Weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
-     *         </p>
+     *         weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
      *         <p>
      *         Valid Range: Minimum value of 1. Maximum value of 999.
      */
@@ -201,30 +180,29 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of capacity units, which gives the instance type a proportional weight to other instance types. For
-     * example, larger instance types are generally weighted more than smaller instance types. These are the same units
-     * that you chose to set the desired capacity in terms of instances, or a performance attribute such as vCPUs,
-     * memory, or I/O.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance Weighting for
-     * Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * The number of capacity units provided by the specified instance type in terms of virtual CPUs, memory, storage,
+     * throughput, or other relative performance characteristic. When a Spot or On-Demand Instance is provisioned, the
+     * capacity units count toward the desired capacity. Amazon EC2 Auto Scaling provisions instances until the desired
+     * capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to
+     * fulfill capacity, and Amazon EC2 Auto Scaling can only provision an instance with a <code>WeightedCapacity</code>
+     * of 5 units, the instance is provisioned, and the desired capacity is exceeded by 3 units. For more information,
+     * see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
+     * weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * Valid Range: Minimum value of 1. Maximum value of 999.
      * </p>
      * 
      * @param weightedCapacity
-     *        The number of capacity units, which gives the instance type a proportional weight to other instance types.
-     *        For example, larger instance types are generally weighted more than smaller instance types. These are the
-     *        same units that you chose to set the desired capacity in terms of instances, or a performance attribute
-     *        such as vCPUs, memory, or I/O.</p>
-     *        <p>
-     *        For more information, see <a
+     *        The number of capacity units provided by the specified instance type in terms of virtual CPUs, memory,
+     *        storage, throughput, or other relative performance characteristic. When a Spot or On-Demand Instance is
+     *        provisioned, the capacity units count toward the desired capacity. Amazon EC2 Auto Scaling provisions
+     *        instances until the desired capacity is totally fulfilled, even if this results in an overage. For
+     *        example, if there are 2 units remaining to fulfill capacity, and Amazon EC2 Auto Scaling can only
+     *        provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and
+     *        the desired capacity is exceeded by 3 units. For more information, see <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
-     *        Weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
-     *        </p>
+     *        weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
      *        <p>
      *        Valid Range: Minimum value of 1. Maximum value of 999.
      * @return Returns a reference to this object so that method calls can be chained together.

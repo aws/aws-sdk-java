@@ -27,8 +27,8 @@ public class DescribeAutoScalingGroupsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The names of the Auto Scaling groups. Each name can be a maximum of 1600 characters. By default, you can only
-     * specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code> parameter.
+     * The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally
+     * increase this limit using the <code>MaxRecords</code> parameter.
      * </p>
      * <p>
      * If you omit this parameter, all Auto Scaling groups are described.
@@ -51,16 +51,15 @@ public class DescribeAutoScalingGroupsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The names of the Auto Scaling groups. Each name can be a maximum of 1600 characters. By default, you can only
-     * specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code> parameter.
+     * The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally
+     * increase this limit using the <code>MaxRecords</code> parameter.
      * </p>
      * <p>
      * If you omit this parameter, all Auto Scaling groups are described.
      * </p>
      * 
-     * @return The names of the Auto Scaling groups. Each name can be a maximum of 1600 characters. By default, you can
-     *         only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code>
-     *         parameter.</p>
+     * @return The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally
+     *         increase this limit using the <code>MaxRecords</code> parameter.</p>
      *         <p>
      *         If you omit this parameter, all Auto Scaling groups are described.
      */
@@ -74,17 +73,16 @@ public class DescribeAutoScalingGroupsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The names of the Auto Scaling groups. Each name can be a maximum of 1600 characters. By default, you can only
-     * specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code> parameter.
+     * The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally
+     * increase this limit using the <code>MaxRecords</code> parameter.
      * </p>
      * <p>
      * If you omit this parameter, all Auto Scaling groups are described.
      * </p>
      * 
      * @param autoScalingGroupNames
-     *        The names of the Auto Scaling groups. Each name can be a maximum of 1600 characters. By default, you can
-     *        only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code>
-     *        parameter.</p>
+     *        The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally
+     *        increase this limit using the <code>MaxRecords</code> parameter.</p>
      *        <p>
      *        If you omit this parameter, all Auto Scaling groups are described.
      */
@@ -100,8 +98,8 @@ public class DescribeAutoScalingGroupsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The names of the Auto Scaling groups. Each name can be a maximum of 1600 characters. By default, you can only
-     * specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code> parameter.
+     * The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally
+     * increase this limit using the <code>MaxRecords</code> parameter.
      * </p>
      * <p>
      * If you omit this parameter, all Auto Scaling groups are described.
@@ -113,9 +111,8 @@ public class DescribeAutoScalingGroupsRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param autoScalingGroupNames
-     *        The names of the Auto Scaling groups. Each name can be a maximum of 1600 characters. By default, you can
-     *        only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code>
-     *        parameter.</p>
+     *        The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally
+     *        increase this limit using the <code>MaxRecords</code> parameter.</p>
      *        <p>
      *        If you omit this parameter, all Auto Scaling groups are described.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -133,17 +130,16 @@ public class DescribeAutoScalingGroupsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The names of the Auto Scaling groups. Each name can be a maximum of 1600 characters. By default, you can only
-     * specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code> parameter.
+     * The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally
+     * increase this limit using the <code>MaxRecords</code> parameter.
      * </p>
      * <p>
      * If you omit this parameter, all Auto Scaling groups are described.
      * </p>
      * 
      * @param autoScalingGroupNames
-     *        The names of the Auto Scaling groups. Each name can be a maximum of 1600 characters. By default, you can
-     *        only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code>
-     *        parameter.</p>
+     *        The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally
+     *        increase this limit using the <code>MaxRecords</code> parameter.</p>
      *        <p>
      *        If you omit this parameter, all Auto Scaling groups are described.
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -52,6 +52,9 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * [Network Load Balancers] You can specify subnets from one or more Availability Zones.
      * </p>
+     * <p>
+     * [Gateway Load Balancers] You can specify subnets from one or more Availability Zones.
+     * </p>
      */
     private java.util.List<String> subnets;
     /**
@@ -74,6 +77,10 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load
      * balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet.
      * </p>
+     * <p>
+     * [Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify Elastic
+     * IP addresses for your subnets.
+     * </p>
      */
     private java.util.List<SubnetMapping> subnetMappings;
     /**
@@ -95,6 +102,9 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * The default is an Internet-facing load balancer.
+     * </p>
+     * <p>
+     * You cannot specify a scheme for a Gateway Load Balancer.
      * </p>
      */
     private String scheme;
@@ -206,6 +216,9 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * [Network Load Balancers] You can specify subnets from one or more Availability Zones.
      * </p>
+     * <p>
+     * [Gateway Load Balancers] You can specify subnets from one or more Availability Zones.
+     * </p>
      * 
      * @return The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify
      *         either subnets or subnet mappings.</p>
@@ -220,6 +233,9 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *         </p>
      *         <p>
      *         [Network Load Balancers] You can specify subnets from one or more Availability Zones.
+     *         </p>
+     *         <p>
+     *         [Gateway Load Balancers] You can specify subnets from one or more Availability Zones.
      */
 
     public java.util.List<String> getSubnets() {
@@ -243,6 +259,9 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * [Network Load Balancers] You can specify subnets from one or more Availability Zones.
      * </p>
+     * <p>
+     * [Gateway Load Balancers] You can specify subnets from one or more Availability Zones.
+     * </p>
      * 
      * @param subnets
      *        The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify
@@ -258,6 +277,9 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        <p>
      *        [Network Load Balancers] You can specify subnets from one or more Availability Zones.
+     *        </p>
+     *        <p>
+     *        [Gateway Load Balancers] You can specify subnets from one or more Availability Zones.
      */
 
     public void setSubnets(java.util.Collection<String> subnets) {
@@ -287,6 +309,9 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * [Network Load Balancers] You can specify subnets from one or more Availability Zones.
      * </p>
      * <p>
+     * [Gateway Load Balancers] You can specify subnets from one or more Availability Zones.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSubnets(java.util.Collection)} or {@link #withSubnets(java.util.Collection)} if you want to override
      * the existing values.
@@ -306,6 +331,9 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        <p>
      *        [Network Load Balancers] You can specify subnets from one or more Availability Zones.
+     *        </p>
+     *        <p>
+     *        [Gateway Load Balancers] You can specify subnets from one or more Availability Zones.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -336,6 +364,9 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * [Network Load Balancers] You can specify subnets from one or more Availability Zones.
      * </p>
+     * <p>
+     * [Gateway Load Balancers] You can specify subnets from one or more Availability Zones.
+     * </p>
      * 
      * @param subnets
      *        The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify
@@ -351,6 +382,9 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        <p>
      *        [Network Load Balancers] You can specify subnets from one or more Availability Zones.
+     *        </p>
+     *        <p>
+     *        [Gateway Load Balancers] You can specify subnets from one or more Availability Zones.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -379,6 +413,10 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load
      * balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet.
      * </p>
+     * <p>
+     * [Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify Elastic
+     * IP addresses for your subnets.
+     * </p>
      * 
      * @return The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify
      *         either subnets or subnet mappings.</p>
@@ -397,6 +435,10 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *         Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For
      *         internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the
      *         subnet.
+     *         </p>
+     *         <p>
+     *         [Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify
+     *         Elastic IP addresses for your subnets.
      */
 
     public java.util.List<SubnetMapping> getSubnetMappings() {
@@ -423,6 +465,10 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load
      * balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet.
      * </p>
+     * <p>
+     * [Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify Elastic
+     * IP addresses for your subnets.
+     * </p>
      * 
      * @param subnetMappings
      *        The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify
@@ -442,6 +488,10 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For
      *        internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the
      *        subnet.
+     *        </p>
+     *        <p>
+     *        [Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify
+     *        Elastic IP addresses for your subnets.
      */
 
     public void setSubnetMappings(java.util.Collection<SubnetMapping> subnetMappings) {
@@ -474,6 +524,10 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet.
      * </p>
      * <p>
+     * [Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify Elastic
+     * IP addresses for your subnets.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSubnetMappings(java.util.Collection)} or {@link #withSubnetMappings(java.util.Collection)} if you want
      * to override the existing values.
@@ -497,6 +551,10 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For
      *        internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the
      *        subnet.
+     *        </p>
+     *        <p>
+     *        [Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify
+     *        Elastic IP addresses for your subnets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -530,6 +588,10 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load
      * balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet.
      * </p>
+     * <p>
+     * [Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify Elastic
+     * IP addresses for your subnets.
+     * </p>
      * 
      * @param subnetMappings
      *        The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify
@@ -549,6 +611,10 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For
      *        internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the
      *        subnet.
+     *        </p>
+     *        <p>
+     *        [Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify
+     *        Elastic IP addresses for your subnets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -641,6 +707,9 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The default is an Internet-facing load balancer.
      * </p>
+     * <p>
+     * You cannot specify a scheme for a Gateway Load Balancer.
+     * </p>
      * 
      * @param scheme
      *        The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing
@@ -653,6 +722,9 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        <p>
      *        The default is an Internet-facing load balancer.
+     *        </p>
+     *        <p>
+     *        You cannot specify a scheme for a Gateway Load Balancer.
      * @see LoadBalancerSchemeEnum
      */
 
@@ -674,6 +746,9 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The default is an Internet-facing load balancer.
      * </p>
+     * <p>
+     * You cannot specify a scheme for a Gateway Load Balancer.
+     * </p>
      * 
      * @return The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an
      *         Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore,
@@ -685,6 +760,9 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *         </p>
      *         <p>
      *         The default is an Internet-facing load balancer.
+     *         </p>
+     *         <p>
+     *         You cannot specify a scheme for a Gateway Load Balancer.
      * @see LoadBalancerSchemeEnum
      */
 
@@ -706,6 +784,9 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The default is an Internet-facing load balancer.
      * </p>
+     * <p>
+     * You cannot specify a scheme for a Gateway Load Balancer.
+     * </p>
      * 
      * @param scheme
      *        The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing
@@ -718,6 +799,9 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        <p>
      *        The default is an Internet-facing load balancer.
+     *        </p>
+     *        <p>
+     *        You cannot specify a scheme for a Gateway Load Balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoadBalancerSchemeEnum
      */
@@ -741,6 +825,9 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The default is an Internet-facing load balancer.
      * </p>
+     * <p>
+     * You cannot specify a scheme for a Gateway Load Balancer.
+     * </p>
      * 
      * @param scheme
      *        The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing
@@ -753,6 +840,9 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        <p>
      *        The default is an Internet-facing load balancer.
+     *        </p>
+     *        <p>
+     *        You cannot specify a scheme for a Gateway Load Balancer.
      * @see LoadBalancerSchemeEnum
      */
 
@@ -774,6 +864,9 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The default is an Internet-facing load balancer.
      * </p>
+     * <p>
+     * You cannot specify a scheme for a Gateway Load Balancer.
+     * </p>
      * 
      * @param scheme
      *        The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing
@@ -786,6 +879,9 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        <p>
      *        The default is an Internet-facing load balancer.
+     *        </p>
+     *        <p>
+     *        You cannot specify a scheme for a Gateway Load Balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoadBalancerSchemeEnum
      */

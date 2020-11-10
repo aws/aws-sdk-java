@@ -34,8 +34,8 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported for
-     * health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The TLS, UDP, and TCP_UDP
-     * protocols are not supported for health checks.
+     * health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and
+     * TCP_UDP protocols are not supported for health checks.
      * </p>
      * <p>
      * With Network Load Balancers, you can't modify this setting.
@@ -69,8 +69,8 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     private Boolean healthCheckEnabled;
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an individual target. For HTTP and HTTPS
-     * health checks, the range is 5 to 300 seconds. For TPC health checks, the supported values are 10 or 30 seconds.
+     * The approximate amount of time, in seconds, between health checks of an individual target. For TCP health checks,
+     * the supported values are 10 or 30 seconds.
      * </p>
      * <p>
      * With Network Load Balancers, you can't modify this setting.
@@ -152,8 +152,8 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported for
-     * health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The TLS, UDP, and TCP_UDP
-     * protocols are not supported for health checks.
+     * health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and
+     * TCP_UDP protocols are not supported for health checks.
      * </p>
      * <p>
      * With Network Load Balancers, you can't modify this setting.
@@ -162,7 +162,7 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * @param healthCheckProtocol
      *        The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
      *        supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The
-     *        TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
+     *        GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
      *        <p>
      *        With Network Load Balancers, you can't modify this setting.
      * @see ProtocolEnum
@@ -175,8 +175,8 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported for
-     * health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The TLS, UDP, and TCP_UDP
-     * protocols are not supported for health checks.
+     * health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and
+     * TCP_UDP protocols are not supported for health checks.
      * </p>
      * <p>
      * With Network Load Balancers, you can't modify this setting.
@@ -184,7 +184,7 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @return The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
      *         supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The
-     *         TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
+     *         GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
      *         <p>
      *         With Network Load Balancers, you can't modify this setting.
      * @see ProtocolEnum
@@ -197,8 +197,8 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported for
-     * health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The TLS, UDP, and TCP_UDP
-     * protocols are not supported for health checks.
+     * health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and
+     * TCP_UDP protocols are not supported for health checks.
      * </p>
      * <p>
      * With Network Load Balancers, you can't modify this setting.
@@ -207,7 +207,7 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * @param healthCheckProtocol
      *        The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
      *        supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The
-     *        TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
+     *        GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
      *        <p>
      *        With Network Load Balancers, you can't modify this setting.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -222,8 +222,8 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported for
-     * health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The TLS, UDP, and TCP_UDP
-     * protocols are not supported for health checks.
+     * health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and
+     * TCP_UDP protocols are not supported for health checks.
      * </p>
      * <p>
      * With Network Load Balancers, you can't modify this setting.
@@ -232,7 +232,7 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * @param healthCheckProtocol
      *        The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
      *        supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The
-     *        TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
+     *        GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
      *        <p>
      *        With Network Load Balancers, you can't modify this setting.
      * @see ProtocolEnum
@@ -245,8 +245,8 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported for
-     * health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The TLS, UDP, and TCP_UDP
-     * protocols are not supported for health checks.
+     * health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and
+     * TCP_UDP protocols are not supported for health checks.
      * </p>
      * <p>
      * With Network Load Balancers, you can't modify this setting.
@@ -255,7 +255,7 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * @param healthCheckProtocol
      *        The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
      *        supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The
-     *        TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
+     *        GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
      *        <p>
      *        With Network Load Balancers, you can't modify this setting.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -440,17 +440,16 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an individual target. For HTTP and HTTPS
-     * health checks, the range is 5 to 300 seconds. For TPC health checks, the supported values are 10 or 30 seconds.
+     * The approximate amount of time, in seconds, between health checks of an individual target. For TCP health checks,
+     * the supported values are 10 or 30 seconds.
      * </p>
      * <p>
      * With Network Load Balancers, you can't modify this setting.
      * </p>
      * 
      * @param healthCheckIntervalSeconds
-     *        The approximate amount of time, in seconds, between health checks of an individual target. For HTTP and
-     *        HTTPS health checks, the range is 5 to 300 seconds. For TPC health checks, the supported values are 10 or
-     *        30 seconds.</p>
+     *        The approximate amount of time, in seconds, between health checks of an individual target. For TCP health
+     *        checks, the supported values are 10 or 30 seconds.</p>
      *        <p>
      *        With Network Load Balancers, you can't modify this setting.
      */
@@ -461,16 +460,15 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an individual target. For HTTP and HTTPS
-     * health checks, the range is 5 to 300 seconds. For TPC health checks, the supported values are 10 or 30 seconds.
+     * The approximate amount of time, in seconds, between health checks of an individual target. For TCP health checks,
+     * the supported values are 10 or 30 seconds.
      * </p>
      * <p>
      * With Network Load Balancers, you can't modify this setting.
      * </p>
      * 
-     * @return The approximate amount of time, in seconds, between health checks of an individual target. For HTTP and
-     *         HTTPS health checks, the range is 5 to 300 seconds. For TPC health checks, the supported values are 10 or
-     *         30 seconds.</p>
+     * @return The approximate amount of time, in seconds, between health checks of an individual target. For TCP health
+     *         checks, the supported values are 10 or 30 seconds.</p>
      *         <p>
      *         With Network Load Balancers, you can't modify this setting.
      */
@@ -481,17 +479,16 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an individual target. For HTTP and HTTPS
-     * health checks, the range is 5 to 300 seconds. For TPC health checks, the supported values are 10 or 30 seconds.
+     * The approximate amount of time, in seconds, between health checks of an individual target. For TCP health checks,
+     * the supported values are 10 or 30 seconds.
      * </p>
      * <p>
      * With Network Load Balancers, you can't modify this setting.
      * </p>
      * 
      * @param healthCheckIntervalSeconds
-     *        The approximate amount of time, in seconds, between health checks of an individual target. For HTTP and
-     *        HTTPS health checks, the range is 5 to 300 seconds. For TPC health checks, the supported values are 10 or
-     *        30 seconds.</p>
+     *        The approximate amount of time, in seconds, between health checks of an individual target. For TCP health
+     *        checks, the supported values are 10 or 30 seconds.</p>
      *        <p>
      *        With Network Load Balancers, you can't modify this setting.
      * @return Returns a reference to this object so that method calls can be chained together.

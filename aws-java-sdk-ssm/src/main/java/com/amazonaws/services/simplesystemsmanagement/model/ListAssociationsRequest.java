@@ -29,6 +29,13 @@ public class ListAssociationsRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * One or more filters. Use a filter to return a more specific list of results.
      * </p>
+     * <note>
+     * <p>
+     * Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using
+     * the <code>InstanceID</code> attribute. Associations targeting the instance that are part of the Target Attributes
+     * <code>ResourceGroup</code> or <code>Tags</code> are not returned.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<AssociationFilter> associationFilterList;
     /**
@@ -49,8 +56,20 @@ public class ListAssociationsRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * One or more filters. Use a filter to return a more specific list of results.
      * </p>
+     * <note>
+     * <p>
+     * Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using
+     * the <code>InstanceID</code> attribute. Associations targeting the instance that are part of the Target Attributes
+     * <code>ResourceGroup</code> or <code>Tags</code> are not returned.
+     * </p>
+     * </note>
      * 
-     * @return One or more filters. Use a filter to return a more specific list of results.
+     * @return One or more filters. Use a filter to return a more specific list of results.</p> <note>
+     *         <p>
+     *         Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations
+     *         created using the <code>InstanceID</code> attribute. Associations targeting the instance that are part of
+     *         the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> are not returned.
+     *         </p>
      */
 
     public java.util.List<AssociationFilter> getAssociationFilterList() {
@@ -64,9 +83,21 @@ public class ListAssociationsRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * One or more filters. Use a filter to return a more specific list of results.
      * </p>
+     * <note>
+     * <p>
+     * Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using
+     * the <code>InstanceID</code> attribute. Associations targeting the instance that are part of the Target Attributes
+     * <code>ResourceGroup</code> or <code>Tags</code> are not returned.
+     * </p>
+     * </note>
      * 
      * @param associationFilterList
-     *        One or more filters. Use a filter to return a more specific list of results.
+     *        One or more filters. Use a filter to return a more specific list of results.</p> <note>
+     *        <p>
+     *        Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations
+     *        created using the <code>InstanceID</code> attribute. Associations targeting the instance that are part of
+     *        the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> are not returned.
+     *        </p>
      */
 
     public void setAssociationFilterList(java.util.Collection<AssociationFilter> associationFilterList) {
@@ -82,6 +113,13 @@ public class ListAssociationsRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * One or more filters. Use a filter to return a more specific list of results.
      * </p>
+     * <note>
+     * <p>
+     * Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using
+     * the <code>InstanceID</code> attribute. Associations targeting the instance that are part of the Target Attributes
+     * <code>ResourceGroup</code> or <code>Tags</code> are not returned.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAssociationFilterList(java.util.Collection)} or
@@ -89,7 +127,12 @@ public class ListAssociationsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param associationFilterList
-     *        One or more filters. Use a filter to return a more specific list of results.
+     *        One or more filters. Use a filter to return a more specific list of results.</p> <note>
+     *        <p>
+     *        Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations
+     *        created using the <code>InstanceID</code> attribute. Associations targeting the instance that are part of
+     *        the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> are not returned.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,9 +150,21 @@ public class ListAssociationsRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * One or more filters. Use a filter to return a more specific list of results.
      * </p>
+     * <note>
+     * <p>
+     * Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using
+     * the <code>InstanceID</code> attribute. Associations targeting the instance that are part of the Target Attributes
+     * <code>ResourceGroup</code> or <code>Tags</code> are not returned.
+     * </p>
+     * </note>
      * 
      * @param associationFilterList
-     *        One or more filters. Use a filter to return a more specific list of results.
+     *        One or more filters. Use a filter to return a more specific list of results.</p> <note>
+     *        <p>
+     *        Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations
+     *        created using the <code>InstanceID</code> attribute. Associations targeting the instance that are part of
+     *        the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> are not returned.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
