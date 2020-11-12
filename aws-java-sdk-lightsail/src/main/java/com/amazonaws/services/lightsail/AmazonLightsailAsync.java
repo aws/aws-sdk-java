@@ -27,10 +27,10 @@ import com.amazonaws.services.lightsail.model.*;
  * <p>
  * <p>
  * Amazon Lightsail is the easiest way to get started with Amazon Web Services (AWS) for developers who need to build
- * websites or web applications. It includes everything you need to launch your project quickly – instances (virtual
- * private servers), managed databases, SSD-based block storage, static IP addresses, load balancers, content delivery
- * network (CDN) distributions, DNS management of registered domains, and snapshots (backups) – for a low, predictable
- * monthly price.
+ * websites or web applications. It includes everything you need to launch your project quickly - instances (virtual
+ * private servers), container services, managed databases, SSD-based block storage, static IP addresses, load
+ * balancers, content delivery network (CDN) distributions, DNS management of registered domains, and resource snapshots
+ * (backups) - for a low, predictable monthly price.
  * </p>
  * <p>
  * You can manage your Lightsail resources using the Lightsail console, Lightsail API, AWS Command Line Interface (AWS
@@ -40,7 +40,7 @@ import com.amazonaws.services.lightsail.model.*;
  * </p>
  * <p>
  * This API Reference provides detailed information about the actions, data types, parameters, and errors of the
- * Lightsail service. For more information about the supported AWS Regions, endpoints, and service quotas for the
+ * Lightsail service. For more information about the supported AWS Regions, endpoints, and service quotas of the
  * Lightsail service, see <a href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail
  * Endpoints and Quotas</a> in the <i>AWS General Reference</i>.
  * </p>
@@ -579,6 +579,189 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
+     * Creates an Amazon Lightsail container service.
+     * </p>
+     * <p>
+     * A Lightsail container service is a compute resource to which you can deploy containers. For more information, see
+     * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-containers">Container services
+     * in Amazon Lightsail</a> in the <i>Lightsail Dev Guide</i>.
+     * </p>
+     * 
+     * @param createContainerServiceRequest
+     * @return A Java Future containing the result of the CreateContainerService operation returned by the service.
+     * @sample AmazonLightsailAsync.CreateContainerService
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContainerService"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateContainerServiceResult> createContainerServiceAsync(CreateContainerServiceRequest createContainerServiceRequest);
+
+    /**
+     * <p>
+     * Creates an Amazon Lightsail container service.
+     * </p>
+     * <p>
+     * A Lightsail container service is a compute resource to which you can deploy containers. For more information, see
+     * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-containers">Container services
+     * in Amazon Lightsail</a> in the <i>Lightsail Dev Guide</i>.
+     * </p>
+     * 
+     * @param createContainerServiceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateContainerService operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.CreateContainerService
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContainerService"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateContainerServiceResult> createContainerServiceAsync(CreateContainerServiceRequest createContainerServiceRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateContainerServiceRequest, CreateContainerServiceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a deployment for your Amazon Lightsail container service.
+     * </p>
+     * <p>
+     * A deployment specifies the containers that will be launched on the container service and their settings, such as
+     * the ports to open, the environment variables to apply, and the launch command to run. It also specifies the
+     * container that will serve as the public endpoint of the deployment and its settings, such as the HTTP or HTTPS
+     * port to use, and the health check configuration.
+     * </p>
+     * <p>
+     * You can deploy containers to your container service using container images from a public registry like Docker
+     * Hub, or from your local machine. For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-container-images"
+     * >Creating container images for your Amazon Lightsail container services</a> in the <i>Lightsail Dev Guide</i>.
+     * </p>
+     * 
+     * @param createContainerServiceDeploymentRequest
+     * @return A Java Future containing the result of the CreateContainerServiceDeployment operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.CreateContainerServiceDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContainerServiceDeployment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateContainerServiceDeploymentResult> createContainerServiceDeploymentAsync(
+            CreateContainerServiceDeploymentRequest createContainerServiceDeploymentRequest);
+
+    /**
+     * <p>
+     * Creates a deployment for your Amazon Lightsail container service.
+     * </p>
+     * <p>
+     * A deployment specifies the containers that will be launched on the container service and their settings, such as
+     * the ports to open, the environment variables to apply, and the launch command to run. It also specifies the
+     * container that will serve as the public endpoint of the deployment and its settings, such as the HTTP or HTTPS
+     * port to use, and the health check configuration.
+     * </p>
+     * <p>
+     * You can deploy containers to your container service using container images from a public registry like Docker
+     * Hub, or from your local machine. For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-container-images"
+     * >Creating container images for your Amazon Lightsail container services</a> in the <i>Lightsail Dev Guide</i>.
+     * </p>
+     * 
+     * @param createContainerServiceDeploymentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateContainerServiceDeployment operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.CreateContainerServiceDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContainerServiceDeployment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateContainerServiceDeploymentResult> createContainerServiceDeploymentAsync(
+            CreateContainerServiceDeploymentRequest createContainerServiceDeploymentRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateContainerServiceDeploymentRequest, CreateContainerServiceDeploymentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a temporary set of log in credentials that you can use to log in to the Docker process on your local
+     * machine. After you're logged in, you can use the native Docker commands to push your local container images to
+     * the container image registry of your Amazon Lightsail account so that you can use them with your Lightsail
+     * container service. The log in credentials expire 12 hours after they are created, at which point you will need to
+     * create a new set of log in credentials.
+     * </p>
+     * <note>
+     * <p>
+     * You can only push container images to the container service registry of your Lightsail account. You cannot pull
+     * container images perform any other container image management actions on the container service registry of your
+     * Lightsail account.
+     * </p>
+     * </note>
+     * <p>
+     * After you push your container images to the container image registry of your Lightsail account, use the
+     * <code>RegisterContainerImage</code> action to register the pushed images to a specific Lightsail container
+     * service.
+     * </p>
+     * <note>
+     * <p>
+     * This action is not required if you install and use the Lightsail Control (lightsailctl) plugin to push container
+     * images to your Lightsail container service. For more information, see <a
+     * href="amazon-lightsail-pushing-container-images">Pushing and managing container images on your Amazon Lightsail
+     * container services</a> in the <i>Lightsail Dev Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param createContainerServiceRegistryLoginRequest
+     * @return A Java Future containing the result of the CreateContainerServiceRegistryLogin operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.CreateContainerServiceRegistryLogin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContainerServiceRegistryLogin"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateContainerServiceRegistryLoginResult> createContainerServiceRegistryLoginAsync(
+            CreateContainerServiceRegistryLoginRequest createContainerServiceRegistryLoginRequest);
+
+    /**
+     * <p>
+     * Creates a temporary set of log in credentials that you can use to log in to the Docker process on your local
+     * machine. After you're logged in, you can use the native Docker commands to push your local container images to
+     * the container image registry of your Amazon Lightsail account so that you can use them with your Lightsail
+     * container service. The log in credentials expire 12 hours after they are created, at which point you will need to
+     * create a new set of log in credentials.
+     * </p>
+     * <note>
+     * <p>
+     * You can only push container images to the container service registry of your Lightsail account. You cannot pull
+     * container images perform any other container image management actions on the container service registry of your
+     * Lightsail account.
+     * </p>
+     * </note>
+     * <p>
+     * After you push your container images to the container image registry of your Lightsail account, use the
+     * <code>RegisterContainerImage</code> action to register the pushed images to a specific Lightsail container
+     * service.
+     * </p>
+     * <note>
+     * <p>
+     * This action is not required if you install and use the Lightsail Control (lightsailctl) plugin to push container
+     * images to your Lightsail container service. For more information, see <a
+     * href="amazon-lightsail-pushing-container-images">Pushing and managing container images on your Amazon Lightsail
+     * container services</a> in the <i>Lightsail Dev Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param createContainerServiceRegistryLoginRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateContainerServiceRegistryLogin operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.CreateContainerServiceRegistryLogin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContainerServiceRegistryLogin"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateContainerServiceRegistryLoginResult> createContainerServiceRegistryLoginAsync(
+            CreateContainerServiceRegistryLoginRequest createContainerServiceRegistryLoginRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateContainerServiceRegistryLoginRequest, CreateContainerServiceRegistryLoginResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a block storage disk that can be attached to an Amazon Lightsail instance in the same Availability Zone
      * (e.g., <code>us-east-2a</code>).
      * </p>
@@ -754,9 +937,9 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * </p>
      * <p>
      * A distribution is a globally distributed network of caching servers that improve the performance of your website
-     * or web application hosted on a Lightsail instance. For more information, see <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-content-delivery-networks">Content
-     * delivery networks in Amazon Lightsail</a>.
+     * or web application hosted on a Lightsail instance. For more information, see <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-content-delivery-network-distributions"
+     * >Content delivery networks in Amazon Lightsail</a>.
      * </p>
      * 
      * @param createDistributionRequest
@@ -773,9 +956,9 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * </p>
      * <p>
      * A distribution is a globally distributed network of caching servers that improve the performance of your website
-     * or web application hosted on a Lightsail instance. For more information, see <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-content-delivery-networks">Content
-     * delivery networks in Amazon Lightsail</a>.
+     * or web application hosted on a Lightsail instance. For more information, see <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-content-delivery-network-distributions"
+     * >Content delivery networks in Amazon Lightsail</a>.
      * </p>
      * 
      * @param createDistributionRequest
@@ -836,8 +1019,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Creates one of the following entry records associated with the domain: Address (A), canonical name (CNAME), mail
-     * exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).
+     * Creates one of the following domain name system (DNS) records in a domain DNS zone: Address (A), canonical name
+     * (CNAME), mail exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).
      * </p>
      * <p>
      * The <code>create domain entry</code> operation supports tag-based access control via resource tags applied to the
@@ -856,8 +1039,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Creates one of the following entry records associated with the domain: Address (A), canonical name (CNAME), mail
-     * exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).
+     * Creates one of the following domain name system (DNS) records in a domain DNS zone: Address (A), canonical name
+     * (CNAME), mail exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).
      * </p>
      * <p>
      * The <code>create domain entry</code> operation supports tag-based access control via resource tags applied to the
@@ -1479,6 +1662,68 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<DeleteContactMethodResult> deleteContactMethodAsync(DeleteContactMethodRequest deleteContactMethodRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteContactMethodRequest, DeleteContactMethodResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a container image that is registered to your Amazon Lightsail container service.
+     * </p>
+     * 
+     * @param deleteContainerImageRequest
+     * @return A Java Future containing the result of the DeleteContainerImage operation returned by the service.
+     * @sample AmazonLightsailAsync.DeleteContainerImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteContainerImage" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteContainerImageResult> deleteContainerImageAsync(DeleteContainerImageRequest deleteContainerImageRequest);
+
+    /**
+     * <p>
+     * Deletes a container image that is registered to your Amazon Lightsail container service.
+     * </p>
+     * 
+     * @param deleteContainerImageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteContainerImage operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.DeleteContainerImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteContainerImage" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteContainerImageResult> deleteContainerImageAsync(DeleteContainerImageRequest deleteContainerImageRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteContainerImageRequest, DeleteContainerImageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes your Amazon Lightsail container service.
+     * </p>
+     * 
+     * @param deleteContainerServiceRequest
+     * @return A Java Future containing the result of the DeleteContainerService operation returned by the service.
+     * @sample AmazonLightsailAsync.DeleteContainerService
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteContainerService"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteContainerServiceResult> deleteContainerServiceAsync(DeleteContainerServiceRequest deleteContainerServiceRequest);
+
+    /**
+     * <p>
+     * Deletes your Amazon Lightsail container service.
+     * </p>
+     * 
+     * @param deleteContainerServiceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteContainerService operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.DeleteContainerService
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteContainerService"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteContainerServiceResult> deleteContainerServiceAsync(DeleteContainerServiceRequest deleteContainerServiceRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteContainerServiceRequest, DeleteContainerServiceResult> asyncHandler);
 
     /**
      * <p>
@@ -2746,6 +2991,315 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<GetContactMethodsResult> getContactMethodsAsync(GetContactMethodsRequest getContactMethodsRequest,
             com.amazonaws.handlers.AsyncHandler<GetContactMethodsRequest, GetContactMethodsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about Amazon Lightsail containers, such as the current version of the Lightsail Control
+     * (lightsailctl) plugin.
+     * </p>
+     * 
+     * @param getContainerAPIMetadataRequest
+     * @return A Java Future containing the result of the GetContainerAPIMetadata operation returned by the service.
+     * @sample AmazonLightsailAsync.GetContainerAPIMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerAPIMetadata"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetContainerAPIMetadataResult> getContainerAPIMetadataAsync(GetContainerAPIMetadataRequest getContainerAPIMetadataRequest);
+
+    /**
+     * <p>
+     * Returns information about Amazon Lightsail containers, such as the current version of the Lightsail Control
+     * (lightsailctl) plugin.
+     * </p>
+     * 
+     * @param getContainerAPIMetadataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetContainerAPIMetadata operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.GetContainerAPIMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerAPIMetadata"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetContainerAPIMetadataResult> getContainerAPIMetadataAsync(GetContainerAPIMetadataRequest getContainerAPIMetadataRequest,
+            com.amazonaws.handlers.AsyncHandler<GetContainerAPIMetadataRequest, GetContainerAPIMetadataResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the container images that are registered to your Amazon Lightsail container service.
+     * </p>
+     * <note>
+     * <p>
+     * If you created a deployment on your Lightsail container service that uses container images from a public registry
+     * like Docker Hub, those images are not returned as part of this action. Those images are not registered to your
+     * Lightsail container service.
+     * </p>
+     * </note>
+     * 
+     * @param getContainerImagesRequest
+     * @return A Java Future containing the result of the GetContainerImages operation returned by the service.
+     * @sample AmazonLightsailAsync.GetContainerImages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerImages" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetContainerImagesResult> getContainerImagesAsync(GetContainerImagesRequest getContainerImagesRequest);
+
+    /**
+     * <p>
+     * Returns the container images that are registered to your Amazon Lightsail container service.
+     * </p>
+     * <note>
+     * <p>
+     * If you created a deployment on your Lightsail container service that uses container images from a public registry
+     * like Docker Hub, those images are not returned as part of this action. Those images are not registered to your
+     * Lightsail container service.
+     * </p>
+     * </note>
+     * 
+     * @param getContainerImagesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetContainerImages operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.GetContainerImages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerImages" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetContainerImagesResult> getContainerImagesAsync(GetContainerImagesRequest getContainerImagesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetContainerImagesRequest, GetContainerImagesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the log events of a container of your Amazon Lightsail container service.
+     * </p>
+     * <p>
+     * If your container service has more than one node (i.e., a scale greater than 1), then the log events that are
+     * returned for the specified container are merged from all nodes on your container service.
+     * </p>
+     * <note>
+     * <p>
+     * Container logs are retained for a certain amount of time. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail endpoints and quotas</a> in
+     * the <i>AWS General Reference</i>.
+     * </p>
+     * </note>
+     * 
+     * @param getContainerLogRequest
+     * @return A Java Future containing the result of the GetContainerLog operation returned by the service.
+     * @sample AmazonLightsailAsync.GetContainerLog
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerLog" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetContainerLogResult> getContainerLogAsync(GetContainerLogRequest getContainerLogRequest);
+
+    /**
+     * <p>
+     * Returns the log events of a container of your Amazon Lightsail container service.
+     * </p>
+     * <p>
+     * If your container service has more than one node (i.e., a scale greater than 1), then the log events that are
+     * returned for the specified container are merged from all nodes on your container service.
+     * </p>
+     * <note>
+     * <p>
+     * Container logs are retained for a certain amount of time. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail endpoints and quotas</a> in
+     * the <i>AWS General Reference</i>.
+     * </p>
+     * </note>
+     * 
+     * @param getContainerLogRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetContainerLog operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.GetContainerLog
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerLog" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetContainerLogResult> getContainerLogAsync(GetContainerLogRequest getContainerLogRequest,
+            com.amazonaws.handlers.AsyncHandler<GetContainerLogRequest, GetContainerLogResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the deployments for your Amazon Lightsail container service
+     * </p>
+     * <p>
+     * A deployment specifies the settings, such as the ports and launch command, of containers that are deployed to
+     * your container service.
+     * </p>
+     * <p>
+     * The deployments are ordered by version in ascending order. The newest version is listed at the top of the
+     * response.
+     * </p>
+     * <note>
+     * <p>
+     * A set number of deployments are kept before the oldest one is replaced with the newest one. For more information,
+     * see <a href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail endpoints and
+     * quotas</a> in the <i>AWS General Reference</i>.
+     * </p>
+     * </note>
+     * 
+     * @param getContainerServiceDeploymentsRequest
+     * @return A Java Future containing the result of the GetContainerServiceDeployments operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.GetContainerServiceDeployments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerServiceDeployments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetContainerServiceDeploymentsResult> getContainerServiceDeploymentsAsync(
+            GetContainerServiceDeploymentsRequest getContainerServiceDeploymentsRequest);
+
+    /**
+     * <p>
+     * Returns the deployments for your Amazon Lightsail container service
+     * </p>
+     * <p>
+     * A deployment specifies the settings, such as the ports and launch command, of containers that are deployed to
+     * your container service.
+     * </p>
+     * <p>
+     * The deployments are ordered by version in ascending order. The newest version is listed at the top of the
+     * response.
+     * </p>
+     * <note>
+     * <p>
+     * A set number of deployments are kept before the oldest one is replaced with the newest one. For more information,
+     * see <a href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail endpoints and
+     * quotas</a> in the <i>AWS General Reference</i>.
+     * </p>
+     * </note>
+     * 
+     * @param getContainerServiceDeploymentsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetContainerServiceDeployments operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.GetContainerServiceDeployments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerServiceDeployments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetContainerServiceDeploymentsResult> getContainerServiceDeploymentsAsync(
+            GetContainerServiceDeploymentsRequest getContainerServiceDeploymentsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetContainerServiceDeploymentsRequest, GetContainerServiceDeploymentsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the data points of a specific metric of your Amazon Lightsail container service.
+     * </p>
+     * <p>
+     * Metrics report the utilization of your resources. Monitor and collect metric data regularly to maintain the
+     * reliability, availability, and performance of your resources.
+     * </p>
+     * 
+     * @param getContainerServiceMetricDataRequest
+     * @return A Java Future containing the result of the GetContainerServiceMetricData operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.GetContainerServiceMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerServiceMetricData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetContainerServiceMetricDataResult> getContainerServiceMetricDataAsync(
+            GetContainerServiceMetricDataRequest getContainerServiceMetricDataRequest);
+
+    /**
+     * <p>
+     * Returns the data points of a specific metric of your Amazon Lightsail container service.
+     * </p>
+     * <p>
+     * Metrics report the utilization of your resources. Monitor and collect metric data regularly to maintain the
+     * reliability, availability, and performance of your resources.
+     * </p>
+     * 
+     * @param getContainerServiceMetricDataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetContainerServiceMetricData operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.GetContainerServiceMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerServiceMetricData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetContainerServiceMetricDataResult> getContainerServiceMetricDataAsync(
+            GetContainerServiceMetricDataRequest getContainerServiceMetricDataRequest,
+            com.amazonaws.handlers.AsyncHandler<GetContainerServiceMetricDataRequest, GetContainerServiceMetricDataResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the list of powers that can be specified for your Amazon Lightsail container services.
+     * </p>
+     * <p>
+     * The power specifies the amount of memory, the number of vCPUs, and the base price of the container service.
+     * </p>
+     * 
+     * @param getContainerServicePowersRequest
+     * @return A Java Future containing the result of the GetContainerServicePowers operation returned by the service.
+     * @sample AmazonLightsailAsync.GetContainerServicePowers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerServicePowers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetContainerServicePowersResult> getContainerServicePowersAsync(
+            GetContainerServicePowersRequest getContainerServicePowersRequest);
+
+    /**
+     * <p>
+     * Returns the list of powers that can be specified for your Amazon Lightsail container services.
+     * </p>
+     * <p>
+     * The power specifies the amount of memory, the number of vCPUs, and the base price of the container service.
+     * </p>
+     * 
+     * @param getContainerServicePowersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetContainerServicePowers operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.GetContainerServicePowers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerServicePowers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetContainerServicePowersResult> getContainerServicePowersAsync(
+            GetContainerServicePowersRequest getContainerServicePowersRequest,
+            com.amazonaws.handlers.AsyncHandler<GetContainerServicePowersRequest, GetContainerServicePowersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about one or more of your Amazon Lightsail container services.
+     * </p>
+     * 
+     * @param getContainerServicesRequest
+     * @return A Java Future containing the result of the GetContainerServices operation returned by the service.
+     * @sample AmazonLightsailAsync.GetContainerServices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerServices" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetContainerServicesResult> getContainerServicesAsync(GetContainerServicesRequest getContainerServicesRequest);
+
+    /**
+     * <p>
+     * Returns information about one or more of your Amazon Lightsail container services.
+     * </p>
+     * 
+     * @param getContainerServicesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetContainerServices operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.GetContainerServices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerServices" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetContainerServicesResult> getContainerServicesAsync(GetContainerServicesRequest getContainerServicesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetContainerServicesRequest, GetContainerServicesResult> asyncHandler);
 
     /**
      * <p>
@@ -4598,6 +5152,53 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
+     * Registers a container image to your Amazon Lightsail container service.
+     * </p>
+     * <note>
+     * <p>
+     * This action is not required if you install and use the Lightsail Control (lightsailctl) plugin to push container
+     * images to your Lightsail container service. For more information, see <a
+     * href="amazon-lightsail-pushing-container-images">Pushing and managing container images on your Amazon Lightsail
+     * container services</a> in the <i>Lightsail Dev Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param registerContainerImageRequest
+     * @return A Java Future containing the result of the RegisterContainerImage operation returned by the service.
+     * @sample AmazonLightsailAsync.RegisterContainerImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RegisterContainerImage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RegisterContainerImageResult> registerContainerImageAsync(RegisterContainerImageRequest registerContainerImageRequest);
+
+    /**
+     * <p>
+     * Registers a container image to your Amazon Lightsail container service.
+     * </p>
+     * <note>
+     * <p>
+     * This action is not required if you install and use the Lightsail Control (lightsailctl) plugin to push container
+     * images to your Lightsail container service. For more information, see <a
+     * href="amazon-lightsail-pushing-container-images">Pushing and managing container images on your Amazon Lightsail
+     * container services</a> in the <i>Lightsail Dev Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param registerContainerImageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RegisterContainerImage operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.RegisterContainerImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RegisterContainerImage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RegisterContainerImageResult> registerContainerImageAsync(RegisterContainerImageRequest registerContainerImageRequest,
+            com.amazonaws.handlers.AsyncHandler<RegisterContainerImageRequest, RegisterContainerImageResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a specific static IP from your account.
      * </p>
      * 
@@ -5114,6 +5715,39 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the configuration of your Amazon Lightsail container service, such as its power, scale, and public domain
+     * names.
+     * </p>
+     * 
+     * @param updateContainerServiceRequest
+     * @return A Java Future containing the result of the UpdateContainerService operation returned by the service.
+     * @sample AmazonLightsailAsync.UpdateContainerService
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateContainerService"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateContainerServiceResult> updateContainerServiceAsync(UpdateContainerServiceRequest updateContainerServiceRequest);
+
+    /**
+     * <p>
+     * Updates the configuration of your Amazon Lightsail container service, such as its power, scale, and public domain
+     * names.
+     * </p>
+     * 
+     * @param updateContainerServiceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateContainerService operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.UpdateContainerService
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateContainerService"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateContainerServiceResult> updateContainerServiceAsync(UpdateContainerServiceRequest updateContainerServiceRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateContainerServiceRequest, UpdateContainerServiceResult> asyncHandler);
 
     /**
      * <p>

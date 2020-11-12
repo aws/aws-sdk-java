@@ -135,9 +135,9 @@ public class Lexicon implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getContent() != null)
-            sb.append("Content: ").append(getContent()).append(",");
+            sb.append("Content: ").append("***Sensitive Data Redacted***").append(",");
         if (getName() != null)
-            sb.append("Name: ").append("***Sensitive Data Redacted***");
+            sb.append("Name: ").append(getName());
         sb.append("}");
         return sb.toString();
     }

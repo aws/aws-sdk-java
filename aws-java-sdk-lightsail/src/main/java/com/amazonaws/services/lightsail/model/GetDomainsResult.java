@@ -31,7 +31,7 @@ public class GetDomainsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     private java.util.List<Domain> domains;
     /**
      * <p>
-     * The token to advance to the next page of resutls from your request.
+     * The token to advance to the next page of results from your request.
      * </p>
      * <p>
      * A next page token is not returned if there are no more results to display.
@@ -116,7 +116,7 @@ public class GetDomainsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The token to advance to the next page of resutls from your request.
+     * The token to advance to the next page of results from your request.
      * </p>
      * <p>
      * A next page token is not returned if there are no more results to display.
@@ -127,7 +127,7 @@ public class GetDomainsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param nextPageToken
-     *        The token to advance to the next page of resutls from your request.</p>
+     *        The token to advance to the next page of results from your request.</p>
      *        <p>
      *        A next page token is not returned if there are no more results to display.
      *        </p>
@@ -142,7 +142,7 @@ public class GetDomainsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The token to advance to the next page of resutls from your request.
+     * The token to advance to the next page of results from your request.
      * </p>
      * <p>
      * A next page token is not returned if there are no more results to display.
@@ -152,7 +152,7 @@ public class GetDomainsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * using the <code>pageToken</code> parameter.
      * </p>
      * 
-     * @return The token to advance to the next page of resutls from your request.</p>
+     * @return The token to advance to the next page of results from your request.</p>
      *         <p>
      *         A next page token is not returned if there are no more results to display.
      *         </p>
@@ -167,7 +167,7 @@ public class GetDomainsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The token to advance to the next page of resutls from your request.
+     * The token to advance to the next page of results from your request.
      * </p>
      * <p>
      * A next page token is not returned if there are no more results to display.
@@ -178,7 +178,7 @@ public class GetDomainsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param nextPageToken
-     *        The token to advance to the next page of resutls from your request.</p>
+     *        The token to advance to the next page of results from your request.</p>
      *        <p>
      *        A next page token is not returned if there are no more results to display.
      *        </p>

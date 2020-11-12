@@ -33,11 +33,33 @@ public class IotEventsAction implements Serializable, Cloneable, StructuredPojo 
     private String inputName;
     /**
      * <p>
-     * [Optional] Use this to ensure that only one input (message) with a given messageId will be processed by an AWS
-     * IoT Events detector.
+     * The ID of the message. The default <code>messageId</code> is a new UUID value.
+     * </p>
+     * <p>
+     * When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>--a new UUID value
+     * will be assigned.
+     * </p>
+     * <p>
+     * Assign a value to this property to ensure that only one input (message) with a given <code>messageId</code> will
+     * be processed by an AWS IoT Events detector.
      * </p>
      */
     private String messageId;
+    /**
+     * <p>
+     * Whether to process the event actions as a batch. The default value is <code>false</code>.
+     * </p>
+     * <p>
+     * When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>.
+     * </p>
+     * <p>
+     * When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each Array
+     * element is treated as a separate message when it's sent to AWS IoT Events by calling <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html">
+     * <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10 messages.
+     * </p>
+     */
+    private Boolean batchMode;
     /**
      * <p>
      * The ARN of the role that grants AWS IoT permission to send an input to an AWS IoT Events detector.
@@ -88,13 +110,26 @@ public class IotEventsAction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * [Optional] Use this to ensure that only one input (message) with a given messageId will be processed by an AWS
-     * IoT Events detector.
+     * The ID of the message. The default <code>messageId</code> is a new UUID value.
+     * </p>
+     * <p>
+     * When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>--a new UUID value
+     * will be assigned.
+     * </p>
+     * <p>
+     * Assign a value to this property to ensure that only one input (message) with a given <code>messageId</code> will
+     * be processed by an AWS IoT Events detector.
      * </p>
      * 
      * @param messageId
-     *        [Optional] Use this to ensure that only one input (message) with a given messageId will be processed by an
-     *        AWS IoT Events detector.
+     *        The ID of the message. The default <code>messageId</code> is a new UUID value.</p>
+     *        <p>
+     *        When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>--a new UUID
+     *        value will be assigned.
+     *        </p>
+     *        <p>
+     *        Assign a value to this property to ensure that only one input (message) with a given
+     *        <code>messageId</code> will be processed by an AWS IoT Events detector.
      */
 
     public void setMessageId(String messageId) {
@@ -103,12 +138,25 @@ public class IotEventsAction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * [Optional] Use this to ensure that only one input (message) with a given messageId will be processed by an AWS
-     * IoT Events detector.
+     * The ID of the message. The default <code>messageId</code> is a new UUID value.
+     * </p>
+     * <p>
+     * When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>--a new UUID value
+     * will be assigned.
+     * </p>
+     * <p>
+     * Assign a value to this property to ensure that only one input (message) with a given <code>messageId</code> will
+     * be processed by an AWS IoT Events detector.
      * </p>
      * 
-     * @return [Optional] Use this to ensure that only one input (message) with a given messageId will be processed by
-     *         an AWS IoT Events detector.
+     * @return The ID of the message. The default <code>messageId</code> is a new UUID value.</p>
+     *         <p>
+     *         When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>--a new UUID
+     *         value will be assigned.
+     *         </p>
+     *         <p>
+     *         Assign a value to this property to ensure that only one input (message) with a given
+     *         <code>messageId</code> will be processed by an AWS IoT Events detector.
      */
 
     public String getMessageId() {
@@ -117,19 +165,152 @@ public class IotEventsAction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * [Optional] Use this to ensure that only one input (message) with a given messageId will be processed by an AWS
-     * IoT Events detector.
+     * The ID of the message. The default <code>messageId</code> is a new UUID value.
+     * </p>
+     * <p>
+     * When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>--a new UUID value
+     * will be assigned.
+     * </p>
+     * <p>
+     * Assign a value to this property to ensure that only one input (message) with a given <code>messageId</code> will
+     * be processed by an AWS IoT Events detector.
      * </p>
      * 
      * @param messageId
-     *        [Optional] Use this to ensure that only one input (message) with a given messageId will be processed by an
-     *        AWS IoT Events detector.
+     *        The ID of the message. The default <code>messageId</code> is a new UUID value.</p>
+     *        <p>
+     *        When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>--a new UUID
+     *        value will be assigned.
+     *        </p>
+     *        <p>
+     *        Assign a value to this property to ensure that only one input (message) with a given
+     *        <code>messageId</code> will be processed by an AWS IoT Events detector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public IotEventsAction withMessageId(String messageId) {
         setMessageId(messageId);
         return this;
+    }
+
+    /**
+     * <p>
+     * Whether to process the event actions as a batch. The default value is <code>false</code>.
+     * </p>
+     * <p>
+     * When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>.
+     * </p>
+     * <p>
+     * When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each Array
+     * element is treated as a separate message when it's sent to AWS IoT Events by calling <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html">
+     * <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10 messages.
+     * </p>
+     * 
+     * @param batchMode
+     *        Whether to process the event actions as a batch. The default value is <code>false</code>.</p>
+     *        <p>
+     *        When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>.
+     *        </p>
+     *        <p>
+     *        When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each
+     *        Array element is treated as a separate message when it's sent to AWS IoT Events by calling <a
+     *        href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html">
+     *        <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10 messages.
+     */
+
+    public void setBatchMode(Boolean batchMode) {
+        this.batchMode = batchMode;
+    }
+
+    /**
+     * <p>
+     * Whether to process the event actions as a batch. The default value is <code>false</code>.
+     * </p>
+     * <p>
+     * When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>.
+     * </p>
+     * <p>
+     * When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each Array
+     * element is treated as a separate message when it's sent to AWS IoT Events by calling <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html">
+     * <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10 messages.
+     * </p>
+     * 
+     * @return Whether to process the event actions as a batch. The default value is <code>false</code>.</p>
+     *         <p>
+     *         When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>.
+     *         </p>
+     *         <p>
+     *         When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each
+     *         Array element is treated as a separate message when it's sent to AWS IoT Events by calling <a href=
+     *         "https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html">
+     *         <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10 messages.
+     */
+
+    public Boolean getBatchMode() {
+        return this.batchMode;
+    }
+
+    /**
+     * <p>
+     * Whether to process the event actions as a batch. The default value is <code>false</code>.
+     * </p>
+     * <p>
+     * When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>.
+     * </p>
+     * <p>
+     * When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each Array
+     * element is treated as a separate message when it's sent to AWS IoT Events by calling <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html">
+     * <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10 messages.
+     * </p>
+     * 
+     * @param batchMode
+     *        Whether to process the event actions as a batch. The default value is <code>false</code>.</p>
+     *        <p>
+     *        When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>.
+     *        </p>
+     *        <p>
+     *        When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each
+     *        Array element is treated as a separate message when it's sent to AWS IoT Events by calling <a
+     *        href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html">
+     *        <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10 messages.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IotEventsAction withBatchMode(Boolean batchMode) {
+        setBatchMode(batchMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether to process the event actions as a batch. The default value is <code>false</code>.
+     * </p>
+     * <p>
+     * When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>.
+     * </p>
+     * <p>
+     * When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each Array
+     * element is treated as a separate message when it's sent to AWS IoT Events by calling <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html">
+     * <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10 messages.
+     * </p>
+     * 
+     * @return Whether to process the event actions as a batch. The default value is <code>false</code>.</p>
+     *         <p>
+     *         When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>.
+     *         </p>
+     *         <p>
+     *         When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each
+     *         Array element is treated as a separate message when it's sent to AWS IoT Events by calling <a href=
+     *         "https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html">
+     *         <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10 messages.
+     */
+
+    public Boolean isBatchMode() {
+        return this.batchMode;
     }
 
     /**
@@ -194,6 +375,8 @@ public class IotEventsAction implements Serializable, Cloneable, StructuredPojo 
             sb.append("InputName: ").append(getInputName()).append(",");
         if (getMessageId() != null)
             sb.append("MessageId: ").append(getMessageId()).append(",");
+        if (getBatchMode() != null)
+            sb.append("BatchMode: ").append(getBatchMode()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn());
         sb.append("}");
@@ -218,6 +401,10 @@ public class IotEventsAction implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getMessageId() != null && other.getMessageId().equals(this.getMessageId()) == false)
             return false;
+        if (other.getBatchMode() == null ^ this.getBatchMode() == null)
+            return false;
+        if (other.getBatchMode() != null && other.getBatchMode().equals(this.getBatchMode()) == false)
+            return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
@@ -232,6 +419,7 @@ public class IotEventsAction implements Serializable, Cloneable, StructuredPojo 
 
         hashCode = prime * hashCode + ((getInputName() == null) ? 0 : getInputName().hashCode());
         hashCode = prime * hashCode + ((getMessageId() == null) ? 0 : getMessageId().hashCode());
+        hashCode = prime * hashCode + ((getBatchMode() == null) ? 0 : getBatchMode().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         return hashCode;
     }

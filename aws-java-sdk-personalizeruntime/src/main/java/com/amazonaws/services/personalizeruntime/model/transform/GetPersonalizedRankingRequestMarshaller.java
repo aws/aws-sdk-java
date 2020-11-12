@@ -39,6 +39,8 @@ public class GetPersonalizedRankingRequestMarshaller {
             .marshallLocationName("context").build();
     private static final MarshallingInfo<String> FILTERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("filterArn").build();
+    private static final MarshallingInfo<Map> FILTERVALUES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("filterValues").build();
 
     private static final GetPersonalizedRankingRequestMarshaller instance = new GetPersonalizedRankingRequestMarshaller();
 
@@ -61,6 +63,7 @@ public class GetPersonalizedRankingRequestMarshaller {
             protocolMarshaller.marshall(getPersonalizedRankingRequest.getUserId(), USERID_BINDING);
             protocolMarshaller.marshall(getPersonalizedRankingRequest.getContext(), CONTEXT_BINDING);
             protocolMarshaller.marshall(getPersonalizedRankingRequest.getFilterArn(), FILTERARN_BINDING);
+            protocolMarshaller.marshall(getPersonalizedRankingRequest.getFilterValues(), FILTERVALUES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

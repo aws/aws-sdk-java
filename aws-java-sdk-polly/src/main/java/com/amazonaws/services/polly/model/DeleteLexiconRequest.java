@@ -85,7 +85,7 @@ public class DeleteLexiconRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: ").append("***Sensitive Data Redacted***");
+            sb.append("Name: ").append(getName());
         sb.append("}");
         return sb.toString();
     }

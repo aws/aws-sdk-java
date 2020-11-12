@@ -83,7 +83,14 @@ public enum OperationType {
     DetachCertificateFromDistribution("DetachCertificateFromDistribution"),
     UpdateDistributionBundle("UpdateDistributionBundle"),
     CreateCertificate("CreateCertificate"),
-    DeleteCertificate("DeleteCertificate");
+    DeleteCertificate("DeleteCertificate"),
+    CreateContainerService("CreateContainerService"),
+    UpdateContainerService("UpdateContainerService"),
+    DeleteContainerService("DeleteContainerService"),
+    CreateContainerServiceDeployment("CreateContainerServiceDeployment"),
+    CreateContainerServiceRegistryLogin("CreateContainerServiceRegistryLogin"),
+    RegisterContainerImage("RegisterContainerImage"),
+    DeleteContainerImage("DeleteContainerImage");
 
     private String value;
 

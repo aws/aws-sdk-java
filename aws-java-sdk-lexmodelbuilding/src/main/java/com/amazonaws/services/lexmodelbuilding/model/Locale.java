@@ -24,7 +24,11 @@ public enum Locale {
     EnAU("en-AU"),
     EnGB("en-GB"),
     EnUS("en-US"),
-    EsUS("es-US");
+    EsES("es-ES"),
+    EsUS("es-US"),
+    FrFR("fr-FR"),
+    FrCA("fr-CA"),
+    ItIT("it-IT");
 
     private String value;
 

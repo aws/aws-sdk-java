@@ -32,7 +32,7 @@ public class GetRelationalDatabaseBlueprintsResult extends com.amazonaws.AmazonW
     private java.util.List<RelationalDatabaseBlueprint> blueprints;
     /**
      * <p>
-     * The token to advance to the next page of resutls from your request.
+     * The token to advance to the next page of results from your request.
      * </p>
      * <p>
      * A next page token is not returned if there are no more results to display.
@@ -116,7 +116,7 @@ public class GetRelationalDatabaseBlueprintsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The token to advance to the next page of resutls from your request.
+     * The token to advance to the next page of results from your request.
      * </p>
      * <p>
      * A next page token is not returned if there are no more results to display.
@@ -127,7 +127,7 @@ public class GetRelationalDatabaseBlueprintsResult extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param nextPageToken
-     *        The token to advance to the next page of resutls from your request.</p>
+     *        The token to advance to the next page of results from your request.</p>
      *        <p>
      *        A next page token is not returned if there are no more results to display.
      *        </p>
@@ -142,7 +142,7 @@ public class GetRelationalDatabaseBlueprintsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The token to advance to the next page of resutls from your request.
+     * The token to advance to the next page of results from your request.
      * </p>
      * <p>
      * A next page token is not returned if there are no more results to display.
@@ -152,7 +152,7 @@ public class GetRelationalDatabaseBlueprintsResult extends com.amazonaws.AmazonW
      * the next page token using the <code>pageToken</code> parameter.
      * </p>
      * 
-     * @return The token to advance to the next page of resutls from your request.</p>
+     * @return The token to advance to the next page of results from your request.</p>
      *         <p>
      *         A next page token is not returned if there are no more results to display.
      *         </p>
@@ -167,7 +167,7 @@ public class GetRelationalDatabaseBlueprintsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The token to advance to the next page of resutls from your request.
+     * The token to advance to the next page of results from your request.
      * </p>
      * <p>
      * A next page token is not returned if there are no more results to display.
@@ -178,7 +178,7 @@ public class GetRelationalDatabaseBlueprintsResult extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param nextPageToken
-     *        The token to advance to the next page of resutls from your request.</p>
+     *        The token to advance to the next page of results from your request.</p>
      *        <p>
      *        A next page token is not returned if there are no more results to display.
      *        </p>

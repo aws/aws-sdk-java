@@ -56,6 +56,10 @@ public class IotEventsActionJsonUnmarshaller implements Unmarshaller<IotEventsAc
                     context.nextToken();
                     iotEventsAction.setMessageId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("batchMode", targetDepth)) {
+                    context.nextToken();
+                    iotEventsAction.setBatchMode(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
                     iotEventsAction.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));

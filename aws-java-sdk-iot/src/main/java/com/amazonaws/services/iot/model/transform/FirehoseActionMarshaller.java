@@ -33,6 +33,8 @@ public class FirehoseActionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deliveryStreamName").build();
     private static final MarshallingInfo<String> SEPARATOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("separator").build();
+    private static final MarshallingInfo<Boolean> BATCHMODE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("batchMode").build();
 
     private static final FirehoseActionMarshaller instance = new FirehoseActionMarshaller();
 
@@ -53,6 +55,7 @@ public class FirehoseActionMarshaller {
             protocolMarshaller.marshall(firehoseAction.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(firehoseAction.getDeliveryStreamName(), DELIVERYSTREAMNAME_BINDING);
             protocolMarshaller.marshall(firehoseAction.getSeparator(), SEPARATOR_BINDING);
+            protocolMarshaller.marshall(firehoseAction.getBatchMode(), BATCHMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

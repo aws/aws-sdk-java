@@ -52,10 +52,10 @@ import com.amazonaws.services.lightsail.model.transform.*;
  * <p>
  * <p>
  * Amazon Lightsail is the easiest way to get started with Amazon Web Services (AWS) for developers who need to build
- * websites or web applications. It includes everything you need to launch your project quickly – instances (virtual
- * private servers), managed databases, SSD-based block storage, static IP addresses, load balancers, content delivery
- * network (CDN) distributions, DNS management of registered domains, and snapshots (backups) – for a low, predictable
- * monthly price.
+ * websites or web applications. It includes everything you need to launch your project quickly - instances (virtual
+ * private servers), container services, managed databases, SSD-based block storage, static IP addresses, load
+ * balancers, content delivery network (CDN) distributions, DNS management of registered domains, and resource snapshots
+ * (backups) - for a low, predictable monthly price.
  * </p>
  * <p>
  * You can manage your Lightsail resources using the Lightsail console, Lightsail API, AWS Command Line Interface (AWS
@@ -65,7 +65,7 @@ import com.amazonaws.services.lightsail.model.transform.*;
  * </p>
  * <p>
  * This API Reference provides detailed information about the actions, data types, parameters, and errors of the
- * Lightsail service. For more information about the supported AWS Regions, endpoints, and service quotas for the
+ * Lightsail service. For more information about the supported AWS Regions, endpoints, and service quotas of the
  * Lightsail service, see <a href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail
  * Endpoints and Quotas</a> in the <i>AWS General Reference</i>.
  * </p>
@@ -1222,6 +1222,264 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Creates an Amazon Lightsail container service.
+     * </p>
+     * <p>
+     * A Lightsail container service is a compute resource to which you can deploy containers. For more information, see
+     * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-containers">Container services
+     * in Amazon Lightsail</a> in the <i>Lightsail Dev Guide</i>.
+     * </p>
+     * 
+     * @param createContainerServiceRequest
+     * @return Result of the CreateContainerService operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.CreateContainerService
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContainerService"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateContainerServiceResult createContainerService(CreateContainerServiceRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateContainerService(request);
+    }
+
+    @SdkInternalApi
+    final CreateContainerServiceResult executeCreateContainerService(CreateContainerServiceRequest createContainerServiceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createContainerServiceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateContainerServiceRequest> request = null;
+        Response<CreateContainerServiceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateContainerServiceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createContainerServiceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateContainerService");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateContainerServiceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateContainerServiceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a deployment for your Amazon Lightsail container service.
+     * </p>
+     * <p>
+     * A deployment specifies the containers that will be launched on the container service and their settings, such as
+     * the ports to open, the environment variables to apply, and the launch command to run. It also specifies the
+     * container that will serve as the public endpoint of the deployment and its settings, such as the HTTP or HTTPS
+     * port to use, and the health check configuration.
+     * </p>
+     * <p>
+     * You can deploy containers to your container service using container images from a public registry like Docker
+     * Hub, or from your local machine. For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-container-images"
+     * >Creating container images for your Amazon Lightsail container services</a> in the <i>Lightsail Dev Guide</i>.
+     * </p>
+     * 
+     * @param createContainerServiceDeploymentRequest
+     * @return Result of the CreateContainerServiceDeployment operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.CreateContainerServiceDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContainerServiceDeployment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateContainerServiceDeploymentResult createContainerServiceDeployment(CreateContainerServiceDeploymentRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateContainerServiceDeployment(request);
+    }
+
+    @SdkInternalApi
+    final CreateContainerServiceDeploymentResult executeCreateContainerServiceDeployment(
+            CreateContainerServiceDeploymentRequest createContainerServiceDeploymentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createContainerServiceDeploymentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateContainerServiceDeploymentRequest> request = null;
+        Response<CreateContainerServiceDeploymentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateContainerServiceDeploymentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createContainerServiceDeploymentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateContainerServiceDeployment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateContainerServiceDeploymentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateContainerServiceDeploymentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a temporary set of log in credentials that you can use to log in to the Docker process on your local
+     * machine. After you're logged in, you can use the native Docker commands to push your local container images to
+     * the container image registry of your Amazon Lightsail account so that you can use them with your Lightsail
+     * container service. The log in credentials expire 12 hours after they are created, at which point you will need to
+     * create a new set of log in credentials.
+     * </p>
+     * <note>
+     * <p>
+     * You can only push container images to the container service registry of your Lightsail account. You cannot pull
+     * container images perform any other container image management actions on the container service registry of your
+     * Lightsail account.
+     * </p>
+     * </note>
+     * <p>
+     * After you push your container images to the container image registry of your Lightsail account, use the
+     * <code>RegisterContainerImage</code> action to register the pushed images to a specific Lightsail container
+     * service.
+     * </p>
+     * <note>
+     * <p>
+     * This action is not required if you install and use the Lightsail Control (lightsailctl) plugin to push container
+     * images to your Lightsail container service. For more information, see <a
+     * href="amazon-lightsail-pushing-container-images">Pushing and managing container images on your Amazon Lightsail
+     * container services</a> in the <i>Lightsail Dev Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param createContainerServiceRegistryLoginRequest
+     * @return Result of the CreateContainerServiceRegistryLogin operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.CreateContainerServiceRegistryLogin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContainerServiceRegistryLogin"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateContainerServiceRegistryLoginResult createContainerServiceRegistryLogin(CreateContainerServiceRegistryLoginRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateContainerServiceRegistryLogin(request);
+    }
+
+    @SdkInternalApi
+    final CreateContainerServiceRegistryLoginResult executeCreateContainerServiceRegistryLogin(
+            CreateContainerServiceRegistryLoginRequest createContainerServiceRegistryLoginRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createContainerServiceRegistryLoginRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateContainerServiceRegistryLoginRequest> request = null;
+        Response<CreateContainerServiceRegistryLoginResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateContainerServiceRegistryLoginRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createContainerServiceRegistryLoginRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateContainerServiceRegistryLogin");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateContainerServiceRegistryLoginResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateContainerServiceRegistryLoginResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a block storage disk that can be attached to an Amazon Lightsail instance in the same Availability Zone
      * (e.g., <code>us-east-2a</code>).
      * </p>
@@ -1488,9 +1746,9 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * </p>
      * <p>
      * A distribution is a globally distributed network of caching servers that improve the performance of your website
-     * or web application hosted on a Lightsail instance. For more information, see <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-content-delivery-networks">Content
-     * delivery networks in Amazon Lightsail</a>.
+     * or web application hosted on a Lightsail instance. For more information, see <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-content-delivery-network-distributions"
+     * >Content delivery networks in Amazon Lightsail</a>.
      * </p>
      * 
      * @param createDistributionRequest
@@ -1642,8 +1900,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Creates one of the following entry records associated with the domain: Address (A), canonical name (CNAME), mail
-     * exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).
+     * Creates one of the following domain name system (DNS) records in a domain DNS zone: Address (A), canonical name
+     * (CNAME), mail exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).
      * </p>
      * <p>
      * The <code>create domain entry</code> operation supports tag-based access control via resource tags applied to the
@@ -2769,6 +3027,147 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteContactMethodResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteContactMethodResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a container image that is registered to your Amazon Lightsail container service.
+     * </p>
+     * 
+     * @param deleteContainerImageRequest
+     * @return Result of the DeleteContainerImage operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.DeleteContainerImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteContainerImage" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteContainerImageResult deleteContainerImage(DeleteContainerImageRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteContainerImage(request);
+    }
+
+    @SdkInternalApi
+    final DeleteContainerImageResult executeDeleteContainerImage(DeleteContainerImageRequest deleteContainerImageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteContainerImageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteContainerImageRequest> request = null;
+        Response<DeleteContainerImageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteContainerImageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteContainerImageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteContainerImage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteContainerImageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteContainerImageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes your Amazon Lightsail container service.
+     * </p>
+     * 
+     * @param deleteContainerServiceRequest
+     * @return Result of the DeleteContainerService operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.DeleteContainerService
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteContainerService"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteContainerServiceResult deleteContainerService(DeleteContainerServiceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteContainerService(request);
+    }
+
+    @SdkInternalApi
+    final DeleteContainerServiceResult executeDeleteContainerService(DeleteContainerServiceRequest deleteContainerServiceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteContainerServiceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteContainerServiceRequest> request = null;
+        Response<DeleteContainerServiceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteContainerServiceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteContainerServiceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteContainerService");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteContainerServiceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteContainerServiceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5089,6 +5488,536 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<GetContactMethodsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetContactMethodsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about Amazon Lightsail containers, such as the current version of the Lightsail Control
+     * (lightsailctl) plugin.
+     * </p>
+     * 
+     * @param getContainerAPIMetadataRequest
+     * @return Result of the GetContainerAPIMetadata operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetContainerAPIMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerAPIMetadata"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetContainerAPIMetadataResult getContainerAPIMetadata(GetContainerAPIMetadataRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetContainerAPIMetadata(request);
+    }
+
+    @SdkInternalApi
+    final GetContainerAPIMetadataResult executeGetContainerAPIMetadata(GetContainerAPIMetadataRequest getContainerAPIMetadataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getContainerAPIMetadataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetContainerAPIMetadataRequest> request = null;
+        Response<GetContainerAPIMetadataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetContainerAPIMetadataRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getContainerAPIMetadataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetContainerAPIMetadata");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetContainerAPIMetadataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetContainerAPIMetadataResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the container images that are registered to your Amazon Lightsail container service.
+     * </p>
+     * <note>
+     * <p>
+     * If you created a deployment on your Lightsail container service that uses container images from a public registry
+     * like Docker Hub, those images are not returned as part of this action. Those images are not registered to your
+     * Lightsail container service.
+     * </p>
+     * </note>
+     * 
+     * @param getContainerImagesRequest
+     * @return Result of the GetContainerImages operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetContainerImages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerImages" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetContainerImagesResult getContainerImages(GetContainerImagesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetContainerImages(request);
+    }
+
+    @SdkInternalApi
+    final GetContainerImagesResult executeGetContainerImages(GetContainerImagesRequest getContainerImagesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getContainerImagesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetContainerImagesRequest> request = null;
+        Response<GetContainerImagesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetContainerImagesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getContainerImagesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetContainerImages");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetContainerImagesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetContainerImagesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the log events of a container of your Amazon Lightsail container service.
+     * </p>
+     * <p>
+     * If your container service has more than one node (i.e., a scale greater than 1), then the log events that are
+     * returned for the specified container are merged from all nodes on your container service.
+     * </p>
+     * <note>
+     * <p>
+     * Container logs are retained for a certain amount of time. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail endpoints and quotas</a> in
+     * the <i>AWS General Reference</i>.
+     * </p>
+     * </note>
+     * 
+     * @param getContainerLogRequest
+     * @return Result of the GetContainerLog operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetContainerLog
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerLog" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetContainerLogResult getContainerLog(GetContainerLogRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetContainerLog(request);
+    }
+
+    @SdkInternalApi
+    final GetContainerLogResult executeGetContainerLog(GetContainerLogRequest getContainerLogRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getContainerLogRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetContainerLogRequest> request = null;
+        Response<GetContainerLogResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetContainerLogRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getContainerLogRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetContainerLog");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetContainerLogResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetContainerLogResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the deployments for your Amazon Lightsail container service
+     * </p>
+     * <p>
+     * A deployment specifies the settings, such as the ports and launch command, of containers that are deployed to
+     * your container service.
+     * </p>
+     * <p>
+     * The deployments are ordered by version in ascending order. The newest version is listed at the top of the
+     * response.
+     * </p>
+     * <note>
+     * <p>
+     * A set number of deployments are kept before the oldest one is replaced with the newest one. For more information,
+     * see <a href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail endpoints and
+     * quotas</a> in the <i>AWS General Reference</i>.
+     * </p>
+     * </note>
+     * 
+     * @param getContainerServiceDeploymentsRequest
+     * @return Result of the GetContainerServiceDeployments operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetContainerServiceDeployments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerServiceDeployments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetContainerServiceDeploymentsResult getContainerServiceDeployments(GetContainerServiceDeploymentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetContainerServiceDeployments(request);
+    }
+
+    @SdkInternalApi
+    final GetContainerServiceDeploymentsResult executeGetContainerServiceDeployments(GetContainerServiceDeploymentsRequest getContainerServiceDeploymentsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getContainerServiceDeploymentsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetContainerServiceDeploymentsRequest> request = null;
+        Response<GetContainerServiceDeploymentsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetContainerServiceDeploymentsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getContainerServiceDeploymentsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetContainerServiceDeployments");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetContainerServiceDeploymentsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetContainerServiceDeploymentsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the data points of a specific metric of your Amazon Lightsail container service.
+     * </p>
+     * <p>
+     * Metrics report the utilization of your resources. Monitor and collect metric data regularly to maintain the
+     * reliability, availability, and performance of your resources.
+     * </p>
+     * 
+     * @param getContainerServiceMetricDataRequest
+     * @return Result of the GetContainerServiceMetricData operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetContainerServiceMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerServiceMetricData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetContainerServiceMetricDataResult getContainerServiceMetricData(GetContainerServiceMetricDataRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetContainerServiceMetricData(request);
+    }
+
+    @SdkInternalApi
+    final GetContainerServiceMetricDataResult executeGetContainerServiceMetricData(GetContainerServiceMetricDataRequest getContainerServiceMetricDataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getContainerServiceMetricDataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetContainerServiceMetricDataRequest> request = null;
+        Response<GetContainerServiceMetricDataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetContainerServiceMetricDataRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getContainerServiceMetricDataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetContainerServiceMetricData");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetContainerServiceMetricDataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetContainerServiceMetricDataResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the list of powers that can be specified for your Amazon Lightsail container services.
+     * </p>
+     * <p>
+     * The power specifies the amount of memory, the number of vCPUs, and the base price of the container service.
+     * </p>
+     * 
+     * @param getContainerServicePowersRequest
+     * @return Result of the GetContainerServicePowers operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetContainerServicePowers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerServicePowers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetContainerServicePowersResult getContainerServicePowers(GetContainerServicePowersRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetContainerServicePowers(request);
+    }
+
+    @SdkInternalApi
+    final GetContainerServicePowersResult executeGetContainerServicePowers(GetContainerServicePowersRequest getContainerServicePowersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getContainerServicePowersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetContainerServicePowersRequest> request = null;
+        Response<GetContainerServicePowersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetContainerServicePowersRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getContainerServicePowersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetContainerServicePowers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetContainerServicePowersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetContainerServicePowersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about one or more of your Amazon Lightsail container services.
+     * </p>
+     * 
+     * @param getContainerServicesRequest
+     * @return Result of the GetContainerServices operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetContainerServices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerServices" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetContainerServicesResult getContainerServices(GetContainerServicesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetContainerServices(request);
+    }
+
+    @SdkInternalApi
+    final GetContainerServicesResult executeGetContainerServices(GetContainerServicesRequest getContainerServicesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getContainerServicesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetContainerServicesRequest> request = null;
+        Response<GetContainerServicesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetContainerServicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getContainerServicesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetContainerServices");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetContainerServicesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetContainerServicesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9024,6 +9953,85 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Registers a container image to your Amazon Lightsail container service.
+     * </p>
+     * <note>
+     * <p>
+     * This action is not required if you install and use the Lightsail Control (lightsailctl) plugin to push container
+     * images to your Lightsail container service. For more information, see <a
+     * href="amazon-lightsail-pushing-container-images">Pushing and managing container images on your Amazon Lightsail
+     * container services</a> in the <i>Lightsail Dev Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param registerContainerImageRequest
+     * @return Result of the RegisterContainerImage operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.RegisterContainerImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RegisterContainerImage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RegisterContainerImageResult registerContainerImage(RegisterContainerImageRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterContainerImage(request);
+    }
+
+    @SdkInternalApi
+    final RegisterContainerImageResult executeRegisterContainerImage(RegisterContainerImageRequest registerContainerImageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(registerContainerImageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegisterContainerImageRequest> request = null;
+        Response<RegisterContainerImageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegisterContainerImageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerContainerImageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterContainerImage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RegisterContainerImageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new RegisterContainerImageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a specific static IP from your account.
      * </p>
      * 
@@ -9913,6 +10921,78 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the configuration of your Amazon Lightsail container service, such as its power, scale, and public domain
+     * names.
+     * </p>
+     * 
+     * @param updateContainerServiceRequest
+     * @return Result of the UpdateContainerService operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.UpdateContainerService
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateContainerService"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateContainerServiceResult updateContainerService(UpdateContainerServiceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateContainerService(request);
+    }
+
+    @SdkInternalApi
+    final UpdateContainerServiceResult executeUpdateContainerService(UpdateContainerServiceRequest updateContainerServiceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateContainerServiceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateContainerServiceRequest> request = null;
+        Response<UpdateContainerServiceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateContainerServiceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateContainerServiceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateContainerService");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateContainerServiceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateContainerServiceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

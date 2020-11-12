@@ -34,8 +34,8 @@ public class GetRegionsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private Boolean includeAvailabilityZones;
     /**
      * <p>
-     * &gt;A Boolean value indicating whether to also include Availability Zones for databases in your get regions
-     * request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).
+     * A Boolean value indicating whether to also include Availability Zones for databases in your get regions request.
+     * Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).
      * </p>
      */
     private Boolean includeRelationalDatabaseAvailabilityZones;
@@ -102,13 +102,13 @@ public class GetRegionsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * &gt;A Boolean value indicating whether to also include Availability Zones for databases in your get regions
-     * request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).
+     * A Boolean value indicating whether to also include Availability Zones for databases in your get regions request.
+     * Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).
      * </p>
      * 
      * @param includeRelationalDatabaseAvailabilityZones
-     *        &gt;A Boolean value indicating whether to also include Availability Zones for databases in your get
-     *        regions request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).
+     *        A Boolean value indicating whether to also include Availability Zones for databases in your get regions
+     *        request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).
      */
 
     public void setIncludeRelationalDatabaseAvailabilityZones(Boolean includeRelationalDatabaseAvailabilityZones) {
@@ -117,12 +117,12 @@ public class GetRegionsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * &gt;A Boolean value indicating whether to also include Availability Zones for databases in your get regions
-     * request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).
+     * A Boolean value indicating whether to also include Availability Zones for databases in your get regions request.
+     * Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).
      * </p>
      * 
-     * @return &gt;A Boolean value indicating whether to also include Availability Zones for databases in your get
-     *         regions request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).
+     * @return A Boolean value indicating whether to also include Availability Zones for databases in your get regions
+     *         request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).
      */
 
     public Boolean getIncludeRelationalDatabaseAvailabilityZones() {
@@ -131,13 +131,13 @@ public class GetRegionsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * &gt;A Boolean value indicating whether to also include Availability Zones for databases in your get regions
-     * request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).
+     * A Boolean value indicating whether to also include Availability Zones for databases in your get regions request.
+     * Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).
      * </p>
      * 
      * @param includeRelationalDatabaseAvailabilityZones
-     *        &gt;A Boolean value indicating whether to also include Availability Zones for databases in your get
-     *        regions request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).
+     *        A Boolean value indicating whether to also include Availability Zones for databases in your get regions
+     *        request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,12 +148,12 @@ public class GetRegionsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * &gt;A Boolean value indicating whether to also include Availability Zones for databases in your get regions
-     * request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).
+     * A Boolean value indicating whether to also include Availability Zones for databases in your get regions request.
+     * Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).
      * </p>
      * 
-     * @return &gt;A Boolean value indicating whether to also include Availability Zones for databases in your get
-     *         regions request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).
+     * @return A Boolean value indicating whether to also include Availability Zones for databases in your get regions
+     *         request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).
      */
 
     public Boolean isIncludeRelationalDatabaseAvailabilityZones() {

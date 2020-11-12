@@ -39,7 +39,9 @@ public class S3Action implements Serializable, Cloneable, StructuredPojo {
     private String bucketName;
     /**
      * <p>
-     * The object key.
+     * The object key. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions, resources, and condition keys
+     * for Amazon S3</a>.
      * </p>
      */
     private String key;
@@ -133,11 +135,15 @@ public class S3Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The object key.
+     * The object key. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions, resources, and condition keys
+     * for Amazon S3</a>.
      * </p>
      * 
      * @param key
-     *        The object key.
+     *        The object key. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions, resources, and
+     *        condition keys for Amazon S3</a>.
      */
 
     public void setKey(String key) {
@@ -146,10 +152,14 @@ public class S3Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The object key.
+     * The object key. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions, resources, and condition keys
+     * for Amazon S3</a>.
      * </p>
      * 
-     * @return The object key.
+     * @return The object key. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions, resources, and
+     *         condition keys for Amazon S3</a>.
      */
 
     public String getKey() {
@@ -158,11 +168,15 @@ public class S3Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The object key.
+     * The object key. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions, resources, and condition keys
+     * for Amazon S3</a>.
      * </p>
      * 
      * @param key
-     *        The object key.
+     *        The object key. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions, resources, and
+     *        condition keys for Amazon S3</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

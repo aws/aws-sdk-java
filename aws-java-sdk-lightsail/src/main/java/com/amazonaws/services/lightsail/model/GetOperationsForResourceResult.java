@@ -45,7 +45,7 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
     private String nextPageCount;
     /**
      * <p>
-     * The token to advance to the next page of resutls from your request.
+     * The token to advance to the next page of results from your request.
      * </p>
      * <p>
      * A next page token is not returned if there are no more results to display.
@@ -207,7 +207,7 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The token to advance to the next page of resutls from your request.
+     * The token to advance to the next page of results from your request.
      * </p>
      * <p>
      * A next page token is not returned if there are no more results to display.
@@ -218,7 +218,7 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param nextPageToken
-     *        The token to advance to the next page of resutls from your request.</p>
+     *        The token to advance to the next page of results from your request.</p>
      *        <p>
      *        A next page token is not returned if there are no more results to display.
      *        </p>
@@ -233,7 +233,7 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The token to advance to the next page of resutls from your request.
+     * The token to advance to the next page of results from your request.
      * </p>
      * <p>
      * A next page token is not returned if there are no more results to display.
@@ -243,7 +243,7 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
      * next page token using the <code>pageToken</code> parameter.
      * </p>
      * 
-     * @return The token to advance to the next page of resutls from your request.</p>
+     * @return The token to advance to the next page of results from your request.</p>
      *         <p>
      *         A next page token is not returned if there are no more results to display.
      *         </p>
@@ -258,7 +258,7 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The token to advance to the next page of resutls from your request.
+     * The token to advance to the next page of results from your request.
      * </p>
      * <p>
      * A next page token is not returned if there are no more results to display.
@@ -269,7 +269,7 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param nextPageToken
-     *        The token to advance to the next page of resutls from your request.</p>
+     *        The token to advance to the next page of results from your request.</p>
      *        <p>
      *        A next page token is not returned if there are no more results to display.
      *        </p>

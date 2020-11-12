@@ -44,6 +44,20 @@ public class FirehoseAction implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String separator;
+    /**
+     * <p>
+     * Whether to deliver the Kinesis Data Firehose stream as a batch by using <a
+     * href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+     * <code>PutRecordBatch</code> </a>. The default value is <code>false</code>.
+     * </p>
+     * <p>
+     * When <code>batchMode</code> is <code>true</code> and the rule's SQL statement evaluates to an Array, each Array
+     * element forms one record in the <a
+     * href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+     * <code>PutRecordBatch</code> </a> request. The resulting array can't have more than 500 records.
+     * </p>
+     */
+    private Boolean batchMode;
 
     /**
      * <p>
@@ -172,6 +186,118 @@ public class FirehoseAction implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Whether to deliver the Kinesis Data Firehose stream as a batch by using <a
+     * href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+     * <code>PutRecordBatch</code> </a>. The default value is <code>false</code>.
+     * </p>
+     * <p>
+     * When <code>batchMode</code> is <code>true</code> and the rule's SQL statement evaluates to an Array, each Array
+     * element forms one record in the <a
+     * href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+     * <code>PutRecordBatch</code> </a> request. The resulting array can't have more than 500 records.
+     * </p>
+     * 
+     * @param batchMode
+     *        Whether to deliver the Kinesis Data Firehose stream as a batch by using <a
+     *        href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+     *        <code>PutRecordBatch</code> </a>. The default value is <code>false</code>.</p>
+     *        <p>
+     *        When <code>batchMode</code> is <code>true</code> and the rule's SQL statement evaluates to an Array, each
+     *        Array element forms one record in the <a
+     *        href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+     *        <code>PutRecordBatch</code> </a> request. The resulting array can't have more than 500 records.
+     */
+
+    public void setBatchMode(Boolean batchMode) {
+        this.batchMode = batchMode;
+    }
+
+    /**
+     * <p>
+     * Whether to deliver the Kinesis Data Firehose stream as a batch by using <a
+     * href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+     * <code>PutRecordBatch</code> </a>. The default value is <code>false</code>.
+     * </p>
+     * <p>
+     * When <code>batchMode</code> is <code>true</code> and the rule's SQL statement evaluates to an Array, each Array
+     * element forms one record in the <a
+     * href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+     * <code>PutRecordBatch</code> </a> request. The resulting array can't have more than 500 records.
+     * </p>
+     * 
+     * @return Whether to deliver the Kinesis Data Firehose stream as a batch by using <a
+     *         href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+     *         <code>PutRecordBatch</code> </a>. The default value is <code>false</code>.</p>
+     *         <p>
+     *         When <code>batchMode</code> is <code>true</code> and the rule's SQL statement evaluates to an Array, each
+     *         Array element forms one record in the <a
+     *         href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+     *         <code>PutRecordBatch</code> </a> request. The resulting array can't have more than 500 records.
+     */
+
+    public Boolean getBatchMode() {
+        return this.batchMode;
+    }
+
+    /**
+     * <p>
+     * Whether to deliver the Kinesis Data Firehose stream as a batch by using <a
+     * href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+     * <code>PutRecordBatch</code> </a>. The default value is <code>false</code>.
+     * </p>
+     * <p>
+     * When <code>batchMode</code> is <code>true</code> and the rule's SQL statement evaluates to an Array, each Array
+     * element forms one record in the <a
+     * href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+     * <code>PutRecordBatch</code> </a> request. The resulting array can't have more than 500 records.
+     * </p>
+     * 
+     * @param batchMode
+     *        Whether to deliver the Kinesis Data Firehose stream as a batch by using <a
+     *        href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+     *        <code>PutRecordBatch</code> </a>. The default value is <code>false</code>.</p>
+     *        <p>
+     *        When <code>batchMode</code> is <code>true</code> and the rule's SQL statement evaluates to an Array, each
+     *        Array element forms one record in the <a
+     *        href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+     *        <code>PutRecordBatch</code> </a> request. The resulting array can't have more than 500 records.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FirehoseAction withBatchMode(Boolean batchMode) {
+        setBatchMode(batchMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether to deliver the Kinesis Data Firehose stream as a batch by using <a
+     * href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+     * <code>PutRecordBatch</code> </a>. The default value is <code>false</code>.
+     * </p>
+     * <p>
+     * When <code>batchMode</code> is <code>true</code> and the rule's SQL statement evaluates to an Array, each Array
+     * element forms one record in the <a
+     * href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+     * <code>PutRecordBatch</code> </a> request. The resulting array can't have more than 500 records.
+     * </p>
+     * 
+     * @return Whether to deliver the Kinesis Data Firehose stream as a batch by using <a
+     *         href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+     *         <code>PutRecordBatch</code> </a>. The default value is <code>false</code>.</p>
+     *         <p>
+     *         When <code>batchMode</code> is <code>true</code> and the rule's SQL statement evaluates to an Array, each
+     *         Array element forms one record in the <a
+     *         href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+     *         <code>PutRecordBatch</code> </a> request. The resulting array can't have more than 500 records.
+     */
+
+    public Boolean isBatchMode() {
+        return this.batchMode;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -188,7 +314,9 @@ public class FirehoseAction implements Serializable, Cloneable, StructuredPojo {
         if (getDeliveryStreamName() != null)
             sb.append("DeliveryStreamName: ").append(getDeliveryStreamName()).append(",");
         if (getSeparator() != null)
-            sb.append("Separator: ").append(getSeparator());
+            sb.append("Separator: ").append(getSeparator()).append(",");
+        if (getBatchMode() != null)
+            sb.append("BatchMode: ").append(getBatchMode());
         sb.append("}");
         return sb.toString();
     }
@@ -215,6 +343,10 @@ public class FirehoseAction implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSeparator() != null && other.getSeparator().equals(this.getSeparator()) == false)
             return false;
+        if (other.getBatchMode() == null ^ this.getBatchMode() == null)
+            return false;
+        if (other.getBatchMode() != null && other.getBatchMode().equals(this.getBatchMode()) == false)
+            return false;
         return true;
     }
 
@@ -226,6 +358,7 @@ public class FirehoseAction implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getDeliveryStreamName() == null) ? 0 : getDeliveryStreamName().hashCode());
         hashCode = prime * hashCode + ((getSeparator() == null) ? 0 : getSeparator().hashCode());
+        hashCode = prime * hashCode + ((getBatchMode() == null) ? 0 : getBatchMode().hashCode());
         return hashCode;
     }
 

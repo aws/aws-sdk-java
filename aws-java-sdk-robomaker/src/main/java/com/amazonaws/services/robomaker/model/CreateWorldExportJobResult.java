@@ -115,7 +115,19 @@ public class CreateWorldExportJobResult extends com.amazonaws.AmazonWebServiceRe
      * An input parameter in the request is not valid.
      * </p>
      * </dd>
+     * <dt>AllWorldGenerationFailed</dt>
+     * <dd>
+     * <p>
+     * All of the worlds in the world generation job failed. This can happen if your <code>worldCount</code> is greater
+     * than 50 or less than 1.
+     * </p>
+     * </dd>
      * </dl>
+     * <p>
+     * For more information about troubleshooting WorldForge, see <a
+     * href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting Simulation
+     * WorldForge</a>.
+     * </p>
      */
     private String failureCode;
     /**
@@ -614,7 +626,19 @@ public class CreateWorldExportJobResult extends com.amazonaws.AmazonWebServiceRe
      * An input parameter in the request is not valid.
      * </p>
      * </dd>
+     * <dt>AllWorldGenerationFailed</dt>
+     * <dd>
+     * <p>
+     * All of the worlds in the world generation job failed. This can happen if your <code>worldCount</code> is greater
+     * than 50 or less than 1.
+     * </p>
+     * </dd>
      * </dl>
+     * <p>
+     * For more information about troubleshooting WorldForge, see <a
+     * href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting Simulation
+     * WorldForge</a>.
+     * </p>
      * 
      * @param failureCode
      *        The failure code of the world export job if it failed:</p>
@@ -650,6 +674,18 @@ public class CreateWorldExportJobResult extends com.amazonaws.AmazonWebServiceRe
      *        An input parameter in the request is not valid.
      *        </p>
      *        </dd>
+     *        <dt>AllWorldGenerationFailed</dt>
+     *        <dd>
+     *        <p>
+     *        All of the worlds in the world generation job failed. This can happen if your <code>worldCount</code> is
+     *        greater than 50 or less than 1.
+     *        </p>
+     *        </dd>
+     *        </dl>
+     *        <p>
+     *        For more information about troubleshooting WorldForge, see <a
+     *        href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting
+     *        Simulation WorldForge</a>.
      * @see WorldExportJobErrorCode
      */
 
@@ -693,7 +729,19 @@ public class CreateWorldExportJobResult extends com.amazonaws.AmazonWebServiceRe
      * An input parameter in the request is not valid.
      * </p>
      * </dd>
+     * <dt>AllWorldGenerationFailed</dt>
+     * <dd>
+     * <p>
+     * All of the worlds in the world generation job failed. This can happen if your <code>worldCount</code> is greater
+     * than 50 or less than 1.
+     * </p>
+     * </dd>
      * </dl>
+     * <p>
+     * For more information about troubleshooting WorldForge, see <a
+     * href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting Simulation
+     * WorldForge</a>.
+     * </p>
      * 
      * @return The failure code of the world export job if it failed:</p>
      *         <dl>
@@ -728,6 +776,18 @@ public class CreateWorldExportJobResult extends com.amazonaws.AmazonWebServiceRe
      *         An input parameter in the request is not valid.
      *         </p>
      *         </dd>
+     *         <dt>AllWorldGenerationFailed</dt>
+     *         <dd>
+     *         <p>
+     *         All of the worlds in the world generation job failed. This can happen if your <code>worldCount</code> is
+     *         greater than 50 or less than 1.
+     *         </p>
+     *         </dd>
+     *         </dl>
+     *         <p>
+     *         For more information about troubleshooting WorldForge, see <a
+     *         href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting
+     *         Simulation WorldForge</a>.
      * @see WorldExportJobErrorCode
      */
 
@@ -771,7 +831,19 @@ public class CreateWorldExportJobResult extends com.amazonaws.AmazonWebServiceRe
      * An input parameter in the request is not valid.
      * </p>
      * </dd>
+     * <dt>AllWorldGenerationFailed</dt>
+     * <dd>
+     * <p>
+     * All of the worlds in the world generation job failed. This can happen if your <code>worldCount</code> is greater
+     * than 50 or less than 1.
+     * </p>
+     * </dd>
      * </dl>
+     * <p>
+     * For more information about troubleshooting WorldForge, see <a
+     * href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting Simulation
+     * WorldForge</a>.
+     * </p>
      * 
      * @param failureCode
      *        The failure code of the world export job if it failed:</p>
@@ -807,6 +879,18 @@ public class CreateWorldExportJobResult extends com.amazonaws.AmazonWebServiceRe
      *        An input parameter in the request is not valid.
      *        </p>
      *        </dd>
+     *        <dt>AllWorldGenerationFailed</dt>
+     *        <dd>
+     *        <p>
+     *        All of the worlds in the world generation job failed. This can happen if your <code>worldCount</code> is
+     *        greater than 50 or less than 1.
+     *        </p>
+     *        </dd>
+     *        </dl>
+     *        <p>
+     *        For more information about troubleshooting WorldForge, see <a
+     *        href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting
+     *        Simulation WorldForge</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorldExportJobErrorCode
      */
@@ -852,7 +936,19 @@ public class CreateWorldExportJobResult extends com.amazonaws.AmazonWebServiceRe
      * An input parameter in the request is not valid.
      * </p>
      * </dd>
+     * <dt>AllWorldGenerationFailed</dt>
+     * <dd>
+     * <p>
+     * All of the worlds in the world generation job failed. This can happen if your <code>worldCount</code> is greater
+     * than 50 or less than 1.
+     * </p>
+     * </dd>
      * </dl>
+     * <p>
+     * For more information about troubleshooting WorldForge, see <a
+     * href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting Simulation
+     * WorldForge</a>.
+     * </p>
      * 
      * @param failureCode
      *        The failure code of the world export job if it failed:</p>
@@ -888,6 +984,18 @@ public class CreateWorldExportJobResult extends com.amazonaws.AmazonWebServiceRe
      *        An input parameter in the request is not valid.
      *        </p>
      *        </dd>
+     *        <dt>AllWorldGenerationFailed</dt>
+     *        <dd>
+     *        <p>
+     *        All of the worlds in the world generation job failed. This can happen if your <code>worldCount</code> is
+     *        greater than 50 or less than 1.
+     *        </p>
+     *        </dd>
+     *        </dl>
+     *        <p>
+     *        For more information about troubleshooting WorldForge, see <a
+     *        href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting
+     *        Simulation WorldForge</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorldExportJobErrorCode
      */

@@ -134,7 +134,7 @@ public class LexiconDescription implements Serializable, Cloneable, StructuredPo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: ").append("***Sensitive Data Redacted***").append(",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getAttributes() != null)
             sb.append("Attributes: ").append(getAttributes());
         sb.append("}");

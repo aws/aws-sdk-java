@@ -68,6 +68,7 @@ public enum VoiceId {
     Mizuki("Mizuki"),
     Naja("Naja"),
     Nicole("Nicole"),
+    Olivia("Olivia"),
     Penelope("Penelope"),
     Raveena("Raveena"),
     Ricardo("Ricardo"),

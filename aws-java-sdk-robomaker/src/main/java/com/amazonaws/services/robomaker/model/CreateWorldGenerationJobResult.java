@@ -148,6 +148,12 @@ public class CreateWorldGenerationJobResult extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * A map that contains tag keys and tag values that are attached to the generated worlds.
+     * </p>
+     */
+    private java.util.Map<String, String> worldTags;
 
     /**
      * <p>
@@ -1144,6 +1150,74 @@ public class CreateWorldGenerationJobResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * A map that contains tag keys and tag values that are attached to the generated worlds.
+     * </p>
+     * 
+     * @return A map that contains tag keys and tag values that are attached to the generated worlds.
+     */
+
+    public java.util.Map<String, String> getWorldTags() {
+        return worldTags;
+    }
+
+    /**
+     * <p>
+     * A map that contains tag keys and tag values that are attached to the generated worlds.
+     * </p>
+     * 
+     * @param worldTags
+     *        A map that contains tag keys and tag values that are attached to the generated worlds.
+     */
+
+    public void setWorldTags(java.util.Map<String, String> worldTags) {
+        this.worldTags = worldTags;
+    }
+
+    /**
+     * <p>
+     * A map that contains tag keys and tag values that are attached to the generated worlds.
+     * </p>
+     * 
+     * @param worldTags
+     *        A map that contains tag keys and tag values that are attached to the generated worlds.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorldGenerationJobResult withWorldTags(java.util.Map<String, String> worldTags) {
+        setWorldTags(worldTags);
+        return this;
+    }
+
+    /**
+     * Add a single WorldTags entry
+     *
+     * @see CreateWorldGenerationJobResult#withWorldTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorldGenerationJobResult addWorldTagsEntry(String key, String value) {
+        if (null == this.worldTags) {
+            this.worldTags = new java.util.HashMap<String, String>();
+        }
+        if (this.worldTags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.worldTags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into WorldTags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorldGenerationJobResult clearWorldTagsEntries() {
+        this.worldTags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1170,7 +1244,9 @@ public class CreateWorldGenerationJobResult extends com.amazonaws.AmazonWebServi
         if (getWorldCount() != null)
             sb.append("WorldCount: ").append(getWorldCount()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getWorldTags() != null)
+            sb.append("WorldTags: ").append(getWorldTags());
         sb.append("}");
         return sb.toString();
     }
@@ -1217,6 +1293,10 @@ public class CreateWorldGenerationJobResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getWorldTags() == null ^ this.getWorldTags() == null)
+            return false;
+        if (other.getWorldTags() != null && other.getWorldTags().equals(this.getWorldTags()) == false)
+            return false;
         return true;
     }
 
@@ -1233,6 +1313,7 @@ public class CreateWorldGenerationJobResult extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getTemplate() == null) ? 0 : getTemplate().hashCode());
         hashCode = prime * hashCode + ((getWorldCount() == null) ? 0 : getWorldCount().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getWorldTags() == null) ? 0 : getWorldTags().hashCode());
         return hashCode;
     }
 

@@ -31,6 +31,8 @@ public class IotAnalyticsActionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("channelArn").build();
     private static final MarshallingInfo<String> CHANNELNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("channelName").build();
+    private static final MarshallingInfo<Boolean> BATCHMODE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("batchMode").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("roleArn").build();
 
@@ -52,6 +54,7 @@ public class IotAnalyticsActionMarshaller {
         try {
             protocolMarshaller.marshall(iotAnalyticsAction.getChannelArn(), CHANNELARN_BINDING);
             protocolMarshaller.marshall(iotAnalyticsAction.getChannelName(), CHANNELNAME_BINDING);
+            protocolMarshaller.marshall(iotAnalyticsAction.getBatchMode(), BATCHMODE_BINDING);
             protocolMarshaller.marshall(iotAnalyticsAction.getRoleArn(), ROLEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

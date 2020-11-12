@@ -56,6 +56,10 @@ public class IotAnalyticsActionJsonUnmarshaller implements Unmarshaller<IotAnaly
                     context.nextToken();
                     iotAnalyticsAction.setChannelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("batchMode", targetDepth)) {
+                    context.nextToken();
+                    iotAnalyticsAction.setBatchMode(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
                     iotAnalyticsAction.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));

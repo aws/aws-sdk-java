@@ -1098,7 +1098,7 @@ public class SynthesisTask implements Serializable, Cloneable, StructuredPojo {
         if (getSnsTopicArn() != null)
             sb.append("SnsTopicArn: ").append(getSnsTopicArn()).append(",");
         if (getLexiconNames() != null)
-            sb.append("LexiconNames: ").append("***Sensitive Data Redacted***").append(",");
+            sb.append("LexiconNames: ").append(getLexiconNames()).append(",");
         if (getOutputFormat() != null)
             sb.append("OutputFormat: ").append(getOutputFormat()).append(",");
         if (getSampleRate() != null)

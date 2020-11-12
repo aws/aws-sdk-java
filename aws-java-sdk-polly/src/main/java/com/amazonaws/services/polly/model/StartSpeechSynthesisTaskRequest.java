@@ -926,7 +926,7 @@ public class StartSpeechSynthesisTaskRequest extends com.amazonaws.AmazonWebServ
         if (getLanguageCode() != null)
             sb.append("LanguageCode: ").append(getLanguageCode()).append(",");
         if (getLexiconNames() != null)
-            sb.append("LexiconNames: ").append("***Sensitive Data Redacted***").append(",");
+            sb.append("LexiconNames: ").append(getLexiconNames()).append(",");
         if (getOutputFormat() != null)
             sb.append("OutputFormat: ").append(getOutputFormat()).append(",");
         if (getOutputS3BucketName() != null)

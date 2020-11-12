@@ -40,6 +40,8 @@ public class CreateWorldGenerationJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("worldCount").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<Map> WORLDTAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("worldTags").build();
 
     private static final CreateWorldGenerationJobRequestMarshaller instance = new CreateWorldGenerationJobRequestMarshaller();
 
@@ -61,6 +63,7 @@ public class CreateWorldGenerationJobRequestMarshaller {
             protocolMarshaller.marshall(createWorldGenerationJobRequest.getTemplate(), TEMPLATE_BINDING);
             protocolMarshaller.marshall(createWorldGenerationJobRequest.getWorldCount(), WORLDCOUNT_BINDING);
             protocolMarshaller.marshall(createWorldGenerationJobRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createWorldGenerationJobRequest.getWorldTags(), WORLDTAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -31,7 +31,7 @@ public class GetBlueprintsResult extends com.amazonaws.AmazonWebServiceResult<co
     private java.util.List<Blueprint> blueprints;
     /**
      * <p>
-     * The token to advance to the next page of resutls from your request.
+     * The token to advance to the next page of results from your request.
      * </p>
      * <p>
      * A next page token is not returned if there are no more results to display.
@@ -115,7 +115,7 @@ public class GetBlueprintsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The token to advance to the next page of resutls from your request.
+     * The token to advance to the next page of results from your request.
      * </p>
      * <p>
      * A next page token is not returned if there are no more results to display.
@@ -126,7 +126,7 @@ public class GetBlueprintsResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param nextPageToken
-     *        The token to advance to the next page of resutls from your request.</p>
+     *        The token to advance to the next page of results from your request.</p>
      *        <p>
      *        A next page token is not returned if there are no more results to display.
      *        </p>
@@ -141,7 +141,7 @@ public class GetBlueprintsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The token to advance to the next page of resutls from your request.
+     * The token to advance to the next page of results from your request.
      * </p>
      * <p>
      * A next page token is not returned if there are no more results to display.
@@ -151,7 +151,7 @@ public class GetBlueprintsResult extends com.amazonaws.AmazonWebServiceResult<co
      * token using the <code>pageToken</code> parameter.
      * </p>
      * 
-     * @return The token to advance to the next page of resutls from your request.</p>
+     * @return The token to advance to the next page of results from your request.</p>
      *         <p>
      *         A next page token is not returned if there are no more results to display.
      *         </p>
@@ -166,7 +166,7 @@ public class GetBlueprintsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The token to advance to the next page of resutls from your request.
+     * The token to advance to the next page of results from your request.
      * </p>
      * <p>
      * A next page token is not returned if there are no more results to display.
@@ -177,7 +177,7 @@ public class GetBlueprintsResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param nextPageToken
-     *        The token to advance to the next page of resutls from your request.</p>
+     *        The token to advance to the next page of results from your request.</p>
      *        <p>
      *        A next page token is not returned if there are no more results to display.
      *        </p>

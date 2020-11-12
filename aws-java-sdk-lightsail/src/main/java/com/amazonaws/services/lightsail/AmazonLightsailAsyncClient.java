@@ -32,10 +32,10 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * <p>
  * Amazon Lightsail is the easiest way to get started with Amazon Web Services (AWS) for developers who need to build
- * websites or web applications. It includes everything you need to launch your project quickly – instances (virtual
- * private servers), managed databases, SSD-based block storage, static IP addresses, load balancers, content delivery
- * network (CDN) distributions, DNS management of registered domains, and snapshots (backups) – for a low, predictable
- * monthly price.
+ * websites or web applications. It includes everything you need to launch your project quickly - instances (virtual
+ * private servers), container services, managed databases, SSD-based block storage, static IP addresses, load
+ * balancers, content delivery network (CDN) distributions, DNS management of registered domains, and resource snapshots
+ * (backups) - for a low, predictable monthly price.
  * </p>
  * <p>
  * You can manage your Lightsail resources using the Lightsail console, Lightsail API, AWS Command Line Interface (AWS
@@ -45,7 +45,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </p>
  * <p>
  * This API Reference provides detailed information about the actions, data types, parameters, and errors of the
- * Lightsail service. For more information about the supported AWS Regions, endpoints, and service quotas for the
+ * Lightsail service. For more information about the supported AWS Regions, endpoints, and service quotas of the
  * Lightsail service, see <a href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail
  * Endpoints and Quotas</a> in the <i>AWS General Reference</i>.
  * </p>
@@ -626,6 +626,109 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
 
                 try {
                     result = executeCreateContactMethod(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateContainerServiceResult> createContainerServiceAsync(CreateContainerServiceRequest request) {
+
+        return createContainerServiceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateContainerServiceResult> createContainerServiceAsync(final CreateContainerServiceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateContainerServiceRequest, CreateContainerServiceResult> asyncHandler) {
+        final CreateContainerServiceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateContainerServiceResult>() {
+            @Override
+            public CreateContainerServiceResult call() throws Exception {
+                CreateContainerServiceResult result = null;
+
+                try {
+                    result = executeCreateContainerService(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateContainerServiceDeploymentResult> createContainerServiceDeploymentAsync(
+            CreateContainerServiceDeploymentRequest request) {
+
+        return createContainerServiceDeploymentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateContainerServiceDeploymentResult> createContainerServiceDeploymentAsync(
+            final CreateContainerServiceDeploymentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateContainerServiceDeploymentRequest, CreateContainerServiceDeploymentResult> asyncHandler) {
+        final CreateContainerServiceDeploymentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateContainerServiceDeploymentResult>() {
+            @Override
+            public CreateContainerServiceDeploymentResult call() throws Exception {
+                CreateContainerServiceDeploymentResult result = null;
+
+                try {
+                    result = executeCreateContainerServiceDeployment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateContainerServiceRegistryLoginResult> createContainerServiceRegistryLoginAsync(
+            CreateContainerServiceRegistryLoginRequest request) {
+
+        return createContainerServiceRegistryLoginAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateContainerServiceRegistryLoginResult> createContainerServiceRegistryLoginAsync(
+            final CreateContainerServiceRegistryLoginRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateContainerServiceRegistryLoginRequest, CreateContainerServiceRegistryLoginResult> asyncHandler) {
+        final CreateContainerServiceRegistryLoginRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateContainerServiceRegistryLoginResult>() {
+            @Override
+            public CreateContainerServiceRegistryLoginResult call() throws Exception {
+                CreateContainerServiceRegistryLoginResult result = null;
+
+                try {
+                    result = executeCreateContainerServiceRegistryLogin(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1259,6 +1362,72 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
 
                 try {
                     result = executeDeleteContactMethod(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContainerImageResult> deleteContainerImageAsync(DeleteContainerImageRequest request) {
+
+        return deleteContainerImageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContainerImageResult> deleteContainerImageAsync(final DeleteContainerImageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteContainerImageRequest, DeleteContainerImageResult> asyncHandler) {
+        final DeleteContainerImageRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteContainerImageResult>() {
+            @Override
+            public DeleteContainerImageResult call() throws Exception {
+                DeleteContainerImageResult result = null;
+
+                try {
+                    result = executeDeleteContainerImage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContainerServiceResult> deleteContainerServiceAsync(DeleteContainerServiceRequest request) {
+
+        return deleteContainerServiceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContainerServiceResult> deleteContainerServiceAsync(final DeleteContainerServiceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteContainerServiceRequest, DeleteContainerServiceResult> asyncHandler) {
+        final DeleteContainerServiceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteContainerServiceResult>() {
+            @Override
+            public DeleteContainerServiceResult call() throws Exception {
+                DeleteContainerServiceResult result = null;
+
+                try {
+                    result = executeDeleteContainerService(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2225,6 +2394,239 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
 
                 try {
                     result = executeGetContactMethods(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContainerAPIMetadataResult> getContainerAPIMetadataAsync(GetContainerAPIMetadataRequest request) {
+
+        return getContainerAPIMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContainerAPIMetadataResult> getContainerAPIMetadataAsync(final GetContainerAPIMetadataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetContainerAPIMetadataRequest, GetContainerAPIMetadataResult> asyncHandler) {
+        final GetContainerAPIMetadataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetContainerAPIMetadataResult>() {
+            @Override
+            public GetContainerAPIMetadataResult call() throws Exception {
+                GetContainerAPIMetadataResult result = null;
+
+                try {
+                    result = executeGetContainerAPIMetadata(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContainerImagesResult> getContainerImagesAsync(GetContainerImagesRequest request) {
+
+        return getContainerImagesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContainerImagesResult> getContainerImagesAsync(final GetContainerImagesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetContainerImagesRequest, GetContainerImagesResult> asyncHandler) {
+        final GetContainerImagesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetContainerImagesResult>() {
+            @Override
+            public GetContainerImagesResult call() throws Exception {
+                GetContainerImagesResult result = null;
+
+                try {
+                    result = executeGetContainerImages(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContainerLogResult> getContainerLogAsync(GetContainerLogRequest request) {
+
+        return getContainerLogAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContainerLogResult> getContainerLogAsync(final GetContainerLogRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetContainerLogRequest, GetContainerLogResult> asyncHandler) {
+        final GetContainerLogRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetContainerLogResult>() {
+            @Override
+            public GetContainerLogResult call() throws Exception {
+                GetContainerLogResult result = null;
+
+                try {
+                    result = executeGetContainerLog(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContainerServiceDeploymentsResult> getContainerServiceDeploymentsAsync(GetContainerServiceDeploymentsRequest request) {
+
+        return getContainerServiceDeploymentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContainerServiceDeploymentsResult> getContainerServiceDeploymentsAsync(
+            final GetContainerServiceDeploymentsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetContainerServiceDeploymentsRequest, GetContainerServiceDeploymentsResult> asyncHandler) {
+        final GetContainerServiceDeploymentsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetContainerServiceDeploymentsResult>() {
+            @Override
+            public GetContainerServiceDeploymentsResult call() throws Exception {
+                GetContainerServiceDeploymentsResult result = null;
+
+                try {
+                    result = executeGetContainerServiceDeployments(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContainerServiceMetricDataResult> getContainerServiceMetricDataAsync(GetContainerServiceMetricDataRequest request) {
+
+        return getContainerServiceMetricDataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContainerServiceMetricDataResult> getContainerServiceMetricDataAsync(
+            final GetContainerServiceMetricDataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetContainerServiceMetricDataRequest, GetContainerServiceMetricDataResult> asyncHandler) {
+        final GetContainerServiceMetricDataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetContainerServiceMetricDataResult>() {
+            @Override
+            public GetContainerServiceMetricDataResult call() throws Exception {
+                GetContainerServiceMetricDataResult result = null;
+
+                try {
+                    result = executeGetContainerServiceMetricData(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContainerServicePowersResult> getContainerServicePowersAsync(GetContainerServicePowersRequest request) {
+
+        return getContainerServicePowersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContainerServicePowersResult> getContainerServicePowersAsync(final GetContainerServicePowersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetContainerServicePowersRequest, GetContainerServicePowersResult> asyncHandler) {
+        final GetContainerServicePowersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetContainerServicePowersResult>() {
+            @Override
+            public GetContainerServicePowersResult call() throws Exception {
+                GetContainerServicePowersResult result = null;
+
+                try {
+                    result = executeGetContainerServicePowers(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContainerServicesResult> getContainerServicesAsync(GetContainerServicesRequest request) {
+
+        return getContainerServicesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContainerServicesResult> getContainerServicesAsync(final GetContainerServicesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetContainerServicesRequest, GetContainerServicesResult> asyncHandler) {
+        final GetContainerServicesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetContainerServicesResult>() {
+            @Override
+            public GetContainerServicesResult call() throws Exception {
+                GetContainerServicesResult result = null;
+
+                try {
+                    result = executeGetContainerServices(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3940,6 +4342,39 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<RegisterContainerImageResult> registerContainerImageAsync(RegisterContainerImageRequest request) {
+
+        return registerContainerImageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterContainerImageResult> registerContainerImageAsync(final RegisterContainerImageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RegisterContainerImageRequest, RegisterContainerImageResult> asyncHandler) {
+        final RegisterContainerImageRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RegisterContainerImageResult>() {
+            @Override
+            public RegisterContainerImageResult call() throws Exception {
+                RegisterContainerImageResult result = null;
+
+                try {
+                    result = executeRegisterContainerImage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ReleaseStaticIpResult> releaseStaticIpAsync(ReleaseStaticIpRequest request) {
 
         return releaseStaticIpAsync(request, null);
@@ -4288,6 +4723,39 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContainerServiceResult> updateContainerServiceAsync(UpdateContainerServiceRequest request) {
+
+        return updateContainerServiceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContainerServiceResult> updateContainerServiceAsync(final UpdateContainerServiceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateContainerServiceRequest, UpdateContainerServiceResult> asyncHandler) {
+        final UpdateContainerServiceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateContainerServiceResult>() {
+            @Override
+            public UpdateContainerServiceResult call() throws Exception {
+                UpdateContainerServiceResult result = null;
+
+                try {
+                    result = executeUpdateContainerService(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
