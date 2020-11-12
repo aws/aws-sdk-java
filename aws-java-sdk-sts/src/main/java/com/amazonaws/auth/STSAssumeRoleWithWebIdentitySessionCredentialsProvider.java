@@ -234,7 +234,7 @@ public class STSAssumeRoleWithWebIdentitySessionCredentialsProvider implements A
                                    AmazonClientException exception,
                                    int retriesAttempted) {
             // Always retry on client exceptions caused by IOException
-            if (exception instanceof IOException || exception.getCause() instanceof IOException) return true;
+            if (exception.getCause() instanceof IOException) return true;
 
             if (exception instanceof InvalidIdentityTokenException || exception.getCause() instanceof InvalidIdentityTokenException) return true;
 
