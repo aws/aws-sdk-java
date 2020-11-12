@@ -792,8 +792,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
     /**
      * <p>
      * Creates an assignment with one specified IAM policy, identified by its Amazon Resource Name (ARN). This policy
-     * will be assigned to specified groups or users of Amazon QuickSight. The users and groups need to be in the same
-     * namespace.
+     * assignment is attached to the specified groups or users of Amazon QuickSight. Assignment names are unique per AWS
+     * account. To avoid overwriting rules in other namespaces, use assignment names that are unique.
      * </p>
      * 
      * @param createIAMPolicyAssignmentRequest
@@ -6863,7 +6863,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
     /**
      * <p>
      * Updates an existing IAM policy assignment. This operation updates only the optional parameter or parameters that
-     * are specified in the request.
+     * are specified in the request. This overwrites all of the users included in <code>Identities</code>.
      * </p>
      * 
      * @param updateIAMPolicyAssignmentRequest

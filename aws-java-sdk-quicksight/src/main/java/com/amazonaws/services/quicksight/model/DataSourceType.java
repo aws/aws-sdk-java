@@ -30,6 +30,7 @@ public enum DataSourceType {
     JIRA("JIRA"),
     MARIADB("MARIADB"),
     MYSQL("MYSQL"),
+    ORACLE("ORACLE"),
     POSTGRESQL("POSTGRESQL"),
     PRESTO("PRESTO"),
     REDSHIFT("REDSHIFT"),

@@ -30,7 +30,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name for the Amplify app.
+     * The name for an Amplify app.
      * </p>
      */
     private String name;
@@ -122,30 +122,36 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String buildSpec;
     /**
      * <p>
-     * Enables automated branch creation for the Amplify app.
+     * The custom HTTP headers for an Amplify app.
+     * </p>
+     */
+    private String customHeaders;
+    /**
+     * <p>
+     * Enables automated branch creation for an Amplify app.
      * </p>
      */
     private Boolean enableAutoBranchCreation;
     /**
      * <p>
-     * The automated branch creation glob patterns for the Amplify app.
+     * The automated branch creation glob patterns for an Amplify app.
      * </p>
      */
     private java.util.List<String> autoBranchCreationPatterns;
     /**
      * <p>
-     * The automated branch creation configuration for the Amplify app.
+     * The automated branch creation configuration for an Amplify app.
      * </p>
      */
     private AutoBranchCreationConfig autoBranchCreationConfig;
 
     /**
      * <p>
-     * The name for the Amplify app.
+     * The name for an Amplify app.
      * </p>
      * 
      * @param name
-     *        The name for the Amplify app.
+     *        The name for an Amplify app.
      */
 
     public void setName(String name) {
@@ -154,10 +160,10 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name for the Amplify app.
+     * The name for an Amplify app.
      * </p>
      * 
-     * @return The name for the Amplify app.
+     * @return The name for an Amplify app.
      */
 
     public String getName() {
@@ -166,11 +172,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name for the Amplify app.
+     * The name for an Amplify app.
      * </p>
      * 
      * @param name
-     *        The name for the Amplify app.
+     *        The name for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -900,11 +906,51 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Enables automated branch creation for the Amplify app.
+     * The custom HTTP headers for an Amplify app.
+     * </p>
+     * 
+     * @param customHeaders
+     *        The custom HTTP headers for an Amplify app.
+     */
+
+    public void setCustomHeaders(String customHeaders) {
+        this.customHeaders = customHeaders;
+    }
+
+    /**
+     * <p>
+     * The custom HTTP headers for an Amplify app.
+     * </p>
+     * 
+     * @return The custom HTTP headers for an Amplify app.
+     */
+
+    public String getCustomHeaders() {
+        return this.customHeaders;
+    }
+
+    /**
+     * <p>
+     * The custom HTTP headers for an Amplify app.
+     * </p>
+     * 
+     * @param customHeaders
+     *        The custom HTTP headers for an Amplify app.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAppRequest withCustomHeaders(String customHeaders) {
+        setCustomHeaders(customHeaders);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enables automated branch creation for an Amplify app.
      * </p>
      * 
      * @param enableAutoBranchCreation
-     *        Enables automated branch creation for the Amplify app.
+     *        Enables automated branch creation for an Amplify app.
      */
 
     public void setEnableAutoBranchCreation(Boolean enableAutoBranchCreation) {
@@ -913,10 +959,10 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Enables automated branch creation for the Amplify app.
+     * Enables automated branch creation for an Amplify app.
      * </p>
      * 
-     * @return Enables automated branch creation for the Amplify app.
+     * @return Enables automated branch creation for an Amplify app.
      */
 
     public Boolean getEnableAutoBranchCreation() {
@@ -925,11 +971,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Enables automated branch creation for the Amplify app.
+     * Enables automated branch creation for an Amplify app.
      * </p>
      * 
      * @param enableAutoBranchCreation
-     *        Enables automated branch creation for the Amplify app.
+     *        Enables automated branch creation for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -940,10 +986,10 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Enables automated branch creation for the Amplify app.
+     * Enables automated branch creation for an Amplify app.
      * </p>
      * 
-     * @return Enables automated branch creation for the Amplify app.
+     * @return Enables automated branch creation for an Amplify app.
      */
 
     public Boolean isEnableAutoBranchCreation() {
@@ -952,10 +998,10 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The automated branch creation glob patterns for the Amplify app.
+     * The automated branch creation glob patterns for an Amplify app.
      * </p>
      * 
-     * @return The automated branch creation glob patterns for the Amplify app.
+     * @return The automated branch creation glob patterns for an Amplify app.
      */
 
     public java.util.List<String> getAutoBranchCreationPatterns() {
@@ -964,11 +1010,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The automated branch creation glob patterns for the Amplify app.
+     * The automated branch creation glob patterns for an Amplify app.
      * </p>
      * 
      * @param autoBranchCreationPatterns
-     *        The automated branch creation glob patterns for the Amplify app.
+     *        The automated branch creation glob patterns for an Amplify app.
      */
 
     public void setAutoBranchCreationPatterns(java.util.Collection<String> autoBranchCreationPatterns) {
@@ -982,7 +1028,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The automated branch creation glob patterns for the Amplify app.
+     * The automated branch creation glob patterns for an Amplify app.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -991,7 +1037,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param autoBranchCreationPatterns
-     *        The automated branch creation glob patterns for the Amplify app.
+     *        The automated branch creation glob patterns for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1007,11 +1053,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The automated branch creation glob patterns for the Amplify app.
+     * The automated branch creation glob patterns for an Amplify app.
      * </p>
      * 
      * @param autoBranchCreationPatterns
-     *        The automated branch creation glob patterns for the Amplify app.
+     *        The automated branch creation glob patterns for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1022,11 +1068,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The automated branch creation configuration for the Amplify app.
+     * The automated branch creation configuration for an Amplify app.
      * </p>
      * 
      * @param autoBranchCreationConfig
-     *        The automated branch creation configuration for the Amplify app.
+     *        The automated branch creation configuration for an Amplify app.
      */
 
     public void setAutoBranchCreationConfig(AutoBranchCreationConfig autoBranchCreationConfig) {
@@ -1035,10 +1081,10 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The automated branch creation configuration for the Amplify app.
+     * The automated branch creation configuration for an Amplify app.
      * </p>
      * 
-     * @return The automated branch creation configuration for the Amplify app.
+     * @return The automated branch creation configuration for an Amplify app.
      */
 
     public AutoBranchCreationConfig getAutoBranchCreationConfig() {
@@ -1047,11 +1093,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The automated branch creation configuration for the Amplify app.
+     * The automated branch creation configuration for an Amplify app.
      * </p>
      * 
      * @param autoBranchCreationConfig
-     *        The automated branch creation configuration for the Amplify app.
+     *        The automated branch creation configuration for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1102,6 +1148,8 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
             sb.append("Tags: ").append(getTags()).append(",");
         if (getBuildSpec() != null)
             sb.append("BuildSpec: ").append(getBuildSpec()).append(",");
+        if (getCustomHeaders() != null)
+            sb.append("CustomHeaders: ").append(getCustomHeaders()).append(",");
         if (getEnableAutoBranchCreation() != null)
             sb.append("EnableAutoBranchCreation: ").append(getEnableAutoBranchCreation()).append(",");
         if (getAutoBranchCreationPatterns() != null)
@@ -1182,6 +1230,10 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getBuildSpec() != null && other.getBuildSpec().equals(this.getBuildSpec()) == false)
             return false;
+        if (other.getCustomHeaders() == null ^ this.getCustomHeaders() == null)
+            return false;
+        if (other.getCustomHeaders() != null && other.getCustomHeaders().equals(this.getCustomHeaders()) == false)
+            return false;
         if (other.getEnableAutoBranchCreation() == null ^ this.getEnableAutoBranchCreation() == null)
             return false;
         if (other.getEnableAutoBranchCreation() != null && other.getEnableAutoBranchCreation().equals(this.getEnableAutoBranchCreation()) == false)
@@ -1217,6 +1269,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getCustomRules() == null) ? 0 : getCustomRules().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getBuildSpec() == null) ? 0 : getBuildSpec().hashCode());
+        hashCode = prime * hashCode + ((getCustomHeaders() == null) ? 0 : getCustomHeaders().hashCode());
         hashCode = prime * hashCode + ((getEnableAutoBranchCreation() == null) ? 0 : getEnableAutoBranchCreation().hashCode());
         hashCode = prime * hashCode + ((getAutoBranchCreationPatterns() == null) ? 0 : getAutoBranchCreationPatterns().hashCode());
         hashCode = prime * hashCode + ((getAutoBranchCreationConfig() == null) ? 0 : getAutoBranchCreationConfig().hashCode());

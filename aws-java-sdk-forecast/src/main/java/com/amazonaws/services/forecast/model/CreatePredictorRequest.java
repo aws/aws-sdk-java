@@ -47,10 +47,12 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
+     * <code>arn:aws:forecast:::algorithm/CNN-QR</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Supports hyperparameter optimization (HPO)
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
      * </p>
      * </li>
      * <li>
@@ -88,6 +90,17 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
     private Integer forecastHorizon;
     /**
      * <p>
+     * Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types
+     * can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with
+     * <code>mean</code>.
+     * </p>
+     * <p>
+     * The default value is <code>["0.10", "0.50", "0.9"]</code>.
+     * </p>
+     */
+    private java.util.List<String> forecastTypes;
+    /**
+     * <p>
      * Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it provides and
      * chooses the best algorithm and configuration for your training dataset.
      * </p>
@@ -117,12 +130,17 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * specify an algorithm and <code>PerformAutoML</code> must be false.
      * </p>
      * <p>
-     * The following algorithm supports HPO:
+     * The following algorithms support HPO:
      * </p>
      * <ul>
      * <li>
      * <p>
      * DeepAR+
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CNN-QR
      * </p>
      * </li>
      * </ul>
@@ -283,10 +301,12 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
+     * <code>arn:aws:forecast:::algorithm/CNN-QR</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Supports hyperparameter optimization (HPO)
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
      * </p>
      * </li>
      * <li>
@@ -320,10 +340,12 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
+     *        <code>arn:aws:forecast:::algorithm/CNN-QR</code>
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        Supports hyperparameter optimization (HPO)
+     *        <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
      *        </p>
      *        </li>
      *        <li>
@@ -363,10 +385,12 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
+     * <code>arn:aws:forecast:::algorithm/CNN-QR</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Supports hyperparameter optimization (HPO)
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
      * </p>
      * </li>
      * <li>
@@ -399,10 +423,12 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      *         </li>
      *         <li>
      *         <p>
-     *         <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
+     *         <code>arn:aws:forecast:::algorithm/CNN-QR</code>
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         Supports hyperparameter optimization (HPO)
+     *         <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
      *         </p>
      *         </li>
      *         <li>
@@ -442,10 +468,12 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
+     * <code>arn:aws:forecast:::algorithm/CNN-QR</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Supports hyperparameter optimization (HPO)
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
      * </p>
      * </li>
      * <li>
@@ -479,10 +507,12 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
+     *        <code>arn:aws:forecast:::algorithm/CNN-QR</code>
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        Supports hyperparameter optimization (HPO)
+     *        <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
      *        </p>
      *        </li>
      *        <li>
@@ -599,6 +629,112 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
 
     public CreatePredictorRequest withForecastHorizon(Integer forecastHorizon) {
         setForecastHorizon(forecastHorizon);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types
+     * can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with
+     * <code>mean</code>.
+     * </p>
+     * <p>
+     * The default value is <code>["0.10", "0.50", "0.9"]</code>.
+     * </p>
+     * 
+     * @return Specifies the forecast types used to train a predictor. You can specify up to five forecast types.
+     *         Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify
+     *         the mean forecast with <code>mean</code>. </p>
+     *         <p>
+     *         The default value is <code>["0.10", "0.50", "0.9"]</code>.
+     */
+
+    public java.util.List<String> getForecastTypes() {
+        return forecastTypes;
+    }
+
+    /**
+     * <p>
+     * Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types
+     * can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with
+     * <code>mean</code>.
+     * </p>
+     * <p>
+     * The default value is <code>["0.10", "0.50", "0.9"]</code>.
+     * </p>
+     * 
+     * @param forecastTypes
+     *        Specifies the forecast types used to train a predictor. You can specify up to five forecast types.
+     *        Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify
+     *        the mean forecast with <code>mean</code>. </p>
+     *        <p>
+     *        The default value is <code>["0.10", "0.50", "0.9"]</code>.
+     */
+
+    public void setForecastTypes(java.util.Collection<String> forecastTypes) {
+        if (forecastTypes == null) {
+            this.forecastTypes = null;
+            return;
+        }
+
+        this.forecastTypes = new java.util.ArrayList<String>(forecastTypes);
+    }
+
+    /**
+     * <p>
+     * Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types
+     * can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with
+     * <code>mean</code>.
+     * </p>
+     * <p>
+     * The default value is <code>["0.10", "0.50", "0.9"]</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setForecastTypes(java.util.Collection)} or {@link #withForecastTypes(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param forecastTypes
+     *        Specifies the forecast types used to train a predictor. You can specify up to five forecast types.
+     *        Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify
+     *        the mean forecast with <code>mean</code>. </p>
+     *        <p>
+     *        The default value is <code>["0.10", "0.50", "0.9"]</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePredictorRequest withForecastTypes(String... forecastTypes) {
+        if (this.forecastTypes == null) {
+            setForecastTypes(new java.util.ArrayList<String>(forecastTypes.length));
+        }
+        for (String ele : forecastTypes) {
+            this.forecastTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types
+     * can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with
+     * <code>mean</code>.
+     * </p>
+     * <p>
+     * The default value is <code>["0.10", "0.50", "0.9"]</code>.
+     * </p>
+     * 
+     * @param forecastTypes
+     *        Specifies the forecast types used to train a predictor. You can specify up to five forecast types.
+     *        Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify
+     *        the mean forecast with <code>mean</code>. </p>
+     *        <p>
+     *        The default value is <code>["0.10", "0.50", "0.9"]</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePredictorRequest withForecastTypes(java.util.Collection<String> forecastTypes) {
+        setForecastTypes(forecastTypes);
         return this;
     }
 
@@ -738,12 +874,17 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * specify an algorithm and <code>PerformAutoML</code> must be false.
      * </p>
      * <p>
-     * The following algorithm supports HPO:
+     * The following algorithms support HPO:
      * </p>
      * <ul>
      * <li>
      * <p>
      * DeepAR+
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CNN-QR
      * </p>
      * </li>
      * </ul>
@@ -762,12 +903,17 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      *        you are required to specify an algorithm and <code>PerformAutoML</code> must be false.
      *        </p>
      *        <p>
-     *        The following algorithm supports HPO:
+     *        The following algorithms support HPO:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
      *        DeepAR+
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CNN-QR
      *        </p>
      *        </li>
      */
@@ -792,12 +938,17 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * specify an algorithm and <code>PerformAutoML</code> must be false.
      * </p>
      * <p>
-     * The following algorithm supports HPO:
+     * The following algorithms support HPO:
      * </p>
      * <ul>
      * <li>
      * <p>
      * DeepAR+
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CNN-QR
      * </p>
      * </li>
      * </ul>
@@ -815,12 +966,17 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      *         you are required to specify an algorithm and <code>PerformAutoML</code> must be false.
      *         </p>
      *         <p>
-     *         The following algorithm supports HPO:
+     *         The following algorithms support HPO:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
      *         DeepAR+
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CNN-QR
      *         </p>
      *         </li>
      */
@@ -845,12 +1001,17 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * specify an algorithm and <code>PerformAutoML</code> must be false.
      * </p>
      * <p>
-     * The following algorithm supports HPO:
+     * The following algorithms support HPO:
      * </p>
      * <ul>
      * <li>
      * <p>
      * DeepAR+
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CNN-QR
      * </p>
      * </li>
      * </ul>
@@ -869,12 +1030,17 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      *        you are required to specify an algorithm and <code>PerformAutoML</code> must be false.
      *        </p>
      *        <p>
-     *        The following algorithm supports HPO:
+     *        The following algorithms support HPO:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
      *        DeepAR+
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CNN-QR
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -901,12 +1067,17 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * specify an algorithm and <code>PerformAutoML</code> must be false.
      * </p>
      * <p>
-     * The following algorithm supports HPO:
+     * The following algorithms support HPO:
      * </p>
      * <ul>
      * <li>
      * <p>
      * DeepAR+
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CNN-QR
      * </p>
      * </li>
      * </ul>
@@ -924,12 +1095,17 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      *         you are required to specify an algorithm and <code>PerformAutoML</code> must be false.
      *         </p>
      *         <p>
-     *         The following algorithm supports HPO:
+     *         The following algorithms support HPO:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
      *         DeepAR+
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CNN-QR
      *         </p>
      *         </li>
      */
@@ -1720,6 +1896,8 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("AlgorithmArn: ").append(getAlgorithmArn()).append(",");
         if (getForecastHorizon() != null)
             sb.append("ForecastHorizon: ").append(getForecastHorizon()).append(",");
+        if (getForecastTypes() != null)
+            sb.append("ForecastTypes: ").append(getForecastTypes()).append(",");
         if (getPerformAutoML() != null)
             sb.append("PerformAutoML: ").append(getPerformAutoML()).append(",");
         if (getPerformHPO() != null)
@@ -1763,6 +1941,10 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
         if (other.getForecastHorizon() == null ^ this.getForecastHorizon() == null)
             return false;
         if (other.getForecastHorizon() != null && other.getForecastHorizon().equals(this.getForecastHorizon()) == false)
+            return false;
+        if (other.getForecastTypes() == null ^ this.getForecastTypes() == null)
+            return false;
+        if (other.getForecastTypes() != null && other.getForecastTypes().equals(this.getForecastTypes()) == false)
             return false;
         if (other.getPerformAutoML() == null ^ this.getPerformAutoML() == null)
             return false;
@@ -1811,6 +1993,7 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getPredictorName() == null) ? 0 : getPredictorName().hashCode());
         hashCode = prime * hashCode + ((getAlgorithmArn() == null) ? 0 : getAlgorithmArn().hashCode());
         hashCode = prime * hashCode + ((getForecastHorizon() == null) ? 0 : getForecastHorizon().hashCode());
+        hashCode = prime * hashCode + ((getForecastTypes() == null) ? 0 : getForecastTypes().hashCode());
         hashCode = prime * hashCode + ((getPerformAutoML() == null) ? 0 : getPerformAutoML().hashCode());
         hashCode = prime * hashCode + ((getPerformHPO() == null) ? 0 : getPerformHPO().hashCode());
         hashCode = prime * hashCode + ((getTrainingParameters() == null) ? 0 : getTrainingParameters().hashCode());

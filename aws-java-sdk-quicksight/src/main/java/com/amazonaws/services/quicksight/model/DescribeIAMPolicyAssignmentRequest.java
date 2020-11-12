@@ -33,7 +33,7 @@ public class DescribeIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebS
     private String awsAccountId;
     /**
      * <p>
-     * The name of the assignment.
+     * The name of the assignment, also called a rule.
      * </p>
      */
     private String assignmentName;
@@ -86,11 +86,11 @@ public class DescribeIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the assignment.
+     * The name of the assignment, also called a rule.
      * </p>
      * 
      * @param assignmentName
-     *        The name of the assignment.
+     *        The name of the assignment, also called a rule.
      */
 
     public void setAssignmentName(String assignmentName) {
@@ -99,10 +99,10 @@ public class DescribeIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the assignment.
+     * The name of the assignment, also called a rule.
      * </p>
      * 
-     * @return The name of the assignment.
+     * @return The name of the assignment, also called a rule.
      */
 
     public String getAssignmentName() {
@@ -111,11 +111,11 @@ public class DescribeIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the assignment.
+     * The name of the assignment, also called a rule.
      * </p>
      * 
      * @param assignmentName
-     *        The name of the assignment.
+     *        The name of the assignment, also called a rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

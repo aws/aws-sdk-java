@@ -59,6 +59,8 @@ public class CreateAppRequestMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> BUILDSPEC_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("buildSpec").build();
+    private static final MarshallingInfo<String> CUSTOMHEADERS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customHeaders").build();
     private static final MarshallingInfo<Boolean> ENABLEAUTOBRANCHCREATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableAutoBranchCreation").build();
     private static final MarshallingInfo<List> AUTOBRANCHCREATIONPATTERNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -97,6 +99,7 @@ public class CreateAppRequestMarshaller {
             protocolMarshaller.marshall(createAppRequest.getCustomRules(), CUSTOMRULES_BINDING);
             protocolMarshaller.marshall(createAppRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createAppRequest.getBuildSpec(), BUILDSPEC_BINDING);
+            protocolMarshaller.marshall(createAppRequest.getCustomHeaders(), CUSTOMHEADERS_BINDING);
             protocolMarshaller.marshall(createAppRequest.getEnableAutoBranchCreation(), ENABLEAUTOBRANCHCREATION_BINDING);
             protocolMarshaller.marshall(createAppRequest.getAutoBranchCreationPatterns(), AUTOBRANCHCREATIONPATTERNS_BINDING);
             protocolMarshaller.marshall(createAppRequest.getAutoBranchCreationConfig(), AUTOBRANCHCREATIONCONFIG_BINDING);

@@ -22,79 +22,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Describes a supplementary feature of a dataset group. This object is part of the <a>InputDataConfig</a> object.
  * </p>
  * <p>
- * The only supported feature is a holiday calendar. If you use the calendar, all data in the datasets should belong to
- * the same country as the calendar. For the holiday calendar data, see the <a
- * href="http://jollyday.sourceforge.net/data.html">Jollyday</a> web site.
+ * The only supported feature is Holidays. If you use the calendar, all data in the datasets should belong to the same
+ * country as the calendar. For the holiday calendar data, see the <a
+ * href="http://jollyday.sourceforge.net/data.html">Jollyday</a> website.
  * </p>
- * <p>
- * India and Korea's holidays are not included in the Jollyday library, but both are supported by Amazon Forecast. Their
- * holidays are:
- * </p>
- * <p>
- * <b>"IN" - INDIA</b>
- * </p>
- * <ul>
- * <li>
- * <p>
- * <code>JANUARY 26 - REPUBLIC DAY</code>
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>AUGUST 15 - INDEPENDENCE DAY</code>
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>OCTOBER 2 GANDHI'S BIRTHDAY</code>
- * </p>
- * </li>
- * </ul>
- * <p>
- * <b>"KR" - KOREA</b>
- * </p>
- * <ul>
- * <li>
- * <p>
- * <code>JANUARY 1 - NEW YEAR</code>
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>MARCH 1 - INDEPENDENCE MOVEMENT DAY</code>
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>MAY 5 - CHILDREN'S DAY</code>
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>JUNE 6 - MEMORIAL DAY</code>
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>AUGUST 15 - LIBERATION DAY</code>
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>OCTOBER 3 - NATIONAL FOUNDATION DAY</code>
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>OCTOBER 9 - HANGEUL DAY</code>
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>DECEMBER 25 - CHRISTMAS DAY</code>
- * </p>
- * </li>
- * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/SupplementaryFeature" target="_top">AWS API
  *      Documentation</a>
@@ -115,6 +46,11 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * <ul>
      * <li>
      * <p>
+     * "AL" - ALBANIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "AR" - ARGENTINA
      * </p>
      * </li>
@@ -130,7 +66,22 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "BA" - BOSNIA HERZEGOVINA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "BE" - BELGIUM
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "BG" - BULGARIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "BO" - BOLIVIA
      * </p>
      * </li>
      * <li>
@@ -140,12 +91,32 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "BY" - BELARUS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "CA" - CANADA
      * </p>
      * </li>
      * <li>
      * <p>
-     * "CN" - CHINA
+     * "CL" - CHILE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "CO" - COLOMBIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "CR" - COSTA RICA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "HR" - CROATIA
      * </p>
      * </li>
      * <li>
@@ -165,6 +136,16 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "EE" - ESTONIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "ET" - ETHIOPIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "FI" - FINLAND
      * </p>
      * </li>
@@ -180,17 +161,27 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "GR" - GREECE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "HU" - HUNGARY
      * </p>
      * </li>
      * <li>
      * <p>
-     * "IE" - IRELAND
+     * "IS" - ICELAND
      * </p>
      * </li>
      * <li>
      * <p>
      * "IN" - INDIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "IE" - IRELAND
      * </p>
      * </li>
      * <li>
@@ -205,7 +196,27 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "KZ" - KAZAKHSTAN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "KR" - KOREA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "LV" - LATVIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "LI" - LIECHTENSTEIN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "LT" - LITHUANIA
      * </p>
      * </li>
      * <li>
@@ -215,7 +226,27 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "MK" - MACEDONIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "MT" - MALTA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "MX" - MEXICO
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "MD" - MOLDOVA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "ME" - MONTENEGRO
      * </p>
      * </li>
      * <li>
@@ -225,7 +256,37 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "NZ" - NEW ZEALAND
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "NI" - NICARAGUA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "NG" - NIGERIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "NO" - NORWAY
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "PA" - PANAMA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "PY" - PARAGUAY
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "PE" - PERU
      * </p>
      * </li>
      * <li>
@@ -240,7 +301,27 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "RO" - ROMANIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "RU" - RUSSIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "RS" - SERBIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "SK" - SLOVAKIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "SI" - SLOVENIA
      * </p>
      * </li>
      * <li>
@@ -265,12 +346,32 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "UA" - UKRAINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "AE" - UNITED ARAB EMIRATES
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "US" - UNITED STATES
      * </p>
      * </li>
      * <li>
      * <p>
      * "UK" - UNITED KINGDOM
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "UY" - URUGUAY
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "VE" - VENEZUELA
      * </p>
      * </li>
      * </ul>
@@ -324,6 +425,11 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * <ul>
      * <li>
      * <p>
+     * "AL" - ALBANIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "AR" - ARGENTINA
      * </p>
      * </li>
@@ -339,7 +445,22 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "BA" - BOSNIA HERZEGOVINA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "BE" - BELGIUM
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "BG" - BULGARIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "BO" - BOLIVIA
      * </p>
      * </li>
      * <li>
@@ -349,12 +470,32 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "BY" - BELARUS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "CA" - CANADA
      * </p>
      * </li>
      * <li>
      * <p>
-     * "CN" - CHINA
+     * "CL" - CHILE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "CO" - COLOMBIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "CR" - COSTA RICA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "HR" - CROATIA
      * </p>
      * </li>
      * <li>
@@ -374,6 +515,16 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "EE" - ESTONIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "ET" - ETHIOPIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "FI" - FINLAND
      * </p>
      * </li>
@@ -389,17 +540,27 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "GR" - GREECE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "HU" - HUNGARY
      * </p>
      * </li>
      * <li>
      * <p>
-     * "IE" - IRELAND
+     * "IS" - ICELAND
      * </p>
      * </li>
      * <li>
      * <p>
      * "IN" - INDIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "IE" - IRELAND
      * </p>
      * </li>
      * <li>
@@ -414,7 +575,27 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "KZ" - KAZAKHSTAN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "KR" - KOREA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "LV" - LATVIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "LI" - LIECHTENSTEIN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "LT" - LITHUANIA
      * </p>
      * </li>
      * <li>
@@ -424,7 +605,27 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "MK" - MACEDONIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "MT" - MALTA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "MX" - MEXICO
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "MD" - MOLDOVA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "ME" - MONTENEGRO
      * </p>
      * </li>
      * <li>
@@ -434,7 +635,37 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "NZ" - NEW ZEALAND
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "NI" - NICARAGUA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "NG" - NIGERIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "NO" - NORWAY
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "PA" - PANAMA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "PY" - PARAGUAY
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "PE" - PERU
      * </p>
      * </li>
      * <li>
@@ -449,7 +680,27 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "RO" - ROMANIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "RU" - RUSSIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "RS" - SERBIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "SK" - SLOVAKIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "SI" - SLOVENIA
      * </p>
      * </li>
      * <li>
@@ -474,6 +725,16 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "UA" - UKRAINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "AE" - UNITED ARAB EMIRATES
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "US" - UNITED STATES
      * </p>
      * </li>
@@ -482,11 +743,26 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * "UK" - UNITED KINGDOM
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * "UY" - URUGUAY
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "VE" - VENEZUELA
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param value
      *        One of the following 2 letter country codes:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        "AL" - ALBANIA
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        "AR" - ARGENTINA
@@ -504,7 +780,22 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
+     *        "BA" - BOSNIA HERZEGOVINA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        "BE" - BELGIUM
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "BG" - BULGARIA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "BO" - BOLIVIA
      *        </p>
      *        </li>
      *        <li>
@@ -514,12 +805,32 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
+     *        "BY" - BELARUS
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        "CA" - CANADA
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        "CN" - CHINA
+     *        "CL" - CHILE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "CO" - COLOMBIA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "CR" - COSTA RICA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "HR" - CROATIA
      *        </p>
      *        </li>
      *        <li>
@@ -539,6 +850,16 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
+     *        "EE" - ESTONIA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "ET" - ETHIOPIA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        "FI" - FINLAND
      *        </p>
      *        </li>
@@ -554,17 +875,27 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
+     *        "GR" - GREECE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        "HU" - HUNGARY
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        "IE" - IRELAND
+     *        "IS" - ICELAND
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        "IN" - INDIA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "IE" - IRELAND
      *        </p>
      *        </li>
      *        <li>
@@ -579,7 +910,27 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
+     *        "KZ" - KAZAKHSTAN
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        "KR" - KOREA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "LV" - LATVIA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "LI" - LIECHTENSTEIN
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "LT" - LITHUANIA
      *        </p>
      *        </li>
      *        <li>
@@ -589,7 +940,27 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
+     *        "MK" - MACEDONIA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "MT" - MALTA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        "MX" - MEXICO
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "MD" - MOLDOVA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "ME" - MONTENEGRO
      *        </p>
      *        </li>
      *        <li>
@@ -599,7 +970,37 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
+     *        "NZ" - NEW ZEALAND
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "NI" - NICARAGUA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "NG" - NIGERIA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        "NO" - NORWAY
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "PA" - PANAMA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "PY" - PARAGUAY
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "PE" - PERU
      *        </p>
      *        </li>
      *        <li>
@@ -614,7 +1015,27 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
+     *        "RO" - ROMANIA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        "RU" - RUSSIA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "RS" - SERBIA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "SK" - SLOVAKIA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "SI" - SLOVENIA
      *        </p>
      *        </li>
      *        <li>
@@ -639,12 +1060,32 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
+     *        "UA" - UKRAINE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "AE" - UNITED ARAB EMIRATES
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        "US" - UNITED STATES
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        "UK" - UNITED KINGDOM
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "UY" - URUGUAY
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "VE" - VENEZUELA
      *        </p>
      *        </li>
      */
@@ -658,6 +1099,11 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * One of the following 2 letter country codes:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * "AL" - ALBANIA
+     * </p>
+     * </li>
      * <li>
      * <p>
      * "AR" - ARGENTINA
@@ -675,7 +1121,22 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "BA" - BOSNIA HERZEGOVINA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "BE" - BELGIUM
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "BG" - BULGARIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "BO" - BOLIVIA
      * </p>
      * </li>
      * <li>
@@ -685,12 +1146,32 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "BY" - BELARUS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "CA" - CANADA
      * </p>
      * </li>
      * <li>
      * <p>
-     * "CN" - CHINA
+     * "CL" - CHILE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "CO" - COLOMBIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "CR" - COSTA RICA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "HR" - CROATIA
      * </p>
      * </li>
      * <li>
@@ -710,6 +1191,16 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "EE" - ESTONIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "ET" - ETHIOPIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "FI" - FINLAND
      * </p>
      * </li>
@@ -725,17 +1216,27 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "GR" - GREECE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "HU" - HUNGARY
      * </p>
      * </li>
      * <li>
      * <p>
-     * "IE" - IRELAND
+     * "IS" - ICELAND
      * </p>
      * </li>
      * <li>
      * <p>
      * "IN" - INDIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "IE" - IRELAND
      * </p>
      * </li>
      * <li>
@@ -750,7 +1251,27 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "KZ" - KAZAKHSTAN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "KR" - KOREA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "LV" - LATVIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "LI" - LIECHTENSTEIN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "LT" - LITHUANIA
      * </p>
      * </li>
      * <li>
@@ -760,7 +1281,27 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "MK" - MACEDONIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "MT" - MALTA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "MX" - MEXICO
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "MD" - MOLDOVA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "ME" - MONTENEGRO
      * </p>
      * </li>
      * <li>
@@ -770,7 +1311,37 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "NZ" - NEW ZEALAND
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "NI" - NICARAGUA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "NG" - NIGERIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "NO" - NORWAY
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "PA" - PANAMA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "PY" - PARAGUAY
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "PE" - PERU
      * </p>
      * </li>
      * <li>
@@ -785,7 +1356,27 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "RO" - ROMANIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "RU" - RUSSIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "RS" - SERBIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "SK" - SLOVAKIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "SI" - SLOVENIA
      * </p>
      * </li>
      * <li>
@@ -810,6 +1401,16 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "UA" - UKRAINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "AE" - UNITED ARAB EMIRATES
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "US" - UNITED STATES
      * </p>
      * </li>
@@ -818,10 +1419,25 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * "UK" - UNITED KINGDOM
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * "UY" - URUGUAY
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "VE" - VENEZUELA
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return One of the following 2 letter country codes:</p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         "AL" - ALBANIA
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         "AR" - ARGENTINA
@@ -839,7 +1455,22 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      *         </li>
      *         <li>
      *         <p>
+     *         "BA" - BOSNIA HERZEGOVINA
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         "BE" - BELGIUM
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "BG" - BULGARIA
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "BO" - BOLIVIA
      *         </p>
      *         </li>
      *         <li>
@@ -849,12 +1480,32 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      *         </li>
      *         <li>
      *         <p>
+     *         "BY" - BELARUS
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         "CA" - CANADA
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         "CN" - CHINA
+     *         "CL" - CHILE
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "CO" - COLOMBIA
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "CR" - COSTA RICA
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "HR" - CROATIA
      *         </p>
      *         </li>
      *         <li>
@@ -874,6 +1525,16 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      *         </li>
      *         <li>
      *         <p>
+     *         "EE" - ESTONIA
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "ET" - ETHIOPIA
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         "FI" - FINLAND
      *         </p>
      *         </li>
@@ -889,17 +1550,27 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      *         </li>
      *         <li>
      *         <p>
+     *         "GR" - GREECE
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         "HU" - HUNGARY
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         "IE" - IRELAND
+     *         "IS" - ICELAND
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         "IN" - INDIA
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "IE" - IRELAND
      *         </p>
      *         </li>
      *         <li>
@@ -914,7 +1585,27 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      *         </li>
      *         <li>
      *         <p>
+     *         "KZ" - KAZAKHSTAN
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         "KR" - KOREA
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "LV" - LATVIA
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "LI" - LIECHTENSTEIN
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "LT" - LITHUANIA
      *         </p>
      *         </li>
      *         <li>
@@ -924,7 +1615,27 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      *         </li>
      *         <li>
      *         <p>
+     *         "MK" - MACEDONIA
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "MT" - MALTA
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         "MX" - MEXICO
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "MD" - MOLDOVA
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "ME" - MONTENEGRO
      *         </p>
      *         </li>
      *         <li>
@@ -934,7 +1645,37 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      *         </li>
      *         <li>
      *         <p>
+     *         "NZ" - NEW ZEALAND
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "NI" - NICARAGUA
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "NG" - NIGERIA
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         "NO" - NORWAY
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "PA" - PANAMA
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "PY" - PARAGUAY
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "PE" - PERU
      *         </p>
      *         </li>
      *         <li>
@@ -949,7 +1690,27 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      *         </li>
      *         <li>
      *         <p>
+     *         "RO" - ROMANIA
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         "RU" - RUSSIA
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "RS" - SERBIA
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "SK" - SLOVAKIA
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "SI" - SLOVENIA
      *         </p>
      *         </li>
      *         <li>
@@ -974,12 +1735,32 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      *         </li>
      *         <li>
      *         <p>
+     *         "UA" - UKRAINE
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "AE" - UNITED ARAB EMIRATES
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         "US" - UNITED STATES
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         "UK" - UNITED KINGDOM
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "UY" - URUGUAY
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "VE" - VENEZUELA
      *         </p>
      *         </li>
      */
@@ -993,6 +1774,11 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * One of the following 2 letter country codes:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * "AL" - ALBANIA
+     * </p>
+     * </li>
      * <li>
      * <p>
      * "AR" - ARGENTINA
@@ -1010,7 +1796,22 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "BA" - BOSNIA HERZEGOVINA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "BE" - BELGIUM
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "BG" - BULGARIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "BO" - BOLIVIA
      * </p>
      * </li>
      * <li>
@@ -1020,12 +1821,32 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "BY" - BELARUS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "CA" - CANADA
      * </p>
      * </li>
      * <li>
      * <p>
-     * "CN" - CHINA
+     * "CL" - CHILE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "CO" - COLOMBIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "CR" - COSTA RICA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "HR" - CROATIA
      * </p>
      * </li>
      * <li>
@@ -1045,6 +1866,16 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "EE" - ESTONIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "ET" - ETHIOPIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "FI" - FINLAND
      * </p>
      * </li>
@@ -1060,17 +1891,27 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "GR" - GREECE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "HU" - HUNGARY
      * </p>
      * </li>
      * <li>
      * <p>
-     * "IE" - IRELAND
+     * "IS" - ICELAND
      * </p>
      * </li>
      * <li>
      * <p>
      * "IN" - INDIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "IE" - IRELAND
      * </p>
      * </li>
      * <li>
@@ -1085,7 +1926,27 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "KZ" - KAZAKHSTAN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "KR" - KOREA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "LV" - LATVIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "LI" - LIECHTENSTEIN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "LT" - LITHUANIA
      * </p>
      * </li>
      * <li>
@@ -1095,7 +1956,27 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "MK" - MACEDONIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "MT" - MALTA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "MX" - MEXICO
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "MD" - MOLDOVA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "ME" - MONTENEGRO
      * </p>
      * </li>
      * <li>
@@ -1105,7 +1986,37 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "NZ" - NEW ZEALAND
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "NI" - NICARAGUA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "NG" - NIGERIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "NO" - NORWAY
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "PA" - PANAMA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "PY" - PARAGUAY
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "PE" - PERU
      * </p>
      * </li>
      * <li>
@@ -1120,7 +2031,27 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "RO" - ROMANIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "RU" - RUSSIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "RS" - SERBIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "SK" - SLOVAKIA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "SI" - SLOVENIA
      * </p>
      * </li>
      * <li>
@@ -1145,6 +2076,16 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
+     * "UA" - UKRAINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "AE" - UNITED ARAB EMIRATES
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * "US" - UNITED STATES
      * </p>
      * </li>
@@ -1153,11 +2094,26 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      * "UK" - UNITED KINGDOM
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * "UY" - URUGUAY
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "VE" - VENEZUELA
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param value
      *        One of the following 2 letter country codes:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        "AL" - ALBANIA
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        "AR" - ARGENTINA
@@ -1175,7 +2131,22 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
+     *        "BA" - BOSNIA HERZEGOVINA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        "BE" - BELGIUM
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "BG" - BULGARIA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "BO" - BOLIVIA
      *        </p>
      *        </li>
      *        <li>
@@ -1185,12 +2156,32 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
+     *        "BY" - BELARUS
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        "CA" - CANADA
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        "CN" - CHINA
+     *        "CL" - CHILE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "CO" - COLOMBIA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "CR" - COSTA RICA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "HR" - CROATIA
      *        </p>
      *        </li>
      *        <li>
@@ -1210,6 +2201,16 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
+     *        "EE" - ESTONIA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "ET" - ETHIOPIA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        "FI" - FINLAND
      *        </p>
      *        </li>
@@ -1225,17 +2226,27 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
+     *        "GR" - GREECE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        "HU" - HUNGARY
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        "IE" - IRELAND
+     *        "IS" - ICELAND
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        "IN" - INDIA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "IE" - IRELAND
      *        </p>
      *        </li>
      *        <li>
@@ -1250,7 +2261,27 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
+     *        "KZ" - KAZAKHSTAN
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        "KR" - KOREA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "LV" - LATVIA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "LI" - LIECHTENSTEIN
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "LT" - LITHUANIA
      *        </p>
      *        </li>
      *        <li>
@@ -1260,7 +2291,27 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
+     *        "MK" - MACEDONIA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "MT" - MALTA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        "MX" - MEXICO
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "MD" - MOLDOVA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "ME" - MONTENEGRO
      *        </p>
      *        </li>
      *        <li>
@@ -1270,7 +2321,37 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
+     *        "NZ" - NEW ZEALAND
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "NI" - NICARAGUA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "NG" - NIGERIA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        "NO" - NORWAY
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "PA" - PANAMA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "PY" - PARAGUAY
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "PE" - PERU
      *        </p>
      *        </li>
      *        <li>
@@ -1285,7 +2366,27 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
+     *        "RO" - ROMANIA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        "RU" - RUSSIA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "RS" - SERBIA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "SK" - SLOVAKIA
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "SI" - SLOVENIA
      *        </p>
      *        </li>
      *        <li>
@@ -1310,12 +2411,32 @@ public class SupplementaryFeature implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
+     *        "UA" - UKRAINE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "AE" - UNITED ARAB EMIRATES
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        "US" - UNITED STATES
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        "UK" - UNITED KINGDOM
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "UY" - URUGUAY
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "VE" - VENEZUELA
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

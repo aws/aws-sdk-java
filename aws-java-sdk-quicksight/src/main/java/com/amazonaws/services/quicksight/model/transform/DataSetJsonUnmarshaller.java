@@ -102,6 +102,13 @@ public class DataSetJsonUnmarshaller implements Unmarshaller<DataSet, JsonUnmars
                     context.nextToken();
                     dataSet.setRowLevelPermissionDataSet(RowLevelPermissionDataSetJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ColumnLevelPermissionRules", targetDepth)) {
+                    context.nextToken();
+                    dataSet.setColumnLevelPermissionRules(new ListUnmarshaller<ColumnLevelPermissionRule>(ColumnLevelPermissionRuleJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

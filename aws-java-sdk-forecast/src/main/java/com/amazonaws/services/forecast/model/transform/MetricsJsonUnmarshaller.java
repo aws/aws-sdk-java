@@ -58,6 +58,12 @@ public class MetricsJsonUnmarshaller implements Unmarshaller<Metrics, JsonUnmars
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ErrorMetrics", targetDepth)) {
+                    context.nextToken();
+                    metrics.setErrorMetrics(new ListUnmarshaller<ErrorMetric>(ErrorMetricJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

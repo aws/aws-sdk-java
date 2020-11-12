@@ -66,9 +66,12 @@ public class AutoBranchCreationConfig implements Serializable, Cloneable, Struct
     private Boolean enableBasicAuth;
     /**
      * <p>
+     * Enables performance mode for the branch.
+     * </p>
+     * <p>
      * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
-     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
-     * minutes to roll out.
+     * interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to
+     * roll out.
      * </p>
      */
     private Boolean enablePerformanceMode;
@@ -80,7 +83,7 @@ public class AutoBranchCreationConfig implements Serializable, Cloneable, Struct
     private String buildSpec;
     /**
      * <p>
-     * Enables pull request preview for the autocreated branch.
+     * Enables pull request previews for the autocreated branch.
      * </p>
      */
     private Boolean enablePullRequestPreview;
@@ -404,15 +407,20 @@ public class AutoBranchCreationConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
+     * Enables performance mode for the branch.
+     * </p>
+     * <p>
      * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
-     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
-     * minutes to roll out.
+     * interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to
+     * roll out.
      * </p>
      * 
      * @param enablePerformanceMode
+     *        Enables performance mode for the branch.</p>
+     *        <p>
      *        Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
-     *        longer interval. Enabling performance mode will mean that hosting configuration or code changes can take
-     *        up to 10 minutes to roll out.
+     *        longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10
+     *        minutes to roll out.
      */
 
     public void setEnablePerformanceMode(Boolean enablePerformanceMode) {
@@ -421,14 +429,19 @@ public class AutoBranchCreationConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
+     * Enables performance mode for the branch.
+     * </p>
+     * <p>
      * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
-     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
-     * minutes to roll out.
+     * interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to
+     * roll out.
      * </p>
      * 
-     * @return Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
-     *         longer interval. Enabling performance mode will mean that hosting configuration or code changes can take
-     *         up to 10 minutes to roll out.
+     * @return Enables performance mode for the branch.</p>
+     *         <p>
+     *         Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
+     *         longer interval. When performance mode is enabled, hosting configuration or code changes can take up to
+     *         10 minutes to roll out.
      */
 
     public Boolean getEnablePerformanceMode() {
@@ -437,15 +450,20 @@ public class AutoBranchCreationConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
+     * Enables performance mode for the branch.
+     * </p>
+     * <p>
      * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
-     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
-     * minutes to roll out.
+     * interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to
+     * roll out.
      * </p>
      * 
      * @param enablePerformanceMode
+     *        Enables performance mode for the branch.</p>
+     *        <p>
      *        Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
-     *        longer interval. Enabling performance mode will mean that hosting configuration or code changes can take
-     *        up to 10 minutes to roll out.
+     *        longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10
+     *        minutes to roll out.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -456,14 +474,19 @@ public class AutoBranchCreationConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
+     * Enables performance mode for the branch.
+     * </p>
+     * <p>
      * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
-     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
-     * minutes to roll out.
+     * interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to
+     * roll out.
      * </p>
      * 
-     * @return Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
-     *         longer interval. Enabling performance mode will mean that hosting configuration or code changes can take
-     *         up to 10 minutes to roll out.
+     * @return Enables performance mode for the branch.</p>
+     *         <p>
+     *         Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
+     *         longer interval. When performance mode is enabled, hosting configuration or code changes can take up to
+     *         10 minutes to roll out.
      */
 
     public Boolean isEnablePerformanceMode() {
@@ -512,11 +535,11 @@ public class AutoBranchCreationConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Enables pull request preview for the autocreated branch.
+     * Enables pull request previews for the autocreated branch.
      * </p>
      * 
      * @param enablePullRequestPreview
-     *        Enables pull request preview for the autocreated branch.
+     *        Enables pull request previews for the autocreated branch.
      */
 
     public void setEnablePullRequestPreview(Boolean enablePullRequestPreview) {
@@ -525,10 +548,10 @@ public class AutoBranchCreationConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Enables pull request preview for the autocreated branch.
+     * Enables pull request previews for the autocreated branch.
      * </p>
      * 
-     * @return Enables pull request preview for the autocreated branch.
+     * @return Enables pull request previews for the autocreated branch.
      */
 
     public Boolean getEnablePullRequestPreview() {
@@ -537,11 +560,11 @@ public class AutoBranchCreationConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Enables pull request preview for the autocreated branch.
+     * Enables pull request previews for the autocreated branch.
      * </p>
      * 
      * @param enablePullRequestPreview
-     *        Enables pull request preview for the autocreated branch.
+     *        Enables pull request previews for the autocreated branch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -552,10 +575,10 @@ public class AutoBranchCreationConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Enables pull request preview for the autocreated branch.
+     * Enables pull request previews for the autocreated branch.
      * </p>
      * 
-     * @return Enables pull request preview for the autocreated branch.
+     * @return Enables pull request previews for the autocreated branch.
      */
 
     public Boolean isEnablePullRequestPreview() {

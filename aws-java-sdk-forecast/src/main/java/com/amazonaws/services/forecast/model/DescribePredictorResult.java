@@ -49,6 +49,12 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
     private Integer forecastHorizon;
     /**
      * <p>
+     * The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code>
+     * </p>
+     */
+    private java.util.List<String> forecastTypes;
+    /**
+     * <p>
      * Whether the predictor is set to perform AutoML.
      * </p>
      */
@@ -61,9 +67,9 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
     private Boolean performHPO;
     /**
      * <p>
-     * The default training parameters or overrides selected during model training. If using the AutoML algorithm or if
-     * HPO is turned on while using the DeepAR+ algorithms, the optimized values for the chosen hyperparameters are
-     * returned. For more information, see <a>aws-forecast-choosing-recipes</a>.
+     * The default training parameters or overrides selected during model training. When running AutoML or choosing HPO
+     * with CNN-QR or DeepAR+, the optimized values for the chosen hyperparameters are returned. For more information,
+     * see <a>aws-forecast-choosing-recipes</a>.
      * </p>
      */
     private java.util.Map<String, String> trainingParameters;
@@ -337,6 +343,76 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
+     * The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code>
+     * </p>
+     * 
+     * @return The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code>
+     */
+
+    public java.util.List<String> getForecastTypes() {
+        return forecastTypes;
+    }
+
+    /**
+     * <p>
+     * The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code>
+     * </p>
+     * 
+     * @param forecastTypes
+     *        The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code>
+     */
+
+    public void setForecastTypes(java.util.Collection<String> forecastTypes) {
+        if (forecastTypes == null) {
+            this.forecastTypes = null;
+            return;
+        }
+
+        this.forecastTypes = new java.util.ArrayList<String>(forecastTypes);
+    }
+
+    /**
+     * <p>
+     * The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code>
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setForecastTypes(java.util.Collection)} or {@link #withForecastTypes(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param forecastTypes
+     *        The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePredictorResult withForecastTypes(String... forecastTypes) {
+        if (this.forecastTypes == null) {
+            setForecastTypes(new java.util.ArrayList<String>(forecastTypes.length));
+        }
+        for (String ele : forecastTypes) {
+            this.forecastTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code>
+     * </p>
+     * 
+     * @param forecastTypes
+     *        The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePredictorResult withForecastTypes(java.util.Collection<String> forecastTypes) {
+        setForecastTypes(forecastTypes);
+        return this;
+    }
+
+    /**
+     * <p>
      * Whether the predictor is set to perform AutoML.
      * </p>
      * 
@@ -441,14 +517,14 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The default training parameters or overrides selected during model training. If using the AutoML algorithm or if
-     * HPO is turned on while using the DeepAR+ algorithms, the optimized values for the chosen hyperparameters are
-     * returned. For more information, see <a>aws-forecast-choosing-recipes</a>.
+     * The default training parameters or overrides selected during model training. When running AutoML or choosing HPO
+     * with CNN-QR or DeepAR+, the optimized values for the chosen hyperparameters are returned. For more information,
+     * see <a>aws-forecast-choosing-recipes</a>.
      * </p>
      * 
-     * @return The default training parameters or overrides selected during model training. If using the AutoML
-     *         algorithm or if HPO is turned on while using the DeepAR+ algorithms, the optimized values for the chosen
-     *         hyperparameters are returned. For more information, see <a>aws-forecast-choosing-recipes</a>.
+     * @return The default training parameters or overrides selected during model training. When running AutoML or
+     *         choosing HPO with CNN-QR or DeepAR+, the optimized values for the chosen hyperparameters are returned.
+     *         For more information, see <a>aws-forecast-choosing-recipes</a>.
      */
 
     public java.util.Map<String, String> getTrainingParameters() {
@@ -457,15 +533,15 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The default training parameters or overrides selected during model training. If using the AutoML algorithm or if
-     * HPO is turned on while using the DeepAR+ algorithms, the optimized values for the chosen hyperparameters are
-     * returned. For more information, see <a>aws-forecast-choosing-recipes</a>.
+     * The default training parameters or overrides selected during model training. When running AutoML or choosing HPO
+     * with CNN-QR or DeepAR+, the optimized values for the chosen hyperparameters are returned. For more information,
+     * see <a>aws-forecast-choosing-recipes</a>.
      * </p>
      * 
      * @param trainingParameters
-     *        The default training parameters or overrides selected during model training. If using the AutoML algorithm
-     *        or if HPO is turned on while using the DeepAR+ algorithms, the optimized values for the chosen
-     *        hyperparameters are returned. For more information, see <a>aws-forecast-choosing-recipes</a>.
+     *        The default training parameters or overrides selected during model training. When running AutoML or
+     *        choosing HPO with CNN-QR or DeepAR+, the optimized values for the chosen hyperparameters are returned. For
+     *        more information, see <a>aws-forecast-choosing-recipes</a>.
      */
 
     public void setTrainingParameters(java.util.Map<String, String> trainingParameters) {
@@ -474,15 +550,15 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The default training parameters or overrides selected during model training. If using the AutoML algorithm or if
-     * HPO is turned on while using the DeepAR+ algorithms, the optimized values for the chosen hyperparameters are
-     * returned. For more information, see <a>aws-forecast-choosing-recipes</a>.
+     * The default training parameters or overrides selected during model training. When running AutoML or choosing HPO
+     * with CNN-QR or DeepAR+, the optimized values for the chosen hyperparameters are returned. For more information,
+     * see <a>aws-forecast-choosing-recipes</a>.
      * </p>
      * 
      * @param trainingParameters
-     *        The default training parameters or overrides selected during model training. If using the AutoML algorithm
-     *        or if HPO is turned on while using the DeepAR+ algorithms, the optimized values for the chosen
-     *        hyperparameters are returned. For more information, see <a>aws-forecast-choosing-recipes</a>.
+     *        The default training parameters or overrides selected during model training. When running AutoML or
+     *        choosing HPO with CNN-QR or DeepAR+, the optimized values for the chosen hyperparameters are returned. For
+     *        more information, see <a>aws-forecast-choosing-recipes</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1286,6 +1362,8 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
             sb.append("AlgorithmArn: ").append(getAlgorithmArn()).append(",");
         if (getForecastHorizon() != null)
             sb.append("ForecastHorizon: ").append(getForecastHorizon()).append(",");
+        if (getForecastTypes() != null)
+            sb.append("ForecastTypes: ").append(getForecastTypes()).append(",");
         if (getPerformAutoML() != null)
             sb.append("PerformAutoML: ").append(getPerformAutoML()).append(",");
         if (getPerformHPO() != null)
@@ -1345,6 +1423,10 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
         if (other.getForecastHorizon() == null ^ this.getForecastHorizon() == null)
             return false;
         if (other.getForecastHorizon() != null && other.getForecastHorizon().equals(this.getForecastHorizon()) == false)
+            return false;
+        if (other.getForecastTypes() == null ^ this.getForecastTypes() == null)
+            return false;
+        if (other.getForecastTypes() != null && other.getForecastTypes().equals(this.getForecastTypes()) == false)
             return false;
         if (other.getPerformAutoML() == null ^ this.getPerformAutoML() == null)
             return false;
@@ -1418,6 +1500,7 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getPredictorName() == null) ? 0 : getPredictorName().hashCode());
         hashCode = prime * hashCode + ((getAlgorithmArn() == null) ? 0 : getAlgorithmArn().hashCode());
         hashCode = prime * hashCode + ((getForecastHorizon() == null) ? 0 : getForecastHorizon().hashCode());
+        hashCode = prime * hashCode + ((getForecastTypes() == null) ? 0 : getForecastTypes().hashCode());
         hashCode = prime * hashCode + ((getPerformAutoML() == null) ? 0 : getPerformAutoML().hashCode());
         hashCode = prime * hashCode + ((getPerformHPO() == null) ? 0 : getPerformHPO().hashCode());
         hashCode = prime * hashCode + ((getTrainingParameters() == null) ? 0 : getTrainingParameters().hashCode());

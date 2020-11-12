@@ -1,3 +1,28 @@
+# __1.11.899__ __2020-11-11__
+## __AWS Amplify__
+  - ### Features
+    - Whereas previously custom headers were set via the app's buildspec, custom headers can now be set directly on the Amplify app for both ci/cd and manual deploy apps.
+
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - AWS Elemental MediaConvert SDK has added support for Automated ABR encoding and improved the reliability of embedded captions in accelerated outputs.
+
+## __AWS Glue DataBrew__
+  - ### Features
+    - This is the initial SDK release for AWS Glue DataBrew. DataBrew is a visual data preparation tool that enables users to clean and normalize data without writing any code.
+
+## __AWS Service Catalog__
+  - ### Features
+    - Adding support to remove a Provisioned Product launch role via UpdateProvisionedProductProperties
+
+## __Amazon Forecast Service__
+  - ### Features
+    - Providing support of custom quantiles in CreatePredictor API.
+
+## __Amazon QuickSight__
+  - ### Features
+    - QuickSight now supports Column-level security and connecting to Oracle data source.
+
 # __1.11.898__ __2020-11-10__
 ## __Amazon Elastic Compute Cloud__
   - ### Features

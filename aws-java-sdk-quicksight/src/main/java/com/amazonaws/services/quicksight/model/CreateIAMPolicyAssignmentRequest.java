@@ -33,7 +33,7 @@ public class CreateIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
     private String awsAccountId;
     /**
      * <p>
-     * The name of the assignment. It must be unique within an AWS account.
+     * The name of the assignment, also called a rule. It must be unique within an AWS account.
      * </p>
      */
     private String assignmentName;
@@ -121,11 +121,11 @@ public class CreateIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the assignment. It must be unique within an AWS account.
+     * The name of the assignment, also called a rule. It must be unique within an AWS account.
      * </p>
      * 
      * @param assignmentName
-     *        The name of the assignment. It must be unique within an AWS account.
+     *        The name of the assignment, also called a rule. It must be unique within an AWS account.
      */
 
     public void setAssignmentName(String assignmentName) {
@@ -134,10 +134,10 @@ public class CreateIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the assignment. It must be unique within an AWS account.
+     * The name of the assignment, also called a rule. It must be unique within an AWS account.
      * </p>
      * 
-     * @return The name of the assignment. It must be unique within an AWS account.
+     * @return The name of the assignment, also called a rule. It must be unique within an AWS account.
      */
 
     public String getAssignmentName() {
@@ -146,11 +146,11 @@ public class CreateIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the assignment. It must be unique within an AWS account.
+     * The name of the assignment, also called a rule. It must be unique within an AWS account.
      * </p>
      * 
      * @param assignmentName
-     *        The name of the assignment. It must be unique within an AWS account.
+     *        The name of the assignment, also called a rule. It must be unique within an AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

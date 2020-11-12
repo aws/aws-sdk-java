@@ -128,6 +128,10 @@ public class AppJsonUnmarshaller implements Unmarshaller<App, JsonUnmarshallerCo
                     context.nextToken();
                     app.setBuildSpec(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("customHeaders", targetDepth)) {
+                    context.nextToken();
+                    app.setCustomHeaders(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("enableAutoBranchCreation", targetDepth)) {
                     context.nextToken();
                     app.setEnableAutoBranchCreation(context.getUnmarshaller(Boolean.class).unmarshall(context));

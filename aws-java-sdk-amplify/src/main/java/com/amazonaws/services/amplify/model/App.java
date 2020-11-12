@@ -143,6 +143,12 @@ public class App implements Serializable, Cloneable, StructuredPojo {
     private String buildSpec;
     /**
      * <p>
+     * Describes the custom HTTP headers for the Amplify app.
+     * </p>
+     */
+    private String customHeaders;
+    /**
+     * <p>
      * Enables automated branch creation for the Amplify app.
      * </p>
      */
@@ -1070,6 +1076,46 @@ public class App implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Describes the custom HTTP headers for the Amplify app.
+     * </p>
+     * 
+     * @param customHeaders
+     *        Describes the custom HTTP headers for the Amplify app.
+     */
+
+    public void setCustomHeaders(String customHeaders) {
+        this.customHeaders = customHeaders;
+    }
+
+    /**
+     * <p>
+     * Describes the custom HTTP headers for the Amplify app.
+     * </p>
+     * 
+     * @return Describes the custom HTTP headers for the Amplify app.
+     */
+
+    public String getCustomHeaders() {
+        return this.customHeaders;
+    }
+
+    /**
+     * <p>
+     * Describes the custom HTTP headers for the Amplify app.
+     * </p>
+     * 
+     * @param customHeaders
+     *        Describes the custom HTTP headers for the Amplify app.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public App withCustomHeaders(String customHeaders) {
+        setCustomHeaders(customHeaders);
+        return this;
+    }
+
+    /**
+     * <p>
      * Enables automated branch creation for the Amplify app.
      * </p>
      * 
@@ -1280,6 +1326,8 @@ public class App implements Serializable, Cloneable, StructuredPojo {
             sb.append("ProductionBranch: ").append(getProductionBranch()).append(",");
         if (getBuildSpec() != null)
             sb.append("BuildSpec: ").append(getBuildSpec()).append(",");
+        if (getCustomHeaders() != null)
+            sb.append("CustomHeaders: ").append(getCustomHeaders()).append(",");
         if (getEnableAutoBranchCreation() != null)
             sb.append("EnableAutoBranchCreation: ").append(getEnableAutoBranchCreation()).append(",");
         if (getAutoBranchCreationPatterns() != null)
@@ -1376,6 +1424,10 @@ public class App implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getBuildSpec() != null && other.getBuildSpec().equals(this.getBuildSpec()) == false)
             return false;
+        if (other.getCustomHeaders() == null ^ this.getCustomHeaders() == null)
+            return false;
+        if (other.getCustomHeaders() != null && other.getCustomHeaders().equals(this.getCustomHeaders()) == false)
+            return false;
         if (other.getEnableAutoBranchCreation() == null ^ this.getEnableAutoBranchCreation() == null)
             return false;
         if (other.getEnableAutoBranchCreation() != null && other.getEnableAutoBranchCreation().equals(this.getEnableAutoBranchCreation()) == false)
@@ -1415,6 +1467,7 @@ public class App implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCustomRules() == null) ? 0 : getCustomRules().hashCode());
         hashCode = prime * hashCode + ((getProductionBranch() == null) ? 0 : getProductionBranch().hashCode());
         hashCode = prime * hashCode + ((getBuildSpec() == null) ? 0 : getBuildSpec().hashCode());
+        hashCode = prime * hashCode + ((getCustomHeaders() == null) ? 0 : getCustomHeaders().hashCode());
         hashCode = prime * hashCode + ((getEnableAutoBranchCreation() == null) ? 0 : getEnableAutoBranchCreation().hashCode());
         hashCode = prime * hashCode + ((getAutoBranchCreationPatterns() == null) ? 0 : getAutoBranchCreationPatterns().hashCode());
         hashCode = prime * hashCode + ((getAutoBranchCreationConfig() == null) ? 0 : getAutoBranchCreationConfig().hashCode());

@@ -126,9 +126,12 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
     private Boolean enableBasicAuth;
     /**
      * <p>
+     * Enables performance mode for the branch.
+     * </p>
+     * <p>
      * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
-     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
-     * minutes to roll out.
+     * interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to
+     * roll out.
      * </p>
      */
     private Boolean enablePerformanceMode;
@@ -164,7 +167,7 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> associatedResources;
     /**
      * <p>
-     * Enables pull request preview for the branch.
+     * Enables pull request previews for the branch.
      * </p>
      */
     private Boolean enablePullRequestPreview;
@@ -976,15 +979,20 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Enables performance mode for the branch.
+     * </p>
+     * <p>
      * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
-     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
-     * minutes to roll out.
+     * interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to
+     * roll out.
      * </p>
      * 
      * @param enablePerformanceMode
+     *        Enables performance mode for the branch.</p>
+     *        <p>
      *        Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
-     *        longer interval. Enabling performance mode will mean that hosting configuration or code changes can take
-     *        up to 10 minutes to roll out.
+     *        longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10
+     *        minutes to roll out.
      */
 
     public void setEnablePerformanceMode(Boolean enablePerformanceMode) {
@@ -993,14 +1001,19 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Enables performance mode for the branch.
+     * </p>
+     * <p>
      * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
-     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
-     * minutes to roll out.
+     * interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to
+     * roll out.
      * </p>
      * 
-     * @return Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
-     *         longer interval. Enabling performance mode will mean that hosting configuration or code changes can take
-     *         up to 10 minutes to roll out.
+     * @return Enables performance mode for the branch.</p>
+     *         <p>
+     *         Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
+     *         longer interval. When performance mode is enabled, hosting configuration or code changes can take up to
+     *         10 minutes to roll out.
      */
 
     public Boolean getEnablePerformanceMode() {
@@ -1009,15 +1022,20 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Enables performance mode for the branch.
+     * </p>
+     * <p>
      * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
-     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
-     * minutes to roll out.
+     * interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to
+     * roll out.
      * </p>
      * 
      * @param enablePerformanceMode
+     *        Enables performance mode for the branch.</p>
+     *        <p>
      *        Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
-     *        longer interval. Enabling performance mode will mean that hosting configuration or code changes can take
-     *        up to 10 minutes to roll out.
+     *        longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10
+     *        minutes to roll out.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1028,14 +1046,19 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Enables performance mode for the branch.
+     * </p>
+     * <p>
      * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
-     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
-     * minutes to roll out.
+     * interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to
+     * roll out.
      * </p>
      * 
-     * @return Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
-     *         longer interval. Enabling performance mode will mean that hosting configuration or code changes can take
-     *         up to 10 minutes to roll out.
+     * @return Enables performance mode for the branch.</p>
+     *         <p>
+     *         Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
+     *         longer interval. When performance mode is enabled, hosting configuration or code changes can take up to
+     *         10 minutes to roll out.
      */
 
     public Boolean isEnablePerformanceMode() {
@@ -1274,11 +1297,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enables pull request preview for the branch.
+     * Enables pull request previews for the branch.
      * </p>
      * 
      * @param enablePullRequestPreview
-     *        Enables pull request preview for the branch.
+     *        Enables pull request previews for the branch.
      */
 
     public void setEnablePullRequestPreview(Boolean enablePullRequestPreview) {
@@ -1287,10 +1310,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enables pull request preview for the branch.
+     * Enables pull request previews for the branch.
      * </p>
      * 
-     * @return Enables pull request preview for the branch.
+     * @return Enables pull request previews for the branch.
      */
 
     public Boolean getEnablePullRequestPreview() {
@@ -1299,11 +1322,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enables pull request preview for the branch.
+     * Enables pull request previews for the branch.
      * </p>
      * 
      * @param enablePullRequestPreview
-     *        Enables pull request preview for the branch.
+     *        Enables pull request previews for the branch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1314,10 +1337,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enables pull request preview for the branch.
+     * Enables pull request previews for the branch.
      * </p>
      * 
-     * @return Enables pull request preview for the branch.
+     * @return Enables pull request previews for the branch.
      */
 
     public Boolean isEnablePullRequestPreview() {

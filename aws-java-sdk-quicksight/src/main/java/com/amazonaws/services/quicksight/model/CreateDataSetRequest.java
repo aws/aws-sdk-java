@@ -82,6 +82,12 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     private RowLevelPermissionDataSet rowLevelPermissionDataSet;
     /**
      * <p>
+     * A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+     * </p>
+     */
+    private java.util.List<ColumnLevelPermissionRule> columnLevelPermissionRules;
+    /**
+     * <p>
      * Contains a map of the key-value pairs for the resource tag or tags assigned to the dataset.
      * </p>
      */
@@ -592,6 +598,76 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+     * </p>
+     * 
+     * @return A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+     */
+
+    public java.util.List<ColumnLevelPermissionRule> getColumnLevelPermissionRules() {
+        return columnLevelPermissionRules;
+    }
+
+    /**
+     * <p>
+     * A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+     * </p>
+     * 
+     * @param columnLevelPermissionRules
+     *        A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+     */
+
+    public void setColumnLevelPermissionRules(java.util.Collection<ColumnLevelPermissionRule> columnLevelPermissionRules) {
+        if (columnLevelPermissionRules == null) {
+            this.columnLevelPermissionRules = null;
+            return;
+        }
+
+        this.columnLevelPermissionRules = new java.util.ArrayList<ColumnLevelPermissionRule>(columnLevelPermissionRules);
+    }
+
+    /**
+     * <p>
+     * A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setColumnLevelPermissionRules(java.util.Collection)} or
+     * {@link #withColumnLevelPermissionRules(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param columnLevelPermissionRules
+     *        A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDataSetRequest withColumnLevelPermissionRules(ColumnLevelPermissionRule... columnLevelPermissionRules) {
+        if (this.columnLevelPermissionRules == null) {
+            setColumnLevelPermissionRules(new java.util.ArrayList<ColumnLevelPermissionRule>(columnLevelPermissionRules.length));
+        }
+        for (ColumnLevelPermissionRule ele : columnLevelPermissionRules) {
+            this.columnLevelPermissionRules.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+     * </p>
+     * 
+     * @param columnLevelPermissionRules
+     *        A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDataSetRequest withColumnLevelPermissionRules(java.util.Collection<ColumnLevelPermissionRule> columnLevelPermissionRules) {
+        setColumnLevelPermissionRules(columnLevelPermissionRules);
+        return this;
+    }
+
+    /**
+     * <p>
      * Contains a map of the key-value pairs for the resource tag or tags assigned to the dataset.
      * </p>
      * 
@@ -690,6 +766,8 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("Permissions: ").append(getPermissions()).append(",");
         if (getRowLevelPermissionDataSet() != null)
             sb.append("RowLevelPermissionDataSet: ").append(getRowLevelPermissionDataSet()).append(",");
+        if (getColumnLevelPermissionRules() != null)
+            sb.append("ColumnLevelPermissionRules: ").append(getColumnLevelPermissionRules()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -742,6 +820,10 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getRowLevelPermissionDataSet() != null && other.getRowLevelPermissionDataSet().equals(this.getRowLevelPermissionDataSet()) == false)
             return false;
+        if (other.getColumnLevelPermissionRules() == null ^ this.getColumnLevelPermissionRules() == null)
+            return false;
+        if (other.getColumnLevelPermissionRules() != null && other.getColumnLevelPermissionRules().equals(this.getColumnLevelPermissionRules()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -763,6 +845,7 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getColumnGroups() == null) ? 0 : getColumnGroups().hashCode());
         hashCode = prime * hashCode + ((getPermissions() == null) ? 0 : getPermissions().hashCode());
         hashCode = prime * hashCode + ((getRowLevelPermissionDataSet() == null) ? 0 : getRowLevelPermissionDataSet().hashCode());
+        hashCode = prime * hashCode + ((getColumnLevelPermissionRules() == null) ? 0 : getColumnLevelPermissionRules().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

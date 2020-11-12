@@ -70,6 +70,12 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private RowLevelPermissionDataSet rowLevelPermissionDataSet;
+    /**
+     * <p>
+     * Indicates if the dataset has column level permission configured.
+     * </p>
+     */
+    private Boolean columnLevelPermissionRulesApplied;
 
     /**
      * <p>
@@ -371,6 +377,58 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Indicates if the dataset has column level permission configured.
+     * </p>
+     * 
+     * @param columnLevelPermissionRulesApplied
+     *        Indicates if the dataset has column level permission configured.
+     */
+
+    public void setColumnLevelPermissionRulesApplied(Boolean columnLevelPermissionRulesApplied) {
+        this.columnLevelPermissionRulesApplied = columnLevelPermissionRulesApplied;
+    }
+
+    /**
+     * <p>
+     * Indicates if the dataset has column level permission configured.
+     * </p>
+     * 
+     * @return Indicates if the dataset has column level permission configured.
+     */
+
+    public Boolean getColumnLevelPermissionRulesApplied() {
+        return this.columnLevelPermissionRulesApplied;
+    }
+
+    /**
+     * <p>
+     * Indicates if the dataset has column level permission configured.
+     * </p>
+     * 
+     * @param columnLevelPermissionRulesApplied
+     *        Indicates if the dataset has column level permission configured.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSetSummary withColumnLevelPermissionRulesApplied(Boolean columnLevelPermissionRulesApplied) {
+        setColumnLevelPermissionRulesApplied(columnLevelPermissionRulesApplied);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates if the dataset has column level permission configured.
+     * </p>
+     * 
+     * @return Indicates if the dataset has column level permission configured.
+     */
+
+    public Boolean isColumnLevelPermissionRulesApplied() {
+        return this.columnLevelPermissionRulesApplied;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -395,7 +453,9 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
         if (getImportMode() != null)
             sb.append("ImportMode: ").append(getImportMode()).append(",");
         if (getRowLevelPermissionDataSet() != null)
-            sb.append("RowLevelPermissionDataSet: ").append(getRowLevelPermissionDataSet());
+            sb.append("RowLevelPermissionDataSet: ").append(getRowLevelPermissionDataSet()).append(",");
+        if (getColumnLevelPermissionRulesApplied() != null)
+            sb.append("ColumnLevelPermissionRulesApplied: ").append(getColumnLevelPermissionRulesApplied());
         sb.append("}");
         return sb.toString();
     }
@@ -438,6 +498,11 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRowLevelPermissionDataSet() != null && other.getRowLevelPermissionDataSet().equals(this.getRowLevelPermissionDataSet()) == false)
             return false;
+        if (other.getColumnLevelPermissionRulesApplied() == null ^ this.getColumnLevelPermissionRulesApplied() == null)
+            return false;
+        if (other.getColumnLevelPermissionRulesApplied() != null
+                && other.getColumnLevelPermissionRulesApplied().equals(this.getColumnLevelPermissionRulesApplied()) == false)
+            return false;
         return true;
     }
 
@@ -453,6 +518,7 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         hashCode = prime * hashCode + ((getImportMode() == null) ? 0 : getImportMode().hashCode());
         hashCode = prime * hashCode + ((getRowLevelPermissionDataSet() == null) ? 0 : getRowLevelPermissionDataSet().hashCode());
+        hashCode = prime * hashCode + ((getColumnLevelPermissionRulesApplied() == null) ? 0 : getColumnLevelPermissionRulesApplied().hashCode());
         return hashCode;
     }
 

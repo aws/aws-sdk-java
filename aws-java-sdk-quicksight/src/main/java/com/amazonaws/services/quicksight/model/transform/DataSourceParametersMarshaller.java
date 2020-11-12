@@ -43,6 +43,8 @@ public class DataSourceParametersMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MariaDbParameters").build();
     private static final MarshallingInfo<StructuredPojo> MYSQLPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MySqlParameters").build();
+    private static final MarshallingInfo<StructuredPojo> ORACLEPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OracleParameters").build();
     private static final MarshallingInfo<StructuredPojo> POSTGRESQLPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PostgreSqlParameters").build();
     private static final MarshallingInfo<StructuredPojo> PRESTOPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -90,6 +92,7 @@ public class DataSourceParametersMarshaller {
             protocolMarshaller.marshall(dataSourceParameters.getJiraParameters(), JIRAPARAMETERS_BINDING);
             protocolMarshaller.marshall(dataSourceParameters.getMariaDbParameters(), MARIADBPARAMETERS_BINDING);
             protocolMarshaller.marshall(dataSourceParameters.getMySqlParameters(), MYSQLPARAMETERS_BINDING);
+            protocolMarshaller.marshall(dataSourceParameters.getOracleParameters(), ORACLEPARAMETERS_BINDING);
             protocolMarshaller.marshall(dataSourceParameters.getPostgreSqlParameters(), POSTGRESQLPARAMETERS_BINDING);
             protocolMarshaller.marshall(dataSourceParameters.getPrestoParameters(), PRESTOPARAMETERS_BINDING);
             protocolMarshaller.marshall(dataSourceParameters.getRdsParameters(), RDSPARAMETERS_BINDING);

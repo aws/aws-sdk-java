@@ -48,6 +48,10 @@ public class OutputGroupJsonUnmarshaller implements Unmarshaller<OutputGroup, Js
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("automatedEncodingSettings", targetDepth)) {
+                    context.nextToken();
+                    outputGroup.setAutomatedEncodingSettings(AutomatedEncodingSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("customName", targetDepth)) {
                     context.nextToken();
                     outputGroup.setCustomName(context.getUnmarshaller(String.class).unmarshall(context));

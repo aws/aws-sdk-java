@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class OutputGroupMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> AUTOMATEDENCODINGSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("automatedEncodingSettings").build();
     private static final MarshallingInfo<String> CUSTOMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customName").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -53,6 +55,7 @@ public class OutputGroupMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(outputGroup.getAutomatedEncodingSettings(), AUTOMATEDENCODINGSETTINGS_BINDING);
             protocolMarshaller.marshall(outputGroup.getCustomName(), CUSTOMNAME_BINDING);
             protocolMarshaller.marshall(outputGroup.getName(), NAME_BINDING);
             protocolMarshaller.marshall(outputGroup.getOutputGroupSettings(), OUTPUTGROUPSETTINGS_BINDING);

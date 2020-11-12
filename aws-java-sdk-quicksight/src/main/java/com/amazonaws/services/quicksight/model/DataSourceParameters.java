@@ -79,6 +79,12 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
     private MySqlParameters mySqlParameters;
     /**
      * <p>
+     * Oracle parameters.
+     * </p>
+     */
+    private OracleParameters oracleParameters;
+    /**
+     * <p>
      * PostgreSQL parameters.
      * </p>
      */
@@ -461,6 +467,46 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
 
     public DataSourceParameters withMySqlParameters(MySqlParameters mySqlParameters) {
         setMySqlParameters(mySqlParameters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Oracle parameters.
+     * </p>
+     * 
+     * @param oracleParameters
+     *        Oracle parameters.
+     */
+
+    public void setOracleParameters(OracleParameters oracleParameters) {
+        this.oracleParameters = oracleParameters;
+    }
+
+    /**
+     * <p>
+     * Oracle parameters.
+     * </p>
+     * 
+     * @return Oracle parameters.
+     */
+
+    public OracleParameters getOracleParameters() {
+        return this.oracleParameters;
+    }
+
+    /**
+     * <p>
+     * Oracle parameters.
+     * </p>
+     * 
+     * @param oracleParameters
+     *        Oracle parameters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceParameters withOracleParameters(OracleParameters oracleParameters) {
+        setOracleParameters(oracleParameters);
         return this;
     }
 
@@ -932,6 +978,8 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
             sb.append("MariaDbParameters: ").append(getMariaDbParameters()).append(",");
         if (getMySqlParameters() != null)
             sb.append("MySqlParameters: ").append(getMySqlParameters()).append(",");
+        if (getOracleParameters() != null)
+            sb.append("OracleParameters: ").append(getOracleParameters()).append(",");
         if (getPostgreSqlParameters() != null)
             sb.append("PostgreSqlParameters: ").append(getPostgreSqlParameters()).append(",");
         if (getPrestoParameters() != null)
@@ -1001,6 +1049,10 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
             return false;
         if (other.getMySqlParameters() != null && other.getMySqlParameters().equals(this.getMySqlParameters()) == false)
             return false;
+        if (other.getOracleParameters() == null ^ this.getOracleParameters() == null)
+            return false;
+        if (other.getOracleParameters() != null && other.getOracleParameters().equals(this.getOracleParameters()) == false)
+            return false;
         if (other.getPostgreSqlParameters() == null ^ this.getPostgreSqlParameters() == null)
             return false;
         if (other.getPostgreSqlParameters() != null && other.getPostgreSqlParameters().equals(this.getPostgreSqlParameters()) == false)
@@ -1061,6 +1113,7 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getJiraParameters() == null) ? 0 : getJiraParameters().hashCode());
         hashCode = prime * hashCode + ((getMariaDbParameters() == null) ? 0 : getMariaDbParameters().hashCode());
         hashCode = prime * hashCode + ((getMySqlParameters() == null) ? 0 : getMySqlParameters().hashCode());
+        hashCode = prime * hashCode + ((getOracleParameters() == null) ? 0 : getOracleParameters().hashCode());
         hashCode = prime * hashCode + ((getPostgreSqlParameters() == null) ? 0 : getPostgreSqlParameters().hashCode());
         hashCode = prime * hashCode + ((getPrestoParameters() == null) ? 0 : getPrestoParameters().hashCode());
         hashCode = prime * hashCode + ((getRdsParameters() == null) ? 0 : getRdsParameters().hashCode());

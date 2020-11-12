@@ -35,6 +35,8 @@ public class CreatePredictorRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AlgorithmArn").build();
     private static final MarshallingInfo<Integer> FORECASTHORIZON_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ForecastHorizon").build();
+    private static final MarshallingInfo<List> FORECASTTYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ForecastTypes").build();
     private static final MarshallingInfo<Boolean> PERFORMAUTOML_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PerformAutoML").build();
     private static final MarshallingInfo<Boolean> PERFORMHPO_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -73,6 +75,7 @@ public class CreatePredictorRequestMarshaller {
             protocolMarshaller.marshall(createPredictorRequest.getPredictorName(), PREDICTORNAME_BINDING);
             protocolMarshaller.marshall(createPredictorRequest.getAlgorithmArn(), ALGORITHMARN_BINDING);
             protocolMarshaller.marshall(createPredictorRequest.getForecastHorizon(), FORECASTHORIZON_BINDING);
+            protocolMarshaller.marshall(createPredictorRequest.getForecastTypes(), FORECASTTYPES_BINDING);
             protocolMarshaller.marshall(createPredictorRequest.getPerformAutoML(), PERFORMAUTOML_BINDING);
             protocolMarshaller.marshall(createPredictorRequest.getPerformHPO(), PERFORMHPO_BINDING);
             protocolMarshaller.marshall(createPredictorRequest.getTrainingParameters(), TRAININGPARAMETERS_BINDING);

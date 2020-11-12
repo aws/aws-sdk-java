@@ -80,6 +80,10 @@ public class DataSourceParametersJsonUnmarshaller implements Unmarshaller<DataSo
                     context.nextToken();
                     dataSourceParameters.setMySqlParameters(MySqlParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("OracleParameters", targetDepth)) {
+                    context.nextToken();
+                    dataSourceParameters.setOracleParameters(OracleParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("PostgreSqlParameters", targetDepth)) {
                     context.nextToken();
                     dataSourceParameters.setPostgreSqlParameters(PostgreSqlParametersJsonUnmarshaller.getInstance().unmarshall(context));

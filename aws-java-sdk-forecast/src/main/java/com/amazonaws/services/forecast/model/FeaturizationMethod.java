@@ -107,6 +107,11 @@ public class FeaturizationMethod implements Serializable, Cloneable, StructuredP
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To set a filling method to a specific value, set the fill parameter to <code>value</code> and define the value in
+     * a corresponding <code>_value</code> parameter. For example, to set backfilling to a value of 2, include the
+     * following: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>.
+     * </p>
      */
     private java.util.Map<String, String> featurizationMethodParameters;
 
@@ -226,6 +231,11 @@ public class FeaturizationMethod implements Serializable, Cloneable, StructuredP
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To set a filling method to a specific value, set the fill parameter to <code>value</code> and define the value in
+     * a corresponding <code>_value</code> parameter. For example, to set backfilling to a value of 2, include the
+     * following: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>.
+     * </p>
      * 
      * @return The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters
      *         to override the default values. Related Time Series attributes do not accept aggregation parameters.</p>
@@ -281,6 +291,11 @@ public class FeaturizationMethod implements Serializable, Cloneable, StructuredP
      *         <code>min</code>, <code>max</code>
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         To set a filling method to a specific value, set the fill parameter to <code>value</code> and define the
+     *         value in a corresponding <code>_value</code> parameter. For example, to set backfilling to a value of 2,
+     *         include the following: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>.
      */
 
     public java.util.Map<String, String> getFeaturizationMethodParameters() {
@@ -344,6 +359,11 @@ public class FeaturizationMethod implements Serializable, Cloneable, StructuredP
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To set a filling method to a specific value, set the fill parameter to <code>value</code> and define the value in
+     * a corresponding <code>_value</code> parameter. For example, to set backfilling to a value of 2, include the
+     * following: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>.
+     * </p>
      * 
      * @param featurizationMethodParameters
      *        The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters
@@ -400,6 +420,11 @@ public class FeaturizationMethod implements Serializable, Cloneable, StructuredP
      *        <code>min</code>, <code>max</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        To set a filling method to a specific value, set the fill parameter to <code>value</code> and define the
+     *        value in a corresponding <code>_value</code> parameter. For example, to set backfilling to a value of 2,
+     *        include the following: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>.
      */
 
     public void setFeaturizationMethodParameters(java.util.Map<String, String> featurizationMethodParameters) {
@@ -463,6 +488,11 @@ public class FeaturizationMethod implements Serializable, Cloneable, StructuredP
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To set a filling method to a specific value, set the fill parameter to <code>value</code> and define the value in
+     * a corresponding <code>_value</code> parameter. For example, to set backfilling to a value of 2, include the
+     * following: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>.
+     * </p>
      * 
      * @param featurizationMethodParameters
      *        The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters
@@ -519,6 +549,11 @@ public class FeaturizationMethod implements Serializable, Cloneable, StructuredP
      *        <code>min</code>, <code>max</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        To set a filling method to a specific value, set the fill parameter to <code>value</code> and define the
+     *        value in a corresponding <code>_value</code> parameter. For example, to set backfilling to a value of 2,
+     *        include the following: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

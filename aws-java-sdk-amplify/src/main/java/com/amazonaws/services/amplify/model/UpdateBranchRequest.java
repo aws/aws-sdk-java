@@ -90,9 +90,12 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
     private Boolean enableBasicAuth;
     /**
      * <p>
+     * Enables performance mode for the branch.
+     * </p>
+     * <p>
      * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
-     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
-     * minutes to roll out.
+     * interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to
+     * roll out.
      * </p>
      */
     private Boolean enablePerformanceMode;
@@ -116,7 +119,7 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String displayName;
     /**
      * <p>
-     * Enables pull request preview for this branch.
+     * Enables pull request previews for this branch.
      * </p>
      */
     private Boolean enablePullRequestPreview;
@@ -618,15 +621,20 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
+     * Enables performance mode for the branch.
+     * </p>
+     * <p>
      * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
-     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
-     * minutes to roll out.
+     * interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to
+     * roll out.
      * </p>
      * 
      * @param enablePerformanceMode
+     *        Enables performance mode for the branch.</p>
+     *        <p>
      *        Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
-     *        longer interval. Enabling performance mode will mean that hosting configuration or code changes can take
-     *        up to 10 minutes to roll out.
+     *        longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10
+     *        minutes to roll out.
      */
 
     public void setEnablePerformanceMode(Boolean enablePerformanceMode) {
@@ -635,14 +643,19 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
+     * Enables performance mode for the branch.
+     * </p>
+     * <p>
      * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
-     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
-     * minutes to roll out.
+     * interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to
+     * roll out.
      * </p>
      * 
-     * @return Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
-     *         longer interval. Enabling performance mode will mean that hosting configuration or code changes can take
-     *         up to 10 minutes to roll out.
+     * @return Enables performance mode for the branch.</p>
+     *         <p>
+     *         Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
+     *         longer interval. When performance mode is enabled, hosting configuration or code changes can take up to
+     *         10 minutes to roll out.
      */
 
     public Boolean getEnablePerformanceMode() {
@@ -651,15 +664,20 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
+     * Enables performance mode for the branch.
+     * </p>
+     * <p>
      * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
-     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
-     * minutes to roll out.
+     * interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to
+     * roll out.
      * </p>
      * 
      * @param enablePerformanceMode
+     *        Enables performance mode for the branch.</p>
+     *        <p>
      *        Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
-     *        longer interval. Enabling performance mode will mean that hosting configuration or code changes can take
-     *        up to 10 minutes to roll out.
+     *        longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10
+     *        minutes to roll out.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -670,14 +688,19 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
+     * Enables performance mode for the branch.
+     * </p>
+     * <p>
      * Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer
-     * interval. Enabling performance mode will mean that hosting configuration or code changes can take up to 10
-     * minutes to roll out.
+     * interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to
+     * roll out.
      * </p>
      * 
-     * @return Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
-     *         longer interval. Enabling performance mode will mean that hosting configuration or code changes can take
-     *         up to 10 minutes to roll out.
+     * @return Enables performance mode for the branch.</p>
+     *         <p>
+     *         Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a
+     *         longer interval. When performance mode is enabled, hosting configuration or code changes can take up to
+     *         10 minutes to roll out.
      */
 
     public Boolean isEnablePerformanceMode() {
@@ -806,11 +829,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Enables pull request preview for this branch.
+     * Enables pull request previews for this branch.
      * </p>
      * 
      * @param enablePullRequestPreview
-     *        Enables pull request preview for this branch.
+     *        Enables pull request previews for this branch.
      */
 
     public void setEnablePullRequestPreview(Boolean enablePullRequestPreview) {
@@ -819,10 +842,10 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Enables pull request preview for this branch.
+     * Enables pull request previews for this branch.
      * </p>
      * 
-     * @return Enables pull request preview for this branch.
+     * @return Enables pull request previews for this branch.
      */
 
     public Boolean getEnablePullRequestPreview() {
@@ -831,11 +854,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Enables pull request preview for this branch.
+     * Enables pull request previews for this branch.
      * </p>
      * 
      * @param enablePullRequestPreview
-     *        Enables pull request preview for this branch.
+     *        Enables pull request previews for this branch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -846,10 +869,10 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Enables pull request preview for this branch.
+     * Enables pull request previews for this branch.
      * </p>
      * 
-     * @return Enables pull request preview for this branch.
+     * @return Enables pull request previews for this branch.
      */
 
     public Boolean isEnablePullRequestPreview() {

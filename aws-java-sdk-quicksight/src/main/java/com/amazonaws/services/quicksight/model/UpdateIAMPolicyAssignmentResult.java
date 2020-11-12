@@ -25,7 +25,7 @@ public class UpdateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the assignment.
+     * The name of the assignment or rule.
      * </p>
      */
     private String assignmentName;
@@ -85,11 +85,11 @@ public class UpdateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the assignment.
+     * The name of the assignment or rule.
      * </p>
      * 
      * @param assignmentName
-     *        The name of the assignment.
+     *        The name of the assignment or rule.
      */
 
     public void setAssignmentName(String assignmentName) {
@@ -98,10 +98,10 @@ public class UpdateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the assignment.
+     * The name of the assignment or rule.
      * </p>
      * 
-     * @return The name of the assignment.
+     * @return The name of the assignment or rule.
      */
 
     public String getAssignmentName() {
@@ -110,11 +110,11 @@ public class UpdateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the assignment.
+     * The name of the assignment or rule.
      * </p>
      * 
      * @param assignmentName
-     *        The name of the assignment.
+     *        The name of the assignment or rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

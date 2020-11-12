@@ -184,7 +184,7 @@
         {"shape":"ConcurrentUpdatingException"},
         {"shape":"InternalFailureException"}
       ],
-      "documentation":"<p>Creates an assignment with one specified IAM policy, identified by its Amazon Resource Name (ARN). This policy will be assigned to specified groups or users of Amazon QuickSight. The users and groups need to be in the same namespace. </p>"
+      "documentation":"<p>Creates an assignment with one specified IAM policy, identified by its Amazon Resource Name (ARN). This policy assignment is attached to the specified groups or users of Amazon QuickSight. Assignment names are unique per AWS account. To avoid overwriting rules in other namespaces, use assignment names that are unique.</p>"
     },
     "CreateIngestion":{
       "name":"CreateIngestion",
@@ -1716,7 +1716,7 @@
         {"shape":"ConcurrentUpdatingException"},
         {"shape":"InternalFailureException"}
       ],
-      "documentation":"<p>Updates an existing IAM policy assignment. This operation updates only the optional parameter or parameters that are specified in the request.</p>"
+      "documentation":"<p>Updates an existing IAM policy assignment. This operation updates only the optional parameter or parameters that are specified in the request. This overwrites all of the users included in <code>Identities</code>. </p>"
     },
     "UpdateTemplate":{
       "name":"UpdateTemplate",
@@ -2421,6 +2421,25 @@
       "max":64,
       "min":1
     },
+    "ColumnLevelPermissionRule":{
+      "type":"structure",
+      "members":{
+        "Principals":{
+          "shape":"PrincipalList",
+          "documentation":"<p>An array of Amazon Resource Names (ARNs) for QuickSight users or groups.</p>"
+        },
+        "ColumnNames":{
+          "shape":"ColumnNameList",
+          "documentation":"<p>An array of column names.</p>"
+        }
+      },
+      "documentation":"<p>A rule defined to grant access on one or more restricted columns. Each dataset can have multiple rules. To create a restricted column, you add it to one or more rules. Each rule must contain at least one column and at least one user or group. To be able to see a restricted column, a user or group needs to be added to a rule for that column.</p>"
+    },
+    "ColumnLevelPermissionRuleList":{
+      "type":"list",
+      "member":{"shape":"ColumnLevelPermissionRule"},
+      "min":1
+    },
     "ColumnList":{
       "type":"list",
       "member":{"shape":"ColumnName"},
@@ -2430,6 +2449,11 @@
     "ColumnName":{
       "type":"string",
       "max":128,
+      "min":1
+    },
+    "ColumnNameList":{
+      "type":"list",
+      "member":{"shape":"String"},
       "min":1
     },
     "ColumnSchema":{
@@ -2778,6 +2802,10 @@
           "shape":"RowLevelPermissionDataSet",
           "documentation":"<p>The row-level security configuration for the data that you want to create.</p>"
         },
+        "ColumnLevelPermissionRules":{
+          "shape":"ColumnLevelPermissionRuleList",
+          "documentation":"<p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.</p>"
+        },
         "Tags":{
           "shape":"TagList",
           "documentation":"<p>Contains a map of the key-value pairs for the resource tag or tags assigned to the dataset.</p>"
@@ -3013,7 +3041,7 @@
         },
         "AssignmentName":{
           "shape":"IAMPolicyAssignmentName",
-          "documentation":"<p>The name of the assignment. It must be unique within an AWS account.</p>"
+          "documentation":"<p>The name of the assignment, also called a rule. It must be unique within an AWS account.</p>"
         },
         "AssignmentStatus":{
           "shape":"AssignmentStatus",
@@ -3841,6 +3869,10 @@
         "RowLevelPermissionDataSet":{
           "shape":"RowLevelPermissionDataSet",
           "documentation":"<p>The row-level security configuration for the dataset.</p>"
+        },
+        "ColumnLevelPermissionRules":{
+          "shape":"ColumnLevelPermissionRuleList",
+          "documentation":"<p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.</p>"
         }
       },
       "documentation":"<p>Dataset.</p>"
@@ -3948,6 +3980,10 @@
         "RowLevelPermissionDataSet":{
           "shape":"RowLevelPermissionDataSet",
           "documentation":"<p>The row-level security configuration for the dataset.</p>"
+        },
+        "ColumnLevelPermissionRulesApplied":{
+          "shape":"Boolean",
+          "documentation":"<p>Indicates if the dataset has column level permission configured. </p>"
         }
       },
       "documentation":"<p>Dataset summary.</p>"
@@ -4091,6 +4127,10 @@
           "shape":"MySqlParameters",
           "documentation":"<p>MySQL parameters.</p>"
         },
+        "OracleParameters":{
+          "shape":"OracleParameters",
+          "documentation":"<p>Oracle parameters.</p>"
+        },
         "PostgreSqlParameters":{
           "shape":"PostgreSqlParameters",
           "documentation":"<p>PostgreSQL parameters.</p>"
@@ -4157,6 +4197,7 @@
         "JIRA",
         "MARIADB",
         "MYSQL",
+        "ORACLE",
         "POSTGRESQL",
         "PRESTO",
         "REDSHIFT",
@@ -5418,7 +5459,7 @@
         },
         "AssignmentName":{
           "shape":"IAMPolicyAssignmentName",
-          "documentation":"<p>The name of the assignment. </p>",
+          "documentation":"<p>The name of the assignment, also called a rule.</p>",
           "location":"uri",
           "locationName":"AssignmentName"
         },
@@ -7895,6 +7936,28 @@
       "max":65535,
       "min":0
     },
+    "OracleParameters":{
+      "type":"structure",
+      "required":[
+        "Host",
+        "Port",
+        "Database"
+      ],
+      "members":{
+        "Host":{
+          "shape":"Host",
+          "documentation":"<p>An Oracle host.</p>"
+        },
+        "Port":{
+          "shape":"Port",
+          "documentation":"<p>Port.</p>"
+        },
+        "Database":{
+          "shape":"Database",
+          "documentation":"<p>Database.</p>"
+        }
+      }
+    },
     "OutputColumn":{
       "type":"structure",
       "members":{
@@ -8046,6 +8109,12 @@
     "Principal":{
       "type":"string",
       "max":256,
+      "min":1
+    },
+    "PrincipalList":{
+      "type":"list",
+      "member":{"shape":"String"},
+      "max":100,
       "min":1
     },
     "ProjectOperation":{
@@ -8328,7 +8397,7 @@
         },
         "Actions":{
           "shape":"ActionList",
-          "documentation":"<p>The IAM action to grant or revoke permissions on, for example <code>\"quicksight:DescribeDashboard\"</code>.</p>"
+          "documentation":"<p>The IAM action to grant or revoke permissions on.</p>"
         }
       },
       "documentation":"<p>Permission for the resource.</p>"
@@ -10080,6 +10149,10 @@
         "RowLevelPermissionDataSet":{
           "shape":"RowLevelPermissionDataSet",
           "documentation":"<p>The row-level security configuration for the data you want to create.</p>"
+        },
+        "ColumnLevelPermissionRules":{
+          "shape":"ColumnLevelPermissionRuleList",
+          "documentation":"<p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.</p>"
         }
       }
     },
@@ -10292,13 +10365,13 @@
       "members":{
         "AwsAccountId":{
           "shape":"AwsAccountId",
-          "documentation":"<p>The ID of the AWS account that contains the IAM policy assignment.</p>",
+          "documentation":"<p>The ID of the AWS account that contains the IAM policy assignment. </p>",
           "location":"uri",
           "locationName":"AwsAccountId"
         },
         "AssignmentName":{
           "shape":"IAMPolicyAssignmentName",
-          "documentation":"<p>The name of the assignment. This name must be unique within an AWS account.</p>",
+          "documentation":"<p>The name of the assignment, also called a rule. This name must be unique within an AWS account.</p>",
           "location":"uri",
           "locationName":"AssignmentName"
         },
@@ -10327,7 +10400,7 @@
       "members":{
         "AssignmentName":{
           "shape":"IAMPolicyAssignmentName",
-          "documentation":"<p>The name of the assignment. </p>"
+          "documentation":"<p>The name of the assignment or rule.</p>"
         },
         "AssignmentId":{
           "shape":"String",
