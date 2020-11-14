@@ -1,3 +1,16 @@
+# __1.11.901__ __2020-11-13__
+## __AWS Shield__
+  - ### Features
+    - This release adds APIs for two new features: 1) Allow customers to bundle resources into protection groups and treat as a single unit. 2) Provide per-account event summaries to all AWS customers.
+
+## __Amazon Textract__
+  - ### Features
+    - AWS Textract now allows customers to specify their own KMS key to be used for asynchronous jobs output results, AWS Textract now also recognizes handwritten text from English documents.
+
+## __Elastic Load Balancing__
+  - ### Features
+    - Adds dualstack support for Network Load Balancers (TCP/TLS only), an attribute for WAF fail open for Application Load Balancers, and an attribute for connection draining for Network Load Balancers.
+
 # __1.11.900__ __2020-11-12__
 ## __AWS IoT__
   - ### Features

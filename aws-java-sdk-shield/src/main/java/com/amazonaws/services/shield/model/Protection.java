@@ -36,7 +36,7 @@ public class Protection implements Serializable, Cloneable, StructuredPojo {
     private String id;
     /**
      * <p>
-     * The friendly name of the protection. For example, <code>My CloudFront distributions</code>.
+     * The name of the protection. For example, <code>My CloudFront distributions</code>.
      * </p>
      */
     private String name;
@@ -95,11 +95,11 @@ public class Protection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The friendly name of the protection. For example, <code>My CloudFront distributions</code>.
+     * The name of the protection. For example, <code>My CloudFront distributions</code>.
      * </p>
      * 
      * @param name
-     *        The friendly name of the protection. For example, <code>My CloudFront distributions</code>.
+     *        The name of the protection. For example, <code>My CloudFront distributions</code>.
      */
 
     public void setName(String name) {
@@ -108,10 +108,10 @@ public class Protection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The friendly name of the protection. For example, <code>My CloudFront distributions</code>.
+     * The name of the protection. For example, <code>My CloudFront distributions</code>.
      * </p>
      * 
-     * @return The friendly name of the protection. For example, <code>My CloudFront distributions</code>.
+     * @return The name of the protection. For example, <code>My CloudFront distributions</code>.
      */
 
     public String getName() {
@@ -120,11 +120,11 @@ public class Protection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The friendly name of the protection. For example, <code>My CloudFront distributions</code>.
+     * The name of the protection. For example, <code>My CloudFront distributions</code>.
      * </p>
      * 
      * @param name
-     *        The friendly name of the protection. For example, <code>My CloudFront distributions</code>.
+     *        The name of the protection. For example, <code>My CloudFront distributions</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

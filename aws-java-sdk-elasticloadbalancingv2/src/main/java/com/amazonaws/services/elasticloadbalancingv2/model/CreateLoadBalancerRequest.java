@@ -75,7 +75,8 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic
      * IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load
-     * balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet.
+     * balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For
+     * internet-facing load balancer, you can specify one IPv6 address per subnet.
      * </p>
      * <p>
      * [Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify Elastic
@@ -122,9 +123,9 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
     private String type;
     /**
      * <p>
-     * [Application Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible
-     * values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
-     * Internal load balancers must use <code>ipv4</code>.
+     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
+     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use
+     * <code>ipv4</code>.
      * </p>
      */
     private String ipAddressType;
@@ -411,7 +412,8 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic
      * IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load
-     * balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet.
+     * balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For
+     * internet-facing load balancer, you can specify one IPv6 address per subnet.
      * </p>
      * <p>
      * [Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify Elastic
@@ -434,7 +436,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *         [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one
      *         Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For
      *         internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the
-     *         subnet.
+     *         subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.
      *         </p>
      *         <p>
      *         [Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify
@@ -463,7 +465,8 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic
      * IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load
-     * balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet.
+     * balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For
+     * internet-facing load balancer, you can specify one IPv6 address per subnet.
      * </p>
      * <p>
      * [Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify Elastic
@@ -487,7 +490,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one
      *        Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For
      *        internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the
-     *        subnet.
+     *        subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.
      *        </p>
      *        <p>
      *        [Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify
@@ -521,7 +524,8 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic
      * IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load
-     * balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet.
+     * balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For
+     * internet-facing load balancer, you can specify one IPv6 address per subnet.
      * </p>
      * <p>
      * [Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify Elastic
@@ -550,7 +554,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one
      *        Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For
      *        internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the
-     *        subnet.
+     *        subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.
      *        </p>
      *        <p>
      *        [Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify
@@ -586,7 +590,8 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic
      * IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load
-     * balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet.
+     * balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For
+     * internet-facing load balancer, you can specify one IPv6 address per subnet.
      * </p>
      * <p>
      * [Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify Elastic
@@ -610,7 +615,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one
      *        Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For
      *        internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the
-     *        subnet.
+     *        subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.
      *        </p>
      *        <p>
      *        [Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify
@@ -1036,15 +1041,15 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * [Application Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible
-     * values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
-     * Internal load balancers must use <code>ipv4</code>.
+     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
+     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use
+     * <code>ipv4</code>.
      * </p>
      * 
      * @param ipAddressType
-     *        [Application Load Balancers] The type of IP addresses used by the subnets for your load balancer. The
-     *        possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6
-     *        addresses). Internal load balancers must use <code>ipv4</code>.
+     *        The type of IP addresses used by the subnets for your load balancer. The possible values are
+     *        <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
+     *        load balancers must use <code>ipv4</code>.
      * @see IpAddressType
      */
 
@@ -1054,14 +1059,14 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * [Application Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible
-     * values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
-     * Internal load balancers must use <code>ipv4</code>.
+     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
+     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use
+     * <code>ipv4</code>.
      * </p>
      * 
-     * @return [Application Load Balancers] The type of IP addresses used by the subnets for your load balancer. The
-     *         possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6
-     *         addresses). Internal load balancers must use <code>ipv4</code>.
+     * @return The type of IP addresses used by the subnets for your load balancer. The possible values are
+     *         <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
+     *         load balancers must use <code>ipv4</code>.
      * @see IpAddressType
      */
 
@@ -1071,15 +1076,15 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * [Application Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible
-     * values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
-     * Internal load balancers must use <code>ipv4</code>.
+     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
+     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use
+     * <code>ipv4</code>.
      * </p>
      * 
      * @param ipAddressType
-     *        [Application Load Balancers] The type of IP addresses used by the subnets for your load balancer. The
-     *        possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6
-     *        addresses). Internal load balancers must use <code>ipv4</code>.
+     *        The type of IP addresses used by the subnets for your load balancer. The possible values are
+     *        <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
+     *        load balancers must use <code>ipv4</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpAddressType
      */
@@ -1091,15 +1096,15 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * [Application Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible
-     * values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
-     * Internal load balancers must use <code>ipv4</code>.
+     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
+     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use
+     * <code>ipv4</code>.
      * </p>
      * 
      * @param ipAddressType
-     *        [Application Load Balancers] The type of IP addresses used by the subnets for your load balancer. The
-     *        possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6
-     *        addresses). Internal load balancers must use <code>ipv4</code>.
+     *        The type of IP addresses used by the subnets for your load balancer. The possible values are
+     *        <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
+     *        load balancers must use <code>ipv4</code>.
      * @see IpAddressType
      */
 
@@ -1109,15 +1114,15 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * [Application Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible
-     * values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
-     * Internal load balancers must use <code>ipv4</code>.
+     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
+     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use
+     * <code>ipv4</code>.
      * </p>
      * 
      * @param ipAddressType
-     *        [Application Load Balancers] The type of IP addresses used by the subnets for your load balancer. The
-     *        possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6
-     *        addresses). Internal load balancers must use <code>ipv4</code>.
+     *        The type of IP addresses used by the subnets for your load balancer. The possible values are
+     *        <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
+     *        load balancers must use <code>ipv4</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpAddressType
      */

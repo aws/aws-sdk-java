@@ -60,6 +60,10 @@ public class BlockJsonUnmarshaller implements Unmarshaller<Block, JsonUnmarshall
                     context.nextToken();
                     block.setText(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TextType", targetDepth)) {
+                    context.nextToken();
+                    block.setTextType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("RowIndex", targetDepth)) {
                     context.nextToken();
                     block.setRowIndex(context.getUnmarshaller(Integer.class).unmarshall(context));

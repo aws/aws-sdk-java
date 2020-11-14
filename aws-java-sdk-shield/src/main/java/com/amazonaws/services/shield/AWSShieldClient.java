@@ -81,17 +81,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.shield.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("OptimisticLockException").withExceptionUnmarshaller(
                                     com.amazonaws.services.shield.model.transform.OptimisticLockExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LockedSubscriptionException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.shield.model.transform.LockedSubscriptionExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.shield.model.transform.InvalidResourceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
                                     com.amazonaws.services.shield.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
@@ -99,26 +90,35 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                             new JsonErrorShapeMetadata().withErrorCode("InvalidOperationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.shield.model.transform.InvalidOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.shield.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.shield.model.transform.ResourceAlreadyExistsExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalErrorException").withExceptionUnmarshaller(
                                     com.amazonaws.services.shield.model.transform.InternalErrorExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidPaginationTokenException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.shield.model.transform.InvalidPaginationTokenExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitsExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.shield.model.transform.LimitsExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NoAssociatedRoleException").withExceptionUnmarshaller(
                                     com.amazonaws.services.shield.model.transform.NoAssociatedRoleExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedForDependencyException").withExceptionUnmarshaller(
                                     com.amazonaws.services.shield.model.transform.AccessDeniedForDependencyExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.shield.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LockedSubscriptionException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.shield.model.transform.LockedSubscriptionExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.shield.model.transform.InvalidResourceExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.shield.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.shield.model.transform.ResourceAlreadyExistsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidPaginationTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.shield.model.transform.InvalidPaginationTokenExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitsExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.shield.model.transform.LimitsExceededExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.shield.model.AWSShieldException.class));
 
     /**
@@ -347,7 +347,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *         <p>
      *         <code>Limit</code> is the threshold that would be exceeded.
      * @throws InvalidParameterException
-     *         Exception that indicates that the parameters passed to the API are invalid.
+     *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
+     *         includes details in additional properties.
      * @throws AccessDeniedForDependencyException
      *         In order to grant the necessary access to the DDoS Response Team (DRT), the user submitting the request
      *         must have the <code>iam:PassRole</code> permission. This error indicates the user did not have the
@@ -358,7 +359,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *         Exception that indicates that the resource state has been modified by another client. Retrieve the
      *         resource and then retry your request.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @sample AWSShield.AssociateDRTLogBucket
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateDRTLogBucket" target="_top">AWS
      *      API Documentation</a>
@@ -453,7 +455,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws InvalidOperationException
      *         Exception that indicates that the operation would not cause any change to occur.
      * @throws InvalidParameterException
-     *         Exception that indicates that the parameters passed to the API are invalid.
+     *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
+     *         includes details in additional properties.
      * @throws AccessDeniedForDependencyException
      *         In order to grant the necessary access to the DDoS Response Team (DRT), the user submitting the request
      *         must have the <code>iam:PassRole</code> permission. This error indicates the user did not have the
@@ -464,7 +467,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *         Exception that indicates that the resource state has been modified by another client. Retrieve the
      *         resource and then retry your request.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @sample AWSShield.AssociateDRTRole
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateDRTRole" target="_top">AWS API
      *      Documentation</a>
@@ -539,9 +543,11 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *         <p>
      *         <code>Limit</code> is the threshold that would be exceeded.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @throws InvalidParameterException
-     *         Exception that indicates that the parameters passed to the API are invalid.
+     *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
+     *         includes details in additional properties.
      * @throws OptimisticLockException
      *         Exception that indicates that the resource state has been modified by another client. Retrieve the
      *         resource and then retry your request.
@@ -621,9 +627,11 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws InvalidOperationException
      *         Exception that indicates that the operation would not cause any change to occur.
      * @throws InvalidParameterException
-     *         Exception that indicates that the parameters passed to the API are invalid.
+     *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
+     *         includes details in additional properties.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @throws OptimisticLockException
      *         Exception that indicates that the resource state has been modified by another client. Retrieve the
      *         resource and then retry your request.
@@ -711,12 +719,14 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *         <p>
      *         <code>Limit</code> is the threshold that would be exceeded.
      * @throws ResourceAlreadyExistsException
-     *         Exception indicating the specified resource already exists.
+     *         Exception indicating the specified resource already exists. If available, this exception includes details
+     *         in additional properties.
      * @throws OptimisticLockException
      *         Exception that indicates that the resource state has been modified by another client. Retrieve the
      *         resource and then retry your request.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @sample AWSShield.CreateProtection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtection" target="_top">AWS API
      *      Documentation</a>
@@ -766,6 +776,84 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
 
     /**
      * <p>
+     * Creates a grouping of protected resources so they can be handled as a collective. This resource grouping improves
+     * the accuracy of detection and reduces false positives.
+     * </p>
+     * 
+     * @param createProtectionGroupRequest
+     * @return Result of the CreateProtectionGroup operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws ResourceAlreadyExistsException
+     *         Exception indicating the specified resource already exists. If available, this exception includes details
+     *         in additional properties.
+     * @throws OptimisticLockException
+     *         Exception that indicates that the resource state has been modified by another client. Retrieve the
+     *         resource and then retry your request.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
+     * @throws InvalidParameterException
+     *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
+     *         includes details in additional properties.
+     * @throws LimitsExceededException
+     *         Exception that indicates that the operation would exceed a limit.</p>
+     *         <p>
+     *         <code>Type</code> is the type of limit that would be exceeded.
+     *         </p>
+     *         <p>
+     *         <code>Limit</code> is the threshold that would be exceeded.
+     * @sample AWSShield.CreateProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtectionGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateProtectionGroupResult createProtectionGroup(CreateProtectionGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateProtectionGroup(request);
+    }
+
+    @SdkInternalApi
+    final CreateProtectionGroupResult executeCreateProtectionGroup(CreateProtectionGroupRequest createProtectionGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createProtectionGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateProtectionGroupRequest> request = null;
+        Response<CreateProtectionGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateProtectionGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProtectionGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProtectionGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateProtectionGroupResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CreateProtectionGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Activates AWS Shield Advanced for an account.
      * </p>
      * <p>
@@ -779,7 +867,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
      *         request.
      * @throws ResourceAlreadyExistsException
-     *         Exception indicating the specified resource already exists.
+     *         Exception indicating the specified resource already exists. If available, this exception includes details
+     *         in additional properties.
      * @sample AWSShield.CreateSubscription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateSubscription" target="_top">AWS API
      *      Documentation</a>
@@ -838,7 +927,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
      *         request.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @throws OptimisticLockException
      *         Exception that indicates that the resource state has been modified by another client. Retrieve the
      *         resource and then retry your request.
@@ -891,6 +981,70 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
 
     /**
      * <p>
+     * Removes the specified protection group.
+     * </p>
+     * 
+     * @param deleteProtectionGroupRequest
+     * @return Result of the DeleteProtectionGroup operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws OptimisticLockException
+     *         Exception that indicates that the resource state has been modified by another client. Retrieve the
+     *         resource and then retry your request.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
+     * @sample AWSShield.DeleteProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteProtectionGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteProtectionGroupResult deleteProtectionGroup(DeleteProtectionGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteProtectionGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteProtectionGroupResult executeDeleteProtectionGroup(DeleteProtectionGroupRequest deleteProtectionGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteProtectionGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteProtectionGroupRequest> request = null;
+        Response<DeleteProtectionGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteProtectionGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProtectionGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProtectionGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteProtectionGroupResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteProtectionGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Removes AWS Shield Advanced from an account. AWS Shield Advanced requires a 1-year subscription commitment. You
      * cannot delete a subscription prior to the completion of that commitment.
      * </p>
@@ -905,7 +1059,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *         the <code>AutoRenew</code> parameter during the last 30 days of your subscription. This exception
      *         indicates that you are attempting to change <code>AutoRenew</code> prior to that period.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @sample AWSShield.DeleteSubscription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteSubscription" target="_top">AWS API
      *      Documentation</a>
@@ -1016,6 +1171,76 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
 
     /**
      * <p>
+     * Provides information about the number and type of attacks AWS Shield has detected in the last year for all
+     * resources that belong to your account, regardless of whether you've defined Shield protections for them. This
+     * operation is available to Shield customers as well as to Shield Advanced customers.
+     * </p>
+     * <p>
+     * The operation returns data for the time range of midnight UTC, one year ago, to midnight UTC, today. For example,
+     * if the current time is <code>2020-10-26 15:39:32 PDT</code>, equal to <code>2020-10-26 22:39:32 UTC</code>, then
+     * the time range for the attack data returned is from <code>2019-10-26 00:00:00 UTC</code> to
+     * <code>2020-10-26 00:00:00 UTC</code>.
+     * </p>
+     * <p>
+     * The time range indicates the period covered by the attack statistics data items.
+     * </p>
+     * 
+     * @param describeAttackStatisticsRequest
+     * @return Result of the DescribeAttackStatistics operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @sample AWSShield.DescribeAttackStatistics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttackStatistics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAttackStatisticsResult describeAttackStatistics(DescribeAttackStatisticsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAttackStatistics(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAttackStatisticsResult executeDescribeAttackStatistics(DescribeAttackStatisticsRequest describeAttackStatisticsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAttackStatisticsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAttackStatisticsRequest> request = null;
+        Response<DescribeAttackStatisticsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAttackStatisticsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAttackStatisticsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAttackStatistics");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAttackStatisticsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeAttackStatisticsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the current role and list of Amazon S3 log buckets used by the DDoS Response Team (DRT) to access your
      * AWS account while assisting with attack mitigation.
      * </p>
@@ -1026,7 +1251,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
      *         request.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @sample AWSShield.DescribeDRTAccess
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeDRTAccess" target="_top">AWS API
      *      Documentation</a>
@@ -1086,7 +1312,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
      *         request.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @sample AWSShield.DescribeEmergencyContactSettings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeEmergencyContactSettings"
      *      target="_top">AWS API Documentation</a>
@@ -1148,9 +1375,11 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
      *         request.
      * @throws InvalidParameterException
-     *         Exception that indicates that the parameters passed to the API are invalid.
+     *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
+     *         includes details in additional properties.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @sample AWSShield.DescribeProtection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeProtection" target="_top">AWS API
      *      Documentation</a>
@@ -1200,6 +1429,68 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
 
     /**
      * <p>
+     * Returns the specification for the specified protection group.
+     * </p>
+     * 
+     * @param describeProtectionGroupRequest
+     * @return Result of the DescribeProtectionGroup operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
+     * @sample AWSShield.DescribeProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeProtectionGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeProtectionGroupResult describeProtectionGroup(DescribeProtectionGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeProtectionGroup(request);
+    }
+
+    @SdkInternalApi
+    final DescribeProtectionGroupResult executeDescribeProtectionGroup(DescribeProtectionGroupRequest describeProtectionGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeProtectionGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeProtectionGroupRequest> request = null;
+        Response<DescribeProtectionGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeProtectionGroupRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeProtectionGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProtectionGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeProtectionGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeProtectionGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Provides details about the AWS Shield Advanced subscription for an account.
      * </p>
      * 
@@ -1209,7 +1500,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
      *         request.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @sample AWSShield.DescribeSubscription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeSubscription" target="_top">AWS
      *      API Documentation</a>
@@ -1271,9 +1563,11 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws InvalidOperationException
      *         Exception that indicates that the operation would not cause any change to occur.
      * @throws InvalidParameterException
-     *         Exception that indicates that the parameters passed to the API are invalid.
+     *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
+     *         includes details in additional properties.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @throws OptimisticLockException
      *         Exception that indicates that the resource state has been modified by another client. Retrieve the
      *         resource and then retry your request.
@@ -1357,7 +1651,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *         Exception that indicates that the resource state has been modified by another client. Retrieve the
      *         resource and then retry your request.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @sample AWSShield.DisassociateDRTLogBucket
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisassociateDRTLogBucket"
      *      target="_top">AWS API Documentation</a>
@@ -1430,7 +1725,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *         Exception that indicates that the resource state has been modified by another client. Retrieve the
      *         resource and then retry your request.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @sample AWSShield.DisassociateDRTRole
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisassociateDRTRole" target="_top">AWS API
      *      Documentation</a>
@@ -1498,9 +1794,11 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
      *         request.
      * @throws InvalidParameterException
-     *         Exception that indicates that the parameters passed to the API are invalid.
+     *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
+     *         includes details in additional properties.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @throws OptimisticLockException
      *         Exception that indicates that the resource state has been modified by another client. Retrieve the
      *         resource and then retry your request.
@@ -1567,9 +1865,11 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws InvalidOperationException
      *         Exception that indicates that the operation would not cause any change to occur.
      * @throws InvalidParameterException
-     *         Exception that indicates that the parameters passed to the API are invalid.
+     *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
+     *         includes details in additional properties.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @throws OptimisticLockException
      *         Exception that indicates that the resource state has been modified by another client. Retrieve the
      *         resource and then retry your request.
@@ -1690,7 +1990,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
      *         request.
      * @throws InvalidParameterException
-     *         Exception that indicates that the parameters passed to the API are invalid.
+     *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
+     *         includes details in additional properties.
      * @throws InvalidOperationException
      *         Exception that indicates that the operation would not cause any change to occur.
      * @sample AWSShield.ListAttacks
@@ -1742,6 +2043,69 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
 
     /**
      * <p>
+     * Retrieves the <a>ProtectionGroup</a> objects for the account.
+     * </p>
+     * 
+     * @param listProtectionGroupsRequest
+     * @return Result of the ListProtectionGroups operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
+     * @throws InvalidPaginationTokenException
+     *         Exception that indicates that the NextToken specified in the request is invalid. Submit the request using
+     *         the NextToken value that was returned in the response.
+     * @sample AWSShield.ListProtectionGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtectionGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListProtectionGroupsResult listProtectionGroups(ListProtectionGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListProtectionGroups(request);
+    }
+
+    @SdkInternalApi
+    final ListProtectionGroupsResult executeListProtectionGroups(ListProtectionGroupsRequest listProtectionGroupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listProtectionGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListProtectionGroupsRequest> request = null;
+        Response<ListProtectionGroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListProtectionGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProtectionGroupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProtectionGroups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListProtectionGroupsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListProtectionGroupsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists all <a>Protection</a> objects for the account.
      * </p>
      * 
@@ -1751,7 +2115,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
      *         request.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @throws InvalidPaginationTokenException
      *         Exception that indicates that the NextToken specified in the request is invalid. Submit the request using
      *         the NextToken value that was returned in the response.
@@ -1804,6 +2169,71 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
 
     /**
      * <p>
+     * Retrieves the resources that are included in the protection group.
+     * </p>
+     * 
+     * @param listResourcesInProtectionGroupRequest
+     * @return Result of the ListResourcesInProtectionGroup operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
+     * @throws InvalidPaginationTokenException
+     *         Exception that indicates that the NextToken specified in the request is invalid. Submit the request using
+     *         the NextToken value that was returned in the response.
+     * @sample AWSShield.ListResourcesInProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListResourcesInProtectionGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListResourcesInProtectionGroupResult listResourcesInProtectionGroup(ListResourcesInProtectionGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeListResourcesInProtectionGroup(request);
+    }
+
+    @SdkInternalApi
+    final ListResourcesInProtectionGroupResult executeListResourcesInProtectionGroup(ListResourcesInProtectionGroupRequest listResourcesInProtectionGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listResourcesInProtectionGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListResourcesInProtectionGroupRequest> request = null;
+        Response<ListResourcesInProtectionGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListResourcesInProtectionGroupRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listResourcesInProtectionGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourcesInProtectionGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListResourcesInProtectionGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListResourcesInProtectionGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates the details of the list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to
      * contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive
      * customer support.
@@ -1815,12 +2245,14 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
      *         request.
      * @throws InvalidParameterException
-     *         Exception that indicates that the parameters passed to the API are invalid.
+     *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
+     *         includes details in additional properties.
      * @throws OptimisticLockException
      *         Exception that indicates that the resource state has been modified by another client. Retrieve the
      *         resource and then retry your request.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @sample AWSShield.UpdateEmergencyContactSettings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateEmergencyContactSettings"
      *      target="_top">AWS API Documentation</a>
@@ -1872,6 +2304,74 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
 
     /**
      * <p>
+     * Updates an existing protection group. A protection group is a grouping of protected resources so they can be
+     * handled as a collective. This resource grouping improves the accuracy of detection and reduces false positives.
+     * </p>
+     * 
+     * @param updateProtectionGroupRequest
+     * @return Result of the UpdateProtectionGroup operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
+     * @throws OptimisticLockException
+     *         Exception that indicates that the resource state has been modified by another client. Retrieve the
+     *         resource and then retry your request.
+     * @throws InvalidParameterException
+     *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
+     *         includes details in additional properties.
+     * @sample AWSShield.UpdateProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateProtectionGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateProtectionGroupResult updateProtectionGroup(UpdateProtectionGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateProtectionGroup(request);
+    }
+
+    @SdkInternalApi
+    final UpdateProtectionGroupResult executeUpdateProtectionGroup(UpdateProtectionGroupRequest updateProtectionGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateProtectionGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateProtectionGroupRequest> request = null;
+        Response<UpdateProtectionGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateProtectionGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateProtectionGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateProtectionGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateProtectionGroupResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateProtectionGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates the details of an existing subscription. Only enter values for parameters you want to change. Empty
      * parameters are not updated.
      * </p>
@@ -1886,9 +2386,11 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *         the <code>AutoRenew</code> parameter during the last 30 days of your subscription. This exception
      *         indicates that you are attempting to change <code>AutoRenew</code> prior to that period.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @throws InvalidParameterException
-     *         Exception that indicates that the parameters passed to the API are invalid.
+     *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
+     *         includes details in additional properties.
      * @throws OptimisticLockException
      *         Exception that indicates that the resource state has been modified by another client. Retrieve the
      *         resource and then retry your request.

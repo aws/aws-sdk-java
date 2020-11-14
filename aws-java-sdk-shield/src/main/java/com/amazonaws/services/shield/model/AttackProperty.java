@@ -44,7 +44,7 @@ public class AttackProperty implements Serializable, Cloneable, StructuredPojo {
     private String attackPropertyIdentifier;
     /**
      * <p>
-     * The array of <a>Contributor</a> objects that includes the top five contributors to an attack.
+     * The array of contributor objects that includes the top five contributors to an attack.
      * </p>
      */
     private java.util.List<Contributor> topContributors;
@@ -202,10 +202,10 @@ public class AttackProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The array of <a>Contributor</a> objects that includes the top five contributors to an attack.
+     * The array of contributor objects that includes the top five contributors to an attack.
      * </p>
      * 
-     * @return The array of <a>Contributor</a> objects that includes the top five contributors to an attack.
+     * @return The array of contributor objects that includes the top five contributors to an attack.
      */
 
     public java.util.List<Contributor> getTopContributors() {
@@ -214,11 +214,11 @@ public class AttackProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The array of <a>Contributor</a> objects that includes the top five contributors to an attack.
+     * The array of contributor objects that includes the top five contributors to an attack.
      * </p>
      * 
      * @param topContributors
-     *        The array of <a>Contributor</a> objects that includes the top five contributors to an attack.
+     *        The array of contributor objects that includes the top five contributors to an attack.
      */
 
     public void setTopContributors(java.util.Collection<Contributor> topContributors) {
@@ -232,7 +232,7 @@ public class AttackProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The array of <a>Contributor</a> objects that includes the top five contributors to an attack.
+     * The array of contributor objects that includes the top five contributors to an attack.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -241,7 +241,7 @@ public class AttackProperty implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param topContributors
-     *        The array of <a>Contributor</a> objects that includes the top five contributors to an attack.
+     *        The array of contributor objects that includes the top five contributors to an attack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -257,11 +257,11 @@ public class AttackProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The array of <a>Contributor</a> objects that includes the top five contributors to an attack.
+     * The array of contributor objects that includes the top five contributors to an attack.
      * </p>
      * 
      * @param topContributors
-     *        The array of <a>Contributor</a> objects that includes the top five contributors to an attack.
+     *        The array of contributor objects that includes the top five contributors to an attack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

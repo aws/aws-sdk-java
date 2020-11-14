@@ -41,8 +41,9 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and
-     * HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You cannot specify a
-     * protocol for a Gateway Load Balancer.
+     * HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the
+     * protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load
+     * Balancer.
      * </p>
      */
     private String protocol;
@@ -201,14 +202,16 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and
-     * HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You cannot specify a
-     * protocol for a Gateway Load Balancer.
+     * HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the
+     * protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load
+     * Balancer.
      * </p>
      * 
      * @param protocol
      *        The protocol for connections from clients to the load balancer. Application Load Balancers support the
      *        HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You
-     *        cannot specify a protocol for a Gateway Load Balancer.
+     *        can’t change the protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol
+     *        for a Gateway Load Balancer.
      * @see ProtocolEnum
      */
 
@@ -219,13 +222,15 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and
-     * HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You cannot specify a
-     * protocol for a Gateway Load Balancer.
+     * HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the
+     * protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load
+     * Balancer.
      * </p>
      * 
      * @return The protocol for connections from clients to the load balancer. Application Load Balancers support the
      *         HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You
-     *         cannot specify a protocol for a Gateway Load Balancer.
+     *         can’t change the protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol
+     *         for a Gateway Load Balancer.
      * @see ProtocolEnum
      */
 
@@ -236,14 +241,16 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and
-     * HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You cannot specify a
-     * protocol for a Gateway Load Balancer.
+     * HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the
+     * protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load
+     * Balancer.
      * </p>
      * 
      * @param protocol
      *        The protocol for connections from clients to the load balancer. Application Load Balancers support the
      *        HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You
-     *        cannot specify a protocol for a Gateway Load Balancer.
+     *        can’t change the protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol
+     *        for a Gateway Load Balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
@@ -256,14 +263,16 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and
-     * HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You cannot specify a
-     * protocol for a Gateway Load Balancer.
+     * HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the
+     * protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load
+     * Balancer.
      * </p>
      * 
      * @param protocol
      *        The protocol for connections from clients to the load balancer. Application Load Balancers support the
      *        HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You
-     *        cannot specify a protocol for a Gateway Load Balancer.
+     *        can’t change the protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol
+     *        for a Gateway Load Balancer.
      * @see ProtocolEnum
      */
 
@@ -274,14 +283,16 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and
-     * HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You cannot specify a
-     * protocol for a Gateway Load Balancer.
+     * HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the
+     * protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load
+     * Balancer.
      * </p>
      * 
      * @param protocol
      *        The protocol for connections from clients to the load balancer. Application Load Balancers support the
      *        HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You
-     *        cannot specify a protocol for a Gateway Load Balancer.
+     *        can’t change the protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol
+     *        for a Gateway Load Balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */

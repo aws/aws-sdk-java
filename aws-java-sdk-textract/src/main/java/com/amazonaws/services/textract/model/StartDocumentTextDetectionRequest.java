@@ -62,6 +62,14 @@ public class StartDocumentTextDetectionRequest extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private OutputConfig outputConfig;
+    /**
+     * <p>
+     * The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS
+     * key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When
+     * this parameter is not enabled, the result will be encrypted server side,using SSE-S3.
+     * </p>
+     */
+    private String kMSKeyId;
 
     /**
      * <p>
@@ -309,6 +317,58 @@ public class StartDocumentTextDetectionRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS
+     * key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When
+     * this parameter is not enabled, the result will be encrypted server side,using SSE-S3.
+     * </p>
+     * 
+     * @param kMSKeyId
+     *        The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When
+     *        a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer
+     *        bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.
+     */
+
+    public void setKMSKeyId(String kMSKeyId) {
+        this.kMSKeyId = kMSKeyId;
+    }
+
+    /**
+     * <p>
+     * The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS
+     * key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When
+     * this parameter is not enabled, the result will be encrypted server side,using SSE-S3.
+     * </p>
+     * 
+     * @return The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When
+     *         a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer
+     *         bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.
+     */
+
+    public String getKMSKeyId() {
+        return this.kMSKeyId;
+    }
+
+    /**
+     * <p>
+     * The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS
+     * key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When
+     * this parameter is not enabled, the result will be encrypted server side,using SSE-S3.
+     * </p>
+     * 
+     * @param kMSKeyId
+     *        The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When
+     *        a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer
+     *        bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartDocumentTextDetectionRequest withKMSKeyId(String kMSKeyId) {
+        setKMSKeyId(kMSKeyId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -329,7 +389,9 @@ public class StartDocumentTextDetectionRequest extends com.amazonaws.AmazonWebSe
         if (getNotificationChannel() != null)
             sb.append("NotificationChannel: ").append(getNotificationChannel()).append(",");
         if (getOutputConfig() != null)
-            sb.append("OutputConfig: ").append(getOutputConfig());
+            sb.append("OutputConfig: ").append(getOutputConfig()).append(",");
+        if (getKMSKeyId() != null)
+            sb.append("KMSKeyId: ").append(getKMSKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -364,6 +426,10 @@ public class StartDocumentTextDetectionRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getOutputConfig() != null && other.getOutputConfig().equals(this.getOutputConfig()) == false)
             return false;
+        if (other.getKMSKeyId() == null ^ this.getKMSKeyId() == null)
+            return false;
+        if (other.getKMSKeyId() != null && other.getKMSKeyId().equals(this.getKMSKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -377,6 +443,7 @@ public class StartDocumentTextDetectionRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getJobTag() == null) ? 0 : getJobTag().hashCode());
         hashCode = prime * hashCode + ((getNotificationChannel() == null) ? 0 : getNotificationChannel().hashCode());
         hashCode = prime * hashCode + ((getOutputConfig() == null) ? 0 : getOutputConfig().hashCode());
+        hashCode = prime * hashCode + ((getKMSKeyId() == null) ? 0 : getKMSKeyId().hashCode());
         return hashCode;
     }
 

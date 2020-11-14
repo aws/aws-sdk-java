@@ -85,9 +85,18 @@ public class SetSubnetsRequestMarshaller implements Marshaller<Request<SetSubnet
                         request.addParameter("SubnetMappings.member." + subnetMappingsListIndex + ".PrivateIPv4Address",
                                 StringUtils.fromString(subnetMappingsListValue.getPrivateIPv4Address()));
                     }
+
+                    if (subnetMappingsListValue.getIPv6Address() != null) {
+                        request.addParameter("SubnetMappings.member." + subnetMappingsListIndex + ".IPv6Address",
+                                StringUtils.fromString(subnetMappingsListValue.getIPv6Address()));
+                    }
                     subnetMappingsListIndex++;
                 }
             }
+        }
+
+        if (setSubnetsRequest.getIpAddressType() != null) {
+            request.addParameter("IpAddressType", StringUtils.fromString(setSubnetsRequest.getIpAddressType()));
         }
 
         return request;

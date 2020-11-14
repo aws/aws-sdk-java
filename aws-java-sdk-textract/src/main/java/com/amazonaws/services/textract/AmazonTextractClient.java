@@ -87,6 +87,18 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
                             new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
                                     com.amazonaws.services.textract.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidKMSKeyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.InvalidKMSKeyExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatchException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.IdempotentParameterMismatchExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("HumanLoopQuotaExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.HumanLoopQuotaExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DocumentTooLargeException").withExceptionUnmarshaller(
                                     com.amazonaws.services.textract.model.transform.DocumentTooLargeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -105,17 +117,8 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withExceptionUnmarshaller(
                                     com.amazonaws.services.textract.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.textract.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.textract.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatchException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.textract.model.transform.IdempotentParameterMismatchExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("HumanLoopQuotaExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.textract.model.transform.HumanLoopQuotaExceededExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.textract.model.AmazonTextractException.class));
 
     public static AmazonTextractClientBuilder builder() {
@@ -231,7 +234,7 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         JPEG format. Documents for asynchronous operations can also be in PDF format.
      * @throws DocumentTooLargeException
      *         The document can't be processed because it's too large. The maximum document size for synchronous
-     *         operations 5 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
+     *         operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
      * @throws BadDocumentException
      *         Amazon Textract isn't able to read the document. For more information on the document limits in Amazon
      *         Textract, see <a>limits</a>.
@@ -332,7 +335,7 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         JPEG format. Documents for asynchronous operations can also be in PDF format.
      * @throws DocumentTooLargeException
      *         The document can't be processed because it's too large. The maximum document size for synchronous
-     *         operations 5 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
+     *         operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
      * @throws BadDocumentException
      *         Amazon Textract isn't able to read the document. For more information on the document limits in Amazon
      *         Textract, see <a>limits</a>.
@@ -664,12 +667,15 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to
      *         Amazon S3</a> For troubleshooting information, see <a
      *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
+     * @throws InvalidKMSKeyException
+     *         Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered
+     *         incorrectly.
      * @throws UnsupportedDocumentException
      *         The format of the input document isn't supported. Documents for synchronous operations can be in PNG or
      *         JPEG format. Documents for asynchronous operations can also be in PDF format.
      * @throws DocumentTooLargeException
      *         The document can't be processed because it's too large. The maximum document size for synchronous
-     *         operations 5 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
+     *         operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
      * @throws BadDocumentException
      *         Amazon Textract isn't able to read the document. For more information on the document limits in Amazon
      *         Textract, see <a>limits</a>.
@@ -774,12 +780,15 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to
      *         Amazon S3</a> For troubleshooting information, see <a
      *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
+     * @throws InvalidKMSKeyException
+     *         Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered
+     *         incorrectly.
      * @throws UnsupportedDocumentException
      *         The format of the input document isn't supported. Documents for synchronous operations can be in PNG or
      *         JPEG format. Documents for asynchronous operations can also be in PDF format.
      * @throws DocumentTooLargeException
      *         The document can't be processed because it's too large. The maximum document size for synchronous
-     *         operations 5 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
+     *         operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
      * @throws BadDocumentException
      *         Amazon Textract isn't able to read the document. For more information on the document limits in Amazon
      *         Textract, see <a>limits</a>.

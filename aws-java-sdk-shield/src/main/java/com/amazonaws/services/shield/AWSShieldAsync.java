@@ -347,6 +347,39 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
+     * Creates a grouping of protected resources so they can be handled as a collective. This resource grouping improves
+     * the accuracy of detection and reduces false positives.
+     * </p>
+     * 
+     * @param createProtectionGroupRequest
+     * @return A Java Future containing the result of the CreateProtectionGroup operation returned by the service.
+     * @sample AWSShieldAsync.CreateProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtectionGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateProtectionGroupResult> createProtectionGroupAsync(CreateProtectionGroupRequest createProtectionGroupRequest);
+
+    /**
+     * <p>
+     * Creates a grouping of protected resources so they can be handled as a collective. This resource grouping improves
+     * the accuracy of detection and reduces false positives.
+     * </p>
+     * 
+     * @param createProtectionGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateProtectionGroup operation returned by the service.
+     * @sample AWSShieldAsyncHandler.CreateProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtectionGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateProtectionGroupResult> createProtectionGroupAsync(CreateProtectionGroupRequest createProtectionGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateProtectionGroupRequest, CreateProtectionGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Activates AWS Shield Advanced for an account.
      * </p>
      * <p>
@@ -417,6 +450,37 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
+     * Removes the specified protection group.
+     * </p>
+     * 
+     * @param deleteProtectionGroupRequest
+     * @return A Java Future containing the result of the DeleteProtectionGroup operation returned by the service.
+     * @sample AWSShieldAsync.DeleteProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteProtectionGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteProtectionGroupResult> deleteProtectionGroupAsync(DeleteProtectionGroupRequest deleteProtectionGroupRequest);
+
+    /**
+     * <p>
+     * Removes the specified protection group.
+     * </p>
+     * 
+     * @param deleteProtectionGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteProtectionGroup operation returned by the service.
+     * @sample AWSShieldAsyncHandler.DeleteProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteProtectionGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteProtectionGroupResult> deleteProtectionGroupAsync(DeleteProtectionGroupRequest deleteProtectionGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteProtectionGroupRequest, DeleteProtectionGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Removes AWS Shield Advanced from an account. AWS Shield Advanced requires a 1-year subscription commitment. You
      * cannot delete a subscription prior to the completion of that commitment.
      * </p>
@@ -480,6 +544,59 @@ public interface AWSShieldAsync extends AWSShield {
      */
     java.util.concurrent.Future<DescribeAttackResult> describeAttackAsync(DescribeAttackRequest describeAttackRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeAttackRequest, DescribeAttackResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides information about the number and type of attacks AWS Shield has detected in the last year for all
+     * resources that belong to your account, regardless of whether you've defined Shield protections for them. This
+     * operation is available to Shield customers as well as to Shield Advanced customers.
+     * </p>
+     * <p>
+     * The operation returns data for the time range of midnight UTC, one year ago, to midnight UTC, today. For example,
+     * if the current time is <code>2020-10-26 15:39:32 PDT</code>, equal to <code>2020-10-26 22:39:32 UTC</code>, then
+     * the time range for the attack data returned is from <code>2019-10-26 00:00:00 UTC</code> to
+     * <code>2020-10-26 00:00:00 UTC</code>.
+     * </p>
+     * <p>
+     * The time range indicates the period covered by the attack statistics data items.
+     * </p>
+     * 
+     * @param describeAttackStatisticsRequest
+     * @return A Java Future containing the result of the DescribeAttackStatistics operation returned by the service.
+     * @sample AWSShieldAsync.DescribeAttackStatistics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttackStatistics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAttackStatisticsResult> describeAttackStatisticsAsync(DescribeAttackStatisticsRequest describeAttackStatisticsRequest);
+
+    /**
+     * <p>
+     * Provides information about the number and type of attacks AWS Shield has detected in the last year for all
+     * resources that belong to your account, regardless of whether you've defined Shield protections for them. This
+     * operation is available to Shield customers as well as to Shield Advanced customers.
+     * </p>
+     * <p>
+     * The operation returns data for the time range of midnight UTC, one year ago, to midnight UTC, today. For example,
+     * if the current time is <code>2020-10-26 15:39:32 PDT</code>, equal to <code>2020-10-26 22:39:32 UTC</code>, then
+     * the time range for the attack data returned is from <code>2019-10-26 00:00:00 UTC</code> to
+     * <code>2020-10-26 00:00:00 UTC</code>.
+     * </p>
+     * <p>
+     * The time range indicates the period covered by the attack statistics data items.
+     * </p>
+     * 
+     * @param describeAttackStatisticsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAttackStatistics operation returned by the service.
+     * @sample AWSShieldAsyncHandler.DescribeAttackStatistics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttackStatistics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAttackStatisticsResult> describeAttackStatisticsAsync(DescribeAttackStatisticsRequest describeAttackStatisticsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAttackStatisticsRequest, DescribeAttackStatisticsResult> asyncHandler);
 
     /**
      * <p>
@@ -581,6 +698,37 @@ public interface AWSShieldAsync extends AWSShield {
      */
     java.util.concurrent.Future<DescribeProtectionResult> describeProtectionAsync(DescribeProtectionRequest describeProtectionRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeProtectionRequest, DescribeProtectionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the specification for the specified protection group.
+     * </p>
+     * 
+     * @param describeProtectionGroupRequest
+     * @return A Java Future containing the result of the DescribeProtectionGroup operation returned by the service.
+     * @sample AWSShieldAsync.DescribeProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeProtectionGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeProtectionGroupResult> describeProtectionGroupAsync(DescribeProtectionGroupRequest describeProtectionGroupRequest);
+
+    /**
+     * <p>
+     * Returns the specification for the specified protection group.
+     * </p>
+     * 
+     * @param describeProtectionGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeProtectionGroup operation returned by the service.
+     * @sample AWSShieldAsyncHandler.DescribeProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeProtectionGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeProtectionGroupResult> describeProtectionGroupAsync(DescribeProtectionGroupRequest describeProtectionGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeProtectionGroupRequest, DescribeProtectionGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -886,6 +1034,37 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
+     * Retrieves the <a>ProtectionGroup</a> objects for the account.
+     * </p>
+     * 
+     * @param listProtectionGroupsRequest
+     * @return A Java Future containing the result of the ListProtectionGroups operation returned by the service.
+     * @sample AWSShieldAsync.ListProtectionGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtectionGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListProtectionGroupsResult> listProtectionGroupsAsync(ListProtectionGroupsRequest listProtectionGroupsRequest);
+
+    /**
+     * <p>
+     * Retrieves the <a>ProtectionGroup</a> objects for the account.
+     * </p>
+     * 
+     * @param listProtectionGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListProtectionGroups operation returned by the service.
+     * @sample AWSShieldAsyncHandler.ListProtectionGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtectionGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListProtectionGroupsResult> listProtectionGroupsAsync(ListProtectionGroupsRequest listProtectionGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListProtectionGroupsRequest, ListProtectionGroupsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists all <a>Protection</a> objects for the account.
      * </p>
      * 
@@ -914,6 +1093,41 @@ public interface AWSShieldAsync extends AWSShield {
      */
     java.util.concurrent.Future<ListProtectionsResult> listProtectionsAsync(ListProtectionsRequest listProtectionsRequest,
             com.amazonaws.handlers.AsyncHandler<ListProtectionsRequest, ListProtectionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the resources that are included in the protection group.
+     * </p>
+     * 
+     * @param listResourcesInProtectionGroupRequest
+     * @return A Java Future containing the result of the ListResourcesInProtectionGroup operation returned by the
+     *         service.
+     * @sample AWSShieldAsync.ListResourcesInProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListResourcesInProtectionGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourcesInProtectionGroupResult> listResourcesInProtectionGroupAsync(
+            ListResourcesInProtectionGroupRequest listResourcesInProtectionGroupRequest);
+
+    /**
+     * <p>
+     * Retrieves the resources that are included in the protection group.
+     * </p>
+     * 
+     * @param listResourcesInProtectionGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListResourcesInProtectionGroup operation returned by the
+     *         service.
+     * @sample AWSShieldAsyncHandler.ListResourcesInProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListResourcesInProtectionGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourcesInProtectionGroupResult> listResourcesInProtectionGroupAsync(
+            ListResourcesInProtectionGroupRequest listResourcesInProtectionGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<ListResourcesInProtectionGroupRequest, ListResourcesInProtectionGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -953,6 +1167,39 @@ public interface AWSShieldAsync extends AWSShield {
     java.util.concurrent.Future<UpdateEmergencyContactSettingsResult> updateEmergencyContactSettingsAsync(
             UpdateEmergencyContactSettingsRequest updateEmergencyContactSettingsRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateEmergencyContactSettingsRequest, UpdateEmergencyContactSettingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an existing protection group. A protection group is a grouping of protected resources so they can be
+     * handled as a collective. This resource grouping improves the accuracy of detection and reduces false positives.
+     * </p>
+     * 
+     * @param updateProtectionGroupRequest
+     * @return A Java Future containing the result of the UpdateProtectionGroup operation returned by the service.
+     * @sample AWSShieldAsync.UpdateProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateProtectionGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateProtectionGroupResult> updateProtectionGroupAsync(UpdateProtectionGroupRequest updateProtectionGroupRequest);
+
+    /**
+     * <p>
+     * Updates an existing protection group. A protection group is a grouping of protected resources so they can be
+     * handled as a collective. This resource grouping improves the accuracy of detection and reduces false positives.
+     * </p>
+     * 
+     * @param updateProtectionGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateProtectionGroup operation returned by the service.
+     * @sample AWSShieldAsyncHandler.UpdateProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateProtectionGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateProtectionGroupResult> updateProtectionGroupAsync(UpdateProtectionGroupRequest updateProtectionGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateProtectionGroupRequest, UpdateProtectionGroupResult> asyncHandler);
 
     /**
      * <p>

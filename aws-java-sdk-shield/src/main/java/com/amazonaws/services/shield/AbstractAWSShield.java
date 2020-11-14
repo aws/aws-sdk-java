@@ -63,12 +63,22 @@ public class AbstractAWSShield implements AWSShield {
     }
 
     @Override
+    public CreateProtectionGroupResult createProtectionGroup(CreateProtectionGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateSubscriptionResult createSubscription(CreateSubscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteProtectionResult deleteProtection(DeleteProtectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteProtectionGroupResult deleteProtectionGroup(DeleteProtectionGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -84,6 +94,11 @@ public class AbstractAWSShield implements AWSShield {
     }
 
     @Override
+    public DescribeAttackStatisticsResult describeAttackStatistics(DescribeAttackStatisticsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeDRTAccessResult describeDRTAccess(DescribeDRTAccessRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -95,6 +110,11 @@ public class AbstractAWSShield implements AWSShield {
 
     @Override
     public DescribeProtectionResult describeProtection(DescribeProtectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeProtectionGroupResult describeProtectionGroup(DescribeProtectionGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -139,12 +159,27 @@ public class AbstractAWSShield implements AWSShield {
     }
 
     @Override
+    public ListProtectionGroupsResult listProtectionGroups(ListProtectionGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListProtectionsResult listProtections(ListProtectionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public ListResourcesInProtectionGroupResult listResourcesInProtectionGroup(ListResourcesInProtectionGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateEmergencyContactSettingsResult updateEmergencyContactSettings(UpdateEmergencyContactSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateProtectionGroupResult updateProtectionGroup(UpdateProtectionGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

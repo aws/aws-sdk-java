@@ -81,6 +81,12 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String proactiveEngagementStatus;
+    /**
+     * <p>
+     * Limits settings for your subscription.
+     * </p>
+     */
+    private SubscriptionLimits subscriptionLimits;
 
     /**
      * <p>
@@ -518,6 +524,46 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Limits settings for your subscription.
+     * </p>
+     * 
+     * @param subscriptionLimits
+     *        Limits settings for your subscription.
+     */
+
+    public void setSubscriptionLimits(SubscriptionLimits subscriptionLimits) {
+        this.subscriptionLimits = subscriptionLimits;
+    }
+
+    /**
+     * <p>
+     * Limits settings for your subscription.
+     * </p>
+     * 
+     * @return Limits settings for your subscription.
+     */
+
+    public SubscriptionLimits getSubscriptionLimits() {
+        return this.subscriptionLimits;
+    }
+
+    /**
+     * <p>
+     * Limits settings for your subscription.
+     * </p>
+     * 
+     * @param subscriptionLimits
+     *        Limits settings for your subscription.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Subscription withSubscriptionLimits(SubscriptionLimits subscriptionLimits) {
+        setSubscriptionLimits(subscriptionLimits);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -540,7 +586,9 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
         if (getLimits() != null)
             sb.append("Limits: ").append(getLimits()).append(",");
         if (getProactiveEngagementStatus() != null)
-            sb.append("ProactiveEngagementStatus: ").append(getProactiveEngagementStatus());
+            sb.append("ProactiveEngagementStatus: ").append(getProactiveEngagementStatus()).append(",");
+        if (getSubscriptionLimits() != null)
+            sb.append("SubscriptionLimits: ").append(getSubscriptionLimits());
         sb.append("}");
         return sb.toString();
     }
@@ -579,6 +627,10 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getProactiveEngagementStatus() != null && other.getProactiveEngagementStatus().equals(this.getProactiveEngagementStatus()) == false)
             return false;
+        if (other.getSubscriptionLimits() == null ^ this.getSubscriptionLimits() == null)
+            return false;
+        if (other.getSubscriptionLimits() != null && other.getSubscriptionLimits().equals(this.getSubscriptionLimits()) == false)
+            return false;
         return true;
     }
 
@@ -593,6 +645,7 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAutoRenew() == null) ? 0 : getAutoRenew().hashCode());
         hashCode = prime * hashCode + ((getLimits() == null) ? 0 : getLimits().hashCode());
         hashCode = prime * hashCode + ((getProactiveEngagementStatus() == null) ? 0 : getProactiveEngagementStatus().hashCode());
+        hashCode = prime * hashCode + ((getSubscriptionLimits() == null) ? 0 : getSubscriptionLimits().hashCode());
         return hashCode;
     }
 

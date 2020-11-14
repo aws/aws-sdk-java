@@ -55,6 +55,10 @@ public class SetSubnetsResultStaxUnmarshaller implements Unmarshaller<SetSubnets
                     continue;
                 }
 
+                if (context.testExpression("IpAddressType", targetDepth)) {
+                    setSubnetsResult.setIpAddressType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return setSubnetsResult;

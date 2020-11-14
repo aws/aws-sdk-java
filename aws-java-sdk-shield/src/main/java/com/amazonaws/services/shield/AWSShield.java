@@ -124,7 +124,8 @@ public interface AWSShield {
      *         <p>
      *         <code>Limit</code> is the threshold that would be exceeded.
      * @throws InvalidParameterException
-     *         Exception that indicates that the parameters passed to the API are invalid.
+     *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
+     *         includes details in additional properties.
      * @throws AccessDeniedForDependencyException
      *         In order to grant the necessary access to the DDoS Response Team (DRT), the user submitting the request
      *         must have the <code>iam:PassRole</code> permission. This error indicates the user did not have the
@@ -135,7 +136,8 @@ public interface AWSShield {
      *         Exception that indicates that the resource state has been modified by another client. Retrieve the
      *         resource and then retry your request.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @sample AWSShield.AssociateDRTLogBucket
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateDRTLogBucket" target="_top">AWS
      *      API Documentation</a>
@@ -188,7 +190,8 @@ public interface AWSShield {
      * @throws InvalidOperationException
      *         Exception that indicates that the operation would not cause any change to occur.
      * @throws InvalidParameterException
-     *         Exception that indicates that the parameters passed to the API are invalid.
+     *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
+     *         includes details in additional properties.
      * @throws AccessDeniedForDependencyException
      *         In order to grant the necessary access to the DDoS Response Team (DRT), the user submitting the request
      *         must have the <code>iam:PassRole</code> permission. This error indicates the user did not have the
@@ -199,7 +202,8 @@ public interface AWSShield {
      *         Exception that indicates that the resource state has been modified by another client. Retrieve the
      *         resource and then retry your request.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @sample AWSShield.AssociateDRTRole
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateDRTRole" target="_top">AWS API
      *      Documentation</a>
@@ -233,9 +237,11 @@ public interface AWSShield {
      *         <p>
      *         <code>Limit</code> is the threshold that would be exceeded.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @throws InvalidParameterException
-     *         Exception that indicates that the parameters passed to the API are invalid.
+     *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
+     *         includes details in additional properties.
      * @throws OptimisticLockException
      *         Exception that indicates that the resource state has been modified by another client. Retrieve the
      *         resource and then retry your request.
@@ -274,9 +280,11 @@ public interface AWSShield {
      * @throws InvalidOperationException
      *         Exception that indicates that the operation would not cause any change to occur.
      * @throws InvalidParameterException
-     *         Exception that indicates that the parameters passed to the API are invalid.
+     *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
+     *         includes details in additional properties.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @throws OptimisticLockException
      *         Exception that indicates that the resource state has been modified by another client. Retrieve the
      *         resource and then retry your request.
@@ -321,17 +329,55 @@ public interface AWSShield {
      *         <p>
      *         <code>Limit</code> is the threshold that would be exceeded.
      * @throws ResourceAlreadyExistsException
-     *         Exception indicating the specified resource already exists.
+     *         Exception indicating the specified resource already exists. If available, this exception includes details
+     *         in additional properties.
      * @throws OptimisticLockException
      *         Exception that indicates that the resource state has been modified by another client. Retrieve the
      *         resource and then retry your request.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @sample AWSShield.CreateProtection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtection" target="_top">AWS API
      *      Documentation</a>
      */
     CreateProtectionResult createProtection(CreateProtectionRequest createProtectionRequest);
+
+    /**
+     * <p>
+     * Creates a grouping of protected resources so they can be handled as a collective. This resource grouping improves
+     * the accuracy of detection and reduces false positives.
+     * </p>
+     * 
+     * @param createProtectionGroupRequest
+     * @return Result of the CreateProtectionGroup operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws ResourceAlreadyExistsException
+     *         Exception indicating the specified resource already exists. If available, this exception includes details
+     *         in additional properties.
+     * @throws OptimisticLockException
+     *         Exception that indicates that the resource state has been modified by another client. Retrieve the
+     *         resource and then retry your request.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
+     * @throws InvalidParameterException
+     *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
+     *         includes details in additional properties.
+     * @throws LimitsExceededException
+     *         Exception that indicates that the operation would exceed a limit.</p>
+     *         <p>
+     *         <code>Type</code> is the type of limit that would be exceeded.
+     *         </p>
+     *         <p>
+     *         <code>Limit</code> is the threshold that would be exceeded.
+     * @sample AWSShield.CreateProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtectionGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateProtectionGroupResult createProtectionGroup(CreateProtectionGroupRequest createProtectionGroupRequest);
 
     /**
      * <p>
@@ -348,7 +394,8 @@ public interface AWSShield {
      *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
      *         request.
      * @throws ResourceAlreadyExistsException
-     *         Exception indicating the specified resource already exists.
+     *         Exception indicating the specified resource already exists. If available, this exception includes details
+     *         in additional properties.
      * @sample AWSShield.CreateSubscription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateSubscription" target="_top">AWS API
      *      Documentation</a>
@@ -366,7 +413,8 @@ public interface AWSShield {
      *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
      *         request.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @throws OptimisticLockException
      *         Exception that indicates that the resource state has been modified by another client. Retrieve the
      *         resource and then retry your request.
@@ -375,6 +423,28 @@ public interface AWSShield {
      *      Documentation</a>
      */
     DeleteProtectionResult deleteProtection(DeleteProtectionRequest deleteProtectionRequest);
+
+    /**
+     * <p>
+     * Removes the specified protection group.
+     * </p>
+     * 
+     * @param deleteProtectionGroupRequest
+     * @return Result of the DeleteProtectionGroup operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws OptimisticLockException
+     *         Exception that indicates that the resource state has been modified by another client. Retrieve the
+     *         resource and then retry your request.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
+     * @sample AWSShield.DeleteProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteProtectionGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteProtectionGroupResult deleteProtectionGroup(DeleteProtectionGroupRequest deleteProtectionGroupRequest);
 
     /**
      * <p>
@@ -392,7 +462,8 @@ public interface AWSShield {
      *         the <code>AutoRenew</code> parameter during the last 30 days of your subscription. This exception
      *         indicates that you are attempting to change <code>AutoRenew</code> prior to that period.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @sample AWSShield.DeleteSubscription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteSubscription" target="_top">AWS API
      *      Documentation</a>
@@ -421,6 +492,33 @@ public interface AWSShield {
 
     /**
      * <p>
+     * Provides information about the number and type of attacks AWS Shield has detected in the last year for all
+     * resources that belong to your account, regardless of whether you've defined Shield protections for them. This
+     * operation is available to Shield customers as well as to Shield Advanced customers.
+     * </p>
+     * <p>
+     * The operation returns data for the time range of midnight UTC, one year ago, to midnight UTC, today. For example,
+     * if the current time is <code>2020-10-26 15:39:32 PDT</code>, equal to <code>2020-10-26 22:39:32 UTC</code>, then
+     * the time range for the attack data returned is from <code>2019-10-26 00:00:00 UTC</code> to
+     * <code>2020-10-26 00:00:00 UTC</code>.
+     * </p>
+     * <p>
+     * The time range indicates the period covered by the attack statistics data items.
+     * </p>
+     * 
+     * @param describeAttackStatisticsRequest
+     * @return Result of the DescribeAttackStatistics operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @sample AWSShield.DescribeAttackStatistics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttackStatistics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeAttackStatisticsResult describeAttackStatistics(DescribeAttackStatisticsRequest describeAttackStatisticsRequest);
+
+    /**
+     * <p>
      * Returns the current role and list of Amazon S3 log buckets used by the DDoS Response Team (DRT) to access your
      * AWS account while assisting with attack mitigation.
      * </p>
@@ -431,7 +529,8 @@ public interface AWSShield {
      *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
      *         request.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @sample AWSShield.DescribeDRTAccess
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeDRTAccess" target="_top">AWS API
      *      Documentation</a>
@@ -450,7 +549,8 @@ public interface AWSShield {
      *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
      *         request.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @sample AWSShield.DescribeEmergencyContactSettings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeEmergencyContactSettings"
      *      target="_top">AWS API Documentation</a>
@@ -468,14 +568,35 @@ public interface AWSShield {
      *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
      *         request.
      * @throws InvalidParameterException
-     *         Exception that indicates that the parameters passed to the API are invalid.
+     *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
+     *         includes details in additional properties.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @sample AWSShield.DescribeProtection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeProtection" target="_top">AWS API
      *      Documentation</a>
      */
     DescribeProtectionResult describeProtection(DescribeProtectionRequest describeProtectionRequest);
+
+    /**
+     * <p>
+     * Returns the specification for the specified protection group.
+     * </p>
+     * 
+     * @param describeProtectionGroupRequest
+     * @return Result of the DescribeProtectionGroup operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
+     * @sample AWSShield.DescribeProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeProtectionGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeProtectionGroupResult describeProtectionGroup(DescribeProtectionGroupRequest describeProtectionGroupRequest);
 
     /**
      * <p>
@@ -488,7 +609,8 @@ public interface AWSShield {
      *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
      *         request.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @sample AWSShield.DescribeSubscription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeSubscription" target="_top">AWS
      *      API Documentation</a>
@@ -509,9 +631,11 @@ public interface AWSShield {
      * @throws InvalidOperationException
      *         Exception that indicates that the operation would not cause any change to occur.
      * @throws InvalidParameterException
-     *         Exception that indicates that the parameters passed to the API are invalid.
+     *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
+     *         includes details in additional properties.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @throws OptimisticLockException
      *         Exception that indicates that the resource state has been modified by another client. Retrieve the
      *         resource and then retry your request.
@@ -552,7 +676,8 @@ public interface AWSShield {
      *         Exception that indicates that the resource state has been modified by another client. Retrieve the
      *         resource and then retry your request.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @sample AWSShield.DisassociateDRTLogBucket
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisassociateDRTLogBucket"
      *      target="_top">AWS API Documentation</a>
@@ -582,7 +707,8 @@ public interface AWSShield {
      *         Exception that indicates that the resource state has been modified by another client. Retrieve the
      *         resource and then retry your request.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @sample AWSShield.DisassociateDRTRole
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisassociateDRTRole" target="_top">AWS API
      *      Documentation</a>
@@ -609,9 +735,11 @@ public interface AWSShield {
      *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
      *         request.
      * @throws InvalidParameterException
-     *         Exception that indicates that the parameters passed to the API are invalid.
+     *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
+     *         includes details in additional properties.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @throws OptimisticLockException
      *         Exception that indicates that the resource state has been modified by another client. Retrieve the
      *         resource and then retry your request.
@@ -635,9 +763,11 @@ public interface AWSShield {
      * @throws InvalidOperationException
      *         Exception that indicates that the operation would not cause any change to occur.
      * @throws InvalidParameterException
-     *         Exception that indicates that the parameters passed to the API are invalid.
+     *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
+     *         includes details in additional properties.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @throws OptimisticLockException
      *         Exception that indicates that the resource state has been modified by another client. Retrieve the
      *         resource and then retry your request.
@@ -674,7 +804,8 @@ public interface AWSShield {
      *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
      *         request.
      * @throws InvalidParameterException
-     *         Exception that indicates that the parameters passed to the API are invalid.
+     *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
+     *         includes details in additional properties.
      * @throws InvalidOperationException
      *         Exception that indicates that the operation would not cause any change to occur.
      * @sample AWSShield.ListAttacks
@@ -682,6 +813,28 @@ public interface AWSShield {
      *      Documentation</a>
      */
     ListAttacksResult listAttacks(ListAttacksRequest listAttacksRequest);
+
+    /**
+     * <p>
+     * Retrieves the <a>ProtectionGroup</a> objects for the account.
+     * </p>
+     * 
+     * @param listProtectionGroupsRequest
+     * @return Result of the ListProtectionGroups operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
+     * @throws InvalidPaginationTokenException
+     *         Exception that indicates that the NextToken specified in the request is invalid. Submit the request using
+     *         the NextToken value that was returned in the response.
+     * @sample AWSShield.ListProtectionGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtectionGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListProtectionGroupsResult listProtectionGroups(ListProtectionGroupsRequest listProtectionGroupsRequest);
 
     /**
      * <p>
@@ -694,7 +847,8 @@ public interface AWSShield {
      *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
      *         request.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @throws InvalidPaginationTokenException
      *         Exception that indicates that the NextToken specified in the request is invalid. Submit the request using
      *         the NextToken value that was returned in the response.
@@ -703,6 +857,28 @@ public interface AWSShield {
      *      Documentation</a>
      */
     ListProtectionsResult listProtections(ListProtectionsRequest listProtectionsRequest);
+
+    /**
+     * <p>
+     * Retrieves the resources that are included in the protection group.
+     * </p>
+     * 
+     * @param listResourcesInProtectionGroupRequest
+     * @return Result of the ListResourcesInProtectionGroup operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
+     * @throws InvalidPaginationTokenException
+     *         Exception that indicates that the NextToken specified in the request is invalid. Submit the request using
+     *         the NextToken value that was returned in the response.
+     * @sample AWSShield.ListResourcesInProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListResourcesInProtectionGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListResourcesInProtectionGroupResult listResourcesInProtectionGroup(ListResourcesInProtectionGroupRequest listResourcesInProtectionGroupRequest);
 
     /**
      * <p>
@@ -717,17 +893,45 @@ public interface AWSShield {
      *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
      *         request.
      * @throws InvalidParameterException
-     *         Exception that indicates that the parameters passed to the API are invalid.
+     *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
+     *         includes details in additional properties.
      * @throws OptimisticLockException
      *         Exception that indicates that the resource state has been modified by another client. Retrieve the
      *         resource and then retry your request.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @sample AWSShield.UpdateEmergencyContactSettings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateEmergencyContactSettings"
      *      target="_top">AWS API Documentation</a>
      */
     UpdateEmergencyContactSettingsResult updateEmergencyContactSettings(UpdateEmergencyContactSettingsRequest updateEmergencyContactSettingsRequest);
+
+    /**
+     * <p>
+     * Updates an existing protection group. A protection group is a grouping of protected resources so they can be
+     * handled as a collective. This resource grouping improves the accuracy of detection and reduces false positives.
+     * </p>
+     * 
+     * @param updateProtectionGroupRequest
+     * @return Result of the UpdateProtectionGroup operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
+     * @throws OptimisticLockException
+     *         Exception that indicates that the resource state has been modified by another client. Retrieve the
+     *         resource and then retry your request.
+     * @throws InvalidParameterException
+     *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
+     *         includes details in additional properties.
+     * @sample AWSShield.UpdateProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateProtectionGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateProtectionGroupResult updateProtectionGroup(UpdateProtectionGroupRequest updateProtectionGroupRequest);
 
     /**
      * <p>
@@ -745,9 +949,11 @@ public interface AWSShield {
      *         the <code>AutoRenew</code> parameter during the last 30 days of your subscription. This exception
      *         indicates that you are attempting to change <code>AutoRenew</code> prior to that period.
      * @throws ResourceNotFoundException
-     *         Exception indicating the specified resource does not exist.
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
      * @throws InvalidParameterException
-     *         Exception that indicates that the parameters passed to the API are invalid.
+     *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
+     *         includes details in additional properties.
      * @throws OptimisticLockException
      *         Exception that indicates that the resource state has been modified by another client. Retrieve the
      *         resource and then retry your request.

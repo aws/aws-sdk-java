@@ -95,6 +95,13 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * contain only alphanumeric characters and hyphens.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route requests to
+     * targets if it is unable to forward the request to AWS WAF. The value is <code>true</code> or <code>false</code>.
+     * The default is <code>false</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The following attribute is supported by Network Load Balancers and Gateway Load Balancers:
@@ -185,6 +192,13 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * contain only alphanumeric characters and hyphens.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route requests to
+     * targets if it is unable to forward the request to AWS WAF. The value is <code>true</code> or <code>false</code>.
+     * The default is <code>false</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The following attribute is supported by Network Load Balancers and Gateway Load Balancers:
@@ -263,6 +277,13 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The value is <code>true</code>
      *        or <code>false</code>. The default is <code>true</code>. Elastic Load Balancing requires that message
      *        header names contain only alphanumeric characters and hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route
+     *        requests to targets if it is unable to forward the request to AWS WAF. The value is <code>true</code> or
+     *        <code>false</code>. The default is <code>false</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -351,6 +372,13 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * contain only alphanumeric characters and hyphens.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route requests to
+     * targets if it is unable to forward the request to AWS WAF. The value is <code>true</code> or <code>false</code>.
+     * The default is <code>false</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The following attribute is supported by Network Load Balancers and Gateway Load Balancers:
@@ -428,6 +456,13 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *         <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The value is <code>true</code>
      *         or <code>false</code>. The default is <code>true</code>. Elastic Load Balancing requires that message
      *         header names contain only alphanumeric characters and hyphens.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route
+     *         requests to targets if it is unable to forward the request to AWS WAF. The value is <code>true</code> or
+     *         <code>false</code>. The default is <code>false</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -516,6 +551,13 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * contain only alphanumeric characters and hyphens.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route requests to
+     * targets if it is unable to forward the request to AWS WAF. The value is <code>true</code> or <code>false</code>.
+     * The default is <code>false</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The following attribute is supported by Network Load Balancers and Gateway Load Balancers:
@@ -594,6 +636,13 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The value is <code>true</code>
      *        or <code>false</code>. The default is <code>true</code>. Elastic Load Balancing requires that message
      *        header names contain only alphanumeric characters and hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route
+     *        requests to targets if it is unable to forward the request to AWS WAF. The value is <code>true</code> or
+     *        <code>false</code>. The default is <code>false</code>.
      *        </p>
      *        </li>
      *        </ul>

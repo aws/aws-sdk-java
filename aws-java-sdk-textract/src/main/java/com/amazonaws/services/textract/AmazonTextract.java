@@ -109,7 +109,7 @@ public interface AmazonTextract {
      *         JPEG format. Documents for asynchronous operations can also be in PDF format.
      * @throws DocumentTooLargeException
      *         The document can't be processed because it's too large. The maximum document size for synchronous
-     *         operations 5 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
+     *         operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
      * @throws BadDocumentException
      *         Amazon Textract isn't able to read the document. For more information on the document limits in Amazon
      *         Textract, see <a>limits</a>.
@@ -169,7 +169,7 @@ public interface AmazonTextract {
      *         JPEG format. Documents for asynchronous operations can also be in PDF format.
      * @throws DocumentTooLargeException
      *         The document can't be processed because it's too large. The maximum document size for synchronous
-     *         operations 5 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
+     *         operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
      * @throws BadDocumentException
      *         Amazon Textract isn't able to read the document. For more information on the document limits in Amazon
      *         Textract, see <a>limits</a>.
@@ -376,12 +376,15 @@ public interface AmazonTextract {
      *         <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to
      *         Amazon S3</a> For troubleshooting information, see <a
      *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
+     * @throws InvalidKMSKeyException
+     *         Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered
+     *         incorrectly.
      * @throws UnsupportedDocumentException
      *         The format of the input document isn't supported. Documents for synchronous operations can be in PNG or
      *         JPEG format. Documents for asynchronous operations can also be in PDF format.
      * @throws DocumentTooLargeException
      *         The document can't be processed because it's too large. The maximum document size for synchronous
-     *         operations 5 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
+     *         operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
      * @throws BadDocumentException
      *         Amazon Textract isn't able to read the document. For more information on the document limits in Amazon
      *         Textract, see <a>limits</a>.
@@ -444,12 +447,15 @@ public interface AmazonTextract {
      *         <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to
      *         Amazon S3</a> For troubleshooting information, see <a
      *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
+     * @throws InvalidKMSKeyException
+     *         Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered
+     *         incorrectly.
      * @throws UnsupportedDocumentException
      *         The format of the input document isn't supported. Documents for synchronous operations can be in PNG or
      *         JPEG format. Documents for asynchronous operations can also be in PDF format.
      * @throws DocumentTooLargeException
      *         The document can't be processed because it's too large. The maximum document size for synchronous
-     *         operations 5 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
+     *         operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
      * @throws BadDocumentException
      *         Amazon Textract isn't able to read the document. For more information on the document limits in Amazon
      *         Textract, see <a>limits</a>.

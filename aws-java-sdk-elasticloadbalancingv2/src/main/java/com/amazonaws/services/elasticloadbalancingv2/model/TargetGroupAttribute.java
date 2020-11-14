@@ -103,9 +103,16 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The following attribute is supported only by Network Load Balancers:
+     * The following attributes are supported only by Network Load Balancers:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer terminates
+     * connections at the end of the deregistration timeout. The value is <code>true</code> or <code>false</code>. The
+     * default is <code>false</code>.
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is
@@ -199,9 +206,16 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The following attribute is supported only by Network Load Balancers:
+     * The following attributes are supported only by Network Load Balancers:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer terminates
+     * connections at the end of the deregistration timeout. The value is <code>true</code> or <code>false</code>. The
+     * default is <code>false</code>.
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is
@@ -287,9 +301,16 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        The following attribute is supported only by Network Load Balancers:
+     *        The following attributes are supported only by Network Load Balancers:
      *        </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer
+     *        terminates connections at the end of the deregistration timeout. The value is <code>true</code> or
+     *        <code>false</code>. The default is <code>false</code>.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value
@@ -379,9 +400,16 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The following attribute is supported only by Network Load Balancers:
+     * The following attributes are supported only by Network Load Balancers:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer terminates
+     * connections at the end of the deregistration timeout. The value is <code>true</code> or <code>false</code>. The
+     * default is <code>false</code>.
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is
@@ -467,9 +495,16 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         <p>
-     *         The following attribute is supported only by Network Load Balancers:
+     *         The following attributes are supported only by Network Load Balancers:
      *         </p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer
+     *         terminates connections at the end of the deregistration timeout. The value is <code>true</code> or
+     *         <code>false</code>. The default is <code>false</code>.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value
@@ -559,9 +594,16 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The following attribute is supported only by Network Load Balancers:
+     * The following attributes are supported only by Network Load Balancers:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer terminates
+     * connections at the end of the deregistration timeout. The value is <code>true</code> or <code>false</code>. The
+     * default is <code>false</code>.
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is
@@ -647,9 +689,16 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        The following attribute is supported only by Network Load Balancers:
+     *        The following attributes are supported only by Network Load Balancers:
      *        </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer
+     *        terminates connections at the end of the deregistration timeout. The value is <code>true</code> or
+     *        <code>false</code>. The default is <code>false</code>.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value

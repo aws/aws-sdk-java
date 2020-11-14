@@ -94,6 +94,19 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     }
 
     @Override
+    public java.util.concurrent.Future<CreateProtectionGroupResult> createProtectionGroupAsync(CreateProtectionGroupRequest request) {
+
+        return createProtectionGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateProtectionGroupResult> createProtectionGroupAsync(CreateProtectionGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateProtectionGroupRequest, CreateProtectionGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateSubscriptionResult> createSubscriptionAsync(CreateSubscriptionRequest request) {
 
         return createSubscriptionAsync(request, null);
@@ -115,6 +128,19 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     @Override
     public java.util.concurrent.Future<DeleteProtectionResult> deleteProtectionAsync(DeleteProtectionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteProtectionRequest, DeleteProtectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteProtectionGroupResult> deleteProtectionGroupAsync(DeleteProtectionGroupRequest request) {
+
+        return deleteProtectionGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteProtectionGroupResult> deleteProtectionGroupAsync(DeleteProtectionGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteProtectionGroupRequest, DeleteProtectionGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -143,6 +169,19 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     @Override
     public java.util.concurrent.Future<DescribeAttackResult> describeAttackAsync(DescribeAttackRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAttackRequest, DescribeAttackResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAttackStatisticsResult> describeAttackStatisticsAsync(DescribeAttackStatisticsRequest request) {
+
+        return describeAttackStatisticsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAttackStatisticsResult> describeAttackStatisticsAsync(DescribeAttackStatisticsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAttackStatisticsRequest, DescribeAttackStatisticsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -184,6 +223,19 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     @Override
     public java.util.concurrent.Future<DescribeProtectionResult> describeProtectionAsync(DescribeProtectionRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeProtectionRequest, DescribeProtectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeProtectionGroupResult> describeProtectionGroupAsync(DescribeProtectionGroupRequest request) {
+
+        return describeProtectionGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeProtectionGroupResult> describeProtectionGroupAsync(DescribeProtectionGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeProtectionGroupRequest, DescribeProtectionGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -293,6 +345,19 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     }
 
     @Override
+    public java.util.concurrent.Future<ListProtectionGroupsResult> listProtectionGroupsAsync(ListProtectionGroupsRequest request) {
+
+        return listProtectionGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProtectionGroupsResult> listProtectionGroupsAsync(ListProtectionGroupsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListProtectionGroupsRequest, ListProtectionGroupsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListProtectionsResult> listProtectionsAsync(ListProtectionsRequest request) {
 
         return listProtectionsAsync(request, null);
@@ -306,6 +371,19 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     }
 
     @Override
+    public java.util.concurrent.Future<ListResourcesInProtectionGroupResult> listResourcesInProtectionGroupAsync(ListResourcesInProtectionGroupRequest request) {
+
+        return listResourcesInProtectionGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourcesInProtectionGroupResult> listResourcesInProtectionGroupAsync(ListResourcesInProtectionGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListResourcesInProtectionGroupRequest, ListResourcesInProtectionGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateEmergencyContactSettingsResult> updateEmergencyContactSettingsAsync(UpdateEmergencyContactSettingsRequest request) {
 
         return updateEmergencyContactSettingsAsync(request, null);
@@ -314,6 +392,19 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     @Override
     public java.util.concurrent.Future<UpdateEmergencyContactSettingsResult> updateEmergencyContactSettingsAsync(UpdateEmergencyContactSettingsRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateEmergencyContactSettingsRequest, UpdateEmergencyContactSettingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProtectionGroupResult> updateProtectionGroupAsync(UpdateProtectionGroupRequest request) {
+
+        return updateProtectionGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProtectionGroupResult> updateProtectionGroupAsync(UpdateProtectionGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateProtectionGroupRequest, UpdateProtectionGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
