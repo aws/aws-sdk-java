@@ -59,6 +59,23 @@ public class CanaryRunConfigInput implements Serializable, Cloneable, Structured
      * </p>
      */
     private Boolean activeTracing;
+    /**
+     * <p>
+     * Specifies the keys and values to use for any environment variables used in the canary script. Use the following
+     * format:
+     * </p>
+     * <p>
+     * { "key1" : "value1", "key2" : "value2", ...}
+     * </p>
+     * <p>
+     * Keys must start with a letter and be at least two characters. The total size of your environment variables cannot
+     * exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment
+     * variables. For more information about reserved keys, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
+     * Runtime environment variables</a>.
+     * </p>
+     */
+    private java.util.Map<String, String> environmentVariables;
 
     /**
      * <p>
@@ -284,6 +301,137 @@ public class CanaryRunConfigInput implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * Specifies the keys and values to use for any environment variables used in the canary script. Use the following
+     * format:
+     * </p>
+     * <p>
+     * { "key1" : "value1", "key2" : "value2", ...}
+     * </p>
+     * <p>
+     * Keys must start with a letter and be at least two characters. The total size of your environment variables cannot
+     * exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment
+     * variables. For more information about reserved keys, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
+     * Runtime environment variables</a>.
+     * </p>
+     * 
+     * @return Specifies the keys and values to use for any environment variables used in the canary script. Use the
+     *         following format:</p>
+     *         <p>
+     *         { "key1" : "value1", "key2" : "value2", ...}
+     *         </p>
+     *         <p>
+     *         Keys must start with a letter and be at least two characters. The total size of your environment
+     *         variables cannot exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for
+     *         your environment variables. For more information about reserved keys, see <a href=
+     *         "https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
+     *         Runtime environment variables</a>.
+     */
+
+    public java.util.Map<String, String> getEnvironmentVariables() {
+        return environmentVariables;
+    }
+
+    /**
+     * <p>
+     * Specifies the keys and values to use for any environment variables used in the canary script. Use the following
+     * format:
+     * </p>
+     * <p>
+     * { "key1" : "value1", "key2" : "value2", ...}
+     * </p>
+     * <p>
+     * Keys must start with a letter and be at least two characters. The total size of your environment variables cannot
+     * exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment
+     * variables. For more information about reserved keys, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
+     * Runtime environment variables</a>.
+     * </p>
+     * 
+     * @param environmentVariables
+     *        Specifies the keys and values to use for any environment variables used in the canary script. Use the
+     *        following format:</p>
+     *        <p>
+     *        { "key1" : "value1", "key2" : "value2", ...}
+     *        </p>
+     *        <p>
+     *        Keys must start with a letter and be at least two characters. The total size of your environment variables
+     *        cannot exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your
+     *        environment variables. For more information about reserved keys, see <a href=
+     *        "https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
+     *        Runtime environment variables</a>.
+     */
+
+    public void setEnvironmentVariables(java.util.Map<String, String> environmentVariables) {
+        this.environmentVariables = environmentVariables;
+    }
+
+    /**
+     * <p>
+     * Specifies the keys and values to use for any environment variables used in the canary script. Use the following
+     * format:
+     * </p>
+     * <p>
+     * { "key1" : "value1", "key2" : "value2", ...}
+     * </p>
+     * <p>
+     * Keys must start with a letter and be at least two characters. The total size of your environment variables cannot
+     * exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment
+     * variables. For more information about reserved keys, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
+     * Runtime environment variables</a>.
+     * </p>
+     * 
+     * @param environmentVariables
+     *        Specifies the keys and values to use for any environment variables used in the canary script. Use the
+     *        following format:</p>
+     *        <p>
+     *        { "key1" : "value1", "key2" : "value2", ...}
+     *        </p>
+     *        <p>
+     *        Keys must start with a letter and be at least two characters. The total size of your environment variables
+     *        cannot exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your
+     *        environment variables. For more information about reserved keys, see <a href=
+     *        "https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
+     *        Runtime environment variables</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CanaryRunConfigInput withEnvironmentVariables(java.util.Map<String, String> environmentVariables) {
+        setEnvironmentVariables(environmentVariables);
+        return this;
+    }
+
+    /**
+     * Add a single EnvironmentVariables entry
+     *
+     * @see CanaryRunConfigInput#withEnvironmentVariables
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CanaryRunConfigInput addEnvironmentVariablesEntry(String key, String value) {
+        if (null == this.environmentVariables) {
+            this.environmentVariables = new java.util.HashMap<String, String>();
+        }
+        if (this.environmentVariables.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.environmentVariables.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into EnvironmentVariables.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CanaryRunConfigInput clearEnvironmentVariablesEntries() {
+        this.environmentVariables = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -300,7 +448,9 @@ public class CanaryRunConfigInput implements Serializable, Cloneable, Structured
         if (getMemoryInMB() != null)
             sb.append("MemoryInMB: ").append(getMemoryInMB()).append(",");
         if (getActiveTracing() != null)
-            sb.append("ActiveTracing: ").append(getActiveTracing());
+            sb.append("ActiveTracing: ").append(getActiveTracing()).append(",");
+        if (getEnvironmentVariables() != null)
+            sb.append("EnvironmentVariables: ").append(getEnvironmentVariables());
         sb.append("}");
         return sb.toString();
     }
@@ -327,6 +477,10 @@ public class CanaryRunConfigInput implements Serializable, Cloneable, Structured
             return false;
         if (other.getActiveTracing() != null && other.getActiveTracing().equals(this.getActiveTracing()) == false)
             return false;
+        if (other.getEnvironmentVariables() == null ^ this.getEnvironmentVariables() == null)
+            return false;
+        if (other.getEnvironmentVariables() != null && other.getEnvironmentVariables().equals(this.getEnvironmentVariables()) == false)
+            return false;
         return true;
     }
 
@@ -338,6 +492,7 @@ public class CanaryRunConfigInput implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getTimeoutInSeconds() == null) ? 0 : getTimeoutInSeconds().hashCode());
         hashCode = prime * hashCode + ((getMemoryInMB() == null) ? 0 : getMemoryInMB().hashCode());
         hashCode = prime * hashCode + ((getActiveTracing() == null) ? 0 : getActiveTracing().hashCode());
+        hashCode = prime * hashCode + ((getEnvironmentVariables() == null) ? 0 : getEnvironmentVariables().hashCode());
         return hashCode;
     }
 

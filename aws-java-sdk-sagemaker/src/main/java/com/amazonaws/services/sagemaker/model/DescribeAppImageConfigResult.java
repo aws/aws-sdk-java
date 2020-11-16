@@ -49,7 +49,7 @@ public class DescribeAppImageConfigResult extends com.amazonaws.AmazonWebService
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * The KernelGateway app.
+     * The configuration of a KernelGateway app.
      * </p>
      */
     private KernelGatewayImageConfig kernelGatewayImageConfig;
@@ -216,11 +216,11 @@ public class DescribeAppImageConfigResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The KernelGateway app.
+     * The configuration of a KernelGateway app.
      * </p>
      * 
      * @param kernelGatewayImageConfig
-     *        The KernelGateway app.
+     *        The configuration of a KernelGateway app.
      */
 
     public void setKernelGatewayImageConfig(KernelGatewayImageConfig kernelGatewayImageConfig) {
@@ -229,10 +229,10 @@ public class DescribeAppImageConfigResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The KernelGateway app.
+     * The configuration of a KernelGateway app.
      * </p>
      * 
-     * @return The KernelGateway app.
+     * @return The configuration of a KernelGateway app.
      */
 
     public KernelGatewayImageConfig getKernelGatewayImageConfig() {
@@ -241,11 +241,11 @@ public class DescribeAppImageConfigResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The KernelGateway app.
+     * The configuration of a KernelGateway app.
      * </p>
      * 
      * @param kernelGatewayImageConfig
-     *        The KernelGateway app.
+     *        The configuration of a KernelGateway app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

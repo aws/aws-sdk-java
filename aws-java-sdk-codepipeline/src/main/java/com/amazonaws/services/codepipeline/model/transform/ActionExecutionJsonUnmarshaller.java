@@ -48,6 +48,10 @@ public class ActionExecutionJsonUnmarshaller implements Unmarshaller<ActionExecu
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("actionExecutionId", targetDepth)) {
+                    context.nextToken();
+                    actionExecution.setActionExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     actionExecution.setStatus(context.getUnmarshaller(String.class).unmarshall(context));

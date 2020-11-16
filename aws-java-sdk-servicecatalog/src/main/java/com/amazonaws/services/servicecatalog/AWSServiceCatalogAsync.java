@@ -28,8 +28,8 @@ import com.amazonaws.services.servicecatalog.model.*;
  * <fullname>AWS Service Catalog</fullname>
  * <p>
  * <a href="https://aws.amazon.com/servicecatalog/">AWS Service Catalog</a> enables organizations to create and manage
- * catalogs of IT services that are approved for use on AWS. To get the most out of this documentation, you should be
- * familiar with the terminology discussed in <a
+ * catalogs of IT services that are approved for AWS. To get the most out of this documentation, you should be familiar
+ * with the terminology discussed in <a
  * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">AWS Service Catalog
  * Concepts</a>.
  * </p>
@@ -1979,6 +1979,67 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     java.util.concurrent.Future<GetProvisionedProductOutputsResult> getProvisionedProductOutputsAsync(
             GetProvisionedProductOutputsRequest getProvisionedProductOutputsRequest,
             com.amazonaws.handlers.AsyncHandler<GetProvisionedProductOutputsRequest, GetProvisionedProductOutputsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Requests the import of a resource as a Service Catalog provisioned product that is associated to a Service
+     * Catalog product and provisioning artifact. Once imported all supported Service Catalog governance actions are
+     * supported on the provisioned product.
+     * </p>
+     * <p>
+     * Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets and non-root nested stacks are
+     * not supported.
+     * </p>
+     * <p>
+     * The CloudFormation stack must have one of the following statuses to be imported: CREATE_COMPLETE,
+     * UPDATE_COMPLETE, UPDATE_ROLLBACK_COMPLETE, IMPORT_COMPLETE, IMPORT_ROLLBACK_COMPLETE.
+     * </p>
+     * <p>
+     * Import of the resource requires that the CloudFormation stack template matches the associated Service Catalog
+     * product provisioning artifact.
+     * </p>
+     * 
+     * @param importAsProvisionedProductRequest
+     * @return A Java Future containing the result of the ImportAsProvisionedProduct operation returned by the service.
+     * @sample AWSServiceCatalogAsync.ImportAsProvisionedProduct
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ImportAsProvisionedProduct"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ImportAsProvisionedProductResult> importAsProvisionedProductAsync(
+            ImportAsProvisionedProductRequest importAsProvisionedProductRequest);
+
+    /**
+     * <p>
+     * Requests the import of a resource as a Service Catalog provisioned product that is associated to a Service
+     * Catalog product and provisioning artifact. Once imported all supported Service Catalog governance actions are
+     * supported on the provisioned product.
+     * </p>
+     * <p>
+     * Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets and non-root nested stacks are
+     * not supported.
+     * </p>
+     * <p>
+     * The CloudFormation stack must have one of the following statuses to be imported: CREATE_COMPLETE,
+     * UPDATE_COMPLETE, UPDATE_ROLLBACK_COMPLETE, IMPORT_COMPLETE, IMPORT_ROLLBACK_COMPLETE.
+     * </p>
+     * <p>
+     * Import of the resource requires that the CloudFormation stack template matches the associated Service Catalog
+     * product provisioning artifact.
+     * </p>
+     * 
+     * @param importAsProvisionedProductRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ImportAsProvisionedProduct operation returned by the service.
+     * @sample AWSServiceCatalogAsyncHandler.ImportAsProvisionedProduct
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ImportAsProvisionedProduct"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ImportAsProvisionedProductResult> importAsProvisionedProductAsync(
+            ImportAsProvisionedProductRequest importAsProvisionedProductRequest,
+            com.amazonaws.handlers.AsyncHandler<ImportAsProvisionedProductRequest, ImportAsProvisionedProductResult> asyncHandler);
 
     /**
      * <p>

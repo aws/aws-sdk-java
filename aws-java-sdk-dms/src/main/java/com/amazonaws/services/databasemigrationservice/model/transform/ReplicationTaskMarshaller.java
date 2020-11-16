@@ -63,6 +63,8 @@ public class ReplicationTaskMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicationTaskStats").build();
     private static final MarshallingInfo<String> TASKDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TaskData").build();
+    private static final MarshallingInfo<String> TARGETREPLICATIONINSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetReplicationInstanceArn").build();
 
     private static final ReplicationTaskMarshaller instance = new ReplicationTaskMarshaller();
 
@@ -98,6 +100,7 @@ public class ReplicationTaskMarshaller {
             protocolMarshaller.marshall(replicationTask.getReplicationTaskArn(), REPLICATIONTASKARN_BINDING);
             protocolMarshaller.marshall(replicationTask.getReplicationTaskStats(), REPLICATIONTASKSTATS_BINDING);
             protocolMarshaller.marshall(replicationTask.getTaskData(), TASKDATA_BINDING);
+            protocolMarshaller.marshall(replicationTask.getTargetReplicationInstanceArn(), TARGETREPLICATIONINSTANCEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

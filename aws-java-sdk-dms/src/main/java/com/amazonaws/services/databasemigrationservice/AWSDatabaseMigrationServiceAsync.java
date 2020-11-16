@@ -1727,6 +1727,41 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
 
     /**
      * <p>
+     * Moves a replication task from its current replication instance to a different target replication instance using
+     * the specified parameters. The target replication instance must be created with the same or later AWS DMS version
+     * as the current replication instance.
+     * </p>
+     * 
+     * @param moveReplicationTaskRequest
+     * @return A Java Future containing the result of the MoveReplicationTask operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsync.MoveReplicationTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/MoveReplicationTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<MoveReplicationTaskResult> moveReplicationTaskAsync(MoveReplicationTaskRequest moveReplicationTaskRequest);
+
+    /**
+     * <p>
+     * Moves a replication task from its current replication instance to a different target replication instance using
+     * the specified parameters. The target replication instance must be created with the same or later AWS DMS version
+     * as the current replication instance.
+     * </p>
+     * 
+     * @param moveReplicationTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the MoveReplicationTask operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.MoveReplicationTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/MoveReplicationTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<MoveReplicationTaskResult> moveReplicationTaskAsync(MoveReplicationTaskRequest moveReplicationTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<MoveReplicationTaskRequest, MoveReplicationTaskResult> asyncHandler);
+
+    /**
+     * <p>
      * Reboots a replication instance. Rebooting results in a momentary outage, until the replication instance becomes
      * available again.
      * </p>

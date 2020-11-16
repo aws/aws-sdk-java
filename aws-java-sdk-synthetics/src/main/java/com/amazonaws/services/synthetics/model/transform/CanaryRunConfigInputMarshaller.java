@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.synthetics.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +35,8 @@ public class CanaryRunConfigInputMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MemoryInMB").build();
     private static final MarshallingInfo<Boolean> ACTIVETRACING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ActiveTracing").build();
+    private static final MarshallingInfo<Map> ENVIRONMENTVARIABLES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnvironmentVariables").build();
 
     private static final CanaryRunConfigInputMarshaller instance = new CanaryRunConfigInputMarshaller();
 
@@ -53,6 +57,7 @@ public class CanaryRunConfigInputMarshaller {
             protocolMarshaller.marshall(canaryRunConfigInput.getTimeoutInSeconds(), TIMEOUTINSECONDS_BINDING);
             protocolMarshaller.marshall(canaryRunConfigInput.getMemoryInMB(), MEMORYINMB_BINDING);
             protocolMarshaller.marshall(canaryRunConfigInput.getActiveTracing(), ACTIVETRACING_BINDING);
+            protocolMarshaller.marshall(canaryRunConfigInput.getEnvironmentVariables(), ENVIRONMENTVARIABLES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

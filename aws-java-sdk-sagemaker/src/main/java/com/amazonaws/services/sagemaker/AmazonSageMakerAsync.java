@@ -215,7 +215,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Creates a configuration for running an Amazon SageMaker image as a KernelGateway app.
+     * Creates a configuration for running a SageMaker image as a KernelGateway app. The configuration specifies the
+     * Amazon Elastic File System (EFS) storage volume on the image, and a list of the kernels in the image.
      * </p>
      * 
      * @param createAppImageConfigRequest
@@ -228,7 +229,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Creates a configuration for running an Amazon SageMaker image as a KernelGateway app.
+     * Creates a configuration for running a SageMaker image as a KernelGateway app. The configuration specifies the
+     * Amazon Elastic File System (EFS) storage volume on the image, and a list of the kernels in the image.
      * </p>
      * 
      * @param createAppImageConfigRequest
@@ -620,6 +622,48 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
      * Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * To add the IAM role policies for using this API operation, go to the <a
+     * href="https://console.aws.amazon.com/iam/">IAM console</a>, and choose Roles in the left navigation pane. Search
+     * the IAM role that you want to grant access to use the <a>CreateEndpoint</a> and <a>CreateEndpointConfig</a> API
+     * operations, add the following policies to the role.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Option 1: For a full Amazon SageMaker access, search and attach the <code>AmazonSageMakerFullAccess</code>
+     * policy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Option 2: For granting a limited access to an IAM role, paste the following Action elements manually into the
+     * JSON file of the IAM role:
+     * </p>
+     * <p>
+     * <code>"Action": ["sagemaker:CreateEndpoint", "sagemaker:CreateEndpointConfig"]</code>
+     * </p>
+     * <p>
+     * <code>"Resource": [</code>
+     * </p>
+     * <p>
+     * <code>"arn:aws:sagemaker:region:account-id:endpoint/endpointName"</code>
+     * </p>
+     * <p>
+     * <code>"arn:aws:sagemaker:region:account-id:endpoint-config/endpointConfigName"</code>
+     * </p>
+     * <p>
+     * <code>]</code>
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/api-permissions-reference.html">Amazon SageMaker API
+     * Permissions: Actions, Permissions, and Resources Reference</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param createEndpointRequest
      * @return A Java Future containing the result of the CreateEndpoint operation returned by the service.
@@ -683,6 +727,48 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
      * Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * To add the IAM role policies for using this API operation, go to the <a
+     * href="https://console.aws.amazon.com/iam/">IAM console</a>, and choose Roles in the left navigation pane. Search
+     * the IAM role that you want to grant access to use the <a>CreateEndpoint</a> and <a>CreateEndpointConfig</a> API
+     * operations, add the following policies to the role.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Option 1: For a full Amazon SageMaker access, search and attach the <code>AmazonSageMakerFullAccess</code>
+     * policy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Option 2: For granting a limited access to an IAM role, paste the following Action elements manually into the
+     * JSON file of the IAM role:
+     * </p>
+     * <p>
+     * <code>"Action": ["sagemaker:CreateEndpoint", "sagemaker:CreateEndpointConfig"]</code>
+     * </p>
+     * <p>
+     * <code>"Resource": [</code>
+     * </p>
+     * <p>
+     * <code>"arn:aws:sagemaker:region:account-id:endpoint/endpointName"</code>
+     * </p>
+     * <p>
+     * <code>"arn:aws:sagemaker:region:account-id:endpoint-config/endpointConfigName"</code>
+     * </p>
+     * <p>
+     * <code>]</code>
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/api-permissions-reference.html">Amazon SageMaker API
+     * Permissions: Actions, Permissions, and Resources Reference</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param createEndpointRequest
      * @param asyncHandler
@@ -988,8 +1074,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Creates a SageMaker <code>Image</code>. A SageMaker image represents a set of container images. Each of these
-     * container images is represented by a SageMaker <code>ImageVersion</code>.
+     * Creates a custom SageMaker image. A SageMaker image is a set of image versions. Each image version represents a
+     * container image stored in Amazon Container Registry (ECR). For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html">Bring your own SageMaker image</a>.
      * </p>
      * 
      * @param createImageRequest
@@ -1002,8 +1089,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Creates a SageMaker <code>Image</code>. A SageMaker image represents a set of container images. Each of these
-     * container images is represented by a SageMaker <code>ImageVersion</code>.
+     * Creates a custom SageMaker image. A SageMaker image is a set of image versions. Each image version represents a
+     * container image stored in Amazon Container Registry (ECR). For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html">Bring your own SageMaker image</a>.
      * </p>
      * 
      * @param createImageRequest

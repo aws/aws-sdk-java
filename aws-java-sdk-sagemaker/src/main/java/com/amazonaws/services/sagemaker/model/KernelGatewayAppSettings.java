@@ -37,7 +37,7 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
     private ResourceSpec defaultResourceSpec;
     /**
      * <p>
-     * A list of custom images that are configured to run as a KernelGateway app.
+     * A list of custom SageMaker images that are configured to run as a KernelGateway app.
      * </p>
      */
     private java.util.List<CustomImage> customImages;
@@ -90,10 +90,10 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A list of custom images that are configured to run as a KernelGateway app.
+     * A list of custom SageMaker images that are configured to run as a KernelGateway app.
      * </p>
      * 
-     * @return A list of custom images that are configured to run as a KernelGateway app.
+     * @return A list of custom SageMaker images that are configured to run as a KernelGateway app.
      */
 
     public java.util.List<CustomImage> getCustomImages() {
@@ -102,11 +102,11 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A list of custom images that are configured to run as a KernelGateway app.
+     * A list of custom SageMaker images that are configured to run as a KernelGateway app.
      * </p>
      * 
      * @param customImages
-     *        A list of custom images that are configured to run as a KernelGateway app.
+     *        A list of custom SageMaker images that are configured to run as a KernelGateway app.
      */
 
     public void setCustomImages(java.util.Collection<CustomImage> customImages) {
@@ -120,7 +120,7 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A list of custom images that are configured to run as a KernelGateway app.
+     * A list of custom SageMaker images that are configured to run as a KernelGateway app.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -129,7 +129,7 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
      * </p>
      * 
      * @param customImages
-     *        A list of custom images that are configured to run as a KernelGateway app.
+     *        A list of custom SageMaker images that are configured to run as a KernelGateway app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,11 +145,11 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A list of custom images that are configured to run as a KernelGateway app.
+     * A list of custom SageMaker images that are configured to run as a KernelGateway app.
      * </p>
      * 
      * @param customImages
-     *        A list of custom images that are configured to run as a KernelGateway app.
+     *        A list of custom SageMaker images that are configured to run as a KernelGateway app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

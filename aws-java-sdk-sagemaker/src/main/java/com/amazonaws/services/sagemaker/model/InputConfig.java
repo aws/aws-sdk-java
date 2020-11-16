@@ -130,9 +130,9 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>MXNET/ONNX</code>: You must specify the name and shape (NCHW format) of the expected data inputs in order
-     * using a dictionary format for your trained model. The dictionary formats required for the console and CLI are
-     * different.
+     * <code>MXNET/ONNX/DARKNET</code>: You must specify the name and shape (NCHW format) of the expected data inputs in
+     * order using a dictionary format for your trained model. The dictionary formats required for the console and CLI
+     * are different.
      * </p>
      * <ul>
      * <li>
@@ -495,9 +495,9 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>MXNET/ONNX</code>: You must specify the name and shape (NCHW format) of the expected data inputs in order
-     * using a dictionary format for your trained model. The dictionary formats required for the console and CLI are
-     * different.
+     * <code>MXNET/ONNX/DARKNET</code>: You must specify the name and shape (NCHW format) of the expected data inputs in
+     * order using a dictionary format for your trained model. The dictionary formats required for the console and CLI
+     * are different.
      * </p>
      * <ul>
      * <li>
@@ -805,9 +805,9 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MXNET/ONNX</code>: You must specify the name and shape (NCHW format) of the expected data inputs in
-     *        order using a dictionary format for your trained model. The dictionary formats required for the console
-     *        and CLI are different.
+     *        <code>MXNET/ONNX/DARKNET</code>: You must specify the name and shape (NCHW format) of the expected data
+     *        inputs in order using a dictionary format for your trained model. The dictionary formats required for the
+     *        console and CLI are different.
      *        </p>
      *        <ul>
      *        <li>
@@ -1123,9 +1123,9 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>MXNET/ONNX</code>: You must specify the name and shape (NCHW format) of the expected data inputs in order
-     * using a dictionary format for your trained model. The dictionary formats required for the console and CLI are
-     * different.
+     * <code>MXNET/ONNX/DARKNET</code>: You must specify the name and shape (NCHW format) of the expected data inputs in
+     * order using a dictionary format for your trained model. The dictionary formats required for the console and CLI
+     * are different.
      * </p>
      * <ul>
      * <li>
@@ -1432,9 +1432,9 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>MXNET/ONNX</code>: You must specify the name and shape (NCHW format) of the expected data inputs in
-     *         order using a dictionary format for your trained model. The dictionary formats required for the console
-     *         and CLI are different.
+     *         <code>MXNET/ONNX/DARKNET</code>: You must specify the name and shape (NCHW format) of the expected data
+     *         inputs in order using a dictionary format for your trained model. The dictionary formats required for the
+     *         console and CLI are different.
      *         </p>
      *         <ul>
      *         <li>
@@ -1750,9 +1750,9 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>MXNET/ONNX</code>: You must specify the name and shape (NCHW format) of the expected data inputs in order
-     * using a dictionary format for your trained model. The dictionary formats required for the console and CLI are
-     * different.
+     * <code>MXNET/ONNX/DARKNET</code>: You must specify the name and shape (NCHW format) of the expected data inputs in
+     * order using a dictionary format for your trained model. The dictionary formats required for the console and CLI
+     * are different.
      * </p>
      * <ul>
      * <li>
@@ -2060,9 +2060,9 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MXNET/ONNX</code>: You must specify the name and shape (NCHW format) of the expected data inputs in
-     *        order using a dictionary format for your trained model. The dictionary formats required for the console
-     *        and CLI are different.
+     *        <code>MXNET/ONNX/DARKNET</code>: You must specify the name and shape (NCHW format) of the expected data
+     *        inputs in order using a dictionary format for your trained model. The dictionary formats required for the
+     *        console and CLI are different.
      *        </p>
      *        <ul>
      *        <li>

@@ -63,6 +63,16 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
     private Boolean resetDisabled;
     /**
      * <p>
+     * Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet and the
+     * parameter settings. These are control settings that the dashboard subscriber (QuickSight reader) chooses while
+     * viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when the the subscriber
+     * reopens the same dashboard URL. The state is stored in QuickSight, not in a browser cookie. If this is set to
+     * FALSE, the state of the user session is not persisted. The default is <code>FALSE</code>.
+     * </p>
+     */
+    private Boolean statePersistenceEnabled;
+    /**
+     * <p>
      * The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You
      * can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one
      * of the following:
@@ -380,6 +390,94 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
+     * Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet and the
+     * parameter settings. These are control settings that the dashboard subscriber (QuickSight reader) chooses while
+     * viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when the the subscriber
+     * reopens the same dashboard URL. The state is stored in QuickSight, not in a browser cookie. If this is set to
+     * FALSE, the state of the user session is not persisted. The default is <code>FALSE</code>.
+     * </p>
+     * 
+     * @param statePersistenceEnabled
+     *        Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet
+     *        and the parameter settings. These are control settings that the dashboard subscriber (QuickSight reader)
+     *        chooses while viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when
+     *        the the subscriber reopens the same dashboard URL. The state is stored in QuickSight, not in a browser
+     *        cookie. If this is set to FALSE, the state of the user session is not persisted. The default is
+     *        <code>FALSE</code>.
+     */
+
+    public void setStatePersistenceEnabled(Boolean statePersistenceEnabled) {
+        this.statePersistenceEnabled = statePersistenceEnabled;
+    }
+
+    /**
+     * <p>
+     * Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet and the
+     * parameter settings. These are control settings that the dashboard subscriber (QuickSight reader) chooses while
+     * viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when the the subscriber
+     * reopens the same dashboard URL. The state is stored in QuickSight, not in a browser cookie. If this is set to
+     * FALSE, the state of the user session is not persisted. The default is <code>FALSE</code>.
+     * </p>
+     * 
+     * @return Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet
+     *         and the parameter settings. These are control settings that the dashboard subscriber (QuickSight reader)
+     *         chooses while viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when
+     *         the the subscriber reopens the same dashboard URL. The state is stored in QuickSight, not in a browser
+     *         cookie. If this is set to FALSE, the state of the user session is not persisted. The default is
+     *         <code>FALSE</code>.
+     */
+
+    public Boolean getStatePersistenceEnabled() {
+        return this.statePersistenceEnabled;
+    }
+
+    /**
+     * <p>
+     * Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet and the
+     * parameter settings. These are control settings that the dashboard subscriber (QuickSight reader) chooses while
+     * viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when the the subscriber
+     * reopens the same dashboard URL. The state is stored in QuickSight, not in a browser cookie. If this is set to
+     * FALSE, the state of the user session is not persisted. The default is <code>FALSE</code>.
+     * </p>
+     * 
+     * @param statePersistenceEnabled
+     *        Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet
+     *        and the parameter settings. These are control settings that the dashboard subscriber (QuickSight reader)
+     *        chooses while viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when
+     *        the the subscriber reopens the same dashboard URL. The state is stored in QuickSight, not in a browser
+     *        cookie. If this is set to FALSE, the state of the user session is not persisted. The default is
+     *        <code>FALSE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDashboardEmbedUrlRequest withStatePersistenceEnabled(Boolean statePersistenceEnabled) {
+        setStatePersistenceEnabled(statePersistenceEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet and the
+     * parameter settings. These are control settings that the dashboard subscriber (QuickSight reader) chooses while
+     * viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when the the subscriber
+     * reopens the same dashboard URL. The state is stored in QuickSight, not in a browser cookie. If this is set to
+     * FALSE, the state of the user session is not persisted. The default is <code>FALSE</code>.
+     * </p>
+     * 
+     * @return Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet
+     *         and the parameter settings. These are control settings that the dashboard subscriber (QuickSight reader)
+     *         chooses while viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when
+     *         the the subscriber reopens the same dashboard URL. The state is stored in QuickSight, not in a browser
+     *         cookie. If this is set to FALSE, the state of the user session is not persisted. The default is
+     *         <code>FALSE</code>.
+     */
+
+    public Boolean isStatePersistenceEnabled() {
+        return this.statePersistenceEnabled;
+    }
+
+    /**
+     * <p>
      * The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You
      * can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one
      * of the following:
@@ -577,6 +675,8 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
             sb.append("UndoRedoDisabled: ").append(getUndoRedoDisabled()).append(",");
         if (getResetDisabled() != null)
             sb.append("ResetDisabled: ").append(getResetDisabled()).append(",");
+        if (getStatePersistenceEnabled() != null)
+            sb.append("StatePersistenceEnabled: ").append(getStatePersistenceEnabled()).append(",");
         if (getUserArn() != null)
             sb.append("UserArn: ").append(getUserArn());
         sb.append("}");
@@ -617,6 +717,10 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getResetDisabled() != null && other.getResetDisabled().equals(this.getResetDisabled()) == false)
             return false;
+        if (other.getStatePersistenceEnabled() == null ^ this.getStatePersistenceEnabled() == null)
+            return false;
+        if (other.getStatePersistenceEnabled() != null && other.getStatePersistenceEnabled().equals(this.getStatePersistenceEnabled()) == false)
+            return false;
         if (other.getUserArn() == null ^ this.getUserArn() == null)
             return false;
         if (other.getUserArn() != null && other.getUserArn().equals(this.getUserArn()) == false)
@@ -635,6 +739,7 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getSessionLifetimeInMinutes() == null) ? 0 : getSessionLifetimeInMinutes().hashCode());
         hashCode = prime * hashCode + ((getUndoRedoDisabled() == null) ? 0 : getUndoRedoDisabled().hashCode());
         hashCode = prime * hashCode + ((getResetDisabled() == null) ? 0 : getResetDisabled().hashCode());
+        hashCode = prime * hashCode + ((getStatePersistenceEnabled() == null) ? 0 : getStatePersistenceEnabled().hashCode());
         hashCode = prime * hashCode + ((getUserArn() == null) ? 0 : getUserArn().hashCode());
         return hashCode;
     }

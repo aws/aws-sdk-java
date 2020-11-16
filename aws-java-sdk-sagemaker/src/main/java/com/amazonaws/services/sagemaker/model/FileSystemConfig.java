@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The Amazon Elastic File System (EFS) storage configuration for an image.
+ * The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/FileSystemConfig" target="_top">AWS API
@@ -37,13 +37,13 @@ public class FileSystemConfig implements Serializable, Cloneable, StructuredPojo
     private String mountPath;
     /**
      * <p>
-     * The default POSIX user ID. If not specified, defaults to <code>1000</code>.
+     * The default POSIX user ID (UID). If not specified, defaults to <code>1000</code>.
      * </p>
      */
     private Integer defaultUid;
     /**
      * <p>
-     * The default POSIX group ID. If not specified, defaults to <code>100</code>.
+     * The default POSIX group ID (GID). If not specified, defaults to <code>100</code>.
      * </p>
      */
     private Integer defaultGid;
@@ -96,11 +96,11 @@ public class FileSystemConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The default POSIX user ID. If not specified, defaults to <code>1000</code>.
+     * The default POSIX user ID (UID). If not specified, defaults to <code>1000</code>.
      * </p>
      * 
      * @param defaultUid
-     *        The default POSIX user ID. If not specified, defaults to <code>1000</code>.
+     *        The default POSIX user ID (UID). If not specified, defaults to <code>1000</code>.
      */
 
     public void setDefaultUid(Integer defaultUid) {
@@ -109,10 +109,10 @@ public class FileSystemConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The default POSIX user ID. If not specified, defaults to <code>1000</code>.
+     * The default POSIX user ID (UID). If not specified, defaults to <code>1000</code>.
      * </p>
      * 
-     * @return The default POSIX user ID. If not specified, defaults to <code>1000</code>.
+     * @return The default POSIX user ID (UID). If not specified, defaults to <code>1000</code>.
      */
 
     public Integer getDefaultUid() {
@@ -121,11 +121,11 @@ public class FileSystemConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The default POSIX user ID. If not specified, defaults to <code>1000</code>.
+     * The default POSIX user ID (UID). If not specified, defaults to <code>1000</code>.
      * </p>
      * 
      * @param defaultUid
-     *        The default POSIX user ID. If not specified, defaults to <code>1000</code>.
+     *        The default POSIX user ID (UID). If not specified, defaults to <code>1000</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,11 +136,11 @@ public class FileSystemConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The default POSIX group ID. If not specified, defaults to <code>100</code>.
+     * The default POSIX group ID (GID). If not specified, defaults to <code>100</code>.
      * </p>
      * 
      * @param defaultGid
-     *        The default POSIX group ID. If not specified, defaults to <code>100</code>.
+     *        The default POSIX group ID (GID). If not specified, defaults to <code>100</code>.
      */
 
     public void setDefaultGid(Integer defaultGid) {
@@ -149,10 +149,10 @@ public class FileSystemConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The default POSIX group ID. If not specified, defaults to <code>100</code>.
+     * The default POSIX group ID (GID). If not specified, defaults to <code>100</code>.
      * </p>
      * 
-     * @return The default POSIX group ID. If not specified, defaults to <code>100</code>.
+     * @return The default POSIX group ID (GID). If not specified, defaults to <code>100</code>.
      */
 
     public Integer getDefaultGid() {
@@ -161,11 +161,11 @@ public class FileSystemConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The default POSIX group ID. If not specified, defaults to <code>100</code>.
+     * The default POSIX group ID (GID). If not specified, defaults to <code>100</code>.
      * </p>
      * 
      * @param defaultGid
-     *        The default POSIX group ID. If not specified, defaults to <code>100</code>.
+     *        The default POSIX group ID (GID). If not specified, defaults to <code>100</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,6 +30,8 @@ public class StageStateMarshaller {
 
     private static final MarshallingInfo<String> STAGENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("stageName").build();
+    private static final MarshallingInfo<StructuredPojo> INBOUNDEXECUTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inboundExecution").build();
     private static final MarshallingInfo<StructuredPojo> INBOUNDTRANSITIONSTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inboundTransitionState").build();
     private static final MarshallingInfo<List> ACTIONSTATES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -54,6 +56,7 @@ public class StageStateMarshaller {
 
         try {
             protocolMarshaller.marshall(stageState.getStageName(), STAGENAME_BINDING);
+            protocolMarshaller.marshall(stageState.getInboundExecution(), INBOUNDEXECUTION_BINDING);
             protocolMarshaller.marshall(stageState.getInboundTransitionState(), INBOUNDTRANSITIONSTATE_BINDING);
             protocolMarshaller.marshall(stageState.getActionStates(), ACTIONSTATES_BINDING);
             protocolMarshaller.marshall(stageState.getLatestExecution(), LATESTEXECUTION_BINDING);

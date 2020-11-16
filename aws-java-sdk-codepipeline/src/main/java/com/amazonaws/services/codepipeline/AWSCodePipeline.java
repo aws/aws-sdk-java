@@ -1042,6 +1042,8 @@ public interface AWSCodePipeline {
      * @return Result of the RetryStageExecution operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
+     * @throws ConflictException
+     *         Your request cannot be handled because the pipeline is busy handling ongoing activities. Try again later.
      * @throws PipelineNotFoundException
      *         The pipeline was specified in an invalid format or cannot be found.
      * @throws StageNotFoundException
@@ -1069,6 +1071,8 @@ public interface AWSCodePipeline {
      * @return Result of the StartPipelineExecution operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
+     * @throws ConflictException
+     *         Your request cannot be handled because the pipeline is busy handling ongoing activities. Try again later.
      * @throws PipelineNotFoundException
      *         The pipeline was specified in an invalid format or cannot be found.
      * @sample AWSCodePipeline.StartPipelineExecution
@@ -1089,6 +1093,8 @@ public interface AWSCodePipeline {
      * @return Result of the StopPipelineExecution operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
+     * @throws ConflictException
+     *         Your request cannot be handled because the pipeline is busy handling ongoing activities. Try again later.
      * @throws PipelineNotFoundException
      *         The pipeline was specified in an invalid format or cannot be found.
      * @throws PipelineExecutionNotStoppableException

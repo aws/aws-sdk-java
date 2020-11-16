@@ -125,8 +125,7 @@ public class CreateCanaryRequest extends com.amazonaws.AmazonWebServiceRequest i
     private Integer failureRetentionPeriodInDays;
     /**
      * <p>
-     * Specifies the runtime version to use for the canary. Currently, the only valid values are
-     * <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>. For more information
+     * Specifies the runtime version to use for the canary. For a list of valid runtime versions and more information
      * about runtime versions, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
      * Canary Runtime Versions</a>.
@@ -772,16 +771,14 @@ public class CreateCanaryRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies the runtime version to use for the canary. Currently, the only valid values are
-     * <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>. For more information
+     * Specifies the runtime version to use for the canary. For a list of valid runtime versions and more information
      * about runtime versions, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
      * Canary Runtime Versions</a>.
      * </p>
      * 
      * @param runtimeVersion
-     *        Specifies the runtime version to use for the canary. Currently, the only valid values are
-     *        <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>. For more
+     *        Specifies the runtime version to use for the canary. For a list of valid runtime versions and more
      *        information about runtime versions, see <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"
      *        > Canary Runtime Versions</a>.
@@ -793,15 +790,13 @@ public class CreateCanaryRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies the runtime version to use for the canary. Currently, the only valid values are
-     * <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>. For more information
+     * Specifies the runtime version to use for the canary. For a list of valid runtime versions and more information
      * about runtime versions, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
      * Canary Runtime Versions</a>.
      * </p>
      * 
-     * @return Specifies the runtime version to use for the canary. Currently, the only valid values are
-     *         <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>. For more
+     * @return Specifies the runtime version to use for the canary. For a list of valid runtime versions and more
      *         information about runtime versions, see <a href=
      *         "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"
      *         > Canary Runtime Versions</a>.
@@ -813,16 +808,14 @@ public class CreateCanaryRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies the runtime version to use for the canary. Currently, the only valid values are
-     * <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>. For more information
+     * Specifies the runtime version to use for the canary. For a list of valid runtime versions and more information
      * about runtime versions, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
      * Canary Runtime Versions</a>.
      * </p>
      * 
      * @param runtimeVersion
-     *        Specifies the runtime version to use for the canary. Currently, the only valid values are
-     *        <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>. For more
+     *        Specifies the runtime version to use for the canary. For a list of valid runtime versions and more
      *        information about runtime versions, see <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"
      *        > Canary Runtime Versions</a>.

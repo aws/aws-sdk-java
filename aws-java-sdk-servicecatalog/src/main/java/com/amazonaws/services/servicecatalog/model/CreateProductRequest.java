@@ -104,7 +104,8 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * The configuration of the provisioning artifact.
+     * The configuration of the provisioning artifact. The <code>info</code> field accepts
+     * <code>ImportFromPhysicalID</code>.
      * </p>
      */
     private ProvisioningArtifactProperties provisioningArtifactParameters;
@@ -680,11 +681,13 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The configuration of the provisioning artifact.
+     * The configuration of the provisioning artifact. The <code>info</code> field accepts
+     * <code>ImportFromPhysicalID</code>.
      * </p>
      * 
      * @param provisioningArtifactParameters
-     *        The configuration of the provisioning artifact.
+     *        The configuration of the provisioning artifact. The <code>info</code> field accepts
+     *        <code>ImportFromPhysicalID</code>.
      */
 
     public void setProvisioningArtifactParameters(ProvisioningArtifactProperties provisioningArtifactParameters) {
@@ -693,10 +696,12 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The configuration of the provisioning artifact.
+     * The configuration of the provisioning artifact. The <code>info</code> field accepts
+     * <code>ImportFromPhysicalID</code>.
      * </p>
      * 
-     * @return The configuration of the provisioning artifact.
+     * @return The configuration of the provisioning artifact. The <code>info</code> field accepts
+     *         <code>ImportFromPhysicalID</code>.
      */
 
     public ProvisioningArtifactProperties getProvisioningArtifactParameters() {
@@ -705,11 +710,13 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The configuration of the provisioning artifact.
+     * The configuration of the provisioning artifact. The <code>info</code> field accepts
+     * <code>ImportFromPhysicalID</code>.
      * </p>
      * 
      * @param provisioningArtifactParameters
-     *        The configuration of the provisioning artifact.
+     *        The configuration of the provisioning artifact. The <code>info</code> field accepts
+     *        <code>ImportFromPhysicalID</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

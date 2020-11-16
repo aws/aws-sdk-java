@@ -33,11 +33,47 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
      * A category defines what kind of action can be taken in the stage, and constrains the provider type for the
      * action. Valid categories are limited to one of the following values.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Source
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Build
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Test
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Deploy
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Approval
+     * </p>
+     * </li>
+     * </ul>
      */
     private String category;
     /**
      * <p>
-     * The creator of the action being called.
+     * The creator of the action being called. There are three valid values for the <code>Owner</code> field in the
+     * action category section within your pipeline structure: <code>AWS</code>, <code>ThirdParty</code>, and
+     * <code>Custom</code>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
+     * >Valid Action Types and Providers in CodePipeline</a>.
      * </p>
      */
     private String owner;
@@ -63,10 +99,73 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
      * A category defines what kind of action can be taken in the stage, and constrains the provider type for the
      * action. Valid categories are limited to one of the following values.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Source
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Build
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Test
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Deploy
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Approval
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param category
      *        A category defines what kind of action can be taken in the stage, and constrains the provider type for the
-     *        action. Valid categories are limited to one of the following values.
+     *        action. Valid categories are limited to one of the following values. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Source
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Build
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Test
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Deploy
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Approval
+     *        </p>
+     *        </li>
      * @see ActionCategory
      */
 
@@ -79,9 +178,72 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
      * A category defines what kind of action can be taken in the stage, and constrains the provider type for the
      * action. Valid categories are limited to one of the following values.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Source
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Build
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Test
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Deploy
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Approval
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return A category defines what kind of action can be taken in the stage, and constrains the provider type for
-     *         the action. Valid categories are limited to one of the following values.
+     *         the action. Valid categories are limited to one of the following values. </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Source
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Build
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Test
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Deploy
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Invoke
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Approval
+     *         </p>
+     *         </li>
      * @see ActionCategory
      */
 
@@ -94,10 +256,73 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
      * A category defines what kind of action can be taken in the stage, and constrains the provider type for the
      * action. Valid categories are limited to one of the following values.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Source
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Build
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Test
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Deploy
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Approval
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param category
      *        A category defines what kind of action can be taken in the stage, and constrains the provider type for the
-     *        action. Valid categories are limited to one of the following values.
+     *        action. Valid categories are limited to one of the following values. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Source
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Build
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Test
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Deploy
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Approval
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionCategory
      */
@@ -112,10 +337,73 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
      * A category defines what kind of action can be taken in the stage, and constrains the provider type for the
      * action. Valid categories are limited to one of the following values.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Source
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Build
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Test
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Deploy
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Approval
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param category
      *        A category defines what kind of action can be taken in the stage, and constrains the provider type for the
-     *        action. Valid categories are limited to one of the following values.
+     *        action. Valid categories are limited to one of the following values. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Source
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Build
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Test
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Deploy
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Approval
+     *        </p>
+     *        </li>
      * @see ActionCategory
      */
 
@@ -128,10 +416,73 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
      * A category defines what kind of action can be taken in the stage, and constrains the provider type for the
      * action. Valid categories are limited to one of the following values.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Source
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Build
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Test
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Deploy
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Approval
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param category
      *        A category defines what kind of action can be taken in the stage, and constrains the provider type for the
-     *        action. Valid categories are limited to one of the following values.
+     *        action. Valid categories are limited to one of the following values. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Source
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Build
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Test
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Deploy
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Approval
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionCategory
      */
@@ -143,11 +494,19 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The creator of the action being called.
+     * The creator of the action being called. There are three valid values for the <code>Owner</code> field in the
+     * action category section within your pipeline structure: <code>AWS</code>, <code>ThirdParty</code>, and
+     * <code>Custom</code>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
+     * >Valid Action Types and Providers in CodePipeline</a>.
      * </p>
      * 
      * @param owner
-     *        The creator of the action being called.
+     *        The creator of the action being called. There are three valid values for the <code>Owner</code> field in
+     *        the action category section within your pipeline structure: <code>AWS</code>, <code>ThirdParty</code>, and
+     *        <code>Custom</code>. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
+     *        >Valid Action Types and Providers in CodePipeline</a>.
      * @see ActionOwner
      */
 
@@ -157,10 +516,18 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The creator of the action being called.
+     * The creator of the action being called. There are three valid values for the <code>Owner</code> field in the
+     * action category section within your pipeline structure: <code>AWS</code>, <code>ThirdParty</code>, and
+     * <code>Custom</code>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
+     * >Valid Action Types and Providers in CodePipeline</a>.
      * </p>
      * 
-     * @return The creator of the action being called.
+     * @return The creator of the action being called. There are three valid values for the <code>Owner</code> field in
+     *         the action category section within your pipeline structure: <code>AWS</code>, <code>ThirdParty</code>,
+     *         and <code>Custom</code>. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
+     *         >Valid Action Types and Providers in CodePipeline</a>.
      * @see ActionOwner
      */
 
@@ -170,11 +537,19 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The creator of the action being called.
+     * The creator of the action being called. There are three valid values for the <code>Owner</code> field in the
+     * action category section within your pipeline structure: <code>AWS</code>, <code>ThirdParty</code>, and
+     * <code>Custom</code>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
+     * >Valid Action Types and Providers in CodePipeline</a>.
      * </p>
      * 
      * @param owner
-     *        The creator of the action being called.
+     *        The creator of the action being called. There are three valid values for the <code>Owner</code> field in
+     *        the action category section within your pipeline structure: <code>AWS</code>, <code>ThirdParty</code>, and
+     *        <code>Custom</code>. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
+     *        >Valid Action Types and Providers in CodePipeline</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionOwner
      */
@@ -186,11 +561,19 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The creator of the action being called.
+     * The creator of the action being called. There are three valid values for the <code>Owner</code> field in the
+     * action category section within your pipeline structure: <code>AWS</code>, <code>ThirdParty</code>, and
+     * <code>Custom</code>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
+     * >Valid Action Types and Providers in CodePipeline</a>.
      * </p>
      * 
      * @param owner
-     *        The creator of the action being called.
+     *        The creator of the action being called. There are three valid values for the <code>Owner</code> field in
+     *        the action category section within your pipeline structure: <code>AWS</code>, <code>ThirdParty</code>, and
+     *        <code>Custom</code>. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
+     *        >Valid Action Types and Providers in CodePipeline</a>.
      * @see ActionOwner
      */
 
@@ -200,11 +583,19 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The creator of the action being called.
+     * The creator of the action being called. There are three valid values for the <code>Owner</code> field in the
+     * action category section within your pipeline structure: <code>AWS</code>, <code>ThirdParty</code>, and
+     * <code>Custom</code>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
+     * >Valid Action Types and Providers in CodePipeline</a>.
      * </p>
      * 
      * @param owner
-     *        The creator of the action being called.
+     *        The creator of the action being called. There are three valid values for the <code>Owner</code> field in
+     *        the action category section within your pipeline structure: <code>AWS</code>, <code>ThirdParty</code>, and
+     *        <code>Custom</code>. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
+     *        >Valid Action Types and Providers in CodePipeline</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionOwner
      */

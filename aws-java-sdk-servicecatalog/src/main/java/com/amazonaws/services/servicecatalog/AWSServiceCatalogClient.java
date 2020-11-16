@@ -53,8 +53,8 @@ import com.amazonaws.services.servicecatalog.model.transform.*;
  * <fullname>AWS Service Catalog</fullname>
  * <p>
  * <a href="https://aws.amazon.com/servicecatalog/">AWS Service Catalog</a> enables organizations to create and manage
- * catalogs of IT services that are approved for use on AWS. To get the most out of this documentation, you should be
- * familiar with the terminology discussed in <a
+ * catalogs of IT services that are approved for AWS. To get the most out of this documentation, you should be familiar
+ * with the terminology discussed in <a
  * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">AWS Service Catalog
  * Concepts</a>.
  * </p>
@@ -3547,6 +3547,85 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             HttpResponseHandler<AmazonWebServiceResponse<GetProvisionedProductOutputsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetProvisionedProductOutputsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Requests the import of a resource as a Service Catalog provisioned product that is associated to a Service
+     * Catalog product and provisioning artifact. Once imported all supported Service Catalog governance actions are
+     * supported on the provisioned product.
+     * </p>
+     * <p>
+     * Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets and non-root nested stacks are
+     * not supported.
+     * </p>
+     * <p>
+     * The CloudFormation stack must have one of the following statuses to be imported: CREATE_COMPLETE,
+     * UPDATE_COMPLETE, UPDATE_ROLLBACK_COMPLETE, IMPORT_COMPLETE, IMPORT_ROLLBACK_COMPLETE.
+     * </p>
+     * <p>
+     * Import of the resource requires that the CloudFormation stack template matches the associated Service Catalog
+     * product provisioning artifact.
+     * </p>
+     * 
+     * @param importAsProvisionedProductRequest
+     * @return Result of the ImportAsProvisionedProduct operation returned by the service.
+     * @throws DuplicateResourceException
+     *         The specified resource is a duplicate.
+     * @throws InvalidStateException
+     *         An attempt was made to modify a resource that is in a state that is not valid. Check your resources to
+     *         ensure that they are in valid states before retrying the operation.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @sample AWSServiceCatalog.ImportAsProvisionedProduct
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ImportAsProvisionedProduct"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ImportAsProvisionedProductResult importAsProvisionedProduct(ImportAsProvisionedProductRequest request) {
+        request = beforeClientExecution(request);
+        return executeImportAsProvisionedProduct(request);
+    }
+
+    @SdkInternalApi
+    final ImportAsProvisionedProductResult executeImportAsProvisionedProduct(ImportAsProvisionedProductRequest importAsProvisionedProductRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(importAsProvisionedProductRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ImportAsProvisionedProductRequest> request = null;
+        Response<ImportAsProvisionedProductResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ImportAsProvisionedProductRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(importAsProvisionedProductRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportAsProvisionedProduct");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ImportAsProvisionedProductResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ImportAsProvisionedProductResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

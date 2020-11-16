@@ -1,3 +1,40 @@
+# __1.11.902__ __2020-11-16__
+## __AWS CodePipeline__
+  - ### Features
+    - We show details about inbound executions and id of action executions in GetPipelineState API. We also add ConflictException to StartPipelineExecution, RetryStageExecution, StopPipelineExecution APIs.
+
+## __AWS Database Migration Service__
+  - ### Features
+    - Adding MoveReplicationTask feature to move replication tasks between instances
+
+## __AWS IoT Secure Tunneling__
+  - ### Features
+    - Support using multiple data streams per tunnel using the Secure Tunneling multiplexing feature.
+
+## __AWS IoT SiteWise__
+  - ### Features
+    - This release supports Unicode characters for string operations in formulae computes in SiteWise. For more information, search for SiteWise in Amazon What's new or refer the SiteWise documentation.
+
+## __AWS Service Catalog__
+  - ### Features
+    - Support import of CloudFormation stacks into Service Catalog provisioned products.
+
+## __Amazon QuickSight__
+  - ### Features
+    - Adding new parameters for dashboard persistence
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - This feature enables customers to encrypt their Amazon SageMaker Studio storage volumes with customer master keys (CMKs) managed by them in AWS Key Management Service (KMS).
+
+## __Amazon Simple Notification Service__
+  - ### Features
+    - Documentation updates for Amazon SNS.
+
+## __Synthetics__
+  - ### Features
+    - AWS Synthetics now supports Environment Variables  to assign runtime parameters in the canary scripts.
+
 # __1.11.901__ __2020-11-13__
 ## __AWS Shield__
   - ### Features

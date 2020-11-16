@@ -83,11 +83,18 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String appNetworkAccessType;
     /**
      * <p>
-     * The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
-     * supported.
+     * This member is deprecated and replaced with <code>KmsKeyId</code>.
      * </p>
      */
+    @Deprecated
     private String homeEfsFileSystemKmsKeyId;
+    /**
+     * <p>
+     * SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with an AWS managed customer master key
+     * (CMK) by default. For more control, specify a customer managed CMK.
+     * </p>
+     */
+    private String kmsKeyId;
 
     /**
      * <p>
@@ -577,47 +584,87 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
-     * supported.
+     * This member is deprecated and replaced with <code>KmsKeyId</code>.
      * </p>
      * 
      * @param homeEfsFileSystemKmsKeyId
-     *        The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
-     *        supported.
+     *        This member is deprecated and replaced with <code>KmsKeyId</code>.
      */
-
+    @Deprecated
     public void setHomeEfsFileSystemKmsKeyId(String homeEfsFileSystemKmsKeyId) {
         this.homeEfsFileSystemKmsKeyId = homeEfsFileSystemKmsKeyId;
     }
 
     /**
      * <p>
-     * The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
-     * supported.
+     * This member is deprecated and replaced with <code>KmsKeyId</code>.
      * </p>
      * 
-     * @return The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is
-     *         not supported.
+     * @return This member is deprecated and replaced with <code>KmsKeyId</code>.
      */
-
+    @Deprecated
     public String getHomeEfsFileSystemKmsKeyId() {
         return this.homeEfsFileSystemKmsKeyId;
     }
 
     /**
      * <p>
-     * The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
-     * supported.
+     * This member is deprecated and replaced with <code>KmsKeyId</code>.
      * </p>
      * 
      * @param homeEfsFileSystemKmsKeyId
-     *        The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
-     *        supported.
+     *        This member is deprecated and replaced with <code>KmsKeyId</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+    @Deprecated
+    public CreateDomainRequest withHomeEfsFileSystemKmsKeyId(String homeEfsFileSystemKmsKeyId) {
+        setHomeEfsFileSystemKmsKeyId(homeEfsFileSystemKmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with an AWS managed customer master key
+     * (CMK) by default. For more control, specify a customer managed CMK.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with an AWS managed customer
+     *        master key (CMK) by default. For more control, specify a customer managed CMK.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with an AWS managed customer master key
+     * (CMK) by default. For more control, specify a customer managed CMK.
+     * </p>
+     * 
+     * @return SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with an AWS managed customer
+     *         master key (CMK) by default. For more control, specify a customer managed CMK.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with an AWS managed customer master key
+     * (CMK) by default. For more control, specify a customer managed CMK.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with an AWS managed customer
+     *        master key (CMK) by default. For more control, specify a customer managed CMK.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDomainRequest withHomeEfsFileSystemKmsKeyId(String homeEfsFileSystemKmsKeyId) {
-        setHomeEfsFileSystemKmsKeyId(homeEfsFileSystemKmsKeyId);
+    public CreateDomainRequest withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
         return this;
     }
 
@@ -648,7 +695,9 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getAppNetworkAccessType() != null)
             sb.append("AppNetworkAccessType: ").append(getAppNetworkAccessType()).append(",");
         if (getHomeEfsFileSystemKmsKeyId() != null)
-            sb.append("HomeEfsFileSystemKmsKeyId: ").append(getHomeEfsFileSystemKmsKeyId());
+            sb.append("HomeEfsFileSystemKmsKeyId: ").append(getHomeEfsFileSystemKmsKeyId()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -695,6 +744,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getHomeEfsFileSystemKmsKeyId() != null && other.getHomeEfsFileSystemKmsKeyId().equals(this.getHomeEfsFileSystemKmsKeyId()) == false)
             return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -711,6 +764,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getAppNetworkAccessType() == null) ? 0 : getAppNetworkAccessType().hashCode());
         hashCode = prime * hashCode + ((getHomeEfsFileSystemKmsKeyId() == null) ? 0 : getHomeEfsFileSystemKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         return hashCode;
     }
 

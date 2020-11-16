@@ -39,8 +39,7 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      * A map of attributes with their corresponding values.
      * </p>
      * <p>
-     * The following lists the names, descriptions, and values of the special request parameters that the
-     * <code>SetTopicAttributes</code> action uses:
+     * The following lists the names, descriptions, and values of the special request parameters that this action uses:
      * </p>
      * <ul>
      * <li>
@@ -96,8 +95,8 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      * @param attributeName
      *        A map of attributes with their corresponding values.</p>
      *        <p>
-     *        The following lists the names, descriptions, and values of the special request parameters that the
-     *        <code>SetTopicAttributes</code> action uses:
+     *        The following lists the names, descriptions, and values of the special request parameters that this action
+     *        uses:
      *        </p>
      *        <ul>
      *        <li>
@@ -181,8 +180,7 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      * A map of attributes with their corresponding values.
      * </p>
      * <p>
-     * The following lists the names, descriptions, and values of the special request parameters that the
-     * <code>SetTopicAttributes</code> action uses:
+     * The following lists the names, descriptions, and values of the special request parameters that this action uses:
      * </p>
      * <ul>
      * <li>
@@ -217,8 +215,8 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      * @param attributeName
      *        A map of attributes with their corresponding values.</p>
      *        <p>
-     *        The following lists the names, descriptions, and values of the special request parameters that the
-     *        <code>SetTopicAttributes</code> action uses:
+     *        The following lists the names, descriptions, and values of the special request parameters that this action
+     *        uses:
      *        </p>
      *        <ul>
      *        <li>
@@ -259,8 +257,7 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      * A map of attributes with their corresponding values.
      * </p>
      * <p>
-     * The following lists the names, descriptions, and values of the special request parameters that the
-     * <code>SetTopicAttributes</code> action uses:
+     * The following lists the names, descriptions, and values of the special request parameters that this action uses:
      * </p>
      * <ul>
      * <li>
@@ -294,8 +291,8 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      * 
      * @return A map of attributes with their corresponding values.</p>
      *         <p>
-     *         The following lists the names, descriptions, and values of the special request parameters that the
-     *         <code>SetTopicAttributes</code> action uses:
+     *         The following lists the names, descriptions, and values of the special request parameters that this
+     *         action uses:
      *         </p>
      *         <ul>
      *         <li>
@@ -337,8 +334,7 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      * A map of attributes with their corresponding values.
      * </p>
      * <p>
-     * The following lists the names, descriptions, and values of the special request parameters that the
-     * <code>SetTopicAttributes</code> action uses:
+     * The following lists the names, descriptions, and values of the special request parameters that this action uses:
      * </p>
      * <ul>
      * <li>
@@ -373,8 +369,8 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      * @param attributeName
      *        A map of attributes with their corresponding values.</p>
      *        <p>
-     *        The following lists the names, descriptions, and values of the special request parameters that the
-     *        <code>SetTopicAttributes</code> action uses:
+     *        The following lists the names, descriptions, and values of the special request parameters that this action
+     *        uses:
      *        </p>
      *        <ul>
      *        <li>

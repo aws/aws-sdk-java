@@ -85,8 +85,8 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
     private String authMode;
     /**
      * <p>
-     * Settings which are applied to all UserProfile in this domain, if settings are not explicitly specified in a given
-     * UserProfile.
+     * Settings which are applied to all UserProfiles in this domain, if settings are not explicitly specified in a
+     * given UserProfile.
      * </p>
      */
     private UserSettings defaultUserSettings;
@@ -111,9 +111,10 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
     private String appNetworkAccessType;
     /**
      * <p>
-     * The AWS Key Management Service encryption key ID.
+     * This member is deprecated and replaced with <code>KmsKeyId</code>.
      * </p>
      */
+    @Deprecated
     private String homeEfsFileSystemKmsKeyId;
     /**
      * <p>
@@ -133,6 +134,12 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private String vpcId;
+    /**
+     * <p>
+     * The AWS KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
+     * </p>
+     */
+    private String kmsKeyId;
 
     /**
      * <p>
@@ -574,12 +581,12 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Settings which are applied to all UserProfile in this domain, if settings are not explicitly specified in a given
-     * UserProfile.
+     * Settings which are applied to all UserProfiles in this domain, if settings are not explicitly specified in a
+     * given UserProfile.
      * </p>
      * 
      * @param defaultUserSettings
-     *        Settings which are applied to all UserProfile in this domain, if settings are not explicitly specified in
+     *        Settings which are applied to all UserProfiles in this domain, if settings are not explicitly specified in
      *        a given UserProfile.
      */
 
@@ -589,12 +596,12 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Settings which are applied to all UserProfile in this domain, if settings are not explicitly specified in a given
-     * UserProfile.
+     * Settings which are applied to all UserProfiles in this domain, if settings are not explicitly specified in a
+     * given UserProfile.
      * </p>
      * 
-     * @return Settings which are applied to all UserProfile in this domain, if settings are not explicitly specified in
-     *         a given UserProfile.
+     * @return Settings which are applied to all UserProfiles in this domain, if settings are not explicitly specified
+     *         in a given UserProfile.
      */
 
     public UserSettings getDefaultUserSettings() {
@@ -603,12 +610,12 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Settings which are applied to all UserProfile in this domain, if settings are not explicitly specified in a given
-     * UserProfile.
+     * Settings which are applied to all UserProfiles in this domain, if settings are not explicitly specified in a
+     * given UserProfile.
      * </p>
      * 
      * @param defaultUserSettings
-     *        Settings which are applied to all UserProfile in this domain, if settings are not explicitly specified in
+     *        Settings which are applied to all UserProfiles in this domain, if settings are not explicitly specified in
      *        a given UserProfile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -779,39 +786,39 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The AWS Key Management Service encryption key ID.
+     * This member is deprecated and replaced with <code>KmsKeyId</code>.
      * </p>
      * 
      * @param homeEfsFileSystemKmsKeyId
-     *        The AWS Key Management Service encryption key ID.
+     *        This member is deprecated and replaced with <code>KmsKeyId</code>.
      */
-
+    @Deprecated
     public void setHomeEfsFileSystemKmsKeyId(String homeEfsFileSystemKmsKeyId) {
         this.homeEfsFileSystemKmsKeyId = homeEfsFileSystemKmsKeyId;
     }
 
     /**
      * <p>
-     * The AWS Key Management Service encryption key ID.
+     * This member is deprecated and replaced with <code>KmsKeyId</code>.
      * </p>
      * 
-     * @return The AWS Key Management Service encryption key ID.
+     * @return This member is deprecated and replaced with <code>KmsKeyId</code>.
      */
-
+    @Deprecated
     public String getHomeEfsFileSystemKmsKeyId() {
         return this.homeEfsFileSystemKmsKeyId;
     }
 
     /**
      * <p>
-     * The AWS Key Management Service encryption key ID.
+     * This member is deprecated and replaced with <code>KmsKeyId</code>.
      * </p>
      * 
      * @param homeEfsFileSystemKmsKeyId
-     *        The AWS Key Management Service encryption key ID.
+     *        This member is deprecated and replaced with <code>KmsKeyId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public DescribeDomainResult withHomeEfsFileSystemKmsKeyId(String homeEfsFileSystemKmsKeyId) {
         setHomeEfsFileSystemKmsKeyId(homeEfsFileSystemKmsKeyId);
         return this;
@@ -968,6 +975,46 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * The AWS KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The AWS KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The AWS KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
+     * </p>
+     * 
+     * @return The AWS KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The AWS KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The AWS KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDomainResult withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1010,7 +1057,9 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getUrl() != null)
             sb.append("Url: ").append(getUrl()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: ").append(getVpcId());
+            sb.append("VpcId: ").append(getVpcId()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -1090,6 +1139,10 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -1114,6 +1167,7 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
         hashCode = prime * hashCode + ((getUrl() == null) ? 0 : getUrl().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         return hashCode;
     }
 

@@ -33,8 +33,7 @@ public class CreateImageRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String description;
     /**
      * <p>
-     * The display name of the image. When the image is added to a domain, <code>DisplayName</code> must be unique to
-     * the domain.
+     * The display name of the image. If not provided, <code>ImageName</code> is displayed.
      * </p>
      */
     private String displayName;
@@ -99,13 +98,11 @@ public class CreateImageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The display name of the image. When the image is added to a domain, <code>DisplayName</code> must be unique to
-     * the domain.
+     * The display name of the image. If not provided, <code>ImageName</code> is displayed.
      * </p>
      * 
      * @param displayName
-     *        The display name of the image. When the image is added to a domain, <code>DisplayName</code> must be
-     *        unique to the domain.
+     *        The display name of the image. If not provided, <code>ImageName</code> is displayed.
      */
 
     public void setDisplayName(String displayName) {
@@ -114,12 +111,10 @@ public class CreateImageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The display name of the image. When the image is added to a domain, <code>DisplayName</code> must be unique to
-     * the domain.
+     * The display name of the image. If not provided, <code>ImageName</code> is displayed.
      * </p>
      * 
-     * @return The display name of the image. When the image is added to a domain, <code>DisplayName</code> must be
-     *         unique to the domain.
+     * @return The display name of the image. If not provided, <code>ImageName</code> is displayed.
      */
 
     public String getDisplayName() {
@@ -128,13 +123,11 @@ public class CreateImageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The display name of the image. When the image is added to a domain, <code>DisplayName</code> must be unique to
-     * the domain.
+     * The display name of the image. If not provided, <code>ImageName</code> is displayed.
      * </p>
      * 
      * @param displayName
-     *        The display name of the image. When the image is added to a domain, <code>DisplayName</code> must be
-     *        unique to the domain.
+     *        The display name of the image. If not provided, <code>ImageName</code> is displayed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

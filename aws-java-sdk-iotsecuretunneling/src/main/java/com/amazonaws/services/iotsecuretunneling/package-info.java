@@ -17,8 +17,8 @@
  * AWS IoT Secure Tunnling enables you to create remote connections to devices deployed in the field.
  * </p>
  * <p>
- * For more information about how AWS IoT Secure Tunneling works, see the <a
- * href="https://docs.aws.amazon.com/secure-tunneling/latest/ug/what-is-secure-tunneling.html">User Guide</a>.
+ * For more information about how AWS IoT Secure Tunneling works, see <a
+ * href="https://docs.aws.amazon.com/iot/latest/developerguide/secure-tunneling.html">AWS IoT Secure Tunneling</a>.
  * </p>
  */
 package com.amazonaws.services.iotsecuretunneling;

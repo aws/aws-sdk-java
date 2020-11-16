@@ -1744,6 +1744,39 @@ public class AWSDatabaseMigrationServiceAsyncClient extends AWSDatabaseMigration
     }
 
     @Override
+    public java.util.concurrent.Future<MoveReplicationTaskResult> moveReplicationTaskAsync(MoveReplicationTaskRequest request) {
+
+        return moveReplicationTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<MoveReplicationTaskResult> moveReplicationTaskAsync(final MoveReplicationTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<MoveReplicationTaskRequest, MoveReplicationTaskResult> asyncHandler) {
+        final MoveReplicationTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<MoveReplicationTaskResult>() {
+            @Override
+            public MoveReplicationTaskResult call() throws Exception {
+                MoveReplicationTaskResult result = null;
+
+                try {
+                    result = executeMoveReplicationTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<RebootReplicationInstanceResult> rebootReplicationInstanceAsync(RebootReplicationInstanceRequest request) {
 
         return rebootReplicationInstanceAsync(request, null);

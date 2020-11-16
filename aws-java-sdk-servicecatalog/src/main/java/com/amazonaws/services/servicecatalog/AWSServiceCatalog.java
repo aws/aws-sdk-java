@@ -29,8 +29,8 @@ import com.amazonaws.services.servicecatalog.model.*;
  * <fullname>AWS Service Catalog</fullname>
  * <p>
  * <a href="https://aws.amazon.com/servicecatalog/">AWS Service Catalog</a> enables organizations to create and manage
- * catalogs of IT services that are approved for use on AWS. To get the most out of this documentation, you should be
- * familiar with the terminology discussed in <a
+ * catalogs of IT services that are approved for AWS. To get the most out of this documentation, you should be familiar
+ * with the terminology discussed in <a
  * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">AWS Service Catalog
  * Concepts</a>.
  * </p>
@@ -1188,6 +1188,42 @@ public interface AWSServiceCatalog {
      *      target="_top">AWS API Documentation</a>
      */
     GetProvisionedProductOutputsResult getProvisionedProductOutputs(GetProvisionedProductOutputsRequest getProvisionedProductOutputsRequest);
+
+    /**
+     * <p>
+     * Requests the import of a resource as a Service Catalog provisioned product that is associated to a Service
+     * Catalog product and provisioning artifact. Once imported all supported Service Catalog governance actions are
+     * supported on the provisioned product.
+     * </p>
+     * <p>
+     * Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets and non-root nested stacks are
+     * not supported.
+     * </p>
+     * <p>
+     * The CloudFormation stack must have one of the following statuses to be imported: CREATE_COMPLETE,
+     * UPDATE_COMPLETE, UPDATE_ROLLBACK_COMPLETE, IMPORT_COMPLETE, IMPORT_ROLLBACK_COMPLETE.
+     * </p>
+     * <p>
+     * Import of the resource requires that the CloudFormation stack template matches the associated Service Catalog
+     * product provisioning artifact.
+     * </p>
+     * 
+     * @param importAsProvisionedProductRequest
+     * @return Result of the ImportAsProvisionedProduct operation returned by the service.
+     * @throws DuplicateResourceException
+     *         The specified resource is a duplicate.
+     * @throws InvalidStateException
+     *         An attempt was made to modify a resource that is in a state that is not valid. Check your resources to
+     *         ensure that they are in valid states before retrying the operation.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @sample AWSServiceCatalog.ImportAsProvisionedProduct
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ImportAsProvisionedProduct"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ImportAsProvisionedProductResult importAsProvisionedProduct(ImportAsProvisionedProductRequest importAsProvisionedProductRequest);
 
     /**
      * <p>

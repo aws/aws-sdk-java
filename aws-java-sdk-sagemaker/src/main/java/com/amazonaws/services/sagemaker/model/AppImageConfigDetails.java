@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration for running an Amazon SageMaker image as a KernelGateway app.
+ * The configuration for running a SageMaker image as a KernelGateway app.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AppImageConfigDetails" target="_top">AWS
@@ -36,7 +36,7 @@ public class AppImageConfigDetails implements Serializable, Cloneable, Structure
     private String appImageConfigArn;
     /**
      * <p>
-     * The name of the AppImageConfig.
+     * The name of the AppImageConfig. Must be unique to your account.
      * </p>
      */
     private String appImageConfigName;
@@ -54,7 +54,7 @@ public class AppImageConfigDetails implements Serializable, Cloneable, Structure
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * The KernelGateway app.
+     * The configuration for the file system and kernels in the SageMaker image.
      * </p>
      */
     private KernelGatewayImageConfig kernelGatewayImageConfig;
@@ -101,11 +101,11 @@ public class AppImageConfigDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the AppImageConfig.
+     * The name of the AppImageConfig. Must be unique to your account.
      * </p>
      * 
      * @param appImageConfigName
-     *        The name of the AppImageConfig.
+     *        The name of the AppImageConfig. Must be unique to your account.
      */
 
     public void setAppImageConfigName(String appImageConfigName) {
@@ -114,10 +114,10 @@ public class AppImageConfigDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the AppImageConfig.
+     * The name of the AppImageConfig. Must be unique to your account.
      * </p>
      * 
-     * @return The name of the AppImageConfig.
+     * @return The name of the AppImageConfig. Must be unique to your account.
      */
 
     public String getAppImageConfigName() {
@@ -126,11 +126,11 @@ public class AppImageConfigDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the AppImageConfig.
+     * The name of the AppImageConfig. Must be unique to your account.
      * </p>
      * 
      * @param appImageConfigName
-     *        The name of the AppImageConfig.
+     *        The name of the AppImageConfig. Must be unique to your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,11 +221,11 @@ public class AppImageConfigDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The KernelGateway app.
+     * The configuration for the file system and kernels in the SageMaker image.
      * </p>
      * 
      * @param kernelGatewayImageConfig
-     *        The KernelGateway app.
+     *        The configuration for the file system and kernels in the SageMaker image.
      */
 
     public void setKernelGatewayImageConfig(KernelGatewayImageConfig kernelGatewayImageConfig) {
@@ -234,10 +234,10 @@ public class AppImageConfigDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The KernelGateway app.
+     * The configuration for the file system and kernels in the SageMaker image.
      * </p>
      * 
-     * @return The KernelGateway app.
+     * @return The configuration for the file system and kernels in the SageMaker image.
      */
 
     public KernelGatewayImageConfig getKernelGatewayImageConfig() {
@@ -246,11 +246,11 @@ public class AppImageConfigDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The KernelGateway app.
+     * The configuration for the file system and kernels in the SageMaker image.
      * </p>
      * 
      * @param kernelGatewayImageConfig
-     *        The KernelGateway app.
+     *        The configuration for the file system and kernels in the SageMaker image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

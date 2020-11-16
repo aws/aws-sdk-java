@@ -33,8 +33,9 @@ public class RuntimeVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the runtime version. Currently, the only valid values are <code>syn-nodejs-2.0</code>,
-     * <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>.
+     * The name of the runtime version. For a list of valid runtime versions, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
+     * Canary Runtime Versions</a>.
      * </p>
      */
     private String versionName;
@@ -59,13 +60,15 @@ public class RuntimeVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the runtime version. Currently, the only valid values are <code>syn-nodejs-2.0</code>,
-     * <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>.
+     * The name of the runtime version. For a list of valid runtime versions, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
+     * Canary Runtime Versions</a>.
      * </p>
      * 
      * @param versionName
-     *        The name of the runtime version. Currently, the only valid values are <code>syn-nodejs-2.0</code>,
-     *        <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>.
+     *        The name of the runtime version. For a list of valid runtime versions, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"
+     *        > Canary Runtime Versions</a>.
      */
 
     public void setVersionName(String versionName) {
@@ -74,12 +77,14 @@ public class RuntimeVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the runtime version. Currently, the only valid values are <code>syn-nodejs-2.0</code>,
-     * <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>.
+     * The name of the runtime version. For a list of valid runtime versions, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
+     * Canary Runtime Versions</a>.
      * </p>
      * 
-     * @return The name of the runtime version. Currently, the only valid values are <code>syn-nodejs-2.0</code>,
-     *         <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>.
+     * @return The name of the runtime version. For a list of valid runtime versions, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"
+     *         > Canary Runtime Versions</a>.
      */
 
     public String getVersionName() {
@@ -88,13 +93,15 @@ public class RuntimeVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the runtime version. Currently, the only valid values are <code>syn-nodejs-2.0</code>,
-     * <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>.
+     * The name of the runtime version. For a list of valid runtime versions, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
+     * Canary Runtime Versions</a>.
      * </p>
      * 
      * @param versionName
-     *        The name of the runtime version. Currently, the only valid values are <code>syn-nodejs-2.0</code>,
-     *        <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>.
+     *        The name of the runtime version. For a list of valid runtime versions, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"
+     *        > Canary Runtime Versions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -713,6 +713,19 @@ public class AbstractAWSServiceCatalogAsync extends AbstractAWSServiceCatalog im
     }
 
     @Override
+    public java.util.concurrent.Future<ImportAsProvisionedProductResult> importAsProvisionedProductAsync(ImportAsProvisionedProductRequest request) {
+
+        return importAsProvisionedProductAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportAsProvisionedProductResult> importAsProvisionedProductAsync(ImportAsProvisionedProductRequest request,
+            com.amazonaws.handlers.AsyncHandler<ImportAsProvisionedProductRequest, ImportAsProvisionedProductResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAcceptedPortfolioSharesResult> listAcceptedPortfolioSharesAsync(ListAcceptedPortfolioSharesRequest request) {
 
         return listAcceptedPortfolioSharesAsync(request, null);

@@ -40,6 +40,8 @@ public class TerminateProvisionedProductRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IgnoreErrors").build();
     private static final MarshallingInfo<String> ACCEPTLANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AcceptLanguage").build();
+    private static final MarshallingInfo<Boolean> RETAINPHYSICALRESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RetainPhysicalResources").build();
 
     private static final TerminateProvisionedProductRequestMarshaller instance = new TerminateProvisionedProductRequestMarshaller();
 
@@ -62,6 +64,7 @@ public class TerminateProvisionedProductRequestMarshaller {
             protocolMarshaller.marshall(terminateProvisionedProductRequest.getTerminateToken(), TERMINATETOKEN_BINDING);
             protocolMarshaller.marshall(terminateProvisionedProductRequest.getIgnoreErrors(), IGNOREERRORS_BINDING);
             protocolMarshaller.marshall(terminateProvisionedProductRequest.getAcceptLanguage(), ACCEPTLANGUAGE_BINDING);
+            protocolMarshaller.marshall(terminateProvisionedProductRequest.getRetainPhysicalResources(), RETAINPHYSICALRESOURCES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

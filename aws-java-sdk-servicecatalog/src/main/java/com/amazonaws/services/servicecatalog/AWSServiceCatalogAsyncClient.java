@@ -33,8 +33,8 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <fullname>AWS Service Catalog</fullname>
  * <p>
  * <a href="https://aws.amazon.com/servicecatalog/">AWS Service Catalog</a> enables organizations to create and manage
- * catalogs of IT services that are approved for use on AWS. To get the most out of this documentation, you should be
- * familiar with the terminology discussed in <a
+ * catalogs of IT services that are approved for AWS. To get the most out of this documentation, you should be familiar
+ * with the terminology discussed in <a
  * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">AWS Service Catalog
  * Concepts</a>.
  * </p>
@@ -1959,6 +1959,39 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
 
                 try {
                     result = executeGetProvisionedProductOutputs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportAsProvisionedProductResult> importAsProvisionedProductAsync(ImportAsProvisionedProductRequest request) {
+
+        return importAsProvisionedProductAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportAsProvisionedProductResult> importAsProvisionedProductAsync(final ImportAsProvisionedProductRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ImportAsProvisionedProductRequest, ImportAsProvisionedProductResult> asyncHandler) {
+        final ImportAsProvisionedProductRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ImportAsProvisionedProductResult>() {
+            @Override
+            public ImportAsProvisionedProductResult call() throws Exception {
+                ImportAsProvisionedProductResult result = null;
+
+                try {
+                    result = executeImportAsProvisionedProduct(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

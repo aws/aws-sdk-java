@@ -30,6 +30,19 @@ public class ActionExecution implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * ID of the workflow action execution in the current stage. Use the <a>GetPipelineState</a> action to retrieve the
+     * current action execution details of the current stage.
+     * </p>
+     * <note>
+     * <p>
+     * For older executions, this field might be empty. The action execution ID is available for executions run on or
+     * after March 2020.
+     * </p>
+     * </note>
+     */
+    private String actionExecutionId;
+    /**
+     * <p>
      * The status of the action, or for a completed action, the last status of the action.
      * </p>
      */
@@ -85,6 +98,82 @@ public class ActionExecution implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private ErrorDetails errorDetails;
+
+    /**
+     * <p>
+     * ID of the workflow action execution in the current stage. Use the <a>GetPipelineState</a> action to retrieve the
+     * current action execution details of the current stage.
+     * </p>
+     * <note>
+     * <p>
+     * For older executions, this field might be empty. The action execution ID is available for executions run on or
+     * after March 2020.
+     * </p>
+     * </note>
+     * 
+     * @param actionExecutionId
+     *        ID of the workflow action execution in the current stage. Use the <a>GetPipelineState</a> action to
+     *        retrieve the current action execution details of the current stage.</p> <note>
+     *        <p>
+     *        For older executions, this field might be empty. The action execution ID is available for executions run
+     *        on or after March 2020.
+     *        </p>
+     */
+
+    public void setActionExecutionId(String actionExecutionId) {
+        this.actionExecutionId = actionExecutionId;
+    }
+
+    /**
+     * <p>
+     * ID of the workflow action execution in the current stage. Use the <a>GetPipelineState</a> action to retrieve the
+     * current action execution details of the current stage.
+     * </p>
+     * <note>
+     * <p>
+     * For older executions, this field might be empty. The action execution ID is available for executions run on or
+     * after March 2020.
+     * </p>
+     * </note>
+     * 
+     * @return ID of the workflow action execution in the current stage. Use the <a>GetPipelineState</a> action to
+     *         retrieve the current action execution details of the current stage.</p> <note>
+     *         <p>
+     *         For older executions, this field might be empty. The action execution ID is available for executions run
+     *         on or after March 2020.
+     *         </p>
+     */
+
+    public String getActionExecutionId() {
+        return this.actionExecutionId;
+    }
+
+    /**
+     * <p>
+     * ID of the workflow action execution in the current stage. Use the <a>GetPipelineState</a> action to retrieve the
+     * current action execution details of the current stage.
+     * </p>
+     * <note>
+     * <p>
+     * For older executions, this field might be empty. The action execution ID is available for executions run on or
+     * after March 2020.
+     * </p>
+     * </note>
+     * 
+     * @param actionExecutionId
+     *        ID of the workflow action execution in the current stage. Use the <a>GetPipelineState</a> action to
+     *        retrieve the current action execution details of the current stage.</p> <note>
+     *        <p>
+     *        For older executions, this field might be empty. The action execution ID is available for executions run
+     *        on or after March 2020.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActionExecution withActionExecutionId(String actionExecutionId) {
+        setActionExecutionId(actionExecutionId);
+        return this;
+    }
 
     /**
      * <p>
@@ -509,6 +598,8 @@ public class ActionExecution implements Serializable, Cloneable, StructuredPojo 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getActionExecutionId() != null)
+            sb.append("ActionExecutionId: ").append(getActionExecutionId()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getSummary() != null)
@@ -541,6 +632,10 @@ public class ActionExecution implements Serializable, Cloneable, StructuredPojo 
         if (obj instanceof ActionExecution == false)
             return false;
         ActionExecution other = (ActionExecution) obj;
+        if (other.getActionExecutionId() == null ^ this.getActionExecutionId() == null)
+            return false;
+        if (other.getActionExecutionId() != null && other.getActionExecutionId().equals(this.getActionExecutionId()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -585,6 +680,7 @@ public class ActionExecution implements Serializable, Cloneable, StructuredPojo 
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getActionExecutionId() == null) ? 0 : getActionExecutionId().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getSummary() == null) ? 0 : getSummary().hashCode());
         hashCode = prime * hashCode + ((getLastStatusChange() == null) ? 0 : getLastStatusChange().hashCode());

@@ -52,6 +52,10 @@ public class StageStateJsonUnmarshaller implements Unmarshaller<StageState, Json
                     context.nextToken();
                     stageState.setStageName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("inboundExecution", targetDepth)) {
+                    context.nextToken();
+                    stageState.setInboundExecution(StageExecutionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("inboundTransitionState", targetDepth)) {
                     context.nextToken();
                     stageState.setInboundTransitionState(TransitionStateJsonUnmarshaller.getInstance().unmarshall(context));

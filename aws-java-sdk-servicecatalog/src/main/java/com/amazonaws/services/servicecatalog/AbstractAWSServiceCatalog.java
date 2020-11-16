@@ -297,6 +297,11 @@ public class AbstractAWSServiceCatalog implements AWSServiceCatalog {
     }
 
     @Override
+    public ImportAsProvisionedProductResult importAsProvisionedProduct(ImportAsProvisionedProductRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListAcceptedPortfolioSharesResult listAcceptedPortfolioShares(ListAcceptedPortfolioSharesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

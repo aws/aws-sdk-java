@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration for an Amazon SageMaker KernelGateway app.
+ * The configuration for the file system and kernels in a SageMaker image running as a KernelGateway app.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/KernelGatewayImageConfig" target="_top">AWS
@@ -30,26 +30,23 @@ public class KernelGatewayImageConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Defines how a kernel is started and the arguments, environment variables, and metadata that are available to the
-     * kernel.
+     * The specification of the Jupyter kernels in the image.
      * </p>
      */
     private java.util.List<KernelSpec> kernelSpecs;
     /**
      * <p>
-     * The file system configuration.
+     * The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.
      * </p>
      */
     private FileSystemConfig fileSystemConfig;
 
     /**
      * <p>
-     * Defines how a kernel is started and the arguments, environment variables, and metadata that are available to the
-     * kernel.
+     * The specification of the Jupyter kernels in the image.
      * </p>
      * 
-     * @return Defines how a kernel is started and the arguments, environment variables, and metadata that are available
-     *         to the kernel.
+     * @return The specification of the Jupyter kernels in the image.
      */
 
     public java.util.List<KernelSpec> getKernelSpecs() {
@@ -58,13 +55,11 @@ public class KernelGatewayImageConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Defines how a kernel is started and the arguments, environment variables, and metadata that are available to the
-     * kernel.
+     * The specification of the Jupyter kernels in the image.
      * </p>
      * 
      * @param kernelSpecs
-     *        Defines how a kernel is started and the arguments, environment variables, and metadata that are available
-     *        to the kernel.
+     *        The specification of the Jupyter kernels in the image.
      */
 
     public void setKernelSpecs(java.util.Collection<KernelSpec> kernelSpecs) {
@@ -78,8 +73,7 @@ public class KernelGatewayImageConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Defines how a kernel is started and the arguments, environment variables, and metadata that are available to the
-     * kernel.
+     * The specification of the Jupyter kernels in the image.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -88,8 +82,7 @@ public class KernelGatewayImageConfig implements Serializable, Cloneable, Struct
      * </p>
      * 
      * @param kernelSpecs
-     *        Defines how a kernel is started and the arguments, environment variables, and metadata that are available
-     *        to the kernel.
+     *        The specification of the Jupyter kernels in the image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,13 +98,11 @@ public class KernelGatewayImageConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Defines how a kernel is started and the arguments, environment variables, and metadata that are available to the
-     * kernel.
+     * The specification of the Jupyter kernels in the image.
      * </p>
      * 
      * @param kernelSpecs
-     *        Defines how a kernel is started and the arguments, environment variables, and metadata that are available
-     *        to the kernel.
+     *        The specification of the Jupyter kernels in the image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,11 +113,11 @@ public class KernelGatewayImageConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The file system configuration.
+     * The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.
      * </p>
      * 
      * @param fileSystemConfig
-     *        The file system configuration.
+     *        The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.
      */
 
     public void setFileSystemConfig(FileSystemConfig fileSystemConfig) {
@@ -135,10 +126,10 @@ public class KernelGatewayImageConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The file system configuration.
+     * The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.
      * </p>
      * 
-     * @return The file system configuration.
+     * @return The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.
      */
 
     public FileSystemConfig getFileSystemConfig() {
@@ -147,11 +138,11 @@ public class KernelGatewayImageConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The file system configuration.
+     * The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.
      * </p>
      * 
      * @param fileSystemConfig
-     *        The file system configuration.
+     *        The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

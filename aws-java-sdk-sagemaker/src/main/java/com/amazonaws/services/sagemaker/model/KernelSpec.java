@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Defines how a kernel is started and the arguments, environment variables, and metadata that are available to the
- * kernel.
+ * The specification of a Jupyter kernel.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/KernelSpec" target="_top">AWS API
@@ -31,7 +30,7 @@ public class KernelSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the kernel. Must be unique to your account.
+     * The name of the kernel.
      * </p>
      */
     private String name;
@@ -44,11 +43,11 @@ public class KernelSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the kernel. Must be unique to your account.
+     * The name of the kernel.
      * </p>
      * 
      * @param name
-     *        The name of the kernel. Must be unique to your account.
+     *        The name of the kernel.
      */
 
     public void setName(String name) {
@@ -57,10 +56,10 @@ public class KernelSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the kernel. Must be unique to your account.
+     * The name of the kernel.
      * </p>
      * 
-     * @return The name of the kernel. Must be unique to your account.
+     * @return The name of the kernel.
      */
 
     public String getName() {
@@ -69,11 +68,11 @@ public class KernelSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the kernel. Must be unique to your account.
+     * The name of the kernel.
      * </p>
      * 
      * @param name
-     *        The name of the kernel. Must be unique to your account.
+     *        The name of the kernel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

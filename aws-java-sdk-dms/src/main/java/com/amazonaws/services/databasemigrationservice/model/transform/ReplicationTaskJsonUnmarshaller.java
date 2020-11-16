@@ -120,6 +120,10 @@ public class ReplicationTaskJsonUnmarshaller implements Unmarshaller<Replication
                     context.nextToken();
                     replicationTask.setTaskData(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TargetReplicationInstanceArn", targetDepth)) {
+                    context.nextToken();
+                    replicationTask.setTargetReplicationInstanceArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

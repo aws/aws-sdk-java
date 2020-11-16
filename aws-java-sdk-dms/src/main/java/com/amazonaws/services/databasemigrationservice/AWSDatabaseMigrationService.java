@@ -180,6 +180,8 @@ public interface AWSDatabaseMigrationService {
      *         The resource could not be found.
      * @throws AccessDeniedException
      *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws S3AccessDeniedException
+     *         Insufficient privileges are preventing access to an Amazon S3 object.
      * @sample AWSDatabaseMigrationService.CreateEndpoint
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEndpoint" target="_top">AWS API
      *      Documentation</a>
@@ -1043,6 +1045,27 @@ public interface AWSDatabaseMigrationService {
      *      Documentation</a>
      */
     ModifyReplicationTaskResult modifyReplicationTask(ModifyReplicationTaskRequest modifyReplicationTaskRequest);
+
+    /**
+     * <p>
+     * Moves a replication task from its current replication instance to a different target replication instance using
+     * the specified parameters. The target replication instance must be created with the same or later AWS DMS version
+     * as the current replication instance.
+     * </p>
+     * 
+     * @param moveReplicationTaskRequest
+     * @return Result of the MoveReplicationTask operation returned by the service.
+     * @throws AccessDeniedException
+     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AWSDatabaseMigrationService.MoveReplicationTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/MoveReplicationTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    MoveReplicationTaskResult moveReplicationTask(MoveReplicationTaskRequest moveReplicationTaskRequest);
 
     /**
      * <p>
