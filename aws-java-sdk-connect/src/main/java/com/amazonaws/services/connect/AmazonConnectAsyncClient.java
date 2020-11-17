@@ -228,6 +228,39 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<CreateUserHierarchyGroupResult> createUserHierarchyGroupAsync(CreateUserHierarchyGroupRequest request) {
+
+        return createUserHierarchyGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUserHierarchyGroupResult> createUserHierarchyGroupAsync(final CreateUserHierarchyGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateUserHierarchyGroupRequest, CreateUserHierarchyGroupResult> asyncHandler) {
+        final CreateUserHierarchyGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateUserHierarchyGroupResult>() {
+            @Override
+            public CreateUserHierarchyGroupResult call() throws Exception {
+                CreateUserHierarchyGroupResult result = null;
+
+                try {
+                    result = executeCreateUserHierarchyGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(DeleteUserRequest request) {
 
         return deleteUserAsync(request, null);
@@ -245,6 +278,39 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
                 try {
                     result = executeDeleteUser(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUserHierarchyGroupResult> deleteUserHierarchyGroupAsync(DeleteUserHierarchyGroupRequest request) {
+
+        return deleteUserHierarchyGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUserHierarchyGroupResult> deleteUserHierarchyGroupAsync(final DeleteUserHierarchyGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteUserHierarchyGroupRequest, DeleteUserHierarchyGroupResult> asyncHandler) {
+        final DeleteUserHierarchyGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteUserHierarchyGroupResult>() {
+            @Override
+            public DeleteUserHierarchyGroupResult call() throws Exception {
+                DeleteUserHierarchyGroupResult result = null;
+
+                try {
+                    result = executeDeleteUserHierarchyGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1506,6 +1572,72 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
                 try {
                     result = executeUpdateUserHierarchy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUserHierarchyGroupNameResult> updateUserHierarchyGroupNameAsync(UpdateUserHierarchyGroupNameRequest request) {
+
+        return updateUserHierarchyGroupNameAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUserHierarchyGroupNameResult> updateUserHierarchyGroupNameAsync(final UpdateUserHierarchyGroupNameRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateUserHierarchyGroupNameRequest, UpdateUserHierarchyGroupNameResult> asyncHandler) {
+        final UpdateUserHierarchyGroupNameRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateUserHierarchyGroupNameResult>() {
+            @Override
+            public UpdateUserHierarchyGroupNameResult call() throws Exception {
+                UpdateUserHierarchyGroupNameResult result = null;
+
+                try {
+                    result = executeUpdateUserHierarchyGroupName(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUserHierarchyStructureResult> updateUserHierarchyStructureAsync(UpdateUserHierarchyStructureRequest request) {
+
+        return updateUserHierarchyStructureAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUserHierarchyStructureResult> updateUserHierarchyStructureAsync(final UpdateUserHierarchyStructureRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateUserHierarchyStructureRequest, UpdateUserHierarchyStructureResult> asyncHandler) {
+        final UpdateUserHierarchyStructureRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateUserHierarchyStructureResult>() {
+            @Override
+            public UpdateUserHierarchyStructureResult call() throws Exception {
+                UpdateUserHierarchyStructureResult result = null;
+
+                try {
+                    result = executeUpdateUserHierarchyStructure(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -39,7 +39,7 @@ public class KeyValuePair implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * One part of a key-value pair that comprises a tag. A tag value acts as a descriptor for a tag key. A tag value
-     * can be empty or null.
+     * can be an empty string.
      * </p>
      */
     private String value;
@@ -93,12 +93,12 @@ public class KeyValuePair implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * One part of a key-value pair that comprises a tag. A tag value acts as a descriptor for a tag key. A tag value
-     * can be empty or null.
+     * can be an empty string.
      * </p>
      * 
      * @param value
      *        One part of a key-value pair that comprises a tag. A tag value acts as a descriptor for a tag key. A tag
-     *        value can be empty or null.
+     *        value can be an empty string.
      */
 
     public void setValue(String value) {
@@ -108,11 +108,11 @@ public class KeyValuePair implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * One part of a key-value pair that comprises a tag. A tag value acts as a descriptor for a tag key. A tag value
-     * can be empty or null.
+     * can be an empty string.
      * </p>
      * 
      * @return One part of a key-value pair that comprises a tag. A tag value acts as a descriptor for a tag key. A tag
-     *         value can be empty or null.
+     *         value can be an empty string.
      */
 
     public String getValue() {
@@ -122,12 +122,12 @@ public class KeyValuePair implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * One part of a key-value pair that comprises a tag. A tag value acts as a descriptor for a tag key. A tag value
-     * can be empty or null.
+     * can be an empty string.
      * </p>
      * 
      * @param value
      *        One part of a key-value pair that comprises a tag. A tag value acts as a descriptor for a tag key. A tag
-     *        value can be empty or null.
+     *        value can be an empty string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

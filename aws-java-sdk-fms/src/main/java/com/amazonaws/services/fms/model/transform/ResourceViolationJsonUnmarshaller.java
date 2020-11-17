@@ -60,6 +60,26 @@ public class ResourceViolationJsonUnmarshaller implements Unmarshaller<ResourceV
                     context.nextToken();
                     resourceViolation.setAwsEc2InstanceViolation(AwsEc2InstanceViolationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("NetworkFirewallMissingFirewallViolation", targetDepth)) {
+                    context.nextToken();
+                    resourceViolation.setNetworkFirewallMissingFirewallViolation(NetworkFirewallMissingFirewallViolationJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
+                if (context.testExpression("NetworkFirewallMissingSubnetViolation", targetDepth)) {
+                    context.nextToken();
+                    resourceViolation.setNetworkFirewallMissingSubnetViolation(NetworkFirewallMissingSubnetViolationJsonUnmarshaller.getInstance().unmarshall(
+                            context));
+                }
+                if (context.testExpression("NetworkFirewallMissingExpectedRTViolation", targetDepth)) {
+                    context.nextToken();
+                    resourceViolation.setNetworkFirewallMissingExpectedRTViolation(NetworkFirewallMissingExpectedRTViolationJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
+                if (context.testExpression("NetworkFirewallPolicyModifiedViolation", targetDepth)) {
+                    context.nextToken();
+                    resourceViolation.setNetworkFirewallPolicyModifiedViolation(NetworkFirewallPolicyModifiedViolationJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

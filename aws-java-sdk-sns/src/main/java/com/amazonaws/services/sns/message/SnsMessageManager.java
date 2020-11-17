@@ -130,6 +130,14 @@ public class SnsMessageManager {
             return "sns-us-gov-west-1.amazonaws.com";
         }
 
+        if (Regions.AP_EAST_1.getName().equals(region)) {
+            return "sns-ap-east-1.amazonaws.com";
+        }
+
+        if (Regions.ME_SOUTH_1.getName().equals(region)) {
+            return "sns-me-south-1.amazonaws.com";
+        }
+
         return "sns." + RegionUtils.getRegion(region).getDomain();
     }
 }

@@ -201,6 +201,37 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * Creates a new user hierarchy group.
+     * </p>
+     * 
+     * @param createUserHierarchyGroupRequest
+     * @return A Java Future containing the result of the CreateUserHierarchyGroup operation returned by the service.
+     * @sample AmazonConnectAsync.CreateUserHierarchyGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUserHierarchyGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateUserHierarchyGroupResult> createUserHierarchyGroupAsync(CreateUserHierarchyGroupRequest createUserHierarchyGroupRequest);
+
+    /**
+     * <p>
+     * Creates a new user hierarchy group.
+     * </p>
+     * 
+     * @param createUserHierarchyGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateUserHierarchyGroup operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.CreateUserHierarchyGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUserHierarchyGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateUserHierarchyGroupResult> createUserHierarchyGroupAsync(CreateUserHierarchyGroupRequest createUserHierarchyGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateUserHierarchyGroupRequest, CreateUserHierarchyGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a user account from the specified Amazon Connect instance.
      * </p>
      * <p>
@@ -239,6 +270,39 @@ public interface AmazonConnectAsync extends AmazonConnect {
      */
     java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(DeleteUserRequest deleteUserRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteUserRequest, DeleteUserResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an existing user hierarchy group. It must not be associated with any agents or have any active child
+     * groups.
+     * </p>
+     * 
+     * @param deleteUserHierarchyGroupRequest
+     * @return A Java Future containing the result of the DeleteUserHierarchyGroup operation returned by the service.
+     * @sample AmazonConnectAsync.DeleteUserHierarchyGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUserHierarchyGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteUserHierarchyGroupResult> deleteUserHierarchyGroupAsync(DeleteUserHierarchyGroupRequest deleteUserHierarchyGroupRequest);
+
+    /**
+     * <p>
+     * Deletes an existing user hierarchy group. It must not be associated with any agents or have any active child
+     * groups.
+     * </p>
+     * 
+     * @param deleteUserHierarchyGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteUserHierarchyGroup operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.DeleteUserHierarchyGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUserHierarchyGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteUserHierarchyGroupResult> deleteUserHierarchyGroupAsync(DeleteUserHierarchyGroupRequest deleteUserHierarchyGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteUserHierarchyGroupRequest, DeleteUserHierarchyGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -1491,11 +1555,6 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * Contact attributes are available in Amazon Connect for 24 months, and are then deleted.
      * </p>
      * <p>
-     * This operation is also available in the Amazon Connect Flow language. See <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-actions-updatecontactattributes.html"
-     * >UpdateContactAttributes</a>.
-     * </p>
-     * <p>
      * <b>Important:</b> You cannot use the operation to update attributes for contacts that occurred prior to the
      * release of the API, September 12, 2018. You can update attributes only for contacts that started after the
      * release of the API. If you attempt to update attributes for a contact that occurred prior to the release of the
@@ -1524,11 +1583,6 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * </p>
      * <p>
      * Contact attributes are available in Amazon Connect for 24 months, and are then deleted.
-     * </p>
-     * <p>
-     * This operation is also available in the Amazon Connect Flow language. See <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-actions-updatecontactattributes.html"
-     * >UpdateContactAttributes</a>.
      * </p>
      * <p>
      * <b>Important:</b> You cannot use the operation to update attributes for contacts that occurred prior to the
@@ -1594,6 +1648,10 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * <p>
      * The name of the contact flow.
      * </p>
+     * <p>
+     * You can also create and update contact flows using the <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
+     * </p>
      * 
      * @param updateContactFlowNameRequest
      * @return A Java Future containing the result of the UpdateContactFlowName operation returned by the service.
@@ -1606,6 +1664,10 @@ public interface AmazonConnectAsync extends AmazonConnect {
     /**
      * <p>
      * The name of the contact flow.
+     * </p>
+     * <p>
+     * You can also create and update contact flows using the <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
      * </p>
      * 
      * @param updateContactFlowNameRequest
@@ -1787,6 +1849,76 @@ public interface AmazonConnectAsync extends AmazonConnect {
      */
     java.util.concurrent.Future<UpdateUserHierarchyResult> updateUserHierarchyAsync(UpdateUserHierarchyRequest updateUserHierarchyRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateUserHierarchyRequest, UpdateUserHierarchyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the name of the user hierarchy group.
+     * </p>
+     * 
+     * @param updateUserHierarchyGroupNameRequest
+     * @return A Java Future containing the result of the UpdateUserHierarchyGroupName operation returned by the
+     *         service.
+     * @sample AmazonConnectAsync.UpdateUserHierarchyGroupName
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserHierarchyGroupName"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateUserHierarchyGroupNameResult> updateUserHierarchyGroupNameAsync(
+            UpdateUserHierarchyGroupNameRequest updateUserHierarchyGroupNameRequest);
+
+    /**
+     * <p>
+     * Updates the name of the user hierarchy group.
+     * </p>
+     * 
+     * @param updateUserHierarchyGroupNameRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateUserHierarchyGroupName operation returned by the
+     *         service.
+     * @sample AmazonConnectAsyncHandler.UpdateUserHierarchyGroupName
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserHierarchyGroupName"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateUserHierarchyGroupNameResult> updateUserHierarchyGroupNameAsync(
+            UpdateUserHierarchyGroupNameRequest updateUserHierarchyGroupNameRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateUserHierarchyGroupNameRequest, UpdateUserHierarchyGroupNameResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the user hierarchy structure: add, remove, and rename user hierarchy levels.
+     * </p>
+     * 
+     * @param updateUserHierarchyStructureRequest
+     * @return A Java Future containing the result of the UpdateUserHierarchyStructure operation returned by the
+     *         service.
+     * @sample AmazonConnectAsync.UpdateUserHierarchyStructure
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserHierarchyStructure"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateUserHierarchyStructureResult> updateUserHierarchyStructureAsync(
+            UpdateUserHierarchyStructureRequest updateUserHierarchyStructureRequest);
+
+    /**
+     * <p>
+     * Updates the user hierarchy structure: add, remove, and rename user hierarchy levels.
+     * </p>
+     * 
+     * @param updateUserHierarchyStructureRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateUserHierarchyStructure operation returned by the
+     *         service.
+     * @sample AmazonConnectAsyncHandler.UpdateUserHierarchyStructure
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserHierarchyStructure"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateUserHierarchyStructureResult> updateUserHierarchyStructureAsync(
+            UpdateUserHierarchyStructureRequest updateUserHierarchyStructureRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateUserHierarchyStructureRequest, UpdateUserHierarchyStructureResult> asyncHandler);
 
     /**
      * <p>

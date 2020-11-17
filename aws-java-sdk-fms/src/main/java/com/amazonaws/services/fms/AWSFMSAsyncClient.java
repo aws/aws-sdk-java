@@ -32,6 +32,11 @@ import java.util.concurrent.ExecutorService;
  * Manager features, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html">AWS
  * Firewall Manager Developer Guide</a>.
  * </p>
+ * <p>
+ * Some API actions require explicit resource permissions. For information, see the developer guide topic <a
+ * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall Manager required
+ * permissions for API actions</a>.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

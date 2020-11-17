@@ -61,7 +61,7 @@ import java.util.concurrent.ExecutorService;
  * <dd>
  * <p>
  * If you use REST to make API calls, you must authenticate your request by providing a signature. Amazon Chime supports
- * signature version 4. For more information, see <a
+ * Signature Version 4. For more information, see <a
  * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>
  * in the <i>Amazon Web Services General Reference</i>.
  * </p>
@@ -623,6 +623,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<CreateMeetingDialOutResult> createMeetingDialOutAsync(CreateMeetingDialOutRequest request) {
+
+        return createMeetingDialOutAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMeetingDialOutResult> createMeetingDialOutAsync(final CreateMeetingDialOutRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateMeetingDialOutRequest, CreateMeetingDialOutResult> asyncHandler) {
+        final CreateMeetingDialOutRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateMeetingDialOutResult>() {
+            @Override
+            public CreateMeetingDialOutResult call() throws Exception {
+                CreateMeetingDialOutResult result = null;
+
+                try {
+                    result = executeCreateMeetingDialOut(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateMeetingWithAttendeesResult> createMeetingWithAttendeesAsync(CreateMeetingWithAttendeesRequest request) {
 
         return createMeetingWithAttendeesAsync(request, null);
@@ -772,6 +805,106 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executeCreateRoomMembership(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSipMediaApplicationResult> createSipMediaApplicationAsync(CreateSipMediaApplicationRequest request) {
+
+        return createSipMediaApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSipMediaApplicationResult> createSipMediaApplicationAsync(final CreateSipMediaApplicationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateSipMediaApplicationRequest, CreateSipMediaApplicationResult> asyncHandler) {
+        final CreateSipMediaApplicationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateSipMediaApplicationResult>() {
+            @Override
+            public CreateSipMediaApplicationResult call() throws Exception {
+                CreateSipMediaApplicationResult result = null;
+
+                try {
+                    result = executeCreateSipMediaApplication(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSipMediaApplicationCallResult> createSipMediaApplicationCallAsync(CreateSipMediaApplicationCallRequest request) {
+
+        return createSipMediaApplicationCallAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSipMediaApplicationCallResult> createSipMediaApplicationCallAsync(
+            final CreateSipMediaApplicationCallRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateSipMediaApplicationCallRequest, CreateSipMediaApplicationCallResult> asyncHandler) {
+        final CreateSipMediaApplicationCallRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateSipMediaApplicationCallResult>() {
+            @Override
+            public CreateSipMediaApplicationCallResult call() throws Exception {
+                CreateSipMediaApplicationCallResult result = null;
+
+                try {
+                    result = executeCreateSipMediaApplicationCall(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSipRuleResult> createSipRuleAsync(CreateSipRuleRequest request) {
+
+        return createSipRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSipRuleResult> createSipRuleAsync(final CreateSipRuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateSipRuleRequest, CreateSipRuleResult> asyncHandler) {
+        final CreateSipRuleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateSipRuleResult>() {
+            @Override
+            public CreateSipRuleResult call() throws Exception {
+                CreateSipRuleResult result = null;
+
+                try {
+                    result = executeCreateSipRule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1135,6 +1268,72 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executeDeleteRoomMembership(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSipMediaApplicationResult> deleteSipMediaApplicationAsync(DeleteSipMediaApplicationRequest request) {
+
+        return deleteSipMediaApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSipMediaApplicationResult> deleteSipMediaApplicationAsync(final DeleteSipMediaApplicationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteSipMediaApplicationRequest, DeleteSipMediaApplicationResult> asyncHandler) {
+        final DeleteSipMediaApplicationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteSipMediaApplicationResult>() {
+            @Override
+            public DeleteSipMediaApplicationResult call() throws Exception {
+                DeleteSipMediaApplicationResult result = null;
+
+                try {
+                    result = executeDeleteSipMediaApplication(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSipRuleResult> deleteSipRuleAsync(DeleteSipRuleRequest request) {
+
+        return deleteSipRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSipRuleResult> deleteSipRuleAsync(final DeleteSipRuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteSipRuleRequest, DeleteSipRuleResult> asyncHandler) {
+        final DeleteSipRuleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteSipRuleResult>() {
+            @Override
+            public DeleteSipRuleResult call() throws Exception {
+                DeleteSipRuleResult result = null;
+
+                try {
+                    result = executeDeleteSipRule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1994,6 +2193,107 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<GetSipMediaApplicationResult> getSipMediaApplicationAsync(GetSipMediaApplicationRequest request) {
+
+        return getSipMediaApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSipMediaApplicationResult> getSipMediaApplicationAsync(final GetSipMediaApplicationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSipMediaApplicationRequest, GetSipMediaApplicationResult> asyncHandler) {
+        final GetSipMediaApplicationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSipMediaApplicationResult>() {
+            @Override
+            public GetSipMediaApplicationResult call() throws Exception {
+                GetSipMediaApplicationResult result = null;
+
+                try {
+                    result = executeGetSipMediaApplication(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSipMediaApplicationLoggingConfigurationResult> getSipMediaApplicationLoggingConfigurationAsync(
+            GetSipMediaApplicationLoggingConfigurationRequest request) {
+
+        return getSipMediaApplicationLoggingConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSipMediaApplicationLoggingConfigurationResult> getSipMediaApplicationLoggingConfigurationAsync(
+            final GetSipMediaApplicationLoggingConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSipMediaApplicationLoggingConfigurationRequest, GetSipMediaApplicationLoggingConfigurationResult> asyncHandler) {
+        final GetSipMediaApplicationLoggingConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSipMediaApplicationLoggingConfigurationResult>() {
+            @Override
+            public GetSipMediaApplicationLoggingConfigurationResult call() throws Exception {
+                GetSipMediaApplicationLoggingConfigurationResult result = null;
+
+                try {
+                    result = executeGetSipMediaApplicationLoggingConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSipRuleResult> getSipRuleAsync(GetSipRuleRequest request) {
+
+        return getSipRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSipRuleResult> getSipRuleAsync(final GetSipRuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSipRuleRequest, GetSipRuleResult> asyncHandler) {
+        final GetSipRuleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSipRuleResult>() {
+            @Override
+            public GetSipRuleResult call() throws Exception {
+                GetSipRuleResult result = null;
+
+                try {
+                    result = executeGetSipRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetUserResult> getUserAsync(GetUserRequest request) {
 
         return getUserAsync(request, null);
@@ -2761,6 +3061,72 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<ListSipMediaApplicationsResult> listSipMediaApplicationsAsync(ListSipMediaApplicationsRequest request) {
+
+        return listSipMediaApplicationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSipMediaApplicationsResult> listSipMediaApplicationsAsync(final ListSipMediaApplicationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSipMediaApplicationsRequest, ListSipMediaApplicationsResult> asyncHandler) {
+        final ListSipMediaApplicationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSipMediaApplicationsResult>() {
+            @Override
+            public ListSipMediaApplicationsResult call() throws Exception {
+                ListSipMediaApplicationsResult result = null;
+
+                try {
+                    result = executeListSipMediaApplications(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSipRulesResult> listSipRulesAsync(ListSipRulesRequest request) {
+
+        return listSipRulesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSipRulesResult> listSipRulesAsync(final ListSipRulesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSipRulesRequest, ListSipRulesResult> asyncHandler) {
+        final ListSipRulesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSipRulesResult>() {
+            @Override
+            public ListSipRulesResult call() throws Exception {
+                ListSipRulesResult result = null;
+
+                try {
+                    result = executeListSipRules(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -3011,6 +3377,41 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executePutRetentionSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutSipMediaApplicationLoggingConfigurationResult> putSipMediaApplicationLoggingConfigurationAsync(
+            PutSipMediaApplicationLoggingConfigurationRequest request) {
+
+        return putSipMediaApplicationLoggingConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutSipMediaApplicationLoggingConfigurationResult> putSipMediaApplicationLoggingConfigurationAsync(
+            final PutSipMediaApplicationLoggingConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutSipMediaApplicationLoggingConfigurationRequest, PutSipMediaApplicationLoggingConfigurationResult> asyncHandler) {
+        final PutSipMediaApplicationLoggingConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutSipMediaApplicationLoggingConfigurationResult>() {
+            @Override
+            public PutSipMediaApplicationLoggingConfigurationResult call() throws Exception {
+                PutSipMediaApplicationLoggingConfigurationResult result = null;
+
+                try {
+                    result = executePutSipMediaApplicationLoggingConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3943,6 +4344,72 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executeUpdateRoomMembership(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSipMediaApplicationResult> updateSipMediaApplicationAsync(UpdateSipMediaApplicationRequest request) {
+
+        return updateSipMediaApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSipMediaApplicationResult> updateSipMediaApplicationAsync(final UpdateSipMediaApplicationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateSipMediaApplicationRequest, UpdateSipMediaApplicationResult> asyncHandler) {
+        final UpdateSipMediaApplicationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateSipMediaApplicationResult>() {
+            @Override
+            public UpdateSipMediaApplicationResult call() throws Exception {
+                UpdateSipMediaApplicationResult result = null;
+
+                try {
+                    result = executeUpdateSipMediaApplication(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSipRuleResult> updateSipRuleAsync(UpdateSipRuleRequest request) {
+
+        return updateSipRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSipRuleResult> updateSipRuleAsync(final UpdateSipRuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateSipRuleRequest, UpdateSipRuleResult> asyncHandler) {
+        final UpdateSipRuleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateSipRuleResult>() {
+            @Override
+            public UpdateSipRuleResult call() throws Exception {
+                UpdateSipRuleResult result = null;
+
+                try {
+                    result = executeUpdateSipRule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

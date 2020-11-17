@@ -46,6 +46,35 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private AwsEc2InstanceViolation awsEc2InstanceViolation;
+    /**
+     * <p>
+     * Violation detail for an Network Firewall policy that indicates that a subnet has no Firewall Manager managed
+     * firewall in its VPC.
+     * </p>
+     */
+    private NetworkFirewallMissingFirewallViolation networkFirewallMissingFirewallViolation;
+    /**
+     * <p>
+     * Violation detail for an Network Firewall policy that indicates that an Availability Zone is missing the expected
+     * Firewall Manager managed subnet.
+     * </p>
+     */
+    private NetworkFirewallMissingSubnetViolation networkFirewallMissingSubnetViolation;
+    /**
+     * <p>
+     * Violation detail for an Network Firewall policy that indicates that a subnet is not associated with the expected
+     * Firewall Manager managed route table.
+     * </p>
+     */
+    private NetworkFirewallMissingExpectedRTViolation networkFirewallMissingExpectedRTViolation;
+    /**
+     * <p>
+     * Violation detail for an Network Firewall policy that indicates that a firewall policy in an individual account
+     * has been modified in a way that makes it noncompliant. For example, the individual account owner might have
+     * deleted a rule group, changed the priority of a stateless rule group, or changed a policy default action.
+     * </p>
+     */
+    private NetworkFirewallPolicyModifiedViolation networkFirewallPolicyModifiedViolation;
 
     /**
      * <p>
@@ -168,6 +197,199 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * Violation detail for an Network Firewall policy that indicates that a subnet has no Firewall Manager managed
+     * firewall in its VPC.
+     * </p>
+     * 
+     * @param networkFirewallMissingFirewallViolation
+     *        Violation detail for an Network Firewall policy that indicates that a subnet has no Firewall Manager
+     *        managed firewall in its VPC.
+     */
+
+    public void setNetworkFirewallMissingFirewallViolation(NetworkFirewallMissingFirewallViolation networkFirewallMissingFirewallViolation) {
+        this.networkFirewallMissingFirewallViolation = networkFirewallMissingFirewallViolation;
+    }
+
+    /**
+     * <p>
+     * Violation detail for an Network Firewall policy that indicates that a subnet has no Firewall Manager managed
+     * firewall in its VPC.
+     * </p>
+     * 
+     * @return Violation detail for an Network Firewall policy that indicates that a subnet has no Firewall Manager
+     *         managed firewall in its VPC.
+     */
+
+    public NetworkFirewallMissingFirewallViolation getNetworkFirewallMissingFirewallViolation() {
+        return this.networkFirewallMissingFirewallViolation;
+    }
+
+    /**
+     * <p>
+     * Violation detail for an Network Firewall policy that indicates that a subnet has no Firewall Manager managed
+     * firewall in its VPC.
+     * </p>
+     * 
+     * @param networkFirewallMissingFirewallViolation
+     *        Violation detail for an Network Firewall policy that indicates that a subnet has no Firewall Manager
+     *        managed firewall in its VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceViolation withNetworkFirewallMissingFirewallViolation(NetworkFirewallMissingFirewallViolation networkFirewallMissingFirewallViolation) {
+        setNetworkFirewallMissingFirewallViolation(networkFirewallMissingFirewallViolation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Violation detail for an Network Firewall policy that indicates that an Availability Zone is missing the expected
+     * Firewall Manager managed subnet.
+     * </p>
+     * 
+     * @param networkFirewallMissingSubnetViolation
+     *        Violation detail for an Network Firewall policy that indicates that an Availability Zone is missing the
+     *        expected Firewall Manager managed subnet.
+     */
+
+    public void setNetworkFirewallMissingSubnetViolation(NetworkFirewallMissingSubnetViolation networkFirewallMissingSubnetViolation) {
+        this.networkFirewallMissingSubnetViolation = networkFirewallMissingSubnetViolation;
+    }
+
+    /**
+     * <p>
+     * Violation detail for an Network Firewall policy that indicates that an Availability Zone is missing the expected
+     * Firewall Manager managed subnet.
+     * </p>
+     * 
+     * @return Violation detail for an Network Firewall policy that indicates that an Availability Zone is missing the
+     *         expected Firewall Manager managed subnet.
+     */
+
+    public NetworkFirewallMissingSubnetViolation getNetworkFirewallMissingSubnetViolation() {
+        return this.networkFirewallMissingSubnetViolation;
+    }
+
+    /**
+     * <p>
+     * Violation detail for an Network Firewall policy that indicates that an Availability Zone is missing the expected
+     * Firewall Manager managed subnet.
+     * </p>
+     * 
+     * @param networkFirewallMissingSubnetViolation
+     *        Violation detail for an Network Firewall policy that indicates that an Availability Zone is missing the
+     *        expected Firewall Manager managed subnet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceViolation withNetworkFirewallMissingSubnetViolation(NetworkFirewallMissingSubnetViolation networkFirewallMissingSubnetViolation) {
+        setNetworkFirewallMissingSubnetViolation(networkFirewallMissingSubnetViolation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Violation detail for an Network Firewall policy that indicates that a subnet is not associated with the expected
+     * Firewall Manager managed route table.
+     * </p>
+     * 
+     * @param networkFirewallMissingExpectedRTViolation
+     *        Violation detail for an Network Firewall policy that indicates that a subnet is not associated with the
+     *        expected Firewall Manager managed route table.
+     */
+
+    public void setNetworkFirewallMissingExpectedRTViolation(NetworkFirewallMissingExpectedRTViolation networkFirewallMissingExpectedRTViolation) {
+        this.networkFirewallMissingExpectedRTViolation = networkFirewallMissingExpectedRTViolation;
+    }
+
+    /**
+     * <p>
+     * Violation detail for an Network Firewall policy that indicates that a subnet is not associated with the expected
+     * Firewall Manager managed route table.
+     * </p>
+     * 
+     * @return Violation detail for an Network Firewall policy that indicates that a subnet is not associated with the
+     *         expected Firewall Manager managed route table.
+     */
+
+    public NetworkFirewallMissingExpectedRTViolation getNetworkFirewallMissingExpectedRTViolation() {
+        return this.networkFirewallMissingExpectedRTViolation;
+    }
+
+    /**
+     * <p>
+     * Violation detail for an Network Firewall policy that indicates that a subnet is not associated with the expected
+     * Firewall Manager managed route table.
+     * </p>
+     * 
+     * @param networkFirewallMissingExpectedRTViolation
+     *        Violation detail for an Network Firewall policy that indicates that a subnet is not associated with the
+     *        expected Firewall Manager managed route table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceViolation withNetworkFirewallMissingExpectedRTViolation(NetworkFirewallMissingExpectedRTViolation networkFirewallMissingExpectedRTViolation) {
+        setNetworkFirewallMissingExpectedRTViolation(networkFirewallMissingExpectedRTViolation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Violation detail for an Network Firewall policy that indicates that a firewall policy in an individual account
+     * has been modified in a way that makes it noncompliant. For example, the individual account owner might have
+     * deleted a rule group, changed the priority of a stateless rule group, or changed a policy default action.
+     * </p>
+     * 
+     * @param networkFirewallPolicyModifiedViolation
+     *        Violation detail for an Network Firewall policy that indicates that a firewall policy in an individual
+     *        account has been modified in a way that makes it noncompliant. For example, the individual account owner
+     *        might have deleted a rule group, changed the priority of a stateless rule group, or changed a policy
+     *        default action.
+     */
+
+    public void setNetworkFirewallPolicyModifiedViolation(NetworkFirewallPolicyModifiedViolation networkFirewallPolicyModifiedViolation) {
+        this.networkFirewallPolicyModifiedViolation = networkFirewallPolicyModifiedViolation;
+    }
+
+    /**
+     * <p>
+     * Violation detail for an Network Firewall policy that indicates that a firewall policy in an individual account
+     * has been modified in a way that makes it noncompliant. For example, the individual account owner might have
+     * deleted a rule group, changed the priority of a stateless rule group, or changed a policy default action.
+     * </p>
+     * 
+     * @return Violation detail for an Network Firewall policy that indicates that a firewall policy in an individual
+     *         account has been modified in a way that makes it noncompliant. For example, the individual account owner
+     *         might have deleted a rule group, changed the priority of a stateless rule group, or changed a policy
+     *         default action.
+     */
+
+    public NetworkFirewallPolicyModifiedViolation getNetworkFirewallPolicyModifiedViolation() {
+        return this.networkFirewallPolicyModifiedViolation;
+    }
+
+    /**
+     * <p>
+     * Violation detail for an Network Firewall policy that indicates that a firewall policy in an individual account
+     * has been modified in a way that makes it noncompliant. For example, the individual account owner might have
+     * deleted a rule group, changed the priority of a stateless rule group, or changed a policy default action.
+     * </p>
+     * 
+     * @param networkFirewallPolicyModifiedViolation
+     *        Violation detail for an Network Firewall policy that indicates that a firewall policy in an individual
+     *        account has been modified in a way that makes it noncompliant. For example, the individual account owner
+     *        might have deleted a rule group, changed the priority of a stateless rule group, or changed a policy
+     *        default action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceViolation withNetworkFirewallPolicyModifiedViolation(NetworkFirewallPolicyModifiedViolation networkFirewallPolicyModifiedViolation) {
+        setNetworkFirewallPolicyModifiedViolation(networkFirewallPolicyModifiedViolation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +406,15 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
         if (getAwsEc2NetworkInterfaceViolation() != null)
             sb.append("AwsEc2NetworkInterfaceViolation: ").append(getAwsEc2NetworkInterfaceViolation()).append(",");
         if (getAwsEc2InstanceViolation() != null)
-            sb.append("AwsEc2InstanceViolation: ").append(getAwsEc2InstanceViolation());
+            sb.append("AwsEc2InstanceViolation: ").append(getAwsEc2InstanceViolation()).append(",");
+        if (getNetworkFirewallMissingFirewallViolation() != null)
+            sb.append("NetworkFirewallMissingFirewallViolation: ").append(getNetworkFirewallMissingFirewallViolation()).append(",");
+        if (getNetworkFirewallMissingSubnetViolation() != null)
+            sb.append("NetworkFirewallMissingSubnetViolation: ").append(getNetworkFirewallMissingSubnetViolation()).append(",");
+        if (getNetworkFirewallMissingExpectedRTViolation() != null)
+            sb.append("NetworkFirewallMissingExpectedRTViolation: ").append(getNetworkFirewallMissingExpectedRTViolation()).append(",");
+        if (getNetworkFirewallPolicyModifiedViolation() != null)
+            sb.append("NetworkFirewallPolicyModifiedViolation: ").append(getNetworkFirewallPolicyModifiedViolation());
         sb.append("}");
         return sb.toString();
     }
@@ -212,6 +442,26 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getAwsEc2InstanceViolation() != null && other.getAwsEc2InstanceViolation().equals(this.getAwsEc2InstanceViolation()) == false)
             return false;
+        if (other.getNetworkFirewallMissingFirewallViolation() == null ^ this.getNetworkFirewallMissingFirewallViolation() == null)
+            return false;
+        if (other.getNetworkFirewallMissingFirewallViolation() != null
+                && other.getNetworkFirewallMissingFirewallViolation().equals(this.getNetworkFirewallMissingFirewallViolation()) == false)
+            return false;
+        if (other.getNetworkFirewallMissingSubnetViolation() == null ^ this.getNetworkFirewallMissingSubnetViolation() == null)
+            return false;
+        if (other.getNetworkFirewallMissingSubnetViolation() != null
+                && other.getNetworkFirewallMissingSubnetViolation().equals(this.getNetworkFirewallMissingSubnetViolation()) == false)
+            return false;
+        if (other.getNetworkFirewallMissingExpectedRTViolation() == null ^ this.getNetworkFirewallMissingExpectedRTViolation() == null)
+            return false;
+        if (other.getNetworkFirewallMissingExpectedRTViolation() != null
+                && other.getNetworkFirewallMissingExpectedRTViolation().equals(this.getNetworkFirewallMissingExpectedRTViolation()) == false)
+            return false;
+        if (other.getNetworkFirewallPolicyModifiedViolation() == null ^ this.getNetworkFirewallPolicyModifiedViolation() == null)
+            return false;
+        if (other.getNetworkFirewallPolicyModifiedViolation() != null
+                && other.getNetworkFirewallPolicyModifiedViolation().equals(this.getNetworkFirewallPolicyModifiedViolation()) == false)
+            return false;
         return true;
     }
 
@@ -223,6 +473,11 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getAwsVPCSecurityGroupViolation() == null) ? 0 : getAwsVPCSecurityGroupViolation().hashCode());
         hashCode = prime * hashCode + ((getAwsEc2NetworkInterfaceViolation() == null) ? 0 : getAwsEc2NetworkInterfaceViolation().hashCode());
         hashCode = prime * hashCode + ((getAwsEc2InstanceViolation() == null) ? 0 : getAwsEc2InstanceViolation().hashCode());
+        hashCode = prime * hashCode + ((getNetworkFirewallMissingFirewallViolation() == null) ? 0 : getNetworkFirewallMissingFirewallViolation().hashCode());
+        hashCode = prime * hashCode + ((getNetworkFirewallMissingSubnetViolation() == null) ? 0 : getNetworkFirewallMissingSubnetViolation().hashCode());
+        hashCode = prime * hashCode
+                + ((getNetworkFirewallMissingExpectedRTViolation() == null) ? 0 : getNetworkFirewallMissingExpectedRTViolation().hashCode());
+        hashCode = prime * hashCode + ((getNetworkFirewallPolicyModifiedViolation() == null) ? 0 : getNetworkFirewallPolicyModifiedViolation().hashCode());
         return hashCode;
     }
 

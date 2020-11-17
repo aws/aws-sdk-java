@@ -48,7 +48,17 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public CreateUserHierarchyGroupResult createUserHierarchyGroup(CreateUserHierarchyGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteUserResult deleteUser(DeleteUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteUserHierarchyGroupResult deleteUserHierarchyGroup(DeleteUserHierarchyGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -239,6 +249,16 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public UpdateUserHierarchyResult updateUserHierarchy(UpdateUserHierarchyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateUserHierarchyGroupNameResult updateUserHierarchyGroupName(UpdateUserHierarchyGroupNameRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateUserHierarchyStructureResult updateUserHierarchyStructure(UpdateUserHierarchyStructureRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

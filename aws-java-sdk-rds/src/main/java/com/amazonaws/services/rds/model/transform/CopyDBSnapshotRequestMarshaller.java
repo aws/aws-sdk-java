@@ -81,6 +81,10 @@ public class CopyDBSnapshotRequestMarshaller implements Marshaller<Request<CopyD
             request.addParameter("OptionGroupName", StringUtils.fromString(copyDBSnapshotRequest.getOptionGroupName()));
         }
 
+        if (copyDBSnapshotRequest.getTargetCustomAvailabilityZone() != null) {
+            request.addParameter("TargetCustomAvailabilityZone", StringUtils.fromString(copyDBSnapshotRequest.getTargetCustomAvailabilityZone()));
+        }
+
         if (copyDBSnapshotRequest.getSourceRegion() != null) {
             request.addParameter("SourceRegion", StringUtils.fromString(copyDBSnapshotRequest.getSourceRegion()));
         }

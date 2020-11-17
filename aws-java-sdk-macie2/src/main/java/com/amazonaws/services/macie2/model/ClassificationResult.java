@@ -35,8 +35,8 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
      * includes location data for a maximum of 15 occurrences of sensitive data.
      * </p>
      * <p>
-     * This value can help you to determine whether to investigate additional occurrences of sensitive data in an
-     * object. You can do this by referring to the corresponding sensitive data discovery result for the finding
+     * This value can help you determine whether to investigate additional occurrences of sensitive data in an object.
+     * You can do this by referring to the corresponding sensitive data discovery result for the finding
      * (ClassificationDetails.detailedResultsLocation).
      * </p>
      */
@@ -80,8 +80,8 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
      * includes location data for a maximum of 15 occurrences of sensitive data.
      * </p>
      * <p>
-     * This value can help you to determine whether to investigate additional occurrences of sensitive data in an
-     * object. You can do this by referring to the corresponding sensitive data discovery result for the finding
+     * This value can help you determine whether to investigate additional occurrences of sensitive data in an object.
+     * You can do this by referring to the corresponding sensitive data discovery result for the finding
      * (ClassificationDetails.detailedResultsLocation).
      * </p>
      * 
@@ -89,7 +89,7 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
      *        Specifies whether Amazon Macie detected additional occurrences of sensitive data in the S3 object. A
      *        finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
      *        <p>
-     *        This value can help you to determine whether to investigate additional occurrences of sensitive data in an
+     *        This value can help you determine whether to investigate additional occurrences of sensitive data in an
      *        object. You can do this by referring to the corresponding sensitive data discovery result for the finding
      *        (ClassificationDetails.detailedResultsLocation).
      */
@@ -104,17 +104,17 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
      * includes location data for a maximum of 15 occurrences of sensitive data.
      * </p>
      * <p>
-     * This value can help you to determine whether to investigate additional occurrences of sensitive data in an
-     * object. You can do this by referring to the corresponding sensitive data discovery result for the finding
+     * This value can help you determine whether to investigate additional occurrences of sensitive data in an object.
+     * You can do this by referring to the corresponding sensitive data discovery result for the finding
      * (ClassificationDetails.detailedResultsLocation).
      * </p>
      * 
      * @return Specifies whether Amazon Macie detected additional occurrences of sensitive data in the S3 object. A
      *         finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
      *         <p>
-     *         This value can help you to determine whether to investigate additional occurrences of sensitive data in
-     *         an object. You can do this by referring to the corresponding sensitive data discovery result for the
-     *         finding (ClassificationDetails.detailedResultsLocation).
+     *         This value can help you determine whether to investigate additional occurrences of sensitive data in an
+     *         object. You can do this by referring to the corresponding sensitive data discovery result for the finding
+     *         (ClassificationDetails.detailedResultsLocation).
      */
 
     public Boolean getAdditionalOccurrences() {
@@ -127,8 +127,8 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
      * includes location data for a maximum of 15 occurrences of sensitive data.
      * </p>
      * <p>
-     * This value can help you to determine whether to investigate additional occurrences of sensitive data in an
-     * object. You can do this by referring to the corresponding sensitive data discovery result for the finding
+     * This value can help you determine whether to investigate additional occurrences of sensitive data in an object.
+     * You can do this by referring to the corresponding sensitive data discovery result for the finding
      * (ClassificationDetails.detailedResultsLocation).
      * </p>
      * 
@@ -136,7 +136,7 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
      *        Specifies whether Amazon Macie detected additional occurrences of sensitive data in the S3 object. A
      *        finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
      *        <p>
-     *        This value can help you to determine whether to investigate additional occurrences of sensitive data in an
+     *        This value can help you determine whether to investigate additional occurrences of sensitive data in an
      *        object. You can do this by referring to the corresponding sensitive data discovery result for the finding
      *        (ClassificationDetails.detailedResultsLocation).
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -153,17 +153,17 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
      * includes location data for a maximum of 15 occurrences of sensitive data.
      * </p>
      * <p>
-     * This value can help you to determine whether to investigate additional occurrences of sensitive data in an
-     * object. You can do this by referring to the corresponding sensitive data discovery result for the finding
+     * This value can help you determine whether to investigate additional occurrences of sensitive data in an object.
+     * You can do this by referring to the corresponding sensitive data discovery result for the finding
      * (ClassificationDetails.detailedResultsLocation).
      * </p>
      * 
      * @return Specifies whether Amazon Macie detected additional occurrences of sensitive data in the S3 object. A
      *         finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
      *         <p>
-     *         This value can help you to determine whether to investigate additional occurrences of sensitive data in
-     *         an object. You can do this by referring to the corresponding sensitive data discovery result for the
-     *         finding (ClassificationDetails.detailedResultsLocation).
+     *         This value can help you determine whether to investigate additional occurrences of sensitive data in an
+     *         object. You can do this by referring to the corresponding sensitive data discovery result for the finding
+     *         (ClassificationDetails.detailedResultsLocation).
      */
 
     public Boolean isAdditionalOccurrences() {

@@ -104,6 +104,11 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public CreateMeetingDialOutResult createMeetingDialOut(CreateMeetingDialOutRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateMeetingWithAttendeesResult createMeetingWithAttendees(CreateMeetingWithAttendeesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -125,6 +130,21 @@ public class AbstractAmazonChime implements AmazonChime {
 
     @Override
     public CreateRoomMembershipResult createRoomMembership(CreateRoomMembershipRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateSipMediaApplicationResult createSipMediaApplication(CreateSipMediaApplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateSipMediaApplicationCallResult createSipMediaApplicationCall(CreateSipMediaApplicationCallRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateSipRuleResult createSipRule(CreateSipRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -180,6 +200,16 @@ public class AbstractAmazonChime implements AmazonChime {
 
     @Override
     public DeleteRoomMembershipResult deleteRoomMembership(DeleteRoomMembershipRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteSipMediaApplicationResult deleteSipMediaApplication(DeleteSipMediaApplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteSipRuleResult deleteSipRule(DeleteSipRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -312,6 +342,21 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public GetSipMediaApplicationResult getSipMediaApplication(GetSipMediaApplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetSipMediaApplicationLoggingConfigurationResult getSipMediaApplicationLoggingConfiguration(GetSipMediaApplicationLoggingConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetSipRuleResult getSipRule(GetSipRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetUserResult getUser(GetUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -428,6 +473,16 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public ListSipMediaApplicationsResult listSipMediaApplications(ListSipMediaApplicationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListSipRulesResult listSipRules(ListSipRulesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -464,6 +519,11 @@ public class AbstractAmazonChime implements AmazonChime {
 
     @Override
     public PutRetentionSettingsResult putRetentionSettings(PutRetentionSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutSipMediaApplicationLoggingConfigurationResult putSipMediaApplicationLoggingConfiguration(PutSipMediaApplicationLoggingConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -605,6 +665,16 @@ public class AbstractAmazonChime implements AmazonChime {
 
     @Override
     public UpdateRoomMembershipResult updateRoomMembership(UpdateRoomMembershipRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateSipMediaApplicationResult updateSipMediaApplication(UpdateSipMediaApplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateSipRuleResult updateSipRule(UpdateSipRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

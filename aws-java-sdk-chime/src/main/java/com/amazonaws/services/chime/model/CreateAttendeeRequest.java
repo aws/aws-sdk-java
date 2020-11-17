@@ -33,7 +33,9 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
     private String meetingId;
     /**
      * <p>
-     * The Amazon Chime SDK external user ID. Links the attendee to an identity managed by a builder application.
+     * The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a
+     * builder application. If you create an attendee with the same external user id, the service returns the existing
+     * record.
      * </p>
      */
     private String externalUserId;
@@ -86,11 +88,15 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Chime SDK external user ID. Links the attendee to an identity managed by a builder application.
+     * The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a
+     * builder application. If you create an attendee with the same external user id, the service returns the existing
+     * record.
      * </p>
      * 
      * @param externalUserId
-     *        The Amazon Chime SDK external user ID. Links the attendee to an identity managed by a builder application.
+     *        The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by
+     *        a builder application. If you create an attendee with the same external user id, the service returns the
+     *        existing record.
      */
 
     public void setExternalUserId(String externalUserId) {
@@ -99,11 +105,14 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Chime SDK external user ID. Links the attendee to an identity managed by a builder application.
+     * The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a
+     * builder application. If you create an attendee with the same external user id, the service returns the existing
+     * record.
      * </p>
      * 
-     * @return The Amazon Chime SDK external user ID. Links the attendee to an identity managed by a builder
-     *         application.
+     * @return The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by
+     *         a builder application. If you create an attendee with the same external user id, the service returns the
+     *         existing record.
      */
 
     public String getExternalUserId() {
@@ -112,11 +121,15 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Chime SDK external user ID. Links the attendee to an identity managed by a builder application.
+     * The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a
+     * builder application. If you create an attendee with the same external user id, the service returns the existing
+     * record.
      * </p>
      * 
      * @param externalUserId
-     *        The Amazon Chime SDK external user ID. Links the attendee to an identity managed by a builder application.
+     *        The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by
+     *        a builder application. If you create an attendee with the same external user id, the service returns the
+     *        existing record.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

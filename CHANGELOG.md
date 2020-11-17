@@ -1,3 +1,32 @@
+# __1.11.903__ __2020-11-17__
+## __AWS Network Firewall__
+  - ### Features
+    - (New Service) AWS Network Firewall is a managed network layer firewall service that makes it easy to secure your virtual private cloud (VPC) networks and block malicious traffic.
+
+## __AWS SDK for Java__
+  - ### Bugfixes
+    - Upgraded Jackson-databind dependency to 2.6.7.4
+
+## __Amazon Chime__
+  - ### Features
+    - This release adds CRUD APIs for Amazon Chime SipMediaApplications and SipRules. It also adds the API for creating outbound PSTN calls for Amazon Chime meetings.
+
+## __Amazon Connect Service__
+  - ### Features
+    - This release adds support for user hierarchy group and user hierarchy structure. For details, see the Release Notes in the Amazon Connect Administrator Guide.
+
+## __Amazon Macie 2__
+  - ### Features
+    - The Amazon Macie API now has a lastRunErrorStatus property to indicate if account- or bucket-level errors occurred during the run of a one-time classification job or the latest run of a recurring job.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Support copy-db-snapshot in the one region on cross clusters and local cluster for RDSonVmware. Add target-custom-availability-zone parameter to specify where a snapshot should be copied.
+
+## __Firewall Management Service__
+  - ### Features
+    - Added Firewall Manager policy support for AWS Network Firewall resources.
+
 # __1.11.902__ __2020-11-16__
 ## __AWS CodePipeline__
   - ### Features
@@ -22,6 +51,10 @@
 ## __Amazon QuickSight__
   - ### Features
     - Adding new parameters for dashboard persistence
+
+## __Amazon SNS__
+  - ### Bugfixes
+    - Fix `SnsMessageManager` to use proper certificate name for HKG and BAH region.
 
 ## __Amazon SageMaker Service__
   - ### Features

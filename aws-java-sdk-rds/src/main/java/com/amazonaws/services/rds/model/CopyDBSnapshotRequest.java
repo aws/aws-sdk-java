@@ -206,6 +206,15 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String optionGroupName;
+    /**
+     * <p>
+     * The external custom Availability Zone (CAZ) identifier for the target CAZ.
+     * </p>
+     * <p>
+     * Example: <code>rds-caz-aiqhTgQv</code>.
+     * </p>
+     */
+    private String targetCustomAvailabilityZone;
     /** The region where the source snapshot is located. */
     private String sourceRegion;
 
@@ -1374,6 +1383,61 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The external custom Availability Zone (CAZ) identifier for the target CAZ.
+     * </p>
+     * <p>
+     * Example: <code>rds-caz-aiqhTgQv</code>.
+     * </p>
+     * 
+     * @param targetCustomAvailabilityZone
+     *        The external custom Availability Zone (CAZ) identifier for the target CAZ.</p>
+     *        <p>
+     *        Example: <code>rds-caz-aiqhTgQv</code>.
+     */
+
+    public void setTargetCustomAvailabilityZone(String targetCustomAvailabilityZone) {
+        this.targetCustomAvailabilityZone = targetCustomAvailabilityZone;
+    }
+
+    /**
+     * <p>
+     * The external custom Availability Zone (CAZ) identifier for the target CAZ.
+     * </p>
+     * <p>
+     * Example: <code>rds-caz-aiqhTgQv</code>.
+     * </p>
+     * 
+     * @return The external custom Availability Zone (CAZ) identifier for the target CAZ.</p>
+     *         <p>
+     *         Example: <code>rds-caz-aiqhTgQv</code>.
+     */
+
+    public String getTargetCustomAvailabilityZone() {
+        return this.targetCustomAvailabilityZone;
+    }
+
+    /**
+     * <p>
+     * The external custom Availability Zone (CAZ) identifier for the target CAZ.
+     * </p>
+     * <p>
+     * Example: <code>rds-caz-aiqhTgQv</code>.
+     * </p>
+     * 
+     * @param targetCustomAvailabilityZone
+     *        The external custom Availability Zone (CAZ) identifier for the target CAZ.</p>
+     *        <p>
+     *        Example: <code>rds-caz-aiqhTgQv</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CopyDBSnapshotRequest withTargetCustomAvailabilityZone(String targetCustomAvailabilityZone) {
+        setTargetCustomAvailabilityZone(targetCustomAvailabilityZone);
+        return this;
+    }
+
+    /**
      * The region where the source snapshot is located.
      * 
      * @param sourceRegion
@@ -1433,6 +1497,8 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("PreSignedUrl: ").append(getPreSignedUrl()).append(",");
         if (getOptionGroupName() != null)
             sb.append("OptionGroupName: ").append(getOptionGroupName()).append(",");
+        if (getTargetCustomAvailabilityZone() != null)
+            sb.append("TargetCustomAvailabilityZone: ").append(getTargetCustomAvailabilityZone()).append(",");
         if (getSourceRegion() != null)
             sb.append("SourceRegion: ").append(getSourceRegion());
         sb.append("}");
@@ -1477,6 +1543,10 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getOptionGroupName() != null && other.getOptionGroupName().equals(this.getOptionGroupName()) == false)
             return false;
+        if (other.getTargetCustomAvailabilityZone() == null ^ this.getTargetCustomAvailabilityZone() == null)
+            return false;
+        if (other.getTargetCustomAvailabilityZone() != null && other.getTargetCustomAvailabilityZone().equals(this.getTargetCustomAvailabilityZone()) == false)
+            return false;
         if (other.getSourceRegion() == null ^ this.getSourceRegion() == null)
             return false;
         if (other.getSourceRegion() != null && other.getSourceRegion().equals(this.getSourceRegion()) == false)
@@ -1496,6 +1566,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getCopyTags() == null) ? 0 : getCopyTags().hashCode());
         hashCode = prime * hashCode + ((getPreSignedUrl() == null) ? 0 : getPreSignedUrl().hashCode());
         hashCode = prime * hashCode + ((getOptionGroupName() == null) ? 0 : getOptionGroupName().hashCode());
+        hashCode = prime * hashCode + ((getTargetCustomAvailabilityZone() == null) ? 0 : getTargetCustomAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode());
         return hashCode;
     }

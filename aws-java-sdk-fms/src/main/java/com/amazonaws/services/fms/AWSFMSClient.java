@@ -57,6 +57,11 @@ import com.amazonaws.services.fms.model.transform.*;
  * Manager features, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html">AWS
  * Firewall Manager Developer Guide</a>.
  * </p>
+ * <p>
+ * Some API actions require explicit resource permissions. For information, see the developer guide topic <a
+ * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall Manager required
+ * permissions for API actions</a>.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -368,6 +373,13 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      *         Organizations before you can access it.
      * @throws InternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws InvalidInputException
+     *         The parameters of the request were invalid.
+     * @throws LimitExceededException
+     *         The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects
+     *         that you can create for an AWS account. For more information, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a>
+     *         in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSFMS.DeletePolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeletePolicy" target="_top">AWS API
      *      Documentation</a>
@@ -681,7 +693,10 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      * and out of compliance with the specified policy. Resources are considered noncompliant for AWS WAF and Shield
      * Advanced policies if the specified policy has not been applied to them. Resources are considered noncompliant for
      * security group policies if they are in scope of the policy, they violate one or more of the policy rules, and
-     * remediation is disabled or not possible.
+     * remediation is disabled or not possible. Resources are considered noncompliant for Network Firewall policies if a
+     * firewall is missing in the VPC, if the firewall endpoint isn't set up in an expected Availability Zone and
+     * subnet, if a subnet created by the Firewall Manager doesn't have the expected route table, and for modifications
+     * to a firewall policy that violate the Firewall Manager policy's rules.
      * </p>
      * 
      * @param getComplianceDetailRequest
@@ -1528,6 +1543,12 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      * Designates the IAM role and Amazon Simple Notification Service (SNS) topic that AWS Firewall Manager uses to
      * record SNS logs.
      * </p>
+     * <p>
+     * To perform this action outside of the console, you must configure the SNS topic to allow the Firewall Manager
+     * role <code>AWSServiceRoleForFMS</code> to publish SNS logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall Manager
+     * required permissions for API actions</a> in the <i>AWS Firewall Manager Developer Guide</i>.
+     * </p>
      * 
      * @param putNotificationChannelRequest
      * @return Result of the PutNotificationChannel operation returned by the service.
@@ -1599,11 +1620,6 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      * <ul>
      * <li>
      * <p>
-     * A Shield Advanced policy, which applies Shield Advanced protection to specified accounts and resources
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * An AWS WAF policy (type WAFV2), which defines rule groups to run first in the corresponding AWS WAF web ACL and
      * rule groups to run last in the web ACL.
      * </p>
@@ -1615,7 +1631,17 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      * </li>
      * <li>
      * <p>
+     * A Shield Advanced policy, which applies Shield Advanced protection to specified accounts and resources.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * A security group policy, which manages VPC security groups across your AWS organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An AWS Network Firewall policy, which provides firewall rules to filter network traffic in specified Amazon VPCs.
      * </p>
      * </li>
      * </ul>

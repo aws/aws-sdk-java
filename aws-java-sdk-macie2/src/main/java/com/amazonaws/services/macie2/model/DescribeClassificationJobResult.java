@@ -128,6 +128,13 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
     private String jobType;
     /**
      * <p>
+     * Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this
+     * value indicates the error status of the job's most recent run.
+     * </p>
+     */
+    private LastRunErrorStatus lastRunErrorStatus;
+    /**
+     * <p>
      * The date and time, in UTC and extended ISO 8601 format, when the job last ran.
      * </p>
      */
@@ -1011,6 +1018,52 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
+     * Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this
+     * value indicates the error status of the job's most recent run.
+     * </p>
+     * 
+     * @param lastRunErrorStatus
+     *        Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring
+     *        job, this value indicates the error status of the job's most recent run.
+     */
+
+    public void setLastRunErrorStatus(LastRunErrorStatus lastRunErrorStatus) {
+        this.lastRunErrorStatus = lastRunErrorStatus;
+    }
+
+    /**
+     * <p>
+     * Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this
+     * value indicates the error status of the job's most recent run.
+     * </p>
+     * 
+     * @return Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring
+     *         job, this value indicates the error status of the job's most recent run.
+     */
+
+    public LastRunErrorStatus getLastRunErrorStatus() {
+        return this.lastRunErrorStatus;
+    }
+
+    /**
+     * <p>
+     * Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this
+     * value indicates the error status of the job's most recent run.
+     * </p>
+     * 
+     * @param lastRunErrorStatus
+     *        Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring
+     *        job, this value indicates the error status of the job's most recent run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeClassificationJobResult withLastRunErrorStatus(LastRunErrorStatus lastRunErrorStatus) {
+        setLastRunErrorStatus(lastRunErrorStatus);
+        return this;
+    }
+
+    /**
+     * <p>
      * The date and time, in UTC and extended ISO 8601 format, when the job last ran.
      * </p>
      * 
@@ -1403,6 +1456,8 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
             sb.append("JobStatus: ").append(getJobStatus()).append(",");
         if (getJobType() != null)
             sb.append("JobType: ").append(getJobType()).append(",");
+        if (getLastRunErrorStatus() != null)
+            sb.append("LastRunErrorStatus: ").append(getLastRunErrorStatus()).append(",");
         if (getLastRunTime() != null)
             sb.append("LastRunTime: ").append(getLastRunTime()).append(",");
         if (getName() != null)
@@ -1469,6 +1524,10 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getJobType() != null && other.getJobType().equals(this.getJobType()) == false)
             return false;
+        if (other.getLastRunErrorStatus() == null ^ this.getLastRunErrorStatus() == null)
+            return false;
+        if (other.getLastRunErrorStatus() != null && other.getLastRunErrorStatus().equals(this.getLastRunErrorStatus()) == false)
+            return false;
         if (other.getLastRunTime() == null ^ this.getLastRunTime() == null)
             return false;
         if (other.getLastRunTime() != null && other.getLastRunTime().equals(this.getLastRunTime()) == false)
@@ -1518,6 +1577,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
         hashCode = prime * hashCode + ((getJobStatus() == null) ? 0 : getJobStatus().hashCode());
         hashCode = prime * hashCode + ((getJobType() == null) ? 0 : getJobType().hashCode());
+        hashCode = prime * hashCode + ((getLastRunErrorStatus() == null) ? 0 : getLastRunErrorStatus().hashCode());
         hashCode = prime * hashCode + ((getLastRunTime() == null) ? 0 : getLastRunTime().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getS3JobDefinition() == null) ? 0 : getS3JobDefinition().hashCode());

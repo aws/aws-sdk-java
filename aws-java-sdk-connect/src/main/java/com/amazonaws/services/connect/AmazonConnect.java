@@ -179,6 +179,33 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * Creates a new user hierarchy group.
+     * </p>
+     * 
+     * @param createUserHierarchyGroupRequest
+     * @return Result of the CreateUserHierarchyGroup operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws DuplicateResourceException
+     *         A resource with the specified name already exists.
+     * @throws LimitExceededException
+     *         The allowed limit for the resource has been exceeded.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.CreateUserHierarchyGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUserHierarchyGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateUserHierarchyGroupResult createUserHierarchyGroup(CreateUserHierarchyGroupRequest createUserHierarchyGroupRequest);
+
+    /**
+     * <p>
      * Deletes a user account from the specified Amazon Connect instance.
      * </p>
      * <p>
@@ -204,6 +231,32 @@ public interface AmazonConnect {
      *      Documentation</a>
      */
     DeleteUserResult deleteUser(DeleteUserRequest deleteUserRequest);
+
+    /**
+     * <p>
+     * Deletes an existing user hierarchy group. It must not be associated with any agents or have any active child
+     * groups.
+     * </p>
+     * 
+     * @param deleteUserHierarchyGroupRequest
+     * @return Result of the DeleteUserHierarchyGroup operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ResourceInUseException
+     *         That resource is already in use. Please try another.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.DeleteUserHierarchyGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUserHierarchyGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteUserHierarchyGroupResult deleteUserHierarchyGroup(DeleteUserHierarchyGroupRequest deleteUserHierarchyGroupRequest);
 
     /**
      * <p>
@@ -1047,11 +1100,6 @@ public interface AmazonConnect {
      * Contact attributes are available in Amazon Connect for 24 months, and are then deleted.
      * </p>
      * <p>
-     * This operation is also available in the Amazon Connect Flow language. See <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-actions-updatecontactattributes.html"
-     * >UpdateContactAttributes</a>.
-     * </p>
-     * <p>
      * <b>Important:</b> You cannot use the operation to update attributes for contacts that occurred prior to the
      * release of the API, September 12, 2018. You can update attributes only for contacts that started after the
      * release of the API. If you attempt to update attributes for a contact that occurred prior to the release of the
@@ -1107,6 +1155,10 @@ public interface AmazonConnect {
     /**
      * <p>
      * The name of the contact flow.
+     * </p>
+     * <p>
+     * You can also create and update contact flows using the <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
      * </p>
      * 
      * @param updateContactFlowNameRequest
@@ -1247,6 +1299,56 @@ public interface AmazonConnect {
      *      API Documentation</a>
      */
     UpdateUserHierarchyResult updateUserHierarchy(UpdateUserHierarchyRequest updateUserHierarchyRequest);
+
+    /**
+     * <p>
+     * Updates the name of the user hierarchy group.
+     * </p>
+     * 
+     * @param updateUserHierarchyGroupNameRequest
+     * @return Result of the UpdateUserHierarchyGroupName operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws DuplicateResourceException
+     *         A resource with the specified name already exists.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.UpdateUserHierarchyGroupName
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserHierarchyGroupName"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateUserHierarchyGroupNameResult updateUserHierarchyGroupName(UpdateUserHierarchyGroupNameRequest updateUserHierarchyGroupNameRequest);
+
+    /**
+     * <p>
+     * Updates the user hierarchy structure: add, remove, and rename user hierarchy levels.
+     * </p>
+     * 
+     * @param updateUserHierarchyStructureRequest
+     * @return Result of the UpdateUserHierarchyStructure operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ResourceInUseException
+     *         That resource is already in use. Please try another.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.UpdateUserHierarchyStructure
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserHierarchyStructure"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateUserHierarchyStructureResult updateUserHierarchyStructure(UpdateUserHierarchyStructureRequest updateUserHierarchyStructureRequest);
 
     /**
      * <p>

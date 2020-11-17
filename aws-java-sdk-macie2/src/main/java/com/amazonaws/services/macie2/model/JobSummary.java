@@ -108,6 +108,13 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
     private String jobType;
     /**
      * <p>
+     * Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this
+     * value indicates the error status of the job's most recent run.
+     * </p>
+     */
+    private LastRunErrorStatus lastRunErrorStatus;
+    /**
+     * <p>
      * The custom name of the job.
      * </p>
      */
@@ -771,6 +778,52 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this
+     * value indicates the error status of the job's most recent run.
+     * </p>
+     * 
+     * @param lastRunErrorStatus
+     *        Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring
+     *        job, this value indicates the error status of the job's most recent run.
+     */
+
+    public void setLastRunErrorStatus(LastRunErrorStatus lastRunErrorStatus) {
+        this.lastRunErrorStatus = lastRunErrorStatus;
+    }
+
+    /**
+     * <p>
+     * Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this
+     * value indicates the error status of the job's most recent run.
+     * </p>
+     * 
+     * @return Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring
+     *         job, this value indicates the error status of the job's most recent run.
+     */
+
+    public LastRunErrorStatus getLastRunErrorStatus() {
+        return this.lastRunErrorStatus;
+    }
+
+    /**
+     * <p>
+     * Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this
+     * value indicates the error status of the job's most recent run.
+     * </p>
+     * 
+     * @param lastRunErrorStatus
+     *        Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring
+     *        job, this value indicates the error status of the job's most recent run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobSummary withLastRunErrorStatus(LastRunErrorStatus lastRunErrorStatus) {
+        setLastRunErrorStatus(lastRunErrorStatus);
+        return this;
+    }
+
+    /**
+     * <p>
      * The custom name of the job.
      * </p>
      * 
@@ -880,6 +933,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
             sb.append("JobStatus: ").append(getJobStatus()).append(",");
         if (getJobType() != null)
             sb.append("JobType: ").append(getJobType()).append(",");
+        if (getLastRunErrorStatus() != null)
+            sb.append("LastRunErrorStatus: ").append(getLastRunErrorStatus()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getUserPausedDetails() != null)
@@ -918,6 +973,10 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getJobType() != null && other.getJobType().equals(this.getJobType()) == false)
             return false;
+        if (other.getLastRunErrorStatus() == null ^ this.getLastRunErrorStatus() == null)
+            return false;
+        if (other.getLastRunErrorStatus() != null && other.getLastRunErrorStatus().equals(this.getLastRunErrorStatus()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -939,6 +998,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
         hashCode = prime * hashCode + ((getJobStatus() == null) ? 0 : getJobStatus().hashCode());
         hashCode = prime * hashCode + ((getJobType() == null) ? 0 : getJobType().hashCode());
+        hashCode = prime * hashCode + ((getLastRunErrorStatus() == null) ? 0 : getLastRunErrorStatus().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getUserPausedDetails() == null) ? 0 : getUserPausedDetails().hashCode());
         return hashCode;

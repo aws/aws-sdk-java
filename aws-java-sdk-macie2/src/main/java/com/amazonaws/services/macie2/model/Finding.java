@@ -56,7 +56,8 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     private ClassificationDetails classificationDetails;
     /**
      * <p>
-     * The total number of occurrences of the finding.
+     * The total number of occurrences of the finding. For sensitive data findings, this value is always 1. All
+     * sensitive data findings are considered new (unique) because they derive from individual classification jobs.
      * </p>
      */
     private Long count;
@@ -350,11 +351,14 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of occurrences of the finding.
+     * The total number of occurrences of the finding. For sensitive data findings, this value is always 1. All
+     * sensitive data findings are considered new (unique) because they derive from individual classification jobs.
      * </p>
      * 
      * @param count
-     *        The total number of occurrences of the finding.
+     *        The total number of occurrences of the finding. For sensitive data findings, this value is always 1. All
+     *        sensitive data findings are considered new (unique) because they derive from individual classification
+     *        jobs.
      */
 
     public void setCount(Long count) {
@@ -363,10 +367,13 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of occurrences of the finding.
+     * The total number of occurrences of the finding. For sensitive data findings, this value is always 1. All
+     * sensitive data findings are considered new (unique) because they derive from individual classification jobs.
      * </p>
      * 
-     * @return The total number of occurrences of the finding.
+     * @return The total number of occurrences of the finding. For sensitive data findings, this value is always 1. All
+     *         sensitive data findings are considered new (unique) because they derive from individual classification
+     *         jobs.
      */
 
     public Long getCount() {
@@ -375,11 +382,14 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of occurrences of the finding.
+     * The total number of occurrences of the finding. For sensitive data findings, this value is always 1. All
+     * sensitive data findings are considered new (unique) because they derive from individual classification jobs.
      * </p>
      * 
      * @param count
-     *        The total number of occurrences of the finding.
+     *        The total number of occurrences of the finding. For sensitive data findings, this value is always 1. All
+     *        sensitive data findings are considered new (unique) because they derive from individual classification
+     *        jobs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

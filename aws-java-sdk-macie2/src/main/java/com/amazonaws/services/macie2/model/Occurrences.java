@@ -56,8 +56,8 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
      * position of the data relative to the beginning of the file.
      * </p>
      * <p>
-     * This value is typically null. For binary text files, Macie adds location data to a lineRanges.Range or Page
-     * object, depending on the file type.
+     * This value is typically null. For binary text files, Amazon Macie adds location data to a lineRanges.Range or
+     * Page object, depending on the file type.
      * </p>
      */
     private java.util.List<Range> offsetRanges;
@@ -72,8 +72,8 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array of objects, one for each occurrence of sensitive data in an Apache Avro object container or Apache
-     * Parquet file. Each object specifies the field or record that contains the data. This value is null for all other
-     * types of files.
+     * Parquet file. Each object specifies the record index and the path to the field in the record that contains the
+     * data. This value is null for all other types of files.
      * </p>
      */
     private java.util.List<Record> records;
@@ -292,15 +292,15 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
      * position of the data relative to the beginning of the file.
      * </p>
      * <p>
-     * This value is typically null. For binary text files, Macie adds location data to a lineRanges.Range or Page
-     * object, depending on the file type.
+     * This value is typically null. For binary text files, Amazon Macie adds location data to a lineRanges.Range or
+     * Page object, depending on the file type.
      * </p>
      * 
      * @return An array of objects, one for each occurrence of sensitive data in a binary text file. Each object
      *         specifies the position of the data relative to the beginning of the file.</p>
      *         <p>
-     *         This value is typically null. For binary text files, Macie adds location data to a lineRanges.Range or
-     *         Page object, depending on the file type.
+     *         This value is typically null. For binary text files, Amazon Macie adds location data to a
+     *         lineRanges.Range or Page object, depending on the file type.
      */
 
     public java.util.List<Range> getOffsetRanges() {
@@ -313,16 +313,16 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
      * position of the data relative to the beginning of the file.
      * </p>
      * <p>
-     * This value is typically null. For binary text files, Macie adds location data to a lineRanges.Range or Page
-     * object, depending on the file type.
+     * This value is typically null. For binary text files, Amazon Macie adds location data to a lineRanges.Range or
+     * Page object, depending on the file type.
      * </p>
      * 
      * @param offsetRanges
      *        An array of objects, one for each occurrence of sensitive data in a binary text file. Each object
      *        specifies the position of the data relative to the beginning of the file.</p>
      *        <p>
-     *        This value is typically null. For binary text files, Macie adds location data to a lineRanges.Range or
-     *        Page object, depending on the file type.
+     *        This value is typically null. For binary text files, Amazon Macie adds location data to a lineRanges.Range
+     *        or Page object, depending on the file type.
      */
 
     public void setOffsetRanges(java.util.Collection<Range> offsetRanges) {
@@ -340,8 +340,8 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
      * position of the data relative to the beginning of the file.
      * </p>
      * <p>
-     * This value is typically null. For binary text files, Macie adds location data to a lineRanges.Range or Page
-     * object, depending on the file type.
+     * This value is typically null. For binary text files, Amazon Macie adds location data to a lineRanges.Range or
+     * Page object, depending on the file type.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -353,8 +353,8 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
      *        An array of objects, one for each occurrence of sensitive data in a binary text file. Each object
      *        specifies the position of the data relative to the beginning of the file.</p>
      *        <p>
-     *        This value is typically null. For binary text files, Macie adds location data to a lineRanges.Range or
-     *        Page object, depending on the file type.
+     *        This value is typically null. For binary text files, Amazon Macie adds location data to a lineRanges.Range
+     *        or Page object, depending on the file type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -374,16 +374,16 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
      * position of the data relative to the beginning of the file.
      * </p>
      * <p>
-     * This value is typically null. For binary text files, Macie adds location data to a lineRanges.Range or Page
-     * object, depending on the file type.
+     * This value is typically null. For binary text files, Amazon Macie adds location data to a lineRanges.Range or
+     * Page object, depending on the file type.
      * </p>
      * 
      * @param offsetRanges
      *        An array of objects, one for each occurrence of sensitive data in a binary text file. Each object
      *        specifies the position of the data relative to the beginning of the file.</p>
      *        <p>
-     *        This value is typically null. For binary text files, Macie adds location data to a lineRanges.Range or
-     *        Page object, depending on the file type.
+     *        This value is typically null. For binary text files, Amazon Macie adds location data to a lineRanges.Range
+     *        or Page object, depending on the file type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -481,13 +481,13 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array of objects, one for each occurrence of sensitive data in an Apache Avro object container or Apache
-     * Parquet file. Each object specifies the field or record that contains the data. This value is null for all other
-     * types of files.
+     * Parquet file. Each object specifies the record index and the path to the field in the record that contains the
+     * data. This value is null for all other types of files.
      * </p>
      * 
      * @return An array of objects, one for each occurrence of sensitive data in an Apache Avro object container or
-     *         Apache Parquet file. Each object specifies the field or record that contains the data. This value is null
-     *         for all other types of files.
+     *         Apache Parquet file. Each object specifies the record index and the path to the field in the record that
+     *         contains the data. This value is null for all other types of files.
      */
 
     public java.util.List<Record> getRecords() {
@@ -497,14 +497,14 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array of objects, one for each occurrence of sensitive data in an Apache Avro object container or Apache
-     * Parquet file. Each object specifies the field or record that contains the data. This value is null for all other
-     * types of files.
+     * Parquet file. Each object specifies the record index and the path to the field in the record that contains the
+     * data. This value is null for all other types of files.
      * </p>
      * 
      * @param records
      *        An array of objects, one for each occurrence of sensitive data in an Apache Avro object container or
-     *        Apache Parquet file. Each object specifies the field or record that contains the data. This value is null
-     *        for all other types of files.
+     *        Apache Parquet file. Each object specifies the record index and the path to the field in the record that
+     *        contains the data. This value is null for all other types of files.
      */
 
     public void setRecords(java.util.Collection<Record> records) {
@@ -519,8 +519,8 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array of objects, one for each occurrence of sensitive data in an Apache Avro object container or Apache
-     * Parquet file. Each object specifies the field or record that contains the data. This value is null for all other
-     * types of files.
+     * Parquet file. Each object specifies the record index and the path to the field in the record that contains the
+     * data. This value is null for all other types of files.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -530,8 +530,8 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param records
      *        An array of objects, one for each occurrence of sensitive data in an Apache Avro object container or
-     *        Apache Parquet file. Each object specifies the field or record that contains the data. This value is null
-     *        for all other types of files.
+     *        Apache Parquet file. Each object specifies the record index and the path to the field in the record that
+     *        contains the data. This value is null for all other types of files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -548,14 +548,14 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array of objects, one for each occurrence of sensitive data in an Apache Avro object container or Apache
-     * Parquet file. Each object specifies the field or record that contains the data. This value is null for all other
-     * types of files.
+     * Parquet file. Each object specifies the record index and the path to the field in the record that contains the
+     * data. This value is null for all other types of files.
      * </p>
      * 
      * @param records
      *        An array of objects, one for each occurrence of sensitive data in an Apache Avro object container or
-     *        Apache Parquet file. Each object specifies the field or record that contains the data. This value is null
-     *        for all other types of files.
+     *        Apache Parquet file. Each object specifies the record index and the path to the field in the record that
+     *        contains the data. This value is null for all other types of files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

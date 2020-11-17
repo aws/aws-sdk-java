@@ -36,7 +36,7 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
     private java.util.List<String> eq;
     /**
      * <p>
-     * A condition that requires an array field of a finding to exactly match the specified property values. You can use
+     * A condition that requires an array field on a finding to exactly match the specified property values. You can use
      * this operator with the following properties: customDataIdentifiers.detections.arn,
      * customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
      * resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key,
@@ -147,14 +147,14 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A condition that requires an array field of a finding to exactly match the specified property values. You can use
+     * A condition that requires an array field on a finding to exactly match the specified property values. You can use
      * this operator with the following properties: customDataIdentifiers.detections.arn,
      * customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
      * resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key,
      * resourcesAffected.s3Object.tags.value, sensitiveData.category, and sensitiveData.detections.type.
      * </p>
      * 
-     * @return A condition that requires an array field of a finding to exactly match the specified property values. You
+     * @return A condition that requires an array field on a finding to exactly match the specified property values. You
      *         can use this operator with the following properties: customDataIdentifiers.detections.arn,
      *         customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
      *         resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key,
@@ -167,7 +167,7 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A condition that requires an array field of a finding to exactly match the specified property values. You can use
+     * A condition that requires an array field on a finding to exactly match the specified property values. You can use
      * this operator with the following properties: customDataIdentifiers.detections.arn,
      * customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
      * resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key,
@@ -175,7 +175,7 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
      * </p>
      * 
      * @param eqExactMatch
-     *        A condition that requires an array field of a finding to exactly match the specified property values. You
+     *        A condition that requires an array field on a finding to exactly match the specified property values. You
      *        can use this operator with the following properties: customDataIdentifiers.detections.arn,
      *        customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
      *        resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key,
@@ -193,7 +193,7 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A condition that requires an array field of a finding to exactly match the specified property values. You can use
+     * A condition that requires an array field on a finding to exactly match the specified property values. You can use
      * this operator with the following properties: customDataIdentifiers.detections.arn,
      * customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
      * resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key,
@@ -206,7 +206,7 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
      * </p>
      * 
      * @param eqExactMatch
-     *        A condition that requires an array field of a finding to exactly match the specified property values. You
+     *        A condition that requires an array field on a finding to exactly match the specified property values. You
      *        can use this operator with the following properties: customDataIdentifiers.detections.arn,
      *        customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
      *        resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key,
@@ -226,7 +226,7 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A condition that requires an array field of a finding to exactly match the specified property values. You can use
+     * A condition that requires an array field on a finding to exactly match the specified property values. You can use
      * this operator with the following properties: customDataIdentifiers.detections.arn,
      * customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
      * resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key,
@@ -234,7 +234,7 @@ public class CriterionAdditionalProperties implements Serializable, Cloneable, S
      * </p>
      * 
      * @param eqExactMatch
-     *        A condition that requires an array field of a finding to exactly match the specified property values. You
+     *        A condition that requires an array field on a finding to exactly match the specified property values. You
      *        can use this operator with the following properties: customDataIdentifiers.detections.arn,
      *        customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key,
      *        resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key,

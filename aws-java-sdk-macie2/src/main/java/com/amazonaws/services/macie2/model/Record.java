@@ -30,8 +30,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path, as a JSONPath expression, to the field (in an Apache Avro object container) or record (in an Apache
-     * Parquet file) that contains the data.
+     * The path, as a JSONPath expression, to the field in the record that contains the data.
      * </p>
      * <p>
      * If the name of an element exceeds 20 characters, Amazon Macie truncates the name by removing characters from the
@@ -49,8 +48,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path, as a JSONPath expression, to the field (in an Apache Avro object container) or record (in an Apache
-     * Parquet file) that contains the data.
+     * The path, as a JSONPath expression, to the field in the record that contains the data.
      * </p>
      * <p>
      * If the name of an element exceeds 20 characters, Amazon Macie truncates the name by removing characters from the
@@ -59,8 +57,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param jsonPath
-     *        The path, as a JSONPath expression, to the field (in an Apache Avro object container) or record (in an
-     *        Apache Parquet file) that contains the data.</p>
+     *        The path, as a JSONPath expression, to the field in the record that contains the data.</p>
      *        <p>
      *        If the name of an element exceeds 20 characters, Amazon Macie truncates the name by removing characters
      *        from the beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates
@@ -73,8 +70,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path, as a JSONPath expression, to the field (in an Apache Avro object container) or record (in an Apache
-     * Parquet file) that contains the data.
+     * The path, as a JSONPath expression, to the field in the record that contains the data.
      * </p>
      * <p>
      * If the name of an element exceeds 20 characters, Amazon Macie truncates the name by removing characters from the
@@ -82,8 +78,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      * with the first element in the path, until the path contains 250 or fewer characters.
      * </p>
      * 
-     * @return The path, as a JSONPath expression, to the field (in an Apache Avro object container) or record (in an
-     *         Apache Parquet file) that contains the data.</p>
+     * @return The path, as a JSONPath expression, to the field in the record that contains the data.</p>
      *         <p>
      *         If the name of an element exceeds 20 characters, Amazon Macie truncates the name by removing characters
      *         from the beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates
@@ -96,8 +91,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path, as a JSONPath expression, to the field (in an Apache Avro object container) or record (in an Apache
-     * Parquet file) that contains the data.
+     * The path, as a JSONPath expression, to the field in the record that contains the data.
      * </p>
      * <p>
      * If the name of an element exceeds 20 characters, Amazon Macie truncates the name by removing characters from the
@@ -106,8 +100,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param jsonPath
-     *        The path, as a JSONPath expression, to the field (in an Apache Avro object container) or record (in an
-     *        Apache Parquet file) that contains the data.</p>
+     *        The path, as a JSONPath expression, to the field in the record that contains the data.</p>
      *        <p>
      *        If the name of an element exceeds 20 characters, Amazon Macie truncates the name by removing characters
      *        from the beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates

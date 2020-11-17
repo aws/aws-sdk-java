@@ -23,20 +23,10 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateAccountResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /**
-     * <p>
-     * The updated Amazon Chime account details.
-     * </p>
-     */
     private Account account;
 
     /**
-     * <p>
-     * The updated Amazon Chime account details.
-     * </p>
-     * 
      * @param account
-     *        The updated Amazon Chime account details.
      */
 
     public void setAccount(Account account) {
@@ -44,11 +34,7 @@ public class UpdateAccountResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * <p>
-     * The updated Amazon Chime account details.
-     * </p>
-     * 
-     * @return The updated Amazon Chime account details.
+     * @return
      */
 
     public Account getAccount() {
@@ -56,12 +42,7 @@ public class UpdateAccountResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * <p>
-     * The updated Amazon Chime account details.
-     * </p>
-     * 
      * @param account
-     *        The updated Amazon Chime account details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

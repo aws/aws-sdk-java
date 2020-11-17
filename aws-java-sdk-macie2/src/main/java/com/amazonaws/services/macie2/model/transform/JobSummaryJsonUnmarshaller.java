@@ -70,6 +70,10 @@ public class JobSummaryJsonUnmarshaller implements Unmarshaller<JobSummary, Json
                     context.nextToken();
                     jobSummary.setJobType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("lastRunErrorStatus", targetDepth)) {
+                    context.nextToken();
+                    jobSummary.setLastRunErrorStatus(LastRunErrorStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     jobSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));

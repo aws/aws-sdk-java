@@ -38,6 +38,8 @@ public class JobSummaryMarshaller {
             .marshallLocationName("jobStatus").build();
     private static final MarshallingInfo<String> JOBTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("jobType").build();
+    private static final MarshallingInfo<StructuredPojo> LASTRUNERRORSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastRunErrorStatus").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<StructuredPojo> USERPAUSEDDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -64,6 +66,7 @@ public class JobSummaryMarshaller {
             protocolMarshaller.marshall(jobSummary.getJobId(), JOBID_BINDING);
             protocolMarshaller.marshall(jobSummary.getJobStatus(), JOBSTATUS_BINDING);
             protocolMarshaller.marshall(jobSummary.getJobType(), JOBTYPE_BINDING);
+            protocolMarshaller.marshall(jobSummary.getLastRunErrorStatus(), LASTRUNERRORSTATUS_BINDING);
             protocolMarshaller.marshall(jobSummary.getName(), NAME_BINDING);
             protocolMarshaller.marshall(jobSummary.getUserPausedDetails(), USERPAUSEDDETAILS_BINDING);
         } catch (Exception e) {

@@ -86,6 +86,10 @@ public class DescribeClassificationJobResultJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     describeClassificationJobResult.setJobType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("lastRunErrorStatus", targetDepth)) {
+                    context.nextToken();
+                    describeClassificationJobResult.setLastRunErrorStatus(LastRunErrorStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("lastRunTime", targetDepth)) {
                     context.nextToken();
                     describeClassificationJobResult.setLastRunTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));

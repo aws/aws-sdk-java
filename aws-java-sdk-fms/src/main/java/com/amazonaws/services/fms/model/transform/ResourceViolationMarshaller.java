@@ -33,6 +33,15 @@ public class ResourceViolationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsEc2NetworkInterfaceViolation").build();
     private static final MarshallingInfo<StructuredPojo> AWSEC2INSTANCEVIOLATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsEc2InstanceViolation").build();
+    private static final MarshallingInfo<StructuredPojo> NETWORKFIREWALLMISSINGFIREWALLVIOLATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NetworkFirewallMissingFirewallViolation").build();
+    private static final MarshallingInfo<StructuredPojo> NETWORKFIREWALLMISSINGSUBNETVIOLATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NetworkFirewallMissingSubnetViolation").build();
+    private static final MarshallingInfo<StructuredPojo> NETWORKFIREWALLMISSINGEXPECTEDRTVIOLATION_BINDING = MarshallingInfo
+            .builder(MarshallingType.STRUCTURED).marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NetworkFirewallMissingExpectedRTViolation")
+            .build();
+    private static final MarshallingInfo<StructuredPojo> NETWORKFIREWALLPOLICYMODIFIEDVIOLATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NetworkFirewallPolicyModifiedViolation").build();
 
     private static final ResourceViolationMarshaller instance = new ResourceViolationMarshaller();
 
@@ -53,6 +62,10 @@ public class ResourceViolationMarshaller {
             protocolMarshaller.marshall(resourceViolation.getAwsVPCSecurityGroupViolation(), AWSVPCSECURITYGROUPVIOLATION_BINDING);
             protocolMarshaller.marshall(resourceViolation.getAwsEc2NetworkInterfaceViolation(), AWSEC2NETWORKINTERFACEVIOLATION_BINDING);
             protocolMarshaller.marshall(resourceViolation.getAwsEc2InstanceViolation(), AWSEC2INSTANCEVIOLATION_BINDING);
+            protocolMarshaller.marshall(resourceViolation.getNetworkFirewallMissingFirewallViolation(), NETWORKFIREWALLMISSINGFIREWALLVIOLATION_BINDING);
+            protocolMarshaller.marshall(resourceViolation.getNetworkFirewallMissingSubnetViolation(), NETWORKFIREWALLMISSINGSUBNETVIOLATION_BINDING);
+            protocolMarshaller.marshall(resourceViolation.getNetworkFirewallMissingExpectedRTViolation(), NETWORKFIREWALLMISSINGEXPECTEDRTVIOLATION_BINDING);
+            protocolMarshaller.marshall(resourceViolation.getNetworkFirewallPolicyModifiedViolation(), NETWORKFIREWALLPOLICYMODIFIEDVIOLATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

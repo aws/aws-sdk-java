@@ -40,8 +40,8 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * PARTIAL - Macie was able to analyze only a subset of the data in the object that the finding applies to. For
-     * example, the object is a compressed or archive file that contains files in an unsupported format.
+     * PARTIAL - Macie analyzed only a subset of the data in the object that the finding applies to. For example, the
+     * object is an archive file that contains files in an unsupported format.
      * </p>
      * </li>
      * <li>
@@ -73,8 +73,8 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * PARTIAL - Macie was able to analyze only a subset of the data in the object that the finding applies to. For
-     * example, the object is a compressed or archive file that contains files in an unsupported format.
+     * PARTIAL - Macie analyzed only a subset of the data in the object that the finding applies to. For example, the
+     * object is an archive file that contains files in an unsupported format.
      * </p>
      * </li>
      * <li>
@@ -97,8 +97,8 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *        </li>
      *        <li>
      *        <p>
-     *        PARTIAL - Macie was able to analyze only a subset of the data in the object that the finding applies to.
-     *        For example, the object is a compressed or archive file that contains files in an unsupported format.
+     *        PARTIAL - Macie analyzed only a subset of the data in the object that the finding applies to. For example,
+     *        the object is an archive file that contains files in an unsupported format.
      *        </p>
      *        </li>
      *        <li>
@@ -126,8 +126,8 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * PARTIAL - Macie was able to analyze only a subset of the data in the object that the finding applies to. For
-     * example, the object is a compressed or archive file that contains files in an unsupported format.
+     * PARTIAL - Macie analyzed only a subset of the data in the object that the finding applies to. For example, the
+     * object is an archive file that contains files in an unsupported format.
      * </p>
      * </li>
      * <li>
@@ -149,8 +149,8 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *         </li>
      *         <li>
      *         <p>
-     *         PARTIAL - Macie was able to analyze only a subset of the data in the object that the finding applies to.
-     *         For example, the object is a compressed or archive file that contains files in an unsupported format.
+     *         PARTIAL - Macie analyzed only a subset of the data in the object that the finding applies to. For
+     *         example, the object is an archive file that contains files in an unsupported format.
      *         </p>
      *         </li>
      *         <li>
@@ -178,8 +178,8 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * PARTIAL - Macie was able to analyze only a subset of the data in the object that the finding applies to. For
-     * example, the object is a compressed or archive file that contains files in an unsupported format.
+     * PARTIAL - Macie analyzed only a subset of the data in the object that the finding applies to. For example, the
+     * object is an archive file that contains files in an unsupported format.
      * </p>
      * </li>
      * <li>
@@ -202,8 +202,8 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *        </li>
      *        <li>
      *        <p>
-     *        PARTIAL - Macie was able to analyze only a subset of the data in the object that the finding applies to.
-     *        For example, the object is a compressed or archive file that contains files in an unsupported format.
+     *        PARTIAL - Macie analyzed only a subset of the data in the object that the finding applies to. For example,
+     *        the object is an archive file that contains files in an unsupported format.
      *        </p>
      *        </li>
      *        <li>
