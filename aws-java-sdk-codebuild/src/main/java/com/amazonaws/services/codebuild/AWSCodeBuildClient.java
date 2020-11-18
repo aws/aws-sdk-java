@@ -2525,7 +2525,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
     /**
      * <p>
-     * Restarts a batch build.
+     * Restarts a failed batch build. Only batch builds that have failed can be retried.
      * </p>
      * 
      * @param retryBuildBatchRequest

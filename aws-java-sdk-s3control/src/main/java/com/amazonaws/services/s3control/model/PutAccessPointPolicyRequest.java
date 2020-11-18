@@ -36,7 +36,12 @@ public class PutAccessPointPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * The name of the access point that you want to associate with the specified policy.
      * </p>
      * <p>
-     * For Amazon S3 on Outposts specify the ARN of the access point accessed in the format
+     * For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the
+     * x-amz-outpost-id as well.
+     * </p>
+     * <p>
+     * For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the access
+     * point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>
      * . For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned
      * by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
@@ -48,7 +53,7 @@ public class PutAccessPointPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The policy that you want to apply to the specified access point. For more information about access point
-     * policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing Data Access
+     * policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing data access
      * with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      */
@@ -99,7 +104,12 @@ public class PutAccessPointPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * The name of the access point that you want to associate with the specified policy.
      * </p>
      * <p>
-     * For Amazon S3 on Outposts specify the ARN of the access point accessed in the format
+     * For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the
+     * x-amz-outpost-id as well.
+     * </p>
+     * <p>
+     * For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the access
+     * point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>
      * . For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned
      * by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
@@ -110,7 +120,12 @@ public class PutAccessPointPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * @param name
      *        The name of the access point that you want to associate with the specified policy.</p>
      *        <p>
-     *        For Amazon S3 on Outposts specify the ARN of the access point accessed in the format
+     *        For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the
+     *        x-amz-outpost-id as well.
+     *        </p>
+     *        <p>
+     *        For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the
+     *        access point accessed in the format
      *        <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>
      *        . For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code>
      *        owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
@@ -127,7 +142,12 @@ public class PutAccessPointPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * The name of the access point that you want to associate with the specified policy.
      * </p>
      * <p>
-     * For Amazon S3 on Outposts specify the ARN of the access point accessed in the format
+     * For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the
+     * x-amz-outpost-id as well.
+     * </p>
+     * <p>
+     * For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the access
+     * point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>
      * . For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned
      * by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
@@ -137,7 +157,12 @@ public class PutAccessPointPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @return The name of the access point that you want to associate with the specified policy.</p>
      *         <p>
-     *         For Amazon S3 on Outposts specify the ARN of the access point accessed in the format
+     *         For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the
+     *         x-amz-outpost-id as well.
+     *         </p>
+     *         <p>
+     *         For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the
+     *         access point accessed in the format
      *         <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>
      *         . For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code>
      *         owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
@@ -154,7 +179,12 @@ public class PutAccessPointPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * The name of the access point that you want to associate with the specified policy.
      * </p>
      * <p>
-     * For Amazon S3 on Outposts specify the ARN of the access point accessed in the format
+     * For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the
+     * x-amz-outpost-id as well.
+     * </p>
+     * <p>
+     * For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the access
+     * point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>
      * . For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned
      * by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
@@ -165,7 +195,12 @@ public class PutAccessPointPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * @param name
      *        The name of the access point that you want to associate with the specified policy.</p>
      *        <p>
-     *        For Amazon S3 on Outposts specify the ARN of the access point accessed in the format
+     *        For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the
+     *        x-amz-outpost-id as well.
+     *        </p>
+     *        <p>
+     *        For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the
+     *        access point accessed in the format
      *        <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>
      *        . For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code>
      *        owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
@@ -182,14 +217,14 @@ public class PutAccessPointPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The policy that you want to apply to the specified access point. For more information about access point
-     * policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing Data Access
+     * policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing data access
      * with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * 
      * @param policy
      *        The policy that you want to apply to the specified access point. For more information about access point
-     *        policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing Data
-     *        Access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     *        policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing data
+     *        access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      */
 
     public void setPolicy(String policy) {
@@ -199,13 +234,13 @@ public class PutAccessPointPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The policy that you want to apply to the specified access point. For more information about access point
-     * policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing Data Access
+     * policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing data access
      * with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * 
      * @return The policy that you want to apply to the specified access point. For more information about access point
-     *         policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing Data
-     *         Access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     *         policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing data
+     *         access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      */
 
     public String getPolicy() {
@@ -215,14 +250,14 @@ public class PutAccessPointPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The policy that you want to apply to the specified access point. For more information about access point
-     * policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing Data Access
+     * policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing data access
      * with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * 
      * @param policy
      *        The policy that you want to apply to the specified access point. For more information about access point
-     *        policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing Data
-     *        Access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     *        policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing data
+     *        access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -43,9 +43,15 @@ public class AdvancedBackupSetting implements Serializable, Cloneable, Structure
      * Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.
      * </p>
      * <p>
-     * Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and create a VSS
-     * Windows backup. Set to “WindowsVSS”:”disabled” to create a regular backup. The WindowsVSS option is not enabled
-     * by default.
+     * Valid values:
+     * </p>
+     * <p>
+     * Set to <code>"WindowsVSS":"enabled"</code> to enable the WindowsVSS backup option and create a VSS Windows
+     * backup.
+     * </p>
+     * <p>
+     * Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. The WindowsVSS option is not enabled by
+     * default.
      * </p>
      * <p>
      * If you specify an invalid option, you get an <code>InvalidParameterValueException</code> exception.
@@ -124,9 +130,15 @@ public class AdvancedBackupSetting implements Serializable, Cloneable, Structure
      * Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.
      * </p>
      * <p>
-     * Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and create a VSS
-     * Windows backup. Set to “WindowsVSS”:”disabled” to create a regular backup. The WindowsVSS option is not enabled
-     * by default.
+     * Valid values:
+     * </p>
+     * <p>
+     * Set to <code>"WindowsVSS":"enabled"</code> to enable the WindowsVSS backup option and create a VSS Windows
+     * backup.
+     * </p>
+     * <p>
+     * Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. The WindowsVSS option is not enabled by
+     * default.
      * </p>
      * <p>
      * If you specify an invalid option, you get an <code>InvalidParameterValueException</code> exception.
@@ -140,9 +152,15 @@ public class AdvancedBackupSetting implements Serializable, Cloneable, Structure
      * @return Specifies the backup option for a selected resource. This option is only available for Windows VSS backup
      *         jobs.</p>
      *         <p>
-     *         Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and create a
-     *         VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular backup. The WindowsVSS option is
-     *         not enabled by default.
+     *         Valid values:
+     *         </p>
+     *         <p>
+     *         Set to <code>"WindowsVSS":"enabled"</code> to enable the WindowsVSS backup option and create a VSS
+     *         Windows backup.
+     *         </p>
+     *         <p>
+     *         Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. The WindowsVSS option is not
+     *         enabled by default.
      *         </p>
      *         <p>
      *         If you specify an invalid option, you get an <code>InvalidParameterValueException</code> exception.
@@ -162,9 +180,15 @@ public class AdvancedBackupSetting implements Serializable, Cloneable, Structure
      * Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.
      * </p>
      * <p>
-     * Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and create a VSS
-     * Windows backup. Set to “WindowsVSS”:”disabled” to create a regular backup. The WindowsVSS option is not enabled
-     * by default.
+     * Valid values:
+     * </p>
+     * <p>
+     * Set to <code>"WindowsVSS":"enabled"</code> to enable the WindowsVSS backup option and create a VSS Windows
+     * backup.
+     * </p>
+     * <p>
+     * Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. The WindowsVSS option is not enabled by
+     * default.
      * </p>
      * <p>
      * If you specify an invalid option, you get an <code>InvalidParameterValueException</code> exception.
@@ -179,9 +203,15 @@ public class AdvancedBackupSetting implements Serializable, Cloneable, Structure
      *        Specifies the backup option for a selected resource. This option is only available for Windows VSS backup
      *        jobs.</p>
      *        <p>
-     *        Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and create a
-     *        VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular backup. The WindowsVSS option is
-     *        not enabled by default.
+     *        Valid values:
+     *        </p>
+     *        <p>
+     *        Set to <code>"WindowsVSS":"enabled"</code> to enable the WindowsVSS backup option and create a VSS Windows
+     *        backup.
+     *        </p>
+     *        <p>
+     *        Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. The WindowsVSS option is not
+     *        enabled by default.
      *        </p>
      *        <p>
      *        If you specify an invalid option, you get an <code>InvalidParameterValueException</code> exception.
@@ -201,9 +231,15 @@ public class AdvancedBackupSetting implements Serializable, Cloneable, Structure
      * Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.
      * </p>
      * <p>
-     * Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and create a VSS
-     * Windows backup. Set to “WindowsVSS”:”disabled” to create a regular backup. The WindowsVSS option is not enabled
-     * by default.
+     * Valid values:
+     * </p>
+     * <p>
+     * Set to <code>"WindowsVSS":"enabled"</code> to enable the WindowsVSS backup option and create a VSS Windows
+     * backup.
+     * </p>
+     * <p>
+     * Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. The WindowsVSS option is not enabled by
+     * default.
      * </p>
      * <p>
      * If you specify an invalid option, you get an <code>InvalidParameterValueException</code> exception.
@@ -218,9 +254,15 @@ public class AdvancedBackupSetting implements Serializable, Cloneable, Structure
      *        Specifies the backup option for a selected resource. This option is only available for Windows VSS backup
      *        jobs.</p>
      *        <p>
-     *        Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and create a
-     *        VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular backup. The WindowsVSS option is
-     *        not enabled by default.
+     *        Valid values:
+     *        </p>
+     *        <p>
+     *        Set to <code>"WindowsVSS":"enabled"</code> to enable the WindowsVSS backup option and create a VSS Windows
+     *        backup.
+     *        </p>
+     *        <p>
+     *        Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. The WindowsVSS option is not
+     *        enabled by default.
      *        </p>
      *        <p>
      *        If you specify an invalid option, you get an <code>InvalidParameterValueException</code> exception.

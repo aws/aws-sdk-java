@@ -60,8 +60,8 @@ public class ProjectFileSystemLocation implements Serializable, Cloneable, Struc
      * <p>
      * The name used to access a file system created by Amazon EFS. CodeBuild creates an environment variable by
      * appending the <code>identifier</code> in all capital letters to <code>CODEBUILD_</code>. For example, if you
-     * specify <code>my-efs</code> for <code>identifier</code>, a new environment variable is create named
-     * <code>CODEBUILD_MY-EFS</code>.
+     * specify <code>my_efs</code> for <code>identifier</code>, a new environment variable is create named
+     * <code>CODEBUILD_MY_EFS</code>.
      * </p>
      * <p>
      * The <code>identifier</code> is used to mount your file system.
@@ -273,8 +273,8 @@ public class ProjectFileSystemLocation implements Serializable, Cloneable, Struc
      * <p>
      * The name used to access a file system created by Amazon EFS. CodeBuild creates an environment variable by
      * appending the <code>identifier</code> in all capital letters to <code>CODEBUILD_</code>. For example, if you
-     * specify <code>my-efs</code> for <code>identifier</code>, a new environment variable is create named
-     * <code>CODEBUILD_MY-EFS</code>.
+     * specify <code>my_efs</code> for <code>identifier</code>, a new environment variable is create named
+     * <code>CODEBUILD_MY_EFS</code>.
      * </p>
      * <p>
      * The <code>identifier</code> is used to mount your file system.
@@ -283,8 +283,8 @@ public class ProjectFileSystemLocation implements Serializable, Cloneable, Struc
      * @param identifier
      *        The name used to access a file system created by Amazon EFS. CodeBuild creates an environment variable by
      *        appending the <code>identifier</code> in all capital letters to <code>CODEBUILD_</code>. For example, if
-     *        you specify <code>my-efs</code> for <code>identifier</code>, a new environment variable is create named
-     *        <code>CODEBUILD_MY-EFS</code>. </p>
+     *        you specify <code>my_efs</code> for <code>identifier</code>, a new environment variable is create named
+     *        <code>CODEBUILD_MY_EFS</code>. </p>
      *        <p>
      *        The <code>identifier</code> is used to mount your file system.
      */
@@ -297,8 +297,8 @@ public class ProjectFileSystemLocation implements Serializable, Cloneable, Struc
      * <p>
      * The name used to access a file system created by Amazon EFS. CodeBuild creates an environment variable by
      * appending the <code>identifier</code> in all capital letters to <code>CODEBUILD_</code>. For example, if you
-     * specify <code>my-efs</code> for <code>identifier</code>, a new environment variable is create named
-     * <code>CODEBUILD_MY-EFS</code>.
+     * specify <code>my_efs</code> for <code>identifier</code>, a new environment variable is create named
+     * <code>CODEBUILD_MY_EFS</code>.
      * </p>
      * <p>
      * The <code>identifier</code> is used to mount your file system.
@@ -306,8 +306,8 @@ public class ProjectFileSystemLocation implements Serializable, Cloneable, Struc
      * 
      * @return The name used to access a file system created by Amazon EFS. CodeBuild creates an environment variable by
      *         appending the <code>identifier</code> in all capital letters to <code>CODEBUILD_</code>. For example, if
-     *         you specify <code>my-efs</code> for <code>identifier</code>, a new environment variable is create named
-     *         <code>CODEBUILD_MY-EFS</code>. </p>
+     *         you specify <code>my_efs</code> for <code>identifier</code>, a new environment variable is create named
+     *         <code>CODEBUILD_MY_EFS</code>. </p>
      *         <p>
      *         The <code>identifier</code> is used to mount your file system.
      */
@@ -320,8 +320,8 @@ public class ProjectFileSystemLocation implements Serializable, Cloneable, Struc
      * <p>
      * The name used to access a file system created by Amazon EFS. CodeBuild creates an environment variable by
      * appending the <code>identifier</code> in all capital letters to <code>CODEBUILD_</code>. For example, if you
-     * specify <code>my-efs</code> for <code>identifier</code>, a new environment variable is create named
-     * <code>CODEBUILD_MY-EFS</code>.
+     * specify <code>my_efs</code> for <code>identifier</code>, a new environment variable is create named
+     * <code>CODEBUILD_MY_EFS</code>.
      * </p>
      * <p>
      * The <code>identifier</code> is used to mount your file system.
@@ -330,8 +330,8 @@ public class ProjectFileSystemLocation implements Serializable, Cloneable, Struc
      * @param identifier
      *        The name used to access a file system created by Amazon EFS. CodeBuild creates an environment variable by
      *        appending the <code>identifier</code> in all capital letters to <code>CODEBUILD_</code>. For example, if
-     *        you specify <code>my-efs</code> for <code>identifier</code>, a new environment variable is create named
-     *        <code>CODEBUILD_MY-EFS</code>. </p>
+     *        you specify <code>my_efs</code> for <code>identifier</code>, a new environment variable is create named
+     *        <code>CODEBUILD_MY_EFS</code>. </p>
      *        <p>
      *        The <code>identifier</code> is used to mount your file system.
      * @return Returns a reference to this object so that method calls can be chained together.

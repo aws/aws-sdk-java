@@ -157,7 +157,10 @@
     },
     "CreateOutpostInput":{
       "type":"structure",
-      "required":["SiteId"],
+      "required":[
+        "Name",
+        "SiteId"
+      ],
       "members":{
         "Name":{"shape":"OutpostName"},
         "Description":{"shape":"OutpostDescription"},

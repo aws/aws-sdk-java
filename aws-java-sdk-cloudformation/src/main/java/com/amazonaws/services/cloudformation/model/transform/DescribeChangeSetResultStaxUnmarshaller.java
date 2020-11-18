@@ -149,6 +149,21 @@ public class DescribeChangeSetResultStaxUnmarshaller implements Unmarshaller<Des
                     describeChangeSetResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("IncludeNestedStacks", targetDepth)) {
+                    describeChangeSetResult.setIncludeNestedStacks(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ParentChangeSetId", targetDepth)) {
+                    describeChangeSetResult.setParentChangeSetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("RootChangeSetId", targetDepth)) {
+                    describeChangeSetResult.setRootChangeSetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeChangeSetResult;

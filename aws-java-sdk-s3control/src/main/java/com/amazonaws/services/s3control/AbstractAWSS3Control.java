@@ -83,6 +83,16 @@ public class AbstractAWSS3Control implements AWSS3Control {
     }
 
     @Override
+    public DeleteStorageLensConfigurationResult deleteStorageLensConfiguration(DeleteStorageLensConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteStorageLensConfigurationTaggingResult deleteStorageLensConfigurationTagging(DeleteStorageLensConfigurationTaggingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeJobResult describeJob(DescribeJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -133,6 +143,16 @@ public class AbstractAWSS3Control implements AWSS3Control {
     }
 
     @Override
+    public GetStorageLensConfigurationResult getStorageLensConfiguration(GetStorageLensConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetStorageLensConfigurationTaggingResult getStorageLensConfigurationTagging(GetStorageLensConfigurationTaggingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListAccessPointsResult listAccessPoints(ListAccessPointsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -144,6 +164,11 @@ public class AbstractAWSS3Control implements AWSS3Control {
 
     @Override
     public ListRegionalBucketsResult listRegionalBuckets(ListRegionalBucketsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListStorageLensConfigurationsResult listStorageLensConfigurations(ListStorageLensConfigurationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -174,6 +199,16 @@ public class AbstractAWSS3Control implements AWSS3Control {
 
     @Override
     public PutPublicAccessBlockResult putPublicAccessBlock(PutPublicAccessBlockRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutStorageLensConfigurationResult putStorageLensConfiguration(PutStorageLensConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutStorageLensConfigurationTaggingResult putStorageLensConfigurationTagging(PutStorageLensConfigurationTaggingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -72,23 +72,27 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
     private String location;
     /**
      * <p>
-     * If you use a <code>LOCAL</code> cache, the local cache mode. You can use one or more local cache modes at the
-     * same time.
+     * An array of strings that specify the local cache modes. You can use one or more local cache modes at the same
+     * time. This is only used for <code>LOCAL</code> cache types.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * <code>LOCAL_SOURCE_CACHE</code> mode caches Git metadata for primary and secondary sources. After the cache is
-     * created, subsequent builds pull only the change between commits. This mode is a good choice for projects with a
-     * clean working directory and a source that is a large Git repository. If you choose this option and your project
-     * does not use a Git repository (GitHub, GitHub Enterprise, or Bitbucket), the option is ignored.
+     * Possible values are:
      * </p>
-     * </li>
-     * <li>
+     * <dl>
+     * <dt>LOCAL_SOURCE_CACHE</dt>
+     * <dd>
      * <p>
-     * <code>LOCAL_DOCKER_LAYER_CACHE</code> mode caches existing Docker layers. This mode is a good choice for projects
-     * that build or pull large Docker images. It can prevent the performance issues caused by pulling large Docker
-     * images down from the network.
+     * Caches Git metadata for primary and secondary sources. After the cache is created, subsequent builds pull only
+     * the change between commits. This mode is a good choice for projects with a clean working directory and a source
+     * that is a large Git repository. If you choose this option and your project does not use a Git repository (GitHub,
+     * GitHub Enterprise, or Bitbucket), the option is ignored.
+     * </p>
+     * </dd>
+     * <dt>LOCAL_DOCKER_LAYER_CACHE</dt>
+     * <dd>
+     * <p>
+     * Caches existing Docker layers. This mode is a good choice for projects that build or pull large Docker images. It
+     * can prevent the performance issues caused by pulling large Docker images down from the network.
      * </p>
      * <note>
      * <ul>
@@ -108,14 +112,12 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
-     * </note></li>
-     * </ul>
-     * <ul>
-     * <li>
+     * </note></dd>
+     * <dt>LOCAL_CUSTOM_CACHE</dt>
+     * <dd>
      * <p>
-     * <code>LOCAL_CUSTOM_CACHE</code> mode caches directories you specify in the buildspec file. This mode is a good
-     * choice if your build scenario is not suited to one of the other three local cache modes. If you use a custom
-     * cache:
+     * Caches directories you specify in the buildspec file. This mode is a good choice if your build scenario is not
+     * suited to one of the other three local cache modes. If you use a custom cache:
      * </p>
      * <ul>
      * <li>
@@ -135,8 +137,8 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
-     * </li>
-     * </ul>
+     * </dd>
+     * </dl>
      */
     private java.util.List<String> modes;
 
@@ -450,23 +452,27 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If you use a <code>LOCAL</code> cache, the local cache mode. You can use one or more local cache modes at the
-     * same time.
+     * An array of strings that specify the local cache modes. You can use one or more local cache modes at the same
+     * time. This is only used for <code>LOCAL</code> cache types.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * <code>LOCAL_SOURCE_CACHE</code> mode caches Git metadata for primary and secondary sources. After the cache is
-     * created, subsequent builds pull only the change between commits. This mode is a good choice for projects with a
-     * clean working directory and a source that is a large Git repository. If you choose this option and your project
-     * does not use a Git repository (GitHub, GitHub Enterprise, or Bitbucket), the option is ignored.
+     * Possible values are:
      * </p>
-     * </li>
-     * <li>
+     * <dl>
+     * <dt>LOCAL_SOURCE_CACHE</dt>
+     * <dd>
      * <p>
-     * <code>LOCAL_DOCKER_LAYER_CACHE</code> mode caches existing Docker layers. This mode is a good choice for projects
-     * that build or pull large Docker images. It can prevent the performance issues caused by pulling large Docker
-     * images down from the network.
+     * Caches Git metadata for primary and secondary sources. After the cache is created, subsequent builds pull only
+     * the change between commits. This mode is a good choice for projects with a clean working directory and a source
+     * that is a large Git repository. If you choose this option and your project does not use a Git repository (GitHub,
+     * GitHub Enterprise, or Bitbucket), the option is ignored.
+     * </p>
+     * </dd>
+     * <dt>LOCAL_DOCKER_LAYER_CACHE</dt>
+     * <dd>
+     * <p>
+     * Caches existing Docker layers. This mode is a good choice for projects that build or pull large Docker images. It
+     * can prevent the performance issues caused by pulling large Docker images down from the network.
      * </p>
      * <note>
      * <ul>
@@ -486,14 +492,12 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
-     * </note></li>
-     * </ul>
-     * <ul>
-     * <li>
+     * </note></dd>
+     * <dt>LOCAL_CUSTOM_CACHE</dt>
+     * <dd>
      * <p>
-     * <code>LOCAL_CUSTOM_CACHE</code> mode caches directories you specify in the buildspec file. This mode is a good
-     * choice if your build scenario is not suited to one of the other three local cache modes. If you use a custom
-     * cache:
+     * Caches directories you specify in the buildspec file. This mode is a good choice if your build scenario is not
+     * suited to one of the other three local cache modes. If you use a custom cache:
      * </p>
      * <ul>
      * <li>
@@ -513,26 +517,30 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
-     * </li>
-     * </ul>
+     * </dd>
+     * </dl>
      * 
-     * @return If you use a <code>LOCAL</code> cache, the local cache mode. You can use one or more local cache modes at
-     *         the same time. </p>
-     *         <ul>
-     *         <li>
+     * @return An array of strings that specify the local cache modes. You can use one or more local cache modes at the
+     *         same time. This is only used for <code>LOCAL</code> cache types.</p>
      *         <p>
-     *         <code>LOCAL_SOURCE_CACHE</code> mode caches Git metadata for primary and secondary sources. After the
-     *         cache is created, subsequent builds pull only the change between commits. This mode is a good choice for
-     *         projects with a clean working directory and a source that is a large Git repository. If you choose this
-     *         option and your project does not use a Git repository (GitHub, GitHub Enterprise, or Bitbucket), the
-     *         option is ignored.
+     *         Possible values are:
      *         </p>
-     *         </li>
-     *         <li>
+     *         <dl>
+     *         <dt>LOCAL_SOURCE_CACHE</dt>
+     *         <dd>
      *         <p>
-     *         <code>LOCAL_DOCKER_LAYER_CACHE</code> mode caches existing Docker layers. This mode is a good choice for
-     *         projects that build or pull large Docker images. It can prevent the performance issues caused by pulling
-     *         large Docker images down from the network.
+     *         Caches Git metadata for primary and secondary sources. After the cache is created, subsequent builds pull
+     *         only the change between commits. This mode is a good choice for projects with a clean working directory
+     *         and a source that is a large Git repository. If you choose this option and your project does not use a
+     *         Git repository (GitHub, GitHub Enterprise, or Bitbucket), the option is ignored.
+     *         </p>
+     *         </dd>
+     *         <dt>LOCAL_DOCKER_LAYER_CACHE</dt>
+     *         <dd>
+     *         <p>
+     *         Caches existing Docker layers. This mode is a good choice for projects that build or pull large Docker
+     *         images. It can prevent the performance issues caused by pulling large Docker images down from the
+     *         network.
      *         </p>
      *         <note>
      *         <ul>
@@ -552,14 +560,12 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         </li>
      *         </ul>
-     *         </note></li>
-     *         </ul>
-     *         <ul>
-     *         <li>
+     *         </note></dd>
+     *         <dt>LOCAL_CUSTOM_CACHE</dt>
+     *         <dd>
      *         <p>
-     *         <code>LOCAL_CUSTOM_CACHE</code> mode caches directories you specify in the buildspec file. This mode is a
-     *         good choice if your build scenario is not suited to one of the other three local cache modes. If you use
-     *         a custom cache:
+     *         Caches directories you specify in the buildspec file. This mode is a good choice if your build scenario
+     *         is not suited to one of the other three local cache modes. If you use a custom cache:
      *         </p>
      *         <ul>
      *         <li>
@@ -580,7 +586,7 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         </li>
      *         </ul>
-     *         </li>
+     *         </dd>
      * @see CacheMode
      */
 
@@ -590,23 +596,27 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If you use a <code>LOCAL</code> cache, the local cache mode. You can use one or more local cache modes at the
-     * same time.
+     * An array of strings that specify the local cache modes. You can use one or more local cache modes at the same
+     * time. This is only used for <code>LOCAL</code> cache types.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * <code>LOCAL_SOURCE_CACHE</code> mode caches Git metadata for primary and secondary sources. After the cache is
-     * created, subsequent builds pull only the change between commits. This mode is a good choice for projects with a
-     * clean working directory and a source that is a large Git repository. If you choose this option and your project
-     * does not use a Git repository (GitHub, GitHub Enterprise, or Bitbucket), the option is ignored.
+     * Possible values are:
      * </p>
-     * </li>
-     * <li>
+     * <dl>
+     * <dt>LOCAL_SOURCE_CACHE</dt>
+     * <dd>
      * <p>
-     * <code>LOCAL_DOCKER_LAYER_CACHE</code> mode caches existing Docker layers. This mode is a good choice for projects
-     * that build or pull large Docker images. It can prevent the performance issues caused by pulling large Docker
-     * images down from the network.
+     * Caches Git metadata for primary and secondary sources. After the cache is created, subsequent builds pull only
+     * the change between commits. This mode is a good choice for projects with a clean working directory and a source
+     * that is a large Git repository. If you choose this option and your project does not use a Git repository (GitHub,
+     * GitHub Enterprise, or Bitbucket), the option is ignored.
+     * </p>
+     * </dd>
+     * <dt>LOCAL_DOCKER_LAYER_CACHE</dt>
+     * <dd>
+     * <p>
+     * Caches existing Docker layers. This mode is a good choice for projects that build or pull large Docker images. It
+     * can prevent the performance issues caused by pulling large Docker images down from the network.
      * </p>
      * <note>
      * <ul>
@@ -626,14 +636,12 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
-     * </note></li>
-     * </ul>
-     * <ul>
-     * <li>
+     * </note></dd>
+     * <dt>LOCAL_CUSTOM_CACHE</dt>
+     * <dd>
      * <p>
-     * <code>LOCAL_CUSTOM_CACHE</code> mode caches directories you specify in the buildspec file. This mode is a good
-     * choice if your build scenario is not suited to one of the other three local cache modes. If you use a custom
-     * cache:
+     * Caches directories you specify in the buildspec file. This mode is a good choice if your build scenario is not
+     * suited to one of the other three local cache modes. If you use a custom cache:
      * </p>
      * <ul>
      * <li>
@@ -653,27 +661,30 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
-     * </li>
-     * </ul>
+     * </dd>
+     * </dl>
      * 
      * @param modes
-     *        If you use a <code>LOCAL</code> cache, the local cache mode. You can use one or more local cache modes at
-     *        the same time. </p>
-     *        <ul>
-     *        <li>
+     *        An array of strings that specify the local cache modes. You can use one or more local cache modes at the
+     *        same time. This is only used for <code>LOCAL</code> cache types.</p>
      *        <p>
-     *        <code>LOCAL_SOURCE_CACHE</code> mode caches Git metadata for primary and secondary sources. After the
-     *        cache is created, subsequent builds pull only the change between commits. This mode is a good choice for
-     *        projects with a clean working directory and a source that is a large Git repository. If you choose this
-     *        option and your project does not use a Git repository (GitHub, GitHub Enterprise, or Bitbucket), the
-     *        option is ignored.
+     *        Possible values are:
      *        </p>
-     *        </li>
-     *        <li>
+     *        <dl>
+     *        <dt>LOCAL_SOURCE_CACHE</dt>
+     *        <dd>
      *        <p>
-     *        <code>LOCAL_DOCKER_LAYER_CACHE</code> mode caches existing Docker layers. This mode is a good choice for
-     *        projects that build or pull large Docker images. It can prevent the performance issues caused by pulling
-     *        large Docker images down from the network.
+     *        Caches Git metadata for primary and secondary sources. After the cache is created, subsequent builds pull
+     *        only the change between commits. This mode is a good choice for projects with a clean working directory
+     *        and a source that is a large Git repository. If you choose this option and your project does not use a Git
+     *        repository (GitHub, GitHub Enterprise, or Bitbucket), the option is ignored.
+     *        </p>
+     *        </dd>
+     *        <dt>LOCAL_DOCKER_LAYER_CACHE</dt>
+     *        <dd>
+     *        <p>
+     *        Caches existing Docker layers. This mode is a good choice for projects that build or pull large Docker
+     *        images. It can prevent the performance issues caused by pulling large Docker images down from the network.
      *        </p>
      *        <note>
      *        <ul>
@@ -693,14 +704,12 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
-     *        </note></li>
-     *        </ul>
-     *        <ul>
-     *        <li>
+     *        </note></dd>
+     *        <dt>LOCAL_CUSTOM_CACHE</dt>
+     *        <dd>
      *        <p>
-     *        <code>LOCAL_CUSTOM_CACHE</code> mode caches directories you specify in the buildspec file. This mode is a
-     *        good choice if your build scenario is not suited to one of the other three local cache modes. If you use a
-     *        custom cache:
+     *        Caches directories you specify in the buildspec file. This mode is a good choice if your build scenario is
+     *        not suited to one of the other three local cache modes. If you use a custom cache:
      *        </p>
      *        <ul>
      *        <li>
@@ -721,7 +730,7 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
-     *        </li>
+     *        </dd>
      * @see CacheMode
      */
 
@@ -736,23 +745,27 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If you use a <code>LOCAL</code> cache, the local cache mode. You can use one or more local cache modes at the
-     * same time.
+     * An array of strings that specify the local cache modes. You can use one or more local cache modes at the same
+     * time. This is only used for <code>LOCAL</code> cache types.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * <code>LOCAL_SOURCE_CACHE</code> mode caches Git metadata for primary and secondary sources. After the cache is
-     * created, subsequent builds pull only the change between commits. This mode is a good choice for projects with a
-     * clean working directory and a source that is a large Git repository. If you choose this option and your project
-     * does not use a Git repository (GitHub, GitHub Enterprise, or Bitbucket), the option is ignored.
+     * Possible values are:
      * </p>
-     * </li>
-     * <li>
+     * <dl>
+     * <dt>LOCAL_SOURCE_CACHE</dt>
+     * <dd>
      * <p>
-     * <code>LOCAL_DOCKER_LAYER_CACHE</code> mode caches existing Docker layers. This mode is a good choice for projects
-     * that build or pull large Docker images. It can prevent the performance issues caused by pulling large Docker
-     * images down from the network.
+     * Caches Git metadata for primary and secondary sources. After the cache is created, subsequent builds pull only
+     * the change between commits. This mode is a good choice for projects with a clean working directory and a source
+     * that is a large Git repository. If you choose this option and your project does not use a Git repository (GitHub,
+     * GitHub Enterprise, or Bitbucket), the option is ignored.
+     * </p>
+     * </dd>
+     * <dt>LOCAL_DOCKER_LAYER_CACHE</dt>
+     * <dd>
+     * <p>
+     * Caches existing Docker layers. This mode is a good choice for projects that build or pull large Docker images. It
+     * can prevent the performance issues caused by pulling large Docker images down from the network.
      * </p>
      * <note>
      * <ul>
@@ -772,14 +785,12 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
-     * </note></li>
-     * </ul>
-     * <ul>
-     * <li>
+     * </note></dd>
+     * <dt>LOCAL_CUSTOM_CACHE</dt>
+     * <dd>
      * <p>
-     * <code>LOCAL_CUSTOM_CACHE</code> mode caches directories you specify in the buildspec file. This mode is a good
-     * choice if your build scenario is not suited to one of the other three local cache modes. If you use a custom
-     * cache:
+     * Caches directories you specify in the buildspec file. This mode is a good choice if your build scenario is not
+     * suited to one of the other three local cache modes. If you use a custom cache:
      * </p>
      * <ul>
      * <li>
@@ -799,8 +810,8 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
-     * </li>
-     * </ul>
+     * </dd>
+     * </dl>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setModes(java.util.Collection)} or {@link #withModes(java.util.Collection)} if you want to override the
@@ -808,23 +819,26 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param modes
-     *        If you use a <code>LOCAL</code> cache, the local cache mode. You can use one or more local cache modes at
-     *        the same time. </p>
-     *        <ul>
-     *        <li>
+     *        An array of strings that specify the local cache modes. You can use one or more local cache modes at the
+     *        same time. This is only used for <code>LOCAL</code> cache types.</p>
      *        <p>
-     *        <code>LOCAL_SOURCE_CACHE</code> mode caches Git metadata for primary and secondary sources. After the
-     *        cache is created, subsequent builds pull only the change between commits. This mode is a good choice for
-     *        projects with a clean working directory and a source that is a large Git repository. If you choose this
-     *        option and your project does not use a Git repository (GitHub, GitHub Enterprise, or Bitbucket), the
-     *        option is ignored.
+     *        Possible values are:
      *        </p>
-     *        </li>
-     *        <li>
+     *        <dl>
+     *        <dt>LOCAL_SOURCE_CACHE</dt>
+     *        <dd>
      *        <p>
-     *        <code>LOCAL_DOCKER_LAYER_CACHE</code> mode caches existing Docker layers. This mode is a good choice for
-     *        projects that build or pull large Docker images. It can prevent the performance issues caused by pulling
-     *        large Docker images down from the network.
+     *        Caches Git metadata for primary and secondary sources. After the cache is created, subsequent builds pull
+     *        only the change between commits. This mode is a good choice for projects with a clean working directory
+     *        and a source that is a large Git repository. If you choose this option and your project does not use a Git
+     *        repository (GitHub, GitHub Enterprise, or Bitbucket), the option is ignored.
+     *        </p>
+     *        </dd>
+     *        <dt>LOCAL_DOCKER_LAYER_CACHE</dt>
+     *        <dd>
+     *        <p>
+     *        Caches existing Docker layers. This mode is a good choice for projects that build or pull large Docker
+     *        images. It can prevent the performance issues caused by pulling large Docker images down from the network.
      *        </p>
      *        <note>
      *        <ul>
@@ -844,14 +858,12 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
-     *        </note></li>
-     *        </ul>
-     *        <ul>
-     *        <li>
+     *        </note></dd>
+     *        <dt>LOCAL_CUSTOM_CACHE</dt>
+     *        <dd>
      *        <p>
-     *        <code>LOCAL_CUSTOM_CACHE</code> mode caches directories you specify in the buildspec file. This mode is a
-     *        good choice if your build scenario is not suited to one of the other three local cache modes. If you use a
-     *        custom cache:
+     *        Caches directories you specify in the buildspec file. This mode is a good choice if your build scenario is
+     *        not suited to one of the other three local cache modes. If you use a custom cache:
      *        </p>
      *        <ul>
      *        <li>
@@ -872,7 +884,7 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
-     *        </li>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CacheMode
      */
@@ -889,23 +901,27 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If you use a <code>LOCAL</code> cache, the local cache mode. You can use one or more local cache modes at the
-     * same time.
+     * An array of strings that specify the local cache modes. You can use one or more local cache modes at the same
+     * time. This is only used for <code>LOCAL</code> cache types.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * <code>LOCAL_SOURCE_CACHE</code> mode caches Git metadata for primary and secondary sources. After the cache is
-     * created, subsequent builds pull only the change between commits. This mode is a good choice for projects with a
-     * clean working directory and a source that is a large Git repository. If you choose this option and your project
-     * does not use a Git repository (GitHub, GitHub Enterprise, or Bitbucket), the option is ignored.
+     * Possible values are:
      * </p>
-     * </li>
-     * <li>
+     * <dl>
+     * <dt>LOCAL_SOURCE_CACHE</dt>
+     * <dd>
      * <p>
-     * <code>LOCAL_DOCKER_LAYER_CACHE</code> mode caches existing Docker layers. This mode is a good choice for projects
-     * that build or pull large Docker images. It can prevent the performance issues caused by pulling large Docker
-     * images down from the network.
+     * Caches Git metadata for primary and secondary sources. After the cache is created, subsequent builds pull only
+     * the change between commits. This mode is a good choice for projects with a clean working directory and a source
+     * that is a large Git repository. If you choose this option and your project does not use a Git repository (GitHub,
+     * GitHub Enterprise, or Bitbucket), the option is ignored.
+     * </p>
+     * </dd>
+     * <dt>LOCAL_DOCKER_LAYER_CACHE</dt>
+     * <dd>
+     * <p>
+     * Caches existing Docker layers. This mode is a good choice for projects that build or pull large Docker images. It
+     * can prevent the performance issues caused by pulling large Docker images down from the network.
      * </p>
      * <note>
      * <ul>
@@ -925,14 +941,12 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
-     * </note></li>
-     * </ul>
-     * <ul>
-     * <li>
+     * </note></dd>
+     * <dt>LOCAL_CUSTOM_CACHE</dt>
+     * <dd>
      * <p>
-     * <code>LOCAL_CUSTOM_CACHE</code> mode caches directories you specify in the buildspec file. This mode is a good
-     * choice if your build scenario is not suited to one of the other three local cache modes. If you use a custom
-     * cache:
+     * Caches directories you specify in the buildspec file. This mode is a good choice if your build scenario is not
+     * suited to one of the other three local cache modes. If you use a custom cache:
      * </p>
      * <ul>
      * <li>
@@ -952,27 +966,30 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
-     * </li>
-     * </ul>
+     * </dd>
+     * </dl>
      * 
      * @param modes
-     *        If you use a <code>LOCAL</code> cache, the local cache mode. You can use one or more local cache modes at
-     *        the same time. </p>
-     *        <ul>
-     *        <li>
+     *        An array of strings that specify the local cache modes. You can use one or more local cache modes at the
+     *        same time. This is only used for <code>LOCAL</code> cache types.</p>
      *        <p>
-     *        <code>LOCAL_SOURCE_CACHE</code> mode caches Git metadata for primary and secondary sources. After the
-     *        cache is created, subsequent builds pull only the change between commits. This mode is a good choice for
-     *        projects with a clean working directory and a source that is a large Git repository. If you choose this
-     *        option and your project does not use a Git repository (GitHub, GitHub Enterprise, or Bitbucket), the
-     *        option is ignored.
+     *        Possible values are:
      *        </p>
-     *        </li>
-     *        <li>
+     *        <dl>
+     *        <dt>LOCAL_SOURCE_CACHE</dt>
+     *        <dd>
      *        <p>
-     *        <code>LOCAL_DOCKER_LAYER_CACHE</code> mode caches existing Docker layers. This mode is a good choice for
-     *        projects that build or pull large Docker images. It can prevent the performance issues caused by pulling
-     *        large Docker images down from the network.
+     *        Caches Git metadata for primary and secondary sources. After the cache is created, subsequent builds pull
+     *        only the change between commits. This mode is a good choice for projects with a clean working directory
+     *        and a source that is a large Git repository. If you choose this option and your project does not use a Git
+     *        repository (GitHub, GitHub Enterprise, or Bitbucket), the option is ignored.
+     *        </p>
+     *        </dd>
+     *        <dt>LOCAL_DOCKER_LAYER_CACHE</dt>
+     *        <dd>
+     *        <p>
+     *        Caches existing Docker layers. This mode is a good choice for projects that build or pull large Docker
+     *        images. It can prevent the performance issues caused by pulling large Docker images down from the network.
      *        </p>
      *        <note>
      *        <ul>
@@ -992,14 +1009,12 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
-     *        </note></li>
-     *        </ul>
-     *        <ul>
-     *        <li>
+     *        </note></dd>
+     *        <dt>LOCAL_CUSTOM_CACHE</dt>
+     *        <dd>
      *        <p>
-     *        <code>LOCAL_CUSTOM_CACHE</code> mode caches directories you specify in the buildspec file. This mode is a
-     *        good choice if your build scenario is not suited to one of the other three local cache modes. If you use a
-     *        custom cache:
+     *        Caches directories you specify in the buildspec file. This mode is a good choice if your build scenario is
+     *        not suited to one of the other three local cache modes. If you use a custom cache:
      *        </p>
      *        <ul>
      *        <li>
@@ -1020,7 +1035,7 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
-     *        </li>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CacheMode
      */
@@ -1032,23 +1047,27 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If you use a <code>LOCAL</code> cache, the local cache mode. You can use one or more local cache modes at the
-     * same time.
+     * An array of strings that specify the local cache modes. You can use one or more local cache modes at the same
+     * time. This is only used for <code>LOCAL</code> cache types.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * <code>LOCAL_SOURCE_CACHE</code> mode caches Git metadata for primary and secondary sources. After the cache is
-     * created, subsequent builds pull only the change between commits. This mode is a good choice for projects with a
-     * clean working directory and a source that is a large Git repository. If you choose this option and your project
-     * does not use a Git repository (GitHub, GitHub Enterprise, or Bitbucket), the option is ignored.
+     * Possible values are:
      * </p>
-     * </li>
-     * <li>
+     * <dl>
+     * <dt>LOCAL_SOURCE_CACHE</dt>
+     * <dd>
      * <p>
-     * <code>LOCAL_DOCKER_LAYER_CACHE</code> mode caches existing Docker layers. This mode is a good choice for projects
-     * that build or pull large Docker images. It can prevent the performance issues caused by pulling large Docker
-     * images down from the network.
+     * Caches Git metadata for primary and secondary sources. After the cache is created, subsequent builds pull only
+     * the change between commits. This mode is a good choice for projects with a clean working directory and a source
+     * that is a large Git repository. If you choose this option and your project does not use a Git repository (GitHub,
+     * GitHub Enterprise, or Bitbucket), the option is ignored.
+     * </p>
+     * </dd>
+     * <dt>LOCAL_DOCKER_LAYER_CACHE</dt>
+     * <dd>
+     * <p>
+     * Caches existing Docker layers. This mode is a good choice for projects that build or pull large Docker images. It
+     * can prevent the performance issues caused by pulling large Docker images down from the network.
      * </p>
      * <note>
      * <ul>
@@ -1068,14 +1087,12 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
-     * </note></li>
-     * </ul>
-     * <ul>
-     * <li>
+     * </note></dd>
+     * <dt>LOCAL_CUSTOM_CACHE</dt>
+     * <dd>
      * <p>
-     * <code>LOCAL_CUSTOM_CACHE</code> mode caches directories you specify in the buildspec file. This mode is a good
-     * choice if your build scenario is not suited to one of the other three local cache modes. If you use a custom
-     * cache:
+     * Caches directories you specify in the buildspec file. This mode is a good choice if your build scenario is not
+     * suited to one of the other three local cache modes. If you use a custom cache:
      * </p>
      * <ul>
      * <li>
@@ -1095,27 +1112,30 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
-     * </li>
-     * </ul>
+     * </dd>
+     * </dl>
      * 
      * @param modes
-     *        If you use a <code>LOCAL</code> cache, the local cache mode. You can use one or more local cache modes at
-     *        the same time. </p>
-     *        <ul>
-     *        <li>
+     *        An array of strings that specify the local cache modes. You can use one or more local cache modes at the
+     *        same time. This is only used for <code>LOCAL</code> cache types.</p>
      *        <p>
-     *        <code>LOCAL_SOURCE_CACHE</code> mode caches Git metadata for primary and secondary sources. After the
-     *        cache is created, subsequent builds pull only the change between commits. This mode is a good choice for
-     *        projects with a clean working directory and a source that is a large Git repository. If you choose this
-     *        option and your project does not use a Git repository (GitHub, GitHub Enterprise, or Bitbucket), the
-     *        option is ignored.
+     *        Possible values are:
      *        </p>
-     *        </li>
-     *        <li>
+     *        <dl>
+     *        <dt>LOCAL_SOURCE_CACHE</dt>
+     *        <dd>
      *        <p>
-     *        <code>LOCAL_DOCKER_LAYER_CACHE</code> mode caches existing Docker layers. This mode is a good choice for
-     *        projects that build or pull large Docker images. It can prevent the performance issues caused by pulling
-     *        large Docker images down from the network.
+     *        Caches Git metadata for primary and secondary sources. After the cache is created, subsequent builds pull
+     *        only the change between commits. This mode is a good choice for projects with a clean working directory
+     *        and a source that is a large Git repository. If you choose this option and your project does not use a Git
+     *        repository (GitHub, GitHub Enterprise, or Bitbucket), the option is ignored.
+     *        </p>
+     *        </dd>
+     *        <dt>LOCAL_DOCKER_LAYER_CACHE</dt>
+     *        <dd>
+     *        <p>
+     *        Caches existing Docker layers. This mode is a good choice for projects that build or pull large Docker
+     *        images. It can prevent the performance issues caused by pulling large Docker images down from the network.
      *        </p>
      *        <note>
      *        <ul>
@@ -1135,14 +1155,12 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
-     *        </note></li>
-     *        </ul>
-     *        <ul>
-     *        <li>
+     *        </note></dd>
+     *        <dt>LOCAL_CUSTOM_CACHE</dt>
+     *        <dd>
      *        <p>
-     *        <code>LOCAL_CUSTOM_CACHE</code> mode caches directories you specify in the buildspec file. This mode is a
-     *        good choice if your build scenario is not suited to one of the other three local cache modes. If you use a
-     *        custom cache:
+     *        Caches directories you specify in the buildspec file. This mode is a good choice if your build scenario is
+     *        not suited to one of the other three local cache modes. If you use a custom cache:
      *        </p>
      *        <ul>
      *        <li>
@@ -1163,7 +1181,7 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
-     *        </li>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CacheMode
      */

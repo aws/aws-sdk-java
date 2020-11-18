@@ -42,6 +42,8 @@ public class ReportGroupMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastModified").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("status").build();
 
     private static final ReportGroupMarshaller instance = new ReportGroupMarshaller();
 
@@ -66,6 +68,7 @@ public class ReportGroupMarshaller {
             protocolMarshaller.marshall(reportGroup.getCreated(), CREATED_BINDING);
             protocolMarshaller.marshall(reportGroup.getLastModified(), LASTMODIFIED_BINDING);
             protocolMarshaller.marshall(reportGroup.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(reportGroup.getStatus(), STATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

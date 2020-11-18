@@ -28,6 +28,11 @@ public class CreateAccessPointResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The ARN of the access point.
      * </p>
+     * <note>
+     * <p>
+     * This is only supported by Amazon S3 on Outposts.
+     * </p>
+     * </note>
      */
     private String accessPointArn;
 
@@ -35,9 +40,17 @@ public class CreateAccessPointResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The ARN of the access point.
      * </p>
+     * <note>
+     * <p>
+     * This is only supported by Amazon S3 on Outposts.
+     * </p>
+     * </note>
      * 
      * @param accessPointArn
-     *        The ARN of the access point.
+     *        The ARN of the access point.</p> <note>
+     *        <p>
+     *        This is only supported by Amazon S3 on Outposts.
+     *        </p>
      */
 
     public void setAccessPointArn(String accessPointArn) {
@@ -48,8 +61,16 @@ public class CreateAccessPointResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The ARN of the access point.
      * </p>
+     * <note>
+     * <p>
+     * This is only supported by Amazon S3 on Outposts.
+     * </p>
+     * </note>
      * 
-     * @return The ARN of the access point.
+     * @return The ARN of the access point.</p> <note>
+     *         <p>
+     *         This is only supported by Amazon S3 on Outposts.
+     *         </p>
      */
 
     public String getAccessPointArn() {
@@ -60,9 +81,17 @@ public class CreateAccessPointResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The ARN of the access point.
      * </p>
+     * <note>
+     * <p>
+     * This is only supported by Amazon S3 on Outposts.
+     * </p>
+     * </note>
      * 
      * @param accessPointArn
-     *        The ARN of the access point.
+     *        The ARN of the access point.</p> <note>
+     *        <p>
+     *        This is only supported by Amazon S3 on Outposts.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

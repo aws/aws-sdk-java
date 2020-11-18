@@ -1354,7 +1354,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
-     * Restarts a batch build.
+     * Restarts a failed batch build. Only batch builds that have failed can be retried.
      * </p>
      * 
      * @param retryBuildBatchRequest
@@ -1367,7 +1367,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
-     * Restarts a batch build.
+     * Restarts a failed batch build. Only batch builds that have failed can be retried.
      * </p>
      * 
      * @param retryBuildBatchRequest

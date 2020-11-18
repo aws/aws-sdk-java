@@ -135,6 +135,24 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * Verifies if <code>IncludeNestedStacks</code> is set to <code>True</code>.
+     * </p>
+     */
+    private Boolean includeNestedStacks;
+    /**
+     * <p>
+     * Specifies the change set ID of the parent change set in the current nested change set hierarchy.
+     * </p>
+     */
+    private String parentChangeSetId;
+    /**
+     * <p>
+     * Specifies the change set ID of the root change set in the current nested change set hierarchy.
+     * </p>
+     */
+    private String rootChangeSetId;
 
     /**
      * <p>
@@ -1144,6 +1162,138 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * Verifies if <code>IncludeNestedStacks</code> is set to <code>True</code>.
+     * </p>
+     * 
+     * @param includeNestedStacks
+     *        Verifies if <code>IncludeNestedStacks</code> is set to <code>True</code>.
+     */
+
+    public void setIncludeNestedStacks(Boolean includeNestedStacks) {
+        this.includeNestedStacks = includeNestedStacks;
+    }
+
+    /**
+     * <p>
+     * Verifies if <code>IncludeNestedStacks</code> is set to <code>True</code>.
+     * </p>
+     * 
+     * @return Verifies if <code>IncludeNestedStacks</code> is set to <code>True</code>.
+     */
+
+    public Boolean getIncludeNestedStacks() {
+        return this.includeNestedStacks;
+    }
+
+    /**
+     * <p>
+     * Verifies if <code>IncludeNestedStacks</code> is set to <code>True</code>.
+     * </p>
+     * 
+     * @param includeNestedStacks
+     *        Verifies if <code>IncludeNestedStacks</code> is set to <code>True</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeChangeSetResult withIncludeNestedStacks(Boolean includeNestedStacks) {
+        setIncludeNestedStacks(includeNestedStacks);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Verifies if <code>IncludeNestedStacks</code> is set to <code>True</code>.
+     * </p>
+     * 
+     * @return Verifies if <code>IncludeNestedStacks</code> is set to <code>True</code>.
+     */
+
+    public Boolean isIncludeNestedStacks() {
+        return this.includeNestedStacks;
+    }
+
+    /**
+     * <p>
+     * Specifies the change set ID of the parent change set in the current nested change set hierarchy.
+     * </p>
+     * 
+     * @param parentChangeSetId
+     *        Specifies the change set ID of the parent change set in the current nested change set hierarchy.
+     */
+
+    public void setParentChangeSetId(String parentChangeSetId) {
+        this.parentChangeSetId = parentChangeSetId;
+    }
+
+    /**
+     * <p>
+     * Specifies the change set ID of the parent change set in the current nested change set hierarchy.
+     * </p>
+     * 
+     * @return Specifies the change set ID of the parent change set in the current nested change set hierarchy.
+     */
+
+    public String getParentChangeSetId() {
+        return this.parentChangeSetId;
+    }
+
+    /**
+     * <p>
+     * Specifies the change set ID of the parent change set in the current nested change set hierarchy.
+     * </p>
+     * 
+     * @param parentChangeSetId
+     *        Specifies the change set ID of the parent change set in the current nested change set hierarchy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeChangeSetResult withParentChangeSetId(String parentChangeSetId) {
+        setParentChangeSetId(parentChangeSetId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the change set ID of the root change set in the current nested change set hierarchy.
+     * </p>
+     * 
+     * @param rootChangeSetId
+     *        Specifies the change set ID of the root change set in the current nested change set hierarchy.
+     */
+
+    public void setRootChangeSetId(String rootChangeSetId) {
+        this.rootChangeSetId = rootChangeSetId;
+    }
+
+    /**
+     * <p>
+     * Specifies the change set ID of the root change set in the current nested change set hierarchy.
+     * </p>
+     * 
+     * @return Specifies the change set ID of the root change set in the current nested change set hierarchy.
+     */
+
+    public String getRootChangeSetId() {
+        return this.rootChangeSetId;
+    }
+
+    /**
+     * <p>
+     * Specifies the change set ID of the root change set in the current nested change set hierarchy.
+     * </p>
+     * 
+     * @param rootChangeSetId
+     *        Specifies the change set ID of the root change set in the current nested change set hierarchy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeChangeSetResult withRootChangeSetId(String rootChangeSetId) {
+        setRootChangeSetId(rootChangeSetId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1186,7 +1336,13 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
         if (getChanges() != null)
             sb.append("Changes: ").append(getChanges()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getIncludeNestedStacks() != null)
+            sb.append("IncludeNestedStacks: ").append(getIncludeNestedStacks()).append(",");
+        if (getParentChangeSetId() != null)
+            sb.append("ParentChangeSetId: ").append(getParentChangeSetId()).append(",");
+        if (getRootChangeSetId() != null)
+            sb.append("RootChangeSetId: ").append(getRootChangeSetId());
         sb.append("}");
         return sb.toString();
     }
@@ -1265,6 +1421,18 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getIncludeNestedStacks() == null ^ this.getIncludeNestedStacks() == null)
+            return false;
+        if (other.getIncludeNestedStacks() != null && other.getIncludeNestedStacks().equals(this.getIncludeNestedStacks()) == false)
+            return false;
+        if (other.getParentChangeSetId() == null ^ this.getParentChangeSetId() == null)
+            return false;
+        if (other.getParentChangeSetId() != null && other.getParentChangeSetId().equals(this.getParentChangeSetId()) == false)
+            return false;
+        if (other.getRootChangeSetId() == null ^ this.getRootChangeSetId() == null)
+            return false;
+        if (other.getRootChangeSetId() != null && other.getRootChangeSetId().equals(this.getRootChangeSetId()) == false)
+            return false;
         return true;
     }
 
@@ -1289,6 +1457,9 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getChanges() == null) ? 0 : getChanges().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getIncludeNestedStacks() == null) ? 0 : getIncludeNestedStacks().hashCode());
+        hashCode = prime * hashCode + ((getParentChangeSetId() == null) ? 0 : getParentChangeSetId().hashCode());
+        hashCode = prime * hashCode + ((getRootChangeSetId() == null) ? 0 : getRootChangeSetId().hashCode());
         return hashCode;
     }
 

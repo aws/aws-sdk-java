@@ -978,6 +978,63 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
+     * The current feature settings for the AWS Account.
+     * </p>
+     * 
+     * @param describeGlobalSettingsRequest
+     * @return Result of the DescribeGlobalSettings operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.DescribeGlobalSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeGlobalSettings" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeGlobalSettingsResult describeGlobalSettings(DescribeGlobalSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeGlobalSettings(request);
+    }
+
+    @SdkInternalApi
+    final DescribeGlobalSettingsResult executeDescribeGlobalSettings(DescribeGlobalSettingsRequest describeGlobalSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeGlobalSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeGlobalSettingsRequest> request = null;
+        Response<DescribeGlobalSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeGlobalSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeGlobalSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGlobalSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeGlobalSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeGlobalSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns information about a saved resource, including the last time it was backed up, its Amazon Resource Name
      * (ARN), and the AWS service type of the saved resource.
      * </p>
@@ -1106,10 +1163,10 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
-     * Returns the current service opt-in settings for the Region. If the service has a value set to <code>true</code>,
-     * AWS Backup tries to protect that service's resources in this Region, when included in an on-demand backup or
-     * scheduled backup plan. If the value is set to <code>false</code> for a service, AWS Backup does not try to
-     * protect that service's resources in this Region.
+     * Returns the current service opt-in settings for the Region. If service-opt-in is enabled for a service, AWS
+     * Backup tries to protect that service's resources in this Region, when the resource is included in an on-demand
+     * backup or scheduled backup plan. Otherwise, AWS Backup does not try to protect that service's resources in this
+     * Region, AWS Backup does not try to protect that service's resources in this Region.
      * </p>
      * 
      * @param describeRegionSettingsRequest
@@ -2695,6 +2752,9 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
      *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
      * @throws MissingParameterValueException
      *         Indicates that a required parameter is missing.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong
+     *         type.
      * @throws ServiceUnavailableException
      *         The request failed due to a temporary failure of the server.
      * @throws LimitExceededException
@@ -3130,6 +3190,70 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
+     * Updates the current global settings for the AWS Account. Use the <code>DescribeGlobalSettings</code> API to
+     * determine the current settings.
+     * </p>
+     * 
+     * @param updateGlobalSettingsRequest
+     * @return Result of the UpdateGlobalSettings operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong
+     *         type.
+     * @sample AWSBackup.UpdateGlobalSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateGlobalSettings" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateGlobalSettingsResult updateGlobalSettings(UpdateGlobalSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateGlobalSettings(request);
+    }
+
+    @SdkInternalApi
+    final UpdateGlobalSettingsResult executeUpdateGlobalSettings(UpdateGlobalSettingsRequest updateGlobalSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateGlobalSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateGlobalSettingsRequest> request = null;
+        Response<UpdateGlobalSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateGlobalSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGlobalSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGlobalSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateGlobalSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateGlobalSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Sets the transition lifecycle of a recovery point.
      * </p>
      * <p>
@@ -3203,10 +3327,10 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
-     * Updates the current service opt-in settings for the Region. If the service has a value set to <code>true</code>,
-     * AWS Backup tries to protect that service's resources in this Region, when included in an on-demand backup or
-     * scheduled backup plan. If the value is set to <code>false</code> for a service, AWS Backup does not try to
-     * protect that service's resources in this Region.
+     * Updates the current service opt-in settings for the Region. If service-opt-in is enabled for a service, AWS
+     * Backup tries to protect that service's resources in this Region, when the resource is included in an on-demand
+     * backup or scheduled backup plan. Otherwise, AWS Backup does not try to protect that service's resources in this
+     * Region. Use the <code>DescribeRegionSettings</code> API to determine the resource types that are supported.
      * </p>
      * 
      * @param updateRegionSettingsRequest

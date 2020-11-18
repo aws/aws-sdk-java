@@ -52,6 +52,13 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
     private String backupVaultArn;
     /**
      * <p>
+     * The backup vault where the recovery point was originally copied from. If the recovery point is restored to the
+     * same account this value will be <code>null</code>.
+     * </p>
+     */
+    private String sourceBackupVaultArn;
+    /**
+     * <p>
      * An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type.
      * </p>
      */
@@ -289,6 +296,52 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
 
     public RecoveryPointByBackupVault withBackupVaultArn(String backupVaultArn) {
         setBackupVaultArn(backupVaultArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The backup vault where the recovery point was originally copied from. If the recovery point is restored to the
+     * same account this value will be <code>null</code>.
+     * </p>
+     * 
+     * @param sourceBackupVaultArn
+     *        The backup vault where the recovery point was originally copied from. If the recovery point is restored to
+     *        the same account this value will be <code>null</code>.
+     */
+
+    public void setSourceBackupVaultArn(String sourceBackupVaultArn) {
+        this.sourceBackupVaultArn = sourceBackupVaultArn;
+    }
+
+    /**
+     * <p>
+     * The backup vault where the recovery point was originally copied from. If the recovery point is restored to the
+     * same account this value will be <code>null</code>.
+     * </p>
+     * 
+     * @return The backup vault where the recovery point was originally copied from. If the recovery point is restored
+     *         to the same account this value will be <code>null</code>.
+     */
+
+    public String getSourceBackupVaultArn() {
+        return this.sourceBackupVaultArn;
+    }
+
+    /**
+     * <p>
+     * The backup vault where the recovery point was originally copied from. If the recovery point is restored to the
+     * same account this value will be <code>null</code>.
+     * </p>
+     * 
+     * @param sourceBackupVaultArn
+     *        The backup vault where the recovery point was originally copied from. If the recovery point is restored to
+     *        the same account this value will be <code>null</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecoveryPointByBackupVault withSourceBackupVaultArn(String sourceBackupVaultArn) {
+        setSourceBackupVaultArn(sourceBackupVaultArn);
         return this;
     }
 
@@ -980,6 +1033,8 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
             sb.append("BackupVaultName: ").append(getBackupVaultName()).append(",");
         if (getBackupVaultArn() != null)
             sb.append("BackupVaultArn: ").append(getBackupVaultArn()).append(",");
+        if (getSourceBackupVaultArn() != null)
+            sb.append("SourceBackupVaultArn: ").append(getSourceBackupVaultArn()).append(",");
         if (getResourceArn() != null)
             sb.append("ResourceArn: ").append(getResourceArn()).append(",");
         if (getResourceType() != null)
@@ -1031,6 +1086,10 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
         if (other.getBackupVaultArn() == null ^ this.getBackupVaultArn() == null)
             return false;
         if (other.getBackupVaultArn() != null && other.getBackupVaultArn().equals(this.getBackupVaultArn()) == false)
+            return false;
+        if (other.getSourceBackupVaultArn() == null ^ this.getSourceBackupVaultArn() == null)
+            return false;
+        if (other.getSourceBackupVaultArn() != null && other.getSourceBackupVaultArn().equals(this.getSourceBackupVaultArn()) == false)
             return false;
         if (other.getResourceArn() == null ^ this.getResourceArn() == null)
             return false;
@@ -1095,6 +1154,7 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getRecoveryPointArn() == null) ? 0 : getRecoveryPointArn().hashCode());
         hashCode = prime * hashCode + ((getBackupVaultName() == null) ? 0 : getBackupVaultName().hashCode());
         hashCode = prime * hashCode + ((getBackupVaultArn() == null) ? 0 : getBackupVaultArn().hashCode());
+        hashCode = prime * hashCode + ((getSourceBackupVaultArn() == null) ? 0 : getSourceBackupVaultArn().hashCode());
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());

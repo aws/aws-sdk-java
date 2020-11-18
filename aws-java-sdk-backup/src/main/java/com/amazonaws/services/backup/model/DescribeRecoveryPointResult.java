@@ -47,6 +47,14 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
     private String backupVaultArn;
     /**
      * <p>
+     * An Amazon Resource Name (ARN) that uniquely identifies the source vault where the resource was originally backed
+     * up in; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the recovery is
+     * restored to the same AWS account or Region, this value will be <code>null</code>.
+     * </p>
+     */
+    private String sourceBackupVaultArn;
+    /**
+     * <p>
      * An ARN that uniquely identifies a saved resource. The format of the ARN depends on the resource type.
      * </p>
      */
@@ -294,6 +302,58 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
 
     public DescribeRecoveryPointResult withBackupVaultArn(String backupVaultArn) {
         setBackupVaultArn(backupVaultArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An Amazon Resource Name (ARN) that uniquely identifies the source vault where the resource was originally backed
+     * up in; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the recovery is
+     * restored to the same AWS account or Region, this value will be <code>null</code>.
+     * </p>
+     * 
+     * @param sourceBackupVaultArn
+     *        An Amazon Resource Name (ARN) that uniquely identifies the source vault where the resource was originally
+     *        backed up in; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the
+     *        recovery is restored to the same AWS account or Region, this value will be <code>null</code>.
+     */
+
+    public void setSourceBackupVaultArn(String sourceBackupVaultArn) {
+        this.sourceBackupVaultArn = sourceBackupVaultArn;
+    }
+
+    /**
+     * <p>
+     * An Amazon Resource Name (ARN) that uniquely identifies the source vault where the resource was originally backed
+     * up in; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the recovery is
+     * restored to the same AWS account or Region, this value will be <code>null</code>.
+     * </p>
+     * 
+     * @return An Amazon Resource Name (ARN) that uniquely identifies the source vault where the resource was originally
+     *         backed up in; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the
+     *         recovery is restored to the same AWS account or Region, this value will be <code>null</code>.
+     */
+
+    public String getSourceBackupVaultArn() {
+        return this.sourceBackupVaultArn;
+    }
+
+    /**
+     * <p>
+     * An Amazon Resource Name (ARN) that uniquely identifies the source vault where the resource was originally backed
+     * up in; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the recovery is
+     * restored to the same AWS account or Region, this value will be <code>null</code>.
+     * </p>
+     * 
+     * @param sourceBackupVaultArn
+     *        An Amazon Resource Name (ARN) that uniquely identifies the source vault where the resource was originally
+     *        backed up in; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the
+     *        recovery is restored to the same AWS account or Region, this value will be <code>null</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeRecoveryPointResult withSourceBackupVaultArn(String sourceBackupVaultArn) {
+        setSourceBackupVaultArn(sourceBackupVaultArn);
         return this;
     }
 
@@ -1074,6 +1134,8 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
             sb.append("BackupVaultName: ").append(getBackupVaultName()).append(",");
         if (getBackupVaultArn() != null)
             sb.append("BackupVaultArn: ").append(getBackupVaultArn()).append(",");
+        if (getSourceBackupVaultArn() != null)
+            sb.append("SourceBackupVaultArn: ").append(getSourceBackupVaultArn()).append(",");
         if (getResourceArn() != null)
             sb.append("ResourceArn: ").append(getResourceArn()).append(",");
         if (getResourceType() != null)
@@ -1127,6 +1189,10 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
         if (other.getBackupVaultArn() == null ^ this.getBackupVaultArn() == null)
             return false;
         if (other.getBackupVaultArn() != null && other.getBackupVaultArn().equals(this.getBackupVaultArn()) == false)
+            return false;
+        if (other.getSourceBackupVaultArn() == null ^ this.getSourceBackupVaultArn() == null)
+            return false;
+        if (other.getSourceBackupVaultArn() != null && other.getSourceBackupVaultArn().equals(this.getSourceBackupVaultArn()) == false)
             return false;
         if (other.getResourceArn() == null ^ this.getResourceArn() == null)
             return false;
@@ -1195,6 +1261,7 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getRecoveryPointArn() == null) ? 0 : getRecoveryPointArn().hashCode());
         hashCode = prime * hashCode + ((getBackupVaultName() == null) ? 0 : getBackupVaultName().hashCode());
         hashCode = prime * hashCode + ((getBackupVaultArn() == null) ? 0 : getBackupVaultArn().hashCode());
+        hashCode = prime * hashCode + ((getSourceBackupVaultArn() == null) ? 0 : getSourceBackupVaultArn().hashCode());
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());

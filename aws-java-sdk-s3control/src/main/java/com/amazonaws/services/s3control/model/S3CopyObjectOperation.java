@@ -28,7 +28,12 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class S3CopyObjectOperation implements Serializable, Cloneable {
 
-    /** <p/> */
+    /**
+     * <p>
+     * Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a bucket named
+     * "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".
+     * </p>
+     */
     private String targetResource;
     /** <p/> */
     private String cannedAccessControlList;
@@ -42,7 +47,12 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     private S3ObjectMetadata newObjectMetadata;
     /** <p/> */
     private java.util.List<S3Tag> newObjectTagging;
-    /** <p/> */
+    /**
+     * <p>
+     * Specifies an optional metadata property for website redirects, <code>x-amz-website-redirect-location</code>.
+     * Allows webpage redirects if the object is accessed through a website endpoint.
+     * </p>
+     */
     private String redirectLocation;
     /** <p/> */
     private Boolean requesterPays;
@@ -52,7 +62,12 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     private java.util.Date unModifiedSinceConstraint;
     /** <p/> */
     private String sSEAwsKmsKeyId;
-    /** <p/> */
+    /**
+     * <p>
+     * Specifies the folder prefix into which you would like the objects to be copied. For example, to copy objects into
+     * a folder named "Folder1" in the destination bucket, set the TargetKeyPrefix to "Folder1/".
+     * </p>
+     */
     private String targetKeyPrefix;
     /**
      * <p>
@@ -74,9 +89,14 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     private java.util.Date objectLockRetainUntilDate;
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a bucket named
+     * "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".
+     * </p>
      * 
      * @param targetResource
+     *        Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a
+     *        bucket named "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".
      */
 
     public void setTargetResource(String targetResource) {
@@ -84,9 +104,13 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a bucket named
+     * "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".
+     * </p>
      * 
-     * @return
+     * @return Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a
+     *         bucket named "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".
      */
 
     public String getTargetResource() {
@@ -94,9 +118,14 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a bucket named
+     * "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".
+     * </p>
      * 
      * @param targetResource
+     *        Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a
+     *        bucket named "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -384,9 +413,15 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies an optional metadata property for website redirects, <code>x-amz-website-redirect-location</code>.
+     * Allows webpage redirects if the object is accessed through a website endpoint.
+     * </p>
      * 
      * @param redirectLocation
+     *        Specifies an optional metadata property for website redirects,
+     *        <code>x-amz-website-redirect-location</code>. Allows webpage redirects if the object is accessed through a
+     *        website endpoint.
      */
 
     public void setRedirectLocation(String redirectLocation) {
@@ -394,9 +429,14 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies an optional metadata property for website redirects, <code>x-amz-website-redirect-location</code>.
+     * Allows webpage redirects if the object is accessed through a website endpoint.
+     * </p>
      * 
-     * @return
+     * @return Specifies an optional metadata property for website redirects,
+     *         <code>x-amz-website-redirect-location</code>. Allows webpage redirects if the object is accessed through
+     *         a website endpoint.
      */
 
     public String getRedirectLocation() {
@@ -404,9 +444,15 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies an optional metadata property for website redirects, <code>x-amz-website-redirect-location</code>.
+     * Allows webpage redirects if the object is accessed through a website endpoint.
+     * </p>
      * 
      * @param redirectLocation
+     *        Specifies an optional metadata property for website redirects,
+     *        <code>x-amz-website-redirect-location</code>. Allows webpage redirects if the object is accessed through a
+     *        website endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -570,9 +616,14 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the folder prefix into which you would like the objects to be copied. For example, to copy objects into
+     * a folder named "Folder1" in the destination bucket, set the TargetKeyPrefix to "Folder1/".
+     * </p>
      * 
      * @param targetKeyPrefix
+     *        Specifies the folder prefix into which you would like the objects to be copied. For example, to copy
+     *        objects into a folder named "Folder1" in the destination bucket, set the TargetKeyPrefix to "Folder1/".
      */
 
     public void setTargetKeyPrefix(String targetKeyPrefix) {
@@ -580,9 +631,13 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the folder prefix into which you would like the objects to be copied. For example, to copy objects into
+     * a folder named "Folder1" in the destination bucket, set the TargetKeyPrefix to "Folder1/".
+     * </p>
      * 
-     * @return
+     * @return Specifies the folder prefix into which you would like the objects to be copied. For example, to copy
+     *         objects into a folder named "Folder1" in the destination bucket, set the TargetKeyPrefix to "Folder1/".
      */
 
     public String getTargetKeyPrefix() {
@@ -590,9 +645,14 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the folder prefix into which you would like the objects to be copied. For example, to copy objects into
+     * a folder named "Folder1" in the destination bucket, set the TargetKeyPrefix to "Folder1/".
+     * </p>
      * 
      * @param targetKeyPrefix
+     *        Specifies the folder prefix into which you would like the objects to be copied. For example, to copy
+     *        objects into a folder named "Folder1" in the destination bucket, set the TargetKeyPrefix to "Folder1/".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

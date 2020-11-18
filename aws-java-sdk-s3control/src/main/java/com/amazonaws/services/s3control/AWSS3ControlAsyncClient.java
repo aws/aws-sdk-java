@@ -439,6 +439,75 @@ public class AWSS3ControlAsyncClient extends AWSS3ControlClient implements AWSS3
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteStorageLensConfigurationResult> deleteStorageLensConfigurationAsync(DeleteStorageLensConfigurationRequest request) {
+
+        return deleteStorageLensConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStorageLensConfigurationResult> deleteStorageLensConfigurationAsync(
+            final DeleteStorageLensConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteStorageLensConfigurationRequest, DeleteStorageLensConfigurationResult> asyncHandler) {
+        final DeleteStorageLensConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteStorageLensConfigurationResult>() {
+            @Override
+            public DeleteStorageLensConfigurationResult call() throws Exception {
+                DeleteStorageLensConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteStorageLensConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStorageLensConfigurationTaggingResult> deleteStorageLensConfigurationTaggingAsync(
+            DeleteStorageLensConfigurationTaggingRequest request) {
+
+        return deleteStorageLensConfigurationTaggingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStorageLensConfigurationTaggingResult> deleteStorageLensConfigurationTaggingAsync(
+            final DeleteStorageLensConfigurationTaggingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteStorageLensConfigurationTaggingRequest, DeleteStorageLensConfigurationTaggingResult> asyncHandler) {
+        final DeleteStorageLensConfigurationTaggingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteStorageLensConfigurationTaggingResult>() {
+            @Override
+            public DeleteStorageLensConfigurationTaggingResult call() throws Exception {
+                DeleteStorageLensConfigurationTaggingResult result = null;
+
+                try {
+                    result = executeDeleteStorageLensConfigurationTagging(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeJobResult> describeJobAsync(DescribeJobRequest request) {
 
         return describeJobAsync(request, null);
@@ -771,6 +840,74 @@ public class AWSS3ControlAsyncClient extends AWSS3ControlClient implements AWSS3
     }
 
     @Override
+    public java.util.concurrent.Future<GetStorageLensConfigurationResult> getStorageLensConfigurationAsync(GetStorageLensConfigurationRequest request) {
+
+        return getStorageLensConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetStorageLensConfigurationResult> getStorageLensConfigurationAsync(final GetStorageLensConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetStorageLensConfigurationRequest, GetStorageLensConfigurationResult> asyncHandler) {
+        final GetStorageLensConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetStorageLensConfigurationResult>() {
+            @Override
+            public GetStorageLensConfigurationResult call() throws Exception {
+                GetStorageLensConfigurationResult result = null;
+
+                try {
+                    result = executeGetStorageLensConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetStorageLensConfigurationTaggingResult> getStorageLensConfigurationTaggingAsync(
+            GetStorageLensConfigurationTaggingRequest request) {
+
+        return getStorageLensConfigurationTaggingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetStorageLensConfigurationTaggingResult> getStorageLensConfigurationTaggingAsync(
+            final GetStorageLensConfigurationTaggingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetStorageLensConfigurationTaggingRequest, GetStorageLensConfigurationTaggingResult> asyncHandler) {
+        final GetStorageLensConfigurationTaggingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetStorageLensConfigurationTaggingResult>() {
+            @Override
+            public GetStorageLensConfigurationTaggingResult call() throws Exception {
+                GetStorageLensConfigurationTaggingResult result = null;
+
+                try {
+                    result = executeGetStorageLensConfigurationTagging(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAccessPointsResult> listAccessPointsAsync(ListAccessPointsRequest request) {
 
         return listAccessPointsAsync(request, null);
@@ -854,6 +991,40 @@ public class AWSS3ControlAsyncClient extends AWSS3ControlClient implements AWSS3
 
                 try {
                     result = executeListRegionalBuckets(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStorageLensConfigurationsResult> listStorageLensConfigurationsAsync(ListStorageLensConfigurationsRequest request) {
+
+        return listStorageLensConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStorageLensConfigurationsResult> listStorageLensConfigurationsAsync(
+            final ListStorageLensConfigurationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListStorageLensConfigurationsRequest, ListStorageLensConfigurationsResult> asyncHandler) {
+        final ListStorageLensConfigurationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListStorageLensConfigurationsResult>() {
+            @Override
+            public ListStorageLensConfigurationsResult call() throws Exception {
+                ListStorageLensConfigurationsResult result = null;
+
+                try {
+                    result = executeListStorageLensConfigurations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1054,6 +1225,74 @@ public class AWSS3ControlAsyncClient extends AWSS3ControlClient implements AWSS3
 
                 try {
                     result = executePutPublicAccessBlock(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutStorageLensConfigurationResult> putStorageLensConfigurationAsync(PutStorageLensConfigurationRequest request) {
+
+        return putStorageLensConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutStorageLensConfigurationResult> putStorageLensConfigurationAsync(final PutStorageLensConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutStorageLensConfigurationRequest, PutStorageLensConfigurationResult> asyncHandler) {
+        final PutStorageLensConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutStorageLensConfigurationResult>() {
+            @Override
+            public PutStorageLensConfigurationResult call() throws Exception {
+                PutStorageLensConfigurationResult result = null;
+
+                try {
+                    result = executePutStorageLensConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutStorageLensConfigurationTaggingResult> putStorageLensConfigurationTaggingAsync(
+            PutStorageLensConfigurationTaggingRequest request) {
+
+        return putStorageLensConfigurationTaggingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutStorageLensConfigurationTaggingResult> putStorageLensConfigurationTaggingAsync(
+            final PutStorageLensConfigurationTaggingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutStorageLensConfigurationTaggingRequest, PutStorageLensConfigurationTaggingResult> asyncHandler) {
+        final PutStorageLensConfigurationTaggingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutStorageLensConfigurationTaggingResult>() {
+            @Override
+            public PutStorageLensConfigurationTaggingResult call() throws Exception {
+                PutStorageLensConfigurationTaggingResult result = null;
+
+                try {
+                    result = executePutStorageLensConfigurationTagging(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

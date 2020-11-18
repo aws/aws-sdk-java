@@ -183,6 +183,9 @@ public interface AmazonCloudFormation {
      * When you are satisfied with the changes the change set will make, execute the change set by using the
      * <a>ExecuteChangeSet</a> action. AWS CloudFormation doesn't make changes until you execute the change set.
      * </p>
+     * <p>
+     * To create a change set for the entire stack hierachy, set <code>IncludeNestedStacks</code> to <code>True</code>.
+     * </p>
      * 
      * @param createChangeSetRequest
      *        The input for the <a>CreateChangeSet</a> action.
@@ -291,6 +294,11 @@ public interface AmazonCloudFormation {
      * </p>
      * <p>
      * If the call successfully completes, AWS CloudFormation successfully deleted the change set.
+     * </p>
+     * <p>
+     * If <code>IncludeNestedStacks</code> specifies <code>True</code> during the creation of the nested change set,
+     * then <code>DeleteChangeSet</code> will delete all change sets that belong to the stacks hierarchy and will also
+     * delete all change sets for nested stacks with the status of <code>REVIEW_IN_PROGRESS</code>.
      * </p>
      * 
      * @param deleteChangeSetRequest
@@ -849,6 +857,10 @@ public interface AmazonCloudFormation {
      * <p>
      * If a stack policy is associated with the stack, AWS CloudFormation enforces the policy during the update. You
      * can't specify a temporary stack policy that overrides the current policy.
+     * </p>
+     * <p>
+     * To create a change set for the entire stack hierachy, <code>IncludeNestedStacks</code> must have been set to
+     * <code>True</code>.
      * </p>
      * 
      * @param executeChangeSetRequest

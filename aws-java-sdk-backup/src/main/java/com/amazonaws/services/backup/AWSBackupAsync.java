@@ -529,6 +529,37 @@ public interface AWSBackupAsync extends AWSBackup {
 
     /**
      * <p>
+     * The current feature settings for the AWS Account.
+     * </p>
+     * 
+     * @param describeGlobalSettingsRequest
+     * @return A Java Future containing the result of the DescribeGlobalSettings operation returned by the service.
+     * @sample AWSBackupAsync.DescribeGlobalSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeGlobalSettings" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeGlobalSettingsResult> describeGlobalSettingsAsync(DescribeGlobalSettingsRequest describeGlobalSettingsRequest);
+
+    /**
+     * <p>
+     * The current feature settings for the AWS Account.
+     * </p>
+     * 
+     * @param describeGlobalSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeGlobalSettings operation returned by the service.
+     * @sample AWSBackupAsyncHandler.DescribeGlobalSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeGlobalSettings" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeGlobalSettingsResult> describeGlobalSettingsAsync(DescribeGlobalSettingsRequest describeGlobalSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeGlobalSettingsRequest, DescribeGlobalSettingsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about a saved resource, including the last time it was backed up, its Amazon Resource Name
      * (ARN), and the AWS service type of the saved resource.
      * </p>
@@ -595,10 +626,10 @@ public interface AWSBackupAsync extends AWSBackup {
 
     /**
      * <p>
-     * Returns the current service opt-in settings for the Region. If the service has a value set to <code>true</code>,
-     * AWS Backup tries to protect that service's resources in this Region, when included in an on-demand backup or
-     * scheduled backup plan. If the value is set to <code>false</code> for a service, AWS Backup does not try to
-     * protect that service's resources in this Region.
+     * Returns the current service opt-in settings for the Region. If service-opt-in is enabled for a service, AWS
+     * Backup tries to protect that service's resources in this Region, when the resource is included in an on-demand
+     * backup or scheduled backup plan. Otherwise, AWS Backup does not try to protect that service's resources in this
+     * Region, AWS Backup does not try to protect that service's resources in this Region.
      * </p>
      * 
      * @param describeRegionSettingsRequest
@@ -611,10 +642,10 @@ public interface AWSBackupAsync extends AWSBackup {
 
     /**
      * <p>
-     * Returns the current service opt-in settings for the Region. If the service has a value set to <code>true</code>,
-     * AWS Backup tries to protect that service's resources in this Region, when included in an on-demand backup or
-     * scheduled backup plan. If the value is set to <code>false</code> for a service, AWS Backup does not try to
-     * protect that service's resources in this Region.
+     * Returns the current service opt-in settings for the Region. If service-opt-in is enabled for a service, AWS
+     * Backup tries to protect that service's resources in this Region, when the resource is included in an on-demand
+     * backup or scheduled backup plan. Otherwise, AWS Backup does not try to protect that service's resources in this
+     * Region, AWS Backup does not try to protect that service's resources in this Region.
      * </p>
      * 
      * @param describeRegionSettingsRequest
@@ -1653,6 +1684,39 @@ public interface AWSBackupAsync extends AWSBackup {
 
     /**
      * <p>
+     * Updates the current global settings for the AWS Account. Use the <code>DescribeGlobalSettings</code> API to
+     * determine the current settings.
+     * </p>
+     * 
+     * @param updateGlobalSettingsRequest
+     * @return A Java Future containing the result of the UpdateGlobalSettings operation returned by the service.
+     * @sample AWSBackupAsync.UpdateGlobalSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateGlobalSettings" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateGlobalSettingsResult> updateGlobalSettingsAsync(UpdateGlobalSettingsRequest updateGlobalSettingsRequest);
+
+    /**
+     * <p>
+     * Updates the current global settings for the AWS Account. Use the <code>DescribeGlobalSettings</code> API to
+     * determine the current settings.
+     * </p>
+     * 
+     * @param updateGlobalSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateGlobalSettings operation returned by the service.
+     * @sample AWSBackupAsyncHandler.UpdateGlobalSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateGlobalSettings" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateGlobalSettingsResult> updateGlobalSettingsAsync(UpdateGlobalSettingsRequest updateGlobalSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateGlobalSettingsRequest, UpdateGlobalSettingsResult> asyncHandler);
+
+    /**
+     * <p>
      * Sets the transition lifecycle of a recovery point.
      * </p>
      * <p>
@@ -1706,10 +1770,10 @@ public interface AWSBackupAsync extends AWSBackup {
 
     /**
      * <p>
-     * Updates the current service opt-in settings for the Region. If the service has a value set to <code>true</code>,
-     * AWS Backup tries to protect that service's resources in this Region, when included in an on-demand backup or
-     * scheduled backup plan. If the value is set to <code>false</code> for a service, AWS Backup does not try to
-     * protect that service's resources in this Region.
+     * Updates the current service opt-in settings for the Region. If service-opt-in is enabled for a service, AWS
+     * Backup tries to protect that service's resources in this Region, when the resource is included in an on-demand
+     * backup or scheduled backup plan. Otherwise, AWS Backup does not try to protect that service's resources in this
+     * Region. Use the <code>DescribeRegionSettings</code> API to determine the resource types that are supported.
      * </p>
      * 
      * @param updateRegionSettingsRequest
@@ -1722,10 +1786,10 @@ public interface AWSBackupAsync extends AWSBackup {
 
     /**
      * <p>
-     * Updates the current service opt-in settings for the Region. If the service has a value set to <code>true</code>,
-     * AWS Backup tries to protect that service's resources in this Region, when included in an on-demand backup or
-     * scheduled backup plan. If the value is set to <code>false</code> for a service, AWS Backup does not try to
-     * protect that service's resources in this Region.
+     * Updates the current service opt-in settings for the Region. If service-opt-in is enabled for a service, AWS
+     * Backup tries to protect that service's resources in this Region, when the resource is included in an on-demand
+     * backup or scheduled backup plan. Otherwise, AWS Backup does not try to protect that service's resources in this
+     * Region. Use the <code>DescribeRegionSettings</code> API to determine the resource types that are supported.
      * </p>
      * 
      * @param updateRegionSettingsRequest

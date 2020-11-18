@@ -30,7 +30,8 @@ public class ResourceChange implements Serializable, Cloneable {
     /**
      * <p>
      * The action that AWS CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource),
-     * <code>Modify</code> (changes a resource), or <code>Remove</code> (deletes a resource).
+     * <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code> (imports
+     * a resource), or <code>Dynamic</code> (exact action for the resource cannot be determined).
      * </p>
      */
     private String action;
@@ -83,16 +84,24 @@ public class ResourceChange implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ResourceChangeDetail> details;
+    /**
+     * <p>
+     * The change set ID of the nested change set.
+     * </p>
+     */
+    private String changeSetId;
 
     /**
      * <p>
      * The action that AWS CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource),
-     * <code>Modify</code> (changes a resource), or <code>Remove</code> (deletes a resource).
+     * <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code> (imports
+     * a resource), or <code>Dynamic</code> (exact action for the resource cannot be determined).
      * </p>
      * 
      * @param action
      *        The action that AWS CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource),
-     *        <code>Modify</code> (changes a resource), or <code>Remove</code> (deletes a resource).
+     *        <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code>
+     *        (imports a resource), or <code>Dynamic</code> (exact action for the resource cannot be determined).
      * @see ChangeAction
      */
 
@@ -103,11 +112,13 @@ public class ResourceChange implements Serializable, Cloneable {
     /**
      * <p>
      * The action that AWS CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource),
-     * <code>Modify</code> (changes a resource), or <code>Remove</code> (deletes a resource).
+     * <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code> (imports
+     * a resource), or <code>Dynamic</code> (exact action for the resource cannot be determined).
      * </p>
      * 
      * @return The action that AWS CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource),
-     *         <code>Modify</code> (changes a resource), or <code>Remove</code> (deletes a resource).
+     *         <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code>
+     *         (imports a resource), or <code>Dynamic</code> (exact action for the resource cannot be determined).
      * @see ChangeAction
      */
 
@@ -118,12 +129,14 @@ public class ResourceChange implements Serializable, Cloneable {
     /**
      * <p>
      * The action that AWS CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource),
-     * <code>Modify</code> (changes a resource), or <code>Remove</code> (deletes a resource).
+     * <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code> (imports
+     * a resource), or <code>Dynamic</code> (exact action for the resource cannot be determined).
      * </p>
      * 
      * @param action
      *        The action that AWS CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource),
-     *        <code>Modify</code> (changes a resource), or <code>Remove</code> (deletes a resource).
+     *        <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code>
+     *        (imports a resource), or <code>Dynamic</code> (exact action for the resource cannot be determined).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChangeAction
      */
@@ -136,12 +149,14 @@ public class ResourceChange implements Serializable, Cloneable {
     /**
      * <p>
      * The action that AWS CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource),
-     * <code>Modify</code> (changes a resource), or <code>Remove</code> (deletes a resource).
+     * <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code> (imports
+     * a resource), or <code>Dynamic</code> (exact action for the resource cannot be determined).
      * </p>
      * 
      * @param action
      *        The action that AWS CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource),
-     *        <code>Modify</code> (changes a resource), or <code>Remove</code> (deletes a resource).
+     *        <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code>
+     *        (imports a resource), or <code>Dynamic</code> (exact action for the resource cannot be determined).
      * @see ChangeAction
      */
 
@@ -152,12 +167,14 @@ public class ResourceChange implements Serializable, Cloneable {
     /**
      * <p>
      * The action that AWS CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource),
-     * <code>Modify</code> (changes a resource), or <code>Remove</code> (deletes a resource).
+     * <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code> (imports
+     * a resource), or <code>Dynamic</code> (exact action for the resource cannot be determined).
      * </p>
      * 
      * @param action
      *        The action that AWS CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource),
-     *        <code>Modify</code> (changes a resource), or <code>Remove</code> (deletes a resource).
+     *        <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code>
+     *        (imports a resource), or <code>Dynamic</code> (exact action for the resource cannot be determined).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChangeAction
      */
@@ -665,6 +682,46 @@ public class ResourceChange implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The change set ID of the nested change set.
+     * </p>
+     * 
+     * @param changeSetId
+     *        The change set ID of the nested change set.
+     */
+
+    public void setChangeSetId(String changeSetId) {
+        this.changeSetId = changeSetId;
+    }
+
+    /**
+     * <p>
+     * The change set ID of the nested change set.
+     * </p>
+     * 
+     * @return The change set ID of the nested change set.
+     */
+
+    public String getChangeSetId() {
+        return this.changeSetId;
+    }
+
+    /**
+     * <p>
+     * The change set ID of the nested change set.
+     * </p>
+     * 
+     * @param changeSetId
+     *        The change set ID of the nested change set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceChange withChangeSetId(String changeSetId) {
+        setChangeSetId(changeSetId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -689,7 +746,9 @@ public class ResourceChange implements Serializable, Cloneable {
         if (getScope() != null)
             sb.append("Scope: ").append(getScope()).append(",");
         if (getDetails() != null)
-            sb.append("Details: ").append(getDetails());
+            sb.append("Details: ").append(getDetails()).append(",");
+        if (getChangeSetId() != null)
+            sb.append("ChangeSetId: ").append(getChangeSetId());
         sb.append("}");
         return sb.toString();
     }
@@ -732,6 +791,10 @@ public class ResourceChange implements Serializable, Cloneable {
             return false;
         if (other.getDetails() != null && other.getDetails().equals(this.getDetails()) == false)
             return false;
+        if (other.getChangeSetId() == null ^ this.getChangeSetId() == null)
+            return false;
+        if (other.getChangeSetId() != null && other.getChangeSetId().equals(this.getChangeSetId()) == false)
+            return false;
         return true;
     }
 
@@ -747,6 +810,7 @@ public class ResourceChange implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getReplacement() == null) ? 0 : getReplacement().hashCode());
         hashCode = prime * hashCode + ((getScope() == null) ? 0 : getScope().hashCode());
         hashCode = prime * hashCode + ((getDetails() == null) ? 0 : getDetails().hashCode());
+        hashCode = prime * hashCode + ((getChangeSetId() == null) ? 0 : getChangeSetId().hashCode());
         return hashCode;
     }
 

@@ -76,6 +76,8 @@ public class ReportGroup implements Serializable, Cloneable, StructuredPojo {
      */
     private java.util.List<Tag> tags;
 
+    private String status;
+
     /**
      * <p>
      * The ARN of a <code>ReportGroup</code>.
@@ -426,6 +428,46 @@ public class ReportGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param status
+     * @see ReportGroupStatusType
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * @return
+     * @see ReportGroupStatusType
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * @param status
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReportGroupStatusType
+     */
+
+    public ReportGroup withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * @param status
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReportGroupStatusType
+     */
+
+    public ReportGroup withStatus(ReportGroupStatusType status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -450,7 +492,9 @@ public class ReportGroup implements Serializable, Cloneable, StructuredPojo {
         if (getLastModified() != null)
             sb.append("LastModified: ").append(getLastModified()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -493,6 +537,10 @@ public class ReportGroup implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
         return true;
     }
 
@@ -508,6 +556,7 @@ public class ReportGroup implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreated() == null) ? 0 : getCreated().hashCode());
         hashCode = prime * hashCode + ((getLastModified() == null) ? 0 : getLastModified().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

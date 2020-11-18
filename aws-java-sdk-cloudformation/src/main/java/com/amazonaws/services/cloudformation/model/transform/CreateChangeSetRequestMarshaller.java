@@ -264,6 +264,10 @@ public class CreateChangeSetRequestMarshaller implements Marshaller<Request<Crea
             }
         }
 
+        if (createChangeSetRequest.getIncludeNestedStacks() != null) {
+            request.addParameter("IncludeNestedStacks", StringUtils.fromBoolean(createChangeSetRequest.getIncludeNestedStacks()));
+        }
+
         return request;
     }
 

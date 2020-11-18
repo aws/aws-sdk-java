@@ -33,6 +33,8 @@ public class RecoveryPointByBackupVaultMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackupVaultName").build();
     private static final MarshallingInfo<String> BACKUPVAULTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackupVaultArn").build();
+    private static final MarshallingInfo<String> SOURCEBACKUPVAULTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceBackupVaultArn").build();
     private static final MarshallingInfo<String> RESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceArn").build();
     private static final MarshallingInfo<String> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -79,6 +81,7 @@ public class RecoveryPointByBackupVaultMarshaller {
             protocolMarshaller.marshall(recoveryPointByBackupVault.getRecoveryPointArn(), RECOVERYPOINTARN_BINDING);
             protocolMarshaller.marshall(recoveryPointByBackupVault.getBackupVaultName(), BACKUPVAULTNAME_BINDING);
             protocolMarshaller.marshall(recoveryPointByBackupVault.getBackupVaultArn(), BACKUPVAULTARN_BINDING);
+            protocolMarshaller.marshall(recoveryPointByBackupVault.getSourceBackupVaultArn(), SOURCEBACKUPVAULTARN_BINDING);
             protocolMarshaller.marshall(recoveryPointByBackupVault.getResourceArn(), RESOURCEARN_BINDING);
             protocolMarshaller.marshall(recoveryPointByBackupVault.getResourceType(), RESOURCETYPE_BINDING);
             protocolMarshaller.marshall(recoveryPointByBackupVault.getCreatedBy(), CREATEDBY_BINDING);

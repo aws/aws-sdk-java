@@ -60,6 +60,10 @@ public class DescribeRecoveryPointResultJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     describeRecoveryPointResult.setBackupVaultArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SourceBackupVaultArn", targetDepth)) {
+                    context.nextToken();
+                    describeRecoveryPointResult.setSourceBackupVaultArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ResourceArn", targetDepth)) {
                     context.nextToken();
                     describeRecoveryPointResult.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));

@@ -158,8 +158,8 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * Represents the actual backup type selected for a backup job. For example, if a successful WindowsVSS backup was
-     * taken, <code>BackupType</code> returns “WindowsVSS”. If <code>BackupType</code> is empty, then it is a regular
-     * backup.
+     * taken, <code>BackupType</code> returns "WindowsVSS". If <code>BackupType</code> is empty, then the backup type
+     * that was is a regular backup.
      * </p>
      */
     private String backupType;
@@ -1082,14 +1082,14 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * Represents the actual backup type selected for a backup job. For example, if a successful WindowsVSS backup was
-     * taken, <code>BackupType</code> returns “WindowsVSS”. If <code>BackupType</code> is empty, then it is a regular
-     * backup.
+     * taken, <code>BackupType</code> returns "WindowsVSS". If <code>BackupType</code> is empty, then the backup type
+     * that was is a regular backup.
      * </p>
      * 
      * @param backupType
      *        Represents the actual backup type selected for a backup job. For example, if a successful WindowsVSS
-     *        backup was taken, <code>BackupType</code> returns “WindowsVSS”. If <code>BackupType</code> is empty, then
-     *        it is a regular backup.
+     *        backup was taken, <code>BackupType</code> returns "WindowsVSS". If <code>BackupType</code> is empty, then
+     *        the backup type that was is a regular backup.
      */
 
     public void setBackupType(String backupType) {
@@ -1099,13 +1099,13 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * Represents the actual backup type selected for a backup job. For example, if a successful WindowsVSS backup was
-     * taken, <code>BackupType</code> returns “WindowsVSS”. If <code>BackupType</code> is empty, then it is a regular
-     * backup.
+     * taken, <code>BackupType</code> returns "WindowsVSS". If <code>BackupType</code> is empty, then the backup type
+     * that was is a regular backup.
      * </p>
      * 
      * @return Represents the actual backup type selected for a backup job. For example, if a successful WindowsVSS
-     *         backup was taken, <code>BackupType</code> returns “WindowsVSS”. If <code>BackupType</code> is empty, then
-     *         it is a regular backup.
+     *         backup was taken, <code>BackupType</code> returns "WindowsVSS". If <code>BackupType</code> is empty, then
+     *         the backup type that was is a regular backup.
      */
 
     public String getBackupType() {
@@ -1115,14 +1115,14 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * Represents the actual backup type selected for a backup job. For example, if a successful WindowsVSS backup was
-     * taken, <code>BackupType</code> returns “WindowsVSS”. If <code>BackupType</code> is empty, then it is a regular
-     * backup.
+     * taken, <code>BackupType</code> returns "WindowsVSS". If <code>BackupType</code> is empty, then the backup type
+     * that was is a regular backup.
      * </p>
      * 
      * @param backupType
      *        Represents the actual backup type selected for a backup job. For example, if a successful WindowsVSS
-     *        backup was taken, <code>BackupType</code> returns “WindowsVSS”. If <code>BackupType</code> is empty, then
-     *        it is a regular backup.
+     *        backup was taken, <code>BackupType</code> returns "WindowsVSS". If <code>BackupType</code> is empty, then
+     *        the backup type that was is a regular backup.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

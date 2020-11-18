@@ -2302,7 +2302,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * For Redis engine version 6.04 onwards: Deletes a user. The user will be removed from all user groups and in turn
+     * For Redis engine version 6.x onwards: Deletes a user. The user will be removed from all user groups and in turn
      * removed from all replication groups. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access
      * Control (RBAC)</a>.
@@ -2365,7 +2365,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * For Redis engine version 6.04 onwards: Deletes a ser group. The user group must first be disassociated from the
+     * For Redis engine version 6.x onwards: Deletes a ser group. The user group must first be disassociated from the
      * replcation group before it can be deleted. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access
      * Control (RBAC)</a>.

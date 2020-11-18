@@ -23,7 +23,8 @@ public enum ChangeAction {
     Add("Add"),
     Modify("Modify"),
     Remove("Remove"),
-    Import("Import");
+    Import("Import"),
+    Dynamic("Dynamic");
 
     private String value;
 

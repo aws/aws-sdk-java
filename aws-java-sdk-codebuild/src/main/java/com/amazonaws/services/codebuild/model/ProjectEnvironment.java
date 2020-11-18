@@ -68,7 +68,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <p>
      * For an image tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example, in the Docker
      * repository that CodeBuild uses to manage its Docker images, this would be <code>aws/codebuild/standard:4.0</code>
-     * . To specify the latest version of this image, this would be <code>aws/codebuild/standard:latest</code>.
+     * .
      * </p>
      * </li>
      * <li>
@@ -178,7 +178,10 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
     private Boolean privilegedMode;
     /**
      * <p>
-     * The certificate to use with this build project.
+     * The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix, and object key that contains the
+     * PEM-encoded certificate for the build project. For more information, see <a href=
+     * "https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate"
+     * >certificate</a> in the <i>AWS CodeBuild User Guide</i>.
      * </p>
      */
     private String certificate;
@@ -535,7 +538,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <p>
      * For an image tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example, in the Docker
      * repository that CodeBuild uses to manage its Docker images, this would be <code>aws/codebuild/standard:4.0</code>
-     * . To specify the latest version of this image, this would be <code>aws/codebuild/standard:latest</code>.
+     * .
      * </p>
      * </li>
      * <li>
@@ -556,8 +559,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        <p>
      *        For an image tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example, in the Docker
      *        repository that CodeBuild uses to manage its Docker images, this would be
-     *        <code>aws/codebuild/standard:4.0</code>. To specify the latest version of this image, this would be
-     *        <code>aws/codebuild/standard:latest</code>.
+     *        <code>aws/codebuild/standard:4.0</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -585,7 +587,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <p>
      * For an image tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example, in the Docker
      * repository that CodeBuild uses to manage its Docker images, this would be <code>aws/codebuild/standard:4.0</code>
-     * . To specify the latest version of this image, this would be <code>aws/codebuild/standard:latest</code>.
+     * .
      * </p>
      * </li>
      * <li>
@@ -605,8 +607,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *         <p>
      *         For an image tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example, in the
      *         Docker repository that CodeBuild uses to manage its Docker images, this would be
-     *         <code>aws/codebuild/standard:4.0</code>. To specify the latest version of this image, this would be
-     *         <code>aws/codebuild/standard:latest</code>.
+     *         <code>aws/codebuild/standard:4.0</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -634,7 +635,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <p>
      * For an image tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example, in the Docker
      * repository that CodeBuild uses to manage its Docker images, this would be <code>aws/codebuild/standard:4.0</code>
-     * . To specify the latest version of this image, this would be <code>aws/codebuild/standard:latest</code>.
+     * .
      * </p>
      * </li>
      * <li>
@@ -655,8 +656,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        <p>
      *        For an image tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example, in the Docker
      *        repository that CodeBuild uses to manage its Docker images, this would be
-     *        <code>aws/codebuild/standard:4.0</code>. To specify the latest version of this image, this would be
-     *        <code>aws/codebuild/standard:latest</code>.
+     *        <code>aws/codebuild/standard:4.0</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1574,11 +1574,17 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The certificate to use with this build project.
+     * The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix, and object key that contains the
+     * PEM-encoded certificate for the build project. For more information, see <a href=
+     * "https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate"
+     * >certificate</a> in the <i>AWS CodeBuild User Guide</i>.
      * </p>
      * 
      * @param certificate
-     *        The certificate to use with this build project.
+     *        The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix, and object key that contains
+     *        the PEM-encoded certificate for the build project. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate"
+     *        >certificate</a> in the <i>AWS CodeBuild User Guide</i>.
      */
 
     public void setCertificate(String certificate) {
@@ -1587,10 +1593,16 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The certificate to use with this build project.
+     * The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix, and object key that contains the
+     * PEM-encoded certificate for the build project. For more information, see <a href=
+     * "https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate"
+     * >certificate</a> in the <i>AWS CodeBuild User Guide</i>.
      * </p>
      * 
-     * @return The certificate to use with this build project.
+     * @return The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix, and object key that
+     *         contains the PEM-encoded certificate for the build project. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate"
+     *         >certificate</a> in the <i>AWS CodeBuild User Guide</i>.
      */
 
     public String getCertificate() {
@@ -1599,11 +1611,17 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The certificate to use with this build project.
+     * The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix, and object key that contains the
+     * PEM-encoded certificate for the build project. For more information, see <a href=
+     * "https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate"
+     * >certificate</a> in the <i>AWS CodeBuild User Guide</i>.
      * </p>
      * 
      * @param certificate
-     *        The certificate to use with this build project.
+     *        The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix, and object key that contains
+     *        the PEM-encoded certificate for the build project. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate"
+     *        >certificate</a> in the <i>AWS CodeBuild User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

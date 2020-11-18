@@ -72,12 +72,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <i>Amazon Simple Storage Service Developer Guide </i>.
      * </p>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_CreateAccessPoint.html#API_control_CreateAccessPoint_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPoint.html#API_control_CreateAccessPoint_Examples"
+     * >Examples</a> section.
      * </p>
      * <p/>
      * <p>
@@ -92,12 +93,12 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <li>
      * <p>
      * <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteAccessPoint.html">DeleteAccessPoint</a>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPoint.html">DeleteAccessPoint</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_ListAccessPoints.html">ListAccessPoints</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPoints.html">ListAccessPoints</a>
      * </p>
      * </li>
      * </ul>
@@ -150,12 +151,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <i>Amazon Simple Storage Service Developer Guide </i>.
      * </p>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_CreateAccessPoint.html#API_control_CreateAccessPoint_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPoint.html#API_control_CreateAccessPoint_Examples"
+     * >Examples</a> section.
      * </p>
      * <p/>
      * <p>
@@ -170,12 +172,12 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <li>
      * <p>
      * <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteAccessPoint.html">DeleteAccessPoint</a>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPoint.html">DeleteAccessPoint</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_ListAccessPoints.html">ListAccessPoints</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPoints.html">ListAccessPoints</a>
      * </p>
      * </li>
      * </ul>
@@ -239,9 +241,9 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </ul>
      * <p>
      * For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname
-     * prefix and outpost-id in your API request, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_CreateBucket.html#API_control_CreateBucket_Examples"
-     * > Example</a> section below.
+     * prefix and <code>x-amz-outpost-id</code> in your API request, see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html#API_control_CreateBucket_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * The following actions are related to <code>CreateBucket</code> for Amazon S3 on Outposts:
@@ -254,23 +256,23 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetBucket.html">GetBucket</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucket.html">GetBucket</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteBucket.html">DeleteBucket</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucket.html">DeleteBucket</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_CreateAccessPoint.html">CreateAccessPoint</a>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPoint.html">CreateAccessPoint</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_PutAccessPointPolicy.html">
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicy.html">
      * PutAccessPointPolicy</a>
      * </p>
      * </li>
@@ -330,9 +332,9 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </ul>
      * <p>
      * For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname
-     * prefix and outpost-id in your API request, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_CreateBucket.html#API_control_CreateBucket_Examples"
-     * > Example</a> section below.
+     * prefix and <code>x-amz-outpost-id</code> in your API request, see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html#API_control_CreateBucket_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * The following actions are related to <code>CreateBucket</code> for Amazon S3 on Outposts:
@@ -345,23 +347,23 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetBucket.html">GetBucket</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucket.html">GetBucket</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteBucket.html">DeleteBucket</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucket.html">DeleteBucket</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_CreateAccessPoint.html">CreateAccessPoint</a>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPoint.html">CreateAccessPoint</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_PutAccessPointPolicy.html">
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicy.html">
      * PutAccessPointPolicy</a>
      * </p>
      * </li>
@@ -388,7 +390,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p>
-     * This operation creates a S3 Batch Operations job.
+     * This operation creates an S3 Batch Operations job.
      * </p>
      * <p/>
      * <p>
@@ -434,7 +436,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p>
-     * This operation creates a S3 Batch Operations job.
+     * This operation creates an S3 Batch Operations job.
      * </p>
      * <p/>
      * <p>
@@ -482,12 +484,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * Deletes the specified access point.
      * </p>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteAccessPoint.html#API_control_DeleteAccessPoint_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPoint.html#API_control_DeleteAccessPoint_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * The following actions are related to <code>DeleteAccessPoint</code>:
@@ -524,12 +527,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * Deletes the specified access point.
      * </p>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteAccessPoint.html#API_control_DeleteAccessPoint_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPoint.html#API_control_DeleteAccessPoint_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * The following actions are related to <code>DeleteAccessPoint</code>:
@@ -572,12 +576,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </p>
      * <p/>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteAccessPointPolicy.html#API_control_DeleteAccessPointPolicy_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicy.html#API_control_DeleteAccessPointPolicy_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * The following actions are related to <code>DeleteAccessPointPolicy</code>:
@@ -611,12 +616,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </p>
      * <p/>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteAccessPointPolicy.html#API_control_DeleteAccessPointPolicy_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicy.html#API_control_DeleteAccessPointPolicy_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * The following actions are related to <code>DeleteAccessPointPolicy</code>:
@@ -664,12 +670,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteBucket.html#API_control_DeleteBucket_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucket.html#API_control_DeleteBucket_Examples"
+     * >Examples</a> section.
      * </p>
      * <p class="title">
      * <b>Related Resources</b>
@@ -682,7 +689,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetBucket.html">GetBucket</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucket.html">GetBucket</a>
      * </p>
      * </li>
      * <li>
@@ -715,12 +722,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteBucket.html#API_control_DeleteBucket_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucket.html#API_control_DeleteBucket_Examples"
+     * >Examples</a> section.
      * </p>
      * <p class="title">
      * <b>Related Resources</b>
@@ -733,7 +741,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetBucket.html">GetBucket</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucket.html">GetBucket</a>
      * </p>
      * </li>
      * <li>
@@ -775,16 +783,17 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </p>
      * <p>
      * To use this operation, you must have permission to perform the
-     * <code>s3outposts:DeleteLifecycleConfiguration</code> action. By default, the bucket owner has this permission and
-     * the Outposts bucket owner can grant this permission to others.
+     * <code>s3-outposts:DeleteLifecycleConfiguration</code> action. By default, the bucket owner has this permission
+     * and the Outposts bucket owner can grant this permission to others.
      * </p>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteBucketLifecycleConfiguration.html#API_control_DeleteBucketLifecycleConfiguration_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketLifecycleConfiguration.html#API_control_DeleteBucketLifecycleConfiguration_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * For more information about object expiration, see <a
@@ -838,16 +847,17 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </p>
      * <p>
      * To use this operation, you must have permission to perform the
-     * <code>s3outposts:DeleteLifecycleConfiguration</code> action. By default, the bucket owner has this permission and
-     * the Outposts bucket owner can grant this permission to others.
+     * <code>s3-outposts:DeleteLifecycleConfiguration</code> action. By default, the bucket owner has this permission
+     * and the Outposts bucket owner can grant this permission to others.
      * </p>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteBucketLifecycleConfiguration.html#API_control_DeleteBucketLifecycleConfiguration_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketLifecycleConfiguration.html#API_control_DeleteBucketLifecycleConfiguration_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * For more information about object expiration, see <a
@@ -898,7 +908,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * This implementation of the DELETE operation uses the policy subresource to delete the policy of a specified
      * Amazon S3 on Outposts bucket. If you are using an identity other than the root user of the AWS account that owns
-     * the bucket, the calling identity must have the <code>s3outposts:DeleteBucketPolicy</code> permissions on the
+     * the bucket, the calling identity must have the <code>s3-outposts:DeleteBucketPolicy</code> permissions on the
      * specified Outposts bucket and belong to the bucket owner's account to use this operation. For more information,
      * see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a>
      * in <i>Amazon Simple Storage Service Developer Guide</i>.
@@ -920,12 +930,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * Policies</a>.
      * </p>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteBucketPolicy.html#API_control_DeleteBucketPolicy_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketPolicy.html#API_control_DeleteBucketPolicy_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * The following actions are related to <code>DeleteBucketPolicy</code>:
@@ -938,7 +949,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_PutBucketPolicy.html">PutBucketPolicy</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketPolicy.html">PutBucketPolicy</a>
      * </p>
      * </li>
      * </ul>
@@ -962,7 +973,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * This implementation of the DELETE operation uses the policy subresource to delete the policy of a specified
      * Amazon S3 on Outposts bucket. If you are using an identity other than the root user of the AWS account that owns
-     * the bucket, the calling identity must have the <code>s3outposts:DeleteBucketPolicy</code> permissions on the
+     * the bucket, the calling identity must have the <code>s3-outposts:DeleteBucketPolicy</code> permissions on the
      * specified Outposts bucket and belong to the bucket owner's account to use this operation. For more information,
      * see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a>
      * in <i>Amazon Simple Storage Service Developer Guide</i>.
@@ -984,12 +995,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * Policies</a>.
      * </p>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteBucketPolicy.html#API_control_DeleteBucketPolicy_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketPolicy.html#API_control_DeleteBucketPolicy_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * The following actions are related to <code>DeleteBucketPolicy</code>:
@@ -1002,7 +1014,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_PutBucketPolicy.html">PutBucketPolicy</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketPolicy.html">PutBucketPolicy</a>
      * </p>
      * </li>
      * </ul>
@@ -1023,7 +1035,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <note>
      * <p>
-     * This API operation deletes an Amazon S3 on Outposts bucket's tags. To delete an S3 bucket tags, see <a
+     * This operation deletes an Amazon S3 on Outposts bucket's tags. To delete an S3 bucket tags, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a> in
      * the <i>Amazon Simple Storage Service API</i>.
      * </p>
@@ -1038,12 +1050,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * the bucket owner has this permission and can grant this permission to others.
      * </p>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteBucketTagging.html#API_control_DeleteBucketTagging_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketTagging.html#API_control_DeleteBucketTagging_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * The following actions are related to <code>DeleteBucketTagging</code>:
@@ -1072,7 +1085,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <note>
      * <p>
-     * This API operation deletes an Amazon S3 on Outposts bucket's tags. To delete an S3 bucket tags, see <a
+     * This operation deletes an Amazon S3 on Outposts bucket's tags. To delete an S3 bucket tags, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a> in
      * the <i>Amazon Simple Storage Service API</i>.
      * </p>
@@ -1087,12 +1100,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * the bucket owner has this permission and can grant this permission to others.
      * </p>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteBucketTagging.html#API_control_DeleteBucketTagging_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketTagging.html#API_control_DeleteBucketTagging_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * The following actions are related to <code>DeleteBucketTagging</code>:
@@ -1273,6 +1287,116 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
+     * Deletes the Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with
+     * Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * To use this action, you must have permission to perform the <code>s3:DeleteStorageLensConfiguration</code>
+     * action. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting permissions to
+     * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param deleteStorageLensConfigurationRequest
+     * @return A Java Future containing the result of the DeleteStorageLensConfiguration operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsync.DeleteStorageLensConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteStorageLensConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteStorageLensConfigurationResult> deleteStorageLensConfigurationAsync(
+            DeleteStorageLensConfigurationRequest deleteStorageLensConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes the Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with
+     * Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * To use this action, you must have permission to perform the <code>s3:DeleteStorageLensConfiguration</code>
+     * action. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting permissions to
+     * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param deleteStorageLensConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteStorageLensConfiguration operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsyncHandler.DeleteStorageLensConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteStorageLensConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteStorageLensConfigurationResult> deleteStorageLensConfigurationAsync(
+            DeleteStorageLensConfigurationRequest deleteStorageLensConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteStorageLensConfigurationRequest, DeleteStorageLensConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the Amazon S3 Storage Lens configuration tags. For more information about S3 Storage Lens, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with
+     * Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * To use this action, you must have permission to perform the <code>s3:DeleteStorageLensConfigurationTagging</code>
+     * action. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting permissions to
+     * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param deleteStorageLensConfigurationTaggingRequest
+     * @return A Java Future containing the result of the DeleteStorageLensConfigurationTagging operation returned by
+     *         the service.
+     * @sample AWSS3ControlAsync.DeleteStorageLensConfigurationTagging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteStorageLensConfigurationTagging"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteStorageLensConfigurationTaggingResult> deleteStorageLensConfigurationTaggingAsync(
+            DeleteStorageLensConfigurationTaggingRequest deleteStorageLensConfigurationTaggingRequest);
+
+    /**
+     * <p>
+     * Deletes the Amazon S3 Storage Lens configuration tags. For more information about S3 Storage Lens, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with
+     * Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * To use this action, you must have permission to perform the <code>s3:DeleteStorageLensConfigurationTagging</code>
+     * action. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting permissions to
+     * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param deleteStorageLensConfigurationTaggingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteStorageLensConfigurationTagging operation returned by
+     *         the service.
+     * @sample AWSS3ControlAsyncHandler.DeleteStorageLensConfigurationTagging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteStorageLensConfigurationTagging"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteStorageLensConfigurationTaggingResult> deleteStorageLensConfigurationTaggingAsync(
+            DeleteStorageLensConfigurationTaggingRequest deleteStorageLensConfigurationTaggingRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteStorageLensConfigurationTaggingRequest, DeleteStorageLensConfigurationTaggingResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the configuration parameters and status for a Batch Operations job. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the
      * <i>Amazon Simple Storage Service Developer Guide</i>.
@@ -1366,12 +1490,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </p>
      * <p/>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetAccessPoint.html#API_control_GetAccessPoint_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html#API_control_GetAccessPoint_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * The following actions are related to <code>GetAccessPoint</code>:
@@ -1410,12 +1535,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </p>
      * <p/>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetAccessPoint.html#API_control_GetAccessPoint_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html#API_control_GetAccessPoint_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * The following actions are related to <code>GetAccessPoint</code>:
@@ -1564,7 +1690,26 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p>
+     * If you are using an identity other than the root user of the AWS account that owns the bucket, the calling
+     * identity must have the <code>s3-outposts:GetBucket</code> permissions on the specified bucket and belong to the
+     * bucket owner's account in order to use this operation. Only users from Outposts bucket owner account with the
+     * right permissions can perform actions on an Outposts bucket.
+     * </p>
+     * <p>
+     * If you don't have <code>s3-outposts:GetBucket</code> permissions or you're not using an identity that belongs to
+     * the bucket owner's account, Amazon S3 returns a <code>403 Access Denied</code> error.
+     * </p>
+     * <p>
      * The following actions are related to <code>GetBucket</code> for Amazon S3 on Outposts:
+     * </p>
+     * <p>
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucket.html#API_control_GetBucket_Examples"
+     * >Examples</a> section.
      * </p>
      * <ul>
      * <li>
@@ -1574,12 +1719,12 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_CreateBucket.html">CreateBucket</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">CreateBucket</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteBucket.html">DeleteBucket</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucket.html">DeleteBucket</a>
      * </p>
      * </li>
      * </ul>
@@ -1599,7 +1744,26 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p>
+     * If you are using an identity other than the root user of the AWS account that owns the bucket, the calling
+     * identity must have the <code>s3-outposts:GetBucket</code> permissions on the specified bucket and belong to the
+     * bucket owner's account in order to use this operation. Only users from Outposts bucket owner account with the
+     * right permissions can perform actions on an Outposts bucket.
+     * </p>
+     * <p>
+     * If you don't have <code>s3-outposts:GetBucket</code> permissions or you're not using an identity that belongs to
+     * the bucket owner's account, Amazon S3 returns a <code>403 Access Denied</code> error.
+     * </p>
+     * <p>
      * The following actions are related to <code>GetBucket</code> for Amazon S3 on Outposts:
+     * </p>
+     * <p>
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucket.html#API_control_GetBucket_Examples"
+     * >Examples</a> section.
      * </p>
      * <ul>
      * <li>
@@ -1609,12 +1773,12 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_CreateBucket.html">CreateBucket</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">CreateBucket</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteBucket.html">DeleteBucket</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucket.html">DeleteBucket</a>
      * </p>
      * </li>
      * </ul>
@@ -1635,8 +1799,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <note>
      * <p>
-     * This API operation gets an Amazon S3 on Outposts bucket's lifecycle configuration. To get an S3 bucket's
-     * lifecycle configuration, see <a
+     * This operation gets an Amazon S3 on Outposts bucket's lifecycle configuration. To get an S3 bucket's lifecycle
+     * configuration, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html"
      * >GetBucketLifecycleConfiguration</a> in the <i>Amazon Simple Storage Service API</i>.
      * </p>
@@ -1649,7 +1813,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * Management</a> in <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p>
-     * To use this operation, you must have permission to perform the <code>s3outposts:GetLifecycleConfiguration</code>
+     * To use this operation, you must have permission to perform the <code>s3-outposts:GetLifecycleConfiguration</code>
      * action. The Outposts bucket owner has this permission, by default. The bucket owner can grant this permission to
      * others. For more information about permissions, see <a href=
      * "https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources"
@@ -1658,12 +1822,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * Amazon S3 Resources</a>.
      * </p>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetBucketLifecycleConfiguration.html#API_control_GetBucketLifecycleConfiguration_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketLifecycleConfiguration.html#API_control_GetBucketLifecycleConfiguration_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * <code>GetBucketLifecycleConfiguration</code> has the following special error:
@@ -1723,8 +1888,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <note>
      * <p>
-     * This API operation gets an Amazon S3 on Outposts bucket's lifecycle configuration. To get an S3 bucket's
-     * lifecycle configuration, see <a
+     * This operation gets an Amazon S3 on Outposts bucket's lifecycle configuration. To get an S3 bucket's lifecycle
+     * configuration, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html"
      * >GetBucketLifecycleConfiguration</a> in the <i>Amazon Simple Storage Service API</i>.
      * </p>
@@ -1737,7 +1902,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * Management</a> in <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p>
-     * To use this operation, you must have permission to perform the <code>s3outposts:GetLifecycleConfiguration</code>
+     * To use this operation, you must have permission to perform the <code>s3-outposts:GetLifecycleConfiguration</code>
      * action. The Outposts bucket owner has this permission, by default. The bucket owner can grant this permission to
      * others. For more information about permissions, see <a href=
      * "https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources"
@@ -1746,12 +1911,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * Amazon S3 Resources</a>.
      * </p>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetBucketLifecycleConfiguration.html#API_control_GetBucketLifecycleConfiguration_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketLifecycleConfiguration.html#API_control_GetBucketLifecycleConfiguration_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * <code>GetBucketLifecycleConfiguration</code> has the following special error:
@@ -1816,8 +1982,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <note>
      * <p>
-     * This API action gets a bucket policy for an Amazon S3 on Outposts bucket. To get a policy for an S3 bucket, see
-     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicy.html">GetBucketPolicy</a> in the
+     * This action gets a bucket policy for an Amazon S3 on Outposts bucket. To get a policy for an S3 bucket, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicy.html">GetBucketPolicy</a> in the
      * <i>Amazon Simple Storage Service API</i>.
      * </p>
      * </note>
@@ -1832,9 +1998,9 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * owner's account in order to use this operation.
      * </p>
      * <p>
-     * If you don't have <code>s3outposts:GetBucketPolicy</code> permissions, Amazon S3 returns a
-     * <code>403 Access Denied</code> error. If you have the correct permissions, but you're not using an identity that
-     * belongs to the bucket owner's account, Amazon S3 returns a <code>405 Method Not Allowed</code> error.
+     * Only users from Outposts bucket owner account with the right permissions can perform actions on an Outposts
+     * bucket. If you don't have <code>s3-outposts:GetBucketPolicy</code> permissions or you're not using an identity
+     * that belongs to the bucket owner's account, Amazon S3 returns a <code>403 Access Denied</code> error.
      * </p>
      * <important>
      * <p>
@@ -1848,12 +2014,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * Policies</a>.
      * </p>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetBucketPolicy.html#API_control_GetBucketPolicy_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketPolicy.html#API_control_GetBucketPolicy_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * The following actions are related to <code>GetBucketPolicy</code>:
@@ -1888,8 +2055,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <note>
      * <p>
-     * This API action gets a bucket policy for an Amazon S3 on Outposts bucket. To get a policy for an S3 bucket, see
-     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicy.html">GetBucketPolicy</a> in the
+     * This action gets a bucket policy for an Amazon S3 on Outposts bucket. To get a policy for an S3 bucket, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicy.html">GetBucketPolicy</a> in the
      * <i>Amazon Simple Storage Service API</i>.
      * </p>
      * </note>
@@ -1904,9 +2071,9 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * owner's account in order to use this operation.
      * </p>
      * <p>
-     * If you don't have <code>s3outposts:GetBucketPolicy</code> permissions, Amazon S3 returns a
-     * <code>403 Access Denied</code> error. If you have the correct permissions, but you're not using an identity that
-     * belongs to the bucket owner's account, Amazon S3 returns a <code>405 Method Not Allowed</code> error.
+     * Only users from Outposts bucket owner account with the right permissions can perform actions on an Outposts
+     * bucket. If you don't have <code>s3-outposts:GetBucketPolicy</code> permissions or you're not using an identity
+     * that belongs to the bucket owner's account, Amazon S3 returns a <code>403 Access Denied</code> error.
      * </p>
      * <important>
      * <p>
@@ -1920,12 +2087,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * Policies</a>.
      * </p>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetBucketPolicy.html#API_control_GetBucketPolicy_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketPolicy.html#API_control_GetBucketPolicy_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * The following actions are related to <code>GetBucketPolicy</code>:
@@ -1965,7 +2133,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <note>
      * <p>
-     * This API operation gets an Amazon S3 on Outposts bucket's tags. To get an S3 bucket tags, see <a
+     * This operation gets an Amazon S3 on Outposts bucket's tags. To get an S3 bucket tags, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html">GetBucketTagging</a> in the
      * <i>Amazon Simple Storage Service API</i>.
      * </p>
@@ -1997,12 +2165,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </li>
      * </ul>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetBucketTagging.html#API_control_GetBucketTagging_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketTagging.html#API_control_GetBucketTagging_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * The following actions are related to <code>GetBucketTagging</code>:
@@ -2033,7 +2202,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <note>
      * <p>
-     * This API operation gets an Amazon S3 on Outposts bucket's tags. To get an S3 bucket tags, see <a
+     * This operation gets an Amazon S3 on Outposts bucket's tags. To get an S3 bucket tags, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html">GetBucketTagging</a> in the
      * <i>Amazon Simple Storage Service API</i>.
      * </p>
@@ -2065,12 +2234,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </li>
      * </ul>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetBucketTagging.html#API_control_GetBucketTagging_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketTagging.html#API_control_GetBucketTagging_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * The following actions are related to <code>GetBucketTagging</code>:
@@ -2253,6 +2423,114 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
+     * Gets the Amazon S3 Storage Lens configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with
+     * Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * To use this action, you must have permission to perform the <code>s3:GetStorageLensConfiguration</code> action.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting permissions to
+     * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param getStorageLensConfigurationRequest
+     * @return A Java Future containing the result of the GetStorageLensConfiguration operation returned by the service.
+     * @sample AWSS3ControlAsync.GetStorageLensConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetStorageLensConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetStorageLensConfigurationResult> getStorageLensConfigurationAsync(
+            GetStorageLensConfigurationRequest getStorageLensConfigurationRequest);
+
+    /**
+     * <p>
+     * Gets the Amazon S3 Storage Lens configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with
+     * Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * To use this action, you must have permission to perform the <code>s3:GetStorageLensConfiguration</code> action.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting permissions to
+     * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param getStorageLensConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetStorageLensConfiguration operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.GetStorageLensConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetStorageLensConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetStorageLensConfigurationResult> getStorageLensConfigurationAsync(
+            GetStorageLensConfigurationRequest getStorageLensConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetStorageLensConfigurationRequest, GetStorageLensConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the tags of Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with
+     * Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * To use this action, you must have permission to perform the <code>s3:GetStorageLensConfigurationTagging</code>
+     * action. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting permissions to
+     * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param getStorageLensConfigurationTaggingRequest
+     * @return A Java Future containing the result of the GetStorageLensConfigurationTagging operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsync.GetStorageLensConfigurationTagging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetStorageLensConfigurationTagging"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetStorageLensConfigurationTaggingResult> getStorageLensConfigurationTaggingAsync(
+            GetStorageLensConfigurationTaggingRequest getStorageLensConfigurationTaggingRequest);
+
+    /**
+     * <p>
+     * Gets the tags of Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with
+     * Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * To use this action, you must have permission to perform the <code>s3:GetStorageLensConfigurationTagging</code>
+     * action. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting permissions to
+     * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param getStorageLensConfigurationTaggingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetStorageLensConfigurationTagging operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsyncHandler.GetStorageLensConfigurationTagging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetStorageLensConfigurationTagging"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetStorageLensConfigurationTaggingResult> getStorageLensConfigurationTaggingAsync(
+            GetStorageLensConfigurationTaggingRequest getStorageLensConfigurationTaggingRequest,
+            com.amazonaws.handlers.AsyncHandler<GetStorageLensConfigurationTaggingRequest, GetStorageLensConfigurationTaggingResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of the access points currently associated with the specified bucket. You can retrieve up to 1000
      * access points per call. If the specified bucket has more than 1,000 access points (or the number specified in
      * <code>maxResults</code>, whichever is less), the response will include a continuation token that you can use to
@@ -2260,12 +2538,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </p>
      * <p/>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetAccessPoint.html#API_control_GetAccessPoint_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html#API_control_GetAccessPoint_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * The following actions are related to <code>ListAccessPoints</code>:
@@ -2307,12 +2586,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </p>
      * <p/>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetAccessPoint.html#API_control_GetAccessPoint_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html#API_control_GetAccessPoint_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * The following actions are related to <code>ListAccessPoints</code>:
@@ -2443,15 +2723,15 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
-     * Returns a list of all Outposts buckets in an Outposts that are owned by the authenticated sender of the request.
+     * Returns a list of all Outposts buckets in an Outpost that are owned by the authenticated sender of the request.
      * For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
      * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p>
      * For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname
-     * prefix and outpost-id in your API request, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_ListRegionalBuckets.html#API_control_ListRegionalBuckets_Examples"
-     * > Example</a> section below.
+     * prefix and <code>x-amz-outpost-id</code> in your request, see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListRegionalBuckets.html#API_control_ListRegionalBuckets_Examples"
+     * >Examples</a> section.
      * </p>
      * 
      * @param listRegionalBucketsRequest
@@ -2464,15 +2744,15 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
-     * Returns a list of all Outposts buckets in an Outposts that are owned by the authenticated sender of the request.
+     * Returns a list of all Outposts buckets in an Outpost that are owned by the authenticated sender of the request.
      * For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
      * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p>
      * For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname
-     * prefix and outpost-id in your API request, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_ListRegionalBuckets.html#API_control_ListRegionalBuckets_Examples"
-     * > Example</a> section below.
+     * prefix and <code>x-amz-outpost-id</code> in your request, see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListRegionalBuckets.html#API_control_ListRegionalBuckets_Examples"
+     * >Examples</a> section.
      * </p>
      * 
      * @param listRegionalBucketsRequest
@@ -2490,17 +2770,73 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
+     * Gets a list of Amazon S3 Storage Lens configurations. For more information about S3 Storage Lens, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with
+     * Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * To use this action, you must have permission to perform the <code>s3:ListStorageLensConfigurations</code> action.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting permissions to
+     * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param listStorageLensConfigurationsRequest
+     * @return A Java Future containing the result of the ListStorageLensConfigurations operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsync.ListStorageLensConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListStorageLensConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListStorageLensConfigurationsResult> listStorageLensConfigurationsAsync(
+            ListStorageLensConfigurationsRequest listStorageLensConfigurationsRequest);
+
+    /**
+     * <p>
+     * Gets a list of Amazon S3 Storage Lens configurations. For more information about S3 Storage Lens, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with
+     * Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * To use this action, you must have permission to perform the <code>s3:ListStorageLensConfigurations</code> action.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting permissions to
+     * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param listStorageLensConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListStorageLensConfigurations operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsyncHandler.ListStorageLensConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListStorageLensConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListStorageLensConfigurationsResult> listStorageLensConfigurationsAsync(
+            ListStorageLensConfigurationsRequest listStorageLensConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListStorageLensConfigurationsRequest, ListStorageLensConfigurationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Associates an access policy with the specified access point. Each access point can have only one policy, so a
      * request made to this API replaces any existing policy associated with the specified access point.
      * </p>
      * <p/>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_PutAccessPointPolicy.html#API_control_PutAccessPointPolicy_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicy.html#API_control_PutAccessPointPolicy_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * The following actions are related to <code>PutAccessPointPolicy</code>:
@@ -2535,12 +2871,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </p>
      * <p/>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_PutAccessPointPolicy.html#API_control_PutAccessPointPolicy_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicy.html#API_control_PutAccessPointPolicy_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * The following actions are related to <code>PutAccessPointPolicy</code>:
@@ -2576,26 +2913,28 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <note>
      * <p>
-     * This API action puts a lifecycle configuration to an Amazon S3 on Outposts bucket. To put a lifecycle
-     * configuration to an S3 bucket, see <a
+     * This action puts a lifecycle configuration to an Amazon S3 on Outposts bucket. To put a lifecycle configuration
+     * to an S3 bucket, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html"
      * >PutBucketLifecycleConfiguration</a> in the <i>Amazon Simple Storage Service API</i>.
      * </p>
      * </note>
      * <p>
      * Creates a new lifecycle configuration for the Outposts bucket or replaces an existing lifecycle configuration.
-     * Outposts buckets can only support a lifecycle that deletes objects after a certain period of time. For more
-     * information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Managing Lifecycle
-     * Permissions for Amazon S3 on Outposts</a>.
+     * Outposts buckets only support lifecycle configurations that delete/expire objects after a certain period of time
+     * and abort incomplete multipart uploads. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Managing Lifecycle Permissions for
+     * Amazon S3 on Outposts</a>.
      * </p>
      * <p/>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_PutBucketLifecycleConfiguration.html#API_control_PutBucketLifecycleConfiguration_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketLifecycleConfiguration.html#API_control_PutBucketLifecycleConfiguration_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * The following actions are related to <code>PutBucketLifecycleConfiguration</code>:
@@ -2628,26 +2967,28 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <note>
      * <p>
-     * This API action puts a lifecycle configuration to an Amazon S3 on Outposts bucket. To put a lifecycle
-     * configuration to an S3 bucket, see <a
+     * This action puts a lifecycle configuration to an Amazon S3 on Outposts bucket. To put a lifecycle configuration
+     * to an S3 bucket, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html"
      * >PutBucketLifecycleConfiguration</a> in the <i>Amazon Simple Storage Service API</i>.
      * </p>
      * </note>
      * <p>
      * Creates a new lifecycle configuration for the Outposts bucket or replaces an existing lifecycle configuration.
-     * Outposts buckets can only support a lifecycle that deletes objects after a certain period of time. For more
-     * information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Managing Lifecycle
-     * Permissions for Amazon S3 on Outposts</a>.
+     * Outposts buckets only support lifecycle configurations that delete/expire objects after a certain period of time
+     * and abort incomplete multipart uploads. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Managing Lifecycle Permissions for
+     * Amazon S3 on Outposts</a>.
      * </p>
      * <p/>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_PutBucketLifecycleConfiguration.html#API_control_PutBucketLifecycleConfiguration_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketLifecycleConfiguration.html#API_control_PutBucketLifecycleConfiguration_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * The following actions are related to <code>PutBucketLifecycleConfiguration</code>:
@@ -2685,7 +3026,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <note>
      * <p>
-     * This API action puts a bucket policy to an Amazon S3 on Outposts bucket. To put a policy on an S3 bucket, see <a
+     * This action puts a bucket policy to an Amazon S3 on Outposts bucket. To put a policy on an S3 bucket, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketPolicy.html">PutBucketPolicy</a> in the
      * <i>Amazon Simple Storage Service API</i>.
      * </p>
@@ -2717,12 +3058,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * Policies</a>.
      * </p>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_PutBucketPolicy.html#API_control_PutBucketPolicy_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketPolicy.html#API_control_PutBucketPolicy_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * The following actions are related to <code>PutBucketPolicy</code>:
@@ -2752,7 +3094,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <note>
      * <p>
-     * This API action puts a bucket policy to an Amazon S3 on Outposts bucket. To put a policy on an S3 bucket, see <a
+     * This action puts a bucket policy to an Amazon S3 on Outposts bucket. To put a policy on an S3 bucket, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketPolicy.html">PutBucketPolicy</a> in the
      * <i>Amazon Simple Storage Service API</i>.
      * </p>
@@ -2784,12 +3126,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * Policies</a>.
      * </p>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_PutBucketPolicy.html#API_control_PutBucketPolicy_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketPolicy.html#API_control_PutBucketPolicy_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * The following actions are related to <code>PutBucketPolicy</code>:
@@ -2824,7 +3167,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <note>
      * <p>
-     * This API action puts tags on an Amazon S3 on Outposts bucket. To put tags on an S3 bucket, see <a
+     * This action puts tags on an Amazon S3 on Outposts bucket. To put tags on an S3 bucket, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a> in the
      * <i>Amazon Simple Storage Service API</i>.
      * </p>
@@ -2852,7 +3195,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </p>
      * </note>
      * <p>
-     * To use this operation, you must have permissions to perform the <code>s3outposts:PutBucketTagging</code> action.
+     * To use this operation, you must have permissions to perform the <code>s3-outposts:PutBucketTagging</code> action.
      * The Outposts bucket owner has this permission by default and can grant this permission to others. For more
      * information about permissions, see <a href=
      * "https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources"
@@ -2919,12 +3262,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </li>
      * </ul>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_PutBucketTagging.html#API_control_PutBucketTagging_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketTagging.html#API_control_PutBucketTagging_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * The following actions are related to <code>PutBucketTagging</code>:
@@ -2955,7 +3299,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <note>
      * <p>
-     * This API action puts tags on an Amazon S3 on Outposts bucket. To put tags on an S3 bucket, see <a
+     * This action puts tags on an Amazon S3 on Outposts bucket. To put tags on an S3 bucket, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a> in the
      * <i>Amazon Simple Storage Service API</i>.
      * </p>
@@ -2983,7 +3327,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </p>
      * </note>
      * <p>
-     * To use this operation, you must have permissions to perform the <code>s3outposts:PutBucketTagging</code> action.
+     * To use this operation, you must have permissions to perform the <code>s3-outposts:PutBucketTagging</code> action.
      * The Outposts bucket owner has this permission by default and can grant this permission to others. For more
      * information about permissions, see <a href=
      * "https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources"
@@ -3050,12 +3394,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </li>
      * </ul>
      * <p>
-     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
-     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
-     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
-     * outpost-id derived using the access point ARN, see the <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_PutBucketTagging.html#API_control_PutBucketTagging_Examples"
-     * > Example</a> section below.
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
+     * instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on Outposts that uses the
+     * S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point ARN,
+     * see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketTagging.html#API_control_PutBucketTagging_Examples"
+     * >Examples</a> section.
      * </p>
      * <p>
      * The following actions are related to <code>PutBucketTagging</code>:
@@ -3098,9 +3443,10 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * replace the existing tag set entirely, or make changes within the existing tag set by retrieving the existing tag
      * set using <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetJobTagging.html">GetJobTagging</a>, modify
-     * that tag set, and use this API action to replace the tag set with the one you modified. For more information, see
-     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">
-     * Controlling access and labeling jobs using tags</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * that tag set, and use this action to replace the tag set with the one you modified. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling
+     * access and labeling jobs using tags</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p/>
      * <note>
@@ -3199,9 +3545,10 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * replace the existing tag set entirely, or make changes within the existing tag set by retrieving the existing tag
      * set using <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetJobTagging.html">GetJobTagging</a>, modify
-     * that tag set, and use this API action to replace the tag set with the one you modified. For more information, see
-     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">
-     * Controlling access and labeling jobs using tags</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * that tag set, and use this action to replace the tag set with the one you modified. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling
+     * access and labeling jobs using tags</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p/>
      * <note>
@@ -3363,6 +3710,116 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      */
     java.util.concurrent.Future<PutPublicAccessBlockResult> putPublicAccessBlockAsync(PutPublicAccessBlockRequest putPublicAccessBlockRequest,
             com.amazonaws.handlers.AsyncHandler<PutPublicAccessBlockRequest, PutPublicAccessBlockResult> asyncHandler);
+
+    /**
+     * <p>
+     * Puts an Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with
+     * Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * To use this action, you must have permission to perform the <code>s3:PutStorageLensConfiguration</code> action.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting permissions to
+     * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param putStorageLensConfigurationRequest
+     * @return A Java Future containing the result of the PutStorageLensConfiguration operation returned by the service.
+     * @sample AWSS3ControlAsync.PutStorageLensConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutStorageLensConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutStorageLensConfigurationResult> putStorageLensConfigurationAsync(
+            PutStorageLensConfigurationRequest putStorageLensConfigurationRequest);
+
+    /**
+     * <p>
+     * Puts an Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with
+     * Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * To use this action, you must have permission to perform the <code>s3:PutStorageLensConfiguration</code> action.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting permissions to
+     * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param putStorageLensConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutStorageLensConfiguration operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.PutStorageLensConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutStorageLensConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutStorageLensConfigurationResult> putStorageLensConfigurationAsync(
+            PutStorageLensConfigurationRequest putStorageLensConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutStorageLensConfigurationRequest, PutStorageLensConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Put or replace tags on an existing Amazon S3 Storage Lens configuration. For more information about S3 Storage
+     * Lens, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with
+     * Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * To use this action, you must have permission to perform the <code>s3:PutStorageLensConfigurationTagging</code>
+     * action. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting permissions to
+     * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param putStorageLensConfigurationTaggingRequest
+     * @return A Java Future containing the result of the PutStorageLensConfigurationTagging operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsync.PutStorageLensConfigurationTagging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutStorageLensConfigurationTagging"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutStorageLensConfigurationTaggingResult> putStorageLensConfigurationTaggingAsync(
+            PutStorageLensConfigurationTaggingRequest putStorageLensConfigurationTaggingRequest);
+
+    /**
+     * <p>
+     * Put or replace tags on an existing Amazon S3 Storage Lens configuration. For more information about S3 Storage
+     * Lens, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with
+     * Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * To use this action, you must have permission to perform the <code>s3:PutStorageLensConfigurationTagging</code>
+     * action. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html#storage_lens_IAM">Setting permissions to
+     * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param putStorageLensConfigurationTaggingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutStorageLensConfigurationTagging operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsyncHandler.PutStorageLensConfigurationTagging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutStorageLensConfigurationTagging"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutStorageLensConfigurationTaggingResult> putStorageLensConfigurationTaggingAsync(
+            PutStorageLensConfigurationTaggingRequest putStorageLensConfigurationTaggingRequest,
+            com.amazonaws.handlers.AsyncHandler<PutStorageLensConfigurationTaggingRequest, PutStorageLensConfigurationTaggingResult> asyncHandler);
 
     /**
      * <p>

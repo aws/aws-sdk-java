@@ -87,6 +87,21 @@ public class ChangeSetSummaryStaxUnmarshaller implements Unmarshaller<ChangeSetS
                     changeSetSummary.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("IncludeNestedStacks", targetDepth)) {
+                    changeSetSummary.setIncludeNestedStacks(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ParentChangeSetId", targetDepth)) {
+                    changeSetSummary.setParentChangeSetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("RootChangeSetId", targetDepth)) {
+                    changeSetSummary.setRootChangeSetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return changeSetSummary;

@@ -41,8 +41,7 @@ public class FleetSpotCapacityRebalanceRequest implements Serializable, Cloneabl
      * <note>
      * <p>
      * When a replacement instance is launched, the instance marked for rebalance is not automatically terminated. You
-     * can terminate it, or you can wait until Amazon EC2 interrupts it. You are charged for all instances while they
-     * are running.
+     * can terminate it, or you can leave it running. You are charged for all instances while they are running.
      * </p>
      * </note>
      */
@@ -60,8 +59,7 @@ public class FleetSpotCapacityRebalanceRequest implements Serializable, Cloneabl
      * <note>
      * <p>
      * When a replacement instance is launched, the instance marked for rebalance is not automatically terminated. You
-     * can terminate it, or you can wait until Amazon EC2 interrupts it. You are charged for all instances while they
-     * are running.
+     * can terminate it, or you can leave it running. You are charged for all instances while they are running.
      * </p>
      * </note>
      * 
@@ -75,8 +73,8 @@ public class FleetSpotCapacityRebalanceRequest implements Serializable, Cloneabl
      *        <note>
      *        <p>
      *        When a replacement instance is launched, the instance marked for rebalance is not automatically
-     *        terminated. You can terminate it, or you can wait until Amazon EC2 interrupts it. You are charged for all
-     *        instances while they are running.
+     *        terminated. You can terminate it, or you can leave it running. You are charged for all instances while
+     *        they are running.
      *        </p>
      * @see FleetReplacementStrategy
      */
@@ -97,8 +95,7 @@ public class FleetSpotCapacityRebalanceRequest implements Serializable, Cloneabl
      * <note>
      * <p>
      * When a replacement instance is launched, the instance marked for rebalance is not automatically terminated. You
-     * can terminate it, or you can wait until Amazon EC2 interrupts it. You are charged for all instances while they
-     * are running.
+     * can terminate it, or you can leave it running. You are charged for all instances while they are running.
      * </p>
      * </note>
      * 
@@ -111,8 +108,8 @@ public class FleetSpotCapacityRebalanceRequest implements Serializable, Cloneabl
      *         <note>
      *         <p>
      *         When a replacement instance is launched, the instance marked for rebalance is not automatically
-     *         terminated. You can terminate it, or you can wait until Amazon EC2 interrupts it. You are charged for all
-     *         instances while they are running.
+     *         terminated. You can terminate it, or you can leave it running. You are charged for all instances while
+     *         they are running.
      *         </p>
      * @see FleetReplacementStrategy
      */
@@ -133,8 +130,7 @@ public class FleetSpotCapacityRebalanceRequest implements Serializable, Cloneabl
      * <note>
      * <p>
      * When a replacement instance is launched, the instance marked for rebalance is not automatically terminated. You
-     * can terminate it, or you can wait until Amazon EC2 interrupts it. You are charged for all instances while they
-     * are running.
+     * can terminate it, or you can leave it running. You are charged for all instances while they are running.
      * </p>
      * </note>
      * 
@@ -148,8 +144,8 @@ public class FleetSpotCapacityRebalanceRequest implements Serializable, Cloneabl
      *        <note>
      *        <p>
      *        When a replacement instance is launched, the instance marked for rebalance is not automatically
-     *        terminated. You can terminate it, or you can wait until Amazon EC2 interrupts it. You are charged for all
-     *        instances while they are running.
+     *        terminated. You can terminate it, or you can leave it running. You are charged for all instances while
+     *        they are running.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetReplacementStrategy
@@ -172,8 +168,7 @@ public class FleetSpotCapacityRebalanceRequest implements Serializable, Cloneabl
      * <note>
      * <p>
      * When a replacement instance is launched, the instance marked for rebalance is not automatically terminated. You
-     * can terminate it, or you can wait until Amazon EC2 interrupts it. You are charged for all instances while they
-     * are running.
+     * can terminate it, or you can leave it running. You are charged for all instances while they are running.
      * </p>
      * </note>
      * 
@@ -187,8 +182,8 @@ public class FleetSpotCapacityRebalanceRequest implements Serializable, Cloneabl
      *        <note>
      *        <p>
      *        When a replacement instance is launched, the instance marked for rebalance is not automatically
-     *        terminated. You can terminate it, or you can wait until Amazon EC2 interrupts it. You are charged for all
-     *        instances while they are running.
+     *        terminated. You can terminate it, or you can leave it running. You are charged for all instances while
+     *        they are running.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetReplacementStrategy

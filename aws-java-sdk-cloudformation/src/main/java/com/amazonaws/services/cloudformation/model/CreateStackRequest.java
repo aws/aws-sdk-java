@@ -215,9 +215,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      * </p>
      * <p>
-     * Change sets do not currently support nested stacks. If you want to create a stack from a stack template that
-     * contains macros <i>and</i> nested stacks, you must create the stack directly from the template using this
-     * capability.
+     * If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you must
+     * create the stack directly from the template using this capability.
      * </p>
      * <important>
      * <p>
@@ -1031,9 +1030,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      * </p>
      * <p>
-     * Change sets do not currently support nested stacks. If you want to create a stack from a stack template that
-     * contains macros <i>and</i> nested stacks, you must create the stack directly from the template using this
-     * capability.
+     * If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you must
+     * create the stack directly from the template using this capability.
      * </p>
      * <important>
      * <p>
@@ -1162,9 +1160,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      *         </p>
      *         <p>
-     *         Change sets do not currently support nested stacks. If you want to create a stack from a stack template
-     *         that contains macros <i>and</i> nested stacks, you must create the stack directly from the template using
-     *         this capability.
+     *         If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you
+     *         must create the stack directly from the template using this capability.
      *         </p>
      *         <important>
      *         <p>
@@ -1300,9 +1297,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      * </p>
      * <p>
-     * Change sets do not currently support nested stacks. If you want to create a stack from a stack template that
-     * contains macros <i>and</i> nested stacks, you must create the stack directly from the template using this
-     * capability.
+     * If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you must
+     * create the stack directly from the template using this capability.
      * </p>
      * <important>
      * <p>
@@ -1432,9 +1428,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      *        </p>
      *        <p>
-     *        Change sets do not currently support nested stacks. If you want to create a stack from a stack template
-     *        that contains macros <i>and</i> nested stacks, you must create the stack directly from the template using
-     *        this capability.
+     *        If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you
+     *        must create the stack directly from the template using this capability.
      *        </p>
      *        <important>
      *        <p>
@@ -1572,9 +1567,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      * </p>
      * <p>
-     * Change sets do not currently support nested stacks. If you want to create a stack from a stack template that
-     * contains macros <i>and</i> nested stacks, you must create the stack directly from the template using this
-     * capability.
+     * If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you must
+     * create the stack directly from the template using this capability.
      * </p>
      * <important>
      * <p>
@@ -1709,9 +1703,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      *        </p>
      *        <p>
-     *        Change sets do not currently support nested stacks. If you want to create a stack from a stack template
-     *        that contains macros <i>and</i> nested stacks, you must create the stack directly from the template using
-     *        this capability.
+     *        If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you
+     *        must create the stack directly from the template using this capability.
      *        </p>
      *        <important>
      *        <p>
@@ -1851,9 +1844,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      * </p>
      * <p>
-     * Change sets do not currently support nested stacks. If you want to create a stack from a stack template that
-     * contains macros <i>and</i> nested stacks, you must create the stack directly from the template using this
-     * capability.
+     * If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you must
+     * create the stack directly from the template using this capability.
      * </p>
      * <important>
      * <p>
@@ -1983,9 +1975,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      *        </p>
      *        <p>
-     *        Change sets do not currently support nested stacks. If you want to create a stack from a stack template
-     *        that contains macros <i>and</i> nested stacks, you must create the stack directly from the template using
-     *        this capability.
+     *        If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you
+     *        must create the stack directly from the template using this capability.
      *        </p>
      *        <important>
      *        <p>
@@ -2120,9 +2111,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      * </p>
      * <p>
-     * Change sets do not currently support nested stacks. If you want to create a stack from a stack template that
-     * contains macros <i>and</i> nested stacks, you must create the stack directly from the template using this
-     * capability.
+     * If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you must
+     * create the stack directly from the template using this capability.
      * </p>
      * <important>
      * <p>
@@ -2252,9 +2242,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      *        </p>
      *        <p>
-     *        Change sets do not currently support nested stacks. If you want to create a stack from a stack template
-     *        that contains macros <i>and</i> nested stacks, you must create the stack directly from the template using
-     *        this capability.
+     *        If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you
+     *        must create the stack directly from the template using this capability.
      *        </p>
      *        <important>
      *        <p>

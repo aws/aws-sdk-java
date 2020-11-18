@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 bucket. You can enable the
+ * The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the
  * configuration options in any combination. For more information about when Amazon S3 considers a bucket or object
  * public, see <a href=
  * "https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status"
@@ -95,8 +95,8 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this
-     * element to <code>TRUE</code> restricts access to buckets with public policies to only AWS services and authorized
-     * users within this account.
+     * element to <code>TRUE</code> restricts access to buckets with public policies to only AWS service principals and
+     * authorized users within this account.
      * </p>
      * <p>
      * Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account
@@ -583,8 +583,8 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this
-     * element to <code>TRUE</code> restricts access to buckets with public policies to only AWS services and authorized
-     * users within this account.
+     * element to <code>TRUE</code> restricts access to buckets with public policies to only AWS service principals and
+     * authorized users within this account.
      * </p>
      * <p>
      * Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account
@@ -596,8 +596,8 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      * 
      * @param restrictPublicBuckets
      *        Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting
-     *        this element to <code>TRUE</code> restricts access to buckets with public policies to only AWS services
-     *        and authorized users within this account.</p>
+     *        this element to <code>TRUE</code> restricts access to buckets with public policies to only AWS service
+     *        principals and authorized users within this account.</p>
      *        <p>
      *        Enabling this setting doesn't affect previously stored bucket policies, except that public and
      *        cross-account access within any public bucket policy, including non-public delegation to specific
@@ -614,8 +614,8 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this
-     * element to <code>TRUE</code> restricts access to buckets with public policies to only AWS services and authorized
-     * users within this account.
+     * element to <code>TRUE</code> restricts access to buckets with public policies to only AWS service principals and
+     * authorized users within this account.
      * </p>
      * <p>
      * Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account
@@ -626,8 +626,8 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @return Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting
-     *         this element to <code>TRUE</code> restricts access to buckets with public policies to only AWS services
-     *         and authorized users within this account.</p>
+     *         this element to <code>TRUE</code> restricts access to buckets with public policies to only AWS service
+     *         principals and authorized users within this account.</p>
      *         <p>
      *         Enabling this setting doesn't affect previously stored bucket policies, except that public and
      *         cross-account access within any public bucket policy, including non-public delegation to specific
@@ -644,8 +644,8 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this
-     * element to <code>TRUE</code> restricts access to buckets with public policies to only AWS services and authorized
-     * users within this account.
+     * element to <code>TRUE</code> restricts access to buckets with public policies to only AWS service principals and
+     * authorized users within this account.
      * </p>
      * <p>
      * Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account
@@ -657,8 +657,8 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      * 
      * @param restrictPublicBuckets
      *        Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting
-     *        this element to <code>TRUE</code> restricts access to buckets with public policies to only AWS services
-     *        and authorized users within this account.</p>
+     *        this element to <code>TRUE</code> restricts access to buckets with public policies to only AWS service
+     *        principals and authorized users within this account.</p>
      *        <p>
      *        Enabling this setting doesn't affect previously stored bucket policies, except that public and
      *        cross-account access within any public bucket policy, including non-public delegation to specific
@@ -677,8 +677,8 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting this
-     * element to <code>TRUE</code> restricts access to buckets with public policies to only AWS services and authorized
-     * users within this account.
+     * element to <code>TRUE</code> restricts access to buckets with public policies to only AWS service principals and
+     * authorized users within this account.
      * </p>
      * <p>
      * Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account
@@ -689,8 +689,8 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @return Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting
-     *         this element to <code>TRUE</code> restricts access to buckets with public policies to only AWS services
-     *         and authorized users within this account.</p>
+     *         this element to <code>TRUE</code> restricts access to buckets with public policies to only AWS service
+     *         principals and authorized users within this account.</p>
      *         <p>
      *         Enabling this setting doesn't affect previously stored bucket policies, except that public and
      *         cross-account access within any public bucket policy, including non-public delegation to specific

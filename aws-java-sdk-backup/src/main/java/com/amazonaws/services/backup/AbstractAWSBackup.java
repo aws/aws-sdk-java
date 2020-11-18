@@ -88,6 +88,11 @@ public class AbstractAWSBackup implements AWSBackup {
     }
 
     @Override
+    public DescribeGlobalSettingsResult describeGlobalSettings(DescribeGlobalSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeProtectedResourceResult describeProtectedResource(DescribeProtectedResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -254,6 +259,11 @@ public class AbstractAWSBackup implements AWSBackup {
 
     @Override
     public UpdateBackupPlanResult updateBackupPlan(UpdateBackupPlanRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateGlobalSettingsResult updateGlobalSettings(UpdateGlobalSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
