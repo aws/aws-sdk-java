@@ -107,6 +107,17 @@ public class PostTextRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * </p>
      */
     private String inputText;
+    /**
+     * <p>
+     * A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by
+     * including the context in the request,
+     * </p>
+     * <p>
+     * If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you
+     * specify an empty list, all contexts for the session are cleared.
+     * </p>
+     */
+    private java.util.List<ActiveContext> activeContexts;
 
     /**
      * <p>
@@ -672,6 +683,112 @@ public class PostTextRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
+     * <p>
+     * A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by
+     * including the context in the request,
+     * </p>
+     * <p>
+     * If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you
+     * specify an empty list, all contexts for the session are cleared.
+     * </p>
+     * 
+     * @return A list of contexts active for the request. A context can be activated when a previous intent is
+     *         fulfilled, or by including the context in the request,</p>
+     *         <p>
+     *         If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the
+     *         session. If you specify an empty list, all contexts for the session are cleared.
+     */
+
+    public java.util.List<ActiveContext> getActiveContexts() {
+        return activeContexts;
+    }
+
+    /**
+     * <p>
+     * A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by
+     * including the context in the request,
+     * </p>
+     * <p>
+     * If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you
+     * specify an empty list, all contexts for the session are cleared.
+     * </p>
+     * 
+     * @param activeContexts
+     *        A list of contexts active for the request. A context can be activated when a previous intent is fulfilled,
+     *        or by including the context in the request,</p>
+     *        <p>
+     *        If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session.
+     *        If you specify an empty list, all contexts for the session are cleared.
+     */
+
+    public void setActiveContexts(java.util.Collection<ActiveContext> activeContexts) {
+        if (activeContexts == null) {
+            this.activeContexts = null;
+            return;
+        }
+
+        this.activeContexts = new java.util.ArrayList<ActiveContext>(activeContexts);
+    }
+
+    /**
+     * <p>
+     * A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by
+     * including the context in the request,
+     * </p>
+     * <p>
+     * If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you
+     * specify an empty list, all contexts for the session are cleared.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setActiveContexts(java.util.Collection)} or {@link #withActiveContexts(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param activeContexts
+     *        A list of contexts active for the request. A context can be activated when a previous intent is fulfilled,
+     *        or by including the context in the request,</p>
+     *        <p>
+     *        If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session.
+     *        If you specify an empty list, all contexts for the session are cleared.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PostTextRequest withActiveContexts(ActiveContext... activeContexts) {
+        if (this.activeContexts == null) {
+            setActiveContexts(new java.util.ArrayList<ActiveContext>(activeContexts.length));
+        }
+        for (ActiveContext ele : activeContexts) {
+            this.activeContexts.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by
+     * including the context in the request,
+     * </p>
+     * <p>
+     * If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you
+     * specify an empty list, all contexts for the session are cleared.
+     * </p>
+     * 
+     * @param activeContexts
+     *        A list of contexts active for the request. A context can be activated when a previous intent is fulfilled,
+     *        or by including the context in the request,</p>
+     *        <p>
+     *        If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session.
+     *        If you specify an empty list, all contexts for the session are cleared.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PostTextRequest withActiveContexts(java.util.Collection<ActiveContext> activeContexts) {
+        setActiveContexts(activeContexts);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -694,7 +811,9 @@ public class PostTextRequest extends com.amazonaws.AmazonWebServiceRequest imple
         if (getRequestAttributes() != null)
             sb.append("RequestAttributes: ").append("***Sensitive Data Redacted***").append(",");
         if (getInputText() != null)
-            sb.append("InputText: ").append("***Sensitive Data Redacted***");
+            sb.append("InputText: ").append("***Sensitive Data Redacted***").append(",");
+        if (getActiveContexts() != null)
+            sb.append("ActiveContexts: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -733,6 +852,10 @@ public class PostTextRequest extends com.amazonaws.AmazonWebServiceRequest imple
             return false;
         if (other.getInputText() != null && other.getInputText().equals(this.getInputText()) == false)
             return false;
+        if (other.getActiveContexts() == null ^ this.getActiveContexts() == null)
+            return false;
+        if (other.getActiveContexts() != null && other.getActiveContexts().equals(this.getActiveContexts()) == false)
+            return false;
         return true;
     }
 
@@ -747,6 +870,7 @@ public class PostTextRequest extends com.amazonaws.AmazonWebServiceRequest imple
         hashCode = prime * hashCode + ((getSessionAttributes() == null) ? 0 : getSessionAttributes().hashCode());
         hashCode = prime * hashCode + ((getRequestAttributes() == null) ? 0 : getRequestAttributes().hashCode());
         hashCode = prime * hashCode + ((getInputText() == null) ? 0 : getInputText().hashCode());
+        hashCode = prime * hashCode + ((getActiveContexts() == null) ? 0 : getActiveContexts().hashCode());
         return hashCode;
     }
 

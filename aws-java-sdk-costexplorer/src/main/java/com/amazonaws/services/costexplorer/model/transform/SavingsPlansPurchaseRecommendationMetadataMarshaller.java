@@ -31,6 +31,8 @@ public class SavingsPlansPurchaseRecommendationMetadataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecommendationId").build();
     private static final MarshallingInfo<String> GENERATIONTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GenerationTimestamp").build();
+    private static final MarshallingInfo<String> ADDITIONALMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdditionalMetadata").build();
 
     private static final SavingsPlansPurchaseRecommendationMetadataMarshaller instance = new SavingsPlansPurchaseRecommendationMetadataMarshaller();
 
@@ -50,6 +52,7 @@ public class SavingsPlansPurchaseRecommendationMetadataMarshaller {
         try {
             protocolMarshaller.marshall(savingsPlansPurchaseRecommendationMetadata.getRecommendationId(), RECOMMENDATIONID_BINDING);
             protocolMarshaller.marshall(savingsPlansPurchaseRecommendationMetadata.getGenerationTimestamp(), GENERATIONTIMESTAMP_BINDING);
+            protocolMarshaller.marshall(savingsPlansPurchaseRecommendationMetadata.getAdditionalMetadata(), ADDITIONALMETADATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

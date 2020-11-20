@@ -33,6 +33,8 @@ public class InputDeviceSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectionState").build();
     private static final MarshallingInfo<String> DEVICESETTINGSSYNCSTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deviceSettingsSyncState").build();
+    private static final MarshallingInfo<String> DEVICEUPDATESTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deviceUpdateStatus").build();
     private static final MarshallingInfo<StructuredPojo> HDDEVICESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hdDeviceSettings").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -67,6 +69,7 @@ public class InputDeviceSummaryMarshaller {
             protocolMarshaller.marshall(inputDeviceSummary.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(inputDeviceSummary.getConnectionState(), CONNECTIONSTATE_BINDING);
             protocolMarshaller.marshall(inputDeviceSummary.getDeviceSettingsSyncState(), DEVICESETTINGSSYNCSTATE_BINDING);
+            protocolMarshaller.marshall(inputDeviceSummary.getDeviceUpdateStatus(), DEVICEUPDATESTATUS_BINDING);
             protocolMarshaller.marshall(inputDeviceSummary.getHdDeviceSettings(), HDDEVICESETTINGS_BINDING);
             protocolMarshaller.marshall(inputDeviceSummary.getId(), ID_BINDING);
             protocolMarshaller.marshall(inputDeviceSummary.getMacAddress(), MACADDRESS_BINDING);

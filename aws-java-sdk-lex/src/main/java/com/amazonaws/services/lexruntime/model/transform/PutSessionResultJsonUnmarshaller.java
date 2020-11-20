@@ -69,6 +69,11 @@ public class PutSessionResultJsonUnmarshaller implements Unmarshaller<PutSession
                 context.setCurrentHeader("x-amz-lex-session-id");
                 putSessionResult.setSessionId(context.getUnmarshaller(String.class).unmarshall(context));
             }
+            if (context.getHeader("x-amz-lex-active-contexts") != null) {
+                context.setCurrentHeader("x-amz-lex-active-contexts");
+                putSessionResult.setActiveContexts(context.getUnmarshaller(String.class, JsonUnmarshallerContext.UnmarshallerType.JSON_VALUE).unmarshall(
+                        context));
+            }
         }
 
         putSessionResult.setAudioStream(context.getHttpResponse().getContent());

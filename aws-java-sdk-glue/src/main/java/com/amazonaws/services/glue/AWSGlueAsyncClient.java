@@ -537,6 +537,39 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CheckSchemaVersionValidityResult> checkSchemaVersionValidityAsync(CheckSchemaVersionValidityRequest request) {
+
+        return checkSchemaVersionValidityAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CheckSchemaVersionValidityResult> checkSchemaVersionValidityAsync(final CheckSchemaVersionValidityRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CheckSchemaVersionValidityRequest, CheckSchemaVersionValidityResult> asyncHandler) {
+        final CheckSchemaVersionValidityRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CheckSchemaVersionValidityResult>() {
+            @Override
+            public CheckSchemaVersionValidityResult call() throws Exception {
+                CheckSchemaVersionValidityResult result = null;
+
+                try {
+                    result = executeCheckSchemaVersionValidity(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateClassifierResult> createClassifierAsync(CreateClassifierRequest request) {
 
         return createClassifierAsync(request, null);
@@ -785,6 +818,72 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
 
                 try {
                     result = executeCreatePartition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRegistryResult> createRegistryAsync(CreateRegistryRequest request) {
+
+        return createRegistryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRegistryResult> createRegistryAsync(final CreateRegistryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateRegistryRequest, CreateRegistryResult> asyncHandler) {
+        final CreateRegistryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateRegistryResult>() {
+            @Override
+            public CreateRegistryResult call() throws Exception {
+                CreateRegistryResult result = null;
+
+                try {
+                    result = executeCreateRegistry(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSchemaResult> createSchemaAsync(CreateSchemaRequest request) {
+
+        return createSchemaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSchemaResult> createSchemaAsync(final CreateSchemaRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateSchemaRequest, CreateSchemaResult> asyncHandler) {
+        final CreateSchemaRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateSchemaResult>() {
+            @Override
+            public CreateSchemaResult call() throws Exception {
+                CreateSchemaResult result = null;
+
+                try {
+                    result = executeCreateSchema(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1332,6 +1431,39 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteRegistryResult> deleteRegistryAsync(DeleteRegistryRequest request) {
+
+        return deleteRegistryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRegistryResult> deleteRegistryAsync(final DeleteRegistryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRegistryRequest, DeleteRegistryResult> asyncHandler) {
+        final DeleteRegistryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteRegistryResult>() {
+            @Override
+            public DeleteRegistryResult call() throws Exception {
+                DeleteRegistryResult result = null;
+
+                try {
+                    result = executeDeleteRegistry(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest request) {
 
         return deleteResourcePolicyAsync(request, null);
@@ -1349,6 +1481,72 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
 
                 try {
                     result = executeDeleteResourcePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSchemaResult> deleteSchemaAsync(DeleteSchemaRequest request) {
+
+        return deleteSchemaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSchemaResult> deleteSchemaAsync(final DeleteSchemaRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteSchemaRequest, DeleteSchemaResult> asyncHandler) {
+        final DeleteSchemaRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteSchemaResult>() {
+            @Override
+            public DeleteSchemaResult call() throws Exception {
+                DeleteSchemaResult result = null;
+
+                try {
+                    result = executeDeleteSchema(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSchemaVersionsResult> deleteSchemaVersionsAsync(DeleteSchemaVersionsRequest request) {
+
+        return deleteSchemaVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSchemaVersionsResult> deleteSchemaVersionsAsync(final DeleteSchemaVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteSchemaVersionsRequest, DeleteSchemaVersionsResult> asyncHandler) {
+        final DeleteSchemaVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteSchemaVersionsResult>() {
+            @Override
+            public DeleteSchemaVersionsResult call() throws Exception {
+                DeleteSchemaVersionsResult result = null;
+
+                try {
+                    result = executeDeleteSchemaVersions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2557,6 +2755,39 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetRegistryResult> getRegistryAsync(GetRegistryRequest request) {
+
+        return getRegistryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRegistryResult> getRegistryAsync(final GetRegistryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRegistryRequest, GetRegistryResult> asyncHandler) {
+        final GetRegistryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRegistryResult>() {
+            @Override
+            public GetRegistryResult call() throws Exception {
+                GetRegistryResult result = null;
+
+                try {
+                    result = executeGetRegistry(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetResourcePoliciesResult> getResourcePoliciesAsync(GetResourcePoliciesRequest request) {
 
         return getResourcePoliciesAsync(request, null);
@@ -2607,6 +2838,138 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
 
                 try {
                     result = executeGetResourcePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSchemaResult> getSchemaAsync(GetSchemaRequest request) {
+
+        return getSchemaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSchemaResult> getSchemaAsync(final GetSchemaRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSchemaRequest, GetSchemaResult> asyncHandler) {
+        final GetSchemaRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSchemaResult>() {
+            @Override
+            public GetSchemaResult call() throws Exception {
+                GetSchemaResult result = null;
+
+                try {
+                    result = executeGetSchema(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSchemaByDefinitionResult> getSchemaByDefinitionAsync(GetSchemaByDefinitionRequest request) {
+
+        return getSchemaByDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSchemaByDefinitionResult> getSchemaByDefinitionAsync(final GetSchemaByDefinitionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSchemaByDefinitionRequest, GetSchemaByDefinitionResult> asyncHandler) {
+        final GetSchemaByDefinitionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSchemaByDefinitionResult>() {
+            @Override
+            public GetSchemaByDefinitionResult call() throws Exception {
+                GetSchemaByDefinitionResult result = null;
+
+                try {
+                    result = executeGetSchemaByDefinition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSchemaVersionResult> getSchemaVersionAsync(GetSchemaVersionRequest request) {
+
+        return getSchemaVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSchemaVersionResult> getSchemaVersionAsync(final GetSchemaVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSchemaVersionRequest, GetSchemaVersionResult> asyncHandler) {
+        final GetSchemaVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSchemaVersionResult>() {
+            @Override
+            public GetSchemaVersionResult call() throws Exception {
+                GetSchemaVersionResult result = null;
+
+                try {
+                    result = executeGetSchemaVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSchemaVersionsDiffResult> getSchemaVersionsDiffAsync(GetSchemaVersionsDiffRequest request) {
+
+        return getSchemaVersionsDiffAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSchemaVersionsDiffResult> getSchemaVersionsDiffAsync(final GetSchemaVersionsDiffRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSchemaVersionsDiffRequest, GetSchemaVersionsDiffResult> asyncHandler) {
+        final GetSchemaVersionsDiffRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSchemaVersionsDiffResult>() {
+            @Override
+            public GetSchemaVersionsDiffResult call() throws Exception {
+                GetSchemaVersionsDiffResult result = null;
+
+                try {
+                    result = executeGetSchemaVersionsDiff(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3283,6 +3646,105 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListRegistriesResult> listRegistriesAsync(ListRegistriesRequest request) {
+
+        return listRegistriesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRegistriesResult> listRegistriesAsync(final ListRegistriesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListRegistriesRequest, ListRegistriesResult> asyncHandler) {
+        final ListRegistriesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListRegistriesResult>() {
+            @Override
+            public ListRegistriesResult call() throws Exception {
+                ListRegistriesResult result = null;
+
+                try {
+                    result = executeListRegistries(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSchemaVersionsResult> listSchemaVersionsAsync(ListSchemaVersionsRequest request) {
+
+        return listSchemaVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSchemaVersionsResult> listSchemaVersionsAsync(final ListSchemaVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSchemaVersionsRequest, ListSchemaVersionsResult> asyncHandler) {
+        final ListSchemaVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSchemaVersionsResult>() {
+            @Override
+            public ListSchemaVersionsResult call() throws Exception {
+                ListSchemaVersionsResult result = null;
+
+                try {
+                    result = executeListSchemaVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSchemasResult> listSchemasAsync(ListSchemasRequest request) {
+
+        return listSchemasAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSchemasResult> listSchemasAsync(final ListSchemasRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSchemasRequest, ListSchemasResult> asyncHandler) {
+        final ListSchemasRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSchemasResult>() {
+            @Override
+            public ListSchemasResult call() throws Exception {
+                ListSchemasResult result = null;
+
+                try {
+                    result = executeListSchemas(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTriggersResult> listTriggersAsync(ListTriggersRequest request) {
 
         return listTriggersAsync(request, null);
@@ -3417,6 +3879,39 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<PutSchemaVersionMetadataResult> putSchemaVersionMetadataAsync(PutSchemaVersionMetadataRequest request) {
+
+        return putSchemaVersionMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutSchemaVersionMetadataResult> putSchemaVersionMetadataAsync(final PutSchemaVersionMetadataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutSchemaVersionMetadataRequest, PutSchemaVersionMetadataResult> asyncHandler) {
+        final PutSchemaVersionMetadataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutSchemaVersionMetadataResult>() {
+            @Override
+            public PutSchemaVersionMetadataResult call() throws Exception {
+                PutSchemaVersionMetadataResult result = null;
+
+                try {
+                    result = executePutSchemaVersionMetadata(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PutWorkflowRunPropertiesResult> putWorkflowRunPropertiesAsync(PutWorkflowRunPropertiesRequest request) {
 
         return putWorkflowRunPropertiesAsync(request, null);
@@ -3434,6 +3929,105 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
 
                 try {
                     result = executePutWorkflowRunProperties(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<QuerySchemaVersionMetadataResult> querySchemaVersionMetadataAsync(QuerySchemaVersionMetadataRequest request) {
+
+        return querySchemaVersionMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<QuerySchemaVersionMetadataResult> querySchemaVersionMetadataAsync(final QuerySchemaVersionMetadataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<QuerySchemaVersionMetadataRequest, QuerySchemaVersionMetadataResult> asyncHandler) {
+        final QuerySchemaVersionMetadataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<QuerySchemaVersionMetadataResult>() {
+            @Override
+            public QuerySchemaVersionMetadataResult call() throws Exception {
+                QuerySchemaVersionMetadataResult result = null;
+
+                try {
+                    result = executeQuerySchemaVersionMetadata(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterSchemaVersionResult> registerSchemaVersionAsync(RegisterSchemaVersionRequest request) {
+
+        return registerSchemaVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterSchemaVersionResult> registerSchemaVersionAsync(final RegisterSchemaVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RegisterSchemaVersionRequest, RegisterSchemaVersionResult> asyncHandler) {
+        final RegisterSchemaVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RegisterSchemaVersionResult>() {
+            @Override
+            public RegisterSchemaVersionResult call() throws Exception {
+                RegisterSchemaVersionResult result = null;
+
+                try {
+                    result = executeRegisterSchemaVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveSchemaVersionMetadataResult> removeSchemaVersionMetadataAsync(RemoveSchemaVersionMetadataRequest request) {
+
+        return removeSchemaVersionMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveSchemaVersionMetadataResult> removeSchemaVersionMetadataAsync(final RemoveSchemaVersionMetadataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RemoveSchemaVersionMetadataRequest, RemoveSchemaVersionMetadataResult> asyncHandler) {
+        final RemoveSchemaVersionMetadataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RemoveSchemaVersionMetadataResult>() {
+            @Override
+            public RemoveSchemaVersionMetadataResult call() throws Exception {
+                RemoveSchemaVersionMetadataResult result = null;
+
+                try {
+                    result = executeRemoveSchemaVersionMetadata(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4396,6 +4990,72 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
 
                 try {
                     result = executeUpdatePartition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRegistryResult> updateRegistryAsync(UpdateRegistryRequest request) {
+
+        return updateRegistryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRegistryResult> updateRegistryAsync(final UpdateRegistryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateRegistryRequest, UpdateRegistryResult> asyncHandler) {
+        final UpdateRegistryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateRegistryResult>() {
+            @Override
+            public UpdateRegistryResult call() throws Exception {
+                UpdateRegistryResult result = null;
+
+                try {
+                    result = executeUpdateRegistry(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSchemaResult> updateSchemaAsync(UpdateSchemaRequest request) {
+
+        return updateSchemaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSchemaResult> updateSchemaAsync(final UpdateSchemaRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateSchemaRequest, UpdateSchemaResult> asyncHandler) {
+        final UpdateSchemaRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateSchemaResult>() {
+            @Override
+            public UpdateSchemaResult call() throws Exception {
+                UpdateSchemaResult result = null;
+
+                try {
+                    result = executeUpdateSchema(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -22,7 +22,8 @@ public enum RuntimeEnvironment {
 
     SQL1_0("SQL-1_0"),
     FLINK1_6("FLINK-1_6"),
-    FLINK1_8("FLINK-1_8");
+    FLINK1_8("FLINK-1_8"),
+    FLINK1_11("FLINK-1_11");
 
     private String value;
 

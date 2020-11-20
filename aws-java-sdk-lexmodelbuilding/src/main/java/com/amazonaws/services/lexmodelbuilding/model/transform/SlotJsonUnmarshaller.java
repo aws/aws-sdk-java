@@ -90,6 +90,10 @@ public class SlotJsonUnmarshaller implements Unmarshaller<Slot, JsonUnmarshaller
                     context.nextToken();
                     slot.setObfuscationSetting(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("defaultValueSpec", targetDepth)) {
+                    context.nextToken();
+                    slot.setDefaultValueSpec(SlotDefaultValueSpecJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

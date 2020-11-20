@@ -251,8 +251,13 @@ public interface AWSCostExplorer {
      * and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time
      * range. For a complete list of valid dimensions, see the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html"
-     * >GetDimensionValues</a> operation. Master account in an organization in AWS Organizations have access to all
+     * >GetDimensionValues</a> operation. Management account in an organization in AWS Organizations have access to all
      * member accounts.
+     * </p>
+     * <p>
+     * For information about filter limitations, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-limits.html">Quotas and
+     * restrictions</a> in the <i>Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @param getCostAndUsageRequest
@@ -281,7 +286,7 @@ public interface AWSCostExplorer {
      * can also filter and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a
      * specific time range. For a complete list of valid dimensions, see the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html"
-     * >GetDimensionValues</a> operation. Master account in an organization in AWS Organizations have access to all
+     * >GetDimensionValues</a> operation. Management account in an organization in AWS Organizations have access to all
      * member accounts. This API is currently available for the Amazon Elastic Compute Cloud – Compute service only.
      * </p>
      * <note>
@@ -359,7 +364,7 @@ public interface AWSCostExplorer {
      * <p>
      * Retrieves the reservation coverage for your account. This enables you to see how much of your Amazon Elastic
      * Compute Cloud, Amazon ElastiCache, Amazon Relational Database Service, or Amazon Redshift usage is covered by a
-     * reservation. An organization's master account can see the coverage of the associated member accounts. This
+     * reservation. An organization's management account can see the coverage of the associated member accounts. This
      * supports dimensions, Cost Categories, and nested expressions. For any time period, you can filter data about
      * reservation usage by the following dimensions:
      * </p>
@@ -482,9 +487,9 @@ public interface AWSCostExplorer {
 
     /**
      * <p>
-     * Retrieves the reservation utilization for your account. Master account in an organization have access to member
-     * accounts. You can filter data by dimensions in a time period. You can use <code>GetDimensionValues</code> to
-     * determine the possible dimension values. Currently, you can group only by <code>SUBSCRIPTION_ID</code>.
+     * Retrieves the reservation utilization for your account. Management account in an organization have access to
+     * member accounts. You can filter data by dimensions in a time period. You can use <code>GetDimensionValues</code>
+     * to determine the possible dimension values. Currently, you can group only by <code>SUBSCRIPTION_ID</code>.
      * </p>
      * 
      * @param getReservationUtilizationRequest
@@ -527,7 +532,7 @@ public interface AWSCostExplorer {
     /**
      * <p>
      * Retrieves the Savings Plans covered for your account. This enables you to see how much of your cost is covered by
-     * a Savings Plan. An organization’s master account can see the coverage of the associated member accounts. This
+     * a Savings Plan. An organization’s management account can see the coverage of the associated member accounts. This
      * supports dimensions, Cost Categories, and nested expressions. For any time period, you can filter data for
      * Savings Plans usage with the following dimensions:
      * </p>
@@ -592,8 +597,8 @@ public interface AWSCostExplorer {
     /**
      * <p>
      * Retrieves the Savings Plans utilization for your account across date ranges with daily or monthly granularity.
-     * Master account in an organization have access to member accounts. You can use <code>GetDimensionValues</code> in
-     * <code>SAVINGS_PLANS</code> to determine the possible dimension values.
+     * Management account in an organization have access to member accounts. You can use <code>GetDimensionValues</code>
+     * in <code>SAVINGS_PLANS</code> to determine the possible dimension values.
      * </p>
      * <note>
      * <p>

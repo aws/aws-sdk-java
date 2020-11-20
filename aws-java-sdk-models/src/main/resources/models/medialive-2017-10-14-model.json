@@ -5441,6 +5441,11 @@
           "locationName": "deviceSettingsSyncState",
           "documentation": "The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration."
         },
+        "DeviceUpdateStatus": {
+          "shape": "DeviceUpdateStatus",
+          "locationName": "deviceUpdateStatus",
+          "documentation": "The status of software on the input device."
+        },
         "HdDeviceSettings": {
           "shape": "InputDeviceHdSettings",
           "locationName": "hdDeviceSettings",
@@ -6040,6 +6045,14 @@
       "enum": [
         "SYNCED",
         "SYNCING"
+      ]
+    },
+    "DeviceUpdateStatus": {
+      "type": "string",
+      "documentation": "The status of software on the input device.",
+      "enum": [
+        "UP_TO_DATE",
+        "NOT_UP_TO_DATE"
       ]
     },
     "DvbNitSettings": {
@@ -8682,6 +8695,11 @@
           "locationName": "deviceSettingsSyncState",
           "documentation": "The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration."
         },
+        "DeviceUpdateStatus": {
+          "shape": "DeviceUpdateStatus",
+          "locationName": "deviceUpdateStatus",
+          "documentation": "The status of software on the input device."
+        },
         "HdDeviceSettings": {
           "shape": "InputDeviceHdSettings",
           "locationName": "hdDeviceSettings",
@@ -8917,6 +8935,11 @@
           "shape": "DeviceSettingsSyncState",
           "locationName": "deviceSettingsSyncState",
           "documentation": "The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration."
+        },
+        "DeviceUpdateStatus": {
+          "shape": "DeviceUpdateStatus",
+          "locationName": "deviceUpdateStatus",
+          "documentation": "The status of software on the input device."
         },
         "HdDeviceSettings": {
           "shape": "InputDeviceHdSettings",
@@ -13945,6 +13968,11 @@
           "shape": "DeviceSettingsSyncState",
           "locationName": "deviceSettingsSyncState",
           "documentation": "The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration."
+        },
+        "DeviceUpdateStatus": {
+          "shape": "DeviceUpdateStatus",
+          "locationName": "deviceUpdateStatus",
+          "documentation": "The status of software on the input device."
         },
         "HdDeviceSettings": {
           "shape": "InputDeviceHdSettings",

@@ -106,6 +106,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                             new JsonErrorShapeMetadata().withErrorCode("DirectoryNotSharedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.directory.model.transform.DirectoryNotSharedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("RegionLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.directory.model.transform.RegionLimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("EntityDoesNotExistException").withExceptionUnmarshaller(
                                     com.amazonaws.services.directory.model.transform.EntityDoesNotExistExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -120,6 +123,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("CertificateAlreadyExistsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.directory.model.transform.CertificateAlreadyExistsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DirectoryAlreadyInRegionException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.directory.model.transform.DirectoryAlreadyInRegionExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DomainControllerLimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.directory.model.transform.DomainControllerLimitExceededExceptionUnmarshaller.getInstance()))
@@ -530,6 +536,81 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Adds two domain controllers in the specified Region for the specified directory.
+     * </p>
+     * 
+     * @param addRegionRequest
+     * @return Result of the AddRegion operation returned by the service.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws DirectoryAlreadyInRegionException
+     *         The Region you specified is the same Region where the AWS Managed Microsoft AD directory was created.
+     *         Specify a different Region and try again.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws RegionLimitExceededException
+     *         You have reached the limit for maximum number of simultaneous region replications per directory.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.AddRegion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddRegion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public AddRegionResult addRegion(AddRegionRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddRegion(request);
+    }
+
+    @SdkInternalApi
+    final AddRegionResult executeAddRegion(AddRegionRequest addRegionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(addRegionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AddRegionRequest> request = null;
+        Response<AddRegionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AddRegionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addRegionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddRegion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AddRegionResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new AddRegionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds or overwrites one or more tags for the specified directory. Each directory can have a maximum of 50 tags.
      * Each tag consists of a key and optional value. Tag keys must be unique to each resource.
      * </p>
@@ -802,7 +883,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Creates a computer account in the specified directory, and joins the computer to the directory.
+     * Creates an Active Directory computer object in the specified directory.
      * </p>
      * 
      * @param createComputerRequest
@@ -2201,6 +2282,74 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Provides information about the Regions that are configured for multi-Region replication.
+     * </p>
+     * 
+     * @param describeRegionsRequest
+     * @return Result of the DescribeRegions operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value is not valid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DescribeRegions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeRegions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeRegionsResult describeRegions(DescribeRegionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRegions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRegionsResult executeDescribeRegions(DescribeRegionsRequest describeRegionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeRegionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeRegionsRequest> request = null;
+        Response<DescribeRegionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeRegionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRegionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRegions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeRegionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeRegionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the shared directories in your account.
      * </p>
      * 
@@ -3518,6 +3667,73 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
             HttpResponseHandler<AmazonWebServiceResponse<RemoveIpRoutesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RemoveIpRoutesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops all replication and removes the domain controllers from the specified Region. You cannot remove the primary
+     * Region with this operation. Instead, use the <code>DeleteDirectory</code> API.
+     * </p>
+     * 
+     * @param removeRegionRequest
+     * @return Result of the RemoveRegion operation returned by the service.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.RemoveRegion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveRegion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public RemoveRegionResult removeRegion(RemoveRegionRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveRegion(request);
+    }
+
+    @SdkInternalApi
+    final RemoveRegionResult executeRemoveRegion(RemoveRegionRequest removeRegionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(removeRegionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RemoveRegionRequest> request = null;
+        Response<RemoveRegionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveRegionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeRegionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveRegion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RemoveRegionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RemoveRegionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -86,28 +86,6 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default. In
      * these Regions setting the parameter to <code>false</code> throws a <code>ValidationException</code> exception.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Asia Pacific (Singapore) (ap-southeast-1)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Asia Pacific (Tokyo) (ap-northeast-1)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EU (Frankfurt) (eu-central-1)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EU (London) (eu-west-2)
-     * </p>
-     * </li>
-     * </ul>
      */
     private Boolean enableModelImprovements;
     /**
@@ -120,7 +98,8 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * configured for the bot.
      * </p>
      * <p>
-     * You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence scores.
+     * You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence scores in
+     * the following regions.
      * </p>
      * <ul>
      * <li>
@@ -563,28 +542,6 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default. In
      * these Regions setting the parameter to <code>false</code> throws a <code>ValidationException</code> exception.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Asia Pacific (Singapore) (ap-southeast-1)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Asia Pacific (Tokyo) (ap-northeast-1)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EU (Frankfurt) (eu-central-1)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EU (London) (eu-west-2)
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param enableModelImprovements
      *        Set to <code>true</code> to enable access to natural language understanding improvements. </p>
@@ -626,28 +583,6 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *        In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by
      *        default. In these Regions setting the parameter to <code>false</code> throws a
      *        <code>ValidationException</code> exception.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Asia Pacific (Singapore) (ap-southeast-1)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Asia Pacific (Tokyo) (ap-northeast-1)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        EU (Frankfurt) (eu-central-1)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        EU (London) (eu-west-2)
-     *        </p>
-     *        </li>
      */
 
     public void setEnableModelImprovements(Boolean enableModelImprovements) {
@@ -696,28 +631,6 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default. In
      * these Regions setting the parameter to <code>false</code> throws a <code>ValidationException</code> exception.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Asia Pacific (Singapore) (ap-southeast-1)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Asia Pacific (Tokyo) (ap-northeast-1)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EU (Frankfurt) (eu-central-1)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EU (London) (eu-west-2)
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @return Set to <code>true</code> to enable access to natural language understanding improvements. </p>
      *         <p>
@@ -759,28 +672,6 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *         In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by
      *         default. In these Regions setting the parameter to <code>false</code> throws a
      *         <code>ValidationException</code> exception.
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Asia Pacific (Singapore) (ap-southeast-1)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Asia Pacific (Tokyo) (ap-northeast-1)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         EU (Frankfurt) (eu-central-1)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         EU (London) (eu-west-2)
-     *         </p>
-     *         </li>
      */
 
     public Boolean getEnableModelImprovements() {
@@ -829,28 +720,6 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default. In
      * these Regions setting the parameter to <code>false</code> throws a <code>ValidationException</code> exception.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Asia Pacific (Singapore) (ap-southeast-1)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Asia Pacific (Tokyo) (ap-northeast-1)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EU (Frankfurt) (eu-central-1)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EU (London) (eu-west-2)
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param enableModelImprovements
      *        Set to <code>true</code> to enable access to natural language understanding improvements. </p>
@@ -892,28 +761,6 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *        In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by
      *        default. In these Regions setting the parameter to <code>false</code> throws a
      *        <code>ValidationException</code> exception.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Asia Pacific (Singapore) (ap-southeast-1)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Asia Pacific (Tokyo) (ap-northeast-1)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        EU (Frankfurt) (eu-central-1)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        EU (London) (eu-west-2)
-     *        </p>
-     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -964,28 +811,6 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default. In
      * these Regions setting the parameter to <code>false</code> throws a <code>ValidationException</code> exception.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Asia Pacific (Singapore) (ap-southeast-1)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Asia Pacific (Tokyo) (ap-northeast-1)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EU (Frankfurt) (eu-central-1)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EU (London) (eu-west-2)
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @return Set to <code>true</code> to enable access to natural language understanding improvements. </p>
      *         <p>
@@ -1027,28 +852,6 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *         In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by
      *         default. In these Regions setting the parameter to <code>false</code> throws a
      *         <code>ValidationException</code> exception.
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Asia Pacific (Singapore) (ap-southeast-1)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Asia Pacific (Tokyo) (ap-northeast-1)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         EU (Frankfurt) (eu-central-1)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         EU (London) (eu-west-2)
-     *         </p>
-     *         </li>
      */
 
     public Boolean isEnableModelImprovements() {
@@ -1065,7 +868,8 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * configured for the bot.
      * </p>
      * <p>
-     * You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence scores.
+     * You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence scores in
+     * the following regions.
      * </p>
      * <ul>
      * <li>
@@ -1130,7 +934,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *        are configured for the bot.</p>
      *        <p>
      *        You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence
-     *        scores.
+     *        scores in the following regions.
      *        </p>
      *        <ul>
      *        <li>
@@ -1201,7 +1005,8 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * configured for the bot.
      * </p>
      * <p>
-     * You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence scores.
+     * You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence scores in
+     * the following regions.
      * </p>
      * <ul>
      * <li>
@@ -1265,7 +1070,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *         are configured for the bot.</p>
      *         <p>
      *         You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence
-     *         scores.
+     *         scores in the following regions.
      *         </p>
      *         <ul>
      *         <li>
@@ -1336,7 +1141,8 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * configured for the bot.
      * </p>
      * <p>
-     * You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence scores.
+     * You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence scores in
+     * the following regions.
      * </p>
      * <ul>
      * <li>
@@ -1401,7 +1207,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *        are configured for the bot.</p>
      *        <p>
      *        You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence
-     *        scores.
+     *        scores in the following regions.
      *        </p>
      *        <ul>
      *        <li>

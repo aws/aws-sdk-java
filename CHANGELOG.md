@@ -1,3 +1,52 @@
+# __1.11.905__ __2020-11-19__
+## __AWS Cost Explorer Service__
+  - ### Features
+    - Additional metadata that may be applicable to the recommendation.
+
+## __AWS Directory Service__
+  - ### Features
+    - Adding multi-region replication feature for AWS Managed Microsoft AD
+
+## __AWS Elemental MediaLive__
+  - ### Features
+    - The AWS Elemental MediaLive APIs and SDKs now support the ability to see the software update status on Link devices
+
+## __AWS Glue__
+  - ### Features
+    - Adding support for Glue Schema Registry. The AWS Glue Schema Registry is a new feature that allows you to centrally discover, control, and evolve data stream schemas.
+
+## __AWS Lambda__
+  - ### Features
+    - Added the starting position and starting position timestamp to ESM Configuration. Now customers will be able to view these fields for their ESM.
+
+## __Amazon CloudWatch Events__
+  - ### Features
+    - EventBridge now supports Resource-based policy authorization on event buses. This enables cross-account PutEvents API calls, creating cross-account rules, and simplifies permission management.
+
+## __Amazon EventBridge__
+  - ### Features
+    - EventBridge now supports Resource-based policy authorization on event buses. This enables cross-account PutEvents API calls, creating cross-account rules, and simplifies permission management.
+
+## __Amazon Kinesis Analytics__
+  - ### Features
+    - Amazon Kinesis Data Analytics now supports building and running streaming applications using Apache Flink 1.11 and provides a way to access the Apache Flink dashboard for supported Flink versions.
+
+## __Amazon Lex Model Building Service__
+  - ### Features
+    - Amazon Lex supports managing input and output contexts as well as default values for slots.
+
+## __Amazon Lex Runtime Service__
+  - ### Features
+    - Amazon Lex now supports the ability to view and manage active contexts associated with a user session.
+
+## __Amazon Redshift__
+  - ### Features
+    - Amazon Redshift support for returning ClusterNamespaceArn in describeClusters
+
+## __Auto Scaling__
+  - ### Features
+    - You can now create Auto Scaling groups with multiple launch templates using a mixed instances policy, making it easy to deploy an AMI with an architecture that is different from the rest of the group.
+
 # __1.11.904__ __2020-11-18__
 ## __AWS Backup__
   - ### Features

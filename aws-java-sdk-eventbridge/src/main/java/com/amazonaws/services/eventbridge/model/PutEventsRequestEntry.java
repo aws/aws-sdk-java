@@ -62,8 +62,8 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
     private String detail;
     /**
      * <p>
-     * The event bus that will receive the event. Only the rules that are associated with this event bus will be able to
-     * match the event.
+     * The name or ARN of the event bus to receive the event. Only the rules that are associated with this event bus are
+     * used to match the event. If you omit this, the default event bus is used.
      * </p>
      */
     private String eventBusName;
@@ -317,13 +317,13 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The event bus that will receive the event. Only the rules that are associated with this event bus will be able to
-     * match the event.
+     * The name or ARN of the event bus to receive the event. Only the rules that are associated with this event bus are
+     * used to match the event. If you omit this, the default event bus is used.
      * </p>
      * 
      * @param eventBusName
-     *        The event bus that will receive the event. Only the rules that are associated with this event bus will be
-     *        able to match the event.
+     *        The name or ARN of the event bus to receive the event. Only the rules that are associated with this event
+     *        bus are used to match the event. If you omit this, the default event bus is used.
      */
 
     public void setEventBusName(String eventBusName) {
@@ -332,12 +332,12 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The event bus that will receive the event. Only the rules that are associated with this event bus will be able to
-     * match the event.
+     * The name or ARN of the event bus to receive the event. Only the rules that are associated with this event bus are
+     * used to match the event. If you omit this, the default event bus is used.
      * </p>
      * 
-     * @return The event bus that will receive the event. Only the rules that are associated with this event bus will be
-     *         able to match the event.
+     * @return The name or ARN of the event bus to receive the event. Only the rules that are associated with this event
+     *         bus are used to match the event. If you omit this, the default event bus is used.
      */
 
     public String getEventBusName() {
@@ -346,13 +346,13 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The event bus that will receive the event. Only the rules that are associated with this event bus will be able to
-     * match the event.
+     * The name or ARN of the event bus to receive the event. Only the rules that are associated with this event bus are
+     * used to match the event. If you omit this, the default event bus is used.
      * </p>
      * 
      * @param eventBusName
-     *        The event bus that will receive the event. Only the rules that are associated with this event bus will be
-     *        able to match the event.
+     *        The name or ARN of the event bus to receive the event. Only the rules that are associated with this event
+     *        bus are used to match the event. If you omit this, the default event bus is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

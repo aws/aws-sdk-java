@@ -36,8 +36,7 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence Scores</a>.
      * </p>
      * <p>
-     * The score is a relative score, not an absolute score. The score may change based on improvements to the Amazon
-     * Lex natural language understanding (NLU) model.
+     * The score is a relative score, not an absolute score. The score may change based on improvements to Amazon Lex.
      * </p>
      */
     private IntentConfidence nluIntentConfidence;
@@ -220,17 +219,19 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * The version of the bot that responded to the conversation. You can use this information to help determine if one
      * version of a bot is performing better than another version.
      * </p>
-     * <p>
-     * If you have enabled the new natural language understanding (NLU) model, you can use this to determine if the
-     * improvement is due to changes to the bot or changes to the NLU.
-     * </p>
-     * <p>
-     * For more information about enabling the new NLU, see the <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements"
-     * >enableModelImprovements</a> parameter of the <code>PutBot</code> operation.
-     * </p>
      */
     private String botVersion;
+    /**
+     * <p>
+     * A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the
+     * <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.
+     * </p>
+     * <p>
+     * You can use a context to control the intents that can follow up an intent, or to modify the operation of your
+     * application.
+     * </p>
+     */
+    private java.util.List<ActiveContext> activeContexts;
 
     /**
      * <p>
@@ -279,8 +280,7 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence Scores</a>.
      * </p>
      * <p>
-     * The score is a relative score, not an absolute score. The score may change based on improvements to the Amazon
-     * Lex natural language understanding (NLU) model.
+     * The score is a relative score, not an absolute score. The score may change based on improvements to Amazon Lex.
      * </p>
      * 
      * @param nluIntentConfidence
@@ -288,8 +288,8 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      *        matches the user's intent. The score is between 0.0 and 1.0. For more information, see <a
      *        href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence Scores</a>.</p>
      *        <p>
-     *        The score is a relative score, not an absolute score. The score may change based on improvements to the
-     *        Amazon Lex natural language understanding (NLU) model.
+     *        The score is a relative score, not an absolute score. The score may change based on improvements to Amazon
+     *        Lex.
      */
 
     public void setNluIntentConfidence(IntentConfidence nluIntentConfidence) {
@@ -303,16 +303,15 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence Scores</a>.
      * </p>
      * <p>
-     * The score is a relative score, not an absolute score. The score may change based on improvements to the Amazon
-     * Lex natural language understanding (NLU) model.
+     * The score is a relative score, not an absolute score. The score may change based on improvements to Amazon Lex.
      * </p>
      * 
      * @return Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that
      *         matches the user's intent. The score is between 0.0 and 1.0. For more information, see <a
      *         href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence Scores</a>.</p>
      *         <p>
-     *         The score is a relative score, not an absolute score. The score may change based on improvements to the
-     *         Amazon Lex natural language understanding (NLU) model.
+     *         The score is a relative score, not an absolute score. The score may change based on improvements to
+     *         Amazon Lex.
      */
 
     public IntentConfidence getNluIntentConfidence() {
@@ -326,8 +325,7 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence Scores</a>.
      * </p>
      * <p>
-     * The score is a relative score, not an absolute score. The score may change based on improvements to the Amazon
-     * Lex natural language understanding (NLU) model.
+     * The score is a relative score, not an absolute score. The score may change based on improvements to Amazon Lex.
      * </p>
      * 
      * @param nluIntentConfidence
@@ -335,8 +333,8 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      *        matches the user's intent. The score is between 0.0 and 1.0. For more information, see <a
      *        href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence Scores</a>.</p>
      *        <p>
-     *        The score is a relative score, not an absolute score. The score may change based on improvements to the
-     *        Amazon Lex natural language understanding (NLU) model.
+     *        The score is a relative score, not an absolute score. The score may change based on improvements to Amazon
+     *        Lex.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1910,27 +1908,10 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * The version of the bot that responded to the conversation. You can use this information to help determine if one
      * version of a bot is performing better than another version.
      * </p>
-     * <p>
-     * If you have enabled the new natural language understanding (NLU) model, you can use this to determine if the
-     * improvement is due to changes to the bot or changes to the NLU.
-     * </p>
-     * <p>
-     * For more information about enabling the new NLU, see the <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements"
-     * >enableModelImprovements</a> parameter of the <code>PutBot</code> operation.
-     * </p>
      * 
      * @param botVersion
      *        The version of the bot that responded to the conversation. You can use this information to help determine
-     *        if one version of a bot is performing better than another version.</p>
-     *        <p>
-     *        If you have enabled the new natural language understanding (NLU) model, you can use this to determine if
-     *        the improvement is due to changes to the bot or changes to the NLU.
-     *        </p>
-     *        <p>
-     *        For more information about enabling the new NLU, see the <a href=
-     *        "https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements"
-     *        >enableModelImprovements</a> parameter of the <code>PutBot</code> operation.
+     *        if one version of a bot is performing better than another version.
      */
 
     public void setBotVersion(String botVersion) {
@@ -1942,26 +1923,9 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * The version of the bot that responded to the conversation. You can use this information to help determine if one
      * version of a bot is performing better than another version.
      * </p>
-     * <p>
-     * If you have enabled the new natural language understanding (NLU) model, you can use this to determine if the
-     * improvement is due to changes to the bot or changes to the NLU.
-     * </p>
-     * <p>
-     * For more information about enabling the new NLU, see the <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements"
-     * >enableModelImprovements</a> parameter of the <code>PutBot</code> operation.
-     * </p>
      * 
      * @return The version of the bot that responded to the conversation. You can use this information to help determine
-     *         if one version of a bot is performing better than another version.</p>
-     *         <p>
-     *         If you have enabled the new natural language understanding (NLU) model, you can use this to determine if
-     *         the improvement is due to changes to the bot or changes to the NLU.
-     *         </p>
-     *         <p>
-     *         For more information about enabling the new NLU, see the <a href=
-     *         "https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements"
-     *         >enableModelImprovements</a> parameter of the <code>PutBot</code> operation.
+     *         if one version of a bot is performing better than another version.
      */
 
     public String getBotVersion() {
@@ -1973,32 +1937,121 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * The version of the bot that responded to the conversation. You can use this information to help determine if one
      * version of a bot is performing better than another version.
      * </p>
-     * <p>
-     * If you have enabled the new natural language understanding (NLU) model, you can use this to determine if the
-     * improvement is due to changes to the bot or changes to the NLU.
-     * </p>
-     * <p>
-     * For more information about enabling the new NLU, see the <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements"
-     * >enableModelImprovements</a> parameter of the <code>PutBot</code> operation.
-     * </p>
      * 
      * @param botVersion
      *        The version of the bot that responded to the conversation. You can use this information to help determine
-     *        if one version of a bot is performing better than another version.</p>
-     *        <p>
-     *        If you have enabled the new natural language understanding (NLU) model, you can use this to determine if
-     *        the improvement is due to changes to the bot or changes to the NLU.
-     *        </p>
-     *        <p>
-     *        For more information about enabling the new NLU, see the <a href=
-     *        "https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements"
-     *        >enableModelImprovements</a> parameter of the <code>PutBot</code> operation.
+     *        if one version of a bot is performing better than another version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PostTextResult withBotVersion(String botVersion) {
         setBotVersion(botVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the
+     * <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.
+     * </p>
+     * <p>
+     * You can use a context to control the intents that can follow up an intent, or to modify the operation of your
+     * application.
+     * </p>
+     * 
+     * @return A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling
+     *         the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
+     *         <p>
+     *         You can use a context to control the intents that can follow up an intent, or to modify the operation of
+     *         your application.
+     */
+
+    public java.util.List<ActiveContext> getActiveContexts() {
+        return activeContexts;
+    }
+
+    /**
+     * <p>
+     * A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the
+     * <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.
+     * </p>
+     * <p>
+     * You can use a context to control the intents that can follow up an intent, or to modify the operation of your
+     * application.
+     * </p>
+     * 
+     * @param activeContexts
+     *        A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling
+     *        the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
+     *        <p>
+     *        You can use a context to control the intents that can follow up an intent, or to modify the operation of
+     *        your application.
+     */
+
+    public void setActiveContexts(java.util.Collection<ActiveContext> activeContexts) {
+        if (activeContexts == null) {
+            this.activeContexts = null;
+            return;
+        }
+
+        this.activeContexts = new java.util.ArrayList<ActiveContext>(activeContexts);
+    }
+
+    /**
+     * <p>
+     * A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the
+     * <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.
+     * </p>
+     * <p>
+     * You can use a context to control the intents that can follow up an intent, or to modify the operation of your
+     * application.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setActiveContexts(java.util.Collection)} or {@link #withActiveContexts(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param activeContexts
+     *        A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling
+     *        the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
+     *        <p>
+     *        You can use a context to control the intents that can follow up an intent, or to modify the operation of
+     *        your application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PostTextResult withActiveContexts(ActiveContext... activeContexts) {
+        if (this.activeContexts == null) {
+            setActiveContexts(new java.util.ArrayList<ActiveContext>(activeContexts.length));
+        }
+        for (ActiveContext ele : activeContexts) {
+            this.activeContexts.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the
+     * <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.
+     * </p>
+     * <p>
+     * You can use a context to control the intents that can follow up an intent, or to modify the operation of your
+     * application.
+     * </p>
+     * 
+     * @param activeContexts
+     *        A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling
+     *        the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
+     *        <p>
+     *        You can use a context to control the intents that can follow up an intent, or to modify the operation of
+     *        your application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PostTextResult withActiveContexts(java.util.Collection<ActiveContext> activeContexts) {
+        setActiveContexts(activeContexts);
         return this;
     }
 
@@ -2039,7 +2092,9 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         if (getSessionId() != null)
             sb.append("SessionId: ").append(getSessionId()).append(",");
         if (getBotVersion() != null)
-            sb.append("BotVersion: ").append(getBotVersion());
+            sb.append("BotVersion: ").append(getBotVersion()).append(",");
+        if (getActiveContexts() != null)
+            sb.append("ActiveContexts: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -2106,6 +2161,10 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
             return false;
         if (other.getBotVersion() != null && other.getBotVersion().equals(this.getBotVersion()) == false)
             return false;
+        if (other.getActiveContexts() == null ^ this.getActiveContexts() == null)
+            return false;
+        if (other.getActiveContexts() != null && other.getActiveContexts().equals(this.getActiveContexts()) == false)
+            return false;
         return true;
     }
 
@@ -2127,6 +2186,7 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         hashCode = prime * hashCode + ((getResponseCard() == null) ? 0 : getResponseCard().hashCode());
         hashCode = prime * hashCode + ((getSessionId() == null) ? 0 : getSessionId().hashCode());
         hashCode = prime * hashCode + ((getBotVersion() == null) ? 0 : getBotVersion().hashCode());
+        hashCode = prime * hashCode + ((getActiveContexts() == null) ? 0 : getActiveContexts().hashCode());
         return hashCode;
     }
 

@@ -242,6 +242,17 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private java.io.InputStream inputStream;
+    /**
+     * <p>
+     * A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by
+     * including the context in the request,
+     * </p>
+     * <p>
+     * If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you
+     * specify an empty list, all contexts for the session are cleared.
+     * </p>
+     */
+    private String activeContexts;
 
     /**
      * <p>
@@ -1600,6 +1611,93 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by
+     * including the context in the request,
+     * </p>
+     * <p>
+     * If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you
+     * specify an empty list, all contexts for the session are cleared.
+     * </p>
+     * <p>
+     * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * 
+     * @param activeContexts
+     *        A list of contexts active for the request. A context can be activated when a previous intent is fulfilled,
+     *        or by including the context in the request,</p>
+     *        <p>
+     *        If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session.
+     *        If you specify an empty list, all contexts for the session are cleared.
+     */
+
+    public void setActiveContexts(String activeContexts) {
+        this.activeContexts = activeContexts;
+    }
+
+    /**
+     * <p>
+     * A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by
+     * including the context in the request,
+     * </p>
+     * <p>
+     * If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you
+     * specify an empty list, all contexts for the session are cleared.
+     * </p>
+     * <p>
+     * This field's value will be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
+     * 
+     * @return A list of contexts active for the request. A context can be activated when a previous intent is
+     *         fulfilled, or by including the context in the request,</p>
+     *         <p>
+     *         If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the
+     *         session. If you specify an empty list, all contexts for the session are cleared.
+     */
+
+    public String getActiveContexts() {
+        return this.activeContexts;
+    }
+
+    /**
+     * <p>
+     * A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by
+     * including the context in the request,
+     * </p>
+     * <p>
+     * If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you
+     * specify an empty list, all contexts for the session are cleared.
+     * </p>
+     * <p>
+     * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * 
+     * @param activeContexts
+     *        A list of contexts active for the request. A context can be activated when a previous intent is fulfilled,
+     *        or by including the context in the request,</p>
+     *        <p>
+     *        If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session.
+     *        If you specify an empty list, all contexts for the session are cleared.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PostContentRequest withActiveContexts(String activeContexts) {
+        setActiveContexts(activeContexts);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1626,7 +1724,9 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getAccept() != null)
             sb.append("Accept: ").append(getAccept()).append(",");
         if (getInputStream() != null)
-            sb.append("InputStream: ").append(getInputStream());
+            sb.append("InputStream: ").append(getInputStream()).append(",");
+        if (getActiveContexts() != null)
+            sb.append("ActiveContexts: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -1673,6 +1773,10 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getInputStream() != null && other.getInputStream().equals(this.getInputStream()) == false)
             return false;
+        if (other.getActiveContexts() == null ^ this.getActiveContexts() == null)
+            return false;
+        if (other.getActiveContexts() != null && other.getActiveContexts().equals(this.getActiveContexts()) == false)
+            return false;
         return true;
     }
 
@@ -1689,6 +1793,7 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
         hashCode = prime * hashCode + ((getAccept() == null) ? 0 : getAccept().hashCode());
         hashCode = prime * hashCode + ((getInputStream() == null) ? 0 : getInputStream().hashCode());
+        hashCode = prime * hashCode + ((getActiveContexts() == null) ? 0 : getActiveContexts().hashCode());
         return hashCode;
     }
 

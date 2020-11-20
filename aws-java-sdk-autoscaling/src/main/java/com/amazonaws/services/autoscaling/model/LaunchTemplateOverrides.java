@@ -17,10 +17,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes an override for a launch template. Currently, the only supported override is instance type.
- * </p>
- * <p>
- * The maximum number of instance type overrides that can be associated with an Auto Scaling group is 20.
+ * Describes an override for a launch template. The maximum number of instance types that can be associated with an Auto
+ * Scaling group is 20. For more information, see <a
+ * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-override-options.html">Configuring overrides</a> in
+ * the <i>Amazon EC2 Auto Scaling User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LaunchTemplateOverrides"
@@ -32,9 +32,9 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
     /**
      * <p>
      * The instance type, such as <code>m3.xlarge</code>. You must use an instance type that is supported in your
-     * requested Region and Availability Zones. For information about available instance types, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
+     * requested Region and Availability Zones. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
     private String instanceType;
@@ -54,20 +54,30 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      */
     private String weightedCapacity;
+    /**
+     * <p>
+     * Provides the launch template to be used when launching the instance type. For example, some instance types might
+     * require a launch template with a different AMI. If not provided, Amazon EC2 Auto Scaling uses the launch template
+     * that's defined for your mixed instances policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-template-overrides.html">Specifying a
+     * different launch template for an instance type</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     */
+    private LaunchTemplateSpecification launchTemplateSpecification;
 
     /**
      * <p>
      * The instance type, such as <code>m3.xlarge</code>. You must use an instance type that is supported in your
-     * requested Region and Availability Zones. For information about available instance types, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
+     * requested Region and Availability Zones. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param instanceType
      *        The instance type, such as <code>m3.xlarge</code>. You must use an instance type that is supported in your
-     *        requested Region and Availability Zones. For information about available instance types, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
-     *        >Available instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
+     *        requested Region and Availability Zones. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public void setInstanceType(String instanceType) {
@@ -77,15 +87,15 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
     /**
      * <p>
      * The instance type, such as <code>m3.xlarge</code>. You must use an instance type that is supported in your
-     * requested Region and Availability Zones. For information about available instance types, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
+     * requested Region and Availability Zones. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @return The instance type, such as <code>m3.xlarge</code>. You must use an instance type that is supported in
-     *         your requested Region and Availability Zones. For information about available instance types, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">
-     *         Available instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
+     *         your requested Region and Availability Zones. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     *         <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public String getInstanceType() {
@@ -95,16 +105,16 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
     /**
      * <p>
      * The instance type, such as <code>m3.xlarge</code>. You must use an instance type that is supported in your
-     * requested Region and Availability Zones. For information about available instance types, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
+     * requested Region and Availability Zones. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param instanceType
      *        The instance type, such as <code>m3.xlarge</code>. You must use an instance type that is supported in your
-     *        requested Region and Availability Zones. For information about available instance types, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
-     *        >Available instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
+     *        requested Region and Availability Zones. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,6 +224,71 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Provides the launch template to be used when launching the instance type. For example, some instance types might
+     * require a launch template with a different AMI. If not provided, Amazon EC2 Auto Scaling uses the launch template
+     * that's defined for your mixed instances policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-template-overrides.html">Specifying a
+     * different launch template for an instance type</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * 
+     * @param launchTemplateSpecification
+     *        Provides the launch template to be used when launching the instance type. For example, some instance types
+     *        might require a launch template with a different AMI. If not provided, Amazon EC2 Auto Scaling uses the
+     *        launch template that's defined for your mixed instances policy. For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-template-overrides.html">Specifying
+     *        a different launch template for an instance type</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     */
+
+    public void setLaunchTemplateSpecification(LaunchTemplateSpecification launchTemplateSpecification) {
+        this.launchTemplateSpecification = launchTemplateSpecification;
+    }
+
+    /**
+     * <p>
+     * Provides the launch template to be used when launching the instance type. For example, some instance types might
+     * require a launch template with a different AMI. If not provided, Amazon EC2 Auto Scaling uses the launch template
+     * that's defined for your mixed instances policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-template-overrides.html">Specifying a
+     * different launch template for an instance type</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * 
+     * @return Provides the launch template to be used when launching the instance type. For example, some instance
+     *         types might require a launch template with a different AMI. If not provided, Amazon EC2 Auto Scaling uses
+     *         the launch template that's defined for your mixed instances policy. For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-template-overrides.html"
+     *         >Specifying a different launch template for an instance type</a> in the <i>Amazon EC2 Auto Scaling User
+     *         Guide</i>.
+     */
+
+    public LaunchTemplateSpecification getLaunchTemplateSpecification() {
+        return this.launchTemplateSpecification;
+    }
+
+    /**
+     * <p>
+     * Provides the launch template to be used when launching the instance type. For example, some instance types might
+     * require a launch template with a different AMI. If not provided, Amazon EC2 Auto Scaling uses the launch template
+     * that's defined for your mixed instances policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-template-overrides.html">Specifying a
+     * different launch template for an instance type</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * 
+     * @param launchTemplateSpecification
+     *        Provides the launch template to be used when launching the instance type. For example, some instance types
+     *        might require a launch template with a different AMI. If not provided, Amazon EC2 Auto Scaling uses the
+     *        launch template that's defined for your mixed instances policy. For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-template-overrides.html">Specifying
+     *        a different launch template for an instance type</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchTemplateOverrides withLaunchTemplateSpecification(LaunchTemplateSpecification launchTemplateSpecification) {
+        setLaunchTemplateSpecification(launchTemplateSpecification);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -228,7 +303,9 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
         if (getInstanceType() != null)
             sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getWeightedCapacity() != null)
-            sb.append("WeightedCapacity: ").append(getWeightedCapacity());
+            sb.append("WeightedCapacity: ").append(getWeightedCapacity()).append(",");
+        if (getLaunchTemplateSpecification() != null)
+            sb.append("LaunchTemplateSpecification: ").append(getLaunchTemplateSpecification());
         sb.append("}");
         return sb.toString();
     }
@@ -251,6 +328,10 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
             return false;
         if (other.getWeightedCapacity() != null && other.getWeightedCapacity().equals(this.getWeightedCapacity()) == false)
             return false;
+        if (other.getLaunchTemplateSpecification() == null ^ this.getLaunchTemplateSpecification() == null)
+            return false;
+        if (other.getLaunchTemplateSpecification() != null && other.getLaunchTemplateSpecification().equals(this.getLaunchTemplateSpecification()) == false)
+            return false;
         return true;
     }
 
@@ -261,6 +342,7 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getWeightedCapacity() == null) ? 0 : getWeightedCapacity().hashCode());
+        hashCode = prime * hashCode + ((getLaunchTemplateSpecification() == null) ? 0 : getLaunchTemplateSpecification().hashCode());
         return hashCode;
     }
 

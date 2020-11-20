@@ -41,8 +41,7 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * user's intent. The score is between 0.0 and 1.0.
      * </p>
      * <p>
-     * The score is a relative score, not an absolute score. The score may change based on improvements to the Amazon
-     * Lex NLU.
+     * The score is a relative score, not an absolute score. The score may change based on improvements to Amazon Lex.
      * </p>
      */
     private String nluIntentConfidence;
@@ -229,15 +228,6 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * The version of the bot that responded to the conversation. You can use this information to help determine if one
      * version of a bot is performing better than another version.
      * </p>
-     * <p>
-     * If you have enabled the new natural language understanding (NLU) model, you can use this to determine if the
-     * improvement is due to changes to the bot or changes to the NLU.
-     * </p>
-     * <p>
-     * For more information about enabling the new NLU, see the <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements"
-     * >enableModelImprovements</a> parameter of the <code>PutBot</code> operation.
-     * </p>
      */
     private String botVersion;
     /**
@@ -246,6 +236,17 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private String sessionId;
+    /**
+     * <p>
+     * A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the
+     * <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.
+     * </p>
+     * <p>
+     * You can use a context to control the intents that can follow up an intent, or to modify the operation of your
+     * application.
+     * </p>
+     */
+    private String activeContexts;
 
     /**
      * <p>
@@ -333,8 +334,7 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * user's intent. The score is between 0.0 and 1.0.
      * </p>
      * <p>
-     * The score is a relative score, not an absolute score. The score may change based on improvements to the Amazon
-     * Lex NLU.
+     * The score is a relative score, not an absolute score. The score may change based on improvements to Amazon Lex.
      * </p>
      * <p>
      * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
@@ -349,8 +349,8 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      *        Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that
      *        matches the user's intent. The score is between 0.0 and 1.0.</p>
      *        <p>
-     *        The score is a relative score, not an absolute score. The score may change based on improvements to the
-     *        Amazon Lex NLU.
+     *        The score is a relative score, not an absolute score. The score may change based on improvements to Amazon
+     *        Lex.
      */
 
     public void setNluIntentConfidence(String nluIntentConfidence) {
@@ -363,8 +363,7 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * user's intent. The score is between 0.0 and 1.0.
      * </p>
      * <p>
-     * The score is a relative score, not an absolute score. The score may change based on improvements to the Amazon
-     * Lex NLU.
+     * The score is a relative score, not an absolute score. The score may change based on improvements to Amazon Lex.
      * </p>
      * <p>
      * This field's value will be valid JSON according to RFC 7159, including the opening and closing braces. For
@@ -374,8 +373,8 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * @return Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that
      *         matches the user's intent. The score is between 0.0 and 1.0.</p>
      *         <p>
-     *         The score is a relative score, not an absolute score. The score may change based on improvements to the
-     *         Amazon Lex NLU.
+     *         The score is a relative score, not an absolute score. The score may change based on improvements to
+     *         Amazon Lex.
      */
 
     public String getNluIntentConfidence() {
@@ -388,8 +387,7 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * user's intent. The score is between 0.0 and 1.0.
      * </p>
      * <p>
-     * The score is a relative score, not an absolute score. The score may change based on improvements to the Amazon
-     * Lex NLU.
+     * The score is a relative score, not an absolute score. The score may change based on improvements to Amazon Lex.
      * </p>
      * <p>
      * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
@@ -404,8 +402,8 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      *        Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that
      *        matches the user's intent. The score is between 0.0 and 1.0.</p>
      *        <p>
-     *        The score is a relative score, not an absolute score. The score may change based on improvements to the
-     *        Amazon Lex NLU.
+     *        The score is a relative score, not an absolute score. The score may change based on improvements to Amazon
+     *        Lex.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1960,27 +1958,10 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * The version of the bot that responded to the conversation. You can use this information to help determine if one
      * version of a bot is performing better than another version.
      * </p>
-     * <p>
-     * If you have enabled the new natural language understanding (NLU) model, you can use this to determine if the
-     * improvement is due to changes to the bot or changes to the NLU.
-     * </p>
-     * <p>
-     * For more information about enabling the new NLU, see the <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements"
-     * >enableModelImprovements</a> parameter of the <code>PutBot</code> operation.
-     * </p>
      * 
      * @param botVersion
      *        The version of the bot that responded to the conversation. You can use this information to help determine
-     *        if one version of a bot is performing better than another version.</p>
-     *        <p>
-     *        If you have enabled the new natural language understanding (NLU) model, you can use this to determine if
-     *        the improvement is due to changes to the bot or changes to the NLU.
-     *        </p>
-     *        <p>
-     *        For more information about enabling the new NLU, see the <a href=
-     *        "https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements"
-     *        >enableModelImprovements</a> parameter of the <code>PutBot</code> operation.
+     *        if one version of a bot is performing better than another version.
      */
 
     public void setBotVersion(String botVersion) {
@@ -1992,26 +1973,9 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * The version of the bot that responded to the conversation. You can use this information to help determine if one
      * version of a bot is performing better than another version.
      * </p>
-     * <p>
-     * If you have enabled the new natural language understanding (NLU) model, you can use this to determine if the
-     * improvement is due to changes to the bot or changes to the NLU.
-     * </p>
-     * <p>
-     * For more information about enabling the new NLU, see the <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements"
-     * >enableModelImprovements</a> parameter of the <code>PutBot</code> operation.
-     * </p>
      * 
      * @return The version of the bot that responded to the conversation. You can use this information to help determine
-     *         if one version of a bot is performing better than another version.</p>
-     *         <p>
-     *         If you have enabled the new natural language understanding (NLU) model, you can use this to determine if
-     *         the improvement is due to changes to the bot or changes to the NLU.
-     *         </p>
-     *         <p>
-     *         For more information about enabling the new NLU, see the <a href=
-     *         "https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements"
-     *         >enableModelImprovements</a> parameter of the <code>PutBot</code> operation.
+     *         if one version of a bot is performing better than another version.
      */
 
     public String getBotVersion() {
@@ -2023,27 +1987,10 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * The version of the bot that responded to the conversation. You can use this information to help determine if one
      * version of a bot is performing better than another version.
      * </p>
-     * <p>
-     * If you have enabled the new natural language understanding (NLU) model, you can use this to determine if the
-     * improvement is due to changes to the bot or changes to the NLU.
-     * </p>
-     * <p>
-     * For more information about enabling the new NLU, see the <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements"
-     * >enableModelImprovements</a> parameter of the <code>PutBot</code> operation.
-     * </p>
      * 
      * @param botVersion
      *        The version of the bot that responded to the conversation. You can use this information to help determine
-     *        if one version of a bot is performing better than another version.</p>
-     *        <p>
-     *        If you have enabled the new natural language understanding (NLU) model, you can use this to determine if
-     *        the improvement is due to changes to the bot or changes to the NLU.
-     *        </p>
-     *        <p>
-     *        For more information about enabling the new NLU, see the <a href=
-     *        "https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements"
-     *        >enableModelImprovements</a> parameter of the <code>PutBot</code> operation.
+     *        if one version of a bot is performing better than another version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2093,6 +2040,93 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the
+     * <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.
+     * </p>
+     * <p>
+     * You can use a context to control the intents that can follow up an intent, or to modify the operation of your
+     * application.
+     * </p>
+     * <p>
+     * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * 
+     * @param activeContexts
+     *        A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling
+     *        the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
+     *        <p>
+     *        You can use a context to control the intents that can follow up an intent, or to modify the operation of
+     *        your application.
+     */
+
+    public void setActiveContexts(String activeContexts) {
+        this.activeContexts = activeContexts;
+    }
+
+    /**
+     * <p>
+     * A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the
+     * <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.
+     * </p>
+     * <p>
+     * You can use a context to control the intents that can follow up an intent, or to modify the operation of your
+     * application.
+     * </p>
+     * <p>
+     * This field's value will be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
+     * 
+     * @return A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling
+     *         the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
+     *         <p>
+     *         You can use a context to control the intents that can follow up an intent, or to modify the operation of
+     *         your application.
+     */
+
+    public String getActiveContexts() {
+        return this.activeContexts;
+    }
+
+    /**
+     * <p>
+     * A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the
+     * <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.
+     * </p>
+     * <p>
+     * You can use a context to control the intents that can follow up an intent, or to modify the operation of your
+     * application.
+     * </p>
+     * <p>
+     * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * 
+     * @param activeContexts
+     *        A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling
+     *        the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
+     *        <p>
+     *        You can use a context to control the intents that can follow up an intent, or to modify the operation of
+     *        your application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PostContentResult withActiveContexts(String activeContexts) {
+        setActiveContexts(activeContexts);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2133,7 +2167,9 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getBotVersion() != null)
             sb.append("BotVersion: ").append(getBotVersion()).append(",");
         if (getSessionId() != null)
-            sb.append("SessionId: ").append(getSessionId());
+            sb.append("SessionId: ").append(getSessionId()).append(",");
+        if (getActiveContexts() != null)
+            sb.append("ActiveContexts: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -2208,6 +2244,10 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getSessionId() != null && other.getSessionId().equals(this.getSessionId()) == false)
             return false;
+        if (other.getActiveContexts() == null ^ this.getActiveContexts() == null)
+            return false;
+        if (other.getActiveContexts() != null && other.getActiveContexts().equals(this.getActiveContexts()) == false)
+            return false;
         return true;
     }
 
@@ -2231,6 +2271,7 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getAudioStream() == null) ? 0 : getAudioStream().hashCode());
         hashCode = prime * hashCode + ((getBotVersion() == null) ? 0 : getBotVersion().hashCode());
         hashCode = prime * hashCode + ((getSessionId() == null) ? 0 : getSessionId().hashCode());
+        hashCode = prime * hashCode + ((getActiveContexts() == null) ? 0 : getActiveContexts().hashCode());
         return hashCode;
     }
 

@@ -54,6 +54,17 @@ public class GetSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      */
     private DialogAction dialogAction;
+    /**
+     * <p>
+     * A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the
+     * <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.
+     * </p>
+     * <p>
+     * You can use a context to control the intents that can follow up an intent, or to modify the operation of your
+     * application.
+     * </p>
+     */
+    private java.util.List<ActiveContext> activeContexts;
 
     /**
      * <p>
@@ -324,6 +335,112 @@ public class GetSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <p>
+     * A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the
+     * <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.
+     * </p>
+     * <p>
+     * You can use a context to control the intents that can follow up an intent, or to modify the operation of your
+     * application.
+     * </p>
+     * 
+     * @return A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling
+     *         the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
+     *         <p>
+     *         You can use a context to control the intents that can follow up an intent, or to modify the operation of
+     *         your application.
+     */
+
+    public java.util.List<ActiveContext> getActiveContexts() {
+        return activeContexts;
+    }
+
+    /**
+     * <p>
+     * A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the
+     * <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.
+     * </p>
+     * <p>
+     * You can use a context to control the intents that can follow up an intent, or to modify the operation of your
+     * application.
+     * </p>
+     * 
+     * @param activeContexts
+     *        A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling
+     *        the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
+     *        <p>
+     *        You can use a context to control the intents that can follow up an intent, or to modify the operation of
+     *        your application.
+     */
+
+    public void setActiveContexts(java.util.Collection<ActiveContext> activeContexts) {
+        if (activeContexts == null) {
+            this.activeContexts = null;
+            return;
+        }
+
+        this.activeContexts = new java.util.ArrayList<ActiveContext>(activeContexts);
+    }
+
+    /**
+     * <p>
+     * A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the
+     * <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.
+     * </p>
+     * <p>
+     * You can use a context to control the intents that can follow up an intent, or to modify the operation of your
+     * application.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setActiveContexts(java.util.Collection)} or {@link #withActiveContexts(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param activeContexts
+     *        A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling
+     *        the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
+     *        <p>
+     *        You can use a context to control the intents that can follow up an intent, or to modify the operation of
+     *        your application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetSessionResult withActiveContexts(ActiveContext... activeContexts) {
+        if (this.activeContexts == null) {
+            setActiveContexts(new java.util.ArrayList<ActiveContext>(activeContexts.length));
+        }
+        for (ActiveContext ele : activeContexts) {
+            this.activeContexts.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the
+     * <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.
+     * </p>
+     * <p>
+     * You can use a context to control the intents that can follow up an intent, or to modify the operation of your
+     * application.
+     * </p>
+     * 
+     * @param activeContexts
+     *        A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling
+     *        the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
+     *        <p>
+     *        You can use a context to control the intents that can follow up an intent, or to modify the operation of
+     *        your application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetSessionResult withActiveContexts(java.util.Collection<ActiveContext> activeContexts) {
+        setActiveContexts(activeContexts);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -342,7 +459,9 @@ public class GetSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
         if (getSessionId() != null)
             sb.append("SessionId: ").append(getSessionId()).append(",");
         if (getDialogAction() != null)
-            sb.append("DialogAction: ").append(getDialogAction());
+            sb.append("DialogAction: ").append(getDialogAction()).append(",");
+        if (getActiveContexts() != null)
+            sb.append("ActiveContexts: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -373,6 +492,10 @@ public class GetSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
             return false;
         if (other.getDialogAction() != null && other.getDialogAction().equals(this.getDialogAction()) == false)
             return false;
+        if (other.getActiveContexts() == null ^ this.getActiveContexts() == null)
+            return false;
+        if (other.getActiveContexts() != null && other.getActiveContexts().equals(this.getActiveContexts()) == false)
+            return false;
         return true;
     }
 
@@ -385,6 +508,7 @@ public class GetSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
         hashCode = prime * hashCode + ((getSessionAttributes() == null) ? 0 : getSessionAttributes().hashCode());
         hashCode = prime * hashCode + ((getSessionId() == null) ? 0 : getSessionId().hashCode());
         hashCode = prime * hashCode + ((getDialogAction() == null) ? 0 : getDialogAction().hashCode());
+        hashCode = prime * hashCode + ((getActiveContexts() == null) ? 0 : getActiveContexts().hashCode());
         return hashCode;
     }
 

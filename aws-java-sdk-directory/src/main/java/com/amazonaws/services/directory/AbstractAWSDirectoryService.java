@@ -48,6 +48,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
+    public AddRegionResult addRegion(AddRegionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -173,6 +178,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
+    public DescribeRegionsResult describeRegions(DescribeRegionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeSharedDirectoriesResult describeSharedDirectories(DescribeSharedDirectoriesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -279,6 +289,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
 
     @Override
     public RemoveIpRoutesResult removeIpRoutes(RemoveIpRoutesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RemoveRegionResult removeRegion(RemoveRegionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

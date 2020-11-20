@@ -377,6 +377,65 @@ public interface AmazonKinesisAnalyticsV2Async extends AmazonKinesisAnalyticsV2 
 
     /**
      * <p>
+     * Creates and returns a URL that you can use to connect to an application's extension. Currently, the only
+     * available extension is the Apache Flink dashboard.
+     * </p>
+     * <p>
+     * The IAM role or user used to call this API defines the permissions to access the extension. Once the presigned
+     * URL is created, no additional permission is required to access this URL. IAM authorization policies for this API
+     * are also enforced for every HTTP request that attempts to connect to the extension.
+     * </p>
+     * <note>
+     * <p>
+     * The URL that you get from a call to CreateApplicationPresignedUrl must be used within 3 minutes to be valid. If
+     * you first try to use the URL after the 3-minute limit expires, the service returns an HTTP 403 Forbidden error.
+     * </p>
+     * </note>
+     * 
+     * @param createApplicationPresignedUrlRequest
+     * @return A Java Future containing the result of the CreateApplicationPresignedUrl operation returned by the
+     *         service.
+     * @sample AmazonKinesisAnalyticsV2Async.CreateApplicationPresignedUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplicationPresignedUrl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateApplicationPresignedUrlResult> createApplicationPresignedUrlAsync(
+            CreateApplicationPresignedUrlRequest createApplicationPresignedUrlRequest);
+
+    /**
+     * <p>
+     * Creates and returns a URL that you can use to connect to an application's extension. Currently, the only
+     * available extension is the Apache Flink dashboard.
+     * </p>
+     * <p>
+     * The IAM role or user used to call this API defines the permissions to access the extension. Once the presigned
+     * URL is created, no additional permission is required to access this URL. IAM authorization policies for this API
+     * are also enforced for every HTTP request that attempts to connect to the extension.
+     * </p>
+     * <note>
+     * <p>
+     * The URL that you get from a call to CreateApplicationPresignedUrl must be used within 3 minutes to be valid. If
+     * you first try to use the URL after the 3-minute limit expires, the service returns an HTTP 403 Forbidden error.
+     * </p>
+     * </note>
+     * 
+     * @param createApplicationPresignedUrlRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateApplicationPresignedUrl operation returned by the
+     *         service.
+     * @sample AmazonKinesisAnalyticsV2AsyncHandler.CreateApplicationPresignedUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplicationPresignedUrl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateApplicationPresignedUrlResult> createApplicationPresignedUrlAsync(
+            CreateApplicationPresignedUrlRequest createApplicationPresignedUrlRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateApplicationPresignedUrlRequest, CreateApplicationPresignedUrlResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a snapshot of the application's state data.
      * </p>
      * 
@@ -922,8 +981,15 @@ public interface AmazonKinesisAnalyticsV2Async extends AmazonKinesisAnalyticsV2 
 
     /**
      * <p>
-     * Stops the application from processing data. You can stop an application only if it is in the running state. You
-     * can use the <a>DescribeApplication</a> operation to find the application state.
+     * Stops the application from processing data. You can stop an application only if it is in the running status,
+     * unless you set the <code>Force</code> parameter to <code>true</code>.
+     * </p>
+     * <p>
+     * You can use the <a>DescribeApplication</a> operation to find the application status.
+     * </p>
+     * <p>
+     * Kinesis Data Analytics takes a snapshot when the application is stopped, unless <code>Force</code> is set to
+     * <code>true</code>.
      * </p>
      * 
      * @param stopApplicationRequest
@@ -936,8 +1002,15 @@ public interface AmazonKinesisAnalyticsV2Async extends AmazonKinesisAnalyticsV2 
 
     /**
      * <p>
-     * Stops the application from processing data. You can stop an application only if it is in the running state. You
-     * can use the <a>DescribeApplication</a> operation to find the application state.
+     * Stops the application from processing data. You can stop an application only if it is in the running status,
+     * unless you set the <code>Force</code> parameter to <code>true</code>.
+     * </p>
+     * <p>
+     * You can use the <a>DescribeApplication</a> operation to find the application status.
+     * </p>
+     * <p>
+     * Kinesis Data Analytics takes a snapshot when the application is stopped, unless <code>Force</code> is set to
+     * <code>true</code>.
      * </p>
      * 
      * @param stopApplicationRequest

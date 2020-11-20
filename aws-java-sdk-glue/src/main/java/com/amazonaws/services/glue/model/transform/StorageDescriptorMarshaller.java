@@ -53,6 +53,8 @@ public class StorageDescriptorMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SkewedInfo").build();
     private static final MarshallingInfo<Boolean> STOREDASSUBDIRECTORIES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StoredAsSubDirectories").build();
+    private static final MarshallingInfo<StructuredPojo> SCHEMAREFERENCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SchemaReference").build();
 
     private static final StorageDescriptorMarshaller instance = new StorageDescriptorMarshaller();
 
@@ -82,6 +84,7 @@ public class StorageDescriptorMarshaller {
             protocolMarshaller.marshall(storageDescriptor.getParameters(), PARAMETERS_BINDING);
             protocolMarshaller.marshall(storageDescriptor.getSkewedInfo(), SKEWEDINFO_BINDING);
             protocolMarshaller.marshall(storageDescriptor.getStoredAsSubDirectories(), STOREDASSUBDIRECTORIES_BINDING);
+            protocolMarshaller.marshall(storageDescriptor.getSchemaReference(), SCHEMAREFERENCE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

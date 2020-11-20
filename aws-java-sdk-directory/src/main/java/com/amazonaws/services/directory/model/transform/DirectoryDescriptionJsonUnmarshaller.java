@@ -146,6 +146,10 @@ public class DirectoryDescriptionJsonUnmarshaller implements Unmarshaller<Direct
                     context.nextToken();
                     directoryDescription.setOwnerDirectoryDescription(OwnerDirectoryDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("RegionsInfo", targetDepth)) {
+                    context.nextToken();
+                    directoryDescription.setRegionsInfo(RegionsInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

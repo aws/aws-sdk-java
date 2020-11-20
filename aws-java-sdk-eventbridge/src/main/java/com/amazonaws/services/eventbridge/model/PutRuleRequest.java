@@ -71,7 +71,7 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * The event bus to associate with this rule. If you omit this, the default event bus is used.
+     * The name or ARN of the event bus to associate with this rule. If you omit this, the default event bus is used.
      * </p>
      */
     private String eventBusName;
@@ -419,11 +419,12 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The event bus to associate with this rule. If you omit this, the default event bus is used.
+     * The name or ARN of the event bus to associate with this rule. If you omit this, the default event bus is used.
      * </p>
      * 
      * @param eventBusName
-     *        The event bus to associate with this rule. If you omit this, the default event bus is used.
+     *        The name or ARN of the event bus to associate with this rule. If you omit this, the default event bus is
+     *        used.
      */
 
     public void setEventBusName(String eventBusName) {
@@ -432,10 +433,11 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The event bus to associate with this rule. If you omit this, the default event bus is used.
+     * The name or ARN of the event bus to associate with this rule. If you omit this, the default event bus is used.
      * </p>
      * 
-     * @return The event bus to associate with this rule. If you omit this, the default event bus is used.
+     * @return The name or ARN of the event bus to associate with this rule. If you omit this, the default event bus is
+     *         used.
      */
 
     public String getEventBusName() {
@@ -444,11 +446,12 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The event bus to associate with this rule. If you omit this, the default event bus is used.
+     * The name or ARN of the event bus to associate with this rule. If you omit this, the default event bus is used.
      * </p>
      * 
      * @param eventBusName
-     *        The event bus to associate with this rule. If you omit this, the default event bus is used.
+     *        The name or ARN of the event bus to associate with this rule. If you omit this, the default event bus is
+     *        used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

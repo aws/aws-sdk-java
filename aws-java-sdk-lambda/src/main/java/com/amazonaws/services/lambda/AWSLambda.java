@@ -238,6 +238,11 @@ public interface AWSLambda {
      * </li>
      * <li>
      * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html">Using AWS Lambda with Amazon MQ</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">Using AWS Lambda with Amazon MSK</a>
      * </p>
      * </li>

@@ -130,6 +130,37 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
+     * Adds two domain controllers in the specified Region for the specified directory.
+     * </p>
+     * 
+     * @param addRegionRequest
+     * @return A Java Future containing the result of the AddRegion operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.AddRegion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddRegion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AddRegionResult> addRegionAsync(AddRegionRequest addRegionRequest);
+
+    /**
+     * <p>
+     * Adds two domain controllers in the specified Region for the specified directory.
+     * </p>
+     * 
+     * @param addRegionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddRegion operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.AddRegion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddRegion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AddRegionResult> addRegionAsync(AddRegionRequest addRegionRequest,
+            com.amazonaws.handlers.AsyncHandler<AddRegionRequest, AddRegionResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds or overwrites one or more tags for the specified directory. Each directory can have a maximum of 50 tags.
      * Each tag consists of a key and optional value. Tag keys must be unique to each resource.
      * </p>
@@ -294,7 +325,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Creates a computer account in the specified directory, and joins the computer to the directory.
+     * Creates an Active Directory computer object in the specified directory.
      * </p>
      * 
      * @param createComputerRequest
@@ -308,7 +339,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Creates a computer account in the specified directory, and joins the computer to the directory.
+     * Creates an Active Directory computer object in the specified directory.
      * </p>
      * 
      * @param createComputerRequest
@@ -1103,6 +1134,37 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
+     * Provides information about the Regions that are configured for multi-Region replication.
+     * </p>
+     * 
+     * @param describeRegionsRequest
+     * @return A Java Future containing the result of the DescribeRegions operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.DescribeRegions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeRegions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRegionsResult> describeRegionsAsync(DescribeRegionsRequest describeRegionsRequest);
+
+    /**
+     * <p>
+     * Provides information about the Regions that are configured for multi-Region replication.
+     * </p>
+     * 
+     * @param describeRegionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeRegions operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.DescribeRegions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeRegions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRegionsResult> describeRegionsAsync(DescribeRegionsRequest describeRegionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeRegionsRequest, DescribeRegionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the shared directories in your account.
      * </p>
      * 
@@ -1810,6 +1872,39 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      */
     java.util.concurrent.Future<RemoveIpRoutesResult> removeIpRoutesAsync(RemoveIpRoutesRequest removeIpRoutesRequest,
             com.amazonaws.handlers.AsyncHandler<RemoveIpRoutesRequest, RemoveIpRoutesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops all replication and removes the domain controllers from the specified Region. You cannot remove the primary
+     * Region with this operation. Instead, use the <code>DeleteDirectory</code> API.
+     * </p>
+     * 
+     * @param removeRegionRequest
+     * @return A Java Future containing the result of the RemoveRegion operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.RemoveRegion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveRegion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveRegionResult> removeRegionAsync(RemoveRegionRequest removeRegionRequest);
+
+    /**
+     * <p>
+     * Stops all replication and removes the domain controllers from the specified Region. You cannot remove the primary
+     * Region with this operation. Instead, use the <code>DeleteDirectory</code> API.
+     * </p>
+     * 
+     * @param removeRegionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveRegion operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.RemoveRegion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveRegion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveRegionResult> removeRegionAsync(RemoveRegionRequest removeRegionRequest,
+            com.amazonaws.handlers.AsyncHandler<RemoveRegionRequest, RemoveRegionResult> asyncHandler);
 
     /**
      * <p>

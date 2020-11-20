@@ -56,6 +56,10 @@ public class PutIntentRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createVersion").build();
     private static final MarshallingInfo<StructuredPojo> KENDRACONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("kendraConfiguration").build();
+    private static final MarshallingInfo<List> INPUTCONTEXTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("inputContexts").build();
+    private static final MarshallingInfo<List> OUTPUTCONTEXTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("outputContexts").build();
 
     private static final PutIntentRequestMarshaller instance = new PutIntentRequestMarshaller();
 
@@ -87,6 +91,8 @@ public class PutIntentRequestMarshaller {
             protocolMarshaller.marshall(putIntentRequest.getChecksum(), CHECKSUM_BINDING);
             protocolMarshaller.marshall(putIntentRequest.getCreateVersion(), CREATEVERSION_BINDING);
             protocolMarshaller.marshall(putIntentRequest.getKendraConfiguration(), KENDRACONFIGURATION_BINDING);
+            protocolMarshaller.marshall(putIntentRequest.getInputContexts(), INPUTCONTEXTS_BINDING);
+            protocolMarshaller.marshall(putIntentRequest.getOutputContexts(), OUTPUTCONTEXTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

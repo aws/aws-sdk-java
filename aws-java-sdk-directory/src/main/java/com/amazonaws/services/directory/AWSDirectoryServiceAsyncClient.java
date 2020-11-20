@@ -339,6 +339,39 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient im
     }
 
     @Override
+    public java.util.concurrent.Future<AddRegionResult> addRegionAsync(AddRegionRequest request) {
+
+        return addRegionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddRegionResult> addRegionAsync(final AddRegionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddRegionRequest, AddRegionResult> asyncHandler) {
+        final AddRegionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AddRegionResult>() {
+            @Override
+            public AddRegionResult call() throws Exception {
+                AddRegionResult result = null;
+
+                try {
+                    result = executeAddRegion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(AddTagsToResourceRequest request) {
 
         return addTagsToResourceAsync(request, null);
@@ -1155,6 +1188,39 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient im
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeRegionsResult> describeRegionsAsync(DescribeRegionsRequest request) {
+
+        return describeRegionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegionsResult> describeRegionsAsync(final DescribeRegionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeRegionsRequest, DescribeRegionsResult> asyncHandler) {
+        final DescribeRegionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeRegionsResult>() {
+            @Override
+            public DescribeRegionsResult call() throws Exception {
+                DescribeRegionsResult result = null;
+
+                try {
+                    result = executeDescribeRegions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeSharedDirectoriesResult> describeSharedDirectoriesAsync(DescribeSharedDirectoriesRequest request) {
 
         return describeSharedDirectoriesAsync(request, null);
@@ -1845,6 +1911,39 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient im
 
                 try {
                     result = executeRemoveIpRoutes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveRegionResult> removeRegionAsync(RemoveRegionRequest request) {
+
+        return removeRegionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveRegionResult> removeRegionAsync(final RemoveRegionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RemoveRegionRequest, RemoveRegionResult> asyncHandler) {
+        final RemoveRegionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RemoveRegionResult>() {
+            @Override
+            public RemoveRegionResult call() throws Exception {
+                RemoveRegionResult result = null;
+
+                try {
+                    result = executeRemoveRegion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

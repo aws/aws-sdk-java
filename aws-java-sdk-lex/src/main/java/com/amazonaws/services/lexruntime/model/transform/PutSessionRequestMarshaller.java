@@ -43,6 +43,8 @@ public class PutSessionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("recentIntentSummaryView").build();
     private static final MarshallingInfo<String> ACCEPT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.HEADER)
             .marshallLocationName("Accept").build();
+    private static final MarshallingInfo<List> ACTIVECONTEXTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("activeContexts").build();
 
     private static final PutSessionRequestMarshaller instance = new PutSessionRequestMarshaller();
 
@@ -67,6 +69,7 @@ public class PutSessionRequestMarshaller {
             protocolMarshaller.marshall(putSessionRequest.getDialogAction(), DIALOGACTION_BINDING);
             protocolMarshaller.marshall(putSessionRequest.getRecentIntentSummaryView(), RECENTINTENTSUMMARYVIEW_BINDING);
             protocolMarshaller.marshall(putSessionRequest.getAccept(), ACCEPT_BINDING);
+            protocolMarshaller.marshall(putSessionRequest.getActiveContexts(), ACTIVECONTEXTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

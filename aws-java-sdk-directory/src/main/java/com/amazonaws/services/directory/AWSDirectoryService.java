@@ -169,6 +169,40 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Adds two domain controllers in the specified Region for the specified directory.
+     * </p>
+     * 
+     * @param addRegionRequest
+     * @return Result of the AddRegion operation returned by the service.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws DirectoryAlreadyInRegionException
+     *         The Region you specified is the same Region where the AWS Managed Microsoft AD directory was created.
+     *         Specify a different Region and try again.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws RegionLimitExceededException
+     *         You have reached the limit for maximum number of simultaneous region replications per directory.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.AddRegion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddRegion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    AddRegionResult addRegion(AddRegionRequest addRegionRequest);
+
+    /**
+     * <p>
      * Adds or overwrites one or more tags for the specified directory. Each directory can have a maximum of 50 tags.
      * Each tag consists of a key and optional value. Tag keys must be unique to each resource.
      * </p>
@@ -276,7 +310,7 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
-     * Creates a computer account in the specified directory, and joins the computer to the directory.
+     * Creates an Active Directory computer object in the specified directory.
      * </p>
      * 
      * @param createComputerRequest
@@ -845,6 +879,33 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Provides information about the Regions that are configured for multi-Region replication.
+     * </p>
+     * 
+     * @param describeRegionsRequest
+     * @return Result of the DescribeRegions operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value is not valid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DescribeRegions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeRegions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeRegionsResult describeRegions(DescribeRegionsRequest describeRegionsRequest);
+
+    /**
+     * <p>
      * Returns the shared directories in your account.
      * </p>
      * 
@@ -1352,6 +1413,32 @@ public interface AWSDirectoryService {
      *      Documentation</a>
      */
     RemoveIpRoutesResult removeIpRoutes(RemoveIpRoutesRequest removeIpRoutesRequest);
+
+    /**
+     * <p>
+     * Stops all replication and removes the domain controllers from the specified Region. You cannot remove the primary
+     * Region with this operation. Instead, use the <code>DeleteDirectory</code> API.
+     * </p>
+     * 
+     * @param removeRegionRequest
+     * @return Result of the RemoveRegion operation returned by the service.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.RemoveRegion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveRegion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    RemoveRegionResult removeRegion(RemoveRegionRequest removeRegionRequest);
 
     /**
      * <p>

@@ -699,6 +699,80 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Creates and returns a URL that you can use to connect to an application's extension. Currently, the only
+     * available extension is the Apache Flink dashboard.
+     * </p>
+     * <p>
+     * The IAM role or user used to call this API defines the permissions to access the extension. Once the presigned
+     * URL is created, no additional permission is required to access this URL. IAM authorization policies for this API
+     * are also enforced for every HTTP request that attempts to connect to the extension.
+     * </p>
+     * <note>
+     * <p>
+     * The URL that you get from a call to CreateApplicationPresignedUrl must be used within 3 minutes to be valid. If
+     * you first try to use the URL after the 3-minute limit expires, the service returns an HTTP 403 Forbidden error.
+     * </p>
+     * </note>
+     * 
+     * @param createApplicationPresignedUrlRequest
+     * @return Result of the CreateApplicationPresignedUrl operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Specified application can't be found.
+     * @throws ResourceInUseException
+     *         The application is not available for this operation.
+     * @throws InvalidArgumentException
+     *         The specified input parameter value is not valid.
+     * @sample AmazonKinesisAnalyticsV2.CreateApplicationPresignedUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplicationPresignedUrl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateApplicationPresignedUrlResult createApplicationPresignedUrl(CreateApplicationPresignedUrlRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateApplicationPresignedUrl(request);
+    }
+
+    @SdkInternalApi
+    final CreateApplicationPresignedUrlResult executeCreateApplicationPresignedUrl(CreateApplicationPresignedUrlRequest createApplicationPresignedUrlRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createApplicationPresignedUrlRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateApplicationPresignedUrlRequest> request = null;
+        Response<CreateApplicationPresignedUrlResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateApplicationPresignedUrlRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createApplicationPresignedUrlRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApplicationPresignedUrl");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateApplicationPresignedUrlResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateApplicationPresignedUrlResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a snapshot of the application's state data.
      * </p>
      * 
@@ -1708,8 +1782,15 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Stops the application from processing data. You can stop an application only if it is in the running state. You
-     * can use the <a>DescribeApplication</a> operation to find the application state.
+     * Stops the application from processing data. You can stop an application only if it is in the running status,
+     * unless you set the <code>Force</code> parameter to <code>true</code>.
+     * </p>
+     * <p>
+     * You can use the <a>DescribeApplication</a> operation to find the application status.
+     * </p>
+     * <p>
+     * Kinesis Data Analytics takes a snapshot when the application is stopped, unless <code>Force</code> is set to
+     * <code>true</code>.
      * </p>
      * 
      * @param stopApplicationRequest

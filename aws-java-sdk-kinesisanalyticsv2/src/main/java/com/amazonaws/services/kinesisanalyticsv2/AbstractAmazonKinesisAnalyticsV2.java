@@ -63,6 +63,11 @@ public class AbstractAmazonKinesisAnalyticsV2 implements AmazonKinesisAnalyticsV
     }
 
     @Override
+    public CreateApplicationPresignedUrlResult createApplicationPresignedUrl(CreateApplicationPresignedUrlRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateApplicationSnapshotResult createApplicationSnapshot(CreateApplicationSnapshotRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

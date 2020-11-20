@@ -316,6 +316,40 @@ public class AmazonKinesisAnalyticsV2AsyncClient extends AmazonKinesisAnalyticsV
     }
 
     @Override
+    public java.util.concurrent.Future<CreateApplicationPresignedUrlResult> createApplicationPresignedUrlAsync(CreateApplicationPresignedUrlRequest request) {
+
+        return createApplicationPresignedUrlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateApplicationPresignedUrlResult> createApplicationPresignedUrlAsync(
+            final CreateApplicationPresignedUrlRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateApplicationPresignedUrlRequest, CreateApplicationPresignedUrlResult> asyncHandler) {
+        final CreateApplicationPresignedUrlRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateApplicationPresignedUrlResult>() {
+            @Override
+            public CreateApplicationPresignedUrlResult call() throws Exception {
+                CreateApplicationPresignedUrlResult result = null;
+
+                try {
+                    result = executeCreateApplicationPresignedUrl(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateApplicationSnapshotResult> createApplicationSnapshotAsync(CreateApplicationSnapshotRequest request) {
 
         return createApplicationSnapshotAsync(request, null);

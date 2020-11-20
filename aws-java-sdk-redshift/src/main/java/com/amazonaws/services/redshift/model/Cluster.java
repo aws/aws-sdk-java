@@ -488,6 +488,12 @@ public class Cluster implements Serializable, Cloneable {
      * </ul>
      */
     private ResizeInfo resizeInfo;
+    /**
+     * <p>
+     * The namespace Amazon Resource Name (ARN) of the cluster.
+     * </p>
+     */
+    private String clusterNamespaceArn;
 
     /**
      * <p>
@@ -3812,6 +3818,46 @@ public class Cluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The namespace Amazon Resource Name (ARN) of the cluster.
+     * </p>
+     * 
+     * @param clusterNamespaceArn
+     *        The namespace Amazon Resource Name (ARN) of the cluster.
+     */
+
+    public void setClusterNamespaceArn(String clusterNamespaceArn) {
+        this.clusterNamespaceArn = clusterNamespaceArn;
+    }
+
+    /**
+     * <p>
+     * The namespace Amazon Resource Name (ARN) of the cluster.
+     * </p>
+     * 
+     * @return The namespace Amazon Resource Name (ARN) of the cluster.
+     */
+
+    public String getClusterNamespaceArn() {
+        return this.clusterNamespaceArn;
+    }
+
+    /**
+     * <p>
+     * The namespace Amazon Resource Name (ARN) of the cluster.
+     * </p>
+     * 
+     * @param clusterNamespaceArn
+     *        The namespace Amazon Resource Name (ARN) of the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withClusterNamespaceArn(String clusterNamespaceArn) {
+        setClusterNamespaceArn(clusterNamespaceArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3914,7 +3960,9 @@ public class Cluster implements Serializable, Cloneable {
         if (getNextMaintenanceWindowStartTime() != null)
             sb.append("NextMaintenanceWindowStartTime: ").append(getNextMaintenanceWindowStartTime()).append(",");
         if (getResizeInfo() != null)
-            sb.append("ResizeInfo: ").append(getResizeInfo());
+            sb.append("ResizeInfo: ").append(getResizeInfo()).append(",");
+        if (getClusterNamespaceArn() != null)
+            sb.append("ClusterNamespaceArn: ").append(getClusterNamespaceArn());
         sb.append("}");
         return sb.toString();
     }
@@ -4119,6 +4167,10 @@ public class Cluster implements Serializable, Cloneable {
             return false;
         if (other.getResizeInfo() != null && other.getResizeInfo().equals(this.getResizeInfo()) == false)
             return false;
+        if (other.getClusterNamespaceArn() == null ^ this.getClusterNamespaceArn() == null)
+            return false;
+        if (other.getClusterNamespaceArn() != null && other.getClusterNamespaceArn().equals(this.getClusterNamespaceArn()) == false)
+            return false;
         return true;
     }
 
@@ -4173,6 +4225,7 @@ public class Cluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getExpectedNextSnapshotScheduleTimeStatus() == null) ? 0 : getExpectedNextSnapshotScheduleTimeStatus().hashCode());
         hashCode = prime * hashCode + ((getNextMaintenanceWindowStartTime() == null) ? 0 : getNextMaintenanceWindowStartTime().hashCode());
         hashCode = prime * hashCode + ((getResizeInfo() == null) ? 0 : getResizeInfo().hashCode());
+        hashCode = prime * hashCode + ((getClusterNamespaceArn() == null) ? 0 : getClusterNamespaceArn().hashCode());
         return hashCode;
     }
 

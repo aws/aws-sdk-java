@@ -13,7 +13,7 @@
 package com.amazonaws.services.lexruntime.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -41,6 +41,8 @@ public class PostTextRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requestAttributes").build();
     private static final MarshallingInfo<String> INPUTTEXT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("inputText").build();
+    private static final MarshallingInfo<List> ACTIVECONTEXTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("activeContexts").build();
 
     private static final PostTextRequestMarshaller instance = new PostTextRequestMarshaller();
 
@@ -64,6 +66,7 @@ public class PostTextRequestMarshaller {
             protocolMarshaller.marshall(postTextRequest.getSessionAttributes(), SESSIONATTRIBUTES_BINDING);
             protocolMarshaller.marshall(postTextRequest.getRequestAttributes(), REQUESTATTRIBUTES_BINDING);
             protocolMarshaller.marshall(postTextRequest.getInputText(), INPUTTEXT_BINDING);
+            protocolMarshaller.marshall(postTextRequest.getActiveContexts(), ACTIVECONTEXTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -34,6 +34,19 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
     private String uUID;
     /**
      * <p>
+     * The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon
+     * MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
+     * </p>
+     */
+    private String startingPosition;
+    /**
+     * <p>
+     * With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.
+     * </p>
+     */
+    private java.util.Date startingPositionTimestamp;
+    /**
+     * <p>
      * The maximum number of items to retrieve in a single batch.
      * </p>
      */
@@ -180,6 +193,114 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     public CreateEventSourceMappingResult withUUID(String uUID) {
         setUUID(uUID);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon
+     * MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
+     * </p>
+     * 
+     * @param startingPosition
+     *        The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and
+     *        Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
+     * @see EventSourcePosition
+     */
+
+    public void setStartingPosition(String startingPosition) {
+        this.startingPosition = startingPosition;
+    }
+
+    /**
+     * <p>
+     * The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon
+     * MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
+     * </p>
+     * 
+     * @return The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and
+     *         Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
+     * @see EventSourcePosition
+     */
+
+    public String getStartingPosition() {
+        return this.startingPosition;
+    }
+
+    /**
+     * <p>
+     * The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon
+     * MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
+     * </p>
+     * 
+     * @param startingPosition
+     *        The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and
+     *        Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EventSourcePosition
+     */
+
+    public CreateEventSourceMappingResult withStartingPosition(String startingPosition) {
+        setStartingPosition(startingPosition);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon
+     * MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
+     * </p>
+     * 
+     * @param startingPosition
+     *        The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and
+     *        Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EventSourcePosition
+     */
+
+    public CreateEventSourceMappingResult withStartingPosition(EventSourcePosition startingPosition) {
+        this.startingPosition = startingPosition.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.
+     * </p>
+     * 
+     * @param startingPositionTimestamp
+     *        With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.
+     */
+
+    public void setStartingPositionTimestamp(java.util.Date startingPositionTimestamp) {
+        this.startingPositionTimestamp = startingPositionTimestamp;
+    }
+
+    /**
+     * <p>
+     * With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.
+     * </p>
+     * 
+     * @return With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
+     *         reading.
+     */
+
+    public java.util.Date getStartingPositionTimestamp() {
+        return this.startingPositionTimestamp;
+    }
+
+    /**
+     * <p>
+     * With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.
+     * </p>
+     * 
+     * @param startingPositionTimestamp
+     *        With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEventSourceMappingResult withStartingPositionTimestamp(java.util.Date startingPositionTimestamp) {
+        setStartingPositionTimestamp(startingPositionTimestamp);
         return this;
     }
 
@@ -1053,6 +1174,10 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
         sb.append("{");
         if (getUUID() != null)
             sb.append("UUID: ").append(getUUID()).append(",");
+        if (getStartingPosition() != null)
+            sb.append("StartingPosition: ").append(getStartingPosition()).append(",");
+        if (getStartingPositionTimestamp() != null)
+            sb.append("StartingPositionTimestamp: ").append(getStartingPositionTimestamp()).append(",");
         if (getBatchSize() != null)
             sb.append("BatchSize: ").append(getBatchSize()).append(",");
         if (getMaximumBatchingWindowInSeconds() != null)
@@ -1102,6 +1227,14 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
         if (other.getUUID() == null ^ this.getUUID() == null)
             return false;
         if (other.getUUID() != null && other.getUUID().equals(this.getUUID()) == false)
+            return false;
+        if (other.getStartingPosition() == null ^ this.getStartingPosition() == null)
+            return false;
+        if (other.getStartingPosition() != null && other.getStartingPosition().equals(this.getStartingPosition()) == false)
+            return false;
+        if (other.getStartingPositionTimestamp() == null ^ this.getStartingPositionTimestamp() == null)
+            return false;
+        if (other.getStartingPositionTimestamp() != null && other.getStartingPositionTimestamp().equals(this.getStartingPositionTimestamp()) == false)
             return false;
         if (other.getBatchSize() == null ^ this.getBatchSize() == null)
             return false;
@@ -1177,6 +1310,8 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getUUID() == null) ? 0 : getUUID().hashCode());
+        hashCode = prime * hashCode + ((getStartingPosition() == null) ? 0 : getStartingPosition().hashCode());
+        hashCode = prime * hashCode + ((getStartingPositionTimestamp() == null) ? 0 : getStartingPositionTimestamp().hashCode());
         hashCode = prime * hashCode + ((getBatchSize() == null) ? 0 : getBatchSize().hashCode());
         hashCode = prime * hashCode + ((getMaximumBatchingWindowInSeconds() == null) ? 0 : getMaximumBatchingWindowInSeconds().hashCode());
         hashCode = prime * hashCode + ((getParallelizationFactor() == null) ? 0 : getParallelizationFactor().hashCode());

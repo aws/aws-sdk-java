@@ -67,6 +67,12 @@ public class GetSessionResultJsonUnmarshaller implements Unmarshaller<GetSession
                     context.nextToken();
                     getSessionResult.setDialogAction(DialogActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("activeContexts", targetDepth)) {
+                    context.nextToken();
+                    getSessionResult.setActiveContexts(new ListUnmarshaller<ActiveContext>(ActiveContextJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

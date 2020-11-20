@@ -27,7 +27,7 @@ public class ListReplaysRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A name prefix to filter the archives returned. Only archives with name that match the prefix are returned.
+     * A name prefix to filter the replays returned. Only replays with name that match the prefix are returned.
      * </p>
      */
     private String namePrefix;
@@ -58,11 +58,11 @@ public class ListReplaysRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A name prefix to filter the archives returned. Only archives with name that match the prefix are returned.
+     * A name prefix to filter the replays returned. Only replays with name that match the prefix are returned.
      * </p>
      * 
      * @param namePrefix
-     *        A name prefix to filter the archives returned. Only archives with name that match the prefix are returned.
+     *        A name prefix to filter the replays returned. Only replays with name that match the prefix are returned.
      */
 
     public void setNamePrefix(String namePrefix) {
@@ -71,11 +71,10 @@ public class ListReplaysRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A name prefix to filter the archives returned. Only archives with name that match the prefix are returned.
+     * A name prefix to filter the replays returned. Only replays with name that match the prefix are returned.
      * </p>
      * 
-     * @return A name prefix to filter the archives returned. Only archives with name that match the prefix are
-     *         returned.
+     * @return A name prefix to filter the replays returned. Only replays with name that match the prefix are returned.
      */
 
     public String getNamePrefix() {
@@ -84,11 +83,11 @@ public class ListReplaysRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A name prefix to filter the archives returned. Only archives with name that match the prefix are returned.
+     * A name prefix to filter the replays returned. Only replays with name that match the prefix are returned.
      * </p>
      * 
      * @param namePrefix
-     *        A name prefix to filter the archives returned. Only archives with name that match the prefix are returned.
+     *        A name prefix to filter the replays returned. Only replays with name that match the prefix are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

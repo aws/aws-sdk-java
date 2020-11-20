@@ -30,6 +30,10 @@ public class EventSourceMappingConfigurationMarshaller {
 
     private static final MarshallingInfo<String> UUID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("UUID").build();
+    private static final MarshallingInfo<String> STARTINGPOSITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartingPosition").build();
+    private static final MarshallingInfo<java.util.Date> STARTINGPOSITIONTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartingPositionTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Integer> BATCHSIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BatchSize").build();
     private static final MarshallingInfo<Integer> MAXIMUMBATCHINGWINDOWINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -80,6 +84,8 @@ public class EventSourceMappingConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(eventSourceMappingConfiguration.getUUID(), UUID_BINDING);
+            protocolMarshaller.marshall(eventSourceMappingConfiguration.getStartingPosition(), STARTINGPOSITION_BINDING);
+            protocolMarshaller.marshall(eventSourceMappingConfiguration.getStartingPositionTimestamp(), STARTINGPOSITIONTIMESTAMP_BINDING);
             protocolMarshaller.marshall(eventSourceMappingConfiguration.getBatchSize(), BATCHSIZE_BINDING);
             protocolMarshaller.marshall(eventSourceMappingConfiguration.getMaximumBatchingWindowInSeconds(), MAXIMUMBATCHINGWINDOWINSECONDS_BINDING);
             protocolMarshaller.marshall(eventSourceMappingConfiguration.getParallelizationFactor(), PARALLELIZATIONFACTOR_BINDING);

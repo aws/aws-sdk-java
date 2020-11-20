@@ -60,6 +60,10 @@ public class InputDeviceSummaryJsonUnmarshaller implements Unmarshaller<InputDev
                     context.nextToken();
                     inputDeviceSummary.setDeviceSettingsSyncState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("deviceUpdateStatus", targetDepth)) {
+                    context.nextToken();
+                    inputDeviceSummary.setDeviceUpdateStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("hdDeviceSettings", targetDepth)) {
                     context.nextToken();
                     inputDeviceSummary.setHdDeviceSettings(InputDeviceHdSettingsJsonUnmarshaller.getInstance().unmarshall(context));

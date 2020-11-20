@@ -125,6 +125,19 @@ public class AbstractAmazonKinesisAnalyticsV2Async extends AbstractAmazonKinesis
     }
 
     @Override
+    public java.util.concurrent.Future<CreateApplicationPresignedUrlResult> createApplicationPresignedUrlAsync(CreateApplicationPresignedUrlRequest request) {
+
+        return createApplicationPresignedUrlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateApplicationPresignedUrlResult> createApplicationPresignedUrlAsync(CreateApplicationPresignedUrlRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateApplicationPresignedUrlRequest, CreateApplicationPresignedUrlResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateApplicationSnapshotResult> createApplicationSnapshotAsync(CreateApplicationSnapshotRequest request) {
 
         return createApplicationSnapshotAsync(request, null);

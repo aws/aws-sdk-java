@@ -40,6 +40,12 @@ public class SavingsPlansPurchaseRecommendationMetadata implements Serializable,
      * </p>
      */
     private String generationTimestamp;
+    /**
+     * <p>
+     * Additional metadata that may be applicable to the recommendation.
+     * </p>
+     */
+    private String additionalMetadata;
 
     /**
      * <p>
@@ -122,6 +128,46 @@ public class SavingsPlansPurchaseRecommendationMetadata implements Serializable,
     }
 
     /**
+     * <p>
+     * Additional metadata that may be applicable to the recommendation.
+     * </p>
+     * 
+     * @param additionalMetadata
+     *        Additional metadata that may be applicable to the recommendation.
+     */
+
+    public void setAdditionalMetadata(String additionalMetadata) {
+        this.additionalMetadata = additionalMetadata;
+    }
+
+    /**
+     * <p>
+     * Additional metadata that may be applicable to the recommendation.
+     * </p>
+     * 
+     * @return Additional metadata that may be applicable to the recommendation.
+     */
+
+    public String getAdditionalMetadata() {
+        return this.additionalMetadata;
+    }
+
+    /**
+     * <p>
+     * Additional metadata that may be applicable to the recommendation.
+     * </p>
+     * 
+     * @param additionalMetadata
+     *        Additional metadata that may be applicable to the recommendation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SavingsPlansPurchaseRecommendationMetadata withAdditionalMetadata(String additionalMetadata) {
+        setAdditionalMetadata(additionalMetadata);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +182,9 @@ public class SavingsPlansPurchaseRecommendationMetadata implements Serializable,
         if (getRecommendationId() != null)
             sb.append("RecommendationId: ").append(getRecommendationId()).append(",");
         if (getGenerationTimestamp() != null)
-            sb.append("GenerationTimestamp: ").append(getGenerationTimestamp());
+            sb.append("GenerationTimestamp: ").append(getGenerationTimestamp()).append(",");
+        if (getAdditionalMetadata() != null)
+            sb.append("AdditionalMetadata: ").append(getAdditionalMetadata());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +207,10 @@ public class SavingsPlansPurchaseRecommendationMetadata implements Serializable,
             return false;
         if (other.getGenerationTimestamp() != null && other.getGenerationTimestamp().equals(this.getGenerationTimestamp()) == false)
             return false;
+        if (other.getAdditionalMetadata() == null ^ this.getAdditionalMetadata() == null)
+            return false;
+        if (other.getAdditionalMetadata() != null && other.getAdditionalMetadata().equals(this.getAdditionalMetadata()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +221,7 @@ public class SavingsPlansPurchaseRecommendationMetadata implements Serializable,
 
         hashCode = prime * hashCode + ((getRecommendationId() == null) ? 0 : getRecommendationId().hashCode());
         hashCode = prime * hashCode + ((getGenerationTimestamp() == null) ? 0 : getGenerationTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalMetadata() == null) ? 0 : getAdditionalMetadata().hashCode());
         return hashCode;
     }
 

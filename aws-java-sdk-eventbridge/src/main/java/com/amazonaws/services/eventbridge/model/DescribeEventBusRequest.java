@@ -27,18 +27,19 @@ public class DescribeEventBusRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the event bus to show details for. If you omit this, the default event bus is displayed.
+     * The name or ARN of the event bus to show details for. If you omit this, the default event bus is displayed.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The name of the event bus to show details for. If you omit this, the default event bus is displayed.
+     * The name or ARN of the event bus to show details for. If you omit this, the default event bus is displayed.
      * </p>
      * 
      * @param name
-     *        The name of the event bus to show details for. If you omit this, the default event bus is displayed.
+     *        The name or ARN of the event bus to show details for. If you omit this, the default event bus is
+     *        displayed.
      */
 
     public void setName(String name) {
@@ -47,10 +48,11 @@ public class DescribeEventBusRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the event bus to show details for. If you omit this, the default event bus is displayed.
+     * The name or ARN of the event bus to show details for. If you omit this, the default event bus is displayed.
      * </p>
      * 
-     * @return The name of the event bus to show details for. If you omit this, the default event bus is displayed.
+     * @return The name or ARN of the event bus to show details for. If you omit this, the default event bus is
+     *         displayed.
      */
 
     public String getName() {
@@ -59,11 +61,12 @@ public class DescribeEventBusRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the event bus to show details for. If you omit this, the default event bus is displayed.
+     * The name or ARN of the event bus to show details for. If you omit this, the default event bus is displayed.
      * </p>
      * 
      * @param name
-     *        The name of the event bus to show details for. If you omit this, the default event bus is displayed.
+     *        The name or ARN of the event bus to show details for. If you omit this, the default event bus is
+     *        displayed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -33,7 +33,7 @@ public class RemoveTargetsRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String rule;
     /**
      * <p>
-     * The name of the event bus associated with the rule.
+     * The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.
      * </p>
      */
     private String eventBusName;
@@ -95,11 +95,12 @@ public class RemoveTargetsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the event bus associated with the rule.
+     * The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.
      * </p>
      * 
      * @param eventBusName
-     *        The name of the event bus associated with the rule.
+     *        The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is
+     *        used.
      */
 
     public void setEventBusName(String eventBusName) {
@@ -108,10 +109,11 @@ public class RemoveTargetsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the event bus associated with the rule.
+     * The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.
      * </p>
      * 
-     * @return The name of the event bus associated with the rule.
+     * @return The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is
+     *         used.
      */
 
     public String getEventBusName() {
@@ -120,11 +122,12 @@ public class RemoveTargetsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the event bus associated with the rule.
+     * The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.
      * </p>
      * 
      * @param eventBusName
-     *        The name of the event bus associated with the rule.
+     *        The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is
+     *        used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -49,8 +49,8 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * An embedded object that specifies a mixed instances policy. When you make changes to an existing policy, all
      * optional parameters are left unchanged if not specified. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling Groups with
-     * Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling groups with
+     * multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      */
     private MixedInstancesPolicy mixedInstancesPolicy;
@@ -321,15 +321,15 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * An embedded object that specifies a mixed instances policy. When you make changes to an existing policy, all
      * optional parameters are left unchanged if not specified. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling Groups with
-     * Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling groups with
+     * multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param mixedInstancesPolicy
      *        An embedded object that specifies a mixed instances policy. When you make changes to an existing policy,
      *        all optional parameters are left unchanged if not specified. For more information, see <a
-     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling Groups
-     *        with Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling groups
+     *        with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public void setMixedInstancesPolicy(MixedInstancesPolicy mixedInstancesPolicy) {
@@ -340,14 +340,14 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * An embedded object that specifies a mixed instances policy. When you make changes to an existing policy, all
      * optional parameters are left unchanged if not specified. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling Groups with
-     * Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling groups with
+     * multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return An embedded object that specifies a mixed instances policy. When you make changes to an existing policy,
      *         all optional parameters are left unchanged if not specified. For more information, see <a
      *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling
-     *         Groups with Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto Scaling User
+     *         groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
      *         Guide</i>.
      */
 
@@ -359,15 +359,15 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * An embedded object that specifies a mixed instances policy. When you make changes to an existing policy, all
      * optional parameters are left unchanged if not specified. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling Groups with
-     * Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling groups with
+     * multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param mixedInstancesPolicy
      *        An embedded object that specifies a mixed instances policy. When you make changes to an existing policy,
      *        all optional parameters are left unchanged if not specified. For more information, see <a
-     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling Groups
-     *        with Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling groups
+     *        with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

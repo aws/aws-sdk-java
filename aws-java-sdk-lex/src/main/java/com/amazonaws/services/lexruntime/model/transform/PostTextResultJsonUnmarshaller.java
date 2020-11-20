@@ -104,6 +104,12 @@ public class PostTextResultJsonUnmarshaller implements Unmarshaller<PostTextResu
                     context.nextToken();
                     postTextResult.setBotVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("activeContexts", targetDepth)) {
+                    context.nextToken();
+                    postTextResult.setActiveContexts(new ListUnmarshaller<ActiveContext>(ActiveContextJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -48,6 +48,8 @@ public class SlotMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("responseCard").build();
     private static final MarshallingInfo<String> OBFUSCATIONSETTING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("obfuscationSetting").build();
+    private static final MarshallingInfo<StructuredPojo> DEFAULTVALUESPEC_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultValueSpec").build();
 
     private static final SlotMarshaller instance = new SlotMarshaller();
 
@@ -75,6 +77,7 @@ public class SlotMarshaller {
             protocolMarshaller.marshall(slot.getSampleUtterances(), SAMPLEUTTERANCES_BINDING);
             protocolMarshaller.marshall(slot.getResponseCard(), RESPONSECARD_BINDING);
             protocolMarshaller.marshall(slot.getObfuscationSetting(), OBFUSCATIONSETTING_BINDING);
+            protocolMarshaller.marshall(slot.getDefaultValueSpec(), DEFAULTVALUESPEC_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

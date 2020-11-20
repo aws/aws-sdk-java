@@ -98,6 +98,13 @@ public class Slot implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String obfuscationSetting;
+    /**
+     * <p>
+     * A list of default values for the slot. Default values are used when Amazon Lex hasn't determined a value for a
+     * slot. You can specify default values from context variables, session attributes, and defined values.
+     * </p>
+     */
+    private SlotDefaultValueSpec defaultValueSpec;
 
     /**
      * <p>
@@ -672,6 +679,53 @@ public class Slot implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A list of default values for the slot. Default values are used when Amazon Lex hasn't determined a value for a
+     * slot. You can specify default values from context variables, session attributes, and defined values.
+     * </p>
+     * 
+     * @param defaultValueSpec
+     *        A list of default values for the slot. Default values are used when Amazon Lex hasn't determined a value
+     *        for a slot. You can specify default values from context variables, session attributes, and defined values.
+     */
+
+    public void setDefaultValueSpec(SlotDefaultValueSpec defaultValueSpec) {
+        this.defaultValueSpec = defaultValueSpec;
+    }
+
+    /**
+     * <p>
+     * A list of default values for the slot. Default values are used when Amazon Lex hasn't determined a value for a
+     * slot. You can specify default values from context variables, session attributes, and defined values.
+     * </p>
+     * 
+     * @return A list of default values for the slot. Default values are used when Amazon Lex hasn't determined a value
+     *         for a slot. You can specify default values from context variables, session attributes, and defined
+     *         values.
+     */
+
+    public SlotDefaultValueSpec getDefaultValueSpec() {
+        return this.defaultValueSpec;
+    }
+
+    /**
+     * <p>
+     * A list of default values for the slot. Default values are used when Amazon Lex hasn't determined a value for a
+     * slot. You can specify default values from context variables, session attributes, and defined values.
+     * </p>
+     * 
+     * @param defaultValueSpec
+     *        A list of default values for the slot. Default values are used when Amazon Lex hasn't determined a value
+     *        for a slot. You can specify default values from context variables, session attributes, and defined values.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Slot withDefaultValueSpec(SlotDefaultValueSpec defaultValueSpec) {
+        setDefaultValueSpec(defaultValueSpec);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -702,7 +756,9 @@ public class Slot implements Serializable, Cloneable, StructuredPojo {
         if (getResponseCard() != null)
             sb.append("ResponseCard: ").append(getResponseCard()).append(",");
         if (getObfuscationSetting() != null)
-            sb.append("ObfuscationSetting: ").append(getObfuscationSetting());
+            sb.append("ObfuscationSetting: ").append(getObfuscationSetting()).append(",");
+        if (getDefaultValueSpec() != null)
+            sb.append("DefaultValueSpec: ").append(getDefaultValueSpec());
         sb.append("}");
         return sb.toString();
     }
@@ -757,6 +813,10 @@ public class Slot implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getObfuscationSetting() != null && other.getObfuscationSetting().equals(this.getObfuscationSetting()) == false)
             return false;
+        if (other.getDefaultValueSpec() == null ^ this.getDefaultValueSpec() == null)
+            return false;
+        if (other.getDefaultValueSpec() != null && other.getDefaultValueSpec().equals(this.getDefaultValueSpec()) == false)
+            return false;
         return true;
     }
 
@@ -775,6 +835,7 @@ public class Slot implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSampleUtterances() == null) ? 0 : getSampleUtterances().hashCode());
         hashCode = prime * hashCode + ((getResponseCard() == null) ? 0 : getResponseCard().hashCode());
         hashCode = prime * hashCode + ((getObfuscationSetting() == null) ? 0 : getObfuscationSetting().hashCode());
+        hashCode = prime * hashCode + ((getDefaultValueSpec() == null) ? 0 : getDefaultValueSpec().hashCode());
         return hashCode;
     }
 

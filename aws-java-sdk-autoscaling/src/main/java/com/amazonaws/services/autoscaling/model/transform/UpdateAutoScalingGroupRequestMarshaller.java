@@ -112,6 +112,29 @@ public class UpdateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
                                     request.addParameter("MixedInstancesPolicy.LaunchTemplate.Overrides.member." + overridesListIndex + ".WeightedCapacity",
                                             StringUtils.fromString(overridesListValue.getWeightedCapacity()));
                                 }
+
+                                {
+                                    LaunchTemplateSpecification launchTemplateSpecification = overridesListValue.getLaunchTemplateSpecification();
+                                    if (launchTemplateSpecification != null) {
+
+                                        if (launchTemplateSpecification.getLaunchTemplateId() != null) {
+                                            request.addParameter("MixedInstancesPolicy.LaunchTemplate.Overrides.member." + overridesListIndex
+                                                    + ".LaunchTemplateSpecification.LaunchTemplateId",
+                                                    StringUtils.fromString(launchTemplateSpecification.getLaunchTemplateId()));
+                                        }
+
+                                        if (launchTemplateSpecification.getLaunchTemplateName() != null) {
+                                            request.addParameter("MixedInstancesPolicy.LaunchTemplate.Overrides.member." + overridesListIndex
+                                                    + ".LaunchTemplateSpecification.LaunchTemplateName",
+                                                    StringUtils.fromString(launchTemplateSpecification.getLaunchTemplateName()));
+                                        }
+
+                                        if (launchTemplateSpecification.getVersion() != null) {
+                                            request.addParameter("MixedInstancesPolicy.LaunchTemplate.Overrides.member." + overridesListIndex
+                                                    + ".LaunchTemplateSpecification.Version", StringUtils.fromString(launchTemplateSpecification.getVersion()));
+                                        }
+                                    }
+                                }
                                 overridesListIndex++;
                             }
                         }

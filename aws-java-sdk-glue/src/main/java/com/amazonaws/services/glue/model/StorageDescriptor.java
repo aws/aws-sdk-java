@@ -103,6 +103,15 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private Boolean storedAsSubDirectories;
+    /**
+     * <p>
+     * An object that references a schema stored in the AWS Glue Schema Registry.
+     * </p>
+     * <p>
+     * When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.
+     * </p>
+     */
+    private SchemaReference schemaReference;
 
     /**
      * <p>
@@ -745,6 +754,64 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * An object that references a schema stored in the AWS Glue Schema Registry.
+     * </p>
+     * <p>
+     * When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.
+     * </p>
+     * 
+     * @param schemaReference
+     *        An object that references a schema stored in the AWS Glue Schema Registry.</p>
+     *        <p>
+     *        When creating a table, you can pass an empty list of columns for the schema, and instead use a schema
+     *        reference.
+     */
+
+    public void setSchemaReference(SchemaReference schemaReference) {
+        this.schemaReference = schemaReference;
+    }
+
+    /**
+     * <p>
+     * An object that references a schema stored in the AWS Glue Schema Registry.
+     * </p>
+     * <p>
+     * When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.
+     * </p>
+     * 
+     * @return An object that references a schema stored in the AWS Glue Schema Registry.</p>
+     *         <p>
+     *         When creating a table, you can pass an empty list of columns for the schema, and instead use a schema
+     *         reference.
+     */
+
+    public SchemaReference getSchemaReference() {
+        return this.schemaReference;
+    }
+
+    /**
+     * <p>
+     * An object that references a schema stored in the AWS Glue Schema Registry.
+     * </p>
+     * <p>
+     * When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.
+     * </p>
+     * 
+     * @param schemaReference
+     *        An object that references a schema stored in the AWS Glue Schema Registry.</p>
+     *        <p>
+     *        When creating a table, you can pass an empty list of columns for the schema, and instead use a schema
+     *        reference.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StorageDescriptor withSchemaReference(SchemaReference schemaReference) {
+        setSchemaReference(schemaReference);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -779,7 +846,9 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
         if (getSkewedInfo() != null)
             sb.append("SkewedInfo: ").append(getSkewedInfo()).append(",");
         if (getStoredAsSubDirectories() != null)
-            sb.append("StoredAsSubDirectories: ").append(getStoredAsSubDirectories());
+            sb.append("StoredAsSubDirectories: ").append(getStoredAsSubDirectories()).append(",");
+        if (getSchemaReference() != null)
+            sb.append("SchemaReference: ").append(getSchemaReference());
         sb.append("}");
         return sb.toString();
     }
@@ -842,6 +911,10 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getStoredAsSubDirectories() != null && other.getStoredAsSubDirectories().equals(this.getStoredAsSubDirectories()) == false)
             return false;
+        if (other.getSchemaReference() == null ^ this.getSchemaReference() == null)
+            return false;
+        if (other.getSchemaReference() != null && other.getSchemaReference().equals(this.getSchemaReference()) == false)
+            return false;
         return true;
     }
 
@@ -862,6 +935,7 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getSkewedInfo() == null) ? 0 : getSkewedInfo().hashCode());
         hashCode = prime * hashCode + ((getStoredAsSubDirectories() == null) ? 0 : getStoredAsSubDirectories().hashCode());
+        hashCode = prime * hashCode + ((getSchemaReference() == null) ? 0 : getSchemaReference().hashCode());
         return hashCode;
     }
 

@@ -52,6 +52,14 @@ public class GetEventSourceMappingResultJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     getEventSourceMappingResult.setUUID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("StartingPosition", targetDepth)) {
+                    context.nextToken();
+                    getEventSourceMappingResult.setStartingPosition(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("StartingPositionTimestamp", targetDepth)) {
+                    context.nextToken();
+                    getEventSourceMappingResult.setStartingPositionTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("BatchSize", targetDepth)) {
                     context.nextToken();
                     getEventSourceMappingResult.setBatchSize(context.getUnmarshaller(Integer.class).unmarshall(context));
