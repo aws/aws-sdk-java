@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ListAssociatedAttributeGroups"
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAssociatedAttributeGroups"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

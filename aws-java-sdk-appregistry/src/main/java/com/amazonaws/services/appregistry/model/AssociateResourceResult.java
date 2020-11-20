@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/AssociateResource" target="_top">AWS API
- *      Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateResource"
+ *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AssociateResourceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {

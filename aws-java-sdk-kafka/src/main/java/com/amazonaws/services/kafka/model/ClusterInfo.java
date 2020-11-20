@@ -85,9 +85,10 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
     private EncryptionInfo encryptionInfo;
     /**
      * <p>
-     * Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT,
-     * PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of
-     * monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
+     * Specifies which metrics are gathered for the MSK cluster. This property has the following possible values:
+     * DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. For a list of the metrics associated with
+     * each of these levels of monitoring, see <a
+     * href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
      * </p>
      */
     private String enhancedMonitoring;
@@ -548,16 +549,17 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT,
-     * PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of
-     * monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
+     * Specifies which metrics are gathered for the MSK cluster. This property has the following possible values:
+     * DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. For a list of the metrics associated with
+     * each of these levels of monitoring, see <a
+     * href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
      * </p>
      * 
      * @param enhancedMonitoring
      *        <p>
-     *        Specifies which metrics are gathered for the MSK cluster. This property has three possible values:
-     *        DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these
-     *        three levels of monitoring, see <a
+     *        Specifies which metrics are gathered for the MSK cluster. This property has the following possible values:
+     *        DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. For a list of the metrics
+     *        associated with each of these levels of monitoring, see <a
      *        href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
      *        </p>
      * @see EnhancedMonitoring
@@ -569,15 +571,16 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT,
-     * PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of
-     * monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
+     * Specifies which metrics are gathered for the MSK cluster. This property has the following possible values:
+     * DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. For a list of the metrics associated with
+     * each of these levels of monitoring, see <a
+     * href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
      * </p>
      * 
      * @return <p>
-     *         Specifies which metrics are gathered for the MSK cluster. This property has three possible values:
-     *         DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these
-     *         three levels of monitoring, see <a
+     *         Specifies which metrics are gathered for the MSK cluster. This property has the following possible
+     *         values: DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. For a list of the metrics
+     *         associated with each of these levels of monitoring, see <a
      *         href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
      *         </p>
      * @see EnhancedMonitoring
@@ -589,16 +592,17 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT,
-     * PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of
-     * monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
+     * Specifies which metrics are gathered for the MSK cluster. This property has the following possible values:
+     * DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. For a list of the metrics associated with
+     * each of these levels of monitoring, see <a
+     * href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
      * </p>
      * 
      * @param enhancedMonitoring
      *        <p>
-     *        Specifies which metrics are gathered for the MSK cluster. This property has three possible values:
-     *        DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these
-     *        three levels of monitoring, see <a
+     *        Specifies which metrics are gathered for the MSK cluster. This property has the following possible values:
+     *        DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. For a list of the metrics
+     *        associated with each of these levels of monitoring, see <a
      *        href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -612,16 +616,17 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT,
-     * PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of
-     * monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
+     * Specifies which metrics are gathered for the MSK cluster. This property has the following possible values:
+     * DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. For a list of the metrics associated with
+     * each of these levels of monitoring, see <a
+     * href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
      * </p>
      * 
      * @param enhancedMonitoring
      *        <p>
-     *        Specifies which metrics are gathered for the MSK cluster. This property has three possible values:
-     *        DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these
-     *        three levels of monitoring, see <a
+     *        Specifies which metrics are gathered for the MSK cluster. This property has the following possible values:
+     *        DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. For a list of the metrics
+     *        associated with each of these levels of monitoring, see <a
      *        href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.

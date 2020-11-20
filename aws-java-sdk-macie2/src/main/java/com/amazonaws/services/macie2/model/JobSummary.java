@@ -53,12 +53,13 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - You cancelled the job, or you paused the job and didn't resume it within 30 days of pausing it.
+     * CANCELLED - You cancelled the job, or you paused the job while it had a status of RUNNING and you didn't resume
+     * it within 30 days of pausing it.
      * </p>
      * </li>
      * <li>
      * <p>
-     * COMPLETE - For a one-time job, Amazon Macie finished processing all the data specified for the job. This value
+     * COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value
      * doesn't apply to recurring jobs.
      * </p>
      * </li>
@@ -70,8 +71,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * PAUSED - Amazon Macie started running the job but completion of the job would exceed one or more quotas for your
-     * account.
+     * PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive data
+     * discovery quota for your account or one or more member accounts that the job analyzes data for.
      * </p>
      * </li>
      * <li>
@@ -81,8 +82,9 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * USER_PAUSED - You paused the job. If you don't resume the job within 30 days of pausing it, the job will expire
-     * and be cancelled.
+     * USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume the
+     * job within 30 days of pausing it, the job expires and is cancelled. To check the job's expiration date, refer to
+     * the UserPausedDetails.jobExpiresAt property.
      * </p>
      * </li>
      * </ul>
@@ -284,12 +286,13 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - You cancelled the job, or you paused the job and didn't resume it within 30 days of pausing it.
+     * CANCELLED - You cancelled the job, or you paused the job while it had a status of RUNNING and you didn't resume
+     * it within 30 days of pausing it.
      * </p>
      * </li>
      * <li>
      * <p>
-     * COMPLETE - For a one-time job, Amazon Macie finished processing all the data specified for the job. This value
+     * COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value
      * doesn't apply to recurring jobs.
      * </p>
      * </li>
@@ -301,8 +304,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * PAUSED - Amazon Macie started running the job but completion of the job would exceed one or more quotas for your
-     * account.
+     * PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive data
+     * discovery quota for your account or one or more member accounts that the job analyzes data for.
      * </p>
      * </li>
      * <li>
@@ -312,8 +315,9 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * USER_PAUSED - You paused the job. If you don't resume the job within 30 days of pausing it, the job will expire
-     * and be cancelled.
+     * USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume the
+     * job within 30 days of pausing it, the job expires and is cancelled. To check the job's expiration date, refer to
+     * the UserPausedDetails.jobExpiresAt property.
      * </p>
      * </li>
      * </ul>
@@ -323,14 +327,14 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        CANCELLED - You cancelled the job, or you paused the job and didn't resume it within 30 days of pausing
-     *        it.
+     *        CANCELLED - You cancelled the job, or you paused the job while it had a status of RUNNING and you didn't
+     *        resume it within 30 days of pausing it.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        COMPLETE - For a one-time job, Amazon Macie finished processing all the data specified for the job. This
-     *        value doesn't apply to recurring jobs.
+     *        COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value
+     *        doesn't apply to recurring jobs.
      *        </p>
      *        </li>
      *        <li>
@@ -341,8 +345,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        PAUSED - Amazon Macie started running the job but completion of the job would exceed one or more quotas
-     *        for your account.
+     *        PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive
+     *        data discovery quota for your account or one or more member accounts that the job analyzes data for.
      *        </p>
      *        </li>
      *        <li>
@@ -352,8 +356,9 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        USER_PAUSED - You paused the job. If you don't resume the job within 30 days of pausing it, the job will
-     *        expire and be cancelled.
+     *        USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't
+     *        resume the job within 30 days of pausing it, the job expires and is cancelled. To check the job's
+     *        expiration date, refer to the UserPausedDetails.jobExpiresAt property.
      *        </p>
      *        </li>
      * @see JobStatus
@@ -370,12 +375,13 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - You cancelled the job, or you paused the job and didn't resume it within 30 days of pausing it.
+     * CANCELLED - You cancelled the job, or you paused the job while it had a status of RUNNING and you didn't resume
+     * it within 30 days of pausing it.
      * </p>
      * </li>
      * <li>
      * <p>
-     * COMPLETE - For a one-time job, Amazon Macie finished processing all the data specified for the job. This value
+     * COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value
      * doesn't apply to recurring jobs.
      * </p>
      * </li>
@@ -387,8 +393,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * PAUSED - Amazon Macie started running the job but completion of the job would exceed one or more quotas for your
-     * account.
+     * PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive data
+     * discovery quota for your account or one or more member accounts that the job analyzes data for.
      * </p>
      * </li>
      * <li>
@@ -398,8 +404,9 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * USER_PAUSED - You paused the job. If you don't resume the job within 30 days of pausing it, the job will expire
-     * and be cancelled.
+     * USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume the
+     * job within 30 days of pausing it, the job expires and is cancelled. To check the job's expiration date, refer to
+     * the UserPausedDetails.jobExpiresAt property.
      * </p>
      * </li>
      * </ul>
@@ -408,13 +415,13 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         CANCELLED - You cancelled the job, or you paused the job and didn't resume it within 30 days of pausing
-     *         it.
+     *         CANCELLED - You cancelled the job, or you paused the job while it had a status of RUNNING and you didn't
+     *         resume it within 30 days of pausing it.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         COMPLETE - For a one-time job, Amazon Macie finished processing all the data specified for the job. This
+     *         COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This
      *         value doesn't apply to recurring jobs.
      *         </p>
      *         </li>
@@ -426,8 +433,9 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         PAUSED - Amazon Macie started running the job but completion of the job would exceed one or more quotas
-     *         for your account.
+     *         PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly
+     *         sensitive data discovery quota for your account or one or more member accounts that the job analyzes data
+     *         for.
      *         </p>
      *         </li>
      *         <li>
@@ -438,8 +446,9 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         USER_PAUSED - You paused the job. If you don't resume the job within 30 days of pausing it, the job will
-     *         expire and be cancelled.
+     *         USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't
+     *         resume the job within 30 days of pausing it, the job expires and is cancelled. To check the job's
+     *         expiration date, refer to the UserPausedDetails.jobExpiresAt property.
      *         </p>
      *         </li>
      * @see JobStatus
@@ -456,12 +465,13 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - You cancelled the job, or you paused the job and didn't resume it within 30 days of pausing it.
+     * CANCELLED - You cancelled the job, or you paused the job while it had a status of RUNNING and you didn't resume
+     * it within 30 days of pausing it.
      * </p>
      * </li>
      * <li>
      * <p>
-     * COMPLETE - For a one-time job, Amazon Macie finished processing all the data specified for the job. This value
+     * COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value
      * doesn't apply to recurring jobs.
      * </p>
      * </li>
@@ -473,8 +483,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * PAUSED - Amazon Macie started running the job but completion of the job would exceed one or more quotas for your
-     * account.
+     * PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive data
+     * discovery quota for your account or one or more member accounts that the job analyzes data for.
      * </p>
      * </li>
      * <li>
@@ -484,8 +494,9 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * USER_PAUSED - You paused the job. If you don't resume the job within 30 days of pausing it, the job will expire
-     * and be cancelled.
+     * USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume the
+     * job within 30 days of pausing it, the job expires and is cancelled. To check the job's expiration date, refer to
+     * the UserPausedDetails.jobExpiresAt property.
      * </p>
      * </li>
      * </ul>
@@ -495,14 +506,14 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        CANCELLED - You cancelled the job, or you paused the job and didn't resume it within 30 days of pausing
-     *        it.
+     *        CANCELLED - You cancelled the job, or you paused the job while it had a status of RUNNING and you didn't
+     *        resume it within 30 days of pausing it.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        COMPLETE - For a one-time job, Amazon Macie finished processing all the data specified for the job. This
-     *        value doesn't apply to recurring jobs.
+     *        COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value
+     *        doesn't apply to recurring jobs.
      *        </p>
      *        </li>
      *        <li>
@@ -513,8 +524,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        PAUSED - Amazon Macie started running the job but completion of the job would exceed one or more quotas
-     *        for your account.
+     *        PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive
+     *        data discovery quota for your account or one or more member accounts that the job analyzes data for.
      *        </p>
      *        </li>
      *        <li>
@@ -524,8 +535,9 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        USER_PAUSED - You paused the job. If you don't resume the job within 30 days of pausing it, the job will
-     *        expire and be cancelled.
+     *        USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't
+     *        resume the job within 30 days of pausing it, the job expires and is cancelled. To check the job's
+     *        expiration date, refer to the UserPausedDetails.jobExpiresAt property.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -544,12 +556,13 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - You cancelled the job, or you paused the job and didn't resume it within 30 days of pausing it.
+     * CANCELLED - You cancelled the job, or you paused the job while it had a status of RUNNING and you didn't resume
+     * it within 30 days of pausing it.
      * </p>
      * </li>
      * <li>
      * <p>
-     * COMPLETE - For a one-time job, Amazon Macie finished processing all the data specified for the job. This value
+     * COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value
      * doesn't apply to recurring jobs.
      * </p>
      * </li>
@@ -561,8 +574,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * PAUSED - Amazon Macie started running the job but completion of the job would exceed one or more quotas for your
-     * account.
+     * PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive data
+     * discovery quota for your account or one or more member accounts that the job analyzes data for.
      * </p>
      * </li>
      * <li>
@@ -572,8 +585,9 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * USER_PAUSED - You paused the job. If you don't resume the job within 30 days of pausing it, the job will expire
-     * and be cancelled.
+     * USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume the
+     * job within 30 days of pausing it, the job expires and is cancelled. To check the job's expiration date, refer to
+     * the UserPausedDetails.jobExpiresAt property.
      * </p>
      * </li>
      * </ul>
@@ -583,14 +597,14 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        CANCELLED - You cancelled the job, or you paused the job and didn't resume it within 30 days of pausing
-     *        it.
+     *        CANCELLED - You cancelled the job, or you paused the job while it had a status of RUNNING and you didn't
+     *        resume it within 30 days of pausing it.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        COMPLETE - For a one-time job, Amazon Macie finished processing all the data specified for the job. This
-     *        value doesn't apply to recurring jobs.
+     *        COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value
+     *        doesn't apply to recurring jobs.
      *        </p>
      *        </li>
      *        <li>
@@ -601,8 +615,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        PAUSED - Amazon Macie started running the job but completion of the job would exceed one or more quotas
-     *        for your account.
+     *        PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive
+     *        data discovery quota for your account or one or more member accounts that the job analyzes data for.
      *        </p>
      *        </li>
      *        <li>
@@ -612,8 +626,9 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        USER_PAUSED - You paused the job. If you don't resume the job within 30 days of pausing it, the job will
-     *        expire and be cancelled.
+     *        USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't
+     *        resume the job within 30 days of pausing it, the job expires and is cancelled. To check the job's
+     *        expiration date, refer to the UserPausedDetails.jobExpiresAt property.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -57,7 +57,7 @@ import java.util.concurrent.ExecutorService;
  * Command Reference</i>.
  * </p>
  * </dd>
- * <dt>Using REST API</dt>
+ * <dt>Using REST</dt>
  * <dd>
  * <p>
  * If you use REST to make API calls, you must authenticate your request by providing a signature. Amazon Chime supports
@@ -524,6 +524,105 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAppInstanceResult> createAppInstanceAsync(CreateAppInstanceRequest request) {
+
+        return createAppInstanceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAppInstanceResult> createAppInstanceAsync(final CreateAppInstanceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAppInstanceRequest, CreateAppInstanceResult> asyncHandler) {
+        final CreateAppInstanceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateAppInstanceResult>() {
+            @Override
+            public CreateAppInstanceResult call() throws Exception {
+                CreateAppInstanceResult result = null;
+
+                try {
+                    result = executeCreateAppInstance(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAppInstanceAdminResult> createAppInstanceAdminAsync(CreateAppInstanceAdminRequest request) {
+
+        return createAppInstanceAdminAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAppInstanceAdminResult> createAppInstanceAdminAsync(final CreateAppInstanceAdminRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAppInstanceAdminRequest, CreateAppInstanceAdminResult> asyncHandler) {
+        final CreateAppInstanceAdminRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateAppInstanceAdminResult>() {
+            @Override
+            public CreateAppInstanceAdminResult call() throws Exception {
+                CreateAppInstanceAdminResult result = null;
+
+                try {
+                    result = executeCreateAppInstanceAdmin(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAppInstanceUserResult> createAppInstanceUserAsync(CreateAppInstanceUserRequest request) {
+
+        return createAppInstanceUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAppInstanceUserResult> createAppInstanceUserAsync(final CreateAppInstanceUserRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAppInstanceUserRequest, CreateAppInstanceUserResult> asyncHandler) {
+        final CreateAppInstanceUserRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateAppInstanceUserResult>() {
+            @Override
+            public CreateAppInstanceUserResult call() throws Exception {
+                CreateAppInstanceUserResult result = null;
+
+                try {
+                    result = executeCreateAppInstanceUser(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAttendeeResult> createAttendeeAsync(CreateAttendeeRequest request) {
 
         return createAttendeeAsync(request, null);
@@ -574,6 +673,138 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executeCreateBot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateChannelResult> createChannelAsync(CreateChannelRequest request) {
+
+        return createChannelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateChannelResult> createChannelAsync(final CreateChannelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateChannelRequest, CreateChannelResult> asyncHandler) {
+        final CreateChannelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateChannelResult>() {
+            @Override
+            public CreateChannelResult call() throws Exception {
+                CreateChannelResult result = null;
+
+                try {
+                    result = executeCreateChannel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateChannelBanResult> createChannelBanAsync(CreateChannelBanRequest request) {
+
+        return createChannelBanAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateChannelBanResult> createChannelBanAsync(final CreateChannelBanRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateChannelBanRequest, CreateChannelBanResult> asyncHandler) {
+        final CreateChannelBanRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateChannelBanResult>() {
+            @Override
+            public CreateChannelBanResult call() throws Exception {
+                CreateChannelBanResult result = null;
+
+                try {
+                    result = executeCreateChannelBan(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateChannelMembershipResult> createChannelMembershipAsync(CreateChannelMembershipRequest request) {
+
+        return createChannelMembershipAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateChannelMembershipResult> createChannelMembershipAsync(final CreateChannelMembershipRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateChannelMembershipRequest, CreateChannelMembershipResult> asyncHandler) {
+        final CreateChannelMembershipRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateChannelMembershipResult>() {
+            @Override
+            public CreateChannelMembershipResult call() throws Exception {
+                CreateChannelMembershipResult result = null;
+
+                try {
+                    result = executeCreateChannelMembership(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateChannelModeratorResult> createChannelModeratorAsync(CreateChannelModeratorRequest request) {
+
+        return createChannelModeratorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateChannelModeratorResult> createChannelModeratorAsync(final CreateChannelModeratorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateChannelModeratorRequest, CreateChannelModeratorResult> asyncHandler) {
+        final CreateChannelModeratorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateChannelModeratorResult>() {
+            @Override
+            public CreateChannelModeratorResult call() throws Exception {
+                CreateChannelModeratorResult result = null;
+
+                try {
+                    result = executeCreateChannelModerator(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1053,6 +1284,140 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteAppInstanceResult> deleteAppInstanceAsync(DeleteAppInstanceRequest request) {
+
+        return deleteAppInstanceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppInstanceResult> deleteAppInstanceAsync(final DeleteAppInstanceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAppInstanceRequest, DeleteAppInstanceResult> asyncHandler) {
+        final DeleteAppInstanceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAppInstanceResult>() {
+            @Override
+            public DeleteAppInstanceResult call() throws Exception {
+                DeleteAppInstanceResult result = null;
+
+                try {
+                    result = executeDeleteAppInstance(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppInstanceAdminResult> deleteAppInstanceAdminAsync(DeleteAppInstanceAdminRequest request) {
+
+        return deleteAppInstanceAdminAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppInstanceAdminResult> deleteAppInstanceAdminAsync(final DeleteAppInstanceAdminRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAppInstanceAdminRequest, DeleteAppInstanceAdminResult> asyncHandler) {
+        final DeleteAppInstanceAdminRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAppInstanceAdminResult>() {
+            @Override
+            public DeleteAppInstanceAdminResult call() throws Exception {
+                DeleteAppInstanceAdminResult result = null;
+
+                try {
+                    result = executeDeleteAppInstanceAdmin(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppInstanceStreamingConfigurationsResult> deleteAppInstanceStreamingConfigurationsAsync(
+            DeleteAppInstanceStreamingConfigurationsRequest request) {
+
+        return deleteAppInstanceStreamingConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppInstanceStreamingConfigurationsResult> deleteAppInstanceStreamingConfigurationsAsync(
+            final DeleteAppInstanceStreamingConfigurationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAppInstanceStreamingConfigurationsRequest, DeleteAppInstanceStreamingConfigurationsResult> asyncHandler) {
+        final DeleteAppInstanceStreamingConfigurationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAppInstanceStreamingConfigurationsResult>() {
+            @Override
+            public DeleteAppInstanceStreamingConfigurationsResult call() throws Exception {
+                DeleteAppInstanceStreamingConfigurationsResult result = null;
+
+                try {
+                    result = executeDeleteAppInstanceStreamingConfigurations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppInstanceUserResult> deleteAppInstanceUserAsync(DeleteAppInstanceUserRequest request) {
+
+        return deleteAppInstanceUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppInstanceUserResult> deleteAppInstanceUserAsync(final DeleteAppInstanceUserRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAppInstanceUserRequest, DeleteAppInstanceUserResult> asyncHandler) {
+        final DeleteAppInstanceUserRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAppInstanceUserResult>() {
+            @Override
+            public DeleteAppInstanceUserResult call() throws Exception {
+                DeleteAppInstanceUserResult result = null;
+
+                try {
+                    result = executeDeleteAppInstanceUser(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteAttendeeResult> deleteAttendeeAsync(DeleteAttendeeRequest request) {
 
         return deleteAttendeeAsync(request, null);
@@ -1070,6 +1435,171 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executeDeleteAttendee(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteChannelResult> deleteChannelAsync(DeleteChannelRequest request) {
+
+        return deleteChannelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteChannelResult> deleteChannelAsync(final DeleteChannelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteChannelRequest, DeleteChannelResult> asyncHandler) {
+        final DeleteChannelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteChannelResult>() {
+            @Override
+            public DeleteChannelResult call() throws Exception {
+                DeleteChannelResult result = null;
+
+                try {
+                    result = executeDeleteChannel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteChannelBanResult> deleteChannelBanAsync(DeleteChannelBanRequest request) {
+
+        return deleteChannelBanAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteChannelBanResult> deleteChannelBanAsync(final DeleteChannelBanRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteChannelBanRequest, DeleteChannelBanResult> asyncHandler) {
+        final DeleteChannelBanRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteChannelBanResult>() {
+            @Override
+            public DeleteChannelBanResult call() throws Exception {
+                DeleteChannelBanResult result = null;
+
+                try {
+                    result = executeDeleteChannelBan(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteChannelMembershipResult> deleteChannelMembershipAsync(DeleteChannelMembershipRequest request) {
+
+        return deleteChannelMembershipAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteChannelMembershipResult> deleteChannelMembershipAsync(final DeleteChannelMembershipRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteChannelMembershipRequest, DeleteChannelMembershipResult> asyncHandler) {
+        final DeleteChannelMembershipRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteChannelMembershipResult>() {
+            @Override
+            public DeleteChannelMembershipResult call() throws Exception {
+                DeleteChannelMembershipResult result = null;
+
+                try {
+                    result = executeDeleteChannelMembership(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteChannelMessageResult> deleteChannelMessageAsync(DeleteChannelMessageRequest request) {
+
+        return deleteChannelMessageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteChannelMessageResult> deleteChannelMessageAsync(final DeleteChannelMessageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteChannelMessageRequest, DeleteChannelMessageResult> asyncHandler) {
+        final DeleteChannelMessageRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteChannelMessageResult>() {
+            @Override
+            public DeleteChannelMessageResult call() throws Exception {
+                DeleteChannelMessageResult result = null;
+
+                try {
+                    result = executeDeleteChannelMessage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteChannelModeratorResult> deleteChannelModeratorAsync(DeleteChannelModeratorRequest request) {
+
+        return deleteChannelModeratorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteChannelModeratorResult> deleteChannelModeratorAsync(final DeleteChannelModeratorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteChannelModeratorRequest, DeleteChannelModeratorResult> asyncHandler) {
+        final DeleteChannelModeratorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteChannelModeratorResult>() {
+            @Override
+            public DeleteChannelModeratorResult call() throws Exception {
+                DeleteChannelModeratorResult result = null;
+
+                try {
+                    result = executeDeleteChannelModerator(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1624,6 +2154,307 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAppInstanceResult> describeAppInstanceAsync(DescribeAppInstanceRequest request) {
+
+        return describeAppInstanceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAppInstanceResult> describeAppInstanceAsync(final DescribeAppInstanceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAppInstanceRequest, DescribeAppInstanceResult> asyncHandler) {
+        final DescribeAppInstanceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAppInstanceResult>() {
+            @Override
+            public DescribeAppInstanceResult call() throws Exception {
+                DescribeAppInstanceResult result = null;
+
+                try {
+                    result = executeDescribeAppInstance(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAppInstanceAdminResult> describeAppInstanceAdminAsync(DescribeAppInstanceAdminRequest request) {
+
+        return describeAppInstanceAdminAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAppInstanceAdminResult> describeAppInstanceAdminAsync(final DescribeAppInstanceAdminRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAppInstanceAdminRequest, DescribeAppInstanceAdminResult> asyncHandler) {
+        final DescribeAppInstanceAdminRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAppInstanceAdminResult>() {
+            @Override
+            public DescribeAppInstanceAdminResult call() throws Exception {
+                DescribeAppInstanceAdminResult result = null;
+
+                try {
+                    result = executeDescribeAppInstanceAdmin(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAppInstanceUserResult> describeAppInstanceUserAsync(DescribeAppInstanceUserRequest request) {
+
+        return describeAppInstanceUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAppInstanceUserResult> describeAppInstanceUserAsync(final DescribeAppInstanceUserRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAppInstanceUserRequest, DescribeAppInstanceUserResult> asyncHandler) {
+        final DescribeAppInstanceUserRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAppInstanceUserResult>() {
+            @Override
+            public DescribeAppInstanceUserResult call() throws Exception {
+                DescribeAppInstanceUserResult result = null;
+
+                try {
+                    result = executeDescribeAppInstanceUser(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeChannelResult> describeChannelAsync(DescribeChannelRequest request) {
+
+        return describeChannelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeChannelResult> describeChannelAsync(final DescribeChannelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeChannelRequest, DescribeChannelResult> asyncHandler) {
+        final DescribeChannelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeChannelResult>() {
+            @Override
+            public DescribeChannelResult call() throws Exception {
+                DescribeChannelResult result = null;
+
+                try {
+                    result = executeDescribeChannel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeChannelBanResult> describeChannelBanAsync(DescribeChannelBanRequest request) {
+
+        return describeChannelBanAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeChannelBanResult> describeChannelBanAsync(final DescribeChannelBanRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeChannelBanRequest, DescribeChannelBanResult> asyncHandler) {
+        final DescribeChannelBanRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeChannelBanResult>() {
+            @Override
+            public DescribeChannelBanResult call() throws Exception {
+                DescribeChannelBanResult result = null;
+
+                try {
+                    result = executeDescribeChannelBan(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeChannelMembershipResult> describeChannelMembershipAsync(DescribeChannelMembershipRequest request) {
+
+        return describeChannelMembershipAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeChannelMembershipResult> describeChannelMembershipAsync(final DescribeChannelMembershipRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeChannelMembershipRequest, DescribeChannelMembershipResult> asyncHandler) {
+        final DescribeChannelMembershipRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeChannelMembershipResult>() {
+            @Override
+            public DescribeChannelMembershipResult call() throws Exception {
+                DescribeChannelMembershipResult result = null;
+
+                try {
+                    result = executeDescribeChannelMembership(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeChannelMembershipForAppInstanceUserResult> describeChannelMembershipForAppInstanceUserAsync(
+            DescribeChannelMembershipForAppInstanceUserRequest request) {
+
+        return describeChannelMembershipForAppInstanceUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeChannelMembershipForAppInstanceUserResult> describeChannelMembershipForAppInstanceUserAsync(
+            final DescribeChannelMembershipForAppInstanceUserRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeChannelMembershipForAppInstanceUserRequest, DescribeChannelMembershipForAppInstanceUserResult> asyncHandler) {
+        final DescribeChannelMembershipForAppInstanceUserRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeChannelMembershipForAppInstanceUserResult>() {
+            @Override
+            public DescribeChannelMembershipForAppInstanceUserResult call() throws Exception {
+                DescribeChannelMembershipForAppInstanceUserResult result = null;
+
+                try {
+                    result = executeDescribeChannelMembershipForAppInstanceUser(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeChannelModeratedByAppInstanceUserResult> describeChannelModeratedByAppInstanceUserAsync(
+            DescribeChannelModeratedByAppInstanceUserRequest request) {
+
+        return describeChannelModeratedByAppInstanceUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeChannelModeratedByAppInstanceUserResult> describeChannelModeratedByAppInstanceUserAsync(
+            final DescribeChannelModeratedByAppInstanceUserRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeChannelModeratedByAppInstanceUserRequest, DescribeChannelModeratedByAppInstanceUserResult> asyncHandler) {
+        final DescribeChannelModeratedByAppInstanceUserRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeChannelModeratedByAppInstanceUserResult>() {
+            @Override
+            public DescribeChannelModeratedByAppInstanceUserResult call() throws Exception {
+                DescribeChannelModeratedByAppInstanceUserResult result = null;
+
+                try {
+                    result = executeDescribeChannelModeratedByAppInstanceUser(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeChannelModeratorResult> describeChannelModeratorAsync(DescribeChannelModeratorRequest request) {
+
+        return describeChannelModeratorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeChannelModeratorResult> describeChannelModeratorAsync(final DescribeChannelModeratorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeChannelModeratorRequest, DescribeChannelModeratorResult> asyncHandler) {
+        final DescribeChannelModeratorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeChannelModeratorResult>() {
+            @Override
+            public DescribeChannelModeratorResult call() throws Exception {
+                DescribeChannelModeratorResult result = null;
+
+                try {
+                    result = executeDescribeChannelModerator(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociatePhoneNumberFromUserResult> disassociatePhoneNumberFromUserAsync(
             DisassociatePhoneNumberFromUserRequest request) {
 
@@ -1830,6 +2661,76 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<GetAppInstanceRetentionSettingsResult> getAppInstanceRetentionSettingsAsync(
+            GetAppInstanceRetentionSettingsRequest request) {
+
+        return getAppInstanceRetentionSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAppInstanceRetentionSettingsResult> getAppInstanceRetentionSettingsAsync(
+            final GetAppInstanceRetentionSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAppInstanceRetentionSettingsRequest, GetAppInstanceRetentionSettingsResult> asyncHandler) {
+        final GetAppInstanceRetentionSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAppInstanceRetentionSettingsResult>() {
+            @Override
+            public GetAppInstanceRetentionSettingsResult call() throws Exception {
+                GetAppInstanceRetentionSettingsResult result = null;
+
+                try {
+                    result = executeGetAppInstanceRetentionSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAppInstanceStreamingConfigurationsResult> getAppInstanceStreamingConfigurationsAsync(
+            GetAppInstanceStreamingConfigurationsRequest request) {
+
+        return getAppInstanceStreamingConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAppInstanceStreamingConfigurationsResult> getAppInstanceStreamingConfigurationsAsync(
+            final GetAppInstanceStreamingConfigurationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAppInstanceStreamingConfigurationsRequest, GetAppInstanceStreamingConfigurationsResult> asyncHandler) {
+        final GetAppInstanceStreamingConfigurationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAppInstanceStreamingConfigurationsResult>() {
+            @Override
+            public GetAppInstanceStreamingConfigurationsResult call() throws Exception {
+                GetAppInstanceStreamingConfigurationsResult result = null;
+
+                try {
+                    result = executeGetAppInstanceStreamingConfigurations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAttendeeResult> getAttendeeAsync(GetAttendeeRequest request) {
 
         return getAttendeeAsync(request, null);
@@ -1880,6 +2781,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executeGetBot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetChannelMessageResult> getChannelMessageAsync(GetChannelMessageRequest request) {
+
+        return getChannelMessageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetChannelMessageResult> getChannelMessageAsync(final GetChannelMessageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetChannelMessageRequest, GetChannelMessageResult> asyncHandler) {
+        final GetChannelMessageRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetChannelMessageResult>() {
+            @Override
+            public GetChannelMessageResult call() throws Exception {
+                GetChannelMessageResult result = null;
+
+                try {
+                    result = executeGetChannelMessage(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1979,6 +2913,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executeGetMeeting(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMessagingSessionEndpointResult> getMessagingSessionEndpointAsync(GetMessagingSessionEndpointRequest request) {
+
+        return getMessagingSessionEndpointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMessagingSessionEndpointResult> getMessagingSessionEndpointAsync(final GetMessagingSessionEndpointRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMessagingSessionEndpointRequest, GetMessagingSessionEndpointResult> asyncHandler) {
+        final GetMessagingSessionEndpointRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMessagingSessionEndpointResult>() {
+            @Override
+            public GetMessagingSessionEndpointResult call() throws Exception {
+                GetMessagingSessionEndpointResult result = null;
+
+                try {
+                    result = executeGetMessagingSessionEndpoint(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2731,6 +3698,105 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<ListAppInstanceAdminsResult> listAppInstanceAdminsAsync(ListAppInstanceAdminsRequest request) {
+
+        return listAppInstanceAdminsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppInstanceAdminsResult> listAppInstanceAdminsAsync(final ListAppInstanceAdminsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAppInstanceAdminsRequest, ListAppInstanceAdminsResult> asyncHandler) {
+        final ListAppInstanceAdminsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAppInstanceAdminsResult>() {
+            @Override
+            public ListAppInstanceAdminsResult call() throws Exception {
+                ListAppInstanceAdminsResult result = null;
+
+                try {
+                    result = executeListAppInstanceAdmins(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppInstanceUsersResult> listAppInstanceUsersAsync(ListAppInstanceUsersRequest request) {
+
+        return listAppInstanceUsersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppInstanceUsersResult> listAppInstanceUsersAsync(final ListAppInstanceUsersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAppInstanceUsersRequest, ListAppInstanceUsersResult> asyncHandler) {
+        final ListAppInstanceUsersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAppInstanceUsersResult>() {
+            @Override
+            public ListAppInstanceUsersResult call() throws Exception {
+                ListAppInstanceUsersResult result = null;
+
+                try {
+                    result = executeListAppInstanceUsers(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppInstancesResult> listAppInstancesAsync(ListAppInstancesRequest request) {
+
+        return listAppInstancesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppInstancesResult> listAppInstancesAsync(final ListAppInstancesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAppInstancesRequest, ListAppInstancesResult> asyncHandler) {
+        final ListAppInstancesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAppInstancesResult>() {
+            @Override
+            public ListAppInstancesResult call() throws Exception {
+                ListAppInstancesResult result = null;
+
+                try {
+                    result = executeListAppInstances(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAttendeeTagsResult> listAttendeeTagsAsync(ListAttendeeTagsRequest request) {
 
         return listAttendeeTagsAsync(request, null);
@@ -2814,6 +3880,241 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executeListBots(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListChannelBansResult> listChannelBansAsync(ListChannelBansRequest request) {
+
+        return listChannelBansAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListChannelBansResult> listChannelBansAsync(final ListChannelBansRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListChannelBansRequest, ListChannelBansResult> asyncHandler) {
+        final ListChannelBansRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListChannelBansResult>() {
+            @Override
+            public ListChannelBansResult call() throws Exception {
+                ListChannelBansResult result = null;
+
+                try {
+                    result = executeListChannelBans(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListChannelMembershipsResult> listChannelMembershipsAsync(ListChannelMembershipsRequest request) {
+
+        return listChannelMembershipsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListChannelMembershipsResult> listChannelMembershipsAsync(final ListChannelMembershipsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListChannelMembershipsRequest, ListChannelMembershipsResult> asyncHandler) {
+        final ListChannelMembershipsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListChannelMembershipsResult>() {
+            @Override
+            public ListChannelMembershipsResult call() throws Exception {
+                ListChannelMembershipsResult result = null;
+
+                try {
+                    result = executeListChannelMemberships(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListChannelMembershipsForAppInstanceUserResult> listChannelMembershipsForAppInstanceUserAsync(
+            ListChannelMembershipsForAppInstanceUserRequest request) {
+
+        return listChannelMembershipsForAppInstanceUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListChannelMembershipsForAppInstanceUserResult> listChannelMembershipsForAppInstanceUserAsync(
+            final ListChannelMembershipsForAppInstanceUserRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListChannelMembershipsForAppInstanceUserRequest, ListChannelMembershipsForAppInstanceUserResult> asyncHandler) {
+        final ListChannelMembershipsForAppInstanceUserRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListChannelMembershipsForAppInstanceUserResult>() {
+            @Override
+            public ListChannelMembershipsForAppInstanceUserResult call() throws Exception {
+                ListChannelMembershipsForAppInstanceUserResult result = null;
+
+                try {
+                    result = executeListChannelMembershipsForAppInstanceUser(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListChannelMessagesResult> listChannelMessagesAsync(ListChannelMessagesRequest request) {
+
+        return listChannelMessagesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListChannelMessagesResult> listChannelMessagesAsync(final ListChannelMessagesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListChannelMessagesRequest, ListChannelMessagesResult> asyncHandler) {
+        final ListChannelMessagesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListChannelMessagesResult>() {
+            @Override
+            public ListChannelMessagesResult call() throws Exception {
+                ListChannelMessagesResult result = null;
+
+                try {
+                    result = executeListChannelMessages(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListChannelModeratorsResult> listChannelModeratorsAsync(ListChannelModeratorsRequest request) {
+
+        return listChannelModeratorsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListChannelModeratorsResult> listChannelModeratorsAsync(final ListChannelModeratorsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListChannelModeratorsRequest, ListChannelModeratorsResult> asyncHandler) {
+        final ListChannelModeratorsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListChannelModeratorsResult>() {
+            @Override
+            public ListChannelModeratorsResult call() throws Exception {
+                ListChannelModeratorsResult result = null;
+
+                try {
+                    result = executeListChannelModerators(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListChannelsResult> listChannelsAsync(ListChannelsRequest request) {
+
+        return listChannelsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListChannelsResult> listChannelsAsync(final ListChannelsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListChannelsRequest, ListChannelsResult> asyncHandler) {
+        final ListChannelsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListChannelsResult>() {
+            @Override
+            public ListChannelsResult call() throws Exception {
+                ListChannelsResult result = null;
+
+                try {
+                    result = executeListChannels(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListChannelsModeratedByAppInstanceUserResult> listChannelsModeratedByAppInstanceUserAsync(
+            ListChannelsModeratedByAppInstanceUserRequest request) {
+
+        return listChannelsModeratedByAppInstanceUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListChannelsModeratedByAppInstanceUserResult> listChannelsModeratedByAppInstanceUserAsync(
+            final ListChannelsModeratedByAppInstanceUserRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListChannelsModeratedByAppInstanceUserRequest, ListChannelsModeratedByAppInstanceUserResult> asyncHandler) {
+        final ListChannelsModeratedByAppInstanceUserRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListChannelsModeratedByAppInstanceUserResult>() {
+            @Override
+            public ListChannelsModeratedByAppInstanceUserResult call() throws Exception {
+                ListChannelsModeratedByAppInstanceUserResult result = null;
+
+                try {
+                    result = executeListChannelsModeratedByAppInstanceUser(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3327,6 +4628,76 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<PutAppInstanceRetentionSettingsResult> putAppInstanceRetentionSettingsAsync(
+            PutAppInstanceRetentionSettingsRequest request) {
+
+        return putAppInstanceRetentionSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAppInstanceRetentionSettingsResult> putAppInstanceRetentionSettingsAsync(
+            final PutAppInstanceRetentionSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutAppInstanceRetentionSettingsRequest, PutAppInstanceRetentionSettingsResult> asyncHandler) {
+        final PutAppInstanceRetentionSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutAppInstanceRetentionSettingsResult>() {
+            @Override
+            public PutAppInstanceRetentionSettingsResult call() throws Exception {
+                PutAppInstanceRetentionSettingsResult result = null;
+
+                try {
+                    result = executePutAppInstanceRetentionSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAppInstanceStreamingConfigurationsResult> putAppInstanceStreamingConfigurationsAsync(
+            PutAppInstanceStreamingConfigurationsRequest request) {
+
+        return putAppInstanceStreamingConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAppInstanceStreamingConfigurationsResult> putAppInstanceStreamingConfigurationsAsync(
+            final PutAppInstanceStreamingConfigurationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutAppInstanceStreamingConfigurationsRequest, PutAppInstanceStreamingConfigurationsResult> asyncHandler) {
+        final PutAppInstanceStreamingConfigurationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutAppInstanceStreamingConfigurationsResult>() {
+            @Override
+            public PutAppInstanceStreamingConfigurationsResult call() throws Exception {
+                PutAppInstanceStreamingConfigurationsResult result = null;
+
+                try {
+                    result = executePutAppInstanceStreamingConfigurations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PutEventsConfigurationResult> putEventsConfigurationAsync(PutEventsConfigurationRequest request) {
 
         return putEventsConfigurationAsync(request, null);
@@ -3667,6 +5038,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<RedactChannelMessageResult> redactChannelMessageAsync(RedactChannelMessageRequest request) {
+
+        return redactChannelMessageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RedactChannelMessageResult> redactChannelMessageAsync(final RedactChannelMessageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RedactChannelMessageRequest, RedactChannelMessageResult> asyncHandler) {
+        final RedactChannelMessageRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RedactChannelMessageResult>() {
+            @Override
+            public RedactChannelMessageResult call() throws Exception {
+                RedactChannelMessageResult result = null;
+
+                try {
+                    result = executeRedactChannelMessage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<RedactConversationMessageResult> redactConversationMessageAsync(RedactConversationMessageRequest request) {
 
         return redactConversationMessageAsync(request, null);
@@ -3849,6 +5253,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executeSearchAvailablePhoneNumbers(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendChannelMessageResult> sendChannelMessageAsync(SendChannelMessageRequest request) {
+
+        return sendChannelMessageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendChannelMessageResult> sendChannelMessageAsync(final SendChannelMessageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SendChannelMessageRequest, SendChannelMessageResult> asyncHandler) {
+        final SendChannelMessageRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SendChannelMessageResult>() {
+            @Override
+            public SendChannelMessageResult call() throws Exception {
+                SendChannelMessageResult result = null;
+
+                try {
+                    result = executeSendChannelMessage(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4129,6 +5566,72 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateAppInstanceResult> updateAppInstanceAsync(UpdateAppInstanceRequest request) {
+
+        return updateAppInstanceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAppInstanceResult> updateAppInstanceAsync(final UpdateAppInstanceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAppInstanceRequest, UpdateAppInstanceResult> asyncHandler) {
+        final UpdateAppInstanceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAppInstanceResult>() {
+            @Override
+            public UpdateAppInstanceResult call() throws Exception {
+                UpdateAppInstanceResult result = null;
+
+                try {
+                    result = executeUpdateAppInstance(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAppInstanceUserResult> updateAppInstanceUserAsync(UpdateAppInstanceUserRequest request) {
+
+        return updateAppInstanceUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAppInstanceUserResult> updateAppInstanceUserAsync(final UpdateAppInstanceUserRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAppInstanceUserRequest, UpdateAppInstanceUserResult> asyncHandler) {
+        final UpdateAppInstanceUserRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAppInstanceUserResult>() {
+            @Override
+            public UpdateAppInstanceUserResult call() throws Exception {
+                UpdateAppInstanceUserResult result = null;
+
+                try {
+                    result = executeUpdateAppInstanceUser(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateBotResult> updateBotAsync(UpdateBotRequest request) {
 
         return updateBotAsync(request, null);
@@ -4146,6 +5649,105 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executeUpdateBot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateChannelResult> updateChannelAsync(UpdateChannelRequest request) {
+
+        return updateChannelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateChannelResult> updateChannelAsync(final UpdateChannelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateChannelRequest, UpdateChannelResult> asyncHandler) {
+        final UpdateChannelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateChannelResult>() {
+            @Override
+            public UpdateChannelResult call() throws Exception {
+                UpdateChannelResult result = null;
+
+                try {
+                    result = executeUpdateChannel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateChannelMessageResult> updateChannelMessageAsync(UpdateChannelMessageRequest request) {
+
+        return updateChannelMessageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateChannelMessageResult> updateChannelMessageAsync(final UpdateChannelMessageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateChannelMessageRequest, UpdateChannelMessageResult> asyncHandler) {
+        final UpdateChannelMessageRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateChannelMessageResult>() {
+            @Override
+            public UpdateChannelMessageResult call() throws Exception {
+                UpdateChannelMessageResult result = null;
+
+                try {
+                    result = executeUpdateChannelMessage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateChannelReadMarkerResult> updateChannelReadMarkerAsync(UpdateChannelReadMarkerRequest request) {
+
+        return updateChannelReadMarkerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateChannelReadMarkerResult> updateChannelReadMarkerAsync(final UpdateChannelReadMarkerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateChannelReadMarkerRequest, UpdateChannelReadMarkerResult> asyncHandler) {
+        final UpdateChannelReadMarkerRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateChannelReadMarkerResult>() {
+            @Override
+            public UpdateChannelReadMarkerResult call() throws Exception {
+                UpdateChannelReadMarkerResult result = null;
+
+                try {
+                    result = executeUpdateChannelReadMarker(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

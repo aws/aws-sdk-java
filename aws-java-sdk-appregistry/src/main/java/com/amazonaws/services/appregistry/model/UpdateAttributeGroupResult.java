@@ -17,26 +17,26 @@ import javax.annotation.Generated;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/UpdateAttributeGroup" target="_top">AWS API
- *      Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UpdateAttributeGroup"
+ *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateAttributeGroupResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name or ID of the attribute group that holds the attributes to describe the application.
+     * The updated information of the attribute group.
      * </p>
      */
     private AttributeGroup attributeGroup;
 
     /**
      * <p>
-     * The name or ID of the attribute group that holds the attributes to describe the application.
+     * The updated information of the attribute group.
      * </p>
      * 
      * @param attributeGroup
-     *        The name or ID of the attribute group that holds the attributes to describe the application.
+     *        The updated information of the attribute group.
      */
 
     public void setAttributeGroup(AttributeGroup attributeGroup) {
@@ -45,10 +45,10 @@ public class UpdateAttributeGroupResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name or ID of the attribute group that holds the attributes to describe the application.
+     * The updated information of the attribute group.
      * </p>
      * 
-     * @return The name or ID of the attribute group that holds the attributes to describe the application.
+     * @return The updated information of the attribute group.
      */
 
     public AttributeGroup getAttributeGroup() {
@@ -57,11 +57,11 @@ public class UpdateAttributeGroupResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name or ID of the attribute group that holds the attributes to describe the application.
+     * The updated information of the attribute group.
      * </p>
      * 
      * @param attributeGroup
-     *        The name or ID of the attribute group that holds the attributes to describe the application.
+     *        The updated information of the attribute group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

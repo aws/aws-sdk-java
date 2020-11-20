@@ -19,10 +19,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the BackupId, BackupState,
- * ClusterId, and CreateTimestamp parameters. Backups that were copied into a destination region additionally contain
- * the CopyTimestamp, SourceBackup, SourceCluster, and SourceRegion paramters. A backup that is pending deletion will
- * include the DeleteTimestamp parameter.
+ * Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the <code>BackupId</code>,
+ * <code>BackupState</code>, <code>ClusterId</code>, and <code>CreateTimestamp</code> parameters. Backups that were
+ * copied into a destination region additionally contain the <code>CopyTimestamp</code>, <code>SourceBackup</code>,
+ * <code>SourceCluster</code>, and <code>SourceRegion</code> parameters. A backup that is pending deletion will include
+ * the <code>DeleteTimestamp</code> parameter.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/Backup" target="_top">AWS API
@@ -61,6 +62,14 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date copyTimestamp;
+    /**
+     * <p>
+     * Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code>
+     * exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention
+     * policy defined at the cluster.
+     * </p>
+     */
+    private Boolean neverExpires;
     /**
      * <p>
      * The AWS Region that contains the source backup from which the new backup was copied.
@@ -309,6 +318,74 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
     public Backup withCopyTimestamp(java.util.Date copyTimestamp) {
         setCopyTimestamp(copyTimestamp);
         return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code>
+     * exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention
+     * policy defined at the cluster.
+     * </p>
+     * 
+     * @param neverExpires
+     *        Specifies whether the service should exempt a backup from the retention policy for the cluster.
+     *        <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies
+     *        the backup retention policy defined at the cluster.
+     */
+
+    public void setNeverExpires(Boolean neverExpires) {
+        this.neverExpires = neverExpires;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code>
+     * exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention
+     * policy defined at the cluster.
+     * </p>
+     * 
+     * @return Specifies whether the service should exempt a backup from the retention policy for the cluster.
+     *         <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service
+     *         applies the backup retention policy defined at the cluster.
+     */
+
+    public Boolean getNeverExpires() {
+        return this.neverExpires;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code>
+     * exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention
+     * policy defined at the cluster.
+     * </p>
+     * 
+     * @param neverExpires
+     *        Specifies whether the service should exempt a backup from the retention policy for the cluster.
+     *        <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies
+     *        the backup retention policy defined at the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Backup withNeverExpires(Boolean neverExpires) {
+        setNeverExpires(neverExpires);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code>
+     * exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention
+     * policy defined at the cluster.
+     * </p>
+     * 
+     * @return Specifies whether the service should exempt a backup from the retention policy for the cluster.
+     *         <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service
+     *         applies the backup retention policy defined at the cluster.
+     */
+
+    public Boolean isNeverExpires() {
+        return this.neverExpires;
     }
 
     /**
@@ -563,6 +640,8 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
             sb.append("CreateTimestamp: ").append(getCreateTimestamp()).append(",");
         if (getCopyTimestamp() != null)
             sb.append("CopyTimestamp: ").append(getCopyTimestamp()).append(",");
+        if (getNeverExpires() != null)
+            sb.append("NeverExpires: ").append(getNeverExpires()).append(",");
         if (getSourceRegion() != null)
             sb.append("SourceRegion: ").append(getSourceRegion()).append(",");
         if (getSourceBackup() != null)
@@ -607,6 +686,10 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCopyTimestamp() != null && other.getCopyTimestamp().equals(this.getCopyTimestamp()) == false)
             return false;
+        if (other.getNeverExpires() == null ^ this.getNeverExpires() == null)
+            return false;
+        if (other.getNeverExpires() != null && other.getNeverExpires().equals(this.getNeverExpires()) == false)
+            return false;
         if (other.getSourceRegion() == null ^ this.getSourceRegion() == null)
             return false;
         if (other.getSourceRegion() != null && other.getSourceRegion().equals(this.getSourceRegion()) == false)
@@ -640,6 +723,7 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getClusterId() == null) ? 0 : getClusterId().hashCode());
         hashCode = prime * hashCode + ((getCreateTimestamp() == null) ? 0 : getCreateTimestamp().hashCode());
         hashCode = prime * hashCode + ((getCopyTimestamp() == null) ? 0 : getCopyTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getNeverExpires() == null) ? 0 : getNeverExpires().hashCode());
         hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode());
         hashCode = prime * hashCode + ((getSourceBackup() == null) ? 0 : getSourceBackup().hashCode());
         hashCode = prime * hashCode + ((getSourceCluster() == null) ? 0 : getSourceCluster().hashCode());

@@ -325,6 +325,54 @@ public interface AWSCloudHSMV2 {
 
     /**
      * <p>
+     * Modifies attributes for AWS CloudHSM backup.
+     * </p>
+     * 
+     * @param modifyBackupAttributesRequest
+     * @return Result of the ModifyBackupAttributes operation returned by the service.
+     * @throws CloudHsmAccessDeniedException
+     *         The request was rejected because the requester does not have permission to perform the requested
+     *         operation.
+     * @throws CloudHsmInternalFailureException
+     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
+     * @throws CloudHsmInvalidRequestException
+     *         The request was rejected because it is not a valid request.
+     * @throws CloudHsmResourceNotFoundException
+     *         The request was rejected because it refers to a resource that cannot be found.
+     * @throws CloudHsmServiceException
+     *         The request was rejected because an error occurred.
+     * @sample AWSCloudHSMV2.ModifyBackupAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ModifyBackupAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ModifyBackupAttributesResult modifyBackupAttributes(ModifyBackupAttributesRequest modifyBackupAttributesRequest);
+
+    /**
+     * <p>
+     * Modifies AWS CloudHSM cluster.
+     * </p>
+     * 
+     * @param modifyClusterRequest
+     * @return Result of the ModifyCluster operation returned by the service.
+     * @throws CloudHsmAccessDeniedException
+     *         The request was rejected because the requester does not have permission to perform the requested
+     *         operation.
+     * @throws CloudHsmInternalFailureException
+     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
+     * @throws CloudHsmInvalidRequestException
+     *         The request was rejected because it is not a valid request.
+     * @throws CloudHsmResourceNotFoundException
+     *         The request was rejected because it refers to a resource that cannot be found.
+     * @throws CloudHsmServiceException
+     *         The request was rejected because an error occurred.
+     * @sample AWSCloudHSMV2.ModifyCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ModifyCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ModifyClusterResult modifyCluster(ModifyClusterRequest modifyClusterRequest);
+
+    /**
+     * <p>
      * Restores a specified AWS CloudHSM backup that is in the <code>PENDING_DELETION</code> state. For mor information
      * on deleting a backup, see <a>DeleteBackup</a>.
      * </p>

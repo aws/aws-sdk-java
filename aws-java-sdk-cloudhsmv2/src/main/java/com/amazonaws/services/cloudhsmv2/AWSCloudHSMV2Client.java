@@ -836,6 +836,137 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
 
     /**
      * <p>
+     * Modifies attributes for AWS CloudHSM backup.
+     * </p>
+     * 
+     * @param modifyBackupAttributesRequest
+     * @return Result of the ModifyBackupAttributes operation returned by the service.
+     * @throws CloudHsmAccessDeniedException
+     *         The request was rejected because the requester does not have permission to perform the requested
+     *         operation.
+     * @throws CloudHsmInternalFailureException
+     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
+     * @throws CloudHsmInvalidRequestException
+     *         The request was rejected because it is not a valid request.
+     * @throws CloudHsmResourceNotFoundException
+     *         The request was rejected because it refers to a resource that cannot be found.
+     * @throws CloudHsmServiceException
+     *         The request was rejected because an error occurred.
+     * @sample AWSCloudHSMV2.ModifyBackupAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ModifyBackupAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ModifyBackupAttributesResult modifyBackupAttributes(ModifyBackupAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyBackupAttributes(request);
+    }
+
+    @SdkInternalApi
+    final ModifyBackupAttributesResult executeModifyBackupAttributes(ModifyBackupAttributesRequest modifyBackupAttributesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyBackupAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyBackupAttributesRequest> request = null;
+        Response<ModifyBackupAttributesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyBackupAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(modifyBackupAttributesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyBackupAttributes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ModifyBackupAttributesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ModifyBackupAttributesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies AWS CloudHSM cluster.
+     * </p>
+     * 
+     * @param modifyClusterRequest
+     * @return Result of the ModifyCluster operation returned by the service.
+     * @throws CloudHsmAccessDeniedException
+     *         The request was rejected because the requester does not have permission to perform the requested
+     *         operation.
+     * @throws CloudHsmInternalFailureException
+     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
+     * @throws CloudHsmInvalidRequestException
+     *         The request was rejected because it is not a valid request.
+     * @throws CloudHsmResourceNotFoundException
+     *         The request was rejected because it refers to a resource that cannot be found.
+     * @throws CloudHsmServiceException
+     *         The request was rejected because an error occurred.
+     * @sample AWSCloudHSMV2.ModifyCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ModifyCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ModifyClusterResult modifyCluster(ModifyClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyCluster(request);
+    }
+
+    @SdkInternalApi
+    final ModifyClusterResult executeModifyCluster(ModifyClusterRequest modifyClusterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyClusterRequest> request = null;
+        Response<ModifyClusterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyClusterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(modifyClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyCluster");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ModifyClusterResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ModifyClusterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Restores a specified AWS CloudHSM backup that is in the <code>PENDING_DELETION</code> state. For mor information
      * on deleting a backup, see <a>DeleteBackup</a>.
      * </p>

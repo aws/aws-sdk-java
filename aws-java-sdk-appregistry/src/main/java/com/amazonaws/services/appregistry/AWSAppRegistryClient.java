@@ -145,8 +145,8 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
     /**
      * <p>
      * Associates an attribute group with an application to augment the application's metadata with the group's
-     * attributes. This way applications can be described with user-defined details which are machine-readable (e.g. for
-     * third-party integrations).
+     * attributes. This feature enables applications to be described with user-defined details that are
+     * machine-readable, such as third-party integrations.
      * </p>
      * 
      * @param associateAttributeGroupRequest
@@ -160,8 +160,8 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
      * @throws ServiceQuotaExceededException
      *         The maximum number of resources per account has been reached.
      * @sample AWSAppRegistry.AssociateAttributeGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/AssociateAttributeGroup" target="_top">AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateAttributeGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public AssociateAttributeGroupResult associateAttributeGroup(AssociateAttributeGroupRequest request) {
@@ -226,8 +226,8 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
      *         There was a conflict when processing the request (for example, a resource with the given name already
      *         exists within the account).
      * @sample AWSAppRegistry.AssociateResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/AssociateResource" target="_top">AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateResource"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public AssociateResourceResult associateResource(AssociateResourceRequest request) {
@@ -287,8 +287,8 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
      * @throws InternalServerException
      *         The service is experiencing internal problems.
      * @sample AWSAppRegistry.CreateApplication
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/CreateApplication" target="_top">AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/CreateApplication"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public CreateApplicationResult createApplication(CreateApplicationRequest request) {
@@ -335,9 +335,9 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
 
     /**
      * <p>
-     * Creates a new attribute group as a container for user-defined attributes. This approach enables users to have
-     * full control over their cloud application's metadata in a rich machine-readable format to facilitate integration
-     * with automated workflows and third-party tools.
+     * Creates a new attribute group as a container for user-defined attributes. This feature enables users to have full
+     * control over their cloud application's metadata in a rich machine-readable format to facilitate integration with
+     * automated workflows and third-party tools.
      * </p>
      * 
      * @param createAttributeGroupRequest
@@ -352,8 +352,8 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
      * @throws InternalServerException
      *         The service is experiencing internal problems.
      * @sample AWSAppRegistry.CreateAttributeGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/CreateAttributeGroup" target="_top">AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/CreateAttributeGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public CreateAttributeGroupResult createAttributeGroup(CreateAttributeGroupRequest request) {
@@ -400,7 +400,8 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
 
     /**
      * <p>
-     * Delete an application, specified either by its application ID or name.
+     * Deletes an application that is specified either by its application ID or name. All associated attribute groups
+     * and resources must be disassociated from it before deleting an application.
      * </p>
      * 
      * @param deleteApplicationRequest
@@ -412,8 +413,8 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
      * @throws InternalServerException
      *         The service is experiencing internal problems.
      * @sample AWSAppRegistry.DeleteApplication
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/DeleteApplication" target="_top">AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DeleteApplication"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DeleteApplicationResult deleteApplication(DeleteApplicationRequest request) {
@@ -472,8 +473,8 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
      * @throws InternalServerException
      *         The service is experiencing internal problems.
      * @sample AWSAppRegistry.DeleteAttributeGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/DeleteAttributeGroup" target="_top">AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DeleteAttributeGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DeleteAttributeGroupResult deleteAttributeGroup(DeleteAttributeGroupRequest request) {
@@ -521,7 +522,7 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
     /**
      * <p>
      * Disassociates an attribute group from an application to remove the extra attributes contained in the attribute
-     * group from the application's metadata. This operation reverts AssociateAttributeGroup.
+     * group from the application's metadata. This operation reverts <code>AssociateAttributeGroup</code>.
      * </p>
      * 
      * @param disassociateAttributeGroupRequest
@@ -533,7 +534,7 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
      * @throws InternalServerException
      *         The service is experiencing internal problems.
      * @sample AWSAppRegistry.DisassociateAttributeGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/DisassociateAttributeGroup"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateAttributeGroup"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -594,8 +595,8 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
      * @throws InternalServerException
      *         The service is experiencing internal problems.
      * @sample AWSAppRegistry.DisassociateResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/DisassociateResource" target="_top">AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateResource"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public DisassociateResourceResult disassociateResource(DisassociateResourceRequest request) {
@@ -645,7 +646,7 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
      * Retrieves metadata information about one of your applications. The application can be specified either by its
      * unique ID or by its name (which is unique within one account in one region at a given point in time). Specify by
      * ID in automated workflows if you want to make sure that the exact same application is returned or a
-     * ResourceNotFoundException is thrown, avoiding the ABA addressing problem.
+     * <code>ResourceNotFoundException</code> is thrown, avoiding the ABA addressing problem.
      * </p>
      * 
      * @param getApplicationRequest
@@ -657,8 +658,8 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
      * @throws InternalServerException
      *         The service is experiencing internal problems.
      * @sample AWSAppRegistry.GetApplication
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/GetApplication" target="_top">AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetApplication"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public GetApplicationResult getApplication(GetApplicationRequest request) {
@@ -705,7 +706,8 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
 
     /**
      * <p>
-     * Retrieves an attribute group, either by its name or its ID.
+     * Retrieves an attribute group, either by its name or its ID. The attribute group can be specified either by its
+     * unique ID or by its name.
      * </p>
      * 
      * @param getAttributeGroupRequest
@@ -717,8 +719,8 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
      * @throws InternalServerException
      *         The service is experiencing internal problems.
      * @sample AWSAppRegistry.GetAttributeGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/GetAttributeGroup" target="_top">AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetAttributeGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public GetAttributeGroupResult getAttributeGroup(GetAttributeGroupRequest request) {
@@ -775,8 +777,8 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
      * @throws InternalServerException
      *         The service is experiencing internal problems.
      * @sample AWSAppRegistry.ListApplications
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ListApplications" target="_top">AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListApplications"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public ListApplicationsResult listApplications(ListApplicationsRequest request) {
@@ -835,7 +837,7 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
      * @throws InternalServerException
      *         The service is experiencing internal problems.
      * @sample AWSAppRegistry.ListAssociatedAttributeGroups
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ListAssociatedAttributeGroups"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAssociatedAttributeGroups"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -897,8 +899,8 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
      * @throws InternalServerException
      *         The service is experiencing internal problems.
      * @sample AWSAppRegistry.ListAssociatedResources
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ListAssociatedResources" target="_top">AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAssociatedResources"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public ListAssociatedResourcesResult listAssociatedResources(ListAssociatedResourcesRequest request) {
@@ -957,8 +959,8 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
      * @throws InternalServerException
      *         The service is experiencing internal problems.
      * @sample AWSAppRegistry.ListAttributeGroups
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ListAttributeGroups" target="_top">AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAttributeGroups"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public ListAttributeGroupsResult listAttributeGroups(ListAttributeGroupsRequest request) {
@@ -1018,8 +1020,8 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
      * @throws InternalServerException
      *         The service is experiencing internal problems.
      * @sample AWSAppRegistry.UpdateApplication
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/UpdateApplication" target="_top">AWS API
-     *      Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UpdateApplication"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public UpdateApplicationResult updateApplication(UpdateApplicationRequest request) {
@@ -1081,8 +1083,8 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
      * @throws InternalServerException
      *         The service is experiencing internal problems.
      * @sample AWSAppRegistry.UpdateAttributeGroup
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/UpdateAttributeGroup" target="_top">AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UpdateAttributeGroup"
+     *      target="_top">AWS API Documentation</a>
      */
     @Override
     public UpdateAttributeGroupResult updateAttributeGroup(UpdateAttributeGroupRequest request) {

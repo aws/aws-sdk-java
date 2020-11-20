@@ -55,6 +55,148 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * Associates an approved origin to an Amazon Connect instance.
+     * </p>
+     * 
+     * @param associateApprovedOriginRequest
+     * @return A Java Future containing the result of the AssociateApprovedOrigin operation returned by the service.
+     * @sample AmazonConnectAsync.AssociateApprovedOrigin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateApprovedOrigin"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateApprovedOriginResult> associateApprovedOriginAsync(AssociateApprovedOriginRequest associateApprovedOriginRequest);
+
+    /**
+     * <p>
+     * Associates an approved origin to an Amazon Connect instance.
+     * </p>
+     * 
+     * @param associateApprovedOriginRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateApprovedOrigin operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.AssociateApprovedOrigin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateApprovedOrigin"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateApprovedOriginResult> associateApprovedOriginAsync(AssociateApprovedOriginRequest associateApprovedOriginRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateApprovedOriginRequest, AssociateApprovedOriginResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associates a storage resource type for the first time. You can only associate one type of storage configuration
+     * in a single call. This means, for example, that you can't define an instance with multiple S3 buckets for storing
+     * chat transcripts.
+     * </p>
+     * <p>
+     * This API does not create a resource that doesn't exist. It only associates it to the instance. Ensure that the
+     * resource being specified in the storage configuration, like an Amazon S3 bucket, exists when being used for
+     * association.
+     * </p>
+     * 
+     * @param associateInstanceStorageConfigRequest
+     * @return A Java Future containing the result of the AssociateInstanceStorageConfig operation returned by the
+     *         service.
+     * @sample AmazonConnectAsync.AssociateInstanceStorageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateInstanceStorageConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateInstanceStorageConfigResult> associateInstanceStorageConfigAsync(
+            AssociateInstanceStorageConfigRequest associateInstanceStorageConfigRequest);
+
+    /**
+     * <p>
+     * Associates a storage resource type for the first time. You can only associate one type of storage configuration
+     * in a single call. This means, for example, that you can't define an instance with multiple S3 buckets for storing
+     * chat transcripts.
+     * </p>
+     * <p>
+     * This API does not create a resource that doesn't exist. It only associates it to the instance. Ensure that the
+     * resource being specified in the storage configuration, like an Amazon S3 bucket, exists when being used for
+     * association.
+     * </p>
+     * 
+     * @param associateInstanceStorageConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateInstanceStorageConfig operation returned by the
+     *         service.
+     * @sample AmazonConnectAsyncHandler.AssociateInstanceStorageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateInstanceStorageConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateInstanceStorageConfigResult> associateInstanceStorageConfigAsync(
+            AssociateInstanceStorageConfigRequest associateInstanceStorageConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateInstanceStorageConfigRequest, AssociateInstanceStorageConfigResult> asyncHandler);
+
+    /**
+     * <p>
+     * Allows the specified Amazon Connect instance to access the specified Lambda function.
+     * </p>
+     * 
+     * @param associateLambdaFunctionRequest
+     * @return A Java Future containing the result of the AssociateLambdaFunction operation returned by the service.
+     * @sample AmazonConnectAsync.AssociateLambdaFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateLambdaFunction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateLambdaFunctionResult> associateLambdaFunctionAsync(AssociateLambdaFunctionRequest associateLambdaFunctionRequest);
+
+    /**
+     * <p>
+     * Allows the specified Amazon Connect instance to access the specified Lambda function.
+     * </p>
+     * 
+     * @param associateLambdaFunctionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateLambdaFunction operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.AssociateLambdaFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateLambdaFunction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateLambdaFunctionResult> associateLambdaFunctionAsync(AssociateLambdaFunctionRequest associateLambdaFunctionRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateLambdaFunctionRequest, AssociateLambdaFunctionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Allows the specified Amazon Connect instance to access the specified Amazon Lex bot.
+     * </p>
+     * 
+     * @param associateLexBotRequest
+     * @return A Java Future containing the result of the AssociateLexBot operation returned by the service.
+     * @sample AmazonConnectAsync.AssociateLexBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateLexBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateLexBotResult> associateLexBotAsync(AssociateLexBotRequest associateLexBotRequest);
+
+    /**
+     * <p>
+     * Allows the specified Amazon Connect instance to access the specified Amazon Lex bot.
+     * </p>
+     * 
+     * @param associateLexBotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateLexBot operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.AssociateLexBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateLexBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateLexBotResult> associateLexBotAsync(AssociateLexBotRequest associateLexBotRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateLexBotRequest, AssociateLexBotResult> asyncHandler);
+
+    /**
+     * <p>
      * Associates a set of queues with a routing profile.
      * </p>
      * 
@@ -87,6 +229,37 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<AssociateRoutingProfileQueuesResult> associateRoutingProfileQueuesAsync(
             AssociateRoutingProfileQueuesRequest associateRoutingProfileQueuesRequest,
             com.amazonaws.handlers.AsyncHandler<AssociateRoutingProfileQueuesRequest, AssociateRoutingProfileQueuesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associates a security key to the instance.
+     * </p>
+     * 
+     * @param associateSecurityKeyRequest
+     * @return A Java Future containing the result of the AssociateSecurityKey operation returned by the service.
+     * @sample AmazonConnectAsync.AssociateSecurityKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateSecurityKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateSecurityKeyResult> associateSecurityKeyAsync(AssociateSecurityKeyRequest associateSecurityKeyRequest);
+
+    /**
+     * <p>
+     * Associates a security key to the instance.
+     * </p>
+     * 
+     * @param associateSecurityKeyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateSecurityKey operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.AssociateSecurityKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateSecurityKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateSecurityKeyResult> associateSecurityKeyAsync(AssociateSecurityKeyRequest associateSecurityKeyRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateSecurityKeyRequest, AssociateSecurityKeyResult> asyncHandler);
 
     /**
      * <p>
@@ -126,6 +299,41 @@ public interface AmazonConnectAsync extends AmazonConnect {
      */
     java.util.concurrent.Future<CreateContactFlowResult> createContactFlowAsync(CreateContactFlowRequest createContactFlowRequest,
             com.amazonaws.handlers.AsyncHandler<CreateContactFlowRequest, CreateContactFlowResult> asyncHandler);
+
+    /**
+     * <p>
+     * Initiates an Amazon Connect instance with all the supported channels enabled. It does not attach any storage
+     * (such as Amazon S3, or Kinesis) or allow for any configurations on features such as Contact Lens for Amazon
+     * Connect.
+     * </p>
+     * 
+     * @param createInstanceRequest
+     * @return A Java Future containing the result of the CreateInstance operation returned by the service.
+     * @sample AmazonConnectAsync.CreateInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateInstanceResult> createInstanceAsync(CreateInstanceRequest createInstanceRequest);
+
+    /**
+     * <p>
+     * Initiates an Amazon Connect instance with all the supported channels enabled. It does not attach any storage
+     * (such as Amazon S3, or Kinesis) or allow for any configurations on features such as Contact Lens for Amazon
+     * Connect.
+     * </p>
+     * 
+     * @param createInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateInstance operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.CreateInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateInstanceResult> createInstanceAsync(CreateInstanceRequest createInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateInstanceRequest, CreateInstanceResult> asyncHandler);
 
     /**
      * <p>
@@ -229,6 +437,37 @@ public interface AmazonConnectAsync extends AmazonConnect {
      */
     java.util.concurrent.Future<CreateUserHierarchyGroupResult> createUserHierarchyGroupAsync(CreateUserHierarchyGroupRequest createUserHierarchyGroupRequest,
             com.amazonaws.handlers.AsyncHandler<CreateUserHierarchyGroupRequest, CreateUserHierarchyGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the Amazon Connect instance.
+     * </p>
+     * 
+     * @param deleteInstanceRequest
+     * @return A Java Future containing the result of the DeleteInstance operation returned by the service.
+     * @sample AmazonConnectAsync.DeleteInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteInstanceResult> deleteInstanceAsync(DeleteInstanceRequest deleteInstanceRequest);
+
+    /**
+     * <p>
+     * Deletes the Amazon Connect instance.
+     * </p>
+     * 
+     * @param deleteInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteInstance operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.DeleteInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteInstanceResult> deleteInstanceAsync(DeleteInstanceRequest deleteInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteInstanceRequest, DeleteInstanceResult> asyncHandler);
 
     /**
      * <p>
@@ -342,6 +581,115 @@ public interface AmazonConnectAsync extends AmazonConnect {
      */
     java.util.concurrent.Future<DescribeContactFlowResult> describeContactFlowAsync(DescribeContactFlowRequest describeContactFlowRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeContactFlowRequest, DescribeContactFlowResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the current state of the specified instance identifier. It tracks the instance while it is being created
+     * and returns an error status if applicable.
+     * </p>
+     * <p>
+     * If an instance is not created successfully, the instance status reason field returns details relevant to the
+     * reason. The instance in a failed state is returned only for 24 hours after the CreateInstance API was invoked.
+     * </p>
+     * 
+     * @param describeInstanceRequest
+     * @return A Java Future containing the result of the DescribeInstance operation returned by the service.
+     * @sample AmazonConnectAsync.DescribeInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInstanceResult> describeInstanceAsync(DescribeInstanceRequest describeInstanceRequest);
+
+    /**
+     * <p>
+     * Returns the current state of the specified instance identifier. It tracks the instance while it is being created
+     * and returns an error status if applicable.
+     * </p>
+     * <p>
+     * If an instance is not created successfully, the instance status reason field returns details relevant to the
+     * reason. The instance in a failed state is returned only for 24 hours after the CreateInstance API was invoked.
+     * </p>
+     * 
+     * @param describeInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeInstance operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.DescribeInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInstanceResult> describeInstanceAsync(DescribeInstanceRequest describeInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeInstanceRequest, DescribeInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the specified instance attribute.
+     * </p>
+     * 
+     * @param describeInstanceAttributeRequest
+     * @return A Java Future containing the result of the DescribeInstanceAttribute operation returned by the service.
+     * @sample AmazonConnectAsync.DescribeInstanceAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstanceAttribute"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInstanceAttributeResult> describeInstanceAttributeAsync(
+            DescribeInstanceAttributeRequest describeInstanceAttributeRequest);
+
+    /**
+     * <p>
+     * Describes the specified instance attribute.
+     * </p>
+     * 
+     * @param describeInstanceAttributeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeInstanceAttribute operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.DescribeInstanceAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstanceAttribute"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInstanceAttributeResult> describeInstanceAttributeAsync(
+            DescribeInstanceAttributeRequest describeInstanceAttributeRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeInstanceAttributeRequest, DescribeInstanceAttributeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the current storage configurations for the specified resource type, association ID, and instance ID.
+     * </p>
+     * 
+     * @param describeInstanceStorageConfigRequest
+     * @return A Java Future containing the result of the DescribeInstanceStorageConfig operation returned by the
+     *         service.
+     * @sample AmazonConnectAsync.DescribeInstanceStorageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstanceStorageConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInstanceStorageConfigResult> describeInstanceStorageConfigAsync(
+            DescribeInstanceStorageConfigRequest describeInstanceStorageConfigRequest);
+
+    /**
+     * <p>
+     * Retrieves the current storage configurations for the specified resource type, association ID, and instance ID.
+     * </p>
+     * 
+     * @param describeInstanceStorageConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeInstanceStorageConfig operation returned by the
+     *         service.
+     * @sample AmazonConnectAsyncHandler.DescribeInstanceStorageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstanceStorageConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInstanceStorageConfigResult> describeInstanceStorageConfigAsync(
+            DescribeInstanceStorageConfigRequest describeInstanceStorageConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeInstanceStorageConfigRequest, DescribeInstanceStorageConfigResult> asyncHandler);
 
     /**
      * <p>
@@ -477,6 +825,138 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * Revokes access to integrated applications from Amazon Connect.
+     * </p>
+     * 
+     * @param disassociateApprovedOriginRequest
+     * @return A Java Future containing the result of the DisassociateApprovedOrigin operation returned by the service.
+     * @sample AmazonConnectAsync.DisassociateApprovedOrigin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateApprovedOrigin"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateApprovedOriginResult> disassociateApprovedOriginAsync(
+            DisassociateApprovedOriginRequest disassociateApprovedOriginRequest);
+
+    /**
+     * <p>
+     * Revokes access to integrated applications from Amazon Connect.
+     * </p>
+     * 
+     * @param disassociateApprovedOriginRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateApprovedOrigin operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.DisassociateApprovedOrigin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateApprovedOrigin"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateApprovedOriginResult> disassociateApprovedOriginAsync(
+            DisassociateApprovedOriginRequest disassociateApprovedOriginRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateApprovedOriginRequest, DisassociateApprovedOriginResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes the storage type configurations for the specified resource type and association ID.
+     * </p>
+     * 
+     * @param disassociateInstanceStorageConfigRequest
+     * @return A Java Future containing the result of the DisassociateInstanceStorageConfig operation returned by the
+     *         service.
+     * @sample AmazonConnectAsync.DisassociateInstanceStorageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateInstanceStorageConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateInstanceStorageConfigResult> disassociateInstanceStorageConfigAsync(
+            DisassociateInstanceStorageConfigRequest disassociateInstanceStorageConfigRequest);
+
+    /**
+     * <p>
+     * Removes the storage type configurations for the specified resource type and association ID.
+     * </p>
+     * 
+     * @param disassociateInstanceStorageConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateInstanceStorageConfig operation returned by the
+     *         service.
+     * @sample AmazonConnectAsyncHandler.DisassociateInstanceStorageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateInstanceStorageConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateInstanceStorageConfigResult> disassociateInstanceStorageConfigAsync(
+            DisassociateInstanceStorageConfigRequest disassociateInstanceStorageConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateInstanceStorageConfigRequest, DisassociateInstanceStorageConfigResult> asyncHandler);
+
+    /**
+     * <p>
+     * Remove the Lambda function from the drop-down options available in the relevant contact flow blocks.
+     * </p>
+     * 
+     * @param disassociateLambdaFunctionRequest
+     * @return A Java Future containing the result of the DisassociateLambdaFunction operation returned by the service.
+     * @sample AmazonConnectAsync.DisassociateLambdaFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLambdaFunction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateLambdaFunctionResult> disassociateLambdaFunctionAsync(
+            DisassociateLambdaFunctionRequest disassociateLambdaFunctionRequest);
+
+    /**
+     * <p>
+     * Remove the Lambda function from the drop-down options available in the relevant contact flow blocks.
+     * </p>
+     * 
+     * @param disassociateLambdaFunctionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateLambdaFunction operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.DisassociateLambdaFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLambdaFunction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateLambdaFunctionResult> disassociateLambdaFunctionAsync(
+            DisassociateLambdaFunctionRequest disassociateLambdaFunctionRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateLambdaFunctionRequest, DisassociateLambdaFunctionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Revokes authorization from the specified instance to access the specified Amazon Lex bot.
+     * </p>
+     * 
+     * @param disassociateLexBotRequest
+     * @return A Java Future containing the result of the DisassociateLexBot operation returned by the service.
+     * @sample AmazonConnectAsync.DisassociateLexBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLexBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateLexBotResult> disassociateLexBotAsync(DisassociateLexBotRequest disassociateLexBotRequest);
+
+    /**
+     * <p>
+     * Revokes authorization from the specified instance to access the specified Amazon Lex bot.
+     * </p>
+     * 
+     * @param disassociateLexBotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateLexBot operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.DisassociateLexBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLexBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateLexBotResult> disassociateLexBotAsync(DisassociateLexBotRequest disassociateLexBotRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateLexBotRequest, DisassociateLexBotResult> asyncHandler);
+
+    /**
+     * <p>
      * Disassociates a set of queues from a routing profile.
      * </p>
      * 
@@ -509,6 +989,37 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<DisassociateRoutingProfileQueuesResult> disassociateRoutingProfileQueuesAsync(
             DisassociateRoutingProfileQueuesRequest disassociateRoutingProfileQueuesRequest,
             com.amazonaws.handlers.AsyncHandler<DisassociateRoutingProfileQueuesRequest, DisassociateRoutingProfileQueuesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified security key.
+     * </p>
+     * 
+     * @param disassociateSecurityKeyRequest
+     * @return A Java Future containing the result of the DisassociateSecurityKey operation returned by the service.
+     * @sample AmazonConnectAsync.DisassociateSecurityKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateSecurityKey"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateSecurityKeyResult> disassociateSecurityKeyAsync(DisassociateSecurityKeyRequest disassociateSecurityKeyRequest);
+
+    /**
+     * <p>
+     * Deletes the specified security key.
+     * </p>
+     * 
+     * @param disassociateSecurityKeyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateSecurityKey operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.DisassociateSecurityKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateSecurityKey"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateSecurityKeyResult> disassociateSecurityKeyAsync(DisassociateSecurityKeyRequest disassociateSecurityKeyRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateSecurityKeyRequest, DisassociateSecurityKeyResult> asyncHandler);
 
     /**
      * <p>
@@ -656,6 +1167,37 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * Returns a paginated list of all approved origins associated with the instance.
+     * </p>
+     * 
+     * @param listApprovedOriginsRequest
+     * @return A Java Future containing the result of the ListApprovedOrigins operation returned by the service.
+     * @sample AmazonConnectAsync.ListApprovedOrigins
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListApprovedOrigins" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListApprovedOriginsResult> listApprovedOriginsAsync(ListApprovedOriginsRequest listApprovedOriginsRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of all approved origins associated with the instance.
+     * </p>
+     * 
+     * @param listApprovedOriginsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListApprovedOrigins operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.ListApprovedOrigins
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListApprovedOrigins" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListApprovedOriginsResult> listApprovedOriginsAsync(ListApprovedOriginsRequest listApprovedOriginsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListApprovedOriginsRequest, ListApprovedOriginsResult> asyncHandler);
+
+    /**
+     * <p>
      * Provides information about the contact flows for the specified Amazon Connect instance.
      * </p>
      * <p>
@@ -743,6 +1285,169 @@ public interface AmazonConnectAsync extends AmazonConnect {
      */
     java.util.concurrent.Future<ListHoursOfOperationsResult> listHoursOfOperationsAsync(ListHoursOfOperationsRequest listHoursOfOperationsRequest,
             com.amazonaws.handlers.AsyncHandler<ListHoursOfOperationsRequest, ListHoursOfOperationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a paginated list of all attribute types for the given instance.
+     * </p>
+     * 
+     * @param listInstanceAttributesRequest
+     * @return A Java Future containing the result of the ListInstanceAttributes operation returned by the service.
+     * @sample AmazonConnectAsync.ListInstanceAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstanceAttributes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListInstanceAttributesResult> listInstanceAttributesAsync(ListInstanceAttributesRequest listInstanceAttributesRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of all attribute types for the given instance.
+     * </p>
+     * 
+     * @param listInstanceAttributesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListInstanceAttributes operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.ListInstanceAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstanceAttributes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListInstanceAttributesResult> listInstanceAttributesAsync(ListInstanceAttributesRequest listInstanceAttributesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListInstanceAttributesRequest, ListInstanceAttributesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a paginated list of storage configs for the identified instance and resource type.
+     * </p>
+     * 
+     * @param listInstanceStorageConfigsRequest
+     * @return A Java Future containing the result of the ListInstanceStorageConfigs operation returned by the service.
+     * @sample AmazonConnectAsync.ListInstanceStorageConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstanceStorageConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListInstanceStorageConfigsResult> listInstanceStorageConfigsAsync(
+            ListInstanceStorageConfigsRequest listInstanceStorageConfigsRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of storage configs for the identified instance and resource type.
+     * </p>
+     * 
+     * @param listInstanceStorageConfigsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListInstanceStorageConfigs operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.ListInstanceStorageConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstanceStorageConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListInstanceStorageConfigsResult> listInstanceStorageConfigsAsync(
+            ListInstanceStorageConfigsRequest listInstanceStorageConfigsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListInstanceStorageConfigsRequest, ListInstanceStorageConfigsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Return a list of instances which are in active state, creation-in-progress state, and failed state. Instances
+     * that aren't successfully created (they are in a failed state) are returned only for 24 hours after the
+     * CreateInstance API was invoked.
+     * </p>
+     * 
+     * @param listInstancesRequest
+     * @return A Java Future containing the result of the ListInstances operation returned by the service.
+     * @sample AmazonConnectAsync.ListInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstances" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListInstancesResult> listInstancesAsync(ListInstancesRequest listInstancesRequest);
+
+    /**
+     * <p>
+     * Return a list of instances which are in active state, creation-in-progress state, and failed state. Instances
+     * that aren't successfully created (they are in a failed state) are returned only for 24 hours after the
+     * CreateInstance API was invoked.
+     * </p>
+     * 
+     * @param listInstancesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListInstances operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.ListInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstances" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListInstancesResult> listInstancesAsync(ListInstancesRequest listInstancesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListInstancesRequest, ListInstancesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a paginated list of all the Lambda functions that show up in the drop-down options in the relevant
+     * contact flow blocks.
+     * </p>
+     * 
+     * @param listLambdaFunctionsRequest
+     * @return A Java Future containing the result of the ListLambdaFunctions operation returned by the service.
+     * @sample AmazonConnectAsync.ListLambdaFunctions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLambdaFunctions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLambdaFunctionsResult> listLambdaFunctionsAsync(ListLambdaFunctionsRequest listLambdaFunctionsRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of all the Lambda functions that show up in the drop-down options in the relevant
+     * contact flow blocks.
+     * </p>
+     * 
+     * @param listLambdaFunctionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLambdaFunctions operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.ListLambdaFunctions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLambdaFunctions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLambdaFunctionsResult> listLambdaFunctionsAsync(ListLambdaFunctionsRequest listLambdaFunctionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLambdaFunctionsRequest, ListLambdaFunctionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a paginated list of all the Amazon Lex bots currently associated with the instance.
+     * </p>
+     * 
+     * @param listLexBotsRequest
+     * @return A Java Future containing the result of the ListLexBots operation returned by the service.
+     * @sample AmazonConnectAsync.ListLexBots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLexBots" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListLexBotsResult> listLexBotsAsync(ListLexBotsRequest listLexBotsRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of all the Amazon Lex bots currently associated with the instance.
+     * </p>
+     * 
+     * @param listLexBotsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLexBots operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.ListLexBots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLexBots" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListLexBotsResult> listLexBotsAsync(ListLexBotsRequest listLexBotsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLexBotsRequest, ListLexBotsResult> asyncHandler);
 
     /**
      * <p>
@@ -930,6 +1635,37 @@ public interface AmazonConnectAsync extends AmazonConnect {
      */
     java.util.concurrent.Future<ListRoutingProfilesResult> listRoutingProfilesAsync(ListRoutingProfilesRequest listRoutingProfilesRequest,
             com.amazonaws.handlers.AsyncHandler<ListRoutingProfilesRequest, ListRoutingProfilesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a paginated list of all security keys associated with the instance.
+     * </p>
+     * 
+     * @param listSecurityKeysRequest
+     * @return A Java Future containing the result of the ListSecurityKeys operation returned by the service.
+     * @sample AmazonConnectAsync.ListSecurityKeys
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityKeys" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListSecurityKeysResult> listSecurityKeysAsync(ListSecurityKeysRequest listSecurityKeysRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of all security keys associated with the instance.
+     * </p>
+     * 
+     * @param listSecurityKeysRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSecurityKeys operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.ListSecurityKeys
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityKeys" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListSecurityKeysResult> listSecurityKeysAsync(ListSecurityKeysRequest listSecurityKeysRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSecurityKeysRequest, ListSecurityKeysResult> asyncHandler);
 
     /**
      * <p>
@@ -1682,6 +2418,70 @@ public interface AmazonConnectAsync extends AmazonConnect {
      */
     java.util.concurrent.Future<UpdateContactFlowNameResult> updateContactFlowNameAsync(UpdateContactFlowNameRequest updateContactFlowNameRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateContactFlowNameRequest, UpdateContactFlowNameResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the value for the specified attribute type.
+     * </p>
+     * 
+     * @param updateInstanceAttributeRequest
+     * @return A Java Future containing the result of the UpdateInstanceAttribute operation returned by the service.
+     * @sample AmazonConnectAsync.UpdateInstanceAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateInstanceAttribute"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateInstanceAttributeResult> updateInstanceAttributeAsync(UpdateInstanceAttributeRequest updateInstanceAttributeRequest);
+
+    /**
+     * <p>
+     * Updates the value for the specified attribute type.
+     * </p>
+     * 
+     * @param updateInstanceAttributeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateInstanceAttribute operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.UpdateInstanceAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateInstanceAttribute"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateInstanceAttributeResult> updateInstanceAttributeAsync(UpdateInstanceAttributeRequest updateInstanceAttributeRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateInstanceAttributeRequest, UpdateInstanceAttributeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an existing configuration for a resource type. This API is idempotent.
+     * </p>
+     * 
+     * @param updateInstanceStorageConfigRequest
+     * @return A Java Future containing the result of the UpdateInstanceStorageConfig operation returned by the service.
+     * @sample AmazonConnectAsync.UpdateInstanceStorageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateInstanceStorageConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateInstanceStorageConfigResult> updateInstanceStorageConfigAsync(
+            UpdateInstanceStorageConfigRequest updateInstanceStorageConfigRequest);
+
+    /**
+     * <p>
+     * Updates an existing configuration for a resource type. This API is idempotent.
+     * </p>
+     * 
+     * @param updateInstanceStorageConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateInstanceStorageConfig operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.UpdateInstanceStorageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateInstanceStorageConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateInstanceStorageConfigResult> updateInstanceStorageConfigAsync(
+            UpdateInstanceStorageConfigRequest updateInstanceStorageConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateInstanceStorageConfigRequest, UpdateInstanceStorageConfigResult> asyncHandler);
 
     /**
      * <p>

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * Specifies whether any account- or bucket-level access errors occurred during the run of a one-time classification job
- * ran or the most recent run of a recurring classification job. Possible values are:
+ * or the most recent run of a recurring classification job. Possible values are:
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

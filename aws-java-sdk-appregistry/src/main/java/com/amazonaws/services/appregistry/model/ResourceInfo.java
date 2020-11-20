@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Information about the resource.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ResourceInfo" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ResourceInfo" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -36,7 +36,7 @@ public class ResourceInfo implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The Amazon resource name (ARN) that specifies the application across services.
+     * The Amazon resource name (ARN) that specifies the resource across services.
      * </p>
      */
     private String arn;
@@ -83,11 +83,11 @@ public class ResourceInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon resource name (ARN) that specifies the application across services.
+     * The Amazon resource name (ARN) that specifies the resource across services.
      * </p>
      * 
      * @param arn
-     *        The Amazon resource name (ARN) that specifies the application across services.
+     *        The Amazon resource name (ARN) that specifies the resource across services.
      */
 
     public void setArn(String arn) {
@@ -96,10 +96,10 @@ public class ResourceInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon resource name (ARN) that specifies the application across services.
+     * The Amazon resource name (ARN) that specifies the resource across services.
      * </p>
      * 
-     * @return The Amazon resource name (ARN) that specifies the application across services.
+     * @return The Amazon resource name (ARN) that specifies the resource across services.
      */
 
     public String getArn() {
@@ -108,11 +108,11 @@ public class ResourceInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon resource name (ARN) that specifies the application across services.
+     * The Amazon resource name (ARN) that specifies the resource across services.
      * </p>
      * 
      * @param arn
-     *        The Amazon resource name (ARN) that specifies the application across services.
+     *        The Amazon resource name (ARN) that specifies the resource across services.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

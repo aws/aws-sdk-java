@@ -17,15 +17,15 @@ import javax.annotation.Generated;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/DisassociateResource" target="_top">AWS API
- *      Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateResource"
+ *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DisassociateResourceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon resource name (ARN) of the application that was augmented with attributes.
+     * The Amazon resource name (ARN) that specifies the application.
      * </p>
      */
     private String applicationArn;
@@ -38,11 +38,11 @@ public class DisassociateResourceResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon resource name (ARN) of the application that was augmented with attributes.
+     * The Amazon resource name (ARN) that specifies the application.
      * </p>
      * 
      * @param applicationArn
-     *        The Amazon resource name (ARN) of the application that was augmented with attributes.
+     *        The Amazon resource name (ARN) that specifies the application.
      */
 
     public void setApplicationArn(String applicationArn) {
@@ -51,10 +51,10 @@ public class DisassociateResourceResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon resource name (ARN) of the application that was augmented with attributes.
+     * The Amazon resource name (ARN) that specifies the application.
      * </p>
      * 
-     * @return The Amazon resource name (ARN) of the application that was augmented with attributes.
+     * @return The Amazon resource name (ARN) that specifies the application.
      */
 
     public String getApplicationArn() {
@@ -63,11 +63,11 @@ public class DisassociateResourceResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon resource name (ARN) of the application that was augmented with attributes.
+     * The Amazon resource name (ARN) that specifies the application.
      * </p>
      * 
      * @param applicationArn
-     *        The Amazon resource name (ARN) of the application that was augmented with attributes.
+     *        The Amazon resource name (ARN) that specifies the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

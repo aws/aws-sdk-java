@@ -19,41 +19,38 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/UpdateApplication" target="_top">AWS API
- *      Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UpdateApplication"
+ *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name or ID of the application. The name must be unique in the region in which you are updating the attribute
-     * group.
+     * The name or ID of the application that will be updated.
      * </p>
      */
     private String application;
     /**
      * <p>
-     * The anme of the application. The name must be unique in the region in which you are creating the application.
+     * The new name of the application. The name must be unique in the region in which you are updating the application.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The description of the application.
+     * The new description of the application.
      * </p>
      */
     private String description;
 
     /**
      * <p>
-     * The name or ID of the application. The name must be unique in the region in which you are updating the attribute
-     * group.
+     * The name or ID of the application that will be updated.
      * </p>
      * 
      * @param application
-     *        The name or ID of the application. The name must be unique in the region in which you are updating the
-     *        attribute group.
+     *        The name or ID of the application that will be updated.
      */
 
     public void setApplication(String application) {
@@ -62,12 +59,10 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name or ID of the application. The name must be unique in the region in which you are updating the attribute
-     * group.
+     * The name or ID of the application that will be updated.
      * </p>
      * 
-     * @return The name or ID of the application. The name must be unique in the region in which you are updating the
-     *         attribute group.
+     * @return The name or ID of the application that will be updated.
      */
 
     public String getApplication() {
@@ -76,13 +71,11 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name or ID of the application. The name must be unique in the region in which you are updating the attribute
-     * group.
+     * The name or ID of the application that will be updated.
      * </p>
      * 
      * @param application
-     *        The name or ID of the application. The name must be unique in the region in which you are updating the
-     *        attribute group.
+     *        The name or ID of the application that will be updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +86,11 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The anme of the application. The name must be unique in the region in which you are creating the application.
+     * The new name of the application. The name must be unique in the region in which you are updating the application.
      * </p>
      * 
      * @param name
-     *        The anme of the application. The name must be unique in the region in which you are creating the
+     *        The new name of the application. The name must be unique in the region in which you are updating the
      *        application.
      */
 
@@ -107,10 +100,10 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The anme of the application. The name must be unique in the region in which you are creating the application.
+     * The new name of the application. The name must be unique in the region in which you are updating the application.
      * </p>
      * 
-     * @return The anme of the application. The name must be unique in the region in which you are creating the
+     * @return The new name of the application. The name must be unique in the region in which you are updating the
      *         application.
      */
 
@@ -120,11 +113,11 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The anme of the application. The name must be unique in the region in which you are creating the application.
+     * The new name of the application. The name must be unique in the region in which you are updating the application.
      * </p>
      * 
      * @param name
-     *        The anme of the application. The name must be unique in the region in which you are creating the
+     *        The new name of the application. The name must be unique in the region in which you are updating the
      *        application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -136,11 +129,11 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The description of the application.
+     * The new description of the application.
      * </p>
      * 
      * @param description
-     *        The description of the application.
+     *        The new description of the application.
      */
 
     public void setDescription(String description) {
@@ -149,10 +142,10 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The description of the application.
+     * The new description of the application.
      * </p>
      * 
-     * @return The description of the application.
+     * @return The new description of the application.
      */
 
     public String getDescription() {
@@ -161,11 +154,11 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The description of the application.
+     * The new description of the application.
      * </p>
      * 
      * @param description
-     *        The description of the application.
+     *        The new description of the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

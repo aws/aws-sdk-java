@@ -158,6 +158,32 @@ public class AbstractAWSCloudHSMV2Async extends AbstractAWSCloudHSMV2 implements
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyBackupAttributesResult> modifyBackupAttributesAsync(ModifyBackupAttributesRequest request) {
+
+        return modifyBackupAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyBackupAttributesResult> modifyBackupAttributesAsync(ModifyBackupAttributesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyBackupAttributesRequest, ModifyBackupAttributesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyClusterResult> modifyClusterAsync(ModifyClusterRequest request) {
+
+        return modifyClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyClusterResult> modifyClusterAsync(ModifyClusterRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyClusterRequest, ModifyClusterResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<RestoreBackupResult> restoreBackupAsync(RestoreBackupRequest request) {
 
         return restoreBackupAsync(request, null);

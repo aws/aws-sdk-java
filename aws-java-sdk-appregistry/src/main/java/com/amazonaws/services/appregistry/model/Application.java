@@ -23,7 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * resource abstractions.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/Application" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/Application" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

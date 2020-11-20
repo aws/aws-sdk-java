@@ -19,8 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/GetAttributeGroup" target="_top">AWS API
- *      Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetAttributeGroup"
+ *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetAttributeGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {

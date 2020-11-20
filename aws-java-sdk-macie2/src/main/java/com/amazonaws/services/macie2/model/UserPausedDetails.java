@@ -20,7 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Provides information about when a classification job was paused and when it will expire and be cancelled if it isn't
- * resumed. This object is present only if a job's current status (jobStatus) is USER_PAUSED.
+ * resumed. This object is present only if a job's current status (jobStatus) is USER_PAUSED. The information in this
+ * object applies only to a job that was paused while it had a status of RUNNING.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UserPausedDetails" target="_top">AWS API

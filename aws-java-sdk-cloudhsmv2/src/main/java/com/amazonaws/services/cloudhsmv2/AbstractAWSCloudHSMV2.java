@@ -78,6 +78,16 @@ public class AbstractAWSCloudHSMV2 implements AWSCloudHSMV2 {
     }
 
     @Override
+    public ModifyBackupAttributesResult modifyBackupAttributes(ModifyBackupAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyClusterResult modifyCluster(ModifyClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RestoreBackupResult restoreBackup(RestoreBackupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

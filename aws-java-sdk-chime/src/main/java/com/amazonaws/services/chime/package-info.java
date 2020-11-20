@@ -44,7 +44,7 @@
  * Command Reference</i>.
  * </p>
  * </dd>
- * <dt>Using REST API</dt>
+ * <dt>Using REST</dt>
  * <dd>
  * <p>
  * If you use REST to make API calls, you must authenticate your request by providing a signature. Amazon Chime supports

@@ -22,8 +22,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Summary of a Service Catalog AppRegistry application.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ApplicationSummary" target="_top">AWS API
- *      Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ApplicationSummary"
+ *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ApplicationSummary implements Serializable, Cloneable, StructuredPojo {

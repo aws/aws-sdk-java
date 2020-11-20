@@ -1,3 +1,44 @@
+# __1.11.906__ __2020-11-20__
+## __AWS App Mesh__
+  - ### Features
+    - This release makes tag value a required attribute of the tag's key-value pair.
+
+## __AWS CloudHSM V2__
+  - ### Features
+    - Added managed backup retention, a feature that enables customers to retain backups for a configurable period after which CloudHSM service will automatically delete them.
+
+## __AWS Service Catalog App Registry__
+  - ### Features
+    - AWS Service Catalog AppRegistry Documentation update
+
+## __Amazon Chime__
+  - ### Features
+    - The Amazon Chime SDK for messaging provides the building blocks needed to build chat and other real-time collaboration features.
+
+## __Amazon CodeGuru Reviewer__
+  - ### Features
+    - This release supports tagging repository association resources in Amazon CodeGuru Reviewer.
+
+## __Amazon Cognito Identity__
+  - ### Features
+    - Added SDK pagination support for ListIdentityPools
+
+## __Amazon Connect Service__
+  - ### Features
+    - This release adds a set of Amazon Connect APIs to programmatically control instance creation, modification, description and deletion.
+
+## __Amazon Macie 2__
+  - ### Features
+    - The Amazon Macie API now provides S3 bucket metadata that indicates whether any one-time or recurring classification jobs are configured to analyze data in a bucket.
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - Add new documentation regarding automatically generated Content-MD5 headers when using the SDK or CLI.
+
+## __Managed Streaming for Kafka__
+  - ### Features
+    - This release adds support for PER TOPIC PER PARTITION monitoring on AWS MSK clusters.
+
 # __1.11.905__ __2020-11-19__
 ## __AWS Cost Explorer Service__
   - ### Features

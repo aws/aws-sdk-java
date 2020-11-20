@@ -34,6 +34,9 @@ public class CreateAttendeeRequestItem implements Serializable, Cloneable, Struc
      * builder application. If you create an attendee with the same external user id, the service returns the existing
      * record.
      * </p>
+     * <p>
+     * The Amazon Chime SDK external user ID. Links the attendee to an identity managed by a builder application.
+     * </p>
      */
     private String externalUserId;
     /**
@@ -49,11 +52,16 @@ public class CreateAttendeeRequestItem implements Serializable, Cloneable, Struc
      * builder application. If you create an attendee with the same external user id, the service returns the existing
      * record.
      * </p>
+     * <p>
+     * The Amazon Chime SDK external user ID. Links the attendee to an identity managed by a builder application.
+     * </p>
      * 
      * @param externalUserId
      *        The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by
      *        a builder application. If you create an attendee with the same external user id, the service returns the
-     *        existing record.
+     *        existing record.</p>
+     *        <p>
+     *        The Amazon Chime SDK external user ID. Links the attendee to an identity managed by a builder application.
      */
 
     public void setExternalUserId(String externalUserId) {
@@ -66,10 +74,16 @@ public class CreateAttendeeRequestItem implements Serializable, Cloneable, Struc
      * builder application. If you create an attendee with the same external user id, the service returns the existing
      * record.
      * </p>
+     * <p>
+     * The Amazon Chime SDK external user ID. Links the attendee to an identity managed by a builder application.
+     * </p>
      * 
      * @return The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by
      *         a builder application. If you create an attendee with the same external user id, the service returns the
-     *         existing record.
+     *         existing record.</p>
+     *         <p>
+     *         The Amazon Chime SDK external user ID. Links the attendee to an identity managed by a builder
+     *         application.
      */
 
     public String getExternalUserId() {
@@ -82,11 +96,16 @@ public class CreateAttendeeRequestItem implements Serializable, Cloneable, Struc
      * builder application. If you create an attendee with the same external user id, the service returns the existing
      * record.
      * </p>
+     * <p>
+     * The Amazon Chime SDK external user ID. Links the attendee to an identity managed by a builder application.
+     * </p>
      * 
      * @param externalUserId
      *        The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by
      *        a builder application. If you create an attendee with the same external user id, the service returns the
-     *        existing record.
+     *        existing record.</p>
+     *        <p>
+     *        The Amazon Chime SDK external user ID. Links the attendee to an identity managed by a builder application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

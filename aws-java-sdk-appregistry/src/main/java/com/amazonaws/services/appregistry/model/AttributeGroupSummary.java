@@ -22,8 +22,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Summary of a Service Catalog AppRegistry attribute group.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/AttributeGroupSummary" target="_top">AWS API
- *      Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AttributeGroupSummary"
+ *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AttributeGroupSummary implements Serializable, Cloneable, StructuredPojo {
@@ -36,7 +36,7 @@ public class AttributeGroupSummary implements Serializable, Cloneable, Structure
     private String id;
     /**
      * <p>
-     * The Amazon resource name (ARN) that specifies the application across services.
+     * The Amazon resource name (ARN) that specifies the attribute group across services.
      * </p>
      */
     private String arn;
@@ -108,11 +108,11 @@ public class AttributeGroupSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon resource name (ARN) that specifies the application across services.
+     * The Amazon resource name (ARN) that specifies the attribute group across services.
      * </p>
      * 
      * @param arn
-     *        The Amazon resource name (ARN) that specifies the application across services.
+     *        The Amazon resource name (ARN) that specifies the attribute group across services.
      */
 
     public void setArn(String arn) {
@@ -121,10 +121,10 @@ public class AttributeGroupSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon resource name (ARN) that specifies the application across services.
+     * The Amazon resource name (ARN) that specifies the attribute group across services.
      * </p>
      * 
-     * @return The Amazon resource name (ARN) that specifies the application across services.
+     * @return The Amazon resource name (ARN) that specifies the attribute group across services.
      */
 
     public String getArn() {
@@ -133,11 +133,11 @@ public class AttributeGroupSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon resource name (ARN) that specifies the application across services.
+     * The Amazon resource name (ARN) that specifies the attribute group across services.
      * </p>
      * 
      * @param arn
-     *        The Amazon resource name (ARN) that specifies the application across services.
+     *        The Amazon resource name (ARN) that specifies the attribute group across services.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

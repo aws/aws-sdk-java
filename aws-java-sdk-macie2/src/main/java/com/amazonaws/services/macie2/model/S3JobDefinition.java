@@ -30,7 +30,8 @@ public class S3JobDefinition implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of objects, one for each bucket that contains objects to analyze.
+     * An array of objects, one for each AWS account that owns buckets to analyze. Each object specifies the account ID
+     * for an account and one or more buckets to analyze for the account.
      * </p>
      */
     private java.util.List<S3BucketDefinitionForJob> bucketDefinitions;
@@ -43,10 +44,12 @@ public class S3JobDefinition implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of objects, one for each bucket that contains objects to analyze.
+     * An array of objects, one for each AWS account that owns buckets to analyze. Each object specifies the account ID
+     * for an account and one or more buckets to analyze for the account.
      * </p>
      * 
-     * @return An array of objects, one for each bucket that contains objects to analyze.
+     * @return An array of objects, one for each AWS account that owns buckets to analyze. Each object specifies the
+     *         account ID for an account and one or more buckets to analyze for the account.
      */
 
     public java.util.List<S3BucketDefinitionForJob> getBucketDefinitions() {
@@ -55,11 +58,13 @@ public class S3JobDefinition implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of objects, one for each bucket that contains objects to analyze.
+     * An array of objects, one for each AWS account that owns buckets to analyze. Each object specifies the account ID
+     * for an account and one or more buckets to analyze for the account.
      * </p>
      * 
      * @param bucketDefinitions
-     *        An array of objects, one for each bucket that contains objects to analyze.
+     *        An array of objects, one for each AWS account that owns buckets to analyze. Each object specifies the
+     *        account ID for an account and one or more buckets to analyze for the account.
      */
 
     public void setBucketDefinitions(java.util.Collection<S3BucketDefinitionForJob> bucketDefinitions) {
@@ -73,7 +78,8 @@ public class S3JobDefinition implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of objects, one for each bucket that contains objects to analyze.
+     * An array of objects, one for each AWS account that owns buckets to analyze. Each object specifies the account ID
+     * for an account and one or more buckets to analyze for the account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +88,8 @@ public class S3JobDefinition implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param bucketDefinitions
-     *        An array of objects, one for each bucket that contains objects to analyze.
+     *        An array of objects, one for each AWS account that owns buckets to analyze. Each object specifies the
+     *        account ID for an account and one or more buckets to analyze for the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +105,13 @@ public class S3JobDefinition implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of objects, one for each bucket that contains objects to analyze.
+     * An array of objects, one for each AWS account that owns buckets to analyze. Each object specifies the account ID
+     * for an account and one or more buckets to analyze for the account.
      * </p>
      * 
      * @param bucketDefinitions
-     *        An array of objects, one for each bucket that contains objects to analyze.
+     *        An array of objects, one for each AWS account that owns buckets to analyze. Each object specifies the
+     *        account ID for an account and one or more buckets to analyze for the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

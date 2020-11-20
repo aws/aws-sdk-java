@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a code review.
+ * Information about a code review. A code review belongs to the associated repository that contains the reviewed code.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/CodeReview" target="_top">AWS API
@@ -126,6 +126,17 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private SourceCodeType sourceCodeType;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     * <code>RepositoryAssociation</code> </a> that contains the reviewed source code. You can retrieve associated
+     * repository ARNs by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>.
+     * </p>
+     */
+    private String associationArn;
     /**
      * <p>
      * The statistics from the code review.
@@ -868,6 +879,76 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     * <code>RepositoryAssociation</code> </a> that contains the reviewed source code. You can retrieve associated
+     * repository ARNs by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>.
+     * </p>
+     * 
+     * @param associationArn
+     *        The Amazon Resource Name (ARN) of the <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     *        <code>RepositoryAssociation</code> </a> that contains the reviewed source code. You can retrieve
+     *        associated repository ARNs by calling <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     *        <code>ListRepositoryAssociations</code> </a>.
+     */
+
+    public void setAssociationArn(String associationArn) {
+        this.associationArn = associationArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     * <code>RepositoryAssociation</code> </a> that contains the reviewed source code. You can retrieve associated
+     * repository ARNs by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the <a
+     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     *         <code>RepositoryAssociation</code> </a> that contains the reviewed source code. You can retrieve
+     *         associated repository ARNs by calling <a
+     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     *         <code>ListRepositoryAssociations</code> </a>.
+     */
+
+    public String getAssociationArn() {
+        return this.associationArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     * <code>RepositoryAssociation</code> </a> that contains the reviewed source code. You can retrieve associated
+     * repository ARNs by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>.
+     * </p>
+     * 
+     * @param associationArn
+     *        The Amazon Resource Name (ARN) of the <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     *        <code>RepositoryAssociation</code> </a> that contains the reviewed source code. You can retrieve
+     *        associated repository ARNs by calling <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     *        <code>ListRepositoryAssociations</code> </a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeReview withAssociationArn(String associationArn) {
+        setAssociationArn(associationArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * The statistics from the code review.
      * </p>
      * 
@@ -942,6 +1023,8 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
             sb.append("PullRequestId: ").append(getPullRequestId()).append(",");
         if (getSourceCodeType() != null)
             sb.append("SourceCodeType: ").append(getSourceCodeType()).append(",");
+        if (getAssociationArn() != null)
+            sb.append("AssociationArn: ").append(getAssociationArn()).append(",");
         if (getMetrics() != null)
             sb.append("Metrics: ").append(getMetrics());
         sb.append("}");
@@ -1006,6 +1089,10 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSourceCodeType() != null && other.getSourceCodeType().equals(this.getSourceCodeType()) == false)
             return false;
+        if (other.getAssociationArn() == null ^ this.getAssociationArn() == null)
+            return false;
+        if (other.getAssociationArn() != null && other.getAssociationArn().equals(this.getAssociationArn()) == false)
+            return false;
         if (other.getMetrics() == null ^ this.getMetrics() == null)
             return false;
         if (other.getMetrics() != null && other.getMetrics().equals(this.getMetrics()) == false)
@@ -1030,6 +1117,7 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getPullRequestId() == null) ? 0 : getPullRequestId().hashCode());
         hashCode = prime * hashCode + ((getSourceCodeType() == null) ? 0 : getSourceCodeType().hashCode());
+        hashCode = prime * hashCode + ((getAssociationArn() == null) ? 0 : getAssociationArn().hashCode());
         hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
         return hashCode;
     }

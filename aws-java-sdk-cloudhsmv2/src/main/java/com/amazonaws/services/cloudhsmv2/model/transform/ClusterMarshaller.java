@@ -31,6 +31,8 @@ public class ClusterMarshaller {
 
     private static final MarshallingInfo<String> BACKUPPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackupPolicy").build();
+    private static final MarshallingInfo<StructuredPojo> BACKUPRETENTIONPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackupRetentionPolicy").build();
     private static final MarshallingInfo<String> CLUSTERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ClusterId").build();
     private static final MarshallingInfo<java.util.Date> CREATETIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -75,6 +77,7 @@ public class ClusterMarshaller {
 
         try {
             protocolMarshaller.marshall(cluster.getBackupPolicy(), BACKUPPOLICY_BINDING);
+            protocolMarshaller.marshall(cluster.getBackupRetentionPolicy(), BACKUPRETENTIONPOLICY_BINDING);
             protocolMarshaller.marshall(cluster.getClusterId(), CLUSTERID_BINDING);
             protocolMarshaller.marshall(cluster.getCreateTimestamp(), CREATETIMESTAMP_BINDING);
             protocolMarshaller.marshall(cluster.getHsms(), HSMS_BINDING);

@@ -51,6 +51,8 @@ public class CodeReviewMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PullRequestId").build();
     private static final MarshallingInfo<StructuredPojo> SOURCECODETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceCodeType").build();
+    private static final MarshallingInfo<String> ASSOCIATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociationArn").build();
     private static final MarshallingInfo<StructuredPojo> METRICS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Metrics").build();
 
@@ -82,6 +84,7 @@ public class CodeReviewMarshaller {
             protocolMarshaller.marshall(codeReview.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(codeReview.getPullRequestId(), PULLREQUESTID_BINDING);
             protocolMarshaller.marshall(codeReview.getSourceCodeType(), SOURCECODETYPE_BINDING);
+            protocolMarshaller.marshall(codeReview.getAssociationArn(), ASSOCIATIONARN_BINDING);
             protocolMarshaller.marshall(codeReview.getMetrics(), METRICS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

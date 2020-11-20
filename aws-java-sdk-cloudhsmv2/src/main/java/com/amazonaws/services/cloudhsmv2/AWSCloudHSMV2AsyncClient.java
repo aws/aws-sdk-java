@@ -405,6 +405,72 @@ public class AWSCloudHSMV2AsyncClient extends AWSCloudHSMV2Client implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyBackupAttributesResult> modifyBackupAttributesAsync(ModifyBackupAttributesRequest request) {
+
+        return modifyBackupAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyBackupAttributesResult> modifyBackupAttributesAsync(final ModifyBackupAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyBackupAttributesRequest, ModifyBackupAttributesResult> asyncHandler) {
+        final ModifyBackupAttributesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyBackupAttributesResult>() {
+            @Override
+            public ModifyBackupAttributesResult call() throws Exception {
+                ModifyBackupAttributesResult result = null;
+
+                try {
+                    result = executeModifyBackupAttributes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyClusterResult> modifyClusterAsync(ModifyClusterRequest request) {
+
+        return modifyClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyClusterResult> modifyClusterAsync(final ModifyClusterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyClusterRequest, ModifyClusterResult> asyncHandler) {
+        final ModifyClusterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyClusterResult>() {
+            @Override
+            public ModifyClusterResult call() throws Exception {
+                ModifyClusterResult result = null;
+
+                try {
+                    result = executeModifyCluster(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<RestoreBackupResult> restoreBackupAsync(RestoreBackupRequest request) {
 
         return restoreBackupAsync(request, null);

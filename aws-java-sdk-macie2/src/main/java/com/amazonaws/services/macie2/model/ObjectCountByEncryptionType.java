@@ -39,13 +39,13 @@ public class ObjectCountByEncryptionType implements Serializable, Cloneable, Str
     /**
      * <p>
      * The total number of objects that are encrypted using an AWS Key Management Service (AWS KMS) customer master key
-     * (CMK). The objects use AWS KMS AWS-managed (AWS-KMS) encryption or AWS KMS customer-managed (SSE-KMS) encryption.
+     * (CMK). The objects use AWS managed AWS KMS (AWS-KMS) encryption or customer managed AWS KMS (SSE-KMS) encryption.
      * </p>
      */
     private Long kmsManaged;
     /**
      * <p>
-     * The total number of objects that are encrypted using an Amazon S3-managed key. The objects use Amazon S3-managed
+     * The total number of objects that are encrypted using an Amazon S3 managed key. The objects use Amazon S3 managed
      * (SSE-S3) encryption.
      * </p>
      */
@@ -106,12 +106,12 @@ public class ObjectCountByEncryptionType implements Serializable, Cloneable, Str
     /**
      * <p>
      * The total number of objects that are encrypted using an AWS Key Management Service (AWS KMS) customer master key
-     * (CMK). The objects use AWS KMS AWS-managed (AWS-KMS) encryption or AWS KMS customer-managed (SSE-KMS) encryption.
+     * (CMK). The objects use AWS managed AWS KMS (AWS-KMS) encryption or customer managed AWS KMS (SSE-KMS) encryption.
      * </p>
      * 
      * @param kmsManaged
      *        The total number of objects that are encrypted using an AWS Key Management Service (AWS KMS) customer
-     *        master key (CMK). The objects use AWS KMS AWS-managed (AWS-KMS) encryption or AWS KMS customer-managed
+     *        master key (CMK). The objects use AWS managed AWS KMS (AWS-KMS) encryption or customer managed AWS KMS
      *        (SSE-KMS) encryption.
      */
 
@@ -122,11 +122,11 @@ public class ObjectCountByEncryptionType implements Serializable, Cloneable, Str
     /**
      * <p>
      * The total number of objects that are encrypted using an AWS Key Management Service (AWS KMS) customer master key
-     * (CMK). The objects use AWS KMS AWS-managed (AWS-KMS) encryption or AWS KMS customer-managed (SSE-KMS) encryption.
+     * (CMK). The objects use AWS managed AWS KMS (AWS-KMS) encryption or customer managed AWS KMS (SSE-KMS) encryption.
      * </p>
      * 
      * @return The total number of objects that are encrypted using an AWS Key Management Service (AWS KMS) customer
-     *         master key (CMK). The objects use AWS KMS AWS-managed (AWS-KMS) encryption or AWS KMS customer-managed
+     *         master key (CMK). The objects use AWS managed AWS KMS (AWS-KMS) encryption or customer managed AWS KMS
      *         (SSE-KMS) encryption.
      */
 
@@ -137,12 +137,12 @@ public class ObjectCountByEncryptionType implements Serializable, Cloneable, Str
     /**
      * <p>
      * The total number of objects that are encrypted using an AWS Key Management Service (AWS KMS) customer master key
-     * (CMK). The objects use AWS KMS AWS-managed (AWS-KMS) encryption or AWS KMS customer-managed (SSE-KMS) encryption.
+     * (CMK). The objects use AWS managed AWS KMS (AWS-KMS) encryption or customer managed AWS KMS (SSE-KMS) encryption.
      * </p>
      * 
      * @param kmsManaged
      *        The total number of objects that are encrypted using an AWS Key Management Service (AWS KMS) customer
-     *        master key (CMK). The objects use AWS KMS AWS-managed (AWS-KMS) encryption or AWS KMS customer-managed
+     *        master key (CMK). The objects use AWS managed AWS KMS (AWS-KMS) encryption or customer managed AWS KMS
      *        (SSE-KMS) encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -154,13 +154,13 @@ public class ObjectCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The total number of objects that are encrypted using an Amazon S3-managed key. The objects use Amazon S3-managed
+     * The total number of objects that are encrypted using an Amazon S3 managed key. The objects use Amazon S3 managed
      * (SSE-S3) encryption.
      * </p>
      * 
      * @param s3Managed
-     *        The total number of objects that are encrypted using an Amazon S3-managed key. The objects use Amazon
-     *        S3-managed (SSE-S3) encryption.
+     *        The total number of objects that are encrypted using an Amazon S3 managed key. The objects use Amazon S3
+     *        managed (SSE-S3) encryption.
      */
 
     public void setS3Managed(Long s3Managed) {
@@ -169,12 +169,12 @@ public class ObjectCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The total number of objects that are encrypted using an Amazon S3-managed key. The objects use Amazon S3-managed
+     * The total number of objects that are encrypted using an Amazon S3 managed key. The objects use Amazon S3 managed
      * (SSE-S3) encryption.
      * </p>
      * 
-     * @return The total number of objects that are encrypted using an Amazon S3-managed key. The objects use Amazon
-     *         S3-managed (SSE-S3) encryption.
+     * @return The total number of objects that are encrypted using an Amazon S3 managed key. The objects use Amazon S3
+     *         managed (SSE-S3) encryption.
      */
 
     public Long getS3Managed() {
@@ -183,13 +183,13 @@ public class ObjectCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The total number of objects that are encrypted using an Amazon S3-managed key. The objects use Amazon S3-managed
+     * The total number of objects that are encrypted using an Amazon S3 managed key. The objects use Amazon S3 managed
      * (SSE-S3) encryption.
      * </p>
      * 
      * @param s3Managed
-     *        The total number of objects that are encrypted using an Amazon S3-managed key. The objects use Amazon
-     *        S3-managed (SSE-S3) encryption.
+     *        The total number of objects that are encrypted using an Amazon S3 managed key. The objects use Amazon S3
+     *        managed (SSE-S3) encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

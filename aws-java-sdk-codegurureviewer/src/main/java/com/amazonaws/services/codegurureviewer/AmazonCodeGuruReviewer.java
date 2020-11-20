@@ -38,6 +38,12 @@ import com.amazonaws.services.codegurureviewer.model.*;
  * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/welcome.html">Amazon CodeGuru Reviewer User
  * Guide</a>.</i>
  * </p>
+ * <p>
+ * To improve the security of your CodeGuru Reviewer API calls, you can establish a private connection between your VPC
+ * and CodeGuru Reviewer by creating an <i>interface VPC endpoint</i>. For more information, see <a
+ * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/vpc-interface-endpoints.html">CodeGuru Reviewer and
+ * interface VPC endpoints (AWS PrivateLink)</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonCodeGuruReviewer {
@@ -99,7 +105,11 @@ public interface AmazonCodeGuruReviewer {
 
     /**
      * <p>
-     * Use to create a code review for a repository analysis.
+     * Use to create a code review with a <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
+     * <code>CodeReviewType</code> </a> of <code>RepositoryAnalysis</code>. This type of code review analyzes all code
+     * under a specified branch in an associated repository. <code>PullRequest</code> code reviews are automatically
+     * triggered by a pull request so cannot be created using this method.
      * </p>
      * 
      * @param createCodeReviewRequest
@@ -322,6 +332,25 @@ public interface AmazonCodeGuruReviewer {
 
     /**
      * <p>
+     * Returns the list of tags associated with an associated repository resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request was not found.
+     * @sample AmazonCodeGuruReviewer.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Stores customer feedback for a CodeGuru Reviewer recommendation. When this API is called again with different
      * reactions the previous feedback is overwritten.
      * </p>
@@ -343,6 +372,44 @@ public interface AmazonCodeGuruReviewer {
      *      target="_top">AWS API Documentation</a>
      */
     PutRecommendationFeedbackResult putRecommendationFeedback(PutRecommendationFeedbackRequest putRecommendationFeedbackRequest);
+
+    /**
+     * <p>
+     * Adds one or more tags to an associated repository.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request was not found.
+     * @sample AmazonCodeGuruReviewer.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/TagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes a tag from an associated repository.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request was not found.
+     * @sample AmazonCodeGuruReviewer.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/UntagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

@@ -23,7 +23,8 @@ public enum RepositoryAssociationState {
     Associated("Associated"),
     Associating("Associating"),
     Failed("Failed"),
-    Disassociating("Disassociating");
+    Disassociating("Disassociating"),
+    Disassociated("Disassociated");
 
     private String value;
 

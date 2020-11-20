@@ -16,8 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The client is permanently forbidden from making the request. For example, when a user tries to create an account from
- * an unsupported Region.
+ * The client is permanently forbidden from making the request.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

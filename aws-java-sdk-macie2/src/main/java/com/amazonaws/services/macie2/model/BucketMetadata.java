@@ -68,6 +68,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     private Long classifiableSizeInBytes;
     /**
      * <p>
+     * Specifies whether any one-time or recurring classification jobs are configured to analyze data in the bucket,
+     * and, if so, the details of the job that ran most recently.
+     * </p>
+     */
+    private JobDetails jobDetails;
+    /**
+     * <p>
      * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved data about the
      * bucket from Amazon S3.
      * </p>
@@ -425,6 +432,52 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     public BucketMetadata withClassifiableSizeInBytes(Long classifiableSizeInBytes) {
         setClassifiableSizeInBytes(classifiableSizeInBytes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether any one-time or recurring classification jobs are configured to analyze data in the bucket,
+     * and, if so, the details of the job that ran most recently.
+     * </p>
+     * 
+     * @param jobDetails
+     *        Specifies whether any one-time or recurring classification jobs are configured to analyze data in the
+     *        bucket, and, if so, the details of the job that ran most recently.
+     */
+
+    public void setJobDetails(JobDetails jobDetails) {
+        this.jobDetails = jobDetails;
+    }
+
+    /**
+     * <p>
+     * Specifies whether any one-time or recurring classification jobs are configured to analyze data in the bucket,
+     * and, if so, the details of the job that ran most recently.
+     * </p>
+     * 
+     * @return Specifies whether any one-time or recurring classification jobs are configured to analyze data in the
+     *         bucket, and, if so, the details of the job that ran most recently.
+     */
+
+    public JobDetails getJobDetails() {
+        return this.jobDetails;
+    }
+
+    /**
+     * <p>
+     * Specifies whether any one-time or recurring classification jobs are configured to analyze data in the bucket,
+     * and, if so, the details of the job that ran most recently.
+     * </p>
+     * 
+     * @param jobDetails
+     *        Specifies whether any one-time or recurring classification jobs are configured to analyze data in the
+     *        bucket, and, if so, the details of the job that ran most recently.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BucketMetadata withJobDetails(JobDetails jobDetails) {
+        setJobDetails(jobDetails);
         return this;
     }
 
@@ -1257,6 +1310,8 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
             sb.append("ClassifiableObjectCount: ").append(getClassifiableObjectCount()).append(",");
         if (getClassifiableSizeInBytes() != null)
             sb.append("ClassifiableSizeInBytes: ").append(getClassifiableSizeInBytes()).append(",");
+        if (getJobDetails() != null)
+            sb.append("JobDetails: ").append(getJobDetails()).append(",");
         if (getLastUpdated() != null)
             sb.append("LastUpdated: ").append(getLastUpdated()).append(",");
         if (getObjectCount() != null)
@@ -1320,6 +1375,10 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
         if (other.getClassifiableSizeInBytes() == null ^ this.getClassifiableSizeInBytes() == null)
             return false;
         if (other.getClassifiableSizeInBytes() != null && other.getClassifiableSizeInBytes().equals(this.getClassifiableSizeInBytes()) == false)
+            return false;
+        if (other.getJobDetails() == null ^ this.getJobDetails() == null)
+            return false;
+        if (other.getJobDetails() != null && other.getJobDetails().equals(this.getJobDetails()) == false)
             return false;
         if (other.getLastUpdated() == null ^ this.getLastUpdated() == null)
             return false;
@@ -1388,6 +1447,7 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getBucketName() == null) ? 0 : getBucketName().hashCode());
         hashCode = prime * hashCode + ((getClassifiableObjectCount() == null) ? 0 : getClassifiableObjectCount().hashCode());
         hashCode = prime * hashCode + ((getClassifiableSizeInBytes() == null) ? 0 : getClassifiableSizeInBytes().hashCode());
+        hashCode = prime * hashCode + ((getJobDetails() == null) ? 0 : getJobDetails().hashCode());
         hashCode = prime * hashCode + ((getLastUpdated() == null) ? 0 : getLastUpdated().hashCode());
         hashCode = prime * hashCode + ((getObjectCount() == null) ? 0 : getObjectCount().hashCode());
         hashCode = prime * hashCode + ((getObjectCountByEncryptionType() == null) ? 0 : getObjectCountByEncryptionType().hashCode());

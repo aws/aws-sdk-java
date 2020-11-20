@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/GetApplication" target="_top">AWS API
- *      Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetApplication" target="_top">AWS
+ *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
@@ -67,7 +67,7 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
     private Integer associatedResourceCount;
     /**
      * <p>
-     * Key-value pairs you can use to associate with the application.
+     * Key-value pairs associated with the application.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -357,10 +357,10 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Key-value pairs you can use to associate with the application.
+     * Key-value pairs associated with the application.
      * </p>
      * 
-     * @return Key-value pairs you can use to associate with the application.
+     * @return Key-value pairs associated with the application.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -369,11 +369,11 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Key-value pairs you can use to associate with the application.
+     * Key-value pairs associated with the application.
      * </p>
      * 
      * @param tags
-     *        Key-value pairs you can use to associate with the application.
+     *        Key-value pairs associated with the application.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -382,11 +382,11 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Key-value pairs you can use to associate with the application.
+     * Key-value pairs associated with the application.
      * </p>
      * 
      * @param tags
-     *        Key-value pairs you can use to associate with the application.
+     *        Key-value pairs associated with the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

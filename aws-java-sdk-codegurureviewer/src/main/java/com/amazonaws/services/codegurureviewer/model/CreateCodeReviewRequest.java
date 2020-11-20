@@ -27,8 +27,7 @@ public class CreateCodeReviewRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the code review. Each code review of the same code review type must have a unique name in your AWS
-     * account.
+     * The name of the code review. The name of each code review in your AWS account must be unique.
      * </p>
      */
     private String name;
@@ -36,8 +35,9 @@ public class CreateCodeReviewRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling
-     * <code>ListRepositories</code>.
+     * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>.
      * </p>
      * <p>
      * A code review can only be created on an associated repository. This is the ARN of the associated repository.
@@ -48,7 +48,8 @@ public class CreateCodeReviewRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The type of code review to create. This is specified using a <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
-     * <code>CodeReviewType</code> </a> object.
+     * <code>CodeReviewType</code> </a> object. You can create a code review only of type
+     * <code>RepositoryAnalysis</code>.
      * </p>
      */
     private CodeReviewType type;
@@ -62,13 +63,11 @@ public class CreateCodeReviewRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the code review. Each code review of the same code review type must have a unique name in your AWS
-     * account.
+     * The name of the code review. The name of each code review in your AWS account must be unique.
      * </p>
      * 
      * @param name
-     *        The name of the code review. Each code review of the same code review type must have a unique name in your
-     *        AWS account.
+     *        The name of the code review. The name of each code review in your AWS account must be unique.
      */
 
     public void setName(String name) {
@@ -77,12 +76,10 @@ public class CreateCodeReviewRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the code review. Each code review of the same code review type must have a unique name in your AWS
-     * account.
+     * The name of the code review. The name of each code review in your AWS account must be unique.
      * </p>
      * 
-     * @return The name of the code review. Each code review of the same code review type must have a unique name in
-     *         your AWS account.
+     * @return The name of the code review. The name of each code review in your AWS account must be unique.
      */
 
     public String getName() {
@@ -91,13 +88,11 @@ public class CreateCodeReviewRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the code review. Each code review of the same code review type must have a unique name in your AWS
-     * account.
+     * The name of the code review. The name of each code review in your AWS account must be unique.
      * </p>
      * 
      * @param name
-     *        The name of the code review. Each code review of the same code review type must have a unique name in your
-     *        AWS account.
+     *        The name of the code review. The name of each code review in your AWS account must be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,8 +105,9 @@ public class CreateCodeReviewRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling
-     * <code>ListRepositories</code>.
+     * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>.
      * </p>
      * <p>
      * A code review can only be created on an associated repository. This is the ARN of the associated repository.
@@ -120,8 +116,9 @@ public class CreateCodeReviewRequest extends com.amazonaws.AmazonWebServiceReque
      * @param repositoryAssociationArn
      *        The Amazon Resource Name (ARN) of the <a
      *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     *        <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling
-     *        <code>ListRepositories</code>. </p>
+     *        <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     *        <code>ListRepositoryAssociations</code> </a>. </p>
      *        <p>
      *        A code review can only be created on an associated repository. This is the ARN of the associated
      *        repository.
@@ -135,8 +132,9 @@ public class CreateCodeReviewRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling
-     * <code>ListRepositories</code>.
+     * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>.
      * </p>
      * <p>
      * A code review can only be created on an associated repository. This is the ARN of the associated repository.
@@ -144,8 +142,9 @@ public class CreateCodeReviewRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @return The Amazon Resource Name (ARN) of the <a
      *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     *         <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling
-     *         <code>ListRepositories</code>. </p>
+     *         <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a
+     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     *         <code>ListRepositoryAssociations</code> </a>. </p>
      *         <p>
      *         A code review can only be created on an associated repository. This is the ARN of the associated
      *         repository.
@@ -159,8 +158,9 @@ public class CreateCodeReviewRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling
-     * <code>ListRepositories</code>.
+     * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>.
      * </p>
      * <p>
      * A code review can only be created on an associated repository. This is the ARN of the associated repository.
@@ -169,8 +169,9 @@ public class CreateCodeReviewRequest extends com.amazonaws.AmazonWebServiceReque
      * @param repositoryAssociationArn
      *        The Amazon Resource Name (ARN) of the <a
      *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     *        <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling
-     *        <code>ListRepositories</code>. </p>
+     *        <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     *        <code>ListRepositoryAssociations</code> </a>. </p>
      *        <p>
      *        A code review can only be created on an associated repository. This is the ARN of the associated
      *        repository.
@@ -186,13 +187,15 @@ public class CreateCodeReviewRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The type of code review to create. This is specified using a <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
-     * <code>CodeReviewType</code> </a> object.
+     * <code>CodeReviewType</code> </a> object. You can create a code review only of type
+     * <code>RepositoryAnalysis</code>.
      * </p>
      * 
      * @param type
      *        The type of code review to create. This is specified using a <a
      *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
-     *        <code>CodeReviewType</code> </a> object.
+     *        <code>CodeReviewType</code> </a> object. You can create a code review only of type
+     *        <code>RepositoryAnalysis</code>.
      */
 
     public void setType(CodeReviewType type) {
@@ -203,12 +206,14 @@ public class CreateCodeReviewRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The type of code review to create. This is specified using a <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
-     * <code>CodeReviewType</code> </a> object.
+     * <code>CodeReviewType</code> </a> object. You can create a code review only of type
+     * <code>RepositoryAnalysis</code>.
      * </p>
      * 
      * @return The type of code review to create. This is specified using a <a
      *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
-     *         <code>CodeReviewType</code> </a> object.
+     *         <code>CodeReviewType</code> </a> object. You can create a code review only of type
+     *         <code>RepositoryAnalysis</code>.
      */
 
     public CodeReviewType getType() {
@@ -219,13 +224,15 @@ public class CreateCodeReviewRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The type of code review to create. This is specified using a <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
-     * <code>CodeReviewType</code> </a> object.
+     * <code>CodeReviewType</code> </a> object. You can create a code review only of type
+     * <code>RepositoryAnalysis</code>.
      * </p>
      * 
      * @param type
      *        The type of code review to create. This is specified using a <a
      *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
-     *        <code>CodeReviewType</code> </a> object.
+     *        <code>CodeReviewType</code> </a> object. You can create a code review only of type
+     *        <code>RepositoryAnalysis</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

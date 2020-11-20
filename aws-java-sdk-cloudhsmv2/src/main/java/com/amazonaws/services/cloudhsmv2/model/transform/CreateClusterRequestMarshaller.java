@@ -28,12 +28,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateClusterRequestMarshaller {
 
-    private static final MarshallingInfo<List> SUBNETIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("SubnetIds").build();
+    private static final MarshallingInfo<StructuredPojo> BACKUPRETENTIONPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackupRetentionPolicy").build();
     private static final MarshallingInfo<String> HSMTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("HsmType").build();
     private static final MarshallingInfo<String> SOURCEBACKUPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceBackupId").build();
+    private static final MarshallingInfo<List> SUBNETIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SubnetIds").build();
     private static final MarshallingInfo<List> TAGLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TagList").build();
 
@@ -53,9 +55,10 @@ public class CreateClusterRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(createClusterRequest.getSubnetIds(), SUBNETIDS_BINDING);
+            protocolMarshaller.marshall(createClusterRequest.getBackupRetentionPolicy(), BACKUPRETENTIONPOLICY_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getHsmType(), HSMTYPE_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getSourceBackupId(), SOURCEBACKUPID_BINDING);
+            protocolMarshaller.marshall(createClusterRequest.getSubnetIds(), SUBNETIDS_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getTagList(), TAGLIST_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

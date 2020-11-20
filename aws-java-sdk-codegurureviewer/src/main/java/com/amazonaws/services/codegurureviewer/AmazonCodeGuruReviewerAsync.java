@@ -37,6 +37,12 @@ import com.amazonaws.services.codegurureviewer.model.*;
  * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/welcome.html">Amazon CodeGuru Reviewer User
  * Guide</a>.</i>
  * </p>
+ * <p>
+ * To improve the security of your CodeGuru Reviewer API calls, you can establish a private connection between your VPC
+ * and CodeGuru Reviewer by creating an <i>interface VPC endpoint</i>. For more information, see <a
+ * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/vpc-interface-endpoints.html">CodeGuru Reviewer and
+ * interface VPC endpoints (AWS PrivateLink)</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonCodeGuruReviewerAsync extends AmazonCodeGuruReviewer {
@@ -120,7 +126,11 @@ public interface AmazonCodeGuruReviewerAsync extends AmazonCodeGuruReviewer {
 
     /**
      * <p>
-     * Use to create a code review for a repository analysis.
+     * Use to create a code review with a <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
+     * <code>CodeReviewType</code> </a> of <code>RepositoryAnalysis</code>. This type of code review analyzes all code
+     * under a specified branch in an associated repository. <code>PullRequest</code> code reviews are automatically
+     * triggered by a pull request so cannot be created using this method.
      * </p>
      * 
      * @param createCodeReviewRequest
@@ -133,7 +143,11 @@ public interface AmazonCodeGuruReviewerAsync extends AmazonCodeGuruReviewer {
 
     /**
      * <p>
-     * Use to create a code review for a repository analysis.
+     * Use to create a code review with a <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
+     * <code>CodeReviewType</code> </a> of <code>RepositoryAnalysis</code>. This type of code review analyzes all code
+     * under a specified branch in an associated repository. <code>PullRequest</code> code reviews are automatically
+     * triggered by a pull request so cannot be created using this method.
      * </p>
      * 
      * @param createCodeReviewRequest
@@ -443,6 +457,37 @@ public interface AmazonCodeGuruReviewerAsync extends AmazonCodeGuruReviewer {
 
     /**
      * <p>
+     * Returns the list of tags associated with an associated repository resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonCodeGuruReviewerAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Returns the list of tags associated with an associated repository resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonCodeGuruReviewerAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Stores customer feedback for a CodeGuru Reviewer recommendation. When this API is called again with different
      * reactions the previous feedback is overwritten.
      * </p>
@@ -475,5 +520,67 @@ public interface AmazonCodeGuruReviewerAsync extends AmazonCodeGuruReviewer {
     java.util.concurrent.Future<PutRecommendationFeedbackResult> putRecommendationFeedbackAsync(
             PutRecommendationFeedbackRequest putRecommendationFeedbackRequest,
             com.amazonaws.handlers.AsyncHandler<PutRecommendationFeedbackRequest, PutRecommendationFeedbackResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds one or more tags to an associated repository.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonCodeGuruReviewerAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/TagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Adds one or more tags to an associated repository.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonCodeGuruReviewerAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/TagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes a tag from an associated repository.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonCodeGuruReviewerAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/UntagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes a tag from an associated repository.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonCodeGuruReviewerAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/UntagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
 }

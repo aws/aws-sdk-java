@@ -72,6 +72,10 @@ public class BucketMetadataJsonUnmarshaller implements Unmarshaller<BucketMetada
                     context.nextToken();
                     bucketMetadata.setClassifiableSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("jobDetails", targetDepth)) {
+                    context.nextToken();
+                    bucketMetadata.setJobDetails(JobDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("lastUpdated", targetDepth)) {
                     context.nextToken();
                     bucketMetadata.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));

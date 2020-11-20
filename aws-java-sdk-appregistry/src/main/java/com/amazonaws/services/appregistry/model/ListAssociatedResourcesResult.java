@@ -17,15 +17,15 @@ import javax.annotation.Generated;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ListAssociatedResources" target="_top">AWS API
- *      Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAssociatedResources"
+ *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListAssociatedResourcesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name or ID of the resource of which the application will be associated.
+     * Information about the resources.
      * </p>
      */
     private java.util.List<ResourceInfo> resources;
@@ -38,10 +38,10 @@ public class ListAssociatedResourcesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name or ID of the resource of which the application will be associated.
+     * Information about the resources.
      * </p>
      * 
-     * @return The name or ID of the resource of which the application will be associated.
+     * @return Information about the resources.
      */
 
     public java.util.List<ResourceInfo> getResources() {
@@ -50,11 +50,11 @@ public class ListAssociatedResourcesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name or ID of the resource of which the application will be associated.
+     * Information about the resources.
      * </p>
      * 
      * @param resources
-     *        The name or ID of the resource of which the application will be associated.
+     *        Information about the resources.
      */
 
     public void setResources(java.util.Collection<ResourceInfo> resources) {
@@ -68,7 +68,7 @@ public class ListAssociatedResourcesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name or ID of the resource of which the application will be associated.
+     * Information about the resources.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListAssociatedResourcesResult extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param resources
-     *        The name or ID of the resource of which the application will be associated.
+     *        Information about the resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListAssociatedResourcesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name or ID of the resource of which the application will be associated.
+     * Information about the resources.
      * </p>
      * 
      * @param resources
-     *        The name or ID of the resource of which the application will be associated.
+     *        Information about the resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

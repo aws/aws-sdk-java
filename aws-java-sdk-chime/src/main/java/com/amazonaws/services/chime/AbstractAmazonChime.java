@@ -89,12 +89,47 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public CreateAppInstanceResult createAppInstance(CreateAppInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateAppInstanceAdminResult createAppInstanceAdmin(CreateAppInstanceAdminRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateAppInstanceUserResult createAppInstanceUser(CreateAppInstanceUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateAttendeeResult createAttendee(CreateAttendeeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public CreateBotResult createBot(CreateBotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateChannelResult createChannel(CreateChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateChannelBanResult createChannelBan(CreateChannelBanRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateChannelMembershipResult createChannelMembership(CreateChannelMembershipRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateChannelModeratorResult createChannelModerator(CreateChannelModeratorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -169,7 +204,52 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public DeleteAppInstanceResult deleteAppInstance(DeleteAppInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAppInstanceAdminResult deleteAppInstanceAdmin(DeleteAppInstanceAdminRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAppInstanceStreamingConfigurationsResult deleteAppInstanceStreamingConfigurations(DeleteAppInstanceStreamingConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAppInstanceUserResult deleteAppInstanceUser(DeleteAppInstanceUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteAttendeeResult deleteAttendee(DeleteAttendeeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteChannelResult deleteChannel(DeleteChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteChannelBanResult deleteChannelBan(DeleteChannelBanRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteChannelMembershipResult deleteChannelMembership(DeleteChannelMembershipRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteChannelMessageResult deleteChannelMessage(DeleteChannelMessageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteChannelModeratorResult deleteChannelModerator(DeleteChannelModeratorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -255,6 +335,52 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public DescribeAppInstanceResult describeAppInstance(DescribeAppInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAppInstanceAdminResult describeAppInstanceAdmin(DescribeAppInstanceAdminRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAppInstanceUserResult describeAppInstanceUser(DescribeAppInstanceUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeChannelResult describeChannel(DescribeChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeChannelBanResult describeChannelBan(DescribeChannelBanRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeChannelMembershipResult describeChannelMembership(DescribeChannelMembershipRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeChannelMembershipForAppInstanceUserResult describeChannelMembershipForAppInstanceUser(
+            DescribeChannelMembershipForAppInstanceUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeChannelModeratedByAppInstanceUserResult describeChannelModeratedByAppInstanceUser(DescribeChannelModeratedByAppInstanceUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeChannelModeratorResult describeChannelModerator(DescribeChannelModeratorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisassociatePhoneNumberFromUserResult disassociatePhoneNumberFromUser(DisassociatePhoneNumberFromUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -287,12 +413,27 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public GetAppInstanceRetentionSettingsResult getAppInstanceRetentionSettings(GetAppInstanceRetentionSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAppInstanceStreamingConfigurationsResult getAppInstanceStreamingConfigurations(GetAppInstanceStreamingConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetAttendeeResult getAttendee(GetAttendeeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetBotResult getBot(GetBotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetChannelMessageResult getChannelMessage(GetChannelMessageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -308,6 +449,11 @@ public class AbstractAmazonChime implements AmazonChime {
 
     @Override
     public GetMeetingResult getMeeting(GetMeetingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetMessagingSessionEndpointResult getMessagingSessionEndpoint(GetMessagingSessionEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -423,6 +569,21 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public ListAppInstanceAdminsResult listAppInstanceAdmins(ListAppInstanceAdminsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAppInstanceUsersResult listAppInstanceUsers(ListAppInstanceUsersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAppInstancesResult listAppInstances(ListAppInstancesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListAttendeeTagsResult listAttendeeTags(ListAttendeeTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -434,6 +595,41 @@ public class AbstractAmazonChime implements AmazonChime {
 
     @Override
     public ListBotsResult listBots(ListBotsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListChannelBansResult listChannelBans(ListChannelBansRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListChannelMembershipsResult listChannelMemberships(ListChannelMembershipsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListChannelMembershipsForAppInstanceUserResult listChannelMembershipsForAppInstanceUser(ListChannelMembershipsForAppInstanceUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListChannelMessagesResult listChannelMessages(ListChannelMessagesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListChannelModeratorsResult listChannelModerators(ListChannelModeratorsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListChannelsResult listChannels(ListChannelsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListChannelsModeratedByAppInstanceUserResult listChannelsModeratedByAppInstanceUser(ListChannelsModeratedByAppInstanceUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -513,6 +709,16 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public PutAppInstanceRetentionSettingsResult putAppInstanceRetentionSettings(PutAppInstanceRetentionSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutAppInstanceStreamingConfigurationsResult putAppInstanceStreamingConfigurations(PutAppInstanceStreamingConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutEventsConfigurationResult putEventsConfiguration(PutEventsConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -564,6 +770,11 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public RedactChannelMessageResult redactChannelMessage(RedactChannelMessageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RedactConversationMessageResult redactConversationMessage(RedactConversationMessageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -590,6 +801,11 @@ public class AbstractAmazonChime implements AmazonChime {
 
     @Override
     public SearchAvailablePhoneNumbersResult searchAvailablePhoneNumbers(SearchAvailablePhoneNumbersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SendChannelMessageResult sendChannelMessage(SendChannelMessageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -634,7 +850,32 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public UpdateAppInstanceResult updateAppInstance(UpdateAppInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAppInstanceUserResult updateAppInstanceUser(UpdateAppInstanceUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateBotResult updateBot(UpdateBotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateChannelResult updateChannel(UpdateChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateChannelMessageResult updateChannelMessage(UpdateChannelMessageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateChannelReadMarkerResult updateChannelReadMarker(UpdateChannelReadMarkerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

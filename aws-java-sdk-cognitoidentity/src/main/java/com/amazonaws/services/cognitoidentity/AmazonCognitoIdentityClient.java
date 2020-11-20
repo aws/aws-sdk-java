@@ -766,7 +766,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
             HttpResponseHandler<AmazonWebServiceResponse<GetCredentialsForIdentityResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetCredentialsForIdentityResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
+            response = anonymousInvoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -840,7 +840,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
 
             HttpResponseHandler<AmazonWebServiceResponse<GetIdResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetIdResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
+            response = anonymousInvoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -986,7 +986,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
 
             HttpResponseHandler<AmazonWebServiceResponse<GetOpenIdTokenResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetOpenIdTokenResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
+            response = anonymousInvoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -1744,7 +1744,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
 
             HttpResponseHandler<AmazonWebServiceResponse<UnlinkIdentityResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UnlinkIdentityResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
+            response = anonymousInvoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 

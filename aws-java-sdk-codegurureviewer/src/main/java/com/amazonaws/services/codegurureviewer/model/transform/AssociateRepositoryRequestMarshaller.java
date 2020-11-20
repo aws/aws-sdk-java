@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.codegurureviewer.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -34,6 +36,8 @@ public class AssociateRepositoryRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientRequestToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final AssociateRepositoryRequestMarshaller instance = new AssociateRepositoryRequestMarshaller();
 
@@ -53,6 +57,7 @@ public class AssociateRepositoryRequestMarshaller {
         try {
             protocolMarshaller.marshall(associateRepositoryRequest.getRepository(), REPOSITORY_BINDING);
             protocolMarshaller.marshall(associateRepositoryRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
+            protocolMarshaller.marshall(associateRepositoryRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

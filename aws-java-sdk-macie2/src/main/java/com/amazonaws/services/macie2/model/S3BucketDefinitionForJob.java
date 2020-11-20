@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies which S3 buckets contain the objects that a classification job analyzes.
+ * Specifies which AWS account owns the S3 buckets that a classification job analyzes, and the buckets to analyze for
+ * the account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/S3BucketDefinitionForJob" target="_top">AWS
@@ -30,8 +31,9 @@ public class S3BucketDefinitionForJob implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The unique identifier for the AWS account that owns one or more of the buckets. If specified, the job analyzes
-     * objects in all the buckets that are owned by the account and meet other conditions specified for the job.
+     * The unique identifier for the AWS account that owns the buckets. If you specify this value and don't specify a
+     * value for the buckets array, the job analyzes objects in all the buckets that are owned by the account and meet
+     * other conditions specified for the job.
      * </p>
      */
     private String accountId;
@@ -44,14 +46,15 @@ public class S3BucketDefinitionForJob implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The unique identifier for the AWS account that owns one or more of the buckets. If specified, the job analyzes
-     * objects in all the buckets that are owned by the account and meet other conditions specified for the job.
+     * The unique identifier for the AWS account that owns the buckets. If you specify this value and don't specify a
+     * value for the buckets array, the job analyzes objects in all the buckets that are owned by the account and meet
+     * other conditions specified for the job.
      * </p>
      * 
      * @param accountId
-     *        The unique identifier for the AWS account that owns one or more of the buckets. If specified, the job
-     *        analyzes objects in all the buckets that are owned by the account and meet other conditions specified for
-     *        the job.
+     *        The unique identifier for the AWS account that owns the buckets. If you specify this value and don't
+     *        specify a value for the buckets array, the job analyzes objects in all the buckets that are owned by the
+     *        account and meet other conditions specified for the job.
      */
 
     public void setAccountId(String accountId) {
@@ -60,13 +63,14 @@ public class S3BucketDefinitionForJob implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The unique identifier for the AWS account that owns one or more of the buckets. If specified, the job analyzes
-     * objects in all the buckets that are owned by the account and meet other conditions specified for the job.
+     * The unique identifier for the AWS account that owns the buckets. If you specify this value and don't specify a
+     * value for the buckets array, the job analyzes objects in all the buckets that are owned by the account and meet
+     * other conditions specified for the job.
      * </p>
      * 
-     * @return The unique identifier for the AWS account that owns one or more of the buckets. If specified, the job
-     *         analyzes objects in all the buckets that are owned by the account and meet other conditions specified for
-     *         the job.
+     * @return The unique identifier for the AWS account that owns the buckets. If you specify this value and don't
+     *         specify a value for the buckets array, the job analyzes objects in all the buckets that are owned by the
+     *         account and meet other conditions specified for the job.
      */
 
     public String getAccountId() {
@@ -75,14 +79,15 @@ public class S3BucketDefinitionForJob implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The unique identifier for the AWS account that owns one or more of the buckets. If specified, the job analyzes
-     * objects in all the buckets that are owned by the account and meet other conditions specified for the job.
+     * The unique identifier for the AWS account that owns the buckets. If you specify this value and don't specify a
+     * value for the buckets array, the job analyzes objects in all the buckets that are owned by the account and meet
+     * other conditions specified for the job.
      * </p>
      * 
      * @param accountId
-     *        The unique identifier for the AWS account that owns one or more of the buckets. If specified, the job
-     *        analyzes objects in all the buckets that are owned by the account and meet other conditions specified for
-     *        the job.
+     *        The unique identifier for the AWS account that owns the buckets. If you specify this value and don't
+     *        specify a value for the buckets array, the job analyzes objects in all the buckets that are owned by the
+     *        account and meet other conditions specified for the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

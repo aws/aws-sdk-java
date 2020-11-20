@@ -19,8 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/CreateApplication" target="_top">AWS API
- *      Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/CreateApplication"
+ *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
@@ -45,8 +45,10 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the clientToken,
-     * the same response is returned for each repeated request.
+     * A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully
+     * using the same client token and the same parameters, the retry succeeds without performing any further actions.
+     * If you retry a successful request using the same client token, but one or more of the parameters are different,
+     * the retry fails.
      * </p>
      */
     private String clientToken;
@@ -204,13 +206,17 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the clientToken,
-     * the same response is returned for each repeated request.
+     * A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully
+     * using the same client token and the same parameters, the retry succeeds without performing any further actions.
+     * If you retry a successful request using the same client token, but one or more of the parameters are different,
+     * the retry fails.
      * </p>
      * 
      * @param clientToken
-     *        A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the
-     *        clientToken, the same response is returned for each repeated request.
+     *        A unique identifier that you provide to ensure idempotency. If you retry a request that completed
+     *        successfully using the same client token and the same parameters, the retry succeeds without performing
+     *        any further actions. If you retry a successful request using the same client token, but one or more of the
+     *        parameters are different, the retry fails.
      */
 
     public void setClientToken(String clientToken) {
@@ -219,12 +225,16 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the clientToken,
-     * the same response is returned for each repeated request.
+     * A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully
+     * using the same client token and the same parameters, the retry succeeds without performing any further actions.
+     * If you retry a successful request using the same client token, but one or more of the parameters are different,
+     * the retry fails.
      * </p>
      * 
-     * @return A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the
-     *         clientToken, the same response is returned for each repeated request.
+     * @return A unique identifier that you provide to ensure idempotency. If you retry a request that completed
+     *         successfully using the same client token and the same parameters, the retry succeeds without performing
+     *         any further actions. If you retry a successful request using the same client token, but one or more of
+     *         the parameters are different, the retry fails.
      */
 
     public String getClientToken() {
@@ -233,13 +243,17 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the clientToken,
-     * the same response is returned for each repeated request.
+     * A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully
+     * using the same client token and the same parameters, the retry succeeds without performing any further actions.
+     * If you retry a successful request using the same client token, but one or more of the parameters are different,
+     * the retry fails.
      * </p>
      * 
      * @param clientToken
-     *        A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the
-     *        clientToken, the same response is returned for each repeated request.
+     *        A unique identifier that you provide to ensure idempotency. If you retry a request that completed
+     *        successfully using the same client token and the same parameters, the retry succeeds without performing
+     *        any further actions. If you retry a successful request using the same client token, but one or more of the
+     *        parameters are different, the retry fails.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

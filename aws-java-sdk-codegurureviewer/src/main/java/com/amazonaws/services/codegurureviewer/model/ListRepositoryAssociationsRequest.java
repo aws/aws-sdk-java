@@ -78,6 +78,15 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
      * access.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     * association with this repository if you want to review source code in it later. You can control access to code
+     * reviews created in an associated repository with tags after it has been disassociated. For more information, see
+     * <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
+     * </p>
+     * </li>
      * </ul>
      */
     private java.util.List<String> states;
@@ -267,6 +276,15 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
      * access.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     * association with this repository if you want to review source code in it later. You can control access to code
+     * reviews created in an associated repository with tags after it has been disassociated. For more information, see
+     * <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return List of repository association states to use as a filter.</p>
@@ -314,6 +332,17 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
      *         <p>
      *         <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
      *         source code access.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     *         association with this repository if you want to review source code in it later. You can control access to
+     *         code reviews created in an associated repository with tags after it has been disassociated. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html"
+     *         >Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User
+     *         Guide</i>.
      *         </p>
      *         </li>
      * @see RepositoryAssociationState
@@ -370,6 +399,15 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
      * access.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     * association with this repository if you want to review source code in it later. You can control access to code
+     * reviews created in an associated repository with tags after it has been disassociated. For more information, see
+     * <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param states
@@ -417,6 +455,17 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
      *        <p>
      *        <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
      *        source code access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     *        association with this repository if you want to review source code in it later. You can control access to
+     *        code reviews created in an associated repository with tags after it has been disassociated. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html"
+     *        >Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User
+     *        Guide</i>.
      *        </p>
      *        </li>
      * @see RepositoryAssociationState
@@ -478,6 +527,15 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
      * access.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     * association with this repository if you want to review source code in it later. You can control access to code
+     * reviews created in an associated repository with tags after it has been disassociated. For more information, see
+     * <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -530,6 +588,17 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
      *        <p>
      *        <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
      *        source code access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     *        association with this repository if you want to review source code in it later. You can control access to
+     *        code reviews created in an associated repository with tags after it has been disassociated. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html"
+     *        >Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User
+     *        Guide</i>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -593,6 +662,15 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
      * access.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     * association with this repository if you want to review source code in it later. You can control access to code
+     * reviews created in an associated repository with tags after it has been disassociated. For more information, see
+     * <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param states
@@ -640,6 +718,17 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
      *        <p>
      *        <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
      *        source code access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     *        association with this repository if you want to review source code in it later. You can control access to
+     *        code reviews created in an associated repository with tags after it has been disassociated. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html"
+     *        >Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User
+     *        Guide</i>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -698,6 +787,15 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
      * access.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     * association with this repository if you want to review source code in it later. You can control access to code
+     * reviews created in an associated repository with tags after it has been disassociated. For more information, see
+     * <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param states
@@ -745,6 +843,17 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
      *        <p>
      *        <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
      *        source code access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     *        association with this repository if you want to review source code in it later. You can control access to
+     *        code reviews created in an associated repository with tags after it has been disassociated. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html"
+     *        >Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User
+     *        Guide</i>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

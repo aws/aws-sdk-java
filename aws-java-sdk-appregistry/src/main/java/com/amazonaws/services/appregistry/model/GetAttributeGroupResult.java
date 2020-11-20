@@ -17,21 +17,21 @@ import javax.annotation.Generated;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/GetAttributeGroup" target="_top">AWS API
- *      Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetAttributeGroup"
+ *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetAttributeGroupResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the application.
+     * The identifier of the attribute group.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The Amazon resource name (ARN) that specifies the application across services.
+     * The Amazon resource name (ARN) that specifies the attribute group across services.
      * </p>
      */
     private String arn;
@@ -69,18 +69,18 @@ public class GetAttributeGroupResult extends com.amazonaws.AmazonWebServiceResul
     private java.util.Date lastUpdateTime;
     /**
      * <p>
-     * Key-value pairs you can use to associate with the attribute group.
+     * Key-value pairs associated with the attribute group.
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * The identifier of the application.
+     * The identifier of the attribute group.
      * </p>
      * 
      * @param id
-     *        The identifier of the application.
+     *        The identifier of the attribute group.
      */
 
     public void setId(String id) {
@@ -89,10 +89,10 @@ public class GetAttributeGroupResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The identifier of the application.
+     * The identifier of the attribute group.
      * </p>
      * 
-     * @return The identifier of the application.
+     * @return The identifier of the attribute group.
      */
 
     public String getId() {
@@ -101,11 +101,11 @@ public class GetAttributeGroupResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The identifier of the application.
+     * The identifier of the attribute group.
      * </p>
      * 
      * @param id
-     *        The identifier of the application.
+     *        The identifier of the attribute group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,11 +116,11 @@ public class GetAttributeGroupResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon resource name (ARN) that specifies the application across services.
+     * The Amazon resource name (ARN) that specifies the attribute group across services.
      * </p>
      * 
      * @param arn
-     *        The Amazon resource name (ARN) that specifies the application across services.
+     *        The Amazon resource name (ARN) that specifies the attribute group across services.
      */
 
     public void setArn(String arn) {
@@ -129,10 +129,10 @@ public class GetAttributeGroupResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon resource name (ARN) that specifies the application across services.
+     * The Amazon resource name (ARN) that specifies the attribute group across services.
      * </p>
      * 
-     * @return The Amazon resource name (ARN) that specifies the application across services.
+     * @return The Amazon resource name (ARN) that specifies the attribute group across services.
      */
 
     public String getArn() {
@@ -141,11 +141,11 @@ public class GetAttributeGroupResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon resource name (ARN) that specifies the application across services.
+     * The Amazon resource name (ARN) that specifies the attribute group across services.
      * </p>
      * 
      * @param arn
-     *        The Amazon resource name (ARN) that specifies the application across services.
+     *        The Amazon resource name (ARN) that specifies the attribute group across services.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -368,10 +368,10 @@ public class GetAttributeGroupResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Key-value pairs you can use to associate with the attribute group.
+     * Key-value pairs associated with the attribute group.
      * </p>
      * 
-     * @return Key-value pairs you can use to associate with the attribute group.
+     * @return Key-value pairs associated with the attribute group.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -380,11 +380,11 @@ public class GetAttributeGroupResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Key-value pairs you can use to associate with the attribute group.
+     * Key-value pairs associated with the attribute group.
      * </p>
      * 
      * @param tags
-     *        Key-value pairs you can use to associate with the attribute group.
+     *        Key-value pairs associated with the attribute group.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -393,11 +393,11 @@ public class GetAttributeGroupResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Key-value pairs you can use to associate with the attribute group.
+     * Key-value pairs associated with the attribute group.
      * </p>
      * 
      * @param tags
-     *        Key-value pairs you can use to associate with the attribute group.
+     *        Key-value pairs associated with the attribute group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -17,32 +17,32 @@ import javax.annotation.Generated;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/DisassociateAttributeGroup" target="_top">AWS
- *      API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateAttributeGroup"
+ *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DisassociateAttributeGroupResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon resource name (ARN) of the application that was augmented with attributes.
+     * The Amazon resource name (ARN) that specifies the application.
      * </p>
      */
     private String applicationArn;
     /**
      * <p>
-     * The Amazon resource name (ARN) of the attribute group that contains the application's new attributes.
+     * The Amazon resource name (ARN) that specifies the attribute group.
      * </p>
      */
     private String attributeGroupArn;
 
     /**
      * <p>
-     * The Amazon resource name (ARN) of the application that was augmented with attributes.
+     * The Amazon resource name (ARN) that specifies the application.
      * </p>
      * 
      * @param applicationArn
-     *        The Amazon resource name (ARN) of the application that was augmented with attributes.
+     *        The Amazon resource name (ARN) that specifies the application.
      */
 
     public void setApplicationArn(String applicationArn) {
@@ -51,10 +51,10 @@ public class DisassociateAttributeGroupResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon resource name (ARN) of the application that was augmented with attributes.
+     * The Amazon resource name (ARN) that specifies the application.
      * </p>
      * 
-     * @return The Amazon resource name (ARN) of the application that was augmented with attributes.
+     * @return The Amazon resource name (ARN) that specifies the application.
      */
 
     public String getApplicationArn() {
@@ -63,11 +63,11 @@ public class DisassociateAttributeGroupResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon resource name (ARN) of the application that was augmented with attributes.
+     * The Amazon resource name (ARN) that specifies the application.
      * </p>
      * 
      * @param applicationArn
-     *        The Amazon resource name (ARN) of the application that was augmented with attributes.
+     *        The Amazon resource name (ARN) that specifies the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,11 +78,11 @@ public class DisassociateAttributeGroupResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon resource name (ARN) of the attribute group that contains the application's new attributes.
+     * The Amazon resource name (ARN) that specifies the attribute group.
      * </p>
      * 
      * @param attributeGroupArn
-     *        The Amazon resource name (ARN) of the attribute group that contains the application's new attributes.
+     *        The Amazon resource name (ARN) that specifies the attribute group.
      */
 
     public void setAttributeGroupArn(String attributeGroupArn) {
@@ -91,10 +91,10 @@ public class DisassociateAttributeGroupResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon resource name (ARN) of the attribute group that contains the application's new attributes.
+     * The Amazon resource name (ARN) that specifies the attribute group.
      * </p>
      * 
-     * @return The Amazon resource name (ARN) of the attribute group that contains the application's new attributes.
+     * @return The Amazon resource name (ARN) that specifies the attribute group.
      */
 
     public String getAttributeGroupArn() {
@@ -103,11 +103,11 @@ public class DisassociateAttributeGroupResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon resource name (ARN) of the attribute group that contains the application's new attributes.
+     * The Amazon resource name (ARN) that specifies the attribute group.
      * </p>
      * 
      * @param attributeGroupArn
-     *        The Amazon resource name (ARN) of the attribute group that contains the application's new attributes.
+     *        The Amazon resource name (ARN) that specifies the attribute group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

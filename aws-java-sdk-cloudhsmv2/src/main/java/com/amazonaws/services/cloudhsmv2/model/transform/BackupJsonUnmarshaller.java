@@ -68,6 +68,10 @@ public class BackupJsonUnmarshaller implements Unmarshaller<Backup, JsonUnmarsha
                     context.nextToken();
                     backup.setCopyTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("NeverExpires", targetDepth)) {
+                    context.nextToken();
+                    backup.setNeverExpires(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("SourceRegion", targetDepth)) {
                     context.nextToken();
                     backup.setSourceRegion(context.getUnmarshaller(String.class).unmarshall(context));

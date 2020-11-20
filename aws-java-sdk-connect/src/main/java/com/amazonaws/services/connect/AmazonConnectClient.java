@@ -102,23 +102,14 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                             new JsonErrorShapeMetadata().withErrorCode("OutboundContactNotPermittedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.connect.model.transform.OutboundContactNotPermittedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.connect.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.connect.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.connect.model.transform.InvalidRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.connect.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ContactNotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.connect.model.transform.ContactNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ContactFlowNotPublishedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.connect.model.transform.ContactFlowNotPublishedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.connect.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DuplicateResourceException").withExceptionUnmarshaller(
                                     com.amazonaws.services.connect.model.transform.DuplicateResourceExceptionUnmarshaller.getInstance()))
@@ -135,11 +126,26 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                             new JsonErrorShapeMetadata().withErrorCode("DestinationNotAllowedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.connect.model.transform.DestinationNotAllowedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.connect.model.transform.ResourceConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidContactFlowException").withExceptionUnmarshaller(
                                     com.amazonaws.services.connect.model.transform.InvalidContactFlowExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServiceException").withExceptionUnmarshaller(
                                     com.amazonaws.services.connect.model.transform.InternalServiceExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.connect.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.connect.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.connect.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ContactNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.connect.model.transform.ContactNotFoundExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.connect.model.AmazonConnectException.class));
 
     public static AmazonConnectClientBuilder builder() {
@@ -186,6 +192,289 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/connect/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/connect/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Associates an approved origin to an Amazon Connect instance.
+     * </p>
+     * 
+     * @param associateApprovedOriginRequest
+     * @return Result of the AssociateApprovedOrigin operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ResourceConflictException
+     *         A resource already has that name.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.AssociateApprovedOrigin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateApprovedOrigin"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateApprovedOriginResult associateApprovedOrigin(AssociateApprovedOriginRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateApprovedOrigin(request);
+    }
+
+    @SdkInternalApi
+    final AssociateApprovedOriginResult executeAssociateApprovedOrigin(AssociateApprovedOriginRequest associateApprovedOriginRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateApprovedOriginRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateApprovedOriginRequest> request = null;
+        Response<AssociateApprovedOriginResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateApprovedOriginRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateApprovedOriginRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateApprovedOrigin");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateApprovedOriginResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssociateApprovedOriginResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Associates a storage resource type for the first time. You can only associate one type of storage configuration
+     * in a single call. This means, for example, that you can't define an instance with multiple S3 buckets for storing
+     * chat transcripts.
+     * </p>
+     * <p>
+     * This API does not create a resource that doesn't exist. It only associates it to the instance. Ensure that the
+     * resource being specified in the storage configuration, like an Amazon S3 bucket, exists when being used for
+     * association.
+     * </p>
+     * 
+     * @param associateInstanceStorageConfigRequest
+     * @return Result of the AssociateInstanceStorageConfig operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ResourceConflictException
+     *         A resource already has that name.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.AssociateInstanceStorageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateInstanceStorageConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateInstanceStorageConfigResult associateInstanceStorageConfig(AssociateInstanceStorageConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateInstanceStorageConfig(request);
+    }
+
+    @SdkInternalApi
+    final AssociateInstanceStorageConfigResult executeAssociateInstanceStorageConfig(AssociateInstanceStorageConfigRequest associateInstanceStorageConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateInstanceStorageConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateInstanceStorageConfigRequest> request = null;
+        Response<AssociateInstanceStorageConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateInstanceStorageConfigRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateInstanceStorageConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateInstanceStorageConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateInstanceStorageConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssociateInstanceStorageConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Allows the specified Amazon Connect instance to access the specified Lambda function.
+     * </p>
+     * 
+     * @param associateLambdaFunctionRequest
+     * @return Result of the AssociateLambdaFunction operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ResourceConflictException
+     *         A resource already has that name.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.AssociateLambdaFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateLambdaFunction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateLambdaFunctionResult associateLambdaFunction(AssociateLambdaFunctionRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateLambdaFunction(request);
+    }
+
+    @SdkInternalApi
+    final AssociateLambdaFunctionResult executeAssociateLambdaFunction(AssociateLambdaFunctionRequest associateLambdaFunctionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateLambdaFunctionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateLambdaFunctionRequest> request = null;
+        Response<AssociateLambdaFunctionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateLambdaFunctionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateLambdaFunctionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateLambdaFunction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateLambdaFunctionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssociateLambdaFunctionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Allows the specified Amazon Connect instance to access the specified Amazon Lex bot.
+     * </p>
+     * 
+     * @param associateLexBotRequest
+     * @return Result of the AssociateLexBot operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ResourceConflictException
+     *         A resource already has that name.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.AssociateLexBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateLexBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public AssociateLexBotResult associateLexBot(AssociateLexBotRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateLexBot(request);
+    }
+
+    @SdkInternalApi
+    final AssociateLexBotResult executeAssociateLexBot(AssociateLexBotRequest associateLexBotRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateLexBotRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateLexBotRequest> request = null;
+        Response<AssociateLexBotResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateLexBotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateLexBotRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateLexBot");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateLexBotResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AssociateLexBotResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -244,6 +533,74 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
             HttpResponseHandler<AmazonWebServiceResponse<AssociateRoutingProfileQueuesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new AssociateRoutingProfileQueuesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Associates a security key to the instance.
+     * </p>
+     * 
+     * @param associateSecurityKeyRequest
+     * @return Result of the AssociateSecurityKey operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ResourceConflictException
+     *         A resource already has that name.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.AssociateSecurityKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateSecurityKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public AssociateSecurityKeyResult associateSecurityKey(AssociateSecurityKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateSecurityKey(request);
+    }
+
+    @SdkInternalApi
+    final AssociateSecurityKeyResult executeAssociateSecurityKey(AssociateSecurityKeyRequest associateSecurityKeyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateSecurityKeyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateSecurityKeyRequest> request = null;
+        Response<AssociateSecurityKeyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateSecurityKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateSecurityKeyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateSecurityKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateSecurityKeyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AssociateSecurityKeyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -318,6 +675,72 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateContactFlowResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateContactFlowResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Initiates an Amazon Connect instance with all the supported channels enabled. It does not attach any storage
+     * (such as Amazon S3, or Kinesis) or allow for any configurations on features such as Contact Lens for Amazon
+     * Connect.
+     * </p>
+     * 
+     * @param createInstanceRequest
+     * @return Result of the CreateInstance operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.CreateInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateInstanceResult createInstance(CreateInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateInstance(request);
+    }
+
+    @SdkInternalApi
+    final CreateInstanceResult executeCreateInstance(CreateInstanceRequest createInstanceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateInstanceRequest> request = null;
+        Response<CreateInstanceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createInstanceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInstance");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateInstanceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -541,6 +964,66 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Deletes the Amazon Connect instance.
+     * </p>
+     * 
+     * @param deleteInstanceRequest
+     * @return Result of the DeleteInstance operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @sample AmazonConnect.DeleteInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteInstanceResult deleteInstance(DeleteInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteInstance(request);
+    }
+
+    @SdkInternalApi
+    final DeleteInstanceResult executeDeleteInstance(DeleteInstanceRequest deleteInstanceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteInstanceRequest> request = null;
+        Response<DeleteInstanceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteInstanceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInstance");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteInstanceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a user account from the specified Amazon Connect instance.
      * </p>
      * <p>
@@ -737,6 +1220,203 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeContactFlowResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeContactFlowResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the current state of the specified instance identifier. It tracks the instance while it is being created
+     * and returns an error status if applicable.
+     * </p>
+     * <p>
+     * If an instance is not created successfully, the instance status reason field returns details relevant to the
+     * reason. The instance in a failed state is returned only for 24 hours after the CreateInstance API was invoked.
+     * </p>
+     * 
+     * @param describeInstanceRequest
+     * @return Result of the DescribeInstance operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.DescribeInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeInstanceResult describeInstance(DescribeInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInstance(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInstanceResult executeDescribeInstance(DescribeInstanceRequest describeInstanceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeInstanceRequest> request = null;
+        Response<DescribeInstanceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeInstanceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInstance");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeInstanceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the specified instance attribute.
+     * </p>
+     * 
+     * @param describeInstanceAttributeRequest
+     * @return Result of the DescribeInstanceAttribute operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.DescribeInstanceAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstanceAttribute"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeInstanceAttributeResult describeInstanceAttribute(DescribeInstanceAttributeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInstanceAttribute(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInstanceAttributeResult executeDescribeInstanceAttribute(DescribeInstanceAttributeRequest describeInstanceAttributeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeInstanceAttributeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeInstanceAttributeRequest> request = null;
+        Response<DescribeInstanceAttributeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeInstanceAttributeRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeInstanceAttributeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInstanceAttribute");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeInstanceAttributeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeInstanceAttributeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the current storage configurations for the specified resource type, association ID, and instance ID.
+     * </p>
+     * 
+     * @param describeInstanceStorageConfigRequest
+     * @return Result of the DescribeInstanceStorageConfig operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.DescribeInstanceStorageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstanceStorageConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeInstanceStorageConfigResult describeInstanceStorageConfig(DescribeInstanceStorageConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInstanceStorageConfig(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInstanceStorageConfigResult executeDescribeInstanceStorageConfig(DescribeInstanceStorageConfigRequest describeInstanceStorageConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeInstanceStorageConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeInstanceStorageConfigRequest> request = null;
+        Response<DescribeInstanceStorageConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeInstanceStorageConfigRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeInstanceStorageConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInstanceStorageConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeInstanceStorageConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeInstanceStorageConfigResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1011,6 +1691,269 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Revokes access to integrated applications from Amazon Connect.
+     * </p>
+     * 
+     * @param disassociateApprovedOriginRequest
+     * @return Result of the DisassociateApprovedOrigin operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.DisassociateApprovedOrigin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateApprovedOrigin"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateApprovedOriginResult disassociateApprovedOrigin(DisassociateApprovedOriginRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateApprovedOrigin(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateApprovedOriginResult executeDisassociateApprovedOrigin(DisassociateApprovedOriginRequest disassociateApprovedOriginRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateApprovedOriginRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateApprovedOriginRequest> request = null;
+        Response<DisassociateApprovedOriginResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateApprovedOriginRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateApprovedOriginRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateApprovedOrigin");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateApprovedOriginResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateApprovedOriginResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes the storage type configurations for the specified resource type and association ID.
+     * </p>
+     * 
+     * @param disassociateInstanceStorageConfigRequest
+     * @return Result of the DisassociateInstanceStorageConfig operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.DisassociateInstanceStorageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateInstanceStorageConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateInstanceStorageConfigResult disassociateInstanceStorageConfig(DisassociateInstanceStorageConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateInstanceStorageConfig(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateInstanceStorageConfigResult executeDisassociateInstanceStorageConfig(
+            DisassociateInstanceStorageConfigRequest disassociateInstanceStorageConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateInstanceStorageConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateInstanceStorageConfigRequest> request = null;
+        Response<DisassociateInstanceStorageConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateInstanceStorageConfigRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateInstanceStorageConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateInstanceStorageConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateInstanceStorageConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateInstanceStorageConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Remove the Lambda function from the drop-down options available in the relevant contact flow blocks.
+     * </p>
+     * 
+     * @param disassociateLambdaFunctionRequest
+     * @return Result of the DisassociateLambdaFunction operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.DisassociateLambdaFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLambdaFunction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateLambdaFunctionResult disassociateLambdaFunction(DisassociateLambdaFunctionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateLambdaFunction(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateLambdaFunctionResult executeDisassociateLambdaFunction(DisassociateLambdaFunctionRequest disassociateLambdaFunctionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateLambdaFunctionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateLambdaFunctionRequest> request = null;
+        Response<DisassociateLambdaFunctionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateLambdaFunctionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateLambdaFunctionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateLambdaFunction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateLambdaFunctionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateLambdaFunctionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Revokes authorization from the specified instance to access the specified Amazon Lex bot.
+     * </p>
+     * 
+     * @param disassociateLexBotRequest
+     * @return Result of the DisassociateLexBot operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.DisassociateLexBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLexBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DisassociateLexBotResult disassociateLexBot(DisassociateLexBotRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateLexBot(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateLexBotResult executeDisassociateLexBot(DisassociateLexBotRequest disassociateLexBotRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateLexBotRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateLexBotRequest> request = null;
+        Response<DisassociateLexBotResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateLexBotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateLexBotRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateLexBot");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateLexBotResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DisassociateLexBotResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Disassociates a set of queues from a routing profile.
      * </p>
      * 
@@ -1066,6 +2009,72 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
             HttpResponseHandler<AmazonWebServiceResponse<DisassociateRoutingProfileQueuesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DisassociateRoutingProfileQueuesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified security key.
+     * </p>
+     * 
+     * @param disassociateSecurityKeyRequest
+     * @return Result of the DisassociateSecurityKey operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.DisassociateSecurityKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateSecurityKey"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateSecurityKeyResult disassociateSecurityKey(DisassociateSecurityKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateSecurityKey(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateSecurityKeyResult executeDisassociateSecurityKey(DisassociateSecurityKeyRequest disassociateSecurityKeyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateSecurityKeyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateSecurityKeyRequest> request = null;
+        Response<DisassociateSecurityKeyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateSecurityKeyRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateSecurityKeyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateSecurityKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateSecurityKeyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateSecurityKeyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1342,6 +2351,70 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Returns a paginated list of all approved origins associated with the instance.
+     * </p>
+     * 
+     * @param listApprovedOriginsRequest
+     * @return Result of the ListApprovedOrigins operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.ListApprovedOrigins
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListApprovedOrigins" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListApprovedOriginsResult listApprovedOrigins(ListApprovedOriginsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListApprovedOrigins(request);
+    }
+
+    @SdkInternalApi
+    final ListApprovedOriginsResult executeListApprovedOrigins(ListApprovedOriginsRequest listApprovedOriginsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listApprovedOriginsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListApprovedOriginsRequest> request = null;
+        Response<ListApprovedOriginsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListApprovedOriginsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listApprovedOriginsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApprovedOrigins");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListApprovedOriginsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListApprovedOriginsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Provides information about the contact flows for the specified Amazon Connect instance.
      * </p>
      * <p>
@@ -1473,6 +2546,326 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
             HttpResponseHandler<AmazonWebServiceResponse<ListHoursOfOperationsResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new ListHoursOfOperationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a paginated list of all attribute types for the given instance.
+     * </p>
+     * 
+     * @param listInstanceAttributesRequest
+     * @return Result of the ListInstanceAttributes operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.ListInstanceAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstanceAttributes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListInstanceAttributesResult listInstanceAttributes(ListInstanceAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListInstanceAttributes(request);
+    }
+
+    @SdkInternalApi
+    final ListInstanceAttributesResult executeListInstanceAttributes(ListInstanceAttributesRequest listInstanceAttributesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listInstanceAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListInstanceAttributesRequest> request = null;
+        Response<ListInstanceAttributesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListInstanceAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listInstanceAttributesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInstanceAttributes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListInstanceAttributesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListInstanceAttributesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a paginated list of storage configs for the identified instance and resource type.
+     * </p>
+     * 
+     * @param listInstanceStorageConfigsRequest
+     * @return Result of the ListInstanceStorageConfigs operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.ListInstanceStorageConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstanceStorageConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListInstanceStorageConfigsResult listInstanceStorageConfigs(ListInstanceStorageConfigsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListInstanceStorageConfigs(request);
+    }
+
+    @SdkInternalApi
+    final ListInstanceStorageConfigsResult executeListInstanceStorageConfigs(ListInstanceStorageConfigsRequest listInstanceStorageConfigsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listInstanceStorageConfigsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListInstanceStorageConfigsRequest> request = null;
+        Response<ListInstanceStorageConfigsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListInstanceStorageConfigsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listInstanceStorageConfigsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInstanceStorageConfigs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListInstanceStorageConfigsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListInstanceStorageConfigsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Return a list of instances which are in active state, creation-in-progress state, and failed state. Instances
+     * that aren't successfully created (they are in a failed state) are returned only for 24 hours after the
+     * CreateInstance API was invoked.
+     * </p>
+     * 
+     * @param listInstancesRequest
+     * @return Result of the ListInstances operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.ListInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstances" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListInstancesResult listInstances(ListInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListInstances(request);
+    }
+
+    @SdkInternalApi
+    final ListInstancesResult executeListInstances(ListInstancesRequest listInstancesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listInstancesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListInstancesRequest> request = null;
+        Response<ListInstancesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListInstancesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listInstancesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInstances");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListInstancesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListInstancesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a paginated list of all the Lambda functions that show up in the drop-down options in the relevant
+     * contact flow blocks.
+     * </p>
+     * 
+     * @param listLambdaFunctionsRequest
+     * @return Result of the ListLambdaFunctions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.ListLambdaFunctions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLambdaFunctions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListLambdaFunctionsResult listLambdaFunctions(ListLambdaFunctionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListLambdaFunctions(request);
+    }
+
+    @SdkInternalApi
+    final ListLambdaFunctionsResult executeListLambdaFunctions(ListLambdaFunctionsRequest listLambdaFunctionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listLambdaFunctionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListLambdaFunctionsRequest> request = null;
+        Response<ListLambdaFunctionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListLambdaFunctionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLambdaFunctionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLambdaFunctions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListLambdaFunctionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListLambdaFunctionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a paginated list of all the Amazon Lex bots currently associated with the instance.
+     * </p>
+     * 
+     * @param listLexBotsRequest
+     * @return Result of the ListLexBots operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.ListLexBots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLexBots" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListLexBotsResult listLexBots(ListLexBotsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListLexBots(request);
+    }
+
+    @SdkInternalApi
+    final ListLexBotsResult executeListLexBots(ListLexBotsRequest listLexBotsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listLexBotsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListLexBotsRequest> request = null;
+        Response<ListLexBotsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListLexBotsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLexBotsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLexBots");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListLexBotsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListLexBotsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1811,6 +3204,70 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
             HttpResponseHandler<AmazonWebServiceResponse<ListRoutingProfilesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListRoutingProfilesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a paginated list of all security keys associated with the instance.
+     * </p>
+     * 
+     * @param listSecurityKeysRequest
+     * @return Result of the ListSecurityKeys operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.ListSecurityKeys
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityKeys" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListSecurityKeysResult listSecurityKeys(ListSecurityKeysRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSecurityKeys(request);
+    }
+
+    @SdkInternalApi
+    final ListSecurityKeysResult executeListSecurityKeys(ListSecurityKeysRequest listSecurityKeysRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSecurityKeysRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSecurityKeysRequest> request = null;
+        Response<ListSecurityKeysResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSecurityKeysRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSecurityKeysRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSecurityKeys");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSecurityKeysResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListSecurityKeysResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2967,6 +4424,138 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
             HttpResponseHandler<AmazonWebServiceResponse<UpdateContactFlowNameResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new UpdateContactFlowNameResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the value for the specified attribute type.
+     * </p>
+     * 
+     * @param updateInstanceAttributeRequest
+     * @return Result of the UpdateInstanceAttribute operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.UpdateInstanceAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateInstanceAttribute"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateInstanceAttributeResult updateInstanceAttribute(UpdateInstanceAttributeRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateInstanceAttribute(request);
+    }
+
+    @SdkInternalApi
+    final UpdateInstanceAttributeResult executeUpdateInstanceAttribute(UpdateInstanceAttributeRequest updateInstanceAttributeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateInstanceAttributeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateInstanceAttributeRequest> request = null;
+        Response<UpdateInstanceAttributeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateInstanceAttributeRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateInstanceAttributeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateInstanceAttribute");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateInstanceAttributeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateInstanceAttributeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an existing configuration for a resource type. This API is idempotent.
+     * </p>
+     * 
+     * @param updateInstanceStorageConfigRequest
+     * @return Result of the UpdateInstanceStorageConfig operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.UpdateInstanceStorageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateInstanceStorageConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateInstanceStorageConfigResult updateInstanceStorageConfig(UpdateInstanceStorageConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateInstanceStorageConfig(request);
+    }
+
+    @SdkInternalApi
+    final UpdateInstanceStorageConfigResult executeUpdateInstanceStorageConfig(UpdateInstanceStorageConfigRequest updateInstanceStorageConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateInstanceStorageConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateInstanceStorageConfigRequest> request = null;
+        Response<UpdateInstanceStorageConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateInstanceStorageConfigRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateInstanceStorageConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateInstanceStorageConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateInstanceStorageConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateInstanceStorageConfigResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -35,8 +35,9 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
      * <p>
      * The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling
-     * <code>ListRepositories</code>.
+     * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>.
      * </p>
      */
     private String associationArn;
@@ -129,6 +130,15 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
      * access.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     * association with this repository if you want to review source code in it later. You can control access to code
+     * reviews created in an associated repository with tags after it has been disassociated. For more information, see
+     * <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String state;
@@ -137,15 +147,17 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
      * <p>
      * The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling
-     * <code>ListRepositories</code>.
+     * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>.
      * </p>
      * 
      * @param associationArn
      *        The Amazon Resource Name (ARN) of the <a
      *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     *        <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling
-     *        <code>ListRepositories</code>.
+     *        <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     *        <code>ListRepositoryAssociations</code> </a>.
      */
 
     public void setAssociationArn(String associationArn) {
@@ -156,14 +168,16 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
      * <p>
      * The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling
-     * <code>ListRepositories</code>.
+     * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the <a
      *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     *         <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling
-     *         <code>ListRepositories</code>.
+     *         <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a
+     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     *         <code>ListRepositoryAssociations</code> </a>.
      */
 
     public String getAssociationArn() {
@@ -174,15 +188,17 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
      * <p>
      * The Amazon Resource Name (ARN) of the <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling
-     * <code>ListRepositories</code>.
+     * <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     * <code>ListRepositoryAssociations</code> </a>.
      * </p>
      * 
      * @param associationArn
      *        The Amazon Resource Name (ARN) of the <a
      *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-     *        <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling
-     *        <code>ListRepositories</code>.
+     *        <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+     *        <code>ListRepositoryAssociations</code> </a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -533,6 +549,15 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
      * access.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     * association with this repository if you want to review source code in it later. You can control access to code
+     * reviews created in an associated repository with tags after it has been disassociated. For more information, see
+     * <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param state
@@ -580,6 +605,17 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
      *        <p>
      *        <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
      *        source code access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     *        association with this repository if you want to review source code in it later. You can control access to
+     *        code reviews created in an associated repository with tags after it has been disassociated. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html"
+     *        >Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User
+     *        Guide</i>.
      *        </p>
      *        </li>
      * @see RepositoryAssociationState
@@ -636,6 +672,15 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
      * access.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     * association with this repository if you want to review source code in it later. You can control access to code
+     * reviews created in an associated repository with tags after it has been disassociated. For more information, see
+     * <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The state of the repository association.</p>
@@ -683,6 +728,17 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
      *         <p>
      *         <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
      *         source code access.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     *         association with this repository if you want to review source code in it later. You can control access to
+     *         code reviews created in an associated repository with tags after it has been disassociated. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html"
+     *         >Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User
+     *         Guide</i>.
      *         </p>
      *         </li>
      * @see RepositoryAssociationState
@@ -739,6 +795,15 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
      * access.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     * association with this repository if you want to review source code in it later. You can control access to code
+     * reviews created in an associated repository with tags after it has been disassociated. For more information, see
+     * <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param state
@@ -786,6 +851,17 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
      *        <p>
      *        <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
      *        source code access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     *        association with this repository if you want to review source code in it later. You can control access to
+     *        code reviews created in an associated repository with tags after it has been disassociated. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html"
+     *        >Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User
+     *        Guide</i>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -844,6 +920,15 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
      * access.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     * association with this repository if you want to review source code in it later. You can control access to code
+     * reviews created in an associated repository with tags after it has been disassociated. For more information, see
+     * <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param state
@@ -891,6 +976,17 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
      *        <p>
      *        <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
      *        source code access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     *        association with this repository if you want to review source code in it later. You can control access to
+     *        code reviews created in an associated repository with tags after it has been disassociated. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html"
+     *        >Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User
+     *        Guide</i>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

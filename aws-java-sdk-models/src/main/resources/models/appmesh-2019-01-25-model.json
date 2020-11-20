@@ -3665,7 +3665,10 @@
     },
     "TagRef":{
       "type":"structure",
-      "required":["key"],
+      "required":[
+        "key",
+        "value"
+      ],
       "members":{
         "key":{
           "shape":"TagKey",
@@ -3820,7 +3823,8 @@
         "httpStatusCode":429,
         "senderFault":true
       },
-      "exception":true
+      "exception":true,
+      "retryable":{"throttling":true}
     },
     "TooManyTagsException":{
       "type":"structure",

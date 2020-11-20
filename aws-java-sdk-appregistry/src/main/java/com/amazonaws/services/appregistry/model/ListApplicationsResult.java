@@ -17,15 +17,15 @@ import javax.annotation.Generated;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ListApplications" target="_top">AWS API
- *      Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListApplications" target="_top">AWS
+ *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name or ID of the application.
+     * This list of applications.
      * </p>
      */
     private java.util.List<ApplicationSummary> applications;
@@ -38,10 +38,10 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The name or ID of the application.
+     * This list of applications.
      * </p>
      * 
-     * @return The name or ID of the application.
+     * @return This list of applications.
      */
 
     public java.util.List<ApplicationSummary> getApplications() {
@@ -50,11 +50,11 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The name or ID of the application.
+     * This list of applications.
      * </p>
      * 
      * @param applications
-     *        The name or ID of the application.
+     *        This list of applications.
      */
 
     public void setApplications(java.util.Collection<ApplicationSummary> applications) {
@@ -68,7 +68,7 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The name or ID of the application.
+     * This list of applications.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param applications
-     *        The name or ID of the application.
+     *        This list of applications.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The name or ID of the application.
+     * This list of applications.
      * </p>
      * 
      * @param applications
-     *        The name or ID of the application.
+     *        This list of applications.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

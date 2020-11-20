@@ -52,6 +52,10 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
                     context.nextToken();
                     cluster.setBackupPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("BackupRetentionPolicy", targetDepth)) {
+                    context.nextToken();
+                    cluster.setBackupRetentionPolicy(BackupRetentionPolicyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ClusterId", targetDepth)) {
                     context.nextToken();
                     cluster.setClusterId(context.getUnmarshaller(String.class).unmarshall(context));

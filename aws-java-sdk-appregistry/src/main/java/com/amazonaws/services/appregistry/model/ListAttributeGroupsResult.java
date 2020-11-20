@@ -17,15 +17,15 @@ import javax.annotation.Generated;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/ListAttributeGroups" target="_top">AWS API
- *      Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAttributeGroups"
+ *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListAttributeGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of attribute group IDs.
+     * This list of attribute groups.
      * </p>
      */
     private java.util.List<AttributeGroupSummary> attributeGroups;
@@ -38,10 +38,10 @@ public class ListAttributeGroupsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A list of attribute group IDs.
+     * This list of attribute groups.
      * </p>
      * 
-     * @return A list of attribute group IDs.
+     * @return This list of attribute groups.
      */
 
     public java.util.List<AttributeGroupSummary> getAttributeGroups() {
@@ -50,11 +50,11 @@ public class ListAttributeGroupsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A list of attribute group IDs.
+     * This list of attribute groups.
      * </p>
      * 
      * @param attributeGroups
-     *        A list of attribute group IDs.
+     *        This list of attribute groups.
      */
 
     public void setAttributeGroups(java.util.Collection<AttributeGroupSummary> attributeGroups) {
@@ -68,7 +68,7 @@ public class ListAttributeGroupsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A list of attribute group IDs.
+     * This list of attribute groups.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListAttributeGroupsResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param attributeGroups
-     *        A list of attribute group IDs.
+     *        This list of attribute groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListAttributeGroupsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A list of attribute group IDs.
+     * This list of attribute groups.
      * </p>
      * 
      * @param attributeGroups
-     *        A list of attribute group IDs.
+     *        This list of attribute groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

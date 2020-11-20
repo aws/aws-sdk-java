@@ -19,8 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/AssociateResource" target="_top">AWS API
- *      Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateResource"
+ *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AssociateResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
@@ -31,7 +31,11 @@ public class AssociateResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String application;
-
+    /**
+     * <p>
+     * The type of resource of which the application will be associated.
+     * </p>
+     */
     private String resourceType;
     /**
      * <p>
@@ -81,7 +85,12 @@ public class AssociateResourceRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The type of resource of which the application will be associated.
+     * </p>
+     * 
      * @param resourceType
+     *        The type of resource of which the application will be associated.
      * @see ResourceType
      */
 
@@ -90,7 +99,11 @@ public class AssociateResourceRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * <p>
+     * The type of resource of which the application will be associated.
+     * </p>
+     * 
+     * @return The type of resource of which the application will be associated.
      * @see ResourceType
      */
 
@@ -99,7 +112,12 @@ public class AssociateResourceRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The type of resource of which the application will be associated.
+     * </p>
+     * 
      * @param resourceType
+     *        The type of resource of which the application will be associated.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -110,7 +128,12 @@ public class AssociateResourceRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The type of resource of which the application will be associated.
+     * </p>
+     * 
      * @param resourceType
+     *        The type of resource of which the application will be associated.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */

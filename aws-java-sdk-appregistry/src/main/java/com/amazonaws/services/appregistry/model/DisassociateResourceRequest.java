@@ -19,8 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/DisassociateResource" target="_top">AWS API
- *      Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateResource"
+ *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DisassociateResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
@@ -33,13 +33,13 @@ public class DisassociateResourceRequest extends com.amazonaws.AmazonWebServiceR
     private String application;
     /**
      * <p>
-     * The type of the resource that's being disassociated.
+     * The type of the resource that is being disassociated.
      * </p>
      */
     private String resourceType;
     /**
      * <p>
-     * The name or ID of the resource of which the application will be associated.
+     * The name or ID of the resource.
      * </p>
      */
     private String resource;
@@ -86,11 +86,11 @@ public class DisassociateResourceRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of the resource that's being disassociated.
+     * The type of the resource that is being disassociated.
      * </p>
      * 
      * @param resourceType
-     *        The type of the resource that's being disassociated.
+     *        The type of the resource that is being disassociated.
      * @see ResourceType
      */
 
@@ -100,10 +100,10 @@ public class DisassociateResourceRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of the resource that's being disassociated.
+     * The type of the resource that is being disassociated.
      * </p>
      * 
-     * @return The type of the resource that's being disassociated.
+     * @return The type of the resource that is being disassociated.
      * @see ResourceType
      */
 
@@ -113,11 +113,11 @@ public class DisassociateResourceRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of the resource that's being disassociated.
+     * The type of the resource that is being disassociated.
      * </p>
      * 
      * @param resourceType
-     *        The type of the resource that's being disassociated.
+     *        The type of the resource that is being disassociated.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -129,11 +129,11 @@ public class DisassociateResourceRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of the resource that's being disassociated.
+     * The type of the resource that is being disassociated.
      * </p>
      * 
      * @param resourceType
-     *        The type of the resource that's being disassociated.
+     *        The type of the resource that is being disassociated.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -145,11 +145,11 @@ public class DisassociateResourceRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name or ID of the resource of which the application will be associated.
+     * The name or ID of the resource.
      * </p>
      * 
      * @param resource
-     *        The name or ID of the resource of which the application will be associated.
+     *        The name or ID of the resource.
      */
 
     public void setResource(String resource) {
@@ -158,10 +158,10 @@ public class DisassociateResourceRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name or ID of the resource of which the application will be associated.
+     * The name or ID of the resource.
      * </p>
      * 
-     * @return The name or ID of the resource of which the application will be associated.
+     * @return The name or ID of the resource.
      */
 
     public String getResource() {
@@ -170,11 +170,11 @@ public class DisassociateResourceRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name or ID of the resource of which the application will be associated.
+     * The name or ID of the resource.
      * </p>
      * 
      * @param resource
-     *        The name or ID of the resource of which the application will be associated.
+     *        The name or ID of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

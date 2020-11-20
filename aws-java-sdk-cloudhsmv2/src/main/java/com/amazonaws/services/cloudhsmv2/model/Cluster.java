@@ -36,6 +36,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private String backupPolicy;
     /**
      * <p>
+     * A policy that defines how the service retains backups.
+     * </p>
+     */
+    private BackupRetentionPolicy backupRetentionPolicy;
+    /**
+     * <p>
      * The cluster's identifier (ID).
      * </p>
      */
@@ -170,6 +176,46 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     public Cluster withBackupPolicy(BackupPolicy backupPolicy) {
         this.backupPolicy = backupPolicy.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A policy that defines how the service retains backups.
+     * </p>
+     * 
+     * @param backupRetentionPolicy
+     *        A policy that defines how the service retains backups.
+     */
+
+    public void setBackupRetentionPolicy(BackupRetentionPolicy backupRetentionPolicy) {
+        this.backupRetentionPolicy = backupRetentionPolicy;
+    }
+
+    /**
+     * <p>
+     * A policy that defines how the service retains backups.
+     * </p>
+     * 
+     * @return A policy that defines how the service retains backups.
+     */
+
+    public BackupRetentionPolicy getBackupRetentionPolicy() {
+        return this.backupRetentionPolicy;
+    }
+
+    /**
+     * <p>
+     * A policy that defines how the service retains backups.
+     * </p>
+     * 
+     * @param backupRetentionPolicy
+     *        A policy that defines how the service retains backups.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withBackupRetentionPolicy(BackupRetentionPolicy backupRetentionPolicy) {
+        setBackupRetentionPolicy(backupRetentionPolicy);
         return this;
     }
 
@@ -820,6 +866,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getBackupPolicy() != null)
             sb.append("BackupPolicy: ").append(getBackupPolicy()).append(",");
+        if (getBackupRetentionPolicy() != null)
+            sb.append("BackupRetentionPolicy: ").append(getBackupRetentionPolicy()).append(",");
         if (getClusterId() != null)
             sb.append("ClusterId: ").append(getClusterId()).append(",");
         if (getCreateTimestamp() != null)
@@ -863,6 +911,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         if (other.getBackupPolicy() == null ^ this.getBackupPolicy() == null)
             return false;
         if (other.getBackupPolicy() != null && other.getBackupPolicy().equals(this.getBackupPolicy()) == false)
+            return false;
+        if (other.getBackupRetentionPolicy() == null ^ this.getBackupRetentionPolicy() == null)
+            return false;
+        if (other.getBackupRetentionPolicy() != null && other.getBackupRetentionPolicy().equals(this.getBackupRetentionPolicy()) == false)
             return false;
         if (other.getClusterId() == null ^ this.getClusterId() == null)
             return false;
@@ -925,6 +977,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getBackupPolicy() == null) ? 0 : getBackupPolicy().hashCode());
+        hashCode = prime * hashCode + ((getBackupRetentionPolicy() == null) ? 0 : getBackupRetentionPolicy().hashCode());
         hashCode = prime * hashCode + ((getClusterId() == null) ? 0 : getClusterId().hashCode());
         hashCode = prime * hashCode + ((getCreateTimestamp() == null) ? 0 : getCreateTimestamp().hashCode());
         hashCode = prime * hashCode + ((getHsms() == null) ? 0 : getHsms().hashCode());

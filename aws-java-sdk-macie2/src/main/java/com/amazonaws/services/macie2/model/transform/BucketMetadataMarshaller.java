@@ -40,6 +40,8 @@ public class BucketMetadataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("classifiableObjectCount").build();
     private static final MarshallingInfo<Long> CLASSIFIABLESIZEINBYTES_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("classifiableSizeInBytes").build();
+    private static final MarshallingInfo<StructuredPojo> JOBDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jobDetails").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATED_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdated").timestampFormat("iso8601").build();
     private static final MarshallingInfo<Long> OBJECTCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
@@ -89,6 +91,7 @@ public class BucketMetadataMarshaller {
             protocolMarshaller.marshall(bucketMetadata.getBucketName(), BUCKETNAME_BINDING);
             protocolMarshaller.marshall(bucketMetadata.getClassifiableObjectCount(), CLASSIFIABLEOBJECTCOUNT_BINDING);
             protocolMarshaller.marshall(bucketMetadata.getClassifiableSizeInBytes(), CLASSIFIABLESIZEINBYTES_BINDING);
+            protocolMarshaller.marshall(bucketMetadata.getJobDetails(), JOBDETAILS_BINDING);
             protocolMarshaller.marshall(bucketMetadata.getLastUpdated(), LASTUPDATED_BINDING);
             protocolMarshaller.marshall(bucketMetadata.getObjectCount(), OBJECTCOUNT_BINDING);
             protocolMarshaller.marshall(bucketMetadata.getObjectCountByEncryptionType(), OBJECTCOUNTBYENCRYPTIONTYPE_BINDING);

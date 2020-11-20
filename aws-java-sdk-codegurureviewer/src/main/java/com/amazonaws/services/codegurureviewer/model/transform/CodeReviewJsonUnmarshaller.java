@@ -96,6 +96,10 @@ public class CodeReviewJsonUnmarshaller implements Unmarshaller<CodeReview, Json
                     context.nextToken();
                     codeReview.setSourceCodeType(SourceCodeTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AssociationArn", targetDepth)) {
+                    context.nextToken();
+                    codeReview.setAssociationArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Metrics", targetDepth)) {
                     context.nextToken();
                     codeReview.setMetrics(MetricsJsonUnmarshaller.getInstance().unmarshall(context));

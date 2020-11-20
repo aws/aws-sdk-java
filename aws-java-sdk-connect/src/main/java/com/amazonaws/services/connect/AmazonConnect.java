@@ -64,6 +64,119 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * Associates an approved origin to an Amazon Connect instance.
+     * </p>
+     * 
+     * @param associateApprovedOriginRequest
+     * @return Result of the AssociateApprovedOrigin operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ResourceConflictException
+     *         A resource already has that name.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.AssociateApprovedOrigin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateApprovedOrigin"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateApprovedOriginResult associateApprovedOrigin(AssociateApprovedOriginRequest associateApprovedOriginRequest);
+
+    /**
+     * <p>
+     * Associates a storage resource type for the first time. You can only associate one type of storage configuration
+     * in a single call. This means, for example, that you can't define an instance with multiple S3 buckets for storing
+     * chat transcripts.
+     * </p>
+     * <p>
+     * This API does not create a resource that doesn't exist. It only associates it to the instance. Ensure that the
+     * resource being specified in the storage configuration, like an Amazon S3 bucket, exists when being used for
+     * association.
+     * </p>
+     * 
+     * @param associateInstanceStorageConfigRequest
+     * @return Result of the AssociateInstanceStorageConfig operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ResourceConflictException
+     *         A resource already has that name.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.AssociateInstanceStorageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateInstanceStorageConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateInstanceStorageConfigResult associateInstanceStorageConfig(AssociateInstanceStorageConfigRequest associateInstanceStorageConfigRequest);
+
+    /**
+     * <p>
+     * Allows the specified Amazon Connect instance to access the specified Lambda function.
+     * </p>
+     * 
+     * @param associateLambdaFunctionRequest
+     * @return Result of the AssociateLambdaFunction operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ResourceConflictException
+     *         A resource already has that name.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.AssociateLambdaFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateLambdaFunction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateLambdaFunctionResult associateLambdaFunction(AssociateLambdaFunctionRequest associateLambdaFunctionRequest);
+
+    /**
+     * <p>
+     * Allows the specified Amazon Connect instance to access the specified Amazon Lex bot.
+     * </p>
+     * 
+     * @param associateLexBotRequest
+     * @return Result of the AssociateLexBot operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ResourceConflictException
+     *         A resource already has that name.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.AssociateLexBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateLexBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    AssociateLexBotResult associateLexBot(AssociateLexBotRequest associateLexBotRequest);
+
+    /**
+     * <p>
      * Associates a set of queues with a routing profile.
      * </p>
      * 
@@ -84,6 +197,33 @@ public interface AmazonConnect {
      *      target="_top">AWS API Documentation</a>
      */
     AssociateRoutingProfileQueuesResult associateRoutingProfileQueues(AssociateRoutingProfileQueuesRequest associateRoutingProfileQueuesRequest);
+
+    /**
+     * <p>
+     * Associates a security key to the instance.
+     * </p>
+     * 
+     * @param associateSecurityKeyRequest
+     * @return Result of the AssociateSecurityKey operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ResourceConflictException
+     *         A resource already has that name.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.AssociateSecurityKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateSecurityKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    AssociateSecurityKeyResult associateSecurityKey(AssociateSecurityKeyRequest associateSecurityKeyRequest);
 
     /**
      * <p>
@@ -117,6 +257,31 @@ public interface AmazonConnect {
      *      Documentation</a>
      */
     CreateContactFlowResult createContactFlow(CreateContactFlowRequest createContactFlowRequest);
+
+    /**
+     * <p>
+     * Initiates an Amazon Connect instance with all the supported channels enabled. It does not attach any storage
+     * (such as Amazon S3, or Kinesis) or allow for any configurations on features such as Contact Lens for Amazon
+     * Connect.
+     * </p>
+     * 
+     * @param createInstanceRequest
+     * @return Result of the CreateInstance operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.CreateInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateInstanceResult createInstance(CreateInstanceRequest createInstanceRequest);
 
     /**
      * <p>
@@ -206,6 +371,25 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * Deletes the Amazon Connect instance.
+     * </p>
+     * 
+     * @param deleteInstanceRequest
+     * @return Result of the DeleteInstance operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @sample AmazonConnect.DeleteInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteInstanceResult deleteInstance(DeleteInstanceRequest deleteInstanceRequest);
+
+    /**
+     * <p>
      * Deletes a user account from the specified Amazon Connect instance.
      * </p>
      * <p>
@@ -286,6 +470,76 @@ public interface AmazonConnect {
      *      API Documentation</a>
      */
     DescribeContactFlowResult describeContactFlow(DescribeContactFlowRequest describeContactFlowRequest);
+
+    /**
+     * <p>
+     * Returns the current state of the specified instance identifier. It tracks the instance while it is being created
+     * and returns an error status if applicable.
+     * </p>
+     * <p>
+     * If an instance is not created successfully, the instance status reason field returns details relevant to the
+     * reason. The instance in a failed state is returned only for 24 hours after the CreateInstance API was invoked.
+     * </p>
+     * 
+     * @param describeInstanceRequest
+     * @return Result of the DescribeInstance operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.DescribeInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeInstanceResult describeInstance(DescribeInstanceRequest describeInstanceRequest);
+
+    /**
+     * <p>
+     * Describes the specified instance attribute.
+     * </p>
+     * 
+     * @param describeInstanceAttributeRequest
+     * @return Result of the DescribeInstanceAttribute operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.DescribeInstanceAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstanceAttribute"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeInstanceAttributeResult describeInstanceAttribute(DescribeInstanceAttributeRequest describeInstanceAttributeRequest);
+
+    /**
+     * <p>
+     * Retrieves the current storage configurations for the specified resource type, association ID, and instance ID.
+     * </p>
+     * 
+     * @param describeInstanceStorageConfigRequest
+     * @return Result of the DescribeInstanceStorageConfig operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.DescribeInstanceStorageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstanceStorageConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeInstanceStorageConfigResult describeInstanceStorageConfig(DescribeInstanceStorageConfigRequest describeInstanceStorageConfigRequest);
 
     /**
      * <p>
@@ -382,6 +636,98 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * Revokes access to integrated applications from Amazon Connect.
+     * </p>
+     * 
+     * @param disassociateApprovedOriginRequest
+     * @return Result of the DisassociateApprovedOrigin operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.DisassociateApprovedOrigin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateApprovedOrigin"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateApprovedOriginResult disassociateApprovedOrigin(DisassociateApprovedOriginRequest disassociateApprovedOriginRequest);
+
+    /**
+     * <p>
+     * Removes the storage type configurations for the specified resource type and association ID.
+     * </p>
+     * 
+     * @param disassociateInstanceStorageConfigRequest
+     * @return Result of the DisassociateInstanceStorageConfig operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.DisassociateInstanceStorageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateInstanceStorageConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateInstanceStorageConfigResult disassociateInstanceStorageConfig(DisassociateInstanceStorageConfigRequest disassociateInstanceStorageConfigRequest);
+
+    /**
+     * <p>
+     * Remove the Lambda function from the drop-down options available in the relevant contact flow blocks.
+     * </p>
+     * 
+     * @param disassociateLambdaFunctionRequest
+     * @return Result of the DisassociateLambdaFunction operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.DisassociateLambdaFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLambdaFunction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateLambdaFunctionResult disassociateLambdaFunction(DisassociateLambdaFunctionRequest disassociateLambdaFunctionRequest);
+
+    /**
+     * <p>
+     * Revokes authorization from the specified instance to access the specified Amazon Lex bot.
+     * </p>
+     * 
+     * @param disassociateLexBotRequest
+     * @return Result of the DisassociateLexBot operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.DisassociateLexBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLexBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DisassociateLexBotResult disassociateLexBot(DisassociateLexBotRequest disassociateLexBotRequest);
+
+    /**
+     * <p>
      * Disassociates a set of queues from a routing profile.
      * </p>
      * 
@@ -402,6 +748,29 @@ public interface AmazonConnect {
      *      target="_top">AWS API Documentation</a>
      */
     DisassociateRoutingProfileQueuesResult disassociateRoutingProfileQueues(DisassociateRoutingProfileQueuesRequest disassociateRoutingProfileQueuesRequest);
+
+    /**
+     * <p>
+     * Deletes the specified security key.
+     * </p>
+     * 
+     * @param disassociateSecurityKeyRequest
+     * @return Result of the DisassociateSecurityKey operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.DisassociateSecurityKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateSecurityKey"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateSecurityKeyResult disassociateSecurityKey(DisassociateSecurityKeyRequest disassociateSecurityKeyRequest);
 
     /**
      * <p>
@@ -505,6 +874,29 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * Returns a paginated list of all approved origins associated with the instance.
+     * </p>
+     * 
+     * @param listApprovedOriginsRequest
+     * @return Result of the ListApprovedOrigins operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.ListApprovedOrigins
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListApprovedOrigins" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListApprovedOriginsResult listApprovedOrigins(ListApprovedOriginsRequest listApprovedOriginsRequest);
+
+    /**
+     * <p>
      * Provides information about the contact flows for the specified Amazon Connect instance.
      * </p>
      * <p>
@@ -562,6 +954,118 @@ public interface AmazonConnect {
      *      API Documentation</a>
      */
     ListHoursOfOperationsResult listHoursOfOperations(ListHoursOfOperationsRequest listHoursOfOperationsRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of all attribute types for the given instance.
+     * </p>
+     * 
+     * @param listInstanceAttributesRequest
+     * @return Result of the ListInstanceAttributes operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.ListInstanceAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstanceAttributes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListInstanceAttributesResult listInstanceAttributes(ListInstanceAttributesRequest listInstanceAttributesRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of storage configs for the identified instance and resource type.
+     * </p>
+     * 
+     * @param listInstanceStorageConfigsRequest
+     * @return Result of the ListInstanceStorageConfigs operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.ListInstanceStorageConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstanceStorageConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListInstanceStorageConfigsResult listInstanceStorageConfigs(ListInstanceStorageConfigsRequest listInstanceStorageConfigsRequest);
+
+    /**
+     * <p>
+     * Return a list of instances which are in active state, creation-in-progress state, and failed state. Instances
+     * that aren't successfully created (they are in a failed state) are returned only for 24 hours after the
+     * CreateInstance API was invoked.
+     * </p>
+     * 
+     * @param listInstancesRequest
+     * @return Result of the ListInstances operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.ListInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstances" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListInstancesResult listInstances(ListInstancesRequest listInstancesRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of all the Lambda functions that show up in the drop-down options in the relevant
+     * contact flow blocks.
+     * </p>
+     * 
+     * @param listLambdaFunctionsRequest
+     * @return Result of the ListLambdaFunctions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.ListLambdaFunctions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLambdaFunctions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListLambdaFunctionsResult listLambdaFunctions(ListLambdaFunctionsRequest listLambdaFunctionsRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of all the Amazon Lex bots currently associated with the instance.
+     * </p>
+     * 
+     * @param listLexBotsRequest
+     * @return Result of the ListLexBots operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.ListLexBots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLexBots" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListLexBotsResult listLexBots(ListLexBotsRequest listLexBotsRequest);
 
     /**
      * <p>
@@ -693,6 +1197,29 @@ public interface AmazonConnect {
      *      API Documentation</a>
      */
     ListRoutingProfilesResult listRoutingProfiles(ListRoutingProfilesRequest listRoutingProfilesRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of all security keys associated with the instance.
+     * </p>
+     * 
+     * @param listSecurityKeysRequest
+     * @return Result of the ListSecurityKeys operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.ListSecurityKeys
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityKeys" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListSecurityKeysResult listSecurityKeys(ListSecurityKeysRequest listSecurityKeysRequest);
 
     /**
      * <p>
@@ -1180,6 +1707,52 @@ public interface AmazonConnect {
      *      API Documentation</a>
      */
     UpdateContactFlowNameResult updateContactFlowName(UpdateContactFlowNameRequest updateContactFlowNameRequest);
+
+    /**
+     * <p>
+     * Updates the value for the specified attribute type.
+     * </p>
+     * 
+     * @param updateInstanceAttributeRequest
+     * @return Result of the UpdateInstanceAttribute operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.UpdateInstanceAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateInstanceAttribute"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateInstanceAttributeResult updateInstanceAttribute(UpdateInstanceAttributeRequest updateInstanceAttributeRequest);
+
+    /**
+     * <p>
+     * Updates an existing configuration for a resource type. This API is idempotent.
+     * </p>
+     * 
+     * @param updateInstanceStorageConfigRequest
+     * @return Result of the UpdateInstanceStorageConfig operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.UpdateInstanceStorageConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateInstanceStorageConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateInstanceStorageConfigResult updateInstanceStorageConfig(UpdateInstanceStorageConfigRequest updateInstanceStorageConfigRequest);
 
     /**
      * <p>

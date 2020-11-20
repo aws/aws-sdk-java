@@ -17,26 +17,26 @@ import javax.annotation.Generated;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/DeleteAttributeGroup" target="_top">AWS API
- *      Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DeleteAttributeGroup"
+ *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteAttributeGroupResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name or ID of the attribute group that holds the attributes to describe the application.
+     * Information about the deleted attribute group.
      * </p>
      */
     private AttributeGroupSummary attributeGroup;
 
     /**
      * <p>
-     * The name or ID of the attribute group that holds the attributes to describe the application.
+     * Information about the deleted attribute group.
      * </p>
      * 
      * @param attributeGroup
-     *        The name or ID of the attribute group that holds the attributes to describe the application.
+     *        Information about the deleted attribute group.
      */
 
     public void setAttributeGroup(AttributeGroupSummary attributeGroup) {
@@ -45,10 +45,10 @@ public class DeleteAttributeGroupResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name or ID of the attribute group that holds the attributes to describe the application.
+     * Information about the deleted attribute group.
      * </p>
      * 
-     * @return The name or ID of the attribute group that holds the attributes to describe the application.
+     * @return Information about the deleted attribute group.
      */
 
     public AttributeGroupSummary getAttributeGroup() {
@@ -57,11 +57,11 @@ public class DeleteAttributeGroupResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name or ID of the attribute group that holds the attributes to describe the application.
+     * Information about the deleted attribute group.
      * </p>
      * 
      * @param attributeGroup
-     *        The name or ID of the attribute group that holds the attributes to describe the application.
+     *        Information about the deleted attribute group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

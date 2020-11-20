@@ -17,26 +17,26 @@ import javax.annotation.Generated;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry/CreateApplication" target="_top">AWS API
- *      Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/CreateApplication"
+ *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateApplicationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name or ID of the application.
+     * Information about the application.
      * </p>
      */
     private Application application;
 
     /**
      * <p>
-     * The name or ID of the application.
+     * Information about the application.
      * </p>
      * 
      * @param application
-     *        The name or ID of the application.
+     *        Information about the application.
      */
 
     public void setApplication(Application application) {
@@ -45,10 +45,10 @@ public class CreateApplicationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The name or ID of the application.
+     * Information about the application.
      * </p>
      * 
-     * @return The name or ID of the application.
+     * @return Information about the application.
      */
 
     public Application getApplication() {
@@ -57,11 +57,11 @@ public class CreateApplicationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The name or ID of the application.
+     * Information about the application.
      * </p>
      * 
      * @param application
-     *        The name or ID of the application.
+     *        Information about the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -38,6 +38,28 @@ public class AssociateRepositoryRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String clientRequestToken;
+    /**
+     * <p>
+     * An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two
+     * parts:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or
+     * <code>Secret</code>). Tag keys are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>,
+     * or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case
+     * sensitive.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -126,6 +148,167 @@ public class AssociateRepositoryRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two
+     * parts:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or
+     * <code>Secret</code>). Tag keys are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>,
+     * or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case
+     * sensitive.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with
+     *         two parts: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>,
+     *         or <code>Secret</code>). Tag keys are case sensitive.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>,
+     *         <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string.
+     *         Like tag keys, tag values are case sensitive.
+     *         </p>
+     *         </li>
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two
+     * parts:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or
+     * <code>Secret</code>). Tag keys are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>,
+     * or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case
+     * sensitive.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param tags
+     *        An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with
+     *        two parts: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or
+     *        <code>Secret</code>). Tag keys are case sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>,
+     *        <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string.
+     *        Like tag keys, tag values are case sensitive.
+     *        </p>
+     *        </li>
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two
+     * parts:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or
+     * <code>Secret</code>). Tag keys are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>,
+     * or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case
+     * sensitive.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param tags
+     *        An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with
+     *        two parts: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or
+     *        <code>Secret</code>). Tag keys are case sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>,
+     *        <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string.
+     *        Like tag keys, tag values are case sensitive.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociateRepositoryRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see AssociateRepositoryRequest#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociateRepositoryRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociateRepositoryRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -140,7 +323,9 @@ public class AssociateRepositoryRequest extends com.amazonaws.AmazonWebServiceRe
         if (getRepository() != null)
             sb.append("Repository: ").append(getRepository()).append(",");
         if (getClientRequestToken() != null)
-            sb.append("ClientRequestToken: ").append(getClientRequestToken());
+            sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -163,6 +348,10 @@ public class AssociateRepositoryRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -173,6 +362,7 @@ public class AssociateRepositoryRequest extends com.amazonaws.AmazonWebServiceRe
 
         hashCode = prime * hashCode + ((getRepository() == null) ? 0 : getRepository().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
