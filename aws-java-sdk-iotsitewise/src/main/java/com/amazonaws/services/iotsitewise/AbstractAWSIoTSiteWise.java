@@ -149,6 +149,11 @@ public class AbstractAWSIoTSiteWise implements AWSIoTSiteWise {
     }
 
     @Override
+    public DescribeDefaultEncryptionConfigurationResult describeDefaultEncryptionConfiguration(DescribeDefaultEncryptionConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeGatewayResult describeGateway(DescribeGatewayRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -240,6 +245,11 @@ public class AbstractAWSIoTSiteWise implements AWSIoTSiteWise {
 
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutDefaultEncryptionConfigurationResult putDefaultEncryptionConfiguration(PutDefaultEncryptionConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

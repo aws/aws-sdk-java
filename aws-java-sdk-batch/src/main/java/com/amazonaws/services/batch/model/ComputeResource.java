@@ -82,9 +82,11 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<String> instanceTypes;
     /**
      * <p>
-     * The Amazon Machine Image (AMI) ID used for instances launched in the compute environment.
+     * The Amazon Machine Image (AMI) ID used for instances launched in the compute environment. This parameter is
+     * overridden by the <code>imageIdOverride</code> member of the <code>Ec2Configuration</code> structure.
      * </p>
      */
+    @Deprecated
     private String imageId;
     /**
      * <p>
@@ -171,6 +173,12 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private LaunchTemplateSpecification launchTemplate;
+    /**
+     * <p>
+     * Provides additional details used to selecting the AMI to use for instances in a compute environment.
+     * </p>
+     */
+    private java.util.List<Ec2Configuration> ec2Configuration;
 
     /**
      * <p>
@@ -669,39 +677,45 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Machine Image (AMI) ID used for instances launched in the compute environment.
+     * The Amazon Machine Image (AMI) ID used for instances launched in the compute environment. This parameter is
+     * overridden by the <code>imageIdOverride</code> member of the <code>Ec2Configuration</code> structure.
      * </p>
      * 
      * @param imageId
-     *        The Amazon Machine Image (AMI) ID used for instances launched in the compute environment.
+     *        The Amazon Machine Image (AMI) ID used for instances launched in the compute environment. This parameter
+     *        is overridden by the <code>imageIdOverride</code> member of the <code>Ec2Configuration</code> structure.
      */
-
+    @Deprecated
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
 
     /**
      * <p>
-     * The Amazon Machine Image (AMI) ID used for instances launched in the compute environment.
+     * The Amazon Machine Image (AMI) ID used for instances launched in the compute environment. This parameter is
+     * overridden by the <code>imageIdOverride</code> member of the <code>Ec2Configuration</code> structure.
      * </p>
      * 
-     * @return The Amazon Machine Image (AMI) ID used for instances launched in the compute environment.
+     * @return The Amazon Machine Image (AMI) ID used for instances launched in the compute environment. This parameter
+     *         is overridden by the <code>imageIdOverride</code> member of the <code>Ec2Configuration</code> structure.
      */
-
+    @Deprecated
     public String getImageId() {
         return this.imageId;
     }
 
     /**
      * <p>
-     * The Amazon Machine Image (AMI) ID used for instances launched in the compute environment.
+     * The Amazon Machine Image (AMI) ID used for instances launched in the compute environment. This parameter is
+     * overridden by the <code>imageIdOverride</code> member of the <code>Ec2Configuration</code> structure.
      * </p>
      * 
      * @param imageId
-     *        The Amazon Machine Image (AMI) ID used for instances launched in the compute environment.
+     *        The Amazon Machine Image (AMI) ID used for instances launched in the compute environment. This parameter
+     *        is overridden by the <code>imageIdOverride</code> member of the <code>Ec2Configuration</code> structure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public ComputeResource withImageId(String imageId) {
         setImageId(imageId);
         return this;
@@ -1368,6 +1382,76 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Provides additional details used to selecting the AMI to use for instances in a compute environment.
+     * </p>
+     * 
+     * @return Provides additional details used to selecting the AMI to use for instances in a compute environment.
+     */
+
+    public java.util.List<Ec2Configuration> getEc2Configuration() {
+        return ec2Configuration;
+    }
+
+    /**
+     * <p>
+     * Provides additional details used to selecting the AMI to use for instances in a compute environment.
+     * </p>
+     * 
+     * @param ec2Configuration
+     *        Provides additional details used to selecting the AMI to use for instances in a compute environment.
+     */
+
+    public void setEc2Configuration(java.util.Collection<Ec2Configuration> ec2Configuration) {
+        if (ec2Configuration == null) {
+            this.ec2Configuration = null;
+            return;
+        }
+
+        this.ec2Configuration = new java.util.ArrayList<Ec2Configuration>(ec2Configuration);
+    }
+
+    /**
+     * <p>
+     * Provides additional details used to selecting the AMI to use for instances in a compute environment.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEc2Configuration(java.util.Collection)} or {@link #withEc2Configuration(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param ec2Configuration
+     *        Provides additional details used to selecting the AMI to use for instances in a compute environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComputeResource withEc2Configuration(Ec2Configuration... ec2Configuration) {
+        if (this.ec2Configuration == null) {
+            setEc2Configuration(new java.util.ArrayList<Ec2Configuration>(ec2Configuration.length));
+        }
+        for (Ec2Configuration ele : ec2Configuration) {
+            this.ec2Configuration.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides additional details used to selecting the AMI to use for instances in a compute environment.
+     * </p>
+     * 
+     * @param ec2Configuration
+     *        Provides additional details used to selecting the AMI to use for instances in a compute environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComputeResource withEc2Configuration(java.util.Collection<Ec2Configuration> ec2Configuration) {
+        setEc2Configuration(ec2Configuration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1410,7 +1494,9 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
         if (getSpotIamFleetRole() != null)
             sb.append("SpotIamFleetRole: ").append(getSpotIamFleetRole()).append(",");
         if (getLaunchTemplate() != null)
-            sb.append("LaunchTemplate: ").append(getLaunchTemplate());
+            sb.append("LaunchTemplate: ").append(getLaunchTemplate()).append(",");
+        if (getEc2Configuration() != null)
+            sb.append("Ec2Configuration: ").append(getEc2Configuration());
         sb.append("}");
         return sb.toString();
     }
@@ -1489,6 +1575,10 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getLaunchTemplate() != null && other.getLaunchTemplate().equals(this.getLaunchTemplate()) == false)
             return false;
+        if (other.getEc2Configuration() == null ^ this.getEc2Configuration() == null)
+            return false;
+        if (other.getEc2Configuration() != null && other.getEc2Configuration().equals(this.getEc2Configuration()) == false)
+            return false;
         return true;
     }
 
@@ -1513,6 +1603,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getBidPercentage() == null) ? 0 : getBidPercentage().hashCode());
         hashCode = prime * hashCode + ((getSpotIamFleetRole() == null) ? 0 : getSpotIamFleetRole().hashCode());
         hashCode = prime * hashCode + ((getLaunchTemplate() == null) ? 0 : getLaunchTemplate().hashCode());
+        hashCode = prime * hashCode + ((getEc2Configuration() == null) ? 0 : getEc2Configuration().hashCode());
         return hashCode;
     }
 

@@ -48,6 +48,14 @@ public class MpdSettingsJsonUnmarshaller implements Unmarshaller<MpdSettings, Js
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("accessibilityCaptionHints", targetDepth)) {
+                    context.nextToken();
+                    mpdSettings.setAccessibilityCaptionHints(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("audioDuration", targetDepth)) {
+                    context.nextToken();
+                    mpdSettings.setAudioDuration(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("captionContainerType", targetDepth)) {
                     context.nextToken();
                     mpdSettings.setCaptionContainerType(context.getUnmarshaller(String.class).unmarshall(context));

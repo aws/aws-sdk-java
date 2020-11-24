@@ -59,6 +59,17 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     /** Minimum time of initially buffered media that is needed to ensure smooth playout. */
     private Integer minBufferTime;
     /**
+     * Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back
+     * the end of your video asset. If you know that player devices are hanging on the final segment of your video
+     * because the length of your final segment is too short, use this setting to specify a minimum final segment length,
+     * in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify
+     * a value for this setting, the encoder will combine any final segment that is shorter than the length that you
+     * specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5
+     * seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final
+     * segment is 3.5 seconds.
+     */
+    private Double minFinalSegmentLength;
+    /**
      * Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service
      * signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand
      * (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
@@ -459,6 +470,82 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
+     * Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back
+     * the end of your video asset. If you know that player devices are hanging on the final segment of your video
+     * because the length of your final segment is too short, use this setting to specify a minimum final segment length,
+     * in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify
+     * a value for this setting, the encoder will combine any final segment that is shorter than the length that you
+     * specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5
+     * seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final
+     * segment is 3.5 seconds.
+     * 
+     * @param minFinalSegmentLength
+     *        Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices
+     *        play back the end of your video asset. If you know that player devices are hanging on the final segment of
+     *        your video because the length of your final segment is too short, use this setting to specify a minimum
+     *        final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than your
+     *        segment length. When you specify a value for this setting, the encoder will combine any final segment that
+     *        is shorter than the length that you specify with the previous segment. For example, your segment length is
+     *        3 seconds and your final segment is .5 seconds without a minimum final segment length; when you set the
+     *        minimum final segment length to 1, your final segment is 3.5 seconds.
+     */
+
+    public void setMinFinalSegmentLength(Double minFinalSegmentLength) {
+        this.minFinalSegmentLength = minFinalSegmentLength;
+    }
+
+    /**
+     * Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back
+     * the end of your video asset. If you know that player devices are hanging on the final segment of your video
+     * because the length of your final segment is too short, use this setting to specify a minimum final segment length,
+     * in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify
+     * a value for this setting, the encoder will combine any final segment that is shorter than the length that you
+     * specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5
+     * seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final
+     * segment is 3.5 seconds.
+     * 
+     * @return Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices
+     *         play back the end of your video asset. If you know that player devices are hanging on the final segment
+     *         of your video because the length of your final segment is too short, use this setting to specify a
+     *         minimum final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than
+     *         your segment length. When you specify a value for this setting, the encoder will combine any final
+     *         segment that is shorter than the length that you specify with the previous segment. For example, your
+     *         segment length is 3 seconds and your final segment is .5 seconds without a minimum final segment length;
+     *         when you set the minimum final segment length to 1, your final segment is 3.5 seconds.
+     */
+
+    public Double getMinFinalSegmentLength() {
+        return this.minFinalSegmentLength;
+    }
+
+    /**
+     * Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back
+     * the end of your video asset. If you know that player devices are hanging on the final segment of your video
+     * because the length of your final segment is too short, use this setting to specify a minimum final segment length,
+     * in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify
+     * a value for this setting, the encoder will combine any final segment that is shorter than the length that you
+     * specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5
+     * seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final
+     * segment is 3.5 seconds.
+     * 
+     * @param minFinalSegmentLength
+     *        Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices
+     *        play back the end of your video asset. If you know that player devices are hanging on the final segment of
+     *        your video because the length of your final segment is too short, use this setting to specify a minimum
+     *        final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than your
+     *        segment length. When you specify a value for this setting, the encoder will combine any final segment that
+     *        is shorter than the length that you specify with the previous segment. For example, your segment length is
+     *        3 seconds and your final segment is .5 seconds without a minimum final segment length; when you set the
+     *        minimum final segment length to 1, your final segment is 3.5 seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DashIsoGroupSettings withMinFinalSegmentLength(Double minFinalSegmentLength) {
+        setMinFinalSegmentLength(minFinalSegmentLength);
+        return this;
+    }
+
+    /**
      * Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service
      * signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand
      * (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
@@ -760,6 +847,8 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
             sb.append("HbbtvCompliance: ").append(getHbbtvCompliance()).append(",");
         if (getMinBufferTime() != null)
             sb.append("MinBufferTime: ").append(getMinBufferTime()).append(",");
+        if (getMinFinalSegmentLength() != null)
+            sb.append("MinFinalSegmentLength: ").append(getMinFinalSegmentLength()).append(",");
         if (getMpdProfile() != null)
             sb.append("MpdProfile: ").append(getMpdProfile()).append(",");
         if (getSegmentControl() != null)
@@ -814,6 +903,10 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
             return false;
         if (other.getMinBufferTime() != null && other.getMinBufferTime().equals(this.getMinBufferTime()) == false)
             return false;
+        if (other.getMinFinalSegmentLength() == null ^ this.getMinFinalSegmentLength() == null)
+            return false;
+        if (other.getMinFinalSegmentLength() != null && other.getMinFinalSegmentLength().equals(this.getMinFinalSegmentLength()) == false)
+            return false;
         if (other.getMpdProfile() == null ^ this.getMpdProfile() == null)
             return false;
         if (other.getMpdProfile() != null && other.getMpdProfile().equals(this.getMpdProfile()) == false)
@@ -847,6 +940,7 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getFragmentLength() == null) ? 0 : getFragmentLength().hashCode());
         hashCode = prime * hashCode + ((getHbbtvCompliance() == null) ? 0 : getHbbtvCompliance().hashCode());
         hashCode = prime * hashCode + ((getMinBufferTime() == null) ? 0 : getMinBufferTime().hashCode());
+        hashCode = prime * hashCode + ((getMinFinalSegmentLength() == null) ? 0 : getMinFinalSegmentLength().hashCode());
         hashCode = prime * hashCode + ((getMpdProfile() == null) ? 0 : getMpdProfile().hashCode());
         hashCode = prime * hashCode + ((getSegmentControl() == null) ? 0 : getSegmentControl().hashCode());
         hashCode = prime * hashCode + ((getSegmentLength() == null) ? 0 : getSegmentLength().hashCode());

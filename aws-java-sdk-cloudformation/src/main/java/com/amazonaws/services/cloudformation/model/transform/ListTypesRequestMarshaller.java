@@ -52,6 +52,10 @@ public class ListTypesRequestMarshaller implements Marshaller<Request<ListTypesR
             request.addParameter("DeprecatedStatus", StringUtils.fromString(listTypesRequest.getDeprecatedStatus()));
         }
 
+        if (listTypesRequest.getType() != null) {
+            request.addParameter("Type", StringUtils.fromString(listTypesRequest.getType()));
+        }
+
         if (listTypesRequest.getMaxResults() != null) {
             request.addParameter("MaxResults", StringUtils.fromInteger(listTypesRequest.getMaxResults()));
         }

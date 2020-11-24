@@ -875,6 +875,41 @@ public class AWSIoTSiteWiseAsyncClient extends AWSIoTSiteWiseClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeDefaultEncryptionConfigurationResult> describeDefaultEncryptionConfigurationAsync(
+            DescribeDefaultEncryptionConfigurationRequest request) {
+
+        return describeDefaultEncryptionConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDefaultEncryptionConfigurationResult> describeDefaultEncryptionConfigurationAsync(
+            final DescribeDefaultEncryptionConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDefaultEncryptionConfigurationRequest, DescribeDefaultEncryptionConfigurationResult> asyncHandler) {
+        final DescribeDefaultEncryptionConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeDefaultEncryptionConfigurationResult>() {
+            @Override
+            public DescribeDefaultEncryptionConfigurationResult call() throws Exception {
+                DescribeDefaultEncryptionConfigurationResult result = null;
+
+                try {
+                    result = executeDescribeDefaultEncryptionConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeGatewayResult> describeGatewayAsync(DescribeGatewayRequest request) {
 
         return describeGatewayAsync(request, null);
@@ -1488,6 +1523,41 @@ public class AWSIoTSiteWiseAsyncClient extends AWSIoTSiteWiseClient implements A
 
                 try {
                     result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDefaultEncryptionConfigurationResult> putDefaultEncryptionConfigurationAsync(
+            PutDefaultEncryptionConfigurationRequest request) {
+
+        return putDefaultEncryptionConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDefaultEncryptionConfigurationResult> putDefaultEncryptionConfigurationAsync(
+            final PutDefaultEncryptionConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutDefaultEncryptionConfigurationRequest, PutDefaultEncryptionConfigurationResult> asyncHandler) {
+        final PutDefaultEncryptionConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutDefaultEncryptionConfigurationResult>() {
+            @Override
+            public PutDefaultEncryptionConfigurationResult call() throws Exception {
+                PutDefaultEncryptionConfigurationResult result = null;
+
+                try {
+                    result = executePutDefaultEncryptionConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

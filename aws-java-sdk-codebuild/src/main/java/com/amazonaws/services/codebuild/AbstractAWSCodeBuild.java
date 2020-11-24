@@ -128,6 +128,11 @@ public class AbstractAWSCodeBuild implements AWSCodeBuild {
     }
 
     @Override
+    public GetReportGroupTrendResult getReportGroupTrend(GetReportGroupTrendRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetResourcePolicyResult getResourcePolicy(GetResourcePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

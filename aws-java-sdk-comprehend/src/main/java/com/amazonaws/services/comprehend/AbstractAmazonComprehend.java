@@ -118,6 +118,11 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
     }
 
     @Override
+    public DescribeEventsDetectionJobResult describeEventsDetectionJob(DescribeEventsDetectionJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeKeyPhrasesDetectionJobResult describeKeyPhrasesDetectionJob(DescribeKeyPhrasesDetectionJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -198,6 +203,11 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
     }
 
     @Override
+    public ListEventsDetectionJobsResult listEventsDetectionJobs(ListEventsDetectionJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListKeyPhrasesDetectionJobsResult listKeyPhrasesDetectionJobs(ListKeyPhrasesDetectionJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -238,6 +248,11 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
     }
 
     @Override
+    public StartEventsDetectionJobResult startEventsDetectionJob(StartEventsDetectionJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartKeyPhrasesDetectionJobResult startKeyPhrasesDetectionJob(StartKeyPhrasesDetectionJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -264,6 +279,11 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
 
     @Override
     public StopEntitiesDetectionJobResult stopEntitiesDetectionJob(StopEntitiesDetectionJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopEventsDetectionJobResult stopEventsDetectionJob(StopEventsDetectionJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

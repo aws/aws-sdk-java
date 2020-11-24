@@ -263,13 +263,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<String> stoppedActions;
     /**
      * <p>
-     * A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set,
-     * any application that runs on an instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's ARN from the <a
-     * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about
-     * using on-box credentials for your game servers at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
-     * external resources from a game server</a>.
+     * A unique identifier for an AWS IAM role that manages access to your AWS services.
      * </p>
      */
     private String instanceRoleArn;
@@ -2077,23 +2071,11 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set,
-     * any application that runs on an instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's ARN from the <a
-     * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about
-     * using on-box credentials for your game servers at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
-     * external resources from a game server</a>.
+     * A unique identifier for an AWS IAM role that manages access to your AWS services.
      * </p>
      * 
      * @param instanceRoleArn
-     *        A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role
-     *        ARN set, any application that runs on an instance in this fleet can assume the role, including install
-     *        scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN from
-     *        the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn
-     *        more about using on-box credentials for your game servers at <a
-     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     *        Access external resources from a game server</a>.
+     *        A unique identifier for an AWS IAM role that manages access to your AWS services.
      */
 
     public void setInstanceRoleArn(String instanceRoleArn) {
@@ -2102,22 +2084,10 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set,
-     * any application that runs on an instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's ARN from the <a
-     * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about
-     * using on-box credentials for your game servers at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
-     * external resources from a game server</a>.
+     * A unique identifier for an AWS IAM role that manages access to your AWS services.
      * </p>
      * 
-     * @return A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role
-     *         ARN set, any application that runs on an instance in this fleet can assume the role, including install
-     *         scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN from
-     *         the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn
-     *         more about using on-box credentials for your game servers at <a
-     *         href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     *         Access external resources from a game server</a>.
+     * @return A unique identifier for an AWS IAM role that manages access to your AWS services.
      */
 
     public String getInstanceRoleArn() {
@@ -2126,23 +2096,11 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set,
-     * any application that runs on an instance in this fleet can assume the role, including install scripts, server
-     * processes, and daemons (background processes). Create a role or look up a role's ARN from the <a
-     * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about
-     * using on-box credentials for your game servers at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
-     * external resources from a game server</a>.
+     * A unique identifier for an AWS IAM role that manages access to your AWS services.
      * </p>
      * 
      * @param instanceRoleArn
-     *        A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role
-     *        ARN set, any application that runs on an instance in this fleet can assume the role, including install
-     *        scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN from
-     *        the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn
-     *        more about using on-box credentials for your game servers at <a
-     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     *        Access external resources from a game server</a>.
+     *        A unique identifier for an AWS IAM role that manages access to your AWS services.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

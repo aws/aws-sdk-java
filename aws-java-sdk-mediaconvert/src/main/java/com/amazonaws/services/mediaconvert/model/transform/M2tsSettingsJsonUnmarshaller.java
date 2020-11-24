@@ -52,6 +52,10 @@ public class M2tsSettingsJsonUnmarshaller implements Unmarshaller<M2tsSettings, 
                     context.nextToken();
                     m2tsSettings.setAudioBufferModel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("audioDuration", targetDepth)) {
+                    context.nextToken();
+                    m2tsSettings.setAudioDuration(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("audioFramesPerPes", targetDepth)) {
                     context.nextToken();
                     m2tsSettings.setAudioFramesPerPes(context.getUnmarshaller(Integer.class).unmarshall(context));

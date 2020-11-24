@@ -482,7 +482,7 @@ public interface AWSIoTSiteWise {
      * <p>
      * Creates a pre-signed URL to a portal. Use this operation to create URLs to portals that use AWS Identity and
      * Access Management (IAM) to authenticate users. An IAM user with access to a portal can call this API to get a URL
-     * to that portal. The URL contains a session token that lets the IAM user access the portal.
+     * to that portal. The URL contains an authentication token that lets the IAM user access the portal.
      * </p>
      * 
      * @param createPresignedPortalUrlRequest
@@ -902,6 +902,36 @@ public interface AWSIoTSiteWise {
      *      API Documentation</a>
      */
     DescribeDashboardResult describeDashboard(DescribeDashboardRequest describeDashboardRequest);
+
+    /**
+     * <p>
+     * Retrieves information about the default encryption configuration for the AWS account in the default or specified
+     * region. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in the
+     * <i>AWS IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param describeDefaultEncryptionConfigurationRequest
+     * @return Result of the DescribeDefaultEncryptionConfiguration operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws InternalFailureException
+     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         SiteWise User Guide</i>.
+     * @sample AWSIoTSiteWise.DescribeDefaultEncryptionConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeDefaultEncryptionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeDefaultEncryptionConfigurationResult describeDefaultEncryptionConfiguration(
+            DescribeDefaultEncryptionConfigurationRequest describeDefaultEncryptionConfigurationRequest);
 
     /**
      * <p>
@@ -1512,6 +1542,45 @@ public interface AWSIoTSiteWise {
      *      target="_top">AWS API Documentation</a>
      */
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Sets the default encryption configuration for the AWS account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in the
+     * <i>AWS IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param putDefaultEncryptionConfigurationRequest
+     * @return Result of the PutDefaultEncryptionConfiguration operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws InternalFailureException
+     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         SiteWise User Guide</i>.
+     * @throws LimitExceededException
+     *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
+     *         than the allowed number of child assets or attempting to create more than the allowed number of
+     *         properties for an asset model.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         SiteWise User Guide</i>.
+     * @throws ConflictingOperationException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time.
+     * @sample AWSIoTSiteWise.PutDefaultEncryptionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutDefaultEncryptionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutDefaultEncryptionConfigurationResult putDefaultEncryptionConfiguration(PutDefaultEncryptionConfigurationRequest putDefaultEncryptionConfigurationRequest);
 
     /**
      * <p>

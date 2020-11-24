@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum RegistryType {
 
-    RESOURCE("RESOURCE");
+    RESOURCE("RESOURCE"),
+    MODULE("MODULE");
 
     private String value;
 

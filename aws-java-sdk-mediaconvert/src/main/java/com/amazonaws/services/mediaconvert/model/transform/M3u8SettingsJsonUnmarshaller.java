@@ -48,6 +48,10 @@ public class M3u8SettingsJsonUnmarshaller implements Unmarshaller<M3u8Settings, 
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("audioDuration", targetDepth)) {
+                    context.nextToken();
+                    m3u8Settings.setAudioDuration(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("audioFramesPerPes", targetDepth)) {
                     context.nextToken();
                     m3u8Settings.setAudioFramesPerPes(context.getUnmarshaller(Integer.class).unmarshall(context));

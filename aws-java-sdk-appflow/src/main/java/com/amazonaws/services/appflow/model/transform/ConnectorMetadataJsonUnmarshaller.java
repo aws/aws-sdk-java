@@ -116,6 +116,10 @@ public class ConnectorMetadataJsonUnmarshaller implements Unmarshaller<Connector
                     context.nextToken();
                     connectorMetadata.setEventBridge(EventBridgeMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Upsolver", targetDepth)) {
+                    context.nextToken();
+                    connectorMetadata.setUpsolver(UpsolverMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

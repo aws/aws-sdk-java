@@ -1541,6 +1541,60 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
     }
 
     /**
+     * @param getReportGroupTrendRequest
+     * @return Result of the GetReportGroupTrend operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @sample AWSCodeBuild.GetReportGroupTrend
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/GetReportGroupTrend" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetReportGroupTrendResult getReportGroupTrend(GetReportGroupTrendRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetReportGroupTrend(request);
+    }
+
+    @SdkInternalApi
+    final GetReportGroupTrendResult executeGetReportGroupTrend(GetReportGroupTrendRequest getReportGroupTrendRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getReportGroupTrendRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetReportGroupTrendRequest> request = null;
+        Response<GetReportGroupTrendResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetReportGroupTrendRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getReportGroupTrendRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetReportGroupTrend");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetReportGroupTrendResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetReportGroupTrendResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Gets a resource policy that is identified by its resource ARN.
      * </p>

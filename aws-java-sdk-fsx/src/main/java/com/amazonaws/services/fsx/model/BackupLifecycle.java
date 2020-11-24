@@ -26,18 +26,24 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * <code>CREATING</code> - FSx is creating the new user-intiated backup
+ * <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx has not started creating
+ * the backup.
  * </p>
  * </li>
  * <li>
  * <p>
- * <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; FSx is backing up the file
+ * <code>CREATING</code> - Amazon FSx is creating the new user-intiated backup
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is backing up the file
  * system.
  * </p>
  * </li>
  * <li>
  * <p>
- * <code>DELETED</code> - The backup was deleted is no longer available.
+ * <code>DELETED</code> - Amazon FSx deleted the backup and it is no longer available.
  * </p>
  * </li>
  * <li>
@@ -54,7 +60,8 @@ public enum BackupLifecycle {
     CREATING("CREATING"),
     TRANSFERRING("TRANSFERRING"),
     DELETED("DELETED"),
-    FAILED("FAILED");
+    FAILED("FAILED"),
+    PENDING("PENDING");
 
     private String value;
 

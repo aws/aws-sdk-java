@@ -264,6 +264,19 @@ public class AbstractAWSStepFunctionsAsync extends AbstractAWSStepFunctions impl
     }
 
     @Override
+    public java.util.concurrent.Future<StartSyncExecutionResult> startSyncExecutionAsync(StartSyncExecutionRequest request) {
+
+        return startSyncExecutionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSyncExecutionResult> startSyncExecutionAsync(StartSyncExecutionRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartSyncExecutionRequest, StartSyncExecutionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StopExecutionResult> stopExecutionAsync(StopExecutionRequest request) {
 
         return stopExecutionAsync(request, null);

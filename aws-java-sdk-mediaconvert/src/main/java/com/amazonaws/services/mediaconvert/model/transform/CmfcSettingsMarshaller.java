@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CmfcSettingsMarshaller {
 
+    private static final MarshallingInfo<String> AUDIODURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioDuration").build();
     private static final MarshallingInfo<String> SCTE35ESAM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scte35Esam").build();
     private static final MarshallingInfo<String> SCTE35SOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -48,6 +50,7 @@ public class CmfcSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(cmfcSettings.getAudioDuration(), AUDIODURATION_BINDING);
             protocolMarshaller.marshall(cmfcSettings.getScte35Esam(), SCTE35ESAM_BINDING);
             protocolMarshaller.marshall(cmfcSettings.getScte35Source(), SCTE35SOURCE_BINDING);
         } catch (Exception e) {

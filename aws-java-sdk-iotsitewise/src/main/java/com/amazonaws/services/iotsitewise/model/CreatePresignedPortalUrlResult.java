@@ -25,29 +25,29 @@ public class CreatePresignedPortalUrlResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The pre-signed URL to the portal. The URL contains the portal ID and a session token that lets you access the
-     * portal. The URL has the following format.
+     * The pre-signed URL to the portal. The URL contains the portal ID and an authentication token that lets you access
+     * the portal. The URL has the following format.
      * </p>
      * <p>
-     * <code>https://&lt;portal-id&gt;.app.iotsitewise.aws/auth?token=&lt;encrypted-token&gt;</code>
+     * <code>https://&lt;portal-id&gt;.app.iotsitewise.aws/iam?token=&lt;encrypted-token&gt;</code>
      * </p>
      */
     private String presignedPortalUrl;
 
     /**
      * <p>
-     * The pre-signed URL to the portal. The URL contains the portal ID and a session token that lets you access the
-     * portal. The URL has the following format.
+     * The pre-signed URL to the portal. The URL contains the portal ID and an authentication token that lets you access
+     * the portal. The URL has the following format.
      * </p>
      * <p>
-     * <code>https://&lt;portal-id&gt;.app.iotsitewise.aws/auth?token=&lt;encrypted-token&gt;</code>
+     * <code>https://&lt;portal-id&gt;.app.iotsitewise.aws/iam?token=&lt;encrypted-token&gt;</code>
      * </p>
      * 
      * @param presignedPortalUrl
-     *        The pre-signed URL to the portal. The URL contains the portal ID and a session token that lets you access
-     *        the portal. The URL has the following format.</p>
+     *        The pre-signed URL to the portal. The URL contains the portal ID and an authentication token that lets you
+     *        access the portal. The URL has the following format.</p>
      *        <p>
-     *        <code>https://&lt;portal-id&gt;.app.iotsitewise.aws/auth?token=&lt;encrypted-token&gt;</code>
+     *        <code>https://&lt;portal-id&gt;.app.iotsitewise.aws/iam?token=&lt;encrypted-token&gt;</code>
      */
 
     public void setPresignedPortalUrl(String presignedPortalUrl) {
@@ -56,17 +56,17 @@ public class CreatePresignedPortalUrlResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The pre-signed URL to the portal. The URL contains the portal ID and a session token that lets you access the
-     * portal. The URL has the following format.
+     * The pre-signed URL to the portal. The URL contains the portal ID and an authentication token that lets you access
+     * the portal. The URL has the following format.
      * </p>
      * <p>
-     * <code>https://&lt;portal-id&gt;.app.iotsitewise.aws/auth?token=&lt;encrypted-token&gt;</code>
+     * <code>https://&lt;portal-id&gt;.app.iotsitewise.aws/iam?token=&lt;encrypted-token&gt;</code>
      * </p>
      * 
-     * @return The pre-signed URL to the portal. The URL contains the portal ID and a session token that lets you access
-     *         the portal. The URL has the following format.</p>
+     * @return The pre-signed URL to the portal. The URL contains the portal ID and an authentication token that lets
+     *         you access the portal. The URL has the following format.</p>
      *         <p>
-     *         <code>https://&lt;portal-id&gt;.app.iotsitewise.aws/auth?token=&lt;encrypted-token&gt;</code>
+     *         <code>https://&lt;portal-id&gt;.app.iotsitewise.aws/iam?token=&lt;encrypted-token&gt;</code>
      */
 
     public String getPresignedPortalUrl() {
@@ -75,18 +75,18 @@ public class CreatePresignedPortalUrlResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The pre-signed URL to the portal. The URL contains the portal ID and a session token that lets you access the
-     * portal. The URL has the following format.
+     * The pre-signed URL to the portal. The URL contains the portal ID and an authentication token that lets you access
+     * the portal. The URL has the following format.
      * </p>
      * <p>
-     * <code>https://&lt;portal-id&gt;.app.iotsitewise.aws/auth?token=&lt;encrypted-token&gt;</code>
+     * <code>https://&lt;portal-id&gt;.app.iotsitewise.aws/iam?token=&lt;encrypted-token&gt;</code>
      * </p>
      * 
      * @param presignedPortalUrl
-     *        The pre-signed URL to the portal. The URL contains the portal ID and a session token that lets you access
-     *        the portal. The URL has the following format.</p>
+     *        The pre-signed URL to the portal. The URL contains the portal ID and an authentication token that lets you
+     *        access the portal. The URL has the following format.</p>
      *        <p>
-     *        <code>https://&lt;portal-id&gt;.app.iotsitewise.aws/auth?token=&lt;encrypted-token&gt;</code>
+     *        <code>https://&lt;portal-id&gt;.app.iotsitewise.aws/iam?token=&lt;encrypted-token&gt;</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

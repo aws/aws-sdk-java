@@ -1626,6 +1626,80 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Starts a Synchronous Express state machine execution.
+     * </p>
+     * 
+     * @param startSyncExecutionRequest
+     * @return Result of the StartSyncExecution operation returned by the service.
+     * @throws InvalidArnException
+     *         The provided Amazon Resource Name (ARN) is invalid.
+     * @throws InvalidExecutionInputException
+     *         The provided JSON input data is invalid.
+     * @throws InvalidNameException
+     *         The provided name is invalid.
+     * @throws StateMachineDoesNotExistException
+     *         The specified state machine does not exist.
+     * @throws StateMachineDeletingException
+     *         The specified state machine is being deleted.
+     * @throws StateMachineTypeNotSupportedException
+     * @sample AWSStepFunctions.StartSyncExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartSyncExecution" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StartSyncExecutionResult startSyncExecution(StartSyncExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartSyncExecution(request);
+    }
+
+    @SdkInternalApi
+    final StartSyncExecutionResult executeStartSyncExecution(StartSyncExecutionRequest startSyncExecutionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startSyncExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartSyncExecutionRequest> request = null;
+        Response<StartSyncExecutionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartSyncExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startSyncExecutionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartSyncExecution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "sync-";
+                String resolvedHostPrefix = String.format("sync-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartSyncExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartSyncExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Stops an execution.
      * </p>
      * <p>

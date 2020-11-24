@@ -92,6 +92,11 @@ public class StackResourceStaxUnmarshaller implements Unmarshaller<StackResource
                     stackResource.setDriftInformation(StackResourceDriftInformationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ModuleInfo", targetDepth)) {
+                    stackResource.setModuleInfo(ModuleInfoStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return stackResource;

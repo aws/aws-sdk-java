@@ -88,13 +88,17 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
     private String smsVerificationMessage;
     /**
      * <p>
-     * A string representing the email verification message.
+     * A string representing the email verification message. EmailVerificationMessage is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      */
     private String emailVerificationMessage;
     /**
      * <p>
-     * A string representing the email verification subject.
+     * A string representing the email verification subject. EmailVerificationSubject is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      */
     private String emailVerificationSubject;
@@ -735,11 +739,15 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A string representing the email verification message.
+     * A string representing the email verification message. EmailVerificationMessage is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
      * @param emailVerificationMessage
-     *        A string representing the email verification message.
+     *        A string representing the email verification message. EmailVerificationMessage is allowed only if <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *        >EmailSendingAccount</a> is DEVELOPER.
      */
 
     public void setEmailVerificationMessage(String emailVerificationMessage) {
@@ -748,10 +756,15 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A string representing the email verification message.
+     * A string representing the email verification message. EmailVerificationMessage is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
-     * @return A string representing the email verification message.
+     * @return A string representing the email verification message. EmailVerificationMessage is allowed only if <a
+     *         href=
+     *         "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *         >EmailSendingAccount</a> is DEVELOPER.
      */
 
     public String getEmailVerificationMessage() {
@@ -760,11 +773,15 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A string representing the email verification message.
+     * A string representing the email verification message. EmailVerificationMessage is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
      * @param emailVerificationMessage
-     *        A string representing the email verification message.
+     *        A string representing the email verification message. EmailVerificationMessage is allowed only if <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *        >EmailSendingAccount</a> is DEVELOPER.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -775,11 +792,15 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A string representing the email verification subject.
+     * A string representing the email verification subject. EmailVerificationSubject is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
      * @param emailVerificationSubject
-     *        A string representing the email verification subject.
+     *        A string representing the email verification subject. EmailVerificationSubject is allowed only if <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *        >EmailSendingAccount</a> is DEVELOPER.
      */
 
     public void setEmailVerificationSubject(String emailVerificationSubject) {
@@ -788,10 +809,15 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A string representing the email verification subject.
+     * A string representing the email verification subject. EmailVerificationSubject is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
-     * @return A string representing the email verification subject.
+     * @return A string representing the email verification subject. EmailVerificationSubject is allowed only if <a
+     *         href=
+     *         "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *         >EmailSendingAccount</a> is DEVELOPER.
      */
 
     public String getEmailVerificationSubject() {
@@ -800,11 +826,15 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A string representing the email verification subject.
+     * A string representing the email verification subject. EmailVerificationSubject is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
      * @param emailVerificationSubject
-     *        A string representing the email verification subject.
+     *        A string representing the email verification subject. EmailVerificationSubject is allowed only if <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *        >EmailSendingAccount</a> is DEVELOPER.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

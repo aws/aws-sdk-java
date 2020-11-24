@@ -120,9 +120,9 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
      * An array of one or more DNS alias names that you want to associate with the Amazon FSx file system. Aliases allow
      * you to use existing DNS names to access the data in your Amazon FSx file system. You can associate up to 50
      * aliases with a file system at any time. You can associate additional DNS aliases after you create the file system
-     * using the <a>AssociateFileSystemAliases</a> operation. You can remove DNS aliases from the file system after it
-     * is created using the <a>DisassociateFileSystemAliases</a> operation. You only need to specify the alias name in
-     * the request payload.
+     * using the AssociateFileSystemAliases operation. You can remove DNS aliases from the file system after it is
+     * created using the DisassociateFileSystemAliases operation. You only need to specify the alias name in the request
+     * payload.
      * </p>
      * <p>
      * For more information, see <a
@@ -825,9 +825,9 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
      * An array of one or more DNS alias names that you want to associate with the Amazon FSx file system. Aliases allow
      * you to use existing DNS names to access the data in your Amazon FSx file system. You can associate up to 50
      * aliases with a file system at any time. You can associate additional DNS aliases after you create the file system
-     * using the <a>AssociateFileSystemAliases</a> operation. You can remove DNS aliases from the file system after it
-     * is created using the <a>DisassociateFileSystemAliases</a> operation. You only need to specify the alias name in
-     * the request payload.
+     * using the AssociateFileSystemAliases operation. You can remove DNS aliases from the file system after it is
+     * created using the DisassociateFileSystemAliases operation. You only need to specify the alias name in the request
+     * payload.
      * </p>
      * <p>
      * For more information, see <a
@@ -870,9 +870,9 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
      * @return An array of one or more DNS alias names that you want to associate with the Amazon FSx file system.
      *         Aliases allow you to use existing DNS names to access the data in your Amazon FSx file system. You can
      *         associate up to 50 aliases with a file system at any time. You can associate additional DNS aliases after
-     *         you create the file system using the <a>AssociateFileSystemAliases</a> operation. You can remove DNS
-     *         aliases from the file system after it is created using the <a>DisassociateFileSystemAliases</a>
-     *         operation. You only need to specify the alias name in the request payload.</p>
+     *         you create the file system using the AssociateFileSystemAliases operation. You can remove DNS aliases
+     *         from the file system after it is created using the DisassociateFileSystemAliases operation. You only need
+     *         to specify the alias name in the request payload.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS
@@ -922,9 +922,9 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
      * An array of one or more DNS alias names that you want to associate with the Amazon FSx file system. Aliases allow
      * you to use existing DNS names to access the data in your Amazon FSx file system. You can associate up to 50
      * aliases with a file system at any time. You can associate additional DNS aliases after you create the file system
-     * using the <a>AssociateFileSystemAliases</a> operation. You can remove DNS aliases from the file system after it
-     * is created using the <a>DisassociateFileSystemAliases</a> operation. You only need to specify the alias name in
-     * the request payload.
+     * using the AssociateFileSystemAliases operation. You can remove DNS aliases from the file system after it is
+     * created using the DisassociateFileSystemAliases operation. You only need to specify the alias name in the request
+     * payload.
      * </p>
      * <p>
      * For more information, see <a
@@ -968,9 +968,9 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
      *        An array of one or more DNS alias names that you want to associate with the Amazon FSx file system.
      *        Aliases allow you to use existing DNS names to access the data in your Amazon FSx file system. You can
      *        associate up to 50 aliases with a file system at any time. You can associate additional DNS aliases after
-     *        you create the file system using the <a>AssociateFileSystemAliases</a> operation. You can remove DNS
-     *        aliases from the file system after it is created using the <a>DisassociateFileSystemAliases</a> operation.
-     *        You only need to specify the alias name in the request payload.</p>
+     *        you create the file system using the AssociateFileSystemAliases operation. You can remove DNS aliases from
+     *        the file system after it is created using the DisassociateFileSystemAliases operation. You only need to
+     *        specify the alias name in the request payload.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS
@@ -1024,9 +1024,9 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
      * An array of one or more DNS alias names that you want to associate with the Amazon FSx file system. Aliases allow
      * you to use existing DNS names to access the data in your Amazon FSx file system. You can associate up to 50
      * aliases with a file system at any time. You can associate additional DNS aliases after you create the file system
-     * using the <a>AssociateFileSystemAliases</a> operation. You can remove DNS aliases from the file system after it
-     * is created using the <a>DisassociateFileSystemAliases</a> operation. You only need to specify the alias name in
-     * the request payload.
+     * using the AssociateFileSystemAliases operation. You can remove DNS aliases from the file system after it is
+     * created using the DisassociateFileSystemAliases operation. You only need to specify the alias name in the request
+     * payload.
      * </p>
      * <p>
      * For more information, see <a
@@ -1075,9 +1075,9 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
      *        An array of one or more DNS alias names that you want to associate with the Amazon FSx file system.
      *        Aliases allow you to use existing DNS names to access the data in your Amazon FSx file system. You can
      *        associate up to 50 aliases with a file system at any time. You can associate additional DNS aliases after
-     *        you create the file system using the <a>AssociateFileSystemAliases</a> operation. You can remove DNS
-     *        aliases from the file system after it is created using the <a>DisassociateFileSystemAliases</a> operation.
-     *        You only need to specify the alias name in the request payload.</p>
+     *        you create the file system using the AssociateFileSystemAliases operation. You can remove DNS aliases from
+     *        the file system after it is created using the DisassociateFileSystemAliases operation. You only need to
+     *        specify the alias name in the request payload.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS
@@ -1133,9 +1133,9 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
      * An array of one or more DNS alias names that you want to associate with the Amazon FSx file system. Aliases allow
      * you to use existing DNS names to access the data in your Amazon FSx file system. You can associate up to 50
      * aliases with a file system at any time. You can associate additional DNS aliases after you create the file system
-     * using the <a>AssociateFileSystemAliases</a> operation. You can remove DNS aliases from the file system after it
-     * is created using the <a>DisassociateFileSystemAliases</a> operation. You only need to specify the alias name in
-     * the request payload.
+     * using the AssociateFileSystemAliases operation. You can remove DNS aliases from the file system after it is
+     * created using the DisassociateFileSystemAliases operation. You only need to specify the alias name in the request
+     * payload.
      * </p>
      * <p>
      * For more information, see <a
@@ -1179,9 +1179,9 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
      *        An array of one or more DNS alias names that you want to associate with the Amazon FSx file system.
      *        Aliases allow you to use existing DNS names to access the data in your Amazon FSx file system. You can
      *        associate up to 50 aliases with a file system at any time. You can associate additional DNS aliases after
-     *        you create the file system using the <a>AssociateFileSystemAliases</a> operation. You can remove DNS
-     *        aliases from the file system after it is created using the <a>DisassociateFileSystemAliases</a> operation.
-     *        You only need to specify the alias name in the request payload.</p>
+     *        you create the file system using the AssociateFileSystemAliases operation. You can remove DNS aliases from
+     *        the file system after it is created using the DisassociateFileSystemAliases operation. You only need to
+     *        specify the alias name in the request payload.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS

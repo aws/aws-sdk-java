@@ -262,6 +262,19 @@ public class AbstractAWSCodeBuildAsync extends AbstractAWSCodeBuild implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetReportGroupTrendResult> getReportGroupTrendAsync(GetReportGroupTrendRequest request) {
+
+        return getReportGroupTrendAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetReportGroupTrendResult> getReportGroupTrendAsync(GetReportGroupTrendRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetReportGroupTrendRequest, GetReportGroupTrendResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest request) {
 
         return getResourcePolicyAsync(request, null);

@@ -250,8 +250,9 @@ public interface AWSCloudTrail {
      * @throws InvalidParameterCombinationException
      *         This exception is thrown when the combination of parameters provided is not valid.
      * @throws KmsKeyNotFoundException
-     *         This exception is thrown when the KMS key does not exist, or when the S3 bucket and the KMS key are not
-     *         in the same region.
+     *         This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in
+     *         the same region, or when the KMS key associated with the SNS topic either does not exist or is not in the
+     *         same region.
      * @throws KmsKeyDisabledException
      *         This exception is no longer in use.
      * @throws KmsException
@@ -855,8 +856,8 @@ public interface AWSCloudTrail {
      * </p>
      * <important>
      * <p>
-     * The rate of lookup requests is limited to two per second per account. If this limit is exceeded, a throttling
-     * error occurs.
+     * The rate of lookup requests is limited to two per second, per account, per region. If this limit is exceeded, a
+     * throttling error occurs.
      * </p>
      * </important>
      * 
@@ -1401,8 +1402,9 @@ public interface AWSCloudTrail {
      *         This exception is thrown when an operation is called on a trail from a region other than the region in
      *         which the trail was created.
      * @throws KmsKeyNotFoundException
-     *         This exception is thrown when the KMS key does not exist, or when the S3 bucket and the KMS key are not
-     *         in the same region.
+     *         This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in
+     *         the same region, or when the KMS key associated with the SNS topic either does not exist or is not in the
+     *         same region.
      * @throws KmsKeyDisabledException
      *         This exception is no longer in use.
      * @throws KmsException

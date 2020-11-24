@@ -58,6 +58,12 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
      * </p>
      */
     private EventBridgeDestinationProperties eventBridge;
+    /**
+     * <p>
+     * The properties required to query Upsolver.
+     * </p>
+     */
+    private UpsolverDestinationProperties upsolver;
 
     /**
      * <p>
@@ -260,6 +266,46 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The properties required to query Upsolver.
+     * </p>
+     * 
+     * @param upsolver
+     *        The properties required to query Upsolver.
+     */
+
+    public void setUpsolver(UpsolverDestinationProperties upsolver) {
+        this.upsolver = upsolver;
+    }
+
+    /**
+     * <p>
+     * The properties required to query Upsolver.
+     * </p>
+     * 
+     * @return The properties required to query Upsolver.
+     */
+
+    public UpsolverDestinationProperties getUpsolver() {
+        return this.upsolver;
+    }
+
+    /**
+     * <p>
+     * The properties required to query Upsolver.
+     * </p>
+     * 
+     * @param upsolver
+     *        The properties required to query Upsolver.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DestinationConnectorProperties withUpsolver(UpsolverDestinationProperties upsolver) {
+        setUpsolver(upsolver);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -280,7 +326,9 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
         if (getSnowflake() != null)
             sb.append("Snowflake: ").append(getSnowflake()).append(",");
         if (getEventBridge() != null)
-            sb.append("EventBridge: ").append(getEventBridge());
+            sb.append("EventBridge: ").append(getEventBridge()).append(",");
+        if (getUpsolver() != null)
+            sb.append("Upsolver: ").append(getUpsolver());
         sb.append("}");
         return sb.toString();
     }
@@ -315,6 +363,10 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
             return false;
         if (other.getEventBridge() != null && other.getEventBridge().equals(this.getEventBridge()) == false)
             return false;
+        if (other.getUpsolver() == null ^ this.getUpsolver() == null)
+            return false;
+        if (other.getUpsolver() != null && other.getUpsolver().equals(this.getUpsolver()) == false)
+            return false;
         return true;
     }
 
@@ -328,6 +380,7 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
         hashCode = prime * hashCode + ((getSalesforce() == null) ? 0 : getSalesforce().hashCode());
         hashCode = prime * hashCode + ((getSnowflake() == null) ? 0 : getSnowflake().hashCode());
         hashCode = prime * hashCode + ((getEventBridge() == null) ? 0 : getEventBridge().hashCode());
+        hashCode = prime * hashCode + ((getUpsolver() == null) ? 0 : getUpsolver().hashCode());
         return hashCode;
     }
 

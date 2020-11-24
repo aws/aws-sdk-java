@@ -43,14 +43,44 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     private String clientRequestToken;
     /**
      * <p>
-     * Use this parameter to increase the storage capacity of an Amazon FSx for Windows File Server file system.
-     * Specifies the storage capacity target value, GiB, for the file system you're updating. The storage capacity
-     * target value must be at least 10 percent (%) greater than the current storage capacity value. In order to
-     * increase storage capacity, the file system needs to have at least 16 MB/s of throughput capacity. You cannot make
-     * a storage capacity increase request if there is an existing storage capacity increase request in progress. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing Storage
-     * Capacity</a>.
+     * Use this parameter to increase the storage capacity of an Amazon FSx file system. Specifies the storage capacity
+     * target value, GiB, to increase the storage capacity for the file system that you're updating. You cannot make a
+     * storage capacity increase request if there is an existing storage capacity increase request in progress.
+     * </p>
+     * <p>
+     * For Windows file systems, the storage capacity target value must be at least 10 percent (%) greater than the
+     * current storage capacity value. In order to increase storage capacity, the file system must have at least 16 MB/s
+     * of throughput capacity.
+     * </p>
+     * <p>
+     * For Lustre file systems, the storage capacity target value can be the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment types, valid values are in multiples of
+     * 2400 GiB. The value must be greater than the current storage capacity.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB for 12 MB/s/TiB file systems
+     * and multiples of 1800 GiB for 40 MB/s/TiB file systems. The values must be greater than the current storage
+     * capacity.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>SCRATCH_1</code> file systems, you cannot increase the storage capacity.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage
+     * capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and
+     * throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * </p>
      */
     private Integer storageCapacity;
@@ -151,25 +181,85 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Use this parameter to increase the storage capacity of an Amazon FSx for Windows File Server file system.
-     * Specifies the storage capacity target value, GiB, for the file system you're updating. The storage capacity
-     * target value must be at least 10 percent (%) greater than the current storage capacity value. In order to
-     * increase storage capacity, the file system needs to have at least 16 MB/s of throughput capacity. You cannot make
-     * a storage capacity increase request if there is an existing storage capacity increase request in progress. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing Storage
-     * Capacity</a>.
+     * Use this parameter to increase the storage capacity of an Amazon FSx file system. Specifies the storage capacity
+     * target value, GiB, to increase the storage capacity for the file system that you're updating. You cannot make a
+     * storage capacity increase request if there is an existing storage capacity increase request in progress.
+     * </p>
+     * <p>
+     * For Windows file systems, the storage capacity target value must be at least 10 percent (%) greater than the
+     * current storage capacity value. In order to increase storage capacity, the file system must have at least 16 MB/s
+     * of throughput capacity.
+     * </p>
+     * <p>
+     * For Lustre file systems, the storage capacity target value can be the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment types, valid values are in multiples of
+     * 2400 GiB. The value must be greater than the current storage capacity.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB for 12 MB/s/TiB file systems
+     * and multiples of 1800 GiB for 40 MB/s/TiB file systems. The values must be greater than the current storage
+     * capacity.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>SCRATCH_1</code> file systems, you cannot increase the storage capacity.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage
+     * capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and
+     * throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * </p>
      * 
      * @param storageCapacity
-     *        Use this parameter to increase the storage capacity of an Amazon FSx for Windows File Server file system.
-     *        Specifies the storage capacity target value, GiB, for the file system you're updating. The storage
-     *        capacity target value must be at least 10 percent (%) greater than the current storage capacity value. In
-     *        order to increase storage capacity, the file system needs to have at least 16 MB/s of throughput capacity.
-     *        You cannot make a storage capacity increase request if there is an existing storage capacity increase
-     *        request in progress. For more information, see <a
-     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing Storage
-     *        Capacity</a>.
+     *        Use this parameter to increase the storage capacity of an Amazon FSx file system. Specifies the storage
+     *        capacity target value, GiB, to increase the storage capacity for the file system that you're updating. You
+     *        cannot make a storage capacity increase request if there is an existing storage capacity increase request
+     *        in progress.</p>
+     *        <p>
+     *        For Windows file systems, the storage capacity target value must be at least 10 percent (%) greater than
+     *        the current storage capacity value. In order to increase storage capacity, the file system must have at
+     *        least 16 MB/s of throughput capacity.
+     *        </p>
+     *        <p>
+     *        For Lustre file systems, the storage capacity target value can be the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment types, valid values are in
+     *        multiples of 2400 GiB. The value must be greater than the current storage capacity.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB for 12 MB/s/TiB file
+     *        systems and multiples of 1800 GiB for 40 MB/s/TiB file systems. The values must be greater than the
+     *        current storage capacity.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>SCRATCH_1</code> file systems, you cannot increase the storage capacity.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage
+     *        capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i> and <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage
+     *        and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      */
 
     public void setStorageCapacity(Integer storageCapacity) {
@@ -178,24 +268,84 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Use this parameter to increase the storage capacity of an Amazon FSx for Windows File Server file system.
-     * Specifies the storage capacity target value, GiB, for the file system you're updating. The storage capacity
-     * target value must be at least 10 percent (%) greater than the current storage capacity value. In order to
-     * increase storage capacity, the file system needs to have at least 16 MB/s of throughput capacity. You cannot make
-     * a storage capacity increase request if there is an existing storage capacity increase request in progress. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing Storage
-     * Capacity</a>.
+     * Use this parameter to increase the storage capacity of an Amazon FSx file system. Specifies the storage capacity
+     * target value, GiB, to increase the storage capacity for the file system that you're updating. You cannot make a
+     * storage capacity increase request if there is an existing storage capacity increase request in progress.
+     * </p>
+     * <p>
+     * For Windows file systems, the storage capacity target value must be at least 10 percent (%) greater than the
+     * current storage capacity value. In order to increase storage capacity, the file system must have at least 16 MB/s
+     * of throughput capacity.
+     * </p>
+     * <p>
+     * For Lustre file systems, the storage capacity target value can be the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment types, valid values are in multiples of
+     * 2400 GiB. The value must be greater than the current storage capacity.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB for 12 MB/s/TiB file systems
+     * and multiples of 1800 GiB for 40 MB/s/TiB file systems. The values must be greater than the current storage
+     * capacity.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>SCRATCH_1</code> file systems, you cannot increase the storage capacity.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage
+     * capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and
+     * throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * </p>
      * 
-     * @return Use this parameter to increase the storage capacity of an Amazon FSx for Windows File Server file system.
-     *         Specifies the storage capacity target value, GiB, for the file system you're updating. The storage
-     *         capacity target value must be at least 10 percent (%) greater than the current storage capacity value. In
-     *         order to increase storage capacity, the file system needs to have at least 16 MB/s of throughput
-     *         capacity. You cannot make a storage capacity increase request if there is an existing storage capacity
-     *         increase request in progress. For more information, see <a
+     * @return Use this parameter to increase the storage capacity of an Amazon FSx file system. Specifies the storage
+     *         capacity target value, GiB, to increase the storage capacity for the file system that you're updating.
+     *         You cannot make a storage capacity increase request if there is an existing storage capacity increase
+     *         request in progress.</p>
+     *         <p>
+     *         For Windows file systems, the storage capacity target value must be at least 10 percent (%) greater than
+     *         the current storage capacity value. In order to increase storage capacity, the file system must have at
+     *         least 16 MB/s of throughput capacity.
+     *         </p>
+     *         <p>
+     *         For Lustre file systems, the storage capacity target value can be the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment types, valid values are in
+     *         multiples of 2400 GiB. The value must be greater than the current storage capacity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB for 12 MB/s/TiB file
+     *         systems and multiples of 1800 GiB for 40 MB/s/TiB file systems. The values must be greater than the
+     *         current storage capacity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For <code>SCRATCH_1</code> file systems, you cannot increase the storage capacity.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a
      *         href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
-     *         Storage Capacity</a>.
+     *         storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i> and <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage
+     *         and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      */
 
     public Integer getStorageCapacity() {
@@ -204,25 +354,85 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Use this parameter to increase the storage capacity of an Amazon FSx for Windows File Server file system.
-     * Specifies the storage capacity target value, GiB, for the file system you're updating. The storage capacity
-     * target value must be at least 10 percent (%) greater than the current storage capacity value. In order to
-     * increase storage capacity, the file system needs to have at least 16 MB/s of throughput capacity. You cannot make
-     * a storage capacity increase request if there is an existing storage capacity increase request in progress. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing Storage
-     * Capacity</a>.
+     * Use this parameter to increase the storage capacity of an Amazon FSx file system. Specifies the storage capacity
+     * target value, GiB, to increase the storage capacity for the file system that you're updating. You cannot make a
+     * storage capacity increase request if there is an existing storage capacity increase request in progress.
+     * </p>
+     * <p>
+     * For Windows file systems, the storage capacity target value must be at least 10 percent (%) greater than the
+     * current storage capacity value. In order to increase storage capacity, the file system must have at least 16 MB/s
+     * of throughput capacity.
+     * </p>
+     * <p>
+     * For Lustre file systems, the storage capacity target value can be the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment types, valid values are in multiples of
+     * 2400 GiB. The value must be greater than the current storage capacity.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB for 12 MB/s/TiB file systems
+     * and multiples of 1800 GiB for 40 MB/s/TiB file systems. The values must be greater than the current storage
+     * capacity.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>SCRATCH_1</code> file systems, you cannot increase the storage capacity.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage
+     * capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and
+     * throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * </p>
      * 
      * @param storageCapacity
-     *        Use this parameter to increase the storage capacity of an Amazon FSx for Windows File Server file system.
-     *        Specifies the storage capacity target value, GiB, for the file system you're updating. The storage
-     *        capacity target value must be at least 10 percent (%) greater than the current storage capacity value. In
-     *        order to increase storage capacity, the file system needs to have at least 16 MB/s of throughput capacity.
-     *        You cannot make a storage capacity increase request if there is an existing storage capacity increase
-     *        request in progress. For more information, see <a
-     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing Storage
-     *        Capacity</a>.
+     *        Use this parameter to increase the storage capacity of an Amazon FSx file system. Specifies the storage
+     *        capacity target value, GiB, to increase the storage capacity for the file system that you're updating. You
+     *        cannot make a storage capacity increase request if there is an existing storage capacity increase request
+     *        in progress.</p>
+     *        <p>
+     *        For Windows file systems, the storage capacity target value must be at least 10 percent (%) greater than
+     *        the current storage capacity value. In order to increase storage capacity, the file system must have at
+     *        least 16 MB/s of throughput capacity.
+     *        </p>
+     *        <p>
+     *        For Lustre file systems, the storage capacity target value can be the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment types, valid values are in
+     *        multiples of 2400 GiB. The value must be greater than the current storage capacity.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB for 12 MB/s/TiB file
+     *        systems and multiples of 1800 GiB for 40 MB/s/TiB file systems. The values must be greater than the
+     *        current storage capacity.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>SCRATCH_1</code> file systems, you cannot increase the storage capacity.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage
+     *        capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i> and <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage
+     *        and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

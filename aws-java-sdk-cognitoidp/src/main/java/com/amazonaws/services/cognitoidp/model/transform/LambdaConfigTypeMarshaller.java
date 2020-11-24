@@ -47,6 +47,12 @@ public class LambdaConfigTypeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreTokenGeneration").build();
     private static final MarshallingInfo<String> USERMIGRATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserMigration").build();
+    private static final MarshallingInfo<StructuredPojo> CUSTOMSMSSENDER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomSMSSender").build();
+    private static final MarshallingInfo<StructuredPojo> CUSTOMEMAILSENDER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomEmailSender").build();
+    private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KMSKeyID").build();
 
     private static final LambdaConfigTypeMarshaller instance = new LambdaConfigTypeMarshaller();
 
@@ -74,6 +80,9 @@ public class LambdaConfigTypeMarshaller {
             protocolMarshaller.marshall(lambdaConfigType.getVerifyAuthChallengeResponse(), VERIFYAUTHCHALLENGERESPONSE_BINDING);
             protocolMarshaller.marshall(lambdaConfigType.getPreTokenGeneration(), PRETOKENGENERATION_BINDING);
             protocolMarshaller.marshall(lambdaConfigType.getUserMigration(), USERMIGRATION_BINDING);
+            protocolMarshaller.marshall(lambdaConfigType.getCustomSMSSender(), CUSTOMSMSSENDER_BINDING);
+            protocolMarshaller.marshall(lambdaConfigType.getCustomEmailSender(), CUSTOMEMAILSENDER_BINDING);
+            protocolMarshaller.marshall(lambdaConfigType.getKMSKeyID(), KMSKEYID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

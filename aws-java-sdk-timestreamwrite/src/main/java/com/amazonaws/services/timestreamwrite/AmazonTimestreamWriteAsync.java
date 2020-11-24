@@ -130,6 +130,10 @@ public interface AmazonTimestreamWriteAsync extends AmazonTimestreamWrite {
      * <p>
      * All tables in the database must be deleted first, or a ValidationException error will be thrown.
      * </p>
+     * <p>
+     * Due to the nature of distributed retries, the operation can return either success or a ResourceNotFoundException.
+     * Clients should consider them equivalent.
+     * </p>
      * 
      * @param deleteDatabaseRequest
      * @return A Java Future containing the result of the DeleteDatabase operation returned by the service.
@@ -146,6 +150,10 @@ public interface AmazonTimestreamWriteAsync extends AmazonTimestreamWrite {
      * </p>
      * <p>
      * All tables in the database must be deleted first, or a ValidationException error will be thrown.
+     * </p>
+     * <p>
+     * Due to the nature of distributed retries, the operation can return either success or a ResourceNotFoundException.
+     * Clients should consider them equivalent.
      * </p>
      * 
      * @param deleteDatabaseRequest
@@ -166,6 +174,10 @@ public interface AmazonTimestreamWriteAsync extends AmazonTimestreamWrite {
      * Deletes a given Timestream table. This is an irreversible operation. After a Timestream database table is
      * deleted, the time series data stored in the table cannot be recovered.
      * </p>
+     * <p>
+     * Due to the nature of distributed retries, the operation can return either success or a ResourceNotFoundException.
+     * Clients should consider them equivalent.
+     * </p>
      * 
      * @param deleteTableRequest
      * @return A Java Future containing the result of the DeleteTable operation returned by the service.
@@ -179,6 +191,10 @@ public interface AmazonTimestreamWriteAsync extends AmazonTimestreamWrite {
      * <p>
      * Deletes a given Timestream table. This is an irreversible operation. After a Timestream database table is
      * deleted, the time series data stored in the table cannot be recovered.
+     * </p>
+     * <p>
+     * Due to the nature of distributed retries, the operation can return either success or a ResourceNotFoundException.
+     * Clients should consider them equivalent.
      * </p>
      * 
      * @param deleteTableRequest

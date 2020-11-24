@@ -340,6 +340,21 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeDefaultEncryptionConfigurationResult> describeDefaultEncryptionConfigurationAsync(
+            DescribeDefaultEncryptionConfigurationRequest request) {
+
+        return describeDefaultEncryptionConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDefaultEncryptionConfigurationResult> describeDefaultEncryptionConfigurationAsync(
+            DescribeDefaultEncryptionConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDefaultEncryptionConfigurationRequest, DescribeDefaultEncryptionConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeGatewayResult> describeGatewayAsync(DescribeGatewayRequest request) {
 
         return describeGatewayAsync(request, null);
@@ -584,6 +599,21 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDefaultEncryptionConfigurationResult> putDefaultEncryptionConfigurationAsync(
+            PutDefaultEncryptionConfigurationRequest request) {
+
+        return putDefaultEncryptionConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDefaultEncryptionConfigurationResult> putDefaultEncryptionConfigurationAsync(
+            PutDefaultEncryptionConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutDefaultEncryptionConfigurationRequest, PutDefaultEncryptionConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

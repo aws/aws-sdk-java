@@ -36,25 +36,35 @@ public class VerificationMessageTemplateType implements Serializable, Cloneable,
     private String smsMessage;
     /**
      * <p>
-     * The email message template.
+     * The email message template. EmailMessage is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * > EmailSendingAccount</a> is DEVELOPER.
      * </p>
      */
     private String emailMessage;
     /**
      * <p>
-     * The subject line for the email message template.
+     * The subject line for the email message template. EmailSubject is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      */
     private String emailSubject;
     /**
      * <p>
-     * The email message template for sending a confirmation link to the user.
+     * The email message template for sending a confirmation link to the user. EmailMessageByLink is allowed only if <a
+     * href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * > EmailSendingAccount</a> is DEVELOPER.
      * </p>
      */
     private String emailMessageByLink;
     /**
      * <p>
-     * The subject line for the email message template for sending a confirmation link to the user.
+     * The subject line for the email message template for sending a confirmation link to the user. EmailSubjectByLink
+     * is allowed only <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * > EmailSendingAccount</a> is DEVELOPER.
      * </p>
      */
     private String emailSubjectByLink;
@@ -107,11 +117,15 @@ public class VerificationMessageTemplateType implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The email message template.
+     * The email message template. EmailMessage is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * > EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
      * @param emailMessage
-     *        The email message template.
+     *        The email message template. EmailMessage is allowed only if <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *        > EmailSendingAccount</a> is DEVELOPER.
      */
 
     public void setEmailMessage(String emailMessage) {
@@ -120,10 +134,14 @@ public class VerificationMessageTemplateType implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The email message template.
+     * The email message template. EmailMessage is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * > EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
-     * @return The email message template.
+     * @return The email message template. EmailMessage is allowed only if <a href=
+     *         "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *         > EmailSendingAccount</a> is DEVELOPER.
      */
 
     public String getEmailMessage() {
@@ -132,11 +150,15 @@ public class VerificationMessageTemplateType implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The email message template.
+     * The email message template. EmailMessage is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * > EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
      * @param emailMessage
-     *        The email message template.
+     *        The email message template. EmailMessage is allowed only if <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *        > EmailSendingAccount</a> is DEVELOPER.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,11 +169,15 @@ public class VerificationMessageTemplateType implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The subject line for the email message template.
+     * The subject line for the email message template. EmailSubject is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
      * @param emailSubject
-     *        The subject line for the email message template.
+     *        The subject line for the email message template. EmailSubject is allowed only if <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *        >EmailSendingAccount</a> is DEVELOPER.
      */
 
     public void setEmailSubject(String emailSubject) {
@@ -160,10 +186,14 @@ public class VerificationMessageTemplateType implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The subject line for the email message template.
+     * The subject line for the email message template. EmailSubject is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
-     * @return The subject line for the email message template.
+     * @return The subject line for the email message template. EmailSubject is allowed only if <a href=
+     *         "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *         >EmailSendingAccount</a> is DEVELOPER.
      */
 
     public String getEmailSubject() {
@@ -172,11 +202,15 @@ public class VerificationMessageTemplateType implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The subject line for the email message template.
+     * The subject line for the email message template. EmailSubject is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
      * @param emailSubject
-     *        The subject line for the email message template.
+     *        The subject line for the email message template. EmailSubject is allowed only if <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *        >EmailSendingAccount</a> is DEVELOPER.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,11 +221,17 @@ public class VerificationMessageTemplateType implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The email message template for sending a confirmation link to the user.
+     * The email message template for sending a confirmation link to the user. EmailMessageByLink is allowed only if <a
+     * href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * > EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
      * @param emailMessageByLink
-     *        The email message template for sending a confirmation link to the user.
+     *        The email message template for sending a confirmation link to the user. EmailMessageByLink is allowed only
+     *        if <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *        > EmailSendingAccount</a> is DEVELOPER.
      */
 
     public void setEmailMessageByLink(String emailMessageByLink) {
@@ -200,10 +240,16 @@ public class VerificationMessageTemplateType implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The email message template for sending a confirmation link to the user.
+     * The email message template for sending a confirmation link to the user. EmailMessageByLink is allowed only if <a
+     * href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * > EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
-     * @return The email message template for sending a confirmation link to the user.
+     * @return The email message template for sending a confirmation link to the user. EmailMessageByLink is allowed
+     *         only if <a href=
+     *         "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *         > EmailSendingAccount</a> is DEVELOPER.
      */
 
     public String getEmailMessageByLink() {
@@ -212,11 +258,17 @@ public class VerificationMessageTemplateType implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The email message template for sending a confirmation link to the user.
+     * The email message template for sending a confirmation link to the user. EmailMessageByLink is allowed only if <a
+     * href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * > EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
      * @param emailMessageByLink
-     *        The email message template for sending a confirmation link to the user.
+     *        The email message template for sending a confirmation link to the user. EmailMessageByLink is allowed only
+     *        if <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *        > EmailSendingAccount</a> is DEVELOPER.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,11 +279,17 @@ public class VerificationMessageTemplateType implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The subject line for the email message template for sending a confirmation link to the user.
+     * The subject line for the email message template for sending a confirmation link to the user. EmailSubjectByLink
+     * is allowed only <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * > EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
      * @param emailSubjectByLink
      *        The subject line for the email message template for sending a confirmation link to the user.
+     *        EmailSubjectByLink is allowed only <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *        > EmailSendingAccount</a> is DEVELOPER.
      */
 
     public void setEmailSubjectByLink(String emailSubjectByLink) {
@@ -240,10 +298,16 @@ public class VerificationMessageTemplateType implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The subject line for the email message template for sending a confirmation link to the user.
+     * The subject line for the email message template for sending a confirmation link to the user. EmailSubjectByLink
+     * is allowed only <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * > EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
      * @return The subject line for the email message template for sending a confirmation link to the user.
+     *         EmailSubjectByLink is allowed only <a href=
+     *         "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *         > EmailSendingAccount</a> is DEVELOPER.
      */
 
     public String getEmailSubjectByLink() {
@@ -252,11 +316,17 @@ public class VerificationMessageTemplateType implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The subject line for the email message template for sending a confirmation link to the user.
+     * The subject line for the email message template for sending a confirmation link to the user. EmailSubjectByLink
+     * is allowed only <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * > EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
      * @param emailSubjectByLink
      *        The subject line for the email message template for sending a confirmation link to the user.
+     *        EmailSubjectByLink is allowed only <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *        > EmailSendingAccount</a> is DEVELOPER.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

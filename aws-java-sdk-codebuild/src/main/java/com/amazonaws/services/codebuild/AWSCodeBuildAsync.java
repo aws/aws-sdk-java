@@ -816,6 +816,29 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
             com.amazonaws.handlers.AsyncHandler<DescribeTestCasesRequest, DescribeTestCasesResult> asyncHandler);
 
     /**
+     * @param getReportGroupTrendRequest
+     * @return A Java Future containing the result of the GetReportGroupTrend operation returned by the service.
+     * @sample AWSCodeBuildAsync.GetReportGroupTrend
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/GetReportGroupTrend" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetReportGroupTrendResult> getReportGroupTrendAsync(GetReportGroupTrendRequest getReportGroupTrendRequest);
+
+    /**
+     * @param getReportGroupTrendRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetReportGroupTrend operation returned by the service.
+     * @sample AWSCodeBuildAsyncHandler.GetReportGroupTrend
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/GetReportGroupTrend" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetReportGroupTrendResult> getReportGroupTrendAsync(GetReportGroupTrendRequest getReportGroupTrendRequest,
+            com.amazonaws.handlers.AsyncHandler<GetReportGroupTrendRequest, GetReportGroupTrendResult> asyncHandler);
+
+    /**
      * <p>
      * Gets a resource policy that is identified by its resource ARN.
      * </p>

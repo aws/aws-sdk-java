@@ -119,6 +119,12 @@ public class ComputeResourceJsonUnmarshaller implements Unmarshaller<ComputeReso
                     context.nextToken();
                     computeResource.setLaunchTemplate(LaunchTemplateSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ec2Configuration", targetDepth)) {
+                    context.nextToken();
+                    computeResource.setEc2Configuration(new ListUnmarshaller<Ec2Configuration>(Ec2ConfigurationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

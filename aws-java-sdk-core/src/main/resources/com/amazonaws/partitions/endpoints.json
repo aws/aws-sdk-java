@@ -5466,6 +5466,7 @@
       },
       "snowball" : {
         "endpoints" : {
+          "af-south-1" : { },
           "ap-east-1" : { },
           "ap-northeast-1" : { },
           "ap-northeast-2" : { },
@@ -7047,6 +7048,12 @@
       },
       "polly" : {
         "endpoints" : {
+          "cn-northwest-1" : { }
+        }
+      },
+      "ram" : {
+        "endpoints" : {
+          "cn-north-1" : { },
           "cn-northwest-1" : { }
         }
       },

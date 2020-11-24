@@ -48,6 +48,10 @@ public class Mp4SettingsJsonUnmarshaller implements Unmarshaller<Mp4Settings, Js
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("audioDuration", targetDepth)) {
+                    context.nextToken();
+                    mp4Settings.setAudioDuration(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("cslgAtom", targetDepth)) {
                     context.nextToken();
                     mp4Settings.setCslgAtom(context.getUnmarshaller(String.class).unmarshall(context));

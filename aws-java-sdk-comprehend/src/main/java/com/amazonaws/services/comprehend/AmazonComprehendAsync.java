@@ -672,6 +672,39 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
 
     /**
      * <p>
+     * Gets the status and details of an events detection job.
+     * </p>
+     * 
+     * @param describeEventsDetectionJobRequest
+     * @return A Java Future containing the result of the DescribeEventsDetectionJob operation returned by the service.
+     * @sample AmazonComprehendAsync.DescribeEventsDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEventsDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEventsDetectionJobResult> describeEventsDetectionJobAsync(
+            DescribeEventsDetectionJobRequest describeEventsDetectionJobRequest);
+
+    /**
+     * <p>
+     * Gets the status and details of an events detection job.
+     * </p>
+     * 
+     * @param describeEventsDetectionJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeEventsDetectionJob operation returned by the service.
+     * @sample AmazonComprehendAsyncHandler.DescribeEventsDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEventsDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEventsDetectionJobResult> describeEventsDetectionJobAsync(
+            DescribeEventsDetectionJobRequest describeEventsDetectionJobRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeEventsDetectionJobRequest, DescribeEventsDetectionJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets the properties associated with a key phrases detection job. Use this operation to get the status of a
      * detection job.
      * </p>
@@ -1222,6 +1255,37 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
 
     /**
      * <p>
+     * Gets a list of the events detection jobs that you have submitted.
+     * </p>
+     * 
+     * @param listEventsDetectionJobsRequest
+     * @return A Java Future containing the result of the ListEventsDetectionJobs operation returned by the service.
+     * @sample AmazonComprehendAsync.ListEventsDetectionJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEventsDetectionJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListEventsDetectionJobsResult> listEventsDetectionJobsAsync(ListEventsDetectionJobsRequest listEventsDetectionJobsRequest);
+
+    /**
+     * <p>
+     * Gets a list of the events detection jobs that you have submitted.
+     * </p>
+     * 
+     * @param listEventsDetectionJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListEventsDetectionJobs operation returned by the service.
+     * @sample AmazonComprehendAsyncHandler.ListEventsDetectionJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEventsDetectionJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListEventsDetectionJobsResult> listEventsDetectionJobsAsync(ListEventsDetectionJobsRequest listEventsDetectionJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListEventsDetectionJobsRequest, ListEventsDetectionJobsResult> asyncHandler);
+
+    /**
+     * <p>
      * Get a list of key phrase detection jobs that you have submitted.
      * </p>
      * 
@@ -1502,6 +1566,37 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
 
     /**
      * <p>
+     * Starts an asynchronous event detection job for a collection of documents.
+     * </p>
+     * 
+     * @param startEventsDetectionJobRequest
+     * @return A Java Future containing the result of the StartEventsDetectionJob operation returned by the service.
+     * @sample AmazonComprehendAsync.StartEventsDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartEventsDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartEventsDetectionJobResult> startEventsDetectionJobAsync(StartEventsDetectionJobRequest startEventsDetectionJobRequest);
+
+    /**
+     * <p>
+     * Starts an asynchronous event detection job for a collection of documents.
+     * </p>
+     * 
+     * @param startEventsDetectionJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartEventsDetectionJob operation returned by the service.
+     * @sample AmazonComprehendAsyncHandler.StartEventsDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartEventsDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartEventsDetectionJobResult> startEventsDetectionJobAsync(StartEventsDetectionJobRequest startEventsDetectionJobRequest,
+            com.amazonaws.handlers.AsyncHandler<StartEventsDetectionJobRequest, StartEventsDetectionJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Starts an asynchronous key phrase detection job for a collection of documents. Use the operation to track the
      * status of a job.
      * </p>
@@ -1751,6 +1846,37 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      */
     java.util.concurrent.Future<StopEntitiesDetectionJobResult> stopEntitiesDetectionJobAsync(StopEntitiesDetectionJobRequest stopEntitiesDetectionJobRequest,
             com.amazonaws.handlers.AsyncHandler<StopEntitiesDetectionJobRequest, StopEntitiesDetectionJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops an events detection job in progress.
+     * </p>
+     * 
+     * @param stopEventsDetectionJobRequest
+     * @return A Java Future containing the result of the StopEventsDetectionJob operation returned by the service.
+     * @sample AmazonComprehendAsync.StopEventsDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopEventsDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopEventsDetectionJobResult> stopEventsDetectionJobAsync(StopEventsDetectionJobRequest stopEventsDetectionJobRequest);
+
+    /**
+     * <p>
+     * Stops an events detection job in progress.
+     * </p>
+     * 
+     * @param stopEventsDetectionJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopEventsDetectionJob operation returned by the service.
+     * @sample AmazonComprehendAsyncHandler.StopEventsDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopEventsDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopEventsDetectionJobResult> stopEventsDetectionJobAsync(StopEventsDetectionJobRequest stopEventsDetectionJobRequest,
+            com.amazonaws.handlers.AsyncHandler<StopEventsDetectionJobRequest, StopEventsDetectionJobResult> asyncHandler);
 
     /**
      * <p>

@@ -40,8 +40,9 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
      */
     private String baseUrl;
     /**
-     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later
-     * replay.
+     * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default
+     * value Enabled (ENABLED) and control caching in your video distribution set up. For example, use the Cache-Control
+     * http header.
      */
     private String clientCache;
     /** Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation. */
@@ -248,12 +249,14 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later
-     * replay.
+     * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default
+     * value Enabled (ENABLED) and control caching in your video distribution set up. For example, use the Cache-Control
+     * http header.
      * 
      * @param clientCache
-     *        When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for
-     *        later replay.
+     *        Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the
+     *        default value Enabled (ENABLED) and control caching in your video distribution set up. For example, use
+     *        the Cache-Control http header.
      * @see CmafClientCache
      */
 
@@ -262,11 +265,13 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later
-     * replay.
+     * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default
+     * value Enabled (ENABLED) and control caching in your video distribution set up. For example, use the Cache-Control
+     * http header.
      * 
-     * @return When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for
-     *         later replay.
+     * @return Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the
+     *         default value Enabled (ENABLED) and control caching in your video distribution set up. For example, use
+     *         the Cache-Control http header.
      * @see CmafClientCache
      */
 
@@ -275,12 +280,14 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later
-     * replay.
+     * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default
+     * value Enabled (ENABLED) and control caching in your video distribution set up. For example, use the Cache-Control
+     * http header.
      * 
      * @param clientCache
-     *        When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for
-     *        later replay.
+     *        Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the
+     *        default value Enabled (ENABLED) and control caching in your video distribution set up. For example, use
+     *        the Cache-Control http header.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafClientCache
      */
@@ -291,12 +298,14 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later
-     * replay.
+     * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default
+     * value Enabled (ENABLED) and control caching in your video distribution set up. For example, use the Cache-Control
+     * http header.
      * 
      * @param clientCache
-     *        When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for
-     *        later replay.
+     *        Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the
+     *        default value Enabled (ENABLED) and control caching in your video distribution set up. For example, use
+     *        the Cache-Control http header.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafClientCache
      */

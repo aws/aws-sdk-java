@@ -131,6 +131,12 @@ public class ConnectorMetadata implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private EventBridgeMetadata eventBridge;
+    /**
+     * <p>
+     * The connector metadata specific to Upsolver.
+     * </p>
+     */
+    private UpsolverMetadata upsolver;
 
     /**
      * <p>
@@ -813,6 +819,46 @@ public class ConnectorMetadata implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The connector metadata specific to Upsolver.
+     * </p>
+     * 
+     * @param upsolver
+     *        The connector metadata specific to Upsolver.
+     */
+
+    public void setUpsolver(UpsolverMetadata upsolver) {
+        this.upsolver = upsolver;
+    }
+
+    /**
+     * <p>
+     * The connector metadata specific to Upsolver.
+     * </p>
+     * 
+     * @return The connector metadata specific to Upsolver.
+     */
+
+    public UpsolverMetadata getUpsolver() {
+        return this.upsolver;
+    }
+
+    /**
+     * <p>
+     * The connector metadata specific to Upsolver.
+     * </p>
+     * 
+     * @param upsolver
+     *        The connector metadata specific to Upsolver.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConnectorMetadata withUpsolver(UpsolverMetadata upsolver) {
+        setUpsolver(upsolver);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -857,7 +903,9 @@ public class ConnectorMetadata implements Serializable, Cloneable, StructuredPoj
         if (getZendesk() != null)
             sb.append("Zendesk: ").append(getZendesk()).append(",");
         if (getEventBridge() != null)
-            sb.append("EventBridge: ").append(getEventBridge());
+            sb.append("EventBridge: ").append(getEventBridge()).append(",");
+        if (getUpsolver() != null)
+            sb.append("Upsolver: ").append(getUpsolver());
         sb.append("}");
         return sb.toString();
     }
@@ -940,6 +988,10 @@ public class ConnectorMetadata implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getEventBridge() != null && other.getEventBridge().equals(this.getEventBridge()) == false)
             return false;
+        if (other.getUpsolver() == null ^ this.getUpsolver() == null)
+            return false;
+        if (other.getUpsolver() != null && other.getUpsolver().equals(this.getUpsolver()) == false)
+            return false;
         return true;
     }
 
@@ -965,6 +1017,7 @@ public class ConnectorMetadata implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getVeeva() == null) ? 0 : getVeeva().hashCode());
         hashCode = prime * hashCode + ((getZendesk() == null) ? 0 : getZendesk().hashCode());
         hashCode = prime * hashCode + ((getEventBridge() == null) ? 0 : getEventBridge().hashCode());
+        hashCode = prime * hashCode + ((getUpsolver() == null) ? 0 : getUpsolver().hashCode());
         return hashCode;
     }
 

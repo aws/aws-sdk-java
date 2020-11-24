@@ -1101,7 +1101,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
      * <p>
      * Creates a pre-signed URL to a portal. Use this operation to create URLs to portals that use AWS Identity and
      * Access Management (IAM) to authenticate users. An IAM user with access to a portal can call this API to get a URL
-     * to that portal. The URL contains a session token that lets the IAM user access the portal.
+     * to that portal. The URL contains an authentication token that lets the IAM user access the portal.
      * </p>
      * 
      * @param createPresignedPortalUrlRequest
@@ -2216,6 +2216,79 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
             HttpResponseHandler<AmazonWebServiceResponse<DescribeDashboardResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeDashboardResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves information about the default encryption configuration for the AWS account in the default or specified
+     * region. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in the
+     * <i>AWS IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param describeDefaultEncryptionConfigurationRequest
+     * @return Result of the DescribeDefaultEncryptionConfiguration operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws InternalFailureException
+     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         SiteWise User Guide</i>.
+     * @sample AWSIoTSiteWise.DescribeDefaultEncryptionConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeDefaultEncryptionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeDefaultEncryptionConfigurationResult describeDefaultEncryptionConfiguration(DescribeDefaultEncryptionConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDefaultEncryptionConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDefaultEncryptionConfigurationResult executeDescribeDefaultEncryptionConfiguration(
+            DescribeDefaultEncryptionConfigurationRequest describeDefaultEncryptionConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDefaultEncryptionConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDefaultEncryptionConfigurationRequest> request = null;
+        Response<DescribeDefaultEncryptionConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDefaultEncryptionConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeDefaultEncryptionConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDefaultEncryptionConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDefaultEncryptionConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeDefaultEncryptionConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -3774,6 +3847,89 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Sets the default encryption configuration for the AWS account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in the
+     * <i>AWS IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param putDefaultEncryptionConfigurationRequest
+     * @return Result of the PutDefaultEncryptionConfiguration operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws InternalFailureException
+     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         SiteWise User Guide</i>.
+     * @throws LimitExceededException
+     *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
+     *         than the allowed number of child assets or attempting to create more than the allowed number of
+     *         properties for an asset model.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         SiteWise User Guide</i>.
+     * @throws ConflictingOperationException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time.
+     * @sample AWSIoTSiteWise.PutDefaultEncryptionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutDefaultEncryptionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutDefaultEncryptionConfigurationResult putDefaultEncryptionConfiguration(PutDefaultEncryptionConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executePutDefaultEncryptionConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final PutDefaultEncryptionConfigurationResult executePutDefaultEncryptionConfiguration(
+            PutDefaultEncryptionConfigurationRequest putDefaultEncryptionConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putDefaultEncryptionConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutDefaultEncryptionConfigurationRequest> request = null;
+        Response<PutDefaultEncryptionConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutDefaultEncryptionConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putDefaultEncryptionConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutDefaultEncryptionConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutDefaultEncryptionConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutDefaultEncryptionConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

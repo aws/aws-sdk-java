@@ -58,6 +58,11 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * By default, the value is <code>true</code>.
      * </p>
+     * <p>
+     * The first copy of management events is free. You are charged for additional copies of management events that you
+     * are logging on any subsequent trail in the same region. For more information about CloudTrail pricing, see <a
+     * href="http://aws.amazon.com/cloudtrail/pricing/">AWS CloudTrail Pricing</a>.
+     * </p>
      */
     private Boolean includeManagementEvents;
     /**
@@ -216,6 +221,11 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * By default, the value is <code>true</code>.
      * </p>
+     * <p>
+     * The first copy of management events is free. You are charged for additional copies of management events that you
+     * are logging on any subsequent trail in the same region. For more information about CloudTrail pricing, see <a
+     * href="http://aws.amazon.com/cloudtrail/pricing/">AWS CloudTrail Pricing</a>.
+     * </p>
      * 
      * @param includeManagementEvents
      *        Specify if you want your event selector to include management events for your trail.</p>
@@ -226,6 +236,11 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        By default, the value is <code>true</code>.
+     *        </p>
+     *        <p>
+     *        The first copy of management events is free. You are charged for additional copies of management events
+     *        that you are logging on any subsequent trail in the same region. For more information about CloudTrail
+     *        pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">AWS CloudTrail Pricing</a>.
      */
 
     public void setIncludeManagementEvents(Boolean includeManagementEvents) {
@@ -244,6 +259,11 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * By default, the value is <code>true</code>.
      * </p>
+     * <p>
+     * The first copy of management events is free. You are charged for additional copies of management events that you
+     * are logging on any subsequent trail in the same region. For more information about CloudTrail pricing, see <a
+     * href="http://aws.amazon.com/cloudtrail/pricing/">AWS CloudTrail Pricing</a>.
+     * </p>
      * 
      * @return Specify if you want your event selector to include management events for your trail.</p>
      *         <p>
@@ -253,6 +273,11 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <p>
      *         By default, the value is <code>true</code>.
+     *         </p>
+     *         <p>
+     *         The first copy of management events is free. You are charged for additional copies of management events
+     *         that you are logging on any subsequent trail in the same region. For more information about CloudTrail
+     *         pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">AWS CloudTrail Pricing</a>.
      */
 
     public Boolean getIncludeManagementEvents() {
@@ -271,6 +296,11 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * By default, the value is <code>true</code>.
      * </p>
+     * <p>
+     * The first copy of management events is free. You are charged for additional copies of management events that you
+     * are logging on any subsequent trail in the same region. For more information about CloudTrail pricing, see <a
+     * href="http://aws.amazon.com/cloudtrail/pricing/">AWS CloudTrail Pricing</a>.
+     * </p>
      * 
      * @param includeManagementEvents
      *        Specify if you want your event selector to include management events for your trail.</p>
@@ -281,6 +311,11 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        By default, the value is <code>true</code>.
+     *        </p>
+     *        <p>
+     *        The first copy of management events is free. You are charged for additional copies of management events
+     *        that you are logging on any subsequent trail in the same region. For more information about CloudTrail
+     *        pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">AWS CloudTrail Pricing</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -301,6 +336,11 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * By default, the value is <code>true</code>.
      * </p>
+     * <p>
+     * The first copy of management events is free. You are charged for additional copies of management events that you
+     * are logging on any subsequent trail in the same region. For more information about CloudTrail pricing, see <a
+     * href="http://aws.amazon.com/cloudtrail/pricing/">AWS CloudTrail Pricing</a>.
+     * </p>
      * 
      * @return Specify if you want your event selector to include management events for your trail.</p>
      *         <p>
@@ -310,6 +350,11 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <p>
      *         By default, the value is <code>true</code>.
+     *         </p>
+     *         <p>
+     *         The first copy of management events is free. You are charged for additional copies of management events
+     *         that you are logging on any subsequent trail in the same region. For more information about CloudTrail
+     *         pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">AWS CloudTrail Pricing</a>.
      */
 
     public Boolean isIncludeManagementEvents() {

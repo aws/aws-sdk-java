@@ -32,8 +32,12 @@ public class Dimension implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Dimension represents the meta data attributes of the time series. For example, the name and availability zone of
-     * an EC2 instance or the name of the manufacturer of a wind turbine are dimensions. <i>Dimension names can only
-     * contain alphanumeric characters and underscores. Dimension names cannot end with an underscore.</i>
+     * an EC2 instance or the name of the manufacturer of a wind turbine are dimensions.
+     * </p>
+     * <p>
+     * For constraints on Dimension names, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming
+     * Constraints</a>.
      * </p>
      */
     private String name;
@@ -53,15 +57,21 @@ public class Dimension implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Dimension represents the meta data attributes of the time series. For example, the name and availability zone of
-     * an EC2 instance or the name of the manufacturer of a wind turbine are dimensions. <i>Dimension names can only
-     * contain alphanumeric characters and underscores. Dimension names cannot end with an underscore.</i>
+     * an EC2 instance or the name of the manufacturer of a wind turbine are dimensions.
+     * </p>
+     * <p>
+     * For constraints on Dimension names, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming
+     * Constraints</a>.
      * </p>
      * 
      * @param name
      *        Dimension represents the meta data attributes of the time series. For example, the name and availability
-     *        zone of an EC2 instance or the name of the manufacturer of a wind turbine are dimensions. <i>Dimension
-     *        names can only contain alphanumeric characters and underscores. Dimension names cannot end with an
-     *        underscore.</i>
+     *        zone of an EC2 instance or the name of the manufacturer of a wind turbine are dimensions. </p>
+     *        <p>
+     *        For constraints on Dimension names, see <a
+     *        href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming
+     *        Constraints</a>.
      */
 
     public void setName(String name) {
@@ -71,14 +81,20 @@ public class Dimension implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Dimension represents the meta data attributes of the time series. For example, the name and availability zone of
-     * an EC2 instance or the name of the manufacturer of a wind turbine are dimensions. <i>Dimension names can only
-     * contain alphanumeric characters and underscores. Dimension names cannot end with an underscore.</i>
+     * an EC2 instance or the name of the manufacturer of a wind turbine are dimensions.
+     * </p>
+     * <p>
+     * For constraints on Dimension names, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming
+     * Constraints</a>.
      * </p>
      * 
      * @return Dimension represents the meta data attributes of the time series. For example, the name and availability
-     *         zone of an EC2 instance or the name of the manufacturer of a wind turbine are dimensions. <i>Dimension
-     *         names can only contain alphanumeric characters and underscores. Dimension names cannot end with an
-     *         underscore.</i>
+     *         zone of an EC2 instance or the name of the manufacturer of a wind turbine are dimensions. </p>
+     *         <p>
+     *         For constraints on Dimension names, see <a
+     *         href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming
+     *         Constraints</a>.
      */
 
     public String getName() {
@@ -88,15 +104,21 @@ public class Dimension implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Dimension represents the meta data attributes of the time series. For example, the name and availability zone of
-     * an EC2 instance or the name of the manufacturer of a wind turbine are dimensions. <i>Dimension names can only
-     * contain alphanumeric characters and underscores. Dimension names cannot end with an underscore.</i>
+     * an EC2 instance or the name of the manufacturer of a wind turbine are dimensions.
+     * </p>
+     * <p>
+     * For constraints on Dimension names, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming
+     * Constraints</a>.
      * </p>
      * 
      * @param name
      *        Dimension represents the meta data attributes of the time series. For example, the name and availability
-     *        zone of an EC2 instance or the name of the manufacturer of a wind turbine are dimensions. <i>Dimension
-     *        names can only contain alphanumeric characters and underscores. Dimension names cannot end with an
-     *        underscore.</i>
+     *        zone of an EC2 instance or the name of the manufacturer of a wind turbine are dimensions. </p>
+     *        <p>
+     *        For constraints on Dimension names, see <a
+     *        href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming
+     *        Constraints</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,7 +36,8 @@ public enum ConnectorType {
     Infornexus("Infornexus"),
     Amplitude("Amplitude"),
     Veeva("Veeva"),
-    EventBridge("EventBridge");
+    EventBridge("EventBridge"),
+    Upsolver("Upsolver");
 
     private String value;
 

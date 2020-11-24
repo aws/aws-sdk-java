@@ -104,6 +104,11 @@ public class StackResourceDriftStaxUnmarshaller implements Unmarshaller<StackRes
                     stackResourceDrift.setTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ModuleInfo", targetDepth)) {
+                    stackResourceDrift.setModuleInfo(ModuleInfoStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return stackResourceDrift;

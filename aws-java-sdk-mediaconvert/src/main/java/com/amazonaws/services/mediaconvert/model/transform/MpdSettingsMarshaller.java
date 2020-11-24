@@ -27,6 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class MpdSettingsMarshaller {
 
+    private static final MarshallingInfo<String> ACCESSIBILITYCAPTIONHINTS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("accessibilityCaptionHints").build();
+    private static final MarshallingInfo<String> AUDIODURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioDuration").build();
     private static final MarshallingInfo<String> CAPTIONCONTAINERTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("captionContainerType").build();
     private static final MarshallingInfo<String> SCTE35ESAM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -50,6 +54,8 @@ public class MpdSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(mpdSettings.getAccessibilityCaptionHints(), ACCESSIBILITYCAPTIONHINTS_BINDING);
+            protocolMarshaller.marshall(mpdSettings.getAudioDuration(), AUDIODURATION_BINDING);
             protocolMarshaller.marshall(mpdSettings.getCaptionContainerType(), CAPTIONCONTAINERTYPE_BINDING);
             protocolMarshaller.marshall(mpdSettings.getScte35Esam(), SCTE35ESAM_BINDING);
             protocolMarshaller.marshall(mpdSettings.getScte35Source(), SCTE35SOURCE_BINDING);

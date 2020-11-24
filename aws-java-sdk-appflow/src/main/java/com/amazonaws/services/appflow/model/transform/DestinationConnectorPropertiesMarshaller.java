@@ -37,6 +37,8 @@ public class DestinationConnectorPropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Snowflake").build();
     private static final MarshallingInfo<StructuredPojo> EVENTBRIDGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventBridge").build();
+    private static final MarshallingInfo<StructuredPojo> UPSOLVER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Upsolver").build();
 
     private static final DestinationConnectorPropertiesMarshaller instance = new DestinationConnectorPropertiesMarshaller();
 
@@ -59,6 +61,7 @@ public class DestinationConnectorPropertiesMarshaller {
             protocolMarshaller.marshall(destinationConnectorProperties.getSalesforce(), SALESFORCE_BINDING);
             protocolMarshaller.marshall(destinationConnectorProperties.getSnowflake(), SNOWFLAKE_BINDING);
             protocolMarshaller.marshall(destinationConnectorProperties.getEventBridge(), EVENTBRIDGE_BINDING);
+            protocolMarshaller.marshall(destinationConnectorProperties.getUpsolver(), UPSOLVER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

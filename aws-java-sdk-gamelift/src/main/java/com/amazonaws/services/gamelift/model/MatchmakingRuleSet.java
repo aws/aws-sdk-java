@@ -26,7 +26,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * A rule set may define the following elements for a match. For detailed information and examples showing how to
  * construct a rule set, see <a
- * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build a FlexMatch Rule Set</a>.
+ * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html">Build a FlexMatch Rule Set</a>.
  * </p>
  * <ul>
  * <li>

@@ -1049,6 +1049,39 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
     }
 
     @Override
+    public java.util.concurrent.Future<GetReportGroupTrendResult> getReportGroupTrendAsync(GetReportGroupTrendRequest request) {
+
+        return getReportGroupTrendAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetReportGroupTrendResult> getReportGroupTrendAsync(final GetReportGroupTrendRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetReportGroupTrendRequest, GetReportGroupTrendResult> asyncHandler) {
+        final GetReportGroupTrendRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetReportGroupTrendResult>() {
+            @Override
+            public GetReportGroupTrendResult call() throws Exception {
+                GetReportGroupTrendResult result = null;
+
+                try {
+                    result = executeGetReportGroupTrend(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest request) {
 
         return getResourcePolicyAsync(request, null);

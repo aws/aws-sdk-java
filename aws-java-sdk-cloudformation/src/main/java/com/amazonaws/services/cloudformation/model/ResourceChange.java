@@ -90,6 +90,13 @@ public class ResourceChange implements Serializable, Cloneable {
      * </p>
      */
     private String changeSetId;
+    /**
+     * <p>
+     * Contains information about the module from which the resource was created, if the resource was created from a
+     * module included in the stack template.
+     * </p>
+     */
+    private ModuleInfo moduleInfo;
 
     /**
      * <p>
@@ -722,6 +729,52 @@ public class ResourceChange implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Contains information about the module from which the resource was created, if the resource was created from a
+     * module included in the stack template.
+     * </p>
+     * 
+     * @param moduleInfo
+     *        Contains information about the module from which the resource was created, if the resource was created
+     *        from a module included in the stack template.
+     */
+
+    public void setModuleInfo(ModuleInfo moduleInfo) {
+        this.moduleInfo = moduleInfo;
+    }
+
+    /**
+     * <p>
+     * Contains information about the module from which the resource was created, if the resource was created from a
+     * module included in the stack template.
+     * </p>
+     * 
+     * @return Contains information about the module from which the resource was created, if the resource was created
+     *         from a module included in the stack template.
+     */
+
+    public ModuleInfo getModuleInfo() {
+        return this.moduleInfo;
+    }
+
+    /**
+     * <p>
+     * Contains information about the module from which the resource was created, if the resource was created from a
+     * module included in the stack template.
+     * </p>
+     * 
+     * @param moduleInfo
+     *        Contains information about the module from which the resource was created, if the resource was created
+     *        from a module included in the stack template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceChange withModuleInfo(ModuleInfo moduleInfo) {
+        setModuleInfo(moduleInfo);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -748,7 +801,9 @@ public class ResourceChange implements Serializable, Cloneable {
         if (getDetails() != null)
             sb.append("Details: ").append(getDetails()).append(",");
         if (getChangeSetId() != null)
-            sb.append("ChangeSetId: ").append(getChangeSetId());
+            sb.append("ChangeSetId: ").append(getChangeSetId()).append(",");
+        if (getModuleInfo() != null)
+            sb.append("ModuleInfo: ").append(getModuleInfo());
         sb.append("}");
         return sb.toString();
     }
@@ -795,6 +850,10 @@ public class ResourceChange implements Serializable, Cloneable {
             return false;
         if (other.getChangeSetId() != null && other.getChangeSetId().equals(this.getChangeSetId()) == false)
             return false;
+        if (other.getModuleInfo() == null ^ this.getModuleInfo() == null)
+            return false;
+        if (other.getModuleInfo() != null && other.getModuleInfo().equals(this.getModuleInfo()) == false)
+            return false;
         return true;
     }
 
@@ -811,6 +870,7 @@ public class ResourceChange implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getScope() == null) ? 0 : getScope().hashCode());
         hashCode = prime * hashCode + ((getDetails() == null) ? 0 : getDetails().hashCode());
         hashCode = prime * hashCode + ((getChangeSetId() == null) ? 0 : getChangeSetId().hashCode());
+        hashCode = prime * hashCode + ((getModuleInfo() == null) ? 0 : getModuleInfo().hashCode());
         return hashCode;
     }
 

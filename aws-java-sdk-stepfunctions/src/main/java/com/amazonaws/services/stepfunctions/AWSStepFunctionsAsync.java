@@ -959,6 +959,37 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
 
     /**
      * <p>
+     * Starts a Synchronous Express state machine execution.
+     * </p>
+     * 
+     * @param startSyncExecutionRequest
+     * @return A Java Future containing the result of the StartSyncExecution operation returned by the service.
+     * @sample AWSStepFunctionsAsync.StartSyncExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartSyncExecution" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartSyncExecutionResult> startSyncExecutionAsync(StartSyncExecutionRequest startSyncExecutionRequest);
+
+    /**
+     * <p>
+     * Starts a Synchronous Express state machine execution.
+     * </p>
+     * 
+     * @param startSyncExecutionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartSyncExecution operation returned by the service.
+     * @sample AWSStepFunctionsAsyncHandler.StartSyncExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartSyncExecution" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartSyncExecutionResult> startSyncExecutionAsync(StartSyncExecutionRequest startSyncExecutionRequest,
+            com.amazonaws.handlers.AsyncHandler<StartSyncExecutionRequest, StartSyncExecutionResult> asyncHandler);
+
+    /**
+     * <p>
      * Stops an execution.
      * </p>
      * <p>

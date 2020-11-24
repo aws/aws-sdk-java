@@ -1720,6 +1720,7 @@ public interface AmazonQuickSight {
      * </p>
      * 
      * @param getDashboardEmbedUrlRequest
+     *        Parameter input for the <code>GetDashboardEmbedUrl</code> operation.
      * @return Result of the GetDashboardEmbedUrl operation returned by the service.
      * @throws AccessDeniedException
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
@@ -1751,6 +1752,15 @@ public interface AmazonQuickSight {
      *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
      *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
      *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws UnsupportedPricingPlanException
+     *         This error indicates that you are calling an embedding operation in Amazon QuickSight without the
+     *         required pricing plan on your AWS account. Before you can use anonymous embedding, a QuickSight
+     *         administrator needs to add capacity pricing to QuickSight. You can do this on the <b>Manage
+     *         QuickSight</b> page. </p>
+     *         <p>
+     *         After capacity pricing is added, you can enable anonymous embedding by using the
+     *         <code> <a>GetDashboardEmbedUrl</a> </code> API operation with the <code>--identity-type ANONYMOUS</code>
+     *         option.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @sample AmazonQuickSight.GetDashboardEmbedUrl

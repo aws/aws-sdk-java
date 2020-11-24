@@ -137,7 +137,7 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
      * GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs that you've
      * set up. This property cannot be updated after the game server group is created, and the corresponding Auto
      * Scaling group will always use the property value that is set with this request, even if the Auto Scaling group is
-     * updated directly
+     * updated directly.
      * </p>
      */
     private java.util.List<String> vpcSubnets;
@@ -978,14 +978,14 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
      * GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs that you've
      * set up. This property cannot be updated after the game server group is created, and the corresponding Auto
      * Scaling group will always use the property value that is set with this request, even if the Auto Scaling group is
-     * updated directly
+     * updated directly.
      * </p>
      * 
      * @return A list of virtual private cloud (VPC) subnets to use with instances in the game server group. By default,
      *         all GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs
      *         that you've set up. This property cannot be updated after the game server group is created, and the
      *         corresponding Auto Scaling group will always use the property value that is set with this request, even
-     *         if the Auto Scaling group is updated directly
+     *         if the Auto Scaling group is updated directly.
      */
 
     public java.util.List<String> getVpcSubnets() {
@@ -998,7 +998,7 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
      * GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs that you've
      * set up. This property cannot be updated after the game server group is created, and the corresponding Auto
      * Scaling group will always use the property value that is set with this request, even if the Auto Scaling group is
-     * updated directly
+     * updated directly.
      * </p>
      * 
      * @param vpcSubnets
@@ -1006,7 +1006,7 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
      *        all GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs
      *        that you've set up. This property cannot be updated after the game server group is created, and the
      *        corresponding Auto Scaling group will always use the property value that is set with this request, even if
-     *        the Auto Scaling group is updated directly
+     *        the Auto Scaling group is updated directly.
      */
 
     public void setVpcSubnets(java.util.Collection<String> vpcSubnets) {
@@ -1024,7 +1024,7 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
      * GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs that you've
      * set up. This property cannot be updated after the game server group is created, and the corresponding Auto
      * Scaling group will always use the property value that is set with this request, even if the Auto Scaling group is
-     * updated directly
+     * updated directly.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1037,7 +1037,7 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
      *        all GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs
      *        that you've set up. This property cannot be updated after the game server group is created, and the
      *        corresponding Auto Scaling group will always use the property value that is set with this request, even if
-     *        the Auto Scaling group is updated directly
+     *        the Auto Scaling group is updated directly.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1057,7 +1057,7 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
      * GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs that you've
      * set up. This property cannot be updated after the game server group is created, and the corresponding Auto
      * Scaling group will always use the property value that is set with this request, even if the Auto Scaling group is
-     * updated directly
+     * updated directly.
      * </p>
      * 
      * @param vpcSubnets
@@ -1065,7 +1065,7 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
      *        all GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs
      *        that you've set up. This property cannot be updated after the game server group is created, and the
      *        corresponding Auto Scaling group will always use the property value that is set with this request, even if
-     *        the Auto Scaling group is updated directly
+     *        the Auto Scaling group is updated directly.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

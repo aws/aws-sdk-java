@@ -19,7 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The type used for enabling software token MFA at the user level.
+ * The type used for enabling software token MFA at the user level. If an MFA type is enabled for a user, the user will
+ * be prompted for MFA during all sign in attempts, unless device tracking is turned on and the device has been trusted.
+ * If you would like MFA to be applied selectively based on the assessed risk level of sign in attempts, disable MFA for
+ * users and turn on Adaptive Authentication for the user pool.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SoftwareTokenMfaSettingsType"
@@ -30,7 +33,8 @@ public class SoftwareTokenMfaSettingsType implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Specifies whether software token MFA is enabled.
+     * Specifies whether software token MFA is enabled. If an MFA type is enabled for a user, the user will be prompted
+     * for MFA during all sign in attempts, unless device tracking is turned on and the device has been trusted.
      * </p>
      */
     private Boolean enabled;
@@ -43,11 +47,14 @@ public class SoftwareTokenMfaSettingsType implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Specifies whether software token MFA is enabled.
+     * Specifies whether software token MFA is enabled. If an MFA type is enabled for a user, the user will be prompted
+     * for MFA during all sign in attempts, unless device tracking is turned on and the device has been trusted.
      * </p>
      * 
      * @param enabled
-     *        Specifies whether software token MFA is enabled.
+     *        Specifies whether software token MFA is enabled. If an MFA type is enabled for a user, the user will be
+     *        prompted for MFA during all sign in attempts, unless device tracking is turned on and the device has been
+     *        trusted.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -56,10 +63,13 @@ public class SoftwareTokenMfaSettingsType implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Specifies whether software token MFA is enabled.
+     * Specifies whether software token MFA is enabled. If an MFA type is enabled for a user, the user will be prompted
+     * for MFA during all sign in attempts, unless device tracking is turned on and the device has been trusted.
      * </p>
      * 
-     * @return Specifies whether software token MFA is enabled.
+     * @return Specifies whether software token MFA is enabled. If an MFA type is enabled for a user, the user will be
+     *         prompted for MFA during all sign in attempts, unless device tracking is turned on and the device has been
+     *         trusted.
      */
 
     public Boolean getEnabled() {
@@ -68,11 +78,14 @@ public class SoftwareTokenMfaSettingsType implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Specifies whether software token MFA is enabled.
+     * Specifies whether software token MFA is enabled. If an MFA type is enabled for a user, the user will be prompted
+     * for MFA during all sign in attempts, unless device tracking is turned on and the device has been trusted.
      * </p>
      * 
      * @param enabled
-     *        Specifies whether software token MFA is enabled.
+     *        Specifies whether software token MFA is enabled. If an MFA type is enabled for a user, the user will be
+     *        prompted for MFA during all sign in attempts, unless device tracking is turned on and the device has been
+     *        trusted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +96,13 @@ public class SoftwareTokenMfaSettingsType implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Specifies whether software token MFA is enabled.
+     * Specifies whether software token MFA is enabled. If an MFA type is enabled for a user, the user will be prompted
+     * for MFA during all sign in attempts, unless device tracking is turned on and the device has been trusted.
      * </p>
      * 
-     * @return Specifies whether software token MFA is enabled.
+     * @return Specifies whether software token MFA is enabled. If an MFA type is enabled for a user, the user will be
+     *         prompted for MFA during all sign in attempts, unless device tracking is turned on and the device has been
+     *         trusted.
      */
 
     public Boolean isEnabled() {

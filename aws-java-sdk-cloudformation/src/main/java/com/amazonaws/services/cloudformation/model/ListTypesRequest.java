@@ -103,6 +103,12 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String deprecatedStatus;
     /**
      * <p>
+     * The type of extension.
+     * </p>
+     */
+    private String type;
+    /**
+     * <p>
      * The maximum number of results to be returned with a single call. If the number of available results exceeds this
      * maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code>
      * request parameter to get the next set of results.
@@ -754,6 +760,65 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
+     * The type of extension.
+     * </p>
+     * 
+     * @param type
+     *        The type of extension.
+     * @see RegistryType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The type of extension.
+     * </p>
+     * 
+     * @return The type of extension.
+     * @see RegistryType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The type of extension.
+     * </p>
+     * 
+     * @param type
+     *        The type of extension.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RegistryType
+     */
+
+    public ListTypesRequest withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of extension.
+     * </p>
+     * 
+     * @param type
+     *        The type of extension.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RegistryType
+     */
+
+    public ListTypesRequest withType(RegistryType type) {
+        this.type = type.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The maximum number of results to be returned with a single call. If the number of available results exceeds this
      * maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code>
      * request parameter to get the next set of results.
@@ -883,6 +948,8 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
             sb.append("ProvisioningType: ").append(getProvisioningType()).append(",");
         if (getDeprecatedStatus() != null)
             sb.append("DeprecatedStatus: ").append(getDeprecatedStatus()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
@@ -913,6 +980,10 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getDeprecatedStatus() != null && other.getDeprecatedStatus().equals(this.getDeprecatedStatus()) == false)
             return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -932,6 +1003,7 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getVisibility() == null) ? 0 : getVisibility().hashCode());
         hashCode = prime * hashCode + ((getProvisioningType() == null) ? 0 : getProvisioningType().hashCode());
         hashCode = prime * hashCode + ((getDeprecatedStatus() == null) ? 0 : getDeprecatedStatus().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;

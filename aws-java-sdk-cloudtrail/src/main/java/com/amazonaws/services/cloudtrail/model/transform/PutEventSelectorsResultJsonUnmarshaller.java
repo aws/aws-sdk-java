@@ -58,6 +58,13 @@ public class PutEventSelectorsResultJsonUnmarshaller implements Unmarshaller<Put
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("AdvancedEventSelectors", targetDepth)) {
+                    context.nextToken();
+                    putEventSelectorsResult.setAdvancedEventSelectors(new ListUnmarshaller<AdvancedEventSelector>(AdvancedEventSelectorJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

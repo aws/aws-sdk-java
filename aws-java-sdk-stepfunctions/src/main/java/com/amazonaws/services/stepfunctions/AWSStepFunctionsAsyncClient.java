@@ -867,6 +867,39 @@ public class AWSStepFunctionsAsyncClient extends AWSStepFunctionsClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<StartSyncExecutionResult> startSyncExecutionAsync(StartSyncExecutionRequest request) {
+
+        return startSyncExecutionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSyncExecutionResult> startSyncExecutionAsync(final StartSyncExecutionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartSyncExecutionRequest, StartSyncExecutionResult> asyncHandler) {
+        final StartSyncExecutionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartSyncExecutionResult>() {
+            @Override
+            public StartSyncExecutionResult call() throws Exception {
+                StartSyncExecutionResult result = null;
+
+                try {
+                    result = executeStartSyncExecution(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StopExecutionResult> stopExecutionAsync(StopExecutionRequest request) {
 
         return stopExecutionAsync(request, null);

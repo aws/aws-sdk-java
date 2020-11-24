@@ -19,8 +19,22 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A backup of an Amazon FSx for file system.
+ * A backup of an Amazon FSx file system. For more information see:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working with backups for Windows
+ * file systems</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working with backups for Lustre
+ * file systems</a>
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/Backup" target="_top">AWS API Documentation</a>
  */
@@ -45,17 +59,24 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>CREATING</code> - FSx is creating the backup.
+     * <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx has not started
+     * creating the backup.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>TRANSFERRING</code> - For Lustre file systems only; FSx is transferring the backup to S3.
+     * <code>CREATING</code> - Amazon FSx is creating the backup.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DELETED</code> - The backup was deleted is no longer available.
+     * <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is transferring
+     * the backup to S3.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - Amazon FSx deleted the backup and it is no longer available.
      * </p>
      * </li>
      * <li>
@@ -172,17 +193,24 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>CREATING</code> - FSx is creating the backup.
+     * <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx has not started
+     * creating the backup.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>TRANSFERRING</code> - For Lustre file systems only; FSx is transferring the backup to S3.
+     * <code>CREATING</code> - Amazon FSx is creating the backup.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DELETED</code> - The backup was deleted is no longer available.
+     * <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is transferring
+     * the backup to S3.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - Amazon FSx deleted the backup and it is no longer available.
      * </p>
      * </li>
      * <li>
@@ -202,17 +230,24 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CREATING</code> - FSx is creating the backup.
+     *        <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx has not started
+     *        creating the backup.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>TRANSFERRING</code> - For Lustre file systems only; FSx is transferring the backup to S3.
+     *        <code>CREATING</code> - Amazon FSx is creating the backup.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DELETED</code> - The backup was deleted is no longer available.
+     *        <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is
+     *        transferring the backup to S3.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code> - Amazon FSx deleted the backup and it is no longer available.
      *        </p>
      *        </li>
      *        <li>
@@ -239,17 +274,24 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>CREATING</code> - FSx is creating the backup.
+     * <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx has not started
+     * creating the backup.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>TRANSFERRING</code> - For Lustre file systems only; FSx is transferring the backup to S3.
+     * <code>CREATING</code> - Amazon FSx is creating the backup.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DELETED</code> - The backup was deleted is no longer available.
+     * <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is transferring
+     * the backup to S3.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - Amazon FSx deleted the backup and it is no longer available.
      * </p>
      * </li>
      * <li>
@@ -268,17 +310,24 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>CREATING</code> - FSx is creating the backup.
+     *         <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx has not started
+     *         creating the backup.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>TRANSFERRING</code> - For Lustre file systems only; FSx is transferring the backup to S3.
+     *         <code>CREATING</code> - Amazon FSx is creating the backup.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>DELETED</code> - The backup was deleted is no longer available.
+     *         <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is
+     *         transferring the backup to S3.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DELETED</code> - Amazon FSx deleted the backup and it is no longer available.
      *         </p>
      *         </li>
      *         <li>
@@ -305,17 +354,24 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>CREATING</code> - FSx is creating the backup.
+     * <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx has not started
+     * creating the backup.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>TRANSFERRING</code> - For Lustre file systems only; FSx is transferring the backup to S3.
+     * <code>CREATING</code> - Amazon FSx is creating the backup.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DELETED</code> - The backup was deleted is no longer available.
+     * <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is transferring
+     * the backup to S3.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - Amazon FSx deleted the backup and it is no longer available.
      * </p>
      * </li>
      * <li>
@@ -335,17 +391,24 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CREATING</code> - FSx is creating the backup.
+     *        <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx has not started
+     *        creating the backup.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>TRANSFERRING</code> - For Lustre file systems only; FSx is transferring the backup to S3.
+     *        <code>CREATING</code> - Amazon FSx is creating the backup.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DELETED</code> - The backup was deleted is no longer available.
+     *        <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is
+     *        transferring the backup to S3.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code> - Amazon FSx deleted the backup and it is no longer available.
      *        </p>
      *        </li>
      *        <li>
@@ -374,17 +437,24 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>CREATING</code> - FSx is creating the backup.
+     * <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx has not started
+     * creating the backup.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>TRANSFERRING</code> - For Lustre file systems only; FSx is transferring the backup to S3.
+     * <code>CREATING</code> - Amazon FSx is creating the backup.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DELETED</code> - The backup was deleted is no longer available.
+     * <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is transferring
+     * the backup to S3.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - Amazon FSx deleted the backup and it is no longer available.
      * </p>
      * </li>
      * <li>
@@ -404,17 +474,24 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CREATING</code> - FSx is creating the backup.
+     *        <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx has not started
+     *        creating the backup.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>TRANSFERRING</code> - For Lustre file systems only; FSx is transferring the backup to S3.
+     *        <code>CREATING</code> - Amazon FSx is creating the backup.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DELETED</code> - The backup was deleted is no longer available.
+     *        <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is
+     *        transferring the backup to S3.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code> - Amazon FSx deleted the backup and it is no longer available.
      *        </p>
      *        </li>
      *        <li>

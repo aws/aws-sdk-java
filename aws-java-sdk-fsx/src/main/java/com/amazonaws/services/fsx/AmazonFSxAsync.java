@@ -188,7 +188,7 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * backups</a>.
      * </p>
      * <p>
-     * For more information about backing up Amazon FSx for Lustre file systems, see <a
+     * For more information about backing up Amazon FSx for Windows file systems, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working with FSx for Windows
      * backups</a>.
      * </p>
@@ -258,7 +258,7 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * backups</a>.
      * </p>
      * <p>
-     * For more information about backing up Amazon FSx for Lustre file systems, see <a
+     * For more information about backing up Amazon FSx for Windows file systems, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working with FSx for Windows
      * backups</a>.
      * </p>
@@ -314,10 +314,10 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * (symlinks) from your FSx file system to its linked data repository. A <code>CreateDataRepositoryTask</code>
      * operation will fail if a data repository is not linked to the FSx file system. To learn more about data
      * repository tasks, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Using Data Repository
-     * Tasks</a>. To learn more about linking a data repository to your file system, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/export-data-repository.html#export-prefix">Setting the
-     * Export Prefix</a>.
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Data Repository Tasks</a>.
+     * To learn more about linking a data repository to your file system, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-fs-linked-data-repo.html">Linking your file
+     * system to an S3 bucket</a>.
      * </p>
      * 
      * @param createDataRepositoryTaskRequest
@@ -336,10 +336,10 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * (symlinks) from your FSx file system to its linked data repository. A <code>CreateDataRepositoryTask</code>
      * operation will fail if a data repository is not linked to the FSx file system. To learn more about data
      * repository tasks, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Using Data Repository
-     * Tasks</a>. To learn more about linking a data repository to your file system, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/export-data-repository.html#export-prefix">Setting the
-     * Export Prefix</a>.
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Data Repository Tasks</a>.
+     * To learn more about linking a data repository to your file system, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-fs-linked-data-repo.html">Linking your file
+     * system to an S3 bucket</a>.
      * </p>
      * 
      * @param createDataRepositoryTaskRequest
@@ -1252,6 +1252,11 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * </li>
      * <li>
      * <p>
+     * StorageCapacity
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * WeeklyMaintenanceStartTime
      * </p>
      * </li>
@@ -1323,6 +1328,11 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * <li>
      * <p>
      * DailyAutomaticBackupStartTime
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * StorageCapacity
      * </p>
      * </li>
      * <li>

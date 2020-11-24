@@ -1973,6 +1973,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * </p>
      * 
      * @param getDashboardEmbedUrlRequest
+     *        Parameter input for the <code>GetDashboardEmbedUrl</code> operation.
      * @return A Java Future containing the result of the GetDashboardEmbedUrl operation returned by the service.
      * @sample AmazonQuickSightAsync.GetDashboardEmbedUrl
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetDashboardEmbedUrl"
@@ -2019,6 +2020,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * </p>
      * 
      * @param getDashboardEmbedUrlRequest
+     *        Parameter input for the <code>GetDashboardEmbedUrl</code> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

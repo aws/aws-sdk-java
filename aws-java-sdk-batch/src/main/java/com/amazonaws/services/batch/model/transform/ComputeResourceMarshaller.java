@@ -61,6 +61,8 @@ public class ComputeResourceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("spotIamFleetRole").build();
     private static final MarshallingInfo<StructuredPojo> LAUNCHTEMPLATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchTemplate").build();
+    private static final MarshallingInfo<List> EC2CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ec2Configuration").build();
 
     private static final ComputeResourceMarshaller instance = new ComputeResourceMarshaller();
 
@@ -94,6 +96,7 @@ public class ComputeResourceMarshaller {
             protocolMarshaller.marshall(computeResource.getBidPercentage(), BIDPERCENTAGE_BINDING);
             protocolMarshaller.marshall(computeResource.getSpotIamFleetRole(), SPOTIAMFLEETROLE_BINDING);
             protocolMarshaller.marshall(computeResource.getLaunchTemplate(), LAUNCHTEMPLATE_BINDING);
+            protocolMarshaller.marshall(computeResource.getEc2Configuration(), EC2CONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

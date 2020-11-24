@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes a specific Amazon FSx Administrative Action for the current Windows file system.
+ * Describes a specific Amazon FSx administrative action for the current Windows or Lustre file system.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/AdministrativeAction" target="_top">AWS API
@@ -71,8 +71,10 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
      * <p>
      * <code>UPDATED_OPTIMIZING</code> - For a storage capacity increase update, Amazon FSx has updated the file system
      * with the new storage capacity, and is now performing the storage optimization process. For more information, see
-     * <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing Storage
-     * Capacity</a>.
+     * <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage
+     * capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and
+     * throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -243,8 +245,10 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
      * <p>
      * <code>UPDATED_OPTIMIZING</code> - For a storage capacity increase update, Amazon FSx has updated the file system
      * with the new storage capacity, and is now performing the storage optimization process. For more information, see
-     * <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing Storage
-     * Capacity</a>.
+     * <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage
+     * capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and
+     * throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -277,8 +281,10 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
      *        <code>UPDATED_OPTIMIZING</code> - For a storage capacity increase update, Amazon FSx has updated the file
      *        system with the new storage capacity, and is now performing the storage optimization process. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing Storage
-     *        Capacity</a>.
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage
+     *        capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i> and <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage
+     *        and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      *        </p>
      *        </li>
      * @see Status
@@ -317,8 +323,10 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
      * <p>
      * <code>UPDATED_OPTIMIZING</code> - For a storage capacity increase update, Amazon FSx has updated the file system
      * with the new storage capacity, and is now performing the storage optimization process. For more information, see
-     * <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing Storage
-     * Capacity</a>.
+     * <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage
+     * capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and
+     * throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -351,7 +359,9 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
      *         system with the new storage capacity, and is now performing the storage optimization process. For more
      *         information, see <a
      *         href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
-     *         Storage Capacity</a>.
+     *         storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i> and <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage
+     *         and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      *         </p>
      *         </li>
      * @see Status
@@ -390,8 +400,10 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
      * <p>
      * <code>UPDATED_OPTIMIZING</code> - For a storage capacity increase update, Amazon FSx has updated the file system
      * with the new storage capacity, and is now performing the storage optimization process. For more information, see
-     * <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing Storage
-     * Capacity</a>.
+     * <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage
+     * capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and
+     * throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -424,8 +436,10 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
      *        <code>UPDATED_OPTIMIZING</code> - For a storage capacity increase update, Amazon FSx has updated the file
      *        system with the new storage capacity, and is now performing the storage optimization process. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing Storage
-     *        Capacity</a>.
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage
+     *        capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i> and <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage
+     *        and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -466,8 +480,10 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
      * <p>
      * <code>UPDATED_OPTIMIZING</code> - For a storage capacity increase update, Amazon FSx has updated the file system
      * with the new storage capacity, and is now performing the storage optimization process. For more information, see
-     * <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing Storage
-     * Capacity</a>.
+     * <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage
+     * capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and
+     * throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -500,8 +516,10 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
      *        <code>UPDATED_OPTIMIZING</code> - For a storage capacity increase update, Amazon FSx has updated the file
      *        system with the new storage capacity, and is now performing the storage optimization process. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing Storage
-     *        Capacity</a>.
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage
+     *        capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i> and <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage
+     *        and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

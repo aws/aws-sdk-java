@@ -32,6 +32,8 @@ public class PutEventSelectorsRequestMarshaller {
             .marshallLocationName("TrailName").build();
     private static final MarshallingInfo<List> EVENTSELECTORS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventSelectors").build();
+    private static final MarshallingInfo<List> ADVANCEDEVENTSELECTORS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdvancedEventSelectors").build();
 
     private static final PutEventSelectorsRequestMarshaller instance = new PutEventSelectorsRequestMarshaller();
 
@@ -51,6 +53,7 @@ public class PutEventSelectorsRequestMarshaller {
         try {
             protocolMarshaller.marshall(putEventSelectorsRequest.getTrailName(), TRAILNAME_BINDING);
             protocolMarshaller.marshall(putEventSelectorsRequest.getEventSelectors(), EVENTSELECTORS_BINDING);
+            protocolMarshaller.marshall(putEventSelectorsRequest.getAdvancedEventSelectors(), ADVANCEDEVENTSELECTORS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -977,6 +977,7 @@
         {"shape":"IdentityTypeNotSupportedException"},
         {"shape":"SessionLifetimeInMinutesInvalidException"},
         {"shape":"UnsupportedUserEditionException"},
+        {"shape":"UnsupportedPricingPlanException"},
         {"shape":"InternalFailureException"}
       ],
       "documentation":"<p>Generates a session URL and authorization code that you can use to embed an Amazon QuickSight read-only dashboard in your web server code. Before you use this command, make sure that you have configured the dashboards and permissions. </p> <p>Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not from the user's browser. The following rules apply to the combination of URL and authorization code:</p> <ul> <li> <p>They must be used together.</p> </li> <li> <p>They can be used one time only.</p> </li> <li> <p>They are valid for 5 minutes after you run this command.</p> </li> <li> <p>The resulting user session is valid for 10 hours.</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html\">Embedding Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i> .</p>"
@@ -1930,6 +1931,12 @@
         }
       },
       "documentation":"<p>Ad hoc (one-time) filtering option.</p>"
+    },
+    "AdditionalDashboardIdList":{
+      "type":"list",
+      "member":{"shape":"RestrictiveResourceId"},
+      "max":20,
+      "min":1
     },
     "AliasName":{
       "type":"string",
@@ -3983,7 +3990,7 @@
         },
         "ColumnLevelPermissionRulesApplied":{
           "shape":"Boolean",
-          "documentation":"<p>Indicates if the dataset has column level permission configured. </p>"
+          "documentation":"<p>Indicates if the dataset has column level permission configured.</p>"
         }
       },
       "documentation":"<p>Dataset summary.</p>"
@@ -5938,6 +5945,14 @@
         "ENTERPRISE"
       ]
     },
+    "EmbeddingIdentityType":{
+      "type":"string",
+      "enum":[
+        "IAM",
+        "QUICKSIGHT",
+        "ANONYMOUS"
+      ]
+    },
     "EmbeddingUrl":{
       "type":"string",
       "sensitive":true
@@ -6076,7 +6091,7 @@
           "locationName":"DashboardId"
         },
         "IdentityType":{
-          "shape":"IdentityType",
+          "shape":"EmbeddingIdentityType",
           "documentation":"<p>The authentication method that the user uses to sign in.</p>",
           "location":"querystring",
           "locationName":"creds-type"
@@ -6110,8 +6125,21 @@
           "documentation":"<p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p> <ul> <li> <p>Active Directory (AD) users or group members</p> </li> <li> <p>Invited nonfederated users</p> </li> <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation.</p> </li> </ul> <p>Omit this parameter for users in the third group – IAM users and IAM role-based sessions.</p>",
           "location":"querystring",
           "locationName":"user-arn"
+        },
+        "Namespace":{
+          "shape":"Namespace",
+          "documentation":"<p>The QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace, set this to \"<code>default</code>\".</p>",
+          "location":"querystring",
+          "locationName":"namespace"
+        },
+        "AdditionalDashboardIds":{
+          "shape":"AdditionalDashboardIdList",
+          "documentation":"<p>A list of one or more dashboard ids that you want to add to a session that includes anonymous authorizations. <code>IdentityType</code> must be set to ANONYMOUS for this to work, because other other identity types authenticate as QuickSight users. For example, if you set \"<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>\", the session can access all three dashboards. </p>",
+          "location":"querystring",
+          "locationName":"additional-dashboard-ids"
         }
-      }
+      },
+      "documentation":"<p>Parameter input for the <code>GetDashboardEmbedUrl</code> operation.</p>"
     },
     "GetDashboardEmbedUrlResponse":{
       "type":"structure",
@@ -6129,7 +6157,8 @@
           "shape":"String",
           "documentation":"<p>The AWS request ID for this operation.</p>"
         }
-      }
+      },
+      "documentation":"<p>Output returned from the <code>GetDashboardEmbedUrl</code> operation.</p>"
     },
     "GetSessionEmbedUrlRequest":{
       "type":"structure",
@@ -9618,6 +9647,19 @@
         }
       },
       "documentation":"<p>The theme colors that apply to UI and to charts, excluding data colors. The colors description is a hexadecimal color code that consists of six alphanumerical characters, prefixed with <code>#</code>, for example #37BFF5. For more information, see <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html\">Using Themes in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> </p>"
+    },
+    "UnsupportedPricingPlanException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"String"},
+        "RequestId":{
+          "shape":"String",
+          "documentation":"<p>The AWS request ID for this request.</p>"
+        }
+      },
+      "documentation":"<p>This error indicates that you are calling an embedding operation in Amazon QuickSight without the required pricing plan on your AWS account. Before you can use anonymous embedding, a QuickSight administrator needs to add capacity pricing to QuickSight. You can do this on the <b>Manage QuickSight</b> page. </p> <p>After capacity pricing is added, you can enable anonymous embedding by using the <code> <a>GetDashboardEmbedUrl</a> </code> API operation with the <code>--identity-type ANONYMOUS</code> option.</p>",
+      "error":{"httpStatusCode":403},
+      "exception":true
     },
     "UnsupportedUserEditionException":{
       "type":"structure",

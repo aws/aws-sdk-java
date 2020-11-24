@@ -34,6 +34,18 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
 
     /** Selects between the DVB and ATSC buffer models for Dolby Digital audio. */
     private String audioBufferModel;
+    /**
+     * Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
+     * sensitive to very small duration differences between video and audio. For this situation, choose Match video
+     * duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
+     * (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with
+     * silence or trims them to ensure that the total duration of each audio stream is at least as long as the total
+     * duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame
+     * longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment
+     * of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the
+     * default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+     */
+    private String audioDuration;
     /** The number of audio frames to insert for each PES packet. */
     private Integer audioFramesPerPes;
     /**
@@ -235,6 +247,125 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
 
     public M2tsSettings withAudioBufferModel(M2tsAudioBufferModel audioBufferModel) {
         this.audioBufferModel = audioBufferModel.toString();
+        return this;
+    }
+
+    /**
+     * Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
+     * sensitive to very small duration differences between video and audio. For this situation, choose Match video
+     * duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
+     * (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with
+     * silence or trims them to ensure that the total duration of each audio stream is at least as long as the total
+     * duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame
+     * longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment
+     * of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the
+     * default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+     * 
+     * @param audioDuration
+     *        Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
+     *        sensitive to very small duration differences between video and audio. For this situation, choose Match
+     *        video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
+     *        (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams
+     *        with silence or trims them to ensure that the total duration of each audio stream is at least as long as
+     *        the total duration of the video stream. After padding or trimming, the audio stream duration is no more
+     *        than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the
+     *        end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end
+     *        of the file. When you keep the default value, any minor discrepancies between audio and video duration
+     *        will depend on your output audio codec.
+     * @see M2tsAudioDuration
+     */
+
+    public void setAudioDuration(String audioDuration) {
+        this.audioDuration = audioDuration;
+    }
+
+    /**
+     * Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
+     * sensitive to very small duration differences between video and audio. For this situation, choose Match video
+     * duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
+     * (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with
+     * silence or trims them to ensure that the total duration of each audio stream is at least as long as the total
+     * duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame
+     * longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment
+     * of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the
+     * default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+     * 
+     * @return Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
+     *         sensitive to very small duration differences between video and audio. For this situation, choose Match
+     *         video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
+     *         (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio
+     *         streams with silence or trims them to ensure that the total duration of each audio stream is at least as
+     *         long as the total duration of the video stream. After padding or trimming, the audio stream duration is
+     *         no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only
+     *         to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to
+     *         the end of the file. When you keep the default value, any minor discrepancies between audio and video
+     *         duration will depend on your output audio codec.
+     * @see M2tsAudioDuration
+     */
+
+    public String getAudioDuration() {
+        return this.audioDuration;
+    }
+
+    /**
+     * Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
+     * sensitive to very small duration differences between video and audio. For this situation, choose Match video
+     * duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
+     * (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with
+     * silence or trims them to ensure that the total duration of each audio stream is at least as long as the total
+     * duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame
+     * longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment
+     * of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the
+     * default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+     * 
+     * @param audioDuration
+     *        Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
+     *        sensitive to very small duration differences between video and audio. For this situation, choose Match
+     *        video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
+     *        (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams
+     *        with silence or trims them to ensure that the total duration of each audio stream is at least as long as
+     *        the total duration of the video stream. After padding or trimming, the audio stream duration is no more
+     *        than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the
+     *        end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end
+     *        of the file. When you keep the default value, any minor discrepancies between audio and video duration
+     *        will depend on your output audio codec.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see M2tsAudioDuration
+     */
+
+    public M2tsSettings withAudioDuration(String audioDuration) {
+        setAudioDuration(audioDuration);
+        return this;
+    }
+
+    /**
+     * Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
+     * sensitive to very small duration differences between video and audio. For this situation, choose Match video
+     * duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
+     * (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with
+     * silence or trims them to ensure that the total duration of each audio stream is at least as long as the total
+     * duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame
+     * longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment
+     * of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the
+     * default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+     * 
+     * @param audioDuration
+     *        Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
+     *        sensitive to very small duration differences between video and audio. For this situation, choose Match
+     *        video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
+     *        (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams
+     *        with silence or trims them to ensure that the total duration of each audio stream is at least as long as
+     *        the total duration of the video stream. After padding or trimming, the audio stream duration is no more
+     *        than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the
+     *        end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end
+     *        of the file. When you keep the default value, any minor discrepancies between audio and video duration
+     *        will depend on your output audio codec.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see M2tsAudioDuration
+     */
+
+    public M2tsSettings withAudioDuration(M2tsAudioDuration audioDuration) {
+        this.audioDuration = audioDuration.toString();
         return this;
     }
 
@@ -1994,6 +2125,8 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getAudioBufferModel() != null)
             sb.append("AudioBufferModel: ").append(getAudioBufferModel()).append(",");
+        if (getAudioDuration() != null)
+            sb.append("AudioDuration: ").append(getAudioDuration()).append(",");
         if (getAudioFramesPerPes() != null)
             sb.append("AudioFramesPerPes: ").append(getAudioFramesPerPes()).append(",");
         if (getAudioPids() != null)
@@ -2081,6 +2214,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
         if (other.getAudioBufferModel() == null ^ this.getAudioBufferModel() == null)
             return false;
         if (other.getAudioBufferModel() != null && other.getAudioBufferModel().equals(this.getAudioBufferModel()) == false)
+            return false;
+        if (other.getAudioDuration() == null ^ this.getAudioDuration() == null)
+            return false;
+        if (other.getAudioDuration() != null && other.getAudioDuration().equals(this.getAudioDuration()) == false)
             return false;
         if (other.getAudioFramesPerPes() == null ^ this.getAudioFramesPerPes() == null)
             return false;
@@ -2231,6 +2368,7 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAudioBufferModel() == null) ? 0 : getAudioBufferModel().hashCode());
+        hashCode = prime * hashCode + ((getAudioDuration() == null) ? 0 : getAudioDuration().hashCode());
         hashCode = prime * hashCode + ((getAudioFramesPerPes() == null) ? 0 : getAudioFramesPerPes().hashCode());
         hashCode = prime * hashCode + ((getAudioPids() == null) ? 0 : getAudioPids().hashCode());
         hashCode = prime * hashCode + ((getBitrate() == null) ? 0 : getBitrate().hashCode());

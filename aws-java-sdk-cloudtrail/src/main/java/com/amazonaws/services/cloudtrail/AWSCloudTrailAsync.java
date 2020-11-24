@@ -615,8 +615,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </p>
      * <important>
      * <p>
-     * The rate of lookup requests is limited to two per second per account. If this limit is exceeded, a throttling
-     * error occurs.
+     * The rate of lookup requests is limited to two per second, per account, per region. If this limit is exceeded, a
+     * throttling error occurs.
      * </p>
      * </important>
      * 
@@ -706,8 +706,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </p>
      * <important>
      * <p>
-     * The rate of lookup requests is limited to two per second per account. If this limit is exceeded, a throttling
-     * error occurs.
+     * The rate of lookup requests is limited to two per second, per account, per region. If this limit is exceeded, a
+     * throttling error occurs.
      * </p>
      * </important>
      * 

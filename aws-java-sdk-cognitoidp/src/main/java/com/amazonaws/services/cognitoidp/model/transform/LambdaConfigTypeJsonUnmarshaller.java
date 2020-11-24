@@ -88,6 +88,18 @@ public class LambdaConfigTypeJsonUnmarshaller implements Unmarshaller<LambdaConf
                     context.nextToken();
                     lambdaConfigType.setUserMigration(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CustomSMSSender", targetDepth)) {
+                    context.nextToken();
+                    lambdaConfigType.setCustomSMSSender(CustomSMSLambdaVersionConfigTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("CustomEmailSender", targetDepth)) {
+                    context.nextToken();
+                    lambdaConfigType.setCustomEmailSender(CustomEmailLambdaVersionConfigTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("KMSKeyID", targetDepth)) {
+                    context.nextToken();
+                    lambdaConfigType.setKMSKeyID(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

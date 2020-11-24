@@ -61,6 +61,8 @@ public enum CodebuildActions implements Action {
     DescribeCodeCoverages("codebuild:DescribeCodeCoverages"),
     /** Action for the DescribeTestCases operation. */
     DescribeTestCases("codebuild:DescribeTestCases"),
+    /** Action for the GetReportGroupTrend operation. */
+    GetReportGroupTrend("codebuild:GetReportGroupTrend"),
     /** Action for the GetResourcePolicy operation. */
     GetResourcePolicy("codebuild:GetResourcePolicy"),
     /** Action for the ImportSourceCredentials operation. */

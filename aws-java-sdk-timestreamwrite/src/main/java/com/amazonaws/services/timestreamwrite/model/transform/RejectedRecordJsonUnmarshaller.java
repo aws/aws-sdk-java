@@ -56,6 +56,10 @@ public class RejectedRecordJsonUnmarshaller implements Unmarshaller<RejectedReco
                     context.nextToken();
                     rejectedRecord.setReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ExistingVersion", targetDepth)) {
+                    context.nextToken();
+                    rejectedRecord.setExistingVersion(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

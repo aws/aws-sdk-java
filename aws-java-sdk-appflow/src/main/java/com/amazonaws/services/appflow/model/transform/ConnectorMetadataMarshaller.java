@@ -61,6 +61,8 @@ public class ConnectorMetadataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Zendesk").build();
     private static final MarshallingInfo<StructuredPojo> EVENTBRIDGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventBridge").build();
+    private static final MarshallingInfo<StructuredPojo> UPSOLVER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Upsolver").build();
 
     private static final ConnectorMetadataMarshaller instance = new ConnectorMetadataMarshaller();
 
@@ -95,6 +97,7 @@ public class ConnectorMetadataMarshaller {
             protocolMarshaller.marshall(connectorMetadata.getVeeva(), VEEVA_BINDING);
             protocolMarshaller.marshall(connectorMetadata.getZendesk(), ZENDESK_BINDING);
             protocolMarshaller.marshall(connectorMetadata.getEventBridge(), EVENTBRIDGE_BINDING);
+            protocolMarshaller.marshall(connectorMetadata.getUpsolver(), UPSOLVER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

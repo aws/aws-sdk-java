@@ -83,6 +83,10 @@ public class DashIsoGroupSettingsJsonUnmarshaller implements Unmarshaller<DashIs
                     context.nextToken();
                     dashIsoGroupSettings.setMinBufferTime(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("minFinalSegmentLength", targetDepth)) {
+                    context.nextToken();
+                    dashIsoGroupSettings.setMinFinalSegmentLength(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
                 if (context.testExpression("mpdProfile", targetDepth)) {
                     context.nextToken();
                     dashIsoGroupSettings.setMpdProfile(context.getUnmarshaller(String.class).unmarshall(context));

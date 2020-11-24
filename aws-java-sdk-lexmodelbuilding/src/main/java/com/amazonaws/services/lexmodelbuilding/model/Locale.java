@@ -24,6 +24,7 @@ public enum Locale {
     EnAU("en-AU"),
     EnGB("en-GB"),
     EnUS("en-US"),
+    Es419("es-419"),
     EsES("es-ES"),
     EsUS("es-US"),
     FrFR("fr-FR"),

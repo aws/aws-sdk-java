@@ -532,6 +532,27 @@ public interface AmazonComprehend {
 
     /**
      * <p>
+     * Gets the status and details of an events detection job.
+     * </p>
+     * 
+     * @param describeEventsDetectionJobRequest
+     * @return Result of the DescribeEventsDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws JobNotFoundException
+     *         The specified job was not found. Check the job ID and try again.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DescribeEventsDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEventsDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeEventsDetectionJobResult describeEventsDetectionJob(DescribeEventsDetectionJobRequest describeEventsDetectionJobRequest);
+
+    /**
+     * <p>
      * Gets the properties associated with a key phrases detection job. Use this operation to get the status of a
      * detection job.
      * </p>
@@ -901,6 +922,27 @@ public interface AmazonComprehend {
 
     /**
      * <p>
+     * Gets a list of the events detection jobs that you have submitted.
+     * </p>
+     * 
+     * @param listEventsDetectionJobsRequest
+     * @return Result of the ListEventsDetectionJobs operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InvalidFilterException
+     *         The filter specified for the operation is invalid. Specify a different filter.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.ListEventsDetectionJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEventsDetectionJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListEventsDetectionJobsResult listEventsDetectionJobs(ListEventsDetectionJobsRequest listEventsDetectionJobsRequest);
+
+    /**
+     * <p>
      * Get a list of key phrase detection jobs that you have submitted.
      * </p>
      * 
@@ -1082,6 +1124,27 @@ public interface AmazonComprehend {
 
     /**
      * <p>
+     * Starts an asynchronous event detection job for a collection of documents.
+     * </p>
+     * 
+     * @param startEventsDetectionJobRequest
+     * @return Result of the StartEventsDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws KmsKeyValidationException
+     *         The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StartEventsDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartEventsDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartEventsDetectionJobResult startEventsDetectionJob(StartEventsDetectionJobRequest startEventsDetectionJobRequest);
+
+    /**
+     * <p>
      * Starts an asynchronous key phrase detection job for a collection of documents. Use the operation to track the
      * status of a job.
      * </p>
@@ -1228,6 +1291,25 @@ public interface AmazonComprehend {
      *      target="_top">AWS API Documentation</a>
      */
     StopEntitiesDetectionJobResult stopEntitiesDetectionJob(StopEntitiesDetectionJobRequest stopEntitiesDetectionJobRequest);
+
+    /**
+     * <p>
+     * Stops an events detection job in progress.
+     * </p>
+     * 
+     * @param stopEventsDetectionJobRequest
+     * @return Result of the StopEventsDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws JobNotFoundException
+     *         The specified job was not found. Check the job ID and try again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StopEventsDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopEventsDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StopEventsDetectionJobResult stopEventsDetectionJob(StopEventsDetectionJobRequest stopEventsDetectionJobRequest);
 
     /**
      * <p>

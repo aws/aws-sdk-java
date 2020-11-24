@@ -482,7 +482,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <p>
      * Creates a pre-signed URL to a portal. Use this operation to create URLs to portals that use AWS Identity and
      * Access Management (IAM) to authenticate users. An IAM user with access to a portal can call this API to get a URL
-     * to that portal. The URL contains a session token that lets the IAM user access the portal.
+     * to that portal. The URL contains an authentication token that lets the IAM user access the portal.
      * </p>
      * 
      * @param createPresignedPortalUrlRequest
@@ -497,7 +497,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <p>
      * Creates a pre-signed URL to a portal. Use this operation to create URLs to portals that use AWS Identity and
      * Access Management (IAM) to authenticate users. An IAM user with access to a portal can call this API to get a URL
-     * to that portal. The URL contains a session token that lets the IAM user access the portal.
+     * to that portal. The URL contains an authentication token that lets the IAM user access the portal.
      * </p>
      * 
      * @param createPresignedPortalUrlRequest
@@ -973,6 +973,49 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      */
     java.util.concurrent.Future<DescribeDashboardResult> describeDashboardAsync(DescribeDashboardRequest describeDashboardRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeDashboardRequest, DescribeDashboardResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves information about the default encryption configuration for the AWS account in the default or specified
+     * region. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in the
+     * <i>AWS IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param describeDefaultEncryptionConfigurationRequest
+     * @return A Java Future containing the result of the DescribeDefaultEncryptionConfiguration operation returned by
+     *         the service.
+     * @sample AWSIoTSiteWiseAsync.DescribeDefaultEncryptionConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeDefaultEncryptionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDefaultEncryptionConfigurationResult> describeDefaultEncryptionConfigurationAsync(
+            DescribeDefaultEncryptionConfigurationRequest describeDefaultEncryptionConfigurationRequest);
+
+    /**
+     * <p>
+     * Retrieves information about the default encryption configuration for the AWS account in the default or specified
+     * region. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in the
+     * <i>AWS IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param describeDefaultEncryptionConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDefaultEncryptionConfiguration operation returned by
+     *         the service.
+     * @sample AWSIoTSiteWiseAsyncHandler.DescribeDefaultEncryptionConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeDefaultEncryptionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDefaultEncryptionConfigurationResult> describeDefaultEncryptionConfigurationAsync(
+            DescribeDefaultEncryptionConfigurationRequest describeDefaultEncryptionConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDefaultEncryptionConfigurationRequest, DescribeDefaultEncryptionConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -1774,6 +1817,45 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Sets the default encryption configuration for the AWS account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in the
+     * <i>AWS IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param putDefaultEncryptionConfigurationRequest
+     * @return A Java Future containing the result of the PutDefaultEncryptionConfiguration operation returned by the
+     *         service.
+     * @sample AWSIoTSiteWiseAsync.PutDefaultEncryptionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutDefaultEncryptionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutDefaultEncryptionConfigurationResult> putDefaultEncryptionConfigurationAsync(
+            PutDefaultEncryptionConfigurationRequest putDefaultEncryptionConfigurationRequest);
+
+    /**
+     * <p>
+     * Sets the default encryption configuration for the AWS account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in the
+     * <i>AWS IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param putDefaultEncryptionConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutDefaultEncryptionConfiguration operation returned by the
+     *         service.
+     * @sample AWSIoTSiteWiseAsyncHandler.PutDefaultEncryptionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutDefaultEncryptionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutDefaultEncryptionConfigurationResult> putDefaultEncryptionConfigurationAsync(
+            PutDefaultEncryptionConfigurationRequest putDefaultEncryptionConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutDefaultEncryptionConfigurationRequest, PutDefaultEncryptionConfigurationResult> asyncHandler);
 
     /**
      * <p>

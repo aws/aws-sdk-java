@@ -77,6 +77,11 @@ public class StackResourceSummaryStaxUnmarshaller implements Unmarshaller<StackR
                     stackResourceSummary.setDriftInformation(StackResourceDriftInformationSummaryStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ModuleInfo", targetDepth)) {
+                    stackResourceSummary.setModuleInfo(ModuleInfoStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return stackResourceSummary;

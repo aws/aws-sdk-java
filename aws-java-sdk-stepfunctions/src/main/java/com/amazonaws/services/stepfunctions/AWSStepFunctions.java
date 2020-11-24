@@ -628,6 +628,30 @@ public interface AWSStepFunctions {
 
     /**
      * <p>
+     * Starts a Synchronous Express state machine execution.
+     * </p>
+     * 
+     * @param startSyncExecutionRequest
+     * @return Result of the StartSyncExecution operation returned by the service.
+     * @throws InvalidArnException
+     *         The provided Amazon Resource Name (ARN) is invalid.
+     * @throws InvalidExecutionInputException
+     *         The provided JSON input data is invalid.
+     * @throws InvalidNameException
+     *         The provided name is invalid.
+     * @throws StateMachineDoesNotExistException
+     *         The specified state machine does not exist.
+     * @throws StateMachineDeletingException
+     *         The specified state machine is being deleted.
+     * @throws StateMachineTypeNotSupportedException
+     * @sample AWSStepFunctions.StartSyncExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartSyncExecution" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartSyncExecutionResult startSyncExecution(StartSyncExecutionRequest startSyncExecutionRequest);
+
+    /**
+     * <p>
      * Stops an execution.
      * </p>
      * <p>

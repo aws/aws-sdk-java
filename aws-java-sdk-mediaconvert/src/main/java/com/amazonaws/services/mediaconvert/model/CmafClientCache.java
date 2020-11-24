@@ -15,8 +15,9 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later
- * replay.
+ * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default
+ * value Enabled (ENABLED) and control caching in your video distribution set up. For example, use the Cache-Control
+ * http header.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum CmafClientCache {

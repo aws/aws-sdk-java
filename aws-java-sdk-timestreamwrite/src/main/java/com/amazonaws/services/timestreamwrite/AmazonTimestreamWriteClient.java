@@ -336,6 +336,10 @@ public class AmazonTimestreamWriteClient extends AmazonWebServiceClient implemen
      * <p>
      * All tables in the database must be deleted first, or a ValidationException error will be thrown.
      * </p>
+     * <p>
+     * Due to the nature of distributed retries, the operation can return either success or a ResourceNotFoundException.
+     * Clients should consider them equivalent.
+     * </p>
      * 
      * @param deleteDatabaseRequest
      * @return Result of the DeleteDatabase operation returned by the service.
@@ -409,6 +413,10 @@ public class AmazonTimestreamWriteClient extends AmazonWebServiceClient implemen
      * <p>
      * Deletes a given Timestream table. This is an irreversible operation. After a Timestream database table is
      * deleted, the time series data stored in the table cannot be recovered.
+     * </p>
+     * <p>
+     * Due to the nature of distributed retries, the operation can return either success or a ResourceNotFoundException.
+     * Clients should consider them equivalent.
      * </p>
      * 
      * @param deleteTableRequest
@@ -868,6 +876,8 @@ public class AmazonTimestreamWriteClient extends AmazonWebServiceClient implemen
      * @throws ResourceNotFoundException
      *         The operation tried to access a nonexistent resource. The resource might not be specified correctly, or
      *         its status might not be ACTIVE.
+     * @throws ThrottlingException
+     *         Too many requests were made by a user exceeding service quotas. The request was throttled.
      * @throws ValidationException
      *         Invalid or malformed request.
      * @throws InvalidEndpointException
@@ -938,6 +948,8 @@ public class AmazonTimestreamWriteClient extends AmazonWebServiceClient implemen
      *         its status might not be ACTIVE.
      * @throws ServiceQuotaExceededException
      *         Instance quota of resource exceeded for this account.
+     * @throws ThrottlingException
+     *         Too many requests were made by a user exceeding service quotas. The request was throttled.
      * @throws ValidationException
      *         Invalid or malformed request.
      * @throws InvalidEndpointException
@@ -1006,6 +1018,8 @@ public class AmazonTimestreamWriteClient extends AmazonWebServiceClient implemen
      *         Invalid or malformed request.
      * @throws ServiceQuotaExceededException
      *         Instance quota of resource exceeded for this account.
+     * @throws ThrottlingException
+     *         Too many requests were made by a user exceeding service quotas. The request was throttled.
      * @throws ResourceNotFoundException
      *         The operation tried to access a nonexistent resource. The resource might not be specified correctly, or
      *         its status might not be ACTIVE.

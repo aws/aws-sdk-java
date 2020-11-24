@@ -30,7 +30,7 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that id entifies the execution.
+     * The Amazon Resource Name (ARN) that identifies the execution.
      * </p>
      */
     private String executionArn;
@@ -100,11 +100,11 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that id entifies the execution.
+     * The Amazon Resource Name (ARN) that identifies the execution.
      * </p>
      * 
      * @param executionArn
-     *        The Amazon Resource Name (ARN) that id entifies the execution.
+     *        The Amazon Resource Name (ARN) that identifies the execution.
      */
 
     public void setExecutionArn(String executionArn) {
@@ -113,10 +113,10 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that id entifies the execution.
+     * The Amazon Resource Name (ARN) that identifies the execution.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that id entifies the execution.
+     * @return The Amazon Resource Name (ARN) that identifies the execution.
      */
 
     public String getExecutionArn() {
@@ -125,11 +125,11 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that id entifies the execution.
+     * The Amazon Resource Name (ARN) that identifies the execution.
      * </p>
      * 
      * @param executionArn
-     *        The Amazon Resource Name (ARN) that id entifies the execution.
+     *        The Amazon Resource Name (ARN) that identifies the execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

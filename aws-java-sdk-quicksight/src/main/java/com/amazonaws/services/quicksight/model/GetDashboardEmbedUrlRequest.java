@@ -18,6 +18,9 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
+ * Parameter input for the <code>GetDashboardEmbedUrl</code> operation.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetDashboardEmbedUrl" target="_top">AWS
  *      API Documentation</a>
@@ -100,6 +103,23 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private String userArn;
+    /**
+     * <p>
+     * The QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace,
+     * set this to "<code>default</code>".
+     * </p>
+     */
+    private String namespace;
+    /**
+     * <p>
+     * A list of one or more dashboard ids that you want to add to a session that includes anonymous authorizations.
+     * <code>IdentityType</code> must be set to ANONYMOUS for this to work, because other other identity types
+     * authenticate as QuickSight users. For example, if you set "
+     * <code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can
+     * access all three dashboards.
+     * </p>
+     */
+    private java.util.List<String> additionalDashboardIds;
 
     /**
      * <p>
@@ -188,7 +208,7 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @param identityType
      *        The authentication method that the user uses to sign in.
-     * @see IdentityType
+     * @see EmbeddingIdentityType
      */
 
     public void setIdentityType(String identityType) {
@@ -201,7 +221,7 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @return The authentication method that the user uses to sign in.
-     * @see IdentityType
+     * @see EmbeddingIdentityType
      */
 
     public String getIdentityType() {
@@ -216,7 +236,7 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      * @param identityType
      *        The authentication method that the user uses to sign in.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see IdentityType
+     * @see EmbeddingIdentityType
      */
 
     public GetDashboardEmbedUrlRequest withIdentityType(String identityType) {
@@ -232,10 +252,10 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      * @param identityType
      *        The authentication method that the user uses to sign in.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see IdentityType
+     * @see EmbeddingIdentityType
      */
 
-    public GetDashboardEmbedUrlRequest withIdentityType(IdentityType identityType) {
+    public GetDashboardEmbedUrlRequest withIdentityType(EmbeddingIdentityType identityType) {
         this.identityType = identityType.toString();
         return this;
     }
@@ -652,6 +672,154 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace,
+     * set this to "<code>default</code>".
+     * </p>
+     * 
+     * @param namespace
+     *        The QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom
+     *        namespace, set this to "<code>default</code>".
+     */
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
+
+    /**
+     * <p>
+     * The QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace,
+     * set this to "<code>default</code>".
+     * </p>
+     * 
+     * @return The QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom
+     *         namespace, set this to "<code>default</code>".
+     */
+
+    public String getNamespace() {
+        return this.namespace;
+    }
+
+    /**
+     * <p>
+     * The QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace,
+     * set this to "<code>default</code>".
+     * </p>
+     * 
+     * @param namespace
+     *        The QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom
+     *        namespace, set this to "<code>default</code>".
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDashboardEmbedUrlRequest withNamespace(String namespace) {
+        setNamespace(namespace);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of one or more dashboard ids that you want to add to a session that includes anonymous authorizations.
+     * <code>IdentityType</code> must be set to ANONYMOUS for this to work, because other other identity types
+     * authenticate as QuickSight users. For example, if you set "
+     * <code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can
+     * access all three dashboards.
+     * </p>
+     * 
+     * @return A list of one or more dashboard ids that you want to add to a session that includes anonymous
+     *         authorizations. <code>IdentityType</code> must be set to ANONYMOUS for this to work, because other other
+     *         identity types authenticate as QuickSight users. For example, if you set "
+     *         <code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the
+     *         session can access all three dashboards.
+     */
+
+    public java.util.List<String> getAdditionalDashboardIds() {
+        return additionalDashboardIds;
+    }
+
+    /**
+     * <p>
+     * A list of one or more dashboard ids that you want to add to a session that includes anonymous authorizations.
+     * <code>IdentityType</code> must be set to ANONYMOUS for this to work, because other other identity types
+     * authenticate as QuickSight users. For example, if you set "
+     * <code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can
+     * access all three dashboards.
+     * </p>
+     * 
+     * @param additionalDashboardIds
+     *        A list of one or more dashboard ids that you want to add to a session that includes anonymous
+     *        authorizations. <code>IdentityType</code> must be set to ANONYMOUS for this to work, because other other
+     *        identity types authenticate as QuickSight users. For example, if you set "
+     *        <code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the
+     *        session can access all three dashboards.
+     */
+
+    public void setAdditionalDashboardIds(java.util.Collection<String> additionalDashboardIds) {
+        if (additionalDashboardIds == null) {
+            this.additionalDashboardIds = null;
+            return;
+        }
+
+        this.additionalDashboardIds = new java.util.ArrayList<String>(additionalDashboardIds);
+    }
+
+    /**
+     * <p>
+     * A list of one or more dashboard ids that you want to add to a session that includes anonymous authorizations.
+     * <code>IdentityType</code> must be set to ANONYMOUS for this to work, because other other identity types
+     * authenticate as QuickSight users. For example, if you set "
+     * <code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can
+     * access all three dashboards.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdditionalDashboardIds(java.util.Collection)} or
+     * {@link #withAdditionalDashboardIds(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param additionalDashboardIds
+     *        A list of one or more dashboard ids that you want to add to a session that includes anonymous
+     *        authorizations. <code>IdentityType</code> must be set to ANONYMOUS for this to work, because other other
+     *        identity types authenticate as QuickSight users. For example, if you set "
+     *        <code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the
+     *        session can access all three dashboards.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDashboardEmbedUrlRequest withAdditionalDashboardIds(String... additionalDashboardIds) {
+        if (this.additionalDashboardIds == null) {
+            setAdditionalDashboardIds(new java.util.ArrayList<String>(additionalDashboardIds.length));
+        }
+        for (String ele : additionalDashboardIds) {
+            this.additionalDashboardIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of one or more dashboard ids that you want to add to a session that includes anonymous authorizations.
+     * <code>IdentityType</code> must be set to ANONYMOUS for this to work, because other other identity types
+     * authenticate as QuickSight users. For example, if you set "
+     * <code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can
+     * access all three dashboards.
+     * </p>
+     * 
+     * @param additionalDashboardIds
+     *        A list of one or more dashboard ids that you want to add to a session that includes anonymous
+     *        authorizations. <code>IdentityType</code> must be set to ANONYMOUS for this to work, because other other
+     *        identity types authenticate as QuickSight users. For example, if you set "
+     *        <code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the
+     *        session can access all three dashboards.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDashboardEmbedUrlRequest withAdditionalDashboardIds(java.util.Collection<String> additionalDashboardIds) {
+        setAdditionalDashboardIds(additionalDashboardIds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -678,7 +846,11 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
         if (getStatePersistenceEnabled() != null)
             sb.append("StatePersistenceEnabled: ").append(getStatePersistenceEnabled()).append(",");
         if (getUserArn() != null)
-            sb.append("UserArn: ").append(getUserArn());
+            sb.append("UserArn: ").append(getUserArn()).append(",");
+        if (getNamespace() != null)
+            sb.append("Namespace: ").append(getNamespace()).append(",");
+        if (getAdditionalDashboardIds() != null)
+            sb.append("AdditionalDashboardIds: ").append(getAdditionalDashboardIds());
         sb.append("}");
         return sb.toString();
     }
@@ -725,6 +897,14 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getUserArn() != null && other.getUserArn().equals(this.getUserArn()) == false)
             return false;
+        if (other.getNamespace() == null ^ this.getNamespace() == null)
+            return false;
+        if (other.getNamespace() != null && other.getNamespace().equals(this.getNamespace()) == false)
+            return false;
+        if (other.getAdditionalDashboardIds() == null ^ this.getAdditionalDashboardIds() == null)
+            return false;
+        if (other.getAdditionalDashboardIds() != null && other.getAdditionalDashboardIds().equals(this.getAdditionalDashboardIds()) == false)
+            return false;
         return true;
     }
 
@@ -741,6 +921,8 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getResetDisabled() == null) ? 0 : getResetDisabled().hashCode());
         hashCode = prime * hashCode + ((getStatePersistenceEnabled() == null) ? 0 : getStatePersistenceEnabled().hashCode());
         hashCode = prime * hashCode + ((getUserArn() == null) ? 0 : getUserArn().hashCode());
+        hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalDashboardIds() == null) ? 0 : getAdditionalDashboardIds().hashCode());
         return hashCode;
     }
 

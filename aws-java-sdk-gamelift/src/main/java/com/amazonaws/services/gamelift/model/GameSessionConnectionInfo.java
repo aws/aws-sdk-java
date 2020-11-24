@@ -19,10 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Connection information for the new game session that is created with matchmaking. (with <a>StartMatchmaking</a>).
- * Once a match is set, the FlexMatch engine places the match and creates a new game session for it. This information,
- * including the game session endpoint and player sessions for each player in the original matchmaking request, is added
- * to the <a>MatchmakingTicket</a>, which can be retrieved by calling <a>DescribeMatchmaking</a>.
+ * Connection information for a new game session that is created in response to a <a>StartMatchmaking</a> request. Once
+ * a match is made, the FlexMatch engine creates a new game session for it. This information, including the game session
+ * endpoint and player sessions for each player in the original matchmaking request, is added to the
+ * <a>MatchmakingTicket</a>, which can be retrieved by calling <a>DescribeMatchmaking</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSessionConnectionInfo" target="_top">AWS

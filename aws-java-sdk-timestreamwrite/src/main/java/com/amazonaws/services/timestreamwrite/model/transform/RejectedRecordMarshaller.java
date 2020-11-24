@@ -31,6 +31,8 @@ public class RejectedRecordMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecordIndex").build();
     private static final MarshallingInfo<String> REASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Reason").build();
+    private static final MarshallingInfo<Long> EXISTINGVERSION_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExistingVersion").build();
 
     private static final RejectedRecordMarshaller instance = new RejectedRecordMarshaller();
 
@@ -50,6 +52,7 @@ public class RejectedRecordMarshaller {
         try {
             protocolMarshaller.marshall(rejectedRecord.getRecordIndex(), RECORDINDEX_BINDING);
             protocolMarshaller.marshall(rejectedRecord.getReason(), REASON_BINDING);
+            protocolMarshaller.marshall(rejectedRecord.getExistingVersion(), EXISTINGVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class Mp4SettingsMarshaller {
 
+    private static final MarshallingInfo<String> AUDIODURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioDuration").build();
     private static final MarshallingInfo<String> CSLGATOM_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("cslgAtom").build();
     private static final MarshallingInfo<Integer> CTTSVERSION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -54,6 +56,7 @@ public class Mp4SettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(mp4Settings.getAudioDuration(), AUDIODURATION_BINDING);
             protocolMarshaller.marshall(mp4Settings.getCslgAtom(), CSLGATOM_BINDING);
             protocolMarshaller.marshall(mp4Settings.getCttsVersion(), CTTSVERSION_BINDING);
             protocolMarshaller.marshall(mp4Settings.getFreeSpaceBox(), FREESPACEBOX_BINDING);

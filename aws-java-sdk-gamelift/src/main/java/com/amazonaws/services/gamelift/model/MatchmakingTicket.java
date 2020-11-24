@@ -150,7 +150,8 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Identifier and connection information of the game session created for the match. This information is added to the
-     * ticket only after the matchmaking request has been successfully completed.
+     * ticket only after the matchmaking request has been successfully completed. This parameter is not set when
+     * FlexMatch is being used without GameLift hosting.
      * </p>
      */
     private GameSessionConnectionInfo gameSessionConnectionInfo;
@@ -1062,12 +1063,14 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Identifier and connection information of the game session created for the match. This information is added to the
-     * ticket only after the matchmaking request has been successfully completed.
+     * ticket only after the matchmaking request has been successfully completed. This parameter is not set when
+     * FlexMatch is being used without GameLift hosting.
      * </p>
      * 
      * @param gameSessionConnectionInfo
      *        Identifier and connection information of the game session created for the match. This information is added
-     *        to the ticket only after the matchmaking request has been successfully completed.
+     *        to the ticket only after the matchmaking request has been successfully completed. This parameter is not
+     *        set when FlexMatch is being used without GameLift hosting.
      */
 
     public void setGameSessionConnectionInfo(GameSessionConnectionInfo gameSessionConnectionInfo) {
@@ -1077,11 +1080,13 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Identifier and connection information of the game session created for the match. This information is added to the
-     * ticket only after the matchmaking request has been successfully completed.
+     * ticket only after the matchmaking request has been successfully completed. This parameter is not set when
+     * FlexMatch is being used without GameLift hosting.
      * </p>
      * 
      * @return Identifier and connection information of the game session created for the match. This information is
-     *         added to the ticket only after the matchmaking request has been successfully completed.
+     *         added to the ticket only after the matchmaking request has been successfully completed. This parameter is
+     *         not set when FlexMatch is being used without GameLift hosting.
      */
 
     public GameSessionConnectionInfo getGameSessionConnectionInfo() {
@@ -1091,12 +1096,14 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Identifier and connection information of the game session created for the match. This information is added to the
-     * ticket only after the matchmaking request has been successfully completed.
+     * ticket only after the matchmaking request has been successfully completed. This parameter is not set when
+     * FlexMatch is being used without GameLift hosting.
      * </p>
      * 
      * @param gameSessionConnectionInfo
      *        Identifier and connection information of the game session created for the match. This information is added
-     *        to the ticket only after the matchmaking request has been successfully completed.
+     *        to the ticket only after the matchmaking request has been successfully completed. This parameter is not
+     *        set when FlexMatch is being used without GameLift hosting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

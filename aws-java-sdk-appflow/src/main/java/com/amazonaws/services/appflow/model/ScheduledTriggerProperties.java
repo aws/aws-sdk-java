@@ -31,7 +31,8 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The scheduling expression that determines when and how often the rule runs.
+     * The scheduling expression that determines the rate at which the schedule will run, for example
+     * <code>rate(5minutes)</code>.
      * </p>
      */
     private String scheduleExpression;
@@ -63,11 +64,13 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The scheduling expression that determines when and how often the rule runs.
+     * The scheduling expression that determines the rate at which the schedule will run, for example
+     * <code>rate(5minutes)</code>.
      * </p>
      * 
      * @param scheduleExpression
-     *        The scheduling expression that determines when and how often the rule runs.
+     *        The scheduling expression that determines the rate at which the schedule will run, for example
+     *        <code>rate(5minutes)</code>.
      */
 
     public void setScheduleExpression(String scheduleExpression) {
@@ -76,10 +79,12 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The scheduling expression that determines when and how often the rule runs.
+     * The scheduling expression that determines the rate at which the schedule will run, for example
+     * <code>rate(5minutes)</code>.
      * </p>
      * 
-     * @return The scheduling expression that determines when and how often the rule runs.
+     * @return The scheduling expression that determines the rate at which the schedule will run, for example
+     *         <code>rate(5minutes)</code>.
      */
 
     public String getScheduleExpression() {
@@ -88,11 +93,13 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The scheduling expression that determines when and how often the rule runs.
+     * The scheduling expression that determines the rate at which the schedule will run, for example
+     * <code>rate(5minutes)</code>.
      * </p>
      * 
      * @param scheduleExpression
-     *        The scheduling expression that determines when and how often the rule runs.
+     *        The scheduling expression that determines the rate at which the schedule will run, for example
+     *        <code>rate(5minutes)</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

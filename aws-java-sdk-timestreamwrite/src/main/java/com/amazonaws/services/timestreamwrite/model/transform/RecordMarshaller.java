@@ -40,6 +40,8 @@ public class RecordMarshaller {
             .marshallLocationName("Time").build();
     private static final MarshallingInfo<String> TIMEUNIT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TimeUnit").build();
+    private static final MarshallingInfo<Long> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Version").build();
 
     private static final RecordMarshaller instance = new RecordMarshaller();
 
@@ -63,6 +65,7 @@ public class RecordMarshaller {
             protocolMarshaller.marshall(record.getMeasureValueType(), MEASUREVALUETYPE_BINDING);
             protocolMarshaller.marshall(record.getTime(), TIME_BINDING);
             protocolMarshaller.marshall(record.getTimeUnit(), TIMEUNIT_BINDING);
+            protocolMarshaller.marshall(record.getVersion(), VERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

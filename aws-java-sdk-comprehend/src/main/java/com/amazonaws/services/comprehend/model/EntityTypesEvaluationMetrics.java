@@ -44,9 +44,9 @@ public class EntityTypesEvaluationMetrics implements Serializable, Cloneable, St
     private Double recall;
     /**
      * <p>
-     * A measure of how accurate the recognizer results are for for a specific entity type in the test data. It is
-     * derived from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the harmonic
-     * average of the two scores. The highest score is 1, and the worst score is 0.
+     * A measure of how accurate the recognizer results are for a specific entity type in the test data. It is derived
+     * from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the harmonic average
+     * of the two scores. The highest score is 1, and the worst score is 0.
      * </p>
      */
     private Double f1Score;
@@ -145,14 +145,14 @@ public class EntityTypesEvaluationMetrics implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * A measure of how accurate the recognizer results are for for a specific entity type in the test data. It is
-     * derived from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the harmonic
-     * average of the two scores. The highest score is 1, and the worst score is 0.
+     * A measure of how accurate the recognizer results are for a specific entity type in the test data. It is derived
+     * from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the harmonic average
+     * of the two scores. The highest score is 1, and the worst score is 0.
      * </p>
      * 
      * @param f1Score
-     *        A measure of how accurate the recognizer results are for for a specific entity type in the test data. It
-     *        is derived from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the
+     *        A measure of how accurate the recognizer results are for a specific entity type in the test data. It is
+     *        derived from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the
      *        harmonic average of the two scores. The highest score is 1, and the worst score is 0.
      */
 
@@ -162,14 +162,14 @@ public class EntityTypesEvaluationMetrics implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * A measure of how accurate the recognizer results are for for a specific entity type in the test data. It is
-     * derived from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the harmonic
-     * average of the two scores. The highest score is 1, and the worst score is 0.
+     * A measure of how accurate the recognizer results are for a specific entity type in the test data. It is derived
+     * from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the harmonic average
+     * of the two scores. The highest score is 1, and the worst score is 0.
      * </p>
      * 
-     * @return A measure of how accurate the recognizer results are for for a specific entity type in the test data. It
-     *         is derived from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is
-     *         the harmonic average of the two scores. The highest score is 1, and the worst score is 0.
+     * @return A measure of how accurate the recognizer results are for a specific entity type in the test data. It is
+     *         derived from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the
+     *         harmonic average of the two scores. The highest score is 1, and the worst score is 0.
      */
 
     public Double getF1Score() {
@@ -178,14 +178,14 @@ public class EntityTypesEvaluationMetrics implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * A measure of how accurate the recognizer results are for for a specific entity type in the test data. It is
-     * derived from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the harmonic
-     * average of the two scores. The highest score is 1, and the worst score is 0.
+     * A measure of how accurate the recognizer results are for a specific entity type in the test data. It is derived
+     * from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the harmonic average
+     * of the two scores. The highest score is 1, and the worst score is 0.
      * </p>
      * 
      * @param f1Score
-     *        A measure of how accurate the recognizer results are for for a specific entity type in the test data. It
-     *        is derived from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the
+     *        A measure of how accurate the recognizer results are for a specific entity type in the test data. It is
+     *        derived from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the
      *        harmonic average of the two scores. The highest score is 1, and the worst score is 0.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

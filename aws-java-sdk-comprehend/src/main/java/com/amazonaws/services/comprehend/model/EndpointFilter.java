@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The filter used to determine which endpoints are are returned. You can filter jobs on their name, model, status, or
- * the date and time that they were created. You can only set one filter at a time.
+ * The filter used to determine which endpoints are returned. You can filter jobs on their name, model, status, or the
+ * date and time that they were created. You can only set one filter at a time.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/EndpointFilter" target="_top">AWS API

@@ -601,6 +601,19 @@ public interface AWSCodeBuild {
     DescribeTestCasesResult describeTestCases(DescribeTestCasesRequest describeTestCasesRequest);
 
     /**
+     * @param getReportGroupTrendRequest
+     * @return Result of the GetReportGroupTrend operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @sample AWSCodeBuild.GetReportGroupTrend
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/GetReportGroupTrend" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetReportGroupTrendResult getReportGroupTrend(GetReportGroupTrendRequest getReportGroupTrendRequest);
+
+    /**
      * <p>
      * Gets a resource policy that is identified by its resource ARN.
      * </p>

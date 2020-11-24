@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.907</version>
+    <version>1.11.908</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,12 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-mwaa</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-networkfirewall</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -1544,6 +1550,10 @@
                               </taglet>
                           </taglets>
                           <groups>
+                              <group>
+                                  <title>AmazonMWAA</title>
+                                  <packages>com.amazonaws.services.mwaa*</packages>
+                              </group>
                               <group>
                                   <title>AWS Network Firewall</title>
                                   <packages>com.amazonaws.services.networkfirewall*</packages>

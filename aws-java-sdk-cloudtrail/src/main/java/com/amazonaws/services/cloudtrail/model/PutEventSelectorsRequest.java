@@ -73,6 +73,8 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      */
     private com.amazonaws.internal.SdkInternalList<EventSelector> eventSelectors;
 
+    private com.amazonaws.internal.SdkInternalList<AdvancedEventSelector> advancedEventSelectors;
+
     /**
      * <p>
      * Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following
@@ -395,6 +397,61 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<AdvancedEventSelector> getAdvancedEventSelectors() {
+        if (advancedEventSelectors == null) {
+            advancedEventSelectors = new com.amazonaws.internal.SdkInternalList<AdvancedEventSelector>();
+        }
+        return advancedEventSelectors;
+    }
+
+    /**
+     * @param advancedEventSelectors
+     */
+
+    public void setAdvancedEventSelectors(java.util.Collection<AdvancedEventSelector> advancedEventSelectors) {
+        if (advancedEventSelectors == null) {
+            this.advancedEventSelectors = null;
+            return;
+        }
+
+        this.advancedEventSelectors = new com.amazonaws.internal.SdkInternalList<AdvancedEventSelector>(advancedEventSelectors);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdvancedEventSelectors(java.util.Collection)} or
+     * {@link #withAdvancedEventSelectors(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param advancedEventSelectors
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutEventSelectorsRequest withAdvancedEventSelectors(AdvancedEventSelector... advancedEventSelectors) {
+        if (this.advancedEventSelectors == null) {
+            setAdvancedEventSelectors(new com.amazonaws.internal.SdkInternalList<AdvancedEventSelector>(advancedEventSelectors.length));
+        }
+        for (AdvancedEventSelector ele : advancedEventSelectors) {
+            this.advancedEventSelectors.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param advancedEventSelectors
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutEventSelectorsRequest withAdvancedEventSelectors(java.util.Collection<AdvancedEventSelector> advancedEventSelectors) {
+        setAdvancedEventSelectors(advancedEventSelectors);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -409,7 +466,9 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getTrailName() != null)
             sb.append("TrailName: ").append(getTrailName()).append(",");
         if (getEventSelectors() != null)
-            sb.append("EventSelectors: ").append(getEventSelectors());
+            sb.append("EventSelectors: ").append(getEventSelectors()).append(",");
+        if (getAdvancedEventSelectors() != null)
+            sb.append("AdvancedEventSelectors: ").append(getAdvancedEventSelectors());
         sb.append("}");
         return sb.toString();
     }
@@ -432,6 +491,10 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getEventSelectors() != null && other.getEventSelectors().equals(this.getEventSelectors()) == false)
             return false;
+        if (other.getAdvancedEventSelectors() == null ^ this.getAdvancedEventSelectors() == null)
+            return false;
+        if (other.getAdvancedEventSelectors() != null && other.getAdvancedEventSelectors().equals(this.getAdvancedEventSelectors()) == false)
+            return false;
         return true;
     }
 
@@ -442,6 +505,7 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
 
         hashCode = prime * hashCode + ((getTrailName() == null) ? 0 : getTrailName().hashCode());
         hashCode = prime * hashCode + ((getEventSelectors() == null) ? 0 : getEventSelectors().hashCode());
+        hashCode = prime * hashCode + ((getAdvancedEventSelectors() == null) ? 0 : getAdvancedEventSelectors().hashCode());
         return hashCode;
     }
 

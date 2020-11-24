@@ -28,12 +28,28 @@ import javax.annotation.Generated;
  * <li>
  * <p>
  * <code>STORAGE_OPTIMIZATION</code> - Once the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage
- * capacity completes successfully, a <code>STORAGE_OPTIMIZATION</code> task starts. Storage optimization is the process
- * of migrating the file system data to the new, larger disks. You can track the storage migration progress using the
- * <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> completes successfully, the parent
- * <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see <a
- * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing Storage
- * Capacity</a>.
+ * capacity completes successfully, a <code>STORAGE_OPTIMIZATION</code> task starts.
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * For Windows, storage optimization is the process of migrating the file system data to the new, larger disks.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For Lustre, storage optimization consists of rebalancing the data across the existing and newly added file servers.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * You can track the storage optimization progress using the <code>ProgressPercent</code> property. When
+ * <code>STORAGE_OPTIMIZATION</code> completes successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status
+ * changes to <code>COMPLETED</code>. For more information, see <a
+ * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage
+ * capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i> and <a
+ * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and
+ * throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.
  * </p>
  * </li>
  * <li>

@@ -60,7 +60,9 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
     private String measureValueType;
     /**
      * <p>
-     * Contains the time at which the measure value for the data point was collected.
+     * Contains the time at which the measure value for the data point was collected. The time value plus the unit
+     * provides the time elapsed since the epoch. For example, if the time value is <code>12345</code> and the unit is
+     * <code>ms</code>, then <code>12345 ms</code> have elapsed since the epoch.
      * </p>
      */
     private String time;
@@ -71,6 +73,14 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String timeUnit;
+    /**
+     * <p>
+     * 64-bit attribute used for record updates. Write requests for duplicate data with a higher version number will
+     * update the existing measure value and version. In cases where the measure value is the same, <code>Version</code>
+     * will still be updated . Default value is to 1.
+     * </p>
+     */
+    private Long version;
 
     /**
      * <p>
@@ -289,11 +299,15 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains the time at which the measure value for the data point was collected.
+     * Contains the time at which the measure value for the data point was collected. The time value plus the unit
+     * provides the time elapsed since the epoch. For example, if the time value is <code>12345</code> and the unit is
+     * <code>ms</code>, then <code>12345 ms</code> have elapsed since the epoch.
      * </p>
      * 
      * @param time
-     *        Contains the time at which the measure value for the data point was collected.
+     *        Contains the time at which the measure value for the data point was collected. The time value plus the
+     *        unit provides the time elapsed since the epoch. For example, if the time value is <code>12345</code> and
+     *        the unit is <code>ms</code>, then <code>12345 ms</code> have elapsed since the epoch.
      */
 
     public void setTime(String time) {
@@ -302,10 +316,14 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains the time at which the measure value for the data point was collected.
+     * Contains the time at which the measure value for the data point was collected. The time value plus the unit
+     * provides the time elapsed since the epoch. For example, if the time value is <code>12345</code> and the unit is
+     * <code>ms</code>, then <code>12345 ms</code> have elapsed since the epoch.
      * </p>
      * 
-     * @return Contains the time at which the measure value for the data point was collected.
+     * @return Contains the time at which the measure value for the data point was collected. The time value plus the
+     *         unit provides the time elapsed since the epoch. For example, if the time value is <code>12345</code> and
+     *         the unit is <code>ms</code>, then <code>12345 ms</code> have elapsed since the epoch.
      */
 
     public String getTime() {
@@ -314,11 +332,15 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains the time at which the measure value for the data point was collected.
+     * Contains the time at which the measure value for the data point was collected. The time value plus the unit
+     * provides the time elapsed since the epoch. For example, if the time value is <code>12345</code> and the unit is
+     * <code>ms</code>, then <code>12345 ms</code> have elapsed since the epoch.
      * </p>
      * 
      * @param time
-     *        Contains the time at which the measure value for the data point was collected.
+     *        Contains the time at which the measure value for the data point was collected. The time value plus the
+     *        unit provides the time elapsed since the epoch. For example, if the time value is <code>12345</code> and
+     *        the unit is <code>ms</code>, then <code>12345 ms</code> have elapsed since the epoch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -395,6 +417,58 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * 64-bit attribute used for record updates. Write requests for duplicate data with a higher version number will
+     * update the existing measure value and version. In cases where the measure value is the same, <code>Version</code>
+     * will still be updated . Default value is to 1.
+     * </p>
+     * 
+     * @param version
+     *        64-bit attribute used for record updates. Write requests for duplicate data with a higher version number
+     *        will update the existing measure value and version. In cases where the measure value is the same,
+     *        <code>Version</code> will still be updated . Default value is to 1.
+     */
+
+    public void setVersion(Long version) {
+        this.version = version;
+    }
+
+    /**
+     * <p>
+     * 64-bit attribute used for record updates. Write requests for duplicate data with a higher version number will
+     * update the existing measure value and version. In cases where the measure value is the same, <code>Version</code>
+     * will still be updated . Default value is to 1.
+     * </p>
+     * 
+     * @return 64-bit attribute used for record updates. Write requests for duplicate data with a higher version number
+     *         will update the existing measure value and version. In cases where the measure value is the same,
+     *         <code>Version</code> will still be updated . Default value is to 1.
+     */
+
+    public Long getVersion() {
+        return this.version;
+    }
+
+    /**
+     * <p>
+     * 64-bit attribute used for record updates. Write requests for duplicate data with a higher version number will
+     * update the existing measure value and version. In cases where the measure value is the same, <code>Version</code>
+     * will still be updated . Default value is to 1.
+     * </p>
+     * 
+     * @param version
+     *        64-bit attribute used for record updates. Write requests for duplicate data with a higher version number
+     *        will update the existing measure value and version. In cases where the measure value is the same,
+     *        <code>Version</code> will still be updated . Default value is to 1.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Record withVersion(Long version) {
+        setVersion(version);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -417,7 +491,9 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
         if (getTime() != null)
             sb.append("Time: ").append(getTime()).append(",");
         if (getTimeUnit() != null)
-            sb.append("TimeUnit: ").append(getTimeUnit());
+            sb.append("TimeUnit: ").append(getTimeUnit()).append(",");
+        if (getVersion() != null)
+            sb.append("Version: ").append(getVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -456,6 +532,10 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTimeUnit() != null && other.getTimeUnit().equals(this.getTimeUnit()) == false)
             return false;
+        if (other.getVersion() == null ^ this.getVersion() == null)
+            return false;
+        if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
+            return false;
         return true;
     }
 
@@ -470,6 +550,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMeasureValueType() == null) ? 0 : getMeasureValueType().hashCode());
         hashCode = prime * hashCode + ((getTime() == null) ? 0 : getTime().hashCode());
         hashCode = prime * hashCode + ((getTimeUnit() == null) ? 0 : getTimeUnit().hashCode());
+        hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         return hashCode;
     }
 

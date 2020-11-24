@@ -128,6 +128,11 @@ public class AbstractAWSStepFunctions implements AWSStepFunctions {
     }
 
     @Override
+    public StartSyncExecutionResult startSyncExecution(StartSyncExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StopExecutionResult stopExecution(StopExecutionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

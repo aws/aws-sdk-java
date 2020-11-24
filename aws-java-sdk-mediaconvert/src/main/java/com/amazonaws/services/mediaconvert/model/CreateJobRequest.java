@@ -84,12 +84,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String statusUpdateInterval;
     /**
      * Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or with only
-     * a key.
+     * a key. Use standard AWS tags on your job for automatic integration with AWS services and for custom integrations
+     * and workflows.
      */
     private java.util.Map<String, String> tags;
     /**
      * Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in
-     * key/value pairs.
+     * key/value pairs. Use only for existing integrations or workflows that rely on job metadata tags. Otherwise, we
+     * recommend that you use standard AWS tags.
      */
     private java.util.Map<String, String> userMetadata;
 
@@ -671,10 +673,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or with only
-     * a key.
+     * a key. Use standard AWS tags on your job for automatic integration with AWS services and for custom integrations
+     * and workflows.
      * 
      * @return Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or
-     *         with only a key.
+     *         with only a key. Use standard AWS tags on your job for automatic integration with AWS services and for
+     *         custom integrations and workflows.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -683,11 +687,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or with only
-     * a key.
+     * a key. Use standard AWS tags on your job for automatic integration with AWS services and for custom integrations
+     * and workflows.
      * 
      * @param tags
      *        Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or
-     *        with only a key.
+     *        with only a key. Use standard AWS tags on your job for automatic integration with AWS services and for
+     *        custom integrations and workflows.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -696,11 +702,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or with only
-     * a key.
+     * a key. Use standard AWS tags on your job for automatic integration with AWS services and for custom integrations
+     * and workflows.
      * 
      * @param tags
      *        Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or
-     *        with only a key.
+     *        with only a key. Use standard AWS tags on your job for automatic integration with AWS services and for
+     *        custom integrations and workflows.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -739,10 +747,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in
-     * key/value pairs.
+     * key/value pairs. Use only for existing integrations or workflows that rely on job metadata tags. Otherwise, we
+     * recommend that you use standard AWS tags.
      * 
      * @return Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata
-     *         in key/value pairs.
+     *         in key/value pairs. Use only for existing integrations or workflows that rely on job metadata tags.
+     *         Otherwise, we recommend that you use standard AWS tags.
      */
 
     public java.util.Map<String, String> getUserMetadata() {
@@ -751,11 +761,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in
-     * key/value pairs.
+     * key/value pairs. Use only for existing integrations or workflows that rely on job metadata tags. Otherwise, we
+     * recommend that you use standard AWS tags.
      * 
      * @param userMetadata
      *        Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata
-     *        in key/value pairs.
+     *        in key/value pairs. Use only for existing integrations or workflows that rely on job metadata tags.
+     *        Otherwise, we recommend that you use standard AWS tags.
      */
 
     public void setUserMetadata(java.util.Map<String, String> userMetadata) {
@@ -764,11 +776,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in
-     * key/value pairs.
+     * key/value pairs. Use only for existing integrations or workflows that rely on job metadata tags. Otherwise, we
+     * recommend that you use standard AWS tags.
      * 
      * @param userMetadata
      *        Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata
-     *        in key/value pairs.
+     *        in key/value pairs. Use only for existing integrations or workflows that rely on job metadata tags.
+     *        Otherwise, we recommend that you use standard AWS tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,7 +36,7 @@ public class CreatePresignedPortalUrlRequest extends com.amazonaws.AmazonWebServ
      * The duration (in seconds) for which the session at the URL is valid.
      * </p>
      * <p>
-     * Default: 900 seconds (15 minutes)
+     * Default: 43,200 seconds (12 hours)
      * </p>
      */
     private Integer sessionDurationSeconds;
@@ -86,13 +86,13 @@ public class CreatePresignedPortalUrlRequest extends com.amazonaws.AmazonWebServ
      * The duration (in seconds) for which the session at the URL is valid.
      * </p>
      * <p>
-     * Default: 900 seconds (15 minutes)
+     * Default: 43,200 seconds (12 hours)
      * </p>
      * 
      * @param sessionDurationSeconds
      *        The duration (in seconds) for which the session at the URL is valid.</p>
      *        <p>
-     *        Default: 900 seconds (15 minutes)
+     *        Default: 43,200 seconds (12 hours)
      */
 
     public void setSessionDurationSeconds(Integer sessionDurationSeconds) {
@@ -104,12 +104,12 @@ public class CreatePresignedPortalUrlRequest extends com.amazonaws.AmazonWebServ
      * The duration (in seconds) for which the session at the URL is valid.
      * </p>
      * <p>
-     * Default: 900 seconds (15 minutes)
+     * Default: 43,200 seconds (12 hours)
      * </p>
      * 
      * @return The duration (in seconds) for which the session at the URL is valid.</p>
      *         <p>
-     *         Default: 900 seconds (15 minutes)
+     *         Default: 43,200 seconds (12 hours)
      */
 
     public Integer getSessionDurationSeconds() {
@@ -121,13 +121,13 @@ public class CreatePresignedPortalUrlRequest extends com.amazonaws.AmazonWebServ
      * The duration (in seconds) for which the session at the URL is valid.
      * </p>
      * <p>
-     * Default: 900 seconds (15 minutes)
+     * Default: 43,200 seconds (12 hours)
      * </p>
      * 
      * @param sessionDurationSeconds
      *        The duration (in seconds) for which the session at the URL is valid.</p>
      *        <p>
-     *        Default: 900 seconds (15 minutes)
+     *        Default: 43,200 seconds (12 hours)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

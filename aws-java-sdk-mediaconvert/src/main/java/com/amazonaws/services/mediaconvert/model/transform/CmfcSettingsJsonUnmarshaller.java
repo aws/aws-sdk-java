@@ -48,6 +48,10 @@ public class CmfcSettingsJsonUnmarshaller implements Unmarshaller<CmfcSettings, 
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("audioDuration", targetDepth)) {
+                    context.nextToken();
+                    cmfcSettings.setAudioDuration(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("scte35Esam", targetDepth)) {
                     context.nextToken();
                     cmfcSettings.setScte35Esam(context.getUnmarshaller(String.class).unmarshall(context));

@@ -96,7 +96,7 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
     private FileSystemFailureDetails failureDetails;
     /**
      * <p>
-     * The storage capacity of the file system in gigabytes (GB).
+     * The storage capacity of the file system in gibibytes (GiB).
      * </p>
      */
     private Integer storageCapacity;
@@ -724,11 +724,11 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The storage capacity of the file system in gigabytes (GB).
+     * The storage capacity of the file system in gibibytes (GiB).
      * </p>
      * 
      * @param storageCapacity
-     *        The storage capacity of the file system in gigabytes (GB).
+     *        The storage capacity of the file system in gibibytes (GiB).
      */
 
     public void setStorageCapacity(Integer storageCapacity) {
@@ -737,10 +737,10 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The storage capacity of the file system in gigabytes (GB).
+     * The storage capacity of the file system in gibibytes (GiB).
      * </p>
      * 
-     * @return The storage capacity of the file system in gigabytes (GB).
+     * @return The storage capacity of the file system in gibibytes (GiB).
      */
 
     public Integer getStorageCapacity() {
@@ -749,11 +749,11 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The storage capacity of the file system in gigabytes (GB).
+     * The storage capacity of the file system in gibibytes (GiB).
      * </p>
      * 
      * @param storageCapacity
-     *        The storage capacity of the file system in gigabytes (GB).
+     *        The storage capacity of the file system in gibibytes (GiB).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
