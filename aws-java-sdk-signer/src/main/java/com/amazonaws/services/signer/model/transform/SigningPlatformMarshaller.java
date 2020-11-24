@@ -43,6 +43,8 @@ public class SigningPlatformMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("signingImageFormat").build();
     private static final MarshallingInfo<Integer> MAXSIZEINMB_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxSizeInMB").build();
+    private static final MarshallingInfo<Boolean> REVOCATIONSUPPORTED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("revocationSupported").build();
 
     private static final SigningPlatformMarshaller instance = new SigningPlatformMarshaller();
 
@@ -68,6 +70,7 @@ public class SigningPlatformMarshaller {
             protocolMarshaller.marshall(signingPlatform.getSigningConfiguration(), SIGNINGCONFIGURATION_BINDING);
             protocolMarshaller.marshall(signingPlatform.getSigningImageFormat(), SIGNINGIMAGEFORMAT_BINDING);
             protocolMarshaller.marshall(signingPlatform.getMaxSizeInMB(), MAXSIZEINMB_BINDING);
+            protocolMarshaller.marshall(signingPlatform.getRevocationSupported(), REVOCATIONSUPPORTED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

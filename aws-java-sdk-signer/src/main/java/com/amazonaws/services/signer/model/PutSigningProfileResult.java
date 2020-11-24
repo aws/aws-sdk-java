@@ -29,6 +29,18 @@ public class PutSigningProfileResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private String arn;
+    /**
+     * <p>
+     * The version of the signing profile being created.
+     * </p>
+     */
+    private String profileVersion;
+    /**
+     * <p>
+     * The signing profile ARN, including the profile version.
+     * </p>
+     */
+    private String profileVersionArn;
 
     /**
      * <p>
@@ -71,6 +83,86 @@ public class PutSigningProfileResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * The version of the signing profile being created.
+     * </p>
+     * 
+     * @param profileVersion
+     *        The version of the signing profile being created.
+     */
+
+    public void setProfileVersion(String profileVersion) {
+        this.profileVersion = profileVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the signing profile being created.
+     * </p>
+     * 
+     * @return The version of the signing profile being created.
+     */
+
+    public String getProfileVersion() {
+        return this.profileVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the signing profile being created.
+     * </p>
+     * 
+     * @param profileVersion
+     *        The version of the signing profile being created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutSigningProfileResult withProfileVersion(String profileVersion) {
+        setProfileVersion(profileVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The signing profile ARN, including the profile version.
+     * </p>
+     * 
+     * @param profileVersionArn
+     *        The signing profile ARN, including the profile version.
+     */
+
+    public void setProfileVersionArn(String profileVersionArn) {
+        this.profileVersionArn = profileVersionArn;
+    }
+
+    /**
+     * <p>
+     * The signing profile ARN, including the profile version.
+     * </p>
+     * 
+     * @return The signing profile ARN, including the profile version.
+     */
+
+    public String getProfileVersionArn() {
+        return this.profileVersionArn;
+    }
+
+    /**
+     * <p>
+     * The signing profile ARN, including the profile version.
+     * </p>
+     * 
+     * @param profileVersionArn
+     *        The signing profile ARN, including the profile version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutSigningProfileResult withProfileVersionArn(String profileVersionArn) {
+        setProfileVersionArn(profileVersionArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -83,7 +175,11 @@ public class PutSigningProfileResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getArn() != null)
-            sb.append("Arn: ").append(getArn());
+            sb.append("Arn: ").append(getArn()).append(",");
+        if (getProfileVersion() != null)
+            sb.append("ProfileVersion: ").append(getProfileVersion()).append(",");
+        if (getProfileVersionArn() != null)
+            sb.append("ProfileVersionArn: ").append(getProfileVersionArn());
         sb.append("}");
         return sb.toString();
     }
@@ -102,6 +198,14 @@ public class PutSigningProfileResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
+        if (other.getProfileVersion() == null ^ this.getProfileVersion() == null)
+            return false;
+        if (other.getProfileVersion() != null && other.getProfileVersion().equals(this.getProfileVersion()) == false)
+            return false;
+        if (other.getProfileVersionArn() == null ^ this.getProfileVersionArn() == null)
+            return false;
+        if (other.getProfileVersionArn() != null && other.getProfileVersionArn().equals(this.getProfileVersionArn()) == false)
+            return false;
         return true;
     }
 
@@ -111,6 +215,8 @@ public class PutSigningProfileResult extends com.amazonaws.AmazonWebServiceResul
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getProfileVersion() == null) ? 0 : getProfileVersion().hashCode());
+        hashCode = prime * hashCode + ((getProfileVersionArn() == null) ? 0 : getProfileVersionArn().hashCode());
         return hashCode;
     }
 

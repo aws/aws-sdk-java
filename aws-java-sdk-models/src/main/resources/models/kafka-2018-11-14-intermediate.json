@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -8850,12 +8850,12 @@
         "c2jName" : "State",
         "c2jShape" : "ClusterState",
         "deprecated" : false,
-        "documentation" : "\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         ",
+        "documentation" : "\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         ",
         "endpointDiscoveryId" : false,
         "enumType" : "ClusterState",
-        "fluentSetterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         \n@param state <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterState*/",
+        "fluentSetterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         \n@param state <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterState*/",
         "fluentSetterMethodName" : "withState",
-        "getterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         \n@return <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@see ClusterState*/",
+        "getterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         \n@return <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n@see ClusterState*/",
         "getterMethodName" : "getState",
         "getterModel" : {
           "returnType" : "String",
@@ -8889,7 +8889,7 @@
         "marshallingType" : "STRING",
         "name" : "State",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         \n@param state <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@see ClusterState*/",
+        "setterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         \n@param state <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n@see ClusterState*/",
         "setterMethodName" : "setState",
         "setterModel" : {
           "timestampFormat" : null,
@@ -8904,13 +8904,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         \n@param state <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterState*/",
+        "varargSetterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         \n@param state <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterState*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "state",
           "variableType" : "String",
-          "documentation" : "\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         ",
+          "documentation" : "\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         ",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -10191,12 +10191,12 @@
           "c2jName" : "State",
           "c2jShape" : "ClusterState",
           "deprecated" : false,
-          "documentation" : "\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         ",
+          "documentation" : "\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         ",
           "endpointDiscoveryId" : false,
           "enumType" : "ClusterState",
-          "fluentSetterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         \n@param state <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterState*/",
+          "fluentSetterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         \n@param state <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterState*/",
           "fluentSetterMethodName" : "withState",
-          "getterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         \n@return <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@see ClusterState*/",
+          "getterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         \n@return <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n@see ClusterState*/",
           "getterMethodName" : "getState",
           "getterModel" : {
             "returnType" : "String",
@@ -10230,7 +10230,7 @@
           "marshallingType" : "STRING",
           "name" : "State",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         \n@param state <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@see ClusterState*/",
+          "setterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         \n@param state <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n@see ClusterState*/",
           "setterMethodName" : "setState",
           "setterModel" : {
             "timestampFormat" : null,
@@ -10245,13 +10245,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         \n@param state <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterState*/",
+          "varargSetterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         \n@param state <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterState*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "state",
             "variableType" : "String",
-            "documentation" : "\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         ",
+            "documentation" : "\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         ",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -12911,14 +12911,20 @@
         "name" : "CREATING",
         "value" : "CREATING"
       }, {
-        "name" : "UPDATING",
-        "value" : "UPDATING"
-      }, {
         "name" : "DELETING",
         "value" : "DELETING"
       }, {
         "name" : "FAILED",
         "value" : "FAILED"
+      }, {
+        "name" : "MAINTENANCE",
+        "value" : "MAINTENANCE"
+      }, {
+        "name" : "REBOOTING_BROKER",
+        "value" : "REBOOTING_BROKER"
+      }, {
+        "name" : "UPDATING",
+        "value" : "UPDATING"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.kafka.enum.ClusterState",
@@ -17556,12 +17562,12 @@
         "c2jName" : "State",
         "c2jShape" : "ClusterState",
         "deprecated" : false,
-        "documentation" : "\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         ",
+        "documentation" : "\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         ",
         "endpointDiscoveryId" : false,
         "enumType" : "ClusterState",
-        "fluentSetterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         \n@param state <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterState*/",
+        "fluentSetterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         \n@param state <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterState*/",
         "fluentSetterMethodName" : "withState",
-        "getterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         \n@return <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@see ClusterState*/",
+        "getterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         \n@return <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n@see ClusterState*/",
         "getterMethodName" : "getState",
         "getterModel" : {
           "returnType" : "String",
@@ -17595,7 +17601,7 @@
         "marshallingType" : "STRING",
         "name" : "State",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         \n@param state <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@see ClusterState*/",
+        "setterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         \n@param state <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n@see ClusterState*/",
         "setterMethodName" : "setState",
         "setterModel" : {
           "timestampFormat" : null,
@@ -17610,13 +17616,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         \n@param state <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterState*/",
+        "varargSetterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         \n@param state <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterState*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "state",
           "variableType" : "String",
-          "documentation" : "\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         ",
+          "documentation" : "\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         ",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -17767,12 +17773,12 @@
           "c2jName" : "State",
           "c2jShape" : "ClusterState",
           "deprecated" : false,
-          "documentation" : "\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         ",
+          "documentation" : "\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         ",
           "endpointDiscoveryId" : false,
           "enumType" : "ClusterState",
-          "fluentSetterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         \n@param state <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterState*/",
+          "fluentSetterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         \n@param state <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterState*/",
           "fluentSetterMethodName" : "withState",
-          "getterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         \n@return <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@see ClusterState*/",
+          "getterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         \n@return <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n@see ClusterState*/",
           "getterMethodName" : "getState",
           "getterModel" : {
             "returnType" : "String",
@@ -17806,7 +17812,7 @@
           "marshallingType" : "STRING",
           "name" : "State",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         \n@param state <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@see ClusterState*/",
+          "setterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         \n@param state <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n@see ClusterState*/",
           "setterMethodName" : "setState",
           "setterModel" : {
             "timestampFormat" : null,
@@ -17821,13 +17827,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         \n@param state <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterState*/",
+          "varargSetterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         \n@param state <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterState*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "state",
             "variableType" : "String",
-            "documentation" : "\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         ",
+            "documentation" : "\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         ",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -19789,12 +19795,12 @@
         "c2jName" : "State",
         "c2jShape" : "ClusterState",
         "deprecated" : false,
-        "documentation" : "\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         ",
+        "documentation" : "\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         ",
         "endpointDiscoveryId" : false,
         "enumType" : "ClusterState",
-        "fluentSetterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         \n@param state <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterState*/",
+        "fluentSetterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         \n@param state <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterState*/",
         "fluentSetterMethodName" : "withState",
-        "getterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         \n@return <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@see ClusterState*/",
+        "getterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         \n@return <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n@see ClusterState*/",
         "getterMethodName" : "getState",
         "getterModel" : {
           "returnType" : "String",
@@ -19828,7 +19834,7 @@
         "marshallingType" : "STRING",
         "name" : "State",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         \n@param state <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@see ClusterState*/",
+        "setterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         \n@param state <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n@see ClusterState*/",
         "setterMethodName" : "setState",
         "setterModel" : {
           "timestampFormat" : null,
@@ -19843,13 +19849,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         \n@param state <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterState*/",
+        "varargSetterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         \n@param state <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterState*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "state",
           "variableType" : "String",
-          "documentation" : "\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         ",
+          "documentation" : "\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         ",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -19930,12 +19936,12 @@
           "c2jName" : "State",
           "c2jShape" : "ClusterState",
           "deprecated" : false,
-          "documentation" : "\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         ",
+          "documentation" : "\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         ",
           "endpointDiscoveryId" : false,
           "enumType" : "ClusterState",
-          "fluentSetterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         \n@param state <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterState*/",
+          "fluentSetterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         \n@param state <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterState*/",
           "fluentSetterMethodName" : "withState",
-          "getterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         \n@return <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@see ClusterState*/",
+          "getterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         \n@return <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n@see ClusterState*/",
           "getterMethodName" : "getState",
           "getterModel" : {
             "returnType" : "String",
@@ -19969,7 +19975,7 @@
           "marshallingType" : "STRING",
           "name" : "State",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         \n@param state <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@see ClusterState*/",
+          "setterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         \n@param state <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n@see ClusterState*/",
           "setterMethodName" : "setState",
           "setterModel" : {
             "timestampFormat" : null,
@@ -19984,13 +19990,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         \n@param state <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterState*/",
+          "varargSetterDocumentation" : "/**\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         \n@param state <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterState*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "state",
             "variableType" : "String",
-            "documentation" : "\n            <p>The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.</p>\n         ",
+            "documentation" : "\n            <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>\n         ",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },

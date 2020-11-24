@@ -36,7 +36,7 @@ public class ClusterTimeline implements Serializable, Cloneable, StructuredPojo 
     private java.util.Date creationDateTime;
     /**
      * <p>
-     * The date and time when the cluster was ready to execute steps.
+     * The date and time when the cluster was ready to run steps.
      * </p>
      */
     private java.util.Date readyDateTime;
@@ -89,11 +89,11 @@ public class ClusterTimeline implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The date and time when the cluster was ready to execute steps.
+     * The date and time when the cluster was ready to run steps.
      * </p>
      * 
      * @param readyDateTime
-     *        The date and time when the cluster was ready to execute steps.
+     *        The date and time when the cluster was ready to run steps.
      */
 
     public void setReadyDateTime(java.util.Date readyDateTime) {
@@ -102,10 +102,10 @@ public class ClusterTimeline implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The date and time when the cluster was ready to execute steps.
+     * The date and time when the cluster was ready to run steps.
      * </p>
      * 
-     * @return The date and time when the cluster was ready to execute steps.
+     * @return The date and time when the cluster was ready to run steps.
      */
 
     public java.util.Date getReadyDateTime() {
@@ -114,11 +114,11 @@ public class ClusterTimeline implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The date and time when the cluster was ready to execute steps.
+     * The date and time when the cluster was ready to run steps.
      * </p>
      * 
      * @param readyDateTime
-     *        The date and time when the cluster was ready to execute steps.
+     *        The date and time when the cluster was ready to run steps.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

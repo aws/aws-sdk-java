@@ -35,6 +35,8 @@ public class ManagedScalingMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minimumScalingStepSize").build();
     private static final MarshallingInfo<Integer> MAXIMUMSCALINGSTEPSIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maximumScalingStepSize").build();
+    private static final MarshallingInfo<Integer> INSTANCEWARMUPPERIOD_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceWarmupPeriod").build();
 
     private static final ManagedScalingMarshaller instance = new ManagedScalingMarshaller();
 
@@ -56,6 +58,7 @@ public class ManagedScalingMarshaller {
             protocolMarshaller.marshall(managedScaling.getTargetCapacity(), TARGETCAPACITY_BINDING);
             protocolMarshaller.marshall(managedScaling.getMinimumScalingStepSize(), MINIMUMSCALINGSTEPSIZE_BINDING);
             protocolMarshaller.marshall(managedScaling.getMaximumScalingStepSize(), MAXIMUMSCALINGSTEPSIZE_BINDING);
+            protocolMarshaller.marshall(managedScaling.getInstanceWarmupPeriod(), INSTANCEWARMUPPERIOD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

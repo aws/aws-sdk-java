@@ -65,6 +65,54 @@ public class SigningJob implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String status;
+    /**
+     * <p>
+     * Indicates whether the signing job is revoked.
+     * </p>
+     */
+    private Boolean isRevoked;
+    /**
+     * <p>
+     * The name of the signing profile that created a signing job.
+     * </p>
+     */
+    private String profileName;
+    /**
+     * <p>
+     * The version of the signing profile that created a signing job.
+     * </p>
+     */
+    private String profileVersion;
+    /**
+     * <p>
+     * The unique identifier for a signing platform.
+     * </p>
+     */
+    private String platformId;
+    /**
+     * <p>
+     * The name of a signing platform.
+     * </p>
+     */
+    private String platformDisplayName;
+    /**
+     * <p>
+     * The time when the signature of a signing job expires.
+     * </p>
+     */
+    private java.util.Date signatureExpiresAt;
+    /**
+     * <p>
+     * The AWS account ID of the job owner.
+     * </p>
+     */
+    private String jobOwner;
+    /**
+     * <p>
+     * The AWS account ID of the job invoker.
+     * </p>
+     */
+    private String jobInvoker;
 
     /**
      * <p>
@@ -332,6 +380,338 @@ public class SigningJob implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Indicates whether the signing job is revoked.
+     * </p>
+     * 
+     * @param isRevoked
+     *        Indicates whether the signing job is revoked.
+     */
+
+    public void setIsRevoked(Boolean isRevoked) {
+        this.isRevoked = isRevoked;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the signing job is revoked.
+     * </p>
+     * 
+     * @return Indicates whether the signing job is revoked.
+     */
+
+    public Boolean getIsRevoked() {
+        return this.isRevoked;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the signing job is revoked.
+     * </p>
+     * 
+     * @param isRevoked
+     *        Indicates whether the signing job is revoked.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SigningJob withIsRevoked(Boolean isRevoked) {
+        setIsRevoked(isRevoked);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the signing job is revoked.
+     * </p>
+     * 
+     * @return Indicates whether the signing job is revoked.
+     */
+
+    public Boolean isRevoked() {
+        return this.isRevoked;
+    }
+
+    /**
+     * <p>
+     * The name of the signing profile that created a signing job.
+     * </p>
+     * 
+     * @param profileName
+     *        The name of the signing profile that created a signing job.
+     */
+
+    public void setProfileName(String profileName) {
+        this.profileName = profileName;
+    }
+
+    /**
+     * <p>
+     * The name of the signing profile that created a signing job.
+     * </p>
+     * 
+     * @return The name of the signing profile that created a signing job.
+     */
+
+    public String getProfileName() {
+        return this.profileName;
+    }
+
+    /**
+     * <p>
+     * The name of the signing profile that created a signing job.
+     * </p>
+     * 
+     * @param profileName
+     *        The name of the signing profile that created a signing job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SigningJob withProfileName(String profileName) {
+        setProfileName(profileName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The version of the signing profile that created a signing job.
+     * </p>
+     * 
+     * @param profileVersion
+     *        The version of the signing profile that created a signing job.
+     */
+
+    public void setProfileVersion(String profileVersion) {
+        this.profileVersion = profileVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the signing profile that created a signing job.
+     * </p>
+     * 
+     * @return The version of the signing profile that created a signing job.
+     */
+
+    public String getProfileVersion() {
+        return this.profileVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the signing profile that created a signing job.
+     * </p>
+     * 
+     * @param profileVersion
+     *        The version of the signing profile that created a signing job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SigningJob withProfileVersion(String profileVersion) {
+        setProfileVersion(profileVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for a signing platform.
+     * </p>
+     * 
+     * @param platformId
+     *        The unique identifier for a signing platform.
+     */
+
+    public void setPlatformId(String platformId) {
+        this.platformId = platformId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for a signing platform.
+     * </p>
+     * 
+     * @return The unique identifier for a signing platform.
+     */
+
+    public String getPlatformId() {
+        return this.platformId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for a signing platform.
+     * </p>
+     * 
+     * @param platformId
+     *        The unique identifier for a signing platform.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SigningJob withPlatformId(String platformId) {
+        setPlatformId(platformId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of a signing platform.
+     * </p>
+     * 
+     * @param platformDisplayName
+     *        The name of a signing platform.
+     */
+
+    public void setPlatformDisplayName(String platformDisplayName) {
+        this.platformDisplayName = platformDisplayName;
+    }
+
+    /**
+     * <p>
+     * The name of a signing platform.
+     * </p>
+     * 
+     * @return The name of a signing platform.
+     */
+
+    public String getPlatformDisplayName() {
+        return this.platformDisplayName;
+    }
+
+    /**
+     * <p>
+     * The name of a signing platform.
+     * </p>
+     * 
+     * @param platformDisplayName
+     *        The name of a signing platform.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SigningJob withPlatformDisplayName(String platformDisplayName) {
+        setPlatformDisplayName(platformDisplayName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time when the signature of a signing job expires.
+     * </p>
+     * 
+     * @param signatureExpiresAt
+     *        The time when the signature of a signing job expires.
+     */
+
+    public void setSignatureExpiresAt(java.util.Date signatureExpiresAt) {
+        this.signatureExpiresAt = signatureExpiresAt;
+    }
+
+    /**
+     * <p>
+     * The time when the signature of a signing job expires.
+     * </p>
+     * 
+     * @return The time when the signature of a signing job expires.
+     */
+
+    public java.util.Date getSignatureExpiresAt() {
+        return this.signatureExpiresAt;
+    }
+
+    /**
+     * <p>
+     * The time when the signature of a signing job expires.
+     * </p>
+     * 
+     * @param signatureExpiresAt
+     *        The time when the signature of a signing job expires.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SigningJob withSignatureExpiresAt(java.util.Date signatureExpiresAt) {
+        setSignatureExpiresAt(signatureExpiresAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID of the job owner.
+     * </p>
+     * 
+     * @param jobOwner
+     *        The AWS account ID of the job owner.
+     */
+
+    public void setJobOwner(String jobOwner) {
+        this.jobOwner = jobOwner;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID of the job owner.
+     * </p>
+     * 
+     * @return The AWS account ID of the job owner.
+     */
+
+    public String getJobOwner() {
+        return this.jobOwner;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID of the job owner.
+     * </p>
+     * 
+     * @param jobOwner
+     *        The AWS account ID of the job owner.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SigningJob withJobOwner(String jobOwner) {
+        setJobOwner(jobOwner);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID of the job invoker.
+     * </p>
+     * 
+     * @param jobInvoker
+     *        The AWS account ID of the job invoker.
+     */
+
+    public void setJobInvoker(String jobInvoker) {
+        this.jobInvoker = jobInvoker;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID of the job invoker.
+     * </p>
+     * 
+     * @return The AWS account ID of the job invoker.
+     */
+
+    public String getJobInvoker() {
+        return this.jobInvoker;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID of the job invoker.
+     * </p>
+     * 
+     * @param jobInvoker
+     *        The AWS account ID of the job invoker.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SigningJob withJobInvoker(String jobInvoker) {
+        setJobInvoker(jobInvoker);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -354,7 +734,23 @@ public class SigningJob implements Serializable, Cloneable, StructuredPojo {
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getIsRevoked() != null)
+            sb.append("IsRevoked: ").append(getIsRevoked()).append(",");
+        if (getProfileName() != null)
+            sb.append("ProfileName: ").append(getProfileName()).append(",");
+        if (getProfileVersion() != null)
+            sb.append("ProfileVersion: ").append(getProfileVersion()).append(",");
+        if (getPlatformId() != null)
+            sb.append("PlatformId: ").append(getPlatformId()).append(",");
+        if (getPlatformDisplayName() != null)
+            sb.append("PlatformDisplayName: ").append(getPlatformDisplayName()).append(",");
+        if (getSignatureExpiresAt() != null)
+            sb.append("SignatureExpiresAt: ").append(getSignatureExpiresAt()).append(",");
+        if (getJobOwner() != null)
+            sb.append("JobOwner: ").append(getJobOwner()).append(",");
+        if (getJobInvoker() != null)
+            sb.append("JobInvoker: ").append(getJobInvoker());
         sb.append("}");
         return sb.toString();
     }
@@ -393,6 +789,38 @@ public class SigningJob implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getIsRevoked() == null ^ this.getIsRevoked() == null)
+            return false;
+        if (other.getIsRevoked() != null && other.getIsRevoked().equals(this.getIsRevoked()) == false)
+            return false;
+        if (other.getProfileName() == null ^ this.getProfileName() == null)
+            return false;
+        if (other.getProfileName() != null && other.getProfileName().equals(this.getProfileName()) == false)
+            return false;
+        if (other.getProfileVersion() == null ^ this.getProfileVersion() == null)
+            return false;
+        if (other.getProfileVersion() != null && other.getProfileVersion().equals(this.getProfileVersion()) == false)
+            return false;
+        if (other.getPlatformId() == null ^ this.getPlatformId() == null)
+            return false;
+        if (other.getPlatformId() != null && other.getPlatformId().equals(this.getPlatformId()) == false)
+            return false;
+        if (other.getPlatformDisplayName() == null ^ this.getPlatformDisplayName() == null)
+            return false;
+        if (other.getPlatformDisplayName() != null && other.getPlatformDisplayName().equals(this.getPlatformDisplayName()) == false)
+            return false;
+        if (other.getSignatureExpiresAt() == null ^ this.getSignatureExpiresAt() == null)
+            return false;
+        if (other.getSignatureExpiresAt() != null && other.getSignatureExpiresAt().equals(this.getSignatureExpiresAt()) == false)
+            return false;
+        if (other.getJobOwner() == null ^ this.getJobOwner() == null)
+            return false;
+        if (other.getJobOwner() != null && other.getJobOwner().equals(this.getJobOwner()) == false)
+            return false;
+        if (other.getJobInvoker() == null ^ this.getJobInvoker() == null)
+            return false;
+        if (other.getJobInvoker() != null && other.getJobInvoker().equals(this.getJobInvoker()) == false)
+            return false;
         return true;
     }
 
@@ -407,6 +835,14 @@ public class SigningJob implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSigningMaterial() == null) ? 0 : getSigningMaterial().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getIsRevoked() == null) ? 0 : getIsRevoked().hashCode());
+        hashCode = prime * hashCode + ((getProfileName() == null) ? 0 : getProfileName().hashCode());
+        hashCode = prime * hashCode + ((getProfileVersion() == null) ? 0 : getProfileVersion().hashCode());
+        hashCode = prime * hashCode + ((getPlatformId() == null) ? 0 : getPlatformId().hashCode());
+        hashCode = prime * hashCode + ((getPlatformDisplayName() == null) ? 0 : getPlatformDisplayName().hashCode());
+        hashCode = prime * hashCode + ((getSignatureExpiresAt() == null) ? 0 : getSignatureExpiresAt().hashCode());
+        hashCode = prime * hashCode + ((getJobOwner() == null) ? 0 : getJobOwner().hashCode());
+        hashCode = prime * hashCode + ((getJobInvoker() == null) ? 0 : getJobInvoker().hashCode());
         return hashCode;
     }
 

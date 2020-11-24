@@ -836,6 +836,37 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
+     * Creates a specified partition index in an existing table.
+     * </p>
+     * 
+     * @param createPartitionIndexRequest
+     * @return A Java Future containing the result of the CreatePartitionIndex operation returned by the service.
+     * @sample AWSGlueAsync.CreatePartitionIndex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreatePartitionIndex" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePartitionIndexResult> createPartitionIndexAsync(CreatePartitionIndexRequest createPartitionIndexRequest);
+
+    /**
+     * <p>
+     * Creates a specified partition index in an existing table.
+     * </p>
+     * 
+     * @param createPartitionIndexRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreatePartitionIndex operation returned by the service.
+     * @sample AWSGlueAsyncHandler.CreatePartitionIndex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreatePartitionIndex" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePartitionIndexResult> createPartitionIndexAsync(CreatePartitionIndexRequest createPartitionIndexRequest,
+            com.amazonaws.handlers.AsyncHandler<CreatePartitionIndexRequest, CreatePartitionIndexResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new registry which may be used to hold a collection of schemas.
      * </p>
      * 
@@ -1479,6 +1510,37 @@ public interface AWSGlueAsync extends AWSGlue {
      */
     java.util.concurrent.Future<DeletePartitionResult> deletePartitionAsync(DeletePartitionRequest deletePartitionRequest,
             com.amazonaws.handlers.AsyncHandler<DeletePartitionRequest, DeletePartitionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a specified partition index from an existing table.
+     * </p>
+     * 
+     * @param deletePartitionIndexRequest
+     * @return A Java Future containing the result of the DeletePartitionIndex operation returned by the service.
+     * @sample AWSGlueAsync.DeletePartitionIndex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeletePartitionIndex" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePartitionIndexResult> deletePartitionIndexAsync(DeletePartitionIndexRequest deletePartitionIndexRequest);
+
+    /**
+     * <p>
+     * Deletes a specified partition index from an existing table.
+     * </p>
+     * 
+     * @param deletePartitionIndexRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePartitionIndex operation returned by the service.
+     * @sample AWSGlueAsyncHandler.DeletePartitionIndex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeletePartitionIndex" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePartitionIndexResult> deletePartitionIndexAsync(DeletePartitionIndexRequest deletePartitionIndexRequest,
+            com.amazonaws.handlers.AsyncHandler<DeletePartitionIndexRequest, DeletePartitionIndexResult> asyncHandler);
 
     /**
      * <p>

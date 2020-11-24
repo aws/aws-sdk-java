@@ -72,6 +72,10 @@ public class DeploymentJsonUnmarshaller implements Unmarshaller<Deployment, Json
                     context.nextToken();
                     deployment.setRunningCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("failedTasks", targetDepth)) {
+                    context.nextToken();
+                    deployment.setFailedTasks(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
                     deployment.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
@@ -98,6 +102,14 @@ public class DeploymentJsonUnmarshaller implements Unmarshaller<Deployment, Json
                 if (context.testExpression("networkConfiguration", targetDepth)) {
                     context.nextToken();
                     deployment.setNetworkConfiguration(NetworkConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("rolloutState", targetDepth)) {
+                    context.nextToken();
+                    deployment.setRolloutState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("rolloutStateReason", targetDepth)) {
+                    context.nextToken();
+                    deployment.setRolloutStateReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

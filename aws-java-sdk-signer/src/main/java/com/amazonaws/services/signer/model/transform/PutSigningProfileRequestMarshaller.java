@@ -33,6 +33,8 @@ public class PutSigningProfileRequestMarshaller {
             .marshallLocationName("profileName").build();
     private static final MarshallingInfo<StructuredPojo> SIGNINGMATERIAL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("signingMaterial").build();
+    private static final MarshallingInfo<StructuredPojo> SIGNATUREVALIDITYPERIOD_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("signatureValidityPeriod").build();
     private static final MarshallingInfo<String> PLATFORMID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("platformId").build();
     private static final MarshallingInfo<StructuredPojo> OVERRIDES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -60,6 +62,7 @@ public class PutSigningProfileRequestMarshaller {
         try {
             protocolMarshaller.marshall(putSigningProfileRequest.getProfileName(), PROFILENAME_BINDING);
             protocolMarshaller.marshall(putSigningProfileRequest.getSigningMaterial(), SIGNINGMATERIAL_BINDING);
+            protocolMarshaller.marshall(putSigningProfileRequest.getSignatureValidityPeriod(), SIGNATUREVALIDITYPERIOD_BINDING);
             protocolMarshaller.marshall(putSigningProfileRequest.getPlatformId(), PLATFORMID_BINDING);
             protocolMarshaller.marshall(putSigningProfileRequest.getOverrides(), OVERRIDES_BINDING);
             protocolMarshaller.marshall(putSigningProfileRequest.getSigningParameters(), SIGNINGPARAMETERS_BINDING);

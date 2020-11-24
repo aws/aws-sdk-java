@@ -20,9 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * A description of the Amazon EC2 instance on which the cluster (job flow) runs. A valid JobFlowInstancesConfig must
- * contain either InstanceGroups or InstanceFleets, which is the recommended configuration. They cannot be used
- * together. You may also have MasterInstanceType, SlaveInstanceType, and InstanceCount (all three must be present), but
- * we don't recommend this configuration.
+ * contain either InstanceGroups or InstanceFleets. They cannot be used together. You may also have MasterInstanceType,
+ * SlaveInstanceType, and InstanceCount (all three must be present), but we don't recommend this configuration.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/JobFlowInstancesConfig"
@@ -69,7 +68,8 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable, Structur
     private com.amazonaws.internal.SdkInternalList<InstanceFleetConfig> instanceFleets;
     /**
      * <p>
-     * The name of the EC2 key pair that can be used to ssh to the master node as the user called "hadoop."
+     * The name of the EC2 key pair that can be used to connect to the master node using SSH as the user called
+     * "hadoop."
      * </p>
      */
     private String ec2KeyName;
@@ -95,9 +95,10 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable, Structur
     /**
      * <p>
      * Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for the cluster. Valid inputs
-     * are "0.18" (deprecated), "0.20" (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do
-     * not set this value, the default of 0.18 is used, unless the <code>AmiVersion</code> parameter is set in the
-     * RunJobFlow call, in which case the default version of Hadoop for that AMI version is used.
+     * are "0.18" (no longer maintained), "0.20" (no longer maintained), "0.20.205" (no longer maintained), "1.0.3",
+     * "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used, unless the
+     * <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case the default version of Hadoop for
+     * that AMI version is used.
      * </p>
      */
     private String hadoopVersion;
@@ -475,11 +476,13 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name of the EC2 key pair that can be used to ssh to the master node as the user called "hadoop."
+     * The name of the EC2 key pair that can be used to connect to the master node using SSH as the user called
+     * "hadoop."
      * </p>
      * 
      * @param ec2KeyName
-     *        The name of the EC2 key pair that can be used to ssh to the master node as the user called "hadoop."
+     *        The name of the EC2 key pair that can be used to connect to the master node using SSH as the user called
+     *        "hadoop."
      */
 
     public void setEc2KeyName(String ec2KeyName) {
@@ -488,10 +491,12 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name of the EC2 key pair that can be used to ssh to the master node as the user called "hadoop."
+     * The name of the EC2 key pair that can be used to connect to the master node using SSH as the user called
+     * "hadoop."
      * </p>
      * 
-     * @return The name of the EC2 key pair that can be used to ssh to the master node as the user called "hadoop."
+     * @return The name of the EC2 key pair that can be used to connect to the master node using SSH as the user called
+     *         "hadoop."
      */
 
     public String getEc2KeyName() {
@@ -500,11 +505,13 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name of the EC2 key pair that can be used to ssh to the master node as the user called "hadoop."
+     * The name of the EC2 key pair that can be used to connect to the master node using SSH as the user called
+     * "hadoop."
      * </p>
      * 
      * @param ec2KeyName
-     *        The name of the EC2 key pair that can be used to ssh to the master node as the user called "hadoop."
+     *        The name of the EC2 key pair that can be used to connect to the master node using SSH as the user called
+     *        "hadoop."
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -668,17 +675,18 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable, Structur
     /**
      * <p>
      * Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for the cluster. Valid inputs
-     * are "0.18" (deprecated), "0.20" (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do
-     * not set this value, the default of 0.18 is used, unless the <code>AmiVersion</code> parameter is set in the
-     * RunJobFlow call, in which case the default version of Hadoop for that AMI version is used.
+     * are "0.18" (no longer maintained), "0.20" (no longer maintained), "0.20.205" (no longer maintained), "1.0.3",
+     * "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used, unless the
+     * <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case the default version of Hadoop for
+     * that AMI version is used.
      * </p>
      * 
      * @param hadoopVersion
      *        Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for the cluster. Valid
-     *        inputs are "0.18" (deprecated), "0.20" (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or
-     *        "2.4.0". If you do not set this value, the default of 0.18 is used, unless the <code>AmiVersion</code>
-     *        parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI version
-     *        is used.
+     *        inputs are "0.18" (no longer maintained), "0.20" (no longer maintained), "0.20.205" (no longer
+     *        maintained), "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used,
+     *        unless the <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case the default
+     *        version of Hadoop for that AMI version is used.
      */
 
     public void setHadoopVersion(String hadoopVersion) {
@@ -688,16 +696,17 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable, Structur
     /**
      * <p>
      * Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for the cluster. Valid inputs
-     * are "0.18" (deprecated), "0.20" (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do
-     * not set this value, the default of 0.18 is used, unless the <code>AmiVersion</code> parameter is set in the
-     * RunJobFlow call, in which case the default version of Hadoop for that AMI version is used.
+     * are "0.18" (no longer maintained), "0.20" (no longer maintained), "0.20.205" (no longer maintained), "1.0.3",
+     * "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used, unless the
+     * <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case the default version of Hadoop for
+     * that AMI version is used.
      * </p>
      * 
      * @return Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for the cluster. Valid
-     *         inputs are "0.18" (deprecated), "0.20" (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or
-     *         "2.4.0". If you do not set this value, the default of 0.18 is used, unless the <code>AmiVersion</code>
-     *         parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI version
-     *         is used.
+     *         inputs are "0.18" (no longer maintained), "0.20" (no longer maintained), "0.20.205" (no longer
+     *         maintained), "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used,
+     *         unless the <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case the default
+     *         version of Hadoop for that AMI version is used.
      */
 
     public String getHadoopVersion() {
@@ -707,17 +716,18 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable, Structur
     /**
      * <p>
      * Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for the cluster. Valid inputs
-     * are "0.18" (deprecated), "0.20" (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do
-     * not set this value, the default of 0.18 is used, unless the <code>AmiVersion</code> parameter is set in the
-     * RunJobFlow call, in which case the default version of Hadoop for that AMI version is used.
+     * are "0.18" (no longer maintained), "0.20" (no longer maintained), "0.20.205" (no longer maintained), "1.0.3",
+     * "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used, unless the
+     * <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case the default version of Hadoop for
+     * that AMI version is used.
      * </p>
      * 
      * @param hadoopVersion
      *        Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for the cluster. Valid
-     *        inputs are "0.18" (deprecated), "0.20" (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or
-     *        "2.4.0". If you do not set this value, the default of 0.18 is used, unless the <code>AmiVersion</code>
-     *        parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI version
-     *        is used.
+     *        inputs are "0.18" (no longer maintained), "0.20" (no longer maintained), "0.20.205" (no longer
+     *        maintained), "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used,
+     *        unless the <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case the default
+     *        version of Hadoop for that AMI version is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

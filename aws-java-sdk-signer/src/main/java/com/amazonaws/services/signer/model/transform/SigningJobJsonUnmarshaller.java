@@ -72,6 +72,38 @@ public class SigningJobJsonUnmarshaller implements Unmarshaller<SigningJob, Json
                     context.nextToken();
                     signingJob.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("isRevoked", targetDepth)) {
+                    context.nextToken();
+                    signingJob.setIsRevoked(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("profileName", targetDepth)) {
+                    context.nextToken();
+                    signingJob.setProfileName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("profileVersion", targetDepth)) {
+                    context.nextToken();
+                    signingJob.setProfileVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("platformId", targetDepth)) {
+                    context.nextToken();
+                    signingJob.setPlatformId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("platformDisplayName", targetDepth)) {
+                    context.nextToken();
+                    signingJob.setPlatformDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("signatureExpiresAt", targetDepth)) {
+                    context.nextToken();
+                    signingJob.setSignatureExpiresAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("jobOwner", targetDepth)) {
+                    context.nextToken();
+                    signingJob.setJobOwner(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("jobInvoker", targetDepth)) {
+                    context.nextToken();
+                    signingJob.setJobInvoker(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

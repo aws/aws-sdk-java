@@ -30,24 +30,24 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag's key.
+     * The tag key.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * The tag's value.
+     * The tag value.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * The tag's key.
+     * The tag key.
      * </p>
      * 
      * @param key
-     *        The tag's key.
+     *        The tag key.
      */
 
     public void setKey(String key) {
@@ -56,10 +56,10 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag's key.
+     * The tag key.
      * </p>
      * 
-     * @return The tag's key.
+     * @return The tag key.
      */
 
     public String getKey() {
@@ -68,11 +68,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag's key.
+     * The tag key.
      * </p>
      * 
      * @param key
-     *        The tag's key.
+     *        The tag key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag's value.
+     * The tag value.
      * </p>
      * 
      * @param value
-     *        The tag's value.
+     *        The tag value.
      */
 
     public void setValue(String value) {
@@ -96,10 +96,10 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag's value.
+     * The tag value.
      * </p>
      * 
-     * @return The tag's value.
+     * @return The tag value.
      */
 
     public String getValue() {
@@ -108,11 +108,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag's value.
+     * The tag value.
      * </p>
      * 
      * @param value
-     *        The tag's value.
+     *        The tag value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

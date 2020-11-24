@@ -20,7 +20,10 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum PartitionIndexStatus {
 
-    ACTIVE("ACTIVE");
+    CREATING("CREATING"),
+    ACTIVE("ACTIVE"),
+    DELETING("DELETING"),
+    FAILED("FAILED");
 
     private String value;
 

@@ -47,6 +47,12 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
      * </p>
      */
     private java.util.List<ColumnInfo> columnInfo;
+    /**
+     * <p>
+     * Information about the status of the query, including progress and bytes scannned.
+     * </p>
+     */
+    private QueryStatus queryStatus;
 
     /**
      * <p>
@@ -269,6 +275,46 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
     }
 
     /**
+     * <p>
+     * Information about the status of the query, including progress and bytes scannned.
+     * </p>
+     * 
+     * @param queryStatus
+     *        Information about the status of the query, including progress and bytes scannned.
+     */
+
+    public void setQueryStatus(QueryStatus queryStatus) {
+        this.queryStatus = queryStatus;
+    }
+
+    /**
+     * <p>
+     * Information about the status of the query, including progress and bytes scannned.
+     * </p>
+     * 
+     * @return Information about the status of the query, including progress and bytes scannned.
+     */
+
+    public QueryStatus getQueryStatus() {
+        return this.queryStatus;
+    }
+
+    /**
+     * <p>
+     * Information about the status of the query, including progress and bytes scannned.
+     * </p>
+     * 
+     * @param queryStatus
+     *        Information about the status of the query, including progress and bytes scannned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public QueryResult withQueryStatus(QueryStatus queryStatus) {
+        setQueryStatus(queryStatus);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -287,7 +333,9 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
         if (getRows() != null)
             sb.append("Rows: ").append(getRows()).append(",");
         if (getColumnInfo() != null)
-            sb.append("ColumnInfo: ").append(getColumnInfo());
+            sb.append("ColumnInfo: ").append(getColumnInfo()).append(",");
+        if (getQueryStatus() != null)
+            sb.append("QueryStatus: ").append(getQueryStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -318,6 +366,10 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
             return false;
         if (other.getColumnInfo() != null && other.getColumnInfo().equals(this.getColumnInfo()) == false)
             return false;
+        if (other.getQueryStatus() == null ^ this.getQueryStatus() == null)
+            return false;
+        if (other.getQueryStatus() != null && other.getQueryStatus().equals(this.getQueryStatus()) == false)
+            return false;
         return true;
     }
 
@@ -330,6 +382,7 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getRows() == null) ? 0 : getRows().hashCode());
         hashCode = prime * hashCode + ((getColumnInfo() == null) ? 0 : getColumnInfo().hashCode());
+        hashCode = prime * hashCode + ((getQueryStatus() == null) ? 0 : getQueryStatus().hashCode());
         return hashCode;
     }
 

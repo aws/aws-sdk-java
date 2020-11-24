@@ -34,6 +34,72 @@ public interface AmazonTranslateAsync extends AmazonTranslate {
 
     /**
      * <p>
+     * Creates a parallel data resource in Amazon Translate by importing an input file from Amazon S3. Parallel data
+     * files contain examples of source phrases and their translations from your translation memory. By adding parallel
+     * data, you can influence the style, tone, and word choice in your translation output.
+     * </p>
+     * 
+     * @param createParallelDataRequest
+     * @return A Java Future containing the result of the CreateParallelData operation returned by the service.
+     * @sample AmazonTranslateAsync.CreateParallelData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/CreateParallelData" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateParallelDataResult> createParallelDataAsync(CreateParallelDataRequest createParallelDataRequest);
+
+    /**
+     * <p>
+     * Creates a parallel data resource in Amazon Translate by importing an input file from Amazon S3. Parallel data
+     * files contain examples of source phrases and their translations from your translation memory. By adding parallel
+     * data, you can influence the style, tone, and word choice in your translation output.
+     * </p>
+     * 
+     * @param createParallelDataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateParallelData operation returned by the service.
+     * @sample AmazonTranslateAsyncHandler.CreateParallelData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/CreateParallelData" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateParallelDataResult> createParallelDataAsync(CreateParallelDataRequest createParallelDataRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateParallelDataRequest, CreateParallelDataResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a parallel data resource in Amazon Translate.
+     * </p>
+     * 
+     * @param deleteParallelDataRequest
+     * @return A Java Future containing the result of the DeleteParallelData operation returned by the service.
+     * @sample AmazonTranslateAsync.DeleteParallelData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DeleteParallelData" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteParallelDataResult> deleteParallelDataAsync(DeleteParallelDataRequest deleteParallelDataRequest);
+
+    /**
+     * <p>
+     * Deletes a parallel data resource in Amazon Translate.
+     * </p>
+     * 
+     * @param deleteParallelDataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteParallelData operation returned by the service.
+     * @sample AmazonTranslateAsyncHandler.DeleteParallelData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DeleteParallelData" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteParallelDataResult> deleteParallelDataAsync(DeleteParallelDataRequest deleteParallelDataRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteParallelDataRequest, DeleteParallelDataResult> asyncHandler);
+
+    /**
+     * <p>
      * A synchronous action that deletes a custom terminology.
      * </p>
      * 
@@ -97,6 +163,37 @@ public interface AmazonTranslateAsync extends AmazonTranslate {
     java.util.concurrent.Future<DescribeTextTranslationJobResult> describeTextTranslationJobAsync(
             DescribeTextTranslationJobRequest describeTextTranslationJobRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeTextTranslationJobRequest, DescribeTextTranslationJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides information about a parallel data resource.
+     * </p>
+     * 
+     * @param getParallelDataRequest
+     * @return A Java Future containing the result of the GetParallelData operation returned by the service.
+     * @sample AmazonTranslateAsync.GetParallelData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/GetParallelData" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetParallelDataResult> getParallelDataAsync(GetParallelDataRequest getParallelDataRequest);
+
+    /**
+     * <p>
+     * Provides information about a parallel data resource.
+     * </p>
+     * 
+     * @param getParallelDataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetParallelData operation returned by the service.
+     * @sample AmazonTranslateAsyncHandler.GetParallelData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/GetParallelData" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetParallelDataResult> getParallelDataAsync(GetParallelDataRequest getParallelDataRequest,
+            com.amazonaws.handlers.AsyncHandler<GetParallelDataRequest, GetParallelDataResult> asyncHandler);
 
     /**
      * <p>
@@ -175,6 +272,37 @@ public interface AmazonTranslateAsync extends AmazonTranslate {
      */
     java.util.concurrent.Future<ImportTerminologyResult> importTerminologyAsync(ImportTerminologyRequest importTerminologyRequest,
             com.amazonaws.handlers.AsyncHandler<ImportTerminologyRequest, ImportTerminologyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides a list of your parallel data resources in Amazon Translate.
+     * </p>
+     * 
+     * @param listParallelDataRequest
+     * @return A Java Future containing the result of the ListParallelData operation returned by the service.
+     * @sample AmazonTranslateAsync.ListParallelData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListParallelData" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListParallelDataResult> listParallelDataAsync(ListParallelDataRequest listParallelDataRequest);
+
+    /**
+     * <p>
+     * Provides a list of your parallel data resources in Amazon Translate.
+     * </p>
+     * 
+     * @param listParallelDataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListParallelData operation returned by the service.
+     * @sample AmazonTranslateAsyncHandler.ListParallelData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListParallelData" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListParallelDataResult> listParallelDataAsync(ListParallelDataRequest listParallelDataRequest,
+            com.amazonaws.handlers.AsyncHandler<ListParallelDataRequest, ListParallelDataResult> asyncHandler);
 
     /**
      * <p>
@@ -372,5 +500,36 @@ public interface AmazonTranslateAsync extends AmazonTranslate {
      */
     java.util.concurrent.Future<TranslateTextResult> translateTextAsync(TranslateTextRequest translateTextRequest,
             com.amazonaws.handlers.AsyncHandler<TranslateTextRequest, TranslateTextResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a previously created parallel data resource by importing a new input file from Amazon S3.
+     * </p>
+     * 
+     * @param updateParallelDataRequest
+     * @return A Java Future containing the result of the UpdateParallelData operation returned by the service.
+     * @sample AmazonTranslateAsync.UpdateParallelData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/UpdateParallelData" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateParallelDataResult> updateParallelDataAsync(UpdateParallelDataRequest updateParallelDataRequest);
+
+    /**
+     * <p>
+     * Updates a previously created parallel data resource by importing a new input file from Amazon S3.
+     * </p>
+     * 
+     * @param updateParallelDataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateParallelData operation returned by the service.
+     * @sample AmazonTranslateAsyncHandler.UpdateParallelData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/UpdateParallelData" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateParallelDataResult> updateParallelDataAsync(UpdateParallelDataRequest updateParallelDataRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateParallelDataRequest, UpdateParallelDataResult> asyncHandler);
 
 }

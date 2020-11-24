@@ -304,6 +304,11 @@ public class AbstractAmazonECS implements AmazonECS {
     }
 
     @Override
+    public UpdateCapacityProviderResult updateCapacityProvider(UpdateCapacityProviderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateClusterSettingsResult updateClusterSettings(UpdateClusterSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

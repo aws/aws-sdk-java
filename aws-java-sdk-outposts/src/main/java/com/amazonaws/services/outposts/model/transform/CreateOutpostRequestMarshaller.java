@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.outposts.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +39,8 @@ public class CreateOutpostRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AvailabilityZone").build();
     private static final MarshallingInfo<String> AVAILABILITYZONEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AvailabilityZoneId").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateOutpostRequestMarshaller instance = new CreateOutpostRequestMarshaller();
 
@@ -59,6 +63,7 @@ public class CreateOutpostRequestMarshaller {
             protocolMarshaller.marshall(createOutpostRequest.getSiteId(), SITEID_BINDING);
             protocolMarshaller.marshall(createOutpostRequest.getAvailabilityZone(), AVAILABILITYZONE_BINDING);
             protocolMarshaller.marshall(createOutpostRequest.getAvailabilityZoneId(), AVAILABILITYZONEID_BINDING);
+            protocolMarshaller.marshall(createOutpostRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

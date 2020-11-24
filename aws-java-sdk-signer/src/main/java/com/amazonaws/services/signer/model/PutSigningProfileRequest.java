@@ -39,6 +39,13 @@ public class PutSigningProfileRequest extends com.amazonaws.AmazonWebServiceRequ
     private SigningMaterial signingMaterial;
     /**
      * <p>
+     * The default validity period override for any signature generated using this signing profile. If unspecified, the
+     * default is 135 months.
+     * </p>
+     */
+    private SignatureValidityPeriod signatureValidityPeriod;
+    /**
+     * <p>
      * The ID of the signing platform to be created.
      * </p>
      */
@@ -140,6 +147,52 @@ public class PutSigningProfileRequest extends com.amazonaws.AmazonWebServiceRequ
 
     public PutSigningProfileRequest withSigningMaterial(SigningMaterial signingMaterial) {
         setSigningMaterial(signingMaterial);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The default validity period override for any signature generated using this signing profile. If unspecified, the
+     * default is 135 months.
+     * </p>
+     * 
+     * @param signatureValidityPeriod
+     *        The default validity period override for any signature generated using this signing profile. If
+     *        unspecified, the default is 135 months.
+     */
+
+    public void setSignatureValidityPeriod(SignatureValidityPeriod signatureValidityPeriod) {
+        this.signatureValidityPeriod = signatureValidityPeriod;
+    }
+
+    /**
+     * <p>
+     * The default validity period override for any signature generated using this signing profile. If unspecified, the
+     * default is 135 months.
+     * </p>
+     * 
+     * @return The default validity period override for any signature generated using this signing profile. If
+     *         unspecified, the default is 135 months.
+     */
+
+    public SignatureValidityPeriod getSignatureValidityPeriod() {
+        return this.signatureValidityPeriod;
+    }
+
+    /**
+     * <p>
+     * The default validity period override for any signature generated using this signing profile. If unspecified, the
+     * default is 135 months.
+     * </p>
+     * 
+     * @param signatureValidityPeriod
+     *        The default validity period override for any signature generated using this signing profile. If
+     *        unspecified, the default is 135 months.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutSigningProfileRequest withSignatureValidityPeriod(SignatureValidityPeriod signatureValidityPeriod) {
+        setSignatureValidityPeriod(signatureValidityPeriod);
         return this;
     }
 
@@ -385,6 +438,8 @@ public class PutSigningProfileRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("ProfileName: ").append(getProfileName()).append(",");
         if (getSigningMaterial() != null)
             sb.append("SigningMaterial: ").append(getSigningMaterial()).append(",");
+        if (getSignatureValidityPeriod() != null)
+            sb.append("SignatureValidityPeriod: ").append(getSignatureValidityPeriod()).append(",");
         if (getPlatformId() != null)
             sb.append("PlatformId: ").append(getPlatformId()).append(",");
         if (getOverrides() != null)
@@ -415,6 +470,10 @@ public class PutSigningProfileRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getSigningMaterial() != null && other.getSigningMaterial().equals(this.getSigningMaterial()) == false)
             return false;
+        if (other.getSignatureValidityPeriod() == null ^ this.getSignatureValidityPeriod() == null)
+            return false;
+        if (other.getSignatureValidityPeriod() != null && other.getSignatureValidityPeriod().equals(this.getSignatureValidityPeriod()) == false)
+            return false;
         if (other.getPlatformId() == null ^ this.getPlatformId() == null)
             return false;
         if (other.getPlatformId() != null && other.getPlatformId().equals(this.getPlatformId()) == false)
@@ -441,6 +500,7 @@ public class PutSigningProfileRequest extends com.amazonaws.AmazonWebServiceRequ
 
         hashCode = prime * hashCode + ((getProfileName() == null) ? 0 : getProfileName().hashCode());
         hashCode = prime * hashCode + ((getSigningMaterial() == null) ? 0 : getSigningMaterial().hashCode());
+        hashCode = prime * hashCode + ((getSignatureValidityPeriod() == null) ? 0 : getSignatureValidityPeriod().hashCode());
         hashCode = prime * hashCode + ((getPlatformId() == null) ? 0 : getPlatformId().hashCode());
         hashCode = prime * hashCode + ((getOverrides() == null) ? 0 : getOverrides().hashCode());
         hashCode = prime * hashCode + ((getSigningParameters() == null) ? 0 : getSigningParameters().hashCode());

@@ -622,6 +622,41 @@ public class AWSSecurityHubAsyncClient extends AWSSecurityHubClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeOrganizationConfigurationResult> describeOrganizationConfigurationAsync(
+            DescribeOrganizationConfigurationRequest request) {
+
+        return describeOrganizationConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeOrganizationConfigurationResult> describeOrganizationConfigurationAsync(
+            final DescribeOrganizationConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeOrganizationConfigurationRequest, DescribeOrganizationConfigurationResult> asyncHandler) {
+        final DescribeOrganizationConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeOrganizationConfigurationResult>() {
+            @Override
+            public DescribeOrganizationConfigurationResult call() throws Exception {
+                DescribeOrganizationConfigurationResult result = null;
+
+                try {
+                    result = executeDescribeOrganizationConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeProductsResult> describeProductsAsync(DescribeProductsRequest request) {
 
         return describeProductsAsync(request, null);
@@ -756,6 +791,41 @@ public class AWSSecurityHubAsyncClient extends AWSSecurityHubClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DisableOrganizationAdminAccountResult> disableOrganizationAdminAccountAsync(
+            DisableOrganizationAdminAccountRequest request) {
+
+        return disableOrganizationAdminAccountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableOrganizationAdminAccountResult> disableOrganizationAdminAccountAsync(
+            final DisableOrganizationAdminAccountRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisableOrganizationAdminAccountRequest, DisableOrganizationAdminAccountResult> asyncHandler) {
+        final DisableOrganizationAdminAccountRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisableOrganizationAdminAccountResult>() {
+            @Override
+            public DisableOrganizationAdminAccountResult call() throws Exception {
+                DisableOrganizationAdminAccountResult result = null;
+
+                try {
+                    result = executeDisableOrganizationAdminAccount(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableSecurityHubResult> disableSecurityHubAsync(DisableSecurityHubRequest request) {
 
         return disableSecurityHubAsync(request, null);
@@ -874,6 +944,40 @@ public class AWSSecurityHubAsyncClient extends AWSSecurityHubClient implements A
 
                 try {
                     result = executeEnableImportFindingsForProduct(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableOrganizationAdminAccountResult> enableOrganizationAdminAccountAsync(EnableOrganizationAdminAccountRequest request) {
+
+        return enableOrganizationAdminAccountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableOrganizationAdminAccountResult> enableOrganizationAdminAccountAsync(
+            final EnableOrganizationAdminAccountRequest request,
+            final com.amazonaws.handlers.AsyncHandler<EnableOrganizationAdminAccountRequest, EnableOrganizationAdminAccountResult> asyncHandler) {
+        final EnableOrganizationAdminAccountRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<EnableOrganizationAdminAccountResult>() {
+            @Override
+            public EnableOrganizationAdminAccountResult call() throws Exception {
+                EnableOrganizationAdminAccountResult result = null;
+
+                try {
+                    result = executeEnableOrganizationAdminAccount(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1286,6 +1390,40 @@ public class AWSSecurityHubAsyncClient extends AWSSecurityHubClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<ListOrganizationAdminAccountsResult> listOrganizationAdminAccountsAsync(ListOrganizationAdminAccountsRequest request) {
+
+        return listOrganizationAdminAccountsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOrganizationAdminAccountsResult> listOrganizationAdminAccountsAsync(
+            final ListOrganizationAdminAccountsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListOrganizationAdminAccountsRequest, ListOrganizationAdminAccountsResult> asyncHandler) {
+        final ListOrganizationAdminAccountsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListOrganizationAdminAccountsResult>() {
+            @Override
+            public ListOrganizationAdminAccountsResult call() throws Exception {
+                ListOrganizationAdminAccountsResult result = null;
+
+                try {
+                    result = executeListOrganizationAdminAccounts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -1468,6 +1606,41 @@ public class AWSSecurityHubAsyncClient extends AWSSecurityHubClient implements A
 
                 try {
                     result = executeUpdateInsight(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOrganizationConfigurationResult> updateOrganizationConfigurationAsync(
+            UpdateOrganizationConfigurationRequest request) {
+
+        return updateOrganizationConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOrganizationConfigurationResult> updateOrganizationConfigurationAsync(
+            final UpdateOrganizationConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateOrganizationConfigurationRequest, UpdateOrganizationConfigurationResult> asyncHandler) {
+        final UpdateOrganizationConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateOrganizationConfigurationResult>() {
+            @Override
+            public UpdateOrganizationConfigurationResult call() throws Exception {
+                UpdateOrganizationConfigurationResult result = null;
+
+                try {
+                    result = executeUpdateOrganizationConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

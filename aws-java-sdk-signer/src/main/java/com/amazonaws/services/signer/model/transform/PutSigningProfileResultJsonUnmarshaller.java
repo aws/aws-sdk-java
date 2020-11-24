@@ -52,6 +52,14 @@ public class PutSigningProfileResultJsonUnmarshaller implements Unmarshaller<Put
                     context.nextToken();
                     putSigningProfileResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("profileVersion", targetDepth)) {
+                    context.nextToken();
+                    putSigningProfileResult.setProfileVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("profileVersionArn", targetDepth)) {
+                    context.nextToken();
+                    putSigningProfileResult.setProfileVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

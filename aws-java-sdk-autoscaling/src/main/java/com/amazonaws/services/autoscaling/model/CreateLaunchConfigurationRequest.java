@@ -249,9 +249,9 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * <code>VPCZoneIdentifier</code> when you create your group.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html"
-     * >Configuring instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring
+     * instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * Valid Values: <code>default</code> | <code>dedicated</code>
@@ -1791,9 +1791,9 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * <code>VPCZoneIdentifier</code> when you create your group.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html"
-     * >Configuring instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring
+     * instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * Valid Values: <code>default</code> | <code>dedicated</code>
@@ -1812,8 +1812,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      *        <code>VPCZoneIdentifier</code> when you create your group.
      *        </p>
      *        <p>
-     *        For more information, see <a href=
-     *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html"
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html"
      *        >Configuring instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
      *        Guide</i>.
      *        </p>
@@ -1839,9 +1839,9 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * <code>VPCZoneIdentifier</code> when you create your group.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html"
-     * >Configuring instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring
+     * instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * Valid Values: <code>default</code> | <code>dedicated</code>
@@ -1859,8 +1859,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      *         <code>VPCZoneIdentifier</code> when you create your group.
      *         </p>
      *         <p>
-     *         For more information, see <a href=
-     *         "https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html"
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html"
      *         >Configuring instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
      *         Guide</i>.
      *         </p>
@@ -1886,9 +1886,9 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * <code>VPCZoneIdentifier</code> when you create your group.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html"
-     * >Configuring instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring
+     * instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * Valid Values: <code>default</code> | <code>dedicated</code>
@@ -1907,8 +1907,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      *        <code>VPCZoneIdentifier</code> when you create your group.
      *        </p>
      *        <p>
-     *        For more information, see <a href=
-     *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html"
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html"
      *        >Configuring instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
      *        Guide</i>.
      *        </p>

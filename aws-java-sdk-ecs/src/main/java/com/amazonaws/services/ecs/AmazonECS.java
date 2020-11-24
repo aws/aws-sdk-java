@@ -1641,6 +1641,27 @@ public interface AmazonECS {
 
     /**
      * <p>
+     * Modifies the parameters for a capacity provider.
+     * </p>
+     * 
+     * @param updateCapacityProviderRequest
+     * @return Result of the UpdateCapacityProvider operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @sample AmazonECS.UpdateCapacityProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCapacityProvider" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateCapacityProviderResult updateCapacityProvider(UpdateCapacityProviderRequest updateCapacityProviderRequest);
+
+    /**
+     * <p>
      * Modifies the settings to use for a cluster.
      * </p>
      * 

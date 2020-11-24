@@ -592,6 +592,33 @@ public interface AWSGlue {
 
     /**
      * <p>
+     * Creates a specified partition index in an existing table.
+     * </p>
+     * 
+     * @param createPartitionIndexRequest
+     * @return Result of the CreatePartitionIndex operation returned by the service.
+     * @throws AlreadyExistsException
+     *         A resource to be created or added already exists.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws ResourceNumberLimitExceededException
+     *         A resource numerical limit was exceeded.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
+     * @sample AWSGlue.CreatePartitionIndex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreatePartitionIndex" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreatePartitionIndexResult createPartitionIndex(CreatePartitionIndexRequest createPartitionIndexRequest);
+
+    /**
+     * <p>
      * Creates a new registry which may be used to hold a collection of schemas.
      * </p>
      * 
@@ -1030,6 +1057,31 @@ public interface AWSGlue {
      *      Documentation</a>
      */
     DeletePartitionResult deletePartition(DeletePartitionRequest deletePartitionRequest);
+
+    /**
+     * <p>
+     * Deletes a specified partition index from an existing table.
+     * </p>
+     * 
+     * @param deletePartitionIndexRequest
+     * @return Result of the DeletePartitionIndex operation returned by the service.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws ConflictException
+     *         The <code>CreatePartitions</code> API was called on a table that has indexes enabled.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
+     * @sample AWSGlue.DeletePartitionIndex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeletePartitionIndex" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeletePartitionIndexResult deletePartitionIndex(DeletePartitionIndexRequest deletePartitionIndexRequest);
 
     /**
      * <p>

@@ -166,7 +166,11 @@
         "Description":{"shape":"OutpostDescription"},
         "SiteId":{"shape":"SiteId"},
         "AvailabilityZone":{"shape":"AvailabilityZone"},
-        "AvailabilityZoneId":{"shape":"AvailabilityZoneId"}
+        "AvailabilityZoneId":{"shape":"AvailabilityZoneId"},
+        "Tags":{
+          "shape":"TagMap",
+          "documentation":"<p>The tags to apply to the Outpost.</p>"
+        }
       }
     },
     "CreateOutpostOutput":{
@@ -360,7 +364,11 @@
         "Description":{"shape":"OutpostDescription"},
         "LifeCycleStatus":{"shape":"LifeCycleStatus"},
         "AvailabilityZone":{"shape":"AvailabilityZone"},
-        "AvailabilityZoneId":{"shape":"AvailabilityZoneId"}
+        "AvailabilityZoneId":{"shape":"AvailabilityZoneId"},
+        "Tags":{
+          "shape":"TagMap",
+          "documentation":"<p>The Outpost tags.</p>"
+        }
       },
       "documentation":"<p>Information about an Outpost.</p>"
     },
@@ -414,7 +422,11 @@
         "SiteId":{"shape":"SiteId"},
         "AccountId":{"shape":"AccountId"},
         "Name":{"shape":"SiteName"},
-        "Description":{"shape":"SiteDescription"}
+        "Description":{"shape":"SiteDescription"},
+        "Tags":{
+          "shape":"TagMap",
+          "documentation":"<p>The site tags.</p>"
+        }
       },
       "documentation":"<p>Information about a site.</p>"
     },
@@ -438,6 +450,24 @@
       "max":1000,
       "min":1,
       "pattern":"^[\\S ]+$"
+    },
+    "TagKey":{
+      "type":"string",
+      "max":128,
+      "min":1,
+      "pattern":"^(?!aws:)[a-zA-Z+-=._:/]+$"
+    },
+    "TagMap":{
+      "type":"map",
+      "key":{"shape":"TagKey"},
+      "value":{"shape":"TagValue"},
+      "max":50,
+      "min":1
+    },
+    "TagValue":{
+      "type":"string",
+      "max":256,
+      "pattern":"^[\\S \\n]+$"
     },
     "Token":{
       "type":"string",

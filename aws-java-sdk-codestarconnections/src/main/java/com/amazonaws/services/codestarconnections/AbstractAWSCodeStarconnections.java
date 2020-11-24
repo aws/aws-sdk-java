@@ -83,6 +83,11 @@ public class AbstractAWSCodeStarconnections implements AWSCodeStarconnections {
     }
 
     @Override
+    public UpdateHostResult updateHost(UpdateHostRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public void shutdown() {
         throw new java.lang.UnsupportedOperationException();
     }

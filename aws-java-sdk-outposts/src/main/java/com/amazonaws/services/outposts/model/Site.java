@@ -35,6 +35,12 @@ public class Site implements Serializable, Cloneable, StructuredPojo {
     private String name;
 
     private String description;
+    /**
+     * <p>
+     * The site tags.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * @param siteId
@@ -141,6 +147,74 @@ public class Site implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The site tags.
+     * </p>
+     * 
+     * @return The site tags.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The site tags.
+     * </p>
+     * 
+     * @param tags
+     *        The site tags.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The site tags.
+     * </p>
+     * 
+     * @param tags
+     *        The site tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Site withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see Site#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Site addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Site clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -159,7 +233,9 @@ public class Site implements Serializable, Cloneable, StructuredPojo {
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -190,6 +266,10 @@ public class Site implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -202,6 +282,7 @@ public class Site implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

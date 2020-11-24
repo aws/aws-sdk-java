@@ -1695,6 +1695,74 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
+     * Creates a specified partition index in an existing table.
+     * </p>
+     * 
+     * @param createPartitionIndexRequest
+     * @return Result of the CreatePartitionIndex operation returned by the service.
+     * @throws AlreadyExistsException
+     *         A resource to be created or added already exists.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws ResourceNumberLimitExceededException
+     *         A resource numerical limit was exceeded.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
+     * @sample AWSGlue.CreatePartitionIndex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreatePartitionIndex" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreatePartitionIndexResult createPartitionIndex(CreatePartitionIndexRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePartitionIndex(request);
+    }
+
+    @SdkInternalApi
+    final CreatePartitionIndexResult executeCreatePartitionIndex(CreatePartitionIndexRequest createPartitionIndexRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createPartitionIndexRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreatePartitionIndexRequest> request = null;
+        Response<CreatePartitionIndexResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreatePartitionIndexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPartitionIndexRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePartitionIndex");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreatePartitionIndexResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreatePartitionIndexResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new registry which may be used to hold a collection of schemas.
      * </p>
      * 
@@ -2870,6 +2938,72 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
             HttpResponseHandler<AmazonWebServiceResponse<DeletePartitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeletePartitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a specified partition index from an existing table.
+     * </p>
+     * 
+     * @param deletePartitionIndexRequest
+     * @return Result of the DeletePartitionIndex operation returned by the service.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws ConflictException
+     *         The <code>CreatePartitions</code> API was called on a table that has indexes enabled.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
+     * @sample AWSGlue.DeletePartitionIndex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeletePartitionIndex" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeletePartitionIndexResult deletePartitionIndex(DeletePartitionIndexRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeletePartitionIndex(request);
+    }
+
+    @SdkInternalApi
+    final DeletePartitionIndexResult executeDeletePartitionIndex(DeletePartitionIndexRequest deletePartitionIndexRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deletePartitionIndexRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeletePartitionIndexRequest> request = null;
+        Response<DeletePartitionIndexResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeletePartitionIndexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePartitionIndexRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePartitionIndex");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeletePartitionIndexResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeletePartitionIndexResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -106,6 +106,21 @@ public class AbstractAmazonForecastAsync extends AbstractAmazonForecast implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreatePredictorBacktestExportJobResult> createPredictorBacktestExportJobAsync(
+            CreatePredictorBacktestExportJobRequest request) {
+
+        return createPredictorBacktestExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePredictorBacktestExportJobResult> createPredictorBacktestExportJobAsync(
+            CreatePredictorBacktestExportJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreatePredictorBacktestExportJobRequest, CreatePredictorBacktestExportJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDatasetResult> deleteDatasetAsync(DeleteDatasetRequest request) {
 
         return deleteDatasetAsync(request, null);
@@ -179,6 +194,21 @@ public class AbstractAmazonForecastAsync extends AbstractAmazonForecast implemen
     @Override
     public java.util.concurrent.Future<DeletePredictorResult> deletePredictorAsync(DeletePredictorRequest request,
             com.amazonaws.handlers.AsyncHandler<DeletePredictorRequest, DeletePredictorResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePredictorBacktestExportJobResult> deletePredictorBacktestExportJobAsync(
+            DeletePredictorBacktestExportJobRequest request) {
+
+        return deletePredictorBacktestExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePredictorBacktestExportJobResult> deletePredictorBacktestExportJobAsync(
+            DeletePredictorBacktestExportJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeletePredictorBacktestExportJobRequest, DeletePredictorBacktestExportJobResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -262,6 +292,21 @@ public class AbstractAmazonForecastAsync extends AbstractAmazonForecast implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribePredictorBacktestExportJobResult> describePredictorBacktestExportJobAsync(
+            DescribePredictorBacktestExportJobRequest request) {
+
+        return describePredictorBacktestExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePredictorBacktestExportJobResult> describePredictorBacktestExportJobAsync(
+            DescribePredictorBacktestExportJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribePredictorBacktestExportJobRequest, DescribePredictorBacktestExportJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAccuracyMetricsResult> getAccuracyMetricsAsync(GetAccuracyMetricsRequest request) {
 
         return getAccuracyMetricsAsync(request, null);
@@ -335,6 +380,21 @@ public class AbstractAmazonForecastAsync extends AbstractAmazonForecast implemen
     @Override
     public java.util.concurrent.Future<ListForecastsResult> listForecastsAsync(ListForecastsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListForecastsRequest, ListForecastsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPredictorBacktestExportJobsResult> listPredictorBacktestExportJobsAsync(
+            ListPredictorBacktestExportJobsRequest request) {
+
+        return listPredictorBacktestExportJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPredictorBacktestExportJobsResult> listPredictorBacktestExportJobsAsync(
+            ListPredictorBacktestExportJobsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPredictorBacktestExportJobsRequest, ListPredictorBacktestExportJobsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

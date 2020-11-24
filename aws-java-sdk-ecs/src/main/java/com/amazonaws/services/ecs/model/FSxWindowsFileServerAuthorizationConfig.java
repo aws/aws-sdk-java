@@ -37,91 +37,32 @@ public class FSxWindowsFileServerAuthorizationConfig implements Serializable, Cl
 
     /**
      * <p>
-     * The authorization credential option to use.
+     * The authorization credential option to use. The authorization credential options can be provided using either the
+     * Amazon Resource Name (ARN) of an AWS Secrets Manager secret or AWS Systems Manager Parameter Store parameter. The
+     * ARNs refer to the stored credentials.
      * </p>
-     * <p>
-     * The authorization credential options can be provided using either the AWS Secrets Manager ARN or the AWS Systems
-     * Manager ARN. The ARNs refer to the stored credentials.
-     * </p>
-     * <p class="title">
-     * <b>options:</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of an <a
-     * href="https://docs.aws.amazon.com/secretsmanager">AWS Secrets Manager</a> secret.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of an <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/integration-ps-secretsmanager.html">AWS
-     * Systems Manager</a> parameter.
-     * </p>
-     * </li>
-     * </ul>
      */
     private String credentialsParameter;
     /**
      * <p>
      * A fully qualified domain name hosted by an <a
      * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS Directory
-     * Service</a> Managed Microsoft AD (Active Directory) or self-hosted EC2 AD.
+     * Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD on Amazon EC2.
      * </p>
      */
     private String domain;
 
     /**
      * <p>
-     * The authorization credential option to use.
+     * The authorization credential option to use. The authorization credential options can be provided using either the
+     * Amazon Resource Name (ARN) of an AWS Secrets Manager secret or AWS Systems Manager Parameter Store parameter. The
+     * ARNs refer to the stored credentials.
      * </p>
-     * <p>
-     * The authorization credential options can be provided using either the AWS Secrets Manager ARN or the AWS Systems
-     * Manager ARN. The ARNs refer to the stored credentials.
-     * </p>
-     * <p class="title">
-     * <b>options:</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of an <a
-     * href="https://docs.aws.amazon.com/secretsmanager">AWS Secrets Manager</a> secret.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of an <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/integration-ps-secretsmanager.html">AWS
-     * Systems Manager</a> parameter.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param credentialsParameter
-     *        The authorization credential option to use.</p>
-     *        <p>
-     *        The authorization credential options can be provided using either the AWS Secrets Manager ARN or the AWS
-     *        Systems Manager ARN. The ARNs refer to the stored credentials.
-     *        </p>
-     *        <p class="title">
-     *        <b>options:</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of an <a
-     *        href="https://docs.aws.amazon.com/secretsmanager">AWS Secrets Manager</a> secret.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of an <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/integration-ps-secretsmanager.html">AWS
-     *        Systems Manager</a> parameter.
-     *        </p>
-     *        </li>
+     *        The authorization credential option to use. The authorization credential options can be provided using
+     *        either the Amazon Resource Name (ARN) of an AWS Secrets Manager secret or AWS Systems Manager Parameter
+     *        Store parameter. The ARNs refer to the stored credentials.
      */
 
     public void setCredentialsParameter(String credentialsParameter) {
@@ -130,54 +71,14 @@ public class FSxWindowsFileServerAuthorizationConfig implements Serializable, Cl
 
     /**
      * <p>
-     * The authorization credential option to use.
+     * The authorization credential option to use. The authorization credential options can be provided using either the
+     * Amazon Resource Name (ARN) of an AWS Secrets Manager secret or AWS Systems Manager Parameter Store parameter. The
+     * ARNs refer to the stored credentials.
      * </p>
-     * <p>
-     * The authorization credential options can be provided using either the AWS Secrets Manager ARN or the AWS Systems
-     * Manager ARN. The ARNs refer to the stored credentials.
-     * </p>
-     * <p class="title">
-     * <b>options:</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of an <a
-     * href="https://docs.aws.amazon.com/secretsmanager">AWS Secrets Manager</a> secret.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of an <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/integration-ps-secretsmanager.html">AWS
-     * Systems Manager</a> parameter.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The authorization credential option to use.</p>
-     *         <p>
-     *         The authorization credential options can be provided using either the AWS Secrets Manager ARN or the AWS
-     *         Systems Manager ARN. The ARNs refer to the stored credentials.
-     *         </p>
-     *         <p class="title">
-     *         <b>options:</b>
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of an <a
-     *         href="https://docs.aws.amazon.com/secretsmanager">AWS Secrets Manager</a> secret.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of an <a
-     *         href
-     *         ="https://docs.aws.amazon.com/systems-manager/latest/userguide/integration-ps-secretsmanager.html">AWS
-     *         Systems Manager</a> parameter.
-     *         </p>
-     *         </li>
+     * @return The authorization credential option to use. The authorization credential options can be provided using
+     *         either the Amazon Resource Name (ARN) of an AWS Secrets Manager secret or AWS Systems Manager Parameter
+     *         Store parameter. The ARNs refer to the stored credentials.
      */
 
     public String getCredentialsParameter() {
@@ -186,54 +87,15 @@ public class FSxWindowsFileServerAuthorizationConfig implements Serializable, Cl
 
     /**
      * <p>
-     * The authorization credential option to use.
+     * The authorization credential option to use. The authorization credential options can be provided using either the
+     * Amazon Resource Name (ARN) of an AWS Secrets Manager secret or AWS Systems Manager Parameter Store parameter. The
+     * ARNs refer to the stored credentials.
      * </p>
-     * <p>
-     * The authorization credential options can be provided using either the AWS Secrets Manager ARN or the AWS Systems
-     * Manager ARN. The ARNs refer to the stored credentials.
-     * </p>
-     * <p class="title">
-     * <b>options:</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of an <a
-     * href="https://docs.aws.amazon.com/secretsmanager">AWS Secrets Manager</a> secret.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of an <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/integration-ps-secretsmanager.html">AWS
-     * Systems Manager</a> parameter.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param credentialsParameter
-     *        The authorization credential option to use.</p>
-     *        <p>
-     *        The authorization credential options can be provided using either the AWS Secrets Manager ARN or the AWS
-     *        Systems Manager ARN. The ARNs refer to the stored credentials.
-     *        </p>
-     *        <p class="title">
-     *        <b>options:</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of an <a
-     *        href="https://docs.aws.amazon.com/secretsmanager">AWS Secrets Manager</a> secret.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of an <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/integration-ps-secretsmanager.html">AWS
-     *        Systems Manager</a> parameter.
-     *        </p>
-     *        </li>
+     *        The authorization credential option to use. The authorization credential options can be provided using
+     *        either the Amazon Resource Name (ARN) of an AWS Secrets Manager secret or AWS Systems Manager Parameter
+     *        Store parameter. The ARNs refer to the stored credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,13 +108,13 @@ public class FSxWindowsFileServerAuthorizationConfig implements Serializable, Cl
      * <p>
      * A fully qualified domain name hosted by an <a
      * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS Directory
-     * Service</a> Managed Microsoft AD (Active Directory) or self-hosted EC2 AD.
+     * Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD on Amazon EC2.
      * </p>
      * 
      * @param domain
      *        A fully qualified domain name hosted by an <a
      *        href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS
-     *        Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted EC2 AD.
+     *        Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD on Amazon EC2.
      */
 
     public void setDomain(String domain) {
@@ -263,12 +125,12 @@ public class FSxWindowsFileServerAuthorizationConfig implements Serializable, Cl
      * <p>
      * A fully qualified domain name hosted by an <a
      * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS Directory
-     * Service</a> Managed Microsoft AD (Active Directory) or self-hosted EC2 AD.
+     * Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD on Amazon EC2.
      * </p>
      * 
      * @return A fully qualified domain name hosted by an <a
      *         href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS
-     *         Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted EC2 AD.
+     *         Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD on Amazon EC2.
      */
 
     public String getDomain() {
@@ -279,13 +141,13 @@ public class FSxWindowsFileServerAuthorizationConfig implements Serializable, Cl
      * <p>
      * A fully qualified domain name hosted by an <a
      * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS Directory
-     * Service</a> Managed Microsoft AD (Active Directory) or self-hosted EC2 AD.
+     * Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD on Amazon EC2.
      * </p>
      * 
      * @param domain
      *        A fully qualified domain name hosted by an <a
      *        href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS
-     *        Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted EC2 AD.
+     *        Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD on Amazon EC2.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

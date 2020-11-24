@@ -54,27 +54,25 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
     private Integer targetCapacity;
     /**
      * <p>
-     * The minimum number of Amazon EC2 instances that Amazon ECS will scale out at one time. The scale in process is
-     * not affected by this parameter If this parameter is omitted, the default value of <code>1</code> is used.
-     * </p>
-     * <p>
-     * When additional capacity is required, Amazon ECS will scale up the minimum scaling step size even if the actual
-     * demand is less than the minimum scaling step size.
-     * </p>
-     * <p>
-     * If you use a capacity provider with an Auto Scaling group configured with more than one Amazon EC2 instance type
-     * or Availability Zone, Amazon ECS will scale up by the exact minimum scaling step size value and will ignore both
-     * the maximum scaling step size as well as the capacity demand.
+     * The minimum number of container instances that Amazon ECS will scale in or scale out at one time. If this
+     * parameter is omitted, the default value of <code>1</code> is used.
      * </p>
      */
     private Integer minimumScalingStepSize;
     /**
      * <p>
-     * The maximum number of Amazon EC2 instances that Amazon ECS will scale out at one time. The scale in process is
-     * not affected by this parameter. If this parameter is omitted, the default value of <code>10000</code> is used.
+     * The maximum number of container instances that Amazon ECS will scale in or scale out at one time. If this
+     * parameter is omitted, the default value of <code>10000</code> is used.
      * </p>
      */
     private Integer maximumScalingStepSize;
+    /**
+     * <p>
+     * The period of time, in seconds, after a newly launched Amazon EC2 instance can contribute to CloudWatch metrics
+     * for Auto Scaling group. If this parameter is omitted, the default value of <code>300</code> seconds is used.
+     * </p>
+     */
+    private Integer instanceWarmupPeriod;
 
     /**
      * <p>
@@ -189,31 +187,13 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The minimum number of Amazon EC2 instances that Amazon ECS will scale out at one time. The scale in process is
-     * not affected by this parameter If this parameter is omitted, the default value of <code>1</code> is used.
-     * </p>
-     * <p>
-     * When additional capacity is required, Amazon ECS will scale up the minimum scaling step size even if the actual
-     * demand is less than the minimum scaling step size.
-     * </p>
-     * <p>
-     * If you use a capacity provider with an Auto Scaling group configured with more than one Amazon EC2 instance type
-     * or Availability Zone, Amazon ECS will scale up by the exact minimum scaling step size value and will ignore both
-     * the maximum scaling step size as well as the capacity demand.
+     * The minimum number of container instances that Amazon ECS will scale in or scale out at one time. If this
+     * parameter is omitted, the default value of <code>1</code> is used.
      * </p>
      * 
      * @param minimumScalingStepSize
-     *        The minimum number of Amazon EC2 instances that Amazon ECS will scale out at one time. The scale in
-     *        process is not affected by this parameter If this parameter is omitted, the default value of
-     *        <code>1</code> is used.</p>
-     *        <p>
-     *        When additional capacity is required, Amazon ECS will scale up the minimum scaling step size even if the
-     *        actual demand is less than the minimum scaling step size.
-     *        </p>
-     *        <p>
-     *        If you use a capacity provider with an Auto Scaling group configured with more than one Amazon EC2
-     *        instance type or Availability Zone, Amazon ECS will scale up by the exact minimum scaling step size value
-     *        and will ignore both the maximum scaling step size as well as the capacity demand.
+     *        The minimum number of container instances that Amazon ECS will scale in or scale out at one time. If this
+     *        parameter is omitted, the default value of <code>1</code> is used.
      */
 
     public void setMinimumScalingStepSize(Integer minimumScalingStepSize) {
@@ -222,30 +202,12 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The minimum number of Amazon EC2 instances that Amazon ECS will scale out at one time. The scale in process is
-     * not affected by this parameter If this parameter is omitted, the default value of <code>1</code> is used.
-     * </p>
-     * <p>
-     * When additional capacity is required, Amazon ECS will scale up the minimum scaling step size even if the actual
-     * demand is less than the minimum scaling step size.
-     * </p>
-     * <p>
-     * If you use a capacity provider with an Auto Scaling group configured with more than one Amazon EC2 instance type
-     * or Availability Zone, Amazon ECS will scale up by the exact minimum scaling step size value and will ignore both
-     * the maximum scaling step size as well as the capacity demand.
+     * The minimum number of container instances that Amazon ECS will scale in or scale out at one time. If this
+     * parameter is omitted, the default value of <code>1</code> is used.
      * </p>
      * 
-     * @return The minimum number of Amazon EC2 instances that Amazon ECS will scale out at one time. The scale in
-     *         process is not affected by this parameter If this parameter is omitted, the default value of
-     *         <code>1</code> is used.</p>
-     *         <p>
-     *         When additional capacity is required, Amazon ECS will scale up the minimum scaling step size even if the
-     *         actual demand is less than the minimum scaling step size.
-     *         </p>
-     *         <p>
-     *         If you use a capacity provider with an Auto Scaling group configured with more than one Amazon EC2
-     *         instance type or Availability Zone, Amazon ECS will scale up by the exact minimum scaling step size value
-     *         and will ignore both the maximum scaling step size as well as the capacity demand.
+     * @return The minimum number of container instances that Amazon ECS will scale in or scale out at one time. If this
+     *         parameter is omitted, the default value of <code>1</code> is used.
      */
 
     public Integer getMinimumScalingStepSize() {
@@ -254,31 +216,13 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The minimum number of Amazon EC2 instances that Amazon ECS will scale out at one time. The scale in process is
-     * not affected by this parameter If this parameter is omitted, the default value of <code>1</code> is used.
-     * </p>
-     * <p>
-     * When additional capacity is required, Amazon ECS will scale up the minimum scaling step size even if the actual
-     * demand is less than the minimum scaling step size.
-     * </p>
-     * <p>
-     * If you use a capacity provider with an Auto Scaling group configured with more than one Amazon EC2 instance type
-     * or Availability Zone, Amazon ECS will scale up by the exact minimum scaling step size value and will ignore both
-     * the maximum scaling step size as well as the capacity demand.
+     * The minimum number of container instances that Amazon ECS will scale in or scale out at one time. If this
+     * parameter is omitted, the default value of <code>1</code> is used.
      * </p>
      * 
      * @param minimumScalingStepSize
-     *        The minimum number of Amazon EC2 instances that Amazon ECS will scale out at one time. The scale in
-     *        process is not affected by this parameter If this parameter is omitted, the default value of
-     *        <code>1</code> is used.</p>
-     *        <p>
-     *        When additional capacity is required, Amazon ECS will scale up the minimum scaling step size even if the
-     *        actual demand is less than the minimum scaling step size.
-     *        </p>
-     *        <p>
-     *        If you use a capacity provider with an Auto Scaling group configured with more than one Amazon EC2
-     *        instance type or Availability Zone, Amazon ECS will scale up by the exact minimum scaling step size value
-     *        and will ignore both the maximum scaling step size as well as the capacity demand.
+     *        The minimum number of container instances that Amazon ECS will scale in or scale out at one time. If this
+     *        parameter is omitted, the default value of <code>1</code> is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -289,14 +233,13 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of Amazon EC2 instances that Amazon ECS will scale out at one time. The scale in process is
-     * not affected by this parameter. If this parameter is omitted, the default value of <code>10000</code> is used.
+     * The maximum number of container instances that Amazon ECS will scale in or scale out at one time. If this
+     * parameter is omitted, the default value of <code>10000</code> is used.
      * </p>
      * 
      * @param maximumScalingStepSize
-     *        The maximum number of Amazon EC2 instances that Amazon ECS will scale out at one time. The scale in
-     *        process is not affected by this parameter. If this parameter is omitted, the default value of
-     *        <code>10000</code> is used.
+     *        The maximum number of container instances that Amazon ECS will scale in or scale out at one time. If this
+     *        parameter is omitted, the default value of <code>10000</code> is used.
      */
 
     public void setMaximumScalingStepSize(Integer maximumScalingStepSize) {
@@ -305,13 +248,12 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of Amazon EC2 instances that Amazon ECS will scale out at one time. The scale in process is
-     * not affected by this parameter. If this parameter is omitted, the default value of <code>10000</code> is used.
+     * The maximum number of container instances that Amazon ECS will scale in or scale out at one time. If this
+     * parameter is omitted, the default value of <code>10000</code> is used.
      * </p>
      * 
-     * @return The maximum number of Amazon EC2 instances that Amazon ECS will scale out at one time. The scale in
-     *         process is not affected by this parameter. If this parameter is omitted, the default value of
-     *         <code>10000</code> is used.
+     * @return The maximum number of container instances that Amazon ECS will scale in or scale out at one time. If this
+     *         parameter is omitted, the default value of <code>10000</code> is used.
      */
 
     public Integer getMaximumScalingStepSize() {
@@ -320,19 +262,67 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of Amazon EC2 instances that Amazon ECS will scale out at one time. The scale in process is
-     * not affected by this parameter. If this parameter is omitted, the default value of <code>10000</code> is used.
+     * The maximum number of container instances that Amazon ECS will scale in or scale out at one time. If this
+     * parameter is omitted, the default value of <code>10000</code> is used.
      * </p>
      * 
      * @param maximumScalingStepSize
-     *        The maximum number of Amazon EC2 instances that Amazon ECS will scale out at one time. The scale in
-     *        process is not affected by this parameter. If this parameter is omitted, the default value of
-     *        <code>10000</code> is used.
+     *        The maximum number of container instances that Amazon ECS will scale in or scale out at one time. If this
+     *        parameter is omitted, the default value of <code>10000</code> is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ManagedScaling withMaximumScalingStepSize(Integer maximumScalingStepSize) {
         setMaximumScalingStepSize(maximumScalingStepSize);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The period of time, in seconds, after a newly launched Amazon EC2 instance can contribute to CloudWatch metrics
+     * for Auto Scaling group. If this parameter is omitted, the default value of <code>300</code> seconds is used.
+     * </p>
+     * 
+     * @param instanceWarmupPeriod
+     *        The period of time, in seconds, after a newly launched Amazon EC2 instance can contribute to CloudWatch
+     *        metrics for Auto Scaling group. If this parameter is omitted, the default value of <code>300</code>
+     *        seconds is used.
+     */
+
+    public void setInstanceWarmupPeriod(Integer instanceWarmupPeriod) {
+        this.instanceWarmupPeriod = instanceWarmupPeriod;
+    }
+
+    /**
+     * <p>
+     * The period of time, in seconds, after a newly launched Amazon EC2 instance can contribute to CloudWatch metrics
+     * for Auto Scaling group. If this parameter is omitted, the default value of <code>300</code> seconds is used.
+     * </p>
+     * 
+     * @return The period of time, in seconds, after a newly launched Amazon EC2 instance can contribute to CloudWatch
+     *         metrics for Auto Scaling group. If this parameter is omitted, the default value of <code>300</code>
+     *         seconds is used.
+     */
+
+    public Integer getInstanceWarmupPeriod() {
+        return this.instanceWarmupPeriod;
+    }
+
+    /**
+     * <p>
+     * The period of time, in seconds, after a newly launched Amazon EC2 instance can contribute to CloudWatch metrics
+     * for Auto Scaling group. If this parameter is omitted, the default value of <code>300</code> seconds is used.
+     * </p>
+     * 
+     * @param instanceWarmupPeriod
+     *        The period of time, in seconds, after a newly launched Amazon EC2 instance can contribute to CloudWatch
+     *        metrics for Auto Scaling group. If this parameter is omitted, the default value of <code>300</code>
+     *        seconds is used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ManagedScaling withInstanceWarmupPeriod(Integer instanceWarmupPeriod) {
+        setInstanceWarmupPeriod(instanceWarmupPeriod);
         return this;
     }
 
@@ -355,7 +345,9 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
         if (getMinimumScalingStepSize() != null)
             sb.append("MinimumScalingStepSize: ").append(getMinimumScalingStepSize()).append(",");
         if (getMaximumScalingStepSize() != null)
-            sb.append("MaximumScalingStepSize: ").append(getMaximumScalingStepSize());
+            sb.append("MaximumScalingStepSize: ").append(getMaximumScalingStepSize()).append(",");
+        if (getInstanceWarmupPeriod() != null)
+            sb.append("InstanceWarmupPeriod: ").append(getInstanceWarmupPeriod());
         sb.append("}");
         return sb.toString();
     }
@@ -386,6 +378,10 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMaximumScalingStepSize() != null && other.getMaximumScalingStepSize().equals(this.getMaximumScalingStepSize()) == false)
             return false;
+        if (other.getInstanceWarmupPeriod() == null ^ this.getInstanceWarmupPeriod() == null)
+            return false;
+        if (other.getInstanceWarmupPeriod() != null && other.getInstanceWarmupPeriod().equals(this.getInstanceWarmupPeriod()) == false)
+            return false;
         return true;
     }
 
@@ -398,6 +394,7 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTargetCapacity() == null) ? 0 : getTargetCapacity().hashCode());
         hashCode = prime * hashCode + ((getMinimumScalingStepSize() == null) ? 0 : getMinimumScalingStepSize().hashCode());
         hashCode = prime * hashCode + ((getMaximumScalingStepSize() == null) ? 0 : getMaximumScalingStepSize().hashCode());
+        hashCode = prime * hashCode + ((getInstanceWarmupPeriod() == null) ? 0 : getInstanceWarmupPeriod().hashCode());
         return hashCode;
     }
 

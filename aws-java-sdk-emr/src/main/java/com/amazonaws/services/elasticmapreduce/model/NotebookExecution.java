@@ -161,7 +161,7 @@ public class NotebookExecution implements Serializable, Cloneable, StructuredPoj
     private String notebookInstanceSecurityGroupId;
     /**
      * <p>
-     * A list of tags associated with a notebook execution. Tags are user-defined key value pairs that consist of a
+     * A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a
      * required key string with a maximum of 128 characters and an optional value string with a maximum of 256
      * characters.
      * </p>
@@ -1131,12 +1131,12 @@ public class NotebookExecution implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A list of tags associated with a notebook execution. Tags are user-defined key value pairs that consist of a
+     * A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a
      * required key string with a maximum of 128 characters and an optional value string with a maximum of 256
      * characters.
      * </p>
      * 
-     * @return A list of tags associated with a notebook execution. Tags are user-defined key value pairs that consist
+     * @return A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist
      *         of a required key string with a maximum of 128 characters and an optional value string with a maximum of
      *         256 characters.
      */
@@ -1150,13 +1150,13 @@ public class NotebookExecution implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A list of tags associated with a notebook execution. Tags are user-defined key value pairs that consist of a
+     * A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a
      * required key string with a maximum of 128 characters and an optional value string with a maximum of 256
      * characters.
      * </p>
      * 
      * @param tags
-     *        A list of tags associated with a notebook execution. Tags are user-defined key value pairs that consist of
+     *        A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of
      *        a required key string with a maximum of 128 characters and an optional value string with a maximum of 256
      *        characters.
      */
@@ -1172,7 +1172,7 @@ public class NotebookExecution implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A list of tags associated with a notebook execution. Tags are user-defined key value pairs that consist of a
+     * A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a
      * required key string with a maximum of 128 characters and an optional value string with a maximum of 256
      * characters.
      * </p>
@@ -1183,7 +1183,7 @@ public class NotebookExecution implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param tags
-     *        A list of tags associated with a notebook execution. Tags are user-defined key value pairs that consist of
+     *        A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of
      *        a required key string with a maximum of 128 characters and an optional value string with a maximum of 256
      *        characters.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1201,13 +1201,13 @@ public class NotebookExecution implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A list of tags associated with a notebook execution. Tags are user-defined key value pairs that consist of a
+     * A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a
      * required key string with a maximum of 128 characters and an optional value string with a maximum of 256
      * characters.
      * </p>
      * 
      * @param tags
-     *        A list of tags associated with a notebook execution. Tags are user-defined key value pairs that consist of
+     *        A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of
      *        a required key string with a maximum of 128 characters and an optional value string with a maximum of 256
      *        characters.
      * @return Returns a reference to this object so that method calls can be chained together.

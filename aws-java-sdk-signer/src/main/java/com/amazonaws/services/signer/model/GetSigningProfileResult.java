@@ -31,6 +31,20 @@ public class GetSigningProfileResult extends com.amazonaws.AmazonWebServiceResul
     private String profileName;
     /**
      * <p>
+     * The current version of the signing profile.
+     * </p>
+     */
+    private String profileVersion;
+    /**
+     * <p>
+     * The signing profile ARN, including the profile version.
+     * </p>
+     */
+    private String profileVersionArn;
+
+    private SigningProfileRevocationRecord revocationRecord;
+    /**
+     * <p>
      * The ARN of the certificate that the target profile uses for signing operations.
      * </p>
      */
@@ -41,6 +55,14 @@ public class GetSigningProfileResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private String platformId;
+    /**
+     * <p>
+     * A human-readable name for the signing platform associated with the signing profile.
+     * </p>
+     */
+    private String platformDisplayName;
+
+    private SignatureValidityPeriod signatureValidityPeriod;
     /**
      * <p>
      * A list of overrides applied by the target signing profile for signing operations.
@@ -59,6 +81,12 @@ public class GetSigningProfileResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private String status;
+    /**
+     * <p>
+     * Reason for the status of the target signing profile.
+     * </p>
+     */
+    private String statusReason;
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the signing profile.
@@ -109,6 +137,112 @@ public class GetSigningProfileResult extends com.amazonaws.AmazonWebServiceResul
 
     public GetSigningProfileResult withProfileName(String profileName) {
         setProfileName(profileName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current version of the signing profile.
+     * </p>
+     * 
+     * @param profileVersion
+     *        The current version of the signing profile.
+     */
+
+    public void setProfileVersion(String profileVersion) {
+        this.profileVersion = profileVersion;
+    }
+
+    /**
+     * <p>
+     * The current version of the signing profile.
+     * </p>
+     * 
+     * @return The current version of the signing profile.
+     */
+
+    public String getProfileVersion() {
+        return this.profileVersion;
+    }
+
+    /**
+     * <p>
+     * The current version of the signing profile.
+     * </p>
+     * 
+     * @param profileVersion
+     *        The current version of the signing profile.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetSigningProfileResult withProfileVersion(String profileVersion) {
+        setProfileVersion(profileVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The signing profile ARN, including the profile version.
+     * </p>
+     * 
+     * @param profileVersionArn
+     *        The signing profile ARN, including the profile version.
+     */
+
+    public void setProfileVersionArn(String profileVersionArn) {
+        this.profileVersionArn = profileVersionArn;
+    }
+
+    /**
+     * <p>
+     * The signing profile ARN, including the profile version.
+     * </p>
+     * 
+     * @return The signing profile ARN, including the profile version.
+     */
+
+    public String getProfileVersionArn() {
+        return this.profileVersionArn;
+    }
+
+    /**
+     * <p>
+     * The signing profile ARN, including the profile version.
+     * </p>
+     * 
+     * @param profileVersionArn
+     *        The signing profile ARN, including the profile version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetSigningProfileResult withProfileVersionArn(String profileVersionArn) {
+        setProfileVersionArn(profileVersionArn);
+        return this;
+    }
+
+    /**
+     * @param revocationRecord
+     */
+
+    public void setRevocationRecord(SigningProfileRevocationRecord revocationRecord) {
+        this.revocationRecord = revocationRecord;
+    }
+
+    /**
+     * @return
+     */
+
+    public SigningProfileRevocationRecord getRevocationRecord() {
+        return this.revocationRecord;
+    }
+
+    /**
+     * @param revocationRecord
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetSigningProfileResult withRevocationRecord(SigningProfileRevocationRecord revocationRecord) {
+        setRevocationRecord(revocationRecord);
         return this;
     }
 
@@ -189,6 +323,72 @@ public class GetSigningProfileResult extends com.amazonaws.AmazonWebServiceResul
 
     public GetSigningProfileResult withPlatformId(String platformId) {
         setPlatformId(platformId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A human-readable name for the signing platform associated with the signing profile.
+     * </p>
+     * 
+     * @param platformDisplayName
+     *        A human-readable name for the signing platform associated with the signing profile.
+     */
+
+    public void setPlatformDisplayName(String platformDisplayName) {
+        this.platformDisplayName = platformDisplayName;
+    }
+
+    /**
+     * <p>
+     * A human-readable name for the signing platform associated with the signing profile.
+     * </p>
+     * 
+     * @return A human-readable name for the signing platform associated with the signing profile.
+     */
+
+    public String getPlatformDisplayName() {
+        return this.platformDisplayName;
+    }
+
+    /**
+     * <p>
+     * A human-readable name for the signing platform associated with the signing profile.
+     * </p>
+     * 
+     * @param platformDisplayName
+     *        A human-readable name for the signing platform associated with the signing profile.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetSigningProfileResult withPlatformDisplayName(String platformDisplayName) {
+        setPlatformDisplayName(platformDisplayName);
+        return this;
+    }
+
+    /**
+     * @param signatureValidityPeriod
+     */
+
+    public void setSignatureValidityPeriod(SignatureValidityPeriod signatureValidityPeriod) {
+        this.signatureValidityPeriod = signatureValidityPeriod;
+    }
+
+    /**
+     * @return
+     */
+
+    public SignatureValidityPeriod getSignatureValidityPeriod() {
+        return this.signatureValidityPeriod;
+    }
+
+    /**
+     * @param signatureValidityPeriod
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetSigningProfileResult withSignatureValidityPeriod(SignatureValidityPeriod signatureValidityPeriod) {
+        setSignatureValidityPeriod(signatureValidityPeriod);
         return this;
     }
 
@@ -361,6 +561,46 @@ public class GetSigningProfileResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
+     * Reason for the status of the target signing profile.
+     * </p>
+     * 
+     * @param statusReason
+     *        Reason for the status of the target signing profile.
+     */
+
+    public void setStatusReason(String statusReason) {
+        this.statusReason = statusReason;
+    }
+
+    /**
+     * <p>
+     * Reason for the status of the target signing profile.
+     * </p>
+     * 
+     * @return Reason for the status of the target signing profile.
+     */
+
+    public String getStatusReason() {
+        return this.statusReason;
+    }
+
+    /**
+     * <p>
+     * Reason for the status of the target signing profile.
+     * </p>
+     * 
+     * @param statusReason
+     *        Reason for the status of the target signing profile.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetSigningProfileResult withStatusReason(String statusReason) {
+        setStatusReason(statusReason);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) for the signing profile.
      * </p>
      * 
@@ -481,16 +721,28 @@ public class GetSigningProfileResult extends com.amazonaws.AmazonWebServiceResul
         sb.append("{");
         if (getProfileName() != null)
             sb.append("ProfileName: ").append(getProfileName()).append(",");
+        if (getProfileVersion() != null)
+            sb.append("ProfileVersion: ").append(getProfileVersion()).append(",");
+        if (getProfileVersionArn() != null)
+            sb.append("ProfileVersionArn: ").append(getProfileVersionArn()).append(",");
+        if (getRevocationRecord() != null)
+            sb.append("RevocationRecord: ").append(getRevocationRecord()).append(",");
         if (getSigningMaterial() != null)
             sb.append("SigningMaterial: ").append(getSigningMaterial()).append(",");
         if (getPlatformId() != null)
             sb.append("PlatformId: ").append(getPlatformId()).append(",");
+        if (getPlatformDisplayName() != null)
+            sb.append("PlatformDisplayName: ").append(getPlatformDisplayName()).append(",");
+        if (getSignatureValidityPeriod() != null)
+            sb.append("SignatureValidityPeriod: ").append(getSignatureValidityPeriod()).append(",");
         if (getOverrides() != null)
             sb.append("Overrides: ").append(getOverrides()).append(",");
         if (getSigningParameters() != null)
             sb.append("SigningParameters: ").append(getSigningParameters()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getStatusReason() != null)
+            sb.append("StatusReason: ").append(getStatusReason()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getTags() != null)
@@ -513,6 +765,18 @@ public class GetSigningProfileResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getProfileName() != null && other.getProfileName().equals(this.getProfileName()) == false)
             return false;
+        if (other.getProfileVersion() == null ^ this.getProfileVersion() == null)
+            return false;
+        if (other.getProfileVersion() != null && other.getProfileVersion().equals(this.getProfileVersion()) == false)
+            return false;
+        if (other.getProfileVersionArn() == null ^ this.getProfileVersionArn() == null)
+            return false;
+        if (other.getProfileVersionArn() != null && other.getProfileVersionArn().equals(this.getProfileVersionArn()) == false)
+            return false;
+        if (other.getRevocationRecord() == null ^ this.getRevocationRecord() == null)
+            return false;
+        if (other.getRevocationRecord() != null && other.getRevocationRecord().equals(this.getRevocationRecord()) == false)
+            return false;
         if (other.getSigningMaterial() == null ^ this.getSigningMaterial() == null)
             return false;
         if (other.getSigningMaterial() != null && other.getSigningMaterial().equals(this.getSigningMaterial()) == false)
@@ -520,6 +784,14 @@ public class GetSigningProfileResult extends com.amazonaws.AmazonWebServiceResul
         if (other.getPlatformId() == null ^ this.getPlatformId() == null)
             return false;
         if (other.getPlatformId() != null && other.getPlatformId().equals(this.getPlatformId()) == false)
+            return false;
+        if (other.getPlatformDisplayName() == null ^ this.getPlatformDisplayName() == null)
+            return false;
+        if (other.getPlatformDisplayName() != null && other.getPlatformDisplayName().equals(this.getPlatformDisplayName()) == false)
+            return false;
+        if (other.getSignatureValidityPeriod() == null ^ this.getSignatureValidityPeriod() == null)
+            return false;
+        if (other.getSignatureValidityPeriod() != null && other.getSignatureValidityPeriod().equals(this.getSignatureValidityPeriod()) == false)
             return false;
         if (other.getOverrides() == null ^ this.getOverrides() == null)
             return false;
@@ -532,6 +804,10 @@ public class GetSigningProfileResult extends com.amazonaws.AmazonWebServiceResul
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getStatusReason() == null ^ this.getStatusReason() == null)
+            return false;
+        if (other.getStatusReason() != null && other.getStatusReason().equals(this.getStatusReason()) == false)
             return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
@@ -550,11 +826,17 @@ public class GetSigningProfileResult extends com.amazonaws.AmazonWebServiceResul
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getProfileName() == null) ? 0 : getProfileName().hashCode());
+        hashCode = prime * hashCode + ((getProfileVersion() == null) ? 0 : getProfileVersion().hashCode());
+        hashCode = prime * hashCode + ((getProfileVersionArn() == null) ? 0 : getProfileVersionArn().hashCode());
+        hashCode = prime * hashCode + ((getRevocationRecord() == null) ? 0 : getRevocationRecord().hashCode());
         hashCode = prime * hashCode + ((getSigningMaterial() == null) ? 0 : getSigningMaterial().hashCode());
         hashCode = prime * hashCode + ((getPlatformId() == null) ? 0 : getPlatformId().hashCode());
+        hashCode = prime * hashCode + ((getPlatformDisplayName() == null) ? 0 : getPlatformDisplayName().hashCode());
+        hashCode = prime * hashCode + ((getSignatureValidityPeriod() == null) ? 0 : getSignatureValidityPeriod().hashCode());
         hashCode = prime * hashCode + ((getOverrides() == null) ? 0 : getOverrides().hashCode());
         hashCode = prime * hashCode + ((getSigningParameters() == null) ? 0 : getSigningParameters().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

@@ -28,6 +28,16 @@ public class AbstractAmazonTranslate implements AmazonTranslate {
     }
 
     @Override
+    public CreateParallelDataResult createParallelData(CreateParallelDataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteParallelDataResult deleteParallelData(DeleteParallelDataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteTerminologyResult deleteTerminology(DeleteTerminologyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -38,12 +48,22 @@ public class AbstractAmazonTranslate implements AmazonTranslate {
     }
 
     @Override
+    public GetParallelDataResult getParallelData(GetParallelDataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetTerminologyResult getTerminology(GetTerminologyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ImportTerminologyResult importTerminology(ImportTerminologyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListParallelDataResult listParallelData(ListParallelDataRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -69,6 +89,11 @@ public class AbstractAmazonTranslate implements AmazonTranslate {
 
     @Override
     public TranslateTextResult translateText(TranslateTextRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateParallelDataResult updateParallelData(UpdateParallelDataRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

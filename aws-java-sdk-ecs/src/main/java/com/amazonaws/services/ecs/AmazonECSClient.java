@@ -3664,6 +3664,69 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
 
     /**
      * <p>
+     * Modifies the parameters for a capacity provider.
+     * </p>
+     * 
+     * @param updateCapacityProviderRequest
+     * @return Result of the UpdateCapacityProvider operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @sample AmazonECS.UpdateCapacityProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCapacityProvider" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateCapacityProviderResult updateCapacityProvider(UpdateCapacityProviderRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateCapacityProvider(request);
+    }
+
+    @SdkInternalApi
+    final UpdateCapacityProviderResult executeUpdateCapacityProvider(UpdateCapacityProviderRequest updateCapacityProviderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateCapacityProviderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateCapacityProviderRequest> request = null;
+        Response<UpdateCapacityProviderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateCapacityProviderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateCapacityProviderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCapacityProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateCapacityProviderResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateCapacityProviderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Modifies the settings to use for a cluster.
      * </p>
      * 

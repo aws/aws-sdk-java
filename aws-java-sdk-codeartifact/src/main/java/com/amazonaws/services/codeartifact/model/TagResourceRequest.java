@@ -27,7 +27,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.
+     * The Amazon Resource Name (ARN) of the resource that you want to add or update tags for.
      * </p>
      */
     private String resourceArn;
@@ -40,11 +40,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.
+     * The Amazon Resource Name (ARN) of the resource that you want to add or update tags for.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.
+     *        The Amazon Resource Name (ARN) of the resource that you want to add or update tags for.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -53,10 +53,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.
+     * The Amazon Resource Name (ARN) of the resource that you want to add or update tags for.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.
+     * @return The Amazon Resource Name (ARN) of the resource that you want to add or update tags for.
      */
 
     public String getResourceArn() {
@@ -65,11 +65,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.
+     * The Amazon Resource Name (ARN) of the resource that you want to add or update tags for.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.
+     *        The Amazon Resource Name (ARN) of the resource that you want to add or update tags for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

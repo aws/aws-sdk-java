@@ -88,6 +88,20 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     private Integer runningCount;
     /**
      * <p>
+     * The number of consecutively failed tasks in the deployment. A task is considered a failure if the service
+     * scheduler can't launch the task, the task doesn't transition to a <code>RUNNING</code> state, or if it fails any
+     * of its defined health checks and is stopped.
+     * </p>
+     * <note>
+     * <p>
+     * Once a service deployment has one or more successfully running tasks, the failed task count resets to zero and
+     * stops being evaluated.
+     * </p>
+     * </note>
+     */
+    private Integer failedTasks;
+    /**
+     * <p>
      * The Unix timestamp for when the service deployment was created.
      * </p>
      */
@@ -129,6 +143,28 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private NetworkConfiguration networkConfiguration;
+    /**
+     * <note>
+     * <p>
+     * The <code>rolloutState</code> of a service is only returned for services that use the rolling update (
+     * <code>ECS</code>) deployment type that are not behind a Classic Load Balancer.
+     * </p>
+     * </note>
+     * <p>
+     * The rollout state of the deployment. When a service deployment is started, it begins in an
+     * <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment will transition to a
+     * <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is enabled, the
+     * deployment will transition to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state will launch
+     * no new tasks. For more information, see <a>DeploymentCircuitBreaker</a>.
+     * </p>
+     */
+    private String rolloutState;
+    /**
+     * <p>
+     * A description of the rollout state of a deployment.
+     * </p>
+     */
+    private String rolloutStateReason;
 
     /**
      * <p>
@@ -495,6 +531,88 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The number of consecutively failed tasks in the deployment. A task is considered a failure if the service
+     * scheduler can't launch the task, the task doesn't transition to a <code>RUNNING</code> state, or if it fails any
+     * of its defined health checks and is stopped.
+     * </p>
+     * <note>
+     * <p>
+     * Once a service deployment has one or more successfully running tasks, the failed task count resets to zero and
+     * stops being evaluated.
+     * </p>
+     * </note>
+     * 
+     * @param failedTasks
+     *        The number of consecutively failed tasks in the deployment. A task is considered a failure if the service
+     *        scheduler can't launch the task, the task doesn't transition to a <code>RUNNING</code> state, or if it
+     *        fails any of its defined health checks and is stopped.</p> <note>
+     *        <p>
+     *        Once a service deployment has one or more successfully running tasks, the failed task count resets to zero
+     *        and stops being evaluated.
+     *        </p>
+     */
+
+    public void setFailedTasks(Integer failedTasks) {
+        this.failedTasks = failedTasks;
+    }
+
+    /**
+     * <p>
+     * The number of consecutively failed tasks in the deployment. A task is considered a failure if the service
+     * scheduler can't launch the task, the task doesn't transition to a <code>RUNNING</code> state, or if it fails any
+     * of its defined health checks and is stopped.
+     * </p>
+     * <note>
+     * <p>
+     * Once a service deployment has one or more successfully running tasks, the failed task count resets to zero and
+     * stops being evaluated.
+     * </p>
+     * </note>
+     * 
+     * @return The number of consecutively failed tasks in the deployment. A task is considered a failure if the service
+     *         scheduler can't launch the task, the task doesn't transition to a <code>RUNNING</code> state, or if it
+     *         fails any of its defined health checks and is stopped.</p> <note>
+     *         <p>
+     *         Once a service deployment has one or more successfully running tasks, the failed task count resets to
+     *         zero and stops being evaluated.
+     *         </p>
+     */
+
+    public Integer getFailedTasks() {
+        return this.failedTasks;
+    }
+
+    /**
+     * <p>
+     * The number of consecutively failed tasks in the deployment. A task is considered a failure if the service
+     * scheduler can't launch the task, the task doesn't transition to a <code>RUNNING</code> state, or if it fails any
+     * of its defined health checks and is stopped.
+     * </p>
+     * <note>
+     * <p>
+     * Once a service deployment has one or more successfully running tasks, the failed task count resets to zero and
+     * stops being evaluated.
+     * </p>
+     * </note>
+     * 
+     * @param failedTasks
+     *        The number of consecutively failed tasks in the deployment. A task is considered a failure if the service
+     *        scheduler can't launch the task, the task doesn't transition to a <code>RUNNING</code> state, or if it
+     *        fails any of its defined health checks and is stopped.</p> <note>
+     *        <p>
+     *        Once a service deployment has one or more successfully running tasks, the failed task count resets to zero
+     *        and stops being evaluated.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Deployment withFailedTasks(Integer failedTasks) {
+        setFailedTasks(failedTasks);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Unix timestamp for when the service deployment was created.
      * </p>
      * 
@@ -832,6 +950,189 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <note>
+     * <p>
+     * The <code>rolloutState</code> of a service is only returned for services that use the rolling update (
+     * <code>ECS</code>) deployment type that are not behind a Classic Load Balancer.
+     * </p>
+     * </note>
+     * <p>
+     * The rollout state of the deployment. When a service deployment is started, it begins in an
+     * <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment will transition to a
+     * <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is enabled, the
+     * deployment will transition to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state will launch
+     * no new tasks. For more information, see <a>DeploymentCircuitBreaker</a>.
+     * </p>
+     * 
+     * @param rolloutState
+     *        <p>
+     *        The <code>rolloutState</code> of a service is only returned for services that use the rolling update (
+     *        <code>ECS</code>) deployment type that are not behind a Classic Load Balancer.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The rollout state of the deployment. When a service deployment is started, it begins in an
+     *        <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment will transition to
+     *        a <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is
+     *        enabled, the deployment will transition to a <code>FAILED</code> state. A deployment in
+     *        <code>FAILED</code> state will launch no new tasks. For more information, see
+     *        <a>DeploymentCircuitBreaker</a>.
+     * @see DeploymentRolloutState
+     */
+
+    public void setRolloutState(String rolloutState) {
+        this.rolloutState = rolloutState;
+    }
+
+    /**
+     * <note>
+     * <p>
+     * The <code>rolloutState</code> of a service is only returned for services that use the rolling update (
+     * <code>ECS</code>) deployment type that are not behind a Classic Load Balancer.
+     * </p>
+     * </note>
+     * <p>
+     * The rollout state of the deployment. When a service deployment is started, it begins in an
+     * <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment will transition to a
+     * <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is enabled, the
+     * deployment will transition to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state will launch
+     * no new tasks. For more information, see <a>DeploymentCircuitBreaker</a>.
+     * </p>
+     * 
+     * @return <p>
+     *         The <code>rolloutState</code> of a service is only returned for services that use the rolling update (
+     *         <code>ECS</code>) deployment type that are not behind a Classic Load Balancer.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         The rollout state of the deployment. When a service deployment is started, it begins in an
+     *         <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment will transition
+     *         to a <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is
+     *         enabled, the deployment will transition to a <code>FAILED</code> state. A deployment in
+     *         <code>FAILED</code> state will launch no new tasks. For more information, see
+     *         <a>DeploymentCircuitBreaker</a>.
+     * @see DeploymentRolloutState
+     */
+
+    public String getRolloutState() {
+        return this.rolloutState;
+    }
+
+    /**
+     * <note>
+     * <p>
+     * The <code>rolloutState</code> of a service is only returned for services that use the rolling update (
+     * <code>ECS</code>) deployment type that are not behind a Classic Load Balancer.
+     * </p>
+     * </note>
+     * <p>
+     * The rollout state of the deployment. When a service deployment is started, it begins in an
+     * <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment will transition to a
+     * <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is enabled, the
+     * deployment will transition to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state will launch
+     * no new tasks. For more information, see <a>DeploymentCircuitBreaker</a>.
+     * </p>
+     * 
+     * @param rolloutState
+     *        <p>
+     *        The <code>rolloutState</code> of a service is only returned for services that use the rolling update (
+     *        <code>ECS</code>) deployment type that are not behind a Classic Load Balancer.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The rollout state of the deployment. When a service deployment is started, it begins in an
+     *        <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment will transition to
+     *        a <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is
+     *        enabled, the deployment will transition to a <code>FAILED</code> state. A deployment in
+     *        <code>FAILED</code> state will launch no new tasks. For more information, see
+     *        <a>DeploymentCircuitBreaker</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeploymentRolloutState
+     */
+
+    public Deployment withRolloutState(String rolloutState) {
+        setRolloutState(rolloutState);
+        return this;
+    }
+
+    /**
+     * <note>
+     * <p>
+     * The <code>rolloutState</code> of a service is only returned for services that use the rolling update (
+     * <code>ECS</code>) deployment type that are not behind a Classic Load Balancer.
+     * </p>
+     * </note>
+     * <p>
+     * The rollout state of the deployment. When a service deployment is started, it begins in an
+     * <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment will transition to a
+     * <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is enabled, the
+     * deployment will transition to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state will launch
+     * no new tasks. For more information, see <a>DeploymentCircuitBreaker</a>.
+     * </p>
+     * 
+     * @param rolloutState
+     *        <p>
+     *        The <code>rolloutState</code> of a service is only returned for services that use the rolling update (
+     *        <code>ECS</code>) deployment type that are not behind a Classic Load Balancer.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The rollout state of the deployment. When a service deployment is started, it begins in an
+     *        <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment will transition to
+     *        a <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is
+     *        enabled, the deployment will transition to a <code>FAILED</code> state. A deployment in
+     *        <code>FAILED</code> state will launch no new tasks. For more information, see
+     *        <a>DeploymentCircuitBreaker</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeploymentRolloutState
+     */
+
+    public Deployment withRolloutState(DeploymentRolloutState rolloutState) {
+        this.rolloutState = rolloutState.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A description of the rollout state of a deployment.
+     * </p>
+     * 
+     * @param rolloutStateReason
+     *        A description of the rollout state of a deployment.
+     */
+
+    public void setRolloutStateReason(String rolloutStateReason) {
+        this.rolloutStateReason = rolloutStateReason;
+    }
+
+    /**
+     * <p>
+     * A description of the rollout state of a deployment.
+     * </p>
+     * 
+     * @return A description of the rollout state of a deployment.
+     */
+
+    public String getRolloutStateReason() {
+        return this.rolloutStateReason;
+    }
+
+    /**
+     * <p>
+     * A description of the rollout state of a deployment.
+     * </p>
+     * 
+     * @param rolloutStateReason
+     *        A description of the rollout state of a deployment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Deployment withRolloutStateReason(String rolloutStateReason) {
+        setRolloutStateReason(rolloutStateReason);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -855,6 +1156,8 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
             sb.append("PendingCount: ").append(getPendingCount()).append(",");
         if (getRunningCount() != null)
             sb.append("RunningCount: ").append(getRunningCount()).append(",");
+        if (getFailedTasks() != null)
+            sb.append("FailedTasks: ").append(getFailedTasks()).append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getUpdatedAt() != null)
@@ -866,7 +1169,11 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
         if (getPlatformVersion() != null)
             sb.append("PlatformVersion: ").append(getPlatformVersion()).append(",");
         if (getNetworkConfiguration() != null)
-            sb.append("NetworkConfiguration: ").append(getNetworkConfiguration());
+            sb.append("NetworkConfiguration: ").append(getNetworkConfiguration()).append(",");
+        if (getRolloutState() != null)
+            sb.append("RolloutState: ").append(getRolloutState()).append(",");
+        if (getRolloutStateReason() != null)
+            sb.append("RolloutStateReason: ").append(getRolloutStateReason());
         sb.append("}");
         return sb.toString();
     }
@@ -905,6 +1212,10 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRunningCount() != null && other.getRunningCount().equals(this.getRunningCount()) == false)
             return false;
+        if (other.getFailedTasks() == null ^ this.getFailedTasks() == null)
+            return false;
+        if (other.getFailedTasks() != null && other.getFailedTasks().equals(this.getFailedTasks()) == false)
+            return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
@@ -929,6 +1240,14 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNetworkConfiguration() != null && other.getNetworkConfiguration().equals(this.getNetworkConfiguration()) == false)
             return false;
+        if (other.getRolloutState() == null ^ this.getRolloutState() == null)
+            return false;
+        if (other.getRolloutState() != null && other.getRolloutState().equals(this.getRolloutState()) == false)
+            return false;
+        if (other.getRolloutStateReason() == null ^ this.getRolloutStateReason() == null)
+            return false;
+        if (other.getRolloutStateReason() != null && other.getRolloutStateReason().equals(this.getRolloutStateReason()) == false)
+            return false;
         return true;
     }
 
@@ -943,12 +1262,15 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDesiredCount() == null) ? 0 : getDesiredCount().hashCode());
         hashCode = prime * hashCode + ((getPendingCount() == null) ? 0 : getPendingCount().hashCode());
         hashCode = prime * hashCode + ((getRunningCount() == null) ? 0 : getRunningCount().hashCode());
+        hashCode = prime * hashCode + ((getFailedTasks() == null) ? 0 : getFailedTasks().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
         hashCode = prime * hashCode + ((getCapacityProviderStrategy() == null) ? 0 : getCapacityProviderStrategy().hashCode());
         hashCode = prime * hashCode + ((getLaunchType() == null) ? 0 : getLaunchType().hashCode());
         hashCode = prime * hashCode + ((getPlatformVersion() == null) ? 0 : getPlatformVersion().hashCode());
         hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getRolloutState() == null) ? 0 : getRolloutState().hashCode());
+        hashCode = prime * hashCode + ((getRolloutStateReason() == null) ? 0 : getRolloutStateReason().hashCode());
         return hashCode;
     }
 

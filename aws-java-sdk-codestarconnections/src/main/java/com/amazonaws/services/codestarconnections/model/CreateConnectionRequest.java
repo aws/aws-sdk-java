@@ -27,8 +27,7 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the external provider where your third-party code repository is configured. The valid provider type
-     * is Bitbucket.
+     * The name of the external provider where your third-party code repository is configured.
      * </p>
      */
     private String providerType;
@@ -53,13 +52,11 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the external provider where your third-party code repository is configured. The valid provider type
-     * is Bitbucket.
+     * The name of the external provider where your third-party code repository is configured.
      * </p>
      * 
      * @param providerType
-     *        The name of the external provider where your third-party code repository is configured. The valid provider
-     *        type is Bitbucket.
+     *        The name of the external provider where your third-party code repository is configured.
      * @see ProviderType
      */
 
@@ -69,12 +66,10 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the external provider where your third-party code repository is configured. The valid provider type
-     * is Bitbucket.
+     * The name of the external provider where your third-party code repository is configured.
      * </p>
      * 
-     * @return The name of the external provider where your third-party code repository is configured. The valid
-     *         provider type is Bitbucket.
+     * @return The name of the external provider where your third-party code repository is configured.
      * @see ProviderType
      */
 
@@ -84,13 +79,11 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the external provider where your third-party code repository is configured. The valid provider type
-     * is Bitbucket.
+     * The name of the external provider where your third-party code repository is configured.
      * </p>
      * 
      * @param providerType
-     *        The name of the external provider where your third-party code repository is configured. The valid provider
-     *        type is Bitbucket.
+     *        The name of the external provider where your third-party code repository is configured.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProviderType
      */
@@ -102,13 +95,11 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the external provider where your third-party code repository is configured. The valid provider type
-     * is Bitbucket.
+     * The name of the external provider where your third-party code repository is configured.
      * </p>
      * 
      * @param providerType
-     *        The name of the external provider where your third-party code repository is configured. The valid provider
-     *        type is Bitbucket.
+     *        The name of the external provider where your third-party code repository is configured.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProviderType
      */

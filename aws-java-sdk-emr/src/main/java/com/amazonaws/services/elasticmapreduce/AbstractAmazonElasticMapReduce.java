@@ -69,7 +69,27 @@ public class AbstractAmazonElasticMapReduce implements AmazonElasticMapReduce {
     }
 
     @Override
+    public CreateStudioResult createStudio(CreateStudioRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateStudioSessionMappingResult createStudioSessionMapping(CreateStudioSessionMappingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteSecurityConfigurationResult deleteSecurityConfiguration(DeleteSecurityConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteStudioResult deleteStudio(DeleteStudioRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteStudioSessionMappingResult deleteStudioSessionMapping(DeleteStudioSessionMappingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -106,12 +126,22 @@ public class AbstractAmazonElasticMapReduce implements AmazonElasticMapReduce {
     }
 
     @Override
+    public DescribeStudioResult describeStudio(DescribeStudioRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetBlockPublicAccessConfigurationResult getBlockPublicAccessConfiguration(GetBlockPublicAccessConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetManagedScalingPolicyResult getManagedScalingPolicy(GetManagedScalingPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetStudioSessionMappingResult getStudioSessionMapping(GetStudioSessionMappingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -157,6 +187,16 @@ public class AbstractAmazonElasticMapReduce implements AmazonElasticMapReduce {
 
     @Override
     public ListStepsResult listSteps(ListStepsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListStudioSessionMappingsResult listStudioSessionMappings(ListStudioSessionMappingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListStudiosResult listStudios(ListStudiosRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -237,6 +277,11 @@ public class AbstractAmazonElasticMapReduce implements AmazonElasticMapReduce {
 
     @Override
     public TerminateJobFlowsResult terminateJobFlows(TerminateJobFlowsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateStudioSessionMappingResult updateStudioSessionMapping(UpdateStudioSessionMappingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -1919,6 +1919,39 @@ public class AmazonECSAsyncClient extends AmazonECSClient implements AmazonECSAs
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateCapacityProviderResult> updateCapacityProviderAsync(UpdateCapacityProviderRequest request) {
+
+        return updateCapacityProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCapacityProviderResult> updateCapacityProviderAsync(final UpdateCapacityProviderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateCapacityProviderRequest, UpdateCapacityProviderResult> asyncHandler) {
+        final UpdateCapacityProviderRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateCapacityProviderResult>() {
+            @Override
+            public UpdateCapacityProviderResult call() throws Exception {
+                UpdateCapacityProviderResult result = null;
+
+                try {
+                    result = executeUpdateCapacityProvider(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateClusterSettingsResult> updateClusterSettingsAsync(UpdateClusterSettingsRequest request) {
 
         return updateClusterSettingsAsync(request, null);

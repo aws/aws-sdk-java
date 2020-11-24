@@ -93,6 +93,12 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
     private RecrawlPolicy recrawlPolicy;
     /**
      * <p>
+     * Specifies data lineage configuration settings for the crawler.
+     * </p>
+     */
+    private LineageConfiguration lineageConfiguration;
+    /**
+     * <p>
      * Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's
      * behavior. For more information, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
@@ -591,6 +597,46 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * Specifies data lineage configuration settings for the crawler.
+     * </p>
+     * 
+     * @param lineageConfiguration
+     *        Specifies data lineage configuration settings for the crawler.
+     */
+
+    public void setLineageConfiguration(LineageConfiguration lineageConfiguration) {
+        this.lineageConfiguration = lineageConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies data lineage configuration settings for the crawler.
+     * </p>
+     * 
+     * @return Specifies data lineage configuration settings for the crawler.
+     */
+
+    public LineageConfiguration getLineageConfiguration() {
+        return this.lineageConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies data lineage configuration settings for the crawler.
+     * </p>
+     * 
+     * @param lineageConfiguration
+     *        Specifies data lineage configuration settings for the crawler.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCrawlerRequest withLineageConfiguration(LineageConfiguration lineageConfiguration) {
+        setLineageConfiguration(lineageConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
      * Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's
      * behavior. For more information, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
@@ -796,6 +842,8 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("SchemaChangePolicy: ").append(getSchemaChangePolicy()).append(",");
         if (getRecrawlPolicy() != null)
             sb.append("RecrawlPolicy: ").append(getRecrawlPolicy()).append(",");
+        if (getLineageConfiguration() != null)
+            sb.append("LineageConfiguration: ").append(getLineageConfiguration()).append(",");
         if (getConfiguration() != null)
             sb.append("Configuration: ").append(getConfiguration()).append(",");
         if (getCrawlerSecurityConfiguration() != null)
@@ -856,6 +904,10 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getRecrawlPolicy() != null && other.getRecrawlPolicy().equals(this.getRecrawlPolicy()) == false)
             return false;
+        if (other.getLineageConfiguration() == null ^ this.getLineageConfiguration() == null)
+            return false;
+        if (other.getLineageConfiguration() != null && other.getLineageConfiguration().equals(this.getLineageConfiguration()) == false)
+            return false;
         if (other.getConfiguration() == null ^ this.getConfiguration() == null)
             return false;
         if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
@@ -886,6 +938,7 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getTablePrefix() == null) ? 0 : getTablePrefix().hashCode());
         hashCode = prime * hashCode + ((getSchemaChangePolicy() == null) ? 0 : getSchemaChangePolicy().hashCode());
         hashCode = prime * hashCode + ((getRecrawlPolicy() == null) ? 0 : getRecrawlPolicy().hashCode());
+        hashCode = prime * hashCode + ((getLineageConfiguration() == null) ? 0 : getLineageConfiguration().hashCode());
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCrawlerSecurityConfiguration() == null) ? 0 : getCrawlerSecurityConfiguration().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

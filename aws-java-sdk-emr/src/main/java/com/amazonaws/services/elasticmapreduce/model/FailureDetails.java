@@ -37,8 +37,8 @@ public class FailureDetails implements Serializable, Cloneable, StructuredPojo {
     private String reason;
     /**
      * <p>
-     * The descriptive message including the error the EMR service has identified as the cause of step failure. This is
-     * text from an error log that describes the root cause of the failure.
+     * The descriptive message including the error the Amazon EMR service has identified as the cause of step failure.
+     * This is text from an error log that describes the root cause of the failure.
      * </p>
      */
     private String message;
@@ -97,13 +97,13 @@ public class FailureDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The descriptive message including the error the EMR service has identified as the cause of step failure. This is
-     * text from an error log that describes the root cause of the failure.
+     * The descriptive message including the error the Amazon EMR service has identified as the cause of step failure.
+     * This is text from an error log that describes the root cause of the failure.
      * </p>
      * 
      * @param message
-     *        The descriptive message including the error the EMR service has identified as the cause of step failure.
-     *        This is text from an error log that describes the root cause of the failure.
+     *        The descriptive message including the error the Amazon EMR service has identified as the cause of step
+     *        failure. This is text from an error log that describes the root cause of the failure.
      */
 
     public void setMessage(String message) {
@@ -112,12 +112,12 @@ public class FailureDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The descriptive message including the error the EMR service has identified as the cause of step failure. This is
-     * text from an error log that describes the root cause of the failure.
+     * The descriptive message including the error the Amazon EMR service has identified as the cause of step failure.
+     * This is text from an error log that describes the root cause of the failure.
      * </p>
      * 
-     * @return The descriptive message including the error the EMR service has identified as the cause of step failure.
-     *         This is text from an error log that describes the root cause of the failure.
+     * @return The descriptive message including the error the Amazon EMR service has identified as the cause of step
+     *         failure. This is text from an error log that describes the root cause of the failure.
      */
 
     public String getMessage() {
@@ -126,13 +126,13 @@ public class FailureDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The descriptive message including the error the EMR service has identified as the cause of step failure. This is
-     * text from an error log that describes the root cause of the failure.
+     * The descriptive message including the error the Amazon EMR service has identified as the cause of step failure.
+     * This is text from an error log that describes the root cause of the failure.
      * </p>
      * 
      * @param message
-     *        The descriptive message including the error the EMR service has identified as the cause of step failure.
-     *        This is text from an error log that describes the root cause of the failure.
+     *        The descriptive message including the error the Amazon EMR service has identified as the cause of step
+     *        failure. This is text from an error log that describes the root cause of the failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

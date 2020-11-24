@@ -62,6 +62,12 @@ public class PartitionIndexDescriptorJsonUnmarshaller implements Unmarshaller<Pa
                     context.nextToken();
                     partitionIndexDescriptor.setIndexStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("BackfillErrors", targetDepth)) {
+                    context.nextToken();
+                    partitionIndexDescriptor.setBackfillErrors(new ListUnmarshaller<BackfillError>(BackfillErrorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

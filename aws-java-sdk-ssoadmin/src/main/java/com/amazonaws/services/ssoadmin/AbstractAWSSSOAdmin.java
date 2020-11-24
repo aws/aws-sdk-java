@@ -38,6 +38,12 @@ public class AbstractAWSSSOAdmin implements AWSSSOAdmin {
     }
 
     @Override
+    public CreateInstanceAccessControlAttributeConfigurationResult createInstanceAccessControlAttributeConfiguration(
+            CreateInstanceAccessControlAttributeConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreatePermissionSetResult createPermissionSet(CreatePermissionSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -53,6 +59,12 @@ public class AbstractAWSSSOAdmin implements AWSSSOAdmin {
     }
 
     @Override
+    public DeleteInstanceAccessControlAttributeConfigurationResult deleteInstanceAccessControlAttributeConfiguration(
+            DeleteInstanceAccessControlAttributeConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeletePermissionSetResult deletePermissionSet(DeletePermissionSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -64,6 +76,12 @@ public class AbstractAWSSSOAdmin implements AWSSSOAdmin {
 
     @Override
     public DescribeAccountAssignmentDeletionStatusResult describeAccountAssignmentDeletionStatus(DescribeAccountAssignmentDeletionStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeInstanceAccessControlAttributeConfigurationResult describeInstanceAccessControlAttributeConfiguration(
+            DescribeInstanceAccessControlAttributeConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -154,6 +172,12 @@ public class AbstractAWSSSOAdmin implements AWSSSOAdmin {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateInstanceAccessControlAttributeConfigurationResult updateInstanceAccessControlAttributeConfiguration(
+            UpdateInstanceAccessControlAttributeConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

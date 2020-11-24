@@ -52,6 +52,10 @@ public class LicenseSpecificationJsonUnmarshaller implements Unmarshaller<Licens
                     context.nextToken();
                     licenseSpecification.setLicenseConfigurationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AmiAssociationScope", targetDepth)) {
+                    context.nextToken();
+                    licenseSpecification.setAmiAssociationScope(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

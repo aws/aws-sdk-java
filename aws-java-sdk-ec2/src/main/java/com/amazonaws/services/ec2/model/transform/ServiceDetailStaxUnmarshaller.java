@@ -95,6 +95,16 @@ public class ServiceDetailStaxUnmarshaller implements Unmarshaller<ServiceDetail
                     continue;
                 }
 
+                if (context.testExpression("privateDnsNameSet", targetDepth)) {
+                    serviceDetail.withPrivateDnsNames(new ArrayList<PrivateDnsDetails>());
+                    continue;
+                }
+
+                if (context.testExpression("privateDnsNameSet/item", targetDepth)) {
+                    serviceDetail.withPrivateDnsNames(PrivateDnsDetailsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("vpcEndpointPolicySupported", targetDepth)) {
                     serviceDetail.setVpcEndpointPolicySupported(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

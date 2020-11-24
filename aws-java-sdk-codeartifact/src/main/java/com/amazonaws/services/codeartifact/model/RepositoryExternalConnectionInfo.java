@@ -54,6 +54,11 @@ public class RepositoryExternalConnectionInfo implements Serializable, Cloneable
      * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>nuget</code>: A NuGet package.
+     * </p>
+     * </li>
      * </ul>
      */
     private String packageFormat;
@@ -124,6 +129,11 @@ public class RepositoryExternalConnectionInfo implements Serializable, Cloneable
      * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>nuget</code>: A NuGet package.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param packageFormat
@@ -143,6 +153,11 @@ public class RepositoryExternalConnectionInfo implements Serializable, Cloneable
      *        <p>
      *        <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
      *        file.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>nuget</code>: A NuGet package.
      *        </p>
      *        </li>
      * @see PackageFormat
@@ -172,6 +187,11 @@ public class RepositoryExternalConnectionInfo implements Serializable, Cloneable
      * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>nuget</code>: A NuGet package.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The package format associated with a repository's external connection. The valid package formats are:
@@ -191,6 +211,11 @@ public class RepositoryExternalConnectionInfo implements Serializable, Cloneable
      *         <p>
      *         <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
      *         file.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>nuget</code>: A NuGet package.
      *         </p>
      *         </li>
      * @see PackageFormat
@@ -220,6 +245,11 @@ public class RepositoryExternalConnectionInfo implements Serializable, Cloneable
      * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>nuget</code>: A NuGet package.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param packageFormat
@@ -239,6 +269,11 @@ public class RepositoryExternalConnectionInfo implements Serializable, Cloneable
      *        <p>
      *        <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
      *        file.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>nuget</code>: A NuGet package.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -270,6 +305,11 @@ public class RepositoryExternalConnectionInfo implements Serializable, Cloneable
      * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>nuget</code>: A NuGet package.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param packageFormat
@@ -289,6 +329,11 @@ public class RepositoryExternalConnectionInfo implements Serializable, Cloneable
      *        <p>
      *        <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
      *        file.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>nuget</code>: A NuGet package.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

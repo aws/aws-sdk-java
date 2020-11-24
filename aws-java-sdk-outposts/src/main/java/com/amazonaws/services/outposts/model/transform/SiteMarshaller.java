@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.outposts.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +37,8 @@ public class SiteMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final SiteMarshaller instance = new SiteMarshaller();
 
@@ -56,6 +60,7 @@ public class SiteMarshaller {
             protocolMarshaller.marshall(site.getAccountId(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(site.getName(), NAME_BINDING);
             protocolMarshaller.marshall(site.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(site.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

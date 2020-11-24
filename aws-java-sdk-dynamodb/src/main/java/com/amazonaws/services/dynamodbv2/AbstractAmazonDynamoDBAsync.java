@@ -28,6 +28,19 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     }
 
     @Override
+    public java.util.concurrent.Future<BatchExecuteStatementResult> batchExecuteStatementAsync(BatchExecuteStatementRequest request) {
+
+        return batchExecuteStatementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchExecuteStatementResult> batchExecuteStatementAsync(BatchExecuteStatementRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchExecuteStatementRequest, BatchExecuteStatementResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchGetItemResult> batchGetItemAsync(BatchGetItemRequest request) {
 
         return batchGetItemAsync(request, null);
@@ -389,6 +402,21 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeKinesisStreamingDestinationResult> describeKinesisStreamingDestinationAsync(
+            DescribeKinesisStreamingDestinationRequest request) {
+
+        return describeKinesisStreamingDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeKinesisStreamingDestinationResult> describeKinesisStreamingDestinationAsync(
+            DescribeKinesisStreamingDestinationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeKinesisStreamingDestinationRequest, DescribeKinesisStreamingDestinationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeLimitsResult> describeLimitsAsync(DescribeLimitsRequest request) {
 
         return describeLimitsAsync(request, null);
@@ -461,6 +489,62 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     @Override
     public java.util.concurrent.Future<DescribeTimeToLiveResult> describeTimeToLiveAsync(DescribeTimeToLiveRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeTimeToLiveRequest, DescribeTimeToLiveResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableKinesisStreamingDestinationResult> disableKinesisStreamingDestinationAsync(
+            DisableKinesisStreamingDestinationRequest request) {
+
+        return disableKinesisStreamingDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableKinesisStreamingDestinationResult> disableKinesisStreamingDestinationAsync(
+            DisableKinesisStreamingDestinationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisableKinesisStreamingDestinationRequest, DisableKinesisStreamingDestinationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableKinesisStreamingDestinationResult> enableKinesisStreamingDestinationAsync(
+            EnableKinesisStreamingDestinationRequest request) {
+
+        return enableKinesisStreamingDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableKinesisStreamingDestinationResult> enableKinesisStreamingDestinationAsync(
+            EnableKinesisStreamingDestinationRequest request,
+            com.amazonaws.handlers.AsyncHandler<EnableKinesisStreamingDestinationRequest, EnableKinesisStreamingDestinationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExecuteStatementResult> executeStatementAsync(ExecuteStatementRequest request) {
+
+        return executeStatementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExecuteStatementResult> executeStatementAsync(ExecuteStatementRequest request,
+            com.amazonaws.handlers.AsyncHandler<ExecuteStatementRequest, ExecuteStatementResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExecuteTransactionResult> executeTransactionAsync(ExecuteTransactionRequest request) {
+
+        return executeTransactionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExecuteTransactionResult> executeTransactionAsync(ExecuteTransactionRequest request,
+            com.amazonaws.handlers.AsyncHandler<ExecuteTransactionRequest, ExecuteTransactionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

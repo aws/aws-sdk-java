@@ -815,6 +815,19 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateCapacityProviderResult> updateCapacityProviderAsync(UpdateCapacityProviderRequest request) {
+
+        return updateCapacityProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCapacityProviderResult> updateCapacityProviderAsync(UpdateCapacityProviderRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateCapacityProviderRequest, UpdateCapacityProviderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateClusterSettingsResult> updateClusterSettingsAsync(UpdateClusterSettingsRequest request) {
 
         return updateClusterSettingsAsync(request, null);

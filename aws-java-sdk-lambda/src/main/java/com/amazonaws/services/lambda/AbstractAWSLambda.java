@@ -54,6 +54,11 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
+    public CreateCodeSigningConfigResult createCodeSigningConfig(CreateCodeSigningConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateEventSourceMappingResult createEventSourceMapping(CreateEventSourceMappingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -69,12 +74,22 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
+    public DeleteCodeSigningConfigResult deleteCodeSigningConfig(DeleteCodeSigningConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteEventSourceMappingResult deleteEventSourceMapping(DeleteEventSourceMappingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteFunctionResult deleteFunction(DeleteFunctionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteFunctionCodeSigningConfigResult deleteFunctionCodeSigningConfig(DeleteFunctionCodeSigningConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -109,12 +124,22 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
+    public GetCodeSigningConfigResult getCodeSigningConfig(GetCodeSigningConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetEventSourceMappingResult getEventSourceMapping(GetEventSourceMappingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetFunctionResult getFunction(GetFunctionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetFunctionCodeSigningConfigResult getFunctionCodeSigningConfig(GetFunctionCodeSigningConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -175,6 +200,11 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
+    public ListCodeSigningConfigsResult listCodeSigningConfigs(ListCodeSigningConfigsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListEventSourceMappingsResult listEventSourceMappings(ListEventSourceMappingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -197,6 +227,11 @@ public class AbstractAWSLambda implements AWSLambda {
     @Override
     public ListFunctionsResult listFunctions() {
         return listFunctions(new ListFunctionsRequest());
+    }
+
+    @Override
+    public ListFunctionsByCodeSigningConfigResult listFunctionsByCodeSigningConfig(ListFunctionsByCodeSigningConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -231,6 +266,11 @@ public class AbstractAWSLambda implements AWSLambda {
 
     @Override
     public PublishVersionResult publishVersion(PublishVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutFunctionCodeSigningConfigResult putFunctionCodeSigningConfig(PutFunctionCodeSigningConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -271,6 +311,11 @@ public class AbstractAWSLambda implements AWSLambda {
 
     @Override
     public UpdateAliasResult updateAlias(UpdateAliasRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateCodeSigningConfigResult updateCodeSigningConfig(UpdateCodeSigningConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

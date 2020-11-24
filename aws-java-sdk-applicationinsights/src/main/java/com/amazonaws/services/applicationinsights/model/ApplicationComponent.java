@@ -36,11 +36,24 @@ public class ApplicationComponent implements Serializable, Cloneable, Structured
     private String componentName;
     /**
      * <p>
+     * If logging is supported for the resource type, indicates whether the component has configured logs to be
+     * monitored.
+     * </p>
+     */
+    private String componentRemarks;
+    /**
+     * <p>
      * The resource type. Supported resource types include EC2 instances, Auto Scaling group, Classic ELB, Application
      * ELB, and SQS Queue.
      * </p>
      */
     private String resourceType;
+    /**
+     * <p>
+     * The operating system of the component.
+     * </p>
+     */
+    private String osType;
     /**
      * <p>
      * The stack tier of the application component.
@@ -53,6 +66,12 @@ public class ApplicationComponent implements Serializable, Cloneable, Structured
      * </p>
      */
     private Boolean monitor;
+    /**
+     * <p>
+     * Workloads detected in the application component.
+     * </p>
+     */
+    private java.util.Map<String, java.util.Map<String, String>> detectedWorkload;
 
     /**
      * <p>
@@ -91,6 +110,52 @@ public class ApplicationComponent implements Serializable, Cloneable, Structured
 
     public ApplicationComponent withComponentName(String componentName) {
         setComponentName(componentName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If logging is supported for the resource type, indicates whether the component has configured logs to be
+     * monitored.
+     * </p>
+     * 
+     * @param componentRemarks
+     *        If logging is supported for the resource type, indicates whether the component has configured logs to be
+     *        monitored.
+     */
+
+    public void setComponentRemarks(String componentRemarks) {
+        this.componentRemarks = componentRemarks;
+    }
+
+    /**
+     * <p>
+     * If logging is supported for the resource type, indicates whether the component has configured logs to be
+     * monitored.
+     * </p>
+     * 
+     * @return If logging is supported for the resource type, indicates whether the component has configured logs to be
+     *         monitored.
+     */
+
+    public String getComponentRemarks() {
+        return this.componentRemarks;
+    }
+
+    /**
+     * <p>
+     * If logging is supported for the resource type, indicates whether the component has configured logs to be
+     * monitored.
+     * </p>
+     * 
+     * @param componentRemarks
+     *        If logging is supported for the resource type, indicates whether the component has configured logs to be
+     *        monitored.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationComponent withComponentRemarks(String componentRemarks) {
+        setComponentRemarks(componentRemarks);
         return this;
     }
 
@@ -137,6 +202,65 @@ public class ApplicationComponent implements Serializable, Cloneable, Structured
 
     public ApplicationComponent withResourceType(String resourceType) {
         setResourceType(resourceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The operating system of the component.
+     * </p>
+     * 
+     * @param osType
+     *        The operating system of the component.
+     * @see OsType
+     */
+
+    public void setOsType(String osType) {
+        this.osType = osType;
+    }
+
+    /**
+     * <p>
+     * The operating system of the component.
+     * </p>
+     * 
+     * @return The operating system of the component.
+     * @see OsType
+     */
+
+    public String getOsType() {
+        return this.osType;
+    }
+
+    /**
+     * <p>
+     * The operating system of the component.
+     * </p>
+     * 
+     * @param osType
+     *        The operating system of the component.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OsType
+     */
+
+    public ApplicationComponent withOsType(String osType) {
+        setOsType(osType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The operating system of the component.
+     * </p>
+     * 
+     * @param osType
+     *        The operating system of the component.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OsType
+     */
+
+    public ApplicationComponent withOsType(OsType osType) {
+        this.osType = osType.toString();
         return this;
     }
 
@@ -252,6 +376,74 @@ public class ApplicationComponent implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * Workloads detected in the application component.
+     * </p>
+     * 
+     * @return Workloads detected in the application component.
+     */
+
+    public java.util.Map<String, java.util.Map<String, String>> getDetectedWorkload() {
+        return detectedWorkload;
+    }
+
+    /**
+     * <p>
+     * Workloads detected in the application component.
+     * </p>
+     * 
+     * @param detectedWorkload
+     *        Workloads detected in the application component.
+     */
+
+    public void setDetectedWorkload(java.util.Map<String, java.util.Map<String, String>> detectedWorkload) {
+        this.detectedWorkload = detectedWorkload;
+    }
+
+    /**
+     * <p>
+     * Workloads detected in the application component.
+     * </p>
+     * 
+     * @param detectedWorkload
+     *        Workloads detected in the application component.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationComponent withDetectedWorkload(java.util.Map<String, java.util.Map<String, String>> detectedWorkload) {
+        setDetectedWorkload(detectedWorkload);
+        return this;
+    }
+
+    /**
+     * Add a single DetectedWorkload entry
+     *
+     * @see ApplicationComponent#withDetectedWorkload
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationComponent addDetectedWorkloadEntry(String key, java.util.Map<String, String> value) {
+        if (null == this.detectedWorkload) {
+            this.detectedWorkload = new java.util.HashMap<String, java.util.Map<String, String>>();
+        }
+        if (this.detectedWorkload.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.detectedWorkload.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into DetectedWorkload.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationComponent clearDetectedWorkloadEntries() {
+        this.detectedWorkload = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -265,12 +457,18 @@ public class ApplicationComponent implements Serializable, Cloneable, Structured
         sb.append("{");
         if (getComponentName() != null)
             sb.append("ComponentName: ").append(getComponentName()).append(",");
+        if (getComponentRemarks() != null)
+            sb.append("ComponentRemarks: ").append(getComponentRemarks()).append(",");
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
+        if (getOsType() != null)
+            sb.append("OsType: ").append(getOsType()).append(",");
         if (getTier() != null)
             sb.append("Tier: ").append(getTier()).append(",");
         if (getMonitor() != null)
-            sb.append("Monitor: ").append(getMonitor());
+            sb.append("Monitor: ").append(getMonitor()).append(",");
+        if (getDetectedWorkload() != null)
+            sb.append("DetectedWorkload: ").append(getDetectedWorkload());
         sb.append("}");
         return sb.toString();
     }
@@ -289,9 +487,17 @@ public class ApplicationComponent implements Serializable, Cloneable, Structured
             return false;
         if (other.getComponentName() != null && other.getComponentName().equals(this.getComponentName()) == false)
             return false;
+        if (other.getComponentRemarks() == null ^ this.getComponentRemarks() == null)
+            return false;
+        if (other.getComponentRemarks() != null && other.getComponentRemarks().equals(this.getComponentRemarks()) == false)
+            return false;
         if (other.getResourceType() == null ^ this.getResourceType() == null)
             return false;
         if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
+            return false;
+        if (other.getOsType() == null ^ this.getOsType() == null)
+            return false;
+        if (other.getOsType() != null && other.getOsType().equals(this.getOsType()) == false)
             return false;
         if (other.getTier() == null ^ this.getTier() == null)
             return false;
@@ -300,6 +506,10 @@ public class ApplicationComponent implements Serializable, Cloneable, Structured
         if (other.getMonitor() == null ^ this.getMonitor() == null)
             return false;
         if (other.getMonitor() != null && other.getMonitor().equals(this.getMonitor()) == false)
+            return false;
+        if (other.getDetectedWorkload() == null ^ this.getDetectedWorkload() == null)
+            return false;
+        if (other.getDetectedWorkload() != null && other.getDetectedWorkload().equals(this.getDetectedWorkload()) == false)
             return false;
         return true;
     }
@@ -310,9 +520,12 @@ public class ApplicationComponent implements Serializable, Cloneable, Structured
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getComponentName() == null) ? 0 : getComponentName().hashCode());
+        hashCode = prime * hashCode + ((getComponentRemarks() == null) ? 0 : getComponentRemarks().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
+        hashCode = prime * hashCode + ((getOsType() == null) ? 0 : getOsType().hashCode());
         hashCode = prime * hashCode + ((getTier() == null) ? 0 : getTier().hashCode());
         hashCode = prime * hashCode + ((getMonitor() == null) ? 0 : getMonitor().hashCode());
+        hashCode = prime * hashCode + ((getDetectedWorkload() == null) ? 0 : getDetectedWorkload().hashCode());
         return hashCode;
     }
 

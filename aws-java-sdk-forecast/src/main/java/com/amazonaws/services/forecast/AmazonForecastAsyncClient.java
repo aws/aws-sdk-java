@@ -274,6 +274,41 @@ public class AmazonForecastAsyncClient extends AmazonForecastClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CreatePredictorBacktestExportJobResult> createPredictorBacktestExportJobAsync(
+            CreatePredictorBacktestExportJobRequest request) {
+
+        return createPredictorBacktestExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePredictorBacktestExportJobResult> createPredictorBacktestExportJobAsync(
+            final CreatePredictorBacktestExportJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreatePredictorBacktestExportJobRequest, CreatePredictorBacktestExportJobResult> asyncHandler) {
+        final CreatePredictorBacktestExportJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreatePredictorBacktestExportJobResult>() {
+            @Override
+            public CreatePredictorBacktestExportJobResult call() throws Exception {
+                CreatePredictorBacktestExportJobResult result = null;
+
+                try {
+                    result = executeCreatePredictorBacktestExportJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDatasetResult> deleteDatasetAsync(DeleteDatasetRequest request) {
 
         return deleteDatasetAsync(request, null);
@@ -456,6 +491,41 @@ public class AmazonForecastAsyncClient extends AmazonForecastClient implements A
 
                 try {
                     result = executeDeletePredictor(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePredictorBacktestExportJobResult> deletePredictorBacktestExportJobAsync(
+            DeletePredictorBacktestExportJobRequest request) {
+
+        return deletePredictorBacktestExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePredictorBacktestExportJobResult> deletePredictorBacktestExportJobAsync(
+            final DeletePredictorBacktestExportJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeletePredictorBacktestExportJobRequest, DeletePredictorBacktestExportJobResult> asyncHandler) {
+        final DeletePredictorBacktestExportJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeletePredictorBacktestExportJobResult>() {
+            @Override
+            public DeletePredictorBacktestExportJobResult call() throws Exception {
+                DeletePredictorBacktestExportJobResult result = null;
+
+                try {
+                    result = executeDeletePredictorBacktestExportJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -670,6 +740,41 @@ public class AmazonForecastAsyncClient extends AmazonForecastClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribePredictorBacktestExportJobResult> describePredictorBacktestExportJobAsync(
+            DescribePredictorBacktestExportJobRequest request) {
+
+        return describePredictorBacktestExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePredictorBacktestExportJobResult> describePredictorBacktestExportJobAsync(
+            final DescribePredictorBacktestExportJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribePredictorBacktestExportJobRequest, DescribePredictorBacktestExportJobResult> asyncHandler) {
+        final DescribePredictorBacktestExportJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribePredictorBacktestExportJobResult>() {
+            @Override
+            public DescribePredictorBacktestExportJobResult call() throws Exception {
+                DescribePredictorBacktestExportJobResult result = null;
+
+                try {
+                    result = executeDescribePredictorBacktestExportJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAccuracyMetricsResult> getAccuracyMetricsAsync(GetAccuracyMetricsRequest request) {
 
         return getAccuracyMetricsAsync(request, null);
@@ -852,6 +957,41 @@ public class AmazonForecastAsyncClient extends AmazonForecastClient implements A
 
                 try {
                     result = executeListForecasts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPredictorBacktestExportJobsResult> listPredictorBacktestExportJobsAsync(
+            ListPredictorBacktestExportJobsRequest request) {
+
+        return listPredictorBacktestExportJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPredictorBacktestExportJobsResult> listPredictorBacktestExportJobsAsync(
+            final ListPredictorBacktestExportJobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPredictorBacktestExportJobsRequest, ListPredictorBacktestExportJobsResult> asyncHandler) {
+        final ListPredictorBacktestExportJobsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPredictorBacktestExportJobsResult>() {
+            @Override
+            public ListPredictorBacktestExportJobsResult call() throws Exception {
+                ListPredictorBacktestExportJobsResult result = null;
+
+                try {
+                    result = executeListPredictorBacktestExportJobs(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -37,7 +37,8 @@ public class CreateClusterResult extends com.amazonaws.AmazonWebServiceResult<co
     private String clusterName;
     /**
      * <p>
-     * The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.
+     * The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE,
+     * REBOOTING_BROKER, and UPDATING.
      * </p>
      */
     private String state;
@@ -136,12 +137,14 @@ public class CreateClusterResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.
+     * The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE,
+     * REBOOTING_BROKER, and UPDATING.
      * </p>
      * 
      * @param state
      *        <p>
-     *        The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.
+     *        The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE,
+     *        REBOOTING_BROKER, and UPDATING.
      *        </p>
      * @see ClusterState
      */
@@ -152,11 +155,13 @@ public class CreateClusterResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.
+     * The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE,
+     * REBOOTING_BROKER, and UPDATING.
      * </p>
      * 
      * @return <p>
-     *         The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.
+     *         The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE,
+     *         REBOOTING_BROKER, and UPDATING.
      *         </p>
      * @see ClusterState
      */
@@ -167,12 +172,14 @@ public class CreateClusterResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.
+     * The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE,
+     * REBOOTING_BROKER, and UPDATING.
      * </p>
      * 
      * @param state
      *        <p>
-     *        The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.
+     *        The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE,
+     *        REBOOTING_BROKER, and UPDATING.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ClusterState
@@ -185,12 +192,14 @@ public class CreateClusterResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.
+     * The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE,
+     * REBOOTING_BROKER, and UPDATING.
      * </p>
      * 
      * @param state
      *        <p>
-     *        The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.
+     *        The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE,
+     *        REBOOTING_BROKER, and UPDATING.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ClusterState

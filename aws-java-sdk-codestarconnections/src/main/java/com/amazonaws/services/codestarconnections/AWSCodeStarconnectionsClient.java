@@ -50,11 +50,7 @@ import com.amazonaws.services.codestarconnections.model.transform.*;
  * Client for accessing AWS CodeStar connections. All service calls made using this client are blocking, and will not
  * return until the service call completes.
  * <p>
- * <fullname>AWS CodeStar Connections</fullname> <important>
- * <p>
- * The CodeStar Connections feature is in preview release and is subject to change.
- * </p>
- * </important>
+ * <fullname>AWS CodeStar Connections</fullname>
  * <p>
  * This AWS CodeStar Connections API Reference provides descriptions and usage examples of the operations and data types
  * for the AWS CodeStar Connections API. You can use the connections API to work with connections and installations.
@@ -69,7 +65,7 @@ import com.amazonaws.services.codestarconnections.model.transform.*;
  * <p>
  * When you create a connection, the console initiates a third-party connection handshake. <i>Installations</i> are the
  * apps that are used to conduct this handshake. For example, the installation for the Bitbucket provider type is the
- * Bitbucket Cloud app. When you create a connection, you can choose an existing installation or create one.
+ * Bitbucket app. When you create a connection, you can choose an existing installation or create one.
  * </p>
  * <p>
  * When you want to create a connection to an installed provider type such as GitHub Enterprise Server, you create a
@@ -176,8 +172,14 @@ public class AWSCodeStarconnectionsClient extends AmazonWebServiceClient impleme
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codestarconnections.model.transform.ConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codestarconnections.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codestarconnections.model.transform.UnsupportedOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceUnavailableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codestarconnections.model.transform.ResourceUnavailableExceptionUnmarshaller.getInstance()))
@@ -545,6 +547,8 @@ public class AWSCodeStarconnectionsClient extends AmazonWebServiceClient impleme
      * @return Result of the GetHost operation returned by the service.
      * @throws ResourceNotFoundException
      *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ResourceUnavailableException
+     *         Resource not found. Verify the ARN for the host resource and try again.
      * @sample AWSCodeStarconnections.GetHost
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetHost" target="_top">AWS
      *      API Documentation</a>
@@ -860,6 +864,68 @@ public class AWSCodeStarconnectionsClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a specified host with the provided configurations.
+     * </p>
+     * 
+     * @param updateHostRequest
+     * @return Result of the UpdateHost operation returned by the service.
+     * @throws ConflictException
+     *         Two conflicting operations have been made on the same resource.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ResourceUnavailableException
+     *         Resource not found. Verify the ARN for the host resource and try again.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported. Check the connection status and try again.
+     * @sample AWSCodeStarconnections.UpdateHost
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateHost"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateHostResult updateHost(UpdateHostRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateHost(request);
+    }
+
+    @SdkInternalApi
+    final UpdateHostResult executeUpdateHost(UpdateHostRequest updateHostRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateHostRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateHostRequest> request = null;
+        Response<UpdateHostResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateHostRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateHostRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar connections");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateHost");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateHostResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateHostResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

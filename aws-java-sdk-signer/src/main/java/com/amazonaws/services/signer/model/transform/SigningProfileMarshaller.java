@@ -31,10 +31,18 @@ public class SigningProfileMarshaller {
 
     private static final MarshallingInfo<String> PROFILENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("profileName").build();
+    private static final MarshallingInfo<String> PROFILEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("profileVersion").build();
+    private static final MarshallingInfo<String> PROFILEVERSIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("profileVersionArn").build();
     private static final MarshallingInfo<StructuredPojo> SIGNINGMATERIAL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("signingMaterial").build();
+    private static final MarshallingInfo<StructuredPojo> SIGNATUREVALIDITYPERIOD_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("signatureValidityPeriod").build();
     private static final MarshallingInfo<String> PLATFORMID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("platformId").build();
+    private static final MarshallingInfo<String> PLATFORMDISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("platformDisplayName").build();
     private static final MarshallingInfo<Map> SIGNINGPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("signingParameters").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -61,8 +69,12 @@ public class SigningProfileMarshaller {
 
         try {
             protocolMarshaller.marshall(signingProfile.getProfileName(), PROFILENAME_BINDING);
+            protocolMarshaller.marshall(signingProfile.getProfileVersion(), PROFILEVERSION_BINDING);
+            protocolMarshaller.marshall(signingProfile.getProfileVersionArn(), PROFILEVERSIONARN_BINDING);
             protocolMarshaller.marshall(signingProfile.getSigningMaterial(), SIGNINGMATERIAL_BINDING);
+            protocolMarshaller.marshall(signingProfile.getSignatureValidityPeriod(), SIGNATUREVALIDITYPERIOD_BINDING);
             protocolMarshaller.marshall(signingProfile.getPlatformId(), PLATFORMID_BINDING);
+            protocolMarshaller.marshall(signingProfile.getPlatformDisplayName(), PLATFORMDISPLAYNAME_BINDING);
             protocolMarshaller.marshall(signingProfile.getSigningParameters(), SIGNINGPARAMETERS_BINDING);
             protocolMarshaller.marshall(signingProfile.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(signingProfile.getArn(), ARN_BINDING);

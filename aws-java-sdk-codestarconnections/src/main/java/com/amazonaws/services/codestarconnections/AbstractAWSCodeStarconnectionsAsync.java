@@ -170,4 +170,17 @@ public class AbstractAWSCodeStarconnectionsAsync extends AbstractAWSCodeStarconn
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Override
+    public java.util.concurrent.Future<UpdateHostResult> updateHostAsync(UpdateHostRequest request) {
+
+        return updateHostAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateHostResult> updateHostAsync(UpdateHostRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateHostRequest, UpdateHostResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
 }

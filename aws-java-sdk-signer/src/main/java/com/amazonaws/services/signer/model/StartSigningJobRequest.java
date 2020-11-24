@@ -51,6 +51,12 @@ public class StartSigningJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String clientRequestToken;
+    /**
+     * <p>
+     * The AWS account ID of the signing profile owner.
+     * </p>
+     */
+    private String profileOwner;
 
     /**
      * <p>
@@ -225,6 +231,46 @@ public class StartSigningJobRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The AWS account ID of the signing profile owner.
+     * </p>
+     * 
+     * @param profileOwner
+     *        The AWS account ID of the signing profile owner.
+     */
+
+    public void setProfileOwner(String profileOwner) {
+        this.profileOwner = profileOwner;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID of the signing profile owner.
+     * </p>
+     * 
+     * @return The AWS account ID of the signing profile owner.
+     */
+
+    public String getProfileOwner() {
+        return this.profileOwner;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID of the signing profile owner.
+     * </p>
+     * 
+     * @param profileOwner
+     *        The AWS account ID of the signing profile owner.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartSigningJobRequest withProfileOwner(String profileOwner) {
+        setProfileOwner(profileOwner);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -243,7 +289,9 @@ public class StartSigningJobRequest extends com.amazonaws.AmazonWebServiceReques
         if (getProfileName() != null)
             sb.append("ProfileName: ").append(getProfileName()).append(",");
         if (getClientRequestToken() != null)
-            sb.append("ClientRequestToken: ").append(getClientRequestToken());
+            sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
+        if (getProfileOwner() != null)
+            sb.append("ProfileOwner: ").append(getProfileOwner());
         sb.append("}");
         return sb.toString();
     }
@@ -274,6 +322,10 @@ public class StartSigningJobRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
             return false;
+        if (other.getProfileOwner() == null ^ this.getProfileOwner() == null)
+            return false;
+        if (other.getProfileOwner() != null && other.getProfileOwner().equals(this.getProfileOwner()) == false)
+            return false;
         return true;
     }
 
@@ -286,6 +338,7 @@ public class StartSigningJobRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode());
         hashCode = prime * hashCode + ((getProfileName() == null) ? 0 : getProfileName().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
+        hashCode = prime * hashCode + ((getProfileOwner() == null) ? 0 : getProfileOwner().hashCode());
         return hashCode;
     }
 

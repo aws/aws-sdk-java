@@ -136,6 +136,49 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
+     * Enables the attributes-based access control (ABAC) feature for the specified AWS SSO instance. You can also
+     * specify new attributes to add to your ABAC configuration during the enabling process. For more information about
+     * ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>AWS SSO
+     * User Guide</i>.
+     * </p>
+     * 
+     * @param createInstanceAccessControlAttributeConfigurationRequest
+     * @return A Java Future containing the result of the CreateInstanceAccessControlAttributeConfiguration operation
+     *         returned by the service.
+     * @sample AWSSSOAdminAsync.CreateInstanceAccessControlAttributeConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateInstanceAccessControlAttributeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateInstanceAccessControlAttributeConfigurationResult> createInstanceAccessControlAttributeConfigurationAsync(
+            CreateInstanceAccessControlAttributeConfigurationRequest createInstanceAccessControlAttributeConfigurationRequest);
+
+    /**
+     * <p>
+     * Enables the attributes-based access control (ABAC) feature for the specified AWS SSO instance. You can also
+     * specify new attributes to add to your ABAC configuration during the enabling process. For more information about
+     * ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>AWS SSO
+     * User Guide</i>.
+     * </p>
+     * 
+     * @param createInstanceAccessControlAttributeConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateInstanceAccessControlAttributeConfiguration operation
+     *         returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.CreateInstanceAccessControlAttributeConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateInstanceAccessControlAttributeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateInstanceAccessControlAttributeConfigurationResult> createInstanceAccessControlAttributeConfigurationAsync(
+            CreateInstanceAccessControlAttributeConfigurationRequest createInstanceAccessControlAttributeConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateInstanceAccessControlAttributeConfigurationRequest, CreateInstanceAccessControlAttributeConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a permission set within a specified SSO instance.
      * </p>
      * <note>
@@ -243,6 +286,51 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
+     * Disables the attributes-based access control (ABAC) feature for the specified AWS SSO instance and deletes all of
+     * the attribute mappings that have been configured. Once deleted, any attributes that are received from an identity
+     * source and any custom attributes you have previously configured will not be passed. For more information about
+     * ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>AWS SSO
+     * User Guide</i>.
+     * </p>
+     * 
+     * @param deleteInstanceAccessControlAttributeConfigurationRequest
+     * @return A Java Future containing the result of the DeleteInstanceAccessControlAttributeConfiguration operation
+     *         returned by the service.
+     * @sample AWSSSOAdminAsync.DeleteInstanceAccessControlAttributeConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteInstanceAccessControlAttributeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteInstanceAccessControlAttributeConfigurationResult> deleteInstanceAccessControlAttributeConfigurationAsync(
+            DeleteInstanceAccessControlAttributeConfigurationRequest deleteInstanceAccessControlAttributeConfigurationRequest);
+
+    /**
+     * <p>
+     * Disables the attributes-based access control (ABAC) feature for the specified AWS SSO instance and deletes all of
+     * the attribute mappings that have been configured. Once deleted, any attributes that are received from an identity
+     * source and any custom attributes you have previously configured will not be passed. For more information about
+     * ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>AWS SSO
+     * User Guide</i>.
+     * </p>
+     * 
+     * @param deleteInstanceAccessControlAttributeConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteInstanceAccessControlAttributeConfiguration operation
+     *         returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.DeleteInstanceAccessControlAttributeConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteInstanceAccessControlAttributeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteInstanceAccessControlAttributeConfigurationResult> deleteInstanceAccessControlAttributeConfigurationAsync(
+            DeleteInstanceAccessControlAttributeConfigurationRequest deleteInstanceAccessControlAttributeConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteInstanceAccessControlAttributeConfigurationRequest, DeleteInstanceAccessControlAttributeConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified permission set.
      * </p>
      * 
@@ -345,6 +433,51 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
     java.util.concurrent.Future<DescribeAccountAssignmentDeletionStatusResult> describeAccountAssignmentDeletionStatusAsync(
             DescribeAccountAssignmentDeletionStatusRequest describeAccountAssignmentDeletionStatusRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeAccountAssignmentDeletionStatusRequest, DescribeAccountAssignmentDeletionStatusResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the list of AWS SSO identity store attributes that have been configured to work with attributes-based
+     * access control (ABAC) for the specified AWS SSO instance. This will not return attributes configured and sent by
+     * an external identity provider. For more information about ABAC, see <a
+     * href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>AWS SSO User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param describeInstanceAccessControlAttributeConfigurationRequest
+     * @return A Java Future containing the result of the DescribeInstanceAccessControlAttributeConfiguration operation
+     *         returned by the service.
+     * @sample AWSSSOAdminAsync.DescribeInstanceAccessControlAttributeConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeInstanceAccessControlAttributeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInstanceAccessControlAttributeConfigurationResult> describeInstanceAccessControlAttributeConfigurationAsync(
+            DescribeInstanceAccessControlAttributeConfigurationRequest describeInstanceAccessControlAttributeConfigurationRequest);
+
+    /**
+     * <p>
+     * Returns the list of AWS SSO identity store attributes that have been configured to work with attributes-based
+     * access control (ABAC) for the specified AWS SSO instance. This will not return attributes configured and sent by
+     * an external identity provider. For more information about ABAC, see <a
+     * href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>AWS SSO User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param describeInstanceAccessControlAttributeConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeInstanceAccessControlAttributeConfiguration operation
+     *         returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.DescribeInstanceAccessControlAttributeConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeInstanceAccessControlAttributeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInstanceAccessControlAttributeConfigurationResult> describeInstanceAccessControlAttributeConfigurationAsync(
+            DescribeInstanceAccessControlAttributeConfigurationRequest describeInstanceAccessControlAttributeConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeInstanceAccessControlAttributeConfigurationRequest, DescribeInstanceAccessControlAttributeConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -961,6 +1094,55 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the AWS SSO identity store attributes to use with the AWS SSO instance for attributes-based access
+     * control (ABAC). When using an external identity provider as an identity source, you can pass attributes through
+     * the SAML assertion as an alternative to configuring attributes from the AWS SSO identity store. If a SAML
+     * assertion passes any of these attributes, AWS SSO will replace the attribute value with the value from the AWS
+     * SSO identity store. For more information about ABAC, see <a
+     * href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>AWS SSO User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param updateInstanceAccessControlAttributeConfigurationRequest
+     * @return A Java Future containing the result of the UpdateInstanceAccessControlAttributeConfiguration operation
+     *         returned by the service.
+     * @sample AWSSSOAdminAsync.UpdateInstanceAccessControlAttributeConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateInstanceAccessControlAttributeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateInstanceAccessControlAttributeConfigurationResult> updateInstanceAccessControlAttributeConfigurationAsync(
+            UpdateInstanceAccessControlAttributeConfigurationRequest updateInstanceAccessControlAttributeConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates the AWS SSO identity store attributes to use with the AWS SSO instance for attributes-based access
+     * control (ABAC). When using an external identity provider as an identity source, you can pass attributes through
+     * the SAML assertion as an alternative to configuring attributes from the AWS SSO identity store. If a SAML
+     * assertion passes any of these attributes, AWS SSO will replace the attribute value with the value from the AWS
+     * SSO identity store. For more information about ABAC, see <a
+     * href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>AWS SSO User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param updateInstanceAccessControlAttributeConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateInstanceAccessControlAttributeConfiguration operation
+     *         returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.UpdateInstanceAccessControlAttributeConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateInstanceAccessControlAttributeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateInstanceAccessControlAttributeConfigurationResult> updateInstanceAccessControlAttributeConfigurationAsync(
+            UpdateInstanceAccessControlAttributeConfigurationRequest updateInstanceAccessControlAttributeConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateInstanceAccessControlAttributeConfigurationRequest, UpdateInstanceAccessControlAttributeConfigurationResult> asyncHandler);
 
     /**
      * <p>

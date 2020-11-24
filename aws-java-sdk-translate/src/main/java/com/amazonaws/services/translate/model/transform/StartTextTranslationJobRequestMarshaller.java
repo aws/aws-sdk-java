@@ -44,6 +44,8 @@ public class StartTextTranslationJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetLanguageCodes").build();
     private static final MarshallingInfo<List> TERMINOLOGYNAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TerminologyNames").build();
+    private static final MarshallingInfo<List> PARALLELDATANAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ParallelDataNames").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
@@ -71,6 +73,7 @@ public class StartTextTranslationJobRequestMarshaller {
             protocolMarshaller.marshall(startTextTranslationJobRequest.getSourceLanguageCode(), SOURCELANGUAGECODE_BINDING);
             protocolMarshaller.marshall(startTextTranslationJobRequest.getTargetLanguageCodes(), TARGETLANGUAGECODES_BINDING);
             protocolMarshaller.marshall(startTextTranslationJobRequest.getTerminologyNames(), TERMINOLOGYNAMES_BINDING);
+            protocolMarshaller.marshall(startTextTranslationJobRequest.getParallelDataNames(), PARALLELDATANAMES_BINDING);
             protocolMarshaller.marshall(startTextTranslationJobRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

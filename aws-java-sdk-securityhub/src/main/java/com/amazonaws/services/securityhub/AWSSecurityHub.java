@@ -100,6 +100,9 @@ public interface AWSSecurityHub {
      * invitation was sent from.
      * </p>
      * <p>
+     * This operation is only used by member accounts that are not added through Organizations.
+     * </p>
+     * <p>
      * When the member account accepts the invitation, permission is granted to the master account to view findings
      * generated in the member account.
      * </p>
@@ -111,12 +114,13 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @sample AWSSecurityHub.AcceptInvitation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AcceptInvitation" target="_top">AWS
      *      API Documentation</a>
@@ -140,10 +144,11 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @sample AWSSecurityHub.BatchDisableStandards
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchDisableStandards"
      *      target="_top">AWS API Documentation</a>
@@ -168,10 +173,11 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @sample AWSSecurityHub.BatchEnableStandards
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchEnableStandards"
      *      target="_top">AWS API Documentation</a>
@@ -245,10 +251,11 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @sample AWSSecurityHub.BatchImportFindings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchImportFindings"
      *      target="_top">AWS API Documentation</a>
@@ -329,10 +336,11 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @sample AWSSecurityHub.BatchUpdateFindings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindings"
      *      target="_top">AWS API Documentation</a>
@@ -355,10 +363,11 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws ResourceConflictException
      *         The resource specified in the request conflicts with an existing resource.
      * @sample AWSSecurityHub.CreateActionTarget
@@ -383,10 +392,11 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws ResourceConflictException
      *         The resource specified in the request conflicts with an existing resource.
      * @sample AWSSecurityHub.CreateInsight
@@ -398,19 +408,44 @@ public interface AWSSecurityHub {
     /**
      * <p>
      * Creates a member association in Security Hub between the specified accounts and the account used to make the
-     * request, which is the master account. To successfully create a member, you must use this action from an account
-     * that already has Security Hub enabled. To enable Security Hub, you can use the
+     * request, which is the master account. If you are integrated with Organizations, then the master account is the
+     * Security Hub administrator account that is designated by the organization management account.
+     * </p>
+     * <p>
+     * <code>CreateMembers</code> is always used to add accounts that are not organization members.
+     * </p>
+     * <p>
+     * For accounts that are part of an organization, <code>CreateMembers</code> is only used in the following cases:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Security Hub is not configured to automatically add new accounts in an organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The account was disassociated or deleted in Security Hub.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This action can only be used by an account that has Security Hub enabled. To enable Security Hub, you can use the
      * <code> <a>EnableSecurityHub</a> </code> operation.
      * </p>
      * <p>
-     * After you use <code>CreateMembers</code> to create member account associations in Security Hub, you must use the
-     * <code> <a>InviteMembers</a> </code> operation to invite the accounts to enable Security Hub and become member
-     * accounts in Security Hub.
+     * For accounts that are not organization members, you create the account association and then send an invitation to
+     * the member account. To send the invitation, you use the <code> <a>InviteMembers</a> </code> operation. If the
+     * account owner accepts the invitation, the account becomes a member account in Security Hub.
      * </p>
      * <p>
-     * If the account owner accepts the invitation, the account becomes a member account in Security Hub. A permissions
-     * policy is added that permits the master account to view the findings generated in the member account. When
-     * Security Hub is enabled in the invited account, findings start to be sent to both the member and master accounts.
+     * Accounts that are part of an organization do not receive an invitation. They automatically become a member
+     * account in Security Hub.
+     * </p>
+     * <p>
+     * A permissions policy is added that permits the master account to view the findings generated in the member
+     * account. When Security Hub is enabled in a member account, findings are sent to both the member and master
+     * accounts.
      * </p>
      * <p>
      * To remove the association between the master and member accounts, use the
@@ -424,10 +459,11 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws ResourceConflictException
      *         The resource specified in the request conflicts with an existing resource.
      * @sample AWSSecurityHub.CreateMembers
@@ -440,6 +476,10 @@ public interface AWSSecurityHub {
      * <p>
      * Declines invitations to become a member account.
      * </p>
+     * <p>
+     * This operation is only used by accounts that are not part of an organization. Organization accounts do not
+     * receive invitations.
+     * </p>
      * 
      * @param declineInvitationsRequest
      * @return Result of the DeclineInvitations operation returned by the service.
@@ -448,7 +488,8 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.DeclineInvitations
@@ -473,7 +514,8 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.DeleteActionTarget
@@ -494,10 +536,11 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.DeleteInsight
@@ -510,6 +553,10 @@ public interface AWSSecurityHub {
      * <p>
      * Deletes invitations received by the AWS account to become a member account.
      * </p>
+     * <p>
+     * This operation is only used by accounts that are not part of an organization. Organization accounts do not
+     * receive invitations.
+     * </p>
      * 
      * @param deleteInvitationsRequest
      * @return Result of the DeleteInvitations operation returned by the service.
@@ -518,12 +565,13 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @sample AWSSecurityHub.DeleteInvitations
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteInvitations" target="_top">AWS
      *      API Documentation</a>
@@ -534,6 +582,10 @@ public interface AWSSecurityHub {
      * <p>
      * Deletes the specified member accounts from Security Hub.
      * </p>
+     * <p>
+     * Can be used to delete member accounts that belong to an organization as well as member accounts that were invited
+     * manually.
+     * </p>
      * 
      * @param deleteMembersRequest
      * @return Result of the DeleteMembers operation returned by the service.
@@ -542,10 +594,11 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.DeleteMembers
@@ -566,7 +619,8 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.DescribeActionTargets
@@ -586,10 +640,11 @@ public interface AWSSecurityHub {
      * @throws InternalException
      *         Internal server error.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws ResourceNotFoundException
@@ -602,6 +657,30 @@ public interface AWSSecurityHub {
 
     /**
      * <p>
+     * Returns information about the Organizations configuration for Security Hub. Can only be called from a Security
+     * Hub administrator account.
+     * </p>
+     * 
+     * @param describeOrganizationConfigurationRequest
+     * @return Result of the DescribeOrganizationConfiguration operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
+     * @throws InvalidAccessException
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
+     * @sample AWSSecurityHub.DescribeOrganizationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeOrganizationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeOrganizationConfigurationResult describeOrganizationConfiguration(DescribeOrganizationConfigurationRequest describeOrganizationConfigurationRequest);
+
+    /**
+     * <p>
      * Returns information about the available products that you can subscribe to and integrate with Security Hub in
      * order to consolidate findings.
      * </p>
@@ -611,10 +690,11 @@ public interface AWSSecurityHub {
      * @throws InternalException
      *         Internal server error.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @sample AWSSecurityHub.DescribeProducts
@@ -638,7 +718,8 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @sample AWSSecurityHub.DescribeStandards
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeStandards" target="_top">AWS
      *      API Documentation</a>
@@ -661,7 +742,8 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.DescribeStandardsControls
@@ -685,15 +767,39 @@ public interface AWSSecurityHub {
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @sample AWSSecurityHub.DisableImportFindingsForProduct
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableImportFindingsForProduct"
      *      target="_top">AWS API Documentation</a>
      */
     DisableImportFindingsForProductResult disableImportFindingsForProduct(DisableImportFindingsForProductRequest disableImportFindingsForProductRequest);
+
+    /**
+     * <p>
+     * Disables a Security Hub administrator account. Can only be called by the organization management account.
+     * </p>
+     * 
+     * @param disableOrganizationAdminAccountRequest
+     * @return Result of the DisableOrganizationAdminAccount operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
+     * @throws InvalidAccessException
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
+     * @sample AWSSecurityHub.DisableOrganizationAdminAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableOrganizationAdminAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisableOrganizationAdminAccountResult disableOrganizationAdminAccount(DisableOrganizationAdminAccountRequest disableOrganizationAdminAccountRequest);
 
     /**
      * <p>
@@ -718,10 +824,11 @@ public interface AWSSecurityHub {
      * @throws InternalException
      *         Internal server error.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.DisableSecurityHub
@@ -734,6 +841,10 @@ public interface AWSSecurityHub {
      * <p>
      * Disassociates the current Security Hub member account from the associated master account.
      * </p>
+     * <p>
+     * This operation is only used by accounts that are not part of an organization. For organization accounts, only the
+     * master account (the designated Security Hub administrator) can disassociate a member account.
+     * </p>
      * 
      * @param disassociateFromMasterAccountRequest
      * @return Result of the DisassociateFromMasterAccount operation returned by the service.
@@ -742,10 +853,11 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.DisassociateFromMasterAccount
@@ -758,6 +870,9 @@ public interface AWSSecurityHub {
      * <p>
      * Disassociates the specified member accounts from the associated master account.
      * </p>
+     * <p>
+     * Can be used to disassociate both accounts that are in an organization and accounts that were invited manually.
+     * </p>
      * 
      * @param disassociateMembersRequest
      * @return Result of the DisassociateMembers operation returned by the service.
@@ -766,10 +881,11 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.DisassociateMembers
@@ -795,17 +911,42 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws ResourceConflictException
      *         The resource specified in the request conflicts with an existing resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @sample AWSSecurityHub.EnableImportFindingsForProduct
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableImportFindingsForProduct"
      *      target="_top">AWS API Documentation</a>
      */
     EnableImportFindingsForProductResult enableImportFindingsForProduct(EnableImportFindingsForProductRequest enableImportFindingsForProductRequest);
+
+    /**
+     * <p>
+     * Designates the Security Hub administrator account for an organization. Can only be called by the organization
+     * management account.
+     * </p>
+     * 
+     * @param enableOrganizationAdminAccountRequest
+     * @return Result of the EnableOrganizationAdminAccount operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
+     * @throws InvalidAccessException
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
+     * @sample AWSSecurityHub.EnableOrganizationAdminAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableOrganizationAdminAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    EnableOrganizationAdminAccountResult enableOrganizationAdminAccount(EnableOrganizationAdminAccountRequest enableOrganizationAdminAccountRequest);
 
     /**
      * <p>
@@ -852,10 +993,11 @@ public interface AWSSecurityHub {
      * @throws InternalException
      *         Internal server error.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws ResourceConflictException
      *         The resource specified in the request conflicts with an existing resource.
      * @throws AccessDeniedException
@@ -878,10 +1020,11 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @sample AWSSecurityHub.GetEnabledStandards
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetEnabledStandards"
      *      target="_top">AWS API Documentation</a>
@@ -900,10 +1043,11 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @sample AWSSecurityHub.GetFindings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindings" target="_top">AWS API
      *      Documentation</a>
@@ -922,10 +1066,11 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.GetInsightResults
@@ -946,10 +1091,11 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.GetInsights
@@ -971,10 +1117,11 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @sample AWSSecurityHub.GetInvitationsCount
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetInvitationsCount"
      *      target="_top">AWS API Documentation</a>
@@ -985,6 +1132,9 @@ public interface AWSSecurityHub {
      * <p>
      * Provides the details for the Security Hub master account for the current member account.
      * </p>
+     * <p>
+     * Can be used by both member accounts that are in an organization and accounts that were invited manually.
+     * </p>
      * 
      * @param getMasterAccountRequest
      * @return Result of the GetMasterAccount operation returned by the service.
@@ -993,10 +1143,11 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.GetMasterAccount
@@ -1009,6 +1160,13 @@ public interface AWSSecurityHub {
      * <p>
      * Returns the details for the Security Hub member accounts for the specified account IDs.
      * </p>
+     * <p>
+     * A master account can be either a delegated Security Hub administrator account for an organization or a master
+     * account that enabled Security Hub manually.
+     * </p>
+     * <p>
+     * The results include both member accounts that are in an organization and accounts that were invited manually.
+     * </p>
      * 
      * @param getMembersRequest
      * @return Result of the GetMembers operation returned by the service.
@@ -1017,10 +1175,11 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.GetMembers
@@ -1035,11 +1194,15 @@ public interface AWSSecurityHub {
      * sent from.
      * </p>
      * <p>
+     * This operation is only used to invite accounts that do not belong to an organization. Organization accounts do
+     * not receive invitations.
+     * </p>
+     * <p>
      * Before you can use this action to invite a member, you must first use the <code> <a>CreateMembers</a> </code>
      * action to create the member account in Security Hub.
      * </p>
      * <p>
-     * When the account owner accepts the invitation to become a member account and enables Security Hub, the master
+     * When the account owner enables Security Hub and accepts the invitation to become a member account, the master
      * account can view the findings generated from the member account.
      * </p>
      * 
@@ -1050,10 +1213,11 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.InviteMembers
@@ -1073,10 +1237,11 @@ public interface AWSSecurityHub {
      * @throws InternalException
      *         Internal server error.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @sample AWSSecurityHub.ListEnabledProductsForImport
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListEnabledProductsForImport"
      *      target="_top">AWS API Documentation</a>
@@ -1087,6 +1252,10 @@ public interface AWSSecurityHub {
      * <p>
      * Lists all Security Hub membership invitations that were sent to the current AWS account.
      * </p>
+     * <p>
+     * This operation is only used by accounts that do not belong to an organization. Organization accounts do not
+     * receive invitations.
+     * </p>
      * 
      * @param listInvitationsRequest
      * @return Result of the ListInvitations operation returned by the service.
@@ -1095,10 +1264,11 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @sample AWSSecurityHub.ListInvitations
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListInvitations" target="_top">AWS
      *      API Documentation</a>
@@ -1109,6 +1279,10 @@ public interface AWSSecurityHub {
      * <p>
      * Lists details about all member accounts for the current Security Hub master account.
      * </p>
+     * <p>
+     * The results include both member accounts that belong to an organization and member accounts that were invited
+     * manually.
+     * </p>
      * 
      * @param listMembersRequest
      * @return Result of the ListMembers operation returned by the service.
@@ -1117,15 +1291,39 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @sample AWSSecurityHub.ListMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListMembers" target="_top">AWS API
      *      Documentation</a>
      */
     ListMembersResult listMembers(ListMembersRequest listMembersRequest);
+
+    /**
+     * <p>
+     * Lists the Security Hub administrator accounts. Can only be called by the organization management account.
+     * </p>
+     * 
+     * @param listOrganizationAdminAccountsRequest
+     * @return Result of the ListOrganizationAdminAccounts operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
+     * @throws InvalidAccessException
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
+     * @sample AWSSecurityHub.ListOrganizationAdminAccounts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListOrganizationAdminAccounts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListOrganizationAdminAccountsResult listOrganizationAdminAccounts(ListOrganizationAdminAccountsRequest listOrganizationAdminAccountsRequest);
 
     /**
      * <p>
@@ -1198,7 +1396,8 @@ public interface AWSSecurityHub {
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.UpdateActionTarget
@@ -1224,10 +1423,11 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.UpdateFindings
@@ -1248,10 +1448,11 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.UpdateInsight
@@ -1259,6 +1460,30 @@ public interface AWSSecurityHub {
      *      Documentation</a>
      */
     UpdateInsightResult updateInsight(UpdateInsightRequest updateInsightRequest);
+
+    /**
+     * <p>
+     * Used to update the configuration related to Organizations. Can only be called from a Security Hub administrator
+     * account.
+     * </p>
+     * 
+     * @param updateOrganizationConfigurationRequest
+     * @return Result of the UpdateOrganizationConfiguration operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
+     * @throws InvalidAccessException
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
+     * @sample AWSSecurityHub.UpdateOrganizationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateOrganizationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateOrganizationConfigurationResult updateOrganizationConfiguration(UpdateOrganizationConfigurationRequest updateOrganizationConfigurationRequest);
 
     /**
      * <p>
@@ -1272,10 +1497,11 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.UpdateSecurityHubConfiguration
@@ -1296,7 +1522,8 @@ public interface AWSSecurityHub {
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.UpdateStandardsControl

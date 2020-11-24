@@ -73,6 +73,12 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private Integer maxSizeInMB;
+    /**
+     * <p>
+     * Indicates whether revocation is supported for the platform.
+     * </p>
+     */
+    private Boolean revocationSupported;
 
     /**
      * <p>
@@ -406,6 +412,58 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Indicates whether revocation is supported for the platform.
+     * </p>
+     * 
+     * @param revocationSupported
+     *        Indicates whether revocation is supported for the platform.
+     */
+
+    public void setRevocationSupported(Boolean revocationSupported) {
+        this.revocationSupported = revocationSupported;
+    }
+
+    /**
+     * <p>
+     * Indicates whether revocation is supported for the platform.
+     * </p>
+     * 
+     * @return Indicates whether revocation is supported for the platform.
+     */
+
+    public Boolean getRevocationSupported() {
+        return this.revocationSupported;
+    }
+
+    /**
+     * <p>
+     * Indicates whether revocation is supported for the platform.
+     * </p>
+     * 
+     * @param revocationSupported
+     *        Indicates whether revocation is supported for the platform.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SigningPlatform withRevocationSupported(Boolean revocationSupported) {
+        setRevocationSupported(revocationSupported);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether revocation is supported for the platform.
+     * </p>
+     * 
+     * @return Indicates whether revocation is supported for the platform.
+     */
+
+    public Boolean isRevocationSupported() {
+        return this.revocationSupported;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -432,7 +490,9 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
         if (getSigningImageFormat() != null)
             sb.append("SigningImageFormat: ").append(getSigningImageFormat()).append(",");
         if (getMaxSizeInMB() != null)
-            sb.append("MaxSizeInMB: ").append(getMaxSizeInMB());
+            sb.append("MaxSizeInMB: ").append(getMaxSizeInMB()).append(",");
+        if (getRevocationSupported() != null)
+            sb.append("RevocationSupported: ").append(getRevocationSupported());
         sb.append("}");
         return sb.toString();
     }
@@ -479,6 +539,10 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getMaxSizeInMB() != null && other.getMaxSizeInMB().equals(this.getMaxSizeInMB()) == false)
             return false;
+        if (other.getRevocationSupported() == null ^ this.getRevocationSupported() == null)
+            return false;
+        if (other.getRevocationSupported() != null && other.getRevocationSupported().equals(this.getRevocationSupported()) == false)
+            return false;
         return true;
     }
 
@@ -495,6 +559,7 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getSigningConfiguration() == null) ? 0 : getSigningConfiguration().hashCode());
         hashCode = prime * hashCode + ((getSigningImageFormat() == null) ? 0 : getSigningImageFormat().hashCode());
         hashCode = prime * hashCode + ((getMaxSizeInMB() == null) ? 0 : getMaxSizeInMB().hashCode());
+        hashCode = prime * hashCode + ((getRevocationSupported() == null) ? 0 : getRevocationSupported().hashCode());
         return hashCode;
     }
 

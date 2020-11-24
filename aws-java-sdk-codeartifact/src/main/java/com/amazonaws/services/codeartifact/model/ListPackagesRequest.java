@@ -63,6 +63,11 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>nuget</code>: A NuGet package.
+     * </p>
+     * </li>
      * </ul>
      */
     private String format;
@@ -87,13 +92,18 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
+     * </p>
+     * </li>
      * </ul>
      */
     private String namespace;
     /**
      * <p>
-     * A prefix used to filter returned repositories. Only repositories with names that start with
-     * <code>repositoryPrefix</code> are returned.
+     * A prefix used to filter returned packages. Only packages with names that start with <code>packagePrefix</code>
+     * are returned.
      * </p>
      */
     private String packagePrefix;
@@ -252,6 +262,11 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>nuget</code>: A NuGet package.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param format
@@ -271,6 +286,11 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
      *        file.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>nuget</code>: A NuGet package.
      *        </p>
      *        </li>
      * @see PackageFormat
@@ -300,6 +320,11 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>nuget</code>: A NuGet package.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The format of the packages. The valid package types are: </p>
@@ -318,6 +343,11 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
      *         file.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>nuget</code>: A NuGet package.
      *         </p>
      *         </li>
      * @see PackageFormat
@@ -347,6 +377,11 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>nuget</code>: A NuGet package.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param format
@@ -366,6 +401,11 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
      *        file.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>nuget</code>: A NuGet package.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -397,6 +437,11 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>nuget</code>: A NuGet package.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param format
@@ -416,6 +461,11 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
      *        file.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>nuget</code>: A NuGet package.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -448,6 +498,11 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param namespace
@@ -467,6 +522,11 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
      *        </p>
      *        </li>
      */
@@ -496,6 +556,11 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The namespace of the package. The package component that specifies its namespace depends on its type. For
@@ -514,6 +579,11 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <li>
      *         <p>
      *         A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
      *         </p>
      *         </li>
      */
@@ -543,6 +613,11 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param namespace
@@ -564,6 +639,11 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        A Python package does not contain a corresponding component, so Python packages do not have a namespace.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -574,13 +654,13 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A prefix used to filter returned repositories. Only repositories with names that start with
-     * <code>repositoryPrefix</code> are returned.
+     * A prefix used to filter returned packages. Only packages with names that start with <code>packagePrefix</code>
+     * are returned.
      * </p>
      * 
      * @param packagePrefix
-     *        A prefix used to filter returned repositories. Only repositories with names that start with
-     *        <code>repositoryPrefix</code> are returned.
+     *        A prefix used to filter returned packages. Only packages with names that start with
+     *        <code>packagePrefix</code> are returned.
      */
 
     public void setPackagePrefix(String packagePrefix) {
@@ -589,12 +669,12 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A prefix used to filter returned repositories. Only repositories with names that start with
-     * <code>repositoryPrefix</code> are returned.
+     * A prefix used to filter returned packages. Only packages with names that start with <code>packagePrefix</code>
+     * are returned.
      * </p>
      * 
-     * @return A prefix used to filter returned repositories. Only repositories with names that start with
-     *         <code>repositoryPrefix</code> are returned.
+     * @return A prefix used to filter returned packages. Only packages with names that start with
+     *         <code>packagePrefix</code> are returned.
      */
 
     public String getPackagePrefix() {
@@ -603,13 +683,13 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A prefix used to filter returned repositories. Only repositories with names that start with
-     * <code>repositoryPrefix</code> are returned.
+     * A prefix used to filter returned packages. Only packages with names that start with <code>packagePrefix</code>
+     * are returned.
      * </p>
      * 
      * @param packagePrefix
-     *        A prefix used to filter returned repositories. Only repositories with names that start with
-     *        <code>repositoryPrefix</code> are returned.
+     *        A prefix used to filter returned packages. Only packages with names that start with
+     *        <code>packagePrefix</code> are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -28,10 +28,10 @@ import com.amazonaws.services.codeartifact.model.*;
  * <p>
  * <p>
  * AWS CodeArtifact is a fully managed artifact repository compatible with language-native package managers and build
- * tools such as npm, Apache Maven, and pip. You can use CodeArtifact to share packages with development teams and pull
- * packages. Packages can be pulled from both public and CodeArtifact repositories. You can also create an upstream
- * relationship between a CodeArtifact repository and another repository, which effectively merges their contents from
- * the point of view of a package manager client.
+ * tools such as npm, Apache Maven, NuGet, and pip. You can use CodeArtifact to share packages with development teams
+ * and pull packages. Packages can be pulled from both public and CodeArtifact repositories. You can also create an
+ * upstream relationship between a CodeArtifact repository and another repository, which effectively merges their
+ * contents from the point of view of a package manager client.
  * </p>
  * <p>
  * <b>AWS CodeArtifact Components</b>
@@ -46,8 +46,8 @@ import com.amazonaws.services.codeartifact.model.*;
  * href="https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html#welcome-concepts-package-version">package
  * versions</a>, each of which maps to a set of assets, or files. Repositories are polyglot, so a single repository can
  * contain packages of any supported type. Each repository exposes endpoints for fetching and publishing packages using
- * tools like the <b> <code>npm</code> </b> CLI, the Maven CLI (<b> <code>mvn</code> </b>), and <b> <code>pip</code>
- * </b>.
+ * tools like the <b> <code>npm</code> </b> CLI, the <b> <code>NuGet</code> </b> CLI, the Maven CLI (<b>
+ * <code>mvn</code> </b>), and <b> <code>pip</code> </b>.
  * </p>
  * </li>
  * <li>
@@ -74,8 +74,9 @@ import com.amazonaws.services.codeartifact.model.*;
  * <b>Package</b>: A <i>package</i> is a bundle of software and the metadata required to resolve dependencies and
  * install the software. CodeArtifact supports <a
  * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-npm.html">npm</a>, <a
- * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-python.html">PyPI</a>, and <a
- * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a> package formats.
+ * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-python.html">PyPI</a>, <a
+ * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a>, and <a
+ * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-nuget">NuGet</a> package formats.
  * </p>
  * <p>
  * In CodeArtifact, a package consists of:
@@ -250,6 +251,11 @@ import com.amazonaws.services.codeartifact.model.*;
  * <code>maven</code>
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * <code>nuget</code>
+ * </p>
+ * </li>
  * </ul>
  * </li>
  * <li>
@@ -295,6 +301,11 @@ import com.amazonaws.services.codeartifact.model.*;
  * </li>
  * <li>
  * <p>
+ * <code>ListTagsForResource</code>: Returns a list of the tags associated with a resource.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>PutDomainPermissionsPolicy</code>: Attaches a resource policy to a domain.
  * </p>
  * </li>
@@ -302,6 +313,16 @@ import com.amazonaws.services.codeartifact.model.*;
  * <p>
  * <code>PutRepositoryPermissionsPolicy</code>: Sets the resource policy on a repository that specifies permissions to
  * access it.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>TagResource</code>: Adds or updates tags for a resource.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>UntagResource</code>: Removes a tag from a resource.
  * </p>
  * </li>
  * <li>
@@ -882,6 +903,11 @@ public interface AWSCodeArtifact {
      * <li>
      * <p>
      * <code>maven</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>nuget</code>
      * </p>
      * </li>
      * </ul>

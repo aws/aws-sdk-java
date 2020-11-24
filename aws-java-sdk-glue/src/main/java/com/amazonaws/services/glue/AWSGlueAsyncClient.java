@@ -834,6 +834,39 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreatePartitionIndexResult> createPartitionIndexAsync(CreatePartitionIndexRequest request) {
+
+        return createPartitionIndexAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePartitionIndexResult> createPartitionIndexAsync(final CreatePartitionIndexRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreatePartitionIndexRequest, CreatePartitionIndexResult> asyncHandler) {
+        final CreatePartitionIndexRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreatePartitionIndexResult>() {
+            @Override
+            public CreatePartitionIndexResult call() throws Exception {
+                CreatePartitionIndexResult result = null;
+
+                try {
+                    result = executeCreatePartitionIndex(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateRegistryResult> createRegistryAsync(CreateRegistryRequest request) {
 
         return createRegistryAsync(request, null);
@@ -1415,6 +1448,39 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
 
                 try {
                     result = executeDeletePartition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePartitionIndexResult> deletePartitionIndexAsync(DeletePartitionIndexRequest request) {
+
+        return deletePartitionIndexAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePartitionIndexResult> deletePartitionIndexAsync(final DeletePartitionIndexRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeletePartitionIndexRequest, DeletePartitionIndexResult> asyncHandler) {
+        final DeletePartitionIndexRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeletePartitionIndexResult>() {
+            @Override
+            public DeletePartitionIndexResult call() throws Exception {
+                DeletePartitionIndexResult result = null;
+
+                try {
+                    result = executeDeletePartitionIndex(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

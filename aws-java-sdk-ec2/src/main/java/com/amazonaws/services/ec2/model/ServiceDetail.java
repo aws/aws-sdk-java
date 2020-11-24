@@ -70,6 +70,12 @@ public class ServiceDetail implements Serializable, Cloneable {
     private String privateDnsName;
     /**
      * <p>
+     * The private DNS names assigned to the VPC endpoint service.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<PrivateDnsDetails> privateDnsNames;
+    /**
+     * <p>
      * Indicates whether the service supports endpoint policies.
      * </p>
      */
@@ -484,6 +490,79 @@ public class ServiceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The private DNS names assigned to the VPC endpoint service.
+     * </p>
+     * 
+     * @return The private DNS names assigned to the VPC endpoint service.
+     */
+
+    public java.util.List<PrivateDnsDetails> getPrivateDnsNames() {
+        if (privateDnsNames == null) {
+            privateDnsNames = new com.amazonaws.internal.SdkInternalList<PrivateDnsDetails>();
+        }
+        return privateDnsNames;
+    }
+
+    /**
+     * <p>
+     * The private DNS names assigned to the VPC endpoint service.
+     * </p>
+     * 
+     * @param privateDnsNames
+     *        The private DNS names assigned to the VPC endpoint service.
+     */
+
+    public void setPrivateDnsNames(java.util.Collection<PrivateDnsDetails> privateDnsNames) {
+        if (privateDnsNames == null) {
+            this.privateDnsNames = null;
+            return;
+        }
+
+        this.privateDnsNames = new com.amazonaws.internal.SdkInternalList<PrivateDnsDetails>(privateDnsNames);
+    }
+
+    /**
+     * <p>
+     * The private DNS names assigned to the VPC endpoint service.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPrivateDnsNames(java.util.Collection)} or {@link #withPrivateDnsNames(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param privateDnsNames
+     *        The private DNS names assigned to the VPC endpoint service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceDetail withPrivateDnsNames(PrivateDnsDetails... privateDnsNames) {
+        if (this.privateDnsNames == null) {
+            setPrivateDnsNames(new com.amazonaws.internal.SdkInternalList<PrivateDnsDetails>(privateDnsNames.length));
+        }
+        for (PrivateDnsDetails ele : privateDnsNames) {
+            this.privateDnsNames.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The private DNS names assigned to the VPC endpoint service.
+     * </p>
+     * 
+     * @param privateDnsNames
+     *        The private DNS names assigned to the VPC endpoint service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceDetail withPrivateDnsNames(java.util.Collection<PrivateDnsDetails> privateDnsNames) {
+        setPrivateDnsNames(privateDnsNames);
+        return this;
+    }
+
+    /**
+     * <p>
      * Indicates whether the service supports endpoint policies.
      * </p>
      * 
@@ -824,6 +903,8 @@ public class ServiceDetail implements Serializable, Cloneable {
             sb.append("BaseEndpointDnsNames: ").append(getBaseEndpointDnsNames()).append(",");
         if (getPrivateDnsName() != null)
             sb.append("PrivateDnsName: ").append(getPrivateDnsName()).append(",");
+        if (getPrivateDnsNames() != null)
+            sb.append("PrivateDnsNames: ").append(getPrivateDnsNames()).append(",");
         if (getVpcEndpointPolicySupported() != null)
             sb.append("VpcEndpointPolicySupported: ").append(getVpcEndpointPolicySupported()).append(",");
         if (getAcceptanceRequired() != null)
@@ -876,6 +957,10 @@ public class ServiceDetail implements Serializable, Cloneable {
             return false;
         if (other.getPrivateDnsName() != null && other.getPrivateDnsName().equals(this.getPrivateDnsName()) == false)
             return false;
+        if (other.getPrivateDnsNames() == null ^ this.getPrivateDnsNames() == null)
+            return false;
+        if (other.getPrivateDnsNames() != null && other.getPrivateDnsNames().equals(this.getPrivateDnsNames()) == false)
+            return false;
         if (other.getVpcEndpointPolicySupported() == null ^ this.getVpcEndpointPolicySupported() == null)
             return false;
         if (other.getVpcEndpointPolicySupported() != null && other.getVpcEndpointPolicySupported().equals(this.getVpcEndpointPolicySupported()) == false)
@@ -912,6 +997,7 @@ public class ServiceDetail implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
         hashCode = prime * hashCode + ((getBaseEndpointDnsNames() == null) ? 0 : getBaseEndpointDnsNames().hashCode());
         hashCode = prime * hashCode + ((getPrivateDnsName() == null) ? 0 : getPrivateDnsName().hashCode());
+        hashCode = prime * hashCode + ((getPrivateDnsNames() == null) ? 0 : getPrivateDnsNames().hashCode());
         hashCode = prime * hashCode + ((getVpcEndpointPolicySupported() == null) ? 0 : getVpcEndpointPolicySupported().hashCode());
         hashCode = prime * hashCode + ((getAcceptanceRequired() == null) ? 0 : getAcceptanceRequired().hashCode());
         hashCode = prime * hashCode + ((getManagesVpcEndpoints() == null) ? 0 : getManagesVpcEndpoints().hashCode());

@@ -25,6 +25,8 @@ public enum DynamoDBv2Actions implements Action {
     /** Represents any action executed on DynamoDB. */
     AllDynamoDBv2Actions("dynamodb:*"),
 
+    /** Action for the BatchExecuteStatement operation. */
+    BatchExecuteStatement("dynamodb:BatchExecuteStatement"),
     /** Action for the BatchGetItem operation. */
     BatchGetItem("dynamodb:BatchGetItem"),
     /** Action for the BatchWriteItem operation. */
@@ -55,6 +57,8 @@ public enum DynamoDBv2Actions implements Action {
     DescribeGlobalTable("dynamodb:DescribeGlobalTable"),
     /** Action for the DescribeGlobalTableSettings operation. */
     DescribeGlobalTableSettings("dynamodb:DescribeGlobalTableSettings"),
+    /** Action for the DescribeKinesisStreamingDestination operation. */
+    DescribeKinesisStreamingDestination("dynamodb:DescribeKinesisStreamingDestination"),
     /** Action for the DescribeLimits operation. */
     DescribeLimits("dynamodb:DescribeLimits"),
     /** Action for the DescribeTable operation. */
@@ -63,6 +67,14 @@ public enum DynamoDBv2Actions implements Action {
     DescribeTableReplicaAutoScaling("dynamodb:DescribeTableReplicaAutoScaling"),
     /** Action for the DescribeTimeToLive operation. */
     DescribeTimeToLive("dynamodb:DescribeTimeToLive"),
+    /** Action for the DisableKinesisStreamingDestination operation. */
+    DisableKinesisStreamingDestination("dynamodb:DisableKinesisStreamingDestination"),
+    /** Action for the EnableKinesisStreamingDestination operation. */
+    EnableKinesisStreamingDestination("dynamodb:EnableKinesisStreamingDestination"),
+    /** Action for the ExecuteStatement operation. */
+    ExecuteStatement("dynamodb:ExecuteStatement"),
+    /** Action for the ExecuteTransaction operation. */
+    ExecuteTransaction("dynamodb:ExecuteTransaction"),
     /** Action for the ExportTableToPointInTime operation. */
     ExportTableToPointInTime("dynamodb:ExportTableToPointInTime"),
     /** Action for the GetItem operation. */

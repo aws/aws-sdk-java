@@ -103,6 +103,11 @@ public class AbstractAWSSecurityHub implements AWSSecurityHub {
     }
 
     @Override
+    public DescribeOrganizationConfigurationResult describeOrganizationConfiguration(DescribeOrganizationConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeProductsResult describeProducts(DescribeProductsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -123,6 +128,11 @@ public class AbstractAWSSecurityHub implements AWSSecurityHub {
     }
 
     @Override
+    public DisableOrganizationAdminAccountResult disableOrganizationAdminAccount(DisableOrganizationAdminAccountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisableSecurityHubResult disableSecurityHub(DisableSecurityHubRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -139,6 +149,11 @@ public class AbstractAWSSecurityHub implements AWSSecurityHub {
 
     @Override
     public EnableImportFindingsForProductResult enableImportFindingsForProduct(EnableImportFindingsForProductRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public EnableOrganizationAdminAccountResult enableOrganizationAdminAccount(EnableOrganizationAdminAccountRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -203,6 +218,11 @@ public class AbstractAWSSecurityHub implements AWSSecurityHub {
     }
 
     @Override
+    public ListOrganizationAdminAccountsResult listOrganizationAdminAccounts(ListOrganizationAdminAccountsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -229,6 +249,11 @@ public class AbstractAWSSecurityHub implements AWSSecurityHub {
 
     @Override
     public UpdateInsightResult updateInsight(UpdateInsightRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateOrganizationConfigurationResult updateOrganizationConfiguration(UpdateOrganizationConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

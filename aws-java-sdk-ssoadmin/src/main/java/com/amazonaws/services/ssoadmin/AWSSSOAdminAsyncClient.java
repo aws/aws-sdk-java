@@ -138,6 +138,41 @@ public class AWSSSOAdminAsyncClient extends AWSSSOAdminClient implements AWSSSOA
     }
 
     @Override
+    public java.util.concurrent.Future<CreateInstanceAccessControlAttributeConfigurationResult> createInstanceAccessControlAttributeConfigurationAsync(
+            CreateInstanceAccessControlAttributeConfigurationRequest request) {
+
+        return createInstanceAccessControlAttributeConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateInstanceAccessControlAttributeConfigurationResult> createInstanceAccessControlAttributeConfigurationAsync(
+            final CreateInstanceAccessControlAttributeConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateInstanceAccessControlAttributeConfigurationRequest, CreateInstanceAccessControlAttributeConfigurationResult> asyncHandler) {
+        final CreateInstanceAccessControlAttributeConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateInstanceAccessControlAttributeConfigurationResult>() {
+            @Override
+            public CreateInstanceAccessControlAttributeConfigurationResult call() throws Exception {
+                CreateInstanceAccessControlAttributeConfigurationResult result = null;
+
+                try {
+                    result = executeCreateInstanceAccessControlAttributeConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreatePermissionSetResult> createPermissionSetAsync(CreatePermissionSetRequest request) {
 
         return createPermissionSetAsync(request, null);
@@ -223,6 +258,41 @@ public class AWSSSOAdminAsyncClient extends AWSSSOAdminClient implements AWSSSOA
 
                 try {
                     result = executeDeleteInlinePolicyFromPermissionSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteInstanceAccessControlAttributeConfigurationResult> deleteInstanceAccessControlAttributeConfigurationAsync(
+            DeleteInstanceAccessControlAttributeConfigurationRequest request) {
+
+        return deleteInstanceAccessControlAttributeConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteInstanceAccessControlAttributeConfigurationResult> deleteInstanceAccessControlAttributeConfigurationAsync(
+            final DeleteInstanceAccessControlAttributeConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteInstanceAccessControlAttributeConfigurationRequest, DeleteInstanceAccessControlAttributeConfigurationResult> asyncHandler) {
+        final DeleteInstanceAccessControlAttributeConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteInstanceAccessControlAttributeConfigurationResult>() {
+            @Override
+            public DeleteInstanceAccessControlAttributeConfigurationResult call() throws Exception {
+                DeleteInstanceAccessControlAttributeConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteInstanceAccessControlAttributeConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -326,6 +396,41 @@ public class AWSSSOAdminAsyncClient extends AWSSSOAdminClient implements AWSSSOA
 
                 try {
                     result = executeDescribeAccountAssignmentDeletionStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInstanceAccessControlAttributeConfigurationResult> describeInstanceAccessControlAttributeConfigurationAsync(
+            DescribeInstanceAccessControlAttributeConfigurationRequest request) {
+
+        return describeInstanceAccessControlAttributeConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInstanceAccessControlAttributeConfigurationResult> describeInstanceAccessControlAttributeConfigurationAsync(
+            final DescribeInstanceAccessControlAttributeConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeInstanceAccessControlAttributeConfigurationRequest, DescribeInstanceAccessControlAttributeConfigurationResult> asyncHandler) {
+        final DescribeInstanceAccessControlAttributeConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeInstanceAccessControlAttributeConfigurationResult>() {
+            @Override
+            public DescribeInstanceAccessControlAttributeConfigurationResult call() throws Exception {
+                DescribeInstanceAccessControlAttributeConfigurationResult result = null;
+
+                try {
+                    result = executeDescribeInstanceAccessControlAttributeConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -939,6 +1044,41 @@ public class AWSSSOAdminAsyncClient extends AWSSSOAdminClient implements AWSSSOA
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInstanceAccessControlAttributeConfigurationResult> updateInstanceAccessControlAttributeConfigurationAsync(
+            UpdateInstanceAccessControlAttributeConfigurationRequest request) {
+
+        return updateInstanceAccessControlAttributeConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInstanceAccessControlAttributeConfigurationResult> updateInstanceAccessControlAttributeConfigurationAsync(
+            final UpdateInstanceAccessControlAttributeConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateInstanceAccessControlAttributeConfigurationRequest, UpdateInstanceAccessControlAttributeConfigurationResult> asyncHandler) {
+        final UpdateInstanceAccessControlAttributeConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateInstanceAccessControlAttributeConfigurationResult>() {
+            @Override
+            public UpdateInstanceAccessControlAttributeConfigurationResult call() throws Exception {
+                UpdateInstanceAccessControlAttributeConfigurationResult result = null;
+
+                try {
+                    result = executeUpdateInstanceAccessControlAttributeConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

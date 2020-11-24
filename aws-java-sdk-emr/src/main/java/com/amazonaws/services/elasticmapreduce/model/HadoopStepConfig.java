@@ -37,7 +37,7 @@ public class HadoopStepConfig implements Serializable, Cloneable, StructuredPojo
     private String jar;
     /**
      * <p>
-     * The list of Java properties that are set when the step runs. You can use these properties to pass key value pairs
+     * The list of Java properties that are set when the step runs. You can use these properties to pass key-value pairs
      * to your main function.
      * </p>
      */
@@ -98,12 +98,12 @@ public class HadoopStepConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The list of Java properties that are set when the step runs. You can use these properties to pass key value pairs
+     * The list of Java properties that are set when the step runs. You can use these properties to pass key-value pairs
      * to your main function.
      * </p>
      * 
-     * @return The list of Java properties that are set when the step runs. You can use these properties to pass key
-     *         value pairs to your main function.
+     * @return The list of Java properties that are set when the step runs. You can use these properties to pass
+     *         key-value pairs to your main function.
      */
 
     public java.util.Map<String, String> getProperties() {
@@ -115,13 +115,13 @@ public class HadoopStepConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The list of Java properties that are set when the step runs. You can use these properties to pass key value pairs
+     * The list of Java properties that are set when the step runs. You can use these properties to pass key-value pairs
      * to your main function.
      * </p>
      * 
      * @param properties
-     *        The list of Java properties that are set when the step runs. You can use these properties to pass key
-     *        value pairs to your main function.
+     *        The list of Java properties that are set when the step runs. You can use these properties to pass
+     *        key-value pairs to your main function.
      */
 
     public void setProperties(java.util.Map<String, String> properties) {
@@ -130,13 +130,13 @@ public class HadoopStepConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The list of Java properties that are set when the step runs. You can use these properties to pass key value pairs
+     * The list of Java properties that are set when the step runs. You can use these properties to pass key-value pairs
      * to your main function.
      * </p>
      * 
      * @param properties
-     *        The list of Java properties that are set when the step runs. You can use these properties to pass key
-     *        value pairs to your main function.
+     *        The list of Java properties that are set when the step runs. You can use these properties to pass
+     *        key-value pairs to your main function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -47,10 +47,8 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      * fulfill capacity, and Amazon EC2 Auto Scaling can only provision an instance with a <code>WeightedCapacity</code>
      * of 5 units, the instance is provisioned, and the desired capacity is exceeded by 3 units. For more information,
      * see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
-     * weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
-     * </p>
-     * <p>
-     * Valid Range: Minimum value of 1. Maximum value of 999.
+     * weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. Value must be in the
+     * range of 1 to 999.
      * </p>
      */
     private String weightedCapacity;
@@ -132,10 +130,8 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      * fulfill capacity, and Amazon EC2 Auto Scaling can only provision an instance with a <code>WeightedCapacity</code>
      * of 5 units, the instance is provisioned, and the desired capacity is exceeded by 3 units. For more information,
      * see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
-     * weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
-     * </p>
-     * <p>
-     * Valid Range: Minimum value of 1. Maximum value of 999.
+     * weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. Value must be in the
+     * range of 1 to 999.
      * </p>
      * 
      * @param weightedCapacity
@@ -147,9 +143,8 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      *        provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and
      *        the desired capacity is exceeded by 3 units. For more information, see <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
-     *        weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
-     *        <p>
-     *        Valid Range: Minimum value of 1. Maximum value of 999.
+     *        weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. Value must be
+     *        in the range of 1 to 999.
      */
 
     public void setWeightedCapacity(String weightedCapacity) {
@@ -165,10 +160,8 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      * fulfill capacity, and Amazon EC2 Auto Scaling can only provision an instance with a <code>WeightedCapacity</code>
      * of 5 units, the instance is provisioned, and the desired capacity is exceeded by 3 units. For more information,
      * see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
-     * weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
-     * </p>
-     * <p>
-     * Valid Range: Minimum value of 1. Maximum value of 999.
+     * weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. Value must be in the
+     * range of 1 to 999.
      * </p>
      * 
      * @return The number of capacity units provided by the specified instance type in terms of virtual CPUs, memory,
@@ -179,9 +172,8 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      *         provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and
      *         the desired capacity is exceeded by 3 units. For more information, see <a
      *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
-     *         weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
-     *         <p>
-     *         Valid Range: Minimum value of 1. Maximum value of 999.
+     *         weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. Value must be
+     *         in the range of 1 to 999.
      */
 
     public String getWeightedCapacity() {
@@ -197,10 +189,8 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      * fulfill capacity, and Amazon EC2 Auto Scaling can only provision an instance with a <code>WeightedCapacity</code>
      * of 5 units, the instance is provisioned, and the desired capacity is exceeded by 3 units. For more information,
      * see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
-     * weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
-     * </p>
-     * <p>
-     * Valid Range: Minimum value of 1. Maximum value of 999.
+     * weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. Value must be in the
+     * range of 1 to 999.
      * </p>
      * 
      * @param weightedCapacity
@@ -212,9 +202,8 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      *        provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and
      *        the desired capacity is exceeded by 3 units. For more information, see <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
-     *        weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
-     *        <p>
-     *        Valid Range: Minimum value of 1. Maximum value of 999.
+     *        weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. Value must be
+     *        in the range of 1 to 999.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

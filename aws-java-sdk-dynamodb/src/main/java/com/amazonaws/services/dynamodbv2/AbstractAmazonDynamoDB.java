@@ -39,6 +39,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     }
 
     @Override
+    public BatchExecuteStatementResult batchExecuteStatement(BatchExecuteStatementRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchGetItemResult batchGetItem(BatchGetItemRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -151,6 +156,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     }
 
     @Override
+    public DescribeKinesisStreamingDestinationResult describeKinesisStreamingDestination(DescribeKinesisStreamingDestinationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeLimitsResult describeLimits(DescribeLimitsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -172,6 +182,26 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
 
     @Override
     public DescribeTimeToLiveResult describeTimeToLive(DescribeTimeToLiveRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisableKinesisStreamingDestinationResult disableKinesisStreamingDestination(DisableKinesisStreamingDestinationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public EnableKinesisStreamingDestinationResult enableKinesisStreamingDestination(EnableKinesisStreamingDestinationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ExecuteStatementResult executeStatement(ExecuteStatementRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ExecuteTransactionResult executeTransaction(ExecuteTransactionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

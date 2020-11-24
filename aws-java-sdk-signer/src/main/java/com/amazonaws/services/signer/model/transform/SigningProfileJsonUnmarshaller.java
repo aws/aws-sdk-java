@@ -52,13 +52,29 @@ public class SigningProfileJsonUnmarshaller implements Unmarshaller<SigningProfi
                     context.nextToken();
                     signingProfile.setProfileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("profileVersion", targetDepth)) {
+                    context.nextToken();
+                    signingProfile.setProfileVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("profileVersionArn", targetDepth)) {
+                    context.nextToken();
+                    signingProfile.setProfileVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("signingMaterial", targetDepth)) {
                     context.nextToken();
                     signingProfile.setSigningMaterial(SigningMaterialJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("signatureValidityPeriod", targetDepth)) {
+                    context.nextToken();
+                    signingProfile.setSignatureValidityPeriod(SignatureValidityPeriodJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("platformId", targetDepth)) {
                     context.nextToken();
                     signingProfile.setPlatformId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("platformDisplayName", targetDepth)) {
+                    context.nextToken();
+                    signingProfile.setPlatformDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("signingParameters", targetDepth)) {
                     context.nextToken();

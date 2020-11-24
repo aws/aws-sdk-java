@@ -187,11 +187,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the
      * instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is
      * only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version.
-     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists and drains tasks from nodes before
-     * terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR
-     * removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption.
-     * <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR version 4.1.0 and later, and is the
-     * default for versions of Amazon EMR earlier than 5.1.0.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks
+     * from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either
+     * behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to
+     * HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR version 4.1.0 and
+     * later, and is the default for versions of Amazon EMR earlier than 5.1.0.
      * </p>
      */
     private String scaleDownBehavior;
@@ -204,8 +204,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private String customAmiId;
     /**
      * <p>
-     * The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance. Available in
-     * Amazon EMR version 4.x and later.
+     * The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each EC2 instance.
+     * Available in Amazon EMR version 4.x and later.
      * </p>
      */
     private Integer ebsRootVolumeSize;
@@ -220,7 +220,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For
      * more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
-     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.
+     * Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.
      * </p>
      */
     private KerberosAttributes kerberosAttributes;
@@ -1475,11 +1475,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the
      * instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is
      * only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version.
-     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists and drains tasks from nodes before
-     * terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR
-     * removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption.
-     * <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR version 4.1.0 and later, and is the
-     * default for versions of Amazon EMR earlier than 5.1.0.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks
+     * from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either
+     * behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to
+     * HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR version 4.1.0 and
+     * later, and is the default for versions of Amazon EMR earlier than 5.1.0.
      * </p>
      * 
      * @param scaleDownBehavior
@@ -1487,12 +1487,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      *        instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
      *        nodes at the instance-hour boundary, regardless of when the request to terminate the instance was
      *        submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters
-     *        created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
-     *        and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour
-     *        boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance
-     *        termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available
-     *        only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR earlier than
-     *        5.1.0.
+     *        created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes
+     *        to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the
+     *        instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks
+     *        instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is
+     *        available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR
+     *        earlier than 5.1.0.
      * @see ScaleDownBehavior
      */
 
@@ -1506,23 +1506,23 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the
      * instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is
      * only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version.
-     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists and drains tasks from nodes before
-     * terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR
-     * removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption.
-     * <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR version 4.1.0 and later, and is the
-     * default for versions of Amazon EMR earlier than 5.1.0.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks
+     * from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either
+     * behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to
+     * HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR version 4.1.0 and
+     * later, and is the default for versions of Amazon EMR earlier than 5.1.0.
      * </p>
      * 
      * @return The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an
      *         instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
      *         nodes at the instance-hour boundary, regardless of when the request to terminate the instance was
      *         submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters
-     *         created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR
-     *         blacklists and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the
-     *         instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks
-     *         instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is
-     *         available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR
-     *         earlier than 5.1.0.
+     *         created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds
+     *         nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless
+     *         of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and
+     *         blocks instance termination if it could lead to HDFS corruption.
+     *         <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR version 4.1.0 and later, and is
+     *         the default for versions of Amazon EMR earlier than 5.1.0.
      * @see ScaleDownBehavior
      */
 
@@ -1536,11 +1536,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the
      * instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is
      * only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version.
-     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists and drains tasks from nodes before
-     * terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR
-     * removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption.
-     * <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR version 4.1.0 and later, and is the
-     * default for versions of Amazon EMR earlier than 5.1.0.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks
+     * from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either
+     * behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to
+     * HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR version 4.1.0 and
+     * later, and is the default for versions of Amazon EMR earlier than 5.1.0.
      * </p>
      * 
      * @param scaleDownBehavior
@@ -1548,12 +1548,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      *        instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
      *        nodes at the instance-hour boundary, regardless of when the request to terminate the instance was
      *        submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters
-     *        created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
-     *        and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour
-     *        boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance
-     *        termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available
-     *        only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR earlier than
-     *        5.1.0.
+     *        created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes
+     *        to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the
+     *        instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks
+     *        instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is
+     *        available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR
+     *        earlier than 5.1.0.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScaleDownBehavior
      */
@@ -1569,11 +1569,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the
      * instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is
      * only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version.
-     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists and drains tasks from nodes before
-     * terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR
-     * removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption.
-     * <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR version 4.1.0 and later, and is the
-     * default for versions of Amazon EMR earlier than 5.1.0.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks
+     * from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either
+     * behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to
+     * HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR version 4.1.0 and
+     * later, and is the default for versions of Amazon EMR earlier than 5.1.0.
      * </p>
      * 
      * @param scaleDownBehavior
@@ -1581,12 +1581,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      *        instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
      *        nodes at the instance-hour boundary, regardless of when the request to terminate the instance was
      *        submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters
-     *        created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
-     *        and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour
-     *        boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance
-     *        termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available
-     *        only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR earlier than
-     *        5.1.0.
+     *        created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes
+     *        to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the
+     *        instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks
+     *        instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is
+     *        available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR
+     *        earlier than 5.1.0.
      * @see ScaleDownBehavior
      */
 
@@ -1600,11 +1600,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the
      * instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is
      * only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version.
-     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists and drains tasks from nodes before
-     * terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR
-     * removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption.
-     * <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR version 4.1.0 and later, and is the
-     * default for versions of Amazon EMR earlier than 5.1.0.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks
+     * from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either
+     * behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to
+     * HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR version 4.1.0 and
+     * later, and is the default for versions of Amazon EMR earlier than 5.1.0.
      * </p>
      * 
      * @param scaleDownBehavior
@@ -1612,12 +1612,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      *        instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
      *        nodes at the instance-hour boundary, regardless of when the request to terminate the instance was
      *        submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters
-     *        created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
-     *        and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour
-     *        boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance
-     *        termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available
-     *        only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR earlier than
-     *        5.1.0.
+     *        created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes
+     *        to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the
+     *        instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks
+     *        instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is
+     *        available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR
+     *        earlier than 5.1.0.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScaleDownBehavior
      */
@@ -1675,13 +1675,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance. Available in
-     * Amazon EMR version 4.x and later.
+     * The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each EC2 instance.
+     * Available in Amazon EMR version 4.x and later.
      * </p>
      * 
      * @param ebsRootVolumeSize
-     *        The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance.
-     *        Available in Amazon EMR version 4.x and later.
+     *        The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each EC2
+     *        instance. Available in Amazon EMR version 4.x and later.
      */
 
     public void setEbsRootVolumeSize(Integer ebsRootVolumeSize) {
@@ -1690,12 +1690,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance. Available in
-     * Amazon EMR version 4.x and later.
+     * The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each EC2 instance.
+     * Available in Amazon EMR version 4.x and later.
      * </p>
      * 
-     * @return The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance.
-     *         Available in Amazon EMR version 4.x and later.
+     * @return The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each EC2
+     *         instance. Available in Amazon EMR version 4.x and later.
      */
 
     public Integer getEbsRootVolumeSize() {
@@ -1704,13 +1704,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance. Available in
-     * Amazon EMR version 4.x and later.
+     * The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each EC2 instance.
+     * Available in Amazon EMR version 4.x and later.
      * </p>
      * 
      * @param ebsRootVolumeSize
-     *        The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance.
-     *        Available in Amazon EMR version 4.x and later.
+     *        The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each EC2
+     *        instance. Available in Amazon EMR version 4.x and later.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1806,14 +1806,14 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For
      * more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
-     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.
+     * Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.
      * </p>
      * 
      * @param kerberosAttributes
      *        Attributes for Kerberos configuration when Kerberos authentication is enabled using a security
      *        configuration. For more information see <a
      *        href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos
-     *        Authentication</a> in the <i>EMR Management Guide</i>.
+     *        Authentication</a> in the <i>Amazon EMR Management Guide</i>.
      */
 
     public void setKerberosAttributes(KerberosAttributes kerberosAttributes) {
@@ -1824,13 +1824,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For
      * more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
-     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.
+     * Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.
      * </p>
      * 
      * @return Attributes for Kerberos configuration when Kerberos authentication is enabled using a security
      *         configuration. For more information see <a
      *         href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos
-     *         Authentication</a> in the <i>EMR Management Guide</i>.
+     *         Authentication</a> in the <i>Amazon EMR Management Guide</i>.
      */
 
     public KerberosAttributes getKerberosAttributes() {
@@ -1841,14 +1841,14 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For
      * more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
-     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.
+     * Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.
      * </p>
      * 
      * @param kerberosAttributes
      *        Attributes for Kerberos configuration when Kerberos authentication is enabled using a security
      *        configuration. For more information see <a
      *        href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos
-     *        Authentication</a> in the <i>EMR Management Guide</i>.
+     *        Authentication</a> in the <i>Amazon EMR Management Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

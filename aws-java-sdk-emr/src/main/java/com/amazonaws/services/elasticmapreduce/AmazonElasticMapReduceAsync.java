@@ -26,9 +26,9 @@ import com.amazonaws.services.elasticmapreduce.model.*;
  * </p>
  * <p>
  * <p>
- * Amazon EMR is a web service that makes it easy to process large amounts of data efficiently. Amazon EMR uses Hadoop
- * processing combined with several AWS products to do tasks such as web indexing, data mining, log file analysis,
- * machine learning, scientific simulation, and data warehousing.
+ * Amazon EMR is a web service that makes it easier to process large amounts of data efficiently. Amazon EMR uses Hadoop
+ * processing combined with several AWS services to do tasks such as web indexing, data mining, log file analysis,
+ * machine learning, scientific simulation, and data warehouse management.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -226,8 +226,8 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      * <p>
      * Cancels a pending step or steps in a running cluster. Available only in Amazon EMR versions 4.8.0 and later,
      * excluding version 5.0.0. A maximum of 256 steps are allowed in each CancelSteps request. CancelSteps is
-     * idempotent but asynchronous; it does not guarantee a step will be canceled, even if the request is successfully
-     * submitted. You can only cancel steps that are in a <code>PENDING</code> state.
+     * idempotent but asynchronous; it does not guarantee that a step will be canceled, even if the request is
+     * successfully submitted. You can only cancel steps that are in a <code>PENDING</code> state.
      * </p>
      * 
      * @param cancelStepsRequest
@@ -243,8 +243,8 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      * <p>
      * Cancels a pending step or steps in a running cluster. Available only in Amazon EMR versions 4.8.0 and later,
      * excluding version 5.0.0. A maximum of 256 steps are allowed in each CancelSteps request. CancelSteps is
-     * idempotent but asynchronous; it does not guarantee a step will be canceled, even if the request is successfully
-     * submitted. You can only cancel steps that are in a <code>PENDING</code> state.
+     * idempotent but asynchronous; it does not guarantee that a step will be canceled, even if the request is
+     * successfully submitted. You can only cancel steps that are in a <code>PENDING</code> state.
      * </p>
      * 
      * @param cancelStepsRequest
@@ -295,6 +295,92 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
             com.amazonaws.handlers.AsyncHandler<CreateSecurityConfigurationRequest, CreateSecurityConfigurationResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Creates a new Amazon EMR Studio.
+     * </p>
+     * 
+     * @param createStudioRequest
+     * @return A Java Future containing the result of the CreateStudio operation returned by the service.
+     * @sample AmazonElasticMapReduceAsync.CreateStudio
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateStudio" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateStudioResult> createStudioAsync(CreateStudioRequest createStudioRequest);
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Creates a new Amazon EMR Studio.
+     * </p>
+     * 
+     * @param createStudioRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateStudio operation returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.CreateStudio
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateStudio" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateStudioResult> createStudioAsync(CreateStudioRequest createStudioRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateStudioRequest, CreateStudioResult> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Maps a user or group to the Amazon EMR Studio specified by <code>StudioId</code>, and applies a session policy to
+     * refine Studio permissions for that user or group.
+     * </p>
+     * 
+     * @param createStudioSessionMappingRequest
+     * @return A Java Future containing the result of the CreateStudioSessionMapping operation returned by the service.
+     * @sample AmazonElasticMapReduceAsync.CreateStudioSessionMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateStudioSessionMapping"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateStudioSessionMappingResult> createStudioSessionMappingAsync(
+            CreateStudioSessionMappingRequest createStudioSessionMappingRequest);
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Maps a user or group to the Amazon EMR Studio specified by <code>StudioId</code>, and applies a session policy to
+     * refine Studio permissions for that user or group.
+     * </p>
+     * 
+     * @param createStudioSessionMappingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateStudioSessionMapping operation returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.CreateStudioSessionMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateStudioSessionMapping"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateStudioSessionMappingResult> createStudioSessionMappingAsync(
+            CreateStudioSessionMappingRequest createStudioSessionMappingRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateStudioSessionMappingRequest, CreateStudioSessionMappingResult> asyncHandler);
+
+    /**
      * <p>
      * Deletes a security configuration.
      * </p>
@@ -326,6 +412,90 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
     java.util.concurrent.Future<DeleteSecurityConfigurationResult> deleteSecurityConfigurationAsync(
             DeleteSecurityConfigurationRequest deleteSecurityConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteSecurityConfigurationRequest, DeleteSecurityConfigurationResult> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Removes an Amazon EMR Studio from the Studio metadata store.
+     * </p>
+     * 
+     * @param deleteStudioRequest
+     * @return A Java Future containing the result of the DeleteStudio operation returned by the service.
+     * @sample AmazonElasticMapReduceAsync.DeleteStudio
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteStudio" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteStudioResult> deleteStudioAsync(DeleteStudioRequest deleteStudioRequest);
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Removes an Amazon EMR Studio from the Studio metadata store.
+     * </p>
+     * 
+     * @param deleteStudioRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteStudio operation returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.DeleteStudio
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteStudio" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteStudioResult> deleteStudioAsync(DeleteStudioRequest deleteStudioRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteStudioRequest, DeleteStudioResult> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Removes a user or group from an Amazon EMR Studio.
+     * </p>
+     * 
+     * @param deleteStudioSessionMappingRequest
+     * @return A Java Future containing the result of the DeleteStudioSessionMapping operation returned by the service.
+     * @sample AmazonElasticMapReduceAsync.DeleteStudioSessionMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteStudioSessionMapping"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteStudioSessionMappingResult> deleteStudioSessionMappingAsync(
+            DeleteStudioSessionMappingRequest deleteStudioSessionMappingRequest);
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Removes a user or group from an Amazon EMR Studio.
+     * </p>
+     * 
+     * @param deleteStudioSessionMappingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteStudioSessionMapping operation returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.DeleteStudioSessionMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteStudioSessionMapping"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteStudioSessionMappingResult> deleteStudioSessionMappingAsync(
+            DeleteStudioSessionMappingRequest deleteStudioSessionMappingRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteStudioSessionMappingRequest, DeleteStudioSessionMappingResult> asyncHandler);
 
     /**
      * <p>
@@ -362,7 +532,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
 
     /**
      * <p>
-     * This API is deprecated and will eventually be removed. We recommend you use <a>ListClusters</a>,
+     * This API is no longer supported and will eventually be removed. We recommend you use <a>ListClusters</a>,
      * <a>DescribeCluster</a>, <a>ListSteps</a>, <a>ListInstanceGroups</a> and <a>ListBootstrapActions</a> instead.
      * </p>
      * <p>
@@ -404,7 +574,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
 
     /**
      * <p>
-     * This API is deprecated and will eventually be removed. We recommend you use <a>ListClusters</a>,
+     * This API is no longer supported and will eventually be removed. We recommend you use <a>ListClusters</a>,
      * <a>DescribeCluster</a>, <a>ListSteps</a>, <a>ListInstanceGroups</a> and <a>ListBootstrapActions</a> instead.
      * </p>
      * <p>
@@ -568,6 +738,47 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
             com.amazonaws.handlers.AsyncHandler<DescribeStepRequest, DescribeStepResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Returns details for the specified Amazon EMR Studio including ID, Name, VPC, Studio access URL, and so on.
+     * </p>
+     * 
+     * @param describeStudioRequest
+     * @return A Java Future containing the result of the DescribeStudio operation returned by the service.
+     * @sample AmazonElasticMapReduceAsync.DescribeStudio
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeStudio"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeStudioResult> describeStudioAsync(DescribeStudioRequest describeStudioRequest);
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Returns details for the specified Amazon EMR Studio including ID, Name, VPC, Studio access URL, and so on.
+     * </p>
+     * 
+     * @param describeStudioRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeStudio operation returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.DescribeStudio
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeStudio"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeStudioResult> describeStudioAsync(DescribeStudioRequest describeStudioRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeStudioRequest, DescribeStudioResult> asyncHandler);
+
+    /**
      * <p>
      * Returns the Amazon EMR block public access configuration for your AWS account in the current Region. For more
      * information see <a
@@ -640,6 +851,47 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      */
     java.util.concurrent.Future<GetManagedScalingPolicyResult> getManagedScalingPolicyAsync(GetManagedScalingPolicyRequest getManagedScalingPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<GetManagedScalingPolicyRequest, GetManagedScalingPolicyResult> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Fetches mapping details for the specified Amazon EMR Studio and identity (user or group).
+     * </p>
+     * 
+     * @param getStudioSessionMappingRequest
+     * @return A Java Future containing the result of the GetStudioSessionMapping operation returned by the service.
+     * @sample AmazonElasticMapReduceAsync.GetStudioSessionMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetStudioSessionMapping"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetStudioSessionMappingResult> getStudioSessionMappingAsync(GetStudioSessionMappingRequest getStudioSessionMappingRequest);
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Fetches mapping details for the specified Amazon EMR Studio and identity (user or group).
+     * </p>
+     * 
+     * @param getStudioSessionMappingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetStudioSessionMapping operation returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.GetStudioSessionMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetStudioSessionMapping"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetStudioSessionMappingResult> getStudioSessionMappingAsync(GetStudioSessionMappingRequest getStudioSessionMappingRequest,
+            com.amazonaws.handlers.AsyncHandler<GetStudioSessionMappingRequest, GetStudioSessionMappingResult> asyncHandler);
 
     /**
      * <p>
@@ -946,6 +1198,92 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      */
     java.util.concurrent.Future<ListStepsResult> listStepsAsync(ListStepsRequest listStepsRequest,
             com.amazonaws.handlers.AsyncHandler<ListStepsRequest, ListStepsResult> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Returns a list of all user or group session mappings for the EMR Studio specified by <code>StudioId</code>.
+     * </p>
+     * 
+     * @param listStudioSessionMappingsRequest
+     * @return A Java Future containing the result of the ListStudioSessionMappings operation returned by the service.
+     * @sample AmazonElasticMapReduceAsync.ListStudioSessionMappings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListStudioSessionMappings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListStudioSessionMappingsResult> listStudioSessionMappingsAsync(
+            ListStudioSessionMappingsRequest listStudioSessionMappingsRequest);
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Returns a list of all user or group session mappings for the EMR Studio specified by <code>StudioId</code>.
+     * </p>
+     * 
+     * @param listStudioSessionMappingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListStudioSessionMappings operation returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.ListStudioSessionMappings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListStudioSessionMappings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListStudioSessionMappingsResult> listStudioSessionMappingsAsync(
+            ListStudioSessionMappingsRequest listStudioSessionMappingsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListStudioSessionMappingsRequest, ListStudioSessionMappingsResult> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Returns a list of all Amazon EMR Studios associated with the AWS account. The list includes details such as ID,
+     * Studio Access URL, and creation time for each Studio.
+     * </p>
+     * 
+     * @param listStudiosRequest
+     * @return A Java Future containing the result of the ListStudios operation returned by the service.
+     * @sample AmazonElasticMapReduceAsync.ListStudios
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListStudios" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListStudiosResult> listStudiosAsync(ListStudiosRequest listStudiosRequest);
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Returns a list of all Amazon EMR Studios associated with the AWS account. The list includes details such as ID,
+     * Studio Access URL, and creation time for each Studio.
+     * </p>
+     * 
+     * @param listStudiosRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListStudios operation returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.ListStudios
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListStudios" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListStudiosResult> listStudiosAsync(ListStudiosRequest listStudiosRequest,
+            com.amazonaws.handlers.AsyncHandler<ListStudiosRequest, ListStudiosResult> asyncHandler);
 
     /**
      * <p>
@@ -1610,5 +1948,48 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      */
     java.util.concurrent.Future<TerminateJobFlowsResult> terminateJobFlowsAsync(TerminateJobFlowsRequest terminateJobFlowsRequest,
             com.amazonaws.handlers.AsyncHandler<TerminateJobFlowsRequest, TerminateJobFlowsResult> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Updates the session policy attached to the user or group for the specified Amazon EMR Studio.
+     * </p>
+     * 
+     * @param updateStudioSessionMappingRequest
+     * @return A Java Future containing the result of the UpdateStudioSessionMapping operation returned by the service.
+     * @sample AmazonElasticMapReduceAsync.UpdateStudioSessionMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/UpdateStudioSessionMapping"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateStudioSessionMappingResult> updateStudioSessionMappingAsync(
+            UpdateStudioSessionMappingRequest updateStudioSessionMappingRequest);
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Updates the session policy attached to the user or group for the specified Amazon EMR Studio.
+     * </p>
+     * 
+     * @param updateStudioSessionMappingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateStudioSessionMapping operation returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.UpdateStudioSessionMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/UpdateStudioSessionMapping"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateStudioSessionMappingResult> updateStudioSessionMappingAsync(
+            UpdateStudioSessionMappingRequest updateStudioSessionMappingRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateStudioSessionMappingRequest, UpdateStudioSessionMappingResult> asyncHandler);
 
 }

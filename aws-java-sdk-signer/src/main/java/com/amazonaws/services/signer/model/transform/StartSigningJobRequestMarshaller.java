@@ -38,6 +38,8 @@ public class StartSigningJobRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientRequestToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<String> PROFILEOWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("profileOwner").build();
 
     private static final StartSigningJobRequestMarshaller instance = new StartSigningJobRequestMarshaller();
 
@@ -59,6 +61,7 @@ public class StartSigningJobRequestMarshaller {
             protocolMarshaller.marshall(startSigningJobRequest.getDestination(), DESTINATION_BINDING);
             protocolMarshaller.marshall(startSigningJobRequest.getProfileName(), PROFILENAME_BINDING);
             protocolMarshaller.marshall(startSigningJobRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
+            protocolMarshaller.marshall(startSigningJobRequest.getProfileOwner(), PROFILEOWNER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

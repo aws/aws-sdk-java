@@ -220,7 +220,8 @@ public class DescribeReservedCacheNodesOfferingsRequest extends com.amazonaws.Am
      * offering type.
      * </p>
      * <p>
-     * Valid Values: <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code>
+     * Valid Values:
+     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization" |"All Upfront"|"Partial Upfront"| "No Upfront"</code>
      * </p>
      */
     private String offeringType;
@@ -1394,14 +1395,16 @@ public class DescribeReservedCacheNodesOfferingsRequest extends com.amazonaws.Am
      * offering type.
      * </p>
      * <p>
-     * Valid Values: <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code>
+     * Valid Values:
+     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization" |"All Upfront"|"Partial Upfront"| "No Upfront"</code>
      * </p>
      * 
      * @param offeringType
      *        The offering type filter value. Use this parameter to show only the available offerings matching the
      *        specified offering type.</p>
      *        <p>
-     *        Valid Values: <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code>
+     *        Valid Values:
+     *        <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization" |"All Upfront"|"Partial Upfront"| "No Upfront"</code>
      */
 
     public void setOfferingType(String offeringType) {
@@ -1414,13 +1417,15 @@ public class DescribeReservedCacheNodesOfferingsRequest extends com.amazonaws.Am
      * offering type.
      * </p>
      * <p>
-     * Valid Values: <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code>
+     * Valid Values:
+     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization" |"All Upfront"|"Partial Upfront"| "No Upfront"</code>
      * </p>
      * 
      * @return The offering type filter value. Use this parameter to show only the available offerings matching the
      *         specified offering type.</p>
      *         <p>
-     *         Valid Values: <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code>
+     *         Valid Values:
+     *         <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization" |"All Upfront"|"Partial Upfront"| "No Upfront"</code>
      */
 
     public String getOfferingType() {
@@ -1433,14 +1438,16 @@ public class DescribeReservedCacheNodesOfferingsRequest extends com.amazonaws.Am
      * offering type.
      * </p>
      * <p>
-     * Valid Values: <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code>
+     * Valid Values:
+     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization" |"All Upfront"|"Partial Upfront"| "No Upfront"</code>
      * </p>
      * 
      * @param offeringType
      *        The offering type filter value. Use this parameter to show only the available offerings matching the
      *        specified offering type.</p>
      *        <p>
-     *        Valid Values: <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code>
+     *        Valid Values:
+     *        <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization" |"All Upfront"|"Partial Upfront"| "No Upfront"</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

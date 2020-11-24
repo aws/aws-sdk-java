@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A key value pair.
+ * A key-value pair.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/KeyValue" target="_top">AWS API
@@ -30,7 +30,7 @@ public class KeyValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier of a key value pair.
+     * The unique identifier of a key-value pair.
      * </p>
      */
     private String key;
@@ -53,7 +53,7 @@ public class KeyValue implements Serializable, Cloneable, StructuredPojo {
      * any additional object members.
      * 
      * @param key
-     *        The unique identifier of a key value pair.
+     *        The unique identifier of a key-value pair.
      * @param value
      *        The value part of the identified key.
      */
@@ -64,11 +64,11 @@ public class KeyValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier of a key value pair.
+     * The unique identifier of a key-value pair.
      * </p>
      * 
      * @param key
-     *        The unique identifier of a key value pair.
+     *        The unique identifier of a key-value pair.
      */
 
     public void setKey(String key) {
@@ -77,10 +77,10 @@ public class KeyValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier of a key value pair.
+     * The unique identifier of a key-value pair.
      * </p>
      * 
-     * @return The unique identifier of a key value pair.
+     * @return The unique identifier of a key-value pair.
      */
 
     public String getKey() {
@@ -89,11 +89,11 @@ public class KeyValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier of a key value pair.
+     * The unique identifier of a key-value pair.
      * </p>
      * 
      * @param key
-     *        The unique identifier of a key value pair.
+     *        The unique identifier of a key-value pair.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

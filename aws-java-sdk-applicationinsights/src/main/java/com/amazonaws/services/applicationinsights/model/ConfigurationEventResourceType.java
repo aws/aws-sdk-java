@@ -21,6 +21,7 @@ import javax.annotation.Generated;
 public enum ConfigurationEventResourceType {
 
     CLOUDWATCH_ALARM("CLOUDWATCH_ALARM"),
+    CLOUDWATCH_LOG("CLOUDWATCH_LOG"),
     CLOUDFORMATION("CLOUDFORMATION"),
     SSM_ASSOCIATION("SSM_ASSOCIATION");
 

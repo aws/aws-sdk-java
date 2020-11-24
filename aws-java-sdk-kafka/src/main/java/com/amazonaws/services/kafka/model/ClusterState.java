@@ -25,9 +25,11 @@ public enum ClusterState {
 
     ACTIVE("ACTIVE"),
     CREATING("CREATING"),
-    UPDATING("UPDATING"),
     DELETING("DELETING"),
-    FAILED("FAILED");
+    FAILED("FAILED"),
+    MAINTENANCE("MAINTENANCE"),
+    REBOOTING_BROKER("REBOOTING_BROKER"),
+    UPDATING("UPDATING");
 
     private String value;
 

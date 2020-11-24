@@ -106,6 +106,32 @@ public class AbstractAmazonElasticMapReduceAsync extends AbstractAmazonElasticMa
     }
 
     @Override
+    public java.util.concurrent.Future<CreateStudioResult> createStudioAsync(CreateStudioRequest request) {
+
+        return createStudioAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateStudioResult> createStudioAsync(CreateStudioRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateStudioRequest, CreateStudioResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateStudioSessionMappingResult> createStudioSessionMappingAsync(CreateStudioSessionMappingRequest request) {
+
+        return createStudioSessionMappingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateStudioSessionMappingResult> createStudioSessionMappingAsync(CreateStudioSessionMappingRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateStudioSessionMappingRequest, CreateStudioSessionMappingResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteSecurityConfigurationResult> deleteSecurityConfigurationAsync(DeleteSecurityConfigurationRequest request) {
 
         return deleteSecurityConfigurationAsync(request, null);
@@ -114,6 +140,32 @@ public class AbstractAmazonElasticMapReduceAsync extends AbstractAmazonElasticMa
     @Override
     public java.util.concurrent.Future<DeleteSecurityConfigurationResult> deleteSecurityConfigurationAsync(DeleteSecurityConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteSecurityConfigurationRequest, DeleteSecurityConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStudioResult> deleteStudioAsync(DeleteStudioRequest request) {
+
+        return deleteStudioAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStudioResult> deleteStudioAsync(DeleteStudioRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteStudioRequest, DeleteStudioResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStudioSessionMappingResult> deleteStudioSessionMappingAsync(DeleteStudioSessionMappingRequest request) {
+
+        return deleteStudioSessionMappingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStudioSessionMappingResult> deleteStudioSessionMappingAsync(DeleteStudioSessionMappingRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteStudioSessionMappingRequest, DeleteStudioSessionMappingResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -211,6 +263,19 @@ public class AbstractAmazonElasticMapReduceAsync extends AbstractAmazonElasticMa
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeStudioResult> describeStudioAsync(DescribeStudioRequest request) {
+
+        return describeStudioAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStudioResult> describeStudioAsync(DescribeStudioRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeStudioRequest, DescribeStudioResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetBlockPublicAccessConfigurationResult> getBlockPublicAccessConfigurationAsync(
             GetBlockPublicAccessConfigurationRequest request) {
 
@@ -234,6 +299,19 @@ public class AbstractAmazonElasticMapReduceAsync extends AbstractAmazonElasticMa
     @Override
     public java.util.concurrent.Future<GetManagedScalingPolicyResult> getManagedScalingPolicyAsync(GetManagedScalingPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<GetManagedScalingPolicyRequest, GetManagedScalingPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetStudioSessionMappingResult> getStudioSessionMappingAsync(GetStudioSessionMappingRequest request) {
+
+        return getStudioSessionMappingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetStudioSessionMappingResult> getStudioSessionMappingAsync(GetStudioSessionMappingRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetStudioSessionMappingRequest, GetStudioSessionMappingResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -361,6 +439,32 @@ public class AbstractAmazonElasticMapReduceAsync extends AbstractAmazonElasticMa
     @Override
     public java.util.concurrent.Future<ListStepsResult> listStepsAsync(ListStepsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListStepsRequest, ListStepsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStudioSessionMappingsResult> listStudioSessionMappingsAsync(ListStudioSessionMappingsRequest request) {
+
+        return listStudioSessionMappingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStudioSessionMappingsResult> listStudioSessionMappingsAsync(ListStudioSessionMappingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListStudioSessionMappingsRequest, ListStudioSessionMappingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStudiosResult> listStudiosAsync(ListStudiosRequest request) {
+
+        return listStudiosAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStudiosResult> listStudiosAsync(ListStudiosRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListStudiosRequest, ListStudiosResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -581,6 +685,19 @@ public class AbstractAmazonElasticMapReduceAsync extends AbstractAmazonElasticMa
     @Override
     public java.util.concurrent.Future<TerminateJobFlowsResult> terminateJobFlowsAsync(TerminateJobFlowsRequest request,
             com.amazonaws.handlers.AsyncHandler<TerminateJobFlowsRequest, TerminateJobFlowsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStudioSessionMappingResult> updateStudioSessionMappingAsync(UpdateStudioSessionMappingRequest request) {
+
+        return updateStudioSessionMappingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStudioSessionMappingResult> updateStudioSessionMappingAsync(UpdateStudioSessionMappingRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateStudioSessionMappingRequest, UpdateStudioSessionMappingResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

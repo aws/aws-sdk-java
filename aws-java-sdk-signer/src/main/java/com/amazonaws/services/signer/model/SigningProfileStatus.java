@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum SigningProfileStatus {
 
     Active("Active"),
-    Canceled("Canceled");
+    Canceled("Canceled"),
+    Revoked("Revoked");
 
     private String value;
 

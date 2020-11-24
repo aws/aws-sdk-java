@@ -26,18 +26,63 @@ import com.amazonaws.services.signer.model.*;
  * </p>
  * <p>
  * <p>
- * With code signing for IoT, you can sign code that you create for any IoT device that is supported by Amazon Web
- * Services (AWS). Code signing is available through <a
- * href="http://docs.aws.amazon.com/freertos/latest/userguide/">Amazon FreeRTOS</a> and <a
- * href="http://docs.aws.amazon.com/iot/latest/developerguide/">AWS IoT Device Management</a>, and integrated with <a
- * href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager (ACM)</a>. In order to sign code, you
- * import a third-party code signing certificate with ACM that is used to sign updates in Amazon FreeRTOS and AWS IoT
- * Device Management. For general information about using code signing, see the <a
- * href="http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">Code Signing for IoT Developer Guide</a>.
+ * AWS Signer is a fully managed code signing service to help you ensure the trust and integrity of your code.
  * </p>
+ * <p>
+ * AWS Signer supports the following applications:
+ * </p>
+ * <p>
+ * With <i>code signing for AWS Lambda</i>, you can sign AWS Lambda deployment packages. Integrated support is provided
+ * for Amazon S3, Amazon CloudWatch, and AWS CloudTrail. In order to sign code, you create a signing profile and then
+ * use Signer to sign Lambda zip files in S3.
+ * </p>
+ * <p>
+ * With <i>code signing for IoT</i>, you can sign code for any IoT device that is supported by AWS. IoT code signing is
+ * available for <a href="http://docs.aws.amazon.com/freertos/latest/userguide/">Amazon FreeRTOS</a> and <a
+ * href="http://docs.aws.amazon.com/iot/latest/developerguide/">AWS IoT Device Management</a>, and is integrated with <a
+ * href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager (ACM)</a>. In order to sign code, you
+ * import a third-party code signing certificate using ACM, and use that to sign updates in Amazon FreeRTOS and AWS IoT
+ * Device Management.
+ * </p>
+ * <p>
+ * For more information about AWS Signer, see the <a
+ * href="http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">AWS Signer Developer Guide</a>.
+ * </p>
+ * <p/>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSsignerAsync extends AWSsigner {
+
+    /**
+     * <p>
+     * Adds cross-account permissions to a signing profile.
+     * </p>
+     * 
+     * @param addProfilePermissionRequest
+     * @return A Java Future containing the result of the AddProfilePermission operation returned by the service.
+     * @sample AWSsignerAsync.AddProfilePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/AddProfilePermission" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AddProfilePermissionResult> addProfilePermissionAsync(AddProfilePermissionRequest addProfilePermissionRequest);
+
+    /**
+     * <p>
+     * Adds cross-account permissions to a signing profile.
+     * </p>
+     * 
+     * @param addProfilePermissionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddProfilePermission operation returned by the service.
+     * @sample AWSsignerAsyncHandler.AddProfilePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/AddProfilePermission" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AddProfilePermissionResult> addProfilePermissionAsync(AddProfilePermissionRequest addProfilePermissionRequest,
+            com.amazonaws.handlers.AsyncHandler<AddProfilePermissionRequest, AddProfilePermissionResult> asyncHandler);
 
     /**
      * <p>
@@ -168,6 +213,37 @@ public interface AWSsignerAsync extends AWSsigner {
      */
     java.util.concurrent.Future<GetSigningProfileResult> getSigningProfileAsync(GetSigningProfileRequest getSigningProfileRequest,
             com.amazonaws.handlers.AsyncHandler<GetSigningProfileRequest, GetSigningProfileResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the cross-account permissions associated with a signing profile.
+     * </p>
+     * 
+     * @param listProfilePermissionsRequest
+     * @return A Java Future containing the result of the ListProfilePermissions operation returned by the service.
+     * @sample AWSsignerAsync.ListProfilePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListProfilePermissions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListProfilePermissionsResult> listProfilePermissionsAsync(ListProfilePermissionsRequest listProfilePermissionsRequest);
+
+    /**
+     * <p>
+     * Lists the cross-account permissions associated with a signing profile.
+     * </p>
+     * 
+     * @param listProfilePermissionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListProfilePermissions operation returned by the service.
+     * @sample AWSsignerAsyncHandler.ListProfilePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListProfilePermissions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListProfilePermissionsResult> listProfilePermissionsAsync(ListProfilePermissionsRequest listProfilePermissionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListProfilePermissionsRequest, ListProfilePermissionsResult> asyncHandler);
 
     /**
      * <p>
@@ -357,6 +433,101 @@ public interface AWSsignerAsync extends AWSsigner {
      */
     java.util.concurrent.Future<PutSigningProfileResult> putSigningProfileAsync(PutSigningProfileRequest putSigningProfileRequest,
             com.amazonaws.handlers.AsyncHandler<PutSigningProfileRequest, PutSigningProfileResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes cross-account permissions from a signing profile.
+     * </p>
+     * 
+     * @param removeProfilePermissionRequest
+     * @return A Java Future containing the result of the RemoveProfilePermission operation returned by the service.
+     * @sample AWSsignerAsync.RemoveProfilePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/RemoveProfilePermission" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveProfilePermissionResult> removeProfilePermissionAsync(RemoveProfilePermissionRequest removeProfilePermissionRequest);
+
+    /**
+     * <p>
+     * Removes cross-account permissions from a signing profile.
+     * </p>
+     * 
+     * @param removeProfilePermissionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveProfilePermission operation returned by the service.
+     * @sample AWSsignerAsyncHandler.RemoveProfilePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/RemoveProfilePermission" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveProfilePermissionResult> removeProfilePermissionAsync(RemoveProfilePermissionRequest removeProfilePermissionRequest,
+            com.amazonaws.handlers.AsyncHandler<RemoveProfilePermissionRequest, RemoveProfilePermissionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Changes the state of a signing job to REVOKED. This indicates that the signature is no longer valid.
+     * </p>
+     * 
+     * @param revokeSignatureRequest
+     * @return A Java Future containing the result of the RevokeSignature operation returned by the service.
+     * @sample AWSsignerAsync.RevokeSignature
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/RevokeSignature" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RevokeSignatureResult> revokeSignatureAsync(RevokeSignatureRequest revokeSignatureRequest);
+
+    /**
+     * <p>
+     * Changes the state of a signing job to REVOKED. This indicates that the signature is no longer valid.
+     * </p>
+     * 
+     * @param revokeSignatureRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RevokeSignature operation returned by the service.
+     * @sample AWSsignerAsyncHandler.RevokeSignature
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/RevokeSignature" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RevokeSignatureResult> revokeSignatureAsync(RevokeSignatureRequest revokeSignatureRequest,
+            com.amazonaws.handlers.AsyncHandler<RevokeSignatureRequest, RevokeSignatureResult> asyncHandler);
+
+    /**
+     * <p>
+     * Changes the state of a signing profile to REVOKED. This indicates that signatures generated using the signing
+     * profile after an effective start date are no longer valid.
+     * </p>
+     * 
+     * @param revokeSigningProfileRequest
+     * @return A Java Future containing the result of the RevokeSigningProfile operation returned by the service.
+     * @sample AWSsignerAsync.RevokeSigningProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/RevokeSigningProfile" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RevokeSigningProfileResult> revokeSigningProfileAsync(RevokeSigningProfileRequest revokeSigningProfileRequest);
+
+    /**
+     * <p>
+     * Changes the state of a signing profile to REVOKED. This indicates that signatures generated using the signing
+     * profile after an effective start date are no longer valid.
+     * </p>
+     * 
+     * @param revokeSigningProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RevokeSigningProfile operation returned by the service.
+     * @sample AWSsignerAsyncHandler.RevokeSigningProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/RevokeSigningProfile" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RevokeSigningProfileResult> revokeSigningProfileAsync(RevokeSigningProfileRequest revokeSigningProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<RevokeSigningProfileRequest, RevokeSigningProfileResult> asyncHandler);
 
     /**
      * <p>

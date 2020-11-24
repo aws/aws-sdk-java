@@ -56,6 +56,21 @@ public class AbstractAWSSSOAdminAsync extends AbstractAWSSSOAdmin implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<CreateInstanceAccessControlAttributeConfigurationResult> createInstanceAccessControlAttributeConfigurationAsync(
+            CreateInstanceAccessControlAttributeConfigurationRequest request) {
+
+        return createInstanceAccessControlAttributeConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateInstanceAccessControlAttributeConfigurationResult> createInstanceAccessControlAttributeConfigurationAsync(
+            CreateInstanceAccessControlAttributeConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateInstanceAccessControlAttributeConfigurationRequest, CreateInstanceAccessControlAttributeConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreatePermissionSetResult> createPermissionSetAsync(CreatePermissionSetRequest request) {
 
         return createPermissionSetAsync(request, null);
@@ -92,6 +107,21 @@ public class AbstractAWSSSOAdminAsync extends AbstractAWSSSOAdmin implements AWS
     public java.util.concurrent.Future<DeleteInlinePolicyFromPermissionSetResult> deleteInlinePolicyFromPermissionSetAsync(
             DeleteInlinePolicyFromPermissionSetRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteInlinePolicyFromPermissionSetRequest, DeleteInlinePolicyFromPermissionSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteInstanceAccessControlAttributeConfigurationResult> deleteInstanceAccessControlAttributeConfigurationAsync(
+            DeleteInstanceAccessControlAttributeConfigurationRequest request) {
+
+        return deleteInstanceAccessControlAttributeConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteInstanceAccessControlAttributeConfigurationResult> deleteInstanceAccessControlAttributeConfigurationAsync(
+            DeleteInstanceAccessControlAttributeConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteInstanceAccessControlAttributeConfigurationRequest, DeleteInstanceAccessControlAttributeConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -135,6 +165,21 @@ public class AbstractAWSSSOAdminAsync extends AbstractAWSSSOAdmin implements AWS
     public java.util.concurrent.Future<DescribeAccountAssignmentDeletionStatusResult> describeAccountAssignmentDeletionStatusAsync(
             DescribeAccountAssignmentDeletionStatusRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAccountAssignmentDeletionStatusRequest, DescribeAccountAssignmentDeletionStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInstanceAccessControlAttributeConfigurationResult> describeInstanceAccessControlAttributeConfigurationAsync(
+            DescribeInstanceAccessControlAttributeConfigurationRequest request) {
+
+        return describeInstanceAccessControlAttributeConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInstanceAccessControlAttributeConfigurationResult> describeInstanceAccessControlAttributeConfigurationAsync(
+            DescribeInstanceAccessControlAttributeConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeInstanceAccessControlAttributeConfigurationRequest, DescribeInstanceAccessControlAttributeConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -387,6 +432,21 @@ public class AbstractAWSSSOAdminAsync extends AbstractAWSSSOAdmin implements AWS
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInstanceAccessControlAttributeConfigurationResult> updateInstanceAccessControlAttributeConfigurationAsync(
+            UpdateInstanceAccessControlAttributeConfigurationRequest request) {
+
+        return updateInstanceAccessControlAttributeConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInstanceAccessControlAttributeConfigurationResult> updateInstanceAccessControlAttributeConfigurationAsync(
+            UpdateInstanceAccessControlAttributeConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateInstanceAccessControlAttributeConfigurationRequest, UpdateInstanceAccessControlAttributeConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

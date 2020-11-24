@@ -160,6 +160,14 @@ public class CreateFunctionResultJsonUnmarshaller implements Unmarshaller<Create
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("SigningProfileVersionArn", targetDepth)) {
+                    context.nextToken();
+                    createFunctionResult.setSigningProfileVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SigningJobArn", targetDepth)) {
+                    context.nextToken();
+                    createFunctionResult.setSigningJobArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

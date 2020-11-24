@@ -143,6 +143,11 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public CreatePartitionIndexResult createPartitionIndex(CreatePartitionIndexRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateRegistryResult createRegistry(CreateRegistryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -229,6 +234,11 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public DeletePartitionResult deletePartition(DeletePartitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeletePartitionIndexResult deletePartitionIndex(DeletePartitionIndexRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

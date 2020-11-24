@@ -80,6 +80,12 @@ public class Crawler implements Serializable, Cloneable, StructuredPojo {
     private SchemaChangePolicy schemaChangePolicy;
     /**
      * <p>
+     * A configuration that specifies whether data lineage is enabled for the crawler.
+     * </p>
+     */
+    private LineageConfiguration lineageConfiguration;
+    /**
+     * <p>
      * Indicates whether the crawler is running, or whether a run is pending.
      * </p>
      */
@@ -500,6 +506,46 @@ public class Crawler implements Serializable, Cloneable, StructuredPojo {
 
     public Crawler withSchemaChangePolicy(SchemaChangePolicy schemaChangePolicy) {
         setSchemaChangePolicy(schemaChangePolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A configuration that specifies whether data lineage is enabled for the crawler.
+     * </p>
+     * 
+     * @param lineageConfiguration
+     *        A configuration that specifies whether data lineage is enabled for the crawler.
+     */
+
+    public void setLineageConfiguration(LineageConfiguration lineageConfiguration) {
+        this.lineageConfiguration = lineageConfiguration;
+    }
+
+    /**
+     * <p>
+     * A configuration that specifies whether data lineage is enabled for the crawler.
+     * </p>
+     * 
+     * @return A configuration that specifies whether data lineage is enabled for the crawler.
+     */
+
+    public LineageConfiguration getLineageConfiguration() {
+        return this.lineageConfiguration;
+    }
+
+    /**
+     * <p>
+     * A configuration that specifies whether data lineage is enabled for the crawler.
+     * </p>
+     * 
+     * @param lineageConfiguration
+     *        A configuration that specifies whether data lineage is enabled for the crawler.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Crawler withLineageConfiguration(LineageConfiguration lineageConfiguration) {
+        setLineageConfiguration(lineageConfiguration);
         return this;
     }
 
@@ -962,6 +1008,8 @@ public class Crawler implements Serializable, Cloneable, StructuredPojo {
             sb.append("RecrawlPolicy: ").append(getRecrawlPolicy()).append(",");
         if (getSchemaChangePolicy() != null)
             sb.append("SchemaChangePolicy: ").append(getSchemaChangePolicy()).append(",");
+        if (getLineageConfiguration() != null)
+            sb.append("LineageConfiguration: ").append(getLineageConfiguration()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getTablePrefix() != null)
@@ -1028,6 +1076,10 @@ public class Crawler implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSchemaChangePolicy() != null && other.getSchemaChangePolicy().equals(this.getSchemaChangePolicy()) == false)
             return false;
+        if (other.getLineageConfiguration() == null ^ this.getLineageConfiguration() == null)
+            return false;
+        if (other.getLineageConfiguration() != null && other.getLineageConfiguration().equals(this.getLineageConfiguration()) == false)
+            return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
@@ -1084,6 +1136,7 @@ public class Crawler implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getClassifiers() == null) ? 0 : getClassifiers().hashCode());
         hashCode = prime * hashCode + ((getRecrawlPolicy() == null) ? 0 : getRecrawlPolicy().hashCode());
         hashCode = prime * hashCode + ((getSchemaChangePolicy() == null) ? 0 : getSchemaChangePolicy().hashCode());
+        hashCode = prime * hashCode + ((getLineageConfiguration() == null) ? 0 : getLineageConfiguration().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getTablePrefix() == null) ? 0 : getTablePrefix().hashCode());
         hashCode = prime * hashCode + ((getSchedule() == null) ? 0 : getSchedule().hashCode());

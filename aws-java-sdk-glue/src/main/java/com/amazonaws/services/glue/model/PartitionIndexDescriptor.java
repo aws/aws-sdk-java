@@ -44,8 +44,40 @@ public class PartitionIndexDescriptor implements Serializable, Cloneable, Struct
      * <p>
      * The status of the partition index.
      * </p>
+     * <p>
+     * The possible statuses are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be
+     * deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ACTIVE: The index creation succeeds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FAILED: The index creation fails.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DELETING: The index is deleted from the list of indexes.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String indexStatus;
+    /**
+     * <p>
+     * A list of errors that can occur when registering partition indexes for an existing table.
+     * </p>
+     */
+    private java.util.List<BackfillError> backfillErrors;
 
     /**
      * <p>
@@ -161,9 +193,60 @@ public class PartitionIndexDescriptor implements Serializable, Cloneable, Struct
      * <p>
      * The status of the partition index.
      * </p>
+     * <p>
+     * The possible statuses are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be
+     * deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ACTIVE: The index creation succeeds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FAILED: The index creation fails.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DELETING: The index is deleted from the list of indexes.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param indexStatus
-     *        The status of the partition index.
+     *        The status of the partition index. </p>
+     *        <p>
+     *        The possible statuses are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot
+     *        be deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ACTIVE: The index creation succeeds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FAILED: The index creation fails.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DELETING: The index is deleted from the list of indexes.
+     *        </p>
+     *        </li>
      * @see PartitionIndexStatus
      */
 
@@ -175,8 +258,59 @@ public class PartitionIndexDescriptor implements Serializable, Cloneable, Struct
      * <p>
      * The status of the partition index.
      * </p>
+     * <p>
+     * The possible statuses are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be
+     * deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ACTIVE: The index creation succeeds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FAILED: The index creation fails.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DELETING: The index is deleted from the list of indexes.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The status of the partition index.
+     * @return The status of the partition index. </p>
+     *         <p>
+     *         The possible statuses are:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot
+     *         be deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACTIVE: The index creation succeeds.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         FAILED: The index creation fails.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DELETING: The index is deleted from the list of indexes.
+     *         </p>
+     *         </li>
      * @see PartitionIndexStatus
      */
 
@@ -188,9 +322,60 @@ public class PartitionIndexDescriptor implements Serializable, Cloneable, Struct
      * <p>
      * The status of the partition index.
      * </p>
+     * <p>
+     * The possible statuses are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be
+     * deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ACTIVE: The index creation succeeds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FAILED: The index creation fails.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DELETING: The index is deleted from the list of indexes.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param indexStatus
-     *        The status of the partition index.
+     *        The status of the partition index. </p>
+     *        <p>
+     *        The possible statuses are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot
+     *        be deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ACTIVE: The index creation succeeds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FAILED: The index creation fails.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DELETING: The index is deleted from the list of indexes.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PartitionIndexStatus
      */
@@ -204,15 +389,136 @@ public class PartitionIndexDescriptor implements Serializable, Cloneable, Struct
      * <p>
      * The status of the partition index.
      * </p>
+     * <p>
+     * The possible statuses are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be
+     * deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ACTIVE: The index creation succeeds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FAILED: The index creation fails.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DELETING: The index is deleted from the list of indexes.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param indexStatus
-     *        The status of the partition index.
+     *        The status of the partition index. </p>
+     *        <p>
+     *        The possible statuses are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot
+     *        be deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ACTIVE: The index creation succeeds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FAILED: The index creation fails.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DELETING: The index is deleted from the list of indexes.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PartitionIndexStatus
      */
 
     public PartitionIndexDescriptor withIndexStatus(PartitionIndexStatus indexStatus) {
         this.indexStatus = indexStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of errors that can occur when registering partition indexes for an existing table.
+     * </p>
+     * 
+     * @return A list of errors that can occur when registering partition indexes for an existing table.
+     */
+
+    public java.util.List<BackfillError> getBackfillErrors() {
+        return backfillErrors;
+    }
+
+    /**
+     * <p>
+     * A list of errors that can occur when registering partition indexes for an existing table.
+     * </p>
+     * 
+     * @param backfillErrors
+     *        A list of errors that can occur when registering partition indexes for an existing table.
+     */
+
+    public void setBackfillErrors(java.util.Collection<BackfillError> backfillErrors) {
+        if (backfillErrors == null) {
+            this.backfillErrors = null;
+            return;
+        }
+
+        this.backfillErrors = new java.util.ArrayList<BackfillError>(backfillErrors);
+    }
+
+    /**
+     * <p>
+     * A list of errors that can occur when registering partition indexes for an existing table.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBackfillErrors(java.util.Collection)} or {@link #withBackfillErrors(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param backfillErrors
+     *        A list of errors that can occur when registering partition indexes for an existing table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PartitionIndexDescriptor withBackfillErrors(BackfillError... backfillErrors) {
+        if (this.backfillErrors == null) {
+            setBackfillErrors(new java.util.ArrayList<BackfillError>(backfillErrors.length));
+        }
+        for (BackfillError ele : backfillErrors) {
+            this.backfillErrors.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of errors that can occur when registering partition indexes for an existing table.
+     * </p>
+     * 
+     * @param backfillErrors
+     *        A list of errors that can occur when registering partition indexes for an existing table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PartitionIndexDescriptor withBackfillErrors(java.util.Collection<BackfillError> backfillErrors) {
+        setBackfillErrors(backfillErrors);
         return this;
     }
 
@@ -233,7 +539,9 @@ public class PartitionIndexDescriptor implements Serializable, Cloneable, Struct
         if (getKeys() != null)
             sb.append("Keys: ").append(getKeys()).append(",");
         if (getIndexStatus() != null)
-            sb.append("IndexStatus: ").append(getIndexStatus());
+            sb.append("IndexStatus: ").append(getIndexStatus()).append(",");
+        if (getBackfillErrors() != null)
+            sb.append("BackfillErrors: ").append(getBackfillErrors());
         sb.append("}");
         return sb.toString();
     }
@@ -260,6 +568,10 @@ public class PartitionIndexDescriptor implements Serializable, Cloneable, Struct
             return false;
         if (other.getIndexStatus() != null && other.getIndexStatus().equals(this.getIndexStatus()) == false)
             return false;
+        if (other.getBackfillErrors() == null ^ this.getBackfillErrors() == null)
+            return false;
+        if (other.getBackfillErrors() != null && other.getBackfillErrors().equals(this.getBackfillErrors()) == false)
+            return false;
         return true;
     }
 
@@ -271,6 +583,7 @@ public class PartitionIndexDescriptor implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getIndexName() == null) ? 0 : getIndexName().hashCode());
         hashCode = prime * hashCode + ((getKeys() == null) ? 0 : getKeys().hashCode());
         hashCode = prime * hashCode + ((getIndexStatus() == null) ? 0 : getIndexStatus().hashCode());
+        hashCode = prime * hashCode + ((getBackfillErrors() == null) ? 0 : getBackfillErrors().hashCode());
         return hashCode;
     }
 

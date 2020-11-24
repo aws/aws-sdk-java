@@ -28,9 +28,9 @@ import com.amazonaws.services.elasticmapreduce.waiters.AmazonElasticMapReduceWai
  * </p>
  * <p>
  * <p>
- * Amazon EMR is a web service that makes it easy to process large amounts of data efficiently. Amazon EMR uses Hadoop
- * processing combined with several AWS products to do tasks such as web indexing, data mining, log file analysis,
- * machine learning, scientific simulation, and data warehousing.
+ * Amazon EMR is a web service that makes it easier to process large amounts of data efficiently. Amazon EMR uses Hadoop
+ * processing combined with several AWS services to do tasks such as web indexing, data mining, log file analysis,
+ * machine learning, scientific simulation, and data warehouse management.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -196,8 +196,8 @@ public interface AmazonElasticMapReduce {
      * <p>
      * Cancels a pending step or steps in a running cluster. Available only in Amazon EMR versions 4.8.0 and later,
      * excluding version 5.0.0. A maximum of 256 steps are allowed in each CancelSteps request. CancelSteps is
-     * idempotent but asynchronous; it does not guarantee a step will be canceled, even if the request is successfully
-     * submitted. You can only cancel steps that are in a <code>PENDING</code> state.
+     * idempotent but asynchronous; it does not guarantee that a step will be canceled, even if the request is
+     * successfully submitted. You can only cancel steps that are in a <code>PENDING</code> state.
      * </p>
      * 
      * @param cancelStepsRequest
@@ -231,6 +231,51 @@ public interface AmazonElasticMapReduce {
     CreateSecurityConfigurationResult createSecurityConfiguration(CreateSecurityConfigurationRequest createSecurityConfigurationRequest);
 
     /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Creates a new Amazon EMR Studio.
+     * </p>
+     * 
+     * @param createStudioRequest
+     * @return Result of the CreateStudio operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.CreateStudio
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateStudio" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateStudioResult createStudio(CreateStudioRequest createStudioRequest);
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Maps a user or group to the Amazon EMR Studio specified by <code>StudioId</code>, and applies a session policy to
+     * refine Studio permissions for that user or group.
+     * </p>
+     * 
+     * @param createStudioSessionMappingRequest
+     * @return Result of the CreateStudioSessionMapping operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.CreateStudioSessionMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateStudioSessionMapping"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateStudioSessionMappingResult createStudioSessionMapping(CreateStudioSessionMappingRequest createStudioSessionMappingRequest);
+
+    /**
      * <p>
      * Deletes a security configuration.
      * </p>
@@ -246,6 +291,50 @@ public interface AmazonElasticMapReduce {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteSecurityConfigurationResult deleteSecurityConfiguration(DeleteSecurityConfigurationRequest deleteSecurityConfigurationRequest);
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Removes an Amazon EMR Studio from the Studio metadata store.
+     * </p>
+     * 
+     * @param deleteStudioRequest
+     * @return Result of the DeleteStudio operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.DeleteStudio
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteStudio" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteStudioResult deleteStudio(DeleteStudioRequest deleteStudioRequest);
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Removes a user or group from an Amazon EMR Studio.
+     * </p>
+     * 
+     * @param deleteStudioSessionMappingRequest
+     * @return Result of the DeleteStudioSessionMapping operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.DeleteStudioSessionMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteStudioSessionMapping"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteStudioSessionMappingResult deleteStudioSessionMapping(DeleteStudioSessionMappingRequest deleteStudioSessionMappingRequest);
 
     /**
      * <p>
@@ -267,7 +356,7 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
-     * This API is deprecated and will eventually be removed. We recommend you use <a>ListClusters</a>,
+     * This API is no longer supported and will eventually be removed. We recommend you use <a>ListClusters</a>,
      * <a>DescribeCluster</a>, <a>ListSteps</a>, <a>ListInstanceGroups</a> and <a>ListBootstrapActions</a> instead.
      * </p>
      * <p>
@@ -370,6 +459,28 @@ public interface AmazonElasticMapReduce {
     DescribeStepResult describeStep(DescribeStepRequest describeStepRequest);
 
     /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Returns details for the specified Amazon EMR Studio including ID, Name, VPC, Studio access URL, and so on.
+     * </p>
+     * 
+     * @param describeStudioRequest
+     * @return Result of the DescribeStudio operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.DescribeStudio
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeStudio"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeStudioResult describeStudio(DescribeStudioRequest describeStudioRequest);
+
+    /**
      * <p>
      * Returns the Amazon EMR block public access configuration for your AWS account in the current Region. For more
      * information see <a
@@ -402,6 +513,28 @@ public interface AmazonElasticMapReduce {
      *      target="_top">AWS API Documentation</a>
      */
     GetManagedScalingPolicyResult getManagedScalingPolicy(GetManagedScalingPolicyRequest getManagedScalingPolicyRequest);
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Fetches mapping details for the specified Amazon EMR Studio and identity (user or group).
+     * </p>
+     * 
+     * @param getStudioSessionMappingRequest
+     * @return Result of the GetStudioSessionMapping operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.GetStudioSessionMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetStudioSessionMapping"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetStudioSessionMappingResult getStudioSessionMapping(GetStudioSessionMappingRequest getStudioSessionMappingRequest);
 
     /**
      * <p>
@@ -566,6 +699,51 @@ public interface AmazonElasticMapReduce {
      *      Documentation</a>
      */
     ListStepsResult listSteps(ListStepsRequest listStepsRequest);
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Returns a list of all user or group session mappings for the EMR Studio specified by <code>StudioId</code>.
+     * </p>
+     * 
+     * @param listStudioSessionMappingsRequest
+     * @return Result of the ListStudioSessionMappings operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.ListStudioSessionMappings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListStudioSessionMappings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListStudioSessionMappingsResult listStudioSessionMappings(ListStudioSessionMappingsRequest listStudioSessionMappingsRequest);
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Returns a list of all Amazon EMR Studios associated with the AWS account. The list includes details such as ID,
+     * Studio Access URL, and creation time for each Studio.
+     * </p>
+     * 
+     * @param listStudiosRequest
+     * @return Result of the ListStudios operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.ListStudios
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListStudios" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListStudiosResult listStudios(ListStudiosRequest listStudiosRequest);
 
     /**
      * <p>
@@ -891,6 +1069,28 @@ public interface AmazonElasticMapReduce {
      *      target="_top">AWS API Documentation</a>
      */
     TerminateJobFlowsResult terminateJobFlows(TerminateJobFlowsRequest terminateJobFlowsRequest);
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Updates the session policy attached to the user or group for the specified Amazon EMR Studio.
+     * </p>
+     * 
+     * @param updateStudioSessionMappingRequest
+     * @return Result of the UpdateStudioSessionMapping operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.UpdateStudioSessionMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/UpdateStudioSessionMapping"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateStudioSessionMappingResult updateStudioSessionMapping(UpdateStudioSessionMappingRequest updateStudioSessionMappingRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

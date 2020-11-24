@@ -49,6 +49,37 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
 
     /**
      * <p>
+     * This operation allows you to perform batch reads and writes on data stored in DynamoDB, using PartiQL.
+     * </p>
+     * 
+     * @param batchExecuteStatementRequest
+     * @return A Java Future containing the result of the BatchExecuteStatement operation returned by the service.
+     * @sample AmazonDynamoDBAsync.BatchExecuteStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchExecuteStatement" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchExecuteStatementResult> batchExecuteStatementAsync(BatchExecuteStatementRequest batchExecuteStatementRequest);
+
+    /**
+     * <p>
+     * This operation allows you to perform batch reads and writes on data stored in DynamoDB, using PartiQL.
+     * </p>
+     * 
+     * @param batchExecuteStatementRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchExecuteStatement operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.BatchExecuteStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchExecuteStatement" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchExecuteStatementResult> batchExecuteStatementAsync(BatchExecuteStatementRequest batchExecuteStatementRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchExecuteStatementRequest, BatchExecuteStatementResult> asyncHandler);
+
+    /**
+     * <p>
      * The <code>BatchGetItem</code> operation returns the attributes of one or more items from one or more tables. You
      * identify requested items by primary key.
      * </p>
@@ -1363,6 +1394,41 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
 
     /**
      * <p>
+     * Returns information about the status of Kinesis streaming.
+     * </p>
+     * 
+     * @param describeKinesisStreamingDestinationRequest
+     * @return A Java Future containing the result of the DescribeKinesisStreamingDestination operation returned by the
+     *         service.
+     * @sample AmazonDynamoDBAsync.DescribeKinesisStreamingDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeKinesisStreamingDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeKinesisStreamingDestinationResult> describeKinesisStreamingDestinationAsync(
+            DescribeKinesisStreamingDestinationRequest describeKinesisStreamingDestinationRequest);
+
+    /**
+     * <p>
+     * Returns information about the status of Kinesis streaming.
+     * </p>
+     * 
+     * @param describeKinesisStreamingDestinationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeKinesisStreamingDestination operation returned by the
+     *         service.
+     * @sample AmazonDynamoDBAsyncHandler.DescribeKinesisStreamingDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeKinesisStreamingDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeKinesisStreamingDestinationResult> describeKinesisStreamingDestinationAsync(
+            DescribeKinesisStreamingDestinationRequest describeKinesisStreamingDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeKinesisStreamingDestinationRequest, DescribeKinesisStreamingDestinationResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the current provisioned-capacity quotas for your AWS account in a Region, both for the Region as a whole
      * and for any one DynamoDB table that you create there.
      * </p>
@@ -1715,6 +1781,144 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      */
     java.util.concurrent.Future<DescribeTimeToLiveResult> describeTimeToLiveAsync(DescribeTimeToLiveRequest describeTimeToLiveRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeTimeToLiveRequest, DescribeTimeToLiveResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops replication from the DynamoDB table to the Kinesis data stream. This is done without deleting either of the
+     * resources.
+     * </p>
+     * 
+     * @param disableKinesisStreamingDestinationRequest
+     * @return A Java Future containing the result of the DisableKinesisStreamingDestination operation returned by the
+     *         service.
+     * @sample AmazonDynamoDBAsync.DisableKinesisStreamingDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DisableKinesisStreamingDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableKinesisStreamingDestinationResult> disableKinesisStreamingDestinationAsync(
+            DisableKinesisStreamingDestinationRequest disableKinesisStreamingDestinationRequest);
+
+    /**
+     * <p>
+     * Stops replication from the DynamoDB table to the Kinesis data stream. This is done without deleting either of the
+     * resources.
+     * </p>
+     * 
+     * @param disableKinesisStreamingDestinationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableKinesisStreamingDestination operation returned by the
+     *         service.
+     * @sample AmazonDynamoDBAsyncHandler.DisableKinesisStreamingDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DisableKinesisStreamingDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableKinesisStreamingDestinationResult> disableKinesisStreamingDestinationAsync(
+            DisableKinesisStreamingDestinationRequest disableKinesisStreamingDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<DisableKinesisStreamingDestinationRequest, DisableKinesisStreamingDestinationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts table data replication to the specified Kinesis data stream at a timestamp chosen during the enable
+     * workflow. If this operation doesn't return results immediately, use DescribeKinesisStreamingDestination to check
+     * if streaming to the Kinesis data stream is ACTIVE.
+     * </p>
+     * 
+     * @param enableKinesisStreamingDestinationRequest
+     * @return A Java Future containing the result of the EnableKinesisStreamingDestination operation returned by the
+     *         service.
+     * @sample AmazonDynamoDBAsync.EnableKinesisStreamingDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/EnableKinesisStreamingDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableKinesisStreamingDestinationResult> enableKinesisStreamingDestinationAsync(
+            EnableKinesisStreamingDestinationRequest enableKinesisStreamingDestinationRequest);
+
+    /**
+     * <p>
+     * Starts table data replication to the specified Kinesis data stream at a timestamp chosen during the enable
+     * workflow. If this operation doesn't return results immediately, use DescribeKinesisStreamingDestination to check
+     * if streaming to the Kinesis data stream is ACTIVE.
+     * </p>
+     * 
+     * @param enableKinesisStreamingDestinationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableKinesisStreamingDestination operation returned by the
+     *         service.
+     * @sample AmazonDynamoDBAsyncHandler.EnableKinesisStreamingDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/EnableKinesisStreamingDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableKinesisStreamingDestinationResult> enableKinesisStreamingDestinationAsync(
+            EnableKinesisStreamingDestinationRequest enableKinesisStreamingDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableKinesisStreamingDestinationRequest, EnableKinesisStreamingDestinationResult> asyncHandler);
+
+    /**
+     * <p>
+     * This operation allows you to perform reads and singleton writes on data stored in DynamoDB, using PartiQL.
+     * </p>
+     * 
+     * @param executeStatementRequest
+     * @return A Java Future containing the result of the ExecuteStatement operation returned by the service.
+     * @sample AmazonDynamoDBAsync.ExecuteStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteStatement" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ExecuteStatementResult> executeStatementAsync(ExecuteStatementRequest executeStatementRequest);
+
+    /**
+     * <p>
+     * This operation allows you to perform reads and singleton writes on data stored in DynamoDB, using PartiQL.
+     * </p>
+     * 
+     * @param executeStatementRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ExecuteStatement operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.ExecuteStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteStatement" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ExecuteStatementResult> executeStatementAsync(ExecuteStatementRequest executeStatementRequest,
+            com.amazonaws.handlers.AsyncHandler<ExecuteStatementRequest, ExecuteStatementResult> asyncHandler);
+
+    /**
+     * <p>
+     * This operation allows you to perform transactional reads or writes on data stored in DynamoDB, using PartiQL.
+     * </p>
+     * 
+     * @param executeTransactionRequest
+     * @return A Java Future containing the result of the ExecuteTransaction operation returned by the service.
+     * @sample AmazonDynamoDBAsync.ExecuteTransaction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteTransaction" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ExecuteTransactionResult> executeTransactionAsync(ExecuteTransactionRequest executeTransactionRequest);
+
+    /**
+     * <p>
+     * This operation allows you to perform transactional reads or writes on data stored in DynamoDB, using PartiQL.
+     * </p>
+     * 
+     * @param executeTransactionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ExecuteTransaction operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.ExecuteTransaction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteTransaction" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ExecuteTransactionResult> executeTransactionAsync(ExecuteTransactionRequest executeTransactionRequest,
+            com.amazonaws.handlers.AsyncHandler<ExecuteTransactionRequest, ExecuteTransactionResult> asyncHandler);
 
     /**
      * <p>

@@ -34,6 +34,8 @@ public class PartitionIndexDescriptorMarshaller {
             .marshallLocationName("Keys").build();
     private static final MarshallingInfo<String> INDEXSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IndexStatus").build();
+    private static final MarshallingInfo<List> BACKFILLERRORS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackfillErrors").build();
 
     private static final PartitionIndexDescriptorMarshaller instance = new PartitionIndexDescriptorMarshaller();
 
@@ -54,6 +56,7 @@ public class PartitionIndexDescriptorMarshaller {
             protocolMarshaller.marshall(partitionIndexDescriptor.getIndexName(), INDEXNAME_BINDING);
             protocolMarshaller.marshall(partitionIndexDescriptor.getKeys(), KEYS_BINDING);
             protocolMarshaller.marshall(partitionIndexDescriptor.getIndexStatus(), INDEXSTATUS_BINDING);
+            protocolMarshaller.marshall(partitionIndexDescriptor.getBackfillErrors(), BACKFILLERRORS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

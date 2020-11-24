@@ -71,6 +71,12 @@ public class GetSigningPlatformResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private Integer maxSizeInMB;
+    /**
+     * <p>
+     * A flag indicating whether signatures generated for the signing platform can be revoked.
+     * </p>
+     */
+    private Boolean revocationSupported;
 
     /**
      * <p>
@@ -412,6 +418,58 @@ public class GetSigningPlatformResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * A flag indicating whether signatures generated for the signing platform can be revoked.
+     * </p>
+     * 
+     * @param revocationSupported
+     *        A flag indicating whether signatures generated for the signing platform can be revoked.
+     */
+
+    public void setRevocationSupported(Boolean revocationSupported) {
+        this.revocationSupported = revocationSupported;
+    }
+
+    /**
+     * <p>
+     * A flag indicating whether signatures generated for the signing platform can be revoked.
+     * </p>
+     * 
+     * @return A flag indicating whether signatures generated for the signing platform can be revoked.
+     */
+
+    public Boolean getRevocationSupported() {
+        return this.revocationSupported;
+    }
+
+    /**
+     * <p>
+     * A flag indicating whether signatures generated for the signing platform can be revoked.
+     * </p>
+     * 
+     * @param revocationSupported
+     *        A flag indicating whether signatures generated for the signing platform can be revoked.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetSigningPlatformResult withRevocationSupported(Boolean revocationSupported) {
+        setRevocationSupported(revocationSupported);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A flag indicating whether signatures generated for the signing platform can be revoked.
+     * </p>
+     * 
+     * @return A flag indicating whether signatures generated for the signing platform can be revoked.
+     */
+
+    public Boolean isRevocationSupported() {
+        return this.revocationSupported;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -438,7 +496,9 @@ public class GetSigningPlatformResult extends com.amazonaws.AmazonWebServiceResu
         if (getSigningImageFormat() != null)
             sb.append("SigningImageFormat: ").append(getSigningImageFormat()).append(",");
         if (getMaxSizeInMB() != null)
-            sb.append("MaxSizeInMB: ").append(getMaxSizeInMB());
+            sb.append("MaxSizeInMB: ").append(getMaxSizeInMB()).append(",");
+        if (getRevocationSupported() != null)
+            sb.append("RevocationSupported: ").append(getRevocationSupported());
         sb.append("}");
         return sb.toString();
     }
@@ -485,6 +545,10 @@ public class GetSigningPlatformResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getMaxSizeInMB() != null && other.getMaxSizeInMB().equals(this.getMaxSizeInMB()) == false)
             return false;
+        if (other.getRevocationSupported() == null ^ this.getRevocationSupported() == null)
+            return false;
+        if (other.getRevocationSupported() != null && other.getRevocationSupported().equals(this.getRevocationSupported()) == false)
+            return false;
         return true;
     }
 
@@ -501,6 +565,7 @@ public class GetSigningPlatformResult extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getSigningConfiguration() == null) ? 0 : getSigningConfiguration().hashCode());
         hashCode = prime * hashCode + ((getSigningImageFormat() == null) ? 0 : getSigningImageFormat().hashCode());
         hashCode = prime * hashCode + ((getMaxSizeInMB() == null) ? 0 : getMaxSizeInMB().hashCode());
+        hashCode = prime * hashCode + ((getRevocationSupported() == null) ? 0 : getRevocationSupported().hashCode());
         return hashCode;
     }
 

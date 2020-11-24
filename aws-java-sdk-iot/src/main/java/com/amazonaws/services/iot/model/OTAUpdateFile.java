@@ -33,6 +33,13 @@ public class OTAUpdateFile implements Serializable, Cloneable, StructuredPojo {
     private String fileName;
     /**
      * <p>
+     * An integer value you can include in the job document to allow your devices to identify the type of file received
+     * from the cloud.
+     * </p>
+     */
+    private Integer fileType;
+    /**
+     * <p>
      * The file version.
      * </p>
      */
@@ -93,6 +100,52 @@ public class OTAUpdateFile implements Serializable, Cloneable, StructuredPojo {
 
     public OTAUpdateFile withFileName(String fileName) {
         setFileName(fileName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An integer value you can include in the job document to allow your devices to identify the type of file received
+     * from the cloud.
+     * </p>
+     * 
+     * @param fileType
+     *        An integer value you can include in the job document to allow your devices to identify the type of file
+     *        received from the cloud.
+     */
+
+    public void setFileType(Integer fileType) {
+        this.fileType = fileType;
+    }
+
+    /**
+     * <p>
+     * An integer value you can include in the job document to allow your devices to identify the type of file received
+     * from the cloud.
+     * </p>
+     * 
+     * @return An integer value you can include in the job document to allow your devices to identify the type of file
+     *         received from the cloud.
+     */
+
+    public Integer getFileType() {
+        return this.fileType;
+    }
+
+    /**
+     * <p>
+     * An integer value you can include in the job document to allow your devices to identify the type of file received
+     * from the cloud.
+     * </p>
+     * 
+     * @param fileType
+     *        An integer value you can include in the job document to allow your devices to identify the type of file
+     *        received from the cloud.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OTAUpdateFile withFileType(Integer fileType) {
+        setFileType(fileType);
         return this;
     }
 
@@ -298,6 +351,8 @@ public class OTAUpdateFile implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getFileName() != null)
             sb.append("FileName: ").append(getFileName()).append(",");
+        if (getFileType() != null)
+            sb.append("FileType: ").append(getFileType()).append(",");
         if (getFileVersion() != null)
             sb.append("FileVersion: ").append(getFileVersion()).append(",");
         if (getFileLocation() != null)
@@ -324,6 +379,10 @@ public class OTAUpdateFile implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFileName() != null && other.getFileName().equals(this.getFileName()) == false)
             return false;
+        if (other.getFileType() == null ^ this.getFileType() == null)
+            return false;
+        if (other.getFileType() != null && other.getFileType().equals(this.getFileType()) == false)
+            return false;
         if (other.getFileVersion() == null ^ this.getFileVersion() == null)
             return false;
         if (other.getFileVersion() != null && other.getFileVersion().equals(this.getFileVersion()) == false)
@@ -349,6 +408,7 @@ public class OTAUpdateFile implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getFileName() == null) ? 0 : getFileName().hashCode());
+        hashCode = prime * hashCode + ((getFileType() == null) ? 0 : getFileType().hashCode());
         hashCode = prime * hashCode + ((getFileVersion() == null) ? 0 : getFileVersion().hashCode());
         hashCode = prime * hashCode + ((getFileLocation() == null) ? 0 : getFileLocation().hashCode());
         hashCode = prime * hashCode + ((getCodeSigning() == null) ? 0 : getCodeSigning().hashCode());

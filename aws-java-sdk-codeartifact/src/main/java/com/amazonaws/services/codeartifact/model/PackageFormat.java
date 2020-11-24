@@ -22,7 +22,8 @@ public enum PackageFormat {
 
     Npm("npm"),
     Pypi("pypi"),
-    Maven("maven");
+    Maven("maven"),
+    Nuget("nuget");
 
     private String value;
 

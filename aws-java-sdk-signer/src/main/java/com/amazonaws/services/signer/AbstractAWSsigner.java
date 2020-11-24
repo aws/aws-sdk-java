@@ -29,6 +29,11 @@ public class AbstractAWSsigner implements AWSsigner {
     }
 
     @Override
+    public AddProfilePermissionResult addProfilePermission(AddProfilePermissionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CancelSigningProfileResult cancelSigningProfile(CancelSigningProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -45,6 +50,11 @@ public class AbstractAWSsigner implements AWSsigner {
 
     @Override
     public GetSigningProfileResult getSigningProfile(GetSigningProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListProfilePermissionsResult listProfilePermissions(ListProfilePermissionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -70,6 +80,21 @@ public class AbstractAWSsigner implements AWSsigner {
 
     @Override
     public PutSigningProfileResult putSigningProfile(PutSigningProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RemoveProfilePermissionResult removeProfilePermission(RemoveProfilePermissionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RevokeSignatureResult revokeSignature(RevokeSignatureRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RevokeSigningProfileResult revokeSigningProfile(RevokeSigningProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

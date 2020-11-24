@@ -63,6 +63,11 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      * <code>maven</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>nuget</code>
+     * </p>
+     * </li>
      * </ul>
      */
     private String format;
@@ -85,6 +90,11 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
      * </p>
      * </li>
      * </ul>
@@ -265,6 +275,11 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      * <code>maven</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>nuget</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param format
@@ -283,6 +298,11 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      *        <li>
      *        <p>
      *        <code>maven</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>nuget</code>
      *        </p>
      *        </li>
      * @see PackageFormat
@@ -312,6 +332,11 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      * <code>maven</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>nuget</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return A format that specifies the type of the package with the statuses to update. The valid values are: </p>
@@ -329,6 +354,11 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      *         <li>
      *         <p>
      *         <code>maven</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>nuget</code>
      *         </p>
      *         </li>
      * @see PackageFormat
@@ -358,6 +388,11 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      * <code>maven</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>nuget</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param format
@@ -376,6 +411,11 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      *        <li>
      *        <p>
      *        <code>maven</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>nuget</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -407,6 +447,11 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      * <code>maven</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>nuget</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param format
@@ -425,6 +470,11 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      *        <li>
      *        <p>
      *        <code>maven</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>nuget</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -457,6 +507,11 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param namespace
@@ -476,6 +531,11 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      *        <li>
      *        <p>
      *        A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
      *        </p>
      *        </li>
      */
@@ -505,6 +565,11 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The namespace of the package. The package component that specifies its namespace depends on its type. For
@@ -523,6 +588,11 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      *         <li>
      *         <p>
      *         A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
      *         </p>
      *         </li>
      */
@@ -552,6 +622,11 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param namespace
@@ -571,6 +646,11 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      *        <li>
      *        <p>
      *        A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

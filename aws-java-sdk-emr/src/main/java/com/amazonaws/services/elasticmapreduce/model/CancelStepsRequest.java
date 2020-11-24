@@ -30,7 +30,7 @@ public class CancelStepsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The <code>ClusterID</code> for which specified steps will be canceled. Use <a>RunJobFlow</a> and
+     * The <code>ClusterID</code> for the specified steps that will be canceled. Use <a>RunJobFlow</a> and
      * <a>ListClusters</a> to get ClusterIDs.
      * </p>
      */
@@ -44,20 +44,19 @@ public class CancelStepsRequest extends com.amazonaws.AmazonWebServiceRequest im
     private com.amazonaws.internal.SdkInternalList<String> stepIds;
     /**
      * <p>
-     * The option to choose for cancelling <code>RUNNING</code> steps. By default, the value is
-     * <code>SEND_INTERRUPT</code>.
+     * The option to choose to cancel <code>RUNNING</code> steps. By default, the value is <code>SEND_INTERRUPT</code>.
      * </p>
      */
     private String stepCancellationOption;
 
     /**
      * <p>
-     * The <code>ClusterID</code> for which specified steps will be canceled. Use <a>RunJobFlow</a> and
+     * The <code>ClusterID</code> for the specified steps that will be canceled. Use <a>RunJobFlow</a> and
      * <a>ListClusters</a> to get ClusterIDs.
      * </p>
      * 
      * @param clusterId
-     *        The <code>ClusterID</code> for which specified steps will be canceled. Use <a>RunJobFlow</a> and
+     *        The <code>ClusterID</code> for the specified steps that will be canceled. Use <a>RunJobFlow</a> and
      *        <a>ListClusters</a> to get ClusterIDs.
      */
 
@@ -67,11 +66,11 @@ public class CancelStepsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The <code>ClusterID</code> for which specified steps will be canceled. Use <a>RunJobFlow</a> and
+     * The <code>ClusterID</code> for the specified steps that will be canceled. Use <a>RunJobFlow</a> and
      * <a>ListClusters</a> to get ClusterIDs.
      * </p>
      * 
-     * @return The <code>ClusterID</code> for which specified steps will be canceled. Use <a>RunJobFlow</a> and
+     * @return The <code>ClusterID</code> for the specified steps that will be canceled. Use <a>RunJobFlow</a> and
      *         <a>ListClusters</a> to get ClusterIDs.
      */
 
@@ -81,12 +80,12 @@ public class CancelStepsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The <code>ClusterID</code> for which specified steps will be canceled. Use <a>RunJobFlow</a> and
+     * The <code>ClusterID</code> for the specified steps that will be canceled. Use <a>RunJobFlow</a> and
      * <a>ListClusters</a> to get ClusterIDs.
      * </p>
      * 
      * @param clusterId
-     *        The <code>ClusterID</code> for which specified steps will be canceled. Use <a>RunJobFlow</a> and
+     *        The <code>ClusterID</code> for the specified steps that will be canceled. Use <a>RunJobFlow</a> and
      *        <a>ListClusters</a> to get ClusterIDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -179,12 +178,11 @@ public class CancelStepsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The option to choose for cancelling <code>RUNNING</code> steps. By default, the value is
-     * <code>SEND_INTERRUPT</code>.
+     * The option to choose to cancel <code>RUNNING</code> steps. By default, the value is <code>SEND_INTERRUPT</code>.
      * </p>
      * 
      * @param stepCancellationOption
-     *        The option to choose for cancelling <code>RUNNING</code> steps. By default, the value is
+     *        The option to choose to cancel <code>RUNNING</code> steps. By default, the value is
      *        <code>SEND_INTERRUPT</code>.
      * @see StepCancellationOption
      */
@@ -195,11 +193,10 @@ public class CancelStepsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The option to choose for cancelling <code>RUNNING</code> steps. By default, the value is
-     * <code>SEND_INTERRUPT</code>.
+     * The option to choose to cancel <code>RUNNING</code> steps. By default, the value is <code>SEND_INTERRUPT</code>.
      * </p>
      * 
-     * @return The option to choose for cancelling <code>RUNNING</code> steps. By default, the value is
+     * @return The option to choose to cancel <code>RUNNING</code> steps. By default, the value is
      *         <code>SEND_INTERRUPT</code>.
      * @see StepCancellationOption
      */
@@ -210,12 +207,11 @@ public class CancelStepsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The option to choose for cancelling <code>RUNNING</code> steps. By default, the value is
-     * <code>SEND_INTERRUPT</code>.
+     * The option to choose to cancel <code>RUNNING</code> steps. By default, the value is <code>SEND_INTERRUPT</code>.
      * </p>
      * 
      * @param stepCancellationOption
-     *        The option to choose for cancelling <code>RUNNING</code> steps. By default, the value is
+     *        The option to choose to cancel <code>RUNNING</code> steps. By default, the value is
      *        <code>SEND_INTERRUPT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StepCancellationOption
@@ -228,12 +224,11 @@ public class CancelStepsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The option to choose for cancelling <code>RUNNING</code> steps. By default, the value is
-     * <code>SEND_INTERRUPT</code>.
+     * The option to choose to cancel <code>RUNNING</code> steps. By default, the value is <code>SEND_INTERRUPT</code>.
      * </p>
      * 
      * @param stepCancellationOption
-     *        The option to choose for cancelling <code>RUNNING</code> steps. By default, the value is
+     *        The option to choose to cancel <code>RUNNING</code> steps. By default, the value is
      *        <code>SEND_INTERRUPT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StepCancellationOption

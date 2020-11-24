@@ -47,6 +47,18 @@ public class LayerVersionContentOutput implements Serializable, Cloneable, Struc
      * </p>
      */
     private Long codeSize;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for a signing profile version.
+     * </p>
+     */
+    private String signingProfileVersionArn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a signing job.
+     * </p>
+     */
+    private String signingJobArn;
 
     /**
      * <p>
@@ -169,6 +181,86 @@ public class LayerVersionContentOutput implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for a signing profile version.
+     * </p>
+     * 
+     * @param signingProfileVersionArn
+     *        The Amazon Resource Name (ARN) for a signing profile version.
+     */
+
+    public void setSigningProfileVersionArn(String signingProfileVersionArn) {
+        this.signingProfileVersionArn = signingProfileVersionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for a signing profile version.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for a signing profile version.
+     */
+
+    public String getSigningProfileVersionArn() {
+        return this.signingProfileVersionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for a signing profile version.
+     * </p>
+     * 
+     * @param signingProfileVersionArn
+     *        The Amazon Resource Name (ARN) for a signing profile version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LayerVersionContentOutput withSigningProfileVersionArn(String signingProfileVersionArn) {
+        setSigningProfileVersionArn(signingProfileVersionArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a signing job.
+     * </p>
+     * 
+     * @param signingJobArn
+     *        The Amazon Resource Name (ARN) of a signing job.
+     */
+
+    public void setSigningJobArn(String signingJobArn) {
+        this.signingJobArn = signingJobArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a signing job.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of a signing job.
+     */
+
+    public String getSigningJobArn() {
+        return this.signingJobArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a signing job.
+     * </p>
+     * 
+     * @param signingJobArn
+     *        The Amazon Resource Name (ARN) of a signing job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LayerVersionContentOutput withSigningJobArn(String signingJobArn) {
+        setSigningJobArn(signingJobArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -185,7 +277,11 @@ public class LayerVersionContentOutput implements Serializable, Cloneable, Struc
         if (getCodeSha256() != null)
             sb.append("CodeSha256: ").append(getCodeSha256()).append(",");
         if (getCodeSize() != null)
-            sb.append("CodeSize: ").append(getCodeSize());
+            sb.append("CodeSize: ").append(getCodeSize()).append(",");
+        if (getSigningProfileVersionArn() != null)
+            sb.append("SigningProfileVersionArn: ").append(getSigningProfileVersionArn()).append(",");
+        if (getSigningJobArn() != null)
+            sb.append("SigningJobArn: ").append(getSigningJobArn());
         sb.append("}");
         return sb.toString();
     }
@@ -212,6 +308,14 @@ public class LayerVersionContentOutput implements Serializable, Cloneable, Struc
             return false;
         if (other.getCodeSize() != null && other.getCodeSize().equals(this.getCodeSize()) == false)
             return false;
+        if (other.getSigningProfileVersionArn() == null ^ this.getSigningProfileVersionArn() == null)
+            return false;
+        if (other.getSigningProfileVersionArn() != null && other.getSigningProfileVersionArn().equals(this.getSigningProfileVersionArn()) == false)
+            return false;
+        if (other.getSigningJobArn() == null ^ this.getSigningJobArn() == null)
+            return false;
+        if (other.getSigningJobArn() != null && other.getSigningJobArn().equals(this.getSigningJobArn()) == false)
+            return false;
         return true;
     }
 
@@ -223,6 +327,8 @@ public class LayerVersionContentOutput implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         hashCode = prime * hashCode + ((getCodeSha256() == null) ? 0 : getCodeSha256().hashCode());
         hashCode = prime * hashCode + ((getCodeSize() == null) ? 0 : getCodeSize().hashCode());
+        hashCode = prime * hashCode + ((getSigningProfileVersionArn() == null) ? 0 : getSigningProfileVersionArn().hashCode());
+        hashCode = prime * hashCode + ((getSigningJobArn() == null) ? 0 : getSigningJobArn().hashCode());
         return hashCode;
     }
 

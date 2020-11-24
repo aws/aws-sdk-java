@@ -32,7 +32,7 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose
-     * relationship status with the master is set to <code>ENABLED</code> or <code>DISABLED</code>.
+     * relationship status with the master is set to <code>ENABLED</code>.
      * </p>
      * <p>
      * If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member accounts.
@@ -64,7 +64,7 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose
-     * relationship status with the master is set to <code>ENABLED</code> or <code>DISABLED</code>.
+     * relationship status with the master is set to <code>ENABLED</code>.
      * </p>
      * <p>
      * If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member accounts.
@@ -75,7 +75,7 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        master account. The default value is <code>TRUE</code>.</p>
      *        <p>
      *        If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose
-     *        relationship status with the master is set to <code>ENABLED</code> or <code>DISABLED</code>.
+     *        relationship status with the master is set to <code>ENABLED</code>.
      *        </p>
      *        <p>
      *        If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member
@@ -93,7 +93,7 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose
-     * relationship status with the master is set to <code>ENABLED</code> or <code>DISABLED</code>.
+     * relationship status with the master is set to <code>ENABLED</code>.
      * </p>
      * <p>
      * If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member accounts.
@@ -103,7 +103,7 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         master account. The default value is <code>TRUE</code>.</p>
      *         <p>
      *         If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose
-     *         relationship status with the master is set to <code>ENABLED</code> or <code>DISABLED</code>.
+     *         relationship status with the master is set to <code>ENABLED</code>.
      *         </p>
      *         <p>
      *         If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member
@@ -121,7 +121,7 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose
-     * relationship status with the master is set to <code>ENABLED</code> or <code>DISABLED</code>.
+     * relationship status with the master is set to <code>ENABLED</code>.
      * </p>
      * <p>
      * If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member accounts.
@@ -132,7 +132,7 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        master account. The default value is <code>TRUE</code>.</p>
      *        <p>
      *        If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose
-     *        relationship status with the master is set to <code>ENABLED</code> or <code>DISABLED</code>.
+     *        relationship status with the master is set to <code>ENABLED</code>.
      *        </p>
      *        <p>
      *        If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member
@@ -152,7 +152,7 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose
-     * relationship status with the master is set to <code>ENABLED</code> or <code>DISABLED</code>.
+     * relationship status with the master is set to <code>ENABLED</code>.
      * </p>
      * <p>
      * If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member accounts.
@@ -162,7 +162,7 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         master account. The default value is <code>TRUE</code>.</p>
      *         <p>
      *         If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose
-     *         relationship status with the master is set to <code>ENABLED</code> or <code>DISABLED</code>.
+     *         relationship status with the master is set to <code>ENABLED</code>.
      *         </p>
      *         <p>
      *         If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member

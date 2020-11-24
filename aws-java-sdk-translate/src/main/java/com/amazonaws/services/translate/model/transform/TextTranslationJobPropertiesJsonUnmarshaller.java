@@ -80,6 +80,12 @@ public class TextTranslationJobPropertiesJsonUnmarshaller implements Unmarshalle
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ParallelDataNames", targetDepth)) {
+                    context.nextToken();
+                    textTranslationJobProperties.setParallelDataNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("Message", targetDepth)) {
                     context.nextToken();
                     textTranslationJobProperties.setMessage(context.getUnmarshaller(String.class).unmarshall(context));

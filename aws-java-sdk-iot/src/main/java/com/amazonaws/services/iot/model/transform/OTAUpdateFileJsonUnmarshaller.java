@@ -52,6 +52,10 @@ public class OTAUpdateFileJsonUnmarshaller implements Unmarshaller<OTAUpdateFile
                     context.nextToken();
                     oTAUpdateFile.setFileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("fileType", targetDepth)) {
+                    context.nextToken();
+                    oTAUpdateFile.setFileType(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("fileVersion", targetDepth)) {
                     context.nextToken();
                     oTAUpdateFile.setFileVersion(context.getUnmarshaller(String.class).unmarshall(context));

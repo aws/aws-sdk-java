@@ -63,6 +63,8 @@ public class CreateFunctionRequestMarshaller {
             .marshallLocationName("Layers").build();
     private static final MarshallingInfo<List> FILESYSTEMCONFIGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileSystemConfigs").build();
+    private static final MarshallingInfo<String> CODESIGNINGCONFIGARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CodeSigningConfigArn").build();
 
     private static final CreateFunctionRequestMarshaller instance = new CreateFunctionRequestMarshaller();
 
@@ -97,6 +99,7 @@ public class CreateFunctionRequestMarshaller {
             protocolMarshaller.marshall(createFunctionRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createFunctionRequest.getLayers(), LAYERS_BINDING);
             protocolMarshaller.marshall(createFunctionRequest.getFileSystemConfigs(), FILESYSTEMCONFIGS_BINDING);
+            protocolMarshaller.marshall(createFunctionRequest.getCodeSigningConfigArn(), CODESIGNINGCONFIGARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

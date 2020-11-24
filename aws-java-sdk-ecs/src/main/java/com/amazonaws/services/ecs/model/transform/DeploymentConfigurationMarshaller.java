@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DeploymentConfigurationMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> DEPLOYMENTCIRCUITBREAKER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentCircuitBreaker").build();
     private static final MarshallingInfo<Integer> MAXIMUMPERCENT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maximumPercent").build();
     private static final MarshallingInfo<Integer> MINIMUMHEALTHYPERCENT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -48,6 +50,7 @@ public class DeploymentConfigurationMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(deploymentConfiguration.getDeploymentCircuitBreaker(), DEPLOYMENTCIRCUITBREAKER_BINDING);
             protocolMarshaller.marshall(deploymentConfiguration.getMaximumPercent(), MAXIMUMPERCENT_BINDING);
             protocolMarshaller.marshall(deploymentConfiguration.getMinimumHealthyPercent(), MINIMUMHEALTHYPERCENT_BINDING);
         } catch (Exception e) {

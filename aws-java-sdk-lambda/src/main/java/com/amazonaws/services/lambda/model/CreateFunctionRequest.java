@@ -162,6 +162,13 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<FileSystemConfig> fileSystemConfigs;
+    /**
+     * <p>
+     * To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing
+     * configuration includes set set of signing profiles, which define the trusted publishers for this function.
+     * </p>
+     */
+    private String codeSigningConfigArn;
 
     /**
      * <p>
@@ -1215,6 +1222,53 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing
+     * configuration includes set set of signing profiles, which define the trusted publishers for this function.
+     * </p>
+     * 
+     * @param codeSigningConfigArn
+     *        To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing
+     *        configuration includes set set of signing profiles, which define the trusted publishers for this function.
+     */
+
+    public void setCodeSigningConfigArn(String codeSigningConfigArn) {
+        this.codeSigningConfigArn = codeSigningConfigArn;
+    }
+
+    /**
+     * <p>
+     * To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing
+     * configuration includes set set of signing profiles, which define the trusted publishers for this function.
+     * </p>
+     * 
+     * @return To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing
+     *         configuration includes set set of signing profiles, which define the trusted publishers for this
+     *         function.
+     */
+
+    public String getCodeSigningConfigArn() {
+        return this.codeSigningConfigArn;
+    }
+
+    /**
+     * <p>
+     * To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing
+     * configuration includes set set of signing profiles, which define the trusted publishers for this function.
+     * </p>
+     * 
+     * @param codeSigningConfigArn
+     *        To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing
+     *        configuration includes set set of signing profiles, which define the trusted publishers for this function.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFunctionRequest withCodeSigningConfigArn(String codeSigningConfigArn) {
+        setCodeSigningConfigArn(codeSigningConfigArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1259,7 +1313,9 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getLayers() != null)
             sb.append("Layers: ").append(getLayers()).append(",");
         if (getFileSystemConfigs() != null)
-            sb.append("FileSystemConfigs: ").append(getFileSystemConfigs());
+            sb.append("FileSystemConfigs: ").append(getFileSystemConfigs()).append(",");
+        if (getCodeSigningConfigArn() != null)
+            sb.append("CodeSigningConfigArn: ").append(getCodeSigningConfigArn());
         sb.append("}");
         return sb.toString();
     }
@@ -1342,6 +1398,10 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getFileSystemConfigs() != null && other.getFileSystemConfigs().equals(this.getFileSystemConfigs()) == false)
             return false;
+        if (other.getCodeSigningConfigArn() == null ^ this.getCodeSigningConfigArn() == null)
+            return false;
+        if (other.getCodeSigningConfigArn() != null && other.getCodeSigningConfigArn().equals(this.getCodeSigningConfigArn()) == false)
+            return false;
         return true;
     }
 
@@ -1367,6 +1427,7 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getLayers() == null) ? 0 : getLayers().hashCode());
         hashCode = prime * hashCode + ((getFileSystemConfigs() == null) ? 0 : getFileSystemConfigs().hashCode());
+        hashCode = prime * hashCode + ((getCodeSigningConfigArn() == null) ? 0 : getCodeSigningConfigArn().hashCode());
         return hashCode;
     }
 

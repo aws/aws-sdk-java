@@ -81,6 +81,28 @@ public class ObservationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CodeDeployInstanceGroupId").build();
     private static final MarshallingInfo<String> EC2STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Ec2State").build();
+    private static final MarshallingInfo<String> RDSEVENTCATEGORIES_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RdsEventCategories").build();
+    private static final MarshallingInfo<String> RDSEVENTMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RdsEventMessage").build();
+    private static final MarshallingInfo<String> S3EVENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3EventName").build();
+    private static final MarshallingInfo<String> STATESEXECUTIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatesExecutionArn").build();
+    private static final MarshallingInfo<String> STATESARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StatesArn").build();
+    private static final MarshallingInfo<String> STATESSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatesStatus").build();
+    private static final MarshallingInfo<String> STATESINPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatesInput").build();
+    private static final MarshallingInfo<String> EBSEVENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("EbsEvent").build();
+    private static final MarshallingInfo<String> EBSRESULT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("EbsResult").build();
+    private static final MarshallingInfo<String> EBSCAUSE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("EbsCause").build();
+    private static final MarshallingInfo<String> EBSREQUESTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EbsRequestId").build();
     private static final MarshallingInfo<Integer> XRAYFAULTPERCENT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("XRayFaultPercent").build();
     private static final MarshallingInfo<Integer> XRAYTHROTTLEPERCENT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -139,6 +161,17 @@ public class ObservationMarshaller {
             protocolMarshaller.marshall(observation.getCodeDeployApplication(), CODEDEPLOYAPPLICATION_BINDING);
             protocolMarshaller.marshall(observation.getCodeDeployInstanceGroupId(), CODEDEPLOYINSTANCEGROUPID_BINDING);
             protocolMarshaller.marshall(observation.getEc2State(), EC2STATE_BINDING);
+            protocolMarshaller.marshall(observation.getRdsEventCategories(), RDSEVENTCATEGORIES_BINDING);
+            protocolMarshaller.marshall(observation.getRdsEventMessage(), RDSEVENTMESSAGE_BINDING);
+            protocolMarshaller.marshall(observation.getS3EventName(), S3EVENTNAME_BINDING);
+            protocolMarshaller.marshall(observation.getStatesExecutionArn(), STATESEXECUTIONARN_BINDING);
+            protocolMarshaller.marshall(observation.getStatesArn(), STATESARN_BINDING);
+            protocolMarshaller.marshall(observation.getStatesStatus(), STATESSTATUS_BINDING);
+            protocolMarshaller.marshall(observation.getStatesInput(), STATESINPUT_BINDING);
+            protocolMarshaller.marshall(observation.getEbsEvent(), EBSEVENT_BINDING);
+            protocolMarshaller.marshall(observation.getEbsResult(), EBSRESULT_BINDING);
+            protocolMarshaller.marshall(observation.getEbsCause(), EBSCAUSE_BINDING);
+            protocolMarshaller.marshall(observation.getEbsRequestId(), EBSREQUESTID_BINDING);
             protocolMarshaller.marshall(observation.getXRayFaultPercent(), XRAYFAULTPERCENT_BINDING);
             protocolMarshaller.marshall(observation.getXRayThrottlePercent(), XRAYTHROTTLEPERCENT_BINDING);
             protocolMarshaller.marshall(observation.getXRayErrorPercent(), XRAYERRORPERCENT_BINDING);

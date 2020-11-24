@@ -69,29 +69,27 @@ public class InstancesDistribution implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates how to allocate instances across Spot Instance pools. If the allocation strategy is
+     * <code>capacity-optimized</code> (recommended), the Auto Scaling group launches instances using Spot pools that
+     * are optimally chosen based on the available Spot capacity. If the allocation strategy is
      * <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot pools with the lowest price,
-     * and evenly allocates your instances across the number of Spot pools that you specify. If the allocation strategy
-     * is <code>capacity-optimized</code>, the Auto Scaling group launches instances using Spot pools that are optimally
-     * chosen based on the available Spot capacity. Defaults to <code>lowest-price</code> if not specified.
+     * and evenly allocates your instances across the number of Spot pools that you specify. Defaults to
+     * <code>lowest-price</code> if not specified.
      * </p>
      */
     private String spotAllocationStrategy;
     /**
      * <p>
      * The number of Spot Instance pools across which to allocate your Spot Instances. The Spot pools are determined
-     * from the different instance types in the overrides. Defaults to 2 if not specified. Valid only when the Spot
-     * allocation strategy is <code>lowest-price</code>.
-     * </p>
-     * <p>
-     * Valid Range: Minimum value of 1. Maximum value of 20.
+     * from the different instance types in the overrides. Valid only when the Spot allocation strategy is
+     * <code>lowest-price</code>. Value must be in the range of 1 to 20. Defaults to 2 if not specified.
      * </p>
      */
     private Integer spotInstancePools;
     /**
      * <p>
-     * The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave the value of this
-     * parameter blank (which is the default), the maximum Spot price is set at the On-Demand price. To remove a value
-     * that you previously set, include the parameter but leave the value blank.
+     * The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave the value at its
+     * default (empty), Amazon EC2 Auto Scaling uses the On-Demand price as the maximum Spot price. To remove a value
+     * that you previously set, include the property but specify an empty string ("") for the value.
      * </p>
      */
     private String spotMaxPrice;
@@ -285,18 +283,19 @@ public class InstancesDistribution implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates how to allocate instances across Spot Instance pools. If the allocation strategy is
+     * <code>capacity-optimized</code> (recommended), the Auto Scaling group launches instances using Spot pools that
+     * are optimally chosen based on the available Spot capacity. If the allocation strategy is
      * <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot pools with the lowest price,
-     * and evenly allocates your instances across the number of Spot pools that you specify. If the allocation strategy
-     * is <code>capacity-optimized</code>, the Auto Scaling group launches instances using Spot pools that are optimally
-     * chosen based on the available Spot capacity. Defaults to <code>lowest-price</code> if not specified.
+     * and evenly allocates your instances across the number of Spot pools that you specify. Defaults to
+     * <code>lowest-price</code> if not specified.
      * </p>
      * 
      * @param spotAllocationStrategy
      *        Indicates how to allocate instances across Spot Instance pools. If the allocation strategy is
+     *        <code>capacity-optimized</code> (recommended), the Auto Scaling group launches instances using Spot pools
+     *        that are optimally chosen based on the available Spot capacity. If the allocation strategy is
      *        <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot pools with the lowest
-     *        price, and evenly allocates your instances across the number of Spot pools that you specify. If the
-     *        allocation strategy is <code>capacity-optimized</code>, the Auto Scaling group launches instances using
-     *        Spot pools that are optimally chosen based on the available Spot capacity. Defaults to
+     *        price, and evenly allocates your instances across the number of Spot pools that you specify. Defaults to
      *        <code>lowest-price</code> if not specified.
      */
 
@@ -307,17 +306,18 @@ public class InstancesDistribution implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates how to allocate instances across Spot Instance pools. If the allocation strategy is
+     * <code>capacity-optimized</code> (recommended), the Auto Scaling group launches instances using Spot pools that
+     * are optimally chosen based on the available Spot capacity. If the allocation strategy is
      * <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot pools with the lowest price,
-     * and evenly allocates your instances across the number of Spot pools that you specify. If the allocation strategy
-     * is <code>capacity-optimized</code>, the Auto Scaling group launches instances using Spot pools that are optimally
-     * chosen based on the available Spot capacity. Defaults to <code>lowest-price</code> if not specified.
+     * and evenly allocates your instances across the number of Spot pools that you specify. Defaults to
+     * <code>lowest-price</code> if not specified.
      * </p>
      * 
      * @return Indicates how to allocate instances across Spot Instance pools. If the allocation strategy is
+     *         <code>capacity-optimized</code> (recommended), the Auto Scaling group launches instances using Spot pools
+     *         that are optimally chosen based on the available Spot capacity. If the allocation strategy is
      *         <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot pools with the lowest
-     *         price, and evenly allocates your instances across the number of Spot pools that you specify. If the
-     *         allocation strategy is <code>capacity-optimized</code>, the Auto Scaling group launches instances using
-     *         Spot pools that are optimally chosen based on the available Spot capacity. Defaults to
+     *         price, and evenly allocates your instances across the number of Spot pools that you specify. Defaults to
      *         <code>lowest-price</code> if not specified.
      */
 
@@ -328,18 +328,19 @@ public class InstancesDistribution implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates how to allocate instances across Spot Instance pools. If the allocation strategy is
+     * <code>capacity-optimized</code> (recommended), the Auto Scaling group launches instances using Spot pools that
+     * are optimally chosen based on the available Spot capacity. If the allocation strategy is
      * <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot pools with the lowest price,
-     * and evenly allocates your instances across the number of Spot pools that you specify. If the allocation strategy
-     * is <code>capacity-optimized</code>, the Auto Scaling group launches instances using Spot pools that are optimally
-     * chosen based on the available Spot capacity. Defaults to <code>lowest-price</code> if not specified.
+     * and evenly allocates your instances across the number of Spot pools that you specify. Defaults to
+     * <code>lowest-price</code> if not specified.
      * </p>
      * 
      * @param spotAllocationStrategy
      *        Indicates how to allocate instances across Spot Instance pools. If the allocation strategy is
+     *        <code>capacity-optimized</code> (recommended), the Auto Scaling group launches instances using Spot pools
+     *        that are optimally chosen based on the available Spot capacity. If the allocation strategy is
      *        <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot pools with the lowest
-     *        price, and evenly allocates your instances across the number of Spot pools that you specify. If the
-     *        allocation strategy is <code>capacity-optimized</code>, the Auto Scaling group launches instances using
-     *        Spot pools that are optimally chosen based on the available Spot capacity. Defaults to
+     *        price, and evenly allocates your instances across the number of Spot pools that you specify. Defaults to
      *        <code>lowest-price</code> if not specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -352,19 +353,15 @@ public class InstancesDistribution implements Serializable, Cloneable {
     /**
      * <p>
      * The number of Spot Instance pools across which to allocate your Spot Instances. The Spot pools are determined
-     * from the different instance types in the overrides. Defaults to 2 if not specified. Valid only when the Spot
-     * allocation strategy is <code>lowest-price</code>.
-     * </p>
-     * <p>
-     * Valid Range: Minimum value of 1. Maximum value of 20.
+     * from the different instance types in the overrides. Valid only when the Spot allocation strategy is
+     * <code>lowest-price</code>. Value must be in the range of 1 to 20. Defaults to 2 if not specified.
      * </p>
      * 
      * @param spotInstancePools
      *        The number of Spot Instance pools across which to allocate your Spot Instances. The Spot pools are
-     *        determined from the different instance types in the overrides. Defaults to 2 if not specified. Valid only
-     *        when the Spot allocation strategy is <code>lowest-price</code>.</p>
-     *        <p>
-     *        Valid Range: Minimum value of 1. Maximum value of 20.
+     *        determined from the different instance types in the overrides. Valid only when the Spot allocation
+     *        strategy is <code>lowest-price</code>. Value must be in the range of 1 to 20. Defaults to 2 if not
+     *        specified.
      */
 
     public void setSpotInstancePools(Integer spotInstancePools) {
@@ -374,18 +371,14 @@ public class InstancesDistribution implements Serializable, Cloneable {
     /**
      * <p>
      * The number of Spot Instance pools across which to allocate your Spot Instances. The Spot pools are determined
-     * from the different instance types in the overrides. Defaults to 2 if not specified. Valid only when the Spot
-     * allocation strategy is <code>lowest-price</code>.
-     * </p>
-     * <p>
-     * Valid Range: Minimum value of 1. Maximum value of 20.
+     * from the different instance types in the overrides. Valid only when the Spot allocation strategy is
+     * <code>lowest-price</code>. Value must be in the range of 1 to 20. Defaults to 2 if not specified.
      * </p>
      * 
      * @return The number of Spot Instance pools across which to allocate your Spot Instances. The Spot pools are
-     *         determined from the different instance types in the overrides. Defaults to 2 if not specified. Valid only
-     *         when the Spot allocation strategy is <code>lowest-price</code>.</p>
-     *         <p>
-     *         Valid Range: Minimum value of 1. Maximum value of 20.
+     *         determined from the different instance types in the overrides. Valid only when the Spot allocation
+     *         strategy is <code>lowest-price</code>. Value must be in the range of 1 to 20. Defaults to 2 if not
+     *         specified.
      */
 
     public Integer getSpotInstancePools() {
@@ -395,19 +388,15 @@ public class InstancesDistribution implements Serializable, Cloneable {
     /**
      * <p>
      * The number of Spot Instance pools across which to allocate your Spot Instances. The Spot pools are determined
-     * from the different instance types in the overrides. Defaults to 2 if not specified. Valid only when the Spot
-     * allocation strategy is <code>lowest-price</code>.
-     * </p>
-     * <p>
-     * Valid Range: Minimum value of 1. Maximum value of 20.
+     * from the different instance types in the overrides. Valid only when the Spot allocation strategy is
+     * <code>lowest-price</code>. Value must be in the range of 1 to 20. Defaults to 2 if not specified.
      * </p>
      * 
      * @param spotInstancePools
      *        The number of Spot Instance pools across which to allocate your Spot Instances. The Spot pools are
-     *        determined from the different instance types in the overrides. Defaults to 2 if not specified. Valid only
-     *        when the Spot allocation strategy is <code>lowest-price</code>.</p>
-     *        <p>
-     *        Valid Range: Minimum value of 1. Maximum value of 20.
+     *        determined from the different instance types in the overrides. Valid only when the Spot allocation
+     *        strategy is <code>lowest-price</code>. Value must be in the range of 1 to 20. Defaults to 2 if not
+     *        specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -418,15 +407,15 @@ public class InstancesDistribution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave the value of this
-     * parameter blank (which is the default), the maximum Spot price is set at the On-Demand price. To remove a value
-     * that you previously set, include the parameter but leave the value blank.
+     * The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave the value at its
+     * default (empty), Amazon EC2 Auto Scaling uses the On-Demand price as the maximum Spot price. To remove a value
+     * that you previously set, include the property but specify an empty string ("") for the value.
      * </p>
      * 
      * @param spotMaxPrice
-     *        The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave the value of
-     *        this parameter blank (which is the default), the maximum Spot price is set at the On-Demand price. To
-     *        remove a value that you previously set, include the parameter but leave the value blank.
+     *        The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave the value at
+     *        its default (empty), Amazon EC2 Auto Scaling uses the On-Demand price as the maximum Spot price. To remove
+     *        a value that you previously set, include the property but specify an empty string ("") for the value.
      */
 
     public void setSpotMaxPrice(String spotMaxPrice) {
@@ -435,14 +424,15 @@ public class InstancesDistribution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave the value of this
-     * parameter blank (which is the default), the maximum Spot price is set at the On-Demand price. To remove a value
-     * that you previously set, include the parameter but leave the value blank.
+     * The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave the value at its
+     * default (empty), Amazon EC2 Auto Scaling uses the On-Demand price as the maximum Spot price. To remove a value
+     * that you previously set, include the property but specify an empty string ("") for the value.
      * </p>
      * 
      * @return The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave the value
-     *         of this parameter blank (which is the default), the maximum Spot price is set at the On-Demand price. To
-     *         remove a value that you previously set, include the parameter but leave the value blank.
+     *         at its default (empty), Amazon EC2 Auto Scaling uses the On-Demand price as the maximum Spot price. To
+     *         remove a value that you previously set, include the property but specify an empty string ("") for the
+     *         value.
      */
 
     public String getSpotMaxPrice() {
@@ -451,15 +441,15 @@ public class InstancesDistribution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave the value of this
-     * parameter blank (which is the default), the maximum Spot price is set at the On-Demand price. To remove a value
-     * that you previously set, include the parameter but leave the value blank.
+     * The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave the value at its
+     * default (empty), Amazon EC2 Auto Scaling uses the On-Demand price as the maximum Spot price. To remove a value
+     * that you previously set, include the property but specify an empty string ("") for the value.
      * </p>
      * 
      * @param spotMaxPrice
-     *        The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave the value of
-     *        this parameter blank (which is the default), the maximum Spot price is set at the On-Demand price. To
-     *        remove a value that you previously set, include the parameter but leave the value blank.
+     *        The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave the value at
+     *        its default (empty), Amazon EC2 Auto Scaling uses the On-Demand price as the maximum Spot price. To remove
+     *        a value that you previously set, include the property but specify an empty string ("") for the value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

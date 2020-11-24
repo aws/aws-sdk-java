@@ -48,6 +48,10 @@ public class DeploymentConfigurationJsonUnmarshaller implements Unmarshaller<Dep
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("deploymentCircuitBreaker", targetDepth)) {
+                    context.nextToken();
+                    deploymentConfiguration.setDeploymentCircuitBreaker(DeploymentCircuitBreakerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("maximumPercent", targetDepth)) {
                     context.nextToken();
                     deploymentConfiguration.setMaximumPercent(context.getUnmarshaller(Integer.class).unmarshall(context));

@@ -58,6 +58,11 @@ public class AbstractAmazonForecast implements AmazonForecast {
     }
 
     @Override
+    public CreatePredictorBacktestExportJobResult createPredictorBacktestExportJob(CreatePredictorBacktestExportJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDatasetResult deleteDataset(DeleteDatasetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -84,6 +89,11 @@ public class AbstractAmazonForecast implements AmazonForecast {
 
     @Override
     public DeletePredictorResult deletePredictor(DeletePredictorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeletePredictorBacktestExportJobResult deletePredictorBacktestExportJob(DeletePredictorBacktestExportJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -118,6 +128,11 @@ public class AbstractAmazonForecast implements AmazonForecast {
     }
 
     @Override
+    public DescribePredictorBacktestExportJobResult describePredictorBacktestExportJob(DescribePredictorBacktestExportJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetAccuracyMetricsResult getAccuracyMetrics(GetAccuracyMetricsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -144,6 +159,11 @@ public class AbstractAmazonForecast implements AmazonForecast {
 
     @Override
     public ListForecastsResult listForecasts(ListForecastsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListPredictorBacktestExportJobsResult listPredictorBacktestExportJobs(ListPredictorBacktestExportJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -25,11 +25,7 @@ import java.util.concurrent.ExecutorService;
  * object representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
- * <fullname>AWS CodeStar Connections</fullname> <important>
- * <p>
- * The CodeStar Connections feature is in preview release and is subject to change.
- * </p>
- * </important>
+ * <fullname>AWS CodeStar Connections</fullname>
  * <p>
  * This AWS CodeStar Connections API Reference provides descriptions and usage examples of the operations and data types
  * for the AWS CodeStar Connections API. You can use the connections API to work with connections and installations.
@@ -44,7 +40,7 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * When you create a connection, the console initiates a third-party connection handshake. <i>Installations</i> are the
  * apps that are used to conduct this handshake. For example, the installation for the Bitbucket provider type is the
- * Bitbucket Cloud app. When you create a connection, you can choose an existing installation or create one.
+ * Bitbucket app. When you create a connection, you can choose an existing installation or create one.
  * </p>
  * <p>
  * When you want to create a connection to an installed provider type such as GitHub Enterprise Server, you create a
@@ -522,6 +518,39 @@ public class AWSCodeStarconnectionsAsyncClient extends AWSCodeStarconnectionsCli
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateHostResult> updateHostAsync(UpdateHostRequest request) {
+
+        return updateHostAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateHostResult> updateHostAsync(final UpdateHostRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateHostRequest, UpdateHostResult> asyncHandler) {
+        final UpdateHostRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateHostResult>() {
+            @Override
+            public UpdateHostResult call() throws Exception {
+                UpdateHostResult result = null;
+
+                try {
+                    result = executeUpdateHost(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

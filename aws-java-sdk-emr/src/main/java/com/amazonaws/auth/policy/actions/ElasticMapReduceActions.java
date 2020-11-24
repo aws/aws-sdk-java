@@ -37,8 +37,16 @@ public enum ElasticMapReduceActions implements Action {
     CancelSteps("elasticmapreduce:CancelSteps"),
     /** Action for the CreateSecurityConfiguration operation. */
     CreateSecurityConfiguration("elasticmapreduce:CreateSecurityConfiguration"),
+    /** Action for the CreateStudio operation. */
+    CreateStudio("elasticmapreduce:CreateStudio"),
+    /** Action for the CreateStudioSessionMapping operation. */
+    CreateStudioSessionMapping("elasticmapreduce:CreateStudioSessionMapping"),
     /** Action for the DeleteSecurityConfiguration operation. */
     DeleteSecurityConfiguration("elasticmapreduce:DeleteSecurityConfiguration"),
+    /** Action for the DeleteStudio operation. */
+    DeleteStudio("elasticmapreduce:DeleteStudio"),
+    /** Action for the DeleteStudioSessionMapping operation. */
+    DeleteStudioSessionMapping("elasticmapreduce:DeleteStudioSessionMapping"),
     /** Action for the DescribeCluster operation. */
     DescribeCluster("elasticmapreduce:DescribeCluster"),
     /** Action for the DescribeJobFlows operation. */
@@ -49,10 +57,14 @@ public enum ElasticMapReduceActions implements Action {
     DescribeSecurityConfiguration("elasticmapreduce:DescribeSecurityConfiguration"),
     /** Action for the DescribeStep operation. */
     DescribeStep("elasticmapreduce:DescribeStep"),
+    /** Action for the DescribeStudio operation. */
+    DescribeStudio("elasticmapreduce:DescribeStudio"),
     /** Action for the GetBlockPublicAccessConfiguration operation. */
     GetBlockPublicAccessConfiguration("elasticmapreduce:GetBlockPublicAccessConfiguration"),
     /** Action for the GetManagedScalingPolicy operation. */
     GetManagedScalingPolicy("elasticmapreduce:GetManagedScalingPolicy"),
+    /** Action for the GetStudioSessionMapping operation. */
+    GetStudioSessionMapping("elasticmapreduce:GetStudioSessionMapping"),
     /** Action for the ListBootstrapActions operation. */
     ListBootstrapActions("elasticmapreduce:ListBootstrapActions"),
     /** Action for the ListClusters operation. */
@@ -69,6 +81,10 @@ public enum ElasticMapReduceActions implements Action {
     ListSecurityConfigurations("elasticmapreduce:ListSecurityConfigurations"),
     /** Action for the ListSteps operation. */
     ListSteps("elasticmapreduce:ListSteps"),
+    /** Action for the ListStudioSessionMappings operation. */
+    ListStudioSessionMappings("elasticmapreduce:ListStudioSessionMappings"),
+    /** Action for the ListStudios operation. */
+    ListStudios("elasticmapreduce:ListStudios"),
     /** Action for the ModifyCluster operation. */
     ModifyCluster("elasticmapreduce:ModifyCluster"),
     /** Action for the ModifyInstanceFleet operation. */
@@ -99,6 +115,8 @@ public enum ElasticMapReduceActions implements Action {
     StopNotebookExecution("elasticmapreduce:StopNotebookExecution"),
     /** Action for the TerminateJobFlows operation. */
     TerminateJobFlows("elasticmapreduce:TerminateJobFlows"),
+    /** Action for the UpdateStudioSessionMapping operation. */
+    UpdateStudioSessionMapping("elasticmapreduce:UpdateStudioSessionMapping"),
 
     ;
 

@@ -48,7 +48,7 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
     private String instanceRole;
     /**
      * <p>
-     * The bid price for each EC2 Spot instance type as defined by <code>InstanceType</code>. Expressed in USD. If
+     * The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If
      * neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
      * </p>
@@ -322,13 +322,13 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The bid price for each EC2 Spot instance type as defined by <code>InstanceType</code>. Expressed in USD. If
+     * The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If
      * neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
      * </p>
      * 
      * @param bidPrice
-     *        The bid price for each EC2 Spot instance type as defined by <code>InstanceType</code>. Expressed in USD.
+     *        The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.
      *        If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      *        <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
      */
@@ -339,12 +339,12 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The bid price for each EC2 Spot instance type as defined by <code>InstanceType</code>. Expressed in USD. If
+     * The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If
      * neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
      * </p>
      * 
-     * @return The bid price for each EC2 Spot instance type as defined by <code>InstanceType</code>. Expressed in USD.
+     * @return The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.
      *         If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      *         <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
      */
@@ -355,13 +355,13 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The bid price for each EC2 Spot instance type as defined by <code>InstanceType</code>. Expressed in USD. If
+     * The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If
      * neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
      * </p>
      * 
      * @param bidPrice
-     *        The bid price for each EC2 Spot instance type as defined by <code>InstanceType</code>. Expressed in USD.
+     *        The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.
      *        If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      *        <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
      * @return Returns a reference to this object so that method calls can be chained together.

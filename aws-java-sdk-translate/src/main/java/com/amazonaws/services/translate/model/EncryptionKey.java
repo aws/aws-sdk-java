@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The encryption key used to encrypt the custom terminologies used by Amazon Translate.
+ * The encryption key used to encrypt this object.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/EncryptionKey" target="_top">AWS API

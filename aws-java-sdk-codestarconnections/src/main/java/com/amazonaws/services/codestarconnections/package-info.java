@@ -12,11 +12,7 @@
  */
 
 /**
- * <fullname>AWS CodeStar Connections</fullname> <important>
- * <p>
- * The CodeStar Connections feature is in preview release and is subject to change.
- * </p>
- * </important>
+ * <fullname>AWS CodeStar Connections</fullname>
  * <p>
  * This AWS CodeStar Connections API Reference provides descriptions and usage examples of the operations and data types
  * for the AWS CodeStar Connections API. You can use the connections API to work with connections and installations.
@@ -31,7 +27,7 @@
  * <p>
  * When you create a connection, the console initiates a third-party connection handshake. <i>Installations</i> are the
  * apps that are used to conduct this handshake. For example, the installation for the Bitbucket provider type is the
- * Bitbucket Cloud app. When you create a connection, you can choose an existing installation or create one.
+ * Bitbucket app. When you create a connection, you can choose an existing installation or create one.
  * </p>
  * <p>
  * When you want to create a connection to an installed provider type such as GitHub Enterprise Server, you create a

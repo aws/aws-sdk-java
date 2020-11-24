@@ -60,6 +60,14 @@ public class LayerVersionContentOutputJsonUnmarshaller implements Unmarshaller<L
                     context.nextToken();
                     layerVersionContentOutput.setCodeSize(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("SigningProfileVersionArn", targetDepth)) {
+                    context.nextToken();
+                    layerVersionContentOutput.setSigningProfileVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SigningJobArn", targetDepth)) {
+                    context.nextToken();
+                    layerVersionContentOutput.setSigningJobArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.applicationinsights.model.transform;
 
+import java.util.Map;
 import java.math.*;
 
 import javax.annotation.Generated;
@@ -52,9 +53,17 @@ public class ApplicationComponentJsonUnmarshaller implements Unmarshaller<Applic
                     context.nextToken();
                     applicationComponent.setComponentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ComponentRemarks", targetDepth)) {
+                    context.nextToken();
+                    applicationComponent.setComponentRemarks(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ResourceType", targetDepth)) {
                     context.nextToken();
                     applicationComponent.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("OsType", targetDepth)) {
+                    context.nextToken();
+                    applicationComponent.setOsType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tier", targetDepth)) {
                     context.nextToken();
@@ -63,6 +72,12 @@ public class ApplicationComponentJsonUnmarshaller implements Unmarshaller<Applic
                 if (context.testExpression("Monitor", targetDepth)) {
                     context.nextToken();
                     applicationComponent.setMonitor(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("DetectedWorkload", targetDepth)) {
+                    context.nextToken();
+                    applicationComponent.setDetectedWorkload(new MapUnmarshaller<String, java.util.Map<String, String>>(context.getUnmarshaller(String.class),
+                            new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class)))
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

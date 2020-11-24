@@ -34,6 +34,12 @@ public class CreateOutpostRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String availabilityZone;
 
     private String availabilityZoneId;
+    /**
+     * <p>
+     * The tags to apply to the Outpost.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * @param name
@@ -166,6 +172,74 @@ public class CreateOutpostRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The tags to apply to the Outpost.
+     * </p>
+     * 
+     * @return The tags to apply to the Outpost.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the Outpost.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to apply to the Outpost.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the Outpost.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to apply to the Outpost.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateOutpostRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see CreateOutpostRequest#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateOutpostRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateOutpostRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -186,7 +260,9 @@ public class CreateOutpostRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getAvailabilityZone() != null)
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getAvailabilityZoneId() != null)
-            sb.append("AvailabilityZoneId: ").append(getAvailabilityZoneId());
+            sb.append("AvailabilityZoneId: ").append(getAvailabilityZoneId()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -221,6 +297,10 @@ public class CreateOutpostRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getAvailabilityZoneId() != null && other.getAvailabilityZoneId().equals(this.getAvailabilityZoneId()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -234,6 +314,7 @@ public class CreateOutpostRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getSiteId() == null) ? 0 : getSiteId().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZoneId() == null) ? 0 : getAvailabilityZoneId().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

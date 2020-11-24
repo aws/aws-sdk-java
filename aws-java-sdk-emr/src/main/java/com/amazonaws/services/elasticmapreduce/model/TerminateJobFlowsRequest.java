@@ -30,7 +30,7 @@ public class TerminateJobFlowsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of job flows to be shutdown.
+     * A list of job flows to be shut down.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> jobFlowIds;
@@ -47,7 +47,7 @@ public class TerminateJobFlowsRequest extends com.amazonaws.AmazonWebServiceRequ
      * methods to initialize any additional object members.
      * 
      * @param jobFlowIds
-     *        A list of job flows to be shutdown.
+     *        A list of job flows to be shut down.
      */
     public TerminateJobFlowsRequest(java.util.List<String> jobFlowIds) {
         setJobFlowIds(jobFlowIds);
@@ -55,10 +55,10 @@ public class TerminateJobFlowsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of job flows to be shutdown.
+     * A list of job flows to be shut down.
      * </p>
      * 
-     * @return A list of job flows to be shutdown.
+     * @return A list of job flows to be shut down.
      */
 
     public java.util.List<String> getJobFlowIds() {
@@ -70,11 +70,11 @@ public class TerminateJobFlowsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of job flows to be shutdown.
+     * A list of job flows to be shut down.
      * </p>
      * 
      * @param jobFlowIds
-     *        A list of job flows to be shutdown.
+     *        A list of job flows to be shut down.
      */
 
     public void setJobFlowIds(java.util.Collection<String> jobFlowIds) {
@@ -88,7 +88,7 @@ public class TerminateJobFlowsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of job flows to be shutdown.
+     * A list of job flows to be shut down.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -97,7 +97,7 @@ public class TerminateJobFlowsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param jobFlowIds
-     *        A list of job flows to be shutdown.
+     *        A list of job flows to be shut down.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,11 +113,11 @@ public class TerminateJobFlowsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of job flows to be shutdown.
+     * A list of job flows to be shut down.
      * </p>
      * 
      * @param jobFlowIds
-     *        A list of job flows to be shutdown.
+     *        A list of job flows to be shut down.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -26,11 +26,7 @@ import com.amazonaws.services.codestarconnections.model.*;
  * {@link com.amazonaws.services.codestarconnections.AbstractAWSCodeStarconnections} instead.
  * </p>
  * <p>
- * <fullname>AWS CodeStar Connections</fullname> <important>
- * <p>
- * The CodeStar Connections feature is in preview release and is subject to change.
- * </p>
- * </important>
+ * <fullname>AWS CodeStar Connections</fullname>
  * <p>
  * This AWS CodeStar Connections API Reference provides descriptions and usage examples of the operations and data types
  * for the AWS CodeStar Connections API. You can use the connections API to work with connections and installations.
@@ -45,7 +41,7 @@ import com.amazonaws.services.codestarconnections.model.*;
  * <p>
  * When you create a connection, the console initiates a third-party connection handshake. <i>Installations</i> are the
  * apps that are used to conduct this handshake. For example, the installation for the Bitbucket provider type is the
- * Bitbucket Cloud app. When you create a connection, you can choose an existing installation or create one.
+ * Bitbucket app. When you create a connection, you can choose an existing installation or create one.
  * </p>
  * <p>
  * When you want to create a connection to an installed provider type such as GitHub Enterprise Server, you create a
@@ -248,6 +244,8 @@ public interface AWSCodeStarconnections {
      * @return Result of the GetHost operation returned by the service.
      * @throws ResourceNotFoundException
      *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ResourceUnavailableException
+     *         Resource not found. Verify the ARN for the host resource and try again.
      * @sample AWSCodeStarconnections.GetHost
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetHost" target="_top">AWS
      *      API Documentation</a>
@@ -326,6 +324,27 @@ public interface AWSCodeStarconnections {
      *      target="_top">AWS API Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Updates a specified host with the provided configurations.
+     * </p>
+     * 
+     * @param updateHostRequest
+     * @return Result of the UpdateHost operation returned by the service.
+     * @throws ConflictException
+     *         Two conflicting operations have been made on the same resource.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ResourceUnavailableException
+     *         Resource not found. Verify the ARN for the host resource and try again.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported. Check the connection status and try again.
+     * @sample AWSCodeStarconnections.UpdateHost
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateHost"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateHostResult updateHost(UpdateHostRequest updateHostRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

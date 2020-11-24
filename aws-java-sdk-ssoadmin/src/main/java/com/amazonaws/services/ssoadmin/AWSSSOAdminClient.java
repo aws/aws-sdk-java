@@ -312,6 +312,83 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
 
     /**
      * <p>
+     * Enables the attributes-based access control (ABAC) feature for the specified AWS SSO instance. You can also
+     * specify new attributes to add to your ABAC configuration during the enabling process. For more information about
+     * ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>AWS SSO
+     * User Guide</i>.
+     * </p>
+     * 
+     * @param createInstanceAccessControlAttributeConfigurationRequest
+     * @return Result of the CreateInstanceAccessControlAttributeConfiguration operation returned by the service.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.CreateInstanceAccessControlAttributeConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateInstanceAccessControlAttributeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateInstanceAccessControlAttributeConfigurationResult createInstanceAccessControlAttributeConfiguration(
+            CreateInstanceAccessControlAttributeConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateInstanceAccessControlAttributeConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final CreateInstanceAccessControlAttributeConfigurationResult executeCreateInstanceAccessControlAttributeConfiguration(
+            CreateInstanceAccessControlAttributeConfigurationRequest createInstanceAccessControlAttributeConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createInstanceAccessControlAttributeConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateInstanceAccessControlAttributeConfigurationRequest> request = null;
+        Response<CreateInstanceAccessControlAttributeConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateInstanceAccessControlAttributeConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createInstanceAccessControlAttributeConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInstanceAccessControlAttributeConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateInstanceAccessControlAttributeConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CreateInstanceAccessControlAttributeConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a permission set within a specified SSO instance.
      * </p>
      * <note>
@@ -531,6 +608,84 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
 
     /**
      * <p>
+     * Disables the attributes-based access control (ABAC) feature for the specified AWS SSO instance and deletes all of
+     * the attribute mappings that have been configured. Once deleted, any attributes that are received from an identity
+     * source and any custom attributes you have previously configured will not be passed. For more information about
+     * ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>AWS SSO
+     * User Guide</i>.
+     * </p>
+     * 
+     * @param deleteInstanceAccessControlAttributeConfigurationRequest
+     * @return Result of the DeleteInstanceAccessControlAttributeConfiguration operation returned by the service.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.DeleteInstanceAccessControlAttributeConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteInstanceAccessControlAttributeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteInstanceAccessControlAttributeConfigurationResult deleteInstanceAccessControlAttributeConfiguration(
+            DeleteInstanceAccessControlAttributeConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteInstanceAccessControlAttributeConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteInstanceAccessControlAttributeConfigurationResult executeDeleteInstanceAccessControlAttributeConfiguration(
+            DeleteInstanceAccessControlAttributeConfigurationRequest deleteInstanceAccessControlAttributeConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteInstanceAccessControlAttributeConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteInstanceAccessControlAttributeConfigurationRequest> request = null;
+        Response<DeleteInstanceAccessControlAttributeConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteInstanceAccessControlAttributeConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteInstanceAccessControlAttributeConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInstanceAccessControlAttributeConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteInstanceAccessControlAttributeConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteInstanceAccessControlAttributeConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified permission set.
      * </p>
      * 
@@ -726,6 +881,80 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
             HttpResponseHandler<AmazonWebServiceResponse<DescribeAccountAssignmentDeletionStatusResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new DescribeAccountAssignmentDeletionStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the list of AWS SSO identity store attributes that have been configured to work with attributes-based
+     * access control (ABAC) for the specified AWS SSO instance. This will not return attributes configured and sent by
+     * an external identity provider. For more information about ABAC, see <a
+     * href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>AWS SSO User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param describeInstanceAccessControlAttributeConfigurationRequest
+     * @return Result of the DescribeInstanceAccessControlAttributeConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.DescribeInstanceAccessControlAttributeConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeInstanceAccessControlAttributeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeInstanceAccessControlAttributeConfigurationResult describeInstanceAccessControlAttributeConfiguration(
+            DescribeInstanceAccessControlAttributeConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInstanceAccessControlAttributeConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInstanceAccessControlAttributeConfigurationResult executeDescribeInstanceAccessControlAttributeConfiguration(
+            DescribeInstanceAccessControlAttributeConfigurationRequest describeInstanceAccessControlAttributeConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeInstanceAccessControlAttributeConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeInstanceAccessControlAttributeConfigurationRequest> request = null;
+        Response<DescribeInstanceAccessControlAttributeConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeInstanceAccessControlAttributeConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeInstanceAccessControlAttributeConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInstanceAccessControlAttributeConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeInstanceAccessControlAttributeConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeInstanceAccessControlAttributeConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1959,6 +2188,86 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the AWS SSO identity store attributes to use with the AWS SSO instance for attributes-based access
+     * control (ABAC). When using an external identity provider as an identity source, you can pass attributes through
+     * the SAML assertion as an alternative to configuring attributes from the AWS SSO identity store. If a SAML
+     * assertion passes any of these attributes, AWS SSO will replace the attribute value with the value from the AWS
+     * SSO identity store. For more information about ABAC, see <a
+     * href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>AWS SSO User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param updateInstanceAccessControlAttributeConfigurationRequest
+     * @return Result of the UpdateInstanceAccessControlAttributeConfiguration operation returned by the service.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.UpdateInstanceAccessControlAttributeConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateInstanceAccessControlAttributeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateInstanceAccessControlAttributeConfigurationResult updateInstanceAccessControlAttributeConfiguration(
+            UpdateInstanceAccessControlAttributeConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateInstanceAccessControlAttributeConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateInstanceAccessControlAttributeConfigurationResult executeUpdateInstanceAccessControlAttributeConfiguration(
+            UpdateInstanceAccessControlAttributeConfigurationRequest updateInstanceAccessControlAttributeConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateInstanceAccessControlAttributeConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateInstanceAccessControlAttributeConfigurationRequest> request = null;
+        Response<UpdateInstanceAccessControlAttributeConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateInstanceAccessControlAttributeConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateInstanceAccessControlAttributeConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateInstanceAccessControlAttributeConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateInstanceAccessControlAttributeConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateInstanceAccessControlAttributeConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

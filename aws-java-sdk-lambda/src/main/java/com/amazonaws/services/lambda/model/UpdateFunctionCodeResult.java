@@ -193,6 +193,18 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<FileSystemConfig> fileSystemConfigs;
+    /**
+     * <p>
+     * The ARN of the signing profile version.
+     * </p>
+     */
+    private String signingProfileVersionArn;
+    /**
+     * <p>
+     * The ARN of the signing job.
+     * </p>
+     */
+    private String signingJobArn;
 
     /**
      * <p>
@@ -1552,6 +1564,86 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The ARN of the signing profile version.
+     * </p>
+     * 
+     * @param signingProfileVersionArn
+     *        The ARN of the signing profile version.
+     */
+
+    public void setSigningProfileVersionArn(String signingProfileVersionArn) {
+        this.signingProfileVersionArn = signingProfileVersionArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the signing profile version.
+     * </p>
+     * 
+     * @return The ARN of the signing profile version.
+     */
+
+    public String getSigningProfileVersionArn() {
+        return this.signingProfileVersionArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the signing profile version.
+     * </p>
+     * 
+     * @param signingProfileVersionArn
+     *        The ARN of the signing profile version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFunctionCodeResult withSigningProfileVersionArn(String signingProfileVersionArn) {
+        setSigningProfileVersionArn(signingProfileVersionArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the signing job.
+     * </p>
+     * 
+     * @param signingJobArn
+     *        The ARN of the signing job.
+     */
+
+    public void setSigningJobArn(String signingJobArn) {
+        this.signingJobArn = signingJobArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the signing job.
+     * </p>
+     * 
+     * @return The ARN of the signing job.
+     */
+
+    public String getSigningJobArn() {
+        return this.signingJobArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the signing job.
+     * </p>
+     * 
+     * @param signingJobArn
+     *        The ARN of the signing job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFunctionCodeResult withSigningJobArn(String signingJobArn) {
+        setSigningJobArn(signingJobArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1616,7 +1708,11 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
         if (getLastUpdateStatusReasonCode() != null)
             sb.append("LastUpdateStatusReasonCode: ").append(getLastUpdateStatusReasonCode()).append(",");
         if (getFileSystemConfigs() != null)
-            sb.append("FileSystemConfigs: ").append(getFileSystemConfigs());
+            sb.append("FileSystemConfigs: ").append(getFileSystemConfigs()).append(",");
+        if (getSigningProfileVersionArn() != null)
+            sb.append("SigningProfileVersionArn: ").append(getSigningProfileVersionArn()).append(",");
+        if (getSigningJobArn() != null)
+            sb.append("SigningJobArn: ").append(getSigningJobArn());
         sb.append("}");
         return sb.toString();
     }
@@ -1739,6 +1835,14 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getFileSystemConfigs() != null && other.getFileSystemConfigs().equals(this.getFileSystemConfigs()) == false)
             return false;
+        if (other.getSigningProfileVersionArn() == null ^ this.getSigningProfileVersionArn() == null)
+            return false;
+        if (other.getSigningProfileVersionArn() != null && other.getSigningProfileVersionArn().equals(this.getSigningProfileVersionArn()) == false)
+            return false;
+        if (other.getSigningJobArn() == null ^ this.getSigningJobArn() == null)
+            return false;
+        if (other.getSigningJobArn() != null && other.getSigningJobArn().equals(this.getSigningJobArn()) == false)
+            return false;
         return true;
     }
 
@@ -1774,6 +1878,8 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getLastUpdateStatusReason() == null) ? 0 : getLastUpdateStatusReason().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateStatusReasonCode() == null) ? 0 : getLastUpdateStatusReasonCode().hashCode());
         hashCode = prime * hashCode + ((getFileSystemConfigs() == null) ? 0 : getFileSystemConfigs().hashCode());
+        hashCode = prime * hashCode + ((getSigningProfileVersionArn() == null) ? 0 : getSigningProfileVersionArn().hashCode());
+        hashCode = prime * hashCode + ((getSigningJobArn() == null) ? 0 : getSigningJobArn().hashCode());
         return hashCode;
     }
 

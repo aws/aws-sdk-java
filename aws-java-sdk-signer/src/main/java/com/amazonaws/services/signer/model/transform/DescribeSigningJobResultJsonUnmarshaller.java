@@ -64,9 +64,17 @@ public class DescribeSigningJobResultJsonUnmarshaller implements Unmarshaller<De
                     context.nextToken();
                     describeSigningJobResult.setPlatformId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("platformDisplayName", targetDepth)) {
+                    context.nextToken();
+                    describeSigningJobResult.setPlatformDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("profileName", targetDepth)) {
                     context.nextToken();
                     describeSigningJobResult.setProfileName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("profileVersion", targetDepth)) {
+                    context.nextToken();
+                    describeSigningJobResult.setProfileVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("overrides", targetDepth)) {
                     context.nextToken();
@@ -85,6 +93,10 @@ public class DescribeSigningJobResultJsonUnmarshaller implements Unmarshaller<De
                     context.nextToken();
                     describeSigningJobResult.setCompletedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("signatureExpiresAt", targetDepth)) {
+                    context.nextToken();
+                    describeSigningJobResult.setSignatureExpiresAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("requestedBy", targetDepth)) {
                     context.nextToken();
                     describeSigningJobResult.setRequestedBy(context.getUnmarshaller(String.class).unmarshall(context));
@@ -97,9 +109,21 @@ public class DescribeSigningJobResultJsonUnmarshaller implements Unmarshaller<De
                     context.nextToken();
                     describeSigningJobResult.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("revocationRecord", targetDepth)) {
+                    context.nextToken();
+                    describeSigningJobResult.setRevocationRecord(SigningJobRevocationRecordJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("signedObject", targetDepth)) {
                     context.nextToken();
                     describeSigningJobResult.setSignedObject(SignedObjectJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("jobOwner", targetDepth)) {
+                    context.nextToken();
+                    describeSigningJobResult.setJobOwner(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("jobInvoker", targetDepth)) {
+                    context.nextToken();
+                    describeSigningJobResult.setJobInvoker(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

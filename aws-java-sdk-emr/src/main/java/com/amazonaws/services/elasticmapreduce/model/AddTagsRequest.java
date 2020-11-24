@@ -36,7 +36,7 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
     private String resourceId;
     /**
      * <p>
-     * A list of tags to associate with a cluster and propagate to EC2 instances. Tags are user-defined key/value pairs
+     * A list of tags to associate with a cluster and propagate to EC2 instances. Tags are user-defined key-value pairs
      * that consist of a required key string with a maximum of 128 characters, and an optional value string with a
      * maximum of 256 characters.
      * </p>
@@ -68,7 +68,7 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * @param resourceId
      *        The Amazon EMR resource identifier to which tags will be added. This value must be a cluster identifier.
      * @param tags
-     *        A list of tags to associate with a cluster and propagate to EC2 instances. Tags are user-defined key/value
+     *        A list of tags to associate with a cluster and propagate to EC2 instances. Tags are user-defined key-value
      *        pairs that consist of a required key string with a maximum of 128 characters, and an optional value string
      *        with a maximum of 256 characters.
      */
@@ -119,13 +119,13 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * A list of tags to associate with a cluster and propagate to EC2 instances. Tags are user-defined key/value pairs
+     * A list of tags to associate with a cluster and propagate to EC2 instances. Tags are user-defined key-value pairs
      * that consist of a required key string with a maximum of 128 characters, and an optional value string with a
      * maximum of 256 characters.
      * </p>
      * 
      * @return A list of tags to associate with a cluster and propagate to EC2 instances. Tags are user-defined
-     *         key/value pairs that consist of a required key string with a maximum of 128 characters, and an optional
+     *         key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional
      *         value string with a maximum of 256 characters.
      */
 
@@ -138,13 +138,13 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * A list of tags to associate with a cluster and propagate to EC2 instances. Tags are user-defined key/value pairs
+     * A list of tags to associate with a cluster and propagate to EC2 instances. Tags are user-defined key-value pairs
      * that consist of a required key string with a maximum of 128 characters, and an optional value string with a
      * maximum of 256 characters.
      * </p>
      * 
      * @param tags
-     *        A list of tags to associate with a cluster and propagate to EC2 instances. Tags are user-defined key/value
+     *        A list of tags to associate with a cluster and propagate to EC2 instances. Tags are user-defined key-value
      *        pairs that consist of a required key string with a maximum of 128 characters, and an optional value string
      *        with a maximum of 256 characters.
      */
@@ -160,7 +160,7 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * A list of tags to associate with a cluster and propagate to EC2 instances. Tags are user-defined key/value pairs
+     * A list of tags to associate with a cluster and propagate to EC2 instances. Tags are user-defined key-value pairs
      * that consist of a required key string with a maximum of 128 characters, and an optional value string with a
      * maximum of 256 characters.
      * </p>
@@ -171,7 +171,7 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * 
      * @param tags
-     *        A list of tags to associate with a cluster and propagate to EC2 instances. Tags are user-defined key/value
+     *        A list of tags to associate with a cluster and propagate to EC2 instances. Tags are user-defined key-value
      *        pairs that consist of a required key string with a maximum of 128 characters, and an optional value string
      *        with a maximum of 256 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -189,13 +189,13 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * A list of tags to associate with a cluster and propagate to EC2 instances. Tags are user-defined key/value pairs
+     * A list of tags to associate with a cluster and propagate to EC2 instances. Tags are user-defined key-value pairs
      * that consist of a required key string with a maximum of 128 characters, and an optional value string with a
      * maximum of 256 characters.
      * </p>
      * 
      * @param tags
-     *        A list of tags to associate with a cluster and propagate to EC2 instances. Tags are user-defined key/value
+     *        A list of tags to associate with a cluster and propagate to EC2 instances. Tags are user-defined key-value
      *        pairs that consist of a required key string with a maximum of 128 characters, and an optional value string
      *        with a maximum of 256 characters.
      * @return Returns a reference to this object so that method calls can be chained together.

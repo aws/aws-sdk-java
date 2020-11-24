@@ -77,11 +77,6 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling groups with
      * multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
-     * <p>
-     * Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or
-     * <code>MixedInstancesPolicy</code>) or a launch configuration (<code>LaunchConfigurationName</code> or
-     * <code>InstanceId</code>).
-     * </p>
      */
     private MixedInstancesPolicy mixedInstancesPolicy;
     /**
@@ -148,8 +143,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     private com.amazonaws.internal.SdkInternalList<String> availabilityZones;
     /**
      * <p>
-     * A list of Classic Load Balancers associated with this Auto Scaling group. For Application Load Balancers and
-     * Network Load Balancers, specify <code>TargetGroupARNs</code> instead.
+     * A list of Classic Load Balancers associated with this Auto Scaling group. For Application Load Balancers, Network
+     * Load Balancers, and Gateway Load Balancers, specify the <code>TargetGroupARNs</code> property instead.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> loadBalancerNames;
@@ -523,11 +518,6 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling groups with
      * multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
-     * <p>
-     * Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or
-     * <code>MixedInstancesPolicy</code>) or a launch configuration (<code>LaunchConfigurationName</code> or
-     * <code>InstanceId</code>).
-     * </p>
      * 
      * @param mixedInstancesPolicy
      *        An embedded object that specifies a mixed instances policy. The required parameters must be specified. If
@@ -541,11 +531,6 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *        <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling
      *        groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
      *        Guide</i>.
-     *        </p>
-     *        <p>
-     *        Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or
-     *        <code>MixedInstancesPolicy</code>) or a launch configuration (<code>LaunchConfigurationName</code> or
-     *        <code>InstanceId</code>).
      */
 
     public void setMixedInstancesPolicy(MixedInstancesPolicy mixedInstancesPolicy) {
@@ -566,11 +551,6 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling groups with
      * multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
-     * <p>
-     * Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or
-     * <code>MixedInstancesPolicy</code>) or a launch configuration (<code>LaunchConfigurationName</code> or
-     * <code>InstanceId</code>).
-     * </p>
      * 
      * @return An embedded object that specifies a mixed instances policy. The required parameters must be specified. If
      *         optional parameters are unspecified, their default values are used.</p>
@@ -584,11 +564,6 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling
      *         groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
      *         Guide</i>.
-     *         </p>
-     *         <p>
-     *         Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or
-     *         <code>MixedInstancesPolicy</code>) or a launch configuration (<code>LaunchConfigurationName</code> or
-     *         <code>InstanceId</code>).
      */
 
     public MixedInstancesPolicy getMixedInstancesPolicy() {
@@ -609,11 +584,6 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling groups with
      * multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
-     * <p>
-     * Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or
-     * <code>MixedInstancesPolicy</code>) or a launch configuration (<code>LaunchConfigurationName</code> or
-     * <code>InstanceId</code>).
-     * </p>
      * 
      * @param mixedInstancesPolicy
      *        An embedded object that specifies a mixed instances policy. The required parameters must be specified. If
@@ -627,11 +597,6 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *        <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling
      *        groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
      *        Guide</i>.
-     *        </p>
-     *        <p>
-     *        Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or
-     *        <code>MixedInstancesPolicy</code>) or a launch configuration (<code>LaunchConfigurationName</code> or
-     *        <code>InstanceId</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1074,12 +1039,13 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of Classic Load Balancers associated with this Auto Scaling group. For Application Load Balancers and
-     * Network Load Balancers, specify <code>TargetGroupARNs</code> instead.
+     * A list of Classic Load Balancers associated with this Auto Scaling group. For Application Load Balancers, Network
+     * Load Balancers, and Gateway Load Balancers, specify the <code>TargetGroupARNs</code> property instead.
      * </p>
      * 
-     * @return A list of Classic Load Balancers associated with this Auto Scaling group. For Application Load Balancers
-     *         and Network Load Balancers, specify <code>TargetGroupARNs</code> instead.
+     * @return A list of Classic Load Balancers associated with this Auto Scaling group. For Application Load Balancers,
+     *         Network Load Balancers, and Gateway Load Balancers, specify the <code>TargetGroupARNs</code> property
+     *         instead.
      */
 
     public java.util.List<String> getLoadBalancerNames() {
@@ -1091,13 +1057,14 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of Classic Load Balancers associated with this Auto Scaling group. For Application Load Balancers and
-     * Network Load Balancers, specify <code>TargetGroupARNs</code> instead.
+     * A list of Classic Load Balancers associated with this Auto Scaling group. For Application Load Balancers, Network
+     * Load Balancers, and Gateway Load Balancers, specify the <code>TargetGroupARNs</code> property instead.
      * </p>
      * 
      * @param loadBalancerNames
-     *        A list of Classic Load Balancers associated with this Auto Scaling group. For Application Load Balancers
-     *        and Network Load Balancers, specify <code>TargetGroupARNs</code> instead.
+     *        A list of Classic Load Balancers associated with this Auto Scaling group. For Application Load Balancers,
+     *        Network Load Balancers, and Gateway Load Balancers, specify the <code>TargetGroupARNs</code> property
+     *        instead.
      */
 
     public void setLoadBalancerNames(java.util.Collection<String> loadBalancerNames) {
@@ -1111,8 +1078,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of Classic Load Balancers associated with this Auto Scaling group. For Application Load Balancers and
-     * Network Load Balancers, specify <code>TargetGroupARNs</code> instead.
+     * A list of Classic Load Balancers associated with this Auto Scaling group. For Application Load Balancers, Network
+     * Load Balancers, and Gateway Load Balancers, specify the <code>TargetGroupARNs</code> property instead.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1121,8 +1088,9 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param loadBalancerNames
-     *        A list of Classic Load Balancers associated with this Auto Scaling group. For Application Load Balancers
-     *        and Network Load Balancers, specify <code>TargetGroupARNs</code> instead.
+     *        A list of Classic Load Balancers associated with this Auto Scaling group. For Application Load Balancers,
+     *        Network Load Balancers, and Gateway Load Balancers, specify the <code>TargetGroupARNs</code> property
+     *        instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1138,13 +1106,14 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of Classic Load Balancers associated with this Auto Scaling group. For Application Load Balancers and
-     * Network Load Balancers, specify <code>TargetGroupARNs</code> instead.
+     * A list of Classic Load Balancers associated with this Auto Scaling group. For Application Load Balancers, Network
+     * Load Balancers, and Gateway Load Balancers, specify the <code>TargetGroupARNs</code> property instead.
      * </p>
      * 
      * @param loadBalancerNames
-     *        A list of Classic Load Balancers associated with this Auto Scaling group. For Application Load Balancers
-     *        and Network Load Balancers, specify <code>TargetGroupARNs</code> instead.
+     *        A list of Classic Load Balancers associated with this Auto Scaling group. For Application Load Balancers,
+     *        Network Load Balancers, and Gateway Load Balancers, specify the <code>TargetGroupARNs</code> property
+     *        instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

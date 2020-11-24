@@ -68,7 +68,8 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>ASSOCIATED</code> - Indicates that the member account accepted the invitation.
+     * <code>ENABLED</code> - Indicates that the member account is currently active. For manually invited member
+     * accounts, indicates that the member account accepted the invitation.
      * </p>
      * </li>
      * <li>
@@ -244,7 +245,8 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>ASSOCIATED</code> - Indicates that the member account accepted the invitation.
+     * <code>ENABLED</code> - Indicates that the member account is currently active. For manually invited member
+     * accounts, indicates that the member account accepted the invitation.
      * </p>
      * </li>
      * <li>
@@ -284,7 +286,8 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ASSOCIATED</code> - Indicates that the member account accepted the invitation.
+     *        <code>ENABLED</code> - Indicates that the member account is currently active. For manually invited member
+     *        accounts, indicates that the member account accepted the invitation.
      *        </p>
      *        </li>
      *        <li>
@@ -331,7 +334,8 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>ASSOCIATED</code> - Indicates that the member account accepted the invitation.
+     * <code>ENABLED</code> - Indicates that the member account is currently active. For manually invited member
+     * accounts, indicates that the member account accepted the invitation.
      * </p>
      * </li>
      * <li>
@@ -370,7 +374,8 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ASSOCIATED</code> - Indicates that the member account accepted the invitation.
+     *         <code>ENABLED</code> - Indicates that the member account is currently active. For manually invited member
+     *         accounts, indicates that the member account accepted the invitation.
      *         </p>
      *         </li>
      *         <li>
@@ -417,7 +422,8 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>ASSOCIATED</code> - Indicates that the member account accepted the invitation.
+     * <code>ENABLED</code> - Indicates that the member account is currently active. For manually invited member
+     * accounts, indicates that the member account accepted the invitation.
      * </p>
      * </li>
      * <li>
@@ -457,7 +463,8 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ASSOCIATED</code> - Indicates that the member account accepted the invitation.
+     *        <code>ENABLED</code> - Indicates that the member account is currently active. For manually invited member
+     *        accounts, indicates that the member account accepted the invitation.
      *        </p>
      *        </li>
      *        <li>

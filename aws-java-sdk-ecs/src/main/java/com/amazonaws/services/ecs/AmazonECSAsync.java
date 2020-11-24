@@ -2347,6 +2347,37 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
+     * Modifies the parameters for a capacity provider.
+     * </p>
+     * 
+     * @param updateCapacityProviderRequest
+     * @return A Java Future containing the result of the UpdateCapacityProvider operation returned by the service.
+     * @sample AmazonECSAsync.UpdateCapacityProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCapacityProvider" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCapacityProviderResult> updateCapacityProviderAsync(UpdateCapacityProviderRequest updateCapacityProviderRequest);
+
+    /**
+     * <p>
+     * Modifies the parameters for a capacity provider.
+     * </p>
+     * 
+     * @param updateCapacityProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateCapacityProvider operation returned by the service.
+     * @sample AmazonECSAsyncHandler.UpdateCapacityProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCapacityProvider" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCapacityProviderResult> updateCapacityProviderAsync(UpdateCapacityProviderRequest updateCapacityProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateCapacityProviderRequest, UpdateCapacityProviderResult> asyncHandler);
+
+    /**
+     * <p>
      * Modifies the settings to use for a cluster.
      * </p>
      * 

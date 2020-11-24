@@ -31,6 +31,10 @@ public class LayerMarshaller {
             .marshallLocationName("Arn").build();
     private static final MarshallingInfo<Long> CODESIZE_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("CodeSize").build();
+    private static final MarshallingInfo<String> SIGNINGPROFILEVERSIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SigningProfileVersionArn").build();
+    private static final MarshallingInfo<String> SIGNINGJOBARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SigningJobArn").build();
 
     private static final LayerMarshaller instance = new LayerMarshaller();
 
@@ -50,6 +54,8 @@ public class LayerMarshaller {
         try {
             protocolMarshaller.marshall(layer.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(layer.getCodeSize(), CODESIZE_BINDING);
+            protocolMarshaller.marshall(layer.getSigningProfileVersionArn(), SIGNINGPROFILEVERSIONARN_BINDING);
+            protocolMarshaller.marshall(layer.getSigningJobArn(), SIGNINGJOBARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

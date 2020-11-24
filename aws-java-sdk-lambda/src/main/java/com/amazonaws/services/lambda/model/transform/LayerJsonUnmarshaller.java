@@ -56,6 +56,14 @@ public class LayerJsonUnmarshaller implements Unmarshaller<Layer, JsonUnmarshall
                     context.nextToken();
                     layer.setCodeSize(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("SigningProfileVersionArn", targetDepth)) {
+                    context.nextToken();
+                    layer.setSigningProfileVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SigningJobArn", targetDepth)) {
+                    context.nextToken();
+                    layer.setSigningJobArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

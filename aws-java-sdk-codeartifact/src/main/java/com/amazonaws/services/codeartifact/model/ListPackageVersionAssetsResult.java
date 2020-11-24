@@ -50,6 +50,11 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
      * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
+     * </p>
+     * </li>
      * </ul>
      */
     private String namespace;
@@ -166,6 +171,11 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
      * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param namespace
@@ -185,6 +195,11 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
      *        <li>
      *        <p>
      *        A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
      *        </p>
      *        </li>
      */
@@ -214,6 +229,11 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
      * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The namespace of the package. The package component that specifies its namespace depends on its type. For
@@ -232,6 +252,11 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
      *         <li>
      *         <p>
      *         A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
      *         </p>
      *         </li>
      */
@@ -261,6 +286,11 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
      * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param namespace
@@ -280,6 +310,11 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
      *        <li>
      *        <p>
      *        A Python package does not contain a corresponding component, so Python packages do not have a namespace.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

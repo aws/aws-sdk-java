@@ -23,6 +23,8 @@ import javax.annotation.Generated;
 public class NotFoundException extends com.amazonaws.services.signer.model.AWSsignerException {
     private static final long serialVersionUID = 1L;
 
+    private String code;
+
     /**
      * Constructs a new NotFoundException with the specified error message.
      *
@@ -31,6 +33,34 @@ public class NotFoundException extends com.amazonaws.services.signer.model.AWSsi
      */
     public NotFoundException(String message) {
         super(message);
+    }
+
+    /**
+     * @param code
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("code")
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    /**
+     * @return
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("code")
+    public String getCode() {
+        return this.code;
+    }
+
+    /**
+     * @param code
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NotFoundException withCode(String code) {
+        setCode(code);
+        return this;
     }
 
 }

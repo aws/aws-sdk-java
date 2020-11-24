@@ -29,6 +29,8 @@ public class GetSigningProfileRequestMarshaller {
 
     private static final MarshallingInfo<String> PROFILENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("profileName").build();
+    private static final MarshallingInfo<String> PROFILEOWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("profileOwner").build();
 
     private static final GetSigningProfileRequestMarshaller instance = new GetSigningProfileRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class GetSigningProfileRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(getSigningProfileRequest.getProfileName(), PROFILENAME_BINDING);
+            protocolMarshaller.marshall(getSigningProfileRequest.getProfileOwner(), PROFILEOWNER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

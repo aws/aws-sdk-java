@@ -31,7 +31,7 @@ public class ErrorMetric implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Forecast types can be quantiles from 0.01 to 0.99 (by increments of 0.01), and the mean.
+     * The Forecast type used to compute WAPE and RMSE.
      * </p>
      */
     private String forecastType;
@@ -50,11 +50,11 @@ public class ErrorMetric implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Forecast types can be quantiles from 0.01 to 0.99 (by increments of 0.01), and the mean.
+     * The Forecast type used to compute WAPE and RMSE.
      * </p>
      * 
      * @param forecastType
-     *        Forecast types can be quantiles from 0.01 to 0.99 (by increments of 0.01), and the mean.
+     *        The Forecast type used to compute WAPE and RMSE.
      */
 
     public void setForecastType(String forecastType) {
@@ -63,10 +63,10 @@ public class ErrorMetric implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Forecast types can be quantiles from 0.01 to 0.99 (by increments of 0.01), and the mean.
+     * The Forecast type used to compute WAPE and RMSE.
      * </p>
      * 
-     * @return Forecast types can be quantiles from 0.01 to 0.99 (by increments of 0.01), and the mean.
+     * @return The Forecast type used to compute WAPE and RMSE.
      */
 
     public String getForecastType() {
@@ -75,11 +75,11 @@ public class ErrorMetric implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Forecast types can be quantiles from 0.01 to 0.99 (by increments of 0.01), and the mean.
+     * The Forecast type used to compute WAPE and RMSE.
      * </p>
      * 
      * @param forecastType
-     *        Forecast types can be quantiles from 0.01 to 0.99 (by increments of 0.01), and the mean.
+     *        The Forecast type used to compute WAPE and RMSE.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

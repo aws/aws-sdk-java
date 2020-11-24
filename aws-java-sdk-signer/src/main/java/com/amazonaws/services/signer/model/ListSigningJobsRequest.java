@@ -59,6 +59,30 @@ public class ListSigningJobsRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * Filters results to return only signing jobs with revoked signatures.
+     * </p>
+     */
+    private Boolean isRevoked;
+    /**
+     * <p>
+     * Filters results to return only signing jobs with signatures expiring before a specified timestamp.
+     * </p>
+     */
+    private java.util.Date signatureExpiresBefore;
+    /**
+     * <p>
+     * Filters results to return only signing jobs with signatures expiring after a specified timestamp.
+     * </p>
+     */
+    private java.util.Date signatureExpiresAfter;
+    /**
+     * <p>
+     * Filters results to return only signing jobs initiated by a specified IAM entity.
+     * </p>
+     */
+    private String jobInvoker;
 
     /**
      * <p>
@@ -307,6 +331,178 @@ public class ListSigningJobsRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Filters results to return only signing jobs with revoked signatures.
+     * </p>
+     * 
+     * @param isRevoked
+     *        Filters results to return only signing jobs with revoked signatures.
+     */
+
+    public void setIsRevoked(Boolean isRevoked) {
+        this.isRevoked = isRevoked;
+    }
+
+    /**
+     * <p>
+     * Filters results to return only signing jobs with revoked signatures.
+     * </p>
+     * 
+     * @return Filters results to return only signing jobs with revoked signatures.
+     */
+
+    public Boolean getIsRevoked() {
+        return this.isRevoked;
+    }
+
+    /**
+     * <p>
+     * Filters results to return only signing jobs with revoked signatures.
+     * </p>
+     * 
+     * @param isRevoked
+     *        Filters results to return only signing jobs with revoked signatures.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListSigningJobsRequest withIsRevoked(Boolean isRevoked) {
+        setIsRevoked(isRevoked);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters results to return only signing jobs with revoked signatures.
+     * </p>
+     * 
+     * @return Filters results to return only signing jobs with revoked signatures.
+     */
+
+    public Boolean isRevoked() {
+        return this.isRevoked;
+    }
+
+    /**
+     * <p>
+     * Filters results to return only signing jobs with signatures expiring before a specified timestamp.
+     * </p>
+     * 
+     * @param signatureExpiresBefore
+     *        Filters results to return only signing jobs with signatures expiring before a specified timestamp.
+     */
+
+    public void setSignatureExpiresBefore(java.util.Date signatureExpiresBefore) {
+        this.signatureExpiresBefore = signatureExpiresBefore;
+    }
+
+    /**
+     * <p>
+     * Filters results to return only signing jobs with signatures expiring before a specified timestamp.
+     * </p>
+     * 
+     * @return Filters results to return only signing jobs with signatures expiring before a specified timestamp.
+     */
+
+    public java.util.Date getSignatureExpiresBefore() {
+        return this.signatureExpiresBefore;
+    }
+
+    /**
+     * <p>
+     * Filters results to return only signing jobs with signatures expiring before a specified timestamp.
+     * </p>
+     * 
+     * @param signatureExpiresBefore
+     *        Filters results to return only signing jobs with signatures expiring before a specified timestamp.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListSigningJobsRequest withSignatureExpiresBefore(java.util.Date signatureExpiresBefore) {
+        setSignatureExpiresBefore(signatureExpiresBefore);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters results to return only signing jobs with signatures expiring after a specified timestamp.
+     * </p>
+     * 
+     * @param signatureExpiresAfter
+     *        Filters results to return only signing jobs with signatures expiring after a specified timestamp.
+     */
+
+    public void setSignatureExpiresAfter(java.util.Date signatureExpiresAfter) {
+        this.signatureExpiresAfter = signatureExpiresAfter;
+    }
+
+    /**
+     * <p>
+     * Filters results to return only signing jobs with signatures expiring after a specified timestamp.
+     * </p>
+     * 
+     * @return Filters results to return only signing jobs with signatures expiring after a specified timestamp.
+     */
+
+    public java.util.Date getSignatureExpiresAfter() {
+        return this.signatureExpiresAfter;
+    }
+
+    /**
+     * <p>
+     * Filters results to return only signing jobs with signatures expiring after a specified timestamp.
+     * </p>
+     * 
+     * @param signatureExpiresAfter
+     *        Filters results to return only signing jobs with signatures expiring after a specified timestamp.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListSigningJobsRequest withSignatureExpiresAfter(java.util.Date signatureExpiresAfter) {
+        setSignatureExpiresAfter(signatureExpiresAfter);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters results to return only signing jobs initiated by a specified IAM entity.
+     * </p>
+     * 
+     * @param jobInvoker
+     *        Filters results to return only signing jobs initiated by a specified IAM entity.
+     */
+
+    public void setJobInvoker(String jobInvoker) {
+        this.jobInvoker = jobInvoker;
+    }
+
+    /**
+     * <p>
+     * Filters results to return only signing jobs initiated by a specified IAM entity.
+     * </p>
+     * 
+     * @return Filters results to return only signing jobs initiated by a specified IAM entity.
+     */
+
+    public String getJobInvoker() {
+        return this.jobInvoker;
+    }
+
+    /**
+     * <p>
+     * Filters results to return only signing jobs initiated by a specified IAM entity.
+     * </p>
+     * 
+     * @param jobInvoker
+     *        Filters results to return only signing jobs initiated by a specified IAM entity.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListSigningJobsRequest withJobInvoker(String jobInvoker) {
+        setJobInvoker(jobInvoker);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -327,7 +523,15 @@ public class ListSigningJobsRequest extends com.amazonaws.AmazonWebServiceReques
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getIsRevoked() != null)
+            sb.append("IsRevoked: ").append(getIsRevoked()).append(",");
+        if (getSignatureExpiresBefore() != null)
+            sb.append("SignatureExpiresBefore: ").append(getSignatureExpiresBefore()).append(",");
+        if (getSignatureExpiresAfter() != null)
+            sb.append("SignatureExpiresAfter: ").append(getSignatureExpiresAfter()).append(",");
+        if (getJobInvoker() != null)
+            sb.append("JobInvoker: ").append(getJobInvoker());
         sb.append("}");
         return sb.toString();
     }
@@ -362,6 +566,22 @@ public class ListSigningJobsRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getIsRevoked() == null ^ this.getIsRevoked() == null)
+            return false;
+        if (other.getIsRevoked() != null && other.getIsRevoked().equals(this.getIsRevoked()) == false)
+            return false;
+        if (other.getSignatureExpiresBefore() == null ^ this.getSignatureExpiresBefore() == null)
+            return false;
+        if (other.getSignatureExpiresBefore() != null && other.getSignatureExpiresBefore().equals(this.getSignatureExpiresBefore()) == false)
+            return false;
+        if (other.getSignatureExpiresAfter() == null ^ this.getSignatureExpiresAfter() == null)
+            return false;
+        if (other.getSignatureExpiresAfter() != null && other.getSignatureExpiresAfter().equals(this.getSignatureExpiresAfter()) == false)
+            return false;
+        if (other.getJobInvoker() == null ^ this.getJobInvoker() == null)
+            return false;
+        if (other.getJobInvoker() != null && other.getJobInvoker().equals(this.getJobInvoker()) == false)
+            return false;
         return true;
     }
 
@@ -375,6 +595,10 @@ public class ListSigningJobsRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getRequestedBy() == null) ? 0 : getRequestedBy().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getIsRevoked() == null) ? 0 : getIsRevoked().hashCode());
+        hashCode = prime * hashCode + ((getSignatureExpiresBefore() == null) ? 0 : getSignatureExpiresBefore().hashCode());
+        hashCode = prime * hashCode + ((getSignatureExpiresAfter() == null) ? 0 : getSignatureExpiresAfter().hashCode());
+        hashCode = prime * hashCode + ((getJobInvoker() == null) ? 0 : getJobInvoker().hashCode());
         return hashCode;
     }
 

@@ -223,6 +223,21 @@ public class AbstractAWSSecurityHubAsync extends AbstractAWSSecurityHub implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeOrganizationConfigurationResult> describeOrganizationConfigurationAsync(
+            DescribeOrganizationConfigurationRequest request) {
+
+        return describeOrganizationConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeOrganizationConfigurationResult> describeOrganizationConfigurationAsync(
+            DescribeOrganizationConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeOrganizationConfigurationRequest, DescribeOrganizationConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeProductsResult> describeProductsAsync(DescribeProductsRequest request) {
 
         return describeProductsAsync(request, null);
@@ -277,6 +292,21 @@ public class AbstractAWSSecurityHubAsync extends AbstractAWSSecurityHub implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DisableOrganizationAdminAccountResult> disableOrganizationAdminAccountAsync(
+            DisableOrganizationAdminAccountRequest request) {
+
+        return disableOrganizationAdminAccountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableOrganizationAdminAccountResult> disableOrganizationAdminAccountAsync(
+            DisableOrganizationAdminAccountRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisableOrganizationAdminAccountRequest, DisableOrganizationAdminAccountResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableSecurityHubResult> disableSecurityHubAsync(DisableSecurityHubRequest request) {
 
         return disableSecurityHubAsync(request, null);
@@ -324,6 +354,19 @@ public class AbstractAWSSecurityHubAsync extends AbstractAWSSecurityHub implemen
     @Override
     public java.util.concurrent.Future<EnableImportFindingsForProductResult> enableImportFindingsForProductAsync(EnableImportFindingsForProductRequest request,
             com.amazonaws.handlers.AsyncHandler<EnableImportFindingsForProductRequest, EnableImportFindingsForProductResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableOrganizationAdminAccountResult> enableOrganizationAdminAccountAsync(EnableOrganizationAdminAccountRequest request) {
+
+        return enableOrganizationAdminAccountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableOrganizationAdminAccountResult> enableOrganizationAdminAccountAsync(EnableOrganizationAdminAccountRequest request,
+            com.amazonaws.handlers.AsyncHandler<EnableOrganizationAdminAccountRequest, EnableOrganizationAdminAccountResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -485,6 +528,19 @@ public class AbstractAWSSecurityHubAsync extends AbstractAWSSecurityHub implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListOrganizationAdminAccountsResult> listOrganizationAdminAccountsAsync(ListOrganizationAdminAccountsRequest request) {
+
+        return listOrganizationAdminAccountsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOrganizationAdminAccountsResult> listOrganizationAdminAccountsAsync(ListOrganizationAdminAccountsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListOrganizationAdminAccountsRequest, ListOrganizationAdminAccountsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -558,6 +614,21 @@ public class AbstractAWSSecurityHubAsync extends AbstractAWSSecurityHub implemen
     @Override
     public java.util.concurrent.Future<UpdateInsightResult> updateInsightAsync(UpdateInsightRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateInsightRequest, UpdateInsightResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOrganizationConfigurationResult> updateOrganizationConfigurationAsync(
+            UpdateOrganizationConfigurationRequest request) {
+
+        return updateOrganizationConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOrganizationConfigurationResult> updateOrganizationConfigurationAsync(
+            UpdateOrganizationConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateOrganizationConfigurationRequest, UpdateOrganizationConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

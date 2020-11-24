@@ -1,3 +1,88 @@
+# __1.11.907__ __2020-11-23__
+## __AWS CodeStar connections__
+  - ### Features
+    - Added support for the UpdateHost API.
+
+## __AWS Glue__
+  - ### Features
+    - Feature1 - Glue crawler adds data lineage configuration option. Feature2 - AWS Glue Data Catalog adds APIs for PartitionIndex creation and deletion as part of Enhancement Partition Management feature.
+
+## __AWS IoT__
+  - ### Features
+    - This release enables users to identify different file types in the over-the-air update (OTA) functionality using fileType parameter for CreateOTAUpdate API
+
+## __AWS Lambda__
+  - ### Features
+    - This release includes support for new feature: Code Signing for AWS Lambda. This adds new resources and APIs to configure Lambda functions to accept and verify signed code artifacts at deployment.
+
+## __AWS License Manager__
+  - ### Features
+    - AWS License Manager now provides the ability for license administrators to be able to associate license configurations to AMIs shared with their AWS account
+
+## __AWS Outposts__
+  - ### Features
+    - Support specifying tags during the creation of the Outpost resource. Tags are now returned in the response body of Outpost APIs.
+
+## __AWS SecurityHub__
+  - ### Features
+    - Updated the account management API to support the integration with AWS Organizations. Added new methods to allow users to view and manage the delegated administrator account for Security Hub.
+
+## __AWS Signer__
+  - ### Features
+    - AWS Signer is launching code-signing for AWS Lambda. Now customers can cryptographically sign Lambda code to ensure trust, integrity, and functionality.
+
+## __AWS Single Sign-On Admin__
+  - ### Features
+    - AWS Single Sign-On now enables attribute-based access control for workforce identities to simplify permissions in AWS
+
+## __Amazon CloudWatch Application Insights__
+  - ### Features
+    - Add Detected Workload to ApplicationComponent which shows the workloads that installed in the component
+
+## __Amazon DynamoDB__
+  - ### Features
+    - With this release, you can capture data changes in any Amazon DynamoDB table as an Amazon Kinesis data stream. You also can use PartiQL (SQL-compatible language) to manipulate data in DynamoDB tables.
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - This release adds support for updating capacity providers, specifying custom instance warmup periods for capacity providers, and using deployment circuit breaker for your ECS Services.
+
+## __Amazon ElastiCache__
+  - ### Features
+    - Documentation updates for elasticache
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release adds support for Multiple Private DNS names to DescribeVpcEndpointServices response.
+
+## __Amazon Elastic MapReduce__
+  - ### Features
+    - Add API support for EMR Studio, a new notebook-first IDE for data scientists and data engineers with single sign-on, Jupyter notebooks, automated infrastructure provisioning, and job diagnosis.
+
+## __Amazon Forecast Service__
+  - ### Features
+    - Releasing the set of PredictorBacktestExportJob APIs which allow customers to export backtest values and item-level metrics data from Predictor training.
+
+## __Amazon Timestream Query__
+  - ### Features
+    - Amazon Timestream now supports "QueryStatus" in Query API which has information about cumulative bytes scanned, metered, as well as progress percentage for the query.
+
+## __Amazon Translate__
+  - ### Features
+    - This update adds new operations to create and manage parallel data in Amazon Translate. Parallel data is a resource that you can use to run Active Custom Translation jobs.
+
+## __Auto Scaling__
+  - ### Features
+    - Documentation updates and corrections for Amazon EC2 Auto Scaling API Reference and SDKs.
+
+## __CodeArtifact__
+  - ### Features
+    - Add support for the NuGet package format.
+
+## __Managed Streaming for Kafka__
+  - ### Features
+    - Adding MAINTENANCE and REBOOTING_BROKER to Cluster states.
+
 # __1.11.906__ __2020-11-20__
 ## __AWS App Mesh__
   - ### Features

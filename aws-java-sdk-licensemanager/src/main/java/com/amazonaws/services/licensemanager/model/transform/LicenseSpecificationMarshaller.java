@@ -29,6 +29,8 @@ public class LicenseSpecificationMarshaller {
 
     private static final MarshallingInfo<String> LICENSECONFIGURATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LicenseConfigurationArn").build();
+    private static final MarshallingInfo<String> AMIASSOCIATIONSCOPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AmiAssociationScope").build();
 
     private static final LicenseSpecificationMarshaller instance = new LicenseSpecificationMarshaller();
 
@@ -47,6 +49,7 @@ public class LicenseSpecificationMarshaller {
 
         try {
             protocolMarshaller.marshall(licenseSpecification.getLicenseConfigurationArn(), LICENSECONFIGURATIONARN_BINDING);
+            protocolMarshaller.marshall(licenseSpecification.getAmiAssociationScope(), AMIASSOCIATIONSCOPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -30,6 +30,21 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class DeploymentConfiguration implements Serializable, Cloneable, StructuredPojo {
 
     /**
+     * <note>
+     * <p>
+     * The deployment circuit breaker can only be used for services using the rolling update (<code>ECS</code>)
+     * deployment type.
+     * </p>
+     * </note>
+     * <p>
+     * The <b>deployment circuit breaker</b> determines whether a service deployment will fail if the service can't
+     * reach a steady state. If deployment circuit breaker is enabled, a service deployment will transition to a failed
+     * state and stop launching new tasks. If rollback is enabled, when a service deployment fails, the service is
+     * rolled back to the last deployment that completed successfully.
+     * </p>
+     */
+    private DeploymentCircuitBreaker deploymentCircuitBreaker;
+    /**
      * <p>
      * If a service is using the rolling update (<code>ECS</code>) deployment type, the <b>maximum percent</b> parameter
      * represents an upper limit on the number of tasks in a service that are allowed in the <code>RUNNING</code> or
@@ -72,6 +87,100 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * </p>
      */
     private Integer minimumHealthyPercent;
+
+    /**
+     * <note>
+     * <p>
+     * The deployment circuit breaker can only be used for services using the rolling update (<code>ECS</code>)
+     * deployment type.
+     * </p>
+     * </note>
+     * <p>
+     * The <b>deployment circuit breaker</b> determines whether a service deployment will fail if the service can't
+     * reach a steady state. If deployment circuit breaker is enabled, a service deployment will transition to a failed
+     * state and stop launching new tasks. If rollback is enabled, when a service deployment fails, the service is
+     * rolled back to the last deployment that completed successfully.
+     * </p>
+     * 
+     * @param deploymentCircuitBreaker
+     *        <p>
+     *        The deployment circuit breaker can only be used for services using the rolling update (<code>ECS</code>)
+     *        deployment type.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The <b>deployment circuit breaker</b> determines whether a service deployment will fail if the service
+     *        can't reach a steady state. If deployment circuit breaker is enabled, a service deployment will transition
+     *        to a failed state and stop launching new tasks. If rollback is enabled, when a service deployment fails,
+     *        the service is rolled back to the last deployment that completed successfully.
+     */
+
+    public void setDeploymentCircuitBreaker(DeploymentCircuitBreaker deploymentCircuitBreaker) {
+        this.deploymentCircuitBreaker = deploymentCircuitBreaker;
+    }
+
+    /**
+     * <note>
+     * <p>
+     * The deployment circuit breaker can only be used for services using the rolling update (<code>ECS</code>)
+     * deployment type.
+     * </p>
+     * </note>
+     * <p>
+     * The <b>deployment circuit breaker</b> determines whether a service deployment will fail if the service can't
+     * reach a steady state. If deployment circuit breaker is enabled, a service deployment will transition to a failed
+     * state and stop launching new tasks. If rollback is enabled, when a service deployment fails, the service is
+     * rolled back to the last deployment that completed successfully.
+     * </p>
+     * 
+     * @return <p>
+     *         The deployment circuit breaker can only be used for services using the rolling update (<code>ECS</code>)
+     *         deployment type.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         The <b>deployment circuit breaker</b> determines whether a service deployment will fail if the service
+     *         can't reach a steady state. If deployment circuit breaker is enabled, a service deployment will
+     *         transition to a failed state and stop launching new tasks. If rollback is enabled, when a service
+     *         deployment fails, the service is rolled back to the last deployment that completed successfully.
+     */
+
+    public DeploymentCircuitBreaker getDeploymentCircuitBreaker() {
+        return this.deploymentCircuitBreaker;
+    }
+
+    /**
+     * <note>
+     * <p>
+     * The deployment circuit breaker can only be used for services using the rolling update (<code>ECS</code>)
+     * deployment type.
+     * </p>
+     * </note>
+     * <p>
+     * The <b>deployment circuit breaker</b> determines whether a service deployment will fail if the service can't
+     * reach a steady state. If deployment circuit breaker is enabled, a service deployment will transition to a failed
+     * state and stop launching new tasks. If rollback is enabled, when a service deployment fails, the service is
+     * rolled back to the last deployment that completed successfully.
+     * </p>
+     * 
+     * @param deploymentCircuitBreaker
+     *        <p>
+     *        The deployment circuit breaker can only be used for services using the rolling update (<code>ECS</code>)
+     *        deployment type.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The <b>deployment circuit breaker</b> determines whether a service deployment will fail if the service
+     *        can't reach a steady state. If deployment circuit breaker is enabled, a service deployment will transition
+     *        to a failed state and stop launching new tasks. If rollback is enabled, when a service deployment fails,
+     *        the service is rolled back to the last deployment that completed successfully.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeploymentConfiguration withDeploymentCircuitBreaker(DeploymentCircuitBreaker deploymentCircuitBreaker) {
+        setDeploymentCircuitBreaker(deploymentCircuitBreaker);
+        return this;
+    }
 
     /**
      * <p>
@@ -354,6 +463,8 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getDeploymentCircuitBreaker() != null)
+            sb.append("DeploymentCircuitBreaker: ").append(getDeploymentCircuitBreaker()).append(",");
         if (getMaximumPercent() != null)
             sb.append("MaximumPercent: ").append(getMaximumPercent()).append(",");
         if (getMinimumHealthyPercent() != null)
@@ -372,6 +483,10 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
         if (obj instanceof DeploymentConfiguration == false)
             return false;
         DeploymentConfiguration other = (DeploymentConfiguration) obj;
+        if (other.getDeploymentCircuitBreaker() == null ^ this.getDeploymentCircuitBreaker() == null)
+            return false;
+        if (other.getDeploymentCircuitBreaker() != null && other.getDeploymentCircuitBreaker().equals(this.getDeploymentCircuitBreaker()) == false)
+            return false;
         if (other.getMaximumPercent() == null ^ this.getMaximumPercent() == null)
             return false;
         if (other.getMaximumPercent() != null && other.getMaximumPercent().equals(this.getMaximumPercent()) == false)
@@ -388,6 +503,7 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getDeploymentCircuitBreaker() == null) ? 0 : getDeploymentCircuitBreaker().hashCode());
         hashCode = prime * hashCode + ((getMaximumPercent() == null) ? 0 : getMaximumPercent().hashCode());
         hashCode = prime * hashCode + ((getMinimumHealthyPercent() == null) ? 0 : getMinimumHealthyPercent().hashCode());
         return hashCode;

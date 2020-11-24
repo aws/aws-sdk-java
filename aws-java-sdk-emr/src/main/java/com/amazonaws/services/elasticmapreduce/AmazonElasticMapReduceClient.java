@@ -52,9 +52,9 @@ import com.amazonaws.services.elasticmapreduce.model.transform.*;
  * service call completes.
  * <p>
  * <p>
- * Amazon EMR is a web service that makes it easy to process large amounts of data efficiently. Amazon EMR uses Hadoop
- * processing combined with several AWS products to do tasks such as web indexing, data mining, log file analysis,
- * machine learning, scientific simulation, and data warehousing.
+ * Amazon EMR is a web service that makes it easier to process large amounts of data efficiently. Amazon EMR uses Hadoop
+ * processing combined with several AWS services to do tasks such as web indexing, data mining, log file analysis,
+ * machine learning, scientific simulation, and data warehouse management.
  * </p>
  */
 @ThreadSafe
@@ -555,8 +555,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * <p>
      * Cancels a pending step or steps in a running cluster. Available only in Amazon EMR versions 4.8.0 and later,
      * excluding version 5.0.0. A maximum of 256 steps are allowed in each CancelSteps request. CancelSteps is
-     * idempotent but asynchronous; it does not guarantee a step will be canceled, even if the request is successfully
-     * submitted. You can only cancel steps that are in a <code>PENDING</code> state.
+     * idempotent but asynchronous; it does not guarantee that a step will be canceled, even if the request is
+     * successfully submitted. You can only cancel steps that are in a <code>PENDING</code> state.
      * </p>
      * 
      * @param cancelStepsRequest
@@ -674,6 +674,135 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
     }
 
     /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Creates a new Amazon EMR Studio.
+     * </p>
+     * 
+     * @param createStudioRequest
+     * @return Result of the CreateStudio operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.CreateStudio
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateStudio" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateStudioResult createStudio(CreateStudioRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateStudio(request);
+    }
+
+    @SdkInternalApi
+    final CreateStudioResult executeCreateStudio(CreateStudioRequest createStudioRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createStudioRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateStudioRequest> request = null;
+        Response<CreateStudioResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateStudioRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createStudioRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStudio");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateStudioResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateStudioResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Maps a user or group to the Amazon EMR Studio specified by <code>StudioId</code>, and applies a session policy to
+     * refine Studio permissions for that user or group.
+     * </p>
+     * 
+     * @param createStudioSessionMappingRequest
+     * @return Result of the CreateStudioSessionMapping operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.CreateStudioSessionMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateStudioSessionMapping"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateStudioSessionMappingResult createStudioSessionMapping(CreateStudioSessionMappingRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateStudioSessionMapping(request);
+    }
+
+    @SdkInternalApi
+    final CreateStudioSessionMappingResult executeCreateStudioSessionMapping(CreateStudioSessionMappingRequest createStudioSessionMappingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createStudioSessionMappingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateStudioSessionMappingRequest> request = null;
+        Response<CreateStudioSessionMappingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateStudioSessionMappingRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createStudioSessionMappingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStudioSessionMapping");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateStudioSessionMappingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateStudioSessionMappingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Deletes a security configuration.
      * </p>
@@ -723,6 +852,134 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             HttpResponseHandler<AmazonWebServiceResponse<DeleteSecurityConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteSecurityConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Removes an Amazon EMR Studio from the Studio metadata store.
+     * </p>
+     * 
+     * @param deleteStudioRequest
+     * @return Result of the DeleteStudio operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.DeleteStudio
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteStudio" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteStudioResult deleteStudio(DeleteStudioRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteStudio(request);
+    }
+
+    @SdkInternalApi
+    final DeleteStudioResult executeDeleteStudio(DeleteStudioRequest deleteStudioRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteStudioRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteStudioRequest> request = null;
+        Response<DeleteStudioResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteStudioRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteStudioRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteStudio");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteStudioResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteStudioResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Removes a user or group from an Amazon EMR Studio.
+     * </p>
+     * 
+     * @param deleteStudioSessionMappingRequest
+     * @return Result of the DeleteStudioSessionMapping operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.DeleteStudioSessionMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteStudioSessionMapping"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteStudioSessionMappingResult deleteStudioSessionMapping(DeleteStudioSessionMappingRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteStudioSessionMapping(request);
+    }
+
+    @SdkInternalApi
+    final DeleteStudioSessionMappingResult executeDeleteStudioSessionMapping(DeleteStudioSessionMappingRequest deleteStudioSessionMappingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteStudioSessionMappingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteStudioSessionMappingRequest> request = null;
+        Response<DeleteStudioSessionMappingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteStudioSessionMappingRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteStudioSessionMappingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteStudioSessionMapping");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteStudioSessionMappingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteStudioSessionMappingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -794,7 +1051,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * This API is deprecated and will eventually be removed. We recommend you use <a>ListClusters</a>,
+     * This API is no longer supported and will eventually be removed. We recommend you use <a>ListClusters</a>,
      * <a>DescribeCluster</a>, <a>ListSteps</a>, <a>ListInstanceGroups</a> and <a>ListBootstrapActions</a> instead.
      * </p>
      * <p>
@@ -1063,6 +1320,69 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
     }
 
     /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Returns details for the specified Amazon EMR Studio including ID, Name, VPC, Studio access URL, and so on.
+     * </p>
+     * 
+     * @param describeStudioRequest
+     * @return Result of the DescribeStudio operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.DescribeStudio
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeStudio"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeStudioResult describeStudio(DescribeStudioRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeStudio(request);
+    }
+
+    @SdkInternalApi
+    final DescribeStudioResult executeDescribeStudio(DescribeStudioRequest describeStudioRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeStudioRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeStudioRequest> request = null;
+        Response<DescribeStudioResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeStudioRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeStudioRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStudio");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeStudioResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeStudioResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Returns the Amazon EMR block public access configuration for your AWS account in the current Region. For more
      * information see <a
@@ -1173,6 +1493,71 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             HttpResponseHandler<AmazonWebServiceResponse<GetManagedScalingPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetManagedScalingPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Fetches mapping details for the specified Amazon EMR Studio and identity (user or group).
+     * </p>
+     * 
+     * @param getStudioSessionMappingRequest
+     * @return Result of the GetStudioSessionMapping operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.GetStudioSessionMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetStudioSessionMapping"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetStudioSessionMappingResult getStudioSessionMapping(GetStudioSessionMappingRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetStudioSessionMapping(request);
+    }
+
+    @SdkInternalApi
+    final GetStudioSessionMappingResult executeGetStudioSessionMapping(GetStudioSessionMappingRequest getStudioSessionMappingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getStudioSessionMappingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetStudioSessionMappingRequest> request = null;
+        Response<GetStudioSessionMappingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetStudioSessionMappingRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getStudioSessionMappingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetStudioSessionMapping");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetStudioSessionMappingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetStudioSessionMappingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1666,6 +2051,135 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<ListStepsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListStepsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Returns a list of all user or group session mappings for the EMR Studio specified by <code>StudioId</code>.
+     * </p>
+     * 
+     * @param listStudioSessionMappingsRequest
+     * @return Result of the ListStudioSessionMappings operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.ListStudioSessionMappings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListStudioSessionMappings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListStudioSessionMappingsResult listStudioSessionMappings(ListStudioSessionMappingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListStudioSessionMappings(request);
+    }
+
+    @SdkInternalApi
+    final ListStudioSessionMappingsResult executeListStudioSessionMappings(ListStudioSessionMappingsRequest listStudioSessionMappingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listStudioSessionMappingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListStudioSessionMappingsRequest> request = null;
+        Response<ListStudioSessionMappingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListStudioSessionMappingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listStudioSessionMappingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStudioSessionMappings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListStudioSessionMappingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListStudioSessionMappingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Returns a list of all Amazon EMR Studios associated with the AWS account. The list includes details such as ID,
+     * Studio Access URL, and creation time for each Studio.
+     * </p>
+     * 
+     * @param listStudiosRequest
+     * @return Result of the ListStudios operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.ListStudios
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListStudios" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListStudiosResult listStudios(ListStudiosRequest request) {
+        request = beforeClientExecution(request);
+        return executeListStudios(request);
+    }
+
+    @SdkInternalApi
+    final ListStudiosResult executeListStudios(ListStudiosRequest listStudiosRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listStudiosRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListStudiosRequest> request = null;
+        Response<ListStudiosResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListStudiosRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listStudiosRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStudios");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListStudiosResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListStudiosResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2617,6 +3131,71 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<TerminateJobFlowsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TerminateJobFlowsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Updates the session policy attached to the user or group for the specified Amazon EMR Studio.
+     * </p>
+     * 
+     * @param updateStudioSessionMappingRequest
+     * @return Result of the UpdateStudioSessionMapping operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.UpdateStudioSessionMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/UpdateStudioSessionMapping"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateStudioSessionMappingResult updateStudioSessionMapping(UpdateStudioSessionMappingRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateStudioSessionMapping(request);
+    }
+
+    @SdkInternalApi
+    final UpdateStudioSessionMappingResult executeUpdateStudioSessionMapping(UpdateStudioSessionMappingRequest updateStudioSessionMappingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateStudioSessionMappingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateStudioSessionMappingRequest> request = null;
+        Response<UpdateStudioSessionMappingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateStudioSessionMappingRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateStudioSessionMappingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateStudioSessionMapping");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateStudioSessionMappingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateStudioSessionMappingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

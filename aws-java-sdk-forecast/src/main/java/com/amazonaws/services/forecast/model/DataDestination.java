@@ -19,9 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The destination for an exported forecast, an AWS Identity and Access Management (IAM) role that allows Amazon
- * Forecast to access the location and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in
- * the <a>CreateForecastExportJob</a> request.
+ * The destination for an export job, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to
+ * access the location and, optionally, an AWS Key Management Service (KMS) key.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DataDestination" target="_top">AWS API

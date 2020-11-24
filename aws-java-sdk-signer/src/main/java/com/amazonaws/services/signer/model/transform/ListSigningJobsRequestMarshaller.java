@@ -37,6 +37,14 @@ public class ListSigningJobsRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Boolean> ISREVOKED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("isRevoked").build();
+    private static final MarshallingInfo<java.util.Date> SIGNATUREEXPIRESBEFORE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("signatureExpiresBefore").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<java.util.Date> SIGNATUREEXPIRESAFTER_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("signatureExpiresAfter").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<String> JOBINVOKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("jobInvoker").build();
 
     private static final ListSigningJobsRequestMarshaller instance = new ListSigningJobsRequestMarshaller();
 
@@ -59,6 +67,10 @@ public class ListSigningJobsRequestMarshaller {
             protocolMarshaller.marshall(listSigningJobsRequest.getRequestedBy(), REQUESTEDBY_BINDING);
             protocolMarshaller.marshall(listSigningJobsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listSigningJobsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listSigningJobsRequest.getIsRevoked(), ISREVOKED_BINDING);
+            protocolMarshaller.marshall(listSigningJobsRequest.getSignatureExpiresBefore(), SIGNATUREEXPIRESBEFORE_BINDING);
+            protocolMarshaller.marshall(listSigningJobsRequest.getSignatureExpiresAfter(), SIGNATUREEXPIRESAFTER_BINDING);
+            protocolMarshaller.marshall(listSigningJobsRequest.getJobInvoker(), JOBINVOKER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
