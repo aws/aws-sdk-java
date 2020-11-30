@@ -227,7 +227,7 @@ public class STSAssumeRoleWithWebIdentitySessionCredentialsProvider implements A
         }
     }
 
-    private static class StsRetryCondition implements com.amazonaws.retry.RetryPolicy.RetryCondition {
+    static class StsRetryCondition implements com.amazonaws.retry.RetryPolicy.RetryCondition {
 
         @Override
         public boolean shouldRetry(AmazonWebServiceRequest originalRequest,
