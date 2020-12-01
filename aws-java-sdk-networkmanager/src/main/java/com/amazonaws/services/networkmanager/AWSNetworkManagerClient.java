@@ -2133,4 +2133,9 @@ public class AWSNetworkManagerClient extends AmazonWebServiceClient implements A
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

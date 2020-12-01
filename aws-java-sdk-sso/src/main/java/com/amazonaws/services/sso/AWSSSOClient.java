@@ -489,4 +489,9 @@ public class AWSSSOClient extends AmazonWebServiceClient implements AWSSSO {
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

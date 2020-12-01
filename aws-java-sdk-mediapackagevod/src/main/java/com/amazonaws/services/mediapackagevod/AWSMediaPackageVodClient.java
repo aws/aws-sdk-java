@@ -1218,4 +1218,9 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

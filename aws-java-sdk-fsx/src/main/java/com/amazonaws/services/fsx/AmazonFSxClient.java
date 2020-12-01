@@ -1799,4 +1799,9 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

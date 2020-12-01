@@ -1561,4 +1561,9 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

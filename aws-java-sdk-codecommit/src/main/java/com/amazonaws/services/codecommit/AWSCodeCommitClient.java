@@ -8440,4 +8440,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

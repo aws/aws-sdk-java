@@ -4607,4 +4607,9 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
         return client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

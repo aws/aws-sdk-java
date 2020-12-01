@@ -2559,4 +2559,9 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

@@ -855,4 +855,9 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

@@ -300,4 +300,9 @@ public class AmazonSageMakerRuntimeClient extends AmazonWebServiceClient impleme
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

@@ -653,4 +653,9 @@ public class AWSOutpostsClient extends AmazonWebServiceClient implements AWSOutp
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

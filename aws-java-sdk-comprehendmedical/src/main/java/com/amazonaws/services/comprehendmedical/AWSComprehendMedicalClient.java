@@ -1658,4 +1658,9 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

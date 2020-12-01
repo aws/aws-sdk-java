@@ -263,4 +263,9 @@ public class AmazonWorkMailMessageFlowClient extends AmazonWebServiceClient impl
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

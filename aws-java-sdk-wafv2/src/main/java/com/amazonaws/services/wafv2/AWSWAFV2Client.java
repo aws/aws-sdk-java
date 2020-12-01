@@ -4431,4 +4431,9 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

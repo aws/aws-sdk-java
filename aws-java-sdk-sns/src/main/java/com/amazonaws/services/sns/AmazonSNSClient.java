@@ -2874,4 +2874,9 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
         return client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

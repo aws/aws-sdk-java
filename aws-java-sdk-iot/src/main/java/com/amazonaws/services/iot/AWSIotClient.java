@@ -14246,4 +14246,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

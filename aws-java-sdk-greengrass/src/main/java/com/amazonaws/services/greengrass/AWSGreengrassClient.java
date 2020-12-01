@@ -5354,4 +5354,9 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

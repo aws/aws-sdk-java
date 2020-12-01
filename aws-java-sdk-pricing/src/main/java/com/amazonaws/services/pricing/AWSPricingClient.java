@@ -447,4 +447,9 @@ public class AWSPricingClient extends AmazonWebServiceClient implements AWSPrici
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

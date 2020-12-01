@@ -3745,4 +3745,9 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

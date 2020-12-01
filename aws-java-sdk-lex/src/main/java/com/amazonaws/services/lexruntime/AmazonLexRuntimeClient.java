@@ -814,4 +814,9 @@ public class AmazonLexRuntimeClient extends AmazonWebServiceClient implements Am
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

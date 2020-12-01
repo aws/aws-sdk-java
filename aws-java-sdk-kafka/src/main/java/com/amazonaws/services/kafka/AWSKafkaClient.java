@@ -2448,4 +2448,9 @@ public class AWSKafkaClient extends AmazonWebServiceClient implements AWSKafka {
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

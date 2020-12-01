@@ -443,20 +443,22 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
         }
         return waiters;
     }
+    </#if>
 
     @Override
     public void shutdown() {
         super.shutdown();
+        <#if hasWaiters>
         if (waiters != null) {
             waiters.shutdown();
         }
+        </#if>
         <#if endpointOperation?has_content>
         if (cache != null) {
             cache.shutdown();
         }
         </#if>
     }
-    </#if>
 
     <#if customizationConfig.presignersFqcn??>
     @Override

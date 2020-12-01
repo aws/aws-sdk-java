@@ -1981,4 +1981,9 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

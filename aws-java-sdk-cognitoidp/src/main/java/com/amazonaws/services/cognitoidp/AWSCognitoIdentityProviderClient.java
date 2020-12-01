@@ -7933,4 +7933,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

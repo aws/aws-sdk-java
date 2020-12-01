@@ -756,4 +756,9 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

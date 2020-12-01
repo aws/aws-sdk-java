@@ -1638,4 +1638,9 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

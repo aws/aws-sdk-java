@@ -2722,4 +2722,9 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

@@ -2148,4 +2148,9 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

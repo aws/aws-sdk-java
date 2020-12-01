@@ -2243,4 +2243,9 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         return client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

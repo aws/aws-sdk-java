@@ -1652,4 +1652,9 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
         return client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

@@ -811,4 +811,9 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
         return client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

@@ -2371,4 +2371,9 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

@@ -3013,4 +3013,9 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

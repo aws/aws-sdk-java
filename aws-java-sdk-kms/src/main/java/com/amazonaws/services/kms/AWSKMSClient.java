@@ -5914,4 +5914,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

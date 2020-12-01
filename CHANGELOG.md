@@ -1,3 +1,8 @@
+# __1.11.909__ __2020-12-01__
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release introduces Amazon EC2 Mac1 instances, a new Amazon EC2 instance family built on Apple Mac mini computers, powered by AWS Nitro System, and support running macOS workloads on Amazon EC2
+
 # __1.11.908__ __2020-11-24__
 ## __AWS Batch__
   - ### Features

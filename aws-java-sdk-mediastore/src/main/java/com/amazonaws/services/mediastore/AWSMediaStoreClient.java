@@ -1551,4 +1551,9 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

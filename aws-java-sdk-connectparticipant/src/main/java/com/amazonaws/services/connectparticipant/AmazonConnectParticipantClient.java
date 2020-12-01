@@ -552,4 +552,9 @@ public class AmazonConnectParticipantClient extends AmazonWebServiceClient imple
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

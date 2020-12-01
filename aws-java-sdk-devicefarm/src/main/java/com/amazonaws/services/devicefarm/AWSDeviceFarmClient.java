@@ -5334,4 +5334,9 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

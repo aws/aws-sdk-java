@@ -5963,4 +5963,9 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

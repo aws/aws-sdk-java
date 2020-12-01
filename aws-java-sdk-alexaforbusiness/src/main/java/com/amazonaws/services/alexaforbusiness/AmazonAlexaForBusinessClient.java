@@ -5697,4 +5697,9 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

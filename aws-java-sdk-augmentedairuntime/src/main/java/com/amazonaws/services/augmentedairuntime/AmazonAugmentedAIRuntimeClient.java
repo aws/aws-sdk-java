@@ -577,4 +577,9 @@ public class AmazonAugmentedAIRuntimeClient extends AmazonWebServiceClient imple
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

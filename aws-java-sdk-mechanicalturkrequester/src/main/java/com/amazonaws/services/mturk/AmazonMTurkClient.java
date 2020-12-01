@@ -2781,4 +2781,9 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

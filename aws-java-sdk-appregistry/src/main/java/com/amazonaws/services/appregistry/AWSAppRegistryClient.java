@@ -1205,4 +1205,9 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

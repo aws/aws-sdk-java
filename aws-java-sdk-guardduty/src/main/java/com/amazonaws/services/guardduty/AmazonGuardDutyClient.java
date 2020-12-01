@@ -3657,4 +3657,9 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

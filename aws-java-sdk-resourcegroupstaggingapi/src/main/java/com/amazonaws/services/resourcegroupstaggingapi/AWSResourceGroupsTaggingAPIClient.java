@@ -1839,4 +1839,9 @@ public class AWSResourceGroupsTaggingAPIClient extends AmazonWebServiceClient im
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

@@ -1280,4 +1280,9 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

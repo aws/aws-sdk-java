@@ -375,4 +375,9 @@ public class AmazonKinesisVideoSignalingChannelsClient extends AmazonWebServiceC
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

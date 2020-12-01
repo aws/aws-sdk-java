@@ -2604,4 +2604,9 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

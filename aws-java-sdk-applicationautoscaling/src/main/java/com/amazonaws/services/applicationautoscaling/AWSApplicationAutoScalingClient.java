@@ -1288,4 +1288,9 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

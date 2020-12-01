@@ -1603,4 +1603,9 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

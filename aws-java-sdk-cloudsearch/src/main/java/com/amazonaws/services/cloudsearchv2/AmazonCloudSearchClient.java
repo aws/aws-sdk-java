@@ -2104,4 +2104,9 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         return client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

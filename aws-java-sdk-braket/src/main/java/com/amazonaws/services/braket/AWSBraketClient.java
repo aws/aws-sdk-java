@@ -789,4 +789,9 @@ public class AWSBraketClient extends AmazonWebServiceClient implements AWSBraket
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

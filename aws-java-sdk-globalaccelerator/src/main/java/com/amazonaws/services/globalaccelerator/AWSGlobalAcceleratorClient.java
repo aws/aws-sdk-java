@@ -2040,4 +2040,9 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

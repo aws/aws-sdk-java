@@ -1972,4 +1972,9 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

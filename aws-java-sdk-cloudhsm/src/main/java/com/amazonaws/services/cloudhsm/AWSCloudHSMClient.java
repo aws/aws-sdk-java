@@ -1893,4 +1893,9 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

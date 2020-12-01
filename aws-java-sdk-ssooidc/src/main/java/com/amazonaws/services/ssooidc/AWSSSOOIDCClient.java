@@ -474,4 +474,9 @@ public class AWSSSOOIDCClient extends AmazonWebServiceClient implements AWSSSOOI
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

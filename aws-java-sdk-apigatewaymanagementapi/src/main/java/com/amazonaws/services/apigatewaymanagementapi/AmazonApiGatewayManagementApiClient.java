@@ -403,4 +403,9 @@ public class AmazonApiGatewayManagementApiClient extends AmazonWebServiceClient 
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

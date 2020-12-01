@@ -2899,4 +2899,9 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

@@ -301,4 +301,9 @@ public class AmazonForecastQueryClient extends AmazonWebServiceClient implements
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

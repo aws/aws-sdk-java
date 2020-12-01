@@ -1184,4 +1184,9 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

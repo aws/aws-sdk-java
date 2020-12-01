@@ -1243,4 +1243,9 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

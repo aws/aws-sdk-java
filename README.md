@@ -48,7 +48,7 @@ dependencies.
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-bom</artifactId>
-      <version>1.11.908</version>
+      <version>1.11.909</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -119,7 +119,13 @@ GitHub [issues][sdk-issues] is the preferred channel to interact with our team. 
 * Open a case via the [AWS Support Center][support-center] in the [AWS console][console]
 * If it turns out that you may have found a bug, please open an [issue][sdk-issues]
 
-## Supported Versions
+## Maintenance and Support for SDK Major Versions
+For information about maintenance and support for SDK major versions and their underlying dependencies, see the following in the AWS SDKs and Tools Shared Configuration and Credentials Reference Guide:
+
+* [AWS SDKs and Tools Maintenance Policy][maintenance-policy]
+* [AWS SDKs and Tools Version Support Matrix][version-matrix]
+
+## Supported Minor Versions
 
 * **1.11.x** - Recommended.
 
@@ -165,3 +171,5 @@ For more information see the [AWS SDK for Java 2.x Developer Guide][sdk-v2-dev-g
 [console]: https://console.aws.amazon.com
 [jackson-deserialization-gadget]: https://medium.com/@cowtowncoder/on-jackson-cves-dont-panic-here-is-what-you-need-to-know-54cd0d6e8062
 [sdk-v2-dev-guide]: https://docs.aws.amazon.com/sdk-for-java/v2/developer-guide/welcome.html
+[maintenance-policy]: https://docs.aws.amazon.com/credref/latest/refdocs/maint-policy.html
+[version-matrix]: https://docs.aws.amazon.com/credref/latest/refdocs/version-support-matrix.html

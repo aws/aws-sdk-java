@@ -657,4 +657,9 @@ public class AWSRDSDataClient extends AmazonWebServiceClient implements AWSRDSDa
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

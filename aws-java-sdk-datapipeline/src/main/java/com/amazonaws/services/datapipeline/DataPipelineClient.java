@@ -1694,4 +1694,9 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

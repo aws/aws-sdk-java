@@ -10829,4 +10829,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

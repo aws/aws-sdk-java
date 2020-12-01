@@ -1035,4 +1035,9 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

@@ -18,10 +18,12 @@ package com.amazonaws.internal.auth;
 import com.amazonaws.AmazonWebServiceClient;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
+import com.amazonaws.auth.ServiceAwareSigner;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.auth.SignerFactory;
 import com.amazonaws.auth.SignerParams;
 import com.amazonaws.auth.SignerTypeAware;
+import com.amazonaws.handlers.HandlerContextKey;
 import com.amazonaws.regions.EndpointToRegion;
 import java.net.URI;
 
@@ -38,11 +40,23 @@ public class DefaultSignerProvider extends SignerProvider {
 
     @Override
     public Signer getSigner(SignerProviderContext context) {
-    Request<?> request = context.getRequest();
+        Request<?> request = context.getRequest();
+
         if (request == null || shouldUseDefaultSigner(request.getOriginalRequest())) {
             if (context.isRedirect()) {
                 return awsClient.getSignerByURI(context.getUri());
             }
+
+            // A new signer should be created if the signing name is overridden
+            if (request != null && request.getHandlerContext(HandlerContextKey.SIGNING_NAME) != null) {
+                String signingName = request.getHandlerContext(HandlerContextKey.SIGNING_NAME);
+                Signer newSigner = awsClient.getSignerByURI(context.getUri());
+                if (newSigner instanceof ServiceAwareSigner && !isSignerOverridden()) {
+                    ((ServiceAwareSigner) (newSigner)).setServiceName(signingName);
+                    return newSigner;
+                }
+            }
+
             return defaultSigner;
         }
 

@@ -13526,4 +13526,9 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

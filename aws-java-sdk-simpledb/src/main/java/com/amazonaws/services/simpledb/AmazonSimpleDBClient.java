@@ -1113,4 +1113,9 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
         return client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

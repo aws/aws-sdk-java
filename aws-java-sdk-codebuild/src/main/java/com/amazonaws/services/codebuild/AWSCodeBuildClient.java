@@ -3126,4 +3126,9 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

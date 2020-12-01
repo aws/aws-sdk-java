@@ -1012,4 +1012,9 @@ public class AWSCodeStarconnectionsClient extends AmazonWebServiceClient impleme
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

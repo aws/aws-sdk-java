@@ -665,4 +665,9 @@ public class AmazonEBSClient extends AmazonWebServiceClient implements AmazonEBS
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

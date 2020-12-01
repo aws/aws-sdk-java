@@ -11353,4 +11353,9 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

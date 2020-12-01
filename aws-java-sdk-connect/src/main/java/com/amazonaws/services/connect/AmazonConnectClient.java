@@ -5383,4 +5383,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

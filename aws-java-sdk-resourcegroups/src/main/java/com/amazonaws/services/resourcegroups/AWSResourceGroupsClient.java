@@ -1278,4 +1278,9 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

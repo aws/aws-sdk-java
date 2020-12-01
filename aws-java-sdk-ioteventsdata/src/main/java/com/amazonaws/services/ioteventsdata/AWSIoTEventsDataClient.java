@@ -474,4 +474,9 @@ public class AWSIoTEventsDataClient extends AmazonWebServiceClient implements AW
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

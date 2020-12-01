@@ -2423,4 +2423,9 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

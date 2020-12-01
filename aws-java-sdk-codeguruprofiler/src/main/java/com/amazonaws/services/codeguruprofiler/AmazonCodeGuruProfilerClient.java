@@ -1717,4 +1717,9 @@ public class AmazonCodeGuruProfilerClient extends AmazonWebServiceClient impleme
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

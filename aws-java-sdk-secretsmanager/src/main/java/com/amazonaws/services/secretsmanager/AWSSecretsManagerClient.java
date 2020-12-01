@@ -2742,4 +2742,9 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

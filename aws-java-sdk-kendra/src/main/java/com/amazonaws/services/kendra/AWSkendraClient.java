@@ -1739,4 +1739,9 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

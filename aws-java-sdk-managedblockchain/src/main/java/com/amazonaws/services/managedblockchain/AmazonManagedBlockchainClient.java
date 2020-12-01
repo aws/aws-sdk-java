@@ -1582,4 +1582,9 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

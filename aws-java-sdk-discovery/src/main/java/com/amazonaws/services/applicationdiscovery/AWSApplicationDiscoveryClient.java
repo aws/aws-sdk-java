@@ -2316,4 +2316,9 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

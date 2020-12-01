@@ -3464,4 +3464,9 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

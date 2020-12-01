@@ -3710,4 +3710,9 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

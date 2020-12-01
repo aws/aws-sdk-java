@@ -459,4 +459,12 @@ public class AmazonTimestreamQueryClient extends AmazonWebServiceClient implemen
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (cache != null) {
+            cache.shutdown();
+        }
+    }
+
 }

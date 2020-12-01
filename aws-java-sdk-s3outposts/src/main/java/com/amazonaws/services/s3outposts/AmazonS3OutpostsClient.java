@@ -467,4 +467,9 @@ public class AmazonS3OutpostsClient extends AmazonWebServiceClient implements Am
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

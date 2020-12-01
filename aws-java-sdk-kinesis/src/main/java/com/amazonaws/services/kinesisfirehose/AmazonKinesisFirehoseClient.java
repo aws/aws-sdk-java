@@ -1442,4 +1442,9 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

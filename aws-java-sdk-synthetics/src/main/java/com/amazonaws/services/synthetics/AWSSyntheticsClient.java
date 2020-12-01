@@ -1108,4 +1108,9 @@ public class AWSSyntheticsClient extends AmazonWebServiceClient implements AWSSy
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

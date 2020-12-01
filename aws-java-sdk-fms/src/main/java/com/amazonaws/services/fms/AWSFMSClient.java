@@ -2008,4 +2008,9 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

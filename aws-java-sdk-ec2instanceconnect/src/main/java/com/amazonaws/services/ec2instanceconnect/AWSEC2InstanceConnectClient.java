@@ -283,4 +283,9 @@ public class AWSEC2InstanceConnectClient extends AmazonWebServiceClient implemen
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

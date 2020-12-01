@@ -1169,4 +1169,9 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

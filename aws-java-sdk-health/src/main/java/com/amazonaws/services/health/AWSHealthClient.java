@@ -1392,4 +1392,9 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

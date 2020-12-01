@@ -344,4 +344,9 @@ public class AWSPIClient extends AmazonWebServiceClient implements AWSPI {
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

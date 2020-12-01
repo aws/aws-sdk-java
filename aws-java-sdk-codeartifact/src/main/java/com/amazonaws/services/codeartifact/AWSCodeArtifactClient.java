@@ -2920,4 +2920,9 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

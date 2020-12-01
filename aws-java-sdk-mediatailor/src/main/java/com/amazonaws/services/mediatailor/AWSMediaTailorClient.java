@@ -606,4 +606,9 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

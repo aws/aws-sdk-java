@@ -2807,4 +2807,9 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

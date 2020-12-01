@@ -2343,4 +2343,9 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

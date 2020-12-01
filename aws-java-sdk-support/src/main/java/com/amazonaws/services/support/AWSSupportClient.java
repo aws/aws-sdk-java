@@ -1701,4 +1701,9 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

@@ -5675,4 +5675,9 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

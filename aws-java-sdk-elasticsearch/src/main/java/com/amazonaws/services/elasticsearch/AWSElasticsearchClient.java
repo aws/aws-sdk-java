@@ -2996,4 +2996,9 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

@@ -506,4 +506,9 @@ public class AWSIoTJobsDataPlaneClient extends AmazonWebServiceClient implements
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

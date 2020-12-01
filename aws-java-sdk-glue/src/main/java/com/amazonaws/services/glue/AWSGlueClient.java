@@ -10488,4 +10488,9 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

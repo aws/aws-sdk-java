@@ -709,4 +709,9 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

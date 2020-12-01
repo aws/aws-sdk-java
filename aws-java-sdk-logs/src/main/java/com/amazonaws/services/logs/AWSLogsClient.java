@@ -3366,4 +3366,9 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

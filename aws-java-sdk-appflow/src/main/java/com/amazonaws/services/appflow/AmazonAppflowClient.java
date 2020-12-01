@@ -1418,4 +1418,9 @@ public class AmazonAppflowClient extends AmazonWebServiceClient implements Amazo
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

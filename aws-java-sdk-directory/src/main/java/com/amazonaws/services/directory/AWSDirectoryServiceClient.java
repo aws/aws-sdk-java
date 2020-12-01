@@ -4606,4 +4606,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

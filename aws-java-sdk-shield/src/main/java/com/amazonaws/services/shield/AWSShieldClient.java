@@ -2517,4 +2517,9 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

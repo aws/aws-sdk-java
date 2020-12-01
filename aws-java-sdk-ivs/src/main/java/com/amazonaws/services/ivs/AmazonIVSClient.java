@@ -1792,4 +1792,9 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

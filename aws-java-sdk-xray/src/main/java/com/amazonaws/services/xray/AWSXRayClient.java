@@ -2060,4 +2060,9 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

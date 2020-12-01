@@ -2574,4 +2574,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

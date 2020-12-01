@@ -369,7 +369,8 @@ public enum InstanceType {
     M6gd4xlarge("m6gd.4xlarge"),
     M6gd8xlarge("m6gd.8xlarge"),
     M6gd12xlarge("m6gd.12xlarge"),
-    M6gd16xlarge("m6gd.16xlarge");
+    M6gd16xlarge("m6gd.16xlarge"),
+    Mac1Metal("mac1.metal");
 
     private String value;
 

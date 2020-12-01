@@ -1459,4 +1459,9 @@ public class AWSCodeStarClient extends AmazonWebServiceClient implements AWSCode
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

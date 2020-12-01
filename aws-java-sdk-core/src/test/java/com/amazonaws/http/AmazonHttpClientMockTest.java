@@ -15,6 +15,7 @@
 
 package com.amazonaws.http;
 
+import com.amazonaws.AmazonWebServiceClient;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.Request;
 import com.amazonaws.auth.AWS4Signer;
@@ -33,7 +34,7 @@ import utils.http.WireMockTestBase;
 import static com.amazonaws.auth.internal.SignerConstants.AUTHORIZATION;
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
 
-public class AmazonHttpClientIntegrationTest extends WireMockTestBase {
+public class AmazonHttpClientMockTest extends WireMockTestBase {
     private static final String OPERATION = "/some-operation";
     private static final String HEADER = "Some-Header";
     private static final String CONFIG_HEADER_VALUE = "client config header value";
@@ -87,21 +88,6 @@ public class AmazonHttpClientIntegrationTest extends WireMockTestBase {
         context.setCredentialsProvider(new AWSStaticCredentialsProvider(new BasicAWSCredentials("test", "test")));
         client.requestExecutionBuilder().request(request).executionContext(context).execute();
         verify(getRequestedFor(urlPathEqualTo(OPERATION)).withHeader(AUTHORIZATION, containing("foo-service")));
-    }
-
-    @Test
-    public void signerServiceNameHandlerContextKeyPresent_shouldOverride() throws Exception {
-        Request<?> request = newGetRequest(OPERATION);
-        request.addHandlerContext(HandlerContextKey.SIGNING_NAME, "bar-service");
-
-        AmazonHttpClient client = createClient(HEADER, CONFIG_HEADER_VALUE);
-        ExecutionContext context = ExecutionContext.builder()
-                                                 .withSignerProvider(new TestSignerProvider())
-                                                 .build();
-        context.setCredentialsProvider(new AWSStaticCredentialsProvider(new BasicAWSCredentials("test", "test")));
-        client.requestExecutionBuilder().request(request).executionContext(context).execute();
-
-        verify(getRequestedFor(urlPathEqualTo(OPERATION)).withHeader(AUTHORIZATION, containing("bar-service")));
     }
 
     @Test

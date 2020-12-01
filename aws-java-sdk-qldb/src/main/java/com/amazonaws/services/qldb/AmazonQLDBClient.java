@@ -1431,4 +1431,9 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

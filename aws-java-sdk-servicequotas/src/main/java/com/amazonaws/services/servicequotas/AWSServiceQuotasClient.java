@@ -1480,4 +1480,9 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

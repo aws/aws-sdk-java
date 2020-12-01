@@ -3948,4 +3948,9 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

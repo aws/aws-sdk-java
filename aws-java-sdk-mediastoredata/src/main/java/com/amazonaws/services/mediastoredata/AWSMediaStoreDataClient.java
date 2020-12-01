@@ -518,4 +518,9 @@ public class AWSMediaStoreDataClient extends AmazonWebServiceClient implements A
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

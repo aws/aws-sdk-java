@@ -290,4 +290,9 @@ public class AWSMarketplaceEntitlementClient extends AmazonWebServiceClient impl
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

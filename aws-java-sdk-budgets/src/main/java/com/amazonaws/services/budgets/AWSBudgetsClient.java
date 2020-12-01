@@ -1901,4 +1901,9 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

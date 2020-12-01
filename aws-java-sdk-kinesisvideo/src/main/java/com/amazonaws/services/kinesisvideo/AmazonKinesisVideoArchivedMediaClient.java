@@ -1198,4 +1198,9 @@ public class AmazonKinesisVideoArchivedMediaClient extends AmazonWebServiceClien
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

@@ -974,4 +974,9 @@ public class AmazonMWAAClient extends AmazonWebServiceClient implements AmazonMW
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

@@ -2436,4 +2436,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

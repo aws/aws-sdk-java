@@ -711,4 +711,9 @@ public class AmazonDLMClient extends AmazonWebServiceClient implements AmazonDLM
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }

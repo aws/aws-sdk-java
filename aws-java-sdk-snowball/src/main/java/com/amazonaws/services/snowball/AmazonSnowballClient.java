@@ -1797,4 +1797,9 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
         return protocolFactory;
     }
 
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
 }
