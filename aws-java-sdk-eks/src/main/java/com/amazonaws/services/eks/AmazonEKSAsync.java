@@ -43,6 +43,49 @@ public interface AmazonEKSAsync extends AmazonEKS {
 
     /**
      * <p>
+     * Creates an Amazon EKS add-on.
+     * </p>
+     * <p>
+     * Amazon EKS add-ons help to automate the provisioning and lifecycle management of common operational software for
+     * Amazon EKS clusters. Amazon EKS add-ons can only be used with Amazon EKS clusters running version 1.18 with
+     * platform version <code>eks.3</code> or later because add-ons rely on the Server-side Apply Kubernetes feature,
+     * which is only available in Kubernetes 1.18 and later.
+     * </p>
+     * 
+     * @param createAddonRequest
+     * @return A Java Future containing the result of the CreateAddon operation returned by the service.
+     * @sample AmazonEKSAsync.CreateAddon
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateAddon" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAddonResult> createAddonAsync(CreateAddonRequest createAddonRequest);
+
+    /**
+     * <p>
+     * Creates an Amazon EKS add-on.
+     * </p>
+     * <p>
+     * Amazon EKS add-ons help to automate the provisioning and lifecycle management of common operational software for
+     * Amazon EKS clusters. Amazon EKS add-ons can only be used with Amazon EKS clusters running version 1.18 with
+     * platform version <code>eks.3</code> or later because add-ons rely on the Server-side Apply Kubernetes feature,
+     * which is only available in Kubernetes 1.18 and later.
+     * </p>
+     * 
+     * @param createAddonRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAddon operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.CreateAddon
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateAddon" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAddonResult> createAddonAsync(CreateAddonRequest createAddonRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAddonRequest, CreateAddonResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an Amazon EKS control plane.
      * </p>
      * <p>
@@ -261,7 +304,7 @@ public interface AmazonEKSAsync extends AmazonEKS {
      * </p>
      * <p>
      * An Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated Amazon EC2 instances that are
-     * managed by AWS for an Amazon EKS cluster. Each node group uses a version of the Amazon EKS-optimized Amazon Linux
+     * managed by AWS for an Amazon EKS cluster. Each node group uses a version of the Amazon EKS optimized Amazon Linux
      * 2 AMI. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed Node Groups</a> in the
      * <i>Amazon EKS User Guide</i>.
@@ -285,7 +328,7 @@ public interface AmazonEKSAsync extends AmazonEKS {
      * </p>
      * <p>
      * An Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated Amazon EC2 instances that are
-     * managed by AWS for an Amazon EKS cluster. Each node group uses a version of the Amazon EKS-optimized Amazon Linux
+     * managed by AWS for an Amazon EKS cluster. Each node group uses a version of the Amazon EKS optimized Amazon Linux
      * 2 AMI. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed Node Groups</a> in the
      * <i>Amazon EKS User Guide</i>.
@@ -303,6 +346,45 @@ public interface AmazonEKSAsync extends AmazonEKS {
      */
     java.util.concurrent.Future<CreateNodegroupResult> createNodegroupAsync(CreateNodegroupRequest createNodegroupRequest,
             com.amazonaws.handlers.AsyncHandler<CreateNodegroupRequest, CreateNodegroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete an Amazon EKS add-on.
+     * </p>
+     * <p>
+     * When you remove the add-on, it will also be deleted from the cluster. You can always manually start an add-on on
+     * the cluster using the Kubernetes API.
+     * </p>
+     * 
+     * @param deleteAddonRequest
+     * @return A Java Future containing the result of the DeleteAddon operation returned by the service.
+     * @sample AmazonEKSAsync.DeleteAddon
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteAddon" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAddonResult> deleteAddonAsync(DeleteAddonRequest deleteAddonRequest);
+
+    /**
+     * <p>
+     * Delete an Amazon EKS add-on.
+     * </p>
+     * <p>
+     * When you remove the add-on, it will also be deleted from the cluster. You can always manually start an add-on on
+     * the cluster using the Kubernetes API.
+     * </p>
+     * 
+     * @param deleteAddonRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAddon operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.DeleteAddon
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteAddon" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAddonResult> deleteAddonAsync(DeleteAddonRequest deleteAddonRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAddonRequest, DeleteAddonResult> asyncHandler);
 
     /**
      * <p>
@@ -436,6 +518,68 @@ public interface AmazonEKSAsync extends AmazonEKS {
      */
     java.util.concurrent.Future<DeleteNodegroupResult> deleteNodegroupAsync(DeleteNodegroupRequest deleteNodegroupRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteNodegroupRequest, DeleteNodegroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes an Amazon EKS add-on.
+     * </p>
+     * 
+     * @param describeAddonRequest
+     * @return A Java Future containing the result of the DescribeAddon operation returned by the service.
+     * @sample AmazonEKSAsync.DescribeAddon
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddon" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAddonResult> describeAddonAsync(DescribeAddonRequest describeAddonRequest);
+
+    /**
+     * <p>
+     * Describes an Amazon EKS add-on.
+     * </p>
+     * 
+     * @param describeAddonRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAddon operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.DescribeAddon
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddon" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAddonResult> describeAddonAsync(DescribeAddonRequest describeAddonRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAddonRequest, DescribeAddonResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the Kubernetes versions that the add-on can be used with.
+     * </p>
+     * 
+     * @param describeAddonVersionsRequest
+     * @return A Java Future containing the result of the DescribeAddonVersions operation returned by the service.
+     * @sample AmazonEKSAsync.DescribeAddonVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddonVersions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAddonVersionsResult> describeAddonVersionsAsync(DescribeAddonVersionsRequest describeAddonVersionsRequest);
+
+    /**
+     * <p>
+     * Describes the Kubernetes versions that the add-on can be used with.
+     * </p>
+     * 
+     * @param describeAddonVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAddonVersions operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.DescribeAddonVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddonVersions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAddonVersionsResult> describeAddonVersionsAsync(DescribeAddonVersionsRequest describeAddonVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAddonVersionsRequest, DescribeAddonVersionsResult> asyncHandler);
 
     /**
      * <p>
@@ -592,6 +736,37 @@ public interface AmazonEKSAsync extends AmazonEKS {
      */
     java.util.concurrent.Future<DescribeUpdateResult> describeUpdateAsync(DescribeUpdateRequest describeUpdateRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeUpdateRequest, DescribeUpdateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the available add-ons.
+     * </p>
+     * 
+     * @param listAddonsRequest
+     * @return A Java Future containing the result of the ListAddons operation returned by the service.
+     * @sample AmazonEKSAsync.ListAddons
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListAddons" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAddonsResult> listAddonsAsync(ListAddonsRequest listAddonsRequest);
+
+    /**
+     * <p>
+     * Lists the available add-ons.
+     * </p>
+     * 
+     * @param listAddonsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAddons operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.ListAddons
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListAddons" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAddonsResult> listAddonsAsync(ListAddonsRequest listAddonsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAddonsRequest, ListAddonsResult> asyncHandler);
 
     /**
      * <p>
@@ -824,6 +999,37 @@ public interface AmazonEKSAsync extends AmazonEKS {
 
     /**
      * <p>
+     * Updates an Amazon EKS add-on.
+     * </p>
+     * 
+     * @param updateAddonRequest
+     * @return A Java Future containing the result of the UpdateAddon operation returned by the service.
+     * @sample AmazonEKSAsync.UpdateAddon
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateAddon" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAddonResult> updateAddonAsync(UpdateAddonRequest updateAddonRequest);
+
+    /**
+     * <p>
+     * Updates an Amazon EKS add-on.
+     * </p>
+     * 
+     * @param updateAddonRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAddon operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.UpdateAddon
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateAddon" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAddonResult> updateAddonAsync(UpdateAddonRequest updateAddonRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAddonRequest, UpdateAddonResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates an Amazon EKS cluster configuration. Your cluster continues to function during the update. The response
      * output includes an update ID that you can use to track the status of your cluster update with the
      * <a>DescribeUpdate</a> API operation.
@@ -1022,8 +1228,8 @@ public interface AmazonEKSAsync extends AmazonEKS {
      * group's current Kubernetes version by not specifying a Kubernetes version in the request. You can update to the
      * latest AMI version of your cluster's current Kubernetes version by specifying your cluster's Kubernetes version
      * in the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS-Optimized Linux
-     * AMI Versions</a> in the <i>Amazon EKS User Guide</i>.
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon
+     * Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>.
      * </p>
      * <p>
      * You cannot roll back a node group to an earlier Kubernetes version or AMI version.
@@ -1058,8 +1264,8 @@ public interface AmazonEKSAsync extends AmazonEKS {
      * group's current Kubernetes version by not specifying a Kubernetes version in the request. You can update to the
      * latest AMI version of your cluster's current Kubernetes version by specifying your cluster's Kubernetes version
      * in the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS-Optimized Linux
-     * AMI Versions</a> in the <i>Amazon EKS User Guide</i>.
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon
+     * Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>.
      * </p>
      * <p>
      * You cannot roll back a node group to an earlier Kubernetes version or AMI version.

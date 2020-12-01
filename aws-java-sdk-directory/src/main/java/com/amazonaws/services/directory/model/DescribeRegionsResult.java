@@ -25,24 +25,24 @@ public class DescribeRegionsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * List of regional information related to the directory per replicated Region.
+     * List of Region information related to the directory for each replicated Region.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<RegionDescription> regionsDescription;
     /**
      * <p>
-     * If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call
-     * to <a>DescribeRegions</a> to retrieve the next set of items.
+     * If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent
+     * call to <a>DescribeRegions</a> to retrieve the next set of items.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * List of regional information related to the directory per replicated Region.
+     * List of Region information related to the directory for each replicated Region.
      * </p>
      * 
-     * @return List of regional information related to the directory per replicated Region.
+     * @return List of Region information related to the directory for each replicated Region.
      */
 
     public java.util.List<RegionDescription> getRegionsDescription() {
@@ -54,11 +54,11 @@ public class DescribeRegionsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * List of regional information related to the directory per replicated Region.
+     * List of Region information related to the directory for each replicated Region.
      * </p>
      * 
      * @param regionsDescription
-     *        List of regional information related to the directory per replicated Region.
+     *        List of Region information related to the directory for each replicated Region.
      */
 
     public void setRegionsDescription(java.util.Collection<RegionDescription> regionsDescription) {
@@ -72,7 +72,7 @@ public class DescribeRegionsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * List of regional information related to the directory per replicated Region.
+     * List of Region information related to the directory for each replicated Region.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class DescribeRegionsResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param regionsDescription
-     *        List of regional information related to the directory per replicated Region.
+     *        List of Region information related to the directory for each replicated Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class DescribeRegionsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * List of regional information related to the directory per replicated Region.
+     * List of Region information related to the directory for each replicated Region.
      * </p>
      * 
      * @param regionsDescription
-     *        List of regional information related to the directory per replicated Region.
+     *        List of Region information related to the directory for each replicated Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,12 +112,12 @@ public class DescribeRegionsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call
-     * to <a>DescribeRegions</a> to retrieve the next set of items.
+     * If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent
+     * call to <a>DescribeRegions</a> to retrieve the next set of items.
      * </p>
      * 
      * @param nextToken
-     *        If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a
+     *        If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a
      *        subsequent call to <a>DescribeRegions</a> to retrieve the next set of items.
      */
 
@@ -127,11 +127,11 @@ public class DescribeRegionsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call
-     * to <a>DescribeRegions</a> to retrieve the next set of items.
+     * If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent
+     * call to <a>DescribeRegions</a> to retrieve the next set of items.
      * </p>
      * 
-     * @return If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a
+     * @return If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a
      *         subsequent call to <a>DescribeRegions</a> to retrieve the next set of items.
      */
 
@@ -141,12 +141,12 @@ public class DescribeRegionsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call
-     * to <a>DescribeRegions</a> to retrieve the next set of items.
+     * If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent
+     * call to <a>DescribeRegions</a> to retrieve the next set of items.
      * </p>
      * 
      * @param nextToken
-     *        If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a
+     *        If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a
      *        subsequent call to <a>DescribeRegions</a> to retrieve the next set of items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

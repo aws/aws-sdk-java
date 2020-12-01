@@ -40,6 +40,18 @@ public class FunctionCodeLocation implements Serializable, Cloneable, Structured
      * </p>
      */
     private String location;
+    /**
+     * <p>
+     * URI of a container image in the Amazon ECR registry.
+     * </p>
+     */
+    private String imageUri;
+    /**
+     * <p>
+     * The resolved URI for the image.
+     * </p>
+     */
+    private String resolvedImageUri;
 
     /**
      * <p>
@@ -122,6 +134,86 @@ public class FunctionCodeLocation implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * URI of a container image in the Amazon ECR registry.
+     * </p>
+     * 
+     * @param imageUri
+     *        URI of a container image in the Amazon ECR registry.
+     */
+
+    public void setImageUri(String imageUri) {
+        this.imageUri = imageUri;
+    }
+
+    /**
+     * <p>
+     * URI of a container image in the Amazon ECR registry.
+     * </p>
+     * 
+     * @return URI of a container image in the Amazon ECR registry.
+     */
+
+    public String getImageUri() {
+        return this.imageUri;
+    }
+
+    /**
+     * <p>
+     * URI of a container image in the Amazon ECR registry.
+     * </p>
+     * 
+     * @param imageUri
+     *        URI of a container image in the Amazon ECR registry.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FunctionCodeLocation withImageUri(String imageUri) {
+        setImageUri(imageUri);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The resolved URI for the image.
+     * </p>
+     * 
+     * @param resolvedImageUri
+     *        The resolved URI for the image.
+     */
+
+    public void setResolvedImageUri(String resolvedImageUri) {
+        this.resolvedImageUri = resolvedImageUri;
+    }
+
+    /**
+     * <p>
+     * The resolved URI for the image.
+     * </p>
+     * 
+     * @return The resolved URI for the image.
+     */
+
+    public String getResolvedImageUri() {
+        return this.resolvedImageUri;
+    }
+
+    /**
+     * <p>
+     * The resolved URI for the image.
+     * </p>
+     * 
+     * @param resolvedImageUri
+     *        The resolved URI for the image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FunctionCodeLocation withResolvedImageUri(String resolvedImageUri) {
+        setResolvedImageUri(resolvedImageUri);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +228,11 @@ public class FunctionCodeLocation implements Serializable, Cloneable, Structured
         if (getRepositoryType() != null)
             sb.append("RepositoryType: ").append(getRepositoryType()).append(",");
         if (getLocation() != null)
-            sb.append("Location: ").append(getLocation());
+            sb.append("Location: ").append(getLocation()).append(",");
+        if (getImageUri() != null)
+            sb.append("ImageUri: ").append(getImageUri()).append(",");
+        if (getResolvedImageUri() != null)
+            sb.append("ResolvedImageUri: ").append(getResolvedImageUri());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +255,14 @@ public class FunctionCodeLocation implements Serializable, Cloneable, Structured
             return false;
         if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
             return false;
+        if (other.getImageUri() == null ^ this.getImageUri() == null)
+            return false;
+        if (other.getImageUri() != null && other.getImageUri().equals(this.getImageUri()) == false)
+            return false;
+        if (other.getResolvedImageUri() == null ^ this.getResolvedImageUri() == null)
+            return false;
+        if (other.getResolvedImageUri() != null && other.getResolvedImageUri().equals(this.getResolvedImageUri()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +273,8 @@ public class FunctionCodeLocation implements Serializable, Cloneable, Structured
 
         hashCode = prime * hashCode + ((getRepositoryType() == null) ? 0 : getRepositoryType().hashCode());
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
+        hashCode = prime * hashCode + ((getImageUri() == null) ? 0 : getImageUri().hashCode());
+        hashCode = prime * hashCode + ((getResolvedImageUri() == null) ? 0 : getResolvedImageUri().hashCode());
         return hashCode;
     }
 

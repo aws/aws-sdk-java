@@ -29,6 +29,11 @@ public class AbstractAmazonEKS implements AmazonEKS {
     }
 
     @Override
+    public CreateAddonResult createAddon(CreateAddonRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateClusterResult createCluster(CreateClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -44,6 +49,11 @@ public class AbstractAmazonEKS implements AmazonEKS {
     }
 
     @Override
+    public DeleteAddonResult deleteAddon(DeleteAddonRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteClusterResult deleteCluster(DeleteClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -55,6 +65,16 @@ public class AbstractAmazonEKS implements AmazonEKS {
 
     @Override
     public DeleteNodegroupResult deleteNodegroup(DeleteNodegroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAddonResult describeAddon(DescribeAddonRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAddonVersionsResult describeAddonVersions(DescribeAddonVersionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -75,6 +95,11 @@ public class AbstractAmazonEKS implements AmazonEKS {
 
     @Override
     public DescribeUpdateResult describeUpdate(DescribeUpdateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAddonsResult listAddons(ListAddonsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -110,6 +135,11 @@ public class AbstractAmazonEKS implements AmazonEKS {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAddonResult updateAddon(UpdateAddonRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

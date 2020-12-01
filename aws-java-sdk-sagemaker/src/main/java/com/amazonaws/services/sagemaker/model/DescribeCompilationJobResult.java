@@ -95,6 +95,12 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
     private ModelArtifacts modelArtifacts;
     /**
      * <p>
+     * Provides a BLAKE2 hash value that identifies the compiled model artifacts in Amazon S3.
+     * </p>
+     */
+    private ModelDigests modelDigests;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the model compilation job.
      * </p>
      */
@@ -594,6 +600,46 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * Provides a BLAKE2 hash value that identifies the compiled model artifacts in Amazon S3.
+     * </p>
+     * 
+     * @param modelDigests
+     *        Provides a BLAKE2 hash value that identifies the compiled model artifacts in Amazon S3.
+     */
+
+    public void setModelDigests(ModelDigests modelDigests) {
+        this.modelDigests = modelDigests;
+    }
+
+    /**
+     * <p>
+     * Provides a BLAKE2 hash value that identifies the compiled model artifacts in Amazon S3.
+     * </p>
+     * 
+     * @return Provides a BLAKE2 hash value that identifies the compiled model artifacts in Amazon S3.
+     */
+
+    public ModelDigests getModelDigests() {
+        return this.modelDigests;
+    }
+
+    /**
+     * <p>
+     * Provides a BLAKE2 hash value that identifies the compiled model artifacts in Amazon S3.
+     * </p>
+     * 
+     * @param modelDigests
+     *        Provides a BLAKE2 hash value that identifies the compiled model artifacts in Amazon S3.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeCompilationJobResult withModelDigests(ModelDigests modelDigests) {
+        setModelDigests(modelDigests);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the model compilation job.
      * </p>
      * 
@@ -751,6 +797,8 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
         if (getModelArtifacts() != null)
             sb.append("ModelArtifacts: ").append(getModelArtifacts()).append(",");
+        if (getModelDigests() != null)
+            sb.append("ModelDigests: ").append(getModelDigests()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getInputConfig() != null)
@@ -811,6 +859,10 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getModelArtifacts() != null && other.getModelArtifacts().equals(this.getModelArtifacts()) == false)
             return false;
+        if (other.getModelDigests() == null ^ this.getModelDigests() == null)
+            return false;
+        if (other.getModelDigests() != null && other.getModelDigests().equals(this.getModelDigests()) == false)
+            return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
@@ -841,6 +893,7 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getModelArtifacts() == null) ? 0 : getModelArtifacts().hashCode());
+        hashCode = prime * hashCode + ((getModelDigests() == null) ? 0 : getModelDigests().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getInputConfig() == null) ? 0 : getInputConfig().hashCode());
         hashCode = prime * hashCode + ((getOutputConfig() == null) ? 0 : getOutputConfig().hashCode());

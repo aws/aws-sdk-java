@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A Workbook, App, Screen or Screen Automation was not found with the given ID.
+ * A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

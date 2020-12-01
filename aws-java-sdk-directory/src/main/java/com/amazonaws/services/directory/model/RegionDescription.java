@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The replicated regional information for a directory.
+ * The replicated Region information for a directory.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegionDescription" target="_top">AWS API
@@ -42,7 +42,7 @@ public class RegionDescription implements Serializable, Cloneable, StructuredPoj
     private String regionName;
     /**
      * <p>
-     * Specifies if the Region is the primary Region or an additional Region.
+     * Specifies whether the Region is the primary Region or an additional Region.
      * </p>
      */
     private String regionType;
@@ -161,11 +161,11 @@ public class RegionDescription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Specifies if the Region is the primary Region or an additional Region.
+     * Specifies whether the Region is the primary Region or an additional Region.
      * </p>
      * 
      * @param regionType
-     *        Specifies if the Region is the primary Region or an additional Region.
+     *        Specifies whether the Region is the primary Region or an additional Region.
      * @see RegionType
      */
 
@@ -175,10 +175,10 @@ public class RegionDescription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Specifies if the Region is the primary Region or an additional Region.
+     * Specifies whether the Region is the primary Region or an additional Region.
      * </p>
      * 
-     * @return Specifies if the Region is the primary Region or an additional Region.
+     * @return Specifies whether the Region is the primary Region or an additional Region.
      * @see RegionType
      */
 
@@ -188,11 +188,11 @@ public class RegionDescription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Specifies if the Region is the primary Region or an additional Region.
+     * Specifies whether the Region is the primary Region or an additional Region.
      * </p>
      * 
      * @param regionType
-     *        Specifies if the Region is the primary Region or an additional Region.
+     *        Specifies whether the Region is the primary Region or an additional Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegionType
      */
@@ -204,11 +204,11 @@ public class RegionDescription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Specifies if the Region is the primary Region or an additional Region.
+     * Specifies whether the Region is the primary Region or an additional Region.
      * </p>
      * 
      * @param regionType
-     *        Specifies if the Region is the primary Region or an additional Region.
+     *        Specifies whether the Region is the primary Region or an additional Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegionType
      */

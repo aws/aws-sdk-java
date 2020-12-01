@@ -687,6 +687,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Initiates an Amazon Connect instance with all the supported channels enabled. It does not attach any storage
      * (such as Amazon S3, or Kinesis) or allow for any configurations on features such as Contact Lens for Amazon
      * Connect.
@@ -741,6 +744,75 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateInstanceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Create an AppIntegration association with anAmazon Connect instance.
+     * </p>
+     * 
+     * @param createIntegrationAssociationRequest
+     * @return Result of the CreateIntegrationAssociation operation returned by the service.
+     * @throws DuplicateResourceException
+     *         A resource with the specified name already exists.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.CreateIntegrationAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateIntegrationAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateIntegrationAssociationResult createIntegrationAssociation(CreateIntegrationAssociationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateIntegrationAssociation(request);
+    }
+
+    @SdkInternalApi
+    final CreateIntegrationAssociationResult executeCreateIntegrationAssociation(CreateIntegrationAssociationRequest createIntegrationAssociationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createIntegrationAssociationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateIntegrationAssociationRequest> request = null;
+        Response<CreateIntegrationAssociationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateIntegrationAssociationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createIntegrationAssociationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateIntegrationAssociation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateIntegrationAssociationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateIntegrationAssociationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -809,6 +881,73 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateRoutingProfileResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateRoutingProfileResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Creates a use case for an AppIntegration association.
+     * </p>
+     * 
+     * @param createUseCaseRequest
+     * @return Result of the CreateUseCase operation returned by the service.
+     * @throws DuplicateResourceException
+     *         A resource with the specified name already exists.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.CreateUseCase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUseCase" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateUseCaseResult createUseCase(CreateUseCaseRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateUseCase(request);
+    }
+
+    @SdkInternalApi
+    final CreateUseCaseResult executeCreateUseCase(CreateUseCaseRequest createUseCaseRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createUseCaseRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateUseCaseRequest> request = null;
+        Response<CreateUseCaseResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateUseCaseRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUseCaseRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUseCase");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateUseCaseResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateUseCaseResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -964,6 +1103,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Deletes the Amazon Connect instance.
      * </p>
      * 
@@ -1012,6 +1154,139 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteInstanceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Deletes an AppIntegration association from an Amazon Connect instance. The association must not have any use
+     * cases associated with it.
+     * </p>
+     * 
+     * @param deleteIntegrationAssociationRequest
+     * @return Result of the DeleteIntegrationAssociation operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.DeleteIntegrationAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteIntegrationAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteIntegrationAssociationResult deleteIntegrationAssociation(DeleteIntegrationAssociationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteIntegrationAssociation(request);
+    }
+
+    @SdkInternalApi
+    final DeleteIntegrationAssociationResult executeDeleteIntegrationAssociation(DeleteIntegrationAssociationRequest deleteIntegrationAssociationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteIntegrationAssociationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteIntegrationAssociationRequest> request = null;
+        Response<DeleteIntegrationAssociationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteIntegrationAssociationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteIntegrationAssociationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteIntegrationAssociation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteIntegrationAssociationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteIntegrationAssociationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Deletes a use case from an AppIntegration association.
+     * </p>
+     * 
+     * @param deleteUseCaseRequest
+     * @return Result of the DeleteUseCase operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.DeleteUseCase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUseCase" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteUseCaseResult deleteUseCase(DeleteUseCaseRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteUseCase(request);
+    }
+
+    @SdkInternalApi
+    final DeleteUseCaseResult executeDeleteUseCase(DeleteUseCaseRequest deleteUseCaseRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteUseCaseRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteUseCaseRequest> request = null;
+        Response<DeleteUseCaseResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteUseCaseRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUseCaseRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUseCase");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteUseCaseResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteUseCaseResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2558,6 +2833,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Returns a paginated list of all attribute types for the given instance.
      * </p>
      * 
@@ -2622,6 +2900,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
     }
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Returns a paginated list of storage configs for the identified instance and resource type.
      * </p>
@@ -2689,6 +2970,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Return a list of instances which are in active state, creation-in-progress state, and failed state. Instances
      * that aren't successfully created (they are in a failed state) are returned only for 24 hours after the
      * CreateInstance API was invoked.
@@ -2737,6 +3021,73 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
             HttpResponseHandler<AmazonWebServiceResponse<ListInstancesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListInstancesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Provides summary information about the AppIntegration associations for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param listIntegrationAssociationsRequest
+     * @return Result of the ListIntegrationAssociations operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.ListIntegrationAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListIntegrationAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListIntegrationAssociationsResult listIntegrationAssociations(ListIntegrationAssociationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListIntegrationAssociations(request);
+    }
+
+    @SdkInternalApi
+    final ListIntegrationAssociationsResult executeListIntegrationAssociations(ListIntegrationAssociationsRequest listIntegrationAssociationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listIntegrationAssociationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListIntegrationAssociationsRequest> request = null;
+        Response<ListIntegrationAssociationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListIntegrationAssociationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listIntegrationAssociationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIntegrationAssociations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListIntegrationAssociationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListIntegrationAssociationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3418,6 +3769,73 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * List the use cases.
+     * </p>
+     * 
+     * @param listUseCasesRequest
+     *        Provides summary information about the use cases for the specified Amazon Connect AppIntegration
+     *        association.
+     * @return Result of the ListUseCases operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.ListUseCases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUseCases" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListUseCasesResult listUseCases(ListUseCasesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListUseCases(request);
+    }
+
+    @SdkInternalApi
+    final ListUseCasesResult executeListUseCases(ListUseCasesRequest listUseCasesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listUseCasesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListUseCasesRequest> request = null;
+        Response<ListUseCasesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListUseCasesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUseCasesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUseCases");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListUseCasesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListUseCasesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Provides summary information about the hierarchy groups for the specified Amazon Connect instance.
      * </p>
      * <p>
@@ -3863,6 +4281,72 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
             HttpResponseHandler<AmazonWebServiceResponse<StartOutboundVoiceContactResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new StartOutboundVoiceContactResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Initiates a contact flow to start a new task.
+     * </p>
+     * 
+     * @param startTaskContactRequest
+     * @return Result of the StartTaskContact operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.StartTaskContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartTaskContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StartTaskContactResult startTaskContact(StartTaskContactRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartTaskContact(request);
+    }
+
+    @SdkInternalApi
+    final StartTaskContactResult executeStartTaskContact(StartTaskContactRequest startTaskContactRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startTaskContactRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartTaskContactRequest> request = null;
+        Response<StartTaskContactResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartTaskContactRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startTaskContactRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartTaskContact");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartTaskContactResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartTaskContactResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4436,6 +4920,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Updates the value for the specified attribute type.
      * </p>
      * 
@@ -4501,6 +4988,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
     }
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Updates an existing configuration for a resource type. This API is idempotent.
      * </p>

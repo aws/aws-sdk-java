@@ -56,6 +56,10 @@ public class ModifyVolumeRequestMarshaller implements Marshaller<Request<ModifyV
             request.addParameter("Iops", StringUtils.fromInteger(modifyVolumeRequest.getIops()));
         }
 
+        if (modifyVolumeRequest.getThroughput() != null) {
+            request.addParameter("Throughput", StringUtils.fromInteger(modifyVolumeRequest.getThroughput()));
+        }
+
         return request;
     }
 

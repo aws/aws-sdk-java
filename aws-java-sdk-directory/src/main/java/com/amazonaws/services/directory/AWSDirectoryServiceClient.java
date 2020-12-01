@@ -169,6 +169,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                             new JsonErrorShapeMetadata().withErrorCode("EntityAlreadyExistsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.directory.model.transform.EntityAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidClientAuthStatusException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.directory.model.transform.InvalidClientAuthStatusExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.directory.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -555,7 +558,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * @throws DirectoryDoesNotExistException
      *         The specified directory does not exist in the system.
      * @throws RegionLimitExceededException
-     *         You have reached the limit for maximum number of simultaneous region replications per directory.
+     *         You have reached the limit for maximum number of simultaneous Region replications per directory.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ClientException
@@ -2569,6 +2572,74 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Disable client authentication for smart cards.
+     * </p>
+     * 
+     * @param disableClientAuthenticationRequest
+     * @return Result of the DisableClientAuthentication operation returned by the service.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws InvalidClientAuthStatusException
+     *         The client authorization was invalid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DisableClientAuthentication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableClientAuthentication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DisableClientAuthenticationResult disableClientAuthentication(DisableClientAuthenticationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableClientAuthentication(request);
+    }
+
+    @SdkInternalApi
+    final DisableClientAuthenticationResult executeDisableClientAuthentication(DisableClientAuthenticationRequest disableClientAuthenticationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disableClientAuthenticationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisableClientAuthenticationRequest> request = null;
+        Response<DisableClientAuthenticationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisableClientAuthenticationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disableClientAuthenticationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableClientAuthentication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisableClientAuthenticationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisableClientAuthenticationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deactivates LDAP secure calls for the specified directory.
      * </p>
      * 
@@ -2752,6 +2823,77 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
             HttpResponseHandler<AmazonWebServiceResponse<DisableSsoResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DisableSsoResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Enable client authentication for smardtcards.
+     * </p>
+     * 
+     * @param enableClientAuthenticationRequest
+     * @return Result of the EnableClientAuthentication operation returned by the service.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws InvalidClientAuthStatusException
+     *         The client authorization was invalid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws NoAvailableCertificateException
+     *         The LDAP activities could not be performed because at least one valid certificate must be registered with
+     *         the system.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.EnableClientAuthentication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableClientAuthentication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public EnableClientAuthenticationResult enableClientAuthentication(EnableClientAuthenticationRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableClientAuthentication(request);
+    }
+
+    @SdkInternalApi
+    final EnableClientAuthenticationResult executeEnableClientAuthentication(EnableClientAuthenticationRequest enableClientAuthenticationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(enableClientAuthenticationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<EnableClientAuthenticationRequest> request = null;
+        Response<EnableClientAuthenticationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new EnableClientAuthenticationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(enableClientAuthenticationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableClientAuthentication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<EnableClientAuthenticationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new EnableClientAuthenticationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

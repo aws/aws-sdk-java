@@ -125,6 +125,8 @@ public class DescribeTrialComponentResult extends com.amazonaws.AmazonWebService
      * </p>
      */
     private java.util.Map<String, TrialComponentArtifact> outputArtifacts;
+
+    private MetadataProperties metadataProperties;
     /**
      * <p>
      * The metrics for the component.
@@ -882,6 +884,32 @@ public class DescribeTrialComponentResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * @param metadataProperties
+     */
+
+    public void setMetadataProperties(MetadataProperties metadataProperties) {
+        this.metadataProperties = metadataProperties;
+    }
+
+    /**
+     * @return
+     */
+
+    public MetadataProperties getMetadataProperties() {
+        return this.metadataProperties;
+    }
+
+    /**
+     * @param metadataProperties
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrialComponentResult withMetadataProperties(MetadataProperties metadataProperties) {
+        setMetadataProperties(metadataProperties);
+        return this;
+    }
+
+    /**
      * <p>
      * The metrics for the component.
      * </p>
@@ -991,6 +1019,8 @@ public class DescribeTrialComponentResult extends com.amazonaws.AmazonWebService
             sb.append("InputArtifacts: ").append(getInputArtifacts()).append(",");
         if (getOutputArtifacts() != null)
             sb.append("OutputArtifacts: ").append(getOutputArtifacts()).append(",");
+        if (getMetadataProperties() != null)
+            sb.append("MetadataProperties: ").append(getMetadataProperties()).append(",");
         if (getMetrics() != null)
             sb.append("Metrics: ").append(getMetrics());
         sb.append("}");
@@ -1063,6 +1093,10 @@ public class DescribeTrialComponentResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getOutputArtifacts() != null && other.getOutputArtifacts().equals(this.getOutputArtifacts()) == false)
             return false;
+        if (other.getMetadataProperties() == null ^ this.getMetadataProperties() == null)
+            return false;
+        if (other.getMetadataProperties() != null && other.getMetadataProperties().equals(this.getMetadataProperties()) == false)
+            return false;
         if (other.getMetrics() == null ^ this.getMetrics() == null)
             return false;
         if (other.getMetrics() != null && other.getMetrics().equals(this.getMetrics()) == false)
@@ -1089,6 +1123,7 @@ public class DescribeTrialComponentResult extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getInputArtifacts() == null) ? 0 : getInputArtifacts().hashCode());
         hashCode = prime * hashCode + ((getOutputArtifacts() == null) ? 0 : getOutputArtifacts().hashCode());
+        hashCode = prime * hashCode + ((getMetadataProperties() == null) ? 0 : getMetadataProperties().hashCode());
         hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
         return hashCode;
     }

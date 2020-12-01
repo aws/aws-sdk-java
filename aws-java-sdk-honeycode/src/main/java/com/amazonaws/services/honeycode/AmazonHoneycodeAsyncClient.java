@@ -76,6 +76,171 @@ public class AmazonHoneycodeAsyncClient extends AmazonHoneycodeClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<BatchCreateTableRowsResult> batchCreateTableRowsAsync(BatchCreateTableRowsRequest request) {
+
+        return batchCreateTableRowsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchCreateTableRowsResult> batchCreateTableRowsAsync(final BatchCreateTableRowsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchCreateTableRowsRequest, BatchCreateTableRowsResult> asyncHandler) {
+        final BatchCreateTableRowsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchCreateTableRowsResult>() {
+            @Override
+            public BatchCreateTableRowsResult call() throws Exception {
+                BatchCreateTableRowsResult result = null;
+
+                try {
+                    result = executeBatchCreateTableRows(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteTableRowsResult> batchDeleteTableRowsAsync(BatchDeleteTableRowsRequest request) {
+
+        return batchDeleteTableRowsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteTableRowsResult> batchDeleteTableRowsAsync(final BatchDeleteTableRowsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchDeleteTableRowsRequest, BatchDeleteTableRowsResult> asyncHandler) {
+        final BatchDeleteTableRowsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchDeleteTableRowsResult>() {
+            @Override
+            public BatchDeleteTableRowsResult call() throws Exception {
+                BatchDeleteTableRowsResult result = null;
+
+                try {
+                    result = executeBatchDeleteTableRows(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchUpdateTableRowsResult> batchUpdateTableRowsAsync(BatchUpdateTableRowsRequest request) {
+
+        return batchUpdateTableRowsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchUpdateTableRowsResult> batchUpdateTableRowsAsync(final BatchUpdateTableRowsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchUpdateTableRowsRequest, BatchUpdateTableRowsResult> asyncHandler) {
+        final BatchUpdateTableRowsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchUpdateTableRowsResult>() {
+            @Override
+            public BatchUpdateTableRowsResult call() throws Exception {
+                BatchUpdateTableRowsResult result = null;
+
+                try {
+                    result = executeBatchUpdateTableRows(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchUpsertTableRowsResult> batchUpsertTableRowsAsync(BatchUpsertTableRowsRequest request) {
+
+        return batchUpsertTableRowsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchUpsertTableRowsResult> batchUpsertTableRowsAsync(final BatchUpsertTableRowsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchUpsertTableRowsRequest, BatchUpsertTableRowsResult> asyncHandler) {
+        final BatchUpsertTableRowsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchUpsertTableRowsResult>() {
+            @Override
+            public BatchUpsertTableRowsResult call() throws Exception {
+                BatchUpsertTableRowsResult result = null;
+
+                try {
+                    result = executeBatchUpsertTableRows(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTableDataImportJobResult> describeTableDataImportJobAsync(DescribeTableDataImportJobRequest request) {
+
+        return describeTableDataImportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTableDataImportJobResult> describeTableDataImportJobAsync(final DescribeTableDataImportJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeTableDataImportJobRequest, DescribeTableDataImportJobResult> asyncHandler) {
+        final DescribeTableDataImportJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeTableDataImportJobResult>() {
+            @Override
+            public DescribeTableDataImportJobResult call() throws Exception {
+                DescribeTableDataImportJobResult result = null;
+
+                try {
+                    result = executeDescribeTableDataImportJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetScreenDataResult> getScreenDataAsync(GetScreenDataRequest request) {
 
         return getScreenDataAsync(request, null);
@@ -126,6 +291,171 @@ public class AmazonHoneycodeAsyncClient extends AmazonHoneycodeClient implements
 
                 try {
                     result = executeInvokeScreenAutomation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTableColumnsResult> listTableColumnsAsync(ListTableColumnsRequest request) {
+
+        return listTableColumnsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTableColumnsResult> listTableColumnsAsync(final ListTableColumnsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTableColumnsRequest, ListTableColumnsResult> asyncHandler) {
+        final ListTableColumnsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTableColumnsResult>() {
+            @Override
+            public ListTableColumnsResult call() throws Exception {
+                ListTableColumnsResult result = null;
+
+                try {
+                    result = executeListTableColumns(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTableRowsResult> listTableRowsAsync(ListTableRowsRequest request) {
+
+        return listTableRowsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTableRowsResult> listTableRowsAsync(final ListTableRowsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTableRowsRequest, ListTableRowsResult> asyncHandler) {
+        final ListTableRowsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTableRowsResult>() {
+            @Override
+            public ListTableRowsResult call() throws Exception {
+                ListTableRowsResult result = null;
+
+                try {
+                    result = executeListTableRows(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTablesResult> listTablesAsync(ListTablesRequest request) {
+
+        return listTablesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTablesResult> listTablesAsync(final ListTablesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTablesRequest, ListTablesResult> asyncHandler) {
+        final ListTablesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTablesResult>() {
+            @Override
+            public ListTablesResult call() throws Exception {
+                ListTablesResult result = null;
+
+                try {
+                    result = executeListTables(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<QueryTableRowsResult> queryTableRowsAsync(QueryTableRowsRequest request) {
+
+        return queryTableRowsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<QueryTableRowsResult> queryTableRowsAsync(final QueryTableRowsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<QueryTableRowsRequest, QueryTableRowsResult> asyncHandler) {
+        final QueryTableRowsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<QueryTableRowsResult>() {
+            @Override
+            public QueryTableRowsResult call() throws Exception {
+                QueryTableRowsResult result = null;
+
+                try {
+                    result = executeQueryTableRows(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartTableDataImportJobResult> startTableDataImportJobAsync(StartTableDataImportJobRequest request) {
+
+        return startTableDataImportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartTableDataImportJobResult> startTableDataImportJobAsync(final StartTableDataImportJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartTableDataImportJobRequest, StartTableDataImportJobResult> asyncHandler) {
+        final StartTableDataImportJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartTableDataImportJobResult>() {
+            @Override
+            public StartTableDataImportJobResult call() throws Exception {
+                StartTableDataImportJobResult result = null;
+
+                try {
+                    result = executeStartTableDataImportJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

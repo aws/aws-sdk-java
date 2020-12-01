@@ -84,6 +84,10 @@ public class DescribeTrialResultJsonUnmarshaller implements Unmarshaller<Describ
                     context.nextToken();
                     describeTrialResult.setLastModifiedBy(UserContextJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("MetadataProperties", targetDepth)) {
+                    context.nextToken();
+                    describeTrialResult.setMetadataProperties(MetadataPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

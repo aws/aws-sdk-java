@@ -14,14 +14,6 @@
  */
 package com.amazonaws.services.s3.model;
 
-import static com.amazonaws.util.DateUtils.cloneDate;
-
-import java.io.Serializable;
-import java.util.Collections;
-import java.util.Date;
-import java.util.TreeMap;
-import java.util.Map;
-
 import com.amazonaws.SdkClientException;
 import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.internal.Constants;
@@ -30,6 +22,14 @@ import com.amazonaws.services.s3.internal.ObjectRestoreResult;
 import com.amazonaws.services.s3.internal.S3RequesterChargedResult;
 import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
 import com.amazonaws.util.DateUtils;
+
+import java.io.Serializable;
+import java.util.Collections;
+import java.util.Date;
+import java.util.Map;
+import java.util.TreeMap;
+
+import static com.amazonaws.util.DateUtils.cloneDate;
 
 /**
  * Represents the object metadata that is stored with Amazon S3. This includes custom
@@ -93,6 +93,11 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      */
     private Date restoreExpirationTime;
 
+    /**
+     * Whether or not the object is encrypted with Bucket Key
+     */
+    private Boolean bucketKeyEnabled;
+
     public ObjectMetadata() {}
 
     private ObjectMetadata(ObjectMetadata from) {
@@ -108,6 +113,7 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
         this.httpExpiresDate = cloneDate(from.httpExpiresDate);
         this.ongoingRestore = from.ongoingRestore;
         this.restoreExpirationTime = cloneDate(from.restoreExpirationTime);
+        this.bucketKeyEnabled = from.bucketKeyEnabled;
     }
 
     /**
@@ -1000,6 +1006,23 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      */
     public String getObjectLockLegalHoldStatus() {
         return (String) metadata.get(Headers.OBJECT_LOCK_LEGAL_HOLD_STATUS);
+    }
+
+    /**
+     * Returns whether or not the object is encrypted with Bucket Key.
+     */
+    public Boolean getBucketKeyEnabled() {
+        return bucketKeyEnabled;
+    }
+
+    /**
+     * Sets whether or not the object is encrypted with Bucket Key.
+     *
+     * @param bucketKeyEnabled
+     *            Whether or not bucket key is enabled
+     */
+    public void setBucketKeyEnabled(Boolean bucketKeyEnabled) {
+        this.bucketKeyEnabled = bucketKeyEnabled;
     }
 
 }

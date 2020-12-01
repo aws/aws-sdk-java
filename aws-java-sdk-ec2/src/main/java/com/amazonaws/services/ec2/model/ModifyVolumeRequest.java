@@ -33,10 +33,34 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
     private String volumeId;
     /**
      * <p>
-     * The target size of the volume, in GiB. The target volume size must be greater than or equal to than the existing
-     * size of the volume. For information about available EBS volume sizes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>.
+     * The target size of the volume, in GiB. The target volume size must be greater than or equal to the existing size
+     * of the volume.
      * </p>
+     * <p>
+     * The following are the supported volumes sizes for each volume type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>gp2</code> and <code>gp3</code>: 1-16,384
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code> and <code>io2</code>: 4-16,384
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>st1</code> and <code>sc1</code>: 125-16,384
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>standard</code>: 1-1,024
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Default: If no size is specified, the existing size is retained.
      * </p>
@@ -44,7 +68,9 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
     private Integer size;
     /**
      * <p>
-     * The target EBS volume type of the volume.
+     * The target EBS volume type of the volume. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Default: If no type is specified, the existing type is retained.
@@ -53,18 +79,47 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
     private String volumeType;
     /**
      * <p>
-     * The target IOPS rate of the volume.
+     * The target IOPS rate of the volume. This parameter is valid only for <code>gp3</code>, <code>io1</code>, and
+     * <code>io2</code> volumes.
      * </p>
      * <p>
-     * This is only valid for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes. For moreinformation,
-     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">
-     * Provisioned IOPS SSD (io1 and io2) volumes</a>.
+     * The following are the supported values for each volume type:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>gp3</code>: 3,000-16,000 IOPS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code>: 100-64,000 IOPS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io2</code>: 100-64,000 IOPS
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Default: If no IOPS value is specified, the existing value is retained.
      * </p>
      */
     private Integer iops;
+    /**
+     * <p>
+     * The target throughput of the volume, in MiB/s. This parameter is valid only for <code>gp3</code> volumes. The
+     * maximum value is 1,000.
+     * </p>
+     * <p>
+     * Default: If no throughput value is specified, the existing value is retained.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 125. Maximum value of 1000.
+     * </p>
+     */
+    private Integer throughput;
 
     /**
      * <p>
@@ -108,19 +163,66 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The target size of the volume, in GiB. The target volume size must be greater than or equal to than the existing
-     * size of the volume. For information about available EBS volume sizes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>.
+     * The target size of the volume, in GiB. The target volume size must be greater than or equal to the existing size
+     * of the volume.
      * </p>
+     * <p>
+     * The following are the supported volumes sizes for each volume type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>gp2</code> and <code>gp3</code>: 1-16,384
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code> and <code>io2</code>: 4-16,384
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>st1</code> and <code>sc1</code>: 125-16,384
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>standard</code>: 1-1,024
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Default: If no size is specified, the existing size is retained.
      * </p>
      * 
      * @param size
-     *        The target size of the volume, in GiB. The target volume size must be greater than or equal to than the
-     *        existing size of the volume. For information about available EBS volume sizes, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
-     *        Types</a>.</p>
+     *        The target size of the volume, in GiB. The target volume size must be greater than or equal to the
+     *        existing size of the volume.</p>
+     *        <p>
+     *        The following are the supported volumes sizes for each volume type:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>gp2</code> and <code>gp3</code>: 1-16,384
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>io1</code> and <code>io2</code>: 4-16,384
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>st1</code> and <code>sc1</code>: 125-16,384
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>standard</code>: 1-1,024
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        Default: If no size is specified, the existing size is retained.
      */
@@ -131,18 +233,65 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The target size of the volume, in GiB. The target volume size must be greater than or equal to than the existing
-     * size of the volume. For information about available EBS volume sizes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>.
+     * The target size of the volume, in GiB. The target volume size must be greater than or equal to the existing size
+     * of the volume.
      * </p>
+     * <p>
+     * The following are the supported volumes sizes for each volume type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>gp2</code> and <code>gp3</code>: 1-16,384
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code> and <code>io2</code>: 4-16,384
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>st1</code> and <code>sc1</code>: 125-16,384
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>standard</code>: 1-1,024
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Default: If no size is specified, the existing size is retained.
      * </p>
      * 
-     * @return The target size of the volume, in GiB. The target volume size must be greater than or equal to than the
-     *         existing size of the volume. For information about available EBS volume sizes, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
-     *         Types</a>.</p>
+     * @return The target size of the volume, in GiB. The target volume size must be greater than or equal to the
+     *         existing size of the volume.</p>
+     *         <p>
+     *         The following are the supported volumes sizes for each volume type:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>gp2</code> and <code>gp3</code>: 1-16,384
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>io1</code> and <code>io2</code>: 4-16,384
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>st1</code> and <code>sc1</code>: 125-16,384
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>standard</code>: 1-1,024
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      *         Default: If no size is specified, the existing size is retained.
      */
@@ -153,19 +302,66 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The target size of the volume, in GiB. The target volume size must be greater than or equal to than the existing
-     * size of the volume. For information about available EBS volume sizes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>.
+     * The target size of the volume, in GiB. The target volume size must be greater than or equal to the existing size
+     * of the volume.
      * </p>
+     * <p>
+     * The following are the supported volumes sizes for each volume type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>gp2</code> and <code>gp3</code>: 1-16,384
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code> and <code>io2</code>: 4-16,384
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>st1</code> and <code>sc1</code>: 125-16,384
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>standard</code>: 1-1,024
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Default: If no size is specified, the existing size is retained.
      * </p>
      * 
      * @param size
-     *        The target size of the volume, in GiB. The target volume size must be greater than or equal to than the
-     *        existing size of the volume. For information about available EBS volume sizes, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
-     *        Types</a>.</p>
+     *        The target size of the volume, in GiB. The target volume size must be greater than or equal to the
+     *        existing size of the volume.</p>
+     *        <p>
+     *        The following are the supported volumes sizes for each volume type:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>gp2</code> and <code>gp3</code>: 1-16,384
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>io1</code> and <code>io2</code>: 4-16,384
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>st1</code> and <code>sc1</code>: 125-16,384
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>standard</code>: 1-1,024
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        Default: If no size is specified, the existing size is retained.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -178,14 +374,18 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The target EBS volume type of the volume.
+     * The target EBS volume type of the volume. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Default: If no type is specified, the existing type is retained.
      * </p>
      * 
      * @param volumeType
-     *        The target EBS volume type of the volume.</p>
+     *        The target EBS volume type of the volume. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a>
+     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        Default: If no type is specified, the existing type is retained.
      * @see VolumeType
@@ -197,13 +397,17 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The target EBS volume type of the volume.
+     * The target EBS volume type of the volume. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Default: If no type is specified, the existing type is retained.
      * </p>
      * 
-     * @return The target EBS volume type of the volume.</p>
+     * @return The target EBS volume type of the volume. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume
+     *         types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *         <p>
      *         Default: If no type is specified, the existing type is retained.
      * @see VolumeType
@@ -215,14 +419,18 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The target EBS volume type of the volume.
+     * The target EBS volume type of the volume. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Default: If no type is specified, the existing type is retained.
      * </p>
      * 
      * @param volumeType
-     *        The target EBS volume type of the volume.</p>
+     *        The target EBS volume type of the volume. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a>
+     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        Default: If no type is specified, the existing type is retained.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -236,14 +444,18 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The target EBS volume type of the volume.
+     * The target EBS volume type of the volume. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Default: If no type is specified, the existing type is retained.
      * </p>
      * 
      * @param volumeType
-     *        The target EBS volume type of the volume.</p>
+     *        The target EBS volume type of the volume. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a>
+     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        Default: If no type is specified, the existing type is retained.
      * @see VolumeType
@@ -255,14 +467,18 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The target EBS volume type of the volume.
+     * The target EBS volume type of the volume. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Default: If no type is specified, the existing type is retained.
      * </p>
      * 
      * @param volumeType
-     *        The target EBS volume type of the volume.</p>
+     *        The target EBS volume type of the volume. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a>
+     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        Default: If no type is specified, the existing type is retained.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -276,25 +492,56 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The target IOPS rate of the volume.
+     * The target IOPS rate of the volume. This parameter is valid only for <code>gp3</code>, <code>io1</code>, and
+     * <code>io2</code> volumes.
      * </p>
      * <p>
-     * This is only valid for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes. For moreinformation,
-     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">
-     * Provisioned IOPS SSD (io1 and io2) volumes</a>.
+     * The following are the supported values for each volume type:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>gp3</code>: 3,000-16,000 IOPS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code>: 100-64,000 IOPS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io2</code>: 100-64,000 IOPS
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Default: If no IOPS value is specified, the existing value is retained.
      * </p>
      * 
      * @param iops
-     *        The target IOPS rate of the volume.</p>
+     *        The target IOPS rate of the volume. This parameter is valid only for <code>gp3</code>, <code>io1</code>,
+     *        and <code>io2</code> volumes.</p>
      *        <p>
-     *        This is only valid for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes. For
-     *        moreinformation, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">
-     *        Provisioned IOPS SSD (io1 and io2) volumes</a>.
+     *        The following are the supported values for each volume type:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>gp3</code>: 3,000-16,000 IOPS
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>io1</code>: 100-64,000 IOPS
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>io2</code>: 100-64,000 IOPS
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        Default: If no IOPS value is specified, the existing value is retained.
      */
@@ -305,24 +552,55 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The target IOPS rate of the volume.
+     * The target IOPS rate of the volume. This parameter is valid only for <code>gp3</code>, <code>io1</code>, and
+     * <code>io2</code> volumes.
      * </p>
      * <p>
-     * This is only valid for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes. For moreinformation,
-     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">
-     * Provisioned IOPS SSD (io1 and io2) volumes</a>.
+     * The following are the supported values for each volume type:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>gp3</code>: 3,000-16,000 IOPS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code>: 100-64,000 IOPS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io2</code>: 100-64,000 IOPS
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Default: If no IOPS value is specified, the existing value is retained.
      * </p>
      * 
-     * @return The target IOPS rate of the volume.</p>
+     * @return The target IOPS rate of the volume. This parameter is valid only for <code>gp3</code>, <code>io1</code>,
+     *         and <code>io2</code> volumes.</p>
      *         <p>
-     *         This is only valid for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes. For
-     *         moreinformation, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">
-     *         Provisioned IOPS SSD (io1 and io2) volumes</a>.
+     *         The following are the supported values for each volume type:
      *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>gp3</code>: 3,000-16,000 IOPS
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>io1</code>: 100-64,000 IOPS
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>io2</code>: 100-64,000 IOPS
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      *         Default: If no IOPS value is specified, the existing value is retained.
      */
@@ -333,25 +611,56 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The target IOPS rate of the volume.
+     * The target IOPS rate of the volume. This parameter is valid only for <code>gp3</code>, <code>io1</code>, and
+     * <code>io2</code> volumes.
      * </p>
      * <p>
-     * This is only valid for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes. For moreinformation,
-     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">
-     * Provisioned IOPS SSD (io1 and io2) volumes</a>.
+     * The following are the supported values for each volume type:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>gp3</code>: 3,000-16,000 IOPS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code>: 100-64,000 IOPS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io2</code>: 100-64,000 IOPS
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Default: If no IOPS value is specified, the existing value is retained.
      * </p>
      * 
      * @param iops
-     *        The target IOPS rate of the volume.</p>
+     *        The target IOPS rate of the volume. This parameter is valid only for <code>gp3</code>, <code>io1</code>,
+     *        and <code>io2</code> volumes.</p>
      *        <p>
-     *        This is only valid for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes. For
-     *        moreinformation, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">
-     *        Provisioned IOPS SSD (io1 and io2) volumes</a>.
+     *        The following are the supported values for each volume type:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>gp3</code>: 3,000-16,000 IOPS
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>io1</code>: 100-64,000 IOPS
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>io2</code>: 100-64,000 IOPS
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        Default: If no IOPS value is specified, the existing value is retained.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -359,6 +668,85 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     public ModifyVolumeRequest withIops(Integer iops) {
         setIops(iops);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The target throughput of the volume, in MiB/s. This parameter is valid only for <code>gp3</code> volumes. The
+     * maximum value is 1,000.
+     * </p>
+     * <p>
+     * Default: If no throughput value is specified, the existing value is retained.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 125. Maximum value of 1000.
+     * </p>
+     * 
+     * @param throughput
+     *        The target throughput of the volume, in MiB/s. This parameter is valid only for <code>gp3</code> volumes.
+     *        The maximum value is 1,000.</p>
+     *        <p>
+     *        Default: If no throughput value is specified, the existing value is retained.
+     *        </p>
+     *        <p>
+     *        Valid Range: Minimum value of 125. Maximum value of 1000.
+     */
+
+    public void setThroughput(Integer throughput) {
+        this.throughput = throughput;
+    }
+
+    /**
+     * <p>
+     * The target throughput of the volume, in MiB/s. This parameter is valid only for <code>gp3</code> volumes. The
+     * maximum value is 1,000.
+     * </p>
+     * <p>
+     * Default: If no throughput value is specified, the existing value is retained.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 125. Maximum value of 1000.
+     * </p>
+     * 
+     * @return The target throughput of the volume, in MiB/s. This parameter is valid only for <code>gp3</code> volumes.
+     *         The maximum value is 1,000.</p>
+     *         <p>
+     *         Default: If no throughput value is specified, the existing value is retained.
+     *         </p>
+     *         <p>
+     *         Valid Range: Minimum value of 125. Maximum value of 1000.
+     */
+
+    public Integer getThroughput() {
+        return this.throughput;
+    }
+
+    /**
+     * <p>
+     * The target throughput of the volume, in MiB/s. This parameter is valid only for <code>gp3</code> volumes. The
+     * maximum value is 1,000.
+     * </p>
+     * <p>
+     * Default: If no throughput value is specified, the existing value is retained.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 125. Maximum value of 1000.
+     * </p>
+     * 
+     * @param throughput
+     *        The target throughput of the volume, in MiB/s. This parameter is valid only for <code>gp3</code> volumes.
+     *        The maximum value is 1,000.</p>
+     *        <p>
+     *        Default: If no throughput value is specified, the existing value is retained.
+     *        </p>
+     *        <p>
+     *        Valid Range: Minimum value of 125. Maximum value of 1000.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVolumeRequest withThroughput(Integer throughput) {
+        setThroughput(throughput);
         return this;
     }
 
@@ -392,7 +780,9 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
         if (getVolumeType() != null)
             sb.append("VolumeType: ").append(getVolumeType()).append(",");
         if (getIops() != null)
-            sb.append("Iops: ").append(getIops());
+            sb.append("Iops: ").append(getIops()).append(",");
+        if (getThroughput() != null)
+            sb.append("Throughput: ").append(getThroughput());
         sb.append("}");
         return sb.toString();
     }
@@ -423,6 +813,10 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
             return false;
         if (other.getIops() != null && other.getIops().equals(this.getIops()) == false)
             return false;
+        if (other.getThroughput() == null ^ this.getThroughput() == null)
+            return false;
+        if (other.getThroughput() != null && other.getThroughput().equals(this.getThroughput()) == false)
+            return false;
         return true;
     }
 
@@ -435,6 +829,7 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
         hashCode = prime * hashCode + ((getSize() == null) ? 0 : getSize().hashCode());
         hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
+        hashCode = prime * hashCode + ((getThroughput() == null) ? 0 : getThroughput().hashCode());
         return hashCode;
     }
 

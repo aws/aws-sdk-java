@@ -33,7 +33,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     private String availabilityZone;
     /**
      * <p>
-     * Specifies whether the volume should be encrypted. The effect of setting the encryption state to <code>true</code>
+     * Indicates whether the volume should be encrypted. The effect of setting the encryption state to <code>true</code>
      * depends on the volume origin (new or from a snapshot), starting encryption state, ownership, and whether
      * encryption by default is enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">Encryption by
@@ -49,16 +49,40 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     private Boolean encrypted;
     /**
      * <p>
-     * The number of I/O operations per second (IOPS) to provision for an <code>io1</code> or <code>io2</code> volume,
-     * with a maximum ratio of 50 IOPS/GiB for <code>io1</code>, and 500 IOPS/GiB for <code>io2</code>. Range is 100 to
-     * 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed only on <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code>
+     * volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes,
+     * this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits
+     * for bursting.
      * </p>
      * <p>
-     * This parameter is valid only for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes.
+     * The following are the supported values for each volume type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>gp3</code>: 3,000-16,000 IOPS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code>: 100-64,000 IOPS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io2</code>: 100-64,000 IOPS
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For <code>io1</code> and <code>io2</code> volumes, we guarantee 64,000 IOPS only for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
+     * built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.
+     * </p>
+     * <p>
+     * This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for <code>gp3</code>
+     * volumes is 3,000 IOPS. This parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>,
+     * or <code>standard</code> volumes.
      * </p>
      */
     private Integer iops;
@@ -107,17 +131,35 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     private String outpostArn;
     /**
      * <p>
-     * The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size.
-     * </p>
-     * <p>
-     * Constraints: 1-16,384 for <code>gp2</code>, 4-16,384 for <code>io1</code> and <code>io2</code>, 500-16,384 for
-     * <code>st1</code>, 500-16,384 for <code>sc1</code>, and 1-1,024 for <code>standard</code>. If you specify a
-     * snapshot, the volume size must be equal to or larger than the snapshot size.
-     * </p>
-     * <p>
-     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
+     * The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a
+     * snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the
      * snapshot size.
      * </p>
+     * <p>
+     * The following are the supported volumes sizes for each volume type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>gp2</code> and <code>gp3</code>: 1-16,384
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code> and <code>io2</code>: 4-16,384
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>st1</code> and <code>sc1</code>: 125-16,384
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>standard</code>: 1-1,024
+     * </p>
+     * </li>
+     * </ul>
      */
     private Integer size;
     /**
@@ -128,9 +170,39 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     private String snapshotId;
     /**
      * <p>
-     * The volume type. This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for
-     * Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
-     * <code>standard</code> for Magnetic volumes.
+     * The volume type. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * General Purpose SSD: <code>gp2</code> | <code>gp3</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned IOPS SSD: <code>io1</code> | <code>io2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Throughput Optimized HDD: <code>st1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cold HDD: <code>sc1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Magnetic: <code>standard</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Default: <code>gp2</code>
@@ -145,15 +217,28 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
     /**
      * <p>
-     * Specifies whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the volume to up
+     * Indicates whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the volume to up
      * to 16 <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     * instances</a> in the same Availability Zone. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
+     * built on the Nitro System</a> in the same Availability Zone. This parameter is supported with <code>io1</code>
+     * volumes only. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
      * the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
     private Boolean multiAttachEnabled;
+    /**
+     * <p>
+     * The throughput to provision for a volume, with a maximum of 1,000 MiB/s.
+     * </p>
+     * <p>
+     * This parameter is valid only for <code>gp3</code> volumes.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 125. Maximum value of 1000.
+     * </p>
+     */
+    private Integer throughput;
 
     /**
      * Default constructor for CreateVolumeRequest object. Callers should use the setter or fluent setter (with...)
@@ -167,15 +252,33 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * initialize any additional object members.
      * 
      * @param size
-     *        The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size.</p>
+     *        The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a
+     *        snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than
+     *        the snapshot size.</p>
      *        <p>
-     *        Constraints: 1-16,384 for <code>gp2</code>, 4-16,384 for <code>io1</code> and <code>io2</code>, 500-16,384
-     *        for <code>st1</code>, 500-16,384 for <code>sc1</code>, and 1-1,024 for <code>standard</code>. If you
-     *        specify a snapshot, the volume size must be equal to or larger than the snapshot size.
+     *        The following are the supported volumes sizes for each volume type:
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
-     *        snapshot size.
+     *        <code>gp2</code> and <code>gp3</code>: 1-16,384
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>io1</code> and <code>io2</code>: 4-16,384
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>st1</code> and <code>sc1</code>: 125-16,384
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>standard</code>: 1-1,024
+     *        </p>
+     *        </li>
      * @param availabilityZone
      *        The Availability Zone in which to create the volume.
      */
@@ -240,7 +343,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Specifies whether the volume should be encrypted. The effect of setting the encryption state to <code>true</code>
+     * Indicates whether the volume should be encrypted. The effect of setting the encryption state to <code>true</code>
      * depends on the volume origin (new or from a snapshot), starting encryption state, ownership, and whether
      * encryption by default is enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">Encryption by
@@ -254,7 +357,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param encrypted
-     *        Specifies whether the volume should be encrypted. The effect of setting the encryption state to
+     *        Indicates whether the volume should be encrypted. The effect of setting the encryption state to
      *        <code>true</code> depends on the volume origin (new or from a snapshot), starting encryption state,
      *        ownership, and whether encryption by default is enabled. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default"
@@ -272,7 +375,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Specifies whether the volume should be encrypted. The effect of setting the encryption state to <code>true</code>
+     * Indicates whether the volume should be encrypted. The effect of setting the encryption state to <code>true</code>
      * depends on the volume origin (new or from a snapshot), starting encryption state, ownership, and whether
      * encryption by default is enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">Encryption by
@@ -285,7 +388,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * >Supported instance types</a>.
      * </p>
      * 
-     * @return Specifies whether the volume should be encrypted. The effect of setting the encryption state to
+     * @return Indicates whether the volume should be encrypted. The effect of setting the encryption state to
      *         <code>true</code> depends on the volume origin (new or from a snapshot), starting encryption state,
      *         ownership, and whether encryption by default is enabled. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default"
@@ -303,7 +406,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Specifies whether the volume should be encrypted. The effect of setting the encryption state to <code>true</code>
+     * Indicates whether the volume should be encrypted. The effect of setting the encryption state to <code>true</code>
      * depends on the volume origin (new or from a snapshot), starting encryption state, ownership, and whether
      * encryption by default is enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">Encryption by
@@ -317,7 +420,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param encrypted
-     *        Specifies whether the volume should be encrypted. The effect of setting the encryption state to
+     *        Indicates whether the volume should be encrypted. The effect of setting the encryption state to
      *        <code>true</code> depends on the volume origin (new or from a snapshot), starting encryption state,
      *        ownership, and whether encryption by default is enabled. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default"
@@ -337,7 +440,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Specifies whether the volume should be encrypted. The effect of setting the encryption state to <code>true</code>
+     * Indicates whether the volume should be encrypted. The effect of setting the encryption state to <code>true</code>
      * depends on the volume origin (new or from a snapshot), starting encryption state, ownership, and whether
      * encryption by default is enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">Encryption by
@@ -350,7 +453,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * >Supported instance types</a>.
      * </p>
      * 
-     * @return Specifies whether the volume should be encrypted. The effect of setting the encryption state to
+     * @return Indicates whether the volume should be encrypted. The effect of setting the encryption state to
      *         <code>true</code> depends on the volume origin (new or from a snapshot), starting encryption state,
      *         ownership, and whether encryption by default is enabled. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default"
@@ -368,28 +471,76 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The number of I/O operations per second (IOPS) to provision for an <code>io1</code> or <code>io2</code> volume,
-     * with a maximum ratio of 50 IOPS/GiB for <code>io1</code>, and 500 IOPS/GiB for <code>io2</code>. Range is 100 to
-     * 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed only on <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code>
+     * volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes,
+     * this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits
+     * for bursting.
      * </p>
      * <p>
-     * This parameter is valid only for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes.
+     * The following are the supported values for each volume type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>gp3</code>: 3,000-16,000 IOPS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code>: 100-64,000 IOPS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io2</code>: 100-64,000 IOPS
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For <code>io1</code> and <code>io2</code> volumes, we guarantee 64,000 IOPS only for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
+     * built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.
+     * </p>
+     * <p>
+     * This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for <code>gp3</code>
+     * volumes is 3,000 IOPS. This parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>,
+     * or <code>standard</code> volumes.
      * </p>
      * 
      * @param iops
-     *        The number of I/O operations per second (IOPS) to provision for an <code>io1</code> or <code>io2</code>
-     *        volume, with a maximum ratio of 50 IOPS/GiB for <code>io1</code>, and 500 IOPS/GiB for <code>io2</code>.
-     *        Range is 100 to 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed only on <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-
-     *        based instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more
-     *        information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     *        EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and
+     *        <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For
+     *        <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the
+     *        volume accumulates I/O credits for bursting.</p>
      *        <p>
-     *        This parameter is valid only for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes.
+     *        The following are the supported values for each volume type:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>gp3</code>: 3,000-16,000 IOPS
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>io1</code>: 100-64,000 IOPS
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>io2</code>: 100-64,000 IOPS
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For <code>io1</code> and <code>io2</code> volumes, we guarantee 64,000 IOPS only for <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
+     *        >Instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.
+     *        </p>
+     *        <p>
+     *        This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for
+     *        <code>gp3</code> volumes is 3,000 IOPS. This parameter is not supported for <code>gp2</code>,
+     *        <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.
      */
 
     public void setIops(Integer iops) {
@@ -398,27 +549,76 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The number of I/O operations per second (IOPS) to provision for an <code>io1</code> or <code>io2</code> volume,
-     * with a maximum ratio of 50 IOPS/GiB for <code>io1</code>, and 500 IOPS/GiB for <code>io2</code>. Range is 100 to
-     * 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed only on <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code>
+     * volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes,
+     * this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits
+     * for bursting.
      * </p>
      * <p>
-     * This parameter is valid only for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes.
+     * The following are the supported values for each volume type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>gp3</code>: 3,000-16,000 IOPS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code>: 100-64,000 IOPS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io2</code>: 100-64,000 IOPS
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For <code>io1</code> and <code>io2</code> volumes, we guarantee 64,000 IOPS only for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
+     * built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.
+     * </p>
+     * <p>
+     * This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for <code>gp3</code>
+     * volumes is 3,000 IOPS. This parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>,
+     * or <code>standard</code> volumes.
      * </p>
      * 
-     * @return The number of I/O operations per second (IOPS) to provision for an <code>io1</code> or <code>io2</code>
-     *         volume, with a maximum ratio of 50 IOPS/GiB for <code>io1</code>, and 500 IOPS/GiB for <code>io2</code>.
-     *         Range is 100 to 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed only on <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-
-     *         based instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more
-     *         information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     *         EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * @return The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and
+     *         <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For
+     *         <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which
+     *         the volume accumulates I/O credits for bursting.</p>
      *         <p>
-     *         This parameter is valid only for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes.
+     *         The following are the supported values for each volume type:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>gp3</code>: 3,000-16,000 IOPS
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>io1</code>: 100-64,000 IOPS
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>io2</code>: 100-64,000 IOPS
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For <code>io1</code> and <code>io2</code> volumes, we guarantee 64,000 IOPS only for <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
+     *         >Instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000
+     *         IOPS.
+     *         </p>
+     *         <p>
+     *         This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for
+     *         <code>gp3</code> volumes is 3,000 IOPS. This parameter is not supported for <code>gp2</code>,
+     *         <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.
      */
 
     public Integer getIops() {
@@ -427,28 +627,76 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The number of I/O operations per second (IOPS) to provision for an <code>io1</code> or <code>io2</code> volume,
-     * with a maximum ratio of 50 IOPS/GiB for <code>io1</code>, and 500 IOPS/GiB for <code>io2</code>. Range is 100 to
-     * 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed only on <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code>
+     * volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes,
+     * this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits
+     * for bursting.
      * </p>
      * <p>
-     * This parameter is valid only for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes.
+     * The following are the supported values for each volume type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>gp3</code>: 3,000-16,000 IOPS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code>: 100-64,000 IOPS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io2</code>: 100-64,000 IOPS
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For <code>io1</code> and <code>io2</code> volumes, we guarantee 64,000 IOPS only for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
+     * built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.
+     * </p>
+     * <p>
+     * This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for <code>gp3</code>
+     * volumes is 3,000 IOPS. This parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>,
+     * or <code>standard</code> volumes.
      * </p>
      * 
      * @param iops
-     *        The number of I/O operations per second (IOPS) to provision for an <code>io1</code> or <code>io2</code>
-     *        volume, with a maximum ratio of 50 IOPS/GiB for <code>io1</code>, and 500 IOPS/GiB for <code>io2</code>.
-     *        Range is 100 to 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed only on <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-
-     *        based instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more
-     *        information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     *        EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and
+     *        <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For
+     *        <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the
+     *        volume accumulates I/O credits for bursting.</p>
      *        <p>
-     *        This parameter is valid only for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes.
+     *        The following are the supported values for each volume type:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>gp3</code>: 3,000-16,000 IOPS
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>io1</code>: 100-64,000 IOPS
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>io2</code>: 100-64,000 IOPS
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For <code>io1</code> and <code>io2</code> volumes, we guarantee 64,000 IOPS only for <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
+     *        >Instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.
+     *        </p>
+     *        <p>
+     *        This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for
+     *        <code>gp3</code> volumes is 3,000 IOPS. This parameter is not supported for <code>gp2</code>,
+     *        <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -722,28 +970,64 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size.
-     * </p>
-     * <p>
-     * Constraints: 1-16,384 for <code>gp2</code>, 4-16,384 for <code>io1</code> and <code>io2</code>, 500-16,384 for
-     * <code>st1</code>, 500-16,384 for <code>sc1</code>, and 1-1,024 for <code>standard</code>. If you specify a
-     * snapshot, the volume size must be equal to or larger than the snapshot size.
-     * </p>
-     * <p>
-     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
+     * The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a
+     * snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the
      * snapshot size.
      * </p>
+     * <p>
+     * The following are the supported volumes sizes for each volume type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>gp2</code> and <code>gp3</code>: 1-16,384
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code> and <code>io2</code>: 4-16,384
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>st1</code> and <code>sc1</code>: 125-16,384
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>standard</code>: 1-1,024
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param size
-     *        The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size.</p>
+     *        The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a
+     *        snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than
+     *        the snapshot size.</p>
      *        <p>
-     *        Constraints: 1-16,384 for <code>gp2</code>, 4-16,384 for <code>io1</code> and <code>io2</code>, 500-16,384
-     *        for <code>st1</code>, 500-16,384 for <code>sc1</code>, and 1-1,024 for <code>standard</code>. If you
-     *        specify a snapshot, the volume size must be equal to or larger than the snapshot size.
+     *        The following are the supported volumes sizes for each volume type:
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
-     *        snapshot size.
+     *        <code>gp2</code> and <code>gp3</code>: 1-16,384
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>io1</code> and <code>io2</code>: 4-16,384
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>st1</code> and <code>sc1</code>: 125-16,384
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>standard</code>: 1-1,024
+     *        </p>
+     *        </li>
      */
 
     public void setSize(Integer size) {
@@ -752,27 +1036,63 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size.
-     * </p>
-     * <p>
-     * Constraints: 1-16,384 for <code>gp2</code>, 4-16,384 for <code>io1</code> and <code>io2</code>, 500-16,384 for
-     * <code>st1</code>, 500-16,384 for <code>sc1</code>, and 1-1,024 for <code>standard</code>. If you specify a
-     * snapshot, the volume size must be equal to or larger than the snapshot size.
-     * </p>
-     * <p>
-     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
+     * The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a
+     * snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the
      * snapshot size.
      * </p>
+     * <p>
+     * The following are the supported volumes sizes for each volume type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>gp2</code> and <code>gp3</code>: 1-16,384
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code> and <code>io2</code>: 4-16,384
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>st1</code> and <code>sc1</code>: 125-16,384
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>standard</code>: 1-1,024
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size.</p>
+     * @return The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a
+     *         snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than
+     *         the snapshot size.</p>
      *         <p>
-     *         Constraints: 1-16,384 for <code>gp2</code>, 4-16,384 for <code>io1</code> and <code>io2</code>,
-     *         500-16,384 for <code>st1</code>, 500-16,384 for <code>sc1</code>, and 1-1,024 for <code>standard</code>.
-     *         If you specify a snapshot, the volume size must be equal to or larger than the snapshot size.
+     *         The following are the supported volumes sizes for each volume type:
      *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is
-     *         the snapshot size.
+     *         <code>gp2</code> and <code>gp3</code>: 1-16,384
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>io1</code> and <code>io2</code>: 4-16,384
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>st1</code> and <code>sc1</code>: 125-16,384
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>standard</code>: 1-1,024
+     *         </p>
+     *         </li>
      */
 
     public Integer getSize() {
@@ -781,28 +1101,64 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size.
-     * </p>
-     * <p>
-     * Constraints: 1-16,384 for <code>gp2</code>, 4-16,384 for <code>io1</code> and <code>io2</code>, 500-16,384 for
-     * <code>st1</code>, 500-16,384 for <code>sc1</code>, and 1-1,024 for <code>standard</code>. If you specify a
-     * snapshot, the volume size must be equal to or larger than the snapshot size.
-     * </p>
-     * <p>
-     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
+     * The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a
+     * snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the
      * snapshot size.
      * </p>
+     * <p>
+     * The following are the supported volumes sizes for each volume type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>gp2</code> and <code>gp3</code>: 1-16,384
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code> and <code>io2</code>: 4-16,384
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>st1</code> and <code>sc1</code>: 125-16,384
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>standard</code>: 1-1,024
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param size
-     *        The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size.</p>
+     *        The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a
+     *        snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than
+     *        the snapshot size.</p>
      *        <p>
-     *        Constraints: 1-16,384 for <code>gp2</code>, 4-16,384 for <code>io1</code> and <code>io2</code>, 500-16,384
-     *        for <code>st1</code>, 500-16,384 for <code>sc1</code>, and 1-1,024 for <code>standard</code>. If you
-     *        specify a snapshot, the volume size must be equal to or larger than the snapshot size.
+     *        The following are the supported volumes sizes for each volume type:
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
-     *        snapshot size.
+     *        <code>gp2</code> and <code>gp3</code>: 1-16,384
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>io1</code> and <code>io2</code>: 4-16,384
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>st1</code> and <code>sc1</code>: 125-16,384
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>standard</code>: 1-1,024
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -853,18 +1209,78 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The volume type. This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for
-     * Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
-     * <code>standard</code> for Magnetic volumes.
+     * The volume type. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * General Purpose SSD: <code>gp2</code> | <code>gp3</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned IOPS SSD: <code>io1</code> | <code>io2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Throughput Optimized HDD: <code>st1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cold HDD: <code>sc1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Magnetic: <code>standard</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Default: <code>gp2</code>
      * </p>
      * 
      * @param volumeType
-     *        The volume type. This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or
-     *        <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>
-     *        for Cold HDD, or <code>standard</code> for Magnetic volumes.</p>
+     *        The volume type. This parameter can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        General Purpose SSD: <code>gp2</code> | <code>gp3</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Provisioned IOPS SSD: <code>io1</code> | <code>io2</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Throughput Optimized HDD: <code>st1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cold HDD: <code>sc1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Magnetic: <code>standard</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a>
+     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        </p>
      *        <p>
      *        Default: <code>gp2</code>
      * @see VolumeType
@@ -876,17 +1292,77 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The volume type. This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for
-     * Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
-     * <code>standard</code> for Magnetic volumes.
+     * The volume type. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * General Purpose SSD: <code>gp2</code> | <code>gp3</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned IOPS SSD: <code>io1</code> | <code>io2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Throughput Optimized HDD: <code>st1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cold HDD: <code>sc1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Magnetic: <code>standard</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Default: <code>gp2</code>
      * </p>
      * 
-     * @return The volume type. This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or
-     *         <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     *         <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.</p>
+     * @return The volume type. This parameter can be one of the following values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         General Purpose SSD: <code>gp2</code> | <code>gp3</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Provisioned IOPS SSD: <code>io1</code> | <code>io2</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Throughput Optimized HDD: <code>st1</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cold HDD: <code>sc1</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Magnetic: <code>standard</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume
+     *         types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         </p>
      *         <p>
      *         Default: <code>gp2</code>
      * @see VolumeType
@@ -898,18 +1374,78 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The volume type. This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for
-     * Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
-     * <code>standard</code> for Magnetic volumes.
+     * The volume type. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * General Purpose SSD: <code>gp2</code> | <code>gp3</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned IOPS SSD: <code>io1</code> | <code>io2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Throughput Optimized HDD: <code>st1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cold HDD: <code>sc1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Magnetic: <code>standard</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Default: <code>gp2</code>
      * </p>
      * 
      * @param volumeType
-     *        The volume type. This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or
-     *        <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>
-     *        for Cold HDD, or <code>standard</code> for Magnetic volumes.</p>
+     *        The volume type. This parameter can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        General Purpose SSD: <code>gp2</code> | <code>gp3</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Provisioned IOPS SSD: <code>io1</code> | <code>io2</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Throughput Optimized HDD: <code>st1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cold HDD: <code>sc1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Magnetic: <code>standard</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a>
+     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        </p>
      *        <p>
      *        Default: <code>gp2</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -923,18 +1459,78 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The volume type. This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for
-     * Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
-     * <code>standard</code> for Magnetic volumes.
+     * The volume type. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * General Purpose SSD: <code>gp2</code> | <code>gp3</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned IOPS SSD: <code>io1</code> | <code>io2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Throughput Optimized HDD: <code>st1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cold HDD: <code>sc1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Magnetic: <code>standard</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Default: <code>gp2</code>
      * </p>
      * 
      * @param volumeType
-     *        The volume type. This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or
-     *        <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>
-     *        for Cold HDD, or <code>standard</code> for Magnetic volumes.</p>
+     *        The volume type. This parameter can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        General Purpose SSD: <code>gp2</code> | <code>gp3</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Provisioned IOPS SSD: <code>io1</code> | <code>io2</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Throughput Optimized HDD: <code>st1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cold HDD: <code>sc1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Magnetic: <code>standard</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a>
+     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        </p>
      *        <p>
      *        Default: <code>gp2</code>
      * @see VolumeType
@@ -946,18 +1542,78 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The volume type. This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for
-     * Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
-     * <code>standard</code> for Magnetic volumes.
+     * The volume type. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * General Purpose SSD: <code>gp2</code> | <code>gp3</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned IOPS SSD: <code>io1</code> | <code>io2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Throughput Optimized HDD: <code>st1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cold HDD: <code>sc1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Magnetic: <code>standard</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Default: <code>gp2</code>
      * </p>
      * 
      * @param volumeType
-     *        The volume type. This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or
-     *        <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>
-     *        for Cold HDD, or <code>standard</code> for Magnetic volumes.</p>
+     *        The volume type. This parameter can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        General Purpose SSD: <code>gp2</code> | <code>gp3</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Provisioned IOPS SSD: <code>io1</code> | <code>io2</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Throughput Optimized HDD: <code>st1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cold HDD: <code>sc1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Magnetic: <code>standard</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a>
+     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        </p>
      *        <p>
      *        Default: <code>gp2</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1044,19 +1700,21 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Specifies whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the volume to up
+     * Indicates whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the volume to up
      * to 16 <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     * instances</a> in the same Availability Zone. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
+     * built on the Nitro System</a> in the same Availability Zone. This parameter is supported with <code>io1</code>
+     * volumes only. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
      * the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param multiAttachEnabled
-     *        Specifies whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the volume
+     *        Indicates whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the volume
      *        to up to 16 <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
-     *        >Nitro-based instances</a> in the same Availability Zone. For more information, see <a
+     *        >Instances built on the Nitro System</a> in the same Availability Zone. This parameter is supported with
+     *        <code>io1</code> volumes only. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS
      *        Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
@@ -1067,18 +1725,20 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Specifies whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the volume to up
+     * Indicates whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the volume to up
      * to 16 <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     * instances</a> in the same Availability Zone. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
+     * built on the Nitro System</a> in the same Availability Zone. This parameter is supported with <code>io1</code>
+     * volumes only. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
      * the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
-     * @return Specifies whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the
+     * @return Indicates whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the
      *         volume to up to 16 <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
-     *         >Nitro-based instances</a> in the same Availability Zone. For more information, see <a
+     *         >Instances built on the Nitro System</a> in the same Availability Zone. This parameter is supported with
+     *         <code>io1</code> volumes only. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS
      *         Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
@@ -1089,19 +1749,21 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Specifies whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the volume to up
+     * Indicates whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the volume to up
      * to 16 <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     * instances</a> in the same Availability Zone. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
+     * built on the Nitro System</a> in the same Availability Zone. This parameter is supported with <code>io1</code>
+     * volumes only. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
      * the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param multiAttachEnabled
-     *        Specifies whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the volume
+     *        Indicates whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the volume
      *        to up to 16 <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
-     *        >Nitro-based instances</a> in the same Availability Zone. For more information, see <a
+     *        >Instances built on the Nitro System</a> in the same Availability Zone. This parameter is supported with
+     *        <code>io1</code> volumes only. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS
      *        Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1114,24 +1776,99 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Specifies whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the volume to up
+     * Indicates whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the volume to up
      * to 16 <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     * instances</a> in the same Availability Zone. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
+     * built on the Nitro System</a> in the same Availability Zone. This parameter is supported with <code>io1</code>
+     * volumes only. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
      * the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
-     * @return Specifies whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the
+     * @return Indicates whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the
      *         volume to up to 16 <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
-     *         >Nitro-based instances</a> in the same Availability Zone. For more information, see <a
+     *         >Instances built on the Nitro System</a> in the same Availability Zone. This parameter is supported with
+     *         <code>io1</code> volumes only. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS
      *         Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public Boolean isMultiAttachEnabled() {
         return this.multiAttachEnabled;
+    }
+
+    /**
+     * <p>
+     * The throughput to provision for a volume, with a maximum of 1,000 MiB/s.
+     * </p>
+     * <p>
+     * This parameter is valid only for <code>gp3</code> volumes.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 125. Maximum value of 1000.
+     * </p>
+     * 
+     * @param throughput
+     *        The throughput to provision for a volume, with a maximum of 1,000 MiB/s.</p>
+     *        <p>
+     *        This parameter is valid only for <code>gp3</code> volumes.
+     *        </p>
+     *        <p>
+     *        Valid Range: Minimum value of 125. Maximum value of 1000.
+     */
+
+    public void setThroughput(Integer throughput) {
+        this.throughput = throughput;
+    }
+
+    /**
+     * <p>
+     * The throughput to provision for a volume, with a maximum of 1,000 MiB/s.
+     * </p>
+     * <p>
+     * This parameter is valid only for <code>gp3</code> volumes.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 125. Maximum value of 1000.
+     * </p>
+     * 
+     * @return The throughput to provision for a volume, with a maximum of 1,000 MiB/s.</p>
+     *         <p>
+     *         This parameter is valid only for <code>gp3</code> volumes.
+     *         </p>
+     *         <p>
+     *         Valid Range: Minimum value of 125. Maximum value of 1000.
+     */
+
+    public Integer getThroughput() {
+        return this.throughput;
+    }
+
+    /**
+     * <p>
+     * The throughput to provision for a volume, with a maximum of 1,000 MiB/s.
+     * </p>
+     * <p>
+     * This parameter is valid only for <code>gp3</code> volumes.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 125. Maximum value of 1000.
+     * </p>
+     * 
+     * @param throughput
+     *        The throughput to provision for a volume, with a maximum of 1,000 MiB/s.</p>
+     *        <p>
+     *        This parameter is valid only for <code>gp3</code> volumes.
+     *        </p>
+     *        <p>
+     *        Valid Range: Minimum value of 125. Maximum value of 1000.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVolumeRequest withThroughput(Integer throughput) {
+        setThroughput(throughput);
+        return this;
     }
 
     /**
@@ -1176,7 +1913,9 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
         if (getTagSpecifications() != null)
             sb.append("TagSpecifications: ").append(getTagSpecifications()).append(",");
         if (getMultiAttachEnabled() != null)
-            sb.append("MultiAttachEnabled: ").append(getMultiAttachEnabled());
+            sb.append("MultiAttachEnabled: ").append(getMultiAttachEnabled()).append(",");
+        if (getThroughput() != null)
+            sb.append("Throughput: ").append(getThroughput());
         sb.append("}");
         return sb.toString();
     }
@@ -1231,6 +1970,10 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
             return false;
         if (other.getMultiAttachEnabled() != null && other.getMultiAttachEnabled().equals(this.getMultiAttachEnabled()) == false)
             return false;
+        if (other.getThroughput() == null ^ this.getThroughput() == null)
+            return false;
+        if (other.getThroughput() != null && other.getThroughput().equals(this.getThroughput()) == false)
+            return false;
         return true;
     }
 
@@ -1249,6 +1992,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
         hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         hashCode = prime * hashCode + ((getMultiAttachEnabled() == null) ? 0 : getMultiAttachEnabled().hashCode());
+        hashCode = prime * hashCode + ((getThroughput() == null) ? 0 : getThroughput().hashCode());
         return hashCode;
     }
 

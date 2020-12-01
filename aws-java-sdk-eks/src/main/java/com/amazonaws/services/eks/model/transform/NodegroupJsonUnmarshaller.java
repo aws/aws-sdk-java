@@ -80,6 +80,10 @@ public class NodegroupJsonUnmarshaller implements Unmarshaller<Nodegroup, JsonUn
                     context.nextToken();
                     nodegroup.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("capacityType", targetDepth)) {
+                    context.nextToken();
+                    nodegroup.setCapacityType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("scalingConfig", targetDepth)) {
                     context.nextToken();
                     nodegroup.setScalingConfig(NodegroupScalingConfigJsonUnmarshaller.getInstance().unmarshall(context));

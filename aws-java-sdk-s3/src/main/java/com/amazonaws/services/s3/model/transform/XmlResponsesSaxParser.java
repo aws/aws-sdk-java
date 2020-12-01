@@ -2227,6 +2227,7 @@ public class XmlResponsesSaxParser {
         private Metrics metrics;
         private SourceSelectionCriteria sourceSelectionCriteria;
         private SseKmsEncryptedObjects sseKmsEncryptedObjects;
+        private ReplicaModifications replicaModifications;
         private static final String REPLICATION_CONFIG = "ReplicationConfiguration";
         private static final String ROLE = "Role";
         private static final String RULE = "Rule";
@@ -2256,6 +2257,7 @@ public class XmlResponsesSaxParser {
         private static final String REPLICA_KMS_KEY_ID = "ReplicaKmsKeyID";
         private static final String SOURCE_SELECTION_CRITERIA = "SourceSelectionCriteria";
         private static final String SSE_KMS_ENCRYPTED_OBJECTS = "SseKmsEncryptedObjects";
+        private static final String REPLICA_MODIFICATIONS = "ReplicaModifications";
 
         public BucketReplicationConfiguration getConfiguration() {
             return bucketReplicationConfiguration;
@@ -2302,6 +2304,8 @@ public class XmlResponsesSaxParser {
             } else if (in(REPLICATION_CONFIG, RULE, SOURCE_SELECTION_CRITERIA)) {
                 if (name.equals(SSE_KMS_ENCRYPTED_OBJECTS)) {
                     sseKmsEncryptedObjects = new SseKmsEncryptedObjects();
+                } else if (name.equals(REPLICA_MODIFICATIONS)) {
+                    replicaModifications = new ReplicaModifications();
                 }
             } else if (in(REPLICATION_CONFIG, RULE, FILTER)) {
                 if (name.equals(AND)) {
@@ -2324,6 +2328,7 @@ public class XmlResponsesSaxParser {
                     sseKmsEncryptedObjects = null;
                     accessControlTranslation = null;
                     encryptionConfiguration = null;
+                    replicaModifications = null;
                 } else if (name.equals(ROLE)) {
                     bucketReplicationConfiguration.setRoleARN(getText());
                 }
@@ -2385,10 +2390,16 @@ public class XmlResponsesSaxParser {
             } else if (in(REPLICATION_CONFIG, RULE, SOURCE_SELECTION_CRITERIA)) {
                 if (name.equals(SSE_KMS_ENCRYPTED_OBJECTS)) {
                     sourceSelectionCriteria.setSseKmsEncryptedObjects(sseKmsEncryptedObjects);
+                } else if (name.equals(REPLICA_MODIFICATIONS)) {
+                    sourceSelectionCriteria.setReplicaModifications(replicaModifications);
                 }
             } else if (in(REPLICATION_CONFIG, RULE, SOURCE_SELECTION_CRITERIA, SSE_KMS_ENCRYPTED_OBJECTS)) {
                 if (name.equals(STATUS)) {
                     sseKmsEncryptedObjects.setStatus(getText());
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, SOURCE_SELECTION_CRITERIA, REPLICA_MODIFICATIONS)) {
+                if (name.equals(STATUS)) {
+                    replicaModifications.setStatus(getText());
                 }
             } else if (in(REPLICATION_CONFIG, RULE, EXISTING_OBJECT_REPLICATION)) {
                 if (name.equals(STATUS)) {

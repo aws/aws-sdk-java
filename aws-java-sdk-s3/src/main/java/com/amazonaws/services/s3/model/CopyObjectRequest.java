@@ -215,6 +215,7 @@ public class CopyObjectRequest extends AmazonWebServiceRequest implements
 
     private String objectLockLegalHoldStatus;
 
+    private boolean bucketKeyEnabled;
 
     /**
      * Constructs a new {@link CopyObjectRequest} object.
@@ -1408,5 +1409,35 @@ public class CopyObjectRequest extends AmazonWebServiceRequest implements
      */
     public void setObjectLockLegalHoldStatus(ObjectLockLegalHoldStatus objectLockLegalHoldStatus) {
         setObjectLockLegalHoldStatus(objectLockLegalHoldStatus.toString());
+    }
+
+    /**
+     * Returns whether or not bucket key encryption is used
+     */
+    public Boolean getBucketKeyEnabled() {
+        return bucketKeyEnabled;
+    }
+
+    /**
+     * Specifies whether the client should use an S3 Bucket Key for object encryption with server-side encryption using AWS KMS
+     * (SSE-KMS). Setting this header to <code>true</code> causes the client to use an S3 Bucket Key for object encryption with
+     * SSE-KMS.
+     * <p>Specifying this header with a COPY operation does not affect bucket-level settings for S3 Bucket Key.
+     */
+    public void setBucketKeyEnabled(Boolean bucketKeyEnabled) {
+        this.bucketKeyEnabled = bucketKeyEnabled;
+    }
+
+    /**
+     * Specifies whether the client should use an S3 Bucket Key for object encryption with server-side encryption using AWS KMS
+     * (SSE-KMS). Setting this header to <code>true</code> causes the client to use an S3 Bucket Key for object encryption with
+     * SSE-KMS.
+     * <p>Specifying this header with a COPY operation does not affect bucket-level settings for S3 Bucket Key.
+     *
+     * @return returns the update PutObjectRequest
+     */
+    public CopyObjectRequest withBucketKeyEnabled(Boolean bucketKeyEnabled) {
+        setBucketKeyEnabled(bucketKeyEnabled);
+        return this;
     }
 }

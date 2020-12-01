@@ -29,6 +29,10 @@ public class ModelPackageSummaryMarshaller {
 
     private static final MarshallingInfo<String> MODELPACKAGENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelPackageName").build();
+    private static final MarshallingInfo<String> MODELPACKAGEGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelPackageGroupName").build();
+    private static final MarshallingInfo<Integer> MODELPACKAGEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelPackageVersion").build();
     private static final MarshallingInfo<String> MODELPACKAGEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelPackageArn").build();
     private static final MarshallingInfo<String> MODELPACKAGEDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -37,6 +41,8 @@ public class ModelPackageSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> MODELPACKAGESTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelPackageStatus").build();
+    private static final MarshallingInfo<String> MODELAPPROVALSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelApprovalStatus").build();
 
     private static final ModelPackageSummaryMarshaller instance = new ModelPackageSummaryMarshaller();
 
@@ -55,10 +61,13 @@ public class ModelPackageSummaryMarshaller {
 
         try {
             protocolMarshaller.marshall(modelPackageSummary.getModelPackageName(), MODELPACKAGENAME_BINDING);
+            protocolMarshaller.marshall(modelPackageSummary.getModelPackageGroupName(), MODELPACKAGEGROUPNAME_BINDING);
+            protocolMarshaller.marshall(modelPackageSummary.getModelPackageVersion(), MODELPACKAGEVERSION_BINDING);
             protocolMarshaller.marshall(modelPackageSummary.getModelPackageArn(), MODELPACKAGEARN_BINDING);
             protocolMarshaller.marshall(modelPackageSummary.getModelPackageDescription(), MODELPACKAGEDESCRIPTION_BINDING);
             protocolMarshaller.marshall(modelPackageSummary.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(modelPackageSummary.getModelPackageStatus(), MODELPACKAGESTATUS_BINDING);
+            protocolMarshaller.marshall(modelPackageSummary.getModelApprovalStatus(), MODELAPPROVALSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

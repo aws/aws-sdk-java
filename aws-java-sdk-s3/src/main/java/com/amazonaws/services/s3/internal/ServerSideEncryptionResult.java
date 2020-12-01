@@ -72,4 +72,17 @@ public interface ServerSideEncryptionResult {
      *            server-side encryption.
      */
     public void setSSECustomerKeyMd5(String md5Digest);
+
+    /**
+     * Indicates whether the object uses an S3 Bucket Key for server-side encryption with AWS KMS (SSE-KMS).
+     */
+    public Boolean getBucketKeyEnabled();
+
+    /**
+     * Sets whether or not the object is encrypted with Bucket Key.
+     *
+     * @param bucketKeyEnabled
+     *            Whether or not bucket key is enabled
+     */
+    public void setBucketKeyEnabled(Boolean bucketKeyEnabled);
 }

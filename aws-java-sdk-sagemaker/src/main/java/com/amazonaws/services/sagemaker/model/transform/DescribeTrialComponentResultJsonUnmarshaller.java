@@ -107,6 +107,10 @@ public class DescribeTrialComponentResultJsonUnmarshaller implements Unmarshalle
                     describeTrialComponentResult.setOutputArtifacts(new MapUnmarshaller<String, TrialComponentArtifact>(context.getUnmarshaller(String.class),
                             TrialComponentArtifactJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("MetadataProperties", targetDepth)) {
+                    context.nextToken();
+                    describeTrialComponentResult.setMetadataProperties(MetadataPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Metrics", targetDepth)) {
                     context.nextToken();
                     describeTrialComponentResult.setMetrics(new ListUnmarshaller<TrialComponentMetricSummary>(TrialComponentMetricSummaryJsonUnmarshaller

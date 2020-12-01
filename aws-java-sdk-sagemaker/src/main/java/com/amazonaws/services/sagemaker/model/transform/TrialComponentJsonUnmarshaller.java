@@ -113,6 +113,10 @@ public class TrialComponentJsonUnmarshaller implements Unmarshaller<TrialCompone
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("MetadataProperties", targetDepth)) {
+                    context.nextToken();
+                    trialComponent.setMetadataProperties(MetadataPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("SourceDetail", targetDepth)) {
                     context.nextToken();
                     trialComponent.setSourceDetail(TrialComponentSourceDetailJsonUnmarshaller.getInstance().unmarshall(context));

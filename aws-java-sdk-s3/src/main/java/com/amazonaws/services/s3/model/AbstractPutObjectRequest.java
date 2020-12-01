@@ -119,6 +119,8 @@ public abstract class AbstractPutObjectRequest extends AmazonWebServiceRequest i
 
     private String objectLockLegalHoldStatus;
 
+    private Boolean bucketKeyEnabled;
+
     /**
      * Constructs a new
      * {@link AbstractPutObjectRequest} object to upload a file to the
@@ -971,6 +973,37 @@ public abstract class AbstractPutObjectRequest extends AmazonWebServiceRequest i
     public <T extends AbstractPutObjectRequest> T withSSEAwsKeyManagementParams(
             SSEAwsKeyManagementParams sseAwsKeyManagementParams) {
         setSSEAwsKeyManagementParams(sseAwsKeyManagementParams);
+        @SuppressWarnings("unchecked") T t = (T)this;
+        return t;
+    }
+
+    /**
+     * Returns whether or not bucket key encryption is used
+     */
+    public Boolean getBucketKeyEnabled() {
+        return bucketKeyEnabled;
+    }
+
+    /**
+     * Specifies whether the client should use an S3 Bucket Key for object encryption with server-side encryption using AWS KMS
+     * (SSE-KMS). Setting this header to <code>true</code> causes the client to use an S3 Bucket Key for object encryption with
+     * SSE-KMS.
+     *
+     * <p>Specifying this header with a PUT operation doesn't affect bucket-level settings for S3 Bucket Key.
+     */
+    public void setBucketKeyEnabled(Boolean bucketKeyEnabled) {
+        this.bucketKeyEnabled = bucketKeyEnabled;
+    }
+    /**
+     * Specifies whether the client should use an S3 Bucket Key for object encryption with server-side encryption using AWS KMS
+     * (SSE-KMS). Setting this header to <code>true</code> causes the client to use an S3 Bucket Key for object encryption with
+     * SSE-KMS.
+     *
+     * <p>Specifying this header with a PUT operation doesn't affect bucket-level settings for S3 Bucket Key.
+     * @return returns the update PutObjectRequest
+     */
+    public <T extends AbstractPutObjectRequest> T withBucketKeyEnabled(Boolean bucketKeyEnabled) {
+        setBucketKeyEnabled(bucketKeyEnabled);
         @SuppressWarnings("unchecked") T t = (T)this;
         return t;
     }

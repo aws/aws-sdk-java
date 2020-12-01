@@ -39,6 +39,10 @@ public class CertificateMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RegisteredDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> EXPIRYDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpiryDateTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Type").build();
+    private static final MarshallingInfo<StructuredPojo> CLIENTCERTAUTHSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientCertAuthSettings").build();
 
     private static final CertificateMarshaller instance = new CertificateMarshaller();
 
@@ -62,6 +66,8 @@ public class CertificateMarshaller {
             protocolMarshaller.marshall(certificate.getCommonName(), COMMONNAME_BINDING);
             protocolMarshaller.marshall(certificate.getRegisteredDateTime(), REGISTEREDDATETIME_BINDING);
             protocolMarshaller.marshall(certificate.getExpiryDateTime(), EXPIRYDATETIME_BINDING);
+            protocolMarshaller.marshall(certificate.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(certificate.getClientCertAuthSettings(), CLIENTCERTAUTHSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

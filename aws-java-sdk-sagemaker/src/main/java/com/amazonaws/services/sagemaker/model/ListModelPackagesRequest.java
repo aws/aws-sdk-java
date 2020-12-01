@@ -52,6 +52,41 @@ public class ListModelPackagesRequest extends com.amazonaws.AmazonWebServiceRequ
     private String nameContains;
     /**
      * <p>
+     * A filter that returns only the model packages with the specified approval status.
+     * </p>
+     */
+    private String modelApprovalStatus;
+    /**
+     * <p>
+     * A filter that returns only model versions that belong to the specified model group.
+     * </p>
+     */
+    private String modelPackageGroupName;
+    /**
+     * <p>
+     * A filter that returns onlyl the model packages of the specified type. This can be one of the following values.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>VERSIONED</code> - List only versioned models.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNVERSIONED</code> - List only unversioined models.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BOTH</code> - List both versioned and unversioned models.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String modelPackageType;
+    /**
+     * <p>
      * If the response to a previous <code>ListModelPackages</code> request was truncated, the response includes a
      * <code>NextToken</code>. To retrieve the next set of model packages, use the token in the next request.
      * </p>
@@ -233,6 +268,300 @@ public class ListModelPackagesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     public ListModelPackagesRequest withNameContains(String nameContains) {
         setNameContains(nameContains);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only the model packages with the specified approval status.
+     * </p>
+     * 
+     * @param modelApprovalStatus
+     *        A filter that returns only the model packages with the specified approval status.
+     * @see ModelApprovalStatus
+     */
+
+    public void setModelApprovalStatus(String modelApprovalStatus) {
+        this.modelApprovalStatus = modelApprovalStatus;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only the model packages with the specified approval status.
+     * </p>
+     * 
+     * @return A filter that returns only the model packages with the specified approval status.
+     * @see ModelApprovalStatus
+     */
+
+    public String getModelApprovalStatus() {
+        return this.modelApprovalStatus;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only the model packages with the specified approval status.
+     * </p>
+     * 
+     * @param modelApprovalStatus
+     *        A filter that returns only the model packages with the specified approval status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ModelApprovalStatus
+     */
+
+    public ListModelPackagesRequest withModelApprovalStatus(String modelApprovalStatus) {
+        setModelApprovalStatus(modelApprovalStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only the model packages with the specified approval status.
+     * </p>
+     * 
+     * @param modelApprovalStatus
+     *        A filter that returns only the model packages with the specified approval status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ModelApprovalStatus
+     */
+
+    public ListModelPackagesRequest withModelApprovalStatus(ModelApprovalStatus modelApprovalStatus) {
+        this.modelApprovalStatus = modelApprovalStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only model versions that belong to the specified model group.
+     * </p>
+     * 
+     * @param modelPackageGroupName
+     *        A filter that returns only model versions that belong to the specified model group.
+     */
+
+    public void setModelPackageGroupName(String modelPackageGroupName) {
+        this.modelPackageGroupName = modelPackageGroupName;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only model versions that belong to the specified model group.
+     * </p>
+     * 
+     * @return A filter that returns only model versions that belong to the specified model group.
+     */
+
+    public String getModelPackageGroupName() {
+        return this.modelPackageGroupName;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only model versions that belong to the specified model group.
+     * </p>
+     * 
+     * @param modelPackageGroupName
+     *        A filter that returns only model versions that belong to the specified model group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListModelPackagesRequest withModelPackageGroupName(String modelPackageGroupName) {
+        setModelPackageGroupName(modelPackageGroupName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A filter that returns onlyl the model packages of the specified type. This can be one of the following values.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>VERSIONED</code> - List only versioned models.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNVERSIONED</code> - List only unversioined models.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BOTH</code> - List both versioned and unversioned models.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param modelPackageType
+     *        A filter that returns onlyl the model packages of the specified type. This can be one of the following
+     *        values.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>VERSIONED</code> - List only versioned models.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UNVERSIONED</code> - List only unversioined models.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BOTH</code> - List both versioned and unversioned models.
+     *        </p>
+     *        </li>
+     * @see ModelPackageType
+     */
+
+    public void setModelPackageType(String modelPackageType) {
+        this.modelPackageType = modelPackageType;
+    }
+
+    /**
+     * <p>
+     * A filter that returns onlyl the model packages of the specified type. This can be one of the following values.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>VERSIONED</code> - List only versioned models.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNVERSIONED</code> - List only unversioined models.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BOTH</code> - List both versioned and unversioned models.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return A filter that returns onlyl the model packages of the specified type. This can be one of the following
+     *         values.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>VERSIONED</code> - List only versioned models.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UNVERSIONED</code> - List only unversioined models.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>BOTH</code> - List both versioned and unversioned models.
+     *         </p>
+     *         </li>
+     * @see ModelPackageType
+     */
+
+    public String getModelPackageType() {
+        return this.modelPackageType;
+    }
+
+    /**
+     * <p>
+     * A filter that returns onlyl the model packages of the specified type. This can be one of the following values.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>VERSIONED</code> - List only versioned models.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNVERSIONED</code> - List only unversioined models.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BOTH</code> - List both versioned and unversioned models.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param modelPackageType
+     *        A filter that returns onlyl the model packages of the specified type. This can be one of the following
+     *        values.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>VERSIONED</code> - List only versioned models.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UNVERSIONED</code> - List only unversioined models.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BOTH</code> - List both versioned and unversioned models.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ModelPackageType
+     */
+
+    public ListModelPackagesRequest withModelPackageType(String modelPackageType) {
+        setModelPackageType(modelPackageType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A filter that returns onlyl the model packages of the specified type. This can be one of the following values.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>VERSIONED</code> - List only versioned models.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNVERSIONED</code> - List only unversioined models.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BOTH</code> - List both versioned and unversioned models.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param modelPackageType
+     *        A filter that returns onlyl the model packages of the specified type. This can be one of the following
+     *        values.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>VERSIONED</code> - List only versioned models.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UNVERSIONED</code> - List only unversioined models.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BOTH</code> - List both versioned and unversioned models.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ModelPackageType
+     */
+
+    public ListModelPackagesRequest withModelPackageType(ModelPackageType modelPackageType) {
+        this.modelPackageType = modelPackageType.toString();
         return this;
     }
 
@@ -420,6 +749,12 @@ public class ListModelPackagesRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNameContains() != null)
             sb.append("NameContains: ").append(getNameContains()).append(",");
+        if (getModelApprovalStatus() != null)
+            sb.append("ModelApprovalStatus: ").append(getModelApprovalStatus()).append(",");
+        if (getModelPackageGroupName() != null)
+            sb.append("ModelPackageGroupName: ").append(getModelPackageGroupName()).append(",");
+        if (getModelPackageType() != null)
+            sb.append("ModelPackageType: ").append(getModelPackageType()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getSortBy() != null)
@@ -456,6 +791,18 @@ public class ListModelPackagesRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getNameContains() != null && other.getNameContains().equals(this.getNameContains()) == false)
             return false;
+        if (other.getModelApprovalStatus() == null ^ this.getModelApprovalStatus() == null)
+            return false;
+        if (other.getModelApprovalStatus() != null && other.getModelApprovalStatus().equals(this.getModelApprovalStatus()) == false)
+            return false;
+        if (other.getModelPackageGroupName() == null ^ this.getModelPackageGroupName() == null)
+            return false;
+        if (other.getModelPackageGroupName() != null && other.getModelPackageGroupName().equals(this.getModelPackageGroupName()) == false)
+            return false;
+        if (other.getModelPackageType() == null ^ this.getModelPackageType() == null)
+            return false;
+        if (other.getModelPackageType() != null && other.getModelPackageType().equals(this.getModelPackageType()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -480,6 +827,9 @@ public class ListModelPackagesRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getCreationTimeBefore() == null) ? 0 : getCreationTimeBefore().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNameContains() == null) ? 0 : getNameContains().hashCode());
+        hashCode = prime * hashCode + ((getModelApprovalStatus() == null) ? 0 : getModelApprovalStatus().hashCode());
+        hashCode = prime * hashCode + ((getModelPackageGroupName() == null) ? 0 : getModelPackageGroupName().hashCode());
+        hashCode = prime * hashCode + ((getModelPackageType() == null) ? 0 : getModelPackageType().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getSortBy() == null) ? 0 : getSortBy().hashCode());
         hashCode = prime * hashCode + ((getSortOrder() == null) ? 0 : getSortOrder().hashCode());

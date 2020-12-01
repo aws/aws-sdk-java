@@ -56,7 +56,7 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If the node group was deployed using a launch template with a custom AMI, then this is the AMI ID that was
      * specified in the launch template. For node groups that weren't deployed using a launch template, this is the
-     * version of the Amazon EKS-optimized AMI that the node group was deployed with.
+     * version of the Amazon EKS optimized AMI that the node group was deployed with.
      * </p>
      */
     private String releaseVersion;
@@ -78,6 +78,12 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String status;
+    /**
+     * <p>
+     * The capacity type of your managed node group.
+     * </p>
+     */
+    private String capacityType;
     /**
      * <p>
      * The scaling configuration details for the Auto Scaling group that is associated with your node group.
@@ -331,13 +337,13 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If the node group was deployed using a launch template with a custom AMI, then this is the AMI ID that was
      * specified in the launch template. For node groups that weren't deployed using a launch template, this is the
-     * version of the Amazon EKS-optimized AMI that the node group was deployed with.
+     * version of the Amazon EKS optimized AMI that the node group was deployed with.
      * </p>
      * 
      * @param releaseVersion
      *        If the node group was deployed using a launch template with a custom AMI, then this is the AMI ID that was
      *        specified in the launch template. For node groups that weren't deployed using a launch template, this is
-     *        the version of the Amazon EKS-optimized AMI that the node group was deployed with.
+     *        the version of the Amazon EKS optimized AMI that the node group was deployed with.
      */
 
     public void setReleaseVersion(String releaseVersion) {
@@ -348,12 +354,12 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If the node group was deployed using a launch template with a custom AMI, then this is the AMI ID that was
      * specified in the launch template. For node groups that weren't deployed using a launch template, this is the
-     * version of the Amazon EKS-optimized AMI that the node group was deployed with.
+     * version of the Amazon EKS optimized AMI that the node group was deployed with.
      * </p>
      * 
      * @return If the node group was deployed using a launch template with a custom AMI, then this is the AMI ID that
      *         was specified in the launch template. For node groups that weren't deployed using a launch template, this
-     *         is the version of the Amazon EKS-optimized AMI that the node group was deployed with.
+     *         is the version of the Amazon EKS optimized AMI that the node group was deployed with.
      */
 
     public String getReleaseVersion() {
@@ -364,13 +370,13 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If the node group was deployed using a launch template with a custom AMI, then this is the AMI ID that was
      * specified in the launch template. For node groups that weren't deployed using a launch template, this is the
-     * version of the Amazon EKS-optimized AMI that the node group was deployed with.
+     * version of the Amazon EKS optimized AMI that the node group was deployed with.
      * </p>
      * 
      * @param releaseVersion
      *        If the node group was deployed using a launch template with a custom AMI, then this is the AMI ID that was
      *        specified in the launch template. For node groups that weren't deployed using a launch template, this is
-     *        the version of the Amazon EKS-optimized AMI that the node group was deployed with.
+     *        the version of the Amazon EKS optimized AMI that the node group was deployed with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -515,6 +521,65 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     public Nodegroup withStatus(NodegroupStatus status) {
         this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The capacity type of your managed node group.
+     * </p>
+     * 
+     * @param capacityType
+     *        The capacity type of your managed node group.
+     * @see CapacityTypes
+     */
+
+    public void setCapacityType(String capacityType) {
+        this.capacityType = capacityType;
+    }
+
+    /**
+     * <p>
+     * The capacity type of your managed node group.
+     * </p>
+     * 
+     * @return The capacity type of your managed node group.
+     * @see CapacityTypes
+     */
+
+    public String getCapacityType() {
+        return this.capacityType;
+    }
+
+    /**
+     * <p>
+     * The capacity type of your managed node group.
+     * </p>
+     * 
+     * @param capacityType
+     *        The capacity type of your managed node group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CapacityTypes
+     */
+
+    public Nodegroup withCapacityType(String capacityType) {
+        setCapacityType(capacityType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The capacity type of your managed node group.
+     * </p>
+     * 
+     * @param capacityType
+     *        The capacity type of your managed node group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CapacityTypes
+     */
+
+    public Nodegroup withCapacityType(CapacityTypes capacityType) {
+        this.capacityType = capacityType.toString();
         return this;
     }
 
@@ -1267,6 +1332,8 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
             sb.append("ModifiedAt: ").append(getModifiedAt()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getCapacityType() != null)
+            sb.append("CapacityType: ").append(getCapacityType()).append(",");
         if (getScalingConfig() != null)
             sb.append("ScalingConfig: ").append(getScalingConfig()).append(",");
         if (getInstanceTypes() != null)
@@ -1337,6 +1404,10 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getCapacityType() == null ^ this.getCapacityType() == null)
+            return false;
+        if (other.getCapacityType() != null && other.getCapacityType().equals(this.getCapacityType()) == false)
+            return false;
         if (other.getScalingConfig() == null ^ this.getScalingConfig() == null)
             return false;
         if (other.getScalingConfig() != null && other.getScalingConfig().equals(this.getScalingConfig()) == false)
@@ -1401,6 +1472,7 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getModifiedAt() == null) ? 0 : getModifiedAt().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getCapacityType() == null) ? 0 : getCapacityType().hashCode());
         hashCode = prime * hashCode + ((getScalingConfig() == null) ? 0 : getScalingConfig().hashCode());
         hashCode = prime * hashCode + ((getInstanceTypes() == null) ? 0 : getInstanceTypes().hashCode());
         hashCode = prime * hashCode + ((getSubnets() == null) ? 0 : getSubnets().hashCode());

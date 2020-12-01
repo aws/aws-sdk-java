@@ -53,6 +53,18 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
      */
     private TrialComponent trialComponent;
 
+    private Endpoint endpoint;
+
+    private ModelPackage modelPackage;
+
+    private ModelPackageGroup modelPackageGroup;
+
+    private Pipeline pipeline;
+
+    private PipelineExecution pipelineExecution;
+
+    private FeatureGroup featureGroup;
+
     /**
      * <p>
      * The properties of a training job.
@@ -214,6 +226,162 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param endpoint
+     */
+
+    public void setEndpoint(Endpoint endpoint) {
+        this.endpoint = endpoint;
+    }
+
+    /**
+     * @return
+     */
+
+    public Endpoint getEndpoint() {
+        return this.endpoint;
+    }
+
+    /**
+     * @param endpoint
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchRecord withEndpoint(Endpoint endpoint) {
+        setEndpoint(endpoint);
+        return this;
+    }
+
+    /**
+     * @param modelPackage
+     */
+
+    public void setModelPackage(ModelPackage modelPackage) {
+        this.modelPackage = modelPackage;
+    }
+
+    /**
+     * @return
+     */
+
+    public ModelPackage getModelPackage() {
+        return this.modelPackage;
+    }
+
+    /**
+     * @param modelPackage
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchRecord withModelPackage(ModelPackage modelPackage) {
+        setModelPackage(modelPackage);
+        return this;
+    }
+
+    /**
+     * @param modelPackageGroup
+     */
+
+    public void setModelPackageGroup(ModelPackageGroup modelPackageGroup) {
+        this.modelPackageGroup = modelPackageGroup;
+    }
+
+    /**
+     * @return
+     */
+
+    public ModelPackageGroup getModelPackageGroup() {
+        return this.modelPackageGroup;
+    }
+
+    /**
+     * @param modelPackageGroup
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchRecord withModelPackageGroup(ModelPackageGroup modelPackageGroup) {
+        setModelPackageGroup(modelPackageGroup);
+        return this;
+    }
+
+    /**
+     * @param pipeline
+     */
+
+    public void setPipeline(Pipeline pipeline) {
+        this.pipeline = pipeline;
+    }
+
+    /**
+     * @return
+     */
+
+    public Pipeline getPipeline() {
+        return this.pipeline;
+    }
+
+    /**
+     * @param pipeline
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchRecord withPipeline(Pipeline pipeline) {
+        setPipeline(pipeline);
+        return this;
+    }
+
+    /**
+     * @param pipelineExecution
+     */
+
+    public void setPipelineExecution(PipelineExecution pipelineExecution) {
+        this.pipelineExecution = pipelineExecution;
+    }
+
+    /**
+     * @return
+     */
+
+    public PipelineExecution getPipelineExecution() {
+        return this.pipelineExecution;
+    }
+
+    /**
+     * @param pipelineExecution
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchRecord withPipelineExecution(PipelineExecution pipelineExecution) {
+        setPipelineExecution(pipelineExecution);
+        return this;
+    }
+
+    /**
+     * @param featureGroup
+     */
+
+    public void setFeatureGroup(FeatureGroup featureGroup) {
+        this.featureGroup = featureGroup;
+    }
+
+    /**
+     * @return
+     */
+
+    public FeatureGroup getFeatureGroup() {
+        return this.featureGroup;
+    }
+
+    /**
+     * @param featureGroup
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchRecord withFeatureGroup(FeatureGroup featureGroup) {
+        setFeatureGroup(featureGroup);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -232,7 +400,19 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
         if (getTrial() != null)
             sb.append("Trial: ").append(getTrial()).append(",");
         if (getTrialComponent() != null)
-            sb.append("TrialComponent: ").append(getTrialComponent());
+            sb.append("TrialComponent: ").append(getTrialComponent()).append(",");
+        if (getEndpoint() != null)
+            sb.append("Endpoint: ").append(getEndpoint()).append(",");
+        if (getModelPackage() != null)
+            sb.append("ModelPackage: ").append(getModelPackage()).append(",");
+        if (getModelPackageGroup() != null)
+            sb.append("ModelPackageGroup: ").append(getModelPackageGroup()).append(",");
+        if (getPipeline() != null)
+            sb.append("Pipeline: ").append(getPipeline()).append(",");
+        if (getPipelineExecution() != null)
+            sb.append("PipelineExecution: ").append(getPipelineExecution()).append(",");
+        if (getFeatureGroup() != null)
+            sb.append("FeatureGroup: ").append(getFeatureGroup());
         sb.append("}");
         return sb.toString();
     }
@@ -263,6 +443,30 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTrialComponent() != null && other.getTrialComponent().equals(this.getTrialComponent()) == false)
             return false;
+        if (other.getEndpoint() == null ^ this.getEndpoint() == null)
+            return false;
+        if (other.getEndpoint() != null && other.getEndpoint().equals(this.getEndpoint()) == false)
+            return false;
+        if (other.getModelPackage() == null ^ this.getModelPackage() == null)
+            return false;
+        if (other.getModelPackage() != null && other.getModelPackage().equals(this.getModelPackage()) == false)
+            return false;
+        if (other.getModelPackageGroup() == null ^ this.getModelPackageGroup() == null)
+            return false;
+        if (other.getModelPackageGroup() != null && other.getModelPackageGroup().equals(this.getModelPackageGroup()) == false)
+            return false;
+        if (other.getPipeline() == null ^ this.getPipeline() == null)
+            return false;
+        if (other.getPipeline() != null && other.getPipeline().equals(this.getPipeline()) == false)
+            return false;
+        if (other.getPipelineExecution() == null ^ this.getPipelineExecution() == null)
+            return false;
+        if (other.getPipelineExecution() != null && other.getPipelineExecution().equals(this.getPipelineExecution()) == false)
+            return false;
+        if (other.getFeatureGroup() == null ^ this.getFeatureGroup() == null)
+            return false;
+        if (other.getFeatureGroup() != null && other.getFeatureGroup().equals(this.getFeatureGroup()) == false)
+            return false;
         return true;
     }
 
@@ -275,6 +479,12 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getExperiment() == null) ? 0 : getExperiment().hashCode());
         hashCode = prime * hashCode + ((getTrial() == null) ? 0 : getTrial().hashCode());
         hashCode = prime * hashCode + ((getTrialComponent() == null) ? 0 : getTrialComponent().hashCode());
+        hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getModelPackage() == null) ? 0 : getModelPackage().hashCode());
+        hashCode = prime * hashCode + ((getModelPackageGroup() == null) ? 0 : getModelPackageGroup().hashCode());
+        hashCode = prime * hashCode + ((getPipeline() == null) ? 0 : getPipeline().hashCode());
+        hashCode = prime * hashCode + ((getPipelineExecution() == null) ? 0 : getPipelineExecution().hashCode());
+        hashCode = prime * hashCode + ((getFeatureGroup() == null) ? 0 : getFeatureGroup().hashCode());
         return hashCode;
     }
 

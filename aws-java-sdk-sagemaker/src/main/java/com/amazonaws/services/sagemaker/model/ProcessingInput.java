@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The inputs for a processing job.
+ * The inputs for a processing job. The processing input must specify exactly one of either <code>S3Input</code> or
+ * <code>DatasetDefinition</code> types.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProcessingInput" target="_top">AWS API
@@ -36,10 +37,23 @@ public class ProcessingInput implements Serializable, Cloneable, StructuredPojo 
     private String inputName;
     /**
      * <p>
-     * The S3 inputs for the processing job.
+     * When <code>True</code>, input operations such as data download are managed natively by the processing job
+     * application. When <code>False</code> (default), input operations are managed by Amazon SageMaker.
+     * </p>
+     */
+    private Boolean appManaged;
+    /**
+     * <p>
+     * Configuration for processing job inputs in Amazon S3.
      * </p>
      */
     private ProcessingS3Input s3Input;
+    /**
+     * <p>
+     * Configuration for a Dataset Definition input.
+     * </p>
+     */
+    private DatasetDefinition datasetDefinition;
 
     /**
      * <p>
@@ -83,11 +97,71 @@ public class ProcessingInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The S3 inputs for the processing job.
+     * When <code>True</code>, input operations such as data download are managed natively by the processing job
+     * application. When <code>False</code> (default), input operations are managed by Amazon SageMaker.
+     * </p>
+     * 
+     * @param appManaged
+     *        When <code>True</code>, input operations such as data download are managed natively by the processing job
+     *        application. When <code>False</code> (default), input operations are managed by Amazon SageMaker.
+     */
+
+    public void setAppManaged(Boolean appManaged) {
+        this.appManaged = appManaged;
+    }
+
+    /**
+     * <p>
+     * When <code>True</code>, input operations such as data download are managed natively by the processing job
+     * application. When <code>False</code> (default), input operations are managed by Amazon SageMaker.
+     * </p>
+     * 
+     * @return When <code>True</code>, input operations such as data download are managed natively by the processing job
+     *         application. When <code>False</code> (default), input operations are managed by Amazon SageMaker.
+     */
+
+    public Boolean getAppManaged() {
+        return this.appManaged;
+    }
+
+    /**
+     * <p>
+     * When <code>True</code>, input operations such as data download are managed natively by the processing job
+     * application. When <code>False</code> (default), input operations are managed by Amazon SageMaker.
+     * </p>
+     * 
+     * @param appManaged
+     *        When <code>True</code>, input operations such as data download are managed natively by the processing job
+     *        application. When <code>False</code> (default), input operations are managed by Amazon SageMaker.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProcessingInput withAppManaged(Boolean appManaged) {
+        setAppManaged(appManaged);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When <code>True</code>, input operations such as data download are managed natively by the processing job
+     * application. When <code>False</code> (default), input operations are managed by Amazon SageMaker.
+     * </p>
+     * 
+     * @return When <code>True</code>, input operations such as data download are managed natively by the processing job
+     *         application. When <code>False</code> (default), input operations are managed by Amazon SageMaker.
+     */
+
+    public Boolean isAppManaged() {
+        return this.appManaged;
+    }
+
+    /**
+     * <p>
+     * Configuration for processing job inputs in Amazon S3.
      * </p>
      * 
      * @param s3Input
-     *        The S3 inputs for the processing job.
+     *        Configuration for processing job inputs in Amazon S3.
      */
 
     public void setS3Input(ProcessingS3Input s3Input) {
@@ -96,10 +170,10 @@ public class ProcessingInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The S3 inputs for the processing job.
+     * Configuration for processing job inputs in Amazon S3.
      * </p>
      * 
-     * @return The S3 inputs for the processing job.
+     * @return Configuration for processing job inputs in Amazon S3.
      */
 
     public ProcessingS3Input getS3Input() {
@@ -108,16 +182,56 @@ public class ProcessingInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The S3 inputs for the processing job.
+     * Configuration for processing job inputs in Amazon S3.
      * </p>
      * 
      * @param s3Input
-     *        The S3 inputs for the processing job.
+     *        Configuration for processing job inputs in Amazon S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProcessingInput withS3Input(ProcessingS3Input s3Input) {
         setS3Input(s3Input);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configuration for a Dataset Definition input.
+     * </p>
+     * 
+     * @param datasetDefinition
+     *        Configuration for a Dataset Definition input.
+     */
+
+    public void setDatasetDefinition(DatasetDefinition datasetDefinition) {
+        this.datasetDefinition = datasetDefinition;
+    }
+
+    /**
+     * <p>
+     * Configuration for a Dataset Definition input.
+     * </p>
+     * 
+     * @return Configuration for a Dataset Definition input.
+     */
+
+    public DatasetDefinition getDatasetDefinition() {
+        return this.datasetDefinition;
+    }
+
+    /**
+     * <p>
+     * Configuration for a Dataset Definition input.
+     * </p>
+     * 
+     * @param datasetDefinition
+     *        Configuration for a Dataset Definition input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProcessingInput withDatasetDefinition(DatasetDefinition datasetDefinition) {
+        setDatasetDefinition(datasetDefinition);
         return this;
     }
 
@@ -135,8 +249,12 @@ public class ProcessingInput implements Serializable, Cloneable, StructuredPojo 
         sb.append("{");
         if (getInputName() != null)
             sb.append("InputName: ").append(getInputName()).append(",");
+        if (getAppManaged() != null)
+            sb.append("AppManaged: ").append(getAppManaged()).append(",");
         if (getS3Input() != null)
-            sb.append("S3Input: ").append(getS3Input());
+            sb.append("S3Input: ").append(getS3Input()).append(",");
+        if (getDatasetDefinition() != null)
+            sb.append("DatasetDefinition: ").append(getDatasetDefinition());
         sb.append("}");
         return sb.toString();
     }
@@ -155,9 +273,17 @@ public class ProcessingInput implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getInputName() != null && other.getInputName().equals(this.getInputName()) == false)
             return false;
+        if (other.getAppManaged() == null ^ this.getAppManaged() == null)
+            return false;
+        if (other.getAppManaged() != null && other.getAppManaged().equals(this.getAppManaged()) == false)
+            return false;
         if (other.getS3Input() == null ^ this.getS3Input() == null)
             return false;
         if (other.getS3Input() != null && other.getS3Input().equals(this.getS3Input()) == false)
+            return false;
+        if (other.getDatasetDefinition() == null ^ this.getDatasetDefinition() == null)
+            return false;
+        if (other.getDatasetDefinition() != null && other.getDatasetDefinition().equals(this.getDatasetDefinition()) == false)
             return false;
         return true;
     }
@@ -168,7 +294,9 @@ public class ProcessingInput implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getInputName() == null) ? 0 : getInputName().hashCode());
+        hashCode = prime * hashCode + ((getAppManaged() == null) ? 0 : getAppManaged().hashCode());
         hashCode = prime * hashCode + ((getS3Input() == null) ? 0 : getS3Input().hashCode());
+        hashCode = prime * hashCode + ((getDatasetDefinition() == null) ? 0 : getDatasetDefinition().hashCode());
         return hashCode;
     }
 

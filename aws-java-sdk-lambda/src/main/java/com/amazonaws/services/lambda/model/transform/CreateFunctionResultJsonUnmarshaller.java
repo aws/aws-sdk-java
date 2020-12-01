@@ -160,6 +160,14 @@ public class CreateFunctionResultJsonUnmarshaller implements Unmarshaller<Create
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("PackageType", targetDepth)) {
+                    context.nextToken();
+                    createFunctionResult.setPackageType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ImageConfigResponse", targetDepth)) {
+                    context.nextToken();
+                    createFunctionResult.setImageConfigResponse(ImageConfigResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("SigningProfileVersionArn", targetDepth)) {
                     context.nextToken();
                     createFunctionResult.setSigningProfileVersionArn(context.getUnmarshaller(String.class).unmarshall(context));

@@ -56,6 +56,14 @@ public class ProcessingOutputJsonUnmarshaller implements Unmarshaller<Processing
                     context.nextToken();
                     processingOutput.setS3Output(ProcessingS3OutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("FeatureStoreOutput", targetDepth)) {
+                    context.nextToken();
+                    processingOutput.setFeatureStoreOutput(ProcessingFeatureStoreOutputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AppManaged", targetDepth)) {
+                    context.nextToken();
+                    processingOutput.setAppManaged(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

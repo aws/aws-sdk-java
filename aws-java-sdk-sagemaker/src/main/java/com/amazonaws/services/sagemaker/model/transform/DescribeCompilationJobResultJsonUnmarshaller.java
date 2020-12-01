@@ -88,6 +88,10 @@ public class DescribeCompilationJobResultJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     describeCompilationJobResult.setModelArtifacts(ModelArtifactsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ModelDigests", targetDepth)) {
+                    context.nextToken();
+                    describeCompilationJobResult.setModelDigests(ModelDigestsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("RoleArn", targetDepth)) {
                     context.nextToken();
                     describeCompilationJobResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));

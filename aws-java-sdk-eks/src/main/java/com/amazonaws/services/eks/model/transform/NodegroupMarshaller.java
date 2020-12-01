@@ -45,6 +45,8 @@ public class NodegroupMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("modifiedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
+    private static final MarshallingInfo<String> CAPACITYTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("capacityType").build();
     private static final MarshallingInfo<StructuredPojo> SCALINGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scalingConfig").build();
     private static final MarshallingInfo<List> INSTANCETYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -94,6 +96,7 @@ public class NodegroupMarshaller {
             protocolMarshaller.marshall(nodegroup.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(nodegroup.getModifiedAt(), MODIFIEDAT_BINDING);
             protocolMarshaller.marshall(nodegroup.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(nodegroup.getCapacityType(), CAPACITYTYPE_BINDING);
             protocolMarshaller.marshall(nodegroup.getScalingConfig(), SCALINGCONFIG_BINDING);
             protocolMarshaller.marshall(nodegroup.getInstanceTypes(), INSTANCETYPES_BINDING);
             protocolMarshaller.marshall(nodegroup.getSubnets(), SUBNETS_BINDING);

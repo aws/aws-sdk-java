@@ -151,6 +151,12 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<FileSystemConfig> fileSystemConfigs;
+    /**
+     * <p>
+     * Configuration values that override the container image Dockerfile.
+     * </p>
+     */
+    private ImageConfig imageConfig;
 
     /**
      * <p>
@@ -1084,6 +1090,46 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * Configuration values that override the container image Dockerfile.
+     * </p>
+     * 
+     * @param imageConfig
+     *        Configuration values that override the container image Dockerfile.
+     */
+
+    public void setImageConfig(ImageConfig imageConfig) {
+        this.imageConfig = imageConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration values that override the container image Dockerfile.
+     * </p>
+     * 
+     * @return Configuration values that override the container image Dockerfile.
+     */
+
+    public ImageConfig getImageConfig() {
+        return this.imageConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration values that override the container image Dockerfile.
+     * </p>
+     * 
+     * @param imageConfig
+     *        Configuration values that override the container image Dockerfile.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFunctionConfigurationRequest withImageConfig(ImageConfig imageConfig) {
+        setImageConfig(imageConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1124,7 +1170,9 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
         if (getLayers() != null)
             sb.append("Layers: ").append(getLayers()).append(",");
         if (getFileSystemConfigs() != null)
-            sb.append("FileSystemConfigs: ").append(getFileSystemConfigs());
+            sb.append("FileSystemConfigs: ").append(getFileSystemConfigs()).append(",");
+        if (getImageConfig() != null)
+            sb.append("ImageConfig: ").append(getImageConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1199,6 +1247,10 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getFileSystemConfigs() != null && other.getFileSystemConfigs().equals(this.getFileSystemConfigs()) == false)
             return false;
+        if (other.getImageConfig() == null ^ this.getImageConfig() == null)
+            return false;
+        if (other.getImageConfig() != null && other.getImageConfig().equals(this.getImageConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1222,6 +1274,7 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getRevisionId() == null) ? 0 : getRevisionId().hashCode());
         hashCode = prime * hashCode + ((getLayers() == null) ? 0 : getLayers().hashCode());
         hashCode = prime * hashCode + ((getFileSystemConfigs() == null) ? 0 : getFileSystemConfigs().hashCode());
+        hashCode = prime * hashCode + ((getImageConfig() == null) ? 0 : getImageConfig().hashCode());
         return hashCode;
     }
 

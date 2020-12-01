@@ -23,7 +23,13 @@ public enum ResourceType {
     TrainingJob("TrainingJob"),
     Experiment("Experiment"),
     ExperimentTrial("ExperimentTrial"),
-    ExperimentTrialComponent("ExperimentTrialComponent");
+    ExperimentTrialComponent("ExperimentTrialComponent"),
+    Endpoint("Endpoint"),
+    ModelPackage("ModelPackage"),
+    ModelPackageGroup("ModelPackageGroup"),
+    Pipeline("Pipeline"),
+    PipelineExecution("PipelineExecution"),
+    FeatureGroup("FeatureGroup");
 
     private String value;
 

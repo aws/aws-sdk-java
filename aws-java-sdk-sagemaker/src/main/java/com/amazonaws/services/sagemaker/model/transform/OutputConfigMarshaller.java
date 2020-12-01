@@ -35,6 +35,8 @@ public class OutputConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetPlatform").build();
     private static final MarshallingInfo<String> COMPILEROPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompilerOptions").build();
+    private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KmsKeyId").build();
 
     private static final OutputConfigMarshaller instance = new OutputConfigMarshaller();
 
@@ -56,6 +58,7 @@ public class OutputConfigMarshaller {
             protocolMarshaller.marshall(outputConfig.getTargetDevice(), TARGETDEVICE_BINDING);
             protocolMarshaller.marshall(outputConfig.getTargetPlatform(), TARGETPLATFORM_BINDING);
             protocolMarshaller.marshall(outputConfig.getCompilerOptions(), COMPILEROPTIONS_BINDING);
+            protocolMarshaller.marshall(outputConfig.getKmsKeyId(), KMSKEYID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

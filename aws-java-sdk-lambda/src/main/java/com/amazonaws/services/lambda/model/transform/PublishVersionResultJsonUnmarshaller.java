@@ -160,6 +160,14 @@ public class PublishVersionResultJsonUnmarshaller implements Unmarshaller<Publis
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("PackageType", targetDepth)) {
+                    context.nextToken();
+                    publishVersionResult.setPackageType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ImageConfigResponse", targetDepth)) {
+                    context.nextToken();
+                    publishVersionResult.setImageConfigResponse(ImageConfigResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("SigningProfileVersionArn", targetDepth)) {
                     context.nextToken();
                     publishVersionResult.setSigningProfileVersionArn(context.getUnmarshaller(String.class).unmarshall(context));

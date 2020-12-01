@@ -129,6 +129,11 @@ public class CreateLaunchTemplateRequestMarshaller implements Marshaller<Request
                             request.addParameter("LaunchTemplateData.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.VolumeType",
                                     StringUtils.fromString(ebs.getVolumeType()));
                         }
+
+                        if (ebs.getThroughput() != null) {
+                            request.addParameter("LaunchTemplateData.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Throughput",
+                                    StringUtils.fromInteger(ebs.getThroughput()));
+                        }
                     }
 
                     if (requestLaunchTemplateDataBlockDeviceMappingsListValue.getNoDevice() != null) {

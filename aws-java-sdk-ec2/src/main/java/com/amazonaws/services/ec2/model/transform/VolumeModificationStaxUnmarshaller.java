@@ -73,6 +73,11 @@ public class VolumeModificationStaxUnmarshaller implements Unmarshaller<VolumeMo
                     continue;
                 }
 
+                if (context.testExpression("targetThroughput", targetDepth)) {
+                    volumeModification.setTargetThroughput(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("originalSize", targetDepth)) {
                     volumeModification.setOriginalSize(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -85,6 +90,11 @@ public class VolumeModificationStaxUnmarshaller implements Unmarshaller<VolumeMo
 
                 if (context.testExpression("originalVolumeType", targetDepth)) {
                     volumeModification.setOriginalVolumeType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("originalThroughput", targetDepth)) {
+                    volumeModification.setOriginalThroughput(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

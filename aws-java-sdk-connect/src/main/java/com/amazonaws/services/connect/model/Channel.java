@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum Channel {
 
     VOICE("VOICE"),
-    CHAT("CHAT");
+    CHAT("CHAT"),
+    TASK("TASK");
 
     private String value;
 

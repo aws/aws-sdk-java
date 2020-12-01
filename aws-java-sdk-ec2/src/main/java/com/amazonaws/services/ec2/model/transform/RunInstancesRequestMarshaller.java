@@ -89,6 +89,11 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
                         request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.KmsKeyId", StringUtils.fromString(ebs.getKmsKeyId()));
                     }
 
+                    if (ebs.getThroughput() != null) {
+                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Throughput",
+                                StringUtils.fromInteger(ebs.getThroughput()));
+                    }
+
                     if (ebs.getEncrypted() != null) {
                         request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Encrypted",
                                 StringUtils.fromBoolean(ebs.getEncrypted()));

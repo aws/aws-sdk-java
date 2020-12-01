@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * You do not have sufficient access to perform this action. Check that the workbook is owned by you and your IAM policy
- * allows access to the screen/automation in the request.
+ * allows access to the resource in the request.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

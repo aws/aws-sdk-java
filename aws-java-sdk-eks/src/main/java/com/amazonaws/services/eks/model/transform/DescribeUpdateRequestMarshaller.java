@@ -33,6 +33,8 @@ public class DescribeUpdateRequestMarshaller {
             .marshallLocationName("updateId").build();
     private static final MarshallingInfo<String> NODEGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nodegroupName").build();
+    private static final MarshallingInfo<String> ADDONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("addonName").build();
 
     private static final DescribeUpdateRequestMarshaller instance = new DescribeUpdateRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class DescribeUpdateRequestMarshaller {
             protocolMarshaller.marshall(describeUpdateRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(describeUpdateRequest.getUpdateId(), UPDATEID_BINDING);
             protocolMarshaller.marshall(describeUpdateRequest.getNodegroupName(), NODEGROUPNAME_BINDING);
+            protocolMarshaller.marshall(describeUpdateRequest.getAddonName(), ADDONNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

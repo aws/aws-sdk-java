@@ -81,6 +81,12 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
     private String s3ObjectVersion;
     /**
      * <p>
+     * URI of a container image in the Amazon ECR registry.
+     * </p>
+     */
+    private String imageUri;
+    /**
+     * <p>
      * Set to true to publish a new version of the function after updating the code. This has the same effect as calling
      * <a>PublishVersion</a> separately.
      * </p>
@@ -474,6 +480,46 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
+     * URI of a container image in the Amazon ECR registry.
+     * </p>
+     * 
+     * @param imageUri
+     *        URI of a container image in the Amazon ECR registry.
+     */
+
+    public void setImageUri(String imageUri) {
+        this.imageUri = imageUri;
+    }
+
+    /**
+     * <p>
+     * URI of a container image in the Amazon ECR registry.
+     * </p>
+     * 
+     * @return URI of a container image in the Amazon ECR registry.
+     */
+
+    public String getImageUri() {
+        return this.imageUri;
+    }
+
+    /**
+     * <p>
+     * URI of a container image in the Amazon ECR registry.
+     * </p>
+     * 
+     * @param imageUri
+     *        URI of a container image in the Amazon ECR registry.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFunctionCodeRequest withImageUri(String imageUri) {
+        setImageUri(imageUri);
+        return this;
+    }
+
+    /**
+     * <p>
      * Set to true to publish a new version of the function after updating the code. This has the same effect as calling
      * <a>PublishVersion</a> separately.
      * </p>
@@ -654,6 +700,8 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
             sb.append("S3Key: ").append(getS3Key()).append(",");
         if (getS3ObjectVersion() != null)
             sb.append("S3ObjectVersion: ").append(getS3ObjectVersion()).append(",");
+        if (getImageUri() != null)
+            sb.append("ImageUri: ").append(getImageUri()).append(",");
         if (getPublish() != null)
             sb.append("Publish: ").append(getPublish()).append(",");
         if (getDryRun() != null)
@@ -694,6 +742,10 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getS3ObjectVersion() != null && other.getS3ObjectVersion().equals(this.getS3ObjectVersion()) == false)
             return false;
+        if (other.getImageUri() == null ^ this.getImageUri() == null)
+            return false;
+        if (other.getImageUri() != null && other.getImageUri().equals(this.getImageUri()) == false)
+            return false;
         if (other.getPublish() == null ^ this.getPublish() == null)
             return false;
         if (other.getPublish() != null && other.getPublish().equals(this.getPublish()) == false)
@@ -719,6 +771,7 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getS3Bucket() == null) ? 0 : getS3Bucket().hashCode());
         hashCode = prime * hashCode + ((getS3Key() == null) ? 0 : getS3Key().hashCode());
         hashCode = prime * hashCode + ((getS3ObjectVersion() == null) ? 0 : getS3ObjectVersion().hashCode());
+        hashCode = prime * hashCode + ((getImageUri() == null) ? 0 : getImageUri().hashCode());
         hashCode = prime * hashCode + ((getPublish() == null) ? 0 : getPublish().hashCode());
         hashCode = prime * hashCode + ((getDryRun() == null) ? 0 : getDryRun().hashCode());
         hashCode = prime * hashCode + ((getRevisionId() == null) ? 0 : getRevisionId().hashCode());

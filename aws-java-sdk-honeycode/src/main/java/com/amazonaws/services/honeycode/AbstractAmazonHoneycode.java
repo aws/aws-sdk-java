@@ -28,12 +28,62 @@ public class AbstractAmazonHoneycode implements AmazonHoneycode {
     }
 
     @Override
+    public BatchCreateTableRowsResult batchCreateTableRows(BatchCreateTableRowsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchDeleteTableRowsResult batchDeleteTableRows(BatchDeleteTableRowsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchUpdateTableRowsResult batchUpdateTableRows(BatchUpdateTableRowsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchUpsertTableRowsResult batchUpsertTableRows(BatchUpsertTableRowsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeTableDataImportJobResult describeTableDataImportJob(DescribeTableDataImportJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetScreenDataResult getScreenData(GetScreenDataRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public InvokeScreenAutomationResult invokeScreenAutomation(InvokeScreenAutomationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTableColumnsResult listTableColumns(ListTableColumnsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTableRowsResult listTableRows(ListTableRowsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTablesResult listTables(ListTablesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public QueryTableRowsResult queryTableRows(QueryTableRowsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartTableDataImportJobResult startTableDataImportJob(StartTableDataImportJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

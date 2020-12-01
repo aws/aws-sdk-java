@@ -72,6 +72,14 @@ public class CertificateJsonUnmarshaller implements Unmarshaller<Certificate, Js
                     context.nextToken();
                     certificate.setExpiryDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("Type", targetDepth)) {
+                    context.nextToken();
+                    certificate.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ClientCertAuthSettings", targetDepth)) {
+                    context.nextToken();
+                    certificate.setClientCertAuthSettings(ClientCertAuthSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

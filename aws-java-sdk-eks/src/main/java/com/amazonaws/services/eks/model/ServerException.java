@@ -36,6 +36,8 @@ public class ServerException extends com.amazonaws.services.eks.model.AmazonEKSE
      */
     private String nodegroupName;
 
+    private String addonName;
+
     /**
      * Constructs a new ServerException with the specified error message.
      *
@@ -127,6 +129,34 @@ public class ServerException extends com.amazonaws.services.eks.model.AmazonEKSE
 
     public ServerException withNodegroupName(String nodegroupName) {
         setNodegroupName(nodegroupName);
+        return this;
+    }
+
+    /**
+     * @param addonName
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("addonName")
+    public void setAddonName(String addonName) {
+        this.addonName = addonName;
+    }
+
+    /**
+     * @return
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("addonName")
+    public String getAddonName() {
+        return this.addonName;
+    }
+
+    /**
+     * @param addonName
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServerException withAddonName(String addonName) {
+        setAddonName(addonName);
         return this;
     }
 

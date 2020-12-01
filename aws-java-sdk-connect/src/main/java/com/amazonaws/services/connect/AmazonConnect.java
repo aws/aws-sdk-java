@@ -260,6 +260,9 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Initiates an Amazon Connect instance with all the supported channels enabled. It does not attach any storage
      * (such as Amazon S3, or Kinesis) or allow for any configurations on features such as Contact Lens for Amazon
      * Connect.
@@ -282,6 +285,32 @@ public interface AmazonConnect {
      *      Documentation</a>
      */
     CreateInstanceResult createInstance(CreateInstanceRequest createInstanceRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Create an AppIntegration association with anAmazon Connect instance.
+     * </p>
+     * 
+     * @param createIntegrationAssociationRequest
+     * @return Result of the CreateIntegrationAssociation operation returned by the service.
+     * @throws DuplicateResourceException
+     *         A resource with the specified name already exists.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.CreateIntegrationAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateIntegrationAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateIntegrationAssociationResult createIntegrationAssociation(CreateIntegrationAssociationRequest createIntegrationAssociationRequest);
 
     /**
      * <p>
@@ -309,6 +338,32 @@ public interface AmazonConnect {
      *      API Documentation</a>
      */
     CreateRoutingProfileResult createRoutingProfile(CreateRoutingProfileRequest createRoutingProfileRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Creates a use case for an AppIntegration association.
+     * </p>
+     * 
+     * @param createUseCaseRequest
+     * @return Result of the CreateUseCase operation returned by the service.
+     * @throws DuplicateResourceException
+     *         A resource with the specified name already exists.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.CreateUseCase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUseCase" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateUseCaseResult createUseCase(CreateUseCaseRequest createUseCaseRequest);
 
     /**
      * <p>
@@ -371,6 +426,9 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Deletes the Amazon Connect instance.
      * </p>
      * 
@@ -387,6 +445,55 @@ public interface AmazonConnect {
      *      Documentation</a>
      */
     DeleteInstanceResult deleteInstance(DeleteInstanceRequest deleteInstanceRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Deletes an AppIntegration association from an Amazon Connect instance. The association must not have any use
+     * cases associated with it.
+     * </p>
+     * 
+     * @param deleteIntegrationAssociationRequest
+     * @return Result of the DeleteIntegrationAssociation operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.DeleteIntegrationAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteIntegrationAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteIntegrationAssociationResult deleteIntegrationAssociation(DeleteIntegrationAssociationRequest deleteIntegrationAssociationRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Deletes a use case from an AppIntegration association.
+     * </p>
+     * 
+     * @param deleteUseCaseRequest
+     * @return Result of the DeleteUseCase operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.DeleteUseCase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUseCase" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteUseCaseResult deleteUseCase(DeleteUseCaseRequest deleteUseCaseRequest);
 
     /**
      * <p>
@@ -957,6 +1064,9 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Returns a paginated list of all attribute types for the given instance.
      * </p>
      * 
@@ -979,6 +1089,9 @@ public interface AmazonConnect {
     ListInstanceAttributesResult listInstanceAttributes(ListInstanceAttributesRequest listInstanceAttributesRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Returns a paginated list of storage configs for the identified instance and resource type.
      * </p>
@@ -1003,6 +1116,9 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Return a list of instances which are in active state, creation-in-progress state, and failed state. Instances
      * that aren't successfully created (they are in a failed state) are returned only for 24 hours after the
      * CreateInstance API was invoked.
@@ -1019,6 +1135,30 @@ public interface AmazonConnect {
      *      Documentation</a>
      */
     ListInstancesResult listInstances(ListInstancesRequest listInstancesRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Provides summary information about the AppIntegration associations for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param listIntegrationAssociationsRequest
+     * @return Result of the ListIntegrationAssociations operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.ListIntegrationAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListIntegrationAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListIntegrationAssociationsResult listIntegrationAssociations(ListIntegrationAssociationsRequest listIntegrationAssociationsRequest);
 
     /**
      * <p>
@@ -1279,6 +1419,32 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * List the use cases.
+     * </p>
+     * 
+     * @param listUseCasesRequest
+     *        Provides summary information about the use cases for the specified Amazon Connect AppIntegration
+     *        association.
+     * @return Result of the ListUseCases operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.ListUseCases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUseCases" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListUseCasesResult listUseCases(ListUseCasesRequest listUseCasesRequest);
+
+    /**
+     * <p>
      * Provides summary information about the hierarchy groups for the specified Amazon Connect instance.
      * </p>
      * <p>
@@ -1481,6 +1647,31 @@ public interface AmazonConnect {
      *      target="_top">AWS API Documentation</a>
      */
     StartOutboundVoiceContactResult startOutboundVoiceContact(StartOutboundVoiceContactRequest startOutboundVoiceContactRequest);
+
+    /**
+     * <p>
+     * Initiates a contact flow to start a new task.
+     * </p>
+     * 
+     * @param startTaskContactRequest
+     * @return Result of the StartTaskContact operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.StartTaskContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartTaskContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartTaskContactResult startTaskContact(StartTaskContactRequest startTaskContactRequest);
 
     /**
      * <p>
@@ -1710,6 +1901,9 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Updates the value for the specified attribute type.
      * </p>
      * 
@@ -1732,6 +1926,9 @@ public interface AmazonConnect {
     UpdateInstanceAttributeResult updateInstanceAttribute(UpdateInstanceAttributeRequest updateInstanceAttributeRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Updates an existing configuration for a resource type. This API is idempotent.
      * </p>

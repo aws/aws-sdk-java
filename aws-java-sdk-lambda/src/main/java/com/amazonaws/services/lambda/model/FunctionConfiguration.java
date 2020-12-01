@@ -197,6 +197,19 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     private com.amazonaws.internal.SdkInternalList<FileSystemConfig> fileSystemConfigs;
     /**
      * <p>
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
+     * archive.
+     * </p>
+     */
+    private String packageType;
+    /**
+     * <p>
+     * The function's image configuration values.
+     * </p>
+     */
+    private ImageConfigResponse imageConfigResponse;
+    /**
+     * <p>
      * The ARN of the signing profile version.
      * </p>
      */
@@ -1567,6 +1580,129 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
+     * archive.
+     * </p>
+     * 
+     * @param packageType
+     *        The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for
+     *        ZIP archive.
+     * @see PackageType
+     */
+
+    public void setPackageType(String packageType) {
+        this.packageType = packageType;
+    }
+
+    /**
+     * <p>
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
+     * archive.
+     * </p>
+     * 
+     * @return The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code>
+     *         for ZIP archive.
+     * @see PackageType
+     */
+
+    public String getPackageType() {
+        return this.packageType;
+    }
+
+    /**
+     * <p>
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
+     * archive.
+     * </p>
+     * 
+     * @param packageType
+     *        The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for
+     *        ZIP archive.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PackageType
+     */
+
+    public FunctionConfiguration withPackageType(String packageType) {
+        setPackageType(packageType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
+     * archive.
+     * </p>
+     * 
+     * @param packageType
+     *        The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for
+     *        ZIP archive.
+     * @see PackageType
+     */
+
+    public void setPackageType(PackageType packageType) {
+        withPackageType(packageType);
+    }
+
+    /**
+     * <p>
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
+     * archive.
+     * </p>
+     * 
+     * @param packageType
+     *        The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for
+     *        ZIP archive.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PackageType
+     */
+
+    public FunctionConfiguration withPackageType(PackageType packageType) {
+        this.packageType = packageType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The function's image configuration values.
+     * </p>
+     * 
+     * @param imageConfigResponse
+     *        The function's image configuration values.
+     */
+
+    public void setImageConfigResponse(ImageConfigResponse imageConfigResponse) {
+        this.imageConfigResponse = imageConfigResponse;
+    }
+
+    /**
+     * <p>
+     * The function's image configuration values.
+     * </p>
+     * 
+     * @return The function's image configuration values.
+     */
+
+    public ImageConfigResponse getImageConfigResponse() {
+        return this.imageConfigResponse;
+    }
+
+    /**
+     * <p>
+     * The function's image configuration values.
+     * </p>
+     * 
+     * @param imageConfigResponse
+     *        The function's image configuration values.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FunctionConfiguration withImageConfigResponse(ImageConfigResponse imageConfigResponse) {
+        setImageConfigResponse(imageConfigResponse);
+        return this;
+    }
+
+    /**
+     * <p>
      * The ARN of the signing profile version.
      * </p>
      * 
@@ -1711,6 +1847,10 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
             sb.append("LastUpdateStatusReasonCode: ").append(getLastUpdateStatusReasonCode()).append(",");
         if (getFileSystemConfigs() != null)
             sb.append("FileSystemConfigs: ").append(getFileSystemConfigs()).append(",");
+        if (getPackageType() != null)
+            sb.append("PackageType: ").append(getPackageType()).append(",");
+        if (getImageConfigResponse() != null)
+            sb.append("ImageConfigResponse: ").append(getImageConfigResponse()).append(",");
         if (getSigningProfileVersionArn() != null)
             sb.append("SigningProfileVersionArn: ").append(getSigningProfileVersionArn()).append(",");
         if (getSigningJobArn() != null)
@@ -1837,6 +1977,14 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
             return false;
         if (other.getFileSystemConfigs() != null && other.getFileSystemConfigs().equals(this.getFileSystemConfigs()) == false)
             return false;
+        if (other.getPackageType() == null ^ this.getPackageType() == null)
+            return false;
+        if (other.getPackageType() != null && other.getPackageType().equals(this.getPackageType()) == false)
+            return false;
+        if (other.getImageConfigResponse() == null ^ this.getImageConfigResponse() == null)
+            return false;
+        if (other.getImageConfigResponse() != null && other.getImageConfigResponse().equals(this.getImageConfigResponse()) == false)
+            return false;
         if (other.getSigningProfileVersionArn() == null ^ this.getSigningProfileVersionArn() == null)
             return false;
         if (other.getSigningProfileVersionArn() != null && other.getSigningProfileVersionArn().equals(this.getSigningProfileVersionArn()) == false)
@@ -1880,6 +2028,8 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getLastUpdateStatusReason() == null) ? 0 : getLastUpdateStatusReason().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateStatusReasonCode() == null) ? 0 : getLastUpdateStatusReasonCode().hashCode());
         hashCode = prime * hashCode + ((getFileSystemConfigs() == null) ? 0 : getFileSystemConfigs().hashCode());
+        hashCode = prime * hashCode + ((getPackageType() == null) ? 0 : getPackageType().hashCode());
+        hashCode = prime * hashCode + ((getImageConfigResponse() == null) ? 0 : getImageConfigResponse().hashCode());
         hashCode = prime * hashCode + ((getSigningProfileVersionArn() == null) ? 0 : getSigningProfileVersionArn().hashCode());
         hashCode = prime * hashCode + ((getSigningJobArn() == null) ? 0 : getSigningJobArn().hashCode());
         return hashCode;

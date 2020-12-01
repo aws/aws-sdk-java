@@ -105,8 +105,8 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
      * The maximum number of volume results returned by <code>DescribeVolumeStatus</code> in paginated output. When this
      * parameter is used, the request only returns <code>MaxResults</code> results in a single page along with a
      * <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending
-     * another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000; if
-     * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned. If this parameter is
+     * another request with the returned <code>NextToken</code> value. This value can be between 5 and 1,000; if
+     * <code>MaxResults</code> is given a value larger than 1,000, only 1,000 results are returned. If this parameter is
      * not used, then <code>DescribeVolumeStatus</code> returns all results. You cannot specify this parameter and the
      * volume IDs parameter in the same request.
      * </p>
@@ -748,8 +748,8 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
      * The maximum number of volume results returned by <code>DescribeVolumeStatus</code> in paginated output. When this
      * parameter is used, the request only returns <code>MaxResults</code> results in a single page along with a
      * <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending
-     * another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000; if
-     * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned. If this parameter is
+     * another request with the returned <code>NextToken</code> value. This value can be between 5 and 1,000; if
+     * <code>MaxResults</code> is given a value larger than 1,000, only 1,000 results are returned. If this parameter is
      * not used, then <code>DescribeVolumeStatus</code> returns all results. You cannot specify this parameter and the
      * volume IDs parameter in the same request.
      * </p>
@@ -759,9 +759,9 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
      *        When this parameter is used, the request only returns <code>MaxResults</code> results in a single page
      *        along with a <code>NextToken</code> response element. The remaining results of the initial request can be
      *        seen by sending another request with the returned <code>NextToken</code> value. This value can be between
-     *        5 and 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.
-     *        If this parameter is not used, then <code>DescribeVolumeStatus</code> returns all results. You cannot
-     *        specify this parameter and the volume IDs parameter in the same request.
+     *        5 and 1,000; if <code>MaxResults</code> is given a value larger than 1,000, only 1,000 results are
+     *        returned. If this parameter is not used, then <code>DescribeVolumeStatus</code> returns all results. You
+     *        cannot specify this parameter and the volume IDs parameter in the same request.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -773,8 +773,8 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
      * The maximum number of volume results returned by <code>DescribeVolumeStatus</code> in paginated output. When this
      * parameter is used, the request only returns <code>MaxResults</code> results in a single page along with a
      * <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending
-     * another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000; if
-     * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned. If this parameter is
+     * another request with the returned <code>NextToken</code> value. This value can be between 5 and 1,000; if
+     * <code>MaxResults</code> is given a value larger than 1,000, only 1,000 results are returned. If this parameter is
      * not used, then <code>DescribeVolumeStatus</code> returns all results. You cannot specify this parameter and the
      * volume IDs parameter in the same request.
      * </p>
@@ -783,9 +783,9 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
      *         When this parameter is used, the request only returns <code>MaxResults</code> results in a single page
      *         along with a <code>NextToken</code> response element. The remaining results of the initial request can be
      *         seen by sending another request with the returned <code>NextToken</code> value. This value can be between
-     *         5 and 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.
-     *         If this parameter is not used, then <code>DescribeVolumeStatus</code> returns all results. You cannot
-     *         specify this parameter and the volume IDs parameter in the same request.
+     *         5 and 1,000; if <code>MaxResults</code> is given a value larger than 1,000, only 1,000 results are
+     *         returned. If this parameter is not used, then <code>DescribeVolumeStatus</code> returns all results. You
+     *         cannot specify this parameter and the volume IDs parameter in the same request.
      */
 
     public Integer getMaxResults() {
@@ -797,8 +797,8 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
      * The maximum number of volume results returned by <code>DescribeVolumeStatus</code> in paginated output. When this
      * parameter is used, the request only returns <code>MaxResults</code> results in a single page along with a
      * <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending
-     * another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000; if
-     * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned. If this parameter is
+     * another request with the returned <code>NextToken</code> value. This value can be between 5 and 1,000; if
+     * <code>MaxResults</code> is given a value larger than 1,000, only 1,000 results are returned. If this parameter is
      * not used, then <code>DescribeVolumeStatus</code> returns all results. You cannot specify this parameter and the
      * volume IDs parameter in the same request.
      * </p>
@@ -808,9 +808,9 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
      *        When this parameter is used, the request only returns <code>MaxResults</code> results in a single page
      *        along with a <code>NextToken</code> response element. The remaining results of the initial request can be
      *        seen by sending another request with the returned <code>NextToken</code> value. This value can be between
-     *        5 and 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.
-     *        If this parameter is not used, then <code>DescribeVolumeStatus</code> returns all results. You cannot
-     *        specify this parameter and the volume IDs parameter in the same request.
+     *        5 and 1,000; if <code>MaxResults</code> is given a value larger than 1,000, only 1,000 results are
+     *        returned. If this parameter is not used, then <code>DescribeVolumeStatus</code> returns all results. You
+     *        cannot specify this parameter and the volume IDs parameter in the same request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

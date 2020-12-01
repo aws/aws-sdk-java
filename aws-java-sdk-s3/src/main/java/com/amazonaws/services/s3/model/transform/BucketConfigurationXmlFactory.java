@@ -47,6 +47,7 @@ import com.amazonaws.services.s3.model.NotificationConfiguration;
 import com.amazonaws.services.s3.model.PublicAccessBlockConfiguration;
 import com.amazonaws.services.s3.model.QueueConfiguration;
 import com.amazonaws.services.s3.model.RedirectRule;
+import com.amazonaws.services.s3.model.ReplicaModifications;
 import com.amazonaws.services.s3.model.ReplicationDestinationConfig;
 import com.amazonaws.services.s3.model.ReplicationRule;
 import com.amazonaws.services.s3.model.ReplicationTime;
@@ -57,6 +58,7 @@ import com.amazonaws.services.s3.model.S3KeyFilter;
 import com.amazonaws.services.s3.model.ServerSideEncryptionByDefault;
 import com.amazonaws.services.s3.model.ServerSideEncryptionConfiguration;
 import com.amazonaws.services.s3.model.ServerSideEncryptionRule;
+import com.amazonaws.services.s3.model.SourceSelectionCriteria;
 import com.amazonaws.services.s3.model.SseKmsEncryptedObjects;
 import com.amazonaws.services.s3.model.Tag;
 import com.amazonaws.services.s3.model.TagSet;
@@ -318,12 +320,20 @@ public class BucketConfigurationXmlFactory {
             writeReplicationPrefix(xml, rule);
             writeReplicationFilter(xml, rule.getFilter());
 
-            if (rule.getSourceSelectionCriteria() != null) {
+            SourceSelectionCriteria sourceSelectionCriteria = rule.getSourceSelectionCriteria();
+            if (sourceSelectionCriteria != null) {
                 xml.start("SourceSelectionCriteria");
-                SseKmsEncryptedObjects sseKmsEncryptedObjects = rule.getSourceSelectionCriteria().getSseKmsEncryptedObjects();
+                SseKmsEncryptedObjects sseKmsEncryptedObjects = sourceSelectionCriteria.getSseKmsEncryptedObjects();
                 if (sseKmsEncryptedObjects != null) {
                     xml.start("SseKmsEncryptedObjects");
                     addParameterIfNotNull(xml, "Status", sseKmsEncryptedObjects.getStatus());
+                    xml.end();
+                }
+
+                ReplicaModifications replicaModifications = sourceSelectionCriteria.getReplicaModifications();
+                if (replicaModifications != null) {
+                    xml.start("ReplicaModifications");
+                    addParameterIfNotNull(xml, "Status", replicaModifications.getStatus());
                     xml.end();
                 }
                 xml.end();
@@ -716,6 +726,7 @@ public class BucketConfigurationXmlFactory {
         xml.start("ServerSideEncryptionConfiguration", "xmlns", Constants.XML_NAMESPACE);
         for (ServerSideEncryptionRule rule : sseConfig.getRules()) {
             xml.start("Rule");
+            addBooleanParameterIfNotNull(xml, "BucketKeyEnabled", rule.getBucketKeyEnabled());
             writeServerSideEncryptionByDefault(xml, rule.getApplyServerSideEncryptionByDefault());
             xml.end();
         }

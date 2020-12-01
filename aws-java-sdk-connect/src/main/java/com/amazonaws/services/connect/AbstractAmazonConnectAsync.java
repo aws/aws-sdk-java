@@ -132,6 +132,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateIntegrationAssociationResult> createIntegrationAssociationAsync(CreateIntegrationAssociationRequest request) {
+
+        return createIntegrationAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateIntegrationAssociationResult> createIntegrationAssociationAsync(CreateIntegrationAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateIntegrationAssociationRequest, CreateIntegrationAssociationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateRoutingProfileResult> createRoutingProfileAsync(CreateRoutingProfileRequest request) {
 
         return createRoutingProfileAsync(request, null);
@@ -140,6 +153,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     @Override
     public java.util.concurrent.Future<CreateRoutingProfileResult> createRoutingProfileAsync(CreateRoutingProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateRoutingProfileRequest, CreateRoutingProfileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUseCaseResult> createUseCaseAsync(CreateUseCaseRequest request) {
+
+        return createUseCaseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUseCaseResult> createUseCaseAsync(CreateUseCaseRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateUseCaseRequest, CreateUseCaseResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -179,6 +205,32 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     @Override
     public java.util.concurrent.Future<DeleteInstanceResult> deleteInstanceAsync(DeleteInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteInstanceRequest, DeleteInstanceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteIntegrationAssociationResult> deleteIntegrationAssociationAsync(DeleteIntegrationAssociationRequest request) {
+
+        return deleteIntegrationAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteIntegrationAssociationResult> deleteIntegrationAssociationAsync(DeleteIntegrationAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteIntegrationAssociationRequest, DeleteIntegrationAssociationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUseCaseResult> deleteUseCaseAsync(DeleteUseCaseRequest request) {
+
+        return deleteUseCaseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUseCaseResult> deleteUseCaseAsync(DeleteUseCaseRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteUseCaseRequest, DeleteUseCaseResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -526,6 +578,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListIntegrationAssociationsResult> listIntegrationAssociationsAsync(ListIntegrationAssociationsRequest request) {
+
+        return listIntegrationAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIntegrationAssociationsResult> listIntegrationAssociationsAsync(ListIntegrationAssociationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListIntegrationAssociationsRequest, ListIntegrationAssociationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListLambdaFunctionsResult> listLambdaFunctionsAsync(ListLambdaFunctionsRequest request) {
 
         return listLambdaFunctionsAsync(request, null);
@@ -656,6 +721,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListUseCasesResult> listUseCasesAsync(ListUseCasesRequest request) {
+
+        return listUseCasesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListUseCasesResult> listUseCasesAsync(ListUseCasesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListUseCasesRequest, ListUseCasesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListUserHierarchyGroupsResult> listUserHierarchyGroupsAsync(ListUserHierarchyGroupsRequest request) {
 
         return listUserHierarchyGroupsAsync(request, null);
@@ -729,6 +807,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     @Override
     public java.util.concurrent.Future<StartOutboundVoiceContactResult> startOutboundVoiceContactAsync(StartOutboundVoiceContactRequest request,
             com.amazonaws.handlers.AsyncHandler<StartOutboundVoiceContactRequest, StartOutboundVoiceContactResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartTaskContactResult> startTaskContactAsync(StartTaskContactRequest request) {
+
+        return startTaskContactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartTaskContactResult> startTaskContactAsync(StartTaskContactRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartTaskContactRequest, StartTaskContactResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

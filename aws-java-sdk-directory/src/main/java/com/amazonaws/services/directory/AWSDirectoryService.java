@@ -188,7 +188,7 @@ public interface AWSDirectoryService {
      * @throws DirectoryDoesNotExistException
      *         The specified directory does not exist in the system.
      * @throws RegionLimitExceededException
-     *         You have reached the limit for maximum number of simultaneous region replications per directory.
+     *         You have reached the limit for maximum number of simultaneous Region replications per directory.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ClientException
@@ -1002,6 +1002,31 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Disable client authentication for smart cards.
+     * </p>
+     * 
+     * @param disableClientAuthenticationRequest
+     * @return Result of the DisableClientAuthentication operation returned by the service.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws InvalidClientAuthStatusException
+     *         The client authorization was invalid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DisableClientAuthentication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableClientAuthentication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DisableClientAuthenticationResult disableClientAuthentication(DisableClientAuthenticationRequest disableClientAuthenticationRequest);
+
+    /**
+     * <p>
      * Deactivates LDAP secure calls for the specified directory.
      * </p>
      * 
@@ -1071,6 +1096,34 @@ public interface AWSDirectoryService {
      *      Documentation</a>
      */
     DisableSsoResult disableSso(DisableSsoRequest disableSsoRequest);
+
+    /**
+     * <p>
+     * Enable client authentication for smardtcards.
+     * </p>
+     * 
+     * @param enableClientAuthenticationRequest
+     * @return Result of the EnableClientAuthentication operation returned by the service.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws InvalidClientAuthStatusException
+     *         The client authorization was invalid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws NoAvailableCertificateException
+     *         The LDAP activities could not be performed because at least one valid certificate must be registered with
+     *         the system.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.EnableClientAuthentication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableClientAuthentication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    EnableClientAuthenticationResult enableClientAuthentication(EnableClientAuthenticationRequest enableClientAuthenticationRequest);
 
     /**
      * <p>

@@ -39,7 +39,8 @@ public class UpdateRoutingProfileQueuesRequest extends com.amazonaws.AmazonWebSe
     private String routingProfileId;
     /**
      * <p>
-     * The queues to be updated for this routing profile.
+     * The queues to be updated for this routing profile. Queues must first be associated to the routing profile. You
+     * can do this using AssociateRoutingProfileQueues.
      * </p>
      */
     private java.util.List<RoutingProfileQueueConfig> queueConfigs;
@@ -126,10 +127,12 @@ public class UpdateRoutingProfileQueuesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The queues to be updated for this routing profile.
+     * The queues to be updated for this routing profile. Queues must first be associated to the routing profile. You
+     * can do this using AssociateRoutingProfileQueues.
      * </p>
      * 
-     * @return The queues to be updated for this routing profile.
+     * @return The queues to be updated for this routing profile. Queues must first be associated to the routing
+     *         profile. You can do this using AssociateRoutingProfileQueues.
      */
 
     public java.util.List<RoutingProfileQueueConfig> getQueueConfigs() {
@@ -138,11 +141,13 @@ public class UpdateRoutingProfileQueuesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The queues to be updated for this routing profile.
+     * The queues to be updated for this routing profile. Queues must first be associated to the routing profile. You
+     * can do this using AssociateRoutingProfileQueues.
      * </p>
      * 
      * @param queueConfigs
-     *        The queues to be updated for this routing profile.
+     *        The queues to be updated for this routing profile. Queues must first be associated to the routing profile.
+     *        You can do this using AssociateRoutingProfileQueues.
      */
 
     public void setQueueConfigs(java.util.Collection<RoutingProfileQueueConfig> queueConfigs) {
@@ -156,7 +161,8 @@ public class UpdateRoutingProfileQueuesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The queues to be updated for this routing profile.
+     * The queues to be updated for this routing profile. Queues must first be associated to the routing profile. You
+     * can do this using AssociateRoutingProfileQueues.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -165,7 +171,8 @@ public class UpdateRoutingProfileQueuesRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param queueConfigs
-     *        The queues to be updated for this routing profile.
+     *        The queues to be updated for this routing profile. Queues must first be associated to the routing profile.
+     *        You can do this using AssociateRoutingProfileQueues.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +188,13 @@ public class UpdateRoutingProfileQueuesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The queues to be updated for this routing profile.
+     * The queues to be updated for this routing profile. Queues must first be associated to the routing profile. You
+     * can do this using AssociateRoutingProfileQueues.
      * </p>
      * 
      * @param queueConfigs
-     *        The queues to be updated for this routing profile.
+     *        The queues to be updated for this routing profile. Queues must first be associated to the routing profile.
+     *        You can do this using AssociateRoutingProfileQueues.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

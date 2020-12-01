@@ -31,6 +31,10 @@ public class ProcessingOutputMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputName").build();
     private static final MarshallingInfo<StructuredPojo> S3OUTPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3Output").build();
+    private static final MarshallingInfo<StructuredPojo> FEATURESTOREOUTPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FeatureStoreOutput").build();
+    private static final MarshallingInfo<Boolean> APPMANAGED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AppManaged").build();
 
     private static final ProcessingOutputMarshaller instance = new ProcessingOutputMarshaller();
 
@@ -50,6 +54,8 @@ public class ProcessingOutputMarshaller {
         try {
             protocolMarshaller.marshall(processingOutput.getOutputName(), OUTPUTNAME_BINDING);
             protocolMarshaller.marshall(processingOutput.getS3Output(), S3OUTPUT_BINDING);
+            protocolMarshaller.marshall(processingOutput.getFeatureStoreOutput(), FEATURESTOREOUTPUT_BINDING);
+            protocolMarshaller.marshall(processingOutput.getAppManaged(), APPMANAGED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

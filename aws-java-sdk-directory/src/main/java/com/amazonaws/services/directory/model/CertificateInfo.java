@@ -52,6 +52,12 @@ public class CertificateInfo implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.Date expiryDateTime;
+    /**
+     * <p>
+     * Displays the type of certificate.
+     * </p>
+     */
+    private String type;
 
     /**
      * <p>
@@ -233,6 +239,65 @@ public class CertificateInfo implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Displays the type of certificate.
+     * </p>
+     * 
+     * @param type
+     *        Displays the type of certificate.
+     * @see CertificateType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * Displays the type of certificate.
+     * </p>
+     * 
+     * @return Displays the type of certificate.
+     * @see CertificateType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * Displays the type of certificate.
+     * </p>
+     * 
+     * @param type
+     *        Displays the type of certificate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CertificateType
+     */
+
+    public CertificateInfo withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Displays the type of certificate.
+     * </p>
+     * 
+     * @param type
+     *        Displays the type of certificate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CertificateType
+     */
+
+    public CertificateInfo withType(CertificateType type) {
+        this.type = type.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -251,7 +316,9 @@ public class CertificateInfo implements Serializable, Cloneable, StructuredPojo 
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getExpiryDateTime() != null)
-            sb.append("ExpiryDateTime: ").append(getExpiryDateTime());
+            sb.append("ExpiryDateTime: ").append(getExpiryDateTime()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }
@@ -282,6 +349,10 @@ public class CertificateInfo implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getExpiryDateTime() != null && other.getExpiryDateTime().equals(this.getExpiryDateTime()) == false)
             return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
         return true;
     }
 
@@ -294,6 +365,7 @@ public class CertificateInfo implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getCommonName() == null) ? 0 : getCommonName().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getExpiryDateTime() == null) ? 0 : getExpiryDateTime().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }
 

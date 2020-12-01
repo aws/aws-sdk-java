@@ -101,6 +101,9 @@ public interface Headers {
     /** Header for the MD5 digest of the customer-provided key for server-side encryption */
     String COPY_SOURCE_SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5 = "x-amz-copy-source-server-side-encryption-customer-key-MD5";
 
+    /** Header for the whether or not bucket key encryption is used */
+    String SERVER_SIDE_ENCRYPTION_BUCKET_KEY_ENABLED = "x-amz-server-side-encryption-bucket-key-enabled";
+
     /** Header for optional object expiration */
     String EXPIRATION = "x-amz-expiration";
 

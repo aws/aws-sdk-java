@@ -14,18 +14,9 @@
  */
 package com.amazonaws.services.s3.internal;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
-import com.amazonaws.SdkClientException;
 import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.ResponseMetadata;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.http.HttpResponse;
 import com.amazonaws.http.HttpResponseHandler;
 import com.amazonaws.services.s3.Headers;
@@ -33,6 +24,14 @@ import com.amazonaws.services.s3.S3ResponseMetadata;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.util.DateUtils;
 import com.amazonaws.util.StringUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 /**
  * Abstract HTTP response handler for Amazon S3 responses. Provides common
@@ -152,6 +151,8 @@ public abstract class AbstractS3ResponseHandler<T>
                     throw new SdkClientException(
                             "Unable to parse part count. Header x-amz-mp-parts-count has corrupted data" + nfe.getMessage(), nfe);
                 }
+            } else if (key.equalsIgnoreCase(Headers.SERVER_SIDE_ENCRYPTION_BUCKET_KEY_ENABLED)) {
+                metadata.setBucketKeyEnabled("true".equals(header.getValue()));
             } else {
                 metadata.setHeader(key, header.getValue());
             }

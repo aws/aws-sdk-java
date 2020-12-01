@@ -31,7 +31,9 @@ public enum ErrorCode {
     NodeCreationFailure("NodeCreationFailure"),
     PodEvictionFailure("PodEvictionFailure"),
     InsufficientFreeAddresses("InsufficientFreeAddresses"),
-    ClusterUnreachable("ClusterUnreachable");
+    ClusterUnreachable("ClusterUnreachable"),
+    InsufficientNumberOfReplicas("InsufficientNumberOfReplicas"),
+    ConfigurationConflict("ConfigurationConflict");
 
     private String value;
 

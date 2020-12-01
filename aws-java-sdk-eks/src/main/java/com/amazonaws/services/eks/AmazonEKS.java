@@ -53,6 +53,42 @@ public interface AmazonEKS {
 
     /**
      * <p>
+     * Creates an Amazon EKS add-on.
+     * </p>
+     * <p>
+     * Amazon EKS add-ons help to automate the provisioning and lifecycle management of common operational software for
+     * Amazon EKS clusters. Amazon EKS add-ons can only be used with Amazon EKS clusters running version 1.18 with
+     * platform version <code>eks.3</code> or later because add-ons rely on the Server-side Apply Kubernetes feature,
+     * which is only available in Kubernetes 1.18 and later.
+     * </p>
+     * 
+     * @param createAddonRequest
+     * @return Result of the CreateAddon operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws InvalidRequestException
+     *         The request is invalid given the state of the cluster. Check the state of the cluster and the associated
+     *         operations.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         You can view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node
+     *         groups are Region-specific.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @sample AmazonEKS.CreateAddon
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateAddon" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateAddonResult createAddon(CreateAddonRequest createAddonRequest);
+
+    /**
+     * <p>
      * Creates an Amazon EKS control plane.
      * </p>
      * <p>
@@ -196,7 +232,7 @@ public interface AmazonEKS {
      * </p>
      * <p>
      * An Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated Amazon EC2 instances that are
-     * managed by AWS for an Amazon EKS cluster. Each node group uses a version of the Amazon EKS-optimized Amazon Linux
+     * managed by AWS for an Amazon EKS cluster. Each node group uses a version of the Amazon EKS optimized Amazon Linux
      * 2 AMI. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed Node Groups</a> in the
      * <i>Amazon EKS User Guide</i>.
@@ -226,6 +262,38 @@ public interface AmazonEKS {
      *      Documentation</a>
      */
     CreateNodegroupResult createNodegroup(CreateNodegroupRequest createNodegroupRequest);
+
+    /**
+     * <p>
+     * Delete an Amazon EKS add-on.
+     * </p>
+     * <p>
+     * When you remove the add-on, it will also be deleted from the cluster. You can always manually start an add-on on
+     * the cluster using the Kubernetes API.
+     * </p>
+     * 
+     * @param deleteAddonRequest
+     * @return Result of the DeleteAddon operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws InvalidRequestException
+     *         The request is invalid given the state of the cluster. Check the state of the cluster and the associated
+     *         operations.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         You can view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node
+     *         groups are Region-specific.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @sample AmazonEKS.DeleteAddon
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteAddon" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteAddonResult deleteAddon(DeleteAddonRequest deleteAddonRequest);
 
     /**
      * <p>
@@ -327,6 +395,55 @@ public interface AmazonEKS {
      *      Documentation</a>
      */
     DeleteNodegroupResult deleteNodegroup(DeleteNodegroupRequest deleteNodegroupRequest);
+
+    /**
+     * <p>
+     * Describes an Amazon EKS add-on.
+     * </p>
+     * 
+     * @param describeAddonRequest
+     * @return Result of the DescribeAddon operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws InvalidRequestException
+     *         The request is invalid given the state of the cluster. Check the state of the cluster and the associated
+     *         operations.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         You can view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node
+     *         groups are Region-specific.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @sample AmazonEKS.DescribeAddon
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddon" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeAddonResult describeAddon(DescribeAddonRequest describeAddonRequest);
+
+    /**
+     * <p>
+     * Describes the Kubernetes versions that the add-on can be used with.
+     * </p>
+     * 
+     * @param describeAddonVersionsRequest
+     * @return Result of the DescribeAddonVersions operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         You can view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node
+     *         groups are Region-specific.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @sample AmazonEKS.DescribeAddonVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddonVersions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeAddonVersionsResult describeAddonVersions(DescribeAddonVersionsRequest describeAddonVersionsRequest);
 
     /**
      * <p>
@@ -445,6 +562,34 @@ public interface AmazonEKS {
      *      Documentation</a>
      */
     DescribeUpdateResult describeUpdate(DescribeUpdateRequest describeUpdateRequest);
+
+    /**
+     * <p>
+     * Lists the available add-ons.
+     * </p>
+     * 
+     * @param listAddonsRequest
+     * @return Result of the ListAddons operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws InvalidRequestException
+     *         The request is invalid given the state of the cluster. Check the state of the cluster and the associated
+     *         operations.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         You can view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node
+     *         groups are Region-specific.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @sample AmazonEKS.ListAddons
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListAddons" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListAddonsResult listAddons(ListAddonsRequest listAddonsRequest);
 
     /**
      * <p>
@@ -611,6 +756,36 @@ public interface AmazonEKS {
 
     /**
      * <p>
+     * Updates an Amazon EKS add-on.
+     * </p>
+     * 
+     * @param updateAddonRequest
+     * @return Result of the UpdateAddon operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws InvalidRequestException
+     *         The request is invalid given the state of the cluster. Check the state of the cluster and the associated
+     *         operations.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         You can view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node
+     *         groups are Region-specific.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @sample AmazonEKS.UpdateAddon
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateAddon" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateAddonResult updateAddon(UpdateAddonRequest updateAddonRequest);
+
+    /**
+     * <p>
      * Updates an Amazon EKS cluster configuration. Your cluster continues to function during the update. The response
      * output includes an update ID that you can use to track the status of your cluster update with the
      * <a>DescribeUpdate</a> API operation.
@@ -760,8 +935,8 @@ public interface AmazonEKS {
      * group's current Kubernetes version by not specifying a Kubernetes version in the request. You can update to the
      * latest AMI version of your cluster's current Kubernetes version by specifying your cluster's Kubernetes version
      * in the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS-Optimized Linux
-     * AMI Versions</a> in the <i>Amazon EKS User Guide</i>.
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon
+     * Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>.
      * </p>
      * <p>
      * You cannot roll back a node group to an earlier Kubernetes version or AMI version.

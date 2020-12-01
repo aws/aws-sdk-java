@@ -42,6 +42,8 @@ public class InvalidParameterException extends com.amazonaws.services.eks.model.
      */
     private String fargateProfileName;
 
+    private String addonName;
+
     /**
      * Constructs a new InvalidParameterException with the specified error message.
      *
@@ -175,6 +177,34 @@ public class InvalidParameterException extends com.amazonaws.services.eks.model.
 
     public InvalidParameterException withFargateProfileName(String fargateProfileName) {
         setFargateProfileName(fargateProfileName);
+        return this;
+    }
+
+    /**
+     * @param addonName
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("addonName")
+    public void setAddonName(String addonName) {
+        this.addonName = addonName;
+    }
+
+    /**
+     * @return
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("addonName")
+    public String getAddonName() {
+        return this.addonName;
+    }
+
+    /**
+     * @param addonName
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InvalidParameterException withAddonName(String addonName) {
+        setAddonName(addonName);
         return this;
     }
 

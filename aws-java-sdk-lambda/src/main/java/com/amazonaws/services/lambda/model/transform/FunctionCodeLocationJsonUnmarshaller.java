@@ -56,6 +56,14 @@ public class FunctionCodeLocationJsonUnmarshaller implements Unmarshaller<Functi
                     context.nextToken();
                     functionCodeLocation.setLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ImageUri", targetDepth)) {
+                    context.nextToken();
+                    functionCodeLocation.setImageUri(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ResolvedImageUri", targetDepth)) {
+                    context.nextToken();
+                    functionCodeLocation.setResolvedImageUri(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

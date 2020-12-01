@@ -1343,6 +1343,39 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient im
     }
 
     @Override
+    public java.util.concurrent.Future<DisableClientAuthenticationResult> disableClientAuthenticationAsync(DisableClientAuthenticationRequest request) {
+
+        return disableClientAuthenticationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableClientAuthenticationResult> disableClientAuthenticationAsync(final DisableClientAuthenticationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisableClientAuthenticationRequest, DisableClientAuthenticationResult> asyncHandler) {
+        final DisableClientAuthenticationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisableClientAuthenticationResult>() {
+            @Override
+            public DisableClientAuthenticationResult call() throws Exception {
+                DisableClientAuthenticationResult result = null;
+
+                try {
+                    result = executeDisableClientAuthentication(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableLDAPSResult> disableLDAPSAsync(DisableLDAPSRequest request) {
 
         return disableLDAPSAsync(request, null);
@@ -1426,6 +1459,39 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient im
 
                 try {
                     result = executeDisableSso(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableClientAuthenticationResult> enableClientAuthenticationAsync(EnableClientAuthenticationRequest request) {
+
+        return enableClientAuthenticationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableClientAuthenticationResult> enableClientAuthenticationAsync(final EnableClientAuthenticationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<EnableClientAuthenticationRequest, EnableClientAuthenticationResult> asyncHandler) {
+        final EnableClientAuthenticationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<EnableClientAuthenticationResult>() {
+            @Override
+            public EnableClientAuthenticationResult call() throws Exception {
+                EnableClientAuthenticationResult result = null;
+
+                try {
+                    result = executeEnableClientAuthentication(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

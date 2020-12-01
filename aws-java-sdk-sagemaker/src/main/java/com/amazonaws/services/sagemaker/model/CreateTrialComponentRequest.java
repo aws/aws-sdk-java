@@ -92,6 +92,8 @@ public class CreateTrialComponentRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private java.util.Map<String, TrialComponentArtifact> outputArtifacts;
+
+    private MetadataProperties metadataProperties;
     /**
      * <p>
      * A list of tags to associate with the component. You can use <a>Search</a> API to search on the tags.
@@ -618,6 +620,32 @@ public class CreateTrialComponentRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * @param metadataProperties
+     */
+
+    public void setMetadataProperties(MetadataProperties metadataProperties) {
+        this.metadataProperties = metadataProperties;
+    }
+
+    /**
+     * @return
+     */
+
+    public MetadataProperties getMetadataProperties() {
+        return this.metadataProperties;
+    }
+
+    /**
+     * @param metadataProperties
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTrialComponentRequest withMetadataProperties(MetadataProperties metadataProperties) {
+        setMetadataProperties(metadataProperties);
+        return this;
+    }
+
+    /**
      * <p>
      * A list of tags to associate with the component. You can use <a>Search</a> API to search on the tags.
      * </p>
@@ -715,6 +743,8 @@ public class CreateTrialComponentRequest extends com.amazonaws.AmazonWebServiceR
             sb.append("InputArtifacts: ").append(getInputArtifacts()).append(",");
         if (getOutputArtifacts() != null)
             sb.append("OutputArtifacts: ").append(getOutputArtifacts()).append(",");
+        if (getMetadataProperties() != null)
+            sb.append("MetadataProperties: ").append(getMetadataProperties()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -763,6 +793,10 @@ public class CreateTrialComponentRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getOutputArtifacts() != null && other.getOutputArtifacts().equals(this.getOutputArtifacts()) == false)
             return false;
+        if (other.getMetadataProperties() == null ^ this.getMetadataProperties() == null)
+            return false;
+        if (other.getMetadataProperties() != null && other.getMetadataProperties().equals(this.getMetadataProperties()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -783,6 +817,7 @@ public class CreateTrialComponentRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getInputArtifacts() == null) ? 0 : getInputArtifacts().hashCode());
         hashCode = prime * hashCode + ((getOutputArtifacts() == null) ? 0 : getOutputArtifacts().hashCode());
+        hashCode = prime * hashCode + ((getMetadataProperties() == null) ? 0 : getMetadataProperties().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

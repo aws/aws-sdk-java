@@ -203,6 +203,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
+    public DisableClientAuthenticationResult disableClientAuthentication(DisableClientAuthenticationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisableLDAPSResult disableLDAPS(DisableLDAPSRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -214,6 +219,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
 
     @Override
     public DisableSsoResult disableSso(DisableSsoRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public EnableClientAuthenticationResult enableClientAuthentication(EnableClientAuthenticationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

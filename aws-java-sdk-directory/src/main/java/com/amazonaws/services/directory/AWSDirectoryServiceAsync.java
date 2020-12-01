@@ -1307,6 +1307,39 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
+     * Disable client authentication for smart cards.
+     * </p>
+     * 
+     * @param disableClientAuthenticationRequest
+     * @return A Java Future containing the result of the DisableClientAuthentication operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.DisableClientAuthentication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableClientAuthentication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableClientAuthenticationResult> disableClientAuthenticationAsync(
+            DisableClientAuthenticationRequest disableClientAuthenticationRequest);
+
+    /**
+     * <p>
+     * Disable client authentication for smart cards.
+     * </p>
+     * 
+     * @param disableClientAuthenticationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableClientAuthentication operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.DisableClientAuthentication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableClientAuthentication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableClientAuthenticationResult> disableClientAuthenticationAsync(
+            DisableClientAuthenticationRequest disableClientAuthenticationRequest,
+            com.amazonaws.handlers.AsyncHandler<DisableClientAuthenticationRequest, DisableClientAuthenticationResult> asyncHandler);
+
+    /**
+     * <p>
      * Deactivates LDAP secure calls for the specified directory.
      * </p>
      * 
@@ -1403,6 +1436,39 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      */
     java.util.concurrent.Future<DisableSsoResult> disableSsoAsync(DisableSsoRequest disableSsoRequest,
             com.amazonaws.handlers.AsyncHandler<DisableSsoRequest, DisableSsoResult> asyncHandler);
+
+    /**
+     * <p>
+     * Enable client authentication for smardtcards.
+     * </p>
+     * 
+     * @param enableClientAuthenticationRequest
+     * @return A Java Future containing the result of the EnableClientAuthentication operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.EnableClientAuthentication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableClientAuthentication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableClientAuthenticationResult> enableClientAuthenticationAsync(
+            EnableClientAuthenticationRequest enableClientAuthenticationRequest);
+
+    /**
+     * <p>
+     * Enable client authentication for smardtcards.
+     * </p>
+     * 
+     * @param enableClientAuthenticationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableClientAuthentication operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.EnableClientAuthentication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableClientAuthentication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableClientAuthenticationResult> enableClientAuthenticationAsync(
+            EnableClientAuthenticationRequest enableClientAuthenticationRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableClientAuthenticationRequest, EnableClientAuthenticationResult> asyncHandler);
 
     /**
      * <p>

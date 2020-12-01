@@ -61,6 +61,28 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Creates an <i>association</i> between the source and the destination. A source can be associated with multiple
+     * destinations, and a destination can be associated with multiple sources. An association is a lineage tracking
+     * entity. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker ML Lineage
+     * Tracking</a>.
+     * </p>
+     * 
+     * @param addAssociationRequest
+     * @return Result of the AddAssociation operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.AddAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AddAssociation" target="_top">AWS API
+     *      Documentation</a>
+     */
+    AddAssociationResult addAssociation(AddAssociationRequest addAssociationRequest);
+
+    /**
+     * <p>
      * Adds or overwrites one or more tags for the specified Amazon SageMaker resource. You can add tags to notebook
      * instances, training jobs, hyperparameter tuning jobs, batch transform jobs, models, labeling jobs, work teams,
      * endpoint configurations, and endpoints.
@@ -110,6 +132,25 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Creates an <i>action</i>. An action is a lineage tracking entity that represents an action or activity. For
+     * example, a model deployment or an HPO job. Generally, an action involves at least one input or output artifact.
+     * For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
+     * SageMaker ML Lineage Tracking</a>.
+     * </p>
+     * 
+     * @param createActionRequest
+     * @return Result of the CreateAction operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.CreateAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateActionResult createAction(CreateActionRequest createActionRequest);
+
+    /**
+     * <p>
      * Create a machine learning algorithm that you can use in Amazon SageMaker and list in the AWS Marketplace.
      * </p>
      * 
@@ -156,6 +197,25 @@ public interface AmazonSageMaker {
      *      API Documentation</a>
      */
     CreateAppImageConfigResult createAppImageConfig(CreateAppImageConfigRequest createAppImageConfigRequest);
+
+    /**
+     * <p>
+     * Creates an <i>artifact</i>. An artifact is a lineage tracking entity that represents a URI addressable object or
+     * data. Some examples are the S3 URI of a dataset and the ECR registry path of an image. For more information, see
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker ML Lineage
+     * Tracking</a>.
+     * </p>
+     * 
+     * @param createArtifactRequest
+     * @return Result of the CreateArtifact operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.CreateArtifact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateArtifact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateArtifactResult createArtifact(CreateArtifactRequest createArtifactRequest);
 
     /**
      * <p>
@@ -267,14 +327,42 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Creates a <i>context</i>. A context is a lineage tracking entity that represents a logical grouping of other
+     * tracking or experiment entities. Some examples are an endpoint and a model package. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker ML Lineage
+     * Tracking</a>.
+     * </p>
+     * 
+     * @param createContextRequest
+     * @return Result of the CreateContext operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.CreateContext
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateContext" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateContextResult createContext(CreateContextRequest createContextRequest);
+
+    /**
+     * <p>
      * Creates a <code>Domain</code> used by Amazon SageMaker Studio. A domain consists of an associated Amazon Elastic
      * File System (EFS) volume, a list of authorized users, and a variety of security, application, policy, and Amazon
      * Virtual Private Cloud (VPC) configurations. An AWS account is limited to one domain per region. Users within a
      * domain can share notebook files and other artifacts with each other.
      * </p>
      * <p>
+     * <b>EFS storage</b>
+     * </p>
+     * <p>
      * When a domain is created, an EFS volume is created for use by all of the users within the domain. Each user
      * receives a private home directory within the EFS volume for notebooks, Git repositories, and data files.
+     * </p>
+     * <p>
+     * SageMaker uses the AWS Key Management Service (AWS KMS) to encrypt the EFS volume attached to the domain with an
+     * AWS managed customer master key (CMK) by default. For more control, you can specify a customer managed CMK. For
+     * more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/encryption-at-rest.html">Protect
+     * Data at Rest Using Encryption</a>.
      * </p>
      * <p>
      * <b>VPC configuration</b>
@@ -526,6 +614,39 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Create a new <code>FeatureGroup</code>. A <code>FeatureGroup</code> is a group of <code>Features</code> defined
+     * in the <code>FeatureStore</code> to describe a <code>Record</code>.
+     * </p>
+     * <p>
+     * The <code>FeatureGroup</code> defines the schema and features contained in the FeatureGroup. A
+     * <code>FeatureGroup</code> definition is composed of a list of <code>Features</code>, a
+     * <code>RecordIdentifierFeatureName</code>, an <code>EventTimeFeatureName</code> and configurations for its
+     * <code>OnlineStore</code> and <code>OfflineStore</code>. Check <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS service quotas</a> to see the
+     * <code>FeatureGroup</code>s quota for your AWS account.
+     * </p>
+     * <important>
+     * <p>
+     * You must include at least one of <code>OnlineStoreConfig</code> and <code>OfflineStoreConfig</code> to create a
+     * <code>FeatureGroup</code>.
+     * </p>
+     * </important>
+     * 
+     * @param createFeatureGroupRequest
+     * @return Result of the CreateFeatureGroup operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.CreateFeatureGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateFeatureGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateFeatureGroupResult createFeatureGroup(CreateFeatureGroupRequest createFeatureGroupRequest);
+
+    /**
+     * <p>
      * Creates a flow definition.
      * </p>
      * 
@@ -727,8 +848,9 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Creates a model package that you can use to create Amazon SageMaker models or list on AWS Marketplace. Buyers can
-     * subscribe to model packages listed on AWS Marketplace to create models in Amazon SageMaker.
+     * Creates a model package that you can use to create Amazon SageMaker models or list on AWS Marketplace, or a
+     * versioned model that is part of a model group. Buyers can subscribe to model packages listed on AWS Marketplace
+     * to create models in Amazon SageMaker.
      * </p>
      * <p>
      * To create a model package by specifying a Docker container that contains your inference code and the Amazon S3
@@ -736,6 +858,23 @@ public interface AmazonSageMaker {
      * an algorithm resource that you created or subscribed to in AWS Marketplace, provide a value for
      * <code>SourceAlgorithmSpecification</code>.
      * </p>
+     * <note>
+     * <p>
+     * There are two types of model packages:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Versioned - a model that is part of a model group in the model registry.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Unversioned - a model package that is not part of a model group.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param createModelPackageRequest
      * @return Result of the CreateModelPackage operation returned by the service.
@@ -749,6 +888,22 @@ public interface AmazonSageMaker {
      *      API Documentation</a>
      */
     CreateModelPackageResult createModelPackage(CreateModelPackageRequest createModelPackageRequest);
+
+    /**
+     * <p>
+     * Creates a model group. A model group contains a group of model versions.
+     * </p>
+     * 
+     * @param createModelPackageGroupRequest
+     * @return Result of the CreateModelPackageGroup operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.CreateModelPackageGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelPackageGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateModelPackageGroupResult createModelPackageGroup(CreateModelPackageGroupRequest createModelPackageGroupRequest);
 
     /**
      * <p>
@@ -875,6 +1030,24 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Creates a pipeline using a JSON pipeline definition.
+     * </p>
+     * 
+     * @param createPipelineRequest
+     * @return Result of the CreatePipeline operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.CreatePipeline
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePipeline" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreatePipelineResult createPipeline(CreatePipelineRequest createPipelineRequest);
+
+    /**
+     * <p>
      * Creates a URL for a specified UserProfile in a Domain. When accessed in a web browser, the user will be
      * automatically signed in to Amazon SageMaker Studio, and granted access to all of the Apps and files associated
      * with the Domain's Amazon Elastic File System (EFS) volume. This operation can only be called when the
@@ -956,13 +1129,30 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Creates a machine learning (ML) project that can contain one or more templates that set up an ML pipeline from
+     * training to deploying an approved model.
+     * </p>
+     * 
+     * @param createProjectRequest
+     * @return Result of the CreateProject operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.CreateProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateProject" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateProjectResult createProject(CreateProjectRequest createProjectRequest);
+
+    /**
+     * <p>
      * Starts a model training job. After training completes, Amazon SageMaker saves the resulting model artifacts to an
      * Amazon S3 location that you specify.
      * </p>
      * <p>
      * If you choose to host your model using Amazon SageMaker hosting services, you can use the resulting model
      * artifacts as part of the model. You can also use the artifacts in a machine learning service other than Amazon
-     * SageMaker, provided that you know how to use them for inferences.
+     * SageMaker, provided that you know how to use them for inference.
      * </p>
      * <p>
      * In the request body, you provide the following:
@@ -1009,7 +1199,7 @@ public interface AmazonSageMaker {
      * </li>
      * <li>
      * <p>
-     * <code>RoleARN</code> - The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform tasks on your
+     * <code>RoleArn</code> - The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform tasks on your
      * behalf during model training. You must grant this role the necessary permissions so that Amazon SageMaker can
      * successfully complete model training.
      * </p>
@@ -1249,6 +1439,21 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Deletes an action.
+     * </p>
+     * 
+     * @param deleteActionRequest
+     * @return Result of the DeleteAction operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeleteAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteActionResult deleteAction(DeleteActionRequest deleteActionRequest);
+
+    /**
+     * <p>
      * Removes the specified algorithm from your account.
      * </p>
      * 
@@ -1294,6 +1499,36 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Deletes an artifact. Either <code>ArtifactArn</code> or <code>Source</code> must be specified.
+     * </p>
+     * 
+     * @param deleteArtifactRequest
+     * @return Result of the DeleteArtifact operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeleteArtifact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteArtifact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteArtifactResult deleteArtifact(DeleteArtifactRequest deleteArtifactRequest);
+
+    /**
+     * <p>
+     * Deletes an association.
+     * </p>
+     * 
+     * @param deleteAssociationRequest
+     * @return Result of the DeleteAssociation operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeleteAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAssociation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteAssociationResult deleteAssociation(DeleteAssociationRequest deleteAssociationRequest);
+
+    /**
+     * <p>
      * Deletes the specified Git repository from your account.
      * </p>
      * 
@@ -1304,6 +1539,21 @@ public interface AmazonSageMaker {
      *      API Documentation</a>
      */
     DeleteCodeRepositoryResult deleteCodeRepository(DeleteCodeRepositoryRequest deleteCodeRepositoryRequest);
+
+    /**
+     * <p>
+     * Deletes an context.
+     * </p>
+     * 
+     * @param deleteContextRequest
+     * @return Result of the DeleteContext operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeleteContext
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteContext" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteContextResult deleteContext(DeleteContextRequest deleteContextRequest);
 
     /**
      * <p>
@@ -1378,6 +1628,27 @@ public interface AmazonSageMaker {
      *      Documentation</a>
      */
     DeleteExperimentResult deleteExperiment(DeleteExperimentRequest deleteExperimentRequest);
+
+    /**
+     * <p>
+     * Delete the <code>FeatureGroup</code> and any data that was written to the <code>OnlineStore</code> of the
+     * <code>FeatureGroup</code>. Data cannot be accessed from the <code>OnlineStore</code> immediately after
+     * <code>DeleteFeatureGroup</code> is called.
+     * </p>
+     * <p>
+     * Data written into the <code>OfflineStore</code> will not be deleted. The AWS Glue database and tables that are
+     * automatically created for your <code>OfflineStore</code> are not deleted.
+     * </p>
+     * 
+     * @param deleteFeatureGroupRequest
+     * @return Result of the DeleteFeatureGroup operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeleteFeatureGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteFeatureGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteFeatureGroupResult deleteFeatureGroup(DeleteFeatureGroupRequest deleteFeatureGroupRequest);
 
     /**
      * <p>
@@ -1485,6 +1756,32 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Deletes the specified model group.
+     * </p>
+     * 
+     * @param deleteModelPackageGroupRequest
+     * @return Result of the DeleteModelPackageGroup operation returned by the service.
+     * @sample AmazonSageMaker.DeleteModelPackageGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelPackageGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteModelPackageGroupResult deleteModelPackageGroup(DeleteModelPackageGroupRequest deleteModelPackageGroupRequest);
+
+    /**
+     * <p>
+     * Deletes a model group resource policy.
+     * </p>
+     * 
+     * @param deleteModelPackageGroupPolicyRequest
+     * @return Result of the DeleteModelPackageGroupPolicy operation returned by the service.
+     * @sample AmazonSageMaker.DeleteModelPackageGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelPackageGroupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteModelPackageGroupPolicyResult deleteModelPackageGroupPolicy(DeleteModelPackageGroupPolicyRequest deleteModelPackageGroupPolicyRequest);
+
+    /**
+     * <p>
      * Deletes a monitoring schedule. Also stops the schedule had not already been stopped. This does not delete the job
      * execution history of the monitoring schedule.
      * </p>
@@ -1532,6 +1829,34 @@ public interface AmazonSageMaker {
      */
     DeleteNotebookInstanceLifecycleConfigResult deleteNotebookInstanceLifecycleConfig(
             DeleteNotebookInstanceLifecycleConfigRequest deleteNotebookInstanceLifecycleConfigRequest);
+
+    /**
+     * <p>
+     * Deletes a pipeline.
+     * </p>
+     * 
+     * @param deletePipelineRequest
+     * @return Result of the DeletePipeline operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeletePipeline
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeletePipeline" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeletePipelineResult deletePipeline(DeletePipelineRequest deletePipelineRequest);
+
+    /**
+     * <p>
+     * Delete the specified project.
+     * </p>
+     * 
+     * @param deleteProjectRequest
+     * @return Result of the DeleteProject operation returned by the service.
+     * @sample AmazonSageMaker.DeleteProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteProject" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteProjectResult deleteProject(DeleteProjectRequest deleteProjectRequest);
 
     /**
      * <p>
@@ -1648,6 +1973,21 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Describes an action.
+     * </p>
+     * 
+     * @param describeActionRequest
+     * @return Result of the DescribeAction operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeActionResult describeAction(DescribeActionRequest describeActionRequest);
+
+    /**
+     * <p>
      * Returns a description of the specified algorithm that is in your account.
      * </p>
      * 
@@ -1688,6 +2028,21 @@ public interface AmazonSageMaker {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeAppImageConfigResult describeAppImageConfig(DescribeAppImageConfigRequest describeAppImageConfigRequest);
+
+    /**
+     * <p>
+     * Describes an artifact.
+     * </p>
+     * 
+     * @param describeArtifactRequest
+     * @return Result of the DescribeArtifact operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeArtifact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeArtifact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeArtifactResult describeArtifact(DescribeArtifactRequest describeArtifactRequest);
 
     /**
      * <p>
@@ -1735,6 +2090,21 @@ public interface AmazonSageMaker {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeCompilationJobResult describeCompilationJob(DescribeCompilationJobRequest describeCompilationJobRequest);
+
+    /**
+     * <p>
+     * Describes a context.
+     * </p>
+     * 
+     * @param describeContextRequest
+     * @return Result of the DescribeContext operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeContext
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeContext" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeContextResult describeContext(DescribeContextRequest describeContextRequest);
 
     /**
      * <p>
@@ -1791,6 +2161,22 @@ public interface AmazonSageMaker {
      *      API Documentation</a>
      */
     DescribeExperimentResult describeExperiment(DescribeExperimentRequest describeExperimentRequest);
+
+    /**
+     * <p>
+     * Use this operation to describe a <code>FeatureGroup</code>. The response includes information on the creation
+     * time, <code>FeatureGroup</code> name, the unique identifier for each <code>FeatureGroup</code>, and more.
+     * </p>
+     * 
+     * @param describeFeatureGroupRequest
+     * @return Result of the DescribeFeatureGroup operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeFeatureGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeFeatureGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeFeatureGroupResult describeFeatureGroup(DescribeFeatureGroupRequest describeFeatureGroupRequest);
 
     /**
      * <p>
@@ -1914,6 +2300,19 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Gets a description for the specified model group.
+     * </p>
+     * 
+     * @param describeModelPackageGroupRequest
+     * @return Result of the DescribeModelPackageGroup operation returned by the service.
+     * @sample AmazonSageMaker.DescribeModelPackageGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelPackageGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeModelPackageGroupResult describeModelPackageGroup(DescribeModelPackageGroupRequest describeModelPackageGroupRequest);
+
+    /**
+     * <p>
      * Describes the schedule for a monitoring job.
      * </p>
      * 
@@ -1962,6 +2361,52 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Describes the details of a pipeline.
+     * </p>
+     * 
+     * @param describePipelineRequest
+     * @return Result of the DescribePipeline operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribePipeline
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribePipeline" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribePipelineResult describePipeline(DescribePipelineRequest describePipelineRequest);
+
+    /**
+     * <p>
+     * Describes the details of an execution's pipeline definition.
+     * </p>
+     * 
+     * @param describePipelineDefinitionForExecutionRequest
+     * @return Result of the DescribePipelineDefinitionForExecution operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribePipelineDefinitionForExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribePipelineDefinitionForExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribePipelineDefinitionForExecutionResult describePipelineDefinitionForExecution(
+            DescribePipelineDefinitionForExecutionRequest describePipelineDefinitionForExecutionRequest);
+
+    /**
+     * <p>
+     * Describes the details of a pipeline execution.
+     * </p>
+     * 
+     * @param describePipelineExecutionRequest
+     * @return Result of the DescribePipelineExecution operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribePipelineExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribePipelineExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribePipelineExecutionResult describePipelineExecution(DescribePipelineExecutionRequest describePipelineExecutionRequest);
+
+    /**
+     * <p>
      * Returns a description of a processing job.
      * </p>
      * 
@@ -1974,6 +2419,19 @@ public interface AmazonSageMaker {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeProcessingJobResult describeProcessingJob(DescribeProcessingJobRequest describeProcessingJobRequest);
+
+    /**
+     * <p>
+     * Describes the details of a project.
+     * </p>
+     * 
+     * @param describeProjectRequest
+     * @return Result of the DescribeProject operation returned by the service.
+     * @sample AmazonSageMaker.DescribeProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeProject" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeProjectResult describeProject(DescribeProjectRequest describeProjectRequest);
 
     /**
      * <p>
@@ -2101,6 +2559,21 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Disables using Service Catalog in SageMaker. Service Catalog is used to create SageMaker projects.
+     * </p>
+     * 
+     * @param disableSagemakerServicecatalogPortfolioRequest
+     * @return Result of the DisableSagemakerServicecatalogPortfolio operation returned by the service.
+     * @sample AmazonSageMaker.DisableSagemakerServicecatalogPortfolio
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DisableSagemakerServicecatalogPortfolio"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisableSagemakerServicecatalogPortfolioResult disableSagemakerServicecatalogPortfolio(
+            DisableSagemakerServicecatalogPortfolioRequest disableSagemakerServicecatalogPortfolioRequest);
+
+    /**
+     * <p>
      * Disassociates a trial component from a trial. This doesn't effect other trials the component is associated with.
      * Before you can delete a component, you must disassociate the component from all trials it is associated with. To
      * associate a trial component with a trial, call the <a>AssociateTrialComponent</a> API.
@@ -2123,6 +2596,50 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Enables using Service Catalog in SageMaker. Service Catalog is used to create SageMaker projects.
+     * </p>
+     * 
+     * @param enableSagemakerServicecatalogPortfolioRequest
+     * @return Result of the EnableSagemakerServicecatalogPortfolio operation returned by the service.
+     * @sample AmazonSageMaker.EnableSagemakerServicecatalogPortfolio
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/EnableSagemakerServicecatalogPortfolio"
+     *      target="_top">AWS API Documentation</a>
+     */
+    EnableSagemakerServicecatalogPortfolioResult enableSagemakerServicecatalogPortfolio(
+            EnableSagemakerServicecatalogPortfolioRequest enableSagemakerServicecatalogPortfolioRequest);
+
+    /**
+     * <p>
+     * Gets a resource policy that manages access for a model group. For information about resource policies, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
+     * policies and resource-based policies</a> in the <i>AWS Identity and Access Management User Guide.</i>.
+     * </p>
+     * 
+     * @param getModelPackageGroupPolicyRequest
+     * @return Result of the GetModelPackageGroupPolicy operation returned by the service.
+     * @sample AmazonSageMaker.GetModelPackageGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetModelPackageGroupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetModelPackageGroupPolicyResult getModelPackageGroupPolicy(GetModelPackageGroupPolicyRequest getModelPackageGroupPolicyRequest);
+
+    /**
+     * <p>
+     * Gets the status of Service Catalog in SageMaker. Service Catalog is used to create SageMaker projects.
+     * </p>
+     * 
+     * @param getSagemakerServicecatalogPortfolioStatusRequest
+     * @return Result of the GetSagemakerServicecatalogPortfolioStatus operation returned by the service.
+     * @sample AmazonSageMaker.GetSagemakerServicecatalogPortfolioStatus
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetSagemakerServicecatalogPortfolioStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetSagemakerServicecatalogPortfolioStatusResult getSagemakerServicecatalogPortfolioStatus(
+            GetSagemakerServicecatalogPortfolioStatusRequest getSagemakerServicecatalogPortfolioStatusRequest);
+
+    /**
+     * <p>
      * An auto-complete API for the search functionality in the Amazon SageMaker console. It returns suggestions of
      * possible matches for the property name to use in <code>Search</code> queries. Provides suggestions for
      * <code>HyperParameters</code>, <code>Tags</code>, and <code>Metrics</code>.
@@ -2135,6 +2652,21 @@ public interface AmazonSageMaker {
      *      API Documentation</a>
      */
     GetSearchSuggestionsResult getSearchSuggestions(GetSearchSuggestionsRequest getSearchSuggestionsRequest);
+
+    /**
+     * <p>
+     * Lists the actions in your account and their properties.
+     * </p>
+     * 
+     * @param listActionsRequest
+     * @return Result of the ListActions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.ListActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListActions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListActionsResult listActions(ListActionsRequest listActionsRequest);
 
     /**
      * <p>
@@ -2175,6 +2707,36 @@ public interface AmazonSageMaker {
      *      Documentation</a>
      */
     ListAppsResult listApps(ListAppsRequest listAppsRequest);
+
+    /**
+     * <p>
+     * Lists the artifacts in your account and their properties.
+     * </p>
+     * 
+     * @param listArtifactsRequest
+     * @return Result of the ListArtifacts operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.ListArtifacts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListArtifacts" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListArtifactsResult listArtifacts(ListArtifactsRequest listArtifactsRequest);
+
+    /**
+     * <p>
+     * Lists the associations in your account and their properties.
+     * </p>
+     * 
+     * @param listAssociationsRequest
+     * @return Result of the ListAssociations operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.ListAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAssociations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListAssociationsResult listAssociations(ListAssociationsRequest listAssociationsRequest);
 
     /**
      * <p>
@@ -2236,6 +2798,21 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Lists the contexts in your account and their properties.
+     * </p>
+     * 
+     * @param listContextsRequest
+     * @return Result of the ListContexts operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.ListContexts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListContexts" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListContextsResult listContexts(ListContextsRequest listContextsRequest);
+
+    /**
+     * <p>
      * Lists the domains.
      * </p>
      * 
@@ -2286,6 +2863,19 @@ public interface AmazonSageMaker {
      *      Documentation</a>
      */
     ListExperimentsResult listExperiments(ListExperimentsRequest listExperimentsRequest);
+
+    /**
+     * <p>
+     * List <code>FeatureGroup</code>s based on given filter and order.
+     * </p>
+     * 
+     * @param listFeatureGroupsRequest
+     * @return Result of the ListFeatureGroups operation returned by the service.
+     * @sample AmazonSageMaker.ListFeatureGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListFeatureGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListFeatureGroupsResult listFeatureGroups(ListFeatureGroupsRequest listFeatureGroupsRequest);
 
     /**
      * <p>
@@ -2387,6 +2977,19 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Gets a list of the model groups in your AWS account.
+     * </p>
+     * 
+     * @param listModelPackageGroupsRequest
+     * @return Result of the ListModelPackageGroups operation returned by the service.
+     * @sample AmazonSageMaker.ListModelPackageGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelPackageGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListModelPackageGroupsResult listModelPackageGroups(ListModelPackageGroupsRequest listModelPackageGroupsRequest);
+
+    /**
+     * <p>
      * Lists the model packages that have been created.
      * </p>
      * 
@@ -2467,6 +3070,65 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Gets a list of <code>PipeLineExecutionStep</code> objects.
+     * </p>
+     * 
+     * @param listPipelineExecutionStepsRequest
+     * @return Result of the ListPipelineExecutionSteps operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.ListPipelineExecutionSteps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelineExecutionSteps"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListPipelineExecutionStepsResult listPipelineExecutionSteps(ListPipelineExecutionStepsRequest listPipelineExecutionStepsRequest);
+
+    /**
+     * <p>
+     * Gets a list of the pipeline executions.
+     * </p>
+     * 
+     * @param listPipelineExecutionsRequest
+     * @return Result of the ListPipelineExecutions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.ListPipelineExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelineExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListPipelineExecutionsResult listPipelineExecutions(ListPipelineExecutionsRequest listPipelineExecutionsRequest);
+
+    /**
+     * <p>
+     * Gets a list of parameters for a pipeline execution.
+     * </p>
+     * 
+     * @param listPipelineParametersForExecutionRequest
+     * @return Result of the ListPipelineParametersForExecution operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.ListPipelineParametersForExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelineParametersForExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListPipelineParametersForExecutionResult listPipelineParametersForExecution(
+            ListPipelineParametersForExecutionRequest listPipelineParametersForExecutionRequest);
+
+    /**
+     * <p>
+     * Gets a list of pipelines.
+     * </p>
+     * 
+     * @param listPipelinesRequest
+     * @return Result of the ListPipelines operation returned by the service.
+     * @sample AmazonSageMaker.ListPipelines
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelines" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListPipelinesResult listPipelines(ListPipelinesRequest listPipelinesRequest);
+
+    /**
+     * <p>
      * Lists processing jobs that satisfy various filters.
      * </p>
      * 
@@ -2477,6 +3139,19 @@ public interface AmazonSageMaker {
      *      API Documentation</a>
      */
     ListProcessingJobsResult listProcessingJobs(ListProcessingJobsRequest listProcessingJobsRequest);
+
+    /**
+     * <p>
+     * Gets a list of the projects in an AWS account.
+     * </p>
+     * 
+     * @param listProjectsRequest
+     * @return Result of the ListProjects operation returned by the service.
+     * @sample AmazonSageMaker.ListProjects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListProjects" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListProjectsResult listProjects(ListProjectsRequest listProjectsRequest);
 
     /**
      * <p>
@@ -2644,6 +3319,21 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Adds a resouce policy to control access to a model group. For information about resoure policies, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
+     * policies and resource-based policies</a> in the <i>AWS Identity and Access Management User Guide.</i>.
+     * </p>
+     * 
+     * @param putModelPackageGroupPolicyRequest
+     * @return Result of the PutModelPackageGroupPolicy operation returned by the service.
+     * @sample AmazonSageMaker.PutModelPackageGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/PutModelPackageGroupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutModelPackageGroupPolicyResult putModelPackageGroupPolicy(PutModelPackageGroupPolicyRequest putModelPackageGroupPolicyRequest);
+
+    /**
+     * <p>
      * Renders the UI template so that you can preview the worker's experience.
      * </p>
      * 
@@ -2713,6 +3403,24 @@ public interface AmazonSageMaker {
      *      target="_top">AWS API Documentation</a>
      */
     StartNotebookInstanceResult startNotebookInstance(StartNotebookInstanceRequest startNotebookInstanceRequest);
+
+    /**
+     * <p>
+     * Starts a pipeline execution.
+     * </p>
+     * 
+     * @param startPipelineExecutionRequest
+     * @return Result of the StartPipelineExecution operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.StartPipelineExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartPipelineExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartPipelineExecutionResult startPipelineExecution(StartPipelineExecutionRequest startPipelineExecutionRequest);
 
     /**
      * <p>
@@ -2826,6 +3534,21 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Stops a pipeline execution.
+     * </p>
+     * 
+     * @param stopPipelineExecutionRequest
+     * @return Result of the StopPipelineExecution operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.StopPipelineExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopPipelineExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StopPipelineExecutionResult stopPipelineExecution(StopPipelineExecutionRequest stopPipelineExecutionRequest);
+
+    /**
+     * <p>
      * Stops a processing job.
      * </p>
      * 
@@ -2882,6 +3605,23 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Updates an action.
+     * </p>
+     * 
+     * @param updateActionRequest
+     * @return Result of the UpdateAction operation returned by the service.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify an experiment, trial, or trial component.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.UpdateAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateAction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateActionResult updateAction(UpdateActionRequest updateActionRequest);
+
+    /**
+     * <p>
      * Updates the properties of an AppImageConfig.
      * </p>
      * 
@@ -2897,6 +3637,23 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Updates an artifact.
+     * </p>
+     * 
+     * @param updateArtifactRequest
+     * @return Result of the UpdateArtifact operation returned by the service.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify an experiment, trial, or trial component.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.UpdateArtifact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateArtifact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateArtifactResult updateArtifact(UpdateArtifactRequest updateArtifactRequest);
+
+    /**
+     * <p>
      * Updates the specified Git repository with the specified values.
      * </p>
      * 
@@ -2907,6 +3664,23 @@ public interface AmazonSageMaker {
      *      API Documentation</a>
      */
     UpdateCodeRepositoryResult updateCodeRepository(UpdateCodeRepositoryRequest updateCodeRepositoryRequest);
+
+    /**
+     * <p>
+     * Updates a context.
+     * </p>
+     * 
+     * @param updateContextRequest
+     * @return Result of the UpdateContext operation returned by the service.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify an experiment, trial, or trial component.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.UpdateContext
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateContext" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateContextResult updateContext(UpdateContextRequest updateContextRequest);
 
     /**
      * <p>
@@ -3020,6 +3794,19 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Updates a versioned model.
+     * </p>
+     * 
+     * @param updateModelPackageRequest
+     * @return Result of the UpdateModelPackage operation returned by the service.
+     * @sample AmazonSageMaker.UpdateModelPackage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateModelPackage" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateModelPackageResult updateModelPackage(UpdateModelPackageRequest updateModelPackageRequest);
+
+    /**
+     * <p>
      * Updates a previously created schedule.
      * </p>
      * 
@@ -3070,6 +3857,36 @@ public interface AmazonSageMaker {
      */
     UpdateNotebookInstanceLifecycleConfigResult updateNotebookInstanceLifecycleConfig(
             UpdateNotebookInstanceLifecycleConfigRequest updateNotebookInstanceLifecycleConfigRequest);
+
+    /**
+     * <p>
+     * Updates a pipeline.
+     * </p>
+     * 
+     * @param updatePipelineRequest
+     * @return Result of the UpdatePipeline operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.UpdatePipeline
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePipeline" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdatePipelineResult updatePipeline(UpdatePipelineRequest updatePipelineRequest);
+
+    /**
+     * <p>
+     * Updates a pipeline execution.
+     * </p>
+     * 
+     * @param updatePipelineExecutionRequest
+     * @return Result of the UpdatePipelineExecution operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.UpdatePipelineExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePipelineExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdatePipelineExecutionResult updatePipelineExecution(UpdatePipelineExecutionRequest updatePipelineExecutionRequest);
 
     /**
      * <p>

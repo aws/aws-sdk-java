@@ -67,4 +67,21 @@ abstract class AbstractSSEHandler extends AbstractHandler implements ServerSideE
             result.setSSECustomerKeyMd5(md5Digest);
         }
     }
+
+    @Override
+    public final Boolean getBucketKeyEnabled() {
+        ServerSideEncryptionResult result = sseResult();
+        if (result == null) {
+            return false;
+        }
+        return result.getBucketKeyEnabled();
+    }
+
+    @Override
+    public final void setBucketKeyEnabled(Boolean bucketKeyEnabled) {
+        ServerSideEncryptionResult result = sseResult();
+        if (result != null) {
+            result.setBucketKeyEnabled(bucketKeyEnabled);
+        }
+    }
 }

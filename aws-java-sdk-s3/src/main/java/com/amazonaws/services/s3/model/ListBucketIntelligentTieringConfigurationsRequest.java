@@ -19,8 +19,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Request object to list the S3 Intelligent-Tiering configurations of a bucket.
+ * Request object to list the intelligent tiering configurations of a bucket.
  */
+
 public class ListBucketIntelligentTieringConfigurationsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /** The name of the Amazon S3 bucket to list the S3 Intelligent-Tiering configurations. */

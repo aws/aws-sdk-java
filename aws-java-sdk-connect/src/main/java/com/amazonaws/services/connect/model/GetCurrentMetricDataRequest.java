@@ -35,7 +35,7 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the
      * resources associated with the queues or channels included in the filter. You can include both queue IDs and queue
-     * ARNs in the same request. Both <code>VOICE</code> and <code>CHAT</code> channels are supported.
+     * ARNs in the same request. VOICE, CHAT, and TASK channels are supported.
      * </p>
      */
     private Filters filters;
@@ -43,7 +43,7 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics
      * returned apply to each queue rather than aggregated for all queues. If you group by <code>CHANNEL</code>, you
-     * should include a Channels filter. Both <code>VOICE</code> and <code>CHAT</code> channels are supported.
+     * should include a Channels filter. VOICE, CHAT, and TASK channels are supported.
      * </p>
      * <p>
      * If no <code>Grouping</code> is included in the request, a summary of metrics is returned.
@@ -276,14 +276,13 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the
      * resources associated with the queues or channels included in the filter. You can include both queue IDs and queue
-     * ARNs in the same request. Both <code>VOICE</code> and <code>CHAT</code> channels are supported.
+     * ARNs in the same request. VOICE, CHAT, and TASK channels are supported.
      * </p>
      * 
      * @param filters
      *        The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only
      *        for the resources associated with the queues or channels included in the filter. You can include both
-     *        queue IDs and queue ARNs in the same request. Both <code>VOICE</code> and <code>CHAT</code> channels are
-     *        supported.
+     *        queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.
      */
 
     public void setFilters(Filters filters) {
@@ -294,13 +293,12 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the
      * resources associated with the queues or channels included in the filter. You can include both queue IDs and queue
-     * ARNs in the same request. Both <code>VOICE</code> and <code>CHAT</code> channels are supported.
+     * ARNs in the same request. VOICE, CHAT, and TASK channels are supported.
      * </p>
      * 
      * @return The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only
      *         for the resources associated with the queues or channels included in the filter. You can include both
-     *         queue IDs and queue ARNs in the same request. Both <code>VOICE</code> and <code>CHAT</code> channels are
-     *         supported.
+     *         queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.
      */
 
     public Filters getFilters() {
@@ -311,14 +309,13 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the
      * resources associated with the queues or channels included in the filter. You can include both queue IDs and queue
-     * ARNs in the same request. Both <code>VOICE</code> and <code>CHAT</code> channels are supported.
+     * ARNs in the same request. VOICE, CHAT, and TASK channels are supported.
      * </p>
      * 
      * @param filters
      *        The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only
      *        for the resources associated with the queues or channels included in the filter. You can include both
-     *        queue IDs and queue ARNs in the same request. Both <code>VOICE</code> and <code>CHAT</code> channels are
-     *        supported.
+     *        queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -331,7 +328,7 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics
      * returned apply to each queue rather than aggregated for all queues. If you group by <code>CHANNEL</code>, you
-     * should include a Channels filter. Both <code>VOICE</code> and <code>CHAT</code> channels are supported.
+     * should include a Channels filter. VOICE, CHAT, and TASK channels are supported.
      * </p>
      * <p>
      * If no <code>Grouping</code> is included in the request, a summary of metrics is returned.
@@ -339,8 +336,8 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @return The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the
      *         metrics returned apply to each queue rather than aggregated for all queues. If you group by
-     *         <code>CHANNEL</code>, you should include a Channels filter. Both <code>VOICE</code> and <code>CHAT</code>
-     *         channels are supported.</p>
+     *         <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are
+     *         supported.</p>
      *         <p>
      *         If no <code>Grouping</code> is included in the request, a summary of metrics is returned.
      * @see Grouping
@@ -354,7 +351,7 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics
      * returned apply to each queue rather than aggregated for all queues. If you group by <code>CHANNEL</code>, you
-     * should include a Channels filter. Both <code>VOICE</code> and <code>CHAT</code> channels are supported.
+     * should include a Channels filter. VOICE, CHAT, and TASK channels are supported.
      * </p>
      * <p>
      * If no <code>Grouping</code> is included in the request, a summary of metrics is returned.
@@ -363,8 +360,7 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * @param groupings
      *        The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics
      *        returned apply to each queue rather than aggregated for all queues. If you group by <code>CHANNEL</code>,
-     *        you should include a Channels filter. Both <code>VOICE</code> and <code>CHAT</code> channels are
-     *        supported.</p>
+     *        you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>
      *        <p>
      *        If no <code>Grouping</code> is included in the request, a summary of metrics is returned.
      * @see Grouping
@@ -383,7 +379,7 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics
      * returned apply to each queue rather than aggregated for all queues. If you group by <code>CHANNEL</code>, you
-     * should include a Channels filter. Both <code>VOICE</code> and <code>CHAT</code> channels are supported.
+     * should include a Channels filter. VOICE, CHAT, and TASK channels are supported.
      * </p>
      * <p>
      * If no <code>Grouping</code> is included in the request, a summary of metrics is returned.
@@ -397,8 +393,7 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * @param groupings
      *        The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics
      *        returned apply to each queue rather than aggregated for all queues. If you group by <code>CHANNEL</code>,
-     *        you should include a Channels filter. Both <code>VOICE</code> and <code>CHAT</code> channels are
-     *        supported.</p>
+     *        you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>
      *        <p>
      *        If no <code>Grouping</code> is included in the request, a summary of metrics is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -419,7 +414,7 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics
      * returned apply to each queue rather than aggregated for all queues. If you group by <code>CHANNEL</code>, you
-     * should include a Channels filter. Both <code>VOICE</code> and <code>CHAT</code> channels are supported.
+     * should include a Channels filter. VOICE, CHAT, and TASK channels are supported.
      * </p>
      * <p>
      * If no <code>Grouping</code> is included in the request, a summary of metrics is returned.
@@ -428,8 +423,7 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * @param groupings
      *        The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics
      *        returned apply to each queue rather than aggregated for all queues. If you group by <code>CHANNEL</code>,
-     *        you should include a Channels filter. Both <code>VOICE</code> and <code>CHAT</code> channels are
-     *        supported.</p>
+     *        you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>
      *        <p>
      *        If no <code>Grouping</code> is included in the request, a summary of metrics is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -445,7 +439,7 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics
      * returned apply to each queue rather than aggregated for all queues. If you group by <code>CHANNEL</code>, you
-     * should include a Channels filter. Both <code>VOICE</code> and <code>CHAT</code> channels are supported.
+     * should include a Channels filter. VOICE, CHAT, and TASK channels are supported.
      * </p>
      * <p>
      * If no <code>Grouping</code> is included in the request, a summary of metrics is returned.
@@ -454,8 +448,7 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * @param groupings
      *        The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics
      *        returned apply to each queue rather than aggregated for all queues. If you group by <code>CHANNEL</code>,
-     *        you should include a Channels filter. Both <code>VOICE</code> and <code>CHAT</code> channels are
-     *        supported.</p>
+     *        you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>
      *        <p>
      *        If no <code>Grouping</code> is included in the request, a summary of metrics is returned.
      * @return Returns a reference to this object so that method calls can be chained together.

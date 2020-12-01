@@ -31,7 +31,10 @@ public enum UpdateParamType {
     MaxSize("MaxSize"),
     MinSize("MinSize"),
     ReleaseVersion("ReleaseVersion"),
-    PublicAccessCidrs("PublicAccessCidrs");
+    PublicAccessCidrs("PublicAccessCidrs"),
+    AddonVersion("AddonVersion"),
+    ServiceAccountRoleArn("ServiceAccountRoleArn"),
+    ResolveConflicts("ResolveConflicts");
 
     private String value;
 

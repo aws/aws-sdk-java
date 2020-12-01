@@ -35,6 +35,8 @@ public class FunctionCodeMarshaller {
             .marshallLocationName("S3Key").build();
     private static final MarshallingInfo<String> S3OBJECTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3ObjectVersion").build();
+    private static final MarshallingInfo<String> IMAGEURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ImageUri").build();
 
     private static final FunctionCodeMarshaller instance = new FunctionCodeMarshaller();
 
@@ -56,6 +58,7 @@ public class FunctionCodeMarshaller {
             protocolMarshaller.marshall(functionCode.getS3Bucket(), S3BUCKET_BINDING);
             protocolMarshaller.marshall(functionCode.getS3Key(), S3KEY_BINDING);
             protocolMarshaller.marshall(functionCode.getS3ObjectVersion(), S3OBJECTVERSION_BINDING);
+            protocolMarshaller.marshall(functionCode.getImageUri(), IMAGEURI_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

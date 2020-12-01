@@ -76,7 +76,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private VpcConfigResponse resourcesVpcConfig;
     /**
      * <p>
-     * Network configuration settings for your cluster.
+     * The Kubernetes network configuration for the cluster.
      * </p>
      */
     private KubernetesNetworkConfigResponse kubernetesNetworkConfig;
@@ -445,11 +445,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Network configuration settings for your cluster.
+     * The Kubernetes network configuration for the cluster.
      * </p>
      * 
      * @param kubernetesNetworkConfig
-     *        Network configuration settings for your cluster.
+     *        The Kubernetes network configuration for the cluster.
      */
 
     public void setKubernetesNetworkConfig(KubernetesNetworkConfigResponse kubernetesNetworkConfig) {
@@ -458,10 +458,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Network configuration settings for your cluster.
+     * The Kubernetes network configuration for the cluster.
      * </p>
      * 
-     * @return Network configuration settings for your cluster.
+     * @return The Kubernetes network configuration for the cluster.
      */
 
     public KubernetesNetworkConfigResponse getKubernetesNetworkConfig() {
@@ -470,11 +470,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Network configuration settings for your cluster.
+     * The Kubernetes network configuration for the cluster.
      * </p>
      * 
      * @param kubernetesNetworkConfig
-     *        Network configuration settings for your cluster.
+     *        The Kubernetes network configuration for the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

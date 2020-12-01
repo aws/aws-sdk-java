@@ -84,6 +84,10 @@ public class TrialJsonUnmarshaller implements Unmarshaller<Trial, JsonUnmarshall
                     context.nextToken();
                     trial.setLastModifiedBy(UserContextJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("MetadataProperties", targetDepth)) {
+                    context.nextToken();
+                    trial.setMetadataProperties(MetadataPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
                     trial.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())

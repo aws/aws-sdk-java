@@ -477,6 +477,19 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     }
 
     @Override
+    public java.util.concurrent.Future<DisableClientAuthenticationResult> disableClientAuthenticationAsync(DisableClientAuthenticationRequest request) {
+
+        return disableClientAuthenticationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableClientAuthenticationResult> disableClientAuthenticationAsync(DisableClientAuthenticationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisableClientAuthenticationRequest, DisableClientAuthenticationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableLDAPSResult> disableLDAPSAsync(DisableLDAPSRequest request) {
 
         return disableLDAPSAsync(request, null);
@@ -511,6 +524,19 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     @Override
     public java.util.concurrent.Future<DisableSsoResult> disableSsoAsync(DisableSsoRequest request,
             com.amazonaws.handlers.AsyncHandler<DisableSsoRequest, DisableSsoResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableClientAuthenticationResult> enableClientAuthenticationAsync(EnableClientAuthenticationRequest request) {
+
+        return enableClientAuthenticationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableClientAuthenticationResult> enableClientAuthenticationAsync(EnableClientAuthenticationRequest request,
+            com.amazonaws.handlers.AsyncHandler<EnableClientAuthenticationRequest, EnableClientAuthenticationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

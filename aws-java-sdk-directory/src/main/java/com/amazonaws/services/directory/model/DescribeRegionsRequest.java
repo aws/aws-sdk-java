@@ -39,8 +39,8 @@ public class DescribeRegionsRequest extends com.amazonaws.AmazonWebServiceReques
     private String regionName;
     /**
      * <p>
-     * The <i>DescribeRegionsResult.NextToken</i> value from a previous call to <a>DescribeRegions</a>. Pass null if
-     * this is the first call.
+     * The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <a>DescribeRegions</a>. Pass null
+     * if this is the first call.
      * </p>
      */
     private String nextToken;
@@ -127,13 +127,13 @@ public class DescribeRegionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The <i>DescribeRegionsResult.NextToken</i> value from a previous call to <a>DescribeRegions</a>. Pass null if
-     * this is the first call.
+     * The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <a>DescribeRegions</a>. Pass null
+     * if this is the first call.
      * </p>
      * 
      * @param nextToken
-     *        The <i>DescribeRegionsResult.NextToken</i> value from a previous call to <a>DescribeRegions</a>. Pass null
-     *        if this is the first call.
+     *        The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <a>DescribeRegions</a>.
+     *        Pass null if this is the first call.
      */
 
     public void setNextToken(String nextToken) {
@@ -142,12 +142,12 @@ public class DescribeRegionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The <i>DescribeRegionsResult.NextToken</i> value from a previous call to <a>DescribeRegions</a>. Pass null if
-     * this is the first call.
+     * The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <a>DescribeRegions</a>. Pass null
+     * if this is the first call.
      * </p>
      * 
-     * @return The <i>DescribeRegionsResult.NextToken</i> value from a previous call to <a>DescribeRegions</a>. Pass
-     *         null if this is the first call.
+     * @return The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <a>DescribeRegions</a>.
+     *         Pass null if this is the first call.
      */
 
     public String getNextToken() {
@@ -156,13 +156,13 @@ public class DescribeRegionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The <i>DescribeRegionsResult.NextToken</i> value from a previous call to <a>DescribeRegions</a>. Pass null if
-     * this is the first call.
+     * The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <a>DescribeRegions</a>. Pass null
+     * if this is the first call.
      * </p>
      * 
      * @param nextToken
-     *        The <i>DescribeRegionsResult.NextToken</i> value from a previous call to <a>DescribeRegions</a>. Pass null
-     *        if this is the first call.
+     *        The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <a>DescribeRegions</a>.
+     *        Pass null if this is the first call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

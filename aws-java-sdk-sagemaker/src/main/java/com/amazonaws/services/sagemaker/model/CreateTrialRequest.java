@@ -44,6 +44,8 @@ public class CreateTrialRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String experimentName;
+
+    private MetadataProperties metadataProperties;
     /**
      * <p>
      * A list of tags to associate with the trial. You can use <a>Search</a> API to search on the tags.
@@ -178,6 +180,32 @@ public class CreateTrialRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * @param metadataProperties
+     */
+
+    public void setMetadataProperties(MetadataProperties metadataProperties) {
+        this.metadataProperties = metadataProperties;
+    }
+
+    /**
+     * @return
+     */
+
+    public MetadataProperties getMetadataProperties() {
+        return this.metadataProperties;
+    }
+
+    /**
+     * @param metadataProperties
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTrialRequest withMetadataProperties(MetadataProperties metadataProperties) {
+        setMetadataProperties(metadataProperties);
+        return this;
+    }
+
+    /**
      * <p>
      * A list of tags to associate with the trial. You can use <a>Search</a> API to search on the tags.
      * </p>
@@ -265,6 +293,8 @@ public class CreateTrialRequest extends com.amazonaws.AmazonWebServiceRequest im
             sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getExperimentName() != null)
             sb.append("ExperimentName: ").append(getExperimentName()).append(",");
+        if (getMetadataProperties() != null)
+            sb.append("MetadataProperties: ").append(getMetadataProperties()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -293,6 +323,10 @@ public class CreateTrialRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getExperimentName() != null && other.getExperimentName().equals(this.getExperimentName()) == false)
             return false;
+        if (other.getMetadataProperties() == null ^ this.getMetadataProperties() == null)
+            return false;
+        if (other.getMetadataProperties() != null && other.getMetadataProperties().equals(this.getMetadataProperties()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -308,6 +342,7 @@ public class CreateTrialRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getTrialName() == null) ? 0 : getTrialName().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getExperimentName() == null) ? 0 : getExperimentName().hashCode());
+        hashCode = prime * hashCode + ((getMetadataProperties() == null) ? 0 : getMetadataProperties().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

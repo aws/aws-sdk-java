@@ -18,7 +18,7 @@ import com.amazonaws.services.s3.model.Tag;
 
 /**
  * A {@link IntelligentTieringFilterPredicate} class to represent the {@link Tag} object
- * to use when evaluating an S3 Intelligent-Tiering filter.
+ * to use when evaluating an intelligent tiering filter.
  */
 public final class IntelligentTieringTagPredicate extends IntelligentTieringFilterPredicate {
 

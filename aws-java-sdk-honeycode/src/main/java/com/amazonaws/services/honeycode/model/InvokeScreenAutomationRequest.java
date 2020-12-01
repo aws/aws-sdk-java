@@ -51,10 +51,9 @@ public class InvokeScreenAutomationRequest extends com.amazonaws.AmazonWebServic
     private String screenAutomationId;
     /**
      * <p>
-     * Variables are optional and are needed only if the screen requires them to render correctly. Variables are
-     * specified as a map where the key is the name of the variable as defined on the screen. The value is an object
-     * which currently has only one property, rawValue, which holds the value of the variable to be passed to the
-     * screen.
+     * Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is
+     * an object which currently has only one property, rawValue, which holds the value of the variable to be passed to
+     * the screen. Any variables defined in a screen are required to be passed in the call.
      * </p>
      */
     private java.util.Map<String, VariableValue> variables;
@@ -240,16 +239,14 @@ public class InvokeScreenAutomationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Variables are optional and are needed only if the screen requires them to render correctly. Variables are
-     * specified as a map where the key is the name of the variable as defined on the screen. The value is an object
-     * which currently has only one property, rawValue, which holds the value of the variable to be passed to the
-     * screen.
+     * Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is
+     * an object which currently has only one property, rawValue, which holds the value of the variable to be passed to
+     * the screen. Any variables defined in a screen are required to be passed in the call.
      * </p>
      * 
-     * @return Variables are optional and are needed only if the screen requires them to render correctly. Variables are
-     *         specified as a map where the key is the name of the variable as defined on the screen. The value is an
-     *         object which currently has only one property, rawValue, which holds the value of the variable to be
-     *         passed to the screen.
+     * @return Variables are specified as a map where the key is the name of the variable as defined on the screen. The
+     *         value is an object which currently has only one property, rawValue, which holds the value of the variable
+     *         to be passed to the screen. Any variables defined in a screen are required to be passed in the call.
      */
 
     public java.util.Map<String, VariableValue> getVariables() {
@@ -258,17 +255,15 @@ public class InvokeScreenAutomationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Variables are optional and are needed only if the screen requires them to render correctly. Variables are
-     * specified as a map where the key is the name of the variable as defined on the screen. The value is an object
-     * which currently has only one property, rawValue, which holds the value of the variable to be passed to the
-     * screen.
+     * Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is
+     * an object which currently has only one property, rawValue, which holds the value of the variable to be passed to
+     * the screen. Any variables defined in a screen are required to be passed in the call.
      * </p>
      * 
      * @param variables
-     *        Variables are optional and are needed only if the screen requires them to render correctly. Variables are
-     *        specified as a map where the key is the name of the variable as defined on the screen. The value is an
-     *        object which currently has only one property, rawValue, which holds the value of the variable to be passed
-     *        to the screen.
+     *        Variables are specified as a map where the key is the name of the variable as defined on the screen. The
+     *        value is an object which currently has only one property, rawValue, which holds the value of the variable
+     *        to be passed to the screen. Any variables defined in a screen are required to be passed in the call.
      */
 
     public void setVariables(java.util.Map<String, VariableValue> variables) {
@@ -277,17 +272,15 @@ public class InvokeScreenAutomationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Variables are optional and are needed only if the screen requires them to render correctly. Variables are
-     * specified as a map where the key is the name of the variable as defined on the screen. The value is an object
-     * which currently has only one property, rawValue, which holds the value of the variable to be passed to the
-     * screen.
+     * Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is
+     * an object which currently has only one property, rawValue, which holds the value of the variable to be passed to
+     * the screen. Any variables defined in a screen are required to be passed in the call.
      * </p>
      * 
      * @param variables
-     *        Variables are optional and are needed only if the screen requires them to render correctly. Variables are
-     *        specified as a map where the key is the name of the variable as defined on the screen. The value is an
-     *        object which currently has only one property, rawValue, which holds the value of the variable to be passed
-     *        to the screen.
+     *        Variables are specified as a map where the key is the name of the variable as defined on the screen. The
+     *        value is an object which currently has only one property, rawValue, which holds the value of the variable
+     *        to be passed to the screen. Any variables defined in a screen are required to be passed in the call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

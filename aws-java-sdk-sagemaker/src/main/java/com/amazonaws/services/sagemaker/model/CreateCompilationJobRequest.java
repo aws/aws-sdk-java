@@ -89,10 +89,9 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
     private StoppingCondition stoppingCondition;
     /**
      * <p>
-     * An array of key-value pairs that you want to use to organize and track your AWS resource costs. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
+     * purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -497,16 +496,14 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An array of key-value pairs that you want to use to organize and track your AWS resource costs. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
+     * purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * </p>
      * 
-     * @return An array of key-value pairs that you want to use to organize and track your AWS resource costs. For more
-     *         information, see <a href=
-     *         "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     *         Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * @return An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
+     *         example, by purpose, owner, or environment. For more information, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -515,17 +512,15 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An array of key-value pairs that you want to use to organize and track your AWS resource costs. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
+     * purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * </p>
      * 
      * @param tags
-     *        An array of key-value pairs that you want to use to organize and track your AWS resource costs. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
-     *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
+     *        example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -539,10 +534,9 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An array of key-value pairs that you want to use to organize and track your AWS resource costs. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
+     * purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -551,10 +545,9 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param tags
-     *        An array of key-value pairs that you want to use to organize and track your AWS resource costs. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
-     *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
+     *        example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -570,17 +563,15 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An array of key-value pairs that you want to use to organize and track your AWS resource costs. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
+     * purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * </p>
      * 
      * @param tags
-     *        An array of key-value pairs that you want to use to organize and track your AWS resource costs. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
-     *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
+     *        example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

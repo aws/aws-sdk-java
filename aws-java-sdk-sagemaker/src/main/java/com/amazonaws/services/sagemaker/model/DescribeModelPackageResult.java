@@ -31,6 +31,18 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
     private String modelPackageName;
     /**
      * <p>
+     * If the model is a versioned model, the name of the model group that the versioned model belongs to.
+     * </p>
+     */
+    private String modelPackageGroupName;
+    /**
+     * <p>
+     * The version of the model package.
+     * </p>
+     */
+    private Integer modelPackageVersion;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the model package.
      * </p>
      */
@@ -83,6 +95,36 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private Boolean certifyForMarketplace;
+    /**
+     * <p>
+     * The approval status of the model package.
+     * </p>
+     */
+    private String modelApprovalStatus;
+
+    private UserContext createdBy;
+
+    private MetadataProperties metadataProperties;
+    /**
+     * <p>
+     * Metrics for the model.
+     * </p>
+     */
+    private ModelMetrics modelMetrics;
+    /**
+     * <p>
+     * The last time the model package was modified.
+     * </p>
+     */
+    private java.util.Date lastModifiedTime;
+
+    private UserContext lastModifiedBy;
+    /**
+     * <p>
+     * A description provided for the model approval.
+     * </p>
+     */
+    private String approvalDescription;
 
     /**
      * <p>
@@ -121,6 +163,86 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
 
     public DescribeModelPackageResult withModelPackageName(String modelPackageName) {
         setModelPackageName(modelPackageName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If the model is a versioned model, the name of the model group that the versioned model belongs to.
+     * </p>
+     * 
+     * @param modelPackageGroupName
+     *        If the model is a versioned model, the name of the model group that the versioned model belongs to.
+     */
+
+    public void setModelPackageGroupName(String modelPackageGroupName) {
+        this.modelPackageGroupName = modelPackageGroupName;
+    }
+
+    /**
+     * <p>
+     * If the model is a versioned model, the name of the model group that the versioned model belongs to.
+     * </p>
+     * 
+     * @return If the model is a versioned model, the name of the model group that the versioned model belongs to.
+     */
+
+    public String getModelPackageGroupName() {
+        return this.modelPackageGroupName;
+    }
+
+    /**
+     * <p>
+     * If the model is a versioned model, the name of the model group that the versioned model belongs to.
+     * </p>
+     * 
+     * @param modelPackageGroupName
+     *        If the model is a versioned model, the name of the model group that the versioned model belongs to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeModelPackageResult withModelPackageGroupName(String modelPackageGroupName) {
+        setModelPackageGroupName(modelPackageGroupName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The version of the model package.
+     * </p>
+     * 
+     * @param modelPackageVersion
+     *        The version of the model package.
+     */
+
+    public void setModelPackageVersion(Integer modelPackageVersion) {
+        this.modelPackageVersion = modelPackageVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the model package.
+     * </p>
+     * 
+     * @return The version of the model package.
+     */
+
+    public Integer getModelPackageVersion() {
+        return this.modelPackageVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the model package.
+     * </p>
+     * 
+     * @param modelPackageVersion
+     *        The version of the model package.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeModelPackageResult withModelPackageVersion(Integer modelPackageVersion) {
+        setModelPackageVersion(modelPackageVersion);
         return this;
     }
 
@@ -516,6 +638,263 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The approval status of the model package.
+     * </p>
+     * 
+     * @param modelApprovalStatus
+     *        The approval status of the model package.
+     * @see ModelApprovalStatus
+     */
+
+    public void setModelApprovalStatus(String modelApprovalStatus) {
+        this.modelApprovalStatus = modelApprovalStatus;
+    }
+
+    /**
+     * <p>
+     * The approval status of the model package.
+     * </p>
+     * 
+     * @return The approval status of the model package.
+     * @see ModelApprovalStatus
+     */
+
+    public String getModelApprovalStatus() {
+        return this.modelApprovalStatus;
+    }
+
+    /**
+     * <p>
+     * The approval status of the model package.
+     * </p>
+     * 
+     * @param modelApprovalStatus
+     *        The approval status of the model package.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ModelApprovalStatus
+     */
+
+    public DescribeModelPackageResult withModelApprovalStatus(String modelApprovalStatus) {
+        setModelApprovalStatus(modelApprovalStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The approval status of the model package.
+     * </p>
+     * 
+     * @param modelApprovalStatus
+     *        The approval status of the model package.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ModelApprovalStatus
+     */
+
+    public DescribeModelPackageResult withModelApprovalStatus(ModelApprovalStatus modelApprovalStatus) {
+        this.modelApprovalStatus = modelApprovalStatus.toString();
+        return this;
+    }
+
+    /**
+     * @param createdBy
+     */
+
+    public void setCreatedBy(UserContext createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    /**
+     * @return
+     */
+
+    public UserContext getCreatedBy() {
+        return this.createdBy;
+    }
+
+    /**
+     * @param createdBy
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeModelPackageResult withCreatedBy(UserContext createdBy) {
+        setCreatedBy(createdBy);
+        return this;
+    }
+
+    /**
+     * @param metadataProperties
+     */
+
+    public void setMetadataProperties(MetadataProperties metadataProperties) {
+        this.metadataProperties = metadataProperties;
+    }
+
+    /**
+     * @return
+     */
+
+    public MetadataProperties getMetadataProperties() {
+        return this.metadataProperties;
+    }
+
+    /**
+     * @param metadataProperties
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeModelPackageResult withMetadataProperties(MetadataProperties metadataProperties) {
+        setMetadataProperties(metadataProperties);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Metrics for the model.
+     * </p>
+     * 
+     * @param modelMetrics
+     *        Metrics for the model.
+     */
+
+    public void setModelMetrics(ModelMetrics modelMetrics) {
+        this.modelMetrics = modelMetrics;
+    }
+
+    /**
+     * <p>
+     * Metrics for the model.
+     * </p>
+     * 
+     * @return Metrics for the model.
+     */
+
+    public ModelMetrics getModelMetrics() {
+        return this.modelMetrics;
+    }
+
+    /**
+     * <p>
+     * Metrics for the model.
+     * </p>
+     * 
+     * @param modelMetrics
+     *        Metrics for the model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeModelPackageResult withModelMetrics(ModelMetrics modelMetrics) {
+        setModelMetrics(modelMetrics);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The last time the model package was modified.
+     * </p>
+     * 
+     * @param lastModifiedTime
+     *        The last time the model package was modified.
+     */
+
+    public void setLastModifiedTime(java.util.Date lastModifiedTime) {
+        this.lastModifiedTime = lastModifiedTime;
+    }
+
+    /**
+     * <p>
+     * The last time the model package was modified.
+     * </p>
+     * 
+     * @return The last time the model package was modified.
+     */
+
+    public java.util.Date getLastModifiedTime() {
+        return this.lastModifiedTime;
+    }
+
+    /**
+     * <p>
+     * The last time the model package was modified.
+     * </p>
+     * 
+     * @param lastModifiedTime
+     *        The last time the model package was modified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeModelPackageResult withLastModifiedTime(java.util.Date lastModifiedTime) {
+        setLastModifiedTime(lastModifiedTime);
+        return this;
+    }
+
+    /**
+     * @param lastModifiedBy
+     */
+
+    public void setLastModifiedBy(UserContext lastModifiedBy) {
+        this.lastModifiedBy = lastModifiedBy;
+    }
+
+    /**
+     * @return
+     */
+
+    public UserContext getLastModifiedBy() {
+        return this.lastModifiedBy;
+    }
+
+    /**
+     * @param lastModifiedBy
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeModelPackageResult withLastModifiedBy(UserContext lastModifiedBy) {
+        setLastModifiedBy(lastModifiedBy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A description provided for the model approval.
+     * </p>
+     * 
+     * @param approvalDescription
+     *        A description provided for the model approval.
+     */
+
+    public void setApprovalDescription(String approvalDescription) {
+        this.approvalDescription = approvalDescription;
+    }
+
+    /**
+     * <p>
+     * A description provided for the model approval.
+     * </p>
+     * 
+     * @return A description provided for the model approval.
+     */
+
+    public String getApprovalDescription() {
+        return this.approvalDescription;
+    }
+
+    /**
+     * <p>
+     * A description provided for the model approval.
+     * </p>
+     * 
+     * @param approvalDescription
+     *        A description provided for the model approval.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeModelPackageResult withApprovalDescription(String approvalDescription) {
+        setApprovalDescription(approvalDescription);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -529,6 +908,10 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
         sb.append("{");
         if (getModelPackageName() != null)
             sb.append("ModelPackageName: ").append(getModelPackageName()).append(",");
+        if (getModelPackageGroupName() != null)
+            sb.append("ModelPackageGroupName: ").append(getModelPackageGroupName()).append(",");
+        if (getModelPackageVersion() != null)
+            sb.append("ModelPackageVersion: ").append(getModelPackageVersion()).append(",");
         if (getModelPackageArn() != null)
             sb.append("ModelPackageArn: ").append(getModelPackageArn()).append(",");
         if (getModelPackageDescription() != null)
@@ -546,7 +929,21 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
         if (getModelPackageStatusDetails() != null)
             sb.append("ModelPackageStatusDetails: ").append(getModelPackageStatusDetails()).append(",");
         if (getCertifyForMarketplace() != null)
-            sb.append("CertifyForMarketplace: ").append(getCertifyForMarketplace());
+            sb.append("CertifyForMarketplace: ").append(getCertifyForMarketplace()).append(",");
+        if (getModelApprovalStatus() != null)
+            sb.append("ModelApprovalStatus: ").append(getModelApprovalStatus()).append(",");
+        if (getCreatedBy() != null)
+            sb.append("CreatedBy: ").append(getCreatedBy()).append(",");
+        if (getMetadataProperties() != null)
+            sb.append("MetadataProperties: ").append(getMetadataProperties()).append(",");
+        if (getModelMetrics() != null)
+            sb.append("ModelMetrics: ").append(getModelMetrics()).append(",");
+        if (getLastModifiedTime() != null)
+            sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
+        if (getLastModifiedBy() != null)
+            sb.append("LastModifiedBy: ").append(getLastModifiedBy()).append(",");
+        if (getApprovalDescription() != null)
+            sb.append("ApprovalDescription: ").append(getApprovalDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -564,6 +961,14 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
         if (other.getModelPackageName() == null ^ this.getModelPackageName() == null)
             return false;
         if (other.getModelPackageName() != null && other.getModelPackageName().equals(this.getModelPackageName()) == false)
+            return false;
+        if (other.getModelPackageGroupName() == null ^ this.getModelPackageGroupName() == null)
+            return false;
+        if (other.getModelPackageGroupName() != null && other.getModelPackageGroupName().equals(this.getModelPackageGroupName()) == false)
+            return false;
+        if (other.getModelPackageVersion() == null ^ this.getModelPackageVersion() == null)
+            return false;
+        if (other.getModelPackageVersion() != null && other.getModelPackageVersion().equals(this.getModelPackageVersion()) == false)
             return false;
         if (other.getModelPackageArn() == null ^ this.getModelPackageArn() == null)
             return false;
@@ -601,6 +1006,34 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getCertifyForMarketplace() != null && other.getCertifyForMarketplace().equals(this.getCertifyForMarketplace()) == false)
             return false;
+        if (other.getModelApprovalStatus() == null ^ this.getModelApprovalStatus() == null)
+            return false;
+        if (other.getModelApprovalStatus() != null && other.getModelApprovalStatus().equals(this.getModelApprovalStatus()) == false)
+            return false;
+        if (other.getCreatedBy() == null ^ this.getCreatedBy() == null)
+            return false;
+        if (other.getCreatedBy() != null && other.getCreatedBy().equals(this.getCreatedBy()) == false)
+            return false;
+        if (other.getMetadataProperties() == null ^ this.getMetadataProperties() == null)
+            return false;
+        if (other.getMetadataProperties() != null && other.getMetadataProperties().equals(this.getMetadataProperties()) == false)
+            return false;
+        if (other.getModelMetrics() == null ^ this.getModelMetrics() == null)
+            return false;
+        if (other.getModelMetrics() != null && other.getModelMetrics().equals(this.getModelMetrics()) == false)
+            return false;
+        if (other.getLastModifiedTime() == null ^ this.getLastModifiedTime() == null)
+            return false;
+        if (other.getLastModifiedTime() != null && other.getLastModifiedTime().equals(this.getLastModifiedTime()) == false)
+            return false;
+        if (other.getLastModifiedBy() == null ^ this.getLastModifiedBy() == null)
+            return false;
+        if (other.getLastModifiedBy() != null && other.getLastModifiedBy().equals(this.getLastModifiedBy()) == false)
+            return false;
+        if (other.getApprovalDescription() == null ^ this.getApprovalDescription() == null)
+            return false;
+        if (other.getApprovalDescription() != null && other.getApprovalDescription().equals(this.getApprovalDescription()) == false)
+            return false;
         return true;
     }
 
@@ -610,6 +1043,8 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getModelPackageName() == null) ? 0 : getModelPackageName().hashCode());
+        hashCode = prime * hashCode + ((getModelPackageGroupName() == null) ? 0 : getModelPackageGroupName().hashCode());
+        hashCode = prime * hashCode + ((getModelPackageVersion() == null) ? 0 : getModelPackageVersion().hashCode());
         hashCode = prime * hashCode + ((getModelPackageArn() == null) ? 0 : getModelPackageArn().hashCode());
         hashCode = prime * hashCode + ((getModelPackageDescription() == null) ? 0 : getModelPackageDescription().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
@@ -619,6 +1054,13 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getModelPackageStatus() == null) ? 0 : getModelPackageStatus().hashCode());
         hashCode = prime * hashCode + ((getModelPackageStatusDetails() == null) ? 0 : getModelPackageStatusDetails().hashCode());
         hashCode = prime * hashCode + ((getCertifyForMarketplace() == null) ? 0 : getCertifyForMarketplace().hashCode());
+        hashCode = prime * hashCode + ((getModelApprovalStatus() == null) ? 0 : getModelApprovalStatus().hashCode());
+        hashCode = prime * hashCode + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());
+        hashCode = prime * hashCode + ((getMetadataProperties() == null) ? 0 : getMetadataProperties().hashCode());
+        hashCode = prime * hashCode + ((getModelMetrics() == null) ? 0 : getModelMetrics().hashCode());
+        hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
+        hashCode = prime * hashCode + ((getLastModifiedBy() == null) ? 0 : getLastModifiedBy().hashCode());
+        hashCode = prime * hashCode + ((getApprovalDescription() == null) ? 0 : getApprovalDescription().hashCode());
         return hashCode;
     }
 

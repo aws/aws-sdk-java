@@ -87,6 +87,10 @@ public class DescribeEndpointResultJsonUnmarshaller implements Unmarshaller<Desc
                     context.nextToken();
                     describeEndpointResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("LastDeploymentConfig", targetDepth)) {
+                    context.nextToken();
+                    describeEndpointResult.setLastDeploymentConfig(DeploymentConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

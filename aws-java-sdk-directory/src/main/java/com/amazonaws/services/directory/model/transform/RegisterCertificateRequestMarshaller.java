@@ -31,6 +31,10 @@ public class RegisterCertificateRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DirectoryId").build();
     private static final MarshallingInfo<String> CERTIFICATEDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificateData").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Type").build();
+    private static final MarshallingInfo<StructuredPojo> CLIENTCERTAUTHSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientCertAuthSettings").build();
 
     private static final RegisterCertificateRequestMarshaller instance = new RegisterCertificateRequestMarshaller();
 
@@ -50,6 +54,8 @@ public class RegisterCertificateRequestMarshaller {
         try {
             protocolMarshaller.marshall(registerCertificateRequest.getDirectoryId(), DIRECTORYID_BINDING);
             protocolMarshaller.marshall(registerCertificateRequest.getCertificateData(), CERTIFICATEDATA_BINDING);
+            protocolMarshaller.marshall(registerCertificateRequest.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(registerCertificateRequest.getClientCertAuthSettings(), CLIENTCERTAUTHSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

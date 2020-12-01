@@ -31,7 +31,7 @@ public class CodeSigningPolicies implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Code signing configuration policy for deployment validation failure. If you set the policy to
-     * <code>Enforce</code>, Lambda blocks the deployment request if code-signing validation checks fail. If you set the
+     * <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the
      * policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log.
      * </p>
      * <p>
@@ -43,7 +43,7 @@ public class CodeSigningPolicies implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Code signing configuration policy for deployment validation failure. If you set the policy to
-     * <code>Enforce</code>, Lambda blocks the deployment request if code-signing validation checks fail. If you set the
+     * <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the
      * policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log.
      * </p>
      * <p>
@@ -52,8 +52,8 @@ public class CodeSigningPolicies implements Serializable, Cloneable, StructuredP
      * 
      * @param untrustedArtifactOnDeployment
      *        Code signing configuration policy for deployment validation failure. If you set the policy to
-     *        <code>Enforce</code>, Lambda blocks the deployment request if code-signing validation checks fail. If you
-     *        set the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p>
+     *        <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set
+     *        the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p>
      *        <p>
      *        Default value: <code>Warn</code>
      * @see CodeSigningPolicy
@@ -66,7 +66,7 @@ public class CodeSigningPolicies implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Code signing configuration policy for deployment validation failure. If you set the policy to
-     * <code>Enforce</code>, Lambda blocks the deployment request if code-signing validation checks fail. If you set the
+     * <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the
      * policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log.
      * </p>
      * <p>
@@ -74,7 +74,7 @@ public class CodeSigningPolicies implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @return Code signing configuration policy for deployment validation failure. If you set the policy to
-     *         <code>Enforce</code>, Lambda blocks the deployment request if code-signing validation checks fail. If you
+     *         <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you
      *         set the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p>
      *         <p>
      *         Default value: <code>Warn</code>
@@ -88,7 +88,7 @@ public class CodeSigningPolicies implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Code signing configuration policy for deployment validation failure. If you set the policy to
-     * <code>Enforce</code>, Lambda blocks the deployment request if code-signing validation checks fail. If you set the
+     * <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the
      * policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log.
      * </p>
      * <p>
@@ -97,8 +97,8 @@ public class CodeSigningPolicies implements Serializable, Cloneable, StructuredP
      * 
      * @param untrustedArtifactOnDeployment
      *        Code signing configuration policy for deployment validation failure. If you set the policy to
-     *        <code>Enforce</code>, Lambda blocks the deployment request if code-signing validation checks fail. If you
-     *        set the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p>
+     *        <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set
+     *        the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p>
      *        <p>
      *        Default value: <code>Warn</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -113,7 +113,7 @@ public class CodeSigningPolicies implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Code signing configuration policy for deployment validation failure. If you set the policy to
-     * <code>Enforce</code>, Lambda blocks the deployment request if code-signing validation checks fail. If you set the
+     * <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the
      * policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log.
      * </p>
      * <p>
@@ -122,8 +122,8 @@ public class CodeSigningPolicies implements Serializable, Cloneable, StructuredP
      * 
      * @param untrustedArtifactOnDeployment
      *        Code signing configuration policy for deployment validation failure. If you set the policy to
-     *        <code>Enforce</code>, Lambda blocks the deployment request if code-signing validation checks fail. If you
-     *        set the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p>
+     *        <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set
+     *        the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p>
      *        <p>
      *        Default value: <code>Warn</code>
      * @return Returns a reference to this object so that method calls can be chained together.

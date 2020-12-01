@@ -79,6 +79,8 @@ public class DescribeTrialResult extends com.amazonaws.AmazonWebServiceResult<co
      */
     private UserContext lastModifiedBy;
 
+    private MetadataProperties metadataProperties;
+
     /**
      * <p>
      * The name of the trial.
@@ -446,6 +448,32 @@ public class DescribeTrialResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * @param metadataProperties
+     */
+
+    public void setMetadataProperties(MetadataProperties metadataProperties) {
+        this.metadataProperties = metadataProperties;
+    }
+
+    /**
+     * @return
+     */
+
+    public MetadataProperties getMetadataProperties() {
+        return this.metadataProperties;
+    }
+
+    /**
+     * @param metadataProperties
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrialResult withMetadataProperties(MetadataProperties metadataProperties) {
+        setMetadataProperties(metadataProperties);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -474,7 +502,9 @@ public class DescribeTrialResult extends com.amazonaws.AmazonWebServiceResult<co
         if (getLastModifiedTime() != null)
             sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
         if (getLastModifiedBy() != null)
-            sb.append("LastModifiedBy: ").append(getLastModifiedBy());
+            sb.append("LastModifiedBy: ").append(getLastModifiedBy()).append(",");
+        if (getMetadataProperties() != null)
+            sb.append("MetadataProperties: ").append(getMetadataProperties());
         sb.append("}");
         return sb.toString();
     }
@@ -525,6 +555,10 @@ public class DescribeTrialResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getLastModifiedBy() != null && other.getLastModifiedBy().equals(this.getLastModifiedBy()) == false)
             return false;
+        if (other.getMetadataProperties() == null ^ this.getMetadataProperties() == null)
+            return false;
+        if (other.getMetadataProperties() != null && other.getMetadataProperties().equals(this.getMetadataProperties()) == false)
+            return false;
         return true;
     }
 
@@ -542,6 +576,7 @@ public class DescribeTrialResult extends com.amazonaws.AmazonWebServiceResult<co
         hashCode = prime * hashCode + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedBy() == null) ? 0 : getLastModifiedBy().hashCode());
+        hashCode = prime * hashCode + ((getMetadataProperties() == null) ? 0 : getMetadataProperties().hashCode());
         return hashCode;
     }
 

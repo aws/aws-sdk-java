@@ -37,6 +37,14 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String certificateData;
+    /**
+     * <p>
+     * The certificate type to register for the request.
+     * </p>
+     */
+    private String type;
+
+    private ClientCertAuthSettings clientCertAuthSettings;
 
     /**
      * <p>
@@ -119,6 +127,91 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The certificate type to register for the request.
+     * </p>
+     * 
+     * @param type
+     *        The certificate type to register for the request.
+     * @see CertificateType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The certificate type to register for the request.
+     * </p>
+     * 
+     * @return The certificate type to register for the request.
+     * @see CertificateType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The certificate type to register for the request.
+     * </p>
+     * 
+     * @param type
+     *        The certificate type to register for the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CertificateType
+     */
+
+    public RegisterCertificateRequest withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The certificate type to register for the request.
+     * </p>
+     * 
+     * @param type
+     *        The certificate type to register for the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CertificateType
+     */
+
+    public RegisterCertificateRequest withType(CertificateType type) {
+        this.type = type.toString();
+        return this;
+    }
+
+    /**
+     * @param clientCertAuthSettings
+     */
+
+    public void setClientCertAuthSettings(ClientCertAuthSettings clientCertAuthSettings) {
+        this.clientCertAuthSettings = clientCertAuthSettings;
+    }
+
+    /**
+     * @return
+     */
+
+    public ClientCertAuthSettings getClientCertAuthSettings() {
+        return this.clientCertAuthSettings;
+    }
+
+    /**
+     * @param clientCertAuthSettings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterCertificateRequest withClientCertAuthSettings(ClientCertAuthSettings clientCertAuthSettings) {
+        setClientCertAuthSettings(clientCertAuthSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +226,11 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
         if (getDirectoryId() != null)
             sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getCertificateData() != null)
-            sb.append("CertificateData: ").append(getCertificateData());
+            sb.append("CertificateData: ").append(getCertificateData()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
+        if (getClientCertAuthSettings() != null)
+            sb.append("ClientCertAuthSettings: ").append(getClientCertAuthSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +253,14 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getCertificateData() != null && other.getCertificateData().equals(this.getCertificateData()) == false)
             return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
+        if (other.getClientCertAuthSettings() == null ^ this.getClientCertAuthSettings() == null)
+            return false;
+        if (other.getClientCertAuthSettings() != null && other.getClientCertAuthSettings().equals(this.getClientCertAuthSettings()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +271,8 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
 
         hashCode = prime * hashCode + ((getDirectoryId() == null) ? 0 : getDirectoryId().hashCode());
         hashCode = prime * hashCode + ((getCertificateData() == null) ? 0 : getCertificateData().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getClientCertAuthSettings() == null) ? 0 : getClientCertAuthSettings().hashCode());
         return hashCode;
     }
 

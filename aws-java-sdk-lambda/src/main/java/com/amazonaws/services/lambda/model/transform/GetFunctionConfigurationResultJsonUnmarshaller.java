@@ -160,6 +160,14 @@ public class GetFunctionConfigurationResultJsonUnmarshaller implements Unmarshal
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("PackageType", targetDepth)) {
+                    context.nextToken();
+                    getFunctionConfigurationResult.setPackageType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ImageConfigResponse", targetDepth)) {
+                    context.nextToken();
+                    getFunctionConfigurationResult.setImageConfigResponse(ImageConfigResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("SigningProfileVersionArn", targetDepth)) {
                     context.nextToken();
                     getFunctionConfigurationResult.setSigningProfileVersionArn(context.getUnmarshaller(String.class).unmarshall(context));

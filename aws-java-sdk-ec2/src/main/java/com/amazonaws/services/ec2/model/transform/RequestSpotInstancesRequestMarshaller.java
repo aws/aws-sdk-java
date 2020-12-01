@@ -121,6 +121,11 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
                                     StringUtils.fromString(ebs.getKmsKeyId()));
                         }
 
+                        if (ebs.getThroughput() != null) {
+                            request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Throughput",
+                                    StringUtils.fromInteger(ebs.getThroughput()));
+                        }
+
                         if (ebs.getEncrypted() != null) {
                             request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Encrypted",
                                     StringUtils.fromBoolean(ebs.getEncrypted()));

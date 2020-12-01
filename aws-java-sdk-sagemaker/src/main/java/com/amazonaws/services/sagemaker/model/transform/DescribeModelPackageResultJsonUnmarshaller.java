@@ -52,6 +52,14 @@ public class DescribeModelPackageResultJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     describeModelPackageResult.setModelPackageName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ModelPackageGroupName", targetDepth)) {
+                    context.nextToken();
+                    describeModelPackageResult.setModelPackageGroupName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ModelPackageVersion", targetDepth)) {
+                    context.nextToken();
+                    describeModelPackageResult.setModelPackageVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("ModelPackageArn", targetDepth)) {
                     context.nextToken();
                     describeModelPackageResult.setModelPackageArn(context.getUnmarshaller(String.class).unmarshall(context));
@@ -88,6 +96,34 @@ public class DescribeModelPackageResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("CertifyForMarketplace", targetDepth)) {
                     context.nextToken();
                     describeModelPackageResult.setCertifyForMarketplace(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("ModelApprovalStatus", targetDepth)) {
+                    context.nextToken();
+                    describeModelPackageResult.setModelApprovalStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CreatedBy", targetDepth)) {
+                    context.nextToken();
+                    describeModelPackageResult.setCreatedBy(UserContextJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("MetadataProperties", targetDepth)) {
+                    context.nextToken();
+                    describeModelPackageResult.setMetadataProperties(MetadataPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ModelMetrics", targetDepth)) {
+                    context.nextToken();
+                    describeModelPackageResult.setModelMetrics(ModelMetricsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("LastModifiedTime", targetDepth)) {
+                    context.nextToken();
+                    describeModelPackageResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("LastModifiedBy", targetDepth)) {
+                    context.nextToken();
+                    describeModelPackageResult.setLastModifiedBy(UserContextJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ApprovalDescription", targetDepth)) {
+                    context.nextToken();
+                    describeModelPackageResult.setApprovalDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

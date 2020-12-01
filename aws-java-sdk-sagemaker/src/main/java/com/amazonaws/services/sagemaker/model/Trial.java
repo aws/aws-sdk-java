@@ -71,6 +71,8 @@ public class Trial implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date lastModifiedTime;
 
     private UserContext lastModifiedBy;
+
+    private MetadataProperties metadataProperties;
     /**
      * <p>
      * The list of tags that are associated with the trial. You can use <a>Search</a> API to search on the tags.
@@ -410,6 +412,32 @@ public class Trial implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param metadataProperties
+     */
+
+    public void setMetadataProperties(MetadataProperties metadataProperties) {
+        this.metadataProperties = metadataProperties;
+    }
+
+    /**
+     * @return
+     */
+
+    public MetadataProperties getMetadataProperties() {
+        return this.metadataProperties;
+    }
+
+    /**
+     * @param metadataProperties
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Trial withMetadataProperties(MetadataProperties metadataProperties) {
+        setMetadataProperties(metadataProperties);
+        return this;
+    }
+
+    /**
      * <p>
      * The list of tags that are associated with the trial. You can use <a>Search</a> API to search on the tags.
      * </p>
@@ -587,6 +615,8 @@ public class Trial implements Serializable, Cloneable, StructuredPojo {
             sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
         if (getLastModifiedBy() != null)
             sb.append("LastModifiedBy: ").append(getLastModifiedBy()).append(",");
+        if (getMetadataProperties() != null)
+            sb.append("MetadataProperties: ").append(getMetadataProperties()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getTrialComponentSummaries() != null)
@@ -641,6 +671,10 @@ public class Trial implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLastModifiedBy() != null && other.getLastModifiedBy().equals(this.getLastModifiedBy()) == false)
             return false;
+        if (other.getMetadataProperties() == null ^ this.getMetadataProperties() == null)
+            return false;
+        if (other.getMetadataProperties() != null && other.getMetadataProperties().equals(this.getMetadataProperties()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -666,6 +700,7 @@ public class Trial implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedBy() == null) ? 0 : getLastModifiedBy().hashCode());
+        hashCode = prime * hashCode + ((getMetadataProperties() == null) ? 0 : getMetadataProperties().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getTrialComponentSummaries() == null) ? 0 : getTrialComponentSummaries().hashCode());
         return hashCode;

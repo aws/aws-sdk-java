@@ -118,6 +118,14 @@ public class CreateAlgorithmRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private Boolean certifyForMarketplace;
+    /**
+     * <p>
+     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
+     * purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -712,6 +720,92 @@ public class CreateAlgorithmRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
+     * purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * </p>
+     * 
+     * @return An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
+     *         example, by purpose, owner, or environment. For more information, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
+     * purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * </p>
+     * 
+     * @param tags
+     *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
+     *        example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
+     * purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
+     *        example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAlgorithmRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
+     * purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * </p>
+     * 
+     * @param tags
+     *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
+     *        example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAlgorithmRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -734,7 +828,9 @@ public class CreateAlgorithmRequest extends com.amazonaws.AmazonWebServiceReques
         if (getValidationSpecification() != null)
             sb.append("ValidationSpecification: ").append(getValidationSpecification()).append(",");
         if (getCertifyForMarketplace() != null)
-            sb.append("CertifyForMarketplace: ").append(getCertifyForMarketplace());
+            sb.append("CertifyForMarketplace: ").append(getCertifyForMarketplace()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -773,6 +869,10 @@ public class CreateAlgorithmRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getCertifyForMarketplace() != null && other.getCertifyForMarketplace().equals(this.getCertifyForMarketplace()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -787,6 +887,7 @@ public class CreateAlgorithmRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getInferenceSpecification() == null) ? 0 : getInferenceSpecification().hashCode());
         hashCode = prime * hashCode + ((getValidationSpecification() == null) ? 0 : getValidationSpecification().hashCode());
         hashCode = prime * hashCode + ((getCertifyForMarketplace() == null) ? 0 : getCertifyForMarketplace().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

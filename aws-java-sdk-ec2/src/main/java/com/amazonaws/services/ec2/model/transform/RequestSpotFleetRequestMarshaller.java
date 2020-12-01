@@ -179,6 +179,12 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
                                             StringUtils.fromString(ebs.getKmsKeyId()));
                                 }
 
+                                if (ebs.getThroughput() != null) {
+                                    request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex
+                                            + ".BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Throughput",
+                                            StringUtils.fromInteger(ebs.getThroughput()));
+                                }
+
                                 if (ebs.getEncrypted() != null) {
                                     request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex
                                             + ".BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Encrypted",

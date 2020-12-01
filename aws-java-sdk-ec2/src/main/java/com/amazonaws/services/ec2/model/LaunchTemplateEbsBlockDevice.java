@@ -68,6 +68,12 @@ public class LaunchTemplateEbsBlockDevice implements Serializable, Cloneable {
      * </p>
      */
     private String volumeType;
+    /**
+     * <p>
+     * The throughput that the volume supports, in MiB/s.
+     * </p>
+     */
+    private Integer throughput;
 
     /**
      * <p>
@@ -393,6 +399,46 @@ public class LaunchTemplateEbsBlockDevice implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The throughput that the volume supports, in MiB/s.
+     * </p>
+     * 
+     * @param throughput
+     *        The throughput that the volume supports, in MiB/s.
+     */
+
+    public void setThroughput(Integer throughput) {
+        this.throughput = throughput;
+    }
+
+    /**
+     * <p>
+     * The throughput that the volume supports, in MiB/s.
+     * </p>
+     * 
+     * @return The throughput that the volume supports, in MiB/s.
+     */
+
+    public Integer getThroughput() {
+        return this.throughput;
+    }
+
+    /**
+     * <p>
+     * The throughput that the volume supports, in MiB/s.
+     * </p>
+     * 
+     * @param throughput
+     *        The throughput that the volume supports, in MiB/s.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchTemplateEbsBlockDevice withThroughput(Integer throughput) {
+        setThroughput(throughput);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -417,7 +463,9 @@ public class LaunchTemplateEbsBlockDevice implements Serializable, Cloneable {
         if (getVolumeSize() != null)
             sb.append("VolumeSize: ").append(getVolumeSize()).append(",");
         if (getVolumeType() != null)
-            sb.append("VolumeType: ").append(getVolumeType());
+            sb.append("VolumeType: ").append(getVolumeType()).append(",");
+        if (getThroughput() != null)
+            sb.append("Throughput: ").append(getThroughput());
         sb.append("}");
         return sb.toString();
     }
@@ -460,6 +508,10 @@ public class LaunchTemplateEbsBlockDevice implements Serializable, Cloneable {
             return false;
         if (other.getVolumeType() != null && other.getVolumeType().equals(this.getVolumeType()) == false)
             return false;
+        if (other.getThroughput() == null ^ this.getThroughput() == null)
+            return false;
+        if (other.getThroughput() != null && other.getThroughput().equals(this.getThroughput()) == false)
+            return false;
         return true;
     }
 
@@ -475,6 +527,7 @@ public class LaunchTemplateEbsBlockDevice implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode());
         hashCode = prime * hashCode + ((getVolumeSize() == null) ? 0 : getVolumeSize().hashCode());
         hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
+        hashCode = prime * hashCode + ((getThroughput() == null) ? 0 : getThroughput().hashCode());
         return hashCode;
     }
 

@@ -96,6 +96,32 @@ public class AmazonEKSWaiters {
                 .withExecutorService(executorService).build();
     }
 
+    /**
+     * Builds a AddonActive waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeAddonRequest> addonActive() {
+
+        return new WaiterBuilder<DescribeAddonRequest, DescribeAddonResult>().withSdkFunction(new DescribeAddonFunction(client))
+                .withAcceptors(new AddonActive.IsCREATE_FAILEDMatcher(), new AddonActive.IsACTIVEMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(10)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
+     * Builds a AddonDeleted waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeAddonRequest> addonDeleted() {
+
+        return new WaiterBuilder<DescribeAddonRequest, DescribeAddonResult>().withSdkFunction(new DescribeAddonFunction(client))
+                .withAcceptors(new AddonDeleted.IsDELETE_FAILEDMatcher(), new AddonDeleted.IsResourceNotFoundExceptionMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(10)))
+                .withExecutorService(executorService).build();
+    }
+
     public void shutdown() {
         executorService.shutdown();
     }

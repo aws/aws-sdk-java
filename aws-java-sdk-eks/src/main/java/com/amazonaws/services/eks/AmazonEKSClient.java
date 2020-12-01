@@ -90,9 +90,6 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedAvailabilityZoneException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.eks.model.transform.UnsupportedAvailabilityZoneExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
                                     com.amazonaws.services.eks.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -102,6 +99,12 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.eks.model.transform.InvalidRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.eks.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedAvailabilityZoneException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.eks.model.transform.UnsupportedAvailabilityZoneExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.eks.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -110,9 +113,6 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ClientException").withExceptionUnmarshaller(
                                     com.amazonaws.services.eks.model.transform.ClientExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.eks.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.eks.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
@@ -168,6 +168,83 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/eks/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/eks/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Creates an Amazon EKS add-on.
+     * </p>
+     * <p>
+     * Amazon EKS add-ons help to automate the provisioning and lifecycle management of common operational software for
+     * Amazon EKS clusters. Amazon EKS add-ons can only be used with Amazon EKS clusters running version 1.18 with
+     * platform version <code>eks.3</code> or later because add-ons rely on the Server-side Apply Kubernetes feature,
+     * which is only available in Kubernetes 1.18 and later.
+     * </p>
+     * 
+     * @param createAddonRequest
+     * @return Result of the CreateAddon operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws InvalidRequestException
+     *         The request is invalid given the state of the cluster. Check the state of the cluster and the associated
+     *         operations.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         You can view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node
+     *         groups are Region-specific.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @sample AmazonEKS.CreateAddon
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateAddon" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateAddonResult createAddon(CreateAddonRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAddon(request);
+    }
+
+    @SdkInternalApi
+    final CreateAddonResult executeCreateAddon(CreateAddonRequest createAddonRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createAddonRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAddonRequest> request = null;
+        Response<CreateAddonResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAddonRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAddonRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAddon");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAddonResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateAddonResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -397,7 +474,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
      * </p>
      * <p>
      * An Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated Amazon EC2 instances that are
-     * managed by AWS for an Amazon EKS cluster. Each node group uses a version of the Amazon EKS-optimized Amazon Linux
+     * managed by AWS for an Amazon EKS cluster. Each node group uses a version of the Amazon EKS optimized Amazon Linux
      * 2 AMI. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed Node Groups</a> in the
      * <i>Amazon EKS User Guide</i>.
@@ -459,6 +536,79 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateNodegroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateNodegroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Delete an Amazon EKS add-on.
+     * </p>
+     * <p>
+     * When you remove the add-on, it will also be deleted from the cluster. You can always manually start an add-on on
+     * the cluster using the Kubernetes API.
+     * </p>
+     * 
+     * @param deleteAddonRequest
+     * @return Result of the DeleteAddon operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws InvalidRequestException
+     *         The request is invalid given the state of the cluster. Check the state of the cluster and the associated
+     *         operations.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         You can view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node
+     *         groups are Region-specific.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @sample AmazonEKS.DeleteAddon
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteAddon" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteAddonResult deleteAddon(DeleteAddonRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAddon(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAddonResult executeDeleteAddon(DeleteAddonRequest deleteAddonRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAddonRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAddonRequest> request = null;
+        Response<DeleteAddonResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAddonRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAddonRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAddon");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAddonResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAddonResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -683,6 +833,138 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteNodegroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteNodegroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes an Amazon EKS add-on.
+     * </p>
+     * 
+     * @param describeAddonRequest
+     * @return Result of the DescribeAddon operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws InvalidRequestException
+     *         The request is invalid given the state of the cluster. Check the state of the cluster and the associated
+     *         operations.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         You can view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node
+     *         groups are Region-specific.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @sample AmazonEKS.DescribeAddon
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddon" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeAddonResult describeAddon(DescribeAddonRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAddon(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAddonResult executeDescribeAddon(DescribeAddonRequest describeAddonRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAddonRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAddonRequest> request = null;
+        Response<DescribeAddonResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAddonRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAddonRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAddon");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAddonResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeAddonResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the Kubernetes versions that the add-on can be used with.
+     * </p>
+     * 
+     * @param describeAddonVersionsRequest
+     * @return Result of the DescribeAddonVersions operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         You can view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node
+     *         groups are Region-specific.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @sample AmazonEKS.DescribeAddonVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddonVersions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeAddonVersionsResult describeAddonVersions(DescribeAddonVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAddonVersions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAddonVersionsResult executeDescribeAddonVersions(DescribeAddonVersionsRequest describeAddonVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAddonVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAddonVersionsRequest> request = null;
+        Response<DescribeAddonVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAddonVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAddonVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAddonVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAddonVersionsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeAddonVersionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -966,6 +1248,75 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeUpdateResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeUpdateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the available add-ons.
+     * </p>
+     * 
+     * @param listAddonsRequest
+     * @return Result of the ListAddons operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws InvalidRequestException
+     *         The request is invalid given the state of the cluster. Check the state of the cluster and the associated
+     *         operations.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         You can view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node
+     *         groups are Region-specific.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @sample AmazonEKS.ListAddons
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListAddons" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListAddonsResult listAddons(ListAddonsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAddons(request);
+    }
+
+    @SdkInternalApi
+    final ListAddonsResult executeListAddons(ListAddonsRequest listAddonsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAddonsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAddonsRequest> request = null;
+        Response<ListAddonsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAddonsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAddonsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAddons");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAddonsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAddonsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1428,6 +1779,77 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
 
     /**
      * <p>
+     * Updates an Amazon EKS add-on.
+     * </p>
+     * 
+     * @param updateAddonRequest
+     * @return Result of the UpdateAddon operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws InvalidRequestException
+     *         The request is invalid given the state of the cluster. Check the state of the cluster and the associated
+     *         operations.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         You can view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node
+     *         groups are Region-specific.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @sample AmazonEKS.UpdateAddon
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateAddon" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateAddonResult updateAddon(UpdateAddonRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAddon(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAddonResult executeUpdateAddon(UpdateAddonRequest updateAddonRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAddonRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAddonRequest> request = null;
+        Response<UpdateAddonResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAddonRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAddonRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAddon");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAddonResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateAddonResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates an Amazon EKS cluster configuration. Your cluster continues to function during the update. The response
      * output includes an update ID that you can use to track the status of your cluster update with the
      * <a>DescribeUpdate</a> API operation.
@@ -1701,8 +2123,8 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
      * group's current Kubernetes version by not specifying a Kubernetes version in the request. You can update to the
      * latest AMI version of your cluster's current Kubernetes version by specifying your cluster's Kubernetes version
      * in the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS-Optimized Linux
-     * AMI Versions</a> in the <i>Amazon EKS User Guide</i>.
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon
+     * Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>.
      * </p>
      * <p>
      * You cannot roll back a node group to an earlier Kubernetes version or AMI version.

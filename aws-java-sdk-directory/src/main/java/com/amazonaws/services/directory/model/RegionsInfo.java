@@ -30,7 +30,7 @@ public class RegionsInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Region from where the AWS Managed Microsoft AD directory was originally created.
+     * The Region where the AWS Managed Microsoft AD directory was originally created.
      * </p>
      */
     private String primaryRegion;
@@ -43,11 +43,11 @@ public class RegionsInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Region from where the AWS Managed Microsoft AD directory was originally created.
+     * The Region where the AWS Managed Microsoft AD directory was originally created.
      * </p>
      * 
      * @param primaryRegion
-     *        The Region from where the AWS Managed Microsoft AD directory was originally created.
+     *        The Region where the AWS Managed Microsoft AD directory was originally created.
      */
 
     public void setPrimaryRegion(String primaryRegion) {
@@ -56,10 +56,10 @@ public class RegionsInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Region from where the AWS Managed Microsoft AD directory was originally created.
+     * The Region where the AWS Managed Microsoft AD directory was originally created.
      * </p>
      * 
-     * @return The Region from where the AWS Managed Microsoft AD directory was originally created.
+     * @return The Region where the AWS Managed Microsoft AD directory was originally created.
      */
 
     public String getPrimaryRegion() {
@@ -68,11 +68,11 @@ public class RegionsInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Region from where the AWS Managed Microsoft AD directory was originally created.
+     * The Region where the AWS Managed Microsoft AD directory was originally created.
      * </p>
      * 
      * @param primaryRegion
-     *        The Region from where the AWS Managed Microsoft AD directory was originally created.
+     *        The Region where the AWS Managed Microsoft AD directory was originally created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

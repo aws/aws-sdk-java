@@ -1776,6 +1776,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             request.addHeader(Headers.REDIRECT_LOCATION, putObjectRequest.getRedirectLocation());
         }
 
+        Boolean bucketKeyEnabled = putObjectRequest.getBucketKeyEnabled();
+        if (bucketKeyEnabled != null) {
+            addHeaderIfNotNull(request, Headers.SERVER_SIDE_ENCRYPTION_BUCKET_KEY_ENABLED,
+                    String.valueOf(bucketKeyEnabled));
+        }
+
         addHeaderIfNotNull(request, Headers.S3_TAGGING, urlEncodeTags(putObjectRequest.getTagging()));
 
         populateRequesterPaysHeader(request, putObjectRequest.isRequesterPays());
@@ -1955,6 +1961,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         result.setETag(metadata.getETag());
         result.setMetadata(metadata);
         result.setRequesterCharged(metadata.isRequesterCharged());
+        result.setBucketKeyEnabled(metadata.getBucketKeyEnabled());
         return result;
     }
 
@@ -2014,6 +2021,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         Request<CopyObjectRequest> request = createRequest(destinationBucketName, destinationKey, copyObjectRequest, HttpMethodName.PUT);
         request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CopyObject");
+
+        Boolean bucketKeyEnabled = copyObjectRequest.getBucketKeyEnabled();
+        if (bucketKeyEnabled != null) {
+            addHeaderIfNotNull(request, Headers.SERVER_SIDE_ENCRYPTION_BUCKET_KEY_ENABLED,
+                    String.valueOf(bucketKeyEnabled));
+        }
 
         populateRequestWithCopyObjectParameters(request, copyObjectRequest);
 
@@ -2237,6 +2250,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         copyPartResult.setSSEAlgorithm(copyObjectResultHandler.getSSEAlgorithm());
         copyPartResult.setSSECustomerAlgorithm(copyObjectResultHandler.getSSECustomerAlgorithm());
         copyPartResult.setSSECustomerKeyMd5(copyObjectResultHandler.getSSECustomerKeyMd5());
+        copyPartResult.setBucketKeyEnabled(copyObjectResultHandler.getBucketKeyEnabled());
 
         return copyPartResult;
     }
@@ -3555,6 +3569,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             populateRequestMetadata(request, initiateMultipartUploadRequest.objectMetadata);
         }
 
+        Boolean bucketKeyEnabled = initiateMultipartUploadRequest.getBucketKeyEnabled();
+        if (bucketKeyEnabled != null) {
+            addHeaderIfNotNull(request, Headers.SERVER_SIDE_ENCRYPTION_BUCKET_KEY_ENABLED,
+                    String.valueOf(bucketKeyEnabled));
+        }
+
         populateRequesterPaysHeader(request, initiateMultipartUploadRequest.isRequesterPays());
 
         // Populate the SSE-C parameters to the request header
@@ -3776,6 +3796,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             result.setSSECustomerAlgorithm(metadata.getSSECustomerAlgorithm());
             result.setSSECustomerKeyMd5(metadata.getSSECustomerKeyMd5());
             result.setRequesterCharged(metadata.isRequesterCharged());
+            result.setBucketKeyEnabled(metadata.getBucketKeyEnabled());
             return result;
         } catch (Throwable t) {
             publishProgress(listener, ProgressEventType.TRANSFER_PART_FAILED_EVENT);
@@ -5222,10 +5243,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             }
 
             executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
-
             validateRequestBeforeTransmit(request);
             response = client.execute(request, responseHandler, errorResponseHandler, executionContext);
-
             return response.getAwsResponse();
         } catch (ResetException ex) {
             ex.setExtraInfo("If the request involves an input stream, the maximum stream buffer size can be configured via request.getRequestClientOptions().setReadLimit(int)");

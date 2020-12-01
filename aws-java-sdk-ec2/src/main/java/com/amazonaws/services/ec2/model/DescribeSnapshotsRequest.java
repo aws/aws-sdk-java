@@ -107,7 +107,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * parameter is used, <code>DescribeSnapshots</code> only returns <code>MaxResults</code> results in a single page
      * along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by
      * sending another <code>DescribeSnapshots</code> request with the returned <code>NextToken</code> value. This value
-     * can be between 5 and 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000 results are
+     * can be between 5 and 1,000; if <code>MaxResults</code> is given a value larger than 1,000, only 1,000 results are
      * returned. If this parameter is not used, then <code>DescribeSnapshots</code> returns all results. You cannot
      * specify this parameter and the snapshot IDs parameter in the same request.
      * </p>
@@ -784,7 +784,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * parameter is used, <code>DescribeSnapshots</code> only returns <code>MaxResults</code> results in a single page
      * along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by
      * sending another <code>DescribeSnapshots</code> request with the returned <code>NextToken</code> value. This value
-     * can be between 5 and 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000 results are
+     * can be between 5 and 1,000; if <code>MaxResults</code> is given a value larger than 1,000, only 1,000 results are
      * returned. If this parameter is not used, then <code>DescribeSnapshots</code> returns all results. You cannot
      * specify this parameter and the snapshot IDs parameter in the same request.
      * </p>
@@ -794,8 +794,8 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *        When this parameter is used, <code>DescribeSnapshots</code> only returns <code>MaxResults</code> results
      *        in a single page along with a <code>NextToken</code> response element. The remaining results of the
      *        initial request can be seen by sending another <code>DescribeSnapshots</code> request with the returned
-     *        <code>NextToken</code> value. This value can be between 5 and 1000; if <code>MaxResults</code> is given a
-     *        value larger than 1000, only 1000 results are returned. If this parameter is not used, then
+     *        <code>NextToken</code> value. This value can be between 5 and 1,000; if <code>MaxResults</code> is given a
+     *        value larger than 1,000, only 1,000 results are returned. If this parameter is not used, then
      *        <code>DescribeSnapshots</code> returns all results. You cannot specify this parameter and the snapshot IDs
      *        parameter in the same request.
      */
@@ -810,7 +810,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * parameter is used, <code>DescribeSnapshots</code> only returns <code>MaxResults</code> results in a single page
      * along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by
      * sending another <code>DescribeSnapshots</code> request with the returned <code>NextToken</code> value. This value
-     * can be between 5 and 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000 results are
+     * can be between 5 and 1,000; if <code>MaxResults</code> is given a value larger than 1,000, only 1,000 results are
      * returned. If this parameter is not used, then <code>DescribeSnapshots</code> returns all results. You cannot
      * specify this parameter and the snapshot IDs parameter in the same request.
      * </p>
@@ -819,8 +819,8 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *         When this parameter is used, <code>DescribeSnapshots</code> only returns <code>MaxResults</code> results
      *         in a single page along with a <code>NextToken</code> response element. The remaining results of the
      *         initial request can be seen by sending another <code>DescribeSnapshots</code> request with the returned
-     *         <code>NextToken</code> value. This value can be between 5 and 1000; if <code>MaxResults</code> is given a
-     *         value larger than 1000, only 1000 results are returned. If this parameter is not used, then
+     *         <code>NextToken</code> value. This value can be between 5 and 1,000; if <code>MaxResults</code> is given
+     *         a value larger than 1,000, only 1,000 results are returned. If this parameter is not used, then
      *         <code>DescribeSnapshots</code> returns all results. You cannot specify this parameter and the snapshot
      *         IDs parameter in the same request.
      */
@@ -835,7 +835,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * parameter is used, <code>DescribeSnapshots</code> only returns <code>MaxResults</code> results in a single page
      * along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by
      * sending another <code>DescribeSnapshots</code> request with the returned <code>NextToken</code> value. This value
-     * can be between 5 and 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000 results are
+     * can be between 5 and 1,000; if <code>MaxResults</code> is given a value larger than 1,000, only 1,000 results are
      * returned. If this parameter is not used, then <code>DescribeSnapshots</code> returns all results. You cannot
      * specify this parameter and the snapshot IDs parameter in the same request.
      * </p>
@@ -845,8 +845,8 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *        When this parameter is used, <code>DescribeSnapshots</code> only returns <code>MaxResults</code> results
      *        in a single page along with a <code>NextToken</code> response element. The remaining results of the
      *        initial request can be seen by sending another <code>DescribeSnapshots</code> request with the returned
-     *        <code>NextToken</code> value. This value can be between 5 and 1000; if <code>MaxResults</code> is given a
-     *        value larger than 1000, only 1000 results are returned. If this parameter is not used, then
+     *        <code>NextToken</code> value. This value can be between 5 and 1,000; if <code>MaxResults</code> is given a
+     *        value larger than 1,000, only 1,000 results are returned. If this parameter is not used, then
      *        <code>DescribeSnapshots</code> returns all results. You cannot specify this parameter and the snapshot IDs
      *        parameter in the same request.
      * @return Returns a reference to this object so that method calls can be chained together.

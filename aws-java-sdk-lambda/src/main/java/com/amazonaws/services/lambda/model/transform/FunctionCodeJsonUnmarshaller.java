@@ -64,6 +64,10 @@ public class FunctionCodeJsonUnmarshaller implements Unmarshaller<FunctionCode, 
                     context.nextToken();
                     functionCode.setS3ObjectVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ImageUri", targetDepth)) {
+                    context.nextToken();
+                    functionCode.setImageUri(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

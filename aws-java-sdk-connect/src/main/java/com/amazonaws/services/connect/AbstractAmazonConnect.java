@@ -68,7 +68,17 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public CreateIntegrationAssociationResult createIntegrationAssociation(CreateIntegrationAssociationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateRoutingProfileResult createRoutingProfile(CreateRoutingProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateUseCaseResult createUseCase(CreateUseCaseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -84,6 +94,16 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public DeleteInstanceResult deleteInstance(DeleteInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteIntegrationAssociationResult deleteIntegrationAssociation(DeleteIntegrationAssociationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteUseCaseResult deleteUseCase(DeleteUseCaseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -218,6 +238,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public ListIntegrationAssociationsResult listIntegrationAssociations(ListIntegrationAssociationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListLambdaFunctionsResult listLambdaFunctions(ListLambdaFunctionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -268,6 +293,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public ListUseCasesResult listUseCases(ListUseCasesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListUserHierarchyGroupsResult listUserHierarchyGroups(ListUserHierarchyGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -294,6 +324,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public StartOutboundVoiceContactResult startOutboundVoiceContact(StartOutboundVoiceContactRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartTaskContactResult startTaskContact(StartTaskContactRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

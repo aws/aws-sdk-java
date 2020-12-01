@@ -14,11 +14,11 @@
  */
 package com.amazonaws.services.s3.model;
 
-import java.io.Serializable;
-import java.util.Date;
-
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.services.s3.AmazonS3;
+
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * The InitiateMultipartUploadRequest contains the parameters used for the
@@ -119,6 +119,8 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest
     private String objectLockLegalHoldStatus;
 
     private String expectedBucketOwner;
+
+    private Boolean bucketKeyEnabled;
 
     /**
      * Constructs a request to initiate a new multipart upload in the specified
@@ -772,5 +774,35 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest
      */
     public void setObjectLockLegalHoldStatus(ObjectLockLegalHoldStatus objectLockLegalHoldStatus) {
         setObjectLockLegalHoldStatus(objectLockLegalHoldStatus.toString());
+    }
+
+    /**
+     * Returns whether or not bucket key encryption is used
+     */
+    public Boolean getBucketKeyEnabled() {
+        return bucketKeyEnabled;
+    }
+
+    /**
+     * Specifies whether the client should use an S3 Bucket Key for object encryption with server-side encryption using AWS KMS
+     * (SSE-KMS). Setting this header to <code>true</code> causes the client to use an S3 Bucket Key for object encryption with
+     * SSE-KMS.
+     * <p>Specifying this header with an object operation doesn’t affect bucket-level settings for S3 Bucket Key.
+     */
+    public void setBucketKeyEnabled(Boolean bucketKeyEnabled) {
+        this.bucketKeyEnabled = bucketKeyEnabled;
+    }
+
+    /**
+     * Specifies whether the client should use an S3 Bucket Key for object encryption with server-side encryption using AWS KMS
+     * (SSE-KMS). Setting this header to <code>true</code> causes the client to use an S3 Bucket Key for object encryption with
+     * SSE-KMS.
+     * <p>Specifying this header with an object operation doesn’t affect bucket-level settings for S3 Bucket Key.
+     *
+     * @return returns the update PutObjectRequest
+     */
+    public InitiateMultipartUploadRequest withBucketKeyEnabled(Boolean bucketKeyEnabled) {
+        setBucketKeyEnabled(bucketKeyEnabled);
+        return this;
     }
 }

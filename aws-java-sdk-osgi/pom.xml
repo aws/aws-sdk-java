@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.909</version>
+    <version>1.11.910</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,54 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-lookoutforvision</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-connectcontactlens</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-amplifybackend</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-ecrpublic</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-profile</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-appintegrations</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-sagemakerfeaturestoreruntime</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-devopsguru</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-mwaa</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -1550,6 +1598,38 @@
                               </taglet>
                           </taglets>
                           <groups>
+                              <group>
+                                  <title>Amazon Lookout for Vision</title>
+                                  <packages>com.amazonaws.services.lookoutforvision*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Connect Contact Lens</title>
+                                  <packages>com.amazonaws.services.connectcontactlens*</packages>
+                              </group>
+                              <group>
+                                  <title>AmplifyBackend</title>
+                                  <packages>com.amazonaws.services.amplifybackend*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Elastic Container Registry Public</title>
+                                  <packages>com.amazonaws.services.ecrpublic*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Connect Customer Profiles</title>
+                                  <packages>com.amazonaws.services.profile*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon AppIntegrations</title>
+                                  <packages>com.amazonaws.services.appintegrations*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon SageMaker Feature Store Runtime</title>
+                                  <packages>com.amazonaws.services.sagemakerfeaturestoreruntime*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon DevOps Guru</title>
+                                  <packages>com.amazonaws.services.devopsguru*</packages>
+                              </group>
                               <group>
                                   <title>AmazonMWAA</title>
                                   <packages>com.amazonaws.services.mwaa*</packages>

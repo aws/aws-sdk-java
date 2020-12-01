@@ -26,7 +26,9 @@ public enum LastUpdateStatusReasonCode {
     InternalError("InternalError"),
     SubnetOutOfIPAddresses("SubnetOutOfIPAddresses"),
     InvalidSubnet("InvalidSubnet"),
-    InvalidSecurityGroup("InvalidSecurityGroup");
+    InvalidSecurityGroup("InvalidSecurityGroup"),
+    ImageDeleted("ImageDeleted"),
+    ImageAccessDenied("ImageAccessDenied");
 
     private String value;
 

@@ -38,8 +38,25 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to
-     * use to allow communication between your worker nodes and the Kubernetes control plane. If you don't specify a
-     * security group, the default security group for your VPC is used.
+     * use to allow communication between your worker nodes and the Kubernetes control plane. If you don't specify any
+     * security groups, then familiarize yourself with the difference between Amazon EKS defaults for clusters deployed
+     * with Kubernetes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 1.14 Amazon EKS platform version <code>eks.2</code> and earlier
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.14 Amazon EKS platform version <code>eks.3</code> and later
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon
+     * EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      */
     private java.util.List<String> securityGroupIds;
@@ -164,13 +181,47 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to
-     * use to allow communication between your worker nodes and the Kubernetes control plane. If you don't specify a
-     * security group, the default security group for your VPC is used.
+     * use to allow communication between your worker nodes and the Kubernetes control plane. If you don't specify any
+     * security groups, then familiarize yourself with the difference between Amazon EKS defaults for clusters deployed
+     * with Kubernetes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 1.14 Amazon EKS platform version <code>eks.2</code> and earlier
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.14 Amazon EKS platform version <code>eks.3</code> and later
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon
+     * EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @return Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS
      *         creates to use to allow communication between your worker nodes and the Kubernetes control plane. If you
-     *         don't specify a security group, the default security group for your VPC is used.
+     *         don't specify any security groups, then familiarize yourself with the difference between Amazon EKS
+     *         defaults for clusters deployed with Kubernetes:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         1.14 Amazon EKS platform version <code>eks.2</code> and earlier
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         1.14 Amazon EKS platform version <code>eks.3</code> and later
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon EKS security group
+     *         considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -180,14 +231,48 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to
-     * use to allow communication between your worker nodes and the Kubernetes control plane. If you don't specify a
-     * security group, the default security group for your VPC is used.
+     * use to allow communication between your worker nodes and the Kubernetes control plane. If you don't specify any
+     * security groups, then familiarize yourself with the difference between Amazon EKS defaults for clusters deployed
+     * with Kubernetes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 1.14 Amazon EKS platform version <code>eks.2</code> and earlier
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.14 Amazon EKS platform version <code>eks.3</code> and later
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon
+     * EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @param securityGroupIds
      *        Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS
      *        creates to use to allow communication between your worker nodes and the Kubernetes control plane. If you
-     *        don't specify a security group, the default security group for your VPC is used.
+     *        don't specify any security groups, then familiarize yourself with the difference between Amazon EKS
+     *        defaults for clusters deployed with Kubernetes:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        1.14 Amazon EKS platform version <code>eks.2</code> and earlier
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1.14 Amazon EKS platform version <code>eks.3</code> and later
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon EKS security group
+     *        considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -202,8 +287,25 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to
-     * use to allow communication between your worker nodes and the Kubernetes control plane. If you don't specify a
-     * security group, the default security group for your VPC is used.
+     * use to allow communication between your worker nodes and the Kubernetes control plane. If you don't specify any
+     * security groups, then familiarize yourself with the difference between Amazon EKS defaults for clusters deployed
+     * with Kubernetes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 1.14 Amazon EKS platform version <code>eks.2</code> and earlier
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.14 Amazon EKS platform version <code>eks.3</code> and later
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon
+     * EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -214,7 +316,24 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
      * @param securityGroupIds
      *        Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS
      *        creates to use to allow communication between your worker nodes and the Kubernetes control plane. If you
-     *        don't specify a security group, the default security group for your VPC is used.
+     *        don't specify any security groups, then familiarize yourself with the difference between Amazon EKS
+     *        defaults for clusters deployed with Kubernetes:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        1.14 Amazon EKS platform version <code>eks.2</code> and earlier
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1.14 Amazon EKS platform version <code>eks.3</code> and later
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon EKS security group
+     *        considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -231,14 +350,48 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to
-     * use to allow communication between your worker nodes and the Kubernetes control plane. If you don't specify a
-     * security group, the default security group for your VPC is used.
+     * use to allow communication between your worker nodes and the Kubernetes control plane. If you don't specify any
+     * security groups, then familiarize yourself with the difference between Amazon EKS defaults for clusters deployed
+     * with Kubernetes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 1.14 Amazon EKS platform version <code>eks.2</code> and earlier
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1.14 Amazon EKS platform version <code>eks.3</code> and later
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon
+     * EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @param securityGroupIds
      *        Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS
      *        creates to use to allow communication between your worker nodes and the Kubernetes control plane. If you
-     *        don't specify a security group, the default security group for your VPC is used.
+     *        don't specify any security groups, then familiarize yourself with the difference between Amazon EKS
+     *        defaults for clusters deployed with Kubernetes:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        1.14 Amazon EKS platform version <code>eks.2</code> and earlier
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1.14 Amazon EKS platform version <code>eks.3</code> and later
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon EKS security group
+     *        considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

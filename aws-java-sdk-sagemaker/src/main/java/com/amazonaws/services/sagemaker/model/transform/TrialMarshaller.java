@@ -46,6 +46,8 @@ public class TrialMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<StructuredPojo> LASTMODIFIEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedBy").build();
+    private static final MarshallingInfo<StructuredPojo> METADATAPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MetadataProperties").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<List> TRIALCOMPONENTSUMMARIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -76,6 +78,7 @@ public class TrialMarshaller {
             protocolMarshaller.marshall(trial.getCreatedBy(), CREATEDBY_BINDING);
             protocolMarshaller.marshall(trial.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
             protocolMarshaller.marshall(trial.getLastModifiedBy(), LASTMODIFIEDBY_BINDING);
+            protocolMarshaller.marshall(trial.getMetadataProperties(), METADATAPROPERTIES_BINDING);
             protocolMarshaller.marshall(trial.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(trial.getTrialComponentSummaries(), TRIALCOMPONENTSUMMARIES_BINDING);
         } catch (Exception e) {

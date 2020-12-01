@@ -121,9 +121,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>volume-type</code> - The Amazon EBS volume type. This can be <code>gp2</code> for General Purpose SSD,
-     * <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     * <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.
+     * <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> | <code>gp3</code> | <code>io1</code> |
+     * <code>io2</code> | <code>st1</code> | <code>sc1</code>| <code>standard</code>)
      * </p>
      * </li>
      * </ul>
@@ -271,9 +270,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>volume-type</code> - The Amazon EBS volume type. This can be <code>gp2</code> for General Purpose SSD,
-     * <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     * <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.
+     * <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> | <code>gp3</code> | <code>io1</code> |
+     * <code>io2</code> | <code>st1</code> | <code>sc1</code>| <code>standard</code>)
      * </p>
      * </li>
      * </ul>
@@ -372,9 +370,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *         </li>
      *         <li>
      *         <p>
-     *         <code>volume-type</code> - The Amazon EBS volume type. This can be <code>gp2</code> for General Purpose
-     *         SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
-     *         Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.
+     *         <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> | <code>gp3</code> |
+     *         <code>io1</code> | <code>io2</code> | <code>st1</code> | <code>sc1</code>| <code>standard</code>)
      *         </p>
      *         </li>
      */
@@ -482,9 +479,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>volume-type</code> - The Amazon EBS volume type. This can be <code>gp2</code> for General Purpose SSD,
-     * <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     * <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.
+     * <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> | <code>gp3</code> | <code>io1</code> |
+     * <code>io2</code> | <code>st1</code> | <code>sc1</code>| <code>standard</code>)
      * </p>
      * </li>
      * </ul>
@@ -584,9 +580,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
-     *        <code>volume-type</code> - The Amazon EBS volume type. This can be <code>gp2</code> for General Purpose
-     *        SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
-     *        Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.
+     *        <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> | <code>gp3</code> |
+     *        <code>io1</code> | <code>io2</code> | <code>st1</code> | <code>sc1</code>| <code>standard</code>)
      *        </p>
      *        </li>
      */
@@ -696,9 +691,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>volume-type</code> - The Amazon EBS volume type. This can be <code>gp2</code> for General Purpose SSD,
-     * <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     * <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.
+     * <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> | <code>gp3</code> | <code>io1</code> |
+     * <code>io2</code> | <code>st1</code> | <code>sc1</code>| <code>standard</code>)
      * </p>
      * </li>
      * </ul>
@@ -803,9 +797,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
-     *        <code>volume-type</code> - The Amazon EBS volume type. This can be <code>gp2</code> for General Purpose
-     *        SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
-     *        Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.
+     *        <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> | <code>gp3</code> |
+     *        <code>io1</code> | <code>io2</code> | <code>st1</code> | <code>sc1</code>| <code>standard</code>)
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -917,9 +910,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>volume-type</code> - The Amazon EBS volume type. This can be <code>gp2</code> for General Purpose SSD,
-     * <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     * <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.
+     * <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> | <code>gp3</code> | <code>io1</code> |
+     * <code>io2</code> | <code>st1</code> | <code>sc1</code>| <code>standard</code>)
      * </p>
      * </li>
      * </ul>
@@ -1019,9 +1011,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
-     *        <code>volume-type</code> - The Amazon EBS volume type. This can be <code>gp2</code> for General Purpose
-     *        SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
-     *        Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.
+     *        <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> | <code>gp3</code> |
+     *        <code>io1</code> | <code>io2</code> | <code>st1</code> | <code>sc1</code>| <code>standard</code>)
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

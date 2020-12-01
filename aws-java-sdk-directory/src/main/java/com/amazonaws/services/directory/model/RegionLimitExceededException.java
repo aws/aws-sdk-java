@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You have reached the limit for maximum number of simultaneous region replications per directory.
+ * You have reached the limit for maximum number of simultaneous Region replications per directory.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -58,6 +58,8 @@ public class UpdateFunctionConfigurationRequestMarshaller {
             .marshallLocationName("Layers").build();
     private static final MarshallingInfo<List> FILESYSTEMCONFIGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileSystemConfigs").build();
+    private static final MarshallingInfo<StructuredPojo> IMAGECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImageConfig").build();
 
     private static final UpdateFunctionConfigurationRequestMarshaller instance = new UpdateFunctionConfigurationRequestMarshaller();
 
@@ -90,6 +92,7 @@ public class UpdateFunctionConfigurationRequestMarshaller {
             protocolMarshaller.marshall(updateFunctionConfigurationRequest.getRevisionId(), REVISIONID_BINDING);
             protocolMarshaller.marshall(updateFunctionConfigurationRequest.getLayers(), LAYERS_BINDING);
             protocolMarshaller.marshall(updateFunctionConfigurationRequest.getFileSystemConfigs(), FILESYSTEMCONFIGS_BINDING);
+            protocolMarshaller.marshall(updateFunctionConfigurationRequest.getImageConfig(), IMAGECONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

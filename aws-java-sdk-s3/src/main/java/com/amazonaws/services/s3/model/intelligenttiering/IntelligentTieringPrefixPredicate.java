@@ -16,7 +16,8 @@ package com.amazonaws.services.s3.model.intelligenttiering;
 
 
 /**
- * An object key name prefix that identifies the subset of objects to which the rule applies.
+ * A {@link IntelligentTieringPrefixPredicate} class to represent the
+ * prefix to use when evaluating an intelligent tiering filter.
  */
 public final class IntelligentTieringPrefixPredicate extends IntelligentTieringFilterPredicate {
 

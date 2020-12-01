@@ -39,11 +39,12 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     private String endpointConfigName;
     /**
      * <p>
-     * When updating endpoint resources, enables or disables the retention of variant properties, such as the instance
-     * count or the variant weight. To retain the variant properties of an endpoint when updating it, set
-     * <code>RetainAllVariantProperties</code> to <code>true</code>. To use the variant properties specified in a new
-     * <code>EndpointConfig</code> call when updating an endpoint, set <code>RetainAllVariantProperties</code> to
-     * <code>false</code>.
+     * When updating endpoint resources, enables or disables the retention of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">variant properties</a>,
+     * such as the instance count or the variant weight. To retain the variant properties of an endpoint when updating
+     * it, set <code>RetainAllVariantProperties</code> to <code>true</code>. To use the variant properties specified in
+     * a new <code>EndpointConfig</code> call when updating an endpoint, set <code>RetainAllVariantProperties</code> to
+     * <code>false</code>. The default is <code>false</code>.
      * </p>
      */
     private Boolean retainAllVariantProperties;
@@ -56,6 +57,12 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private java.util.List<VariantProperty> excludeRetainedVariantProperties;
+    /**
+     * <p>
+     * The deployment configuration for the endpoint to be updated.
+     * </p>
+     */
+    private DeploymentConfig deploymentConfig;
 
     /**
      * <p>
@@ -139,19 +146,21 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * When updating endpoint resources, enables or disables the retention of variant properties, such as the instance
-     * count or the variant weight. To retain the variant properties of an endpoint when updating it, set
-     * <code>RetainAllVariantProperties</code> to <code>true</code>. To use the variant properties specified in a new
-     * <code>EndpointConfig</code> call when updating an endpoint, set <code>RetainAllVariantProperties</code> to
-     * <code>false</code>.
+     * When updating endpoint resources, enables or disables the retention of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">variant properties</a>,
+     * such as the instance count or the variant weight. To retain the variant properties of an endpoint when updating
+     * it, set <code>RetainAllVariantProperties</code> to <code>true</code>. To use the variant properties specified in
+     * a new <code>EndpointConfig</code> call when updating an endpoint, set <code>RetainAllVariantProperties</code> to
+     * <code>false</code>. The default is <code>false</code>.
      * </p>
      * 
      * @param retainAllVariantProperties
-     *        When updating endpoint resources, enables or disables the retention of variant properties, such as the
-     *        instance count or the variant weight. To retain the variant properties of an endpoint when updating it,
-     *        set <code>RetainAllVariantProperties</code> to <code>true</code>. To use the variant properties specified
-     *        in a new <code>EndpointConfig</code> call when updating an endpoint, set
-     *        <code>RetainAllVariantProperties</code> to <code>false</code>.
+     *        When updating endpoint resources, enables or disables the retention of <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">variant
+     *        properties</a>, such as the instance count or the variant weight. To retain the variant properties of an
+     *        endpoint when updating it, set <code>RetainAllVariantProperties</code> to <code>true</code>. To use the
+     *        variant properties specified in a new <code>EndpointConfig</code> call when updating an endpoint, set
+     *        <code>RetainAllVariantProperties</code> to <code>false</code>. The default is <code>false</code>.
      */
 
     public void setRetainAllVariantProperties(Boolean retainAllVariantProperties) {
@@ -160,18 +169,20 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * When updating endpoint resources, enables or disables the retention of variant properties, such as the instance
-     * count or the variant weight. To retain the variant properties of an endpoint when updating it, set
-     * <code>RetainAllVariantProperties</code> to <code>true</code>. To use the variant properties specified in a new
-     * <code>EndpointConfig</code> call when updating an endpoint, set <code>RetainAllVariantProperties</code> to
-     * <code>false</code>.
+     * When updating endpoint resources, enables or disables the retention of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">variant properties</a>,
+     * such as the instance count or the variant weight. To retain the variant properties of an endpoint when updating
+     * it, set <code>RetainAllVariantProperties</code> to <code>true</code>. To use the variant properties specified in
+     * a new <code>EndpointConfig</code> call when updating an endpoint, set <code>RetainAllVariantProperties</code> to
+     * <code>false</code>. The default is <code>false</code>.
      * </p>
      * 
-     * @return When updating endpoint resources, enables or disables the retention of variant properties, such as the
-     *         instance count or the variant weight. To retain the variant properties of an endpoint when updating it,
-     *         set <code>RetainAllVariantProperties</code> to <code>true</code>. To use the variant properties specified
-     *         in a new <code>EndpointConfig</code> call when updating an endpoint, set
-     *         <code>RetainAllVariantProperties</code> to <code>false</code>.
+     * @return When updating endpoint resources, enables or disables the retention of <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">variant
+     *         properties</a>, such as the instance count or the variant weight. To retain the variant properties of an
+     *         endpoint when updating it, set <code>RetainAllVariantProperties</code> to <code>true</code>. To use the
+     *         variant properties specified in a new <code>EndpointConfig</code> call when updating an endpoint, set
+     *         <code>RetainAllVariantProperties</code> to <code>false</code>. The default is <code>false</code>.
      */
 
     public Boolean getRetainAllVariantProperties() {
@@ -180,19 +191,21 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * When updating endpoint resources, enables or disables the retention of variant properties, such as the instance
-     * count or the variant weight. To retain the variant properties of an endpoint when updating it, set
-     * <code>RetainAllVariantProperties</code> to <code>true</code>. To use the variant properties specified in a new
-     * <code>EndpointConfig</code> call when updating an endpoint, set <code>RetainAllVariantProperties</code> to
-     * <code>false</code>.
+     * When updating endpoint resources, enables or disables the retention of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">variant properties</a>,
+     * such as the instance count or the variant weight. To retain the variant properties of an endpoint when updating
+     * it, set <code>RetainAllVariantProperties</code> to <code>true</code>. To use the variant properties specified in
+     * a new <code>EndpointConfig</code> call when updating an endpoint, set <code>RetainAllVariantProperties</code> to
+     * <code>false</code>. The default is <code>false</code>.
      * </p>
      * 
      * @param retainAllVariantProperties
-     *        When updating endpoint resources, enables or disables the retention of variant properties, such as the
-     *        instance count or the variant weight. To retain the variant properties of an endpoint when updating it,
-     *        set <code>RetainAllVariantProperties</code> to <code>true</code>. To use the variant properties specified
-     *        in a new <code>EndpointConfig</code> call when updating an endpoint, set
-     *        <code>RetainAllVariantProperties</code> to <code>false</code>.
+     *        When updating endpoint resources, enables or disables the retention of <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">variant
+     *        properties</a>, such as the instance count or the variant weight. To retain the variant properties of an
+     *        endpoint when updating it, set <code>RetainAllVariantProperties</code> to <code>true</code>. To use the
+     *        variant properties specified in a new <code>EndpointConfig</code> call when updating an endpoint, set
+     *        <code>RetainAllVariantProperties</code> to <code>false</code>. The default is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,18 +216,20 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * When updating endpoint resources, enables or disables the retention of variant properties, such as the instance
-     * count or the variant weight. To retain the variant properties of an endpoint when updating it, set
-     * <code>RetainAllVariantProperties</code> to <code>true</code>. To use the variant properties specified in a new
-     * <code>EndpointConfig</code> call when updating an endpoint, set <code>RetainAllVariantProperties</code> to
-     * <code>false</code>.
+     * When updating endpoint resources, enables or disables the retention of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">variant properties</a>,
+     * such as the instance count or the variant weight. To retain the variant properties of an endpoint when updating
+     * it, set <code>RetainAllVariantProperties</code> to <code>true</code>. To use the variant properties specified in
+     * a new <code>EndpointConfig</code> call when updating an endpoint, set <code>RetainAllVariantProperties</code> to
+     * <code>false</code>. The default is <code>false</code>.
      * </p>
      * 
-     * @return When updating endpoint resources, enables or disables the retention of variant properties, such as the
-     *         instance count or the variant weight. To retain the variant properties of an endpoint when updating it,
-     *         set <code>RetainAllVariantProperties</code> to <code>true</code>. To use the variant properties specified
-     *         in a new <code>EndpointConfig</code> call when updating an endpoint, set
-     *         <code>RetainAllVariantProperties</code> to <code>false</code>.
+     * @return When updating endpoint resources, enables or disables the retention of <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">variant
+     *         properties</a>, such as the instance count or the variant weight. To retain the variant properties of an
+     *         endpoint when updating it, set <code>RetainAllVariantProperties</code> to <code>true</code>. To use the
+     *         variant properties specified in a new <code>EndpointConfig</code> call when updating an endpoint, set
+     *         <code>RetainAllVariantProperties</code> to <code>false</code>. The default is <code>false</code>.
      */
 
     public Boolean isRetainAllVariantProperties() {
@@ -317,6 +332,46 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The deployment configuration for the endpoint to be updated.
+     * </p>
+     * 
+     * @param deploymentConfig
+     *        The deployment configuration for the endpoint to be updated.
+     */
+
+    public void setDeploymentConfig(DeploymentConfig deploymentConfig) {
+        this.deploymentConfig = deploymentConfig;
+    }
+
+    /**
+     * <p>
+     * The deployment configuration for the endpoint to be updated.
+     * </p>
+     * 
+     * @return The deployment configuration for the endpoint to be updated.
+     */
+
+    public DeploymentConfig getDeploymentConfig() {
+        return this.deploymentConfig;
+    }
+
+    /**
+     * <p>
+     * The deployment configuration for the endpoint to be updated.
+     * </p>
+     * 
+     * @param deploymentConfig
+     *        The deployment configuration for the endpoint to be updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateEndpointRequest withDeploymentConfig(DeploymentConfig deploymentConfig) {
+        setDeploymentConfig(deploymentConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -335,7 +390,9 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getRetainAllVariantProperties() != null)
             sb.append("RetainAllVariantProperties: ").append(getRetainAllVariantProperties()).append(",");
         if (getExcludeRetainedVariantProperties() != null)
-            sb.append("ExcludeRetainedVariantProperties: ").append(getExcludeRetainedVariantProperties());
+            sb.append("ExcludeRetainedVariantProperties: ").append(getExcludeRetainedVariantProperties()).append(",");
+        if (getDeploymentConfig() != null)
+            sb.append("DeploymentConfig: ").append(getDeploymentConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -367,6 +424,10 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         if (other.getExcludeRetainedVariantProperties() != null
                 && other.getExcludeRetainedVariantProperties().equals(this.getExcludeRetainedVariantProperties()) == false)
             return false;
+        if (other.getDeploymentConfig() == null ^ this.getDeploymentConfig() == null)
+            return false;
+        if (other.getDeploymentConfig() != null && other.getDeploymentConfig().equals(this.getDeploymentConfig()) == false)
+            return false;
         return true;
     }
 
@@ -379,6 +440,7 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getEndpointConfigName() == null) ? 0 : getEndpointConfigName().hashCode());
         hashCode = prime * hashCode + ((getRetainAllVariantProperties() == null) ? 0 : getRetainAllVariantProperties().hashCode());
         hashCode = prime * hashCode + ((getExcludeRetainedVariantProperties() == null) ? 0 : getExcludeRetainedVariantProperties().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentConfig() == null) ? 0 : getDeploymentConfig().hashCode());
         return hashCode;
     }
 

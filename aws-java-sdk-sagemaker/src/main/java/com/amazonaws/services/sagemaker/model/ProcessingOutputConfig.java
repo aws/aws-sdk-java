@@ -30,7 +30,7 @@ public class ProcessingOutputConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Output configuration information for a processing job.
+     * List of output configurations for the processing job.
      * </p>
      */
     private java.util.List<ProcessingOutput> outputs;
@@ -45,10 +45,10 @@ public class ProcessingOutputConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Output configuration information for a processing job.
+     * List of output configurations for the processing job.
      * </p>
      * 
-     * @return Output configuration information for a processing job.
+     * @return List of output configurations for the processing job.
      */
 
     public java.util.List<ProcessingOutput> getOutputs() {
@@ -57,11 +57,11 @@ public class ProcessingOutputConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Output configuration information for a processing job.
+     * List of output configurations for the processing job.
      * </p>
      * 
      * @param outputs
-     *        Output configuration information for a processing job.
+     *        List of output configurations for the processing job.
      */
 
     public void setOutputs(java.util.Collection<ProcessingOutput> outputs) {
@@ -75,7 +75,7 @@ public class ProcessingOutputConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Output configuration information for a processing job.
+     * List of output configurations for the processing job.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -84,7 +84,7 @@ public class ProcessingOutputConfig implements Serializable, Cloneable, Structur
      * </p>
      * 
      * @param outputs
-     *        Output configuration information for a processing job.
+     *        List of output configurations for the processing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,11 +100,11 @@ public class ProcessingOutputConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Output configuration information for a processing job.
+     * List of output configurations for the processing job.
      * </p>
      * 
      * @param outputs
-     *        Output configuration information for a processing job.
+     *        List of output configurations for the processing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

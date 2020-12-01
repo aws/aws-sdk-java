@@ -32,5 +32,9 @@ public class ServerSideEncryptionHeaderHandler <T extends ServerSideEncryptionRe
         result.setSSEAlgorithm(response.getHeaders().get(Headers.SERVER_SIDE_ENCRYPTION));
         result.setSSECustomerAlgorithm(response.getHeaders().get(Headers.SERVER_SIDE_ENCRYPTION_CUSTOMER_ALGORITHM));
         result.setSSECustomerKeyMd5(response.getHeaders().get(Headers.SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5));
+        String bucketKeyEnabled = response.getHeaders().get(Headers.SERVER_SIDE_ENCRYPTION_BUCKET_KEY_ENABLED);
+        if (bucketKeyEnabled != null) {
+            result.setBucketKeyEnabled("true".equals(bucketKeyEnabled));
+        }
     }
 }

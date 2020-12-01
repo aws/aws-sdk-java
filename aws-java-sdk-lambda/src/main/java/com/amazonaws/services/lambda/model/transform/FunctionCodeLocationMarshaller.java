@@ -31,6 +31,10 @@ public class FunctionCodeLocationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RepositoryType").build();
     private static final MarshallingInfo<String> LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Location").build();
+    private static final MarshallingInfo<String> IMAGEURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ImageUri").build();
+    private static final MarshallingInfo<String> RESOLVEDIMAGEURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResolvedImageUri").build();
 
     private static final FunctionCodeLocationMarshaller instance = new FunctionCodeLocationMarshaller();
 
@@ -50,6 +54,8 @@ public class FunctionCodeLocationMarshaller {
         try {
             protocolMarshaller.marshall(functionCodeLocation.getRepositoryType(), REPOSITORYTYPE_BINDING);
             protocolMarshaller.marshall(functionCodeLocation.getLocation(), LOCATION_BINDING);
+            protocolMarshaller.marshall(functionCodeLocation.getImageUri(), IMAGEURI_BINDING);
+            protocolMarshaller.marshall(functionCodeLocation.getResolvedImageUri(), RESOLVEDIMAGEURI_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -23,6 +23,7 @@ import java.io.Serializable;
 public class ServerSideEncryptionRule implements Serializable, Cloneable {
 
     private ServerSideEncryptionByDefault applyServerSideEncryptionByDefault;
+    private Boolean bucketKeyEnabled;
 
     /**
      * Describes the default server-side encryption to apply to new objects in the bucket. If Put Object request does not specify
@@ -57,6 +58,38 @@ public class ServerSideEncryptionRule implements Serializable, Cloneable {
     }
 
     /**
+     * Returns whether or not the bucket key is enabled. If Put Object request does not specify
+     * whether bucket key should be used, this default setting will be applied.
+     *
+     * @return Whether bucket key is enabled or not
+     */
+    public Boolean getBucketKeyEnabled() {
+        return bucketKeyEnabled;
+    }
+
+    /**
+     * Sets the default setting for whether bucket key is used for new objects in the bucket.
+     * If Put Object request does not specify whether bucket key should be used, this default setting will be applied.
+     *
+     * @param bucketKeyEnabled Whether bucket key is enabled or not
+     */
+    public void setBucketKeyEnabled(Boolean bucketKeyEnabled) {
+        this.bucketKeyEnabled = bucketKeyEnabled;
+    }
+
+    /**
+     * Sets the default setting for whether bucket key is used for new objects in the bucket.
+     * If Put Object request does not specify whether bucket key should be used, this default setting will be applied.
+     *
+     * @param bucketKeyEnabled Whether bucket key is enabled or not
+     * @return This object for method chaining.
+     */
+    public ServerSideEncryptionRule withBucketKeyEnabled(Boolean bucketKeyEnabled) {
+        setBucketKeyEnabled(bucketKeyEnabled);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -68,6 +101,7 @@ public class ServerSideEncryptionRule implements Serializable, Cloneable {
         sb.append("{");
         if (getApplyServerSideEncryptionByDefault() != null) {
             sb.append("ApplyServerSideEncryptionByDefault: ").append(getApplyServerSideEncryptionByDefault()).append(",");
+            sb.append("BucketKeyEnabled: ").append(getBucketKeyEnabled()).append(",");
         }
         sb.append("}");
         return sb.toString();
@@ -90,7 +124,14 @@ public class ServerSideEncryptionRule implements Serializable, Cloneable {
             return false;
         }
         if (other.getApplyServerSideEncryptionByDefault() != null
-            && other.getApplyServerSideEncryptionByDefault().equals(this.getApplyServerSideEncryptionByDefault()) == false) {
+                && other.getApplyServerSideEncryptionByDefault().equals(this.getApplyServerSideEncryptionByDefault()) == false) {
+            return false;
+        }
+        if (other.getBucketKeyEnabled() == null ^ this.getBucketKeyEnabled() == null) {
+            return false;
+        }
+        if (other.getBucketKeyEnabled() != null &&
+                other.getBucketKeyEnabled().booleanValue() != this.getBucketKeyEnabled().booleanValue()) {
             return false;
         }
 
@@ -103,7 +144,8 @@ public class ServerSideEncryptionRule implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplyServerSideEncryptionByDefault() == null) ? 0 :
-                                       getApplyServerSideEncryptionByDefault().hashCode());
+                getApplyServerSideEncryptionByDefault().hashCode());
+        hashCode = prime * hashCode + ((getBucketKeyEnabled() == null) ? 0 : getBucketKeyEnabled() ? 1 : 2);
         return hashCode;
     }
 

@@ -88,24 +88,10 @@ public class Volume implements Serializable, Cloneable {
     private String volumeId;
     /**
      * <p>
-     * The number of I/O operations per second (IOPS) that the volume supports. For Provisioned IOPS SSD volumes, this
-     * represents the number of IOPS that are provisioned for the volume. For General Purpose SSD volumes, this
-     * represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for
-     * bursting. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * <p>
-     * Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000 IOPS for <code>io1</code>
-     * and <code>io2</code> volumes, in most Regions. The maximum IOPS for <code>io1</code> and <code>io2</code> of
-     * 64,000 is guaranteed only on <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
-     * </p>
-     * <p>
-     * Condition: This parameter is required for requests to create <code>io1</code> and <code>io2</code> volumes; it is
-     * not used in requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
-     * volumes.
+     * The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code>
+     * volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes,
+     * this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits
+     * for bursting.
      * </p>
      */
     private Integer iops;
@@ -117,9 +103,7 @@ public class Volume implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * The volume type. This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for
-     * Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
-     * <code>standard</code> for Magnetic volumes.
+     * The volume type.
      * </p>
      */
     private String volumeType;
@@ -135,6 +119,12 @@ public class Volume implements Serializable, Cloneable {
      * </p>
      */
     private Boolean multiAttachEnabled;
+    /**
+     * <p>
+     * The throughput that the volume supports, in MiB/s.
+     * </p>
+     */
+    private Integer throughput;
 
     /**
      * <p>
@@ -622,44 +612,17 @@ public class Volume implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of I/O operations per second (IOPS) that the volume supports. For Provisioned IOPS SSD volumes, this
-     * represents the number of IOPS that are provisioned for the volume. For General Purpose SSD volumes, this
-     * represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for
-     * bursting. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * <p>
-     * Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000 IOPS for <code>io1</code>
-     * and <code>io2</code> volumes, in most Regions. The maximum IOPS for <code>io1</code> and <code>io2</code> of
-     * 64,000 is guaranteed only on <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
-     * </p>
-     * <p>
-     * Condition: This parameter is required for requests to create <code>io1</code> and <code>io2</code> volumes; it is
-     * not used in requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
-     * volumes.
+     * The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code>
+     * volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes,
+     * this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits
+     * for bursting.
      * </p>
      * 
      * @param iops
-     *        The number of I/O operations per second (IOPS) that the volume supports. For Provisioned IOPS SSD volumes,
-     *        this represents the number of IOPS that are provisioned for the volume. For General Purpose SSD volumes,
-     *        this represents the baseline performance of the volume and the rate at which the volume accumulates I/O
-     *        credits for bursting. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a>
-     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     *        <p>
-     *        Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000 IOPS for
-     *        <code>io1</code> and <code>io2</code> volumes, in most Regions. The maximum IOPS for <code>io1</code> and
-     *        <code>io2</code> of 64,000 is guaranteed only on <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
-     *        >Nitro-based instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
-     *        </p>
-     *        <p>
-     *        Condition: This parameter is required for requests to create <code>io1</code> and <code>io2</code>
-     *        volumes; it is not used in requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
-     *        <code>standard</code> volumes.
+     *        The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and
+     *        <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For
+     *        <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the
+     *        volume accumulates I/O credits for bursting.
      */
 
     public void setIops(Integer iops) {
@@ -668,43 +631,16 @@ public class Volume implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of I/O operations per second (IOPS) that the volume supports. For Provisioned IOPS SSD volumes, this
-     * represents the number of IOPS that are provisioned for the volume. For General Purpose SSD volumes, this
-     * represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for
-     * bursting. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * <p>
-     * Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000 IOPS for <code>io1</code>
-     * and <code>io2</code> volumes, in most Regions. The maximum IOPS for <code>io1</code> and <code>io2</code> of
-     * 64,000 is guaranteed only on <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
-     * </p>
-     * <p>
-     * Condition: This parameter is required for requests to create <code>io1</code> and <code>io2</code> volumes; it is
-     * not used in requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
-     * volumes.
+     * The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code>
+     * volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes,
+     * this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits
+     * for bursting.
      * </p>
      * 
-     * @return The number of I/O operations per second (IOPS) that the volume supports. For Provisioned IOPS SSD
-     *         volumes, this represents the number of IOPS that are provisioned for the volume. For General Purpose SSD
-     *         volumes, this represents the baseline performance of the volume and the rate at which the volume
-     *         accumulates I/O credits for bursting. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume
-     *         types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     *         <p>
-     *         Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000 IOPS for
-     *         <code>io1</code> and <code>io2</code> volumes, in most Regions. The maximum IOPS for <code>io1</code> and
-     *         <code>io2</code> of 64,000 is guaranteed only on <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
-     *         >Nitro-based instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
-     *         </p>
-     *         <p>
-     *         Condition: This parameter is required for requests to create <code>io1</code> and <code>io2</code>
-     *         volumes; it is not used in requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
-     *         <code>standard</code> volumes.
+     * @return The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and
+     *         <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For
+     *         <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which
+     *         the volume accumulates I/O credits for bursting.
      */
 
     public Integer getIops() {
@@ -713,44 +649,17 @@ public class Volume implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of I/O operations per second (IOPS) that the volume supports. For Provisioned IOPS SSD volumes, this
-     * represents the number of IOPS that are provisioned for the volume. For General Purpose SSD volumes, this
-     * represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for
-     * bursting. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * <p>
-     * Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000 IOPS for <code>io1</code>
-     * and <code>io2</code> volumes, in most Regions. The maximum IOPS for <code>io1</code> and <code>io2</code> of
-     * 64,000 is guaranteed only on <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
-     * </p>
-     * <p>
-     * Condition: This parameter is required for requests to create <code>io1</code> and <code>io2</code> volumes; it is
-     * not used in requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
-     * volumes.
+     * The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code>
+     * volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes,
+     * this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits
+     * for bursting.
      * </p>
      * 
      * @param iops
-     *        The number of I/O operations per second (IOPS) that the volume supports. For Provisioned IOPS SSD volumes,
-     *        this represents the number of IOPS that are provisioned for the volume. For General Purpose SSD volumes,
-     *        this represents the baseline performance of the volume and the rate at which the volume accumulates I/O
-     *        credits for bursting. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a>
-     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     *        <p>
-     *        Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000 IOPS for
-     *        <code>io1</code> and <code>io2</code> volumes, in most Regions. The maximum IOPS for <code>io1</code> and
-     *        <code>io2</code> of 64,000 is guaranteed only on <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
-     *        >Nitro-based instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
-     *        </p>
-     *        <p>
-     *        Condition: This parameter is required for requests to create <code>io1</code> and <code>io2</code>
-     *        volumes; it is not used in requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
-     *        <code>standard</code> volumes.
+     *        The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and
+     *        <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For
+     *        <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the
+     *        volume accumulates I/O credits for bursting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -834,15 +743,11 @@ public class Volume implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for
-     * Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
-     * <code>standard</code> for Magnetic volumes.
+     * The volume type.
      * </p>
      * 
      * @param volumeType
-     *        The volume type. This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or
-     *        <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>
-     *        for Cold HDD, or <code>standard</code> for Magnetic volumes.
+     *        The volume type.
      * @see VolumeType
      */
 
@@ -852,14 +757,10 @@ public class Volume implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for
-     * Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
-     * <code>standard</code> for Magnetic volumes.
+     * The volume type.
      * </p>
      * 
-     * @return The volume type. This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or
-     *         <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     *         <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.
+     * @return The volume type.
      * @see VolumeType
      */
 
@@ -869,15 +770,11 @@ public class Volume implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for
-     * Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
-     * <code>standard</code> for Magnetic volumes.
+     * The volume type.
      * </p>
      * 
      * @param volumeType
-     *        The volume type. This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or
-     *        <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>
-     *        for Cold HDD, or <code>standard</code> for Magnetic volumes.
+     *        The volume type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VolumeType
      */
@@ -889,15 +786,11 @@ public class Volume implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for
-     * Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
-     * <code>standard</code> for Magnetic volumes.
+     * The volume type.
      * </p>
      * 
      * @param volumeType
-     *        The volume type. This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or
-     *        <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>
-     *        for Cold HDD, or <code>standard</code> for Magnetic volumes.
+     *        The volume type.
      * @see VolumeType
      */
 
@@ -907,15 +800,11 @@ public class Volume implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for
-     * Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
-     * <code>standard</code> for Magnetic volumes.
+     * The volume type.
      * </p>
      * 
      * @param volumeType
-     *        The volume type. This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or
-     *        <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>
-     *        for Cold HDD, or <code>standard</code> for Magnetic volumes.
+     *        The volume type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VolumeType
      */
@@ -1030,6 +919,46 @@ public class Volume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The throughput that the volume supports, in MiB/s.
+     * </p>
+     * 
+     * @param throughput
+     *        The throughput that the volume supports, in MiB/s.
+     */
+
+    public void setThroughput(Integer throughput) {
+        this.throughput = throughput;
+    }
+
+    /**
+     * <p>
+     * The throughput that the volume supports, in MiB/s.
+     * </p>
+     * 
+     * @return The throughput that the volume supports, in MiB/s.
+     */
+
+    public Integer getThroughput() {
+        return this.throughput;
+    }
+
+    /**
+     * <p>
+     * The throughput that the volume supports, in MiB/s.
+     * </p>
+     * 
+     * @param throughput
+     *        The throughput that the volume supports, in MiB/s.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Volume withThroughput(Integer throughput) {
+        setThroughput(throughput);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1070,7 +999,9 @@ public class Volume implements Serializable, Cloneable {
         if (getFastRestored() != null)
             sb.append("FastRestored: ").append(getFastRestored()).append(",");
         if (getMultiAttachEnabled() != null)
-            sb.append("MultiAttachEnabled: ").append(getMultiAttachEnabled());
+            sb.append("MultiAttachEnabled: ").append(getMultiAttachEnabled()).append(",");
+        if (getThroughput() != null)
+            sb.append("Throughput: ").append(getThroughput());
         sb.append("}");
         return sb.toString();
     }
@@ -1145,6 +1076,10 @@ public class Volume implements Serializable, Cloneable {
             return false;
         if (other.getMultiAttachEnabled() != null && other.getMultiAttachEnabled().equals(this.getMultiAttachEnabled()) == false)
             return false;
+        if (other.getThroughput() == null ^ this.getThroughput() == null)
+            return false;
+        if (other.getThroughput() != null && other.getThroughput().equals(this.getThroughput()) == false)
+            return false;
         return true;
     }
 
@@ -1168,6 +1103,7 @@ public class Volume implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
         hashCode = prime * hashCode + ((getFastRestored() == null) ? 0 : getFastRestored().hashCode());
         hashCode = prime * hashCode + ((getMultiAttachEnabled() == null) ? 0 : getMultiAttachEnabled().hashCode());
+        hashCode = prime * hashCode + ((getThroughput() == null) ? 0 : getThroughput().hashCode());
         return hashCode;
     }
 

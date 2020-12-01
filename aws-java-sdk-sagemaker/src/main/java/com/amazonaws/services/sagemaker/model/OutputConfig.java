@@ -237,6 +237,39 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      */
     private String compilerOptions;
+    /**
+     * <p>
+     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
+     * after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3
+     * for your role's account
+     * </p>
+     * <p>
+     * The KmsKeyId can be any of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias name: <code>alias/ExampleAlias</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String kmsKeyId;
 
     /**
      * <p>
@@ -1496,6 +1529,205 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
+     * after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3
+     * for your role's account
+     * </p>
+     * <p>
+     * The KmsKeyId can be any of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias name: <code>alias/ExampleAlias</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param kmsKeyId
+     *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage
+     *        volume after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key
+     *        for Amazon S3 for your role's account</p>
+     *        <p>
+     *        The KmsKeyId can be any of the following formats:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias name: <code>alias/ExampleAlias</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
+     *        </p>
+     *        </li>
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
+     * after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3
+     * for your role's account
+     * </p>
+     * <p>
+     * The KmsKeyId can be any of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias name: <code>alias/ExampleAlias</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage
+     *         volume after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS
+     *         key for Amazon S3 for your role's account</p>
+     *         <p>
+     *         The KmsKeyId can be any of the following formats:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Alias name: <code>alias/ExampleAlias</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
+     *         </p>
+     *         </li>
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
+     * after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3
+     * for your role's account
+     * </p>
+     * <p>
+     * The KmsKeyId can be any of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias name: <code>alias/ExampleAlias</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param kmsKeyId
+     *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage
+     *        volume after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key
+     *        for Amazon S3 for your role's account</p>
+     *        <p>
+     *        The KmsKeyId can be any of the following formats:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias name: <code>alias/ExampleAlias</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OutputConfig withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1514,7 +1746,9 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
         if (getTargetPlatform() != null)
             sb.append("TargetPlatform: ").append(getTargetPlatform()).append(",");
         if (getCompilerOptions() != null)
-            sb.append("CompilerOptions: ").append(getCompilerOptions());
+            sb.append("CompilerOptions: ").append(getCompilerOptions()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -1545,6 +1779,10 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCompilerOptions() != null && other.getCompilerOptions().equals(this.getCompilerOptions()) == false)
             return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -1557,6 +1795,7 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTargetDevice() == null) ? 0 : getTargetDevice().hashCode());
         hashCode = prime * hashCode + ((getTargetPlatform() == null) ? 0 : getTargetPlatform().hashCode());
         hashCode = prime * hashCode + ((getCompilerOptions() == null) ? 0 : getCompilerOptions().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         return hashCode;
     }
 

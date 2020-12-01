@@ -15,6 +15,7 @@
 package com.amazonaws.services.s3.model.transform;
 
 import com.amazonaws.services.s3.model.ServerSideEncryptionRule;
+import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.BooleanStaxUnmarshaller;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.Unmarshaller;
 import javax.xml.stream.events.XMLEvent;
@@ -55,6 +56,8 @@ class ServerSideEncryptionRuleStaxUnmarshaller
                 if (context.testExpression("ApplyServerSideEncryptionByDefault", targetDepth)) {
                     rule.setApplyServerSideEncryptionByDefault(
                         ServerSideEncryptionByDefaultStaxUnmarshaller.getInstance().unmarshall(context));
+                } else if (context.testExpression("BucketKeyEnabled", targetDepth)) {
+                    rule.setBucketKeyEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {

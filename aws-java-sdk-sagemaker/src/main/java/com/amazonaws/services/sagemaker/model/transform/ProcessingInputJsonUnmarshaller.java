@@ -52,9 +52,17 @@ public class ProcessingInputJsonUnmarshaller implements Unmarshaller<ProcessingI
                     context.nextToken();
                     processingInput.setInputName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AppManaged", targetDepth)) {
+                    context.nextToken();
+                    processingInput.setAppManaged(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("S3Input", targetDepth)) {
                     context.nextToken();
                     processingInput.setS3Input(ProcessingS3InputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DatasetDefinition", targetDepth)) {
+                    context.nextToken();
+                    processingInput.setDatasetDefinition(DatasetDefinitionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

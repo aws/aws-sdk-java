@@ -302,6 +302,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Initiates an Amazon Connect instance with all the supported channels enabled. It does not attach any storage
      * (such as Amazon S3, or Kinesis) or allow for any configurations on features such as Contact Lens for Amazon
      * Connect.
@@ -316,6 +319,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<CreateInstanceResult> createInstanceAsync(CreateInstanceRequest createInstanceRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Initiates an Amazon Connect instance with all the supported channels enabled. It does not attach any storage
      * (such as Amazon S3, or Kinesis) or allow for any configurations on features such as Contact Lens for Amazon
@@ -334,6 +340,47 @@ public interface AmazonConnectAsync extends AmazonConnect {
      */
     java.util.concurrent.Future<CreateInstanceResult> createInstanceAsync(CreateInstanceRequest createInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<CreateInstanceRequest, CreateInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Create an AppIntegration association with anAmazon Connect instance.
+     * </p>
+     * 
+     * @param createIntegrationAssociationRequest
+     * @return A Java Future containing the result of the CreateIntegrationAssociation operation returned by the
+     *         service.
+     * @sample AmazonConnectAsync.CreateIntegrationAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateIntegrationAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateIntegrationAssociationResult> createIntegrationAssociationAsync(
+            CreateIntegrationAssociationRequest createIntegrationAssociationRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Create an AppIntegration association with anAmazon Connect instance.
+     * </p>
+     * 
+     * @param createIntegrationAssociationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateIntegrationAssociation operation returned by the
+     *         service.
+     * @sample AmazonConnectAsyncHandler.CreateIntegrationAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateIntegrationAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateIntegrationAssociationResult> createIntegrationAssociationAsync(
+            CreateIntegrationAssociationRequest createIntegrationAssociationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateIntegrationAssociationRequest, CreateIntegrationAssociationResult> asyncHandler);
 
     /**
      * <p>
@@ -365,6 +412,43 @@ public interface AmazonConnectAsync extends AmazonConnect {
      */
     java.util.concurrent.Future<CreateRoutingProfileResult> createRoutingProfileAsync(CreateRoutingProfileRequest createRoutingProfileRequest,
             com.amazonaws.handlers.AsyncHandler<CreateRoutingProfileRequest, CreateRoutingProfileResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Creates a use case for an AppIntegration association.
+     * </p>
+     * 
+     * @param createUseCaseRequest
+     * @return A Java Future containing the result of the CreateUseCase operation returned by the service.
+     * @sample AmazonConnectAsync.CreateUseCase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUseCase" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateUseCaseResult> createUseCaseAsync(CreateUseCaseRequest createUseCaseRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Creates a use case for an AppIntegration association.
+     * </p>
+     * 
+     * @param createUseCaseRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateUseCase operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.CreateUseCase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUseCase" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateUseCaseResult> createUseCaseAsync(CreateUseCaseRequest createUseCaseRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateUseCaseRequest, CreateUseCaseResult> asyncHandler);
 
     /**
      * <p>
@@ -440,6 +524,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Deletes the Amazon Connect instance.
      * </p>
      * 
@@ -452,6 +539,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<DeleteInstanceResult> deleteInstanceAsync(DeleteInstanceRequest deleteInstanceRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Deletes the Amazon Connect instance.
      * </p>
@@ -468,6 +558,86 @@ public interface AmazonConnectAsync extends AmazonConnect {
      */
     java.util.concurrent.Future<DeleteInstanceResult> deleteInstanceAsync(DeleteInstanceRequest deleteInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteInstanceRequest, DeleteInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Deletes an AppIntegration association from an Amazon Connect instance. The association must not have any use
+     * cases associated with it.
+     * </p>
+     * 
+     * @param deleteIntegrationAssociationRequest
+     * @return A Java Future containing the result of the DeleteIntegrationAssociation operation returned by the
+     *         service.
+     * @sample AmazonConnectAsync.DeleteIntegrationAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteIntegrationAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteIntegrationAssociationResult> deleteIntegrationAssociationAsync(
+            DeleteIntegrationAssociationRequest deleteIntegrationAssociationRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Deletes an AppIntegration association from an Amazon Connect instance. The association must not have any use
+     * cases associated with it.
+     * </p>
+     * 
+     * @param deleteIntegrationAssociationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteIntegrationAssociation operation returned by the
+     *         service.
+     * @sample AmazonConnectAsyncHandler.DeleteIntegrationAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteIntegrationAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteIntegrationAssociationResult> deleteIntegrationAssociationAsync(
+            DeleteIntegrationAssociationRequest deleteIntegrationAssociationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteIntegrationAssociationRequest, DeleteIntegrationAssociationResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Deletes a use case from an AppIntegration association.
+     * </p>
+     * 
+     * @param deleteUseCaseRequest
+     * @return A Java Future containing the result of the DeleteUseCase operation returned by the service.
+     * @sample AmazonConnectAsync.DeleteUseCase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUseCase" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteUseCaseResult> deleteUseCaseAsync(DeleteUseCaseRequest deleteUseCaseRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Deletes a use case from an AppIntegration association.
+     * </p>
+     * 
+     * @param deleteUseCaseRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteUseCase operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.DeleteUseCase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUseCase" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteUseCaseResult> deleteUseCaseAsync(DeleteUseCaseRequest deleteUseCaseRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteUseCaseRequest, DeleteUseCaseResult> asyncHandler);
 
     /**
      * <p>
@@ -1288,6 +1458,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Returns a paginated list of all attribute types for the given instance.
      * </p>
      * 
@@ -1300,6 +1473,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<ListInstanceAttributesResult> listInstanceAttributesAsync(ListInstanceAttributesRequest listInstanceAttributesRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Returns a paginated list of all attribute types for the given instance.
      * </p>
@@ -1319,6 +1495,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Returns a paginated list of storage configs for the identified instance and resource type.
      * </p>
      * 
@@ -1332,6 +1511,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
             ListInstanceStorageConfigsRequest listInstanceStorageConfigsRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Returns a paginated list of storage configs for the identified instance and resource type.
      * </p>
@@ -1352,6 +1534,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Return a list of instances which are in active state, creation-in-progress state, and failed state. Instances
      * that aren't successfully created (they are in a failed state) are returned only for 24 hours after the
      * CreateInstance API was invoked.
@@ -1366,6 +1551,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<ListInstancesResult> listInstancesAsync(ListInstancesRequest listInstancesRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Return a list of instances which are in active state, creation-in-progress state, and failed state. Instances
      * that aren't successfully created (they are in a failed state) are returned only for 24 hours after the
@@ -1384,6 +1572,45 @@ public interface AmazonConnectAsync extends AmazonConnect {
      */
     java.util.concurrent.Future<ListInstancesResult> listInstancesAsync(ListInstancesRequest listInstancesRequest,
             com.amazonaws.handlers.AsyncHandler<ListInstancesRequest, ListInstancesResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Provides summary information about the AppIntegration associations for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param listIntegrationAssociationsRequest
+     * @return A Java Future containing the result of the ListIntegrationAssociations operation returned by the service.
+     * @sample AmazonConnectAsync.ListIntegrationAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListIntegrationAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListIntegrationAssociationsResult> listIntegrationAssociationsAsync(
+            ListIntegrationAssociationsRequest listIntegrationAssociationsRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Provides summary information about the AppIntegration associations for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param listIntegrationAssociationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListIntegrationAssociations operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.ListIntegrationAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListIntegrationAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListIntegrationAssociationsResult> listIntegrationAssociationsAsync(
+            ListIntegrationAssociationsRequest listIntegrationAssociationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListIntegrationAssociationsRequest, ListIntegrationAssociationsResult> asyncHandler);
 
     /**
      * <p>
@@ -1751,6 +1978,47 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * List the use cases.
+     * </p>
+     * 
+     * @param listUseCasesRequest
+     *        Provides summary information about the use cases for the specified Amazon Connect AppIntegration
+     *        association.
+     * @return A Java Future containing the result of the ListUseCases operation returned by the service.
+     * @sample AmazonConnectAsync.ListUseCases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUseCases" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListUseCasesResult> listUseCasesAsync(ListUseCasesRequest listUseCasesRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * List the use cases.
+     * </p>
+     * 
+     * @param listUseCasesRequest
+     *        Provides summary information about the use cases for the specified Amazon Connect AppIntegration
+     *        association.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListUseCases operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.ListUseCases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUseCases" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListUseCasesResult> listUseCasesAsync(ListUseCasesRequest listUseCasesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListUseCasesRequest, ListUseCasesResult> asyncHandler);
+
+    /**
+     * <p>
      * Provides summary information about the hierarchy groups for the specified Amazon Connect instance.
      * </p>
      * <p>
@@ -2074,6 +2342,37 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<StartOutboundVoiceContactResult> startOutboundVoiceContactAsync(
             StartOutboundVoiceContactRequest startOutboundVoiceContactRequest,
             com.amazonaws.handlers.AsyncHandler<StartOutboundVoiceContactRequest, StartOutboundVoiceContactResult> asyncHandler);
+
+    /**
+     * <p>
+     * Initiates a contact flow to start a new task.
+     * </p>
+     * 
+     * @param startTaskContactRequest
+     * @return A Java Future containing the result of the StartTaskContact operation returned by the service.
+     * @sample AmazonConnectAsync.StartTaskContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartTaskContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartTaskContactResult> startTaskContactAsync(StartTaskContactRequest startTaskContactRequest);
+
+    /**
+     * <p>
+     * Initiates a contact flow to start a new task.
+     * </p>
+     * 
+     * @param startTaskContactRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartTaskContact operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.StartTaskContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartTaskContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartTaskContactResult> startTaskContactAsync(StartTaskContactRequest startTaskContactRequest,
+            com.amazonaws.handlers.AsyncHandler<StartTaskContactRequest, StartTaskContactResult> asyncHandler);
 
     /**
      * <p>
@@ -2421,6 +2720,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Updates the value for the specified attribute type.
      * </p>
      * 
@@ -2433,6 +2735,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<UpdateInstanceAttributeResult> updateInstanceAttributeAsync(UpdateInstanceAttributeRequest updateInstanceAttributeRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Updates the value for the specified attribute type.
      * </p>
@@ -2452,6 +2757,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Updates an existing configuration for a resource type. This API is idempotent.
      * </p>
      * 
@@ -2465,6 +2773,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
             UpdateInstanceStorageConfigRequest updateInstanceStorageConfigRequest);
 
     /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
      * <p>
      * Updates an existing configuration for a resource type. This API is idempotent.
      * </p>

@@ -36,6 +36,8 @@ public class UpdateEndpointRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RetainAllVariantProperties").build();
     private static final MarshallingInfo<List> EXCLUDERETAINEDVARIANTPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExcludeRetainedVariantProperties").build();
+    private static final MarshallingInfo<StructuredPojo> DEPLOYMENTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeploymentConfig").build();
 
     private static final UpdateEndpointRequestMarshaller instance = new UpdateEndpointRequestMarshaller();
 
@@ -57,6 +59,7 @@ public class UpdateEndpointRequestMarshaller {
             protocolMarshaller.marshall(updateEndpointRequest.getEndpointConfigName(), ENDPOINTCONFIGNAME_BINDING);
             protocolMarshaller.marshall(updateEndpointRequest.getRetainAllVariantProperties(), RETAINALLVARIANTPROPERTIES_BINDING);
             protocolMarshaller.marshall(updateEndpointRequest.getExcludeRetainedVariantProperties(), EXCLUDERETAINEDVARIANTPROPERTIES_BINDING);
+            protocolMarshaller.marshall(updateEndpointRequest.getDeploymentConfig(), DEPLOYMENTCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

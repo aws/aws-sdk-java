@@ -27,7 +27,8 @@ public enum Framework {
     PYTORCH("PYTORCH"),
     XGBOOST("XGBOOST"),
     TFLITE("TFLITE"),
-    DARKNET("DARKNET");
+    DARKNET("DARKNET"),
+    SKLEARN("SKLEARN");
 
     private String value;
 

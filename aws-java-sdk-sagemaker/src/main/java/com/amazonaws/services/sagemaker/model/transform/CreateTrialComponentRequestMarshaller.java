@@ -45,6 +45,8 @@ public class CreateTrialComponentRequestMarshaller {
             .marshallLocationName("InputArtifacts").build();
     private static final MarshallingInfo<Map> OUTPUTARTIFACTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("OutputArtifacts").build();
+    private static final MarshallingInfo<StructuredPojo> METADATAPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MetadataProperties").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
 
@@ -72,6 +74,7 @@ public class CreateTrialComponentRequestMarshaller {
             protocolMarshaller.marshall(createTrialComponentRequest.getParameters(), PARAMETERS_BINDING);
             protocolMarshaller.marshall(createTrialComponentRequest.getInputArtifacts(), INPUTARTIFACTS_BINDING);
             protocolMarshaller.marshall(createTrialComponentRequest.getOutputArtifacts(), OUTPUTARTIFACTS_BINDING);
+            protocolMarshaller.marshall(createTrialComponentRequest.getMetadataProperties(), METADATAPROPERTIES_BINDING);
             protocolMarshaller.marshall(createTrialComponentRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

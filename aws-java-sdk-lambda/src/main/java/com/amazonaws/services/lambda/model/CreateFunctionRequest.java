@@ -118,6 +118,13 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     private VpcConfig vpcConfig;
     /**
      * <p>
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
+     * archive.
+     * </p>
+     */
+    private String packageType;
+    /**
+     * <p>
      * A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when
      * they fail processing. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.
@@ -164,8 +171,14 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<FileSystemConfig> fileSystemConfigs;
     /**
      * <p>
+     * Configuration values that override the container image Dockerfile.
+     * </p>
+     */
+    private ImageConfig imageConfig;
+    /**
+     * <p>
      * To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing
-     * configuration includes set set of signing profiles, which define the trusted publishers for this function.
+     * configuration includes a set of signing profiles, which define the trusted publishers for this function.
      * </p>
      */
     private String codeSigningConfigArn;
@@ -810,6 +823,89 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
+     * archive.
+     * </p>
+     * 
+     * @param packageType
+     *        The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for
+     *        ZIP archive.
+     * @see PackageType
+     */
+
+    public void setPackageType(String packageType) {
+        this.packageType = packageType;
+    }
+
+    /**
+     * <p>
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
+     * archive.
+     * </p>
+     * 
+     * @return The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code>
+     *         for ZIP archive.
+     * @see PackageType
+     */
+
+    public String getPackageType() {
+        return this.packageType;
+    }
+
+    /**
+     * <p>
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
+     * archive.
+     * </p>
+     * 
+     * @param packageType
+     *        The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for
+     *        ZIP archive.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PackageType
+     */
+
+    public CreateFunctionRequest withPackageType(String packageType) {
+        setPackageType(packageType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
+     * archive.
+     * </p>
+     * 
+     * @param packageType
+     *        The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for
+     *        ZIP archive.
+     * @see PackageType
+     */
+
+    public void setPackageType(PackageType packageType) {
+        withPackageType(packageType);
+    }
+
+    /**
+     * <p>
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
+     * archive.
+     * </p>
+     * 
+     * @param packageType
+     *        The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for
+     *        ZIP archive.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PackageType
+     */
+
+    public CreateFunctionRequest withPackageType(PackageType packageType) {
+        this.packageType = packageType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when
      * they fail processing. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.
@@ -1223,13 +1319,53 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * Configuration values that override the container image Dockerfile.
+     * </p>
+     * 
+     * @param imageConfig
+     *        Configuration values that override the container image Dockerfile.
+     */
+
+    public void setImageConfig(ImageConfig imageConfig) {
+        this.imageConfig = imageConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration values that override the container image Dockerfile.
+     * </p>
+     * 
+     * @return Configuration values that override the container image Dockerfile.
+     */
+
+    public ImageConfig getImageConfig() {
+        return this.imageConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration values that override the container image Dockerfile.
+     * </p>
+     * 
+     * @param imageConfig
+     *        Configuration values that override the container image Dockerfile.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFunctionRequest withImageConfig(ImageConfig imageConfig) {
+        setImageConfig(imageConfig);
+        return this;
+    }
+
+    /**
+     * <p>
      * To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing
-     * configuration includes set set of signing profiles, which define the trusted publishers for this function.
+     * configuration includes a set of signing profiles, which define the trusted publishers for this function.
      * </p>
      * 
      * @param codeSigningConfigArn
      *        To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing
-     *        configuration includes set set of signing profiles, which define the trusted publishers for this function.
+     *        configuration includes a set of signing profiles, which define the trusted publishers for this function.
      */
 
     public void setCodeSigningConfigArn(String codeSigningConfigArn) {
@@ -1239,12 +1375,11 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing
-     * configuration includes set set of signing profiles, which define the trusted publishers for this function.
+     * configuration includes a set of signing profiles, which define the trusted publishers for this function.
      * </p>
      * 
      * @return To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing
-     *         configuration includes set set of signing profiles, which define the trusted publishers for this
-     *         function.
+     *         configuration includes a set of signing profiles, which define the trusted publishers for this function.
      */
 
     public String getCodeSigningConfigArn() {
@@ -1254,12 +1389,12 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing
-     * configuration includes set set of signing profiles, which define the trusted publishers for this function.
+     * configuration includes a set of signing profiles, which define the trusted publishers for this function.
      * </p>
      * 
      * @param codeSigningConfigArn
      *        To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing
-     *        configuration includes set set of signing profiles, which define the trusted publishers for this function.
+     *        configuration includes a set of signing profiles, which define the trusted publishers for this function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1300,6 +1435,8 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("Publish: ").append(getPublish()).append(",");
         if (getVpcConfig() != null)
             sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
+        if (getPackageType() != null)
+            sb.append("PackageType: ").append(getPackageType()).append(",");
         if (getDeadLetterConfig() != null)
             sb.append("DeadLetterConfig: ").append(getDeadLetterConfig()).append(",");
         if (getEnvironment() != null)
@@ -1314,6 +1451,8 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("Layers: ").append(getLayers()).append(",");
         if (getFileSystemConfigs() != null)
             sb.append("FileSystemConfigs: ").append(getFileSystemConfigs()).append(",");
+        if (getImageConfig() != null)
+            sb.append("ImageConfig: ").append(getImageConfig()).append(",");
         if (getCodeSigningConfigArn() != null)
             sb.append("CodeSigningConfigArn: ").append(getCodeSigningConfigArn());
         sb.append("}");
@@ -1370,6 +1509,10 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
             return false;
+        if (other.getPackageType() == null ^ this.getPackageType() == null)
+            return false;
+        if (other.getPackageType() != null && other.getPackageType().equals(this.getPackageType()) == false)
+            return false;
         if (other.getDeadLetterConfig() == null ^ this.getDeadLetterConfig() == null)
             return false;
         if (other.getDeadLetterConfig() != null && other.getDeadLetterConfig().equals(this.getDeadLetterConfig()) == false)
@@ -1398,6 +1541,10 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getFileSystemConfigs() != null && other.getFileSystemConfigs().equals(this.getFileSystemConfigs()) == false)
             return false;
+        if (other.getImageConfig() == null ^ this.getImageConfig() == null)
+            return false;
+        if (other.getImageConfig() != null && other.getImageConfig().equals(this.getImageConfig()) == false)
+            return false;
         if (other.getCodeSigningConfigArn() == null ^ this.getCodeSigningConfigArn() == null)
             return false;
         if (other.getCodeSigningConfigArn() != null && other.getCodeSigningConfigArn().equals(this.getCodeSigningConfigArn()) == false)
@@ -1420,6 +1567,7 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getMemorySize() == null) ? 0 : getMemorySize().hashCode());
         hashCode = prime * hashCode + ((getPublish() == null) ? 0 : getPublish().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getPackageType() == null) ? 0 : getPackageType().hashCode());
         hashCode = prime * hashCode + ((getDeadLetterConfig() == null) ? 0 : getDeadLetterConfig().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getKMSKeyArn() == null) ? 0 : getKMSKeyArn().hashCode());
@@ -1427,6 +1575,7 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getLayers() == null) ? 0 : getLayers().hashCode());
         hashCode = prime * hashCode + ((getFileSystemConfigs() == null) ? 0 : getFileSystemConfigs().hashCode());
+        hashCode = prime * hashCode + ((getImageConfig() == null) ? 0 : getImageConfig().hashCode());
         hashCode = prime * hashCode + ((getCodeSigningConfigArn() == null) ? 0 : getCodeSigningConfigArn().hashCode());
         return hashCode;
     }
