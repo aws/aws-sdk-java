@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.910</version>
+    <version>1.11.911</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,12 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-customerprofiles</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-lookoutforvision</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -35,12 +41,6 @@
     </dependency>
     <dependency>
         <artifactId>aws-java-sdk-ecrpublic</artifactId>
-        <groupId>com.amazonaws</groupId>
-        <optional>false</optional>
-        <version>${awsjavasdk.version}</version>
-    </dependency>
-    <dependency>
-        <artifactId>aws-java-sdk-profile</artifactId>
         <groupId>com.amazonaws</groupId>
         <optional>false</optional>
         <version>${awsjavasdk.version}</version>
@@ -1599,6 +1599,10 @@
                           </taglets>
                           <groups>
                               <group>
+                                  <title>Amazon Connect Customer Profiles</title>
+                                  <packages>com.amazonaws.services.customerprofiles*</packages>
+                              </group>
+                              <group>
                                   <title>Amazon Lookout for Vision</title>
                                   <packages>com.amazonaws.services.lookoutforvision*</packages>
                               </group>
@@ -1613,10 +1617,6 @@
                               <group>
                                   <title>Amazon Elastic Container Registry Public</title>
                                   <packages>com.amazonaws.services.ecrpublic*</packages>
-                              </group>
-                              <group>
-                                  <title>Amazon Connect Customer Profiles</title>
-                                  <packages>com.amazonaws.services.profile*</packages>
                               </group>
                               <group>
                                   <title>Amazon AppIntegrations</title>

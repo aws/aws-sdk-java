@@ -1,3 +1,11 @@
+# __1.11.911__ __2020-12-02__
+## __Amazon Connect Customer Profiles__
+  - ### Features
+    - This is the first release of Amazon Connect Customer Profiles, a unified customer profile for your Amazon Connect contact center.
+
+  - ### Bugfixes
+    - Removed 'AmazonProfileClient', which was released with the incorrect name.
+
 # __1.11.910__ __2020-12-01__
 ## __AWS Directory Service__
   - ### Features
