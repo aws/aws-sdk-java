@@ -96,6 +96,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The node properties for a single node in a job summary list.
      * </p>
+     * <note>
+     * <p>
+     * This isn't applicable to jobs running on Fargate resources.
+     * </p>
+     * </note>
      */
     private NodePropertiesSummary nodeProperties;
 
@@ -549,9 +554,17 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The node properties for a single node in a job summary list.
      * </p>
+     * <note>
+     * <p>
+     * This isn't applicable to jobs running on Fargate resources.
+     * </p>
+     * </note>
      * 
      * @param nodeProperties
-     *        The node properties for a single node in a job summary list.
+     *        The node properties for a single node in a job summary list.</p> <note>
+     *        <p>
+     *        This isn't applicable to jobs running on Fargate resources.
+     *        </p>
      */
 
     public void setNodeProperties(NodePropertiesSummary nodeProperties) {
@@ -562,8 +575,16 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The node properties for a single node in a job summary list.
      * </p>
+     * <note>
+     * <p>
+     * This isn't applicable to jobs running on Fargate resources.
+     * </p>
+     * </note>
      * 
-     * @return The node properties for a single node in a job summary list.
+     * @return The node properties for a single node in a job summary list.</p> <note>
+     *         <p>
+     *         This isn't applicable to jobs running on Fargate resources.
+     *         </p>
      */
 
     public NodePropertiesSummary getNodeProperties() {
@@ -574,9 +595,17 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The node properties for a single node in a job summary list.
      * </p>
+     * <note>
+     * <p>
+     * This isn't applicable to jobs running on Fargate resources.
+     * </p>
+     * </note>
      * 
      * @param nodeProperties
-     *        The node properties for a single node in a job summary list.
+     *        The node properties for a single node in a job summary list.</p> <note>
+     *        <p>
+     *        This isn't applicable to jobs running on Fargate resources.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

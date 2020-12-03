@@ -30,15 +30,33 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of vCPUs to reserve for the container. This value overrides the value set in the job definition.
+     * This parameter is deprecated and not supported for jobs run on Fargate resources, see
+     * <code>resourceRequirement</code>. For jobs run on EC2 resources, the number of vCPUs to reserve for the
+     * container. This value overrides the value set in the job definition. Jobs run on EC2 resources can specify the
+     * vCPU requirement using <code>resourceRequirement</code> but the vCPU requirements can't be specified both here
+     * and in <code>resourceRequirement</code>. This parameter maps to <code>CpuShares</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option
+     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU
+     * shares. You must specify at least one vCPU.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided. Jobs running on
+     * Fargate resources must specify the vCPU requirement for the job using <code>resourceRequirements</code>.
+     * </p>
+     * </note>
      */
+    @Deprecated
     private Integer vcpus;
     /**
      * <p>
-     * The number of MiB of memory reserved for the job. This value overrides the value set in the job definition.
+     * This parameter is deprecated and not supported for jobs run on Fargate resources, use
+     * <code>ResourceRequirement</code>. For jobs run on EC2 resource, the number of MiB of memory reserved for the job.
+     * This value overrides the value set in the job definition.
      * </p>
      */
+    @Deprecated
     private Integer memory;
     /**
      * <p>
@@ -49,9 +67,14 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
     private java.util.List<String> command;
     /**
      * <p>
-     * The instance type to use for a multi-node parallel job. This parameter is not valid for single-node container
-     * jobs.
+     * The instance type to use for a multi-node parallel job.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to single-node container jobs or for jobs running on Fargate resources and
+     * shouldn't be provided.
+     * </p>
+     * </note>
      */
     private String instanceType;
     /**
@@ -70,50 +93,129 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
     private java.util.List<KeyValuePair> environment;
     /**
      * <p>
-     * The type and amount of a resource to assign to a container. This value overrides the value set in the job
-     * definition. Currently, the only supported resource is <code>GPU</code>.
+     * The type and amount of resources to assign to a container. This overrides the settings in the job definition. The
+     * supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.
      * </p>
      */
     private java.util.List<ResourceRequirement> resourceRequirements;
 
     /**
      * <p>
-     * The number of vCPUs to reserve for the container. This value overrides the value set in the job definition.
+     * This parameter is deprecated and not supported for jobs run on Fargate resources, see
+     * <code>resourceRequirement</code>. For jobs run on EC2 resources, the number of vCPUs to reserve for the
+     * container. This value overrides the value set in the job definition. Jobs run on EC2 resources can specify the
+     * vCPU requirement using <code>resourceRequirement</code> but the vCPU requirements can't be specified both here
+     * and in <code>resourceRequirement</code>. This parameter maps to <code>CpuShares</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option
+     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU
+     * shares. You must specify at least one vCPU.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided. Jobs running on
+     * Fargate resources must specify the vCPU requirement for the job using <code>resourceRequirements</code>.
+     * </p>
+     * </note>
      * 
      * @param vcpus
-     *        The number of vCPUs to reserve for the container. This value overrides the value set in the job
-     *        definition.
+     *        This parameter is deprecated and not supported for jobs run on Fargate resources, see
+     *        <code>resourceRequirement</code>. For jobs run on EC2 resources, the number of vCPUs to reserve for the
+     *        container. This value overrides the value set in the job definition. Jobs run on EC2 resources can specify
+     *        the vCPU requirement using <code>resourceRequirement</code> but the vCPU requirements can't be specified
+     *        both here and in <code>resourceRequirement</code>. This parameter maps to <code>CpuShares</code> in the <a
+     *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
+     *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     *        <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided. Jobs
+     *        running on Fargate resources must specify the vCPU requirement for the job using
+     *        <code>resourceRequirements</code>.
+     *        </p>
      */
-
+    @Deprecated
     public void setVcpus(Integer vcpus) {
         this.vcpus = vcpus;
     }
 
     /**
      * <p>
-     * The number of vCPUs to reserve for the container. This value overrides the value set in the job definition.
+     * This parameter is deprecated and not supported for jobs run on Fargate resources, see
+     * <code>resourceRequirement</code>. For jobs run on EC2 resources, the number of vCPUs to reserve for the
+     * container. This value overrides the value set in the job definition. Jobs run on EC2 resources can specify the
+     * vCPU requirement using <code>resourceRequirement</code> but the vCPU requirements can't be specified both here
+     * and in <code>resourceRequirement</code>. This parameter maps to <code>CpuShares</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option
+     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU
+     * shares. You must specify at least one vCPU.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided. Jobs running on
+     * Fargate resources must specify the vCPU requirement for the job using <code>resourceRequirements</code>.
+     * </p>
+     * </note>
      * 
-     * @return The number of vCPUs to reserve for the container. This value overrides the value set in the job
-     *         definition.
+     * @return This parameter is deprecated and not supported for jobs run on Fargate resources, see
+     *         <code>resourceRequirement</code>. For jobs run on EC2 resources, the number of vCPUs to reserve for the
+     *         container. This value overrides the value set in the job definition. Jobs run on EC2 resources can
+     *         specify the vCPU requirement using <code>resourceRequirement</code> but the vCPU requirements can't be
+     *         specified both here and in <code>resourceRequirement</code>. This parameter maps to
+     *         <code>CpuShares</code> in the <a
+     *         href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
+     *         <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     *         <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *         run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU.</p> <note>
+     *         <p>
+     *         This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided. Jobs
+     *         running on Fargate resources must specify the vCPU requirement for the job using
+     *         <code>resourceRequirements</code>.
+     *         </p>
      */
-
+    @Deprecated
     public Integer getVcpus() {
         return this.vcpus;
     }
 
     /**
      * <p>
-     * The number of vCPUs to reserve for the container. This value overrides the value set in the job definition.
+     * This parameter is deprecated and not supported for jobs run on Fargate resources, see
+     * <code>resourceRequirement</code>. For jobs run on EC2 resources, the number of vCPUs to reserve for the
+     * container. This value overrides the value set in the job definition. Jobs run on EC2 resources can specify the
+     * vCPU requirement using <code>resourceRequirement</code> but the vCPU requirements can't be specified both here
+     * and in <code>resourceRequirement</code>. This parameter maps to <code>CpuShares</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option
+     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU
+     * shares. You must specify at least one vCPU.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided. Jobs running on
+     * Fargate resources must specify the vCPU requirement for the job using <code>resourceRequirements</code>.
+     * </p>
+     * </note>
      * 
      * @param vcpus
-     *        The number of vCPUs to reserve for the container. This value overrides the value set in the job
-     *        definition.
+     *        This parameter is deprecated and not supported for jobs run on Fargate resources, see
+     *        <code>resourceRequirement</code>. For jobs run on EC2 resources, the number of vCPUs to reserve for the
+     *        container. This value overrides the value set in the job definition. Jobs run on EC2 resources can specify
+     *        the vCPU requirement using <code>resourceRequirement</code> but the vCPU requirements can't be specified
+     *        both here and in <code>resourceRequirement</code>. This parameter maps to <code>CpuShares</code> in the <a
+     *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
+     *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     *        <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided. Jobs
+     *        running on Fargate resources must specify the vCPU requirement for the job using
+     *        <code>resourceRequirements</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public ContainerOverrides withVcpus(Integer vcpus) {
         setVcpus(vcpus);
         return this;
@@ -121,42 +223,51 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of MiB of memory reserved for the job. This value overrides the value set in the job definition.
+     * This parameter is deprecated and not supported for jobs run on Fargate resources, use
+     * <code>ResourceRequirement</code>. For jobs run on EC2 resource, the number of MiB of memory reserved for the job.
+     * This value overrides the value set in the job definition.
      * </p>
      * 
      * @param memory
-     *        The number of MiB of memory reserved for the job. This value overrides the value set in the job
-     *        definition.
+     *        This parameter is deprecated and not supported for jobs run on Fargate resources, use
+     *        <code>ResourceRequirement</code>. For jobs run on EC2 resource, the number of MiB of memory reserved for
+     *        the job. This value overrides the value set in the job definition.
      */
-
+    @Deprecated
     public void setMemory(Integer memory) {
         this.memory = memory;
     }
 
     /**
      * <p>
-     * The number of MiB of memory reserved for the job. This value overrides the value set in the job definition.
+     * This parameter is deprecated and not supported for jobs run on Fargate resources, use
+     * <code>ResourceRequirement</code>. For jobs run on EC2 resource, the number of MiB of memory reserved for the job.
+     * This value overrides the value set in the job definition.
      * </p>
      * 
-     * @return The number of MiB of memory reserved for the job. This value overrides the value set in the job
-     *         definition.
+     * @return This parameter is deprecated and not supported for jobs run on Fargate resources, use
+     *         <code>ResourceRequirement</code>. For jobs run on EC2 resource, the number of MiB of memory reserved for
+     *         the job. This value overrides the value set in the job definition.
      */
-
+    @Deprecated
     public Integer getMemory() {
         return this.memory;
     }
 
     /**
      * <p>
-     * The number of MiB of memory reserved for the job. This value overrides the value set in the job definition.
+     * This parameter is deprecated and not supported for jobs run on Fargate resources, use
+     * <code>ResourceRequirement</code>. For jobs run on EC2 resource, the number of MiB of memory reserved for the job.
+     * This value overrides the value set in the job definition.
      * </p>
      * 
      * @param memory
-     *        The number of MiB of memory reserved for the job. This value overrides the value set in the job
-     *        definition.
+     *        This parameter is deprecated and not supported for jobs run on Fargate resources, use
+     *        <code>ResourceRequirement</code>. For jobs run on EC2 resource, the number of MiB of memory reserved for
+     *        the job. This value overrides the value set in the job definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public ContainerOverrides withMemory(Integer memory) {
         setMemory(memory);
         return this;
@@ -242,13 +353,21 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The instance type to use for a multi-node parallel job. This parameter is not valid for single-node container
-     * jobs.
+     * The instance type to use for a multi-node parallel job.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to single-node container jobs or for jobs running on Fargate resources and
+     * shouldn't be provided.
+     * </p>
+     * </note>
      * 
      * @param instanceType
-     *        The instance type to use for a multi-node parallel job. This parameter is not valid for single-node
-     *        container jobs.
+     *        The instance type to use for a multi-node parallel job.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to single-node container jobs or for jobs running on Fargate resources and
+     *        shouldn't be provided.
+     *        </p>
      */
 
     public void setInstanceType(String instanceType) {
@@ -257,12 +376,20 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The instance type to use for a multi-node parallel job. This parameter is not valid for single-node container
-     * jobs.
+     * The instance type to use for a multi-node parallel job.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to single-node container jobs or for jobs running on Fargate resources and
+     * shouldn't be provided.
+     * </p>
+     * </note>
      * 
-     * @return The instance type to use for a multi-node parallel job. This parameter is not valid for single-node
-     *         container jobs.
+     * @return The instance type to use for a multi-node parallel job.</p> <note>
+     *         <p>
+     *         This parameter isn't applicable to single-node container jobs or for jobs running on Fargate resources
+     *         and shouldn't be provided.
+     *         </p>
      */
 
     public String getInstanceType() {
@@ -271,13 +398,21 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The instance type to use for a multi-node parallel job. This parameter is not valid for single-node container
-     * jobs.
+     * The instance type to use for a multi-node parallel job.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to single-node container jobs or for jobs running on Fargate resources and
+     * shouldn't be provided.
+     * </p>
+     * </note>
      * 
      * @param instanceType
-     *        The instance type to use for a multi-node parallel job. This parameter is not valid for single-node
-     *        container jobs.
+     *        The instance type to use for a multi-node parallel job.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to single-node container jobs or for jobs running on Fargate resources and
+     *        shouldn't be provided.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -414,12 +549,12 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type and amount of a resource to assign to a container. This value overrides the value set in the job
-     * definition. Currently, the only supported resource is <code>GPU</code>.
+     * The type and amount of resources to assign to a container. This overrides the settings in the job definition. The
+     * supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.
      * </p>
      * 
-     * @return The type and amount of a resource to assign to a container. This value overrides the value set in the job
-     *         definition. Currently, the only supported resource is <code>GPU</code>.
+     * @return The type and amount of resources to assign to a container. This overrides the settings in the job
+     *         definition. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.
      */
 
     public java.util.List<ResourceRequirement> getResourceRequirements() {
@@ -428,13 +563,13 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type and amount of a resource to assign to a container. This value overrides the value set in the job
-     * definition. Currently, the only supported resource is <code>GPU</code>.
+     * The type and amount of resources to assign to a container. This overrides the settings in the job definition. The
+     * supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.
      * </p>
      * 
      * @param resourceRequirements
-     *        The type and amount of a resource to assign to a container. This value overrides the value set in the job
-     *        definition. Currently, the only supported resource is <code>GPU</code>.
+     *        The type and amount of resources to assign to a container. This overrides the settings in the job
+     *        definition. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.
      */
 
     public void setResourceRequirements(java.util.Collection<ResourceRequirement> resourceRequirements) {
@@ -448,8 +583,8 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type and amount of a resource to assign to a container. This value overrides the value set in the job
-     * definition. Currently, the only supported resource is <code>GPU</code>.
+     * The type and amount of resources to assign to a container. This overrides the settings in the job definition. The
+     * supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -458,8 +593,8 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param resourceRequirements
-     *        The type and amount of a resource to assign to a container. This value overrides the value set in the job
-     *        definition. Currently, the only supported resource is <code>GPU</code>.
+     *        The type and amount of resources to assign to a container. This overrides the settings in the job
+     *        definition. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -475,13 +610,13 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type and amount of a resource to assign to a container. This value overrides the value set in the job
-     * definition. Currently, the only supported resource is <code>GPU</code>.
+     * The type and amount of resources to assign to a container. This overrides the settings in the job definition. The
+     * supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.
      * </p>
      * 
      * @param resourceRequirements
-     *        The type and amount of a resource to assign to a container. This value overrides the value set in the job
-     *        definition. Currently, the only supported resource is <code>GPU</code>.
+     *        The type and amount of resources to assign to a container. This overrides the settings in the job
+     *        definition. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

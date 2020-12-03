@@ -54,7 +54,10 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * The type of job definition.
+     * The type of job definition. If the job is run on Fargate resources, then <code>multinode</code> isn't supported.
+     * For more information about multi-node parallel jobs, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel
+     * job definition</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      */
     private String type;
@@ -83,7 +86,7 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
-     * duration after which AWS Batch terminates your jobs if they have not finished.
+     * duration after which AWS Batch terminates your jobs if they haven't finished.
      * </p>
      */
     private JobTimeout timeout;
@@ -91,6 +94,12 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * An object with various properties specific to multi-node parallel jobs.
      * </p>
+     * <note>
+     * <p>
+     * If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
+     * <code>containerProperties</code> instead.
+     * </p>
+     * </note>
      */
     private NodeProperties nodeProperties;
     /**
@@ -99,6 +108,22 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If
+     * no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation.
+     * For tags with the same name, job tags are given priority over job definitions tags. If the total number of
+     * combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
+     * </p>
+     */
+    private Boolean propagateTags;
+    /**
+     * <p>
+     * The platform capabilities required by the job definition. If no value is specified, it defaults to
+     * <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.
+     * </p>
+     */
+    private java.util.List<String> platformCapabilities;
 
     /**
      * <p>
@@ -262,11 +287,17 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of job definition.
+     * The type of job definition. If the job is run on Fargate resources, then <code>multinode</code> isn't supported.
+     * For more information about multi-node parallel jobs, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel
+     * job definition</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param type
-     *        The type of job definition.
+     *        The type of job definition. If the job is run on Fargate resources, then <code>multinode</code> isn't
+     *        supported. For more information about multi-node parallel jobs, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node
+     *        parallel job definition</a> in the <i>AWS Batch User Guide</i>.
      */
 
     public void setType(String type) {
@@ -275,10 +306,16 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of job definition.
+     * The type of job definition. If the job is run on Fargate resources, then <code>multinode</code> isn't supported.
+     * For more information about multi-node parallel jobs, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel
+     * job definition</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
-     * @return The type of job definition.
+     * @return The type of job definition. If the job is run on Fargate resources, then <code>multinode</code> isn't
+     *         supported. For more information about multi-node parallel jobs, see <a
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node
+     *         parallel job definition</a> in the <i>AWS Batch User Guide</i>.
      */
 
     public String getType() {
@@ -287,11 +324,17 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of job definition.
+     * The type of job definition. If the job is run on Fargate resources, then <code>multinode</code> isn't supported.
+     * For more information about multi-node parallel jobs, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel
+     * job definition</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param type
-     *        The type of job definition.
+     *        The type of job definition. If the job is run on Fargate resources, then <code>multinode</code> isn't
+     *        supported. For more information about multi-node parallel jobs, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node
+     *        parallel job definition</a> in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -478,12 +521,12 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
-     * duration after which AWS Batch terminates your jobs if they have not finished.
+     * duration after which AWS Batch terminates your jobs if they haven't finished.
      * </p>
      * 
      * @param timeout
      *        The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
-     *        duration after which AWS Batch terminates your jobs if they have not finished.
+     *        duration after which AWS Batch terminates your jobs if they haven't finished.
      */
 
     public void setTimeout(JobTimeout timeout) {
@@ -493,11 +536,11 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
-     * duration after which AWS Batch terminates your jobs if they have not finished.
+     * duration after which AWS Batch terminates your jobs if they haven't finished.
      * </p>
      * 
      * @return The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
-     *         duration after which AWS Batch terminates your jobs if they have not finished.
+     *         duration after which AWS Batch terminates your jobs if they haven't finished.
      */
 
     public JobTimeout getTimeout() {
@@ -507,12 +550,12 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
-     * duration after which AWS Batch terminates your jobs if they have not finished.
+     * duration after which AWS Batch terminates your jobs if they haven't finished.
      * </p>
      * 
      * @param timeout
      *        The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
-     *        duration after which AWS Batch terminates your jobs if they have not finished.
+     *        duration after which AWS Batch terminates your jobs if they haven't finished.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -525,9 +568,19 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * An object with various properties specific to multi-node parallel jobs.
      * </p>
+     * <note>
+     * <p>
+     * If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
+     * <code>containerProperties</code> instead.
+     * </p>
+     * </note>
      * 
      * @param nodeProperties
-     *        An object with various properties specific to multi-node parallel jobs.
+     *        An object with various properties specific to multi-node parallel jobs.</p> <note>
+     *        <p>
+     *        If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
+     *        <code>containerProperties</code> instead.
+     *        </p>
      */
 
     public void setNodeProperties(NodeProperties nodeProperties) {
@@ -538,8 +591,18 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * An object with various properties specific to multi-node parallel jobs.
      * </p>
+     * <note>
+     * <p>
+     * If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
+     * <code>containerProperties</code> instead.
+     * </p>
+     * </note>
      * 
-     * @return An object with various properties specific to multi-node parallel jobs.
+     * @return An object with various properties specific to multi-node parallel jobs.</p> <note>
+     *         <p>
+     *         If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
+     *         <code>containerProperties</code> instead.
+     *         </p>
      */
 
     public NodeProperties getNodeProperties() {
@@ -550,9 +613,19 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * An object with various properties specific to multi-node parallel jobs.
      * </p>
+     * <note>
+     * <p>
+     * If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
+     * <code>containerProperties</code> instead.
+     * </p>
+     * </note>
      * 
      * @param nodeProperties
-     *        An object with various properties specific to multi-node parallel jobs.
+     *        An object with various properties specific to multi-node parallel jobs.</p> <note>
+     *        <p>
+     *        If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
+     *        <code>containerProperties</code> instead.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -630,6 +703,194 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If
+     * no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation.
+     * For tags with the same name, job tags are given priority over job definitions tags. If the total number of
+     * combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
+     * </p>
+     * 
+     * @param propagateTags
+     *        Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS
+     *        task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks
+     *        during task creation. For tags with the same name, job tags are given priority over job definitions tags.
+     *        If the total number of combined tags from the job and job definition is over 50, the job is moved to the
+     *        <code>FAILED</code> state.
+     */
+
+    public void setPropagateTags(Boolean propagateTags) {
+        this.propagateTags = propagateTags;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If
+     * no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation.
+     * For tags with the same name, job tags are given priority over job definitions tags. If the total number of
+     * combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
+     * </p>
+     * 
+     * @return Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS
+     *         task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks
+     *         during task creation. For tags with the same name, job tags are given priority over job definitions tags.
+     *         If the total number of combined tags from the job and job definition is over 50, the job is moved to the
+     *         <code>FAILED</code> state.
+     */
+
+    public Boolean getPropagateTags() {
+        return this.propagateTags;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If
+     * no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation.
+     * For tags with the same name, job tags are given priority over job definitions tags. If the total number of
+     * combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
+     * </p>
+     * 
+     * @param propagateTags
+     *        Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS
+     *        task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks
+     *        during task creation. For tags with the same name, job tags are given priority over job definitions tags.
+     *        If the total number of combined tags from the job and job definition is over 50, the job is moved to the
+     *        <code>FAILED</code> state.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDefinition withPropagateTags(Boolean propagateTags) {
+        setPropagateTags(propagateTags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If
+     * no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation.
+     * For tags with the same name, job tags are given priority over job definitions tags. If the total number of
+     * combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
+     * </p>
+     * 
+     * @return Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS
+     *         task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks
+     *         during task creation. For tags with the same name, job tags are given priority over job definitions tags.
+     *         If the total number of combined tags from the job and job definition is over 50, the job is moved to the
+     *         <code>FAILED</code> state.
+     */
+
+    public Boolean isPropagateTags() {
+        return this.propagateTags;
+    }
+
+    /**
+     * <p>
+     * The platform capabilities required by the job definition. If no value is specified, it defaults to
+     * <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.
+     * </p>
+     * 
+     * @return The platform capabilities required by the job definition. If no value is specified, it defaults to
+     *         <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.
+     * @see PlatformCapability
+     */
+
+    public java.util.List<String> getPlatformCapabilities() {
+        return platformCapabilities;
+    }
+
+    /**
+     * <p>
+     * The platform capabilities required by the job definition. If no value is specified, it defaults to
+     * <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.
+     * </p>
+     * 
+     * @param platformCapabilities
+     *        The platform capabilities required by the job definition. If no value is specified, it defaults to
+     *        <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.
+     * @see PlatformCapability
+     */
+
+    public void setPlatformCapabilities(java.util.Collection<String> platformCapabilities) {
+        if (platformCapabilities == null) {
+            this.platformCapabilities = null;
+            return;
+        }
+
+        this.platformCapabilities = new java.util.ArrayList<String>(platformCapabilities);
+    }
+
+    /**
+     * <p>
+     * The platform capabilities required by the job definition. If no value is specified, it defaults to
+     * <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPlatformCapabilities(java.util.Collection)} or {@link #withPlatformCapabilities(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param platformCapabilities
+     *        The platform capabilities required by the job definition. If no value is specified, it defaults to
+     *        <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PlatformCapability
+     */
+
+    public JobDefinition withPlatformCapabilities(String... platformCapabilities) {
+        if (this.platformCapabilities == null) {
+            setPlatformCapabilities(new java.util.ArrayList<String>(platformCapabilities.length));
+        }
+        for (String ele : platformCapabilities) {
+            this.platformCapabilities.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The platform capabilities required by the job definition. If no value is specified, it defaults to
+     * <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.
+     * </p>
+     * 
+     * @param platformCapabilities
+     *        The platform capabilities required by the job definition. If no value is specified, it defaults to
+     *        <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PlatformCapability
+     */
+
+    public JobDefinition withPlatformCapabilities(java.util.Collection<String> platformCapabilities) {
+        setPlatformCapabilities(platformCapabilities);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The platform capabilities required by the job definition. If no value is specified, it defaults to
+     * <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.
+     * </p>
+     * 
+     * @param platformCapabilities
+     *        The platform capabilities required by the job definition. If no value is specified, it defaults to
+     *        <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PlatformCapability
+     */
+
+    public JobDefinition withPlatformCapabilities(PlatformCapability... platformCapabilities) {
+        java.util.ArrayList<String> platformCapabilitiesCopy = new java.util.ArrayList<String>(platformCapabilities.length);
+        for (PlatformCapability value : platformCapabilities) {
+            platformCapabilitiesCopy.add(value.toString());
+        }
+        if (getPlatformCapabilities() == null) {
+            setPlatformCapabilities(platformCapabilitiesCopy);
+        } else {
+            getPlatformCapabilities().addAll(platformCapabilitiesCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -662,7 +923,11 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
         if (getNodeProperties() != null)
             sb.append("NodeProperties: ").append(getNodeProperties()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getPropagateTags() != null)
+            sb.append("PropagateTags: ").append(getPropagateTags()).append(",");
+        if (getPlatformCapabilities() != null)
+            sb.append("PlatformCapabilities: ").append(getPlatformCapabilities());
         sb.append("}");
         return sb.toString();
     }
@@ -721,6 +986,14 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getPropagateTags() == null ^ this.getPropagateTags() == null)
+            return false;
+        if (other.getPropagateTags() != null && other.getPropagateTags().equals(this.getPropagateTags()) == false)
+            return false;
+        if (other.getPlatformCapabilities() == null ^ this.getPlatformCapabilities() == null)
+            return false;
+        if (other.getPlatformCapabilities() != null && other.getPlatformCapabilities().equals(this.getPlatformCapabilities()) == false)
+            return false;
         return true;
     }
 
@@ -740,6 +1013,8 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         hashCode = prime * hashCode + ((getNodeProperties() == null) ? 0 : getNodeProperties().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getPropagateTags() == null) ? 0 : getPropagateTags().hashCode());
+        hashCode = prime * hashCode + ((getPlatformCapabilities() == null) ? 0 : getPlatformCapabilities().hashCode());
         return hashCode;
     }
 

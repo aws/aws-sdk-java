@@ -455,7 +455,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Generates a one time challenge code to authenticate a user into your Amplify Admin UI.
+     * Generates a one-time challenge code to authenticate a user into your Amplify Admin UI.
      * </p>
      * 
      * @param createTokenRequest
@@ -517,7 +517,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Removes an existing environment from your Ampify project.
+     * Removes an existing environment from your Amplify project.
      * </p>
      * 
      * @param deleteBackendRequest
@@ -832,7 +832,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Provides project level details for your Amplify UI project.
+     * Provides project-level details for your Amplify UI project.
      * </p>
      * 
      * @param getBackendRequest
@@ -895,7 +895,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Gets the details for a backend api.
+     * Gets the details for a backend API.
      * </p>
      * 
      * @param getBackendAPIRequest
@@ -1021,7 +1021,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Gets a backend auth details.
+     * Gets backend auth details.
      * </p>
      * 
      * @param getBackendAuthRequest
@@ -1334,7 +1334,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Removes the AWS resources required to access the Amplify Admin UI.
+     * Removes the AWS resources that are required to access the Amplify Admin UI.
      * </p>
      * 
      * @param removeBackendConfigRequest
@@ -1522,7 +1522,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Updates the AWS resources required to access the Amplify Admin UI.
+     * Updates the AWS resources that are required to access the Amplify Admin UI.
      * </p>
      * 
      * @param updateBackendConfigRequest

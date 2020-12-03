@@ -30,8 +30,8 @@ public class ExportEC2InstanceRecommendationsRequest extends com.amazonaws.Amazo
      * The IDs of the AWS accounts for which to export instance recommendations.
      * </p>
      * <p>
-     * If your account is the master account of an organization, use this parameter to specify the member accounts for
-     * which you want to export recommendations.
+     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * for which you want to export recommendations.
      * </p>
      * <p>
      * This parameter cannot be specified together with the include member accounts parameter. The parameters are
@@ -89,7 +89,7 @@ public class ExportEC2InstanceRecommendationsRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * Indicates whether to include recommendations for resources in all member accounts of the organization if your
-     * account is the master account of an organization.
+     * account is the management account of an organization.
      * </p>
      * <p>
      * The member accounts must also be opted in to Compute Optimizer.
@@ -110,8 +110,8 @@ public class ExportEC2InstanceRecommendationsRequest extends com.amazonaws.Amazo
      * The IDs of the AWS accounts for which to export instance recommendations.
      * </p>
      * <p>
-     * If your account is the master account of an organization, use this parameter to specify the member accounts for
-     * which you want to export recommendations.
+     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * for which you want to export recommendations.
      * </p>
      * <p>
      * This parameter cannot be specified together with the include member accounts parameter. The parameters are
@@ -127,7 +127,7 @@ public class ExportEC2InstanceRecommendationsRequest extends com.amazonaws.Amazo
      * 
      * @return The IDs of the AWS accounts for which to export instance recommendations.</p>
      *         <p>
-     *         If your account is the master account of an organization, use this parameter to specify the member
+     *         If your account is the management account of an organization, use this parameter to specify the member
      *         accounts for which you want to export recommendations.
      *         </p>
      *         <p>
@@ -151,8 +151,8 @@ public class ExportEC2InstanceRecommendationsRequest extends com.amazonaws.Amazo
      * The IDs of the AWS accounts for which to export instance recommendations.
      * </p>
      * <p>
-     * If your account is the master account of an organization, use this parameter to specify the member accounts for
-     * which you want to export recommendations.
+     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * for which you want to export recommendations.
      * </p>
      * <p>
      * This parameter cannot be specified together with the include member accounts parameter. The parameters are
@@ -169,7 +169,7 @@ public class ExportEC2InstanceRecommendationsRequest extends com.amazonaws.Amazo
      * @param accountIds
      *        The IDs of the AWS accounts for which to export instance recommendations.</p>
      *        <p>
-     *        If your account is the master account of an organization, use this parameter to specify the member
+     *        If your account is the management account of an organization, use this parameter to specify the member
      *        accounts for which you want to export recommendations.
      *        </p>
      *        <p>
@@ -198,8 +198,8 @@ public class ExportEC2InstanceRecommendationsRequest extends com.amazonaws.Amazo
      * The IDs of the AWS accounts for which to export instance recommendations.
      * </p>
      * <p>
-     * If your account is the master account of an organization, use this parameter to specify the member accounts for
-     * which you want to export recommendations.
+     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * for which you want to export recommendations.
      * </p>
      * <p>
      * This parameter cannot be specified together with the include member accounts parameter. The parameters are
@@ -221,7 +221,7 @@ public class ExportEC2InstanceRecommendationsRequest extends com.amazonaws.Amazo
      * @param accountIds
      *        The IDs of the AWS accounts for which to export instance recommendations.</p>
      *        <p>
-     *        If your account is the master account of an organization, use this parameter to specify the member
+     *        If your account is the management account of an organization, use this parameter to specify the member
      *        accounts for which you want to export recommendations.
      *        </p>
      *        <p>
@@ -252,8 +252,8 @@ public class ExportEC2InstanceRecommendationsRequest extends com.amazonaws.Amazo
      * The IDs of the AWS accounts for which to export instance recommendations.
      * </p>
      * <p>
-     * If your account is the master account of an organization, use this parameter to specify the member accounts for
-     * which you want to export recommendations.
+     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * for which you want to export recommendations.
      * </p>
      * <p>
      * This parameter cannot be specified together with the include member accounts parameter. The parameters are
@@ -270,7 +270,7 @@ public class ExportEC2InstanceRecommendationsRequest extends com.amazonaws.Amazo
      * @param accountIds
      *        The IDs of the AWS accounts for which to export instance recommendations.</p>
      *        <p>
-     *        If your account is the master account of an organization, use this parameter to specify the member
+     *        If your account is the management account of an organization, use this parameter to specify the member
      *        accounts for which you want to export recommendations.
      *        </p>
      *        <p>
@@ -668,7 +668,7 @@ public class ExportEC2InstanceRecommendationsRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * Indicates whether to include recommendations for resources in all member accounts of the organization if your
-     * account is the master account of an organization.
+     * account is the management account of an organization.
      * </p>
      * <p>
      * The member accounts must also be opted in to Compute Optimizer.
@@ -684,7 +684,7 @@ public class ExportEC2InstanceRecommendationsRequest extends com.amazonaws.Amazo
      * 
      * @param includeMemberAccounts
      *        Indicates whether to include recommendations for resources in all member accounts of the organization if
-     *        your account is the master account of an organization.</p>
+     *        your account is the management account of an organization.</p>
      *        <p>
      *        The member accounts must also be opted in to Compute Optimizer.
      *        </p>
@@ -704,7 +704,7 @@ public class ExportEC2InstanceRecommendationsRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * Indicates whether to include recommendations for resources in all member accounts of the organization if your
-     * account is the master account of an organization.
+     * account is the management account of an organization.
      * </p>
      * <p>
      * The member accounts must also be opted in to Compute Optimizer.
@@ -719,7 +719,7 @@ public class ExportEC2InstanceRecommendationsRequest extends com.amazonaws.Amazo
      * </p>
      * 
      * @return Indicates whether to include recommendations for resources in all member accounts of the organization if
-     *         your account is the master account of an organization.</p>
+     *         your account is the management account of an organization.</p>
      *         <p>
      *         The member accounts must also be opted in to Compute Optimizer.
      *         </p>
@@ -739,7 +739,7 @@ public class ExportEC2InstanceRecommendationsRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * Indicates whether to include recommendations for resources in all member accounts of the organization if your
-     * account is the master account of an organization.
+     * account is the management account of an organization.
      * </p>
      * <p>
      * The member accounts must also be opted in to Compute Optimizer.
@@ -755,7 +755,7 @@ public class ExportEC2InstanceRecommendationsRequest extends com.amazonaws.Amazo
      * 
      * @param includeMemberAccounts
      *        Indicates whether to include recommendations for resources in all member accounts of the organization if
-     *        your account is the master account of an organization.</p>
+     *        your account is the management account of an organization.</p>
      *        <p>
      *        The member accounts must also be opted in to Compute Optimizer.
      *        </p>
@@ -777,7 +777,7 @@ public class ExportEC2InstanceRecommendationsRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * Indicates whether to include recommendations for resources in all member accounts of the organization if your
-     * account is the master account of an organization.
+     * account is the management account of an organization.
      * </p>
      * <p>
      * The member accounts must also be opted in to Compute Optimizer.
@@ -792,7 +792,7 @@ public class ExportEC2InstanceRecommendationsRequest extends com.amazonaws.Amazo
      * </p>
      * 
      * @return Indicates whether to include recommendations for resources in all member accounts of the organization if
-     *         your account is the master account of an organization.</p>
+     *         your account is the management account of an organization.</p>
      *         <p>
      *         The member accounts must also be opted in to Compute Optimizer.
      *         </p>

@@ -20,8 +20,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Provides information used to select Amazon Machine Images (AMIs) for instances in the compute environment. If the
- * <code>Ec2Configuration</code> is not specified, the default is <code>ECS_AL1</code>.
+ * <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL1</code>.
  * </p>
+ * <note>
+ * <p>
+ * This object isn't applicable to jobs running on Fargate resources.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/Ec2Configuration" target="_top">AWS API
  *      Documentation</a>
@@ -31,10 +36,10 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The image type to match with the instance type to pick an AMI. If the <code>imageIdOverride</code> parameter is
-     * not specified, then a recent <a
+     * The image type to match with the instance type to select an AMI. If the <code>imageIdOverride</code> parameter
+     * isn't specified, then a recent <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
-     * AMI</a> will be used.
+     * AMI</a> is used.
      * </p>
      * <dl>
      * <dt>ECS_AL2</dt>
@@ -58,7 +63,7 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
      * Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon Linux is reaching the end-of-life
-     * of standard support. For more information, see <a href="https://aws.amazon.com/amazon-linux-ami/">Amazon Linux
+     * of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux
      * AMI</a>.
      * </p>
      * </dd>
@@ -75,10 +80,10 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The image type to match with the instance type to pick an AMI. If the <code>imageIdOverride</code> parameter is
-     * not specified, then a recent <a
+     * The image type to match with the instance type to select an AMI. If the <code>imageIdOverride</code> parameter
+     * isn't specified, then a recent <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
-     * AMI</a> will be used.
+     * AMI</a> is used.
      * </p>
      * <dl>
      * <dt>ECS_AL2</dt>
@@ -102,17 +107,17 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
      * Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon Linux is reaching the end-of-life
-     * of standard support. For more information, see <a href="https://aws.amazon.com/amazon-linux-ami/">Amazon Linux
+     * of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux
      * AMI</a>.
      * </p>
      * </dd>
      * </dl>
      * 
      * @param imageType
-     *        The image type to match with the instance type to pick an AMI. If the <code>imageIdOverride</code>
-     *        parameter is not specified, then a recent <a
+     *        The image type to match with the instance type to select an AMI. If the <code>imageIdOverride</code>
+     *        parameter isn't specified, then a recent <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
-     *        ECS-optimized AMI</a> will be used.</p>
+     *        ECS-optimized AMI</a> is used.</p>
      *        <dl>
      *        <dt>ECS_AL2</dt>
      *        <dd>
@@ -136,7 +141,7 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
      *        Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon Linux is reaching the
      *        end-of-life of standard support. For more information, see <a
-     *        href="https://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.
+     *        href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.
      *        </p>
      *        </dd>
      */
@@ -147,10 +152,10 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The image type to match with the instance type to pick an AMI. If the <code>imageIdOverride</code> parameter is
-     * not specified, then a recent <a
+     * The image type to match with the instance type to select an AMI. If the <code>imageIdOverride</code> parameter
+     * isn't specified, then a recent <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
-     * AMI</a> will be used.
+     * AMI</a> is used.
      * </p>
      * <dl>
      * <dt>ECS_AL2</dt>
@@ -174,16 +179,16 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
      * Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon Linux is reaching the end-of-life
-     * of standard support. For more information, see <a href="https://aws.amazon.com/amazon-linux-ami/">Amazon Linux
+     * of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux
      * AMI</a>.
      * </p>
      * </dd>
      * </dl>
      * 
-     * @return The image type to match with the instance type to pick an AMI. If the <code>imageIdOverride</code>
-     *         parameter is not specified, then a recent <a
+     * @return The image type to match with the instance type to select an AMI. If the <code>imageIdOverride</code>
+     *         parameter isn't specified, then a recent <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
-     *         ECS-optimized AMI</a> will be used.</p>
+     *         ECS-optimized AMI</a> is used.</p>
      *         <dl>
      *         <dt>ECS_AL2</dt>
      *         <dd>
@@ -209,7 +214,7 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      *         <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
      *         Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon Linux is reaching the
      *         end-of-life of standard support. For more information, see <a
-     *         href="https://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.
+     *         href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.
      *         </p>
      *         </dd>
      */
@@ -220,10 +225,10 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The image type to match with the instance type to pick an AMI. If the <code>imageIdOverride</code> parameter is
-     * not specified, then a recent <a
+     * The image type to match with the instance type to select an AMI. If the <code>imageIdOverride</code> parameter
+     * isn't specified, then a recent <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
-     * AMI</a> will be used.
+     * AMI</a> is used.
      * </p>
      * <dl>
      * <dt>ECS_AL2</dt>
@@ -247,17 +252,17 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
      * Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon Linux is reaching the end-of-life
-     * of standard support. For more information, see <a href="https://aws.amazon.com/amazon-linux-ami/">Amazon Linux
+     * of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux
      * AMI</a>.
      * </p>
      * </dd>
      * </dl>
      * 
      * @param imageType
-     *        The image type to match with the instance type to pick an AMI. If the <code>imageIdOverride</code>
-     *        parameter is not specified, then a recent <a
+     *        The image type to match with the instance type to select an AMI. If the <code>imageIdOverride</code>
+     *        parameter isn't specified, then a recent <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
-     *        ECS-optimized AMI</a> will be used.</p>
+     *        ECS-optimized AMI</a> is used.</p>
      *        <dl>
      *        <dt>ECS_AL2</dt>
      *        <dd>
@@ -281,7 +286,7 @@ public class Ec2Configuration implements Serializable, Cloneable, StructuredPojo
      *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
      *        Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon Linux is reaching the
      *        end-of-life of standard support. For more information, see <a
-     *        href="https://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.
+     *        href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.
      *        </p>
      *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -84,12 +84,6 @@ public class InstanceRecommendation implements Serializable, Cloneable, Structur
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * The values that are returned might be <code>UNDER_PROVISIONED</code>, <code>OVER_PROVISIONED</code>, or
-     * <code>OPTIMIZED</code>.
-     * </p>
-     * </note>
      */
     private String finding;
     /**
@@ -315,12 +309,6 @@ public class InstanceRecommendation implements Serializable, Cloneable, Structur
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * The values that are returned might be <code>UNDER_PROVISIONED</code>, <code>OVER_PROVISIONED</code>, or
-     * <code>OPTIMIZED</code>.
-     * </p>
-     * </note>
      * 
      * @param finding
      *        The finding classification for the instance.</p>
@@ -351,12 +339,6 @@ public class InstanceRecommendation implements Serializable, Cloneable, Structur
      *        cost. For optimized resources, AWS Compute Optimizer might recommend a new generation instance type.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        The values that are returned might be <code>UNDER_PROVISIONED</code>, <code>OVER_PROVISIONED</code>, or
-     *        <code>OPTIMIZED</code>.
-     *        </p>
      * @see Finding
      */
 
@@ -396,12 +378,6 @@ public class InstanceRecommendation implements Serializable, Cloneable, Structur
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * The values that are returned might be <code>UNDER_PROVISIONED</code>, <code>OVER_PROVISIONED</code>, or
-     * <code>OPTIMIZED</code>.
-     * </p>
-     * </note>
      * 
      * @return The finding classification for the instance.</p>
      *         <p>
@@ -431,12 +407,6 @@ public class InstanceRecommendation implements Serializable, Cloneable, Structur
      *         cost. For optimized resources, AWS Compute Optimizer might recommend a new generation instance type.
      *         </p>
      *         </li>
-     *         </ul>
-     *         <note>
-     *         <p>
-     *         The values that are returned might be <code>UNDER_PROVISIONED</code>, <code>OVER_PROVISIONED</code>, or
-     *         <code>OPTIMIZED</code>.
-     *         </p>
      * @see Finding
      */
 
@@ -476,12 +446,6 @@ public class InstanceRecommendation implements Serializable, Cloneable, Structur
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * The values that are returned might be <code>UNDER_PROVISIONED</code>, <code>OVER_PROVISIONED</code>, or
-     * <code>OPTIMIZED</code>.
-     * </p>
-     * </note>
      * 
      * @param finding
      *        The finding classification for the instance.</p>
@@ -512,12 +476,6 @@ public class InstanceRecommendation implements Serializable, Cloneable, Structur
      *        cost. For optimized resources, AWS Compute Optimizer might recommend a new generation instance type.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        The values that are returned might be <code>UNDER_PROVISIONED</code>, <code>OVER_PROVISIONED</code>, or
-     *        <code>OPTIMIZED</code>.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Finding
      */
@@ -559,12 +517,6 @@ public class InstanceRecommendation implements Serializable, Cloneable, Structur
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * The values that are returned might be <code>UNDER_PROVISIONED</code>, <code>OVER_PROVISIONED</code>, or
-     * <code>OPTIMIZED</code>.
-     * </p>
-     * </note>
      * 
      * @param finding
      *        The finding classification for the instance.</p>
@@ -595,12 +547,6 @@ public class InstanceRecommendation implements Serializable, Cloneable, Structur
      *        cost. For optimized resources, AWS Compute Optimizer might recommend a new generation instance type.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        The values that are returned might be <code>UNDER_PROVISIONED</code>, <code>OVER_PROVISIONED</code>, or
-     *        <code>OPTIMIZED</code>.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Finding
      */

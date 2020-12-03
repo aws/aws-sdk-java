@@ -134,6 +134,14 @@ public class ContainerPropertiesJsonUnmarshaller implements Unmarshaller<Contain
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("networkConfiguration", targetDepth)) {
+                    context.nextToken();
+                    containerProperties.setNetworkConfiguration(NetworkConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("fargatePlatformConfiguration", targetDepth)) {
+                    context.nextToken();
+                    containerProperties.setFargatePlatformConfiguration(FargatePlatformConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

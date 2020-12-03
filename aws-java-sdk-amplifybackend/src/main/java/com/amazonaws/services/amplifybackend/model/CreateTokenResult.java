@@ -31,19 +31,19 @@ public class CreateTokenResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String appId;
     /**
      * <p>
-     * One time challenge code for authenticating into Amplify Admin UI.
+     * One-time challenge code for authenticating into the Amplify Admin UI.
      * </p>
      */
     private String challengeCode;
     /**
      * <p>
-     * A unique identifier provided when creating a new challenge token.
+     * A unique ID provided when creating a new challenge token.
      * </p>
      */
     private String sessionId;
     /**
      * <p>
-     * The expiry time for the one time generated token code.
+     * The expiry time for the one-time generated token code.
      * </p>
      */
     private String ttl;
@@ -90,11 +90,11 @@ public class CreateTokenResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * One time challenge code for authenticating into Amplify Admin UI.
+     * One-time challenge code for authenticating into the Amplify Admin UI.
      * </p>
      * 
      * @param challengeCode
-     *        One time challenge code for authenticating into Amplify Admin UI.
+     *        One-time challenge code for authenticating into the Amplify Admin UI.
      */
 
     public void setChallengeCode(String challengeCode) {
@@ -103,10 +103,10 @@ public class CreateTokenResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * One time challenge code for authenticating into Amplify Admin UI.
+     * One-time challenge code for authenticating into the Amplify Admin UI.
      * </p>
      * 
-     * @return One time challenge code for authenticating into Amplify Admin UI.
+     * @return One-time challenge code for authenticating into the Amplify Admin UI.
      */
 
     public String getChallengeCode() {
@@ -115,11 +115,11 @@ public class CreateTokenResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * One time challenge code for authenticating into Amplify Admin UI.
+     * One-time challenge code for authenticating into the Amplify Admin UI.
      * </p>
      * 
      * @param challengeCode
-     *        One time challenge code for authenticating into Amplify Admin UI.
+     *        One-time challenge code for authenticating into the Amplify Admin UI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,11 +130,11 @@ public class CreateTokenResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A unique identifier provided when creating a new challenge token.
+     * A unique ID provided when creating a new challenge token.
      * </p>
      * 
      * @param sessionId
-     *        A unique identifier provided when creating a new challenge token.
+     *        A unique ID provided when creating a new challenge token.
      */
 
     public void setSessionId(String sessionId) {
@@ -143,10 +143,10 @@ public class CreateTokenResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A unique identifier provided when creating a new challenge token.
+     * A unique ID provided when creating a new challenge token.
      * </p>
      * 
-     * @return A unique identifier provided when creating a new challenge token.
+     * @return A unique ID provided when creating a new challenge token.
      */
 
     public String getSessionId() {
@@ -155,11 +155,11 @@ public class CreateTokenResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A unique identifier provided when creating a new challenge token.
+     * A unique ID provided when creating a new challenge token.
      * </p>
      * 
      * @param sessionId
-     *        A unique identifier provided when creating a new challenge token.
+     *        A unique ID provided when creating a new challenge token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,11 +170,11 @@ public class CreateTokenResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The expiry time for the one time generated token code.
+     * The expiry time for the one-time generated token code.
      * </p>
      * 
      * @param ttl
-     *        The expiry time for the one time generated token code.
+     *        The expiry time for the one-time generated token code.
      */
 
     public void setTtl(String ttl) {
@@ -183,10 +183,10 @@ public class CreateTokenResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The expiry time for the one time generated token code.
+     * The expiry time for the one-time generated token code.
      * </p>
      * 
-     * @return The expiry time for the one time generated token code.
+     * @return The expiry time for the one-time generated token code.
      */
 
     public String getTtl() {
@@ -195,11 +195,11 @@ public class CreateTokenResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The expiry time for the one time generated token code.
+     * The expiry time for the one-time generated token code.
      * </p>
      * 
      * @param ttl
-     *        The expiry time for the one time generated token code.
+     *        The expiry time for the one-time generated token code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -68,11 +68,6 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * The values that are returned might be <code>NOT_OPTIMIZED</code> or <code>OPTIMIZED</code>.
-     * </p>
-     * </note>
      */
     private String finding;
     /**
@@ -248,11 +243,6 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * The values that are returned might be <code>NOT_OPTIMIZED</code> or <code>OPTIMIZED</code>.
-     * </p>
-     * </note>
      * 
      * @param finding
      *        The finding classification for the Auto Scaling group.</p>
@@ -273,11 +263,6 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
      *        For optimized resources, Compute Optimizer might recommend a new generation instance type.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        The values that are returned might be <code>NOT_OPTIMIZED</code> or <code>OPTIMIZED</code>.
-     *        </p>
      * @see Finding
      */
 
@@ -307,11 +292,6 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * The values that are returned might be <code>NOT_OPTIMIZED</code> or <code>OPTIMIZED</code>.
-     * </p>
-     * </note>
      * 
      * @return The finding classification for the Auto Scaling group.</p>
      *         <p>
@@ -331,11 +311,6 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
      *         type. For optimized resources, Compute Optimizer might recommend a new generation instance type.
      *         </p>
      *         </li>
-     *         </ul>
-     *         <note>
-     *         <p>
-     *         The values that are returned might be <code>NOT_OPTIMIZED</code> or <code>OPTIMIZED</code>.
-     *         </p>
      * @see Finding
      */
 
@@ -365,11 +340,6 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * The values that are returned might be <code>NOT_OPTIMIZED</code> or <code>OPTIMIZED</code>.
-     * </p>
-     * </note>
      * 
      * @param finding
      *        The finding classification for the Auto Scaling group.</p>
@@ -390,11 +360,6 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
      *        For optimized resources, Compute Optimizer might recommend a new generation instance type.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        The values that are returned might be <code>NOT_OPTIMIZED</code> or <code>OPTIMIZED</code>.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Finding
      */
@@ -426,11 +391,6 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * The values that are returned might be <code>NOT_OPTIMIZED</code> or <code>OPTIMIZED</code>.
-     * </p>
-     * </note>
      * 
      * @param finding
      *        The finding classification for the Auto Scaling group.</p>
@@ -451,11 +411,6 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
      *        For optimized resources, Compute Optimizer might recommend a new generation instance type.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        The values that are returned might be <code>NOT_OPTIMIZED</code> or <code>OPTIMIZED</code>.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Finding
      */

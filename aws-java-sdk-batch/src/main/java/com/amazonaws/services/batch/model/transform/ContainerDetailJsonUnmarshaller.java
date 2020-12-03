@@ -160,6 +160,14 @@ public class ContainerDetailJsonUnmarshaller implements Unmarshaller<ContainerDe
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("networkConfiguration", targetDepth)) {
+                    context.nextToken();
+                    containerDetail.setNetworkConfiguration(NetworkConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("fargatePlatformConfiguration", targetDepth)) {
+                    context.nextToken();
+                    containerDetail.setFargatePlatformConfiguration(FargatePlatformConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

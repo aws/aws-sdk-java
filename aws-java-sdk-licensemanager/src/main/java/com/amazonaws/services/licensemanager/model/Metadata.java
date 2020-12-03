@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Reserved.
+ * Describes key/value pairs.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/Metadata" target="_top">AWS API
@@ -30,24 +30,24 @@ public class Metadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved.
+     * The key name.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Reserved.
+     * The value.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * Reserved.
+     * The key name.
      * </p>
      * 
      * @param name
-     *        Reserved.
+     *        The key name.
      */
 
     public void setName(String name) {
@@ -56,10 +56,10 @@ public class Metadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved.
+     * The key name.
      * </p>
      * 
-     * @return Reserved.
+     * @return The key name.
      */
 
     public String getName() {
@@ -68,11 +68,11 @@ public class Metadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved.
+     * The key name.
      * </p>
      * 
      * @param name
-     *        Reserved.
+     *        The key name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class Metadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved.
+     * The value.
      * </p>
      * 
      * @param value
-     *        Reserved.
+     *        The value.
      */
 
     public void setValue(String value) {
@@ -96,10 +96,10 @@ public class Metadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved.
+     * The value.
      * </p>
      * 
-     * @return Reserved.
+     * @return The value.
      */
 
     public String getValue() {
@@ -108,11 +108,11 @@ public class Metadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved.
+     * The value.
      * </p>
      * 
      * @param value
-     *        Reserved.
+     *        The value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

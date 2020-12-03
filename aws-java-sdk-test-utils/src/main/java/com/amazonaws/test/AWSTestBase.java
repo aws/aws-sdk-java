@@ -29,6 +29,7 @@ import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.test.util.InputStreamUtils;
 import com.amazonaws.test.util.SdkAsserts;
 import com.amazonaws.util.IOUtils;
+import java.util.concurrent.TimeUnit;
 import org.junit.Rule;
 
 public abstract class AWSTestBase {
@@ -54,7 +55,7 @@ public abstract class AWSTestBase {
             new SystemPropertiesCredentialsProvider());
 
     @Rule
-    public RetryRule retry = new RetryRule(3);
+    public RetryRule retry = new RetryRule(3, 2, TimeUnit.SECONDS);
 
     /**
      * @deprecated Extend from {@link AWSIntegrationTestBase} to access credentials

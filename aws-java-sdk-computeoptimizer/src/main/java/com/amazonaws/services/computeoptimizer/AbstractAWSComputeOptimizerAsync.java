@@ -88,6 +88,19 @@ public class AbstractAWSComputeOptimizerAsync extends AbstractAWSComputeOptimize
     }
 
     @Override
+    public java.util.concurrent.Future<GetEBSVolumeRecommendationsResult> getEBSVolumeRecommendationsAsync(GetEBSVolumeRecommendationsRequest request) {
+
+        return getEBSVolumeRecommendationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEBSVolumeRecommendationsResult> getEBSVolumeRecommendationsAsync(GetEBSVolumeRecommendationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetEBSVolumeRecommendationsRequest, GetEBSVolumeRecommendationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetEC2InstanceRecommendationsResult> getEC2InstanceRecommendationsAsync(GetEC2InstanceRecommendationsRequest request) {
 
         return getEC2InstanceRecommendationsAsync(request, null);

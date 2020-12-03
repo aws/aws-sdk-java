@@ -57,8 +57,8 @@ public class GetEC2InstanceRecommendationsRequest extends com.amazonaws.AmazonWe
      * The IDs of the AWS accounts for which to return instance recommendations.
      * </p>
      * <p>
-     * If your account is the master account of an organization, use this parameter to specify the member accounts for
-     * which you want to return instance recommendations.
+     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * for which you want to return instance recommendations.
      * </p>
      * <p>
      * Only one account ID can be specified per request.
@@ -306,8 +306,8 @@ public class GetEC2InstanceRecommendationsRequest extends com.amazonaws.AmazonWe
      * The IDs of the AWS accounts for which to return instance recommendations.
      * </p>
      * <p>
-     * If your account is the master account of an organization, use this parameter to specify the member accounts for
-     * which you want to return instance recommendations.
+     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * for which you want to return instance recommendations.
      * </p>
      * <p>
      * Only one account ID can be specified per request.
@@ -315,7 +315,7 @@ public class GetEC2InstanceRecommendationsRequest extends com.amazonaws.AmazonWe
      * 
      * @return The IDs of the AWS accounts for which to return instance recommendations.</p>
      *         <p>
-     *         If your account is the master account of an organization, use this parameter to specify the member
+     *         If your account is the management account of an organization, use this parameter to specify the member
      *         accounts for which you want to return instance recommendations.
      *         </p>
      *         <p>
@@ -331,8 +331,8 @@ public class GetEC2InstanceRecommendationsRequest extends com.amazonaws.AmazonWe
      * The IDs of the AWS accounts for which to return instance recommendations.
      * </p>
      * <p>
-     * If your account is the master account of an organization, use this parameter to specify the member accounts for
-     * which you want to return instance recommendations.
+     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * for which you want to return instance recommendations.
      * </p>
      * <p>
      * Only one account ID can be specified per request.
@@ -341,7 +341,7 @@ public class GetEC2InstanceRecommendationsRequest extends com.amazonaws.AmazonWe
      * @param accountIds
      *        The IDs of the AWS accounts for which to return instance recommendations.</p>
      *        <p>
-     *        If your account is the master account of an organization, use this parameter to specify the member
+     *        If your account is the management account of an organization, use this parameter to specify the member
      *        accounts for which you want to return instance recommendations.
      *        </p>
      *        <p>
@@ -362,8 +362,8 @@ public class GetEC2InstanceRecommendationsRequest extends com.amazonaws.AmazonWe
      * The IDs of the AWS accounts for which to return instance recommendations.
      * </p>
      * <p>
-     * If your account is the master account of an organization, use this parameter to specify the member accounts for
-     * which you want to return instance recommendations.
+     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * for which you want to return instance recommendations.
      * </p>
      * <p>
      * Only one account ID can be specified per request.
@@ -377,7 +377,7 @@ public class GetEC2InstanceRecommendationsRequest extends com.amazonaws.AmazonWe
      * @param accountIds
      *        The IDs of the AWS accounts for which to return instance recommendations.</p>
      *        <p>
-     *        If your account is the master account of an organization, use this parameter to specify the member
+     *        If your account is the management account of an organization, use this parameter to specify the member
      *        accounts for which you want to return instance recommendations.
      *        </p>
      *        <p>
@@ -400,8 +400,8 @@ public class GetEC2InstanceRecommendationsRequest extends com.amazonaws.AmazonWe
      * The IDs of the AWS accounts for which to return instance recommendations.
      * </p>
      * <p>
-     * If your account is the master account of an organization, use this parameter to specify the member accounts for
-     * which you want to return instance recommendations.
+     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * for which you want to return instance recommendations.
      * </p>
      * <p>
      * Only one account ID can be specified per request.
@@ -410,7 +410,7 @@ public class GetEC2InstanceRecommendationsRequest extends com.amazonaws.AmazonWe
      * @param accountIds
      *        The IDs of the AWS accounts for which to return instance recommendations.</p>
      *        <p>
-     *        If your account is the master account of an organization, use this parameter to specify the member
+     *        If your account is the management account of an organization, use this parameter to specify the member
      *        accounts for which you want to return instance recommendations.
      *        </p>
      *        <p>

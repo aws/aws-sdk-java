@@ -69,6 +69,10 @@ public class JobDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeout").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<Boolean> PROPAGATETAGS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("propagateTags").build();
+    private static final MarshallingInfo<List> PLATFORMCAPABILITIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("platformCapabilities").build();
 
     private static final JobDetailMarshaller instance = new JobDetailMarshaller();
 
@@ -106,6 +110,8 @@ public class JobDetailMarshaller {
             protocolMarshaller.marshall(jobDetail.getArrayProperties(), ARRAYPROPERTIES_BINDING);
             protocolMarshaller.marshall(jobDetail.getTimeout(), TIMEOUT_BINDING);
             protocolMarshaller.marshall(jobDetail.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(jobDetail.getPropagateTags(), PROPAGATETAGS_BINDING);
+            protocolMarshaller.marshall(jobDetail.getPlatformCapabilities(), PLATFORMCAPABILITIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

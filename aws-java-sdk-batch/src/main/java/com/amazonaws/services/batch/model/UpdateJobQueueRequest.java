@@ -51,7 +51,9 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Details the set of compute environments mapped to a job queue and their order relative to each other. This is one
-     * of the parameters used by the job scheduler to determine which compute environment should execute a given job.
+     * of the parameters used by the job scheduler to determine which compute environment should run a given job. All of
+     * the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (
+     * <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      * </p>
      */
     private java.util.List<ComputeEnvironmentOrder> computeEnvironmentOrder;
@@ -250,12 +252,16 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Details the set of compute environments mapped to a job queue and their order relative to each other. This is one
-     * of the parameters used by the job scheduler to determine which compute environment should execute a given job.
+     * of the parameters used by the job scheduler to determine which compute environment should run a given job. All of
+     * the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (
+     * <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      * </p>
      * 
      * @return Details the set of compute environments mapped to a job queue and their order relative to each other.
-     *         This is one of the parameters used by the job scheduler to determine which compute environment should
-     *         execute a given job.
+     *         This is one of the parameters used by the job scheduler to determine which compute environment should run
+     *         a given job. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>)
+     *         or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments
+     *         can't be mixed.
      */
 
     public java.util.List<ComputeEnvironmentOrder> getComputeEnvironmentOrder() {
@@ -265,13 +271,17 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Details the set of compute environments mapped to a job queue and their order relative to each other. This is one
-     * of the parameters used by the job scheduler to determine which compute environment should execute a given job.
+     * of the parameters used by the job scheduler to determine which compute environment should run a given job. All of
+     * the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (
+     * <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      * </p>
      * 
      * @param computeEnvironmentOrder
      *        Details the set of compute environments mapped to a job queue and their order relative to each other. This
-     *        is one of the parameters used by the job scheduler to determine which compute environment should execute a
-     *        given job.
+     *        is one of the parameters used by the job scheduler to determine which compute environment should run a
+     *        given job. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or
+     *        Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be
+     *        mixed.
      */
 
     public void setComputeEnvironmentOrder(java.util.Collection<ComputeEnvironmentOrder> computeEnvironmentOrder) {
@@ -286,7 +296,9 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Details the set of compute environments mapped to a job queue and their order relative to each other. This is one
-     * of the parameters used by the job scheduler to determine which compute environment should execute a given job.
+     * of the parameters used by the job scheduler to determine which compute environment should run a given job. All of
+     * the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (
+     * <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -296,8 +308,10 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param computeEnvironmentOrder
      *        Details the set of compute environments mapped to a job queue and their order relative to each other. This
-     *        is one of the parameters used by the job scheduler to determine which compute environment should execute a
-     *        given job.
+     *        is one of the parameters used by the job scheduler to determine which compute environment should run a
+     *        given job. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or
+     *        Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be
+     *        mixed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -314,13 +328,17 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Details the set of compute environments mapped to a job queue and their order relative to each other. This is one
-     * of the parameters used by the job scheduler to determine which compute environment should execute a given job.
+     * of the parameters used by the job scheduler to determine which compute environment should run a given job. All of
+     * the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (
+     * <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      * </p>
      * 
      * @param computeEnvironmentOrder
      *        Details the set of compute environments mapped to a job queue and their order relative to each other. This
-     *        is one of the parameters used by the job scheduler to determine which compute environment should execute a
-     *        given job.
+     *        is one of the parameters used by the job scheduler to determine which compute environment should run a
+     *        given job. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or
+     *        Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be
+     *        mixed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

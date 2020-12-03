@@ -21,6 +21,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Describes a filter that returns a more specific list of recommendations.
  * </p>
+ * <p>
+ * This filter is used with the <code>GetAutoScalingGroupRecommendations</code> and
+ * <code>GetEC2InstanceRecommendations</code> actions.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/Filter" target="_top">AWS API
  *      Documentation</a>
@@ -33,7 +37,7 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The name of the filter.
      * </p>
      * <p>
-     * Specify <code>Finding</code> to return recommendations with a specific findings classification (e.g.,
+     * Specify <code>Finding</code> to return recommendations with a specific finding classification (e.g.,
      * <code>Overprovisioned</code>).
      * </p>
      * <p>
@@ -47,18 +51,29 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The value of the filter.
      * </p>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations for an
-     * <i>instance</i>, then the valid values are <code>Underprovisioned</code>, <code>Overprovisioned</code>,
-     * <code>NotOptimized</code>, or <code>Optimized</code>.
+     * The valid values for this parameter are as follows, depending on what you specify for the <code>name</code>
+     * parameter and the resource type that you wish to filter results for:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations for an
-     * <i>Auto Scaling group</i>, then the valid values are <code>Optimized</code>, or <code>NotOptimized</code>.
+     * Specify <code>Optimized</code> or <code>NotOptimized</code> if you specified the <code>name</code> parameter as
+     * <code>Finding</code> and you want to filter results for Auto Scaling groups.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>RecommendationSourceType</code>, then the valid values
-     * are <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.
+     * Specify <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code> if you specified
+     * the <code>name</code> parameter as <code>Finding</code> and you want to filter results for EC2 instances.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
+     * parameter as <code>RecommendationSourceType</code>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<String> values;
 
@@ -67,7 +82,7 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The name of the filter.
      * </p>
      * <p>
-     * Specify <code>Finding</code> to return recommendations with a specific findings classification (e.g.,
+     * Specify <code>Finding</code> to return recommendations with a specific finding classification (e.g.,
      * <code>Overprovisioned</code>).
      * </p>
      * <p>
@@ -78,7 +93,7 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * @param name
      *        The name of the filter.</p>
      *        <p>
-     *        Specify <code>Finding</code> to return recommendations with a specific findings classification (e.g.,
+     *        Specify <code>Finding</code> to return recommendations with a specific finding classification (e.g.,
      *        <code>Overprovisioned</code>).
      *        </p>
      *        <p>
@@ -96,7 +111,7 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The name of the filter.
      * </p>
      * <p>
-     * Specify <code>Finding</code> to return recommendations with a specific findings classification (e.g.,
+     * Specify <code>Finding</code> to return recommendations with a specific finding classification (e.g.,
      * <code>Overprovisioned</code>).
      * </p>
      * <p>
@@ -106,7 +121,7 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return The name of the filter.</p>
      *         <p>
-     *         Specify <code>Finding</code> to return recommendations with a specific findings classification (e.g.,
+     *         Specify <code>Finding</code> to return recommendations with a specific finding classification (e.g.,
      *         <code>Overprovisioned</code>).
      *         </p>
      *         <p>
@@ -124,7 +139,7 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The name of the filter.
      * </p>
      * <p>
-     * Specify <code>Finding</code> to return recommendations with a specific findings classification (e.g.,
+     * Specify <code>Finding</code> to return recommendations with a specific finding classification (e.g.,
      * <code>Overprovisioned</code>).
      * </p>
      * <p>
@@ -135,7 +150,7 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * @param name
      *        The name of the filter.</p>
      *        <p>
-     *        Specify <code>Finding</code> to return recommendations with a specific findings classification (e.g.,
+     *        Specify <code>Finding</code> to return recommendations with a specific finding classification (e.g.,
      *        <code>Overprovisioned</code>).
      *        </p>
      *        <p>
@@ -155,7 +170,7 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The name of the filter.
      * </p>
      * <p>
-     * Specify <code>Finding</code> to return recommendations with a specific findings classification (e.g.,
+     * Specify <code>Finding</code> to return recommendations with a specific finding classification (e.g.,
      * <code>Overprovisioned</code>).
      * </p>
      * <p>
@@ -166,7 +181,7 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * @param name
      *        The name of the filter.</p>
      *        <p>
-     *        Specify <code>Finding</code> to return recommendations with a specific findings classification (e.g.,
+     *        Specify <code>Finding</code> to return recommendations with a specific finding classification (e.g.,
      *        <code>Overprovisioned</code>).
      *        </p>
      *        <p>
@@ -186,33 +201,55 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The value of the filter.
      * </p>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations for an
-     * <i>instance</i>, then the valid values are <code>Underprovisioned</code>, <code>Overprovisioned</code>,
-     * <code>NotOptimized</code>, or <code>Optimized</code>.
+     * The valid values for this parameter are as follows, depending on what you specify for the <code>name</code>
+     * parameter and the resource type that you wish to filter results for:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations for an
-     * <i>Auto Scaling group</i>, then the valid values are <code>Optimized</code>, or <code>NotOptimized</code>.
+     * Specify <code>Optimized</code> or <code>NotOptimized</code> if you specified the <code>name</code> parameter as
+     * <code>Finding</code> and you want to filter results for Auto Scaling groups.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>RecommendationSourceType</code>, then the valid values
-     * are <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.
+     * Specify <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code> if you specified
+     * the <code>name</code> parameter as <code>Finding</code> and you want to filter results for EC2 instances.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
+     * parameter as <code>RecommendationSourceType</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The value of the filter.</p>
      *         <p>
-     *         If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations
-     *         for an <i>instance</i>, then the valid values are <code>Underprovisioned</code>,
-     *         <code>Overprovisioned</code>, <code>NotOptimized</code>, or <code>Optimized</code>.
+     *         The valid values for this parameter are as follows, depending on what you specify for the
+     *         <code>name</code> parameter and the resource type that you wish to filter results for:
      *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations
-     *         for an <i>Auto Scaling group</i>, then the valid values are <code>Optimized</code>, or
-     *         <code>NotOptimized</code>.
+     *         Specify <code>Optimized</code> or <code>NotOptimized</code> if you specified the <code>name</code>
+     *         parameter as <code>Finding</code> and you want to filter results for Auto Scaling groups.
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         If you specify the <code>name</code> parameter as <code>RecommendationSourceType</code>, then the valid
-     *         values are <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.
+     *         Specify <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code> if you
+     *         specified the <code>name</code> parameter as <code>Finding</code> and you want to filter results for EC2
+     *         instances.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
+     *         parameter as <code>RecommendationSourceType</code>.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<String> getValues() {
@@ -224,34 +261,56 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The value of the filter.
      * </p>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations for an
-     * <i>instance</i>, then the valid values are <code>Underprovisioned</code>, <code>Overprovisioned</code>,
-     * <code>NotOptimized</code>, or <code>Optimized</code>.
+     * The valid values for this parameter are as follows, depending on what you specify for the <code>name</code>
+     * parameter and the resource type that you wish to filter results for:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations for an
-     * <i>Auto Scaling group</i>, then the valid values are <code>Optimized</code>, or <code>NotOptimized</code>.
+     * Specify <code>Optimized</code> or <code>NotOptimized</code> if you specified the <code>name</code> parameter as
+     * <code>Finding</code> and you want to filter results for Auto Scaling groups.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>RecommendationSourceType</code>, then the valid values
-     * are <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.
+     * Specify <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code> if you specified
+     * the <code>name</code> parameter as <code>Finding</code> and you want to filter results for EC2 instances.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
+     * parameter as <code>RecommendationSourceType</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param values
      *        The value of the filter.</p>
      *        <p>
-     *        If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations
-     *        for an <i>instance</i>, then the valid values are <code>Underprovisioned</code>,
-     *        <code>Overprovisioned</code>, <code>NotOptimized</code>, or <code>Optimized</code>.
+     *        The valid values for this parameter are as follows, depending on what you specify for the
+     *        <code>name</code> parameter and the resource type that you wish to filter results for:
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations
-     *        for an <i>Auto Scaling group</i>, then the valid values are <code>Optimized</code>, or
-     *        <code>NotOptimized</code>.
+     *        Specify <code>Optimized</code> or <code>NotOptimized</code> if you specified the <code>name</code>
+     *        parameter as <code>Finding</code> and you want to filter results for Auto Scaling groups.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        If you specify the <code>name</code> parameter as <code>RecommendationSourceType</code>, then the valid
-     *        values are <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.
+     *        Specify <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code> if you
+     *        specified the <code>name</code> parameter as <code>Finding</code> and you want to filter results for EC2
+     *        instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
+     *        parameter as <code>RecommendationSourceType</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -268,18 +327,29 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The value of the filter.
      * </p>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations for an
-     * <i>instance</i>, then the valid values are <code>Underprovisioned</code>, <code>Overprovisioned</code>,
-     * <code>NotOptimized</code>, or <code>Optimized</code>.
+     * The valid values for this parameter are as follows, depending on what you specify for the <code>name</code>
+     * parameter and the resource type that you wish to filter results for:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations for an
-     * <i>Auto Scaling group</i>, then the valid values are <code>Optimized</code>, or <code>NotOptimized</code>.
+     * Specify <code>Optimized</code> or <code>NotOptimized</code> if you specified the <code>name</code> parameter as
+     * <code>Finding</code> and you want to filter results for Auto Scaling groups.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>RecommendationSourceType</code>, then the valid values
-     * are <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.
+     * Specify <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code> if you specified
+     * the <code>name</code> parameter as <code>Finding</code> and you want to filter results for EC2 instances.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
+     * parameter as <code>RecommendationSourceType</code>.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the
@@ -289,18 +359,29 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * @param values
      *        The value of the filter.</p>
      *        <p>
-     *        If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations
-     *        for an <i>instance</i>, then the valid values are <code>Underprovisioned</code>,
-     *        <code>Overprovisioned</code>, <code>NotOptimized</code>, or <code>Optimized</code>.
+     *        The valid values for this parameter are as follows, depending on what you specify for the
+     *        <code>name</code> parameter and the resource type that you wish to filter results for:
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations
-     *        for an <i>Auto Scaling group</i>, then the valid values are <code>Optimized</code>, or
-     *        <code>NotOptimized</code>.
+     *        Specify <code>Optimized</code> or <code>NotOptimized</code> if you specified the <code>name</code>
+     *        parameter as <code>Finding</code> and you want to filter results for Auto Scaling groups.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        If you specify the <code>name</code> parameter as <code>RecommendationSourceType</code>, then the valid
-     *        values are <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.
+     *        Specify <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code> if you
+     *        specified the <code>name</code> parameter as <code>Finding</code> and you want to filter results for EC2
+     *        instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
+     *        parameter as <code>RecommendationSourceType</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,34 +400,56 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The value of the filter.
      * </p>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations for an
-     * <i>instance</i>, then the valid values are <code>Underprovisioned</code>, <code>Overprovisioned</code>,
-     * <code>NotOptimized</code>, or <code>Optimized</code>.
+     * The valid values for this parameter are as follows, depending on what you specify for the <code>name</code>
+     * parameter and the resource type that you wish to filter results for:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations for an
-     * <i>Auto Scaling group</i>, then the valid values are <code>Optimized</code>, or <code>NotOptimized</code>.
+     * Specify <code>Optimized</code> or <code>NotOptimized</code> if you specified the <code>name</code> parameter as
+     * <code>Finding</code> and you want to filter results for Auto Scaling groups.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>RecommendationSourceType</code>, then the valid values
-     * are <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.
+     * Specify <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code> if you specified
+     * the <code>name</code> parameter as <code>Finding</code> and you want to filter results for EC2 instances.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
+     * parameter as <code>RecommendationSourceType</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param values
      *        The value of the filter.</p>
      *        <p>
-     *        If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations
-     *        for an <i>instance</i>, then the valid values are <code>Underprovisioned</code>,
-     *        <code>Overprovisioned</code>, <code>NotOptimized</code>, or <code>Optimized</code>.
+     *        The valid values for this parameter are as follows, depending on what you specify for the
+     *        <code>name</code> parameter and the resource type that you wish to filter results for:
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        If you specify the <code>name</code> parameter as <code>Finding</code>, and you request recommendations
-     *        for an <i>Auto Scaling group</i>, then the valid values are <code>Optimized</code>, or
-     *        <code>NotOptimized</code>.
+     *        Specify <code>Optimized</code> or <code>NotOptimized</code> if you specified the <code>name</code>
+     *        parameter as <code>Finding</code> and you want to filter results for Auto Scaling groups.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        If you specify the <code>name</code> parameter as <code>RecommendationSourceType</code>, then the valid
-     *        values are <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.
+     *        Specify <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code> if you
+     *        specified the <code>name</code> parameter as <code>Finding</code> and you want to filter results for EC2
+     *        instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
+     *        parameter as <code>RecommendationSourceType</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -37,7 +37,7 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
      * parameter is used, <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results in a single
      * page along with a <code>nextToken</code> response element. The remaining results of the initial request can be
      * seen by sending another <code>DescribeJobDefinitions</code> request with the returned <code>nextToken</code>
-     * value. This value can be between 1 and 100. If this parameter is not used, then
+     * value. This value can be between 1 and 100. If this parameter isn't used, then
      * <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
      * </p>
      */
@@ -50,7 +50,7 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
     private String jobDefinitionName;
     /**
      * <p>
-     * The status with which to filter job definitions.
+     * The status used to filter job definitions.
      * </p>
      */
     private String status;
@@ -146,7 +146,7 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
      * parameter is used, <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results in a single
      * page along with a <code>nextToken</code> response element. The remaining results of the initial request can be
      * seen by sending another <code>DescribeJobDefinitions</code> request with the returned <code>nextToken</code>
-     * value. This value can be between 1 and 100. If this parameter is not used, then
+     * value. This value can be between 1 and 100. If this parameter isn't used, then
      * <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
      * </p>
      * 
@@ -155,7 +155,7 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
      *        this parameter is used, <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results
      *        in a single page along with a <code>nextToken</code> response element. The remaining results of the
      *        initial request can be seen by sending another <code>DescribeJobDefinitions</code> request with the
-     *        returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used,
+     *        returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used,
      *        then <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value if
      *        applicable.
      */
@@ -170,7 +170,7 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
      * parameter is used, <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results in a single
      * page along with a <code>nextToken</code> response element. The remaining results of the initial request can be
      * seen by sending another <code>DescribeJobDefinitions</code> request with the returned <code>nextToken</code>
-     * value. This value can be between 1 and 100. If this parameter is not used, then
+     * value. This value can be between 1 and 100. If this parameter isn't used, then
      * <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
      * </p>
      * 
@@ -178,9 +178,9 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
      *         this parameter is used, <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results
      *         in a single page along with a <code>nextToken</code> response element. The remaining results of the
      *         initial request can be seen by sending another <code>DescribeJobDefinitions</code> request with the
-     *         returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not
-     *         used, then <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code>
-     *         value if applicable.
+     *         returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used,
+     *         then <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value if
+     *         applicable.
      */
 
     public Integer getMaxResults() {
@@ -193,7 +193,7 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
      * parameter is used, <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results in a single
      * page along with a <code>nextToken</code> response element. The remaining results of the initial request can be
      * seen by sending another <code>DescribeJobDefinitions</code> request with the returned <code>nextToken</code>
-     * value. This value can be between 1 and 100. If this parameter is not used, then
+     * value. This value can be between 1 and 100. If this parameter isn't used, then
      * <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
      * </p>
      * 
@@ -202,7 +202,7 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
      *        this parameter is used, <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results
      *        in a single page along with a <code>nextToken</code> response element. The remaining results of the
      *        initial request can be seen by sending another <code>DescribeJobDefinitions</code> request with the
-     *        returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used,
+     *        returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used,
      *        then <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value if
      *        applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -255,11 +255,11 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The status with which to filter job definitions.
+     * The status used to filter job definitions.
      * </p>
      * 
      * @param status
-     *        The status with which to filter job definitions.
+     *        The status used to filter job definitions.
      */
 
     public void setStatus(String status) {
@@ -268,10 +268,10 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The status with which to filter job definitions.
+     * The status used to filter job definitions.
      * </p>
      * 
-     * @return The status with which to filter job definitions.
+     * @return The status used to filter job definitions.
      */
 
     public String getStatus() {
@@ -280,11 +280,11 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The status with which to filter job definitions.
+     * The status used to filter job definitions.
      * </p>
      * 
      * @param status
-     *        The status with which to filter job definitions.
+     *        The status used to filter job definitions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

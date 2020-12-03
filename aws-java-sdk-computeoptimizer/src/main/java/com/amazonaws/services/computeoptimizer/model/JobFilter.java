@@ -49,13 +49,24 @@ public class JobFilter implements Serializable, Cloneable, StructuredPojo {
      * The value of the filter.
      * </p>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>ResourceType</code>, the valid values are
-     * <code>Ec2Instance</code> or <code>AutoScalingGroup</code>.
+     * The valid values for this parameter are as follows, depending on what you specify for the <code>name</code>
+     * parameter:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>JobStatus</code>, the valid values are
-     * <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code>.
+     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
+     * parameter as <code>ResourceType</code>. There is no filter for EBS volumes because volume recommendations cannot
+     * be exported at this time.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you
+     * specified the <code>name</code> parameter as <code>JobStatus</code>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<String> values;
 
@@ -175,22 +186,44 @@ public class JobFilter implements Serializable, Cloneable, StructuredPojo {
      * The value of the filter.
      * </p>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>ResourceType</code>, the valid values are
-     * <code>Ec2Instance</code> or <code>AutoScalingGroup</code>.
+     * The valid values for this parameter are as follows, depending on what you specify for the <code>name</code>
+     * parameter:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>JobStatus</code>, the valid values are
-     * <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code>.
+     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
+     * parameter as <code>ResourceType</code>. There is no filter for EBS volumes because volume recommendations cannot
+     * be exported at this time.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you
+     * specified the <code>name</code> parameter as <code>JobStatus</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The value of the filter.</p>
      *         <p>
-     *         If you specify the <code>name</code> parameter as <code>ResourceType</code>, the valid values are
-     *         <code>Ec2Instance</code> or <code>AutoScalingGroup</code>.
+     *         The valid values for this parameter are as follows, depending on what you specify for the
+     *         <code>name</code> parameter:
      *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         If you specify the <code>name</code> parameter as <code>JobStatus</code>, the valid values are
-     *         <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code>.
+     *         Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
+     *         parameter as <code>ResourceType</code>. There is no filter for EBS volumes because volume recommendations
+     *         cannot be exported at this time.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Specify <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if
+     *         you specified the <code>name</code> parameter as <code>JobStatus</code>.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<String> getValues() {
@@ -202,23 +235,45 @@ public class JobFilter implements Serializable, Cloneable, StructuredPojo {
      * The value of the filter.
      * </p>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>ResourceType</code>, the valid values are
-     * <code>Ec2Instance</code> or <code>AutoScalingGroup</code>.
+     * The valid values for this parameter are as follows, depending on what you specify for the <code>name</code>
+     * parameter:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>JobStatus</code>, the valid values are
-     * <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code>.
+     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
+     * parameter as <code>ResourceType</code>. There is no filter for EBS volumes because volume recommendations cannot
+     * be exported at this time.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you
+     * specified the <code>name</code> parameter as <code>JobStatus</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param values
      *        The value of the filter.</p>
      *        <p>
-     *        If you specify the <code>name</code> parameter as <code>ResourceType</code>, the valid values are
-     *        <code>Ec2Instance</code> or <code>AutoScalingGroup</code>.
+     *        The valid values for this parameter are as follows, depending on what you specify for the
+     *        <code>name</code> parameter:
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        If you specify the <code>name</code> parameter as <code>JobStatus</code>, the valid values are
-     *        <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code>.
+     *        Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
+     *        parameter as <code>ResourceType</code>. There is no filter for EBS volumes because volume recommendations
+     *        cannot be exported at this time.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you
+     *        specified the <code>name</code> parameter as <code>JobStatus</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -235,13 +290,24 @@ public class JobFilter implements Serializable, Cloneable, StructuredPojo {
      * The value of the filter.
      * </p>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>ResourceType</code>, the valid values are
-     * <code>Ec2Instance</code> or <code>AutoScalingGroup</code>.
+     * The valid values for this parameter are as follows, depending on what you specify for the <code>name</code>
+     * parameter:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>JobStatus</code>, the valid values are
-     * <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code>.
+     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
+     * parameter as <code>ResourceType</code>. There is no filter for EBS volumes because volume recommendations cannot
+     * be exported at this time.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you
+     * specified the <code>name</code> parameter as <code>JobStatus</code>.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the
@@ -251,12 +317,23 @@ public class JobFilter implements Serializable, Cloneable, StructuredPojo {
      * @param values
      *        The value of the filter.</p>
      *        <p>
-     *        If you specify the <code>name</code> parameter as <code>ResourceType</code>, the valid values are
-     *        <code>Ec2Instance</code> or <code>AutoScalingGroup</code>.
+     *        The valid values for this parameter are as follows, depending on what you specify for the
+     *        <code>name</code> parameter:
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        If you specify the <code>name</code> parameter as <code>JobStatus</code>, the valid values are
-     *        <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code>.
+     *        Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
+     *        parameter as <code>ResourceType</code>. There is no filter for EBS volumes because volume recommendations
+     *        cannot be exported at this time.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you
+     *        specified the <code>name</code> parameter as <code>JobStatus</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -275,23 +352,45 @@ public class JobFilter implements Serializable, Cloneable, StructuredPojo {
      * The value of the filter.
      * </p>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>ResourceType</code>, the valid values are
-     * <code>Ec2Instance</code> or <code>AutoScalingGroup</code>.
+     * The valid values for this parameter are as follows, depending on what you specify for the <code>name</code>
+     * parameter:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you specify the <code>name</code> parameter as <code>JobStatus</code>, the valid values are
-     * <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code>.
+     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
+     * parameter as <code>ResourceType</code>. There is no filter for EBS volumes because volume recommendations cannot
+     * be exported at this time.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you
+     * specified the <code>name</code> parameter as <code>JobStatus</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param values
      *        The value of the filter.</p>
      *        <p>
-     *        If you specify the <code>name</code> parameter as <code>ResourceType</code>, the valid values are
-     *        <code>Ec2Instance</code> or <code>AutoScalingGroup</code>.
+     *        The valid values for this parameter are as follows, depending on what you specify for the
+     *        <code>name</code> parameter:
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        If you specify the <code>name</code> parameter as <code>JobStatus</code>, the valid values are
-     *        <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code>.
+     *        Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
+     *        parameter as <code>ResourceType</code>. There is no filter for EBS volumes because volume recommendations
+     *        cannot be exported at this time.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you
+     *        specified the <code>name</code> parameter as <code>JobStatus</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,13 +36,28 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     private String image;
     /**
      * <p>
-     * The number of VCPUs allocated for the job. This is a required parameter.
+     * The number of vCPUs reserved for the container. Jobs running on EC2 resources can specify the vCPU requirement
+     * for the job using <code>resourceRequirements</code> but the vCPU requirements can't be specified both here and in
+     * the <code>resourceRequirement</code> object. This parameter maps to <code>CpuShares</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option
+     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU
+     * shares. You must specify at least one vCPU. This is required but can be specified in several places. It must be
+     * specified for each node at least once.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources. Jobs running on Fargate resources must
+     * specify the vCPU requirement for the job using <code>resourceRequirements</code>.
+     * </p>
+     * </note>
      */
     private Integer vcpus;
     /**
      * <p>
-     * The number of MiB of memory reserved for the job. This is a required parameter.
+     * For jobs run on EC2 resources that didn't specify memory requirements using <code>ResourceRequirement</code>, the
+     * number of MiB of memory reserved for the job. For other jobs, including all run on Fargate resources, see
+     * <code>resourceRequirements</code>.
      * </p>
      */
     private Integer memory;
@@ -62,7 +77,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
-     * role</a>.
+     * role</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      */
     private String executionRoleArn;
@@ -92,26 +107,47 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<MountPoint> mountPoints;
     /**
      * <p>
-     * When this parameter is true, the container is given read-only access to its root file system.
+     * When this parameter is true, the container is given read-only access to its root file system. This parameter maps
+     * to <code>ReadonlyRootfs</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--read-only</code> option to
+     * <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>.
      * </p>
      */
     private Boolean readonlyRootFilesystem;
     /**
      * <p>
-     * A list of <code>ulimit</code> values to set in the container.
+     * A list of <code>ulimit</code> values to set in the container. This parameter maps to <code>Ulimits</code> in the
+     * <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--ulimit</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources.
+     * </p>
+     * </note>
      */
     private java.util.List<Ulimit> ulimits;
     /**
      * <p>
-     * When this parameter is true, the container is given elevated privileges on the host container instance (similar
-     * to the <code>root</code> user).
+     * When this parameter is true, the container is given elevated permissions on the host container instance (similar
+     * to the <code>root</code> user). The default value is false.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or specified as
+     * false.
+     * </p>
+     * </note>
      */
     private Boolean privileged;
     /**
      * <p>
-     * The user name to use inside the container.
+     * The user name to use inside the container. This parameter maps to <code>User</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--user</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      */
     private String user;
@@ -130,7 +166,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     private String reason;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the container instance on which the container is running.
+     * The Amazon Resource Name (ARN) of the container instance that the container is running on.
      * </p>
      */
     private String containerInstanceArn;
@@ -153,6 +189,11 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The instance type of the underlying host infrastructure of a multi-node parallel job.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources.
+     * </p>
+     * </note>
      */
     private String instanceType;
     /**
@@ -163,8 +204,8 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<NetworkInterface> networkInterfaces;
     /**
      * <p>
-     * The type and amount of a resource to assign to a container. Currently, the only supported resource is
-     * <code>GPU</code>.
+     * The type and amount of resources to assign to a container. The supported resources include <code>GPU</code>,
+     * <code>MEMORY</code>, and <code>VCPU</code>.
      * </p>
      */
     private java.util.List<ResourceRequirement> resourceRequirements;
@@ -183,12 +224,13 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option
      * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same
-     * logging driver that the Docker daemon uses. However the container may use a different logging driver than the
+     * logging driver that the Docker daemon uses. However the container might use a different logging driver than the
      * Docker daemon by specifying a log driver with this parameter in the container definition. To use a different
-     * logging driver for a container, the log system must be configured properly on the container instance (or on a
-     * different log server for remote logging options). For more information on the options for different supported log
-     * drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in
-     * the Docker documentation.
+     * logging driver for a container, the log system must be configured properly on the container instance. Or,
+     * alternatively, it must be configured on a different log server for remote logging options. For more information
+     * on the options for different supported log drivers, see <a
+     * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker
+     * documentation.
      * </p>
      * <note>
      * <p>
@@ -216,11 +258,25 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The secrets to pass to the container. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive
+     * data</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      */
     private java.util.List<Secret> secrets;
+    /**
+     * <p>
+     * The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
+     * this parameter.
+     * </p>
+     */
+    private NetworkConfiguration networkConfiguration;
+    /**
+     * <p>
+     * The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
+     * this parameter.
+     * </p>
+     */
+    private FargatePlatformConfiguration fargatePlatformConfiguration;
 
     /**
      * <p>
@@ -264,11 +320,36 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of VCPUs allocated for the job. This is a required parameter.
+     * The number of vCPUs reserved for the container. Jobs running on EC2 resources can specify the vCPU requirement
+     * for the job using <code>resourceRequirements</code> but the vCPU requirements can't be specified both here and in
+     * the <code>resourceRequirement</code> object. This parameter maps to <code>CpuShares</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option
+     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU
+     * shares. You must specify at least one vCPU. This is required but can be specified in several places. It must be
+     * specified for each node at least once.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources. Jobs running on Fargate resources must
+     * specify the vCPU requirement for the job using <code>resourceRequirements</code>.
+     * </p>
+     * </note>
      * 
      * @param vcpus
-     *        The number of VCPUs allocated for the job. This is a required parameter.
+     *        The number of vCPUs reserved for the container. Jobs running on EC2 resources can specify the vCPU
+     *        requirement for the job using <code>resourceRequirements</code> but the vCPU requirements can't be
+     *        specified both here and in the <code>resourceRequirement</code> object. This parameter maps to
+     *        <code>CpuShares</code> in the <a
+     *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
+     *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     *        <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is required
+     *        but can be specified in several places. It must be specified for each node at least once.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources. Jobs running on Fargate resources
+     *        must specify the vCPU requirement for the job using <code>resourceRequirements</code>.
+     *        </p>
      */
 
     public void setVcpus(Integer vcpus) {
@@ -277,10 +358,36 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of VCPUs allocated for the job. This is a required parameter.
+     * The number of vCPUs reserved for the container. Jobs running on EC2 resources can specify the vCPU requirement
+     * for the job using <code>resourceRequirements</code> but the vCPU requirements can't be specified both here and in
+     * the <code>resourceRequirement</code> object. This parameter maps to <code>CpuShares</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option
+     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU
+     * shares. You must specify at least one vCPU. This is required but can be specified in several places. It must be
+     * specified for each node at least once.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources. Jobs running on Fargate resources must
+     * specify the vCPU requirement for the job using <code>resourceRequirements</code>.
+     * </p>
+     * </note>
      * 
-     * @return The number of VCPUs allocated for the job. This is a required parameter.
+     * @return The number of vCPUs reserved for the container. Jobs running on EC2 resources can specify the vCPU
+     *         requirement for the job using <code>resourceRequirements</code> but the vCPU requirements can't be
+     *         specified both here and in the <code>resourceRequirement</code> object. This parameter maps to
+     *         <code>CpuShares</code> in the <a
+     *         href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
+     *         <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     *         <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *         run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is
+     *         required but can be specified in several places. It must be specified for each node at least once.</p>
+     *         <note>
+     *         <p>
+     *         This parameter isn't applicable to jobs running on Fargate resources. Jobs running on Fargate resources
+     *         must specify the vCPU requirement for the job using <code>resourceRequirements</code>.
+     *         </p>
      */
 
     public Integer getVcpus() {
@@ -289,11 +396,36 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of VCPUs allocated for the job. This is a required parameter.
+     * The number of vCPUs reserved for the container. Jobs running on EC2 resources can specify the vCPU requirement
+     * for the job using <code>resourceRequirements</code> but the vCPU requirements can't be specified both here and in
+     * the <code>resourceRequirement</code> object. This parameter maps to <code>CpuShares</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option
+     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU
+     * shares. You must specify at least one vCPU. This is required but can be specified in several places. It must be
+     * specified for each node at least once.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources. Jobs running on Fargate resources must
+     * specify the vCPU requirement for the job using <code>resourceRequirements</code>.
+     * </p>
+     * </note>
      * 
      * @param vcpus
-     *        The number of VCPUs allocated for the job. This is a required parameter.
+     *        The number of vCPUs reserved for the container. Jobs running on EC2 resources can specify the vCPU
+     *        requirement for the job using <code>resourceRequirements</code> but the vCPU requirements can't be
+     *        specified both here and in the <code>resourceRequirement</code> object. This parameter maps to
+     *        <code>CpuShares</code> in the <a
+     *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
+     *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     *        <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is required
+     *        but can be specified in several places. It must be specified for each node at least once.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources. Jobs running on Fargate resources
+     *        must specify the vCPU requirement for the job using <code>resourceRequirements</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -304,11 +436,15 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of MiB of memory reserved for the job. This is a required parameter.
+     * For jobs run on EC2 resources that didn't specify memory requirements using <code>ResourceRequirement</code>, the
+     * number of MiB of memory reserved for the job. For other jobs, including all run on Fargate resources, see
+     * <code>resourceRequirements</code>.
      * </p>
      * 
      * @param memory
-     *        The number of MiB of memory reserved for the job. This is a required parameter.
+     *        For jobs run on EC2 resources that didn't specify memory requirements using
+     *        <code>ResourceRequirement</code>, the number of MiB of memory reserved for the job. For other jobs,
+     *        including all run on Fargate resources, see <code>resourceRequirements</code>.
      */
 
     public void setMemory(Integer memory) {
@@ -317,10 +453,14 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of MiB of memory reserved for the job. This is a required parameter.
+     * For jobs run on EC2 resources that didn't specify memory requirements using <code>ResourceRequirement</code>, the
+     * number of MiB of memory reserved for the job. For other jobs, including all run on Fargate resources, see
+     * <code>resourceRequirements</code>.
      * </p>
      * 
-     * @return The number of MiB of memory reserved for the job. This is a required parameter.
+     * @return For jobs run on EC2 resources that didn't specify memory requirements using
+     *         <code>ResourceRequirement</code>, the number of MiB of memory reserved for the job. For other jobs,
+     *         including all run on Fargate resources, see <code>resourceRequirements</code>.
      */
 
     public Integer getMemory() {
@@ -329,11 +469,15 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of MiB of memory reserved for the job. This is a required parameter.
+     * For jobs run on EC2 resources that didn't specify memory requirements using <code>ResourceRequirement</code>, the
+     * number of MiB of memory reserved for the job. For other jobs, including all run on Fargate resources, see
+     * <code>resourceRequirements</code>.
      * </p>
      * 
      * @param memory
-     *        The number of MiB of memory reserved for the job. This is a required parameter.
+     *        For jobs run on EC2 resources that didn't specify memory requirements using
+     *        <code>ResourceRequirement</code>, the number of MiB of memory reserved for the job. For other jobs,
+     *        including all run on Fargate resources, see <code>resourceRequirements</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -456,13 +600,13 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
-     * role</a>.
+     * role</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param executionRoleArn
      *        The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see
      *        <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution
-     *        IAM role</a>.
+     *        IAM role</a> in the <i>AWS Batch User Guide</i>.
      */
 
     public void setExecutionRoleArn(String executionRoleArn) {
@@ -473,12 +617,12 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
-     * role</a>.
+     * role</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see
      *         <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution
-     *         IAM role</a>.
+     *         IAM role</a> in the <i>AWS Batch User Guide</i>.
      */
 
     public String getExecutionRoleArn() {
@@ -489,13 +633,13 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
-     * role</a>.
+     * role</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param executionRoleArn
      *        The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see
      *        <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution
-     *        IAM role</a>.
+     *        IAM role</a> in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -756,11 +900,20 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * When this parameter is true, the container is given read-only access to its root file system.
+     * When this parameter is true, the container is given read-only access to its root file system. This parameter maps
+     * to <code>ReadonlyRootfs</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--read-only</code> option to
+     * <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>.
      * </p>
      * 
      * @param readonlyRootFilesystem
-     *        When this parameter is true, the container is given read-only access to its root file system.
+     *        When this parameter is true, the container is given read-only access to its root file system. This
+     *        parameter maps to <code>ReadonlyRootfs</code> in the <a
+     *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
+     *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--read-only</code>
+     *        option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code>
+     *        </a>.
      */
 
     public void setReadonlyRootFilesystem(Boolean readonlyRootFilesystem) {
@@ -769,10 +922,19 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * When this parameter is true, the container is given read-only access to its root file system.
+     * When this parameter is true, the container is given read-only access to its root file system. This parameter maps
+     * to <code>ReadonlyRootfs</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--read-only</code> option to
+     * <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>.
      * </p>
      * 
-     * @return When this parameter is true, the container is given read-only access to its root file system.
+     * @return When this parameter is true, the container is given read-only access to its root file system. This
+     *         parameter maps to <code>ReadonlyRootfs</code> in the <a
+     *         href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
+     *         <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     *         <code>--read-only</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/">
+     *         <code>docker run</code> </a>.
      */
 
     public Boolean getReadonlyRootFilesystem() {
@@ -781,11 +943,20 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * When this parameter is true, the container is given read-only access to its root file system.
+     * When this parameter is true, the container is given read-only access to its root file system. This parameter maps
+     * to <code>ReadonlyRootfs</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--read-only</code> option to
+     * <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>.
      * </p>
      * 
      * @param readonlyRootFilesystem
-     *        When this parameter is true, the container is given read-only access to its root file system.
+     *        When this parameter is true, the container is given read-only access to its root file system. This
+     *        parameter maps to <code>ReadonlyRootfs</code> in the <a
+     *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
+     *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--read-only</code>
+     *        option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code>
+     *        </a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -796,10 +967,19 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * When this parameter is true, the container is given read-only access to its root file system.
+     * When this parameter is true, the container is given read-only access to its root file system. This parameter maps
+     * to <code>ReadonlyRootfs</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--read-only</code> option to
+     * <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>.
      * </p>
      * 
-     * @return When this parameter is true, the container is given read-only access to its root file system.
+     * @return When this parameter is true, the container is given read-only access to its root file system. This
+     *         parameter maps to <code>ReadonlyRootfs</code> in the <a
+     *         href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
+     *         <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     *         <code>--read-only</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/">
+     *         <code>docker run</code> </a>.
      */
 
     public Boolean isReadonlyRootFilesystem() {
@@ -808,10 +988,25 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of <code>ulimit</code> values to set in the container.
+     * A list of <code>ulimit</code> values to set in the container. This parameter maps to <code>Ulimits</code> in the
+     * <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--ulimit</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources.
+     * </p>
+     * </note>
      * 
-     * @return A list of <code>ulimit</code> values to set in the container.
+     * @return A list of <code>ulimit</code> values to set in the container. This parameter maps to <code>Ulimits</code>
+     *         in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a>
+     *         section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     *         <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *         run</a>.</p> <note>
+     *         <p>
+     *         This parameter isn't applicable to jobs running on Fargate resources.
+     *         </p>
      */
 
     public java.util.List<Ulimit> getUlimits() {
@@ -820,11 +1015,26 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of <code>ulimit</code> values to set in the container.
+     * A list of <code>ulimit</code> values to set in the container. This parameter maps to <code>Ulimits</code> in the
+     * <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--ulimit</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources.
+     * </p>
+     * </note>
      * 
      * @param ulimits
-     *        A list of <code>ulimit</code> values to set in the container.
+     *        A list of <code>ulimit</code> values to set in the container. This parameter maps to <code>Ulimits</code>
+     *        in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a>
+     *        section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     *        <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources.
+     *        </p>
      */
 
     public void setUlimits(java.util.Collection<Ulimit> ulimits) {
@@ -838,8 +1048,16 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of <code>ulimit</code> values to set in the container.
+     * A list of <code>ulimit</code> values to set in the container. This parameter maps to <code>Ulimits</code> in the
+     * <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--ulimit</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setUlimits(java.util.Collection)} or {@link #withUlimits(java.util.Collection)} if you want to override
@@ -847,7 +1065,14 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param ulimits
-     *        A list of <code>ulimit</code> values to set in the container.
+     *        A list of <code>ulimit</code> values to set in the container. This parameter maps to <code>Ulimits</code>
+     *        in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a>
+     *        section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     *        <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -863,11 +1088,26 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of <code>ulimit</code> values to set in the container.
+     * A list of <code>ulimit</code> values to set in the container. This parameter maps to <code>Ulimits</code> in the
+     * <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--ulimit</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources.
+     * </p>
+     * </note>
      * 
      * @param ulimits
-     *        A list of <code>ulimit</code> values to set in the container.
+     *        A list of <code>ulimit</code> values to set in the container. This parameter maps to <code>Ulimits</code>
+     *        in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a>
+     *        section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     *        <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -878,13 +1118,23 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * When this parameter is true, the container is given elevated privileges on the host container instance (similar
-     * to the <code>root</code> user).
+     * When this parameter is true, the container is given elevated permissions on the host container instance (similar
+     * to the <code>root</code> user). The default value is false.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or specified as
+     * false.
+     * </p>
+     * </note>
      * 
      * @param privileged
-     *        When this parameter is true, the container is given elevated privileges on the host container instance
-     *        (similar to the <code>root</code> user).
+     *        When this parameter is true, the container is given elevated permissions on the host container instance
+     *        (similar to the <code>root</code> user). The default value is false.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or
+     *        specified as false.
+     *        </p>
      */
 
     public void setPrivileged(Boolean privileged) {
@@ -893,12 +1143,22 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * When this parameter is true, the container is given elevated privileges on the host container instance (similar
-     * to the <code>root</code> user).
+     * When this parameter is true, the container is given elevated permissions on the host container instance (similar
+     * to the <code>root</code> user). The default value is false.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or specified as
+     * false.
+     * </p>
+     * </note>
      * 
-     * @return When this parameter is true, the container is given elevated privileges on the host container instance
-     *         (similar to the <code>root</code> user).
+     * @return When this parameter is true, the container is given elevated permissions on the host container instance
+     *         (similar to the <code>root</code> user). The default value is false.</p> <note>
+     *         <p>
+     *         This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or
+     *         specified as false.
+     *         </p>
      */
 
     public Boolean getPrivileged() {
@@ -907,13 +1167,23 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * When this parameter is true, the container is given elevated privileges on the host container instance (similar
-     * to the <code>root</code> user).
+     * When this parameter is true, the container is given elevated permissions on the host container instance (similar
+     * to the <code>root</code> user). The default value is false.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or specified as
+     * false.
+     * </p>
+     * </note>
      * 
      * @param privileged
-     *        When this parameter is true, the container is given elevated privileges on the host container instance
-     *        (similar to the <code>root</code> user).
+     *        When this parameter is true, the container is given elevated permissions on the host container instance
+     *        (similar to the <code>root</code> user). The default value is false.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or
+     *        specified as false.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -924,12 +1194,22 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * When this parameter is true, the container is given elevated privileges on the host container instance (similar
-     * to the <code>root</code> user).
+     * When this parameter is true, the container is given elevated permissions on the host container instance (similar
+     * to the <code>root</code> user). The default value is false.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or specified as
+     * false.
+     * </p>
+     * </note>
      * 
-     * @return When this parameter is true, the container is given elevated privileges on the host container instance
-     *         (similar to the <code>root</code> user).
+     * @return When this parameter is true, the container is given elevated permissions on the host container instance
+     *         (similar to the <code>root</code> user). The default value is false.</p> <note>
+     *         <p>
+     *         This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or
+     *         specified as false.
+     *         </p>
      */
 
     public Boolean isPrivileged() {
@@ -938,11 +1218,17 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The user name to use inside the container.
+     * The user name to use inside the container. This parameter maps to <code>User</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--user</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * 
      * @param user
-     *        The user name to use inside the container.
+     *        The user name to use inside the container. This parameter maps to <code>User</code> in the <a
+     *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
+     *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--user</code>
+     *        option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      */
 
     public void setUser(String user) {
@@ -951,10 +1237,16 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The user name to use inside the container.
+     * The user name to use inside the container. This parameter maps to <code>User</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--user</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * 
-     * @return The user name to use inside the container.
+     * @return The user name to use inside the container. This parameter maps to <code>User</code> in the <a
+     *         href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
+     *         <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--user</code>
+     *         option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      */
 
     public String getUser() {
@@ -963,11 +1255,17 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The user name to use inside the container.
+     * The user name to use inside the container. This parameter maps to <code>User</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--user</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * 
      * @param user
-     *        The user name to use inside the container.
+     *        The user name to use inside the container. This parameter maps to <code>User</code> in the <a
+     *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
+     *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--user</code>
+     *        option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1064,11 +1362,11 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the container instance on which the container is running.
+     * The Amazon Resource Name (ARN) of the container instance that the container is running on.
      * </p>
      * 
      * @param containerInstanceArn
-     *        The Amazon Resource Name (ARN) of the container instance on which the container is running.
+     *        The Amazon Resource Name (ARN) of the container instance that the container is running on.
      */
 
     public void setContainerInstanceArn(String containerInstanceArn) {
@@ -1077,10 +1375,10 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the container instance on which the container is running.
+     * The Amazon Resource Name (ARN) of the container instance that the container is running on.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the container instance on which the container is running.
+     * @return The Amazon Resource Name (ARN) of the container instance that the container is running on.
      */
 
     public String getContainerInstanceArn() {
@@ -1089,11 +1387,11 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the container instance on which the container is running.
+     * The Amazon Resource Name (ARN) of the container instance that the container is running on.
      * </p>
      * 
      * @param containerInstanceArn
-     *        The Amazon Resource Name (ARN) of the container instance on which the container is running.
+     *        The Amazon Resource Name (ARN) of the container instance that the container is running on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1204,9 +1502,17 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The instance type of the underlying host infrastructure of a multi-node parallel job.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources.
+     * </p>
+     * </note>
      * 
      * @param instanceType
-     *        The instance type of the underlying host infrastructure of a multi-node parallel job.
+     *        The instance type of the underlying host infrastructure of a multi-node parallel job.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources.
+     *        </p>
      */
 
     public void setInstanceType(String instanceType) {
@@ -1217,8 +1523,16 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The instance type of the underlying host infrastructure of a multi-node parallel job.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources.
+     * </p>
+     * </note>
      * 
-     * @return The instance type of the underlying host infrastructure of a multi-node parallel job.
+     * @return The instance type of the underlying host infrastructure of a multi-node parallel job.</p> <note>
+     *         <p>
+     *         This parameter isn't applicable to jobs running on Fargate resources.
+     *         </p>
      */
 
     public String getInstanceType() {
@@ -1229,9 +1543,17 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The instance type of the underlying host infrastructure of a multi-node parallel job.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources.
+     * </p>
+     * </note>
      * 
      * @param instanceType
-     *        The instance type of the underlying host infrastructure of a multi-node parallel job.
+     *        The instance type of the underlying host infrastructure of a multi-node parallel job.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1312,12 +1634,12 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type and amount of a resource to assign to a container. Currently, the only supported resource is
-     * <code>GPU</code>.
+     * The type and amount of resources to assign to a container. The supported resources include <code>GPU</code>,
+     * <code>MEMORY</code>, and <code>VCPU</code>.
      * </p>
      * 
-     * @return The type and amount of a resource to assign to a container. Currently, the only supported resource is
-     *         <code>GPU</code>.
+     * @return The type and amount of resources to assign to a container. The supported resources include
+     *         <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.
      */
 
     public java.util.List<ResourceRequirement> getResourceRequirements() {
@@ -1326,13 +1648,13 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type and amount of a resource to assign to a container. Currently, the only supported resource is
-     * <code>GPU</code>.
+     * The type and amount of resources to assign to a container. The supported resources include <code>GPU</code>,
+     * <code>MEMORY</code>, and <code>VCPU</code>.
      * </p>
      * 
      * @param resourceRequirements
-     *        The type and amount of a resource to assign to a container. Currently, the only supported resource is
-     *        <code>GPU</code>.
+     *        The type and amount of resources to assign to a container. The supported resources include
+     *        <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.
      */
 
     public void setResourceRequirements(java.util.Collection<ResourceRequirement> resourceRequirements) {
@@ -1346,8 +1668,8 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type and amount of a resource to assign to a container. Currently, the only supported resource is
-     * <code>GPU</code>.
+     * The type and amount of resources to assign to a container. The supported resources include <code>GPU</code>,
+     * <code>MEMORY</code>, and <code>VCPU</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1356,8 +1678,8 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param resourceRequirements
-     *        The type and amount of a resource to assign to a container. Currently, the only supported resource is
-     *        <code>GPU</code>.
+     *        The type and amount of resources to assign to a container. The supported resources include
+     *        <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1373,13 +1695,13 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type and amount of a resource to assign to a container. Currently, the only supported resource is
-     * <code>GPU</code>.
+     * The type and amount of resources to assign to a container. The supported resources include <code>GPU</code>,
+     * <code>MEMORY</code>, and <code>VCPU</code>.
      * </p>
      * 
      * @param resourceRequirements
-     *        The type and amount of a resource to assign to a container. Currently, the only supported resource is
-     *        <code>GPU</code>.
+     *        The type and amount of resources to assign to a container. The supported resources include
+     *        <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1437,12 +1759,13 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option
      * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same
-     * logging driver that the Docker daemon uses. However the container may use a different logging driver than the
+     * logging driver that the Docker daemon uses. However the container might use a different logging driver than the
      * Docker daemon by specifying a log driver with this parameter in the container definition. To use a different
-     * logging driver for a container, the log system must be configured properly on the container instance (or on a
-     * different log server for remote logging options). For more information on the options for different supported log
-     * drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in
-     * the Docker documentation.
+     * logging driver for a container, the log system must be configured properly on the container instance. Or,
+     * alternatively, it must be configured on a different log server for remote logging options. For more information
+     * on the options for different supported log drivers, see <a
+     * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker
+     * documentation.
      * </p>
      * <note>
      * <p>
@@ -1474,12 +1797,12 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      *        <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>. By default, containers use the same logging driver that the Docker daemon uses. However the
-     *        container may use a different logging driver than the Docker daemon by specifying a log driver with this
+     *        container might use a different logging driver than the Docker daemon by specifying a log driver with this
      *        parameter in the container definition. To use a different logging driver for a container, the log system
-     *        must be configured properly on the container instance (or on a different log server for remote logging
-     *        options). For more information on the options for different supported log drivers, see <a
-     *        href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker
-     *        documentation.
+     *        must be configured properly on the container instance. Or, alternatively, it must be configured on a
+     *        different log server for remote logging options. For more information on the options for different
+     *        supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure
+     *        logging drivers</a> in the Docker documentation.
      *        </p>
      *        <note>
      *        <p>
@@ -1516,12 +1839,13 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option
      * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same
-     * logging driver that the Docker daemon uses. However the container may use a different logging driver than the
+     * logging driver that the Docker daemon uses. However the container might use a different logging driver than the
      * Docker daemon by specifying a log driver with this parameter in the container definition. To use a different
-     * logging driver for a container, the log system must be configured properly on the container instance (or on a
-     * different log server for remote logging options). For more information on the options for different supported log
-     * drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in
-     * the Docker documentation.
+     * logging driver for a container, the log system must be configured properly on the container instance. Or,
+     * alternatively, it must be configured on a different log server for remote logging options. For more information
+     * on the options for different supported log drivers, see <a
+     * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker
+     * documentation.
      * </p>
      * <note>
      * <p>
@@ -1552,12 +1876,12 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      *         <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      *         <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *         run</a>. By default, containers use the same logging driver that the Docker daemon uses. However the
-     *         container may use a different logging driver than the Docker daemon by specifying a log driver with this
-     *         parameter in the container definition. To use a different logging driver for a container, the log system
-     *         must be configured properly on the container instance (or on a different log server for remote logging
-     *         options). For more information on the options for different supported log drivers, see <a
-     *         href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker
-     *         documentation.
+     *         container might use a different logging driver than the Docker daemon by specifying a log driver with
+     *         this parameter in the container definition. To use a different logging driver for a container, the log
+     *         system must be configured properly on the container instance. Or, alternatively, it must be configured on
+     *         a different log server for remote logging options. For more information on the options for different
+     *         supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure
+     *         logging drivers</a> in the Docker documentation.
      *         </p>
      *         <note>
      *         <p>
@@ -1594,12 +1918,13 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option
      * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same
-     * logging driver that the Docker daemon uses. However the container may use a different logging driver than the
+     * logging driver that the Docker daemon uses. However the container might use a different logging driver than the
      * Docker daemon by specifying a log driver with this parameter in the container definition. To use a different
-     * logging driver for a container, the log system must be configured properly on the container instance (or on a
-     * different log server for remote logging options). For more information on the options for different supported log
-     * drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in
-     * the Docker documentation.
+     * logging driver for a container, the log system must be configured properly on the container instance. Or,
+     * alternatively, it must be configured on a different log server for remote logging options. For more information
+     * on the options for different supported log drivers, see <a
+     * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker
+     * documentation.
      * </p>
      * <note>
      * <p>
@@ -1631,12 +1956,12 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      *        <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>. By default, containers use the same logging driver that the Docker daemon uses. However the
-     *        container may use a different logging driver than the Docker daemon by specifying a log driver with this
+     *        container might use a different logging driver than the Docker daemon by specifying a log driver with this
      *        parameter in the container definition. To use a different logging driver for a container, the log system
-     *        must be configured properly on the container instance (or on a different log server for remote logging
-     *        options). For more information on the options for different supported log drivers, see <a
-     *        href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker
-     *        documentation.
+     *        must be configured properly on the container instance. Or, alternatively, it must be configured on a
+     *        different log server for remote logging options. For more information on the options for different
+     *        supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure
+     *        logging drivers</a> in the Docker documentation.
      *        </p>
      *        <note>
      *        <p>
@@ -1669,13 +1994,13 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The secrets to pass to the container. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive
+     * data</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @return The secrets to pass to the container. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html"
-     *         >Specifying Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+     *         sensitive data</a> in the <i>AWS Batch User Guide</i>.
      */
 
     public java.util.List<Secret> getSecrets() {
@@ -1685,14 +2010,14 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The secrets to pass to the container. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive
+     * data</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param secrets
      *        The secrets to pass to the container. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html"
-     *        >Specifying Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+     *        sensitive data</a> in the <i>AWS Batch User Guide</i>.
      */
 
     public void setSecrets(java.util.Collection<Secret> secrets) {
@@ -1707,8 +2032,8 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The secrets to pass to the container. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive
+     * data</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1718,8 +2043,8 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param secrets
      *        The secrets to pass to the container. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html"
-     *        >Specifying Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+     *        sensitive data</a> in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1736,19 +2061,111 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The secrets to pass to the container. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive
+     * data</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param secrets
      *        The secrets to pass to the container. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html"
-     *        >Specifying Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+     *        sensitive data</a> in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ContainerDetail withSecrets(java.util.Collection<Secret> secrets) {
         setSecrets(secrets);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
+     * this parameter.
+     * </p>
+     * 
+     * @param networkConfiguration
+     *        The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not
+     *        specify this parameter.
+     */
+
+    public void setNetworkConfiguration(NetworkConfiguration networkConfiguration) {
+        this.networkConfiguration = networkConfiguration;
+    }
+
+    /**
+     * <p>
+     * The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
+     * this parameter.
+     * </p>
+     * 
+     * @return The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not
+     *         specify this parameter.
+     */
+
+    public NetworkConfiguration getNetworkConfiguration() {
+        return this.networkConfiguration;
+    }
+
+    /**
+     * <p>
+     * The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
+     * this parameter.
+     * </p>
+     * 
+     * @param networkConfiguration
+     *        The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not
+     *        specify this parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDetail withNetworkConfiguration(NetworkConfiguration networkConfiguration) {
+        setNetworkConfiguration(networkConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
+     * this parameter.
+     * </p>
+     * 
+     * @param fargatePlatformConfiguration
+     *        The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not
+     *        specify this parameter.
+     */
+
+    public void setFargatePlatformConfiguration(FargatePlatformConfiguration fargatePlatformConfiguration) {
+        this.fargatePlatformConfiguration = fargatePlatformConfiguration;
+    }
+
+    /**
+     * <p>
+     * The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
+     * this parameter.
+     * </p>
+     * 
+     * @return The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not
+     *         specify this parameter.
+     */
+
+    public FargatePlatformConfiguration getFargatePlatformConfiguration() {
+        return this.fargatePlatformConfiguration;
+    }
+
+    /**
+     * <p>
+     * The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
+     * this parameter.
+     * </p>
+     * 
+     * @param fargatePlatformConfiguration
+     *        The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not
+     *        specify this parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDetail withFargatePlatformConfiguration(FargatePlatformConfiguration fargatePlatformConfiguration) {
+        setFargatePlatformConfiguration(fargatePlatformConfiguration);
         return this;
     }
 
@@ -1811,7 +2228,11 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
         if (getLogConfiguration() != null)
             sb.append("LogConfiguration: ").append(getLogConfiguration()).append(",");
         if (getSecrets() != null)
-            sb.append("Secrets: ").append(getSecrets());
+            sb.append("Secrets: ").append(getSecrets()).append(",");
+        if (getNetworkConfiguration() != null)
+            sb.append("NetworkConfiguration: ").append(getNetworkConfiguration()).append(",");
+        if (getFargatePlatformConfiguration() != null)
+            sb.append("FargatePlatformConfiguration: ").append(getFargatePlatformConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1922,6 +2343,14 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getSecrets() != null && other.getSecrets().equals(this.getSecrets()) == false)
             return false;
+        if (other.getNetworkConfiguration() == null ^ this.getNetworkConfiguration() == null)
+            return false;
+        if (other.getNetworkConfiguration() != null && other.getNetworkConfiguration().equals(this.getNetworkConfiguration()) == false)
+            return false;
+        if (other.getFargatePlatformConfiguration() == null ^ this.getFargatePlatformConfiguration() == null)
+            return false;
+        if (other.getFargatePlatformConfiguration() != null && other.getFargatePlatformConfiguration().equals(this.getFargatePlatformConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1954,6 +2383,8 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getLinuxParameters() == null) ? 0 : getLinuxParameters().hashCode());
         hashCode = prime * hashCode + ((getLogConfiguration() == null) ? 0 : getLogConfiguration().hashCode());
         hashCode = prime * hashCode + ((getSecrets() == null) ? 0 : getSecrets().hashCode());
+        hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getFargatePlatformConfiguration() == null) ? 0 : getFargatePlatformConfiguration().hashCode());
         return hashCode;
     }
 

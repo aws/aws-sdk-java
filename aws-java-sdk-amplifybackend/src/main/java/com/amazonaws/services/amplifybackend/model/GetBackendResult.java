@@ -25,7 +25,7 @@ public class GetBackendResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A stringified version of the current configs for your Amplify project.
+     * A stringified version of the current configurations for your Amplify project.
      * </p>
      */
     private String amplifyMetaConfig;
@@ -62,11 +62,11 @@ public class GetBackendResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A stringified version of the current configs for your Amplify project.
+     * A stringified version of the current configurations for your Amplify project.
      * </p>
      * 
      * @param amplifyMetaConfig
-     *        A stringified version of the current configs for your Amplify project.
+     *        A stringified version of the current configurations for your Amplify project.
      */
 
     public void setAmplifyMetaConfig(String amplifyMetaConfig) {
@@ -75,10 +75,10 @@ public class GetBackendResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A stringified version of the current configs for your Amplify project.
+     * A stringified version of the current configurations for your Amplify project.
      * </p>
      * 
-     * @return A stringified version of the current configs for your Amplify project.
+     * @return A stringified version of the current configurations for your Amplify project.
      */
 
     public String getAmplifyMetaConfig() {
@@ -87,11 +87,11 @@ public class GetBackendResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A stringified version of the current configs for your Amplify project.
+     * A stringified version of the current configurations for your Amplify project.
      * </p>
      * 
      * @param amplifyMetaConfig
-     *        A stringified version of the current configs for your Amplify project.
+     *        A stringified version of the current configurations for your Amplify project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

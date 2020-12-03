@@ -30,36 +30,36 @@ public class LoginAuthConfigReqObj implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Amazon Cognito identitypool id used for the Amplify Admin UI login authorization.
+     * The Amazon Cognito identity pool ID used for Amplify Admin UI login authorization.
      * </p>
      */
     private String awsCognitoIdentityPoolId;
     /**
      * <p>
-     * The AWS Region for the the Amplify Admin login.
+     * The AWS Region for the Amplify Admin UI login.
      * </p>
      */
     private String awsCognitoRegion;
     /**
      * <p>
-     * The Amazon Cognito userpool id used for Amplify Admin UI login authentication.
+     * The Amazon Cognito user pool ID used for Amplify Admin UI login authentication.
      * </p>
      */
     private String awsUserPoolsId;
     /**
      * <p>
-     * The web client ID for the Amazon Cognito userpools.
+     * The web client ID for the Amazon Cognito user pools.
      * </p>
      */
     private String awsUserPoolsWebClientId;
 
     /**
      * <p>
-     * Amazon Cognito identitypool id used for the Amplify Admin UI login authorization.
+     * The Amazon Cognito identity pool ID used for Amplify Admin UI login authorization.
      * </p>
      * 
      * @param awsCognitoIdentityPoolId
-     *        Amazon Cognito identitypool id used for the Amplify Admin UI login authorization.
+     *        The Amazon Cognito identity pool ID used for Amplify Admin UI login authorization.
      */
 
     public void setAwsCognitoIdentityPoolId(String awsCognitoIdentityPoolId) {
@@ -68,10 +68,10 @@ public class LoginAuthConfigReqObj implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Amazon Cognito identitypool id used for the Amplify Admin UI login authorization.
+     * The Amazon Cognito identity pool ID used for Amplify Admin UI login authorization.
      * </p>
      * 
-     * @return Amazon Cognito identitypool id used for the Amplify Admin UI login authorization.
+     * @return The Amazon Cognito identity pool ID used for Amplify Admin UI login authorization.
      */
 
     public String getAwsCognitoIdentityPoolId() {
@@ -80,11 +80,11 @@ public class LoginAuthConfigReqObj implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Amazon Cognito identitypool id used for the Amplify Admin UI login authorization.
+     * The Amazon Cognito identity pool ID used for Amplify Admin UI login authorization.
      * </p>
      * 
      * @param awsCognitoIdentityPoolId
-     *        Amazon Cognito identitypool id used for the Amplify Admin UI login authorization.
+     *        The Amazon Cognito identity pool ID used for Amplify Admin UI login authorization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class LoginAuthConfigReqObj implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The AWS Region for the the Amplify Admin login.
+     * The AWS Region for the Amplify Admin UI login.
      * </p>
      * 
      * @param awsCognitoRegion
-     *        The AWS Region for the the Amplify Admin login.
+     *        The AWS Region for the Amplify Admin UI login.
      */
 
     public void setAwsCognitoRegion(String awsCognitoRegion) {
@@ -108,10 +108,10 @@ public class LoginAuthConfigReqObj implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The AWS Region for the the Amplify Admin login.
+     * The AWS Region for the Amplify Admin UI login.
      * </p>
      * 
-     * @return The AWS Region for the the Amplify Admin login.
+     * @return The AWS Region for the Amplify Admin UI login.
      */
 
     public String getAwsCognitoRegion() {
@@ -120,11 +120,11 @@ public class LoginAuthConfigReqObj implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The AWS Region for the the Amplify Admin login.
+     * The AWS Region for the Amplify Admin UI login.
      * </p>
      * 
      * @param awsCognitoRegion
-     *        The AWS Region for the the Amplify Admin login.
+     *        The AWS Region for the Amplify Admin UI login.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class LoginAuthConfigReqObj implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Cognito userpool id used for Amplify Admin UI login authentication.
+     * The Amazon Cognito user pool ID used for Amplify Admin UI login authentication.
      * </p>
      * 
      * @param awsUserPoolsId
-     *        The Amazon Cognito userpool id used for Amplify Admin UI login authentication.
+     *        The Amazon Cognito user pool ID used for Amplify Admin UI login authentication.
      */
 
     public void setAwsUserPoolsId(String awsUserPoolsId) {
@@ -148,10 +148,10 @@ public class LoginAuthConfigReqObj implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Cognito userpool id used for Amplify Admin UI login authentication.
+     * The Amazon Cognito user pool ID used for Amplify Admin UI login authentication.
      * </p>
      * 
-     * @return The Amazon Cognito userpool id used for Amplify Admin UI login authentication.
+     * @return The Amazon Cognito user pool ID used for Amplify Admin UI login authentication.
      */
 
     public String getAwsUserPoolsId() {
@@ -160,11 +160,11 @@ public class LoginAuthConfigReqObj implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Cognito userpool id used for Amplify Admin UI login authentication.
+     * The Amazon Cognito user pool ID used for Amplify Admin UI login authentication.
      * </p>
      * 
      * @param awsUserPoolsId
-     *        The Amazon Cognito userpool id used for Amplify Admin UI login authentication.
+     *        The Amazon Cognito user pool ID used for Amplify Admin UI login authentication.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +175,11 @@ public class LoginAuthConfigReqObj implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The web client ID for the Amazon Cognito userpools.
+     * The web client ID for the Amazon Cognito user pools.
      * </p>
      * 
      * @param awsUserPoolsWebClientId
-     *        The web client ID for the Amazon Cognito userpools.
+     *        The web client ID for the Amazon Cognito user pools.
      */
 
     public void setAwsUserPoolsWebClientId(String awsUserPoolsWebClientId) {
@@ -188,10 +188,10 @@ public class LoginAuthConfigReqObj implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The web client ID for the Amazon Cognito userpools.
+     * The web client ID for the Amazon Cognito user pools.
      * </p>
      * 
-     * @return The web client ID for the Amazon Cognito userpools.
+     * @return The web client ID for the Amazon Cognito user pools.
      */
 
     public String getAwsUserPoolsWebClientId() {
@@ -200,11 +200,11 @@ public class LoginAuthConfigReqObj implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The web client ID for the Amazon Cognito userpools.
+     * The web client ID for the Amazon Cognito user pools.
      * </p>
      * 
      * @param awsUserPoolsWebClientId
-     *        The web client ID for the Amazon Cognito userpools.
+     *        The web client ID for the Amazon Cognito user pools.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

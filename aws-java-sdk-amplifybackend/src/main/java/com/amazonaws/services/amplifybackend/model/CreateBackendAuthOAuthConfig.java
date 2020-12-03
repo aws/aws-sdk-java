@@ -36,31 +36,31 @@ public class CreateBackendAuthOAuthConfig implements Serializable, Cloneable, St
     private String domainPrefix;
     /**
      * <p>
-     * The OAuth grant type which you use to allow app users to authenticate from your Amplify app.
+     * The OAuth grant type that you use to allow app users to authenticate from your Amplify app.
      * </p>
      */
     private String oAuthGrantType;
     /**
      * <p>
-     * List of OAuth related flows which use to allow your app users to authenticate from your Amplify app.
+     * List of OAuth-related flows that allow your app users to authenticate from your Amplify app.
      * </p>
      */
     private java.util.List<String> oAuthScopes;
     /**
      * <p>
-     * The redirected URI for sigining into your Amplify app.
+     * The redirected URI for signing in to your Amplify app.
      * </p>
      */
     private java.util.List<String> redirectSignInURIs;
     /**
      * <p>
-     * Redirect URLs used by OAuth when a user signs out of an Amplify app.
+     * Redirect URLs that OAuth uses when a user signs out of an Amplify app.
      * </p>
      */
     private java.util.List<String> redirectSignOutURIs;
     /**
      * <p>
-     * The settings for using the social providers for access to your Amplify app.
+     * The settings for using social identity providers for access to your Amplify app.
      * </p>
      */
     private SocialProviderSettings socialProviderSettings;
@@ -107,11 +107,11 @@ public class CreateBackendAuthOAuthConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The OAuth grant type which you use to allow app users to authenticate from your Amplify app.
+     * The OAuth grant type that you use to allow app users to authenticate from your Amplify app.
      * </p>
      * 
      * @param oAuthGrantType
-     *        The OAuth grant type which you use to allow app users to authenticate from your Amplify app.
+     *        The OAuth grant type that you use to allow app users to authenticate from your Amplify app.
      * @see OAuthGrantType
      */
 
@@ -121,10 +121,10 @@ public class CreateBackendAuthOAuthConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The OAuth grant type which you use to allow app users to authenticate from your Amplify app.
+     * The OAuth grant type that you use to allow app users to authenticate from your Amplify app.
      * </p>
      * 
-     * @return The OAuth grant type which you use to allow app users to authenticate from your Amplify app.
+     * @return The OAuth grant type that you use to allow app users to authenticate from your Amplify app.
      * @see OAuthGrantType
      */
 
@@ -134,11 +134,11 @@ public class CreateBackendAuthOAuthConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The OAuth grant type which you use to allow app users to authenticate from your Amplify app.
+     * The OAuth grant type that you use to allow app users to authenticate from your Amplify app.
      * </p>
      * 
      * @param oAuthGrantType
-     *        The OAuth grant type which you use to allow app users to authenticate from your Amplify app.
+     *        The OAuth grant type that you use to allow app users to authenticate from your Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OAuthGrantType
      */
@@ -150,11 +150,11 @@ public class CreateBackendAuthOAuthConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The OAuth grant type which you use to allow app users to authenticate from your Amplify app.
+     * The OAuth grant type that you use to allow app users to authenticate from your Amplify app.
      * </p>
      * 
      * @param oAuthGrantType
-     *        The OAuth grant type which you use to allow app users to authenticate from your Amplify app.
+     *        The OAuth grant type that you use to allow app users to authenticate from your Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OAuthGrantType
      */
@@ -166,10 +166,10 @@ public class CreateBackendAuthOAuthConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * List of OAuth related flows which use to allow your app users to authenticate from your Amplify app.
+     * List of OAuth-related flows that allow your app users to authenticate from your Amplify app.
      * </p>
      * 
-     * @return List of OAuth related flows which use to allow your app users to authenticate from your Amplify app.
+     * @return List of OAuth-related flows that allow your app users to authenticate from your Amplify app.
      * @see OAuthScopesElement
      */
 
@@ -179,11 +179,11 @@ public class CreateBackendAuthOAuthConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * List of OAuth related flows which use to allow your app users to authenticate from your Amplify app.
+     * List of OAuth-related flows that allow your app users to authenticate from your Amplify app.
      * </p>
      * 
      * @param oAuthScopes
-     *        List of OAuth related flows which use to allow your app users to authenticate from your Amplify app.
+     *        List of OAuth-related flows that allow your app users to authenticate from your Amplify app.
      * @see OAuthScopesElement
      */
 
@@ -198,7 +198,7 @@ public class CreateBackendAuthOAuthConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * List of OAuth related flows which use to allow your app users to authenticate from your Amplify app.
+     * List of OAuth-related flows that allow your app users to authenticate from your Amplify app.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -207,7 +207,7 @@ public class CreateBackendAuthOAuthConfig implements Serializable, Cloneable, St
      * </p>
      * 
      * @param oAuthScopes
-     *        List of OAuth related flows which use to allow your app users to authenticate from your Amplify app.
+     *        List of OAuth-related flows that allow your app users to authenticate from your Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OAuthScopesElement
      */
@@ -224,11 +224,11 @@ public class CreateBackendAuthOAuthConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * List of OAuth related flows which use to allow your app users to authenticate from your Amplify app.
+     * List of OAuth-related flows that allow your app users to authenticate from your Amplify app.
      * </p>
      * 
      * @param oAuthScopes
-     *        List of OAuth related flows which use to allow your app users to authenticate from your Amplify app.
+     *        List of OAuth-related flows that allow your app users to authenticate from your Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OAuthScopesElement
      */
@@ -240,11 +240,11 @@ public class CreateBackendAuthOAuthConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * List of OAuth related flows which use to allow your app users to authenticate from your Amplify app.
+     * List of OAuth-related flows that allow your app users to authenticate from your Amplify app.
      * </p>
      * 
      * @param oAuthScopes
-     *        List of OAuth related flows which use to allow your app users to authenticate from your Amplify app.
+     *        List of OAuth-related flows that allow your app users to authenticate from your Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OAuthScopesElement
      */
@@ -264,10 +264,10 @@ public class CreateBackendAuthOAuthConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The redirected URI for sigining into your Amplify app.
+     * The redirected URI for signing in to your Amplify app.
      * </p>
      * 
-     * @return The redirected URI for sigining into your Amplify app.
+     * @return The redirected URI for signing in to your Amplify app.
      */
 
     public java.util.List<String> getRedirectSignInURIs() {
@@ -276,11 +276,11 @@ public class CreateBackendAuthOAuthConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The redirected URI for sigining into your Amplify app.
+     * The redirected URI for signing in to your Amplify app.
      * </p>
      * 
      * @param redirectSignInURIs
-     *        The redirected URI for sigining into your Amplify app.
+     *        The redirected URI for signing in to your Amplify app.
      */
 
     public void setRedirectSignInURIs(java.util.Collection<String> redirectSignInURIs) {
@@ -294,7 +294,7 @@ public class CreateBackendAuthOAuthConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The redirected URI for sigining into your Amplify app.
+     * The redirected URI for signing in to your Amplify app.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -303,7 +303,7 @@ public class CreateBackendAuthOAuthConfig implements Serializable, Cloneable, St
      * </p>
      * 
      * @param redirectSignInURIs
-     *        The redirected URI for sigining into your Amplify app.
+     *        The redirected URI for signing in to your Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,11 +319,11 @@ public class CreateBackendAuthOAuthConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The redirected URI for sigining into your Amplify app.
+     * The redirected URI for signing in to your Amplify app.
      * </p>
      * 
      * @param redirectSignInURIs
-     *        The redirected URI for sigining into your Amplify app.
+     *        The redirected URI for signing in to your Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -334,10 +334,10 @@ public class CreateBackendAuthOAuthConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Redirect URLs used by OAuth when a user signs out of an Amplify app.
+     * Redirect URLs that OAuth uses when a user signs out of an Amplify app.
      * </p>
      * 
-     * @return Redirect URLs used by OAuth when a user signs out of an Amplify app.
+     * @return Redirect URLs that OAuth uses when a user signs out of an Amplify app.
      */
 
     public java.util.List<String> getRedirectSignOutURIs() {
@@ -346,11 +346,11 @@ public class CreateBackendAuthOAuthConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Redirect URLs used by OAuth when a user signs out of an Amplify app.
+     * Redirect URLs that OAuth uses when a user signs out of an Amplify app.
      * </p>
      * 
      * @param redirectSignOutURIs
-     *        Redirect URLs used by OAuth when a user signs out of an Amplify app.
+     *        Redirect URLs that OAuth uses when a user signs out of an Amplify app.
      */
 
     public void setRedirectSignOutURIs(java.util.Collection<String> redirectSignOutURIs) {
@@ -364,7 +364,7 @@ public class CreateBackendAuthOAuthConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Redirect URLs used by OAuth when a user signs out of an Amplify app.
+     * Redirect URLs that OAuth uses when a user signs out of an Amplify app.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -373,7 +373,7 @@ public class CreateBackendAuthOAuthConfig implements Serializable, Cloneable, St
      * </p>
      * 
      * @param redirectSignOutURIs
-     *        Redirect URLs used by OAuth when a user signs out of an Amplify app.
+     *        Redirect URLs that OAuth uses when a user signs out of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -389,11 +389,11 @@ public class CreateBackendAuthOAuthConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Redirect URLs used by OAuth when a user signs out of an Amplify app.
+     * Redirect URLs that OAuth uses when a user signs out of an Amplify app.
      * </p>
      * 
      * @param redirectSignOutURIs
-     *        Redirect URLs used by OAuth when a user signs out of an Amplify app.
+     *        Redirect URLs that OAuth uses when a user signs out of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -404,11 +404,11 @@ public class CreateBackendAuthOAuthConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The settings for using the social providers for access to your Amplify app.
+     * The settings for using social identity providers for access to your Amplify app.
      * </p>
      * 
      * @param socialProviderSettings
-     *        The settings for using the social providers for access to your Amplify app.
+     *        The settings for using social identity providers for access to your Amplify app.
      */
 
     public void setSocialProviderSettings(SocialProviderSettings socialProviderSettings) {
@@ -417,10 +417,10 @@ public class CreateBackendAuthOAuthConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The settings for using the social providers for access to your Amplify app.
+     * The settings for using social identity providers for access to your Amplify app.
      * </p>
      * 
-     * @return The settings for using the social providers for access to your Amplify app.
+     * @return The settings for using social identity providers for access to your Amplify app.
      */
 
     public SocialProviderSettings getSocialProviderSettings() {
@@ -429,11 +429,11 @@ public class CreateBackendAuthOAuthConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The settings for using the social providers for access to your Amplify app.
+     * The settings for using social identity providers for access to your Amplify app.
      * </p>
      * 
      * @param socialProviderSettings
-     *        The settings for using the social providers for access to your Amplify app.
+     *        The settings for using social identity providers for access to your Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

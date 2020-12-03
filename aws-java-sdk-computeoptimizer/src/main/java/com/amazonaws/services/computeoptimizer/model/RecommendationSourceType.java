@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum RecommendationSourceType {
 
     Ec2Instance("Ec2Instance"),
-    AutoScalingGroup("AutoScalingGroup");
+    AutoScalingGroup("AutoScalingGroup"),
+    EbsVolume("EbsVolume");
 
     private String value;
 

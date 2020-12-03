@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The resource config for the data model,configured as a part of the Amplify project.
+ * The resource configuration for the data model, configured as a part of the Amplify project.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/BackendAPIResourceConfig"
@@ -30,25 +30,25 @@ public class BackendAPIResourceConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Addition authentication methods used to interact with your data models.
+     * Additional authentication methods used to interact with your data models.
      * </p>
      */
     private java.util.List<BackendAPIAuthType> additionalAuthTypes;
     /**
      * <p>
-     * The API name used to interact with the data model, configured as a part of the amplify project.
+     * The API name used to interact with the data model, configured as a part of the Amplify project.
      * </p>
      */
     private String apiName;
     /**
      * <p>
-     * The conflict resoultion strategy for your data stored in the data models.
+     * The conflict resolution strategy for your data stored in the data models.
      * </p>
      */
     private BackendAPIConflictResolution conflictResolution;
     /**
      * <p>
-     * The default authentication type for interacting with the configured data models in your amplify project.
+     * The default authentication type for interacting with the configured data models in your Amplify project.
      * </p>
      */
     private BackendAPIAuthType defaultAuthType;
@@ -60,17 +60,17 @@ public class BackendAPIResourceConfig implements Serializable, Cloneable, Struct
     private String service;
     /**
      * <p>
-     * The definition of the data model in the annotated transform of the graphql schema.
+     * The definition of the data model in the annotated transform of the GraphQL schema.
      * </p>
      */
     private String transformSchema;
 
     /**
      * <p>
-     * Addition authentication methods used to interact with your data models.
+     * Additional authentication methods used to interact with your data models.
      * </p>
      * 
-     * @return Addition authentication methods used to interact with your data models.
+     * @return Additional authentication methods used to interact with your data models.
      */
 
     public java.util.List<BackendAPIAuthType> getAdditionalAuthTypes() {
@@ -79,11 +79,11 @@ public class BackendAPIResourceConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Addition authentication methods used to interact with your data models.
+     * Additional authentication methods used to interact with your data models.
      * </p>
      * 
      * @param additionalAuthTypes
-     *        Addition authentication methods used to interact with your data models.
+     *        Additional authentication methods used to interact with your data models.
      */
 
     public void setAdditionalAuthTypes(java.util.Collection<BackendAPIAuthType> additionalAuthTypes) {
@@ -97,7 +97,7 @@ public class BackendAPIResourceConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Addition authentication methods used to interact with your data models.
+     * Additional authentication methods used to interact with your data models.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -106,7 +106,7 @@ public class BackendAPIResourceConfig implements Serializable, Cloneable, Struct
      * </p>
      * 
      * @param additionalAuthTypes
-     *        Addition authentication methods used to interact with your data models.
+     *        Additional authentication methods used to interact with your data models.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,11 +122,11 @@ public class BackendAPIResourceConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Addition authentication methods used to interact with your data models.
+     * Additional authentication methods used to interact with your data models.
      * </p>
      * 
      * @param additionalAuthTypes
-     *        Addition authentication methods used to interact with your data models.
+     *        Additional authentication methods used to interact with your data models.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,11 +137,11 @@ public class BackendAPIResourceConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The API name used to interact with the data model, configured as a part of the amplify project.
+     * The API name used to interact with the data model, configured as a part of the Amplify project.
      * </p>
      * 
      * @param apiName
-     *        The API name used to interact with the data model, configured as a part of the amplify project.
+     *        The API name used to interact with the data model, configured as a part of the Amplify project.
      */
 
     public void setApiName(String apiName) {
@@ -150,10 +150,10 @@ public class BackendAPIResourceConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The API name used to interact with the data model, configured as a part of the amplify project.
+     * The API name used to interact with the data model, configured as a part of the Amplify project.
      * </p>
      * 
-     * @return The API name used to interact with the data model, configured as a part of the amplify project.
+     * @return The API name used to interact with the data model, configured as a part of the Amplify project.
      */
 
     public String getApiName() {
@@ -162,11 +162,11 @@ public class BackendAPIResourceConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The API name used to interact with the data model, configured as a part of the amplify project.
+     * The API name used to interact with the data model, configured as a part of the Amplify project.
      * </p>
      * 
      * @param apiName
-     *        The API name used to interact with the data model, configured as a part of the amplify project.
+     *        The API name used to interact with the data model, configured as a part of the Amplify project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -177,11 +177,11 @@ public class BackendAPIResourceConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The conflict resoultion strategy for your data stored in the data models.
+     * The conflict resolution strategy for your data stored in the data models.
      * </p>
      * 
      * @param conflictResolution
-     *        The conflict resoultion strategy for your data stored in the data models.
+     *        The conflict resolution strategy for your data stored in the data models.
      */
 
     public void setConflictResolution(BackendAPIConflictResolution conflictResolution) {
@@ -190,10 +190,10 @@ public class BackendAPIResourceConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The conflict resoultion strategy for your data stored in the data models.
+     * The conflict resolution strategy for your data stored in the data models.
      * </p>
      * 
-     * @return The conflict resoultion strategy for your data stored in the data models.
+     * @return The conflict resolution strategy for your data stored in the data models.
      */
 
     public BackendAPIConflictResolution getConflictResolution() {
@@ -202,11 +202,11 @@ public class BackendAPIResourceConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The conflict resoultion strategy for your data stored in the data models.
+     * The conflict resolution strategy for your data stored in the data models.
      * </p>
      * 
      * @param conflictResolution
-     *        The conflict resoultion strategy for your data stored in the data models.
+     *        The conflict resolution strategy for your data stored in the data models.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -217,11 +217,11 @@ public class BackendAPIResourceConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The default authentication type for interacting with the configured data models in your amplify project.
+     * The default authentication type for interacting with the configured data models in your Amplify project.
      * </p>
      * 
      * @param defaultAuthType
-     *        The default authentication type for interacting with the configured data models in your amplify project.
+     *        The default authentication type for interacting with the configured data models in your Amplify project.
      */
 
     public void setDefaultAuthType(BackendAPIAuthType defaultAuthType) {
@@ -230,10 +230,10 @@ public class BackendAPIResourceConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The default authentication type for interacting with the configured data models in your amplify project.
+     * The default authentication type for interacting with the configured data models in your Amplify project.
      * </p>
      * 
-     * @return The default authentication type for interacting with the configured data models in your amplify project.
+     * @return The default authentication type for interacting with the configured data models in your Amplify project.
      */
 
     public BackendAPIAuthType getDefaultAuthType() {
@@ -242,11 +242,11 @@ public class BackendAPIResourceConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The default authentication type for interacting with the configured data models in your amplify project.
+     * The default authentication type for interacting with the configured data models in your Amplify project.
      * </p>
      * 
      * @param defaultAuthType
-     *        The default authentication type for interacting with the configured data models in your amplify project.
+     *        The default authentication type for interacting with the configured data models in your Amplify project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -297,11 +297,11 @@ public class BackendAPIResourceConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The definition of the data model in the annotated transform of the graphql schema.
+     * The definition of the data model in the annotated transform of the GraphQL schema.
      * </p>
      * 
      * @param transformSchema
-     *        The definition of the data model in the annotated transform of the graphql schema.
+     *        The definition of the data model in the annotated transform of the GraphQL schema.
      */
 
     public void setTransformSchema(String transformSchema) {
@@ -310,10 +310,10 @@ public class BackendAPIResourceConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The definition of the data model in the annotated transform of the graphql schema.
+     * The definition of the data model in the annotated transform of the GraphQL schema.
      * </p>
      * 
-     * @return The definition of the data model in the annotated transform of the graphql schema.
+     * @return The definition of the data model in the annotated transform of the GraphQL schema.
      */
 
     public String getTransformSchema() {
@@ -322,11 +322,11 @@ public class BackendAPIResourceConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The definition of the data model in the annotated transform of the graphql schema.
+     * The definition of the data model in the annotated transform of the GraphQL schema.
      * </p>
      * 
      * @param transformSchema
-     *        The definition of the data model in the annotated transform of the graphql schema.
+     *        The definition of the data model in the annotated transform of the GraphQL schema.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

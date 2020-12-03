@@ -21,6 +21,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * The container path, mount options, and size of the tmpfs mount.
  * </p>
+ * <note>
+ * <p>
+ * This object isn't applicable to jobs running on Fargate resources.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/Tmpfs" target="_top">AWS API Documentation</a>
  */
@@ -29,7 +34,7 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The absolute file path in the container where the tmpfs volume is to be mounted.
+     * The absolute file path in the container where the tmpfs volume is mounted.
      * </p>
      */
     private String containerPath;
@@ -59,11 +64,11 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The absolute file path in the container where the tmpfs volume is to be mounted.
+     * The absolute file path in the container where the tmpfs volume is mounted.
      * </p>
      * 
      * @param containerPath
-     *        The absolute file path in the container where the tmpfs volume is to be mounted.
+     *        The absolute file path in the container where the tmpfs volume is mounted.
      */
 
     public void setContainerPath(String containerPath) {
@@ -72,10 +77,10 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The absolute file path in the container where the tmpfs volume is to be mounted.
+     * The absolute file path in the container where the tmpfs volume is mounted.
      * </p>
      * 
-     * @return The absolute file path in the container where the tmpfs volume is to be mounted.
+     * @return The absolute file path in the container where the tmpfs volume is mounted.
      */
 
     public String getContainerPath() {
@@ -84,11 +89,11 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The absolute file path in the container where the tmpfs volume is to be mounted.
+     * The absolute file path in the container where the tmpfs volume is mounted.
      * </p>
      * 
      * @param containerPath
-     *        The absolute file path in the container where the tmpfs volume is to be mounted.
+     *        The absolute file path in the container where the tmpfs volume is mounted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

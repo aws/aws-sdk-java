@@ -42,8 +42,8 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
     private String jobQueueArn;
     /**
      * <p>
-     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it is able
-     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs
+     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it's able
+     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs
      * already in the queue can finish.
      * </p>
      */
@@ -68,7 +68,7 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
     private Integer priority;
     /**
      * <p>
-     * The compute environments that are attached to the job queue and the order in which job placement is preferred.
+     * The compute environments that are attached to the job queue and the order that job placement is preferred.
      * Compute environments are selected for job placement in ascending order.
      * </p>
      */
@@ -162,14 +162,14 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it is able
-     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs
+     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it's able
+     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs
      * already in the queue can finish.
      * </p>
      * 
      * @param state
-     *        Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it
-     *        is able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the
+     *        Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>,
+     *        it's able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the
      *        queue, but jobs already in the queue can finish.
      * @see JQState
      */
@@ -180,13 +180,13 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it is able
-     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs
+     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it's able
+     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs
      * already in the queue can finish.
      * </p>
      * 
-     * @return Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it
-     *         is able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the
+     * @return Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>,
+     *         it's able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the
      *         queue, but jobs already in the queue can finish.
      * @see JQState
      */
@@ -197,14 +197,14 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it is able
-     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs
+     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it's able
+     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs
      * already in the queue can finish.
      * </p>
      * 
      * @param state
-     *        Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it
-     *        is able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the
+     *        Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>,
+     *        it's able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the
      *        queue, but jobs already in the queue can finish.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JQState
@@ -217,14 +217,14 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it is able
-     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs
+     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it's able
+     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs
      * already in the queue can finish.
      * </p>
      * 
      * @param state
-     *        Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it
-     *        is able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the
+     *        Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>,
+     *        it's able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the
      *        queue, but jobs already in the queue can finish.
      * @see JQState
      */
@@ -235,14 +235,14 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it is able
-     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs
+     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it's able
+     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs
      * already in the queue can finish.
      * </p>
      * 
      * @param state
-     *        Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it
-     *        is able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the
+     *        Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>,
+     *        it's able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the
      *        queue, but jobs already in the queue can finish.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JQState
@@ -408,11 +408,11 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The compute environments that are attached to the job queue and the order in which job placement is preferred.
+     * The compute environments that are attached to the job queue and the order that job placement is preferred.
      * Compute environments are selected for job placement in ascending order.
      * </p>
      * 
-     * @return The compute environments that are attached to the job queue and the order in which job placement is
+     * @return The compute environments that are attached to the job queue and the order that job placement is
      *         preferred. Compute environments are selected for job placement in ascending order.
      */
 
@@ -422,13 +422,13 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The compute environments that are attached to the job queue and the order in which job placement is preferred.
+     * The compute environments that are attached to the job queue and the order that job placement is preferred.
      * Compute environments are selected for job placement in ascending order.
      * </p>
      * 
      * @param computeEnvironmentOrder
-     *        The compute environments that are attached to the job queue and the order in which job placement is
-     *        preferred. Compute environments are selected for job placement in ascending order.
+     *        The compute environments that are attached to the job queue and the order that job placement is preferred.
+     *        Compute environments are selected for job placement in ascending order.
      */
 
     public void setComputeEnvironmentOrder(java.util.Collection<ComputeEnvironmentOrder> computeEnvironmentOrder) {
@@ -442,7 +442,7 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The compute environments that are attached to the job queue and the order in which job placement is preferred.
+     * The compute environments that are attached to the job queue and the order that job placement is preferred.
      * Compute environments are selected for job placement in ascending order.
      * </p>
      * <p>
@@ -452,8 +452,8 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param computeEnvironmentOrder
-     *        The compute environments that are attached to the job queue and the order in which job placement is
-     *        preferred. Compute environments are selected for job placement in ascending order.
+     *        The compute environments that are attached to the job queue and the order that job placement is preferred.
+     *        Compute environments are selected for job placement in ascending order.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -469,13 +469,13 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The compute environments that are attached to the job queue and the order in which job placement is preferred.
+     * The compute environments that are attached to the job queue and the order that job placement is preferred.
      * Compute environments are selected for job placement in ascending order.
      * </p>
      * 
      * @param computeEnvironmentOrder
-     *        The compute environments that are attached to the job queue and the order in which job placement is
-     *        preferred. Compute environments are selected for job placement in ascending order.
+     *        The compute environments that are attached to the job queue and the order that job placement is preferred.
+     *        Compute environments are selected for job placement in ascending order.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

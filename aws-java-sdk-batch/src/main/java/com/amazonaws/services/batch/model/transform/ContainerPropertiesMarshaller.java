@@ -64,6 +64,10 @@ public class ContainerPropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logConfiguration").build();
     private static final MarshallingInfo<List> SECRETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("secrets").build();
+    private static final MarshallingInfo<StructuredPojo> NETWORKCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> FARGATEPLATFORMCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fargatePlatformConfiguration").build();
 
     private static final ContainerPropertiesMarshaller instance = new ContainerPropertiesMarshaller();
 
@@ -99,6 +103,8 @@ public class ContainerPropertiesMarshaller {
             protocolMarshaller.marshall(containerProperties.getLinuxParameters(), LINUXPARAMETERS_BINDING);
             protocolMarshaller.marshall(containerProperties.getLogConfiguration(), LOGCONFIGURATION_BINDING);
             protocolMarshaller.marshall(containerProperties.getSecrets(), SECRETS_BINDING);
+            protocolMarshaller.marshall(containerProperties.getNetworkConfiguration(), NETWORKCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(containerProperties.getFargatePlatformConfiguration(), FARGATEPLATFORMCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

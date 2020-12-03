@@ -54,7 +54,7 @@ public class LicenseConfigurationAssociation implements Serializable, Cloneable,
     private java.util.Date associationTime;
     /**
      * <p>
-     * Scope of AMI associations.
+     * Scope of AMI associations. The possible value is <code>cross-account</code>.
      * </p>
      */
     private String amiAssociationScope;
@@ -240,11 +240,11 @@ public class LicenseConfigurationAssociation implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Scope of AMI associations.
+     * Scope of AMI associations. The possible value is <code>cross-account</code>.
      * </p>
      * 
      * @param amiAssociationScope
-     *        Scope of AMI associations.
+     *        Scope of AMI associations. The possible value is <code>cross-account</code>.
      */
 
     public void setAmiAssociationScope(String amiAssociationScope) {
@@ -253,10 +253,10 @@ public class LicenseConfigurationAssociation implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Scope of AMI associations.
+     * Scope of AMI associations. The possible value is <code>cross-account</code>.
      * </p>
      * 
-     * @return Scope of AMI associations.
+     * @return Scope of AMI associations. The possible value is <code>cross-account</code>.
      */
 
     public String getAmiAssociationScope() {
@@ -265,11 +265,11 @@ public class LicenseConfigurationAssociation implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Scope of AMI associations.
+     * Scope of AMI associations. The possible value is <code>cross-account</code>.
      * </p>
      * 
      * @param amiAssociationScope
-     *        Scope of AMI associations.
+     *        Scope of AMI associations. The possible value is <code>cross-account</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

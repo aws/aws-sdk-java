@@ -154,7 +154,7 @@ public interface AWSAmplifyBackend {
 
     /**
      * <p>
-     * Generates a one time challenge code to authenticate a user into your Amplify Admin UI.
+     * Generates a one-time challenge code to authenticate a user into your Amplify Admin UI.
      * </p>
      * 
      * @param createTokenRequest
@@ -175,7 +175,7 @@ public interface AWSAmplifyBackend {
 
     /**
      * <p>
-     * Removes an existing environment from your Ampify project.
+     * Removes an existing environment from your Amplify project.
      * </p>
      * 
      * @param deleteBackendRequest
@@ -283,7 +283,7 @@ public interface AWSAmplifyBackend {
 
     /**
      * <p>
-     * Provides project level details for your Amplify UI project.
+     * Provides project-level details for your Amplify UI project.
      * </p>
      * 
      * @param getBackendRequest
@@ -305,7 +305,7 @@ public interface AWSAmplifyBackend {
 
     /**
      * <p>
-     * Gets the details for a backend api.
+     * Gets the details for a backend API.
      * </p>
      * 
      * @param getBackendAPIRequest
@@ -349,7 +349,7 @@ public interface AWSAmplifyBackend {
 
     /**
      * <p>
-     * Gets a backend auth details.
+     * Gets backend auth details.
      * </p>
      * 
      * @param getBackendAuthRequest
@@ -457,7 +457,7 @@ public interface AWSAmplifyBackend {
 
     /**
      * <p>
-     * Removes the AWS resources required to access the Amplify Admin UI.
+     * Removes the AWS resources that are required to access the Amplify Admin UI.
      * </p>
      * 
      * @param removeBackendConfigRequest
@@ -522,7 +522,7 @@ public interface AWSAmplifyBackend {
 
     /**
      * <p>
-     * Updates the AWS resources required to access the Amplify Admin UI.
+     * Updates the AWS resources that are required to access the Amplify Admin UI.
      * </p>
      * 
      * @param updateBackendConfigRequest

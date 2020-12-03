@@ -13,7 +13,7 @@
 package com.amazonaws.services.batch.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -51,6 +51,10 @@ public class JobDefinitionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nodeProperties").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<Boolean> PROPAGATETAGS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("propagateTags").build();
+    private static final MarshallingInfo<List> PLATFORMCAPABILITIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("platformCapabilities").build();
 
     private static final JobDefinitionMarshaller instance = new JobDefinitionMarshaller();
 
@@ -79,6 +83,8 @@ public class JobDefinitionMarshaller {
             protocolMarshaller.marshall(jobDefinition.getTimeout(), TIMEOUT_BINDING);
             protocolMarshaller.marshall(jobDefinition.getNodeProperties(), NODEPROPERTIES_BINDING);
             protocolMarshaller.marshall(jobDefinition.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(jobDefinition.getPropagateTags(), PROPAGATETAGS_BINDING);
+            protocolMarshaller.marshall(jobDefinition.getPlatformCapabilities(), PLATFORMCAPABILITIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

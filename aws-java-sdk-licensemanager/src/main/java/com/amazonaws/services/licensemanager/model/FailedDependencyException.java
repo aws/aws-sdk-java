@@ -23,6 +23,8 @@ import javax.annotation.Generated;
 public class FailedDependencyException extends com.amazonaws.services.licensemanager.model.AWSLicenseManagerException {
     private static final long serialVersionUID = 1L;
 
+    private String errorCode;
+
     /**
      * Constructs a new FailedDependencyException with the specified error message.
      *
@@ -31,6 +33,34 @@ public class FailedDependencyException extends com.amazonaws.services.licenseman
      */
     public FailedDependencyException(String message) {
         super(message);
+    }
+
+    /**
+     * @param errorCode
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("ErrorCode")
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+    }
+
+    /**
+     * @return
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("ErrorCode")
+    public String getErrorCode() {
+        return this.errorCode;
+    }
+
+    /**
+     * @param errorCode
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FailedDependencyException withErrorCode(String errorCode) {
+        setErrorCode(errorCode);
+        return this;
     }
 
 }

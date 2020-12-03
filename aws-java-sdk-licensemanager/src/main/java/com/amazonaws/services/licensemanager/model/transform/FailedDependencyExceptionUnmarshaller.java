@@ -53,6 +53,10 @@ public class FailedDependencyExceptionUnmarshaller extends EnhancedJsonErrorUnma
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("ErrorCode", targetDepth)) {
+                    context.nextToken();
+                    failedDependencyException.setErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

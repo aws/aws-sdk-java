@@ -31,8 +31,8 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      * The IDs of the AWS accounts for which to export Auto Scaling group recommendations.
      * </p>
      * <p>
-     * If your account is the master account of an organization, use this parameter to specify the member accounts for
-     * which you want to export recommendations.
+     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * for which you want to export recommendations.
      * </p>
      * <p>
      * This parameter cannot be specified together with the include member accounts parameter. The parameters are
@@ -90,7 +90,7 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
     /**
      * <p>
      * Indicates whether to include recommendations for resources in all member accounts of the organization if your
-     * account is the master account of an organization.
+     * account is the management account of an organization.
      * </p>
      * <p>
      * The member accounts must also be opted in to Compute Optimizer.
@@ -115,8 +115,8 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      * The IDs of the AWS accounts for which to export Auto Scaling group recommendations.
      * </p>
      * <p>
-     * If your account is the master account of an organization, use this parameter to specify the member accounts for
-     * which you want to export recommendations.
+     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * for which you want to export recommendations.
      * </p>
      * <p>
      * This parameter cannot be specified together with the include member accounts parameter. The parameters are
@@ -132,7 +132,7 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      * 
      * @return The IDs of the AWS accounts for which to export Auto Scaling group recommendations.</p>
      *         <p>
-     *         If your account is the master account of an organization, use this parameter to specify the member
+     *         If your account is the management account of an organization, use this parameter to specify the member
      *         accounts for which you want to export recommendations.
      *         </p>
      *         <p>
@@ -156,8 +156,8 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      * The IDs of the AWS accounts for which to export Auto Scaling group recommendations.
      * </p>
      * <p>
-     * If your account is the master account of an organization, use this parameter to specify the member accounts for
-     * which you want to export recommendations.
+     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * for which you want to export recommendations.
      * </p>
      * <p>
      * This parameter cannot be specified together with the include member accounts parameter. The parameters are
@@ -174,7 +174,7 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      * @param accountIds
      *        The IDs of the AWS accounts for which to export Auto Scaling group recommendations.</p>
      *        <p>
-     *        If your account is the master account of an organization, use this parameter to specify the member
+     *        If your account is the management account of an organization, use this parameter to specify the member
      *        accounts for which you want to export recommendations.
      *        </p>
      *        <p>
@@ -203,8 +203,8 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      * The IDs of the AWS accounts for which to export Auto Scaling group recommendations.
      * </p>
      * <p>
-     * If your account is the master account of an organization, use this parameter to specify the member accounts for
-     * which you want to export recommendations.
+     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * for which you want to export recommendations.
      * </p>
      * <p>
      * This parameter cannot be specified together with the include member accounts parameter. The parameters are
@@ -226,7 +226,7 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      * @param accountIds
      *        The IDs of the AWS accounts for which to export Auto Scaling group recommendations.</p>
      *        <p>
-     *        If your account is the master account of an organization, use this parameter to specify the member
+     *        If your account is the management account of an organization, use this parameter to specify the member
      *        accounts for which you want to export recommendations.
      *        </p>
      *        <p>
@@ -257,8 +257,8 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      * The IDs of the AWS accounts for which to export Auto Scaling group recommendations.
      * </p>
      * <p>
-     * If your account is the master account of an organization, use this parameter to specify the member accounts for
-     * which you want to export recommendations.
+     * If your account is the management account of an organization, use this parameter to specify the member accounts
+     * for which you want to export recommendations.
      * </p>
      * <p>
      * This parameter cannot be specified together with the include member accounts parameter. The parameters are
@@ -275,7 +275,7 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      * @param accountIds
      *        The IDs of the AWS accounts for which to export Auto Scaling group recommendations.</p>
      *        <p>
-     *        If your account is the master account of an organization, use this parameter to specify the member
+     *        If your account is the management account of an organization, use this parameter to specify the member
      *        accounts for which you want to export recommendations.
      *        </p>
      *        <p>
@@ -677,7 +677,7 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
     /**
      * <p>
      * Indicates whether to include recommendations for resources in all member accounts of the organization if your
-     * account is the master account of an organization.
+     * account is the management account of an organization.
      * </p>
      * <p>
      * The member accounts must also be opted in to Compute Optimizer.
@@ -697,7 +697,7 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      * 
      * @param includeMemberAccounts
      *        Indicates whether to include recommendations for resources in all member accounts of the organization if
-     *        your account is the master account of an organization.</p>
+     *        your account is the management account of an organization.</p>
      *        <p>
      *        The member accounts must also be opted in to Compute Optimizer.
      *        </p>
@@ -721,7 +721,7 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
     /**
      * <p>
      * Indicates whether to include recommendations for resources in all member accounts of the organization if your
-     * account is the master account of an organization.
+     * account is the management account of an organization.
      * </p>
      * <p>
      * The member accounts must also be opted in to Compute Optimizer.
@@ -740,7 +740,7 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      * </p>
      * 
      * @return Indicates whether to include recommendations for resources in all member accounts of the organization if
-     *         your account is the master account of an organization.</p>
+     *         your account is the management account of an organization.</p>
      *         <p>
      *         The member accounts must also be opted in to Compute Optimizer.
      *         </p>
@@ -764,7 +764,7 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
     /**
      * <p>
      * Indicates whether to include recommendations for resources in all member accounts of the organization if your
-     * account is the master account of an organization.
+     * account is the management account of an organization.
      * </p>
      * <p>
      * The member accounts must also be opted in to Compute Optimizer.
@@ -784,7 +784,7 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      * 
      * @param includeMemberAccounts
      *        Indicates whether to include recommendations for resources in all member accounts of the organization if
-     *        your account is the master account of an organization.</p>
+     *        your account is the management account of an organization.</p>
      *        <p>
      *        The member accounts must also be opted in to Compute Optimizer.
      *        </p>
@@ -810,7 +810,7 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
     /**
      * <p>
      * Indicates whether to include recommendations for resources in all member accounts of the organization if your
-     * account is the master account of an organization.
+     * account is the management account of an organization.
      * </p>
      * <p>
      * The member accounts must also be opted in to Compute Optimizer.
@@ -829,7 +829,7 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      * </p>
      * 
      * @return Indicates whether to include recommendations for resources in all member accounts of the organization if
-     *         your account is the master account of an organization.</p>
+     *         your account is the management account of an organization.</p>
      *         <p>
      *         The member accounts must also be opted in to Compute Optimizer.
      *         </p>

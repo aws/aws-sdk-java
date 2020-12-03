@@ -30,7 +30,7 @@ public class NodePropertyOverride implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The range of nodes, using node index values, with which to override. A range of <code>0:3</code> indicates nodes
+     * The range of nodes, using node index values, that's used to override. A range of <code>0:3</code> indicates nodes
      * with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (
      * <code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (
      * <code>n:</code>), then the highest possible node index is used to end the range.
@@ -46,17 +46,17 @@ public class NodePropertyOverride implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The range of nodes, using node index values, with which to override. A range of <code>0:3</code> indicates nodes
+     * The range of nodes, using node index values, that's used to override. A range of <code>0:3</code> indicates nodes
      * with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (
      * <code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (
      * <code>n:</code>), then the highest possible node index is used to end the range.
      * </p>
      * 
      * @param targetNodes
-     *        The range of nodes, using node index values, with which to override. A range of <code>0:3</code> indicates
-     *        nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (
-     *        <code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (
-     *        <code>n:</code>), then the highest possible node index is used to end the range.
+     *        The range of nodes, using node index values, that's used to override. A range of <code>0:3</code>
+     *        indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is
+     *        omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is
+     *        omitted (<code>n:</code>), then the highest possible node index is used to end the range.
      */
 
     public void setTargetNodes(String targetNodes) {
@@ -65,13 +65,13 @@ public class NodePropertyOverride implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The range of nodes, using node index values, with which to override. A range of <code>0:3</code> indicates nodes
+     * The range of nodes, using node index values, that's used to override. A range of <code>0:3</code> indicates nodes
      * with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (
      * <code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (
      * <code>n:</code>), then the highest possible node index is used to end the range.
      * </p>
      * 
-     * @return The range of nodes, using node index values, with which to override. A range of <code>0:3</code>
+     * @return The range of nodes, using node index values, that's used to override. A range of <code>0:3</code>
      *         indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value
      *         is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value
      *         is omitted (<code>n:</code>), then the highest possible node index is used to end the range.
@@ -83,17 +83,17 @@ public class NodePropertyOverride implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The range of nodes, using node index values, with which to override. A range of <code>0:3</code> indicates nodes
+     * The range of nodes, using node index values, that's used to override. A range of <code>0:3</code> indicates nodes
      * with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (
      * <code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (
      * <code>n:</code>), then the highest possible node index is used to end the range.
      * </p>
      * 
      * @param targetNodes
-     *        The range of nodes, using node index values, with which to override. A range of <code>0:3</code> indicates
-     *        nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (
-     *        <code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (
-     *        <code>n:</code>), then the highest possible node index is used to end the range.
+     *        The range of nodes, using node index values, that's used to override. A range of <code>0:3</code>
+     *        indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is
+     *        omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is
+     *        omitted (<code>n:</code>), then the highest possible node index is used to end the range.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

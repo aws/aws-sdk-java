@@ -27,7 +27,7 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The name or full Amazon Resource Name (ARN) of the job queue with which to list jobs.
+     * The name or full Amazon Resource Name (ARN) of the job queue used to list jobs.
      * </p>
      */
     private String jobQueue;
@@ -47,7 +47,7 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private String multiNodeJobId;
     /**
      * <p>
-     * The job status with which to filter jobs in the specified queue. If you do not specify a status, only
+     * The job status used to filter jobs in the specified queue. If you don't specify a status, only
      * <code>RUNNING</code> jobs are returned.
      * </p>
      */
@@ -58,7 +58,7 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <code>ListJobs</code> only returns <code>maxResults</code> results in a single page along with a
      * <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
      * another <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1
-     * and 100. If this parameter is not used, then <code>ListJobs</code> returns up to 100 results and a
+     * and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100 results and a
      * <code>nextToken</code> value if applicable.
      * </p>
      */
@@ -81,11 +81,11 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The name or full Amazon Resource Name (ARN) of the job queue with which to list jobs.
+     * The name or full Amazon Resource Name (ARN) of the job queue used to list jobs.
      * </p>
      * 
      * @param jobQueue
-     *        The name or full Amazon Resource Name (ARN) of the job queue with which to list jobs.
+     *        The name or full Amazon Resource Name (ARN) of the job queue used to list jobs.
      */
 
     public void setJobQueue(String jobQueue) {
@@ -94,10 +94,10 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The name or full Amazon Resource Name (ARN) of the job queue with which to list jobs.
+     * The name or full Amazon Resource Name (ARN) of the job queue used to list jobs.
      * </p>
      * 
-     * @return The name or full Amazon Resource Name (ARN) of the job queue with which to list jobs.
+     * @return The name or full Amazon Resource Name (ARN) of the job queue used to list jobs.
      */
 
     public String getJobQueue() {
@@ -106,11 +106,11 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The name or full Amazon Resource Name (ARN) of the job queue with which to list jobs.
+     * The name or full Amazon Resource Name (ARN) of the job queue used to list jobs.
      * </p>
      * 
      * @param jobQueue
-     *        The name or full Amazon Resource Name (ARN) of the job queue with which to list jobs.
+     *        The name or full Amazon Resource Name (ARN) of the job queue used to list jobs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -213,12 +213,12 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The job status with which to filter jobs in the specified queue. If you do not specify a status, only
+     * The job status used to filter jobs in the specified queue. If you don't specify a status, only
      * <code>RUNNING</code> jobs are returned.
      * </p>
      * 
      * @param jobStatus
-     *        The job status with which to filter jobs in the specified queue. If you do not specify a status, only
+     *        The job status used to filter jobs in the specified queue. If you don't specify a status, only
      *        <code>RUNNING</code> jobs are returned.
      * @see JobStatus
      */
@@ -229,11 +229,11 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The job status with which to filter jobs in the specified queue. If you do not specify a status, only
+     * The job status used to filter jobs in the specified queue. If you don't specify a status, only
      * <code>RUNNING</code> jobs are returned.
      * </p>
      * 
-     * @return The job status with which to filter jobs in the specified queue. If you do not specify a status, only
+     * @return The job status used to filter jobs in the specified queue. If you don't specify a status, only
      *         <code>RUNNING</code> jobs are returned.
      * @see JobStatus
      */
@@ -244,12 +244,12 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The job status with which to filter jobs in the specified queue. If you do not specify a status, only
+     * The job status used to filter jobs in the specified queue. If you don't specify a status, only
      * <code>RUNNING</code> jobs are returned.
      * </p>
      * 
      * @param jobStatus
-     *        The job status with which to filter jobs in the specified queue. If you do not specify a status, only
+     *        The job status used to filter jobs in the specified queue. If you don't specify a status, only
      *        <code>RUNNING</code> jobs are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus
@@ -262,12 +262,12 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The job status with which to filter jobs in the specified queue. If you do not specify a status, only
+     * The job status used to filter jobs in the specified queue. If you don't specify a status, only
      * <code>RUNNING</code> jobs are returned.
      * </p>
      * 
      * @param jobStatus
-     *        The job status with which to filter jobs in the specified queue. If you do not specify a status, only
+     *        The job status used to filter jobs in the specified queue. If you don't specify a status, only
      *        <code>RUNNING</code> jobs are returned.
      * @see JobStatus
      */
@@ -278,12 +278,12 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The job status with which to filter jobs in the specified queue. If you do not specify a status, only
+     * The job status used to filter jobs in the specified queue. If you don't specify a status, only
      * <code>RUNNING</code> jobs are returned.
      * </p>
      * 
      * @param jobStatus
-     *        The job status with which to filter jobs in the specified queue. If you do not specify a status, only
+     *        The job status used to filter jobs in the specified queue. If you don't specify a status, only
      *        <code>RUNNING</code> jobs are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus
@@ -300,7 +300,7 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <code>ListJobs</code> only returns <code>maxResults</code> results in a single page along with a
      * <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
      * another <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1
-     * and 100. If this parameter is not used, then <code>ListJobs</code> returns up to 100 results and a
+     * and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100 results and a
      * <code>nextToken</code> value if applicable.
      * </p>
      * 
@@ -309,7 +309,7 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *        is used, <code>ListJobs</code> only returns <code>maxResults</code> results in a single page along with a
      *        <code>nextToken</code> response element. The remaining results of the initial request can be seen by
      *        sending another <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value
-     *        can be between 1 and 100. If this parameter is not used, then <code>ListJobs</code> returns up to 100
+     *        can be between 1 and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100
      *        results and a <code>nextToken</code> value if applicable.
      */
 
@@ -323,7 +323,7 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <code>ListJobs</code> only returns <code>maxResults</code> results in a single page along with a
      * <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
      * another <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1
-     * and 100. If this parameter is not used, then <code>ListJobs</code> returns up to 100 results and a
+     * and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100 results and a
      * <code>nextToken</code> value if applicable.
      * </p>
      * 
@@ -331,7 +331,7 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *         is used, <code>ListJobs</code> only returns <code>maxResults</code> results in a single page along with a
      *         <code>nextToken</code> response element. The remaining results of the initial request can be seen by
      *         sending another <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value
-     *         can be between 1 and 100. If this parameter is not used, then <code>ListJobs</code> returns up to 100
+     *         can be between 1 and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100
      *         results and a <code>nextToken</code> value if applicable.
      */
 
@@ -345,7 +345,7 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <code>ListJobs</code> only returns <code>maxResults</code> results in a single page along with a
      * <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
      * another <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1
-     * and 100. If this parameter is not used, then <code>ListJobs</code> returns up to 100 results and a
+     * and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100 results and a
      * <code>nextToken</code> value if applicable.
      * </p>
      * 
@@ -354,7 +354,7 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *        is used, <code>ListJobs</code> only returns <code>maxResults</code> results in a single page along with a
      *        <code>nextToken</code> response element. The remaining results of the initial request can be seen by
      *        sending another <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value
-     *        can be between 1 and 100. If this parameter is not used, then <code>ListJobs</code> returns up to 100
+     *        can be between 1 and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100
      *        results and a <code>nextToken</code> value if applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

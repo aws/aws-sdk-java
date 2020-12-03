@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The password policy configuration for the backend to your Amplify project.
+ * The password policy configuration for the backend of your Amplify project.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendAuthPasswordPolicyConfig"
@@ -30,23 +30,23 @@ public class CreateBackendAuthPasswordPolicyConfig implements Serializable, Clon
 
     /**
      * <p>
-     * Additional constraints for the pasword used to access the backend of your Amplify project.
+     * Additional constraints for the password used to access the backend of your Amplify project.
      * </p>
      */
     private java.util.List<String> additionalConstraints;
     /**
      * <p>
-     * The minimum length of password used to access the backend of your Amplify project.
+     * The minimum length of the password used to access the backend of your Amplify project.
      * </p>
      */
     private Double minimumLength;
 
     /**
      * <p>
-     * Additional constraints for the pasword used to access the backend of your Amplify project.
+     * Additional constraints for the password used to access the backend of your Amplify project.
      * </p>
      * 
-     * @return Additional constraints for the pasword used to access the backend of your Amplify project.
+     * @return Additional constraints for the password used to access the backend of your Amplify project.
      * @see AdditionalConstraintsElement
      */
 
@@ -56,11 +56,11 @@ public class CreateBackendAuthPasswordPolicyConfig implements Serializable, Clon
 
     /**
      * <p>
-     * Additional constraints for the pasword used to access the backend of your Amplify project.
+     * Additional constraints for the password used to access the backend of your Amplify project.
      * </p>
      * 
      * @param additionalConstraints
-     *        Additional constraints for the pasword used to access the backend of your Amplify project.
+     *        Additional constraints for the password used to access the backend of your Amplify project.
      * @see AdditionalConstraintsElement
      */
 
@@ -75,7 +75,7 @@ public class CreateBackendAuthPasswordPolicyConfig implements Serializable, Clon
 
     /**
      * <p>
-     * Additional constraints for the pasword used to access the backend of your Amplify project.
+     * Additional constraints for the password used to access the backend of your Amplify project.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -84,7 +84,7 @@ public class CreateBackendAuthPasswordPolicyConfig implements Serializable, Clon
      * </p>
      * 
      * @param additionalConstraints
-     *        Additional constraints for the pasword used to access the backend of your Amplify project.
+     *        Additional constraints for the password used to access the backend of your Amplify project.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AdditionalConstraintsElement
      */
@@ -101,11 +101,11 @@ public class CreateBackendAuthPasswordPolicyConfig implements Serializable, Clon
 
     /**
      * <p>
-     * Additional constraints for the pasword used to access the backend of your Amplify project.
+     * Additional constraints for the password used to access the backend of your Amplify project.
      * </p>
      * 
      * @param additionalConstraints
-     *        Additional constraints for the pasword used to access the backend of your Amplify project.
+     *        Additional constraints for the password used to access the backend of your Amplify project.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AdditionalConstraintsElement
      */
@@ -117,11 +117,11 @@ public class CreateBackendAuthPasswordPolicyConfig implements Serializable, Clon
 
     /**
      * <p>
-     * Additional constraints for the pasword used to access the backend of your Amplify project.
+     * Additional constraints for the password used to access the backend of your Amplify project.
      * </p>
      * 
      * @param additionalConstraints
-     *        Additional constraints for the pasword used to access the backend of your Amplify project.
+     *        Additional constraints for the password used to access the backend of your Amplify project.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AdditionalConstraintsElement
      */
@@ -141,11 +141,11 @@ public class CreateBackendAuthPasswordPolicyConfig implements Serializable, Clon
 
     /**
      * <p>
-     * The minimum length of password used to access the backend of your Amplify project.
+     * The minimum length of the password used to access the backend of your Amplify project.
      * </p>
      * 
      * @param minimumLength
-     *        The minimum length of password used to access the backend of your Amplify project.
+     *        The minimum length of the password used to access the backend of your Amplify project.
      */
 
     public void setMinimumLength(Double minimumLength) {
@@ -154,10 +154,10 @@ public class CreateBackendAuthPasswordPolicyConfig implements Serializable, Clon
 
     /**
      * <p>
-     * The minimum length of password used to access the backend of your Amplify project.
+     * The minimum length of the password used to access the backend of your Amplify project.
      * </p>
      * 
-     * @return The minimum length of password used to access the backend of your Amplify project.
+     * @return The minimum length of the password used to access the backend of your Amplify project.
      */
 
     public Double getMinimumLength() {
@@ -166,11 +166,11 @@ public class CreateBackendAuthPasswordPolicyConfig implements Serializable, Clon
 
     /**
      * <p>
-     * The minimum length of password used to access the backend of your Amplify project.
+     * The minimum length of the password used to access the backend of your Amplify project.
      * </p>
      * 
      * @param minimumLength
-     *        The minimum length of password used to access the backend of your Amplify project.
+     *        The minimum length of the password used to access the backend of your Amplify project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -48,7 +48,7 @@ public class ListBackendJobsRequest extends com.amazonaws.AmazonWebServiceReques
     private String jobId;
     /**
      * <p>
-     * The maximum number of results you want in the response.
+     * The maximum number of results that you want in the response.
      * </p>
      */
     private Integer maxResults;
@@ -60,13 +60,13 @@ public class ListBackendJobsRequest extends com.amazonaws.AmazonWebServiceReques
     private String nextToken;
     /**
      * <p>
-     * Filters the list of response objects to only include those with the specified operation name.
+     * Filters the list of response objects to include only those with the specified operation name.
      * </p>
      */
     private String operation;
     /**
      * <p>
-     * Filters the list of response objects to only include those with the specified status.
+     * Filters the list of response objects to include only those with the specified status.
      * </p>
      */
     private String status;
@@ -193,11 +193,11 @@ public class ListBackendJobsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum number of results you want in the response.
+     * The maximum number of results that you want in the response.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results you want in the response.
+     *        The maximum number of results that you want in the response.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -206,10 +206,10 @@ public class ListBackendJobsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum number of results you want in the response.
+     * The maximum number of results that you want in the response.
      * </p>
      * 
-     * @return The maximum number of results you want in the response.
+     * @return The maximum number of results that you want in the response.
      */
 
     public Integer getMaxResults() {
@@ -218,11 +218,11 @@ public class ListBackendJobsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum number of results you want in the response.
+     * The maximum number of results that you want in the response.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results you want in the response.
+     *        The maximum number of results that you want in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,11 +273,11 @@ public class ListBackendJobsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Filters the list of response objects to only include those with the specified operation name.
+     * Filters the list of response objects to include only those with the specified operation name.
      * </p>
      * 
      * @param operation
-     *        Filters the list of response objects to only include those with the specified operation name.
+     *        Filters the list of response objects to include only those with the specified operation name.
      */
 
     public void setOperation(String operation) {
@@ -286,10 +286,10 @@ public class ListBackendJobsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Filters the list of response objects to only include those with the specified operation name.
+     * Filters the list of response objects to include only those with the specified operation name.
      * </p>
      * 
-     * @return Filters the list of response objects to only include those with the specified operation name.
+     * @return Filters the list of response objects to include only those with the specified operation name.
      */
 
     public String getOperation() {
@@ -298,11 +298,11 @@ public class ListBackendJobsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Filters the list of response objects to only include those with the specified operation name.
+     * Filters the list of response objects to include only those with the specified operation name.
      * </p>
      * 
      * @param operation
-     *        Filters the list of response objects to only include those with the specified operation name.
+     *        Filters the list of response objects to include only those with the specified operation name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -313,11 +313,11 @@ public class ListBackendJobsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Filters the list of response objects to only include those with the specified status.
+     * Filters the list of response objects to include only those with the specified status.
      * </p>
      * 
      * @param status
-     *        Filters the list of response objects to only include those with the specified status.
+     *        Filters the list of response objects to include only those with the specified status.
      */
 
     public void setStatus(String status) {
@@ -326,10 +326,10 @@ public class ListBackendJobsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Filters the list of response objects to only include those with the specified status.
+     * Filters the list of response objects to include only those with the specified status.
      * </p>
      * 
-     * @return Filters the list of response objects to only include those with the specified status.
+     * @return Filters the list of response objects to include only those with the specified status.
      */
 
     public String getStatus() {
@@ -338,11 +338,11 @@ public class ListBackendJobsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Filters the list of response objects to only include those with the specified status.
+     * Filters the list of response objects to include only those with the specified status.
      * </p>
      * 
      * @param status
-     *        Filters the list of response objects to only include those with the specified status.
+     *        Filters the list of response objects to include only those with the specified status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

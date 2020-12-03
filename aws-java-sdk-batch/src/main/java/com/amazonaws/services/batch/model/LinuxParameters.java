@@ -35,6 +35,11 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      */
     private java.util.List<Device> devices;
     /**
@@ -53,6 +58,11 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
      * <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      */
     private Integer sharedMemorySize;
     /**
@@ -60,34 +70,49 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
      * <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      */
     private java.util.List<Tmpfs> tmpfs;
     /**
      * <p>
-     * The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
+     * The total amount of swap memory (in MiB) a container can use. This parameter is translated to the
      * <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where
-     * the value would be the sum of the container memory plus the <code>maxSwap</code> value. For more information, see
-     * <a href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details">
+     * the value is the sum of the container memory plus the <code>maxSwap</code> value. For more information, see <a
+     * href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details">
      * <code>--memory-swap</code> details</a> in the Docker documentation.
      * </p>
      * <p>
-     * If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted values
-     * are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container will
-     * use the swap configuration for the container instance it is running on. A <code>maxSwap</code> value must be set
-     * for the <code>swappiness</code> parameter to be used.
+     * If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't use swap. Accepted values
+     * are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container
+     * doesn't use the swap configuration for the container instance it is running on. A <code>maxSwap</code> value must
+     * be set for the <code>swappiness</code> parameter to be used.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      */
     private Integer maxSwap;
     /**
      * <p>
      * This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of
-     * <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code> value of
-     * <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole numbers between
-     * <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not specified, a default value
-     * of <code>60</code> is used. If a value is not specified for <code>maxSwap</code> then this parameter is ignored.
-     * This parameter maps to the <code>--memory-swappiness</code> option to <a
+     * <code>0</code> causes swapping not to happen unless absolutely necessary. A <code>swappiness</code> value of
+     * <code>100</code> causes pages to be swapped very aggressively. Accepted values are whole numbers between
+     * <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a default value of
+     * <code>60</code> is used. If a value isn't specified for <code>maxSwap</code> then this parameter is ignored. This
+     * parameter maps to the <code>--memory-swappiness</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      */
     private Integer swappiness;
 
@@ -98,11 +123,19 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      * 
      * @return Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a
      *         href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *         <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code>
-     *         option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *         option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     *         <p>
+     *         This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *         </p>
      */
 
     public java.util.List<Device> getDevices() {
@@ -116,12 +149,20 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      * 
      * @param devices
      *        Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code>
-     *        option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        </p>
      */
 
     public void setDevices(java.util.Collection<Device> devices) {
@@ -140,6 +181,11 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setDevices(java.util.Collection)} or {@link #withDevices(java.util.Collection)} if you want to override
@@ -150,7 +196,10 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code>
-     *        option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -171,12 +220,20 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      * 
      * @param devices
      *        Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code>
-     *        option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -282,10 +339,19 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
      * <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      * 
      * @param sharedMemorySize
      *        The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
-     *        <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        </p>
      */
 
     public void setSharedMemorySize(Integer sharedMemorySize) {
@@ -297,9 +363,18 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
      * <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      * 
      * @return The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
-     *         <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *         <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *         run</a>.</p> <note>
+     *         <p>
+     *         This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *         </p>
      */
 
     public Integer getSharedMemorySize() {
@@ -311,10 +386,19 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
      * <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      * 
      * @param sharedMemorySize
      *        The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
-     *        <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -328,9 +412,18 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
      * <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      * 
      * @return The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
-     *         <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *         <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *         run</a>.</p> <note>
+     *         <p>
+     *         This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *         </p>
      */
 
     public java.util.List<Tmpfs> getTmpfs() {
@@ -342,10 +435,19 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
      * <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      * 
      * @param tmpfs
      *        The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
-     *        <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     *        <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        </p>
      */
 
     public void setTmpfs(java.util.Collection<Tmpfs> tmpfs) {
@@ -362,6 +464,11 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
      * <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTmpfs(java.util.Collection)} or {@link #withTmpfs(java.util.Collection)} if you want to override the
@@ -370,7 +477,11 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param tmpfs
      *        The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
-     *        <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     *        <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -389,10 +500,19 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
      * <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      * 
      * @param tmpfs
      *        The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
-     *        <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     *        <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -403,31 +523,41 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
+     * The total amount of swap memory (in MiB) a container can use. This parameter is translated to the
      * <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where
-     * the value would be the sum of the container memory plus the <code>maxSwap</code> value. For more information, see
-     * <a href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details">
+     * the value is the sum of the container memory plus the <code>maxSwap</code> value. For more information, see <a
+     * href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details">
      * <code>--memory-swap</code> details</a> in the Docker documentation.
      * </p>
      * <p>
-     * If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted values
-     * are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container will
-     * use the swap configuration for the container instance it is running on. A <code>maxSwap</code> value must be set
-     * for the <code>swappiness</code> parameter to be used.
+     * If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't use swap. Accepted values
+     * are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container
+     * doesn't use the swap configuration for the container instance it is running on. A <code>maxSwap</code> value must
+     * be set for the <code>swappiness</code> parameter to be used.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      * 
      * @param maxSwap
-     *        The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
+     *        The total amount of swap memory (in MiB) a container can use. This parameter is translated to the
      *        <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a> where the value would be the sum of the container memory plus the <code>maxSwap</code> value. For
-     *        more information, see <a
+     *        run</a> where the value is the sum of the container memory plus the <code>maxSwap</code> value. For more
+     *        information, see <a
      *        href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details">
      *        <code>--memory-swap</code> details</a> in the Docker documentation.</p>
      *        <p>
-     *        If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted
+     *        If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't use swap. Accepted
      *        values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the
-     *        container will use the swap configuration for the container instance it is running on. A
+     *        container doesn't use the swap configuration for the container instance it is running on. A
      *        <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        </p>
      */
 
     public void setMaxSwap(Integer maxSwap) {
@@ -436,30 +566,40 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
+     * The total amount of swap memory (in MiB) a container can use. This parameter is translated to the
      * <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where
-     * the value would be the sum of the container memory plus the <code>maxSwap</code> value. For more information, see
-     * <a href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details">
+     * the value is the sum of the container memory plus the <code>maxSwap</code> value. For more information, see <a
+     * href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details">
      * <code>--memory-swap</code> details</a> in the Docker documentation.
      * </p>
      * <p>
-     * If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted values
-     * are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container will
-     * use the swap configuration for the container instance it is running on. A <code>maxSwap</code> value must be set
-     * for the <code>swappiness</code> parameter to be used.
+     * If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't use swap. Accepted values
+     * are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container
+     * doesn't use the swap configuration for the container instance it is running on. A <code>maxSwap</code> value must
+     * be set for the <code>swappiness</code> parameter to be used.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      * 
-     * @return The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
+     * @return The total amount of swap memory (in MiB) a container can use. This parameter is translated to the
      *         <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *         run</a> where the value would be the sum of the container memory plus the <code>maxSwap</code> value. For
-     *         more information, see <a
+     *         run</a> where the value is the sum of the container memory plus the <code>maxSwap</code> value. For more
+     *         information, see <a
      *         href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details">
      *         <code>--memory-swap</code> details</a> in the Docker documentation.</p>
      *         <p>
-     *         If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted
+     *         If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't use swap. Accepted
      *         values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the
-     *         container will use the swap configuration for the container instance it is running on. A
+     *         container doesn't use the swap configuration for the container instance it is running on. A
      *         <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *         </p>
      */
 
     public Integer getMaxSwap() {
@@ -468,31 +608,41 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
+     * The total amount of swap memory (in MiB) a container can use. This parameter is translated to the
      * <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where
-     * the value would be the sum of the container memory plus the <code>maxSwap</code> value. For more information, see
-     * <a href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details">
+     * the value is the sum of the container memory plus the <code>maxSwap</code> value. For more information, see <a
+     * href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details">
      * <code>--memory-swap</code> details</a> in the Docker documentation.
      * </p>
      * <p>
-     * If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted values
-     * are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container will
-     * use the swap configuration for the container instance it is running on. A <code>maxSwap</code> value must be set
-     * for the <code>swappiness</code> parameter to be used.
+     * If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't use swap. Accepted values
+     * are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container
+     * doesn't use the swap configuration for the container instance it is running on. A <code>maxSwap</code> value must
+     * be set for the <code>swappiness</code> parameter to be used.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      * 
      * @param maxSwap
-     *        The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
+     *        The total amount of swap memory (in MiB) a container can use. This parameter is translated to the
      *        <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a> where the value would be the sum of the container memory plus the <code>maxSwap</code> value. For
-     *        more information, see <a
+     *        run</a> where the value is the sum of the container memory plus the <code>maxSwap</code> value. For more
+     *        information, see <a
      *        href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details">
      *        <code>--memory-swap</code> details</a> in the Docker documentation.</p>
      *        <p>
-     *        If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted
+     *        If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't use swap. Accepted
      *        values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the
-     *        container will use the swap configuration for the container instance it is running on. A
+     *        container doesn't use the swap configuration for the container instance it is running on. A
      *        <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -504,23 +654,30 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of
-     * <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code> value of
-     * <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole numbers between
-     * <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not specified, a default value
-     * of <code>60</code> is used. If a value is not specified for <code>maxSwap</code> then this parameter is ignored.
-     * This parameter maps to the <code>--memory-swappiness</code> option to <a
+     * <code>0</code> causes swapping not to happen unless absolutely necessary. A <code>swappiness</code> value of
+     * <code>100</code> causes pages to be swapped very aggressively. Accepted values are whole numbers between
+     * <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a default value of
+     * <code>60</code> is used. If a value isn't specified for <code>maxSwap</code> then this parameter is ignored. This
+     * parameter maps to the <code>--memory-swappiness</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      * 
      * @param swappiness
      *        This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of
-     *        <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code>
-     *        value of <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole
-     *        numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not
-     *        specified, a default value of <code>60</code> is used. If a value is not specified for
-     *        <code>maxSwap</code> then this parameter is ignored. This parameter maps to the
-     *        <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>.
+     *        <code>0</code> causes swapping not to happen unless absolutely necessary. A <code>swappiness</code> value
+     *        of <code>100</code> causes pages to be swapped very aggressively. Accepted values are whole numbers
+     *        between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a
+     *        default value of <code>60</code> is used. If a value isn't specified for <code>maxSwap</code> then this
+     *        parameter is ignored. This parameter maps to the <code>--memory-swappiness</code> option to <a
+     *        href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        </p>
      */
 
     public void setSwappiness(Integer swappiness) {
@@ -530,22 +687,29 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of
-     * <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code> value of
-     * <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole numbers between
-     * <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not specified, a default value
-     * of <code>60</code> is used. If a value is not specified for <code>maxSwap</code> then this parameter is ignored.
-     * This parameter maps to the <code>--memory-swappiness</code> option to <a
+     * <code>0</code> causes swapping not to happen unless absolutely necessary. A <code>swappiness</code> value of
+     * <code>100</code> causes pages to be swapped very aggressively. Accepted values are whole numbers between
+     * <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a default value of
+     * <code>60</code> is used. If a value isn't specified for <code>maxSwap</code> then this parameter is ignored. This
+     * parameter maps to the <code>--memory-swappiness</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      * 
      * @return This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of
-     *         <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code>
-     *         value of <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole
-     *         numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not
-     *         specified, a default value of <code>60</code> is used. If a value is not specified for
-     *         <code>maxSwap</code> then this parameter is ignored. This parameter maps to the
-     *         <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *         run</a>.
+     *         <code>0</code> causes swapping not to happen unless absolutely necessary. A <code>swappiness</code> value
+     *         of <code>100</code> causes pages to be swapped very aggressively. Accepted values are whole numbers
+     *         between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a
+     *         default value of <code>60</code> is used. If a value isn't specified for <code>maxSwap</code> then this
+     *         parameter is ignored. This parameter maps to the <code>--memory-swappiness</code> option to <a
+     *         href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     *         <p>
+     *         This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *         </p>
      */
 
     public Integer getSwappiness() {
@@ -555,23 +719,30 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of
-     * <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code> value of
-     * <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole numbers between
-     * <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not specified, a default value
-     * of <code>60</code> is used. If a value is not specified for <code>maxSwap</code> then this parameter is ignored.
-     * This parameter maps to the <code>--memory-swappiness</code> option to <a
+     * <code>0</code> causes swapping not to happen unless absolutely necessary. A <code>swappiness</code> value of
+     * <code>100</code> causes pages to be swapped very aggressively. Accepted values are whole numbers between
+     * <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a default value of
+     * <code>60</code> is used. If a value isn't specified for <code>maxSwap</code> then this parameter is ignored. This
+     * parameter maps to the <code>--memory-swappiness</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      * 
      * @param swappiness
      *        This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of
-     *        <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code>
-     *        value of <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole
-     *        numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not
-     *        specified, a default value of <code>60</code> is used. If a value is not specified for
-     *        <code>maxSwap</code> then this parameter is ignored. This parameter maps to the
-     *        <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>.
+     *        <code>0</code> causes swapping not to happen unless absolutely necessary. A <code>swappiness</code> value
+     *        of <code>100</code> causes pages to be swapped very aggressively. Accepted values are whole numbers
+     *        between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a
+     *        default value of <code>60</code> is used. If a value isn't specified for <code>maxSwap</code> then this
+     *        parameter is ignored. This parameter maps to the <code>--memory-swappiness</code> option to <a
+     *        href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

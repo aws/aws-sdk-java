@@ -43,7 +43,7 @@ public class UpdateBackendConfigResult extends com.amazonaws.AmazonWebServiceRes
     private String error;
     /**
      * <p>
-     * Describes the Amazon Cognito configurations for the Admin UI auth resource to login with.
+     * Describes the Amazon Cognito configurations for the Admin UI auth resource to log in with.
      * </p>
      */
     private LoginAuthConfigReqObj loginAuthConfig;
@@ -170,11 +170,11 @@ public class UpdateBackendConfigResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Describes the Amazon Cognito configurations for the Admin UI auth resource to login with.
+     * Describes the Amazon Cognito configurations for the Admin UI auth resource to log in with.
      * </p>
      * 
      * @param loginAuthConfig
-     *        Describes the Amazon Cognito configurations for the Admin UI auth resource to login with.
+     *        Describes the Amazon Cognito configurations for the Admin UI auth resource to log in with.
      */
 
     public void setLoginAuthConfig(LoginAuthConfigReqObj loginAuthConfig) {
@@ -183,10 +183,10 @@ public class UpdateBackendConfigResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Describes the Amazon Cognito configurations for the Admin UI auth resource to login with.
+     * Describes the Amazon Cognito configurations for the Admin UI auth resource to log in with.
      * </p>
      * 
-     * @return Describes the Amazon Cognito configurations for the Admin UI auth resource to login with.
+     * @return Describes the Amazon Cognito configurations for the Admin UI auth resource to log in with.
      */
 
     public LoginAuthConfigReqObj getLoginAuthConfig() {
@@ -195,11 +195,11 @@ public class UpdateBackendConfigResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Describes the Amazon Cognito configurations for the Admin UI auth resource to login with.
+     * Describes the Amazon Cognito configurations for the Admin UI auth resource to log in with.
      * </p>
      * 
      * @param loginAuthConfig
-     *        Describes the Amazon Cognito configurations for the Admin UI auth resource to login with.
+     *        Describes the Amazon Cognito configurations for the Admin UI auth resource to log in with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -48,7 +48,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     private String jobId;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the job queue with which the job is associated.
+     * The Amazon Resource Name (ARN) of the job queue that the job is associated with.
      * </p>
      */
     private String jobQueue;
@@ -94,7 +94,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Unix timestamp (in milliseconds) for when the job was started (when the job transitioned from the
-     * <code>STARTING</code> state to the <code>RUNNING</code> state). This parameter is not provided for child jobs of
+     * <code>STARTING</code> state to the <code>RUNNING</code> state). This parameter isn't provided for child jobs of
      * array jobs or multi-node parallel jobs.
      * </p>
      */
@@ -108,7 +108,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     private Long stoppedAt;
     /**
      * <p>
-     * A list of job IDs on which this job depends.
+     * A list of job IDs that this job depends on.
      * </p>
      */
     private java.util.List<JobDependency> dependsOn;
@@ -127,7 +127,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, String> parameters;
     /**
      * <p>
-     * An object representing the details of the container that is associated with the job.
+     * An object representing the details of the container that's associated with the job.
      * </p>
      */
     private ContainerDetail container;
@@ -141,6 +141,11 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * An object representing the node properties of a multi-node parallel job.
      * </p>
+     * <note>
+     * <p>
+     * This isn't applicable to jobs running on Fargate resources.
+     * </p>
+     * </note>
      */
     private NodeProperties nodeProperties;
     /**
@@ -161,6 +166,22 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If
+     * no value is specified, the tags are not propagated. Tags can only be propagated to the tasks during task
+     * creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number
+     * of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
+     * </p>
+     */
+    private Boolean propagateTags;
+    /**
+     * <p>
+     * The platform capabilities required by the job definition. If no value is specified, it defaults to
+     * <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.
+     * </p>
+     */
+    private java.util.List<String> platformCapabilities;
 
     /**
      * <p>
@@ -284,11 +305,11 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the job queue with which the job is associated.
+     * The Amazon Resource Name (ARN) of the job queue that the job is associated with.
      * </p>
      * 
      * @param jobQueue
-     *        The Amazon Resource Name (ARN) of the job queue with which the job is associated.
+     *        The Amazon Resource Name (ARN) of the job queue that the job is associated with.
      */
 
     public void setJobQueue(String jobQueue) {
@@ -297,10 +318,10 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the job queue with which the job is associated.
+     * The Amazon Resource Name (ARN) of the job queue that the job is associated with.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the job queue with which the job is associated.
+     * @return The Amazon Resource Name (ARN) of the job queue that the job is associated with.
      */
 
     public String getJobQueue() {
@@ -309,11 +330,11 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the job queue with which the job is associated.
+     * The Amazon Resource Name (ARN) of the job queue that the job is associated with.
      * </p>
      * 
      * @param jobQueue
-     *        The Amazon Resource Name (ARN) of the job queue with which the job is associated.
+     *        The Amazon Resource Name (ARN) of the job queue that the job is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -663,13 +684,13 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Unix timestamp (in milliseconds) for when the job was started (when the job transitioned from the
-     * <code>STARTING</code> state to the <code>RUNNING</code> state). This parameter is not provided for child jobs of
+     * <code>STARTING</code> state to the <code>RUNNING</code> state). This parameter isn't provided for child jobs of
      * array jobs or multi-node parallel jobs.
      * </p>
      * 
      * @param startedAt
      *        The Unix timestamp (in milliseconds) for when the job was started (when the job transitioned from the
-     *        <code>STARTING</code> state to the <code>RUNNING</code> state). This parameter is not provided for child
+     *        <code>STARTING</code> state to the <code>RUNNING</code> state). This parameter isn't provided for child
      *        jobs of array jobs or multi-node parallel jobs.
      */
 
@@ -680,12 +701,12 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Unix timestamp (in milliseconds) for when the job was started (when the job transitioned from the
-     * <code>STARTING</code> state to the <code>RUNNING</code> state). This parameter is not provided for child jobs of
+     * <code>STARTING</code> state to the <code>RUNNING</code> state). This parameter isn't provided for child jobs of
      * array jobs or multi-node parallel jobs.
      * </p>
      * 
      * @return The Unix timestamp (in milliseconds) for when the job was started (when the job transitioned from the
-     *         <code>STARTING</code> state to the <code>RUNNING</code> state). This parameter is not provided for child
+     *         <code>STARTING</code> state to the <code>RUNNING</code> state). This parameter isn't provided for child
      *         jobs of array jobs or multi-node parallel jobs.
      */
 
@@ -696,13 +717,13 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Unix timestamp (in milliseconds) for when the job was started (when the job transitioned from the
-     * <code>STARTING</code> state to the <code>RUNNING</code> state). This parameter is not provided for child jobs of
+     * <code>STARTING</code> state to the <code>RUNNING</code> state). This parameter isn't provided for child jobs of
      * array jobs or multi-node parallel jobs.
      * </p>
      * 
      * @param startedAt
      *        The Unix timestamp (in milliseconds) for when the job was started (when the job transitioned from the
-     *        <code>STARTING</code> state to the <code>RUNNING</code> state). This parameter is not provided for child
+     *        <code>STARTING</code> state to the <code>RUNNING</code> state). This parameter isn't provided for child
      *        jobs of array jobs or multi-node parallel jobs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -760,10 +781,10 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of job IDs on which this job depends.
+     * A list of job IDs that this job depends on.
      * </p>
      * 
-     * @return A list of job IDs on which this job depends.
+     * @return A list of job IDs that this job depends on.
      */
 
     public java.util.List<JobDependency> getDependsOn() {
@@ -772,11 +793,11 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of job IDs on which this job depends.
+     * A list of job IDs that this job depends on.
      * </p>
      * 
      * @param dependsOn
-     *        A list of job IDs on which this job depends.
+     *        A list of job IDs that this job depends on.
      */
 
     public void setDependsOn(java.util.Collection<JobDependency> dependsOn) {
@@ -790,7 +811,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of job IDs on which this job depends.
+     * A list of job IDs that this job depends on.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -799,7 +820,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param dependsOn
-     *        A list of job IDs on which this job depends.
+     *        A list of job IDs that this job depends on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -815,11 +836,11 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of job IDs on which this job depends.
+     * A list of job IDs that this job depends on.
      * </p>
      * 
      * @param dependsOn
-     *        A list of job IDs on which this job depends.
+     *        A list of job IDs that this job depends on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -944,11 +965,11 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object representing the details of the container that is associated with the job.
+     * An object representing the details of the container that's associated with the job.
      * </p>
      * 
      * @param container
-     *        An object representing the details of the container that is associated with the job.
+     *        An object representing the details of the container that's associated with the job.
      */
 
     public void setContainer(ContainerDetail container) {
@@ -957,10 +978,10 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object representing the details of the container that is associated with the job.
+     * An object representing the details of the container that's associated with the job.
      * </p>
      * 
-     * @return An object representing the details of the container that is associated with the job.
+     * @return An object representing the details of the container that's associated with the job.
      */
 
     public ContainerDetail getContainer() {
@@ -969,11 +990,11 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object representing the details of the container that is associated with the job.
+     * An object representing the details of the container that's associated with the job.
      * </p>
      * 
      * @param container
-     *        An object representing the details of the container that is associated with the job.
+     *        An object representing the details of the container that's associated with the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1026,9 +1047,17 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * An object representing the node properties of a multi-node parallel job.
      * </p>
+     * <note>
+     * <p>
+     * This isn't applicable to jobs running on Fargate resources.
+     * </p>
+     * </note>
      * 
      * @param nodeProperties
-     *        An object representing the node properties of a multi-node parallel job.
+     *        An object representing the node properties of a multi-node parallel job.</p> <note>
+     *        <p>
+     *        This isn't applicable to jobs running on Fargate resources.
+     *        </p>
      */
 
     public void setNodeProperties(NodeProperties nodeProperties) {
@@ -1039,8 +1068,16 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * An object representing the node properties of a multi-node parallel job.
      * </p>
+     * <note>
+     * <p>
+     * This isn't applicable to jobs running on Fargate resources.
+     * </p>
+     * </note>
      * 
-     * @return An object representing the node properties of a multi-node parallel job.
+     * @return An object representing the node properties of a multi-node parallel job.</p> <note>
+     *         <p>
+     *         This isn't applicable to jobs running on Fargate resources.
+     *         </p>
      */
 
     public NodeProperties getNodeProperties() {
@@ -1051,9 +1088,17 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * An object representing the node properties of a multi-node parallel job.
      * </p>
+     * <note>
+     * <p>
+     * This isn't applicable to jobs running on Fargate resources.
+     * </p>
+     * </note>
      * 
      * @param nodeProperties
-     *        An object representing the node properties of a multi-node parallel job.
+     *        An object representing the node properties of a multi-node parallel job.</p> <note>
+     *        <p>
+     *        This isn't applicable to jobs running on Fargate resources.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1211,6 +1256,194 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If
+     * no value is specified, the tags are not propagated. Tags can only be propagated to the tasks during task
+     * creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number
+     * of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
+     * </p>
+     * 
+     * @param propagateTags
+     *        Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS
+     *        task. If no value is specified, the tags are not propagated. Tags can only be propagated to the tasks
+     *        during task creation. For tags with the same name, job tags are given priority over job definitions tags.
+     *        If the total number of combined tags from the job and job definition is over 50, the job is moved to the
+     *        <code>FAILED</code> state.
+     */
+
+    public void setPropagateTags(Boolean propagateTags) {
+        this.propagateTags = propagateTags;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If
+     * no value is specified, the tags are not propagated. Tags can only be propagated to the tasks during task
+     * creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number
+     * of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
+     * </p>
+     * 
+     * @return Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS
+     *         task. If no value is specified, the tags are not propagated. Tags can only be propagated to the tasks
+     *         during task creation. For tags with the same name, job tags are given priority over job definitions tags.
+     *         If the total number of combined tags from the job and job definition is over 50, the job is moved to the
+     *         <code>FAILED</code> state.
+     */
+
+    public Boolean getPropagateTags() {
+        return this.propagateTags;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If
+     * no value is specified, the tags are not propagated. Tags can only be propagated to the tasks during task
+     * creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number
+     * of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
+     * </p>
+     * 
+     * @param propagateTags
+     *        Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS
+     *        task. If no value is specified, the tags are not propagated. Tags can only be propagated to the tasks
+     *        during task creation. For tags with the same name, job tags are given priority over job definitions tags.
+     *        If the total number of combined tags from the job and job definition is over 50, the job is moved to the
+     *        <code>FAILED</code> state.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withPropagateTags(Boolean propagateTags) {
+        setPropagateTags(propagateTags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If
+     * no value is specified, the tags are not propagated. Tags can only be propagated to the tasks during task
+     * creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number
+     * of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
+     * </p>
+     * 
+     * @return Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS
+     *         task. If no value is specified, the tags are not propagated. Tags can only be propagated to the tasks
+     *         during task creation. For tags with the same name, job tags are given priority over job definitions tags.
+     *         If the total number of combined tags from the job and job definition is over 50, the job is moved to the
+     *         <code>FAILED</code> state.
+     */
+
+    public Boolean isPropagateTags() {
+        return this.propagateTags;
+    }
+
+    /**
+     * <p>
+     * The platform capabilities required by the job definition. If no value is specified, it defaults to
+     * <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.
+     * </p>
+     * 
+     * @return The platform capabilities required by the job definition. If no value is specified, it defaults to
+     *         <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.
+     * @see PlatformCapability
+     */
+
+    public java.util.List<String> getPlatformCapabilities() {
+        return platformCapabilities;
+    }
+
+    /**
+     * <p>
+     * The platform capabilities required by the job definition. If no value is specified, it defaults to
+     * <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.
+     * </p>
+     * 
+     * @param platformCapabilities
+     *        The platform capabilities required by the job definition. If no value is specified, it defaults to
+     *        <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.
+     * @see PlatformCapability
+     */
+
+    public void setPlatformCapabilities(java.util.Collection<String> platformCapabilities) {
+        if (platformCapabilities == null) {
+            this.platformCapabilities = null;
+            return;
+        }
+
+        this.platformCapabilities = new java.util.ArrayList<String>(platformCapabilities);
+    }
+
+    /**
+     * <p>
+     * The platform capabilities required by the job definition. If no value is specified, it defaults to
+     * <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPlatformCapabilities(java.util.Collection)} or {@link #withPlatformCapabilities(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param platformCapabilities
+     *        The platform capabilities required by the job definition. If no value is specified, it defaults to
+     *        <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PlatformCapability
+     */
+
+    public JobDetail withPlatformCapabilities(String... platformCapabilities) {
+        if (this.platformCapabilities == null) {
+            setPlatformCapabilities(new java.util.ArrayList<String>(platformCapabilities.length));
+        }
+        for (String ele : platformCapabilities) {
+            this.platformCapabilities.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The platform capabilities required by the job definition. If no value is specified, it defaults to
+     * <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.
+     * </p>
+     * 
+     * @param platformCapabilities
+     *        The platform capabilities required by the job definition. If no value is specified, it defaults to
+     *        <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PlatformCapability
+     */
+
+    public JobDetail withPlatformCapabilities(java.util.Collection<String> platformCapabilities) {
+        setPlatformCapabilities(platformCapabilities);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The platform capabilities required by the job definition. If no value is specified, it defaults to
+     * <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.
+     * </p>
+     * 
+     * @param platformCapabilities
+     *        The platform capabilities required by the job definition. If no value is specified, it defaults to
+     *        <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PlatformCapability
+     */
+
+    public JobDetail withPlatformCapabilities(PlatformCapability... platformCapabilities) {
+        java.util.ArrayList<String> platformCapabilitiesCopy = new java.util.ArrayList<String>(platformCapabilities.length);
+        for (PlatformCapability value : platformCapabilities) {
+            platformCapabilitiesCopy.add(value.toString());
+        }
+        if (getPlatformCapabilities() == null) {
+            setPlatformCapabilities(platformCapabilitiesCopy);
+        } else {
+            getPlatformCapabilities().addAll(platformCapabilitiesCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1261,7 +1494,11 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
         if (getTimeout() != null)
             sb.append("Timeout: ").append(getTimeout()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getPropagateTags() != null)
+            sb.append("PropagateTags: ").append(getPropagateTags()).append(",");
+        if (getPlatformCapabilities() != null)
+            sb.append("PlatformCapabilities: ").append(getPlatformCapabilities());
         sb.append("}");
         return sb.toString();
     }
@@ -1356,6 +1593,14 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getPropagateTags() == null ^ this.getPropagateTags() == null)
+            return false;
+        if (other.getPropagateTags() != null && other.getPropagateTags().equals(this.getPropagateTags()) == false)
+            return false;
+        if (other.getPlatformCapabilities() == null ^ this.getPlatformCapabilities() == null)
+            return false;
+        if (other.getPlatformCapabilities() != null && other.getPlatformCapabilities().equals(this.getPlatformCapabilities()) == false)
+            return false;
         return true;
     }
 
@@ -1384,6 +1629,8 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getArrayProperties() == null) ? 0 : getArrayProperties().hashCode());
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getPropagateTags() == null) ? 0 : getPropagateTags().hashCode());
+        hashCode = prime * hashCode + ((getPlatformCapabilities() == null) ? 0 : getPlatformCapabilities().hashCode());
         return hashCode;
     }
 

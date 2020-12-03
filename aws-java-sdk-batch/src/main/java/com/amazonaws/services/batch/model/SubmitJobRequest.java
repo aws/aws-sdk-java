@@ -89,6 +89,12 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * A list of node overrides in JSON format that specify the node range to target and the container overrides for
      * that node range.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources; use <code>containerOverrides</code>
+     * instead.
+     * </p>
+     * </note>
      */
     private NodeOverrides nodeOverrides;
     /**
@@ -100,8 +106,18 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private RetryStrategy retryStrategy;
     /**
      * <p>
+     * Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If
+     * no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation.
+     * For tags with the same name, job tags are given priority over job definitions tags. If the total number of
+     * combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state. When
+     * specified, this overrides the tag propagation setting in the job definition.
+     * </p>
+     */
+    private Boolean propagateTags;
+    /**
+     * <p>
      * The timeout configuration for this <a>SubmitJob</a> operation. You can specify a timeout duration after which AWS
-     * Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout, it is not retried.
+     * Batch terminates your jobs if they haven't finished. If a job is terminated due to a timeout, it isn't retried.
      * The minimum value for the timeout is 60 seconds. This configuration overrides any timeout configuration specified
      * in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job. For more
      * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
@@ -572,10 +588,20 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * A list of node overrides in JSON format that specify the node range to target and the container overrides for
      * that node range.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources; use <code>containerOverrides</code>
+     * instead.
+     * </p>
+     * </note>
      * 
      * @param nodeOverrides
      *        A list of node overrides in JSON format that specify the node range to target and the container overrides
-     *        for that node range.
+     *        for that node range.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources; use <code>containerOverrides</code>
+     *        instead.
+     *        </p>
      */
 
     public void setNodeOverrides(NodeOverrides nodeOverrides) {
@@ -587,9 +613,19 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * A list of node overrides in JSON format that specify the node range to target and the container overrides for
      * that node range.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources; use <code>containerOverrides</code>
+     * instead.
+     * </p>
+     * </note>
      * 
      * @return A list of node overrides in JSON format that specify the node range to target and the container overrides
-     *         for that node range.
+     *         for that node range.</p> <note>
+     *         <p>
+     *         This parameter isn't applicable to jobs running on Fargate resources; use <code>containerOverrides</code>
+     *         instead.
+     *         </p>
      */
 
     public NodeOverrides getNodeOverrides() {
@@ -601,10 +637,20 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * A list of node overrides in JSON format that specify the node range to target and the container overrides for
      * that node range.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources; use <code>containerOverrides</code>
+     * instead.
+     * </p>
+     * </note>
      * 
      * @param nodeOverrides
      *        A list of node overrides in JSON format that specify the node range to target and the container overrides
-     *        for that node range.
+     *        for that node range.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources; use <code>containerOverrides</code>
+     *        instead.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -661,8 +707,96 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
+     * Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If
+     * no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation.
+     * For tags with the same name, job tags are given priority over job definitions tags. If the total number of
+     * combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state. When
+     * specified, this overrides the tag propagation setting in the job definition.
+     * </p>
+     * 
+     * @param propagateTags
+     *        Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS
+     *        task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks
+     *        during task creation. For tags with the same name, job tags are given priority over job definitions tags.
+     *        If the total number of combined tags from the job and job definition is over 50, the job is moved to the
+     *        <code>FAILED</code> state. When specified, this overrides the tag propagation setting in the job
+     *        definition.
+     */
+
+    public void setPropagateTags(Boolean propagateTags) {
+        this.propagateTags = propagateTags;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If
+     * no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation.
+     * For tags with the same name, job tags are given priority over job definitions tags. If the total number of
+     * combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state. When
+     * specified, this overrides the tag propagation setting in the job definition.
+     * </p>
+     * 
+     * @return Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS
+     *         task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks
+     *         during task creation. For tags with the same name, job tags are given priority over job definitions tags.
+     *         If the total number of combined tags from the job and job definition is over 50, the job is moved to the
+     *         <code>FAILED</code> state. When specified, this overrides the tag propagation setting in the job
+     *         definition.
+     */
+
+    public Boolean getPropagateTags() {
+        return this.propagateTags;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If
+     * no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation.
+     * For tags with the same name, job tags are given priority over job definitions tags. If the total number of
+     * combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state. When
+     * specified, this overrides the tag propagation setting in the job definition.
+     * </p>
+     * 
+     * @param propagateTags
+     *        Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS
+     *        task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks
+     *        during task creation. For tags with the same name, job tags are given priority over job definitions tags.
+     *        If the total number of combined tags from the job and job definition is over 50, the job is moved to the
+     *        <code>FAILED</code> state. When specified, this overrides the tag propagation setting in the job
+     *        definition.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SubmitJobRequest withPropagateTags(Boolean propagateTags) {
+        setPropagateTags(propagateTags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If
+     * no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation.
+     * For tags with the same name, job tags are given priority over job definitions tags. If the total number of
+     * combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state. When
+     * specified, this overrides the tag propagation setting in the job definition.
+     * </p>
+     * 
+     * @return Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS
+     *         task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks
+     *         during task creation. For tags with the same name, job tags are given priority over job definitions tags.
+     *         If the total number of combined tags from the job and job definition is over 50, the job is moved to the
+     *         <code>FAILED</code> state. When specified, this overrides the tag propagation setting in the job
+     *         definition.
+     */
+
+    public Boolean isPropagateTags() {
+        return this.propagateTags;
+    }
+
+    /**
+     * <p>
      * The timeout configuration for this <a>SubmitJob</a> operation. You can specify a timeout duration after which AWS
-     * Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout, it is not retried.
+     * Batch terminates your jobs if they haven't finished. If a job is terminated due to a timeout, it isn't retried.
      * The minimum value for the timeout is 60 seconds. This configuration overrides any timeout configuration specified
      * in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job. For more
      * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
@@ -671,9 +805,9 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * 
      * @param timeout
      *        The timeout configuration for this <a>SubmitJob</a> operation. You can specify a timeout duration after
-     *        which AWS Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout,
-     *        it is not retried. The minimum value for the timeout is 60 seconds. This configuration overrides any
-     *        timeout configuration specified in the job definition. For array jobs, child jobs have the same timeout
+     *        which AWS Batch terminates your jobs if they haven't finished. If a job is terminated due to a timeout, it
+     *        isn't retried. The minimum value for the timeout is 60 seconds. This configuration overrides any timeout
+     *        configuration specified in the job definition. For array jobs, child jobs have the same timeout
      *        configuration as the parent job. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
      *        the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -686,7 +820,7 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The timeout configuration for this <a>SubmitJob</a> operation. You can specify a timeout duration after which AWS
-     * Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout, it is not retried.
+     * Batch terminates your jobs if they haven't finished. If a job is terminated due to a timeout, it isn't retried.
      * The minimum value for the timeout is 60 seconds. This configuration overrides any timeout configuration specified
      * in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job. For more
      * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
@@ -694,8 +828,8 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @return The timeout configuration for this <a>SubmitJob</a> operation. You can specify a timeout duration after
-     *         which AWS Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout,
-     *         it is not retried. The minimum value for the timeout is 60 seconds. This configuration overrides any
+     *         which AWS Batch terminates your jobs if they haven't finished. If a job is terminated due to a timeout,
+     *         it isn't retried. The minimum value for the timeout is 60 seconds. This configuration overrides any
      *         timeout configuration specified in the job definition. For array jobs, child jobs have the same timeout
      *         configuration as the parent job. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
@@ -709,7 +843,7 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The timeout configuration for this <a>SubmitJob</a> operation. You can specify a timeout duration after which AWS
-     * Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout, it is not retried.
+     * Batch terminates your jobs if they haven't finished. If a job is terminated due to a timeout, it isn't retried.
      * The minimum value for the timeout is 60 seconds. This configuration overrides any timeout configuration specified
      * in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job. For more
      * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
@@ -718,9 +852,9 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * 
      * @param timeout
      *        The timeout configuration for this <a>SubmitJob</a> operation. You can specify a timeout duration after
-     *        which AWS Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout,
-     *        it is not retried. The minimum value for the timeout is 60 seconds. This configuration overrides any
-     *        timeout configuration specified in the job definition. For array jobs, child jobs have the same timeout
+     *        which AWS Batch terminates your jobs if they haven't finished. If a job is terminated due to a timeout, it
+     *        isn't retried. The minimum value for the timeout is 60 seconds. This configuration overrides any timeout
+     *        configuration specified in the job definition. For array jobs, child jobs have the same timeout
      *        configuration as the parent job. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
      *        the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -848,6 +982,8 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             sb.append("NodeOverrides: ").append(getNodeOverrides()).append(",");
         if (getRetryStrategy() != null)
             sb.append("RetryStrategy: ").append(getRetryStrategy()).append(",");
+        if (getPropagateTags() != null)
+            sb.append("PropagateTags: ").append(getPropagateTags()).append(",");
         if (getTimeout() != null)
             sb.append("Timeout: ").append(getTimeout()).append(",");
         if (getTags() != null)
@@ -902,6 +1038,10 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getRetryStrategy() != null && other.getRetryStrategy().equals(this.getRetryStrategy()) == false)
             return false;
+        if (other.getPropagateTags() == null ^ this.getPropagateTags() == null)
+            return false;
+        if (other.getPropagateTags() != null && other.getPropagateTags().equals(this.getPropagateTags()) == false)
+            return false;
         if (other.getTimeout() == null ^ this.getTimeout() == null)
             return false;
         if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
@@ -927,6 +1067,7 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getContainerOverrides() == null) ? 0 : getContainerOverrides().hashCode());
         hashCode = prime * hashCode + ((getNodeOverrides() == null) ? 0 : getNodeOverrides().hashCode());
         hashCode = prime * hashCode + ((getRetryStrategy() == null) ? 0 : getRetryStrategy().hashCode());
+        hashCode = prime * hashCode + ((getPropagateTags() == null) ? 0 : getPropagateTags().hashCode());
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

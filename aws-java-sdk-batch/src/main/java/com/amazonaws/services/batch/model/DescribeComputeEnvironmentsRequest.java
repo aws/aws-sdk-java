@@ -37,7 +37,7 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
      * When this parameter is used, <code>DescribeComputeEnvironments</code> only returns <code>maxResults</code>
      * results in a single page along with a <code>nextToken</code> response element. The remaining results of the
      * initial request can be seen by sending another <code>DescribeComputeEnvironments</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
+     * <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then
      * <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code> value if
      * applicable.
      * </p>
@@ -135,7 +135,7 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
      * When this parameter is used, <code>DescribeComputeEnvironments</code> only returns <code>maxResults</code>
      * results in a single page along with a <code>nextToken</code> response element. The remaining results of the
      * initial request can be seen by sending another <code>DescribeComputeEnvironments</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
+     * <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then
      * <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code> value if
      * applicable.
      * </p>
@@ -146,7 +146,7 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
      *        <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The
      *        remaining results of the initial request can be seen by sending another
      *        <code>DescribeComputeEnvironments</code> request with the returned <code>nextToken</code> value. This
-     *        value can be between 1 and 100. If this parameter is not used, then
+     *        value can be between 1 and 100. If this parameter isn't used, then
      *        <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code> value if
      *        applicable.
      */
@@ -161,7 +161,7 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
      * When this parameter is used, <code>DescribeComputeEnvironments</code> only returns <code>maxResults</code>
      * results in a single page along with a <code>nextToken</code> response element. The remaining results of the
      * initial request can be seen by sending another <code>DescribeComputeEnvironments</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
+     * <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then
      * <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code> value if
      * applicable.
      * </p>
@@ -171,7 +171,7 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
      *         <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element.
      *         The remaining results of the initial request can be seen by sending another
      *         <code>DescribeComputeEnvironments</code> request with the returned <code>nextToken</code> value. This
-     *         value can be between 1 and 100. If this parameter is not used, then
+     *         value can be between 1 and 100. If this parameter isn't used, then
      *         <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code> value if
      *         applicable.
      */
@@ -186,7 +186,7 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
      * When this parameter is used, <code>DescribeComputeEnvironments</code> only returns <code>maxResults</code>
      * results in a single page along with a <code>nextToken</code> response element. The remaining results of the
      * initial request can be seen by sending another <code>DescribeComputeEnvironments</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
+     * <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then
      * <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code> value if
      * applicable.
      * </p>
@@ -197,7 +197,7 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
      *        <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The
      *        remaining results of the initial request can be seen by sending another
      *        <code>DescribeComputeEnvironments</code> request with the returned <code>nextToken</code> value. This
-     *        value can be between 1 and 100. If this parameter is not used, then
+     *        value can be between 1 and 100. If this parameter isn't used, then
      *        <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code> value if
      *        applicable.
      * @return Returns a reference to this object so that method calls can be chained together.

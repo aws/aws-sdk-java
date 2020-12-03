@@ -51,15 +51,15 @@ import com.amazonaws.services.computeoptimizer.model.transform.*;
  * return until the service call completes.
  * <p>
  * <p>
- * AWS Compute Optimizer is a service that analyzes the configuration and utilization metrics of your AWS resources,
- * such as EC2 instances and Auto Scaling groups. It reports whether your resources are optimal, and generates
- * optimization recommendations to reduce the cost and improve the performance of your workloads. Compute Optimizer also
- * provides recent utilization metric data, as well as projected utilization metric data for the recommendations, which
- * you can use to evaluate which recommendation provides the best price-performance trade-off. The analysis of your
- * usage patterns can help you decide when to move or resize your running resources, and still meet your performance and
- * capacity requirements. For more information about Compute Optimizer, including the required permissions to use the
- * service, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">AWS Compute Optimizer User
- * Guide</a>.
+ * AWS Compute Optimizer is a service that analyzes the configuration and utilization metrics of your AWS compute
+ * resources, such as EC2 instances, Auto Scaling groups, and Amazon EBS volumes. It reports whether your resources are
+ * optimal, and generates optimization recommendations to reduce the cost and improve the performance of your workloads.
+ * Compute Optimizer also provides recent utilization metric data, as well as projected utilization metric data for the
+ * recommendations, which you can use to evaluate which recommendation provides the best price-performance trade-off.
+ * The analysis of your usage patterns can help you decide when to move or resize your running resources, and still meet
+ * your performance and capacity requirements. For more information about Compute Optimizer, including the required
+ * permissions to use the service, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">AWS
+ * Compute Optimizer User Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -488,6 +488,84 @@ public class AWSComputeOptimizerClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Returns Amazon Elastic Block Store (Amazon EBS) volume recommendations.
+     * </p>
+     * <p>
+     * AWS Compute Optimizer generates recommendations for Amazon EBS volumes that meet a specific set of requirements.
+     * For more information, see the <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported resources and
+     * requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
+     * </p>
+     * 
+     * @param getEBSVolumeRecommendationsRequest
+     * @return Result of the GetEBSVolumeRecommendations operation returned by the service.
+     * @throws OptInRequiredException
+     *         The account is not opted in to AWS Compute Optimizer.
+     * @throws InternalServerException
+     *         An internal error has occurred. Try your call again.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InvalidParameterValueException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @throws MissingAuthenticationTokenException
+     *         The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSComputeOptimizer.GetEBSVolumeRecommendations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEBSVolumeRecommendations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetEBSVolumeRecommendationsResult getEBSVolumeRecommendations(GetEBSVolumeRecommendationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetEBSVolumeRecommendations(request);
+    }
+
+    @SdkInternalApi
+    final GetEBSVolumeRecommendationsResult executeGetEBSVolumeRecommendations(GetEBSVolumeRecommendationsRequest getEBSVolumeRecommendationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getEBSVolumeRecommendationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetEBSVolumeRecommendationsRequest> request = null;
+        Response<GetEBSVolumeRecommendationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetEBSVolumeRecommendationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getEBSVolumeRecommendationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Compute Optimizer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEBSVolumeRecommendations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetEBSVolumeRecommendationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetEBSVolumeRecommendationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns Amazon EC2 instance recommendations.
      * </p>
      * <p>
@@ -652,7 +730,7 @@ public class AWSComputeOptimizerClient extends AmazonWebServiceClient implements
      * Returns the enrollment (opt in) status of an account to the AWS Compute Optimizer service.
      * </p>
      * <p>
-     * If the account is the master account of an organization, this action also confirms the enrollment status of
+     * If the account is the management account of an organization, this action also confirms the enrollment status of
      * member accounts within the organization.
      * </p>
      * 
@@ -797,7 +875,7 @@ public class AWSComputeOptimizerClient extends AmazonWebServiceClient implements
      * Updates the enrollment (opt in) status of an account to the AWS Compute Optimizer service.
      * </p>
      * <p>
-     * If the account is a master account of an organization, this action can also be used to enroll member accounts
+     * If the account is a management account of an organization, this action can also be used to enroll member accounts
      * within the organization.
      * </p>
      * 

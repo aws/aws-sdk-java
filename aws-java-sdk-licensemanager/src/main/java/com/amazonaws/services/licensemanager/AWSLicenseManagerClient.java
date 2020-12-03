@@ -82,17 +82,8 @@ public class AWSLicenseManagerClient extends AmazonWebServiceClient implements A
                             new JsonErrorShapeMetadata().withErrorCode("FailedDependencyException").withExceptionUnmarshaller(
                                     com.amazonaws.services.licensemanager.model.transform.FailedDependencyExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.licensemanager.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AuthorizationException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.licensemanager.model.transform.AuthorizationExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withExceptionUnmarshaller(
                                     com.amazonaws.services.licensemanager.model.transform.InvalidParameterValueExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceStateException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.licensemanager.model.transform.InvalidResourceStateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("RateLimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.licensemanager.model.transform.RateLimitExceededExceptionUnmarshaller.getInstance()))
@@ -102,6 +93,36 @@ public class AWSLicenseManagerClient extends AmazonWebServiceClient implements A
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServerInternalException").withExceptionUnmarshaller(
                                     com.amazonaws.services.licensemanager.model.transform.ServerInternalExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("RedirectException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.licensemanager.model.transform.RedirectExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedDigitalSignatureMethodException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.licensemanager.model.transform.UnsupportedDigitalSignatureMethodExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.licensemanager.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AuthorizationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.licensemanager.model.transform.AuthorizationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.licensemanager.model.transform.ConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceStateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.licensemanager.model.transform.InvalidResourceStateExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.licensemanager.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("EntitlementNotAllowedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.licensemanager.model.transform.EntitlementNotAllowedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.licensemanager.model.transform.ValidationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NoEntitlementsAllowedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.licensemanager.model.transform.NoEntitlementsAllowedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LicenseUsageException").withExceptionUnmarshaller(
                                     com.amazonaws.services.licensemanager.model.transform.LicenseUsageExceptionUnmarshaller.getInstance()))
@@ -154,6 +175,501 @@ public class AWSLicenseManagerClient extends AmazonWebServiceClient implements A
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/licensemanager/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/licensemanager/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Accepts the specified grant.
+     * </p>
+     * 
+     * @param acceptGrantRequest
+     * @return Result of the AcceptGrant operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @sample AWSLicenseManager.AcceptGrant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/AcceptGrant" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public AcceptGrantResult acceptGrant(AcceptGrantRequest request) {
+        request = beforeClientExecution(request);
+        return executeAcceptGrant(request);
+    }
+
+    @SdkInternalApi
+    final AcceptGrantResult executeAcceptGrant(AcceptGrantRequest acceptGrantRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(acceptGrantRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AcceptGrantRequest> request = null;
+        Response<AcceptGrantResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AcceptGrantRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(acceptGrantRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptGrant");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AcceptGrantResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AcceptGrantResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Checks in the specified license. Check in a license when it is no longer in use.
+     * </p>
+     * 
+     * @param checkInLicenseRequest
+     * @return Result of the CheckInLicense operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Try your request again.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @sample AWSLicenseManager.CheckInLicense
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CheckInLicense" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CheckInLicenseResult checkInLicense(CheckInLicenseRequest request) {
+        request = beforeClientExecution(request);
+        return executeCheckInLicense(request);
+    }
+
+    @SdkInternalApi
+    final CheckInLicenseResult executeCheckInLicense(CheckInLicenseRequest checkInLicenseRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(checkInLicenseRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CheckInLicenseRequest> request = null;
+        Response<CheckInLicenseResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CheckInLicenseRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(checkInLicenseRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CheckInLicense");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CheckInLicenseResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CheckInLicenseResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Checks out the specified license for offline use.
+     * </p>
+     * 
+     * @param checkoutBorrowLicenseRequest
+     * @return Result of the CheckoutBorrowLicense operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws NoEntitlementsAllowedException
+     *         There are no entitlements found for this license, or the entitlement maximum count is reached.
+     * @throws EntitlementNotAllowedException
+     *         The entitlement is not allowed.
+     * @throws UnsupportedDigitalSignatureMethodException
+     *         The digital signature method is unsupported. Try your request again.
+     * @throws RedirectException
+     *         This is not the correct Region for the resource. Try again.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @sample AWSLicenseManager.CheckoutBorrowLicense
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CheckoutBorrowLicense"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CheckoutBorrowLicenseResult checkoutBorrowLicense(CheckoutBorrowLicenseRequest request) {
+        request = beforeClientExecution(request);
+        return executeCheckoutBorrowLicense(request);
+    }
+
+    @SdkInternalApi
+    final CheckoutBorrowLicenseResult executeCheckoutBorrowLicense(CheckoutBorrowLicenseRequest checkoutBorrowLicenseRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(checkoutBorrowLicenseRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CheckoutBorrowLicenseRequest> request = null;
+        Response<CheckoutBorrowLicenseResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CheckoutBorrowLicenseRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(checkoutBorrowLicenseRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CheckoutBorrowLicense");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CheckoutBorrowLicenseResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CheckoutBorrowLicenseResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Checks out the specified license.
+     * </p>
+     * 
+     * @param checkoutLicenseRequest
+     * @return Result of the CheckoutLicense operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws NoEntitlementsAllowedException
+     *         There are no entitlements found for this license, or the entitlement maximum count is reached.
+     * @throws UnsupportedDigitalSignatureMethodException
+     *         The digital signature method is unsupported. Try your request again.
+     * @throws RedirectException
+     *         This is not the correct Region for the resource. Try again.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @sample AWSLicenseManager.CheckoutLicense
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CheckoutLicense"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CheckoutLicenseResult checkoutLicense(CheckoutLicenseRequest request) {
+        request = beforeClientExecution(request);
+        return executeCheckoutLicense(request);
+    }
+
+    @SdkInternalApi
+    final CheckoutLicenseResult executeCheckoutLicense(CheckoutLicenseRequest checkoutLicenseRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(checkoutLicenseRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CheckoutLicenseRequest> request = null;
+        Response<CheckoutLicenseResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CheckoutLicenseRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(checkoutLicenseRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CheckoutLicense");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CheckoutLicenseResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CheckoutLicenseResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a grant for the specified license. A grant shares the use of license entitlements with specific AWS
+     * accounts.
+     * </p>
+     * 
+     * @param createGrantRequest
+     * @return Result of the CreateGrant operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @sample AWSLicenseManager.CreateGrant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateGrant" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateGrantResult createGrant(CreateGrantRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateGrant(request);
+    }
+
+    @SdkInternalApi
+    final CreateGrantResult executeCreateGrant(CreateGrantRequest createGrantRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createGrantRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateGrantRequest> request = null;
+        Response<CreateGrantResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateGrantRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGrantRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGrant");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateGrantResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateGrantResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new version of the specified grant.
+     * </p>
+     * 
+     * @param createGrantVersionRequest
+     * @return Result of the CreateGrantVersion operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @sample AWSLicenseManager.CreateGrantVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateGrantVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateGrantVersionResult createGrantVersion(CreateGrantVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateGrantVersion(request);
+    }
+
+    @SdkInternalApi
+    final CreateGrantVersionResult executeCreateGrantVersion(CreateGrantVersionRequest createGrantVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createGrantVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateGrantVersionRequest> request = null;
+        Response<CreateGrantVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateGrantVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGrantVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGrantVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateGrantVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateGrantVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a license.
+     * </p>
+     * 
+     * @param createLicenseRequest
+     * @return Result of the CreateLicense operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
+     * @throws RedirectException
+     *         This is not the correct Region for the resource. Try again.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @sample AWSLicenseManager.CreateLicense
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicense" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateLicenseResult createLicense(CreateLicenseRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateLicense(request);
+    }
+
+    @SdkInternalApi
+    final CreateLicenseResult executeCreateLicense(CreateLicenseRequest createLicenseRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createLicenseRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateLicenseRequest> request = null;
+        Response<CreateLicenseResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateLicenseRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLicenseRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLicense");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateLicenseResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateLicenseResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -221,6 +737,293 @@ public class AWSLicenseManagerClient extends AmazonWebServiceClient implements A
             HttpResponseHandler<AmazonWebServiceResponse<CreateLicenseConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateLicenseConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new version of the specified license.
+     * </p>
+     * 
+     * @param createLicenseVersionRequest
+     * @return Result of the CreateLicenseVersion operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws RedirectException
+     *         This is not the correct Region for the resource. Try again.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Try your request again.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @sample AWSLicenseManager.CreateLicenseVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateLicenseVersionResult createLicenseVersion(CreateLicenseVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateLicenseVersion(request);
+    }
+
+    @SdkInternalApi
+    final CreateLicenseVersionResult executeCreateLicenseVersion(CreateLicenseVersionRequest createLicenseVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createLicenseVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateLicenseVersionRequest> request = null;
+        Response<CreateLicenseVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateLicenseVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLicenseVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLicenseVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateLicenseVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateLicenseVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a long-lived token.
+     * </p>
+     * <p>
+     * A refresh token is a JWT token used to get an access token. With an access token, you can call
+     * AssumeRoleWithWebIdentity to get role credentials that you can use to call License Manager to manage the
+     * specified license.
+     * </p>
+     * 
+     * @param createTokenRequest
+     * @return Result of the CreateToken operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws RedirectException
+     *         This is not the correct Region for the resource. Try again.
+     * @sample AWSLicenseManager.CreateToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateToken" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateTokenResult createToken(CreateTokenRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateToken(request);
+    }
+
+    @SdkInternalApi
+    final CreateTokenResult executeCreateToken(CreateTokenRequest createTokenRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createTokenRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTokenRequest> request = null;
+        Response<CreateTokenResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTokenRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTokenRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateToken");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateTokenResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateTokenResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified grant.
+     * </p>
+     * 
+     * @param deleteGrantRequest
+     * @return Result of the DeleteGrant operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @sample AWSLicenseManager.DeleteGrant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteGrant" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteGrantResult deleteGrant(DeleteGrantRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteGrant(request);
+    }
+
+    @SdkInternalApi
+    final DeleteGrantResult executeDeleteGrant(DeleteGrantRequest deleteGrantRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteGrantRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteGrantRequest> request = null;
+        Response<DeleteGrantResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteGrantRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGrantRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGrant");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteGrantResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteGrantResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified license.
+     * </p>
+     * 
+     * @param deleteLicenseRequest
+     * @return Result of the DeleteLicense operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
+     * @throws RedirectException
+     *         This is not the correct Region for the resource. Try again.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Try your request again.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @sample AWSLicenseManager.DeleteLicense
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteLicense" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteLicenseResult deleteLicense(DeleteLicenseRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLicense(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLicenseResult executeDeleteLicense(DeleteLicenseRequest deleteLicenseRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteLicenseRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteLicenseRequest> request = null;
+        Response<DeleteLicenseResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteLicenseRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLicenseRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLicense");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteLicenseResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteLicenseResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -303,6 +1106,347 @@ public class AWSLicenseManagerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Deletes the specified token. Must be called in the license home Region.
+     * </p>
+     * 
+     * @param deleteTokenRequest
+     * @return Result of the DeleteToken operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws RedirectException
+     *         This is not the correct Region for the resource. Try again.
+     * @sample AWSLicenseManager.DeleteToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteToken" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteTokenResult deleteToken(DeleteTokenRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteToken(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTokenResult executeDeleteToken(DeleteTokenRequest deleteTokenRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteTokenRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteTokenRequest> request = null;
+        Response<DeleteTokenResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTokenRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTokenRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteToken");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteTokenResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteTokenResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Extends the expiration date for license consumption.
+     * </p>
+     * 
+     * @param extendLicenseConsumptionRequest
+     * @return Result of the ExtendLicenseConsumption operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @sample AWSLicenseManager.ExtendLicenseConsumption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ExtendLicenseConsumption"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ExtendLicenseConsumptionResult extendLicenseConsumption(ExtendLicenseConsumptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeExtendLicenseConsumption(request);
+    }
+
+    @SdkInternalApi
+    final ExtendLicenseConsumptionResult executeExtendLicenseConsumption(ExtendLicenseConsumptionRequest extendLicenseConsumptionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(extendLicenseConsumptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ExtendLicenseConsumptionRequest> request = null;
+        Response<ExtendLicenseConsumptionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ExtendLicenseConsumptionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(extendLicenseConsumptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExtendLicenseConsumption");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ExtendLicenseConsumptionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ExtendLicenseConsumptionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a temporary access token to use with AssumeRoleWithWebIdentity. Access tokens are valid for one hour.
+     * </p>
+     * 
+     * @param getAccessTokenRequest
+     * @return Result of the GetAccessToken operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @sample AWSLicenseManager.GetAccessToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetAccessToken" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetAccessTokenResult getAccessToken(GetAccessTokenRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAccessToken(request);
+    }
+
+    @SdkInternalApi
+    final GetAccessTokenResult executeGetAccessToken(GetAccessTokenRequest getAccessTokenRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAccessTokenRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAccessTokenRequest> request = null;
+        Response<GetAccessTokenResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAccessTokenRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAccessTokenRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccessToken");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAccessTokenResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetAccessTokenResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets detailed information about the specified grant.
+     * </p>
+     * 
+     * @param getGrantRequest
+     * @return Result of the GetGrant operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @sample AWSLicenseManager.GetGrant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetGrant" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetGrantResult getGrant(GetGrantRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetGrant(request);
+    }
+
+    @SdkInternalApi
+    final GetGrantResult executeGetGrant(GetGrantRequest getGrantRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getGrantRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetGrantRequest> request = null;
+        Response<GetGrantResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetGrantRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGrantRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGrant");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetGrantResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetGrantResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets detailed information about the specified license.
+     * </p>
+     * 
+     * @param getLicenseRequest
+     * @return Result of the GetLicense operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @sample AWSLicenseManager.GetLicense
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicense" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetLicenseResult getLicense(GetLicenseRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetLicense(request);
+    }
+
+    @SdkInternalApi
+    final GetLicenseResult executeGetLicense(GetLicenseRequest getLicenseRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getLicenseRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetLicenseRequest> request = null;
+        Response<GetLicenseResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetLicenseRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLicenseRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLicense");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetLicenseResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetLicenseResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets detailed information about the specified license configuration.
      * </p>
      * 
@@ -358,6 +1502,73 @@ public class AWSLicenseManagerClient extends AmazonWebServiceClient implements A
             HttpResponseHandler<AmazonWebServiceResponse<GetLicenseConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetLicenseConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets detailed information about the usage of the specified license.
+     * </p>
+     * 
+     * @param getLicenseUsageRequest
+     * @return Result of the GetLicenseUsage operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @sample AWSLicenseManager.GetLicenseUsage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseUsage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetLicenseUsageResult getLicenseUsage(GetLicenseUsageRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetLicenseUsage(request);
+    }
+
+    @SdkInternalApi
+    final GetLicenseUsageResult executeGetLicenseUsage(GetLicenseUsageRequest getLicenseUsageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getLicenseUsageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetLicenseUsageRequest> request = null;
+        Response<GetLicenseUsageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetLicenseUsageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLicenseUsageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLicenseUsage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetLicenseUsageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetLicenseUsageResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -496,6 +1707,76 @@ public class AWSLicenseManagerClient extends AmazonWebServiceClient implements A
             HttpResponseHandler<AmazonWebServiceResponse<ListAssociationsForLicenseConfigurationResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new ListAssociationsForLicenseConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the grants distributed for the specified license.
+     * </p>
+     * 
+     * @param listDistributedGrantsRequest
+     * @return Result of the ListDistributedGrants operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @sample AWSLicenseManager.ListDistributedGrants
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListDistributedGrants"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListDistributedGrantsResult listDistributedGrants(ListDistributedGrantsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDistributedGrants(request);
+    }
+
+    @SdkInternalApi
+    final ListDistributedGrantsResult executeListDistributedGrants(ListDistributedGrantsRequest listDistributedGrantsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDistributedGrantsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDistributedGrantsRequest> request = null;
+        Response<ListDistributedGrantsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDistributedGrantsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDistributedGrantsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDistributedGrants");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDistributedGrantsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListDistributedGrantsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -716,6 +1997,276 @@ public class AWSLicenseManagerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Lists all versions of the specified license.
+     * </p>
+     * 
+     * @param listLicenseVersionsRequest
+     * @return Result of the ListLicenseVersions operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @sample AWSLicenseManager.ListLicenseVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListLicenseVersionsResult listLicenseVersions(ListLicenseVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListLicenseVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListLicenseVersionsResult executeListLicenseVersions(ListLicenseVersionsRequest listLicenseVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listLicenseVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListLicenseVersionsRequest> request = null;
+        Response<ListLicenseVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListLicenseVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLicenseVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLicenseVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListLicenseVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListLicenseVersionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the licenses for your account.
+     * </p>
+     * 
+     * @param listLicensesRequest
+     * @return Result of the ListLicenses operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @sample AWSLicenseManager.ListLicenses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenses" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListLicensesResult listLicenses(ListLicensesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListLicenses(request);
+    }
+
+    @SdkInternalApi
+    final ListLicensesResult executeListLicenses(ListLicensesRequest listLicensesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listLicensesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListLicensesRequest> request = null;
+        Response<ListLicensesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListLicensesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLicensesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLicenses");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListLicensesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListLicensesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists grants that are received but not accepted.
+     * </p>
+     * 
+     * @param listReceivedGrantsRequest
+     * @return Result of the ListReceivedGrants operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @sample AWSLicenseManager.ListReceivedGrants
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedGrants"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListReceivedGrantsResult listReceivedGrants(ListReceivedGrantsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListReceivedGrants(request);
+    }
+
+    @SdkInternalApi
+    final ListReceivedGrantsResult executeListReceivedGrants(ListReceivedGrantsRequest listReceivedGrantsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listReceivedGrantsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListReceivedGrantsRequest> request = null;
+        Response<ListReceivedGrantsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListReceivedGrantsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listReceivedGrantsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListReceivedGrants");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListReceivedGrantsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListReceivedGrantsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists received licenses.
+     * </p>
+     * 
+     * @param listReceivedLicensesRequest
+     * @return Result of the ListReceivedLicenses operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @sample AWSLicenseManager.ListReceivedLicenses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedLicenses"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListReceivedLicensesResult listReceivedLicenses(ListReceivedLicensesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListReceivedLicenses(request);
+    }
+
+    @SdkInternalApi
+    final ListReceivedLicensesResult executeListReceivedLicenses(ListReceivedLicensesRequest listReceivedLicensesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listReceivedLicensesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListReceivedLicensesRequest> request = null;
+        Response<ListReceivedLicensesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListReceivedLicensesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listReceivedLicensesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListReceivedLicenses");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListReceivedLicensesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListReceivedLicensesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists resources managed using Systems Manager inventory.
      * </p>
      * 
@@ -851,6 +2402,71 @@ public class AWSLicenseManagerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Lists your tokens.
+     * </p>
+     * 
+     * @param listTokensRequest
+     * @return Result of the ListTokens operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @sample AWSLicenseManager.ListTokens
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListTokens" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListTokensResult listTokens(ListTokensRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTokens(request);
+    }
+
+    @SdkInternalApi
+    final ListTokensResult executeListTokens(ListTokensRequest listTokensRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTokensRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTokensRequest> request = null;
+        Response<ListTokensResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTokensRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTokensRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTokens");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTokensResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTokensResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists all license usage records for a license configuration, displaying license consumption details by resource
      * at a selected point in time. Use this action to audit the current license consumption for any license inventory
      * and configuration.
@@ -911,6 +2527,75 @@ public class AWSLicenseManagerClient extends AmazonWebServiceClient implements A
             HttpResponseHandler<AmazonWebServiceResponse<ListUsageForLicenseConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListUsageForLicenseConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Rejects the specified grant.
+     * </p>
+     * 
+     * @param rejectGrantRequest
+     * @return Result of the RejectGrant operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @sample AWSLicenseManager.RejectGrant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/RejectGrant" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public RejectGrantResult rejectGrant(RejectGrantRequest request) {
+        request = beforeClientExecution(request);
+        return executeRejectGrant(request);
+    }
+
+    @SdkInternalApi
+    final RejectGrantResult executeRejectGrant(RejectGrantRequest rejectGrantRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(rejectGrantRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RejectGrantRequest> request = null;
+        Response<RejectGrantResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RejectGrantRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(rejectGrantRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RejectGrant");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RejectGrantResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RejectGrantResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1069,6 +2754,8 @@ public class AWSLicenseManagerClient extends AmazonWebServiceClient implements A
      *         Access to resource denied.
      * @throws RateLimitExceededException
      *         Too many requests have been submitted. Try again after a brief wait.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
      * @sample AWSLicenseManager.UpdateLicenseConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseConfiguration"
      *      target="_top">AWS API Documentation</a>

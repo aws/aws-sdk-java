@@ -34,7 +34,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The state of the job queue. If the job queue state is <code>ENABLED</code>, it is able to accept jobs. If the job
-     * queue state is <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs already in the queue can
+     * queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can
      * finish.
      * </p>
      */
@@ -43,7 +43,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
      * <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority
-     * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
+     * is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given
      * scheduling preference over a job queue with a priority value of <code>1</code>.
      * </p>
      */
@@ -51,9 +51,11 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler
-     * uses this parameter to determine which compute environment should execute a given job. Compute environments must
+     * uses this parameter to determine which compute environment should run a specific job. Compute environments must
      * be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to three
-     * compute environments with a job queue.
+     * compute environments with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or
+     * <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute
+     * environments can't be mixed.
      * </p>
      */
     private java.util.List<ComputeEnvironmentOrder> computeEnvironmentOrder;
@@ -110,13 +112,13 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The state of the job queue. If the job queue state is <code>ENABLED</code>, it is able to accept jobs. If the job
-     * queue state is <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs already in the queue can
+     * queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can
      * finish.
      * </p>
      * 
      * @param state
      *        The state of the job queue. If the job queue state is <code>ENABLED</code>, it is able to accept jobs. If
-     *        the job queue state is <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs already in
+     *        the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
      *        the queue can finish.
      * @see JQState
      */
@@ -128,12 +130,12 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The state of the job queue. If the job queue state is <code>ENABLED</code>, it is able to accept jobs. If the job
-     * queue state is <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs already in the queue can
+     * queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can
      * finish.
      * </p>
      * 
      * @return The state of the job queue. If the job queue state is <code>ENABLED</code>, it is able to accept jobs. If
-     *         the job queue state is <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs already in
+     *         the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
      *         the queue can finish.
      * @see JQState
      */
@@ -145,13 +147,13 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The state of the job queue. If the job queue state is <code>ENABLED</code>, it is able to accept jobs. If the job
-     * queue state is <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs already in the queue can
+     * queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can
      * finish.
      * </p>
      * 
      * @param state
      *        The state of the job queue. If the job queue state is <code>ENABLED</code>, it is able to accept jobs. If
-     *        the job queue state is <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs already in
+     *        the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
      *        the queue can finish.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JQState
@@ -165,13 +167,13 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The state of the job queue. If the job queue state is <code>ENABLED</code>, it is able to accept jobs. If the job
-     * queue state is <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs already in the queue can
+     * queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can
      * finish.
      * </p>
      * 
      * @param state
      *        The state of the job queue. If the job queue state is <code>ENABLED</code>, it is able to accept jobs. If
-     *        the job queue state is <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs already in
+     *        the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
      *        the queue can finish.
      * @see JQState
      */
@@ -183,13 +185,13 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The state of the job queue. If the job queue state is <code>ENABLED</code>, it is able to accept jobs. If the job
-     * queue state is <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs already in the queue can
+     * queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can
      * finish.
      * </p>
      * 
      * @param state
      *        The state of the job queue. If the job queue state is <code>ENABLED</code>, it is able to accept jobs. If
-     *        the job queue state is <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs already in
+     *        the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
      *        the queue can finish.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JQState
@@ -204,14 +206,14 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
      * <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority
-     * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
+     * is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given
      * scheduling preference over a job queue with a priority value of <code>1</code>.
      * </p>
      * 
      * @param priority
      *        The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
      *        <code>priority</code> parameter) are evaluated first when associated with the same compute environment.
-     *        Priority is determined in descending order, for example, a job queue with a priority value of
+     *        Priority is determined in descending order. For example, a job queue with a priority value of
      *        <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>.
      */
 
@@ -223,13 +225,13 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
      * <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority
-     * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
+     * is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given
      * scheduling preference over a job queue with a priority value of <code>1</code>.
      * </p>
      * 
      * @return The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
      *         <code>priority</code> parameter) are evaluated first when associated with the same compute environment.
-     *         Priority is determined in descending order, for example, a job queue with a priority value of
+     *         Priority is determined in descending order. For example, a job queue with a priority value of
      *         <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>.
      */
 
@@ -241,14 +243,14 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
      * <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority
-     * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
+     * is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given
      * scheduling preference over a job queue with a priority value of <code>1</code>.
      * </p>
      * 
      * @param priority
      *        The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
      *        <code>priority</code> parameter) are evaluated first when associated with the same compute environment.
-     *        Priority is determined in descending order, for example, a job queue with a priority value of
+     *        Priority is determined in descending order. For example, a job queue with a priority value of
      *        <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -261,15 +263,19 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler
-     * uses this parameter to determine which compute environment should execute a given job. Compute environments must
+     * uses this parameter to determine which compute environment should run a specific job. Compute environments must
      * be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to three
-     * compute environments with a job queue.
+     * compute environments with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or
+     * <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute
+     * environments can't be mixed.
      * </p>
      * 
      * @return The set of compute environments mapped to a job queue and their order relative to each other. The job
-     *         scheduler uses this parameter to determine which compute environment should execute a given job. Compute
+     *         scheduler uses this parameter to determine which compute environment should run a specific job. Compute
      *         environments must be in the <code>VALID</code> state before you can associate them with a job queue. You
-     *         can associate up to three compute environments with a job queue.
+     *         can associate up to three compute environments with a job queue. All of the compute environments must be
+     *         either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
+     *         <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      */
 
     public java.util.List<ComputeEnvironmentOrder> getComputeEnvironmentOrder() {
@@ -279,16 +285,20 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler
-     * uses this parameter to determine which compute environment should execute a given job. Compute environments must
+     * uses this parameter to determine which compute environment should run a specific job. Compute environments must
      * be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to three
-     * compute environments with a job queue.
+     * compute environments with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or
+     * <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute
+     * environments can't be mixed.
      * </p>
      * 
      * @param computeEnvironmentOrder
      *        The set of compute environments mapped to a job queue and their order relative to each other. The job
-     *        scheduler uses this parameter to determine which compute environment should execute a given job. Compute
+     *        scheduler uses this parameter to determine which compute environment should run a specific job. Compute
      *        environments must be in the <code>VALID</code> state before you can associate them with a job queue. You
-     *        can associate up to three compute environments with a job queue.
+     *        can associate up to three compute environments with a job queue. All of the compute environments must be
+     *        either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
+     *        <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      */
 
     public void setComputeEnvironmentOrder(java.util.Collection<ComputeEnvironmentOrder> computeEnvironmentOrder) {
@@ -303,9 +313,11 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler
-     * uses this parameter to determine which compute environment should execute a given job. Compute environments must
+     * uses this parameter to determine which compute environment should run a specific job. Compute environments must
      * be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to three
-     * compute environments with a job queue.
+     * compute environments with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or
+     * <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute
+     * environments can't be mixed.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -315,9 +327,11 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param computeEnvironmentOrder
      *        The set of compute environments mapped to a job queue and their order relative to each other. The job
-     *        scheduler uses this parameter to determine which compute environment should execute a given job. Compute
+     *        scheduler uses this parameter to determine which compute environment should run a specific job. Compute
      *        environments must be in the <code>VALID</code> state before you can associate them with a job queue. You
-     *        can associate up to three compute environments with a job queue.
+     *        can associate up to three compute environments with a job queue. All of the compute environments must be
+     *        either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
+     *        <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -334,16 +348,20 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler
-     * uses this parameter to determine which compute environment should execute a given job. Compute environments must
+     * uses this parameter to determine which compute environment should run a specific job. Compute environments must
      * be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to three
-     * compute environments with a job queue.
+     * compute environments with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or
+     * <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute
+     * environments can't be mixed.
      * </p>
      * 
      * @param computeEnvironmentOrder
      *        The set of compute environments mapped to a job queue and their order relative to each other. The job
-     *        scheduler uses this parameter to determine which compute environment should execute a given job. Compute
+     *        scheduler uses this parameter to determine which compute environment should run a specific job. Compute
      *        environments must be in the <code>VALID</code> state before you can associate them with a job queue. You
-     *        can associate up to three compute environments with a job queue.
+     *        can associate up to three compute environments with a job queue. All of the compute environments must be
+     *        either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
+     *        <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

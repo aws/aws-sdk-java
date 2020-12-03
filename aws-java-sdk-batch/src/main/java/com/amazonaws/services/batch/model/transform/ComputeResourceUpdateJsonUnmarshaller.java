@@ -60,6 +60,18 @@ public class ComputeResourceUpdateJsonUnmarshaller implements Unmarshaller<Compu
                     context.nextToken();
                     computeResourceUpdate.setDesiredvCpus(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("subnets", targetDepth)) {
+                    context.nextToken();
+                    computeResourceUpdate.setSubnets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("securityGroupIds", targetDepth)) {
+                    context.nextToken();
+                    computeResourceUpdate.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

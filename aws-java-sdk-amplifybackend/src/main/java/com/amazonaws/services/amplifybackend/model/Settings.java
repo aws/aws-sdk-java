@@ -30,7 +30,7 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The supported MFA types
+     * The supported MFA types.
      * </p>
      */
     private java.util.List<String> mfaTypes;
@@ -43,10 +43,10 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The supported MFA types
+     * The supported MFA types.
      * </p>
      * 
-     * @return The supported MFA types
+     * @return The supported MFA types.
      * @see MfaTypesElement
      */
 
@@ -56,11 +56,11 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The supported MFA types
+     * The supported MFA types.
      * </p>
      * 
      * @param mfaTypes
-     *        The supported MFA types
+     *        The supported MFA types.
      * @see MfaTypesElement
      */
 
@@ -75,7 +75,7 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The supported MFA types
+     * The supported MFA types.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -84,7 +84,7 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param mfaTypes
-     *        The supported MFA types
+     *        The supported MFA types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MfaTypesElement
      */
@@ -101,11 +101,11 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The supported MFA types
+     * The supported MFA types.
      * </p>
      * 
      * @param mfaTypes
-     *        The supported MFA types
+     *        The supported MFA types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MfaTypesElement
      */
@@ -117,11 +117,11 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The supported MFA types
+     * The supported MFA types.
      * </p>
      * 
      * @param mfaTypes
-     *        The supported MFA types
+     *        The supported MFA types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MfaTypesElement
      */

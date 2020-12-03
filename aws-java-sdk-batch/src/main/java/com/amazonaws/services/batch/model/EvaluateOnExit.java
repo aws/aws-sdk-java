@@ -32,15 +32,15 @@ public class EvaluateOnExit implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains a glob pattern to match against the <code>StatusReason</code> returned for a job. The patten can be up
-     * to 512 characters long, can contain letters, numbers, periods (.), colons (:), and whitespace (spaces, tabs). and
-     * can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.
+     * to 512 characters long, can contain letters, numbers, periods (.), colons (:), and white space (spaces, tabs).
+     * and can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.
      * </p>
      */
     private String onStatusReason;
     /**
      * <p>
      * Contains a glob pattern to match against the <code>Reason</code> returned for a job. The patten can be up to 512
-     * characters long, can contain letters, numbers, periods (.), colons (:), and whitespace (spaces, tabs), and can
+     * characters long, can contain letters, numbers, periods (.), colons (:), and white space (spaces, tabs), and can
      * optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.
      * </p>
      */
@@ -56,7 +56,7 @@ public class EvaluateOnExit implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the action to take if all of the specified conditions (<code>onStatusReason</code>,
-     * <code>onReason</code>, and <code>onExitCode</code>) are met.
+     * <code>onReason</code>, and <code>onExitCode</code>) are met. The values are not case sensitive.
      * </p>
      */
     private String action;
@@ -64,13 +64,13 @@ public class EvaluateOnExit implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains a glob pattern to match against the <code>StatusReason</code> returned for a job. The patten can be up
-     * to 512 characters long, can contain letters, numbers, periods (.), colons (:), and whitespace (spaces, tabs). and
-     * can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.
+     * to 512 characters long, can contain letters, numbers, periods (.), colons (:), and white space (spaces, tabs).
+     * and can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.
      * </p>
      * 
      * @param onStatusReason
      *        Contains a glob pattern to match against the <code>StatusReason</code> returned for a job. The patten can
-     *        be up to 512 characters long, can contain letters, numbers, periods (.), colons (:), and whitespace
+     *        be up to 512 characters long, can contain letters, numbers, periods (.), colons (:), and white space
      *        (spaces, tabs). and can optionally end with an asterisk (*) so that only the start of the string needs to
      *        be an exact match.
      */
@@ -82,12 +82,12 @@ public class EvaluateOnExit implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains a glob pattern to match against the <code>StatusReason</code> returned for a job. The patten can be up
-     * to 512 characters long, can contain letters, numbers, periods (.), colons (:), and whitespace (spaces, tabs). and
-     * can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.
+     * to 512 characters long, can contain letters, numbers, periods (.), colons (:), and white space (spaces, tabs).
+     * and can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.
      * </p>
      * 
      * @return Contains a glob pattern to match against the <code>StatusReason</code> returned for a job. The patten can
-     *         be up to 512 characters long, can contain letters, numbers, periods (.), colons (:), and whitespace
+     *         be up to 512 characters long, can contain letters, numbers, periods (.), colons (:), and white space
      *         (spaces, tabs). and can optionally end with an asterisk (*) so that only the start of the string needs to
      *         be an exact match.
      */
@@ -99,13 +99,13 @@ public class EvaluateOnExit implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains a glob pattern to match against the <code>StatusReason</code> returned for a job. The patten can be up
-     * to 512 characters long, can contain letters, numbers, periods (.), colons (:), and whitespace (spaces, tabs). and
-     * can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.
+     * to 512 characters long, can contain letters, numbers, periods (.), colons (:), and white space (spaces, tabs).
+     * and can optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.
      * </p>
      * 
      * @param onStatusReason
      *        Contains a glob pattern to match against the <code>StatusReason</code> returned for a job. The patten can
-     *        be up to 512 characters long, can contain letters, numbers, periods (.), colons (:), and whitespace
+     *        be up to 512 characters long, can contain letters, numbers, periods (.), colons (:), and white space
      *        (spaces, tabs). and can optionally end with an asterisk (*) so that only the start of the string needs to
      *        be an exact match.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -119,13 +119,13 @@ public class EvaluateOnExit implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains a glob pattern to match against the <code>Reason</code> returned for a job. The patten can be up to 512
-     * characters long, can contain letters, numbers, periods (.), colons (:), and whitespace (spaces, tabs), and can
+     * characters long, can contain letters, numbers, periods (.), colons (:), and white space (spaces, tabs), and can
      * optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.
      * </p>
      * 
      * @param onReason
      *        Contains a glob pattern to match against the <code>Reason</code> returned for a job. The patten can be up
-     *        to 512 characters long, can contain letters, numbers, periods (.), colons (:), and whitespace (spaces,
+     *        to 512 characters long, can contain letters, numbers, periods (.), colons (:), and white space (spaces,
      *        tabs), and can optionally end with an asterisk (*) so that only the start of the string needs to be an
      *        exact match.
      */
@@ -137,12 +137,12 @@ public class EvaluateOnExit implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains a glob pattern to match against the <code>Reason</code> returned for a job. The patten can be up to 512
-     * characters long, can contain letters, numbers, periods (.), colons (:), and whitespace (spaces, tabs), and can
+     * characters long, can contain letters, numbers, periods (.), colons (:), and white space (spaces, tabs), and can
      * optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.
      * </p>
      * 
      * @return Contains a glob pattern to match against the <code>Reason</code> returned for a job. The patten can be up
-     *         to 512 characters long, can contain letters, numbers, periods (.), colons (:), and whitespace (spaces,
+     *         to 512 characters long, can contain letters, numbers, periods (.), colons (:), and white space (spaces,
      *         tabs), and can optionally end with an asterisk (*) so that only the start of the string needs to be an
      *         exact match.
      */
@@ -154,13 +154,13 @@ public class EvaluateOnExit implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains a glob pattern to match against the <code>Reason</code> returned for a job. The patten can be up to 512
-     * characters long, can contain letters, numbers, periods (.), colons (:), and whitespace (spaces, tabs), and can
+     * characters long, can contain letters, numbers, periods (.), colons (:), and white space (spaces, tabs), and can
      * optionally end with an asterisk (*) so that only the start of the string needs to be an exact match.
      * </p>
      * 
      * @param onReason
      *        Contains a glob pattern to match against the <code>Reason</code> returned for a job. The patten can be up
-     *        to 512 characters long, can contain letters, numbers, periods (.), colons (:), and whitespace (spaces,
+     *        to 512 characters long, can contain letters, numbers, periods (.), colons (:), and white space (spaces,
      *        tabs), and can optionally end with an asterisk (*) so that only the start of the string needs to be an
      *        exact match.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -226,12 +226,12 @@ public class EvaluateOnExit implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the action to take if all of the specified conditions (<code>onStatusReason</code>,
-     * <code>onReason</code>, and <code>onExitCode</code>) are met.
+     * <code>onReason</code>, and <code>onExitCode</code>) are met. The values are not case sensitive.
      * </p>
      * 
      * @param action
      *        Specifies the action to take if all of the specified conditions (<code>onStatusReason</code>,
-     *        <code>onReason</code>, and <code>onExitCode</code>) are met.
+     *        <code>onReason</code>, and <code>onExitCode</code>) are met. The values are not case sensitive.
      * @see RetryAction
      */
 
@@ -242,11 +242,11 @@ public class EvaluateOnExit implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the action to take if all of the specified conditions (<code>onStatusReason</code>,
-     * <code>onReason</code>, and <code>onExitCode</code>) are met.
+     * <code>onReason</code>, and <code>onExitCode</code>) are met. The values are not case sensitive.
      * </p>
      * 
      * @return Specifies the action to take if all of the specified conditions (<code>onStatusReason</code>,
-     *         <code>onReason</code>, and <code>onExitCode</code>) are met.
+     *         <code>onReason</code>, and <code>onExitCode</code>) are met. The values are not case sensitive.
      * @see RetryAction
      */
 
@@ -257,12 +257,12 @@ public class EvaluateOnExit implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the action to take if all of the specified conditions (<code>onStatusReason</code>,
-     * <code>onReason</code>, and <code>onExitCode</code>) are met.
+     * <code>onReason</code>, and <code>onExitCode</code>) are met. The values are not case sensitive.
      * </p>
      * 
      * @param action
      *        Specifies the action to take if all of the specified conditions (<code>onStatusReason</code>,
-     *        <code>onReason</code>, and <code>onExitCode</code>) are met.
+     *        <code>onReason</code>, and <code>onExitCode</code>) are met. The values are not case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RetryAction
      */
@@ -275,12 +275,12 @@ public class EvaluateOnExit implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the action to take if all of the specified conditions (<code>onStatusReason</code>,
-     * <code>onReason</code>, and <code>onExitCode</code>) are met.
+     * <code>onReason</code>, and <code>onExitCode</code>) are met. The values are not case sensitive.
      * </p>
      * 
      * @param action
      *        Specifies the action to take if all of the specified conditions (<code>onStatusReason</code>,
-     *        <code>onReason</code>, and <code>onExitCode</code>) are met.
+     *        <code>onReason</code>, and <code>onExitCode</code>) are met. The values are not case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RetryAction
      */

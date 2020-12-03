@@ -28,6 +28,97 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
     }
 
     @Override
+    public java.util.concurrent.Future<AcceptGrantResult> acceptGrantAsync(AcceptGrantRequest request) {
+
+        return acceptGrantAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AcceptGrantResult> acceptGrantAsync(AcceptGrantRequest request,
+            com.amazonaws.handlers.AsyncHandler<AcceptGrantRequest, AcceptGrantResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CheckInLicenseResult> checkInLicenseAsync(CheckInLicenseRequest request) {
+
+        return checkInLicenseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CheckInLicenseResult> checkInLicenseAsync(CheckInLicenseRequest request,
+            com.amazonaws.handlers.AsyncHandler<CheckInLicenseRequest, CheckInLicenseResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CheckoutBorrowLicenseResult> checkoutBorrowLicenseAsync(CheckoutBorrowLicenseRequest request) {
+
+        return checkoutBorrowLicenseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CheckoutBorrowLicenseResult> checkoutBorrowLicenseAsync(CheckoutBorrowLicenseRequest request,
+            com.amazonaws.handlers.AsyncHandler<CheckoutBorrowLicenseRequest, CheckoutBorrowLicenseResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CheckoutLicenseResult> checkoutLicenseAsync(CheckoutLicenseRequest request) {
+
+        return checkoutLicenseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CheckoutLicenseResult> checkoutLicenseAsync(CheckoutLicenseRequest request,
+            com.amazonaws.handlers.AsyncHandler<CheckoutLicenseRequest, CheckoutLicenseResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateGrantResult> createGrantAsync(CreateGrantRequest request) {
+
+        return createGrantAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateGrantResult> createGrantAsync(CreateGrantRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateGrantRequest, CreateGrantResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateGrantVersionResult> createGrantVersionAsync(CreateGrantVersionRequest request) {
+
+        return createGrantVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateGrantVersionResult> createGrantVersionAsync(CreateGrantVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateGrantVersionRequest, CreateGrantVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLicenseResult> createLicenseAsync(CreateLicenseRequest request) {
+
+        return createLicenseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLicenseResult> createLicenseAsync(CreateLicenseRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateLicenseRequest, CreateLicenseResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateLicenseConfigurationResult> createLicenseConfigurationAsync(CreateLicenseConfigurationRequest request) {
 
         return createLicenseConfigurationAsync(request, null);
@@ -36,6 +127,58 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
     @Override
     public java.util.concurrent.Future<CreateLicenseConfigurationResult> createLicenseConfigurationAsync(CreateLicenseConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateLicenseConfigurationRequest, CreateLicenseConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLicenseVersionResult> createLicenseVersionAsync(CreateLicenseVersionRequest request) {
+
+        return createLicenseVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLicenseVersionResult> createLicenseVersionAsync(CreateLicenseVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateLicenseVersionRequest, CreateLicenseVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTokenResult> createTokenAsync(CreateTokenRequest request) {
+
+        return createTokenAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTokenResult> createTokenAsync(CreateTokenRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateTokenRequest, CreateTokenResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGrantResult> deleteGrantAsync(DeleteGrantRequest request) {
+
+        return deleteGrantAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGrantResult> deleteGrantAsync(DeleteGrantRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteGrantRequest, DeleteGrantResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLicenseResult> deleteLicenseAsync(DeleteLicenseRequest request) {
+
+        return deleteLicenseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLicenseResult> deleteLicenseAsync(DeleteLicenseRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteLicenseRequest, DeleteLicenseResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -54,6 +197,71 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteTokenResult> deleteTokenAsync(DeleteTokenRequest request) {
+
+        return deleteTokenAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTokenResult> deleteTokenAsync(DeleteTokenRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteTokenRequest, DeleteTokenResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExtendLicenseConsumptionResult> extendLicenseConsumptionAsync(ExtendLicenseConsumptionRequest request) {
+
+        return extendLicenseConsumptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExtendLicenseConsumptionResult> extendLicenseConsumptionAsync(ExtendLicenseConsumptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<ExtendLicenseConsumptionRequest, ExtendLicenseConsumptionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccessTokenResult> getAccessTokenAsync(GetAccessTokenRequest request) {
+
+        return getAccessTokenAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccessTokenResult> getAccessTokenAsync(GetAccessTokenRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAccessTokenRequest, GetAccessTokenResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGrantResult> getGrantAsync(GetGrantRequest request) {
+
+        return getGrantAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGrantResult> getGrantAsync(GetGrantRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetGrantRequest, GetGrantResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLicenseResult> getLicenseAsync(GetLicenseRequest request) {
+
+        return getLicenseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLicenseResult> getLicenseAsync(GetLicenseRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetLicenseRequest, GetLicenseResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetLicenseConfigurationResult> getLicenseConfigurationAsync(GetLicenseConfigurationRequest request) {
 
         return getLicenseConfigurationAsync(request, null);
@@ -62,6 +270,19 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
     @Override
     public java.util.concurrent.Future<GetLicenseConfigurationResult> getLicenseConfigurationAsync(GetLicenseConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<GetLicenseConfigurationRequest, GetLicenseConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLicenseUsageResult> getLicenseUsageAsync(GetLicenseUsageRequest request) {
+
+        return getLicenseUsageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLicenseUsageResult> getLicenseUsageAsync(GetLicenseUsageRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetLicenseUsageRequest, GetLicenseUsageResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -90,6 +311,19 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
     public java.util.concurrent.Future<ListAssociationsForLicenseConfigurationResult> listAssociationsForLicenseConfigurationAsync(
             ListAssociationsForLicenseConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAssociationsForLicenseConfigurationRequest, ListAssociationsForLicenseConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDistributedGrantsResult> listDistributedGrantsAsync(ListDistributedGrantsRequest request) {
+
+        return listDistributedGrantsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDistributedGrantsResult> listDistributedGrantsAsync(ListDistributedGrantsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDistributedGrantsRequest, ListDistributedGrantsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -138,6 +372,58 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
     }
 
     @Override
+    public java.util.concurrent.Future<ListLicenseVersionsResult> listLicenseVersionsAsync(ListLicenseVersionsRequest request) {
+
+        return listLicenseVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLicenseVersionsResult> listLicenseVersionsAsync(ListLicenseVersionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListLicenseVersionsRequest, ListLicenseVersionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLicensesResult> listLicensesAsync(ListLicensesRequest request) {
+
+        return listLicensesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLicensesResult> listLicensesAsync(ListLicensesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListLicensesRequest, ListLicensesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReceivedGrantsResult> listReceivedGrantsAsync(ListReceivedGrantsRequest request) {
+
+        return listReceivedGrantsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReceivedGrantsResult> listReceivedGrantsAsync(ListReceivedGrantsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListReceivedGrantsRequest, ListReceivedGrantsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReceivedLicensesResult> listReceivedLicensesAsync(ListReceivedLicensesRequest request) {
+
+        return listReceivedLicensesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReceivedLicensesResult> listReceivedLicensesAsync(ListReceivedLicensesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListReceivedLicensesRequest, ListReceivedLicensesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListResourceInventoryResult> listResourceInventoryAsync(ListResourceInventoryRequest request) {
 
         return listResourceInventoryAsync(request, null);
@@ -164,6 +450,19 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
     }
 
     @Override
+    public java.util.concurrent.Future<ListTokensResult> listTokensAsync(ListTokensRequest request) {
+
+        return listTokensAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTokensResult> listTokensAsync(ListTokensRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTokensRequest, ListTokensResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListUsageForLicenseConfigurationResult> listUsageForLicenseConfigurationAsync(
             ListUsageForLicenseConfigurationRequest request) {
 
@@ -174,6 +473,19 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
     public java.util.concurrent.Future<ListUsageForLicenseConfigurationResult> listUsageForLicenseConfigurationAsync(
             ListUsageForLicenseConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<ListUsageForLicenseConfigurationRequest, ListUsageForLicenseConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RejectGrantResult> rejectGrantAsync(RejectGrantRequest request) {
+
+        return rejectGrantAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RejectGrantResult> rejectGrantAsync(RejectGrantRequest request,
+            com.amazonaws.handlers.AsyncHandler<RejectGrantRequest, RejectGrantResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

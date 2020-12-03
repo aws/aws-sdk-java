@@ -33,7 +33,7 @@ public class GetTokenRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private String appId;
     /**
      * <p>
-     * The session Id.
+     * The session ID.
      * </p>
      */
     private String sessionId;
@@ -80,11 +80,11 @@ public class GetTokenRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The session Id.
+     * The session ID.
      * </p>
      * 
      * @param sessionId
-     *        The session Id.
+     *        The session ID.
      */
 
     public void setSessionId(String sessionId) {
@@ -93,10 +93,10 @@ public class GetTokenRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The session Id.
+     * The session ID.
      * </p>
      * 
-     * @return The session Id.
+     * @return The session ID.
      */
 
     public String getSessionId() {
@@ -105,11 +105,11 @@ public class GetTokenRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The session Id.
+     * The session ID.
      * </p>
      * 
      * @param sessionId
-     *        The session Id.
+     *        The session ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

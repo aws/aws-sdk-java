@@ -21,6 +21,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * The <code>ulimit</code> settings to pass to the container.
  * </p>
+ * <note>
+ * <p>
+ * This object isn't applicable to jobs running on Fargate resources.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/Ulimit" target="_top">AWS API Documentation</a>
  */

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An error that is returned when a limit of a specific type has been exceeded.
+ * An error that is returned when a limit of a specific type is exceeded.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

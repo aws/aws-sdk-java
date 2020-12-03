@@ -21,7 +21,9 @@ import javax.annotation.Generated;
 public enum CRType {
 
     EC2("EC2"),
-    SPOT("SPOT");
+    SPOT("SPOT"),
+    FARGATE("FARGATE"),
+    FARGATE_SPOT("FARGATE_SPOT");
 
     private String value;
 

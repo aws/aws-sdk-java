@@ -23,9 +23,9 @@ import java.util.concurrent.TimeUnit;
 
 public class RetryRule implements TestRule {
 
-    private int maxRetryAttempts;
-    private long delay;
-    private TimeUnit timeUnit;
+    private final int maxRetryAttempts;
+    private final long delay;
+    private final TimeUnit timeUnit;
 
     public RetryRule(int maxRetryAttempts) {
         this(maxRetryAttempts, 0, TimeUnit.SECONDS);

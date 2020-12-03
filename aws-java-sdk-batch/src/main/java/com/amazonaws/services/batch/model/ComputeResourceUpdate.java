@@ -32,6 +32,11 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * <p>
      * The minimum number of Amazon EC2 vCPUs that an environment should maintain.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isnt applicable to jobs running on Fargate resources, and shouldn't be specified.
+     * </p>
+     * </note>
      */
     private Integer minvCpus;
     /**
@@ -44,16 +49,48 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * <p>
      * The desired number of Amazon EC2 vCPUS in the compute environment.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
+     * </p>
+     * </note>
      */
     private Integer desiredvCpus;
+    /**
+     * <p>
+     * The VPC subnets that the compute resources are launched into. This parameter is required for jobs running on
+     * Fargate compute resources, where it can contain up to 16 subnets. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the <i>Amazon
+     * VPC User Guide</i>. This can't be specified for EC2 compute resources. Providing an empty list will be handled as
+     * if this parameter wasn't specified and no change is made.
+     * </p>
+     */
+    private java.util.List<String> subnets;
+    /**
+     * <p>
+     * The Amazon EC2 security groups associated with instances launched in the compute environment. This parameter is
+     * required for Fargate compute resources, where it can contain up to 5 security groups. This can't be specified for
+     * EC2 compute resources. Providing an empty list is handled as if this parameter wasn't specified and no changeis
+     * made.
+     * </p>
+     */
+    private java.util.List<String> securityGroupIds;
 
     /**
      * <p>
      * The minimum number of Amazon EC2 vCPUs that an environment should maintain.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isnt applicable to jobs running on Fargate resources, and shouldn't be specified.
+     * </p>
+     * </note>
      * 
      * @param minvCpus
-     *        The minimum number of Amazon EC2 vCPUs that an environment should maintain.
+     *        The minimum number of Amazon EC2 vCPUs that an environment should maintain.</p> <note>
+     *        <p>
+     *        This parameter isnt applicable to jobs running on Fargate resources, and shouldn't be specified.
+     *        </p>
      */
 
     public void setMinvCpus(Integer minvCpus) {
@@ -64,8 +101,16 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * <p>
      * The minimum number of Amazon EC2 vCPUs that an environment should maintain.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isnt applicable to jobs running on Fargate resources, and shouldn't be specified.
+     * </p>
+     * </note>
      * 
-     * @return The minimum number of Amazon EC2 vCPUs that an environment should maintain.
+     * @return The minimum number of Amazon EC2 vCPUs that an environment should maintain.</p> <note>
+     *         <p>
+     *         This parameter isnt applicable to jobs running on Fargate resources, and shouldn't be specified.
+     *         </p>
      */
 
     public Integer getMinvCpus() {
@@ -76,9 +121,17 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * <p>
      * The minimum number of Amazon EC2 vCPUs that an environment should maintain.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isnt applicable to jobs running on Fargate resources, and shouldn't be specified.
+     * </p>
+     * </note>
      * 
      * @param minvCpus
-     *        The minimum number of Amazon EC2 vCPUs that an environment should maintain.
+     *        The minimum number of Amazon EC2 vCPUs that an environment should maintain.</p> <note>
+     *        <p>
+     *        This parameter isnt applicable to jobs running on Fargate resources, and shouldn't be specified.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,9 +184,17 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * <p>
      * The desired number of Amazon EC2 vCPUS in the compute environment.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
+     * </p>
+     * </note>
      * 
      * @param desiredvCpus
-     *        The desired number of Amazon EC2 vCPUS in the compute environment.
+     *        The desired number of Amazon EC2 vCPUS in the compute environment.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
+     *        </p>
      */
 
     public void setDesiredvCpus(Integer desiredvCpus) {
@@ -144,8 +205,16 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * <p>
      * The desired number of Amazon EC2 vCPUS in the compute environment.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
+     * </p>
+     * </note>
      * 
-     * @return The desired number of Amazon EC2 vCPUS in the compute environment.
+     * @return The desired number of Amazon EC2 vCPUS in the compute environment.</p> <note>
+     *         <p>
+     *         This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
+     *         </p>
      */
 
     public Integer getDesiredvCpus() {
@@ -156,14 +225,218 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * <p>
      * The desired number of Amazon EC2 vCPUS in the compute environment.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
+     * </p>
+     * </note>
      * 
      * @param desiredvCpus
-     *        The desired number of Amazon EC2 vCPUS in the compute environment.
+     *        The desired number of Amazon EC2 vCPUS in the compute environment.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ComputeResourceUpdate withDesiredvCpus(Integer desiredvCpus) {
         setDesiredvCpus(desiredvCpus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The VPC subnets that the compute resources are launched into. This parameter is required for jobs running on
+     * Fargate compute resources, where it can contain up to 16 subnets. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the <i>Amazon
+     * VPC User Guide</i>. This can't be specified for EC2 compute resources. Providing an empty list will be handled as
+     * if this parameter wasn't specified and no change is made.
+     * </p>
+     * 
+     * @return The VPC subnets that the compute resources are launched into. This parameter is required for jobs running
+     *         on Fargate compute resources, where it can contain up to 16 subnets. For more information, see <a
+     *         href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the
+     *         <i>Amazon VPC User Guide</i>. This can't be specified for EC2 compute resources. Providing an empty list
+     *         will be handled as if this parameter wasn't specified and no change is made.
+     */
+
+    public java.util.List<String> getSubnets() {
+        return subnets;
+    }
+
+    /**
+     * <p>
+     * The VPC subnets that the compute resources are launched into. This parameter is required for jobs running on
+     * Fargate compute resources, where it can contain up to 16 subnets. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the <i>Amazon
+     * VPC User Guide</i>. This can't be specified for EC2 compute resources. Providing an empty list will be handled as
+     * if this parameter wasn't specified and no change is made.
+     * </p>
+     * 
+     * @param subnets
+     *        The VPC subnets that the compute resources are launched into. This parameter is required for jobs running
+     *        on Fargate compute resources, where it can contain up to 16 subnets. For more information, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the
+     *        <i>Amazon VPC User Guide</i>. This can't be specified for EC2 compute resources. Providing an empty list
+     *        will be handled as if this parameter wasn't specified and no change is made.
+     */
+
+    public void setSubnets(java.util.Collection<String> subnets) {
+        if (subnets == null) {
+            this.subnets = null;
+            return;
+        }
+
+        this.subnets = new java.util.ArrayList<String>(subnets);
+    }
+
+    /**
+     * <p>
+     * The VPC subnets that the compute resources are launched into. This parameter is required for jobs running on
+     * Fargate compute resources, where it can contain up to 16 subnets. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the <i>Amazon
+     * VPC User Guide</i>. This can't be specified for EC2 compute resources. Providing an empty list will be handled as
+     * if this parameter wasn't specified and no change is made.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSubnets(java.util.Collection)} or {@link #withSubnets(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param subnets
+     *        The VPC subnets that the compute resources are launched into. This parameter is required for jobs running
+     *        on Fargate compute resources, where it can contain up to 16 subnets. For more information, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the
+     *        <i>Amazon VPC User Guide</i>. This can't be specified for EC2 compute resources. Providing an empty list
+     *        will be handled as if this parameter wasn't specified and no change is made.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComputeResourceUpdate withSubnets(String... subnets) {
+        if (this.subnets == null) {
+            setSubnets(new java.util.ArrayList<String>(subnets.length));
+        }
+        for (String ele : subnets) {
+            this.subnets.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The VPC subnets that the compute resources are launched into. This parameter is required for jobs running on
+     * Fargate compute resources, where it can contain up to 16 subnets. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the <i>Amazon
+     * VPC User Guide</i>. This can't be specified for EC2 compute resources. Providing an empty list will be handled as
+     * if this parameter wasn't specified and no change is made.
+     * </p>
+     * 
+     * @param subnets
+     *        The VPC subnets that the compute resources are launched into. This parameter is required for jobs running
+     *        on Fargate compute resources, where it can contain up to 16 subnets. For more information, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the
+     *        <i>Amazon VPC User Guide</i>. This can't be specified for EC2 compute resources. Providing an empty list
+     *        will be handled as if this parameter wasn't specified and no change is made.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComputeResourceUpdate withSubnets(java.util.Collection<String> subnets) {
+        setSubnets(subnets);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon EC2 security groups associated with instances launched in the compute environment. This parameter is
+     * required for Fargate compute resources, where it can contain up to 5 security groups. This can't be specified for
+     * EC2 compute resources. Providing an empty list is handled as if this parameter wasn't specified and no changeis
+     * made.
+     * </p>
+     * 
+     * @return The Amazon EC2 security groups associated with instances launched in the compute environment. This
+     *         parameter is required for Fargate compute resources, where it can contain up to 5 security groups. This
+     *         can't be specified for EC2 compute resources. Providing an empty list is handled as if this parameter
+     *         wasn't specified and no changeis made.
+     */
+
+    public java.util.List<String> getSecurityGroupIds() {
+        return securityGroupIds;
+    }
+
+    /**
+     * <p>
+     * The Amazon EC2 security groups associated with instances launched in the compute environment. This parameter is
+     * required for Fargate compute resources, where it can contain up to 5 security groups. This can't be specified for
+     * EC2 compute resources. Providing an empty list is handled as if this parameter wasn't specified and no changeis
+     * made.
+     * </p>
+     * 
+     * @param securityGroupIds
+     *        The Amazon EC2 security groups associated with instances launched in the compute environment. This
+     *        parameter is required for Fargate compute resources, where it can contain up to 5 security groups. This
+     *        can't be specified for EC2 compute resources. Providing an empty list is handled as if this parameter
+     *        wasn't specified and no changeis made.
+     */
+
+    public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
+        if (securityGroupIds == null) {
+            this.securityGroupIds = null;
+            return;
+        }
+
+        this.securityGroupIds = new java.util.ArrayList<String>(securityGroupIds);
+    }
+
+    /**
+     * <p>
+     * The Amazon EC2 security groups associated with instances launched in the compute environment. This parameter is
+     * required for Fargate compute resources, where it can contain up to 5 security groups. This can't be specified for
+     * EC2 compute resources. Providing an empty list is handled as if this parameter wasn't specified and no changeis
+     * made.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecurityGroupIds(java.util.Collection)} or {@link #withSecurityGroupIds(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param securityGroupIds
+     *        The Amazon EC2 security groups associated with instances launched in the compute environment. This
+     *        parameter is required for Fargate compute resources, where it can contain up to 5 security groups. This
+     *        can't be specified for EC2 compute resources. Providing an empty list is handled as if this parameter
+     *        wasn't specified and no changeis made.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComputeResourceUpdate withSecurityGroupIds(String... securityGroupIds) {
+        if (this.securityGroupIds == null) {
+            setSecurityGroupIds(new java.util.ArrayList<String>(securityGroupIds.length));
+        }
+        for (String ele : securityGroupIds) {
+            this.securityGroupIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon EC2 security groups associated with instances launched in the compute environment. This parameter is
+     * required for Fargate compute resources, where it can contain up to 5 security groups. This can't be specified for
+     * EC2 compute resources. Providing an empty list is handled as if this parameter wasn't specified and no changeis
+     * made.
+     * </p>
+     * 
+     * @param securityGroupIds
+     *        The Amazon EC2 security groups associated with instances launched in the compute environment. This
+     *        parameter is required for Fargate compute resources, where it can contain up to 5 security groups. This
+     *        can't be specified for EC2 compute resources. Providing an empty list is handled as if this parameter
+     *        wasn't specified and no changeis made.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComputeResourceUpdate withSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
+        setSecurityGroupIds(securityGroupIds);
         return this;
     }
 
@@ -184,7 +457,11 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
         if (getMaxvCpus() != null)
             sb.append("MaxvCpus: ").append(getMaxvCpus()).append(",");
         if (getDesiredvCpus() != null)
-            sb.append("DesiredvCpus: ").append(getDesiredvCpus());
+            sb.append("DesiredvCpus: ").append(getDesiredvCpus()).append(",");
+        if (getSubnets() != null)
+            sb.append("Subnets: ").append(getSubnets()).append(",");
+        if (getSecurityGroupIds() != null)
+            sb.append("SecurityGroupIds: ").append(getSecurityGroupIds());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +488,14 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
             return false;
         if (other.getDesiredvCpus() != null && other.getDesiredvCpus().equals(this.getDesiredvCpus()) == false)
             return false;
+        if (other.getSubnets() == null ^ this.getSubnets() == null)
+            return false;
+        if (other.getSubnets() != null && other.getSubnets().equals(this.getSubnets()) == false)
+            return false;
+        if (other.getSecurityGroupIds() == null ^ this.getSecurityGroupIds() == null)
+            return false;
+        if (other.getSecurityGroupIds() != null && other.getSecurityGroupIds().equals(this.getSecurityGroupIds()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +507,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getMinvCpus() == null) ? 0 : getMinvCpus().hashCode());
         hashCode = prime * hashCode + ((getMaxvCpus() == null) ? 0 : getMaxvCpus().hashCode());
         hashCode = prime * hashCode + ((getDesiredvCpus() == null) ? 0 : getDesiredvCpus().hashCode());
+        hashCode = prime * hashCode + ((getSubnets() == null) ? 0 : getSubnets().hashCode());
+        hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
         return hashCode;
     }
 

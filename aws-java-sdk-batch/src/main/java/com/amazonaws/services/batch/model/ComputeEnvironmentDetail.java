@@ -54,7 +54,10 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The type of the compute environment.
+     * The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or
+     * <code>FARGATE_SPOT</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
+     * the <i>AWS Batch User Guide</i>.
      * </p>
      */
     private String type;
@@ -68,7 +71,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      * scale its instances out or in automatically, based on the job queue demand.
      * </p>
      * <p>
-     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place jobs within the
+     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within the
      * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
      * compute environments in the <code>DISABLED</code> state do not scale out. However, they scale in to
      * <code>minvCpus</code> value after instances become idle.
@@ -291,11 +294,17 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of the compute environment.
+     * The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or
+     * <code>FARGATE_SPOT</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
+     * the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param type
-     *        The type of the compute environment.
+     *        The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or
+     *        <code>FARGATE_SPOT</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     *        Environments</a> in the <i>AWS Batch User Guide</i>.
      * @see CEType
      */
 
@@ -305,10 +314,16 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of the compute environment.
+     * The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or
+     * <code>FARGATE_SPOT</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
+     * the <i>AWS Batch User Guide</i>.
      * </p>
      * 
-     * @return The type of the compute environment.
+     * @return The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or
+     *         <code>FARGATE_SPOT</code>. For more information, see <a
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     *         Environments</a> in the <i>AWS Batch User Guide</i>.
      * @see CEType
      */
 
@@ -318,11 +333,17 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of the compute environment.
+     * The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or
+     * <code>FARGATE_SPOT</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
+     * the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param type
-     *        The type of the compute environment.
+     *        The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or
+     *        <code>FARGATE_SPOT</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     *        Environments</a> in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CEType
      */
@@ -334,11 +355,17 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of the compute environment.
+     * The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or
+     * <code>FARGATE_SPOT</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
+     * the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param type
-     *        The type of the compute environment.
+     *        The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or
+     *        <code>FARGATE_SPOT</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     *        Environments</a> in the <i>AWS Batch User Guide</i>.
      * @see CEType
      */
 
@@ -348,11 +375,17 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of the compute environment.
+     * The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or
+     * <code>FARGATE_SPOT</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
+     * the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param type
-     *        The type of the compute environment.
+     *        The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or
+     *        <code>FARGATE_SPOT</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     *        Environments</a> in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CEType
      */
@@ -372,7 +405,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      * scale its instances out or in automatically, based on the job queue demand.
      * </p>
      * <p>
-     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place jobs within the
+     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within the
      * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
      * compute environments in the <code>DISABLED</code> state do not scale out. However, they scale in to
      * <code>minvCpus</code> value after instances become idle.
@@ -387,7 +420,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      *        managed, then it can scale its instances out or in automatically, based on the job queue demand.
      *        </p>
      *        <p>
-     *        If the state is <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place jobs within
+     *        If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within
      *        the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress
      *        normally. Managed compute environments in the <code>DISABLED</code> state do not scale out. However, they
      *        scale in to <code>minvCpus</code> value after instances become idle.
@@ -408,7 +441,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      * scale its instances out or in automatically, based on the job queue demand.
      * </p>
      * <p>
-     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place jobs within the
+     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within the
      * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
      * compute environments in the <code>DISABLED</code> state do not scale out. However, they scale in to
      * <code>minvCpus</code> value after instances become idle.
@@ -422,7 +455,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      *         managed, then it can scale its instances out or in automatically, based on the job queue demand.
      *         </p>
      *         <p>
-     *         If the state is <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place jobs within
+     *         If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within
      *         the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress
      *         normally. Managed compute environments in the <code>DISABLED</code> state do not scale out. However, they
      *         scale in to <code>minvCpus</code> value after instances become idle.
@@ -443,7 +476,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      * scale its instances out or in automatically, based on the job queue demand.
      * </p>
      * <p>
-     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place jobs within the
+     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within the
      * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
      * compute environments in the <code>DISABLED</code> state do not scale out. However, they scale in to
      * <code>minvCpus</code> value after instances become idle.
@@ -458,7 +491,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      *        managed, then it can scale its instances out or in automatically, based on the job queue demand.
      *        </p>
      *        <p>
-     *        If the state is <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place jobs within
+     *        If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within
      *        the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress
      *        normally. Managed compute environments in the <code>DISABLED</code> state do not scale out. However, they
      *        scale in to <code>minvCpus</code> value after instances become idle.
@@ -481,7 +514,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      * scale its instances out or in automatically, based on the job queue demand.
      * </p>
      * <p>
-     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place jobs within the
+     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within the
      * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
      * compute environments in the <code>DISABLED</code> state do not scale out. However, they scale in to
      * <code>minvCpus</code> value after instances become idle.
@@ -496,7 +529,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      *        managed, then it can scale its instances out or in automatically, based on the job queue demand.
      *        </p>
      *        <p>
-     *        If the state is <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place jobs within
+     *        If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within
      *        the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress
      *        normally. Managed compute environments in the <code>DISABLED</code> state do not scale out. However, they
      *        scale in to <code>minvCpus</code> value after instances become idle.
@@ -517,7 +550,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      * scale its instances out or in automatically, based on the job queue demand.
      * </p>
      * <p>
-     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place jobs within the
+     * If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within the
      * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
      * compute environments in the <code>DISABLED</code> state do not scale out. However, they scale in to
      * <code>minvCpus</code> value after instances become idle.
@@ -532,7 +565,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      *        managed, then it can scale its instances out or in automatically, based on the job queue demand.
      *        </p>
      *        <p>
-     *        If the state is <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place jobs within
+     *        If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place jobs within
      *        the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress
      *        normally. Managed compute environments in the <code>DISABLED</code> state do not scale out. However, they
      *        scale in to <code>minvCpus</code> value after instances become idle.

@@ -31,7 +31,7 @@ public class JobTimeout implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The time duration in seconds (measured from the job attempt's <code>startedAt</code> timestamp) after which AWS
-     * Batch terminates your jobs if they have not finished.
+     * Batch terminates your jobs if they have not finished. The minimum value for the timeout is 60 seconds.
      * </p>
      */
     private Integer attemptDurationSeconds;
@@ -39,12 +39,13 @@ public class JobTimeout implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The time duration in seconds (measured from the job attempt's <code>startedAt</code> timestamp) after which AWS
-     * Batch terminates your jobs if they have not finished.
+     * Batch terminates your jobs if they have not finished. The minimum value for the timeout is 60 seconds.
      * </p>
      * 
      * @param attemptDurationSeconds
      *        The time duration in seconds (measured from the job attempt's <code>startedAt</code> timestamp) after
-     *        which AWS Batch terminates your jobs if they have not finished.
+     *        which AWS Batch terminates your jobs if they have not finished. The minimum value for the timeout is 60
+     *        seconds.
      */
 
     public void setAttemptDurationSeconds(Integer attemptDurationSeconds) {
@@ -54,11 +55,12 @@ public class JobTimeout implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The time duration in seconds (measured from the job attempt's <code>startedAt</code> timestamp) after which AWS
-     * Batch terminates your jobs if they have not finished.
+     * Batch terminates your jobs if they have not finished. The minimum value for the timeout is 60 seconds.
      * </p>
      * 
      * @return The time duration in seconds (measured from the job attempt's <code>startedAt</code> timestamp) after
-     *         which AWS Batch terminates your jobs if they have not finished.
+     *         which AWS Batch terminates your jobs if they have not finished. The minimum value for the timeout is 60
+     *         seconds.
      */
 
     public Integer getAttemptDurationSeconds() {
@@ -68,12 +70,13 @@ public class JobTimeout implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The time duration in seconds (measured from the job attempt's <code>startedAt</code> timestamp) after which AWS
-     * Batch terminates your jobs if they have not finished.
+     * Batch terminates your jobs if they have not finished. The minimum value for the timeout is 60 seconds.
      * </p>
      * 
      * @param attemptDurationSeconds
      *        The time duration in seconds (measured from the job attempt's <code>startedAt</code> timestamp) after
-     *        which AWS Batch terminates your jobs if they have not finished.
+     *        which AWS Batch terminates your jobs if they have not finished. The minimum value for the timeout is 60
+     *        seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

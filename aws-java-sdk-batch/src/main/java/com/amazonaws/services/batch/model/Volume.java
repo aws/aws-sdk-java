@@ -31,9 +31,14 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The contents of the <code>host</code> parameter determine whether your data volume persists on the host container
      * instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for
-     * your data volume. However, the data is not guaranteed to persist after the containers associated with it stop
+     * your data volume. However, the data isn't guaranteed to persist after the containers associated with it stop
      * running.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      */
     private Host host;
     /**
@@ -49,15 +54,23 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The contents of the <code>host</code> parameter determine whether your data volume persists on the host container
      * instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for
-     * your data volume. However, the data is not guaranteed to persist after the containers associated with it stop
+     * your data volume. However, the data isn't guaranteed to persist after the containers associated with it stop
      * running.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      * 
      * @param host
      *        The contents of the <code>host</code> parameter determine whether your data volume persists on the host
      *        container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns
-     *        a host path for your data volume. However, the data is not guaranteed to persist after the containers
-     *        associated with it stop running.
+     *        a host path for your data volume. However, the data isn't guaranteed to persist after the containers
+     *        associated with it stop running.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        </p>
      */
 
     public void setHost(Host host) {
@@ -68,14 +81,22 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The contents of the <code>host</code> parameter determine whether your data volume persists on the host container
      * instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for
-     * your data volume. However, the data is not guaranteed to persist after the containers associated with it stop
+     * your data volume. However, the data isn't guaranteed to persist after the containers associated with it stop
      * running.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      * 
      * @return The contents of the <code>host</code> parameter determine whether your data volume persists on the host
      *         container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns
-     *         a host path for your data volume. However, the data is not guaranteed to persist after the containers
-     *         associated with it stop running.
+     *         a host path for your data volume. However, the data isn't guaranteed to persist after the containers
+     *         associated with it stop running.</p> <note>
+     *         <p>
+     *         This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *         </p>
      */
 
     public Host getHost() {
@@ -86,15 +107,23 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The contents of the <code>host</code> parameter determine whether your data volume persists on the host container
      * instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for
-     * your data volume. However, the data is not guaranteed to persist after the containers associated with it stop
+     * your data volume. However, the data isn't guaranteed to persist after the containers associated with it stop
      * running.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      * 
      * @param host
      *        The contents of the <code>host</code> parameter determine whether your data volume persists on the host
      *        container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns
-     *        a host path for your data volume. However, the data is not guaranteed to persist after the containers
-     *        associated with it stop running.
+     *        a host path for your data volume. However, the data isn't guaranteed to persist after the containers
+     *        associated with it stop running.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

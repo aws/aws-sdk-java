@@ -56,8 +56,9 @@ public class ListUsageForLicenseConfigurationRequest extends com.amazonaws.Amazo
      * </li>
      * <li>
      * <p>
-     * <code>resourceType</code> - The resource type (EC2_INSTANCE | EC2_HOST | EC2_AMI |
-     * SYSTEMS_MANAGER_MANAGED_INSTANCE). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> |
+     * <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are <code>EQUALS</code>
+     * | <code>NOT_EQUALS</code>.
      * </p>
      * </li>
      * <li>
@@ -203,8 +204,9 @@ public class ListUsageForLicenseConfigurationRequest extends com.amazonaws.Amazo
      * </li>
      * <li>
      * <p>
-     * <code>resourceType</code> - The resource type (EC2_INSTANCE | EC2_HOST | EC2_AMI |
-     * SYSTEMS_MANAGER_MANAGED_INSTANCE). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> |
+     * <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are <code>EQUALS</code>
+     * | <code>NOT_EQUALS</code>.
      * </p>
      * </li>
      * <li>
@@ -225,8 +227,9 @@ public class ListUsageForLicenseConfigurationRequest extends com.amazonaws.Amazo
      *         </li>
      *         <li>
      *         <p>
-     *         <code>resourceType</code> - The resource type (EC2_INSTANCE | EC2_HOST | EC2_AMI |
-     *         SYSTEMS_MANAGER_MANAGED_INSTANCE). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *         <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> |
+     *         <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are
+     *         <code>EQUALS</code> | <code>NOT_EQUALS</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -254,8 +257,9 @@ public class ListUsageForLicenseConfigurationRequest extends com.amazonaws.Amazo
      * </li>
      * <li>
      * <p>
-     * <code>resourceType</code> - The resource type (EC2_INSTANCE | EC2_HOST | EC2_AMI |
-     * SYSTEMS_MANAGER_MANAGED_INSTANCE). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> |
+     * <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are <code>EQUALS</code>
+     * | <code>NOT_EQUALS</code>.
      * </p>
      * </li>
      * <li>
@@ -277,8 +281,9 @@ public class ListUsageForLicenseConfigurationRequest extends com.amazonaws.Amazo
      *        </li>
      *        <li>
      *        <p>
-     *        <code>resourceType</code> - The resource type (EC2_INSTANCE | EC2_HOST | EC2_AMI |
-     *        SYSTEMS_MANAGER_MANAGED_INSTANCE). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *        <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> |
+     *        <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are
+     *        <code>EQUALS</code> | <code>NOT_EQUALS</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -311,8 +316,9 @@ public class ListUsageForLicenseConfigurationRequest extends com.amazonaws.Amazo
      * </li>
      * <li>
      * <p>
-     * <code>resourceType</code> - The resource type (EC2_INSTANCE | EC2_HOST | EC2_AMI |
-     * SYSTEMS_MANAGER_MANAGED_INSTANCE). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> |
+     * <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are <code>EQUALS</code>
+     * | <code>NOT_EQUALS</code>.
      * </p>
      * </li>
      * <li>
@@ -339,8 +345,9 @@ public class ListUsageForLicenseConfigurationRequest extends com.amazonaws.Amazo
      *        </li>
      *        <li>
      *        <p>
-     *        <code>resourceType</code> - The resource type (EC2_INSTANCE | EC2_HOST | EC2_AMI |
-     *        SYSTEMS_MANAGER_MANAGED_INSTANCE). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *        <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> |
+     *        <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are
+     *        <code>EQUALS</code> | <code>NOT_EQUALS</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -375,8 +382,9 @@ public class ListUsageForLicenseConfigurationRequest extends com.amazonaws.Amazo
      * </li>
      * <li>
      * <p>
-     * <code>resourceType</code> - The resource type (EC2_INSTANCE | EC2_HOST | EC2_AMI |
-     * SYSTEMS_MANAGER_MANAGED_INSTANCE). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> |
+     * <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are <code>EQUALS</code>
+     * | <code>NOT_EQUALS</code>.
      * </p>
      * </li>
      * <li>
@@ -398,8 +406,9 @@ public class ListUsageForLicenseConfigurationRequest extends com.amazonaws.Amazo
      *        </li>
      *        <li>
      *        <p>
-     *        <code>resourceType</code> - The resource type (EC2_INSTANCE | EC2_HOST | EC2_AMI |
-     *        SYSTEMS_MANAGER_MANAGED_INSTANCE). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *        <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> |
+     *        <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are
+     *        <code>EQUALS</code> | <code>NOT_EQUALS</code>.
      *        </p>
      *        </li>
      *        <li>

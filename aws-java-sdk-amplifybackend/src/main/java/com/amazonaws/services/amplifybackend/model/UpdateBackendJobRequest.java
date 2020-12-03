@@ -48,13 +48,13 @@ public class UpdateBackendJobRequest extends com.amazonaws.AmazonWebServiceReque
     private String jobId;
     /**
      * <p>
-     * Filters the list of response objects to only include those with the specified operation name.
+     * Filters the list of response objects to include only those with the specified operation name.
      * </p>
      */
     private String operation;
     /**
      * <p>
-     * Filters the list of response objects to only include those with the specified status.
+     * Filters the list of response objects to include only those with the specified status.
      * </p>
      */
     private String status;
@@ -181,11 +181,11 @@ public class UpdateBackendJobRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Filters the list of response objects to only include those with the specified operation name.
+     * Filters the list of response objects to include only those with the specified operation name.
      * </p>
      * 
      * @param operation
-     *        Filters the list of response objects to only include those with the specified operation name.
+     *        Filters the list of response objects to include only those with the specified operation name.
      */
 
     public void setOperation(String operation) {
@@ -194,10 +194,10 @@ public class UpdateBackendJobRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Filters the list of response objects to only include those with the specified operation name.
+     * Filters the list of response objects to include only those with the specified operation name.
      * </p>
      * 
-     * @return Filters the list of response objects to only include those with the specified operation name.
+     * @return Filters the list of response objects to include only those with the specified operation name.
      */
 
     public String getOperation() {
@@ -206,11 +206,11 @@ public class UpdateBackendJobRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Filters the list of response objects to only include those with the specified operation name.
+     * Filters the list of response objects to include only those with the specified operation name.
      * </p>
      * 
      * @param operation
-     *        Filters the list of response objects to only include those with the specified operation name.
+     *        Filters the list of response objects to include only those with the specified operation name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,11 +221,11 @@ public class UpdateBackendJobRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Filters the list of response objects to only include those with the specified status.
+     * Filters the list of response objects to include only those with the specified status.
      * </p>
      * 
      * @param status
-     *        Filters the list of response objects to only include those with the specified status.
+     *        Filters the list of response objects to include only those with the specified status.
      */
 
     public void setStatus(String status) {
@@ -234,10 +234,10 @@ public class UpdateBackendJobRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Filters the list of response objects to only include those with the specified status.
+     * Filters the list of response objects to include only those with the specified status.
      * </p>
      * 
-     * @return Filters the list of response objects to only include those with the specified status.
+     * @return Filters the list of response objects to include only those with the specified status.
      */
 
     public String getStatus() {
@@ -246,11 +246,11 @@ public class UpdateBackendJobRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Filters the list of response objects to only include those with the specified status.
+     * Filters the list of response objects to include only those with the specified status.
      * </p>
      * 
      * @param status
-     *        Filters the list of response objects to only include those with the specified status.
+     *        Filters the list of response objects to include only those with the specified status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

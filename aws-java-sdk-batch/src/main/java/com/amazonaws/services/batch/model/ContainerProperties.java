@@ -38,6 +38,12 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * Docker image architecture must match the processor architecture of the compute resources that they're scheduled
+     * on. For example, ARM-based Docker images can only run on ARM-based compute resources.
+     * </p>
+     * </note>
      * <ul>
      * <li>
      * <p>
@@ -68,34 +74,47 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     private String image;
     /**
      * <p>
-     * The number of vCPUs reserved for the container. This parameter maps to <code>CpuShares</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
-     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option
-     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU
-     * shares. You must specify at least one vCPU. This is required but can be specified in several places for
-     * multi-node parallel (MNP) jobs; it must be specified for each node at least once.
+     * This parameter is deprecated and not supported for jobs run on Fargate resources, see
+     * <code>resourceRequirement</code>. The number of vCPUs reserved for the container. Jobs running on EC2 resources
+     * can specify the vCPU requirement for the job using <code>resourceRequirements</code> but the vCPU requirements
+     * can't be specified both here and in the <code>resourceRequirement</code> structure. This parameter maps to
+     * <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
+     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     * <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each
+     * vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is required but can be specified
+     * in several places. It must be specified for each node at least once.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided. Jobs running on
+     * Fargate resources must specify the vCPU requirement for the job using <code>resourceRequirements</code>.
+     * </p>
+     * </note>
      */
+    @Deprecated
     private Integer vcpus;
     /**
      * <p>
-     * The hard limit (in MiB) of memory to present to the container. If your container attempts to exceed the memory
-     * specified here, the container is killed. This parameter maps to <code>Memory</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
-     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at least 4 MiB of memory
-     * for a job. This is required but can be specified in several places for multi-node parallel (MNP) jobs; it must be
+     * This parameter is deprecated and not supported for jobs run on Fargate resources, use
+     * <code>ResourceRequirement</code>. For jobs run on EC2 resources can specify the memory requirement using the
+     * <code>ResourceRequirement</code> structure. The hard limit (in MiB) of memory to present to the container. If
+     * your container attempts to exceed the memory specified here, the container is killed. This parameter maps to
+     * <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
+     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     * <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
+     * specify at least 4 MiB of memory for a job. This is required but can be specified in several places; it must be
      * specified for each node at least once.
      * </p>
      * <note>
      * <p>
-     * If you are trying to maximize your resource utilization by providing your jobs as much memory as possible for a
+     * If you're trying to maximize your resource utilization by providing your jobs as much memory as possible for a
      * particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory Management</a> in the
      * <i>AWS Batch User Guide</i>.
      * </p>
      * </note>
      */
+    @Deprecated
     private Integer memory;
     /**
      * <p>
@@ -110,15 +129,18 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     private java.util.List<String> command;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS permissions.
+     * The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS permissions. For more
+     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private String jobRoleArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see <a
+     * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. Jobs running on Fargate resources
+     * must provide an execution role. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
-     * role</a>.
+     * role</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      */
     private String executionRoleArn;
@@ -137,7 +159,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <important>
      * <p>
-     * We do not recommend using plaintext environment variables for sensitive information, such as credential data.
+     * We don't recommend using plaintext environment variables for sensitive information, such as credential data.
      * </p>
      * </important> <note>
      * <p>
@@ -168,12 +190,18 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     private Boolean readonlyRootFilesystem;
     /**
      * <p>
-     * When this parameter is true, the container is given elevated privileges on the host container instance (similar
+     * When this parameter is true, the container is given elevated permissions on the host container instance (similar
      * to the <code>root</code> user). This parameter maps to <code>Privileged</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--privileged</code> option
-     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. The default value is false.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or specified as
+     * false.
+     * </p>
+     * </note>
      */
     private Boolean privileged;
     /**
@@ -183,6 +211,11 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--ulimit</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      */
     private java.util.List<Ulimit> ulimits;
     /**
@@ -196,15 +229,21 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     private String user;
     /**
      * <p>
-     * The instance type to use for a multi-node parallel job. Currently all node groups in a multi-node parallel job
-     * must use the same instance type. This parameter is not valid for single-node container jobs.
+     * The instance type to use for a multi-node parallel job. All node groups in a multi-node parallel job must use the
+     * same instance type.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to single-node container jobs or for jobs running on Fargate resources and
+     * shouldn't be provided.
+     * </p>
+     * </note>
      */
     private String instanceType;
     /**
      * <p>
-     * The type and amount of a resource to assign to a container. Currently, the only supported resource is
-     * <code>GPU</code>.
+     * The type and amount of resources to assign to a container. The supported resources include <code>GPU</code>,
+     * <code>MEMORY</code>, and <code>VCPU</code>.
      * </p>
      */
     private java.util.List<ResourceRequirement> resourceRequirements;
@@ -223,7 +262,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option
      * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same
-     * logging driver that the Docker daemon uses. However the container may use a different logging driver than the
+     * logging driver that the Docker daemon uses. However the container might use a different logging driver than the
      * Docker daemon by specifying a log driver with this parameter in the container definition. To use a different
      * logging driver for a container, the log system must be configured properly on the container instance (or on a
      * different log server for remote logging options). For more information on the options for different supported log
@@ -255,11 +294,25 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The secrets for the container. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive
+     * data</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      */
     private java.util.List<Secret> secrets;
+    /**
+     * <p>
+     * The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
+     * this parameter.
+     * </p>
+     */
+    private NetworkConfiguration networkConfiguration;
+    /**
+     * <p>
+     * The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
+     * this parameter.
+     * </p>
+     */
+    private FargatePlatformConfiguration fargatePlatformConfiguration;
 
     /**
      * <p>
@@ -271,6 +324,12 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * Docker image architecture must match the processor architecture of the compute resources that they're scheduled
+     * on. For example, ARM-based Docker images can only run on ARM-based compute resources.
+     * </p>
+     * </note>
      * <ul>
      * <li>
      * <p>
@@ -306,7 +365,12 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        parameter maps to <code>Image</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code>
-     *        parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     *        parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     *        <p>
+     *        Docker image architecture must match the processor architecture of the compute resources that they're
+     *        scheduled on. For example, ARM-based Docker images can only run on ARM-based compute resources.
+     *        </p>
+     *        </note>
      *        <ul>
      *        <li>
      *        <p>
@@ -348,6 +412,12 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * Docker image architecture must match the processor architecture of the compute resources that they're scheduled
+     * on. For example, ARM-based Docker images can only run on ARM-based compute resources.
+     * </p>
+     * </note>
      * <ul>
      * <li>
      * <p>
@@ -382,7 +452,12 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *         allowed. This parameter maps to <code>Image</code> in the <a
      *         href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *         <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code>
-     *         parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     *         parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     *         <p>
+     *         Docker image architecture must match the processor architecture of the compute resources that they're
+     *         scheduled on. For example, ARM-based Docker images can only run on ARM-based compute resources.
+     *         </p>
+     *         </note>
      *         <ul>
      *         <li>
      *         <p>
@@ -424,6 +499,12 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * Docker image architecture must match the processor architecture of the compute resources that they're scheduled
+     * on. For example, ARM-based Docker images can only run on ARM-based compute resources.
+     * </p>
+     * </note>
      * <ul>
      * <li>
      * <p>
@@ -459,7 +540,12 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        parameter maps to <code>Image</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code>
-     *        parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     *        parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     *        <p>
+     *        Docker image architecture must match the processor architecture of the compute resources that they're
+     *        scheduled on. For example, ARM-based Docker images can only run on ARM-based compute resources.
+     *        </p>
+     *        </note>
      *        <ul>
      *        <li>
      *        <p>
@@ -495,72 +581,124 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The number of vCPUs reserved for the container. This parameter maps to <code>CpuShares</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
-     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option
-     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU
-     * shares. You must specify at least one vCPU. This is required but can be specified in several places for
-     * multi-node parallel (MNP) jobs; it must be specified for each node at least once.
+     * This parameter is deprecated and not supported for jobs run on Fargate resources, see
+     * <code>resourceRequirement</code>. The number of vCPUs reserved for the container. Jobs running on EC2 resources
+     * can specify the vCPU requirement for the job using <code>resourceRequirements</code> but the vCPU requirements
+     * can't be specified both here and in the <code>resourceRequirement</code> structure. This parameter maps to
+     * <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
+     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     * <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each
+     * vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is required but can be specified
+     * in several places. It must be specified for each node at least once.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided. Jobs running on
+     * Fargate resources must specify the vCPU requirement for the job using <code>resourceRequirements</code>.
+     * </p>
+     * </note>
      * 
      * @param vcpus
-     *        The number of vCPUs reserved for the container. This parameter maps to <code>CpuShares</code> in the <a
+     *        This parameter is deprecated and not supported for jobs run on Fargate resources, see
+     *        <code>resourceRequirement</code>. The number of vCPUs reserved for the container. Jobs running on EC2
+     *        resources can specify the vCPU requirement for the job using <code>resourceRequirements</code> but the
+     *        vCPU requirements can't be specified both here and in the <code>resourceRequirement</code> structure. This
+     *        parameter maps to <code>CpuShares</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      *        <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is required
-     *        but can be specified in several places for multi-node parallel (MNP) jobs; it must be specified for each
-     *        node at least once.
+     *        but can be specified in several places. It must be specified for each node at least once.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided. Jobs
+     *        running on Fargate resources must specify the vCPU requirement for the job using
+     *        <code>resourceRequirements</code>.
+     *        </p>
      */
-
+    @Deprecated
     public void setVcpus(Integer vcpus) {
         this.vcpus = vcpus;
     }
 
     /**
      * <p>
-     * The number of vCPUs reserved for the container. This parameter maps to <code>CpuShares</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
-     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option
-     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU
-     * shares. You must specify at least one vCPU. This is required but can be specified in several places for
-     * multi-node parallel (MNP) jobs; it must be specified for each node at least once.
+     * This parameter is deprecated and not supported for jobs run on Fargate resources, see
+     * <code>resourceRequirement</code>. The number of vCPUs reserved for the container. Jobs running on EC2 resources
+     * can specify the vCPU requirement for the job using <code>resourceRequirements</code> but the vCPU requirements
+     * can't be specified both here and in the <code>resourceRequirement</code> structure. This parameter maps to
+     * <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
+     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     * <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each
+     * vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is required but can be specified
+     * in several places. It must be specified for each node at least once.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided. Jobs running on
+     * Fargate resources must specify the vCPU requirement for the job using <code>resourceRequirements</code>.
+     * </p>
+     * </note>
      * 
-     * @return The number of vCPUs reserved for the container. This parameter maps to <code>CpuShares</code> in the <a
+     * @return This parameter is deprecated and not supported for jobs run on Fargate resources, see
+     *         <code>resourceRequirement</code>. The number of vCPUs reserved for the container. Jobs running on EC2
+     *         resources can specify the vCPU requirement for the job using <code>resourceRequirements</code> but the
+     *         vCPU requirements can't be specified both here and in the <code>resourceRequirement</code> structure.
+     *         This parameter maps to <code>CpuShares</code> in the <a
      *         href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *         <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      *         <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *         run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is
-     *         required but can be specified in several places for multi-node parallel (MNP) jobs; it must be specified
-     *         for each node at least once.
+     *         required but can be specified in several places. It must be specified for each node at least once.</p>
+     *         <note>
+     *         <p>
+     *         This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided. Jobs
+     *         running on Fargate resources must specify the vCPU requirement for the job using
+     *         <code>resourceRequirements</code>.
+     *         </p>
      */
-
+    @Deprecated
     public Integer getVcpus() {
         return this.vcpus;
     }
 
     /**
      * <p>
-     * The number of vCPUs reserved for the container. This parameter maps to <code>CpuShares</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
-     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option
-     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU
-     * shares. You must specify at least one vCPU. This is required but can be specified in several places for
-     * multi-node parallel (MNP) jobs; it must be specified for each node at least once.
+     * This parameter is deprecated and not supported for jobs run on Fargate resources, see
+     * <code>resourceRequirement</code>. The number of vCPUs reserved for the container. Jobs running on EC2 resources
+     * can specify the vCPU requirement for the job using <code>resourceRequirements</code> but the vCPU requirements
+     * can't be specified both here and in the <code>resourceRequirement</code> structure. This parameter maps to
+     * <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
+     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     * <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each
+     * vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is required but can be specified
+     * in several places. It must be specified for each node at least once.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided. Jobs running on
+     * Fargate resources must specify the vCPU requirement for the job using <code>resourceRequirements</code>.
+     * </p>
+     * </note>
      * 
      * @param vcpus
-     *        The number of vCPUs reserved for the container. This parameter maps to <code>CpuShares</code> in the <a
+     *        This parameter is deprecated and not supported for jobs run on Fargate resources, see
+     *        <code>resourceRequirement</code>. The number of vCPUs reserved for the container. Jobs running on EC2
+     *        resources can specify the vCPU requirement for the job using <code>resourceRequirements</code> but the
+     *        vCPU requirements can't be specified both here and in the <code>resourceRequirement</code> structure. This
+     *        parameter maps to <code>CpuShares</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      *        <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is required
-     *        but can be specified in several places for multi-node parallel (MNP) jobs; it must be specified for each
-     *        node at least once.
+     *        but can be specified in several places. It must be specified for each node at least once.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided. Jobs
+     *        running on Fargate resources must specify the vCPU requirement for the job using
+     *        <code>resourceRequirements</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public ContainerProperties withVcpus(Integer vcpus) {
         setVcpus(vcpus);
         return this;
@@ -568,17 +706,19 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The hard limit (in MiB) of memory to present to the container. If your container attempts to exceed the memory
-     * specified here, the container is killed. This parameter maps to <code>Memory</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
-     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at least 4 MiB of memory
-     * for a job. This is required but can be specified in several places for multi-node parallel (MNP) jobs; it must be
+     * This parameter is deprecated and not supported for jobs run on Fargate resources, use
+     * <code>ResourceRequirement</code>. For jobs run on EC2 resources can specify the memory requirement using the
+     * <code>ResourceRequirement</code> structure. The hard limit (in MiB) of memory to present to the container. If
+     * your container attempts to exceed the memory specified here, the container is killed. This parameter maps to
+     * <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
+     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     * <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
+     * specify at least 4 MiB of memory for a job. This is required but can be specified in several places; it must be
      * specified for each node at least once.
      * </p>
      * <note>
      * <p>
-     * If you are trying to maximize your resource utilization by providing your jobs as much memory as possible for a
+     * If you're trying to maximize your resource utilization by providing your jobs as much memory as possible for a
      * particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory Management</a> in the
      * <i>AWS Batch User Guide</i>.
@@ -586,76 +726,86 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </note>
      * 
      * @param memory
-     *        The hard limit (in MiB) of memory to present to the container. If your container attempts to exceed the
-     *        memory specified here, the container is killed. This parameter maps to <code>Memory</code> in the <a
+     *        This parameter is deprecated and not supported for jobs run on Fargate resources, use
+     *        <code>ResourceRequirement</code>. For jobs run on EC2 resources can specify the memory requirement using
+     *        the <code>ResourceRequirement</code> structure. The hard limit (in MiB) of memory to present to the
+     *        container. If your container attempts to exceed the memory specified here, the container is killed. This
+     *        parameter maps to <code>Memory</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code>
      *        option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at
-     *        least 4 MiB of memory for a job. This is required but can be specified in several places for multi-node
-     *        parallel (MNP) jobs; it must be specified for each node at least once.</p> <note>
+     *        least 4 MiB of memory for a job. This is required but can be specified in several places; it must be
+     *        specified for each node at least once.</p> <note>
      *        <p>
-     *        If you are trying to maximize your resource utilization by providing your jobs as much memory as possible
+     *        If you're trying to maximize your resource utilization by providing your jobs as much memory as possible
      *        for a particular instance type, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory Management</a> in
      *        the <i>AWS Batch User Guide</i>.
      *        </p>
      */
-
+    @Deprecated
     public void setMemory(Integer memory) {
         this.memory = memory;
     }
 
     /**
      * <p>
-     * The hard limit (in MiB) of memory to present to the container. If your container attempts to exceed the memory
-     * specified here, the container is killed. This parameter maps to <code>Memory</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
-     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at least 4 MiB of memory
-     * for a job. This is required but can be specified in several places for multi-node parallel (MNP) jobs; it must be
+     * This parameter is deprecated and not supported for jobs run on Fargate resources, use
+     * <code>ResourceRequirement</code>. For jobs run on EC2 resources can specify the memory requirement using the
+     * <code>ResourceRequirement</code> structure. The hard limit (in MiB) of memory to present to the container. If
+     * your container attempts to exceed the memory specified here, the container is killed. This parameter maps to
+     * <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
+     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     * <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
+     * specify at least 4 MiB of memory for a job. This is required but can be specified in several places; it must be
      * specified for each node at least once.
      * </p>
      * <note>
      * <p>
-     * If you are trying to maximize your resource utilization by providing your jobs as much memory as possible for a
+     * If you're trying to maximize your resource utilization by providing your jobs as much memory as possible for a
      * particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory Management</a> in the
      * <i>AWS Batch User Guide</i>.
      * </p>
      * </note>
      * 
-     * @return The hard limit (in MiB) of memory to present to the container. If your container attempts to exceed the
-     *         memory specified here, the container is killed. This parameter maps to <code>Memory</code> in the <a
+     * @return This parameter is deprecated and not supported for jobs run on Fargate resources, use
+     *         <code>ResourceRequirement</code>. For jobs run on EC2 resources can specify the memory requirement using
+     *         the <code>ResourceRequirement</code> structure. The hard limit (in MiB) of memory to present to the
+     *         container. If your container attempts to exceed the memory specified here, the container is killed. This
+     *         parameter maps to <code>Memory</code> in the <a
      *         href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *         <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code>
      *         option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at
-     *         least 4 MiB of memory for a job. This is required but can be specified in several places for multi-node
-     *         parallel (MNP) jobs; it must be specified for each node at least once.</p> <note>
+     *         least 4 MiB of memory for a job. This is required but can be specified in several places; it must be
+     *         specified for each node at least once.</p> <note>
      *         <p>
-     *         If you are trying to maximize your resource utilization by providing your jobs as much memory as possible
+     *         If you're trying to maximize your resource utilization by providing your jobs as much memory as possible
      *         for a particular instance type, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory Management</a> in
      *         the <i>AWS Batch User Guide</i>.
      *         </p>
      */
-
+    @Deprecated
     public Integer getMemory() {
         return this.memory;
     }
 
     /**
      * <p>
-     * The hard limit (in MiB) of memory to present to the container. If your container attempts to exceed the memory
-     * specified here, the container is killed. This parameter maps to <code>Memory</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
-     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at least 4 MiB of memory
-     * for a job. This is required but can be specified in several places for multi-node parallel (MNP) jobs; it must be
+     * This parameter is deprecated and not supported for jobs run on Fargate resources, use
+     * <code>ResourceRequirement</code>. For jobs run on EC2 resources can specify the memory requirement using the
+     * <code>ResourceRequirement</code> structure. The hard limit (in MiB) of memory to present to the container. If
+     * your container attempts to exceed the memory specified here, the container is killed. This parameter maps to
+     * <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
+     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     * <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
+     * specify at least 4 MiB of memory for a job. This is required but can be specified in several places; it must be
      * specified for each node at least once.
      * </p>
      * <note>
      * <p>
-     * If you are trying to maximize your resource utilization by providing your jobs as much memory as possible for a
+     * If you're trying to maximize your resource utilization by providing your jobs as much memory as possible for a
      * particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory Management</a> in the
      * <i>AWS Batch User Guide</i>.
@@ -663,22 +813,25 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </note>
      * 
      * @param memory
-     *        The hard limit (in MiB) of memory to present to the container. If your container attempts to exceed the
-     *        memory specified here, the container is killed. This parameter maps to <code>Memory</code> in the <a
+     *        This parameter is deprecated and not supported for jobs run on Fargate resources, use
+     *        <code>ResourceRequirement</code>. For jobs run on EC2 resources can specify the memory requirement using
+     *        the <code>ResourceRequirement</code> structure. The hard limit (in MiB) of memory to present to the
+     *        container. If your container attempts to exceed the memory specified here, the container is killed. This
+     *        parameter maps to <code>Memory</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code>
      *        option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at
-     *        least 4 MiB of memory for a job. This is required but can be specified in several places for multi-node
-     *        parallel (MNP) jobs; it must be specified for each node at least once.</p> <note>
+     *        least 4 MiB of memory for a job. This is required but can be specified in several places; it must be
+     *        specified for each node at least once.</p> <note>
      *        <p>
-     *        If you are trying to maximize your resource utilization by providing your jobs as much memory as possible
+     *        If you're trying to maximize your resource utilization by providing your jobs as much memory as possible
      *        for a particular instance type, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory Management</a> in
      *        the <i>AWS Batch User Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public ContainerProperties withMemory(Integer memory) {
         setMemory(memory);
         return this;
@@ -800,11 +953,16 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS permissions.
+     * The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS permissions. For more
+     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param jobRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS permissions.
+     *        The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS permissions. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for
+     *        Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setJobRoleArn(String jobRoleArn) {
@@ -813,10 +971,15 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS permissions.
+     * The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS permissions. For more
+     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS permissions.
+     * @return The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS permissions. For
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for
+     *         Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public String getJobRoleArn() {
@@ -825,11 +988,16 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS permissions.
+     * The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS permissions. For more
+     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param jobRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS permissions.
+     *        The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS permissions. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for
+     *        Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -840,15 +1008,17 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see <a
+     * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. Jobs running on Fargate resources
+     * must provide an execution role. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
-     * role</a>.
+     * role</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param executionRoleArn
-     *        The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see
-     *        <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution
-     *        IAM role</a>.
+     *        The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. Jobs running on Fargate
+     *        resources must provide an execution role. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
+     *        role</a> in the <i>AWS Batch User Guide</i>.
      */
 
     public void setExecutionRoleArn(String executionRoleArn) {
@@ -857,14 +1027,16 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see <a
+     * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. Jobs running on Fargate resources
+     * must provide an execution role. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
-     * role</a>.
+     * role</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see
-     *         <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution
-     *         IAM role</a>.
+     * @return The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. Jobs running on Fargate
+     *         resources must provide an execution role. For more information, see <a
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
+     *         role</a> in the <i>AWS Batch User Guide</i>.
      */
 
     public String getExecutionRoleArn() {
@@ -873,15 +1045,17 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see <a
+     * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. Jobs running on Fargate resources
+     * must provide an execution role. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
-     * role</a>.
+     * role</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param executionRoleArn
-     *        The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see
-     *        <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution
-     *        IAM role</a>.
+     *        The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. Jobs running on Fargate
+     *        resources must provide an execution role. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS Batch execution IAM
+     *        role</a> in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -969,7 +1143,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <important>
      * <p>
-     * We do not recommend using plaintext environment variables for sensitive information, such as credential data.
+     * We don't recommend using plaintext environment variables for sensitive information, such as credential data.
      * </p>
      * </important> <note>
      * <p>
@@ -983,7 +1157,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *         <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--env</code>
      *         option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <important>
      *         <p>
-     *         We do not recommend using plaintext environment variables for sensitive information, such as credential
+     *         We don't recommend using plaintext environment variables for sensitive information, such as credential
      *         data.
      *         </p>
      *         </important> <note>
@@ -1006,7 +1180,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <important>
      * <p>
-     * We do not recommend using plaintext environment variables for sensitive information, such as credential data.
+     * We don't recommend using plaintext environment variables for sensitive information, such as credential data.
      * </p>
      * </important> <note>
      * <p>
@@ -1021,7 +1195,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--env</code>
      *        option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <important>
      *        <p>
-     *        We do not recommend using plaintext environment variables for sensitive information, such as credential
+     *        We don't recommend using plaintext environment variables for sensitive information, such as credential
      *        data.
      *        </p>
      *        </important> <note>
@@ -1049,7 +1223,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <important>
      * <p>
-     * We do not recommend using plaintext environment variables for sensitive information, such as credential data.
+     * We don't recommend using plaintext environment variables for sensitive information, such as credential data.
      * </p>
      * </important> <note>
      * <p>
@@ -1069,7 +1243,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--env</code>
      *        option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <important>
      *        <p>
-     *        We do not recommend using plaintext environment variables for sensitive information, such as credential
+     *        We don't recommend using plaintext environment variables for sensitive information, such as credential
      *        data.
      *        </p>
      *        </important> <note>
@@ -1099,7 +1273,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <important>
      * <p>
-     * We do not recommend using plaintext environment variables for sensitive information, such as credential data.
+     * We don't recommend using plaintext environment variables for sensitive information, such as credential data.
      * </p>
      * </important> <note>
      * <p>
@@ -1114,7 +1288,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--env</code>
      *        option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <important>
      *        <p>
-     *        We do not recommend using plaintext environment variables for sensitive information, such as credential
+     *        We don't recommend using plaintext environment variables for sensitive information, such as credential
      *        data.
      *        </p>
      *        </important> <note>
@@ -1310,20 +1484,30 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * When this parameter is true, the container is given elevated privileges on the host container instance (similar
+     * When this parameter is true, the container is given elevated permissions on the host container instance (similar
      * to the <code>root</code> user). This parameter maps to <code>Privileged</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--privileged</code> option
-     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. The default value is false.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or specified as
+     * false.
+     * </p>
+     * </note>
      * 
      * @param privileged
-     *        When this parameter is true, the container is given elevated privileges on the host container instance
+     *        When this parameter is true, the container is given elevated permissions on the host container instance
      *        (similar to the <code>root</code> user). This parameter maps to <code>Privileged</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      *        <code>--privileged</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>.
+     *        run</a>. The default value is false.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or
+     *        specified as false.
+     *        </p>
      */
 
     public void setPrivileged(Boolean privileged) {
@@ -1332,19 +1516,29 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * When this parameter is true, the container is given elevated privileges on the host container instance (similar
+     * When this parameter is true, the container is given elevated permissions on the host container instance (similar
      * to the <code>root</code> user). This parameter maps to <code>Privileged</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--privileged</code> option
-     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. The default value is false.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or specified as
+     * false.
+     * </p>
+     * </note>
      * 
-     * @return When this parameter is true, the container is given elevated privileges on the host container instance
+     * @return When this parameter is true, the container is given elevated permissions on the host container instance
      *         (similar to the <code>root</code> user). This parameter maps to <code>Privileged</code> in the <a
      *         href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *         <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      *         <code>--privileged</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *         run</a>.
+     *         run</a>. The default value is false.</p> <note>
+     *         <p>
+     *         This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or
+     *         specified as false.
+     *         </p>
      */
 
     public Boolean getPrivileged() {
@@ -1353,20 +1547,30 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * When this parameter is true, the container is given elevated privileges on the host container instance (similar
+     * When this parameter is true, the container is given elevated permissions on the host container instance (similar
      * to the <code>root</code> user). This parameter maps to <code>Privileged</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--privileged</code> option
-     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. The default value is false.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or specified as
+     * false.
+     * </p>
+     * </note>
      * 
      * @param privileged
-     *        When this parameter is true, the container is given elevated privileges on the host container instance
+     *        When this parameter is true, the container is given elevated permissions on the host container instance
      *        (similar to the <code>root</code> user). This parameter maps to <code>Privileged</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      *        <code>--privileged</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>.
+     *        run</a>. The default value is false.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or
+     *        specified as false.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1377,19 +1581,29 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * When this parameter is true, the container is given elevated privileges on the host container instance (similar
+     * When this parameter is true, the container is given elevated permissions on the host container instance (similar
      * to the <code>root</code> user). This parameter maps to <code>Privileged</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--privileged</code> option
-     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. The default value is false.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or specified as
+     * false.
+     * </p>
+     * </note>
      * 
-     * @return When this parameter is true, the container is given elevated privileges on the host container instance
+     * @return When this parameter is true, the container is given elevated permissions on the host container instance
      *         (similar to the <code>root</code> user). This parameter maps to <code>Privileged</code> in the <a
      *         href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *         <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      *         <code>--privileged</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *         run</a>.
+     *         run</a>. The default value is false.</p> <note>
+     *         <p>
+     *         This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided, or
+     *         specified as false.
+     *         </p>
      */
 
     public Boolean isPrivileged() {
@@ -1403,11 +1617,20 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--ulimit</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      * 
      * @return A list of <code>ulimits</code> to set in the container. This parameter maps to <code>Ulimits</code> in
      *         the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section
      *         of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
-     *         <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *         <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *         run</a>.</p> <note>
+     *         <p>
+     *         This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *         </p>
      */
 
     public java.util.List<Ulimit> getUlimits() {
@@ -1421,12 +1644,21 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--ulimit</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      * 
      * @param ulimits
      *        A list of <code>ulimits</code> to set in the container. This parameter maps to <code>Ulimits</code> in the
      *        <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of
      *        the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
-     *        <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        </p>
      */
 
     public void setUlimits(java.util.Collection<Ulimit> ulimits) {
@@ -1445,6 +1677,11 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--ulimit</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setUlimits(java.util.Collection)} or {@link #withUlimits(java.util.Collection)} if you want to override
@@ -1455,7 +1692,11 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        A list of <code>ulimits</code> to set in the container. This parameter maps to <code>Ulimits</code> in the
      *        <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of
      *        the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
-     *        <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1476,12 +1717,21 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--ulimit</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      * 
      * @param ulimits
      *        A list of <code>ulimits</code> to set in the container. This parameter maps to <code>Ulimits</code> in the
      *        <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of
      *        the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
-     *        <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1550,13 +1800,23 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The instance type to use for a multi-node parallel job. Currently all node groups in a multi-node parallel job
-     * must use the same instance type. This parameter is not valid for single-node container jobs.
+     * The instance type to use for a multi-node parallel job. All node groups in a multi-node parallel job must use the
+     * same instance type.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to single-node container jobs or for jobs running on Fargate resources and
+     * shouldn't be provided.
+     * </p>
+     * </note>
      * 
      * @param instanceType
-     *        The instance type to use for a multi-node parallel job. Currently all node groups in a multi-node parallel
-     *        job must use the same instance type. This parameter is not valid for single-node container jobs.
+     *        The instance type to use for a multi-node parallel job. All node groups in a multi-node parallel job must
+     *        use the same instance type.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to single-node container jobs or for jobs running on Fargate resources and
+     *        shouldn't be provided.
+     *        </p>
      */
 
     public void setInstanceType(String instanceType) {
@@ -1565,12 +1825,22 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The instance type to use for a multi-node parallel job. Currently all node groups in a multi-node parallel job
-     * must use the same instance type. This parameter is not valid for single-node container jobs.
+     * The instance type to use for a multi-node parallel job. All node groups in a multi-node parallel job must use the
+     * same instance type.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to single-node container jobs or for jobs running on Fargate resources and
+     * shouldn't be provided.
+     * </p>
+     * </note>
      * 
-     * @return The instance type to use for a multi-node parallel job. Currently all node groups in a multi-node
-     *         parallel job must use the same instance type. This parameter is not valid for single-node container jobs.
+     * @return The instance type to use for a multi-node parallel job. All node groups in a multi-node parallel job must
+     *         use the same instance type.</p> <note>
+     *         <p>
+     *         This parameter isn't applicable to single-node container jobs or for jobs running on Fargate resources
+     *         and shouldn't be provided.
+     *         </p>
      */
 
     public String getInstanceType() {
@@ -1579,13 +1849,23 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The instance type to use for a multi-node parallel job. Currently all node groups in a multi-node parallel job
-     * must use the same instance type. This parameter is not valid for single-node container jobs.
+     * The instance type to use for a multi-node parallel job. All node groups in a multi-node parallel job must use the
+     * same instance type.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to single-node container jobs or for jobs running on Fargate resources and
+     * shouldn't be provided.
+     * </p>
+     * </note>
      * 
      * @param instanceType
-     *        The instance type to use for a multi-node parallel job. Currently all node groups in a multi-node parallel
-     *        job must use the same instance type. This parameter is not valid for single-node container jobs.
+     *        The instance type to use for a multi-node parallel job. All node groups in a multi-node parallel job must
+     *        use the same instance type.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to single-node container jobs or for jobs running on Fargate resources and
+     *        shouldn't be provided.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1596,12 +1876,12 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The type and amount of a resource to assign to a container. Currently, the only supported resource is
-     * <code>GPU</code>.
+     * The type and amount of resources to assign to a container. The supported resources include <code>GPU</code>,
+     * <code>MEMORY</code>, and <code>VCPU</code>.
      * </p>
      * 
-     * @return The type and amount of a resource to assign to a container. Currently, the only supported resource is
-     *         <code>GPU</code>.
+     * @return The type and amount of resources to assign to a container. The supported resources include
+     *         <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.
      */
 
     public java.util.List<ResourceRequirement> getResourceRequirements() {
@@ -1610,13 +1890,13 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The type and amount of a resource to assign to a container. Currently, the only supported resource is
-     * <code>GPU</code>.
+     * The type and amount of resources to assign to a container. The supported resources include <code>GPU</code>,
+     * <code>MEMORY</code>, and <code>VCPU</code>.
      * </p>
      * 
      * @param resourceRequirements
-     *        The type and amount of a resource to assign to a container. Currently, the only supported resource is
-     *        <code>GPU</code>.
+     *        The type and amount of resources to assign to a container. The supported resources include
+     *        <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.
      */
 
     public void setResourceRequirements(java.util.Collection<ResourceRequirement> resourceRequirements) {
@@ -1630,8 +1910,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The type and amount of a resource to assign to a container. Currently, the only supported resource is
-     * <code>GPU</code>.
+     * The type and amount of resources to assign to a container. The supported resources include <code>GPU</code>,
+     * <code>MEMORY</code>, and <code>VCPU</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1640,8 +1920,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param resourceRequirements
-     *        The type and amount of a resource to assign to a container. Currently, the only supported resource is
-     *        <code>GPU</code>.
+     *        The type and amount of resources to assign to a container. The supported resources include
+     *        <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1657,13 +1937,13 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The type and amount of a resource to assign to a container. Currently, the only supported resource is
-     * <code>GPU</code>.
+     * The type and amount of resources to assign to a container. The supported resources include <code>GPU</code>,
+     * <code>MEMORY</code>, and <code>VCPU</code>.
      * </p>
      * 
      * @param resourceRequirements
-     *        The type and amount of a resource to assign to a container. Currently, the only supported resource is
-     *        <code>GPU</code>.
+     *        The type and amount of resources to assign to a container. The supported resources include
+     *        <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1721,7 +2001,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option
      * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same
-     * logging driver that the Docker daemon uses. However the container may use a different logging driver than the
+     * logging driver that the Docker daemon uses. However the container might use a different logging driver than the
      * Docker daemon by specifying a log driver with this parameter in the container definition. To use a different
      * logging driver for a container, the log system must be configured properly on the container instance (or on a
      * different log server for remote logging options). For more information on the options for different supported log
@@ -1757,7 +2037,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      *        <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>. By default, containers use the same logging driver that the Docker daemon uses. However the
-     *        container may use a different logging driver than the Docker daemon by specifying a log driver with this
+     *        container might use a different logging driver than the Docker daemon by specifying a log driver with this
      *        parameter in the container definition. To use a different logging driver for a container, the log system
      *        must be configured properly on the container instance (or on a different log server for remote logging
      *        options). For more information on the options for different supported log drivers, see <a
@@ -1798,7 +2078,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option
      * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same
-     * logging driver that the Docker daemon uses. However the container may use a different logging driver than the
+     * logging driver that the Docker daemon uses. However the container might use a different logging driver than the
      * Docker daemon by specifying a log driver with this parameter in the container definition. To use a different
      * logging driver for a container, the log system must be configured properly on the container instance (or on a
      * different log server for remote logging options). For more information on the options for different supported log
@@ -1833,10 +2113,10 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *         <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      *         <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *         run</a>. By default, containers use the same logging driver that the Docker daemon uses. However the
-     *         container may use a different logging driver than the Docker daemon by specifying a log driver with this
-     *         parameter in the container definition. To use a different logging driver for a container, the log system
-     *         must be configured properly on the container instance (or on a different log server for remote logging
-     *         options). For more information on the options for different supported log drivers, see <a
+     *         container might use a different logging driver than the Docker daemon by specifying a log driver with
+     *         this parameter in the container definition. To use a different logging driver for a container, the log
+     *         system must be configured properly on the container instance (or on a different log server for remote
+     *         logging options). For more information on the options for different supported log drivers, see <a
      *         href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker
      *         documentation.
      *         </p>
@@ -1874,7 +2154,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option
      * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same
-     * logging driver that the Docker daemon uses. However the container may use a different logging driver than the
+     * logging driver that the Docker daemon uses. However the container might use a different logging driver than the
      * Docker daemon by specifying a log driver with this parameter in the container definition. To use a different
      * logging driver for a container, the log system must be configured properly on the container instance (or on a
      * different log server for remote logging options). For more information on the options for different supported log
@@ -1910,7 +2190,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      *        <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>. By default, containers use the same logging driver that the Docker daemon uses. However the
-     *        container may use a different logging driver than the Docker daemon by specifying a log driver with this
+     *        container might use a different logging driver than the Docker daemon by specifying a log driver with this
      *        parameter in the container definition. To use a different logging driver for a container, the log system
      *        must be configured properly on the container instance (or on a different log server for remote logging
      *        options). For more information on the options for different supported log drivers, see <a
@@ -1947,13 +2227,13 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The secrets for the container. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive
+     * data</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @return The secrets for the container. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html"
-     *         >Specifying Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+     *         sensitive data</a> in the <i>AWS Batch User Guide</i>.
      */
 
     public java.util.List<Secret> getSecrets() {
@@ -1963,14 +2243,14 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The secrets for the container. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive
+     * data</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param secrets
      *        The secrets for the container. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html"
-     *        >Specifying Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+     *        sensitive data</a> in the <i>AWS Batch User Guide</i>.
      */
 
     public void setSecrets(java.util.Collection<Secret> secrets) {
@@ -1985,8 +2265,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The secrets for the container. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive
+     * data</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1996,8 +2276,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * 
      * @param secrets
      *        The secrets for the container. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html"
-     *        >Specifying Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+     *        sensitive data</a> in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2014,19 +2294,111 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The secrets for the container. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive
+     * data</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param secrets
      *        The secrets for the container. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html"
-     *        >Specifying Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+     *        sensitive data</a> in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ContainerProperties withSecrets(java.util.Collection<Secret> secrets) {
         setSecrets(secrets);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
+     * this parameter.
+     * </p>
+     * 
+     * @param networkConfiguration
+     *        The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not
+     *        specify this parameter.
+     */
+
+    public void setNetworkConfiguration(NetworkConfiguration networkConfiguration) {
+        this.networkConfiguration = networkConfiguration;
+    }
+
+    /**
+     * <p>
+     * The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
+     * this parameter.
+     * </p>
+     * 
+     * @return The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not
+     *         specify this parameter.
+     */
+
+    public NetworkConfiguration getNetworkConfiguration() {
+        return this.networkConfiguration;
+    }
+
+    /**
+     * <p>
+     * The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
+     * this parameter.
+     * </p>
+     * 
+     * @param networkConfiguration
+     *        The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not
+     *        specify this parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerProperties withNetworkConfiguration(NetworkConfiguration networkConfiguration) {
+        setNetworkConfiguration(networkConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
+     * this parameter.
+     * </p>
+     * 
+     * @param fargatePlatformConfiguration
+     *        The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not
+     *        specify this parameter.
+     */
+
+    public void setFargatePlatformConfiguration(FargatePlatformConfiguration fargatePlatformConfiguration) {
+        this.fargatePlatformConfiguration = fargatePlatformConfiguration;
+    }
+
+    /**
+     * <p>
+     * The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
+     * this parameter.
+     * </p>
+     * 
+     * @return The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not
+     *         specify this parameter.
+     */
+
+    public FargatePlatformConfiguration getFargatePlatformConfiguration() {
+        return this.fargatePlatformConfiguration;
+    }
+
+    /**
+     * <p>
+     * The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify
+     * this parameter.
+     * </p>
+     * 
+     * @param fargatePlatformConfiguration
+     *        The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not
+     *        specify this parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerProperties withFargatePlatformConfiguration(FargatePlatformConfiguration fargatePlatformConfiguration) {
+        setFargatePlatformConfiguration(fargatePlatformConfiguration);
         return this;
     }
 
@@ -2077,7 +2449,11 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
         if (getLogConfiguration() != null)
             sb.append("LogConfiguration: ").append(getLogConfiguration()).append(",");
         if (getSecrets() != null)
-            sb.append("Secrets: ").append(getSecrets());
+            sb.append("Secrets: ").append(getSecrets()).append(",");
+        if (getNetworkConfiguration() != null)
+            sb.append("NetworkConfiguration: ").append(getNetworkConfiguration()).append(",");
+        if (getFargatePlatformConfiguration() != null)
+            sb.append("FargatePlatformConfiguration: ").append(getFargatePlatformConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -2164,6 +2540,14 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getSecrets() != null && other.getSecrets().equals(this.getSecrets()) == false)
             return false;
+        if (other.getNetworkConfiguration() == null ^ this.getNetworkConfiguration() == null)
+            return false;
+        if (other.getNetworkConfiguration() != null && other.getNetworkConfiguration().equals(this.getNetworkConfiguration()) == false)
+            return false;
+        if (other.getFargatePlatformConfiguration() == null ^ this.getFargatePlatformConfiguration() == null)
+            return false;
+        if (other.getFargatePlatformConfiguration() != null && other.getFargatePlatformConfiguration().equals(this.getFargatePlatformConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -2190,6 +2574,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getLinuxParameters() == null) ? 0 : getLinuxParameters().hashCode());
         hashCode = prime * hashCode + ((getLogConfiguration() == null) ? 0 : getLogConfiguration().hashCode());
         hashCode = prime * hashCode + ((getSecrets() == null) ? 0 : getSecrets().hashCode());
+        hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getFargatePlatformConfiguration() == null) ? 0 : getFargatePlatformConfiguration().hashCode());
         return hashCode;
     }
 

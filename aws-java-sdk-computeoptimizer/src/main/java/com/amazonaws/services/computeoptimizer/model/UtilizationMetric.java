@@ -21,6 +21,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Describes a utilization metric of a resource, such as an Amazon EC2 instance.
  * </p>
+ * <p>
+ * Compare the utilization metric data of your resource against its projected utilization metric data to determine the
+ * performance difference between your current resource and the recommended option.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/UtilizationMetric"
  *      target="_top">AWS API Documentation</a>
@@ -32,6 +36,31 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The name of the utilization metric.
      * </p>
+     * <p>
+     * The following utilization metrics are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Cpu</code> - The percentage of allocated EC2 compute units that are currently in use on the instance. This
+     * metric identifies the processing power required to run an application on the instance.
+     * </p>
+     * <p>
+     * Depending on the instance type, tools in your operating system can show a lower percentage than CloudWatch when
+     * the instance is not allocated a full processor core.
+     * </p>
+     * <p>
+     * Units: Percent
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Memory</code> - The percentage of memory that is currently in use on the instance. This metric identifies
+     * the amount of memory required to run an application on the instance.
+     * </p>
+     * <p>
+     * Units: Percent
+     * </p>
      * <note>
      * <p>
      * The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on
@@ -39,13 +68,67 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization
      * with the CloudWatch Agent</a>.
      * </p>
-     * </note>
+     * </note></li>
+     * <li>
+     * <p>
+     * <code>EBS_READ_OPS_PER_SECOND</code> - The completed read operations from all EBS volumes attached to the
+     * instance in a specified period of time.
+     * </p>
+     * <p>
+     * Unit: Count
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EBS_WRITE_OPS_PER_SECOND</code> - The completed write operations to all EBS volumes attached to the
+     * instance in a specified period of time.
+     * </p>
+     * <p>
+     * Unit: Count
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EBS_READ_BYTES_PER_SECOND</code> - The bytes read from all EBS volumes attached to the instance in a
+     * specified period of time.
+     * </p>
+     * <p>
+     * Unit: Bytes
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EBS_WRITE_BYTES_PER_SECOND</code> - The bytes written to all EBS volumes attached to the instance in a
+     * specified period of time.
+     * </p>
+     * <p>
+     * Unit: Bytes
+     * </p>
+     * </li>
+     * </ul>
      */
     private String name;
     /**
      * <p>
      * The statistic of the utilization metric.
      * </p>
+     * <p>
+     * The following statistics are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Average</code> - This is the value of Sum / SampleCount during the specified period, or the average value
+     * observed during the specified period.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high
+     * volumes of activity for your application.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String statistic;
     /**
@@ -59,6 +142,31 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The name of the utilization metric.
      * </p>
+     * <p>
+     * The following utilization metrics are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Cpu</code> - The percentage of allocated EC2 compute units that are currently in use on the instance. This
+     * metric identifies the processing power required to run an application on the instance.
+     * </p>
+     * <p>
+     * Depending on the instance type, tools in your operating system can show a lower percentage than CloudWatch when
+     * the instance is not allocated a full processor core.
+     * </p>
+     * <p>
+     * Units: Percent
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Memory</code> - The percentage of memory that is currently in use on the instance. This metric identifies
+     * the amount of memory required to run an application on the instance.
+     * </p>
+     * <p>
+     * Units: Percent
+     * </p>
      * <note>
      * <p>
      * The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on
@@ -66,16 +174,116 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization
      * with the CloudWatch Agent</a>.
      * </p>
-     * </note>
+     * </note></li>
+     * <li>
+     * <p>
+     * <code>EBS_READ_OPS_PER_SECOND</code> - The completed read operations from all EBS volumes attached to the
+     * instance in a specified period of time.
+     * </p>
+     * <p>
+     * Unit: Count
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EBS_WRITE_OPS_PER_SECOND</code> - The completed write operations to all EBS volumes attached to the
+     * instance in a specified period of time.
+     * </p>
+     * <p>
+     * Unit: Count
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EBS_READ_BYTES_PER_SECOND</code> - The bytes read from all EBS volumes attached to the instance in a
+     * specified period of time.
+     * </p>
+     * <p>
+     * Unit: Bytes
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EBS_WRITE_BYTES_PER_SECOND</code> - The bytes written to all EBS volumes attached to the instance in a
+     * specified period of time.
+     * </p>
+     * <p>
+     * Unit: Bytes
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param name
-     *        The name of the utilization metric.</p> <note>
+     *        The name of the utilization metric.</p>
+     *        <p>
+     *        The following utilization metrics are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Cpu</code> - The percentage of allocated EC2 compute units that are currently in use on the
+     *        instance. This metric identifies the processing power required to run an application on the instance.
+     *        </p>
+     *        <p>
+     *        Depending on the instance type, tools in your operating system can show a lower percentage than CloudWatch
+     *        when the instance is not allocated a full processor core.
+     *        </p>
+     *        <p>
+     *        Units: Percent
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Memory</code> - The percentage of memory that is currently in use on the instance. This metric
+     *        identifies the amount of memory required to run an application on the instance.
+     *        </p>
+     *        <p>
+     *        Units: Percent
+     *        </p>
+     *        <note>
      *        <p>
      *        The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent
      *        installed on them. For more information, see <a
      *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory
      *        Utilization with the CloudWatch Agent</a>.
      *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        <code>EBS_READ_OPS_PER_SECOND</code> - The completed read operations from all EBS volumes attached to the
+     *        instance in a specified period of time.
+     *        </p>
+     *        <p>
+     *        Unit: Count
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EBS_WRITE_OPS_PER_SECOND</code> - The completed write operations to all EBS volumes attached to the
+     *        instance in a specified period of time.
+     *        </p>
+     *        <p>
+     *        Unit: Count
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EBS_READ_BYTES_PER_SECOND</code> - The bytes read from all EBS volumes attached to the instance in a
+     *        specified period of time.
+     *        </p>
+     *        <p>
+     *        Unit: Bytes
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EBS_WRITE_BYTES_PER_SECOND</code> - The bytes written to all EBS volumes attached to the instance in
+     *        a specified period of time.
+     *        </p>
+     *        <p>
+     *        Unit: Bytes
+     *        </p>
+     *        </li>
      * @see MetricName
      */
 
@@ -87,6 +295,31 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The name of the utilization metric.
      * </p>
+     * <p>
+     * The following utilization metrics are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Cpu</code> - The percentage of allocated EC2 compute units that are currently in use on the instance. This
+     * metric identifies the processing power required to run an application on the instance.
+     * </p>
+     * <p>
+     * Depending on the instance type, tools in your operating system can show a lower percentage than CloudWatch when
+     * the instance is not allocated a full processor core.
+     * </p>
+     * <p>
+     * Units: Percent
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Memory</code> - The percentage of memory that is currently in use on the instance. This metric identifies
+     * the amount of memory required to run an application on the instance.
+     * </p>
+     * <p>
+     * Units: Percent
+     * </p>
      * <note>
      * <p>
      * The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on
@@ -94,15 +327,115 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization
      * with the CloudWatch Agent</a>.
      * </p>
-     * </note>
+     * </note></li>
+     * <li>
+     * <p>
+     * <code>EBS_READ_OPS_PER_SECOND</code> - The completed read operations from all EBS volumes attached to the
+     * instance in a specified period of time.
+     * </p>
+     * <p>
+     * Unit: Count
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EBS_WRITE_OPS_PER_SECOND</code> - The completed write operations to all EBS volumes attached to the
+     * instance in a specified period of time.
+     * </p>
+     * <p>
+     * Unit: Count
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EBS_READ_BYTES_PER_SECOND</code> - The bytes read from all EBS volumes attached to the instance in a
+     * specified period of time.
+     * </p>
+     * <p>
+     * Unit: Bytes
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EBS_WRITE_BYTES_PER_SECOND</code> - The bytes written to all EBS volumes attached to the instance in a
+     * specified period of time.
+     * </p>
+     * <p>
+     * Unit: Bytes
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The name of the utilization metric.</p> <note>
+     * @return The name of the utilization metric.</p>
+     *         <p>
+     *         The following utilization metrics are available:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Cpu</code> - The percentage of allocated EC2 compute units that are currently in use on the
+     *         instance. This metric identifies the processing power required to run an application on the instance.
+     *         </p>
+     *         <p>
+     *         Depending on the instance type, tools in your operating system can show a lower percentage than
+     *         CloudWatch when the instance is not allocated a full processor core.
+     *         </p>
+     *         <p>
+     *         Units: Percent
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Memory</code> - The percentage of memory that is currently in use on the instance. This metric
+     *         identifies the amount of memory required to run an application on the instance.
+     *         </p>
+     *         <p>
+     *         Units: Percent
+     *         </p>
+     *         <note>
      *         <p>
      *         The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent
      *         installed on them. For more information, see <a
      *         href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory
      *         Utilization with the CloudWatch Agent</a>.
      *         </p>
+     *         </note></li>
+     *         <li>
+     *         <p>
+     *         <code>EBS_READ_OPS_PER_SECOND</code> - The completed read operations from all EBS volumes attached to the
+     *         instance in a specified period of time.
+     *         </p>
+     *         <p>
+     *         Unit: Count
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EBS_WRITE_OPS_PER_SECOND</code> - The completed write operations to all EBS volumes attached to the
+     *         instance in a specified period of time.
+     *         </p>
+     *         <p>
+     *         Unit: Count
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EBS_READ_BYTES_PER_SECOND</code> - The bytes read from all EBS volumes attached to the instance in
+     *         a specified period of time.
+     *         </p>
+     *         <p>
+     *         Unit: Bytes
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EBS_WRITE_BYTES_PER_SECOND</code> - The bytes written to all EBS volumes attached to the instance
+     *         in a specified period of time.
+     *         </p>
+     *         <p>
+     *         Unit: Bytes
+     *         </p>
+     *         </li>
      * @see MetricName
      */
 
@@ -114,6 +447,31 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The name of the utilization metric.
      * </p>
+     * <p>
+     * The following utilization metrics are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Cpu</code> - The percentage of allocated EC2 compute units that are currently in use on the instance. This
+     * metric identifies the processing power required to run an application on the instance.
+     * </p>
+     * <p>
+     * Depending on the instance type, tools in your operating system can show a lower percentage than CloudWatch when
+     * the instance is not allocated a full processor core.
+     * </p>
+     * <p>
+     * Units: Percent
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Memory</code> - The percentage of memory that is currently in use on the instance. This metric identifies
+     * the amount of memory required to run an application on the instance.
+     * </p>
+     * <p>
+     * Units: Percent
+     * </p>
      * <note>
      * <p>
      * The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on
@@ -121,16 +479,116 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization
      * with the CloudWatch Agent</a>.
      * </p>
-     * </note>
+     * </note></li>
+     * <li>
+     * <p>
+     * <code>EBS_READ_OPS_PER_SECOND</code> - The completed read operations from all EBS volumes attached to the
+     * instance in a specified period of time.
+     * </p>
+     * <p>
+     * Unit: Count
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EBS_WRITE_OPS_PER_SECOND</code> - The completed write operations to all EBS volumes attached to the
+     * instance in a specified period of time.
+     * </p>
+     * <p>
+     * Unit: Count
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EBS_READ_BYTES_PER_SECOND</code> - The bytes read from all EBS volumes attached to the instance in a
+     * specified period of time.
+     * </p>
+     * <p>
+     * Unit: Bytes
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EBS_WRITE_BYTES_PER_SECOND</code> - The bytes written to all EBS volumes attached to the instance in a
+     * specified period of time.
+     * </p>
+     * <p>
+     * Unit: Bytes
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param name
-     *        The name of the utilization metric.</p> <note>
+     *        The name of the utilization metric.</p>
+     *        <p>
+     *        The following utilization metrics are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Cpu</code> - The percentage of allocated EC2 compute units that are currently in use on the
+     *        instance. This metric identifies the processing power required to run an application on the instance.
+     *        </p>
+     *        <p>
+     *        Depending on the instance type, tools in your operating system can show a lower percentage than CloudWatch
+     *        when the instance is not allocated a full processor core.
+     *        </p>
+     *        <p>
+     *        Units: Percent
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Memory</code> - The percentage of memory that is currently in use on the instance. This metric
+     *        identifies the amount of memory required to run an application on the instance.
+     *        </p>
+     *        <p>
+     *        Units: Percent
+     *        </p>
+     *        <note>
      *        <p>
      *        The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent
      *        installed on them. For more information, see <a
      *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory
      *        Utilization with the CloudWatch Agent</a>.
      *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        <code>EBS_READ_OPS_PER_SECOND</code> - The completed read operations from all EBS volumes attached to the
+     *        instance in a specified period of time.
+     *        </p>
+     *        <p>
+     *        Unit: Count
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EBS_WRITE_OPS_PER_SECOND</code> - The completed write operations to all EBS volumes attached to the
+     *        instance in a specified period of time.
+     *        </p>
+     *        <p>
+     *        Unit: Count
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EBS_READ_BYTES_PER_SECOND</code> - The bytes read from all EBS volumes attached to the instance in a
+     *        specified period of time.
+     *        </p>
+     *        <p>
+     *        Unit: Bytes
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EBS_WRITE_BYTES_PER_SECOND</code> - The bytes written to all EBS volumes attached to the instance in
+     *        a specified period of time.
+     *        </p>
+     *        <p>
+     *        Unit: Bytes
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricName
      */
@@ -144,6 +602,31 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The name of the utilization metric.
      * </p>
+     * <p>
+     * The following utilization metrics are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Cpu</code> - The percentage of allocated EC2 compute units that are currently in use on the instance. This
+     * metric identifies the processing power required to run an application on the instance.
+     * </p>
+     * <p>
+     * Depending on the instance type, tools in your operating system can show a lower percentage than CloudWatch when
+     * the instance is not allocated a full processor core.
+     * </p>
+     * <p>
+     * Units: Percent
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Memory</code> - The percentage of memory that is currently in use on the instance. This metric identifies
+     * the amount of memory required to run an application on the instance.
+     * </p>
+     * <p>
+     * Units: Percent
+     * </p>
      * <note>
      * <p>
      * The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on
@@ -151,16 +634,116 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization
      * with the CloudWatch Agent</a>.
      * </p>
-     * </note>
+     * </note></li>
+     * <li>
+     * <p>
+     * <code>EBS_READ_OPS_PER_SECOND</code> - The completed read operations from all EBS volumes attached to the
+     * instance in a specified period of time.
+     * </p>
+     * <p>
+     * Unit: Count
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EBS_WRITE_OPS_PER_SECOND</code> - The completed write operations to all EBS volumes attached to the
+     * instance in a specified period of time.
+     * </p>
+     * <p>
+     * Unit: Count
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EBS_READ_BYTES_PER_SECOND</code> - The bytes read from all EBS volumes attached to the instance in a
+     * specified period of time.
+     * </p>
+     * <p>
+     * Unit: Bytes
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EBS_WRITE_BYTES_PER_SECOND</code> - The bytes written to all EBS volumes attached to the instance in a
+     * specified period of time.
+     * </p>
+     * <p>
+     * Unit: Bytes
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param name
-     *        The name of the utilization metric.</p> <note>
+     *        The name of the utilization metric.</p>
+     *        <p>
+     *        The following utilization metrics are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Cpu</code> - The percentage of allocated EC2 compute units that are currently in use on the
+     *        instance. This metric identifies the processing power required to run an application on the instance.
+     *        </p>
+     *        <p>
+     *        Depending on the instance type, tools in your operating system can show a lower percentage than CloudWatch
+     *        when the instance is not allocated a full processor core.
+     *        </p>
+     *        <p>
+     *        Units: Percent
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Memory</code> - The percentage of memory that is currently in use on the instance. This metric
+     *        identifies the amount of memory required to run an application on the instance.
+     *        </p>
+     *        <p>
+     *        Units: Percent
+     *        </p>
+     *        <note>
      *        <p>
      *        The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent
      *        installed on them. For more information, see <a
      *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory
      *        Utilization with the CloudWatch Agent</a>.
      *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        <code>EBS_READ_OPS_PER_SECOND</code> - The completed read operations from all EBS volumes attached to the
+     *        instance in a specified period of time.
+     *        </p>
+     *        <p>
+     *        Unit: Count
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EBS_WRITE_OPS_PER_SECOND</code> - The completed write operations to all EBS volumes attached to the
+     *        instance in a specified period of time.
+     *        </p>
+     *        <p>
+     *        Unit: Count
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EBS_READ_BYTES_PER_SECOND</code> - The bytes read from all EBS volumes attached to the instance in a
+     *        specified period of time.
+     *        </p>
+     *        <p>
+     *        Unit: Bytes
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EBS_WRITE_BYTES_PER_SECOND</code> - The bytes written to all EBS volumes attached to the instance in
+     *        a specified period of time.
+     *        </p>
+     *        <p>
+     *        Unit: Bytes
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricName
      */
@@ -174,9 +757,42 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The statistic of the utilization metric.
      * </p>
+     * <p>
+     * The following statistics are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Average</code> - This is the value of Sum / SampleCount during the specified period, or the average value
+     * observed during the specified period.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high
+     * volumes of activity for your application.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param statistic
-     *        The statistic of the utilization metric.
+     *        The statistic of the utilization metric.</p>
+     *        <p>
+     *        The following statistics are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Average</code> - This is the value of Sum / SampleCount during the specified period, or the average
+     *        value observed during the specified period.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine
+     *        high volumes of activity for your application.
+     *        </p>
+     *        </li>
      * @see MetricStatistic
      */
 
@@ -188,8 +804,41 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The statistic of the utilization metric.
      * </p>
+     * <p>
+     * The following statistics are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Average</code> - This is the value of Sum / SampleCount during the specified period, or the average value
+     * observed during the specified period.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high
+     * volumes of activity for your application.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The statistic of the utilization metric.
+     * @return The statistic of the utilization metric.</p>
+     *         <p>
+     *         The following statistics are available:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Average</code> - This is the value of Sum / SampleCount during the specified period, or the average
+     *         value observed during the specified period.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Maximum</code> - The highest value observed during the specified period. Use this value to
+     *         determine high volumes of activity for your application.
+     *         </p>
+     *         </li>
      * @see MetricStatistic
      */
 
@@ -201,9 +850,42 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The statistic of the utilization metric.
      * </p>
+     * <p>
+     * The following statistics are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Average</code> - This is the value of Sum / SampleCount during the specified period, or the average value
+     * observed during the specified period.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high
+     * volumes of activity for your application.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param statistic
-     *        The statistic of the utilization metric.
+     *        The statistic of the utilization metric.</p>
+     *        <p>
+     *        The following statistics are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Average</code> - This is the value of Sum / SampleCount during the specified period, or the average
+     *        value observed during the specified period.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine
+     *        high volumes of activity for your application.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricStatistic
      */
@@ -217,9 +899,42 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The statistic of the utilization metric.
      * </p>
+     * <p>
+     * The following statistics are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Average</code> - This is the value of Sum / SampleCount during the specified period, or the average value
+     * observed during the specified period.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high
+     * volumes of activity for your application.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param statistic
-     *        The statistic of the utilization metric.
+     *        The statistic of the utilization metric.</p>
+     *        <p>
+     *        The following statistics are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Average</code> - This is the value of Sum / SampleCount during the specified period, or the average
+     *        value observed during the specified period.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine
+     *        high volumes of activity for your application.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricStatistic
      */

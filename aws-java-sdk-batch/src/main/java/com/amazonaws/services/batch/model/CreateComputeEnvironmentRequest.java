@@ -34,7 +34,7 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
     private String computeEnvironmentName;
     /**
      * <p>
-     * The type of the compute environment. For more information, see <a
+     * The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
      * the <i>AWS Batch User Guide</i>.
      * </p>
@@ -49,7 +49,7 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
     private String state;
     /**
      * <p>
-     * Details of the compute resources managed by the compute environment. This parameter is required for managed
+     * Details about the compute resources managed by the compute environment. This parameter is required for managed
      * compute environments. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
      * the <i>AWS Batch User Guide</i>.
@@ -68,7 +68,7 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * <note>
      * <p>
      * Depending on how you created your AWS Batch service role, its ARN may contain the <code>service-role</code> path
-     * prefix. When you only specify the name of the service role, AWS Batch assumes that your ARN does not use the
+     * prefix. When you only specify the name of the service role, AWS Batch assumes that your ARN doesn't use the
      * <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your
      * service role when you create compute environments.
      * </p>
@@ -86,7 +86,7 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * These tags can be updated or removed using the <a
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API
-     * operations. These tags do not propagate to the underlying compute resources.
+     * operations. These tags don't propagate to the underlying compute resources.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -139,14 +139,14 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The type of the compute environment. For more information, see <a
+     * The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
      * the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param type
-     *        The type of the compute environment. For more information, see <a
-     *        href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     *        The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information,
+     *        see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
      *        Environments</a> in the <i>AWS Batch User Guide</i>.
      * @see CEType
      */
@@ -157,12 +157,13 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The type of the compute environment. For more information, see <a
+     * The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
      * the <i>AWS Batch User Guide</i>.
      * </p>
      * 
-     * @return The type of the compute environment. For more information, see <a
+     * @return The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more
+     *         information, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
      *         Environments</a> in the <i>AWS Batch User Guide</i>.
      * @see CEType
@@ -174,14 +175,14 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The type of the compute environment. For more information, see <a
+     * The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
      * the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param type
-     *        The type of the compute environment. For more information, see <a
-     *        href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     *        The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information,
+     *        see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
      *        Environments</a> in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CEType
@@ -194,14 +195,14 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The type of the compute environment. For more information, see <a
+     * The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
      * the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param type
-     *        The type of the compute environment. For more information, see <a
-     *        href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     *        The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information,
+     *        see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
      *        Environments</a> in the <i>AWS Batch User Guide</i>.
      * @see CEType
      */
@@ -212,14 +213,14 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The type of the compute environment. For more information, see <a
+     * The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
      * the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param type
-     *        The type of the compute environment. For more information, see <a
-     *        href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     *        The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information,
+     *        see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
      *        Environments</a> in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CEType
@@ -315,14 +316,14 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Details of the compute resources managed by the compute environment. This parameter is required for managed
+     * Details about the compute resources managed by the compute environment. This parameter is required for managed
      * compute environments. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
      * the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param computeResources
-     *        Details of the compute resources managed by the compute environment. This parameter is required for
+     *        Details about the compute resources managed by the compute environment. This parameter is required for
      *        managed compute environments. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
      *        Environments</a> in the <i>AWS Batch User Guide</i>.
@@ -334,13 +335,13 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Details of the compute resources managed by the compute environment. This parameter is required for managed
+     * Details about the compute resources managed by the compute environment. This parameter is required for managed
      * compute environments. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
      * the <i>AWS Batch User Guide</i>.
      * </p>
      * 
-     * @return Details of the compute resources managed by the compute environment. This parameter is required for
+     * @return Details about the compute resources managed by the compute environment. This parameter is required for
      *         managed compute environments. For more information, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
      *         Environments</a> in the <i>AWS Batch User Guide</i>.
@@ -352,14 +353,14 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Details of the compute resources managed by the compute environment. This parameter is required for managed
+     * Details about the compute resources managed by the compute environment. This parameter is required for managed
      * compute environments. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
      * the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param computeResources
-     *        Details of the compute resources managed by the compute environment. This parameter is required for
+     *        Details about the compute resources managed by the compute environment. This parameter is required for
      *        managed compute environments. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
      *        Environments</a> in the <i>AWS Batch User Guide</i>.
@@ -383,7 +384,7 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * <note>
      * <p>
      * Depending on how you created your AWS Batch service role, its ARN may contain the <code>service-role</code> path
-     * prefix. When you only specify the name of the service role, AWS Batch assumes that your ARN does not use the
+     * prefix. When you only specify the name of the service role, AWS Batch assumes that your ARN doesn't use the
      * <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your
      * service role when you create compute environments.
      * </p>
@@ -400,8 +401,8 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      *        <p>
      *        Depending on how you created your AWS Batch service role, its ARN may contain the
      *        <code>service-role</code> path prefix. When you only specify the name of the service role, AWS Batch
-     *        assumes that your ARN does not use the <code>service-role</code> path prefix. Because of this, we
-     *        recommend that you specify the full ARN of your service role when you create compute environments.
+     *        assumes that your ARN doesn't use the <code>service-role</code> path prefix. Because of this, we recommend
+     *        that you specify the full ARN of your service role when you create compute environments.
      *        </p>
      */
 
@@ -421,7 +422,7 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * <note>
      * <p>
      * Depending on how you created your AWS Batch service role, its ARN may contain the <code>service-role</code> path
-     * prefix. When you only specify the name of the service role, AWS Batch assumes that your ARN does not use the
+     * prefix. When you only specify the name of the service role, AWS Batch assumes that your ARN doesn't use the
      * <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your
      * service role when you create compute environments.
      * </p>
@@ -437,7 +438,7 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      *         <p>
      *         Depending on how you created your AWS Batch service role, its ARN may contain the
      *         <code>service-role</code> path prefix. When you only specify the name of the service role, AWS Batch
-     *         assumes that your ARN does not use the <code>service-role</code> path prefix. Because of this, we
+     *         assumes that your ARN doesn't use the <code>service-role</code> path prefix. Because of this, we
      *         recommend that you specify the full ARN of your service role when you create compute environments.
      *         </p>
      */
@@ -458,7 +459,7 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * <note>
      * <p>
      * Depending on how you created your AWS Batch service role, its ARN may contain the <code>service-role</code> path
-     * prefix. When you only specify the name of the service role, AWS Batch assumes that your ARN does not use the
+     * prefix. When you only specify the name of the service role, AWS Batch assumes that your ARN doesn't use the
      * <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your
      * service role when you create compute environments.
      * </p>
@@ -475,8 +476,8 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      *        <p>
      *        Depending on how you created your AWS Batch service role, its ARN may contain the
      *        <code>service-role</code> path prefix. When you only specify the name of the service role, AWS Batch
-     *        assumes that your ARN does not use the <code>service-role</code> path prefix. Because of this, we
-     *        recommend that you specify the full ARN of your service role when you create compute environments.
+     *        assumes that your ARN doesn't use the <code>service-role</code> path prefix. Because of this, we recommend
+     *        that you specify the full ARN of your service role when you create compute environments.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -497,7 +498,7 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * These tags can be updated or removed using the <a
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API
-     * operations. These tags do not propagate to the underlying compute resources.
+     * operations. These tags don't propagate to the underlying compute resources.
      * </p>
      * 
      * @return The tags that you apply to the compute environment to help you categorize and organize your resources.
@@ -508,7 +509,7 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      *         These tags can be updated or removed using the <a
      *         href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a
      *         href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API
-     *         operations. These tags do not propagate to the underlying compute resources.
+     *         operations. These tags don't propagate to the underlying compute resources.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -526,7 +527,7 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * These tags can be updated or removed using the <a
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API
-     * operations. These tags do not propagate to the underlying compute resources.
+     * operations. These tags don't propagate to the underlying compute resources.
      * </p>
      * 
      * @param tags
@@ -538,7 +539,7 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      *        These tags can be updated or removed using the <a
      *        href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a
      *        href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API
-     *        operations. These tags do not propagate to the underlying compute resources.
+     *        operations. These tags don't propagate to the underlying compute resources.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -556,7 +557,7 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * These tags can be updated or removed using the <a
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API
-     * operations. These tags do not propagate to the underlying compute resources.
+     * operations. These tags don't propagate to the underlying compute resources.
      * </p>
      * 
      * @param tags
@@ -568,7 +569,7 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      *        These tags can be updated or removed using the <a
      *        href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a
      *        href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API
-     *        operations. These tags do not propagate to the underlying compute resources.
+     *        operations. These tags don't propagate to the underlying compute resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

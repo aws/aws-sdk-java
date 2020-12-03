@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Determine whether your data volume persists on the host container instance and where it is stored. If this parameter
- * is empty, then the Docker daemon assigns a host path for your data volume, but the data is not guaranteed to persist
+ * is empty, then the Docker daemon assigns a host path for your data volume, but the data isn't guaranteed to persist
  * after the containers associated with it stop running.
  * </p>
  * 
@@ -37,6 +37,11 @@ public class Host implements Serializable, Cloneable, StructuredPojo {
      * path location does not exist on the host container instance, the Docker daemon creates it. If the location does
      * exist, the contents of the source path folder are exported.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      */
     private String sourcePath;
 
@@ -48,13 +53,21 @@ public class Host implements Serializable, Cloneable, StructuredPojo {
      * path location does not exist on the host container instance, the Docker daemon creates it. If the location does
      * exist, the contents of the source path folder are exported.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      * 
      * @param sourcePath
      *        The path on the host container instance that is presented to the container. If this parameter is empty,
      *        then the Docker daemon has assigned a host path for you. If this parameter contains a file location, then
      *        the data volume persists at the specified location on the host container instance until you delete it
      *        manually. If the source path location does not exist on the host container instance, the Docker daemon
-     *        creates it. If the location does exist, the contents of the source path folder are exported.
+     *        creates it. If the location does exist, the contents of the source path folder are exported.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        </p>
      */
 
     public void setSourcePath(String sourcePath) {
@@ -69,12 +82,20 @@ public class Host implements Serializable, Cloneable, StructuredPojo {
      * path location does not exist on the host container instance, the Docker daemon creates it. If the location does
      * exist, the contents of the source path folder are exported.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      * 
      * @return The path on the host container instance that is presented to the container. If this parameter is empty,
      *         then the Docker daemon has assigned a host path for you. If this parameter contains a file location, then
      *         the data volume persists at the specified location on the host container instance until you delete it
      *         manually. If the source path location does not exist on the host container instance, the Docker daemon
-     *         creates it. If the location does exist, the contents of the source path folder are exported.
+     *         creates it. If the location does exist, the contents of the source path folder are exported.</p> <note>
+     *         <p>
+     *         This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *         </p>
      */
 
     public String getSourcePath() {
@@ -89,13 +110,21 @@ public class Host implements Serializable, Cloneable, StructuredPojo {
      * path location does not exist on the host container instance, the Docker daemon creates it. If the location does
      * exist, the contents of the source path folder are exported.
      * </p>
+     * <note>
+     * <p>
+     * This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     * </p>
+     * </note>
      * 
      * @param sourcePath
      *        The path on the host container instance that is presented to the container. If this parameter is empty,
      *        then the Docker daemon has assigned a host path for you. If this parameter contains a file location, then
      *        the data volume persists at the specified location on the host container instance until you delete it
      *        manually. If the source path location does not exist on the host container instance, the Docker daemon
-     *        creates it. If the location does exist, the contents of the source path folder are exported.
+     *        creates it. If the location does exist, the contents of the source path folder are exported.</p> <note>
+     *        <p>
+     *        This parameter isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
