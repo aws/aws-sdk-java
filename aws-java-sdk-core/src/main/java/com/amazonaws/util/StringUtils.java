@@ -54,7 +54,7 @@ public class StringUtils {
     }
 
     public static Boolean toBoolean(StringBuilder value) {
-        return Boolean.getBoolean(value.toString());
+        return Boolean.valueOf(value.toString());
     }
 
     public static String fromInteger(Integer value) {
