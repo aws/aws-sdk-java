@@ -28,7 +28,7 @@ public class Region {
     private final String description;
 
     public Region(@JsonProperty(value = "description") String description) {
-        this.description = ValidationUtils.assertNotNull(description, "Region description");;
+        this.description = ValidationUtils.assertNotNull(description, "Region description");
     }
 
     public String getDescription() {
