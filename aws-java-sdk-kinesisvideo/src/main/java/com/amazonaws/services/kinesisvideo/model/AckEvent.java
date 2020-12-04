@@ -131,7 +131,7 @@ public class AckEvent implements Serializable {
         if (errorCode != null ? !errorCode.equals(ackEvent.errorCode) : ackEvent.errorCode != null) {
             return false;
         }
-        return errorId == ackEvent.errorId;
+        return Integer.compare(errorId, ackEvent.errorId);
     }
 
     @Override
